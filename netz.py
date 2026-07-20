@@ -1,0 +1,882 @@
+#!/usr/bin/env python3
+"""
+NETZ v2.0 — local auto-collation engine for the daily intelligence report.
+
+Pipeline: fetch (RSS + JSON APIs) → window → dedupe/cluster → corroboration
+scoring → delta vs. previous run → PIR matching → convergence detection →
+synthesis with ICD 203 estimative discipline (optional, via LM Studio) →
+Admiralty-graded report, markdown + dark HTML.
+
+No API keys anywhere. If no model is loaded, the collated report still ships.
+
+Usage:
+    python netz.py [--hours 48] [--no-llm] [--open] [--config my.json]
+"""
+
+import argparse
+import html
+import json
+import os
+import platform
+import re
+import subprocess
+import sys
+import webbrowser
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+
+import feedparser
+import requests
+
+DEFAULT_CONFIG = "report_config.json"
+HERE = Path(__file__).resolve().parent
+STATE_FILE = HERE / "state.json"
+
+STOPWORDS = set("""
+a an and are as at be by for from has have how in is it its of on or that the
+this to was were what when where which who will with after amid over under
+new says said say more than into out up down about their his her they them
+""".split())
+
+CITE_RE = re.compile(r"\[(\d+(?:\s*,\s*\d+)*)\]")
+TAG_RE = re.compile(r"<[^>]+>")
+CAP_SEQ_RE = re.compile(r"\b([A-Z][a-zA-Z\u00C0-\u024F]+(?:\s+[A-Z][a-zA-Z\u00C0-\u024F]+){0,3})\b")
+TRACKING_PARAMS = {"utm_source", "utm_medium", "utm_campaign", "utm_term",
+                   "utm_content", "fbclid", "gclid", "ref", "cmpid", "ns_mchannel"}
+UA = {"User-Agent": "NETZ/2.0 (personal OSINT collation; contact via config)"}
+
+
+def load_config(path: str) -> dict:
+    p = Path(path)
+    if not p.is_absolute():
+        p = HERE / p
+    with open(p, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+# ----------------------------------------------------------------------
+# fetch + normalize (RSS)
+# ----------------------------------------------------------------------
+
+def canonical_url(url: str) -> str:
+    try:
+        parts = urlsplit(url)
+        q = [(k, v) for k, v in parse_qsl(parts.query) if k.lower() not in TRACKING_PARAMS]
+        return urlunsplit((parts.scheme, parts.netloc.lower(), parts.path.rstrip("/"),
+                           urlencode(q), ""))
+    except Exception:
+        return url
+
+
+def strip_html(text: str) -> str:
+    return html.unescape(TAG_RE.sub(" ", text or "")).strip()
+
+
+def parse_when(entry):
+    for key in ("published_parsed", "updated_parsed"):
+        t = entry.get(key)
+        if t:
+            try:
+                return datetime(*t[:6], tzinfo=timezone.utc)
+            except Exception:
+                pass
+    return None
+
+
+def fetch_feed(source_name: str, url: str, category: str, timeout: int = 12) -> dict:
+    result = {"source": source_name, "url": url, "category": category,
+              "status": "ok", "items": [], "error": ""}
+    try:
+        resp = requests.get(url, timeout=timeout, headers=UA)
+        resp.raise_for_status()
+        parsed = feedparser.parse(resp.content)
+        if parsed.bozo and not parsed.entries:
+            result["status"] = "parse_fail"
+            result["error"] = str(getattr(parsed, "bozo_exception", "unparseable"))
+            return result
+        for e in parsed.entries:
+            title = strip_html(e.get("title", "")).strip()
+            if not title:
+                continue
+            result["items"].append({
+                "title": title,
+                "link": canonical_url(e.get("link", "")),
+                "summary": strip_html(e.get("summary", e.get("description", "")))[:400],
+                "when": parse_when(e),
+                "source": source_name,
+                "category": category,
+            })
+    except requests.RequestException as exc:
+        result["status"] = "fetch_fail"
+        result["error"] = str(exc)[:160]
+    except Exception as exc:  # noqa: BLE001
+        result["status"] = "error"
+        result["error"] = str(exc)[:160]
+    return result
+
+
+def fetch_all(config: dict, max_workers: int = 12):
+    jobs, health = [], []
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futures = []
+        for category, feeds in config["categories"].items():
+            for source_name, url in feeds.items():
+                futures.append(pool.submit(fetch_feed, source_name, url, category,
+                                           config.get("fetch_timeout_seconds", 12)))
+        for fut in as_completed(futures):
+            jobs.append(fut.result())
+    items = []
+    for job in jobs:
+        newest = max((i["when"] for i in job["items"] if i["when"]), default=None)
+        health.append({"source": job["source"], "category": job["category"],
+                       "status": job["status"], "count": len(job["items"]),
+                       "newest": newest, "error": job["error"]})
+        items.extend(job["items"])
+    health.sort(key=lambda h: (h["category"], h["source"]))
+    return items, health
+
+
+def window_filter(items: list, hours: int) -> list:
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
+    kept = []
+    for it in items:
+        if it["when"] is None:
+            it["undated"] = True
+            kept.append(it)
+        elif it["when"] >= cutoff:
+            it["undated"] = False
+            kept.append(it)
+    return kept
+
+
+# ----------------------------------------------------------------------
+# JSON API sources (keyless): ReliefWeb, NWS
+# ----------------------------------------------------------------------
+
+def fetch_reliefweb(config: dict, health: list) -> list:
+    """Humanitarian-crisis reporting — injected into disaster category."""
+    if not config.get("reliefweb_enabled", True):
+        return []
+    url = config.get("reliefweb_url", "https://api.reliefweb.int/v1/reports")
+    entry = {"source": "ReliefWeb", "category": "disaster_infrastructure",
+             "status": "ok", "count": 0, "newest": None, "error": ""}
+    items = []
+    try:
+        rw_headers = dict(UA); rw_headers["Accept"] = "application/json"
+        r = requests.get(url, timeout=15, headers=rw_headers,
+                         params={"appname": "netz", "limit": 15,
+                                 "profile": "list", "preset": "latest"})
+        r.raise_for_status()
+        for d in r.json().get("data", []):
+            f = d.get("fields", {}) or {}
+            title = f.get("title")
+            if not title:
+                continue
+            when = None
+            try:
+                created = ((f.get("date") or {}).get("created")) or ""
+                when = datetime.fromisoformat(created.replace("Z", "+00:00"))
+                if when.tzinfo is None:
+                    when = when.replace(tzinfo=timezone.utc)
+            except Exception:
+                pass
+            items.append({"title": strip_html(title),
+                          "link": f.get("url_alias") or f.get("url") or d.get("href", ""),
+                          "summary": "", "when": when,
+                          "source": "ReliefWeb", "category": "disaster_infrastructure"})
+        entry["count"] = len(items)
+        entry["newest"] = max((i["when"] for i in items if i["when"]), default=None)
+    except Exception as exc:
+        entry["status"] = "fetch_fail"
+        entry["error"] = str(exc)[:160]
+    health.append(entry)
+    return items
+
+
+def fetch_nws(config: dict) -> list:
+    """Active Extreme/Severe NWS alerts (US)."""
+    if not config.get("nws_enabled", True):
+        return []
+    url = config.get("nws_url", "https://api.weather.gov/alerts/active")
+    try:
+        r = requests.get(url, timeout=15, headers=UA,
+                         params={"status": "actual", "severity": "Extreme,Severe"})
+        r.raise_for_status()
+        out = []
+        for feat in r.json().get("features", [])[:60]:
+            p = feat.get("properties", {}) or {}
+            out.append({"event": p.get("event", "?"),
+                        "severity": p.get("severity", ""),
+                        "area": (p.get("areaDesc") or "")[:90],
+                        "headline": (p.get("headline") or "")[:140]})
+        return out
+    except Exception:
+        return []
+
+
+# ----------------------------------------------------------------------
+# dedupe + cluster + score
+# ----------------------------------------------------------------------
+
+def tokens(text: str) -> set:
+    return {w for w in re.findall(r"[a-z\u00DF-\u00FF']+", text.lower())
+            if len(w) > 3 and w not in STOPWORDS}
+
+
+def jaccard(a: set, b: set) -> float:
+    if not a or not b:
+        return 0.0
+    return len(a & b) / len(a | b)
+
+
+def cluster_items(items: list, threshold: float = 0.45) -> list:
+    seen_urls = {}
+    deduped = []
+    for it in items:
+        key = it["link"] or it["title"]
+        if key in seen_urls:
+            continue
+        seen_urls[key] = True
+        it["tok"] = tokens(it["title"])
+        deduped.append(it)
+
+    clusters = []
+    for it in deduped:
+        placed = False
+        for cl in clusters:
+            if cl["items"][0]["category"] != it["category"]:
+                continue
+            if jaccard(it["tok"], cl["tokens"]) >= threshold:
+                cl["items"].append(it)
+                cl["tokens"] |= it["tok"]
+                placed = True
+                break
+        if not placed:
+            clusters.append({"items": [it], "tokens": set(it["tok"])})
+
+    for cl in clusters:
+        cl["sources"] = sorted({i["source"] for i in cl["items"]})
+        cl["corroboration"] = len(cl["sources"])
+        whens = [i["when"] for i in cl["items"] if i["when"]]
+        cl["newest"] = max(whens) if whens else None
+        cl["category"] = cl["items"][0]["category"]
+        rep = max(cl["items"], key=lambda i: i["when"] or datetime.min.replace(tzinfo=timezone.utc))
+        cl["rep"] = rep
+    return clusters
+
+
+# ----------------------------------------------------------------------
+# delta tracking (the report remembers yesterday)
+# ----------------------------------------------------------------------
+
+def mark_delta(clusters: list):
+    today = datetime.now(timezone.utc).date()
+    prev = []
+    if STATE_FILE.exists():
+        try:
+            prev = json.loads(STATE_FILE.read_text(encoding="utf-8")).get("stories", [])
+        except Exception:
+            prev = []
+    for p in prev:
+        p["_tok"] = set(p.get("tokens", []))
+    for cl in clusters:
+        first_seen = today
+        for p in prev:
+            if jaccard(cl["tokens"], p["_tok"]) >= 0.5:
+                try:
+                    first_seen = min(first_seen,
+                                     datetime.strptime(p["first_seen"], "%Y-%m-%d").date())
+                except ValueError:
+                    pass
+        cl["first_seen"] = first_seen
+        cl["is_new"] = first_seen == today
+        cl["age_days"] = (today - first_seen).days + 1
+    state = {"stories": [{"tokens": sorted(cl["tokens"])[:30],
+                          "title": cl["rep"]["title"][:120],
+                          "first_seen": cl["first_seen"].strftime("%Y-%m-%d")}
+                         for cl in clusters]}
+    STATE_FILE.write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
+
+
+def delta_mark(cl) -> str:
+    return "🆕" if cl.get("is_new", True) else f"↺D{cl.get('age_days', 1)}"
+
+
+# ----------------------------------------------------------------------
+# PIRs + convergence
+# ----------------------------------------------------------------------
+
+def pir_status(config: dict, clusters: list) -> list:
+    out = []
+    for pir in config.get("pirs", []):
+        pt = tokens(pir)
+        need = 2 if len(pt) >= 2 else 1
+        hits = [cl for cl in clusters if len(pt & cl["tokens"]) >= need]
+        hits.sort(key=lambda c: -c["corroboration"])
+        out.append({"pir": pir, "hits": hits[:4]})
+    return out
+
+
+def convergence(clusters: list, min_categories: int = 2, top_n: int = 12) -> list:
+    term_map = {}
+    for cl in clusters:
+        text = cl["rep"]["title"] + " " + cl["rep"]["summary"]
+        for m in CAP_SEQ_RE.findall(text):
+            term = m.strip()
+            if term.lower() in STOPWORDS or len(term) < 4:
+                continue
+            entry = term_map.setdefault(term, {"categories": set(), "hits": 0})
+            entry["categories"].add(cl["category"])
+            entry["hits"] += 1
+    hits = [(t, d) for t, d in term_map.items() if len(d["categories"]) >= min_categories]
+    hits.sort(key=lambda x: (-len(x[1]["categories"]), -x[1]["hits"], x[0]))
+    return [(t, sorted(d["categories"]), d["hits"]) for t, d in hits[:top_n]]
+
+
+# ----------------------------------------------------------------------
+# LM Studio synthesis (optional layer) — ICD 203 discipline
+# ----------------------------------------------------------------------
+
+def llm_probe(base_url: str, timeout: int = 5):
+    try:
+        r = requests.get(f"{base_url.rstrip('/')}/models", timeout=timeout)
+        r.raise_for_status()
+        data = r.json().get("data", [])
+        return data[0]["id"] if data else None
+    except Exception:
+        return None
+
+
+def llm_chat(base_url: str, model: str, system: str, user: str,
+             max_tokens: int = 600, temperature: float = 0.2, timeout: int = 240):
+    try:
+        r = requests.post(f"{base_url.rstrip('/')}/chat/completions", timeout=timeout,
+                          json={"model": model, "temperature": temperature,
+                                "max_tokens": max_tokens,
+                                "messages": [{"role": "system", "content": system},
+                                             {"role": "user", "content": user}]})
+        r.raise_for_status()
+        return r.json()["choices"][0]["message"]["content"].strip()
+    except Exception:
+        return None
+
+
+SYSTEM_PROMPT = (
+    "You are an OSINT analyst drafting a section of a daily intelligence report. "
+    "Work ONLY from the numbered items provided. Every sentence must end with a "
+    "citation in square brackets, e.g. [3] or [3,7]. No outside knowledge. "
+    "Separate reporting from assessment: sentences relaying what sources say use "
+    "'X reports/reported'; analytic inference is prefixed 'We assess' and uses "
+    "standardized estimative language only (almost certainly, very likely, likely, "
+    "roughly even chance, unlikely, very unlikely). Never assess beyond what the "
+    "cited items support; single-source claims may not be assessed above 'possibly'. "
+    "If items conflict, state the conflict with both citations. If any standing "
+    "requirement (PIR) listed is touched by the items, address it explicitly. "
+    "End with exactly one sentence beginning 'WATCH:' naming the single most "
+    "concrete observable to monitor in the next 24-72h, with citation. "
+    "Dense prose, no bullets, no headers, 100-190 words."
+)
+
+BLUF_PROMPT = (
+    "You are an OSINT analyst writing the KEY JUDGMENTS of a daily intelligence "
+    "report from the numbered top signals provided, which span multiple categories. "
+    "Write 3-5 judgments. Each is ONE sentence beginning 'KJ1:', 'KJ2:', etc., "
+    "using standardized estimative language (almost certainly, very likely, likely, "
+    "roughly even chance, unlikely), ending with a confidence tag in parentheses — "
+    "(High confidence), (Moderate confidence), or (Low confidence) — followed by "
+    "citations like [2] or [2,5]. Confidence must track sourcing: only "
+    "multi-source-corroborated items support High confidence; single-source items "
+    "cap at Moderate. Work ONLY from the items given. Lead with whatever crosses "
+    "categories or carries the highest corroboration."
+)
+
+IW_PROMPT = (
+    "You are an OSINT analyst. From the numbered top signals below, produce the "
+    "INDICATIONS & WARNINGS and OUTLOOK blocks of a daily intelligence report. "
+    "Format exactly:\nI&W:\n1. <one concrete observable to monitor in the next "
+    "24-72h, tied to escalation or de-escalation, with citation [n]>\n2. ...\n"
+    "(3 to 6 numbered lines)\nOUTLOOK:\n<one 60-90 word paragraph, standardized "
+    "estimative language, every sentence cited [n]>\n"
+    "Work ONLY from the items given. Observables must be checkable from public "
+    "reporting (a statement, a closure, a price level, an advisory), never vague."
+)
+
+
+def number_items(clusters: list, limit: int):
+    chosen = clusters[:limit]
+    lines = []
+    for n, cl in enumerate(chosen, 1):
+        rep = cl["rep"]
+        when = rep["when"].strftime("%d %b %H:%M UTC") if rep["when"] else "undated"
+        lines.append(f"[{n}] {rep['title']} — {', '.join(cl['sources'])} "
+                     f"({cl['corroboration']} source{'s' if cl['corroboration'] > 1 else ''}, "
+                     f"{when}, {'new today' if cl.get('is_new', True) else 'day ' + str(cl.get('age_days', 1)) + ' of coverage'}). "
+                     f"{rep['summary'][:250]}")
+    return "\n".join(lines), chosen
+
+
+def audit_citations(text: str, n_items: int):
+    warnings = []
+    cited = set()
+    for m in CITE_RE.finditer(text):
+        for num in re.split(r"\s*,\s*", m.group(1)):
+            cited.add(int(num))
+    bad = [c for c in cited if c < 1 or c > n_items]
+    if bad:
+        warnings.append(f"citations out of range: {sorted(bad)}")
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
+    uncited = sum(1 for s in sentences
+                  if not CITE_RE.search(s) and not s.startswith(("I&W:", "OUTLOOK:")))
+    if uncited:
+        warnings.append(f"{uncited} sentence(s) carry no citation — audit before use")
+    return text, warnings
+
+
+# ----------------------------------------------------------------------
+# admiralty grading, markets, KEV
+# ----------------------------------------------------------------------
+
+def admiralty_grade(cluster, rel_map: dict) -> str:
+    letters = [rel_map.get(s, "C") for s in cluster["sources"]]
+    best = min(letters)
+    corr = cluster["corroboration"]
+    cred = 1 if corr >= 3 else 2 if corr == 2 else 3
+    return f"{best}{cred}"
+
+
+def fetch_markets(config: dict) -> list:
+    mcfg = config.get("markets") or {}
+    rows = []
+    stooq_base = mcfg.get("stooq_base", "https://stooq.com/q/d/l/")
+    for label, sym in (mcfg.get("stooq") or {}).items():
+        try:
+            r = requests.get(stooq_base, params={"s": sym, "i": "d"}, timeout=10, headers=UA)
+            r.raise_for_status()
+            lines = [l for l in r.text.strip().splitlines() if l and not l.startswith("Date")]
+            closes = [float(l.split(",")[4]) for l in lines[-2:]]
+            if len(closes) == 2 and closes[0]:
+                rows.append({"label": label, "value": f"{closes[1]:,.2f}",
+                             "chg": (closes[1] - closes[0]) / closes[0] * 100})
+            elif closes:
+                rows.append({"label": label, "value": f"{closes[-1]:,.2f}", "chg": None})
+        except Exception:
+            rows.append({"label": label, "value": "unavailable", "chg": None})
+    cg_ids = mcfg.get("coingecko") or {}
+    if cg_ids:
+        try:
+            r = requests.get(mcfg.get("coingecko_base",
+                             "https://api.coingecko.com/api/v3/simple/price"),
+                             params={"ids": ",".join(cg_ids.values()),
+                                     "vs_currencies": "usd",
+                                     "include_24hr_change": "true"}, timeout=10)
+            r.raise_for_status()
+            data = r.json()
+            for label, cid in cg_ids.items():
+                d = data.get(cid) or {}
+                if "usd" in d:
+                    rows.append({"label": label, "value": f"${d['usd']:,.0f}",
+                                 "chg": d.get("usd_24h_change")})
+        except Exception:
+            rows.append({"label": "crypto", "value": "unavailable", "chg": None})
+    return rows
+
+
+def fetch_kev(config: dict, hours: int) -> list:
+    if not config.get("kev_enabled", True):
+        return []
+    url = config.get("kev_url",
+                     "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json")
+    try:
+        r = requests.get(url, timeout=15, headers=UA)
+        r.raise_for_status()
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=max(1, hours // 24))).date()
+        out = []
+        for v in r.json().get("vulnerabilities", []):
+            try:
+                added = datetime.strptime(v.get("dateAdded", ""), "%Y-%m-%d").date()
+            except ValueError:
+                continue
+            if added >= cutoff:
+                out.append(v)
+        out.sort(key=lambda v: v.get("dateAdded", ""), reverse=True)
+        return out
+    except Exception:
+        return []
+
+
+# ----------------------------------------------------------------------
+# html rendering (dark dashboard)
+# ----------------------------------------------------------------------
+
+HTML_CSS = """
+:root{--bg:#0c0f13;--panel:#12161c;--line:#1f2630;--fg:#c9d1d9;--dim:#7d8590;
+--amber:#e3b341;--green:#3fb950;--red:#f85149;--blue:#58a6ff;}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);margin:0;padding:2rem 1rem;
+font:15px/1.55 -apple-system,'Segoe UI',Roboto,sans-serif}
+main{max-width:900px;margin:0 auto}
+h1{font-family:'Cascadia Code','Consolas',monospace;font-size:1.35rem;color:var(--amber);
+letter-spacing:.06em;border-bottom:1px solid var(--line);padding-bottom:.6rem}
+h2{font-family:'Cascadia Code','Consolas',monospace;font-size:.95rem;color:var(--green);
+letter-spacing:.14em;text-transform:uppercase;margin-top:2.2rem;
+border-left:3px solid var(--green);padding-left:.6rem}
+p{margin:.55rem 0}
+.meta{color:var(--dim);font-family:'Consolas',monospace;font-size:.82rem}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+strong{color:#e6edf3}
+ol,ul{padding-left:1.4rem}li{margin:.35rem 0}
+blockquote{margin:.5rem 0;padding:.45rem .8rem;background:#2d1a12;
+border-left:3px solid var(--red);color:#ffa198;font-size:.86rem;border-radius:0 4px 4px 0}
+table{border-collapse:collapse;width:100%;font-size:.82rem;
+font-family:'Consolas',monospace;margin:.8rem 0}
+th,td{border:1px solid var(--line);padding:.35rem .6rem;text-align:left}
+th{background:var(--panel);color:var(--dim);text-transform:uppercase;
+letter-spacing:.08em;font-size:.72rem}
+tr:nth-child(even) td{background:#10141a}
+.corr{color:var(--amber);font-weight:600}
+.single{color:var(--dim)}
+hr{border:0;border-top:1px solid var(--line);margin:2rem 0}
+em{color:var(--dim)}
+"""
+
+
+def md_inline(text: str) -> str:
+    t = html.escape(text, quote=False)
+    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2" target="_blank">\1</a>', t)
+    t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
+    t = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", t)
+    t = re.sub(r"(\d+)× corroborated", r'<span class="corr">\1× corroborated</span>', t)
+    t = re.sub(r"(\d+)×(?= \()", r'<span class="corr">\1×</span>', t)
+    t = t.replace("(single-source)", '<span class="single">(single-source)</span>')
+    return t
+
+
+def render_html(md: str, title: str) -> str:
+    lines = md.split("\n")
+    out, i = [], 0
+    in_ol = in_ul = False
+
+    def close_lists():
+        nonlocal in_ol, in_ul
+        if in_ol:
+            out.append("</ol>"); in_ol = False
+        if in_ul:
+            out.append("</ul>"); in_ul = False
+
+    while i < len(lines):
+        line = lines[i]
+        if line.startswith("| ") and i + 1 < len(lines) and set(lines[i + 1].replace("|", "").strip()) <= set("- "):
+            close_lists()
+            headers = [c.strip() for c in line.strip("|").split("|")]
+            out.append("<table><thead><tr>" +
+                       "".join(f"<th>{md_inline(h)}</th>" for h in headers) +
+                       "</tr></thead><tbody>")
+            i += 2
+            while i < len(lines) and lines[i].startswith("|"):
+                cells = [c.strip() for c in lines[i].strip("|").split("|")]
+                out.append("<tr>" + "".join(f"<td>{md_inline(c)}</td>" for c in cells) + "</tr>")
+                i += 1
+            out.append("</tbody></table>")
+            continue
+        if line.startswith("# "):
+            close_lists(); out.append(f"<h1>{md_inline(line[2:])}</h1>")
+        elif line.startswith("## "):
+            close_lists(); out.append(f"<h2>{md_inline(line[3:])}</h2>")
+        elif line.startswith("> "):
+            close_lists(); out.append(f"<blockquote>{md_inline(line[2:])}</blockquote>")
+        elif re.match(r"^\d+\.\s", line):
+            if not in_ol:
+                close_lists(); out.append("<ol>"); in_ol = True
+            out.append(f"<li>{md_inline(re.sub(r'^\\d+\\.\\s', '', line))}</li>")
+        elif line.startswith("- "):
+            if not in_ul:
+                close_lists(); out.append("<ul>"); in_ul = True
+            out.append(f"<li>{md_inline(line[2:])}</li>")
+        elif line.strip() == "---":
+            close_lists(); out.append("<hr>")
+        elif line.strip() == "":
+            close_lists()
+        else:
+            close_lists()
+            cls = ' class="meta"' if line.startswith("Window:") else ""
+            out.append(f"<p{cls}>{md_inline(line)}</p>")
+        i += 1
+    close_lists()
+    return (f"<!doctype html><html><head><meta charset='utf-8'>"
+            f"<meta name='viewport' content='width=device-width,initial-scale=1'>"
+            f"<title>{html.escape(title)}</title><style>{HTML_CSS}</style></head>"
+            f"<body><main>{''.join(out)}</main></body></html>")
+
+
+def open_in_browser(path: Path):
+    try:
+        if platform.system() == "Windows":
+            os.startfile(path)  # noqa: S606
+        elif platform.system() == "Darwin":
+            subprocess.run(["open", str(path)], check=False)
+        else:
+            webbrowser.open(path.as_uri())
+    except Exception:
+        pass
+
+
+# ----------------------------------------------------------------------
+# report
+# ----------------------------------------------------------------------
+
+def fmt_when(dt) -> str:
+    return dt.strftime("%d %b %H:%M UTC") if dt else "undated"
+
+
+def age_hours(dt) -> str:
+    if not dt:
+        return "—"
+    h = (datetime.now(timezone.utc) - dt).total_seconds() / 3600
+    return f"{h:.1f}h"
+
+
+def render_report(config, clusters, conv, health, synth, model_used, hours, counts,
+                  markets_data, kevs, nws_alerts, pirs) -> str:
+    now = datetime.now(timezone.utc)
+    rel_map = config.get("source_reliability", {})
+    dtg = now.strftime("%d%H%MZ %b %y").upper()
+    n_new = sum(1 for c in clusters if c.get("is_new", True))
+    sec = iter(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+                "XI", "XII", "XIII", "XIV", "XV", "XVI"])
+    out = []
+    out.append("**UNCLASSIFIED // OPEN SOURCES**\n")
+    out.append(f"# NETZ DAILY INTELLIGENCE REPORT — {dtg}\n")
+    synth_line = f"synthesis: {model_used}" if model_used else "synthesis: OFF — collation only"
+    out.append(f"Window: last {hours}h · {counts['fetched']} items → {counts['stories']} stories "
+               f"(**{n_new} new**, {counts['stories'] - n_new} ongoing) · {synth_line} · "
+               f"grades: Admiralty A-F × 1-6 · 🆕 new today, ↺Dn = day n of coverage\n")
+
+    top = sorted(clusters, key=lambda c: (-c["corroboration"],
+                 -(c["newest"].timestamp() if c["newest"] else 0)))[:config.get("top_signals", 8)]
+
+    out.append(f"## {next(sec)}. KEY JUDGMENTS\n")
+    if synth.get("bluf"):
+        out.append(synth["bluf"] + "\n")
+        for w in synth.get("bluf_warnings", []):
+            out.append(f"> ⚠ {w}\n")
+    else:
+        out.append("*Synthesis layer off — top signals listed without analytic judgments.*\n")
+    out.append("**Top signals (the record behind the judgments):**\n")
+    for n, cl in enumerate(top, 1):
+        rep = cl["rep"]
+        out.append(f"{n}. {delta_mark(cl)} **[{admiralty_grade(cl, rel_map)}] {rep['title']}** — "
+                   f"{cl['corroboration']}× corroborated ({', '.join(cl['sources'])}), "
+                   f"{fmt_when(cl['newest'])} · [{cl['category']}] · [link]({rep['link']})")
+    out.append("")
+
+    out.append(f"## {next(sec)}. INDICATIONS & WARNINGS\n")
+    if synth.get("iw"):
+        out.append(synth["iw"] + "\n")
+        for w in synth.get("iw_warnings", []):
+            out.append(f"> ⚠ {w}\n")
+    else:
+        out.append("*Synthesis layer off — no I&W block this run.*")
+    out.append("")
+
+    out.append(f"## {next(sec)}. PIR STATUS\n")
+    if pirs:
+        for p in pirs:
+            out.append(f"**PIR: {p['pir']}**\n")
+            if p["hits"]:
+                for cl in p["hits"]:
+                    out.append(f"- {delta_mark(cl)} [{admiralty_grade(cl, rel_map)}] "
+                               f"{cl['rep']['title']} · [link]({cl['rep']['link']})")
+            else:
+                out.append("- No collection against this requirement this window.")
+            out.append("")
+    else:
+        out.append("No PIRs defined — add standing questions to `pirs` in config.")
+        out.append("")
+
+    out.append(f"## {next(sec)}. MARKET SNAPSHOT\n")
+    if markets_data:
+        out.append("| instrument | last | Δ |")
+        out.append("|---|---|---|")
+        for m in markets_data:
+            chg = f"{m['chg']:+.2f}%" if m["chg"] is not None else "—"
+            out.append(f"| {m['label']} | {m['value']} | {chg} |")
+    else:
+        out.append("Market feeds unavailable this run.")
+    out.append("")
+
+    out.append(f"## {next(sec)}. CONVERGENCE WATCH\n")
+    if conv:
+        out.append("Terms surfacing across independent categories this window "
+                   "(deterministic — token co-occurrence, not model inference):\n")
+        for term, cats, hits in conv:
+            out.append(f"- **{term}** → {', '.join(cats)} ({hits} stories)")
+    else:
+        out.append("No cross-category term convergence above threshold this window.")
+    out.append("")
+
+    out.append(f"## {next(sec)}. NWS SEVERE ALERTS (US)\n")
+    if nws_alerts:
+        counts_by = {}
+        for a in nws_alerts:
+            counts_by[a["event"]] = counts_by.get(a["event"], 0) + 1
+        out.append("Active Extreme/Severe: " +
+                   ", ".join(f"**{k}** ×{v}" for k, v in
+                             sorted(counts_by.items(), key=lambda x: -x[1])) + "\n")
+        for a in nws_alerts[:8]:
+            out.append(f"- **{a['event']}** ({a['severity']}) — {a['area']}")
+    else:
+        out.append("No active Extreme/Severe alerts (or endpoint unreachable — "
+                   "grade accordingly).")
+    out.append("")
+
+    out.append(f"## {next(sec)}. CISA KEV — NEWLY CATALOGUED EXPLOITED VULNERABILITIES\n")
+    if kevs:
+        for v in kevs[:15]:
+            out.append(f"- **{v.get('cveID','?')}** — {v.get('vendorProject','')} "
+                       f"{v.get('product','')}: {v.get('vulnerabilityName','')} "
+                       f"(added {v.get('dateAdded','')}). "
+                       f"{v.get('shortDescription','')[:180]}")
+    else:
+        out.append("No new KEV entries in window (or catalog unreachable — grade accordingly).")
+    out.append("")
+
+    by_cat = {}
+    for cl in clusters:
+        by_cat.setdefault(cl["category"], []).append(cl)
+    for cat, cls in sorted(by_cat.items()):
+        cls.sort(key=lambda c: (-c["corroboration"],
+                 -(c["newest"].timestamp() if c["newest"] else 0)))
+        out.append(f"## {next(sec)}. {cat.upper()}\n")
+        s = synth.get(cat)
+        if s:
+            out.append("**Synthesis** *(machine-drafted; every sentence cites the record below — "
+                       "uncited claims are flagged, not trusted)*:\n")
+            out.append(s["text"] + "\n")
+            for w in s["warnings"]:
+                out.append(f"> ⚠ {w}\n")
+        out.append("**The record:**\n")
+        for n, cl in enumerate(cls[:config.get("max_items_per_category", 25)], 1):
+            rep = cl["rep"]
+            corr = f" · {cl['corroboration']}× ({', '.join(cl['sources'])})" \
+                if cl["corroboration"] > 1 else f" · {cl['sources'][0]} (single-source)"
+            out.append(f"{n}. {delta_mark(cl)} [{admiralty_grade(cl, rel_map)}] "
+                       f"{rep['title']}{corr} · {fmt_when(cl['newest'])} · [link]({rep['link']})")
+        out.append("")
+
+    out.append("## APPENDIX — FEED HEALTH\n")
+    out.append("| feed | category | status | items | newest |")
+    out.append("|---|---|---|---|---|")
+    for h in health:
+        status = h["status"] if h["status"] == "ok" else f"**{h['status']}**"
+        out.append(f"| {h['source']} | {h['category']} | {status} | {h['count']} | "
+                   f"{age_hours(h['newest'])} |")
+    dead = [h for h in health if h["status"] != "ok"]
+    if dead:
+        out.append("\nDead/degraded feeds this run: " +
+                   ", ".join(f"{h['source']} ({h['error'][:60]})" for h in dead))
+    out.append(f"\n---\n**UNCLASSIFIED // OPEN SOURCES**\n\n*NETZ v2.0 · every synthesized "
+               f"claim must trace to the record; the record traces to source links; the links "
+               f"are the audit trail. Admiralty grades are mechanical (feed tier × "
+               f"corroboration), not analyst judgment.*")
+    return "\n".join(out)
+
+
+# ----------------------------------------------------------------------
+# main
+# ----------------------------------------------------------------------
+
+def main():
+    ap = argparse.ArgumentParser(description="NETZ v2.0 — local auto-collation intelligence report")
+    ap.add_argument("--config", default=DEFAULT_CONFIG)
+    ap.add_argument("--hours", type=int, default=None)
+    ap.add_argument("--no-llm", action="store_true")
+    ap.add_argument("--out", default=None)
+    ap.add_argument("--open", action="store_true")
+    args = ap.parse_args()
+
+    config = load_config(args.config)
+    hours = args.hours or config.get("window_hours", 24)
+
+    print(f"NETZ · fetching {sum(len(v) for v in config['categories'].values())} feeds …",
+          file=sys.stderr)
+    items, health = fetch_all(config)
+    items.extend(fetch_reliefweb(config, health))
+    windowed = window_filter(items, hours)
+    clusters = cluster_items(windowed, config.get("cluster_threshold", 0.45))
+    mark_delta(clusters)
+    conv = convergence(clusters)
+    pirs = pir_status(config, clusters)
+    counts = {"fetched": len(items), "windowed": len(windowed), "stories": len(clusters)}
+    print(f"NETZ · {counts['fetched']} fetched → {counts['windowed']} in window → "
+          f"{counts['stories']} stories "
+          f"({sum(1 for c in clusters if c.get('is_new', True))} new)", file=sys.stderr)
+
+    synth, model_used = {}, None
+    if not args.no_llm:
+        base = config.get("lmstudio_base_url", "http://localhost:1234/v1")
+        model_used = config.get("lmstudio_model") or llm_probe(base)
+        if model_used:
+            print(f"NETZ · synthesis via {model_used}", file=sys.stderr)
+            pir_note = ""
+            if config.get("pirs"):
+                pir_note = "\nStanding requirements (PIRs):\n" + \
+                           "\n".join(f"- {p}" for p in config["pirs"])
+            by_cat = {}
+            for cl in clusters:
+                by_cat.setdefault(cl["category"], []).append(cl)
+            for cat, cls in by_cat.items():
+                cls.sort(key=lambda c: (-c["corroboration"],
+                         -(c["newest"].timestamp() if c["newest"] else 0)))
+                numbered, chosen = number_items(cls, config.get("llm_items_per_category", 20))
+                text = llm_chat(base, model_used, SYSTEM_PROMPT,
+                                f"Category: {cat}{pir_note}\nItems:\n{numbered}")
+                if text:
+                    text, warnings = audit_citations(text, len(chosen))
+                    synth[cat] = {"text": text, "warnings": warnings}
+            top = sorted(clusters, key=lambda c: (-c["corroboration"],
+                         -(c["newest"].timestamp() if c["newest"] else 0)))
+            numbered, chosen = number_items(top, config.get("top_signals", 8))
+            bluf = llm_chat(base, model_used, BLUF_PROMPT, f"Top signals:\n{numbered}")
+            if bluf:
+                bluf, bw = audit_citations(bluf, len(chosen))
+                synth["bluf"], synth["bluf_warnings"] = bluf, bw
+            iw = llm_chat(base, model_used, IW_PROMPT, f"Top signals:\n{numbered}",
+                          max_tokens=700)
+            if iw:
+                iw, iww = audit_citations(iw, len(chosen))
+                synth["iw"], synth["iw_warnings"] = iw, iww
+        else:
+            print("NETZ · no model loaded at LM Studio endpoint — collation only",
+                  file=sys.stderr)
+
+    markets_data = fetch_markets(config)
+    kevs = fetch_kev(config, hours)
+    nws_alerts = fetch_nws(config)
+    print(f"NETZ · markets: {len(markets_data)} · KEV: {len(kevs)} new · "
+          f"NWS severe: {len(nws_alerts)}", file=sys.stderr)
+
+    report = render_report(config, clusters, conv, health, synth, model_used, hours,
+                           counts, markets_data, kevs, nws_alerts, pirs)
+
+    out_dir = Path(args.out or config.get("output_dir", "reports"))
+    if not out_dir.is_absolute():
+        out_dir = HERE / out_dir
+    out_dir.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H%M")
+    out_path = out_dir / f"battle_report_{stamp}.md"
+    out_path.write_text(report, encoding="utf-8")
+    html_doc = render_html(report, f"NETZ Report {stamp}")
+    html_path = out_dir / f"battle_report_{stamp}.html"
+    html_path.write_text(html_doc, encoding="utf-8")
+    (out_dir / "latest.html").write_text(html_doc, encoding="utf-8")
+    print(f"NETZ · report → {out_path}", file=sys.stderr)
+    print(f"NETZ · html   → {html_path} (+ latest.html)", file=sys.stderr)
+    if args.open:
+        open_in_browser(html_path)
+    print(out_path)
+
+
+if __name__ == "__main__":
+    main()

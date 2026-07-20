@@ -1,0 +1,83 @@
+{
+  "window_hours": 24,
+  "cluster_threshold": 0.45,
+  "top_signals": 8,
+  "max_items_per_category": 25,
+  "llm_items_per_category": 20,
+  "fetch_timeout_seconds": 12,
+  "output_dir": "reports",
+  "lmstudio_base_url": "http://localhost:1234/v1",
+  "lmstudio_model": null,
+  "kev_enabled": true,
+  "markets": {
+    "stooq": {
+      "S&P 500": "^spx",
+      "Nasdaq": "^ndq",
+      "Dow": "^dji",
+      "WTI Crude": "cl.f",
+      "Gold": "gc.f",
+      "EUR/USD": "eurusd"
+    },
+    "coingecko": {
+      "BTC": "bitcoin",
+      "ETH": "ethereum"
+    }
+  },
+  "source_reliability": {
+    "CISA Advisories": "A",
+    "USGS Significant Quakes": "A",
+    "GDACS Alerts": "B",
+    "BBC World": "B",
+    "Al Jazeera": "B",
+    "Deutsche Welle": "B",
+    "Guardian World": "B",
+    "Guardian Business": "B",
+    "NPR News": "B",
+    "CNBC Top News": "B",
+    "MarketWatch": "B",
+    "Politico": "B",
+    "Krebs on Security": "B",
+    "Defense One": "C",
+    "War on the Rocks": "C",
+    "BleepingComputer": "C",
+    "The Hacker News": "C",
+    "ReliefWeb": "B"
+  },
+  "categories": {
+    "military_conflict": {
+      "BBC World": "http://feeds.bbci.co.uk/news/world/rss.xml",
+      "Al Jazeera": "https://www.aljazeera.com/xml/rss/all.xml",
+      "Deutsche Welle": "https://rss.dw.com/rdf/rss-en-world",
+      "Defense One": "https://www.defenseone.com/rss/all/",
+      "War on the Rocks": "https://warontherocks.com/feed/"
+    },
+    "cyber": {
+      "CISA Advisories": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "BleepingComputer": "https://www.bleepingcomputer.com/feed/",
+      "The Hacker News": "https://feeds.feedburner.com/TheHackersNews",
+      "Krebs on Security": "https://krebsonsecurity.com/feed/"
+    },
+    "economic": {
+      "CNBC Top News": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+      "MarketWatch": "http://feeds.marketwatch.com/marketwatch/topstories/",
+      "Guardian Business": "https://www.theguardian.com/business/rss"
+    },
+    "disaster_infrastructure": {
+      "USGS Significant Quakes": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.atom",
+      "GDACS Alerts": "https://www.gdacs.org/xml/rss.xml",
+      "NPR News": "https://feeds.npr.org/1001/rss.xml"
+    },
+    "political": {
+      "Guardian World": "https://www.theguardian.com/world/rss",
+      "Politico": "https://rss.politico.com/politics-news.xml"
+    }
+  },
+  "pirs": [
+    "Escalation or de-escalation at maritime chokepoints (Hormuz, Bab el-Mandeb, Suez, Malacca)",
+    "Actively exploited vulnerabilities affecting critical infrastructure or government systems",
+    "Central bank policy shifts or market dislocations exceeding 2% daily moves",
+    "State-level conflict onset, ceasefire, or major offensive operations"
+  ],
+  "reliefweb_enabled": true,
+  "nws_enabled": true
+}
