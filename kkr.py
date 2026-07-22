@@ -37,16 +37,23 @@ LEDGER = HERE / "ledger.json"
 OUT = HERE / "forecasts"
 REPORTS = HERE / "reports"
 
-PROJECTION_PROMPT = """You are a forecasting analyst. From the intelligence report below, generate 8-12 falsifiable projections spanning at least 4 domains (military/conflict, economics/markets, cyber, political, crime/security, disaster).
+PROJECTION_PROMPT = """You are a forecasting analyst. Before writing ANY projection, run this discipline silently and do not output the working, only the final JSON:
+GATE 1 SCOPE — for each candidate, name exactly what would be observed at the deadline. If you cannot name a concrete observable, discard it.
+GATE 2 EVIDENCE — cite which numbered report items support it. No item support = discard.
+GATE 3 ATTACK — argue the OPPOSITE outcome. Ask: what is the base rate for this class of event? Most discrete events do NOT happen. If your probability ignores the base rate, correct it DOWN.
+GATE 4 VERIFY — check the resolution criterion is adjudicable by a third party from public reporting, and the deadline is an absolute weekday date inside the window. Fix or discard.
+GATE 5 REPORT — only projections that survive all four gates go in the array.
+Apply the gates, then: From the intelligence report below, generate 8-10 falsifiable projections (keep each resolution under 40 words so the full JSON array fits) spanning at least 4 domains (military/conflict, economics/markets, cyber, political, crime/security, disaster).
 
 Every projection MUST:
-1. Be a single observable claim a third party could verify from public reporting at the deadline. No vague language ("tensions will continue", "pressure will mount").
+1. Be a single observable claim a third party could verify from public reporting at the deadline. No vague language ("tensions will continue", "pressure will mount"). ABSOLUTE DATES ONLY: never write "within 72 hours" or "within the next N days" — write the explicit window ("between 2026-07-21 and 2026-07-24") in both statement and resolution, matching the deadline field.
 2. Carry "probability": an integer 5-95, never 0 or 100.
 3. Carry "resolution": the exact criterion that settles it true or false.
-4. Carry "deadline": an ISO date between {min_date} and {max_date}.
+4. Carry "deadline": an ISO date between {min_date} and {max_date}. If the resolution depends on a market close or settlement, the deadline must be a weekday.
 5. Carry "citations": a list of item numbers from the report's record that ground it.
 6. Base-rate discipline: most discrete events do not happen; do not cluster probabilities at 60-80%. At least two projections must be rated BELOW 35%.
 
+Use plain ASCII straight quotes only. Do NOT use curly quotes. Do NOT put quotation marks inside any statement or resolution string — refer to names and phrases without quoting them.
 Return ONLY a JSON array — no markdown fences, no commentary before or after:
 [{{"statement": "...", "domain": "...", "probability": 40, "resolution": "...", "deadline": "YYYY-MM-DD", "citations": [1, 4]}}]
 
@@ -65,7 +72,7 @@ def call_lmstudio(base_url: str, model: str | None, prompt: str) -> str | None:
         return None
     try:
         r = requests.post(f"{base_url.rstrip('/')}/chat/completions", timeout=600,
-                          json={"model": model, "temperature": 0.3, "max_tokens": 3000,
+                          json={"model": model, "temperature": 0.3, "max_tokens": 6000,
                                 "messages": [{"role": "user", "content": prompt}]})
         r.raise_for_status()
         return r.json()["choices"][0]["message"]["content"]
@@ -86,7 +93,7 @@ def call_anthropic(model: str | None, prompt: str) -> str | None:
                                    "anthropic-version": "2023-06-01",
                                    "content-type": "application/json"},
                           json={"model": model or "claude-sonnet-4-6",
-                                "max_tokens": 3000,
+                                "max_tokens": 6000,
                                 "messages": [{"role": "user", "content": prompt}]})
         r.raise_for_status()
         return "".join(b.get("text", "") for b in r.json().get("content", []))
@@ -99,15 +106,49 @@ def call_anthropic(model: str | None, prompt: str) -> str | None:
 # parsing + ledger
 # ----------------------------------------------------------------------
 
+def _normalize_json_text(txt: str) -> str:
+    """Repair the typographic drift local models introduce that breaks JSON:
+    curly quotes, curly apostrophes, en/em dashes inside strings, stray BOM."""
+    repl = {
+        "\u201c": "'", "\u201d": "'",          # curly DOUBLE quotes -> single (inner phrase quoting)
+        "\u2018": "'", "\u2019": "'",          # curly single quotes / apostrophe -> straight apostrophe
+        "\u2032": "'", "\u2033": "'",          # primes -> apostrophe
+        "\u2013": "-", "\u2014": "-",            # en/em dash -> hyphen
+        "\ufeff": "", "\u00a0": " ",             # BOM, non-breaking space
+    }
+    for a, b in repl.items():
+        txt = txt.replace(a, b)
+    return txt
+
+
 def parse_projections(raw: str) -> list:
     txt = re.sub(r"```(?:json)?", "", raw).strip()
+    txt = _normalize_json_text(txt)
     m = re.search(r"\[.*\]", txt, re.S)
     if not m:
         return []
-    try:
-        arr = json.loads(m.group(0))
-    except json.JSONDecodeError:
-        return []
+    blob = m.group(0)
+    arr = None
+    for attempt in (blob, re.sub(r"[\r\n\t]+", " ", blob)):
+        try:
+            arr = json.loads(attempt)
+            break
+        except json.JSONDecodeError:
+            continue
+    if arr is None:
+        # SALVAGE a truncated array (model hit its token limit mid-object):
+        # keep everything up to the last complete "}", then close the bracket.
+        last = blob.rfind("}")
+        if last != -1:
+            salvaged = blob[:last + 1] + "]"
+            try:
+                arr = json.loads(salvaged)
+                print(f"CASSALVAGE: recovered {len(arr)} projections from truncated output",
+                      file=sys.stderr)
+            except json.JSONDecodeError:
+                return []
+        else:
+            return []
     out = []
     for p in arr if isinstance(arr, list) else []:
         try:
@@ -134,7 +175,7 @@ VAGUE_PHRASES = ["tensions will", "tension will", "pressure will", "will continu
                  "is expected to evolve", "will likely evolve", "dynamics will"]
 
 
-def validate_projection(p: dict, min_days: int = 3, max_days: int = 240) -> list:
+def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list:
     """Return list of rejection reasons; empty list = accepted."""
     reasons = []
     text = (p["statement"] + " " + p["resolution"]).lower()
@@ -155,6 +196,7 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 240) -> list
         reasons.append("unparseable deadline")
     if not p.get("citations"):
         reasons.append("no grounding citations to the report record")
+    # citations == [0] is the sentinel for operator/human calls (no report record) — allowed
     if re.search(r"within\s+(?:the\s+)?(?:next\s+)?\d+\s+(?:hours|days)", p["statement"], re.I):
         reasons.append("relative timeframe in statement — use absolute date windows; "
                        "the deadline field governs and relative phrasing creates "
@@ -455,6 +497,55 @@ def cmd_resolve(args):
     render_ledger()
 
 
+
+def cmd_mine(args):
+    """Enter YOUR OWN forecasts. Same gate, same ledger, tagged operator/human —
+    so your calls are scored on the identical Brier scale as every model lane."""
+    print("YOUR FORECAST — one at a time. Blank statement to finish.\n"
+          "The same gate applies: falsifiable, absolute-date window, "
+          "probability 5-95, real resolution criterion.\n", file=sys.stderr)
+    entered = []
+    while True:
+        stmt = input("statement (blank = done) > ").strip()
+        if not stmt:
+            break
+        try:
+            prob = int(input("  probability 5-95 > ").strip())
+        except ValueError:
+            print("  not a number — skipped", file=sys.stderr); continue
+        resolution = input("  resolves TRUE when (exact criterion) > ").strip()
+        print("  horizon: [s]hort (<30d)  [m]id (1-6mo)  [l]ong (6-24mo)", file=sys.stderr)
+        hz = input("  horizon s/m/l (or blank) > ").strip().lower()
+        horizon = {"s": "short", "m": "mid", "l": "long"}.get(hz, "unspecified")
+        _sugg = {"short": 21, "mid": 120, "long": 400}.get(horizon)
+        _hint = ""
+        if _sugg:
+            from datetime import datetime as _dt, timedelta as _td, timezone as _tz
+            _d = (_dt.now(_tz.utc) + _td(days=_sugg)).strftime("%Y-%m-%d")
+            _hint = f" (suggest ~{_d} for {horizon})"
+        deadline = input(f"  deadline YYYY-MM-DD{_hint} > ").strip()
+        domain = input("  domain (military/economics/cyber/political/disaster/crime) > ").strip() or "general"
+        rationale = input("  your reasoning (optional, stored not scored) > ").strip()
+        p = {"statement": stmt, "probability": prob, "resolution": resolution,
+             "deadline": deadline, "domain": domain.lower(), "citations": [0],
+             "rationale": rationale, "horizon": horizon}
+        reasons = validate_projection(p)
+        if reasons:
+            print("  GATE REJECTED: " + "; ".join(reasons)
+                  + "\n  (fix and re-enter, or press on)", file=sys.stderr)
+            continue
+        entered.append(p)
+        print(f"  accepted ({len(entered)} so far)", file=sys.stderr)
+    if not entered:
+        print("KKR · nothing entered", file=sys.stderr)
+        return
+    rep = latest_report()
+    added = append_projections(entered, "operator/human", rep.name if rep else "operator")
+    print(f"KKR · {len(added)} of your forecasts on the ledger, tagged operator/human",
+          file=sys.stderr)
+    render_ledger()
+
+
 def main():
     ap = argparse.ArgumentParser(description="KKR — Kaos Kontrol Report: forecasts + predictive ledger")
     ap.add_argument("--provider", choices=["lmstudio", "anthropic", "auto"], default="lmstudio")
@@ -465,14 +556,24 @@ def main():
     ap.add_argument("--resolve", action="store_true")
     ap.add_argument("--all", action="store_true", help="with --resolve: include not-yet-due")
     ap.add_argument("--score", action="store_true")
+    ap.add_argument("--mine", action="store_true", help="enter your own forecasts (operator/human lane)")
     args = ap.parse_args()
 
-    if args.resolve:
+    if args.mine:
+        cmd_mine(args)
+    elif args.resolve:
         cmd_resolve(args)
     elif args.score:
         render_ledger()
-        stats = brier_and_calibration(load_ledger()["projections"])
-        print(json.dumps(stats, indent=2))
+        all_p = load_ledger()["projections"]
+        print("=== OVERALL ==="); print(json.dumps(brier_and_calibration(all_p), indent=2))
+        lanes = {}
+        for p in all_p:
+            lanes.setdefault(p.get("model", "?").split("/")[0], []).append(p)
+        for lane, ps in sorted(lanes.items()):
+            s = brier_and_calibration(ps)
+            if s.get("n_resolved"):
+                print(f"=== {lane.upper()} ==="); print(json.dumps(s, indent=2))
     elif args.ingest:
         cmd_ingest(args)
     else:

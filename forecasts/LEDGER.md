@@ -1,8 +1,8 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KKR PREDICTIVE LEDGER — 202200Z JUL 26
+# KKR PREDICTIVE LEDGER — 220436Z JUL 26
 
-Window: all-time · 29 issued · 24 open · nothing resolved yet — the ledger earns meaning at first resolution
+Window: all-time · 52 issued · 47 open · nothing resolved yet — the ledger earns meaning at first resolution
 
 ## OPEN PROJECTIONS
 
@@ -24,14 +24,37 @@ Window: all-time · 29 issued · 24 open · nothing resolved yet — the ledger 
 | KKR-20260720-29 | 2026-07-20 | 2026-07-23 | 30% | disaster | The Houthi maritime embargo on Saudi Arabia will result in a confirmed disruption of at least one commercial shipping route through the Red Sea within 72 hours, as reported by BBC World and Al Jazeera. |
 | KKR-20260720-02 | 2026-07-20 | 2026-07-28 | 40% | economics/markets | The Nasdaq Composite Index will close below 18,000 on 2026-07-28, based on official market data from Yahoo Finance or Bloomberg. |
 | KKR-20260720-04 | 2026-07-20 | 2026-07-29 | 60% | economics/markets | The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. |
+| KKR-20260721-01 | 2026-07-21 | 2026-07-31 | 30% | political | The Lebanese Armed Forces will release a formal statement confirming Israeli fire near their troops between 2026-07-28 and 2026-07-31. |
+| KKR-20260722-03 | 2026-07-22 | 2026-08-02 | 40% | disaster | Between 2026-07-29 and 2026-08-02, the Japan Meteorological Agency issues a new heatwave alert for Tokyo and Osaka, with temperatures exceeding 40°C for three consecutive days. |
+| KKR-20260721-07 | 2026-07-21 | 2026-08-03 | 35% | cyber | A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03. |
+| KKR-20260721-05 | 2026-07-21 | 2026-08-04 | 30% | economic | Oil prices will exceed $92 per barrel on the NYMEX market between 2026-08-01 and 2026-08-04. |
 | KKR-20260720-10 | 2026-07-20 | 2026-08-05 | 40% | economics/markets | Global oil prices will exceed $85 per barrel for at least three consecutive trading days between 2026-07-28 and 2026-08-05. |
+| KKR-20260721-04 | 2026-07-21 | 2026-08-05 | 40% | cyber | A confirmed exploit of CVE-2026-60137 in WordPress Core will be reported in a public security advisory by 2026-08-05. |
 | KKR-20260720-16 | 2026-07-20 | 2026-08-08 | 30% | cyber | A new AI agent will be confirmed to have breached a government or financial institution’s internal network by 2026-08-08, with public disclosure from the affected organization. |
+| KKR-20260722-04 | 2026-07-22 | 2026-08-08 | 35% | political | Between 2026-08-05 and 2026-08-08, the French Ministry of Health confirms that social media platforms have been fully blocked for users under 15 years old across the country. |
 | KKR-20260720-13 | 2026-07-20 | 2026-08-10 | 55% | political | FIFA will issue a formal disciplinary sanction against at least one player involved in the Spain vs Argentina World Cup final on-pitch brawl by 2026-08-10. |
+| KKR-20260721-03 | 2026-07-21 | 2026-08-10 | 35% | military_conflict | The Houthi movement will launch a naval blockade of the Bab el-Mandeb Strait by 2026-08-10. |
 | KKR-20260720-17 | 2026-07-20 | 2026-08-12 | 50% | political | The U.S. will announce a new round of sanctions against Iran’s Revolutionary Guard Corps by 2026-08-12, citing continued aggression in the region. |
+| KKR-20260722-02 | 2026-07-22 | 2026-08-12 | 25% | economics/markets | On 2026-08-12, the U.S. Department of Labor releases a report showing that job quit rates have declined to 1.8% in July, confirming continued 'job lock' due to health insurance dependency. |
+| KKR-20260722-07 | 2026-07-22 | 2026-08-12 | 45% | disaster | Yes |
+| KKR-20260722-08 | 2026-07-22 | 2026-08-12 | 95% | military | Yes |
+| KKR-20260722-09 | 2026-07-22 | 2026-08-12 | 65% | economics | Brent crude settles above 90 dollars on at least three trading days between 2026-07-23 and 2026-08-12 |
+| KKR-20260722-15 | 2026-07-22 | 2026-08-14 | 70% | economics | Brent crude front-month settles above 90 dollars per barrel on at least three trading days between 2026-07-23 and 2026-08-14 |
 | KKR-20260720-15 | 2026-07-20 | 2026-08-15 | 45% | disaster | The Deloitte-run Medicaid system failure will result in a formal government audit or public report by 2026-08-15, citing systemic IT vulnerabilities. |
+| KKR-20260721-02 | 2026-07-21 | 2026-08-15 | 25% | economic | Nvidia will announce the disbursement of its $2 billion investment in Nebius by 2026-08-15. |
 | KKR-20260720-20 | 2026-07-20 | 2026-08-20 | 40% | cyber | A major cyberattack exploiting the ServiceNow code execution flaw (CVE-2026-6875) will result in a data breach affecting at least 100,000 users by 2026-08-20. |
+| KKR-20260721-06 | 2026-07-21 | 2026-08-20 | 25% | political | The U.S. Treasury Department will issue a new sanction against Meliá Hotels International by 2026-08-20. |
+| KKR-20260722-13 | 2026-07-22 | 2026-08-20 | 80% | disaster | The Japan Meteorological Agency issues heatstroke or extreme-heat alerts covering Tokyo or Osaka on at least five separate days between 2026-07-23 and 2026-08-20 |
+| KKR-20260722-10 | 2026-07-22 | 2026-08-28 | 50% | economics | US 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-08-28 |
 | KKR-20260720-19 | 2026-07-20 | 2026-09-01 | 35% | economics/markets | The Paramount-Warner Bros merger will be formally abandoned or withdrawn by 2026-09-01, with a public statement from either company. |
 | KKR-20260720-18 | 2026-07-20 | 2026-09-15 | 20% | disaster | A magnitude 6.0 or higher earthquake will be reported in the Pacific Northwest (Washington, Oregon, or Northern California) with at least one fatality by 2026-09-15. |
+| KKR-20260722-14 | 2026-07-22 | 2026-09-15 | 65% | military | At least two independent wire services report a new United States or Israeli military strike on Iranian territory or Iranian-flagged maritime assets between 2026-07-23 and 2026-09-15 |
+| KKR-20260722-16 | 2026-07-22 | 2026-09-30 | 55% | economics | The United States 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-09-30 |
+| KKR-20260722-06 | 2026-07-22 | 2026-10-15 | 70% | political | TikTok or another major platform announces age verification for French users |
+| KKR-20260722-12 | 2026-07-22 | 2026-10-31 | 70% | political | At least one major social media platform (Meta, TikTok, Snap, or X) publicly announces an age-verification mechanism for French users between 2026-07-23 and 2026-10-31 |
+| KKR-20260722-01 | 2026-07-22 | 2026-11-05 | 30% | political | Andy Biggs wins the Arizona gubernatorial general election on 2026-11-05, defeating Katie Hobbs in a recount that confirms his victory by 1,200 votes. |
+| KKR-20260722-05 | 2026-07-22 | 2026-11-19 | 85% | political | No |
+| KKR-20260722-11 | 2026-07-22 | 2026-12-15 | 45% | political | Andy Biggs wins the Arizona gubernatorial general election, defeating Katie Hobbs by any margin, with results certified between 2026-11-05 and 2026-12-15 |
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
