@@ -13,7 +13,7 @@ if exist C:\netz\forecasts\ledger.html copy /Y C:\netz\forecasts\ledger.html C:\
 if exist C:\netz\forecasts\KKR_latest.html copy /Y C:\netz\forecasts\KKR_latest.html C:\netz\docs\kkr.html >nul
 cd /d C:\netz
 git add -A
-for /f "tokens=*" %%i in ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-dd_HHmmZ"') do set STAMP=%%i
+for /f "tokens=*" %%i in ('powershell -NoProfile -Command "(Get-Date).ToUniversalTime().ToString('yyyy-MM-dd_HHmm') + 'Z'"') do set STAMP=%%i
 git commit -m "publish %STAMP%"
 git push
 echo.

@@ -666,7 +666,7 @@ def cmd_audit_ingest(args):
                           "evidence": v.get("evidence", "")[:600],
                           "disconfirming": v.get("disconfirming", "")[:400]}
             note = input("  your note (enter = use auditor evidence) > ").strip()
-            p["notes"] = note or f"[{args.auditor}] {v.get('evidence','')[:200]}"
+            p["notes"] = note or f"[{args.auditor}] {v.get('evidence','')[:600]}"
             ruled += 1
     save_ledger(data)
     print(f"\nKKR · {ruled} projections ruled and written to the ledger", file=sys.stderr)
