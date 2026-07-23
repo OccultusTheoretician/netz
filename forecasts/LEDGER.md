@@ -1,35 +1,35 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KKR PREDICTIVE LEDGER — 220436Z JUL 26
+# KKR PREDICTIVE LEDGER — 231550Z JUL 26
 
-Window: all-time · 52 issued · 47 open · nothing resolved yet — the ledger earns meaning at first resolution
+Window: all-time · 56 issued · 41 open (0 past deadline, unresolved) · 2 hits / 8 misses · **Brier 0.196** (0=oracle, 0.25=coin-flip on 50s)
+
+| stated probability | n resolved | realized frequency |
+|---|---|---|
+| 0-20% | 1 | 0% |
+| 20-40% | 7 | 29% |
+| 40-60% | 2 | 0% |
 
 ## OPEN PROJECTIONS
 
 | id | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|
-| KKR-20260720-01 | 2026-07-20 | 2026-07-23 | 30% | crime/security | The Sinaloa Cartel will experience a confirmed internal leadership split or factional violence within 72 hours of Ismael 'El Mayo' Zambada's sentencing, as evidenced by at least two independent news reports documenting a violent clash between rival factions in Sinaloa state. |
-| KKR-20260720-03 | 2026-07-20 | 2026-07-23 | 35% | political | Within 72 hours of the Paramount-Warner Bros merger pause, the 12 U.S. states opposing the merger will file a formal legal motion requesting the court to permanently block the merger, as documented in a public court filing or press release. |
-| KKR-20260720-05 | 2026-07-20 | 2026-07-23 | 30% | political | The UK Labour government under Andy Burnham will announce a formal fiscal review of public spending within 72 hours of the cabinet announcement, as confirmed by a press release from No. 10 Downing Street. |
-| KKR-20260720-07 | 2026-07-20 | 2026-07-23 | 20% | disaster | A magnitude 6.0 or higher earthquake will be reported in the U.S. Pacific Northwest (Washington or Oregon) within 72 hours of 2026-07-20, as recorded by the USGS Significant Quakes database. |
 | KKR-20260720-08 | 2026-07-20 | 2026-07-23 | 45% | cyber | The Hugging Face breach involving an autonomous AI agent will be confirmed by a public statement from Hugging Face or a major cybersecurity organization within 72 hours of 2026-07-20. |
 | KKR-20260720-21 | 2026-07-20 | 2026-07-23 | 65% | military/conflict | The U.S. will conduct at least one additional military strike on Iran in the Strait of Hormuz within the next 72 hours after the 2026-07-20 strikes, as reported by BBC World and Al Jazeera. |
-| KKR-20260720-22 | 2026-07-20 | 2026-07-23 | 30% | military/conflict | The Houthi movement will launch a confirmed attack on a commercial vessel in the Bab el-Mandeb Strait within 48 hours of their maritime embargo announcement, as reported by BBC World and Al Jazeera. |
-| KKR-20260720-23 | 2026-07-20 | 2026-07-23 | 55% | economics/markets | A U.S. federal court will issue a final ruling on the Paramount-Warner Bros merger pause within 72 hours of the initial restraining order, as reported by CNBC and NPR News. |
-| KKR-20260720-24 | 2026-07-20 | 2026-07-23 | 25% | crime/security | The U.S. Department of Justice will release a public statement within 72 hours confirming internal leadership shifts in the Sinaloa cartel following El Mayo’s sentencing, as reported by Al Jazeera and Deutsche Welle. |
 | KKR-20260720-25 | 2026-07-20 | 2026-07-23 | 70% | cyber | An AI-powered malware campaign targeting cloud-based AI platforms will be confirmed by cybersecurity researchers within 48 hours, as reported by BleepingComputer and The Hacker News. |
 | KKR-20260720-26 | 2026-07-20 | 2026-07-23 | 35% | cyber | Iran will respond to U.S. strikes with a confirmed cyberattack on a U.S. government or financial institution within 72 hours, as reported by Al Jazeera and BBC World. |
-| KKR-20260720-27 | 2026-07-20 | 2026-07-23 | 50% | political | Andy Burnham’s UK government will announce a new fiscal policy shift within 72 hours of his cabinet appointment, as reported by Guardian World and BBC World. |
-| KKR-20260720-28 | 2026-07-20 | 2026-07-23 | 15% | disaster | A confirmed earthquake of magnitude 6.0 or higher will cause structural damage to infrastructure in Mexico within 72 hours of the 2026-07-20 M6.4 event near Puerto Madero, as reported by USGS and Al Jazeera. |
-| KKR-20260720-29 | 2026-07-20 | 2026-07-23 | 30% | disaster | The Houthi maritime embargo on Saudi Arabia will result in a confirmed disruption of at least one commercial shipping route through the Red Sea within 72 hours, as reported by BBC World and Al Jazeera. |
+| KKR-20260723-01 | 2026-07-23 | 2026-07-27 | 65% | economics | Between 2026-07-24 and 2026-07-27, Brent crude oil will close above $100 per barrel for three consecutive trading days. |
 | KKR-20260720-02 | 2026-07-20 | 2026-07-28 | 40% | economics/markets | The Nasdaq Composite Index will close below 18,000 on 2026-07-28, based on official market data from Yahoo Finance or Bloomberg. |
 | KKR-20260720-04 | 2026-07-20 | 2026-07-29 | 60% | economics/markets | The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. |
 | KKR-20260721-01 | 2026-07-21 | 2026-07-31 | 30% | political | The Lebanese Armed Forces will release a formal statement confirming Israeli fire near their troops between 2026-07-28 and 2026-07-31. |
+| KKR-20260723-02 | 2026-07-23 | 2026-08-01 | 45% | cyber | By 2026-08-01, the Chaos ransomware group will be linked to a new campaign using msaRAT to route C2 traffic through compromised headless browsers, with at least two new malware samples detected on VirusTotal. |
 | KKR-20260722-03 | 2026-07-22 | 2026-08-02 | 40% | disaster | Between 2026-07-29 and 2026-08-02, the Japan Meteorological Agency issues a new heatwave alert for Tokyo and Osaka, with temperatures exceeding 40°C for three consecutive days. |
 | KKR-20260721-07 | 2026-07-21 | 2026-08-03 | 35% | cyber | A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03. |
+| KKR-20260723-04 | 2026-07-23 | 2026-08-03 | 35% | military_conflict | Between 2026-07-30 and 2026-08-03, a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz will be reported by Al Jazeera or BBC World. |
 | KKR-20260721-05 | 2026-07-21 | 2026-08-04 | 30% | economic | Oil prices will exceed $92 per barrel on the NYMEX market between 2026-08-01 and 2026-08-04. |
 | KKR-20260720-10 | 2026-07-20 | 2026-08-05 | 40% | economics/markets | Global oil prices will exceed $85 per barrel for at least three consecutive trading days between 2026-07-28 and 2026-08-05. |
 | KKR-20260721-04 | 2026-07-21 | 2026-08-05 | 40% | cyber | A confirmed exploit of CVE-2026-60137 in WordPress Core will be reported in a public security advisory by 2026-08-05. |
+| KKR-20260723-03 | 2026-07-23 | 2026-08-05 | 25% | economics | On or before 2026-08-05, the European Central Bank will announce a rate hike in response to energy price spikes driven by Middle East conflict. |
 | KKR-20260720-16 | 2026-07-20 | 2026-08-08 | 30% | cyber | A new AI agent will be confirmed to have breached a government or financial institution’s internal network by 2026-08-08, with public disclosure from the affected organization. |
 | KKR-20260722-04 | 2026-07-22 | 2026-08-08 | 35% | political | Between 2026-08-05 and 2026-08-08, the French Ministry of Health confirms that social media platforms have been fully blocked for users under 15 years old across the country. |
 | KKR-20260720-13 | 2026-07-20 | 2026-08-10 | 55% | political | FIFA will issue a formal disciplinary sanction against at least one player involved in the Spain vs Argentina World Cup final on-pitch brawl by 2026-08-10. |
@@ -58,7 +58,16 @@ Window: all-time · 52 issued · 47 open · nothing resolved yet — the ledger 
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
-None yet. Misses will be listed here and never removed.
+- **✗ MISS** KKR-20260720-01 (30%, due 2026-07-23, resolved 2026-07-23): The Sinaloa Cartel will experience a confirmed internal leadership split or factional violence within 72 hours of Ismael 'El Mayo' Zambada's sentencing, as evidenced by at least two independent news reports documenting a violent clash between rival factions in Sinaloa state. — *[claude] Sentencing coverage on 2026-07-20 (Al Jazeera, AP, Bloomberg, CNN) reported the life sentence and Zambada calling for violence to end. CNN 2026-07-20 referenced the ongoing 2024-2025 Sinaloa factional*
+- **✗ MISS** KKR-20260720-03 (35%, due 2026-07-23, resolved 2026-07-23): Within 72 hours of the Paramount-Warner Bros merger pause, the 12 U.S. states opposing the merger will file a formal legal motion requesting the court to permanently block the merger, as documented in a public court filing or press release. — *[claude] The 12 states led by California AG Bonta had already obtained a temporary restraining order on 2026-07-20 (Deadline, NPR, Washington Post). Reporting indicates the next step is a preliminary injunctio*
+- **✗ MISS** KKR-20260720-05 (30%, due 2026-07-23, resolved 2026-07-23): The UK Labour government under Andy Burnham will announce a formal fiscal review of public spending within 72 hours of the cabinet announcement, as confirmed by a press release from No. 10 Downing Street. — *[claude] No No. 10 Downing Street press release announcing a formal fiscal review of public spending was found in reporting for 2026-07-20 through 2026-07-23.*
+- **✗ MISS** KKR-20260720-07 (20%, due 2026-07-23, resolved 2026-07-23): A magnitude 6.0 or higher earthquake will be reported in the U.S. Pacific Northwest (Washington or Oregon) within 72 hours of 2026-07-20, as recorded by the USGS Significant Quakes database. — *[claude] No magnitude 6.0 or greater earthquake in Washington or Oregon was reported in the 2026-07-20 to 2026-07-23 window in any surfaced reporting or USGS significant-quake coverage.*
+- **✓ HIT** KKR-20260720-22 (30%, due 2026-07-23, resolved 2026-07-23): The Houthi movement will launch a confirmed attack on a commercial vessel in the Bab el-Mandeb Strait within 48 hours of their maritime embargo announcement, as reported by BBC World and Al Jazeera. — *[claude] Al Jazeera 2026-07-22 and Washington Times 2026-07-23 reported Houthi forces struck two Saudi oil tankers, the Encelia and the Layla, in the Red Sea early Thursday 2026-07-23, following their Bab el-M*
+- **✗ MISS** KKR-20260720-23 (55%, due 2026-07-23, resolved 2026-07-23): A U.S. federal court will issue a final ruling on the Paramount-Warner Bros merger pause within 72 hours of the initial restraining order, as reported by CNBC and NPR News. — *[claude] Judge Araceli Martinez-Olguin granted a temporary restraining order on 2026-07-20 pausing the merger 14 days (NPR, Deadline, Washington Post). Variety reported Paramount seeks a preliminary injunction*
+- **✗ MISS** KKR-20260720-24 (25%, due 2026-07-23, resolved 2026-07-23): The U.S. Department of Justice will release a public statement within 72 hours confirming internal leadership shifts in the Sinaloa cartel following El Mayo’s sentencing, as reported by Al Jazeera and Deutsche Welle. — *[claude] The DOJ press release of 2026-07-20 announced the life sentence and 15 billion dollar forfeiture and quoted officials on dismantling the cartel and pursuing faction leaders, but did not confirm intern*
+- **✗ MISS** KKR-20260720-27 (50%, due 2026-07-23, resolved 2026-07-23): Andy Burnham’s UK government will announce a new fiscal policy shift within 72 hours of his cabinet appointment, as reported by Guardian World and BBC World. — *[claude] No new UK fiscal policy announcement under Andy Burnham was surfaced in reporting for the 07-20 to 07-23 window.*
+- **✗ MISS** KKR-20260720-28 (15%, due 2026-07-23, resolved 2026-07-23): A confirmed earthquake of magnitude 6.0 or higher will cause structural damage to infrastructure in Mexico within 72 hours of the 2026-07-20 M6.4 event near Puerto Madero, as reported by USGS and Al Jazeera. — *[claude] No reporting surfaced of a new M6.0+ earthquake in Mexico causing structural damage within 72 hours of 2026-07-20.*
+- **✓ HIT** KKR-20260720-29 (30%, due 2026-07-23, resolved 2026-07-23): The Houthi maritime embargo on Saudi Arabia will result in a confirmed disruption of at least one commercial shipping route through the Red Sea within 72 hours, as reported by BBC World and Al Jazeera. — *[claude] CNBC 2026-07-23 cited the Institute for the Study of War reporting at least seven vessels changed course to avoid Bab el-Mandeb due to the Houthi blockade. Kpler data reported Bab el-Mandeb transits d*
 
 *Voided (unresolvable as stated): KKR-20260720-06, KKR-20260720-09, KKR-20260720-11, KKR-20260720-12, KKR-20260720-14*
 

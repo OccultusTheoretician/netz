@@ -546,6 +546,133 @@ def cmd_mine(args):
     render_ledger()
 
 
+
+AUDIT_PROMPT_HEADER = """# KKR RESOLUTION AUDIT PACKET
+Generated {stamp} · {n} projections past deadline, awaiting adjudication.
+
+## YOUR TASK (independent auditor)
+
+For EACH projection below, search public reporting and determine whether its
+resolution criterion was met. You are auditing forecasts you did not make.
+
+RULES:
+1. Work the RESOLUTION CRITERION as written, not the statement's spirit. If the
+   criterion demands two independent sources, one is not enough.
+2. Search for DISCONFIRMING evidence as hard as confirming evidence. Note both.
+3. If the evidence is genuinely ambiguous or you cannot verify, say so — do NOT
+   guess. AMBIGUOUS is a valid verdict and is the correct one when the record is
+   unclear.
+4. Cite what you found: outlet, date, and what it said. Never assert without a source.
+5. You do not know who made these forecasts or at what probability. Do not speculate.
+
+Return ONLY a JSON array, no commentary, no markdown fences. Use plain ASCII
+straight quotes and do not put quotation marks inside any string value:
+
+[{{"id": "KKR-YYYYMMDD-NN", "verdict": "HIT" | "MISS" | "AMBIGUOUS",
+  "confidence": "high" | "moderate" | "low",
+  "evidence": "what you found, with outlet and date, 1-3 sentences",
+  "disconfirming": "contrary evidence found, or: none found",
+  "note": "one line an adjudicator should know before ruling"}}]
+
+## PROJECTIONS AWAITING AUDIT
+
+"""
+
+
+def cmd_audit_export(args):
+    """Export past-deadline projections as a provider-agnostic audit packet.
+    Any auditor (Claude, local Qwen, third-party) can work it; the verdict file
+    comes back through --audit-ingest. Probabilities and lane tags are WITHHELD
+    so the auditor cannot be anchored by them."""
+    data = load_ledger()
+    today = datetime.now(timezone.utc).date()
+    due = [p for p in data["projections"] if p["status"] == "open" and
+           (args.all or datetime.strptime(p["deadline"], "%Y-%m-%d").date() <= today)]
+    if not due:
+        print("KKR · nothing past deadline to audit", file=sys.stderr)
+        return
+    due.sort(key=lambda p: p["deadline"])
+    now = datetime.now(timezone.utc)
+    body = AUDIT_PROMPT_HEADER.format(
+        stamp=now.strftime("%d%H%MZ %b %y").upper(), n=len(due))
+    for p in due:
+        body += (f"\n### {p['id']}\n"
+                 f"- **Issued:** {p['date_issued']}  ·  **Deadline:** {p['deadline']}\n"
+                 f"- **Domain:** {p.get('domain','general')}\n"
+                 f"- **Claim:** {p['statement']}\n"
+                 f"- **Resolution criterion:** {p['resolution']}\n")
+    OUT.mkdir(exist_ok=True)
+    path = OUT / f"audit_packet_{now.strftime('%Y-%m-%d')}.md"
+    path.write_text(body, encoding="utf-8")
+    print(f"KKR · audit packet ({len(due)} projections) → {path}", file=sys.stderr)
+    print("KKR · give it to any auditor; save their JSON as audit_verdicts.json",
+          file=sys.stderr)
+
+
+def cmd_audit_ingest(args):
+    """Read an auditor's verdict JSON and present each for YOUR ruling.
+    The auditor recommends; you decide. Nothing is written without your key."""
+    raw = Path(args.audit_ingest).read_text(encoding="utf-8")
+    txt = _normalize_json_text(re.sub(r"```(?:json)?", "", raw).strip())
+    m = re.search(r"\[.*\]", txt, re.S)
+    if not m:
+        print("KKR · no JSON array found in the verdict file", file=sys.stderr)
+        sys.exit(1)
+    try:
+        verdicts = json.loads(m.group(0))
+    except json.JSONDecodeError:
+        last = m.group(0).rfind("}")
+        verdicts = json.loads(m.group(0)[:last + 1] + "]") if last != -1 else []
+    if not verdicts:
+        print("KKR · verdict file did not parse", file=sys.stderr)
+        sys.exit(1)
+
+    vmap = {v.get("id"): v for v in verdicts if v.get("id")}
+    data = load_ledger()
+    today = datetime.now(timezone.utc).date()
+    ruled = 0
+    print(f"\nAUDITOR RETURNED {len(vmap)} VERDICTS. You rule on each.\n"
+          f"[a]ccept the auditor's verdict · [h]it · [m]iss · [v]oid · [s]kip\n",
+          file=sys.stderr)
+    for p in data["projections"]:
+        if p["status"] != "open" or p["id"] not in vmap:
+            continue
+        v = vmap[p["id"]]
+        print(f"\n{p['id']} · you stated {p['probability']}% · deadline {p['deadline']}")
+        print(f"  CLAIM: {p['statement']}")
+        print(f"  CRITERION: {p['resolution']}")
+        print(f"  --- AUDITOR ({args.auditor}) ---")
+        print(f"  VERDICT: {v.get('verdict','?')}  (confidence: {v.get('confidence','?')})")
+        print(f"  EVIDENCE: {v.get('evidence','—')}")
+        print(f"  DISCONFIRMING: {v.get('disconfirming','—')}")
+        if v.get("note"):
+            print(f"  NOTE: {v['note']}")
+        ans = input("  [a]ccept / [h]it / [m]iss / [v]oid / [s]kip > ").strip().lower()
+        mapped = None
+        if ans == "a":
+            mapped = {"HIT": "hit", "MISS": "miss",
+                      "AMBIGUOUS": None}.get(str(v.get("verdict", "")).upper())
+            if mapped is None:
+                print("  auditor said AMBIGUOUS — left open for your later ruling",
+                      file=sys.stderr)
+                continue
+        elif ans in ("h", "m", "v"):
+            mapped = {"h": "hit", "m": "miss", "v": "void"}[ans]
+        if mapped:
+            p["status"] = mapped
+            p["resolved_date"] = today.strftime("%Y-%m-%d")
+            p["audit"] = {"auditor": args.auditor, "verdict": v.get("verdict"),
+                          "confidence": v.get("confidence"),
+                          "evidence": v.get("evidence", "")[:600],
+                          "disconfirming": v.get("disconfirming", "")[:400]}
+            note = input("  your note (enter = use auditor evidence) > ").strip()
+            p["notes"] = note or f"[{args.auditor}] {v.get('evidence','')[:200]}"
+            ruled += 1
+    save_ledger(data)
+    print(f"\nKKR · {ruled} projections ruled and written to the ledger", file=sys.stderr)
+    render_ledger()
+
+
 def main():
     ap = argparse.ArgumentParser(description="KKR — Kaos Kontrol Report: forecasts + predictive ledger")
     ap.add_argument("--provider", choices=["lmstudio", "anthropic", "auto"], default="lmstudio")
@@ -557,9 +684,19 @@ def main():
     ap.add_argument("--all", action="store_true", help="with --resolve: include not-yet-due")
     ap.add_argument("--score", action="store_true")
     ap.add_argument("--mine", action="store_true", help="enter your own forecasts (operator/human lane)")
+    ap.add_argument("--audit-export", action="store_true",
+                    help="export past-deadline projections as an audit packet")
+    ap.add_argument("--audit-ingest", metavar="FILE",
+                    help="ingest an auditor's verdict JSON; you rule on each")
+    ap.add_argument("--auditor", default="claude",
+                    help="name of the auditor for provenance (claude/qwen/other)")
     args = ap.parse_args()
 
-    if args.mine:
+    if args.audit_export:
+        cmd_audit_export(args)
+    elif args.audit_ingest:
+        cmd_audit_ingest(args)
+    elif args.mine:
         cmd_mine(args)
     elif args.resolve:
         cmd_resolve(args)
