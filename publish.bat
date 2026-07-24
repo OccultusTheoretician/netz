@@ -11,6 +11,7 @@ if not exist C:\netz\docs mkdir C:\netz\docs
 copy /Y C:\netz\reports\latest.html C:\netz\docs\report.html >nul
 if exist C:\netz\forecasts\ledger.html copy /Y C:\netz\forecasts\ledger.html C:\netz\docs\ledger.html >nul
 if exist C:\netz\forecasts\KKR_latest.html copy /Y C:\netz\forecasts\KKR_latest.html C:\netz\docs\kkr.html >nul
+copy /Y C:\netz\ledger.json C:\netz\docs\ledger.json >nul
 cd /d C:\netz
 git add -A
 for /f "tokens=*" %%i in ('powershell -NoProfile -Command "(Get-Date).ToUniversalTime().ToString('yyyy-MM-dd_HHmm') + 'Z'"') do set STAMP=%%i
