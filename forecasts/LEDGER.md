@@ -1,44 +1,38 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KKR PREDICTIVE LEDGER — 240634Z JUL 26
+# KKR PREDICTIVE LEDGER — 241550Z JUL 26
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 56 issued · 41 open (4 past deadline, unresolved) · 2 hits / 8 misses · **Brier 0.196** (0=oracle, 0.25=coin-flip on 50s)
+Window: all-time · 67 issued · 48 open (0 past deadline, unresolved) · 4 hits / 9 misses · **Brier 0.221** (0=oracle, 0.25=coin-flip on 50s)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 0-20% | 1 | 0% |
 | 20-40% | 7 | 29% |
-| 40-60% | 2 | 0% |
-
-## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
-
-- **KKR-20260720-08** (45%, due 2026-07-23) The Hugging Face breach involving an autonomous AI agent will be confirmed by a public statement from Hugging Face or a major cybersecurity organization within 72 hours of 2026-07-20. — *resolves on:* A public statement from Hugging Face or a major cybersecurity organization (e.g., CISA, BleepingComputer) confirms the breach involving an autonomous AI agent within 72 hours of 2026-07-20.
-- **KKR-20260720-21** (65%, due 2026-07-23) The U.S. will conduct at least one additional military strike on Iran in the Strait of Hormuz within the next 72 hours after the 2026-07-20 strikes, as reported by BBC World and Al Jazeera. — *resolves on:* A confirmed U.S. military strike on an Iranian target in the Strait of Hormuz, documented in at least two independent news reports from BBC World or Al Jazeera, published between 2026-07-21 and 2026-07-23.
-- **KKR-20260720-25** (70%, due 2026-07-23) An AI-powered malware campaign targeting cloud-based AI platforms will be confirmed by cybersecurity researchers within 48 hours, as reported by BleepingComputer and The Hacker News. — *resolves on:* A confirmed AI-powered malware campaign targeting cloud-based AI platforms (e.g., model repositories, training data), documented in at least two independent sources (BleepingComputer and The Hacker News) between 2026-07-21 and 2026-07-23.
-- **KKR-20260720-26** (35%, due 2026-07-23) Iran will respond to U.S. strikes with a confirmed cyberattack on a U.S. government or financial institution within 72 hours, as reported by Al Jazeera and BBC World. — *resolves on:* A confirmed cyberattack on a U.S. government or financial institution, attributed to Iran, documented in at least two independent sources (Al Jazeera and BBC World) between 2026-07-21 and 2026-07-23.
+| 40-60% | 3 | 33% |
+| 60-80% | 2 | 50% |
 
 ## OPEN PROJECTIONS
 
 | id | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|
-| KKR-20260720-08 | 2026-07-20 | 2026-07-23 | 45% | cyber | The Hugging Face breach involving an autonomous AI agent will be confirmed by a public statement from Hugging Face or a major cybersecurity organization within 72 hours of 2026-07-20. |
-| KKR-20260720-21 | 2026-07-20 | 2026-07-23 | 65% | military/conflict | The U.S. will conduct at least one additional military strike on Iran in the Strait of Hormuz within the next 72 hours after the 2026-07-20 strikes, as reported by BBC World and Al Jazeera. |
-| KKR-20260720-25 | 2026-07-20 | 2026-07-23 | 70% | cyber | An AI-powered malware campaign targeting cloud-based AI platforms will be confirmed by cybersecurity researchers within 48 hours, as reported by BleepingComputer and The Hacker News. |
-| KKR-20260720-26 | 2026-07-20 | 2026-07-23 | 35% | cyber | Iran will respond to U.S. strikes with a confirmed cyberattack on a U.S. government or financial institution within 72 hours, as reported by Al Jazeera and BBC World. |
 | KKR-20260723-01 | 2026-07-23 | 2026-07-27 | 65% | economics | Between 2026-07-24 and 2026-07-27, Brent crude oil will close above $100 per barrel for three consecutive trading days. |
+| KKR-20260724-01 | 2026-07-24 | 2026-07-27 | 30% | disaster | Over 80,000 people will have been evacuated from the Cap Ferret peninsula and surrounding areas near Madrid due to wildfires between 2026-07-24 and 2026-07-27. |
 | KKR-20260720-02 | 2026-07-20 | 2026-07-28 | 40% | economics/markets | The Nasdaq Composite Index will close below 18,000 on 2026-07-28, based on official market data from Yahoo Finance or Bloomberg. |
+| KKR-20260724-02 | 2026-07-24 | 2026-07-28 | 25% | military_conflict | The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. |
 | KKR-20260720-04 | 2026-07-20 | 2026-07-29 | 60% | economics/markets | The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. |
 | KKR-20260721-01 | 2026-07-21 | 2026-07-31 | 30% | political | The Lebanese Armed Forces will release a formal statement confirming Israeli fire near their troops between 2026-07-28 and 2026-07-31. |
 | KKR-20260723-02 | 2026-07-23 | 2026-08-01 | 45% | cyber | By 2026-08-01, the Chaos ransomware group will be linked to a new campaign using msaRAT to route C2 traffic through compromised headless browsers, with at least two new malware samples detected on VirusTotal. |
 | KKR-20260722-03 | 2026-07-22 | 2026-08-02 | 40% | disaster | Between 2026-07-29 and 2026-08-02, the Japan Meteorological Agency issues a new heatwave alert for Tokyo and Osaka, with temperatures exceeding 40°C for three consecutive days. |
 | KKR-20260721-07 | 2026-07-21 | 2026-08-03 | 35% | cyber | A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03. |
 | KKR-20260723-04 | 2026-07-23 | 2026-08-03 | 35% | military_conflict | Between 2026-07-30 and 2026-08-03, a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz will be reported by Al Jazeera or BBC World. |
+| KKR-20260724-07 | 2026-07-24 | 2026-08-03 | 40% | political | A United States government official publicly confirms or denies the reported rejected Iran ceasefire proposal between 2026-07-25 and 2026-08-03. |
 | KKR-20260721-05 | 2026-07-21 | 2026-08-04 | 30% | economic | Oil prices will exceed $92 per barrel on the NYMEX market between 2026-08-01 and 2026-08-04. |
 | KKR-20260720-10 | 2026-07-20 | 2026-08-05 | 40% | economics/markets | Global oil prices will exceed $85 per barrel for at least three consecutive trading days between 2026-07-28 and 2026-08-05. |
 | KKR-20260721-04 | 2026-07-21 | 2026-08-05 | 40% | cyber | A confirmed exploit of CVE-2026-60137 in WordPress Core will be reported in a public security advisory by 2026-08-05. |
 | KKR-20260723-03 | 2026-07-23 | 2026-08-05 | 25% | economics | On or before 2026-08-05, the European Central Bank will announce a rate hike in response to energy price spikes driven by Middle East conflict. |
+| KKR-20260724-09 | 2026-07-24 | 2026-08-07 | 28% | disaster | The government of France declares a national state of emergency or equivalent nationwide wildfire emergency between 2026-07-25 and 2026-08-07. |
 | KKR-20260720-16 | 2026-07-20 | 2026-08-08 | 30% | cyber | A new AI agent will be confirmed to have breached a government or financial institution’s internal network by 2026-08-08, with public disclosure from the affected organization. |
 | KKR-20260722-04 | 2026-07-22 | 2026-08-08 | 35% | political | Between 2026-08-05 and 2026-08-08, the French Ministry of Health confirms that social media platforms have been fully blocked for users under 15 years old across the country. |
 | KKR-20260720-13 | 2026-07-20 | 2026-08-10 | 55% | political | FIFA will issue a formal disciplinary sanction against at least one player involved in the Spain vs Argentina World Cup final on-pitch brawl by 2026-08-10. |
@@ -49,17 +43,24 @@ Window: all-time · 56 issued · 41 open (4 past deadline, unresolved) · 2 hits
 | KKR-20260722-08 | 2026-07-22 | 2026-08-12 | 95% | military | Yes |
 | KKR-20260722-09 | 2026-07-22 | 2026-08-12 | 65% | economics | Brent crude settles above 90 dollars on at least three trading days between 2026-07-23 and 2026-08-12 |
 | KKR-20260722-15 | 2026-07-22 | 2026-08-14 | 70% | economics | Brent crude front-month settles above 90 dollars per barrel on at least three trading days between 2026-07-23 and 2026-08-14 |
+| KKR-20260724-03 | 2026-07-24 | 2026-08-14 | 42% | economics | WTI front-month crude futures settle at or above 95.00 USD per barrel on at least one trading day between 2026-07-27 and 2026-08-14. |
 | KKR-20260720-15 | 2026-07-20 | 2026-08-15 | 45% | disaster | The Deloitte-run Medicaid system failure will result in a formal government audit or public report by 2026-08-15, citing systemic IT vulnerabilities. |
 | KKR-20260721-02 | 2026-07-21 | 2026-08-15 | 25% | economic | Nvidia will announce the disbursement of its $2 billion investment in Nebius by 2026-08-15. |
 | KKR-20260720-20 | 2026-07-20 | 2026-08-20 | 40% | cyber | A major cyberattack exploiting the ServiceNow code execution flaw (CVE-2026-6875) will result in a data breach affecting at least 100,000 users by 2026-08-20. |
 | KKR-20260721-06 | 2026-07-21 | 2026-08-20 | 25% | political | The U.S. Treasury Department will issue a new sanction against Meliá Hotels International by 2026-08-20. |
 | KKR-20260722-13 | 2026-07-22 | 2026-08-20 | 80% | disaster | The Japan Meteorological Agency issues heatstroke or extreme-heat alerts covering Tokyo or Osaka on at least five separate days between 2026-07-23 and 2026-08-20 |
 | KKR-20260722-10 | 2026-07-22 | 2026-08-28 | 50% | economics | US 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-08-28 |
+| KKR-20260724-08 | 2026-07-24 | 2026-08-31 | 50% | public_health | The CDC publicly identifies a specific implicated food product or source for the US cyclosporiasis outbreak between 2026-07-25 and 2026-08-31. |
+| KKR-20260724-11 | 2026-07-24 | 2026-08-31 | 45% | public_health | The US cyclosporiasis case count reported by the CDC exceeds 15000 between 2026-07-25 and 2026-08-31. |
 | KKR-20260720-19 | 2026-07-20 | 2026-09-01 | 35% | economics/markets | The Paramount-Warner Bros merger will be formally abandoned or withdrawn by 2026-09-01, with a public statement from either company. |
 | KKR-20260720-18 | 2026-07-20 | 2026-09-15 | 20% | disaster | A magnitude 6.0 or higher earthquake will be reported in the Pacific Northwest (Washington, Oregon, or Northern California) with at least one fatality by 2026-09-15. |
 | KKR-20260722-14 | 2026-07-22 | 2026-09-15 | 65% | military | At least two independent wire services report a new United States or Israeli military strike on Iranian territory or Iranian-flagged maritime assets between 2026-07-23 and 2026-09-15 |
+| KKR-20260724-10 | 2026-07-24 | 2026-09-15 | 25% | cyber | CISA adds the Certighost Active Directory vulnerability to its Known Exploited Vulnerabilities catalog between 2026-07-25 and 2026-09-15. |
 | KKR-20260722-16 | 2026-07-22 | 2026-09-30 | 55% | economics | The United States 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-09-30 |
+| KKR-20260724-05 | 2026-07-24 | 2026-09-30 | 38% | markets | The S&P 500 index closes below 7000 on at least one trading day between 2026-07-27 and 2026-09-30. |
+| KKR-20260724-06 | 2026-07-24 | 2026-09-30 | 22% | military_conflict | The United States and Iran publicly announce a ceasefire or formal cessation of hostilities between 2026-07-25 and 2026-09-30. |
 | KKR-20260722-06 | 2026-07-22 | 2026-10-15 | 70% | political | TikTok or another major platform announces age verification for French users |
+| KKR-20260724-04 | 2026-07-24 | 2026-10-30 | 12% | economics | The 30-year US Treasury yield closes at or above 6.00 percent on at least one trading day between 2026-07-27 and 2026-10-30. |
 | KKR-20260722-12 | 2026-07-22 | 2026-10-31 | 70% | political | At least one major social media platform (Meta, TikTok, Snap, or X) publicly announces an age-verification mechanism for French users between 2026-07-23 and 2026-10-31 |
 | KKR-20260722-01 | 2026-07-22 | 2026-11-05 | 30% | political | Andy Biggs wins the Arizona gubernatorial general election on 2026-11-05, defeating Katie Hobbs in a recount that confirms his victory by 1,200 votes. |
 | KKR-20260722-05 | 2026-07-22 | 2026-11-19 | 85% | political | No |
@@ -67,6 +68,9 @@ Window: all-time · 56 issued · 41 open (4 past deadline, unresolved) · 2 hits
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
+- **✓ HIT** KKR-20260720-08 (45%, due 2026-07-23, resolved 2026-07-24): The Hugging Face breach involving an autonomous AI agent will be confirmed by a public statement from Hugging Face or a major cybersecurity organization within 72 hours of 2026-07-20. — *[claude] Hugging Face published its own security incident disclosure confirming an intrusion driven end to end by an autonomous AI agent system. BleepingComputer covered it 2026-07-20 under the headline that Hugging Face warns an autonomous AI agent hacked its network; The Hacker News covered it the same day; Axios also reported the company statement 2026-07-20.*
+- **✓ HIT** KKR-20260720-21 (65%, due 2026-07-23, resolved 2026-07-24): The U.S. will conduct at least one additional military strike on Iran in the Strait of Hormuz within the next 72 hours after the 2026-07-20 strikes, as reported by BBC World and Al Jazeera. — *[claude] Al Jazeera reported US strikes on Iran on 2026-07-21 (11th consecutive night), 2026-07-22 (12th night) and 2026-07-23 (13th night), each citing CENTCOM statements that the strikes were to further degrade Iran ability to threaten commercial shipping in the Strait of Hormuz. Targets included Jask and Sirik near the Strait and other southern coastal sites.*
+- **✗ MISS** KKR-20260720-25 (70%, due 2026-07-23, resolved 2026-07-24): An AI-powered malware campaign targeting cloud-based AI platforms will be confirmed by cybersecurity researchers within 48 hours, as reported by BleepingComputer and The Hacker News. — *[claude] A qualifying campaign does exist: the JADEPUFFER AI-agent-driven operator deploying ENCFORGE, a Go ransomware built to encrypt model weights, vector indexes and training datasets, documented by Sysdig against a Langflow server. The Hacker News published on it 2026-07-21; BleepingComputer published on it 2026-07-20 at approximately 21:08 UTC, roughly three hours before the window opened.*
 - **✗ MISS** KKR-20260720-01 (30%, due 2026-07-23, resolved 2026-07-23): The Sinaloa Cartel will experience a confirmed internal leadership split or factional violence within 72 hours of Ismael 'El Mayo' Zambada's sentencing, as evidenced by at least two independent news reports documenting a violent clash between rival factions in Sinaloa state. — *[claude] Sentencing coverage on 2026-07-20 (Al Jazeera, AP, Bloomberg, CNN) reported the life sentence and Zambada calling for violence to end. CNN 2026-07-20 referenced the ongoing 2024-2025 Sinaloa factional conflict as background, not as a new post-sentencing clash.*
 - **✗ MISS** KKR-20260720-03 (35%, due 2026-07-23, resolved 2026-07-23): Within 72 hours of the Paramount-Warner Bros merger pause, the 12 U.S. states opposing the merger will file a formal legal motion requesting the court to permanently block the merger, as documented in a public court filing or press release. — *[claude] The 12 states led by California AG Bonta had already obtained a temporary restraining order on 2026-07-20 (Deadline, NPR, Washington Post). Reporting indicates the next step is a preliminary injunction hearing targeted for late August or early September.*
 - **✗ MISS** KKR-20260720-05 (30%, due 2026-07-23, resolved 2026-07-23): The UK Labour government under Andy Burnham will announce a formal fiscal review of public spending within 72 hours of the cabinet announcement, as confirmed by a press release from No. 10 Downing Street. — *[claude] No No. 10 Downing Street press release announcing a formal fiscal review of public spending was found in reporting for 2026-07-20 through 2026-07-23.*
@@ -78,7 +82,7 @@ Window: all-time · 56 issued · 41 open (4 past deadline, unresolved) · 2 hits
 - **✗ MISS** KKR-20260720-28 (15%, due 2026-07-23, resolved 2026-07-23): A confirmed earthquake of magnitude 6.0 or higher will cause structural damage to infrastructure in Mexico within 72 hours of the 2026-07-20 M6.4 event near Puerto Madero, as reported by USGS and Al Jazeera. — *[claude] No reporting surfaced of a new M6.0+ earthquake in Mexico causing structural damage within 72 hours of 2026-07-20.*
 - **✓ HIT** KKR-20260720-29 (30%, due 2026-07-23, resolved 2026-07-23): The Houthi maritime embargo on Saudi Arabia will result in a confirmed disruption of at least one commercial shipping route through the Red Sea within 72 hours, as reported by BBC World and Al Jazeera. — *[claude] CNBC 2026-07-23 cited the Institute for the Study of War reporting at least seven vessels changed course to avoid Bab el-Mandeb due to the Houthi blockade. Kpler data reported Bab el-Mandeb transits down 34 percent on 21 July with four confirmed vessel U-turns near the Gulf of Aden. Al Jazeera and CNBC both covered the blockade disrupting Saudi Red Sea oil routing.*
 
-*Voided (unresolvable as stated): KKR-20260720-06, KKR-20260720-09, KKR-20260720-11, KKR-20260720-12, KKR-20260720-14*
+*Voided (unresolvable as stated): KKR-20260720-06, KKR-20260720-09, KKR-20260720-11, KKR-20260720-12, KKR-20260720-14, KKR-20260720-26*
 
 ---
 **UNCLASSIFIED // OPEN SOURCES** · *the ledger scores the system, not the operator; consistency is not correctness — resolution is.*
