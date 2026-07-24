@@ -183,6 +183,8 @@ def normalize(raw: dict) -> dict:
         "chans_side": {str(k): int(v) for k, v in dict(chans_side).items()},
         "solo_sides": solo,
         "digests": int(pick(raw, "digest_reports", default=0) or 0),
+        "track": str(pick(raw, "track", default="kinetic")),
+        "st_actors": [str(a) for a in as_list(pick(raw, "statement_actors", default=[]))],
         "n_msgs": n_msgs,
         "n_channels": int(n_channels or 0),
         "span": span,
@@ -268,7 +270,12 @@ def anchor_label(a: list[str]) -> str:
 
 def render_section(events: list[dict], src: Path, divergences: list[str]) -> str:
     now = datetime.now(timezone.utc)
-    by = {g: [e for e in events if e["grade"] == g] for g in "ABCF"}
+    kin = [e for e in events if e.get("track") != "statement"]
+    stm = [e for e in events if e.get("track") == "statement"]
+    by = {g: [e for e in kin if e["grade"] == g] for g in "ABCF"}
+    sby = {g: [e for e in stm if e["grade"] == g] for g in "ABCF"}
+    for g in "ABC":
+        sby[g].sort(key=lambda e: (-len(e["sides"]), -e["n_msgs"]))
     for g in "ABC":
         by[g].sort(key=lambda e: (-len(e["sides"]), -e["n_msgs"]))
 
@@ -280,9 +287,10 @@ def render_section(events: list[dict], src: Path, divergences: list[str]) -> str
              "which is echo, not corroboration. Grade F = single source, counted and "
              "withheld. Sides are counted, not outlet labels: three Kremlin-aligned "
              "channels are one voice, not three.*\n")
-    o.append(f"Pull: {src.name} \u00b7 {len(events)} clustered events \u00b7 "
-             f"**{len(by['A'])} Grade A**, {len(by['B'])} Grade B, "
-             f"{len(by['C'])} Grade C, {len(by['F'])} withheld \u00b7 "
+    o.append(f"Pull: {src.name} \u00b7 {len(events)} clustered event{'s' if len(events)!=1 else ''} "
+             f"({len(kin)} kinetic, {len(stm)} statement) \u00b7 "
+             f"kinetic: **{len(by['A'])}A** {len(by['B'])}B {len(by['C'])}C {len(by['F'])} withheld \u00b7 "
+             f"statements: **{len(sby['A'])}A** {len(sby['B'])}B \u00b7 "
              f"rendered {now.strftime('%d%H%MZ %b %y').upper()}\n")
 
     o.append("**\u2b1b GRADE A \u2014 CONFIRMED**\n")
@@ -323,6 +331,24 @@ def render_section(events: list[dict], src: Path, divergences: list[str]) -> str
                  f"{spread}. Not reported. Logged and available on analyst query.\n")
     else:
         o.append("None this window.\n")
+
+    o.append("**\u25c8 STATEMENT TRACK \u2014 CROSS-SIDE CONFIRMED CLAIMS**\n")
+    o.append("*A statement confirmed across hostile sides means the claim circulated on "
+             "both sides of the divide \u2014 it does not mean the claim is true. Kinetic "
+             "cross-bias confirms an event happened; statement cross-bias confirms an "
+             "utterance exists. The desk grades circulation, the reader judges content.*\n")
+    if sby["A"] or sby["B"]:
+        for e in sby["A"] + sby["B"]:
+            o.extend(statement_block(e))
+    else:
+        o.append("No statement cleared two hostile sides this window.\n")
+    if sby["C"]:
+        o.append("*Single-side statement echo (not corroborated): " +
+                 "; ".join(f"{anchor_label(e['anchors'])} \u00b7 {zone_label(e['zone'])} "
+                           f"({e['n_msgs']} rpt, {(e['sides'] or ['?'])[0]})"
+                           for e in sby["C"]) + ".*\n")
+    if sby["F"]:
+        o.append(f"*{len(sby['F'])} single-source statement claims logged, not reported.*\n")
 
     if divergences:
         o.append("**Grade divergence \u2014 recomputed vs. upstream**\n")
@@ -374,6 +400,25 @@ def event_block(e: dict) -> list[str]:
     return lines
 
 
+def statement_block(e: dict) -> list[str]:
+    g = e["grade"]
+    lines = [f"**[{g}] \u201c{anchor_label(e['anchors'])}\u201d \u00b7 {zone_label(e['zone'])}"
+             + (f" \u00b7 around: {', '.join(e['st_actors'])}" if e['st_actors'] else "") + "**\n"]
+    lines.append(f"- {e['n_msgs']} reports across **{len(e['sides'])} hostile sides** "
+                 f"({', '.join(e['sides'])})")
+    if e["balance"]:
+        bal = " \u00b7 ".join(f"{k} {v}" for k, v in sorted(e["balance"].items(), key=lambda kv: -kv[1]))
+        lines.append(f"- Report balance: {bal}{balance_note(e['balance'])}")
+    if e["chans_side"]:
+        cs = ", ".join(f"{k} {v}" for k, v in sorted(e["chans_side"].items()))
+        note = (" \u2014 **every side here is a single outlet**"
+                if len(e["solo_sides"]) == len(e["chans_side"]) and len(e["chans_side"]) > 1 else "")
+        lines.append(f"- Channels per side: {cs}{note}")
+    lines.append(f"- Window: {span_txt(e['span'])} \u00b7 first seen {fmt_ts(e['first'])}")
+    lines.append("")
+    return lines
+
+
 def balance_note(bal: dict) -> str:
     """A 17/1/1 split and a 5/5/5 split carry the same grade and very different
     evidence. Say which one this is."""
@@ -407,8 +452,9 @@ def span_txt(s) -> str:
 
 def build_tile(events: list[dict], src: Path) -> dict:
     now = datetime.now(timezone.utc)
-    by = Counter(e["grade"] for e in events)
-    tops = sorted([e for e in events if e["grade"] == "A"],
+    by = Counter(e["grade"] for e in events if e.get("track") != "statement")
+    sby = Counter(e["grade"] for e in events if e.get("track") == "statement")
+    tops = sorted([e for e in events if e["grade"] == "A" and e.get("track") != "statement"],
                   key=lambda e: (-len(e["sides"]), -e["n_msgs"]))
     top = tops[0] if tops else None
     return {
@@ -416,9 +462,18 @@ def build_tile(events: list[dict], src: Path) -> dict:
         "source_pull": src.name,
         "events_total": len(events),
         "grades": {"A": by["A"], "B": by["B"], "C": by["C"], "F": by["F"]},
+        "statements": {"A": sby["A"], "B": sby["B"], "C": sby["C"], "F": sby["F"]},
         "confirmed": by["A"] + by["B"],
         "withheld": by["F"],
         "zones_covered": sorted({e["zone"] for e in events}),
+        "top3": [{
+            "grade": e["grade"], "track": e.get("track", "kinetic"),
+            "anchor": anchor_label(e["anchors"]) if e.get("track") != "statement"
+                      else "\u201c" + anchor_label(e["anchors"]) + "\u201d",
+            "zone": zone_label(e["zone"]), "sides": len(e["sides"]),
+            "reports": e["n_msgs"],
+        } for e in sorted([e for e in events if e["grade"] in "AB"],
+                          key=lambda e: (-len(e["sides"]), -e["n_msgs"]))[:3]],
         "top_confirmed": ({
             "anchor": anchor_label(top["anchors"]),
             "zone": zone_label(top["zone"]),
