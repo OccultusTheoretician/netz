@@ -1,0 +1,443 @@
+{
+  "_charter": {
+    "name": "NETZ War Desk — Conflict-OSINT Source Registry",
+    "operator": "Nebelkrahe / The Prescient Desk",
+    "scope": "COLLATION DESK. Aggregates and grades what PUBLIC channels REPORT about armed conflict: claims, events, geolocations, orders of battle, official statements. Cross-bias corroboration is the core method.",
+    "scope_fence": "This desk does NOT build dossiers on individuals, deanonymize persons, track named non-public people, or compile personal data. Aggregating the war is intelligence; aggregating a person is surveillance. This instrument does only the first.",
+    "method": "Every source carries an explicit bias tag. A claim is single-source until an INDEPENDENTLY-BIASED source corroborates. A claim confirmed across the bias divide (e.g. pro-RU mil-blogger AND Ukrainian official both report it) grades high; a claim living only inside one bias camp stays low. This is the entire value.",
+    "content_safety": "Text, claims, geolocation, event data IN. Graphic/casualty media flagged as links, never embedded. Not a gore aggregator.",
+    "schema": "war_channels/v2",
+    "compiled": "2026-07-24"
+  },
+  "_verification_protocol": {
+    "CRITICAL": "confidence field is Claude's pre-API estimate, NOT ground truth. tg_fetch.py runs verify_registry() on first contact: pings each handle, marks resolved/dead/renamed, writes cleaned registry. NOTHING in this file is trusted until that pass runs.",
+    "confidence_values": {
+      "confirmed": "widely-cited, stable, high-confidence handle — still verify",
+      "probable": "known channel, handle may have drifted — verify carefully",
+      "placeholder": "structural slot only — operator must supply the real handle"
+    },
+    "last_run": "2026-07-24T18:50:10.856822Z",
+    "resolved": 21,
+    "dead": 9
+  },
+  "structured_data_sources": {
+    "_note": "MACHINE-READABLE BACKBONE. For thin-TG zones (Sudan, Sahel, DRC) these beat any channel. Verify current license/API terms.",
+    "ACLED": {
+      "access": "API, licensed (free tier many uses)",
+      "coverage": "global geocoded events",
+      "url": "acleddata.com"
+    },
+    "GDELT": {
+      "access": "fully open, machine-translated, event-coded",
+      "coverage": "global all-language",
+      "url": "gdeltproject.org"
+    },
+    "ISW": {
+      "access": "public RSS, narrative assessments",
+      "coverage": "Ukraine/Russia/MidEast",
+      "url": "understandingwar.org"
+    },
+    "UCDP": {
+      "access": "open datasets",
+      "coverage": "global organized-violence data",
+      "url": "ucdp.uu.se"
+    },
+    "LiveUAMap": {
+      "access": "web/map, check ToS",
+      "coverage": "multi-zone geolocated"
+    }
+  },
+  "channels": [
+    {
+      "handle": "@rybar",
+      "zone": "russia_ukraine",
+      "lang": "ru",
+      "source_type": "mil_blogger",
+      "bias": "pro-russia state-adjacent",
+      "confidence": "confirmed",
+      "note": "Zvinchuk collective; influential, slanted; good geoloc",
+      "status": "RESOLVED",
+      "resolved_title": "Рыбарь",
+      "resolved_id": 1326223284
+    },
+    {
+      "handle": "@boris_rozhin",
+      "zone": "russia_ukraine",
+      "lang": "ru",
+      "source_type": "mil_blogger",
+      "bias": "pro-russia",
+      "confidence": "probable",
+      "note": "Colonel Cassad; fast pro-RU",
+      "status": "RESOLVED",
+      "resolved_title": "Colonelcassad",
+      "resolved_id": 1101806611
+    },
+    {
+      "handle": "@readovkanews",
+      "zone": "russia_ukraine",
+      "lang": "ru",
+      "source_type": "state_affiliated",
+      "bias": "pro-kremlin",
+      "confidence": "confirmed",
+      "note": "Kremlin-line aggregator",
+      "status": "RESOLVED",
+      "resolved_title": "Readovka",
+      "resolved_id": 1260622817
+    },
+    {
+      "handle": "@rian_ru",
+      "zone": "russia_ukraine",
+      "lang": "ru",
+      "source_type": "state_affiliated",
+      "bias": "russian state",
+      "confidence": "confirmed",
+      "note": "RIA Novosti state wire",
+      "status": "RESOLVED",
+      "resolved_title": "РИА Новости",
+      "resolved_id": 1101170442
+    },
+    {
+      "handle": "@DIUkraine",
+      "zone": "russia_ukraine",
+      "lang": "uk/en",
+      "source_type": "official_military",
+      "bias": "pro-ukraine intel",
+      "confidence": "probable",
+      "note": "HUR press releases; grade as state claim",
+      "status": "RESOLVED",
+      "resolved_title": "Головне управління розвідки МО України",
+      "resolved_id": 1606301574
+    },
+    {
+      "handle": "@russianlosses",
+      "zone": "russia_ukraine",
+      "lang": "en",
+      "source_type": "aggregator",
+      "bias": "pro-ukraine",
+      "confidence": "probable",
+      "note": "Oryx-derived equipment loss",
+      "status": "RESOLVED",
+      "resolved_title": "Потери российских войск",
+      "resolved_id": 1783741650
+    },
+    {
+      "handle": "@kyivindependent_official",
+      "zone": "russia_ukraine",
+      "lang": "en",
+      "source_type": "primary_reporting",
+      "bias": "pro-ukraine pro outlet",
+      "confidence": "probable",
+      "note": "EN Ukrainian outlet",
+      "status": "RESOLVED",
+      "resolved_title": "The Kyiv Independent",
+      "resolved_id": 1659203053
+    },
+    {
+      "handle": "@wartranslated",
+      "zone": "russia_ukraine",
+      "lang": "en",
+      "source_type": "aggregator",
+      "bias": "pro-ukraine",
+      "confidence": "probable",
+      "note": "Translations of RU/UA material",
+      "status": "RESOLVED",
+      "resolved_title": "WarTranslated 18+ | Archiving the War in Ukraine",
+      "resolved_id": 1377735387
+    },
+    {
+      "handle": "@Deepstate_UA",
+      "zone": "russia_ukraine",
+      "lang": "uk/en",
+      "source_type": "aggregator",
+      "bias": "pro-ukraine",
+      "confidence": "probable",
+      "note": "DeepState mapping project",
+      "status": "RESOLVED",
+      "resolved_title": "DeepStateUA",
+      "resolved_id": 2262555018
+    },
+    {
+      "handle": "@abualiexpress",
+      "zone": "israel_gaza",
+      "lang": "he/en",
+      "source_type": "aggregator",
+      "bias": "pro-israel",
+      "confidence": "probable",
+      "note": "Well-known IL war aggregator",
+      "status": "RESOLVED",
+      "resolved_title": "אבו עלי אקספרס",
+      "resolved_id": 1143765178
+    },
+    {
+      "handle": "@AlmayadeenEnglish",
+      "zone": "israel_gaza",
+      "lang": "ar/en",
+      "source_type": "state_affiliated",
+      "bias": "pro-hezbollah/axis",
+      "confidence": "probable",
+      "note": "Al Mayadeen; axis-of-resistance framing",
+      "status": "RESOLVED",
+      "resolved_title": "Al Mayadeen English",
+      "resolved_id": 2125524284
+    },
+    {
+      "handle": "@QudsNen",
+      "zone": "israel_gaza",
+      "lang": "ar/en",
+      "source_type": "aggregator",
+      "bias": "pro-palestinian",
+      "confidence": "placeholder",
+      "note": "Palestinian-side; VERIFY",
+      "status": "RESOLVED",
+      "resolved_title": "Quds News Network",
+      "resolved_id": 1189544175
+    },
+    {
+      "handle": "@Jerusalem_Post",
+      "zone": "israel_gaza",
+      "lang": "en",
+      "source_type": "primary_reporting",
+      "bias": "israeli pro outlet",
+      "confidence": "probable",
+      "note": "JPost",
+      "status": "DEAD"
+    },
+    {
+      "handle": "@TimesofIsrael",
+      "zone": "israel_gaza",
+      "lang": "en",
+      "source_type": "primary_reporting",
+      "bias": "israeli pro outlet",
+      "confidence": "probable",
+      "note": "ToI",
+      "status": "RESOLVED",
+      "resolved_title": "Times of Israel",
+      "resolved_id": 2477954821
+    },
+    {
+      "handle": "@PRESSTV",
+      "zone": "iran",
+      "lang": "fa/en",
+      "source_type": "state_affiliated",
+      "bias": "iranian state",
+      "confidence": "placeholder",
+      "note": "Tehran-line; USER FARSI LIST BEATS THIS",
+      "status": "RESOLVED",
+      "resolved_title": "Press TV",
+      "resolved_id": 1006487902
+    },
+    {
+      "handle": "@IranIntl",
+      "zone": "iran",
+      "lang": "fa",
+      "source_type": "primary_reporting",
+      "bias": "anti-regime saudi-funded",
+      "confidence": "placeholder",
+      "note": "Opposition counterweight; VERIFY",
+      "status": "DEAD"
+    },
+    {
+      "handle": "@BBCPersian",
+      "zone": "iran",
+      "lang": "fa",
+      "source_type": "primary_reporting",
+      "bias": "western pro outlet",
+      "confidence": "probable",
+      "note": "BBC Farsi",
+      "status": "RESOLVED",
+      "resolved_title": "BBCPersian",
+      "resolved_id": 1006430686
+    },
+    {
+      "handle": "@SyriaCivilDefense",
+      "zone": "syria",
+      "lang": "ar/en",
+      "source_type": "monitor_ngo",
+      "bias": "anti-regime",
+      "confidence": "placeholder",
+      "note": "White Helmets",
+      "status": "RESOLVED",
+      "resolved_title": "الدفاع المدني السوري",
+      "resolved_id": 1835705259
+    },
+    {
+      "handle": "@sana_english",
+      "zone": "syria",
+      "lang": "en",
+      "source_type": "state_affiliated",
+      "bias": "syrian state",
+      "confidence": "placeholder",
+      "note": "SANA state agency",
+      "status": "DEAD"
+    },
+    {
+      "handle": "@AnsarAllahEng",
+      "zone": "yemen",
+      "lang": "ar/en",
+      "source_type": "state_affiliated",
+      "bias": "houthi",
+      "confidence": "placeholder",
+      "note": "Houthi statements; VERIFY carefully",
+      "status": "DEAD"
+    },
+    {
+      "handle": "@yemen_monitor",
+      "zone": "yemen",
+      "lang": "ar/en",
+      "source_type": "aggregator",
+      "bias": "mixed",
+      "confidence": "placeholder",
+      "note": "Yemen conflict aggregator",
+      "status": "DEAD"
+    },
+    {
+      "handle": "@sudan_war_monitor",
+      "zone": "sudan",
+      "lang": "ar/en",
+      "source_type": "aggregator",
+      "bias": "mixed",
+      "confidence": "placeholder",
+      "note": "RSF/SAF; sparse coverage — use ACLED backbone",
+      "status": "DEAD"
+    },
+    {
+      "handle": "@sahel_intelligence",
+      "zone": "sahel",
+      "lang": "fr/en",
+      "source_type": "aggregator",
+      "bias": "mixed",
+      "confidence": "placeholder",
+      "note": "Mali/Burkina/Niger; Wagner/Africa Corps presence",
+      "status": "RESOLVED",
+      "resolved_title": "Sahel Intelligence",
+      "resolved_id": 2326215685
+    },
+    {
+      "handle": "@drc_m23_monitor",
+      "zone": "drc",
+      "lang": "fr/en",
+      "source_type": "aggregator",
+      "bias": "mixed",
+      "confidence": "placeholder",
+      "note": "Eastern Congo; VERIFY",
+      "status": "DEAD"
+    },
+    {
+      "handle": "@myanmar_now_eng",
+      "zone": "myanmar",
+      "lang": "my/en",
+      "source_type": "primary_reporting",
+      "bias": "anti-junta",
+      "confidence": "placeholder",
+      "note": "VERIFY; add junta-side for balance",
+      "status": "DEAD"
+    },
+    {
+      "handle": "@sdf_press",
+      "zone": "kurdistan",
+      "lang": "en",
+      "source_type": "official_military",
+      "bias": "pro-SDF",
+      "confidence": "placeholder",
+      "note": "SDF press; add Turkish-side counterweight",
+      "status": "RESOLVED",
+      "resolved_title": "SDF_PRESS - المركز الإعلامي",
+      "resolved_id": 1613543687
+    },
+    {
+      "handle": "@taiwan_adiz_monitor",
+      "zone": "taiwan",
+      "lang": "en",
+      "source_type": "monitor_ngo",
+      "bias": "neutral-ish",
+      "confidence": "placeholder",
+      "note": "PLA incursion tracking; grey-zone not active war",
+      "status": "DEAD"
+    },
+    {
+      "handle": "@sentdefender",
+      "zone": "global",
+      "lang": "en",
+      "source_type": "aggregator",
+      "bias": "western pro-US sensationalist",
+      "confidence": "confirmed",
+      "note": "OSINTdefender; fast, hype-prone",
+      "status": "RESOLVED",
+      "resolved_title": null,
+      "resolved_id": 5277325785
+    },
+    {
+      "handle": "@war_monitor",
+      "zone": "global",
+      "lang": "en",
+      "source_type": "aggregator",
+      "bias": "mixed",
+      "confidence": "probable",
+      "note": "Global flashpoints",
+      "status": "RESOLVED",
+      "resolved_title": "monitor",
+      "resolved_id": 1641260594
+    },
+    {
+      "handle": "@Faytuks",
+      "zone": "global",
+      "lang": "en",
+      "source_type": "aggregator",
+      "bias": "western",
+      "confidence": "probable",
+      "note": "Breaking-news aggregator",
+      "status": "RESOLVED",
+      "resolved_title": "خبر محرمانه",
+      "resolved_id": 3990714396
+    }
+  ],
+  "_cross_bias_map": {
+    "russia_ukraine": [
+      "pro-kremlin",
+      "pro-russia",
+      "pro-ukraine",
+      "russian"
+    ],
+    "israel_gaza": [
+      "israeli",
+      "pro-hezbollah/axis",
+      "pro-israel",
+      "pro-palestinian"
+    ],
+    "iran": [
+      "anti-regime",
+      "iranian",
+      "western"
+    ],
+    "syria": [
+      "anti-regime",
+      "syrian"
+    ],
+    "yemen": [
+      "houthi",
+      "mixed"
+    ],
+    "sudan": [
+      "mixed"
+    ],
+    "sahel": [
+      "mixed"
+    ],
+    "drc": [
+      "mixed"
+    ],
+    "myanmar": [
+      "anti-junta"
+    ],
+    "kurdistan": [
+      "pro-SDF"
+    ],
+    "taiwan": [
+      "neutral-ish"
+    ],
+    "global": [
+      "mixed",
+      "western"
+    ]
+  }
+}

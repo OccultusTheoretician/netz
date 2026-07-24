@@ -780,6 +780,7 @@ def _render_md_body(md: str) -> str:
 _TAB_MAP = [
     # (tab label, [section-title keywords that belong in this tab])
     ("Command", ["KEY JUDGMENTS", "INDICATIONS", "PIR STATUS"]),
+    ("War Desk", ["WAR DESK"]),
     ("Markets", ["MARKET"]),
     ("Convergence", ["CONVERGENCE"]),
     ("Cyber", ["KEV", "CYBER"]),
@@ -949,6 +950,31 @@ def age_hours(dt) -> str:
     return f"{h:.1f}h"
 
 
+
+
+WARDESK_FILE = HERE / "forecasts" / "WARDESK_latest.md"
+
+
+def war_desk_body(hours: int) -> str:
+    """Body of the WAR DESK section, produced by tg_grade.py (Module 3).
+
+    Freshness is a publication gate: a desk older than the report window is
+    withheld and SAID to be withheld. An absent pull prints as an absent pull.
+    """
+    if not WARDESK_FILE.exists():
+        return ("*No WAR DESK run on record. The Telegram cross-bias pipeline has not "
+                "produced a graded file — section reports empty rather than omitted.*\n")
+    age = (datetime.now(timezone.utc).timestamp() - WARDESK_FILE.stat().st_mtime) / 3600
+    if age > hours:
+        return (f"*Last cross-bias pull ran {age:.1f}h ago, outside this {hours}h report "
+                f"window. The stale desk is withheld rather than passed off as current.*\n")
+    body = WARDESK_FILE.read_text(encoding="utf-8")
+    lines = body.split("\n")
+    if lines and lines[0].startswith("## "):   # heading re-issued below with the numeral
+        lines = lines[1:]
+    return "\n".join(lines).strip() + "\n"
+
+
 def render_report(config, clusters, conv, health, synth, model_used, hours, counts,
                   markets_data, kevs, nws_alerts, pirs) -> str:
     now = datetime.now(timezone.utc)
@@ -990,6 +1016,10 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
             out.append(f"> ⚠ {w}\n")
     else:
         out.append("*Synthesis layer off — no I&W block this run.*")
+    out.append("")
+
+    out.append(f"## {next(sec)}. WAR DESK — CROSS-BIAS CONFIRMED EVENTS\n")
+    out.append(war_desk_body(hours))
     out.append("")
 
     out.append(f"## {next(sec)}. PIR STATUS\n")

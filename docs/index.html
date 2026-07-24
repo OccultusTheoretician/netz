@@ -254,6 +254,7 @@ footer{margin-top:4.5rem; border-top:1px solid var(--line);
   <div class="stat"><span class="lbl">Hits / Misses</span><span class="val" id="b-hm">—</span></div>
   <div class="stat"><span class="lbl">Brier</span><span class="val brass" id="b-brier">—</span></div>
   <div class="stat"><span class="lbl">Voided</span><span class="val" id="b-void">—</span></div>
+  <div class="stat"><span class="lbl">War Desk A/B</span><span class="val" id="b-wd">—</span></div>
   <span class="asof" id="b-asof">Live from the ledger</span>
   <a class="go" href="ledger.html">Full record →</a>
 </div></div>
@@ -298,6 +299,12 @@ footer{margin-top:4.5rem; border-top:1px solid var(--line);
       <span class="card-t">Latest Forecasts</span>
       <span class="card-d">The current issuance — sealed projections with deadlines, resolution criteria, and stated probabilities, committed before any outcome exists.</span>
       <span class="card-go">The open positions →</span>
+    </a>
+    <a class="card" href="report.html#tab_wardesk">
+      <span class="card-k">Verification instrument</span>
+      <span class="card-t">The War Desk</span>
+      <span class="card-d">Armed-conflict claims graded by who disagrees. A report is single-source until an <em>independently-biased</em> channel corroborates it; when enemies agree an event happened, it happened. Single-source claims are counted and withheld.</span>
+      <span class="card-go">Confirmed events &rarr;</span>
     </a>
     <a class="card" href="https://github.com/OccultusTheoretician/voidsection">
       <span class="card-k">Sibling instrument</span>
@@ -378,6 +385,12 @@ footer{margin-top:4.5rem; border-top:1px solid var(--line);
   }).catch(function(){
     document.getElementById('b-asof').textContent='Full record on the ledger';
   });
+})();
+(function(){
+  fetch('war_desk.json').then(function(r){return r.json()}).then(function(d){
+    var g=d.grades||{}; var el=document.getElementById('b-wd');
+    if(el) el.textContent=(g.A||0)+'A / '+(g.B||0)+'B';
+  }).catch(function(){});
 })();
 </script>
 </body></html>
