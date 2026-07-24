@@ -808,7 +808,7 @@ def render_html(md: str, title: str) -> str:
         f"<div class='crest-org'>NEBELKRÄHE · OSINT DESK</div>"
         f"<div class='crest-title'>NETZ {doc_kind}</div>"
         f"<div class='crest-line'>The prescient desk · forecasts kept on the record</div>"
-        f"<div class='crest-motto'>&ldquo;What feels true is a hypothesis. The world is the only referee.&rdquo;</div>"
+        f"<div class='crest-motto'>Calling our shots in the fog. Soaring through our misses.</div>"
         f"</div></div>{tiles}</div>")
 
     footer = (
