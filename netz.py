@@ -528,7 +528,36 @@ HTML_CSS = """
   --brass:#C29B45; --brass2:#DCB55F; --green:#4E9E71; --red:#C05149;
   --blue:#7195B5; --crow:#9AA4B0; --ink:#8D97A2;
   --bg:var(--field); --amber:var(--brass); --amber2:var(--brass2); --redglow:var(--red);
+  --brass3:#8A6E30; --steel:#7A97B4;
 }
+
+/* ===== GEOMETRIC FOG FIELD (matches landing) ===== */
+.field-bg{position:fixed; inset:0; z-index:-2; background:var(--field);
+  background-image:
+    linear-gradient(135deg, transparent 0%, rgba(20,26,35,.55) 50%, transparent 100%),
+    radial-gradient(80% 50% at 50% -5%, rgba(184,147,63,.055), transparent 60%)}
+.facets{position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.42}
+.facets svg{width:100%; height:100%; display:block}
+.grain{position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.022;
+  background-image:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 3px)}
+
+/* ===== PERSISTENT DESK NAV (every interior page) ===== */
+.desknav{position:sticky; top:0; z-index:60; background:rgba(8,10,13,.86);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.desknav-in{max-width:900px; margin:0 auto; padding:.6rem 1.25rem; display:flex; align-items:center; gap:1rem}
+.desknav .home{display:flex; align-items:center; gap:.6rem; margin-right:auto}
+.desknav .home img{width:26px; height:auto; display:block; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
+.desknav .home span{font-family:'IBM Plex Mono',monospace; font-size:.66rem; font-weight:600;
+  letter-spacing:.26em; color:var(--fg2); text-transform:uppercase; white-space:nowrap}
+.desknav .dn-links{display:flex; gap:1rem; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+.desknav .dn-links a{font-family:'IBM Plex Mono',monospace; font-size:.64rem; font-weight:500;
+  letter-spacing:.14em; color:var(--dim); text-transform:uppercase; padding:.2rem 0; border-bottom:2px solid transparent}
+.desknav .dn-links a:hover{color:var(--fg2)}
+.desknav .dn-links a.here{color:var(--brass2); border-bottom-color:var(--brass)}
+.desknav .dn-links a.cta-min{color:var(--brass2); border:1px solid var(--line2); padding:.28rem .6rem;
+  clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+.desknav .dn-links a.cta-min:hover{border-color:var(--brass)}
+body{position:relative}
 *{box-sizing:border-box}
 html{background:var(--field)}
 body{
@@ -564,8 +593,12 @@ main{max-width:900px; margin:0 auto; padding:0 1.25rem 4rem}
 
 /* ---- DASHBOARD TILES ---- */
 .dash{display:grid; grid-template-columns:repeat(4,1fr); gap:.6rem; margin:1.4rem 0 1.6rem}
-.tile{background:var(--panel); border:1px solid var(--line);
-  border-top:2px solid var(--brass); padding:.7rem .85rem .6rem}
+.tile{position:relative; background:var(--panel); border:1px solid var(--line);
+  padding:.75rem .9rem .65rem; transition:border-color .15s, transform .15s;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%)}
+.tile::before{content:"";position:absolute;top:0;left:0;width:2px;height:100%;background:var(--brass3)}
+.tile:hover{border-color:var(--line2); transform:translateY(-1px)}
+.tile.alert::before{background:var(--red)}
 .tile.alert{border-top-color:var(--red)}
 .tile-k{font-family:'IBM Plex Mono',monospace; font-size:.6rem; letter-spacing:.16em;
   color:var(--dim); text-transform:uppercase}
@@ -635,15 +668,17 @@ hr{border:0; height:1px; background:var(--line2); margin:2.6rem 0}
 /* ---- TABS ---- */
 .tabbar{display:flex; flex-wrap:wrap; gap:.15rem; margin:0 0 1.6rem;
   padding:0; background:transparent; border-bottom:1px solid var(--line2);
-  position:sticky; top:0; z-index:20; background:var(--field)}
+  position:sticky; top:41px; z-index:20; background:rgba(8,10,13,.92); backdrop-filter:blur(8px)}
 .tab{font-family:'IBM Plex Mono',monospace; font-size:.72rem; font-weight:600;
   letter-spacing:.12em; text-transform:uppercase; color:var(--dim);
   background:transparent; border:0; border-bottom:2px solid transparent;
-  padding:.6rem .85rem; cursor:pointer}
+  padding:.6rem .85rem; cursor:pointer; transition:color .15s, border-color .15s}
 .tab:hover{color:var(--fg2)}
 .tab.active{color:var(--fg2); border-bottom-color:var(--brass)}
-.pane{display:none}
-.pane.active{display:block}
+.pane{display:none; opacity:0; transform:translateY(4px)}
+.pane.active{display:block; animation:paneIn .28s ease forwards}
+@keyframes paneIn{to{opacity:1; transform:none}}
+@media(prefers-reduced-motion:reduce){.pane.active{animation:none; opacity:1; transform:none}}
 .pane h2:first-child{margin-top:.5rem}
 
 /* ---- PRINT: the working paper ---- */
@@ -864,16 +899,27 @@ def render_html(md: str, title: str) -> str:
 function netzTab(id, btn){
   document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
   document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
-  var el=document.getElementById(id); if(el) el.classList.add('active');
+  var el=document.getElementById(id); if(el){ el.classList.add('active'); }
   if(btn) btn.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+  var tb=document.querySelector('.tabbar');
+  if(tb && tb.getBoundingClientRect().top < 0){ tb.scrollIntoView({behavior:'smooth',block:'start'}); }
 }
 </script>"""
 
+    tu = title.upper()
+    if "LEDGER" in tu:
+        h_ledger, h_kkr, h_report = "here", "", ""
+    elif "KKR" in tu or "FORECAST" in tu:
+        h_ledger, h_kkr, h_report = "", "here", ""
+    else:
+        h_ledger, h_kkr, h_report = "", "", "here"
+    desknav = ("""<nav class="desknav"><div class="desknav-in"><a class="home" href="index.html"><img src="crow.png" alt=""><span>Nebelkr&auml;he</span></a><div class="dn-links"><a class="{H_report}" href="report.html">Report</a><a class="{H_ledger}" href="ledger.html">Ledger</a><a class="{H_kkr}" href="kkr.html">Forecasts</a><a href="https://github.com/OccultusTheoretician/netz">GitHub</a><a class="cta-min" href="index.html">Home</a></div></div></nav>""").replace("{H_report}",h_report).replace("{H_ledger}",h_ledger).replace("{H_kkr}",h_kkr)
+    fog = ("""<div class="field-bg"></div><div class="facets"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B8933F" stop-opacity=".10"/><stop offset="1" stop-color="#7A97B4" stop-opacity=".04"/></linearGradient></defs><g stroke="#28313D" stroke-width="1" fill="none" opacity=".6"><path d="M0,180 L360,90 L720,220 L1080,110 L1440,240"/><path d="M0,420 L300,520 L640,400 L980,540 L1440,430"/><path d="M0,680 L380,760 L760,640 L1120,780 L1440,660"/><path d="M360,90 L300,520 M720,220 L640,400 M1080,110 L980,540"/></g><g fill="url(#fg)" opacity=".5"><polygon points="360,90 720,220 640,400 300,520"/><polygon points="1080,110 1440,240 1440,430 980,540"/><polygon points="0,680 380,760 300,520 0,420"/></g></svg></div><div class="grain"></div>""")
     return (f"<!doctype html><html lang='en'><head><meta charset='utf-8'>"
             f"<meta name='viewport' content='width=device-width,initial-scale=1'>"
+            f"<link rel='icon' type='image/png' href='crow.png'>"
             f"<title>{html.escape(title)} · Nebelkrähe</title><style>{HTML_CSS}</style></head>"
-            f"<body><main>{page}</main>{tabjs}</body></html>")
+            f"<body>{fog}{desknav}<main>{page}</main>{tabjs}</body></html>")
 
 
 def open_in_browser(path: Path):
