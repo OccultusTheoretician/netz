@@ -346,7 +346,9 @@ def render_ledger():
                if datetime.strptime(p["deadline"], "%Y-%m-%d").date() < now.date()]
 
     out = ["**UNCLASSIFIED // OPEN SOURCES**\n",
-           f"# KKR PREDICTIVE LEDGER — {now.strftime('%d%H%MZ %b %y').upper()}\n"]
+           f"# KKR PREDICTIVE LEDGER — {now.strftime('%d%H%MZ %b %y').upper()}\n",
+           "**A standing Retro-Prescient Audit™** · method: "
+           "[RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)\n"]
     if stats.get("n_resolved"):
         out.append(f"Window: all-time · {len(projs)} issued · {len(open_p)} open "
                    f"({len(overdue)} past deadline, unresolved) · "

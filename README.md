@@ -8,6 +8,18 @@ material; every synthesized claim must cite the record beneath it; every
 forecast carries a falsifiable resolution criterion, a deadline, and a
 probability — and is scored against outcomes, permanently, in public.
 
+## The method
+
+The ledger runs under the **Retro-Prescient Audit™** — pre-registered,
+misfire-inclusive, blind-adjudicated where practicable, keyed hits claimed only
+as inference, misses printed permanently. The definition, sealed in this
+repository's commit history: [`RETRO_PRESCIENT_AUDIT.md`](RETRO_PRESCIENT_AUDIT.md).
+
+Sibling instrument: [**VoidSection™**](https://github.com/OccultusTheoretician/voidsection)
+— charter sectioning under the Inversion Quotient. NETZ collates, KKR forecasts
+and scores, VoidSection sections charters: one house, three instruments, every
+miss on the record.
+
 **Live dashboards:** daily report (`/docs/index.html` via Pages) · ledger
 (`/docs/ledger.html`) · latest forecasts (`/docs/kkr.html`)
 

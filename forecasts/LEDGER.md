@@ -1,14 +1,23 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KKR PREDICTIVE LEDGER — 231609Z JUL 26
+# KKR PREDICTIVE LEDGER — 240206Z JUL 26
 
-Window: all-time · 56 issued · 41 open (0 past deadline, unresolved) · 2 hits / 8 misses · **Brier 0.196** (0=oracle, 0.25=coin-flip on 50s)
+**A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
+
+Window: all-time · 56 issued · 41 open (4 past deadline, unresolved) · 2 hits / 8 misses · **Brier 0.196** (0=oracle, 0.25=coin-flip on 50s)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 0-20% | 1 | 0% |
 | 20-40% | 7 | 29% |
 | 40-60% | 2 | 0% |
+
+## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
+
+- **KKR-20260720-08** (45%, due 2026-07-23) The Hugging Face breach involving an autonomous AI agent will be confirmed by a public statement from Hugging Face or a major cybersecurity organization within 72 hours of 2026-07-20. — *resolves on:* A public statement from Hugging Face or a major cybersecurity organization (e.g., CISA, BleepingComputer) confirms the breach involving an autonomous AI agent within 72 hours of 2026-07-20.
+- **KKR-20260720-21** (65%, due 2026-07-23) The U.S. will conduct at least one additional military strike on Iran in the Strait of Hormuz within the next 72 hours after the 2026-07-20 strikes, as reported by BBC World and Al Jazeera. — *resolves on:* A confirmed U.S. military strike on an Iranian target in the Strait of Hormuz, documented in at least two independent news reports from BBC World or Al Jazeera, published between 2026-07-21 and 2026-07-23.
+- **KKR-20260720-25** (70%, due 2026-07-23) An AI-powered malware campaign targeting cloud-based AI platforms will be confirmed by cybersecurity researchers within 48 hours, as reported by BleepingComputer and The Hacker News. — *resolves on:* A confirmed AI-powered malware campaign targeting cloud-based AI platforms (e.g., model repositories, training data), documented in at least two independent sources (BleepingComputer and The Hacker News) between 2026-07-21 and 2026-07-23.
+- **KKR-20260720-26** (35%, due 2026-07-23) Iran will respond to U.S. strikes with a confirmed cyberattack on a U.S. government or financial institution within 72 hours, as reported by Al Jazeera and BBC World. — *resolves on:* A confirmed cyberattack on a U.S. government or financial institution, attributed to Iran, documented in at least two independent sources (Al Jazeera and BBC World) between 2026-07-21 and 2026-07-23.
 
 ## OPEN PROJECTIONS
 
