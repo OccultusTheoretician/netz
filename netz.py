@@ -460,7 +460,10 @@ def fetch_markets(config: dict) -> list:
             res = (r.json().get("chart", {}).get("result") or [None])[0]
             meta = res.get("meta", {}) if res else {}
             price = meta.get("regularMarketPrice")
-            prev = meta.get("chartPreviousClose") or meta.get("previousClose")
+            # previousClose = prior session close. chartPreviousClose = close before the
+            # requested RANGE begins (~5 sessions back at range=5d) — using it labels a
+            # multi-day move as a daily one. Prior session first, range-close as fallback.
+            prev = meta.get("previousClose") or meta.get("chartPreviousClose")
             if price is not None and prev:
                 rows.append({"label": label, "value": f"{price:,.2f}",
                              "chg": (price - prev) / prev * 100})
@@ -624,6 +627,8 @@ hr{border:0; height:1px; background:var(--line2); margin:2.6rem 0}
   color:var(--brass); text-transform:uppercase; text-align:center}
 .colophon{font-family:'Spectral',serif; font-style:italic; font-size:.82rem;
   color:var(--ink); text-align:center; margin-top:.9rem; line-height:1.65}
+.discl{display:block; margin-top:.7rem; font-family:'IBM Plex Mono',monospace;
+  font-style:normal; font-size:.68rem; line-height:1.7; color:var(--dim)}
 .byline{font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.14em;
   color:var(--crow); text-align:center; margin-top:.6rem; text-transform:uppercase}
 
@@ -808,10 +813,14 @@ def render_html(md: str, title: str) -> str:
 
     footer = (
         "<div class='footbar'>▲ UNCLASSIFIED // OPEN SOURCES</div>"
-        "<div class='byline'>NebelKrähe × Claude · human and machine, scored together</div>"
+        "<div class='byline'>NEBELKRÄHE · THE PRESCIENT DESK</div>"
         "<div class='colophon'>Machine-collated open-source intelligence. Every synthesized "
         "claim traces to the record; the record traces to source. Grades are mechanical, "
-        "not judgment. A ledger that keeps its own misses.</div>")
+        "not judgment. A ledger that keeps its own misses.<br>"
+        "<span class='discl'>Method disclosure: collation, corroboration grading, and "
+        "convergence detection are deterministic code. Category synthesis is model-drafted "
+        "under citation audit; uncited sentences are flagged in place, not removed. "
+        "Resolution and publication are the operator's.</span></div>")
 
     # ---- ledgers render linear (no tabs); reports render tabbed ----
     _, sections = _split_sections(md)
@@ -954,7 +963,10 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
 
     out.append(f"## {next(sec)}. MARKET SNAPSHOT\n")
     if markets_data:
-        out.append("| instrument | last | Δ |")
+        out.append("*Machine-read quotes, prior-session close as reference. These figures "
+                   "govern: any price stated in a synthesis above is a claim from the record "
+                   "and is subject to the citation audit.*\n")
+        out.append("| instrument | last | Δ vs prior close |")
         out.append("|---|---|---|")
         for m in markets_data:
             chg = f"{m['chg']:+.2f}%" if m["chg"] is not None else "—"
@@ -1012,7 +1024,9 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
                        "uncited claims are flagged, not trusted)*:\n")
             out.append(s["text"] + "\n")
             for w in s["warnings"]:
-                out.append(f"> ⚠ {w}\n")
+                out.append(f"> ⚠ **CITATION AUDIT** — {w}. Flag published deliberately: "
+                           f"this desk shows its own unverified seams rather than "
+                           f"quietly deleting them.\n")
         out.append("**The record:**\n")
         for n, cl in enumerate(cls[:config.get("max_items_per_category", 25)], 1):
             rep = cl["rep"]

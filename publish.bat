@@ -8,7 +8,7 @@ echo  Ctrl+C to ABORT publication. Any other key publishes.
 echo.
 pause
 if not exist C:\netz\docs mkdir C:\netz\docs
-copy /Y C:\netz\reports\latest.html C:\netz\docs\index.html >nul
+copy /Y C:\netz\reports\latest.html C:\netz\docs\report.html >nul
 if exist C:\netz\forecasts\ledger.html copy /Y C:\netz\forecasts\ledger.html C:\netz\docs\ledger.html >nul
 if exist C:\netz\forecasts\KKR_latest.html copy /Y C:\netz\forecasts\KKR_latest.html C:\netz\docs\kkr.html >nul
 cd /d C:\netz

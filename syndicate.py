@@ -23,7 +23,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 LEDGER = HERE / "ledger.json"
-LEDGER_URL = "https://occultustheoretician.github.io/netz/ledger.html"
+LEDGER_URL = "https://retroprescientaudit.com/ledger.html"
 
 
 def build_post() -> tuple[str, str]:
