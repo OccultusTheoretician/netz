@@ -188,6 +188,7 @@ def main():
             fh.write(f"- entries: **{len(entries)}** · resolved: **{resolved}** · keyless: **{keyless}** · keyed: **{keyed}**\n")
             fh.write(f"- 5.02 fifty-entry gate: **{fifty}**\n")
             fh.write(f"- thirty-resolved noise floor: **{noise}**\n")
+            fh.write(f"- thirty-resolved noise floor: **{noise}**\n")
             fh.write(f"- 1.04 keyed/keyless missing: **{kkmissing}/{len(entries)}**\n")
             fh.write(f"- 4.03 failure condition missing: **{fcmissing}/{len(entries)}**\n\n")
             fh.write(f"- findings: **{tally['FAIL']} FAIL**, **{tally['WARN']} WARN**\n\n## Findings\n\n")
