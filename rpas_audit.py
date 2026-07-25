@@ -187,8 +187,9 @@ def main():
                      f"Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*\n\n")
             fh.write(f"- entries: **{len(entries)}** · resolved: **{resolved}** · keyless: **{keyless}** · keyed: **{keyed}**\n")
             fh.write(f"- 5.02 fifty-entry gate: **{fifty}**\n")
+            fh.write(f"- thirty-resolved noise floor: **{noise}**\n")
             fh.write(f"- 1.04 keyed/keyless missing: **{kkmissing}/{len(entries)}**\n")
-            fh.write(f"- 4.03 failure condition missing: **{fcmissing}/{len(entries)}**\\n\\n")
+            fh.write(f"- 4.03 failure condition missing: **{fcmissing}/{len(entries)}**\n\n")
             fh.write(f"- findings: **{tally['FAIL']} FAIL**, **{tally['WARN']} WARN**\n\n## Findings\n\n")
             fh.write("| id | severity | RPAS | finding |\n|---|---|---|---|\n")
             for eid, sev, code, msg in rows:
