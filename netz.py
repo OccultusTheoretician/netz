@@ -639,7 +639,9 @@ blockquote{margin:.6rem 0; padding:.55rem .95rem;
   letter-spacing:.02em}
 
 /* ---- TABLES ---- */
-table{border-collapse:collapse; width:100%; font-size:.79rem;
+.tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1rem 0}
+.tablewrap table{margin:0}
+table{border-collapse:collapse; min-width:100%; width:max-content; font-size:.79rem;
   font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums;
   margin:1rem 0; border:1px solid var(--line2)}
 th,td{border-bottom:1px solid var(--line); padding:.5rem .75rem;
@@ -730,7 +732,7 @@ def _render_md_body(md: str) -> str:
         if line.startswith("| ") and i + 1 < len(lines) and set(lines[i + 1].replace("|", "").strip()) <= set("- "):
             close_lists()
             headers = [c.strip() for c in line.strip("|").split("|")]
-            out.append("<table><thead><tr>" +
+            out.append("<div class='tablewrap'><table><thead><tr>" +
                        "".join(f"<th>{md_inline(h)}</th>" for h in headers) +
                        "</tr></thead><tbody>")
             i += 2
@@ -738,7 +740,7 @@ def _render_md_body(md: str) -> str:
                 cells = [c.strip() for c in lines[i].strip("|").split("|")]
                 out.append("<tr>" + "".join(f"<td>{md_inline(c)}</td>" for c in cells) + "</tr>")
                 i += 1
-            out.append("</tbody></table>")
+            out.append("</tbody></table></div>")
             continue
         if line.startswith("# "):
             close_lists(); out.append(f"<h1>{md_inline(line[2:])}</h1>")
@@ -842,8 +844,8 @@ def render_html(md: str, title: str) -> str:
         f"<span class='dtg'>{dtg}</span></div>"
         f"<div class='crest'>{CROW_SVG}<div class='crest-text'>"
         f"<div class='crest-org'>NEBELKRÄHE · OSINT DESK</div>"
-        f"<div class='crest-title'>NETZ {doc_kind}</div>"
-        f"<div class='crest-line'>The prescient desk · forecasts kept on the record</div>"
+        f"<div class='crest-title'>THE PRESCIENT DESK\u2122 · {doc_kind}</div>"
+        f"<div class='crest-line'>Forecasts kept on the record</div>"
         f"<div class='crest-motto'>Calling our shots in the fog. Soaring through our misses.</div>"
         f"</div></div>{tiles}</div>")
 
@@ -985,7 +987,7 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
                 "XI", "XII", "XIII", "XIV", "XV", "XVI"])
     out = []
     out.append("**UNCLASSIFIED // OPEN SOURCES**\n")
-    out.append(f"# NETZ DAILY INTELLIGENCE REPORT — {dtg}\n")
+    out.append(f"# THE PRESCIENT DESK\u2122 — DAILY INTELLIGENCE REPORT — {dtg}\n")
     synth_line = f"synthesis: {model_used}" if model_used else "synthesis: OFF — collation only"
     out.append(f"Window: last {hours}h · {counts['fetched']} items → {counts['stories']} stories "
                f"(**{n_new} new**, {counts['stories'] - n_new} ongoing) · {synth_line} · "
@@ -1123,7 +1125,7 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
     if dead:
         out.append("\nDead/degraded feeds this run: " +
                    ", ".join(f"{h['source']} ({h['error'][:60]})" for h in dead))
-    out.append(f"\n---\n**UNCLASSIFIED // OPEN SOURCES**\n\n*NETZ v2.0 · every synthesized "
+    out.append(f"\n---\n**UNCLASSIFIED // OPEN SOURCES**\n\n*The Prescient Desk\u2122 · engine NETZ v2.0 · every synthesized "
                f"claim must trace to the record; the record traces to source links; the links "
                f"are the audit trail. Admiralty grades are mechanical (feed tier × "
                f"corroboration), not analyst judgment.*")
@@ -1214,7 +1216,7 @@ def main():
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H%M")
     out_path = out_dir / f"battle_report_{stamp}.md"
     out_path.write_text(report, encoding="utf-8")
-    html_doc = render_html(report, f"NETZ Report {stamp}")
+    html_doc = render_html(report, f"The Prescient Desk \u2014 Report {stamp}")
     html_path = out_dir / f"battle_report_{stamp}.html"
     html_path.write_text(html_doc, encoding="utf-8")
     (out_dir / "latest.html").write_text(html_doc, encoding="utf-8")
