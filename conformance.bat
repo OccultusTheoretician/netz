@@ -6,9 +6,9 @@ if "%1"=="--force" set FORCE=1
 for /f %%H in ('certutil -hashfile ledger.json SHA256 ^| findstr /r "^[0-9a-f]"') do set CUR=%%H
 set LAST=
 if exist .conformance_last set /p LAST=<.conformance_last
-if "%CUR%"=="%LAST%" if "%FORCE%"=="0" ( echo conformance: ledger unchanged & goto sync )
+if "%CUR%"=="%LAST%" if "%FORCE%"=="0" ( echo conformance: ledger unchanged ^& goto sync )
 python rpas_audit.py --ledger ledger.json --report REPORT_conformance.md
-if errorlevel 1 ( echo conformance: AUDIT FAILED & exit /b 1 )
+if errorlevel 1 ( echo conformance: AUDIT FAILED ^& exit /b 1 )
 echo %CUR%>.conformance_last
 :sync
 copy /Y REPORT_conformance.md docs\ >nul
