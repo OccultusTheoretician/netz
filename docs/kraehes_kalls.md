@@ -28,5 +28,16 @@
 
 \---
 
-## 
+##
 
+## DECLARATION UNDER KNM-26 (rev. 2) — appended 2026-07-25, rows above untouched
+
+**Conformance configuration of the clutch above:** Level 1 — discretionary reveal · Architecture A — private opening material · single custodian. (KNM 2.02, 5.06)
+
+**Residual-discretion statement (KNM 6.03).** Reveal of any Kall above is at the committer's sole discretion. Resolution is adjudicated by the committer against each Kall's sealed basis. The committer holds sole custody of the opening material. No independent party has examined the population or any resolution. This record supports statements about published calls and about how much is withheld; it does not support a calibration claim over the committer's forecasting generally, and none is made.
+
+**Custody findings, printed (KNM A.02).** At sealing: custody was single-location against horizons reaching 2036, and no recovery drill had been executed. These are control weaknesses in the deployment, not defects in the seals; binding is unaffected. Remediation is logged here as it lands, drill dates included (KNM 4.05).
+
+**Count anchoring (KNM 3.02).** The external anchor for this log is the public commit history of this repository. Any deletion or edit of a row above is detectable against prior-published state.
+
+**Sufficiency floor (KNM 6.05).** 0 of 9 resolved. Under thirty resolved, no figure from this record is evidence of skill.
