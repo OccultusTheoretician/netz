@@ -7,7 +7,7 @@
     "method": "Every source carries an explicit bias tag. A claim is single-source until an INDEPENDENTLY-BIASED source corroborates. A claim confirmed across the bias divide (e.g. pro-RU mil-blogger AND Ukrainian official both report it) grades high; a claim living only inside one bias camp stays low. This is the entire value.",
     "content_safety": "Text, claims, geolocation, event data IN. Graphic/casualty media flagged as links, never embedded. Not a gore aggregator.",
     "schema": "war_channels/v2",
-    "compiled": "2026-07-24"
+    "compiled": "2026-07-24 (v3: counterweight slots for single-side zones; slots carry deliberately-invalid handles until the operator fills them)"
   },
   "_verification_protocol": {
     "CRITICAL": "confidence field is Claude's pre-API estimate, NOT ground truth. tg_fetch.py runs verify_registry() on first contact: pings each handle, marks resolved/dead/renamed, writes cleaned registry. NOTHING in this file is trusted until that pass runs.",
@@ -18,7 +18,8 @@
     },
     "last_run": "2026-07-24T18:50:10.856822Z",
     "resolved": 21,
-    "dead": 9
+    "dead": 9,
+    "counterweight_note": "A zone with one bias side CANNOT produce Grade A/B by construction. These slots make that gap explicit and fixable. The operator's real Farsi list supersedes all iran placeholders when merged."
   },
   "structured_data_sources": {
     "_note": "MACHINE-READABLE BACKBONE. For thin-TG zones (Sudan, Sahel, DRC) these beat any channel. Verify current license/API terms.",
@@ -389,6 +390,106 @@
       "status": "RESOLVED",
       "resolved_title": "خبر محرمانه",
       "resolved_id": 3990714396
+    },
+    {
+      "handle": "@REPLACE_sudan_saf",
+      "zone": "sudan",
+      "lang": "ar/en",
+      "source_type": "structural_slot",
+      "bias": "saf-aligned",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — Sudanese Armed Forces side. Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "handle": "@REPLACE_sudan_rsf",
+      "zone": "sudan",
+      "lang": "ar/en",
+      "source_type": "structural_slot",
+      "bias": "rsf-aligned",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — RSF side. Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "handle": "@REPLACE_sahel_junta",
+      "zone": "sahel",
+      "lang": "fr",
+      "source_type": "structural_slot",
+      "bias": "junta-aligned",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — AES junta side (Mali/Burkina/Niger). Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "handle": "@REPLACE_drc_m23",
+      "zone": "drc",
+      "lang": "fr/en",
+      "source_type": "structural_slot",
+      "bias": "m23-aligned",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — M23/RDF-aligned side. Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "handle": "@REPLACE_drc_drc",
+      "zone": "drc",
+      "lang": "fr/en",
+      "source_type": "structural_slot",
+      "bias": "drc-gov",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — Kinshasa government side. Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "handle": "@REPLACE_myanmar_junta",
+      "zone": "myanmar",
+      "lang": "my",
+      "source_type": "structural_slot",
+      "bias": "junta-aligned",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — SAC junta side. Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "handle": "@REPLACE_kurdistan_turkish",
+      "zone": "kurdistan",
+      "lang": "tr/en",
+      "source_type": "structural_slot",
+      "bias": "turkish-aligned",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — Turkish-state side. Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "handle": "@REPLACE_taiwan_prc",
+      "zone": "taiwan",
+      "lang": "zh/en",
+      "source_type": "structural_slot",
+      "bias": "prc-aligned",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — PRC-state side. Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "handle": "@REPLACE_taiwan_taiwan",
+      "zone": "taiwan",
+      "lang": "zh/en",
+      "source_type": "structural_slot",
+      "bias": "taiwan-gov",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — Taipei government side. Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "handle": "@REPLACE_yemen_coalition",
+      "zone": "yemen",
+      "lang": "ar/en",
+      "source_type": "structural_slot",
+      "bias": "coalition-aligned",
+      "confidence": "placeholder",
+      "note": "COUNTERWEIGHT SLOT — anti-Houthi coalition side. Operator supplies real handle; verify_registry() gates. Deliberately invalid handle so nothing resolves by accident.",
+      "status": "UNVERIFIED"
     }
   ],
   "_cross_bias_map": {
@@ -415,24 +516,34 @@
     ],
     "yemen": [
       "houthi",
+      "coalition-aligned",
       "mixed"
     ],
     "sudan": [
+      "saf-aligned",
+      "rsf-aligned",
       "mixed"
     ],
     "sahel": [
+      "junta-aligned",
       "mixed"
     ],
     "drc": [
+      "m23-aligned",
+      "drc-gov",
       "mixed"
     ],
     "myanmar": [
-      "anti-junta"
+      "anti-junta",
+      "junta-aligned"
     ],
     "kurdistan": [
-      "pro-SDF"
+      "pro-SDF",
+      "turkish-aligned"
     ],
     "taiwan": [
+      "prc-aligned",
+      "taiwan-gov",
       "neutral-ish"
     ],
     "global": [
