@@ -30,6 +30,8 @@ SUBCOMMANDS
     reveal    emit a KNP 5.01 reveal block for one Kall; sets status REVEALED
     check     KNP 5.02 third-party verification — needs only a reveal block + hashlog
     solve     find the preimage construction the published commitments actually used
+    probe     forensics on one Kall: field shapes + targeted construction search
+    matrix    cross-pairing sweep: every statement/basis/salt against every commitment
     adopt     convert a markdown vault export into the KNP 3.01 JSON vault
     import    seed the hashlog from the already-published markdown table
     count     the standing line (KNP 4.04): N sealed · M revealed · K resolved
@@ -121,6 +123,20 @@ def die(msg: str, code: int = 2):
 
 def load_json(p: Path, default):
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else default
+
+
+def stamp_log(log: dict) -> dict:
+    log["protocol"] = "KNP-26"
+    if CONSTRUCTION:
+        log["construction"] = {
+            "preimage_order": CONSTRUCTION["order"], "separator": CONSTRUCTION["separator"],
+            "hash": "SHA-256", "encoding": "UTF-8", "pipe_escape": PIPE_ESC}
+    else:
+        log.setdefault("construction", {
+            "preimage_order": ["id", "timestamp", "statement", "resolution_basis", "salt"],
+            "separator": SEP, "hash": "SHA-256", "encoding": "UTF-8",
+            "pipe_escape": PIPE_ESC})
+    return log
 
 
 def save_json(p: Path, obj):
@@ -236,8 +252,9 @@ def cmd_seal(a) -> int:
         e["commitment"] = commit_of(e, SEP)
         rec = {"id": kid, "timestamp": now, "commitment": e["commitment"],
                "probability": e["probability"], "deadline": e["deadline"], "status": "SEALED"}
-        if d.get("domain"):
-            rec["domain"] = e["domain"] = d["domain"]
+        for opt in ("domain", "level", "architecture", "reveal_date"):
+            if d.get(opt) is not None:
+                rec[opt] = e[opt] = d[opt]
         if head:                                    # non-normative chain extension
             head = sha_raw(SEP.join([head, e["commitment"]]))
             rec["chain"] = head
@@ -253,7 +270,7 @@ def cmd_seal(a) -> int:
     log["records"].extend(new_p)
     if head:
         log["head"] = head
-    save_json(Path(a.hashlog), log)
+    save_json(Path(a.hashlog), stamp_log(log))
     print(f"sealed {len(new_p)}  ·  vault {a.vault}  ·  hashlog {a.hashlog}")
     print("\nMarkdown rows — APPEND ONLY, never edit a row above (KNM 3.06):")
     for r in new_p:
@@ -332,7 +349,7 @@ def cmd_reveal(a) -> int:
         for r in log["records"]:
             if r["id"] == a.id and r.get("status") == "SEALED":
                 r["status"] = "REVEALED"
-        save_json(Path(a.hashlog), log)
+        save_json(Path(a.hashlog), stamp_log(log))
         print("hashlog status -> REVEALED (in place; the record is never removed, KNP 4.02)")
     return 0
 
@@ -501,20 +518,238 @@ def cmd_solve(a) -> int:
     print(f"\nrecorded -> {cp}   every later command now hashes this way")
     return 0
 
+
+
+# ------------------------------------------------------------------ probe
+def _shape(v) -> str:
+    v = str(v)
+    hx = bool(re.fullmatch(r"[0-9a-fA-F]+", v))
+    return f"len={len(v)}" + (" hex" if hx else "") \
+        + (" CRLF" if "\r" in v else "") \
+        + (" nbsp" if "\u00a0" in v else "") \
+        + (" smartq" if re.search(r"[\u2018\u2019\u201c\u201d]", v) else "") \
+        + (" emdash" if "\u2014" in v else "") \
+        + (" 2xspace" if "  " in v else "")
+
+
+def cmd_probe(a) -> int:
+    """Forensics on one Kall: field shapes, alternates, and a targeted construction
+    search including single-field substitutions. Prints NO content."""
+    vault = [norm(e) for e in load_vault(Path(a.vault))]
+    e = next((x for x in vault if x["id"] == a.id), None)
+    if not e:
+        die(f"{a.id} not in the vault")
+    print(f"PROBE {e['id']}")
+    for f in ("id", "timestamp", "statement", "resolution_basis", "salt",
+              "probability", "deadline", "commitment"):
+        if f in e:
+            print(f"  {f:<18} {_shape(e[f])}")
+    for k, v in (e.get("_alt") or {}).items():
+        print(f"  ALT {k:<14} {_shape(v)}")
+    for k, v in (e.get("_extra") or {}).items():
+        print(f"  EXTRA {k!r:<18} {_shape(v)}")
+
+    target = e.get("commitment")
+    if not target:
+        die("no commitment to probe against")
+    import itertools
+
+    def _deword(v: str) -> str:
+        # reverse Word/Substack autocorrect wholesale: smart quotes, dashes,
+        # ellipsis, nbsp — the classic paste-through-a-word-processor transform
+        return (v.replace("\u2018", "'").replace("\u2019", "'")
+                 .replace("\u201c", '"').replace("\u201d", '"')
+                 .replace("\u2014", "--").replace("\u2013", "-")
+                 .replace("\u2026", "...").replace("\u00a0", " "))
+
+    def _reword(v: str) -> str:
+        # forward direction: what autocorrect would have MADE the sealed text
+        v = re.sub(r"(?<=\w)'(?=\w)", "\u2019", v)
+        v = re.sub(r"--", "\u2014", v)
+        return v
+
+    def norms(v: str):
+        yield "asis", v
+        yield "strip", v.strip()
+        yield "crlf", v.replace("\r", "")
+        yield "ws1", re.sub(r"\s+", " ", v).strip()
+        yield "deword", _deword(v)
+        yield "deword+ws1", re.sub(r"\s+", " ", _deword(v)).strip()
+        yield "reword", _reword(v)
+        yield "ascii-q", v.replace("\u2018", "'").replace("\u2019", "'")
+        yield "ascii-dq", v.replace("\u201c", '"').replace("\u201d", '"')
+        yield "dash", v.replace("\u2014", "--").replace("\u2013", "-")
+        yield "nfc", __import__("unicodedata").normalize("NFC", v)
+        yield "nfkc", __import__("unicodedata").normalize("NFKC", v)
+        yield "lower", v.lower()
+        yield "upper", v.upper()
+
+    base = {f: str(e.get(f, "")) for f in
+            ("id", "timestamp", "statement", "resolution_basis", "salt",
+             "probability", "deadline")}
+    orders = [("id", "timestamp", "statement", "resolution_basis", "salt"),
+              ("id", "timestamp", "statement", "resolution_basis", "probability",
+               "deadline", "salt"),
+              ("statement", "resolution_basis", "probability", "deadline", "salt"),
+              ("id", "statement", "resolution_basis", "salt"),
+              ("statement", "resolution_basis", "salt")]
+    seps = ("|", "", " | ", "\n", ":")
+
+    def tryhash(fields: dict, note: str) -> bool:
+        for order in orders:
+            for sep in seps:
+                for esc_on in (True, False):
+                    for pv in (str(fields.get("probability", "")),
+                               f"{fields.get('probability','')}%"):
+                        f2 = dict(fields); f2["probability"] = pv
+                        parts = [esc(f2.get(x, "")) if esc_on and x in
+                                 ("statement", "resolution_basis") else f2.get(x, "")
+                                 for x in order]
+                        for labeled in (False, True):
+                            pre = sep.join(f"{x}: {v}" for x, v in zip(order, parts)) \
+                                if labeled else sep.join(parts)
+                            if hashlib.sha256(pre.encode("utf-8")).hexdigest() == target:
+                                print(f"\nMATCH · {note}")
+                                print(f"  order={' | '.join(order)}  sep={sep!r}  "
+                                      f"esc={esc_on}  labeled={labeled}  prob={pv!r}")
+                                return True
+        return False
+
+    if tryhash(base, "fields as parsed"):
+        return 0
+    # single-field normalization sweeps
+    for f in ("statement", "resolution_basis", "timestamp", "salt"):
+        for nname, nv in norms(base[f]):
+            if nv == base[f]:
+                continue
+            b2 = dict(base); b2[f] = nv
+            if tryhash(b2, f"{f} normalized [{nname}]"):
+                return 0
+    # paired sweep: the same transform applied to statement AND basis at once,
+    # which is what a word processor actually does to a pasted block
+    for (n1, v1), (n2, v2) in __import__("itertools").product(
+            list(norms(base["statement"])), list(norms(base["resolution_basis"]))):
+        if v1 == base["statement"] and v2 == base["resolution_basis"]:
+            continue
+        b2 = dict(base); b2["statement"] = v1; b2["resolution_basis"] = v2
+        if tryhash(b2, f"statement[{n1}] + basis[{n2}]"):
+            return 0
+    # substitute alternates and extra hex values into salt / basis / statement
+    subs = list((e.get("_alt") or {}).items()) + \
+           [(k, v) for k, v in (e.get("_extra") or {}).items()]
+    for label, val in subs:
+        for f in ("salt", "resolution_basis", "statement", "timestamp"):
+            b2 = dict(base); b2[f] = str(val)
+            if tryhash(b2, f"{f} <- {label!r}"):
+                return 0
+    print("\nNO MATCH under targeted probes. The sealed text differs from the export "
+          "in more than formatting —\nnext step is diffing one Kall against the "
+          "sealing session's own record, not widening the search.")
+    return 1
+
+
+
+# ------------------------------------------------------------------ matrix
+def cmd_matrix(a) -> int:
+    """Cross-pairing sweep for a hand-assembled export: for every published
+    commitment, try every (statement_i, basis_j, salt_k) triple across ALL Kalls,
+    under each candidate construction. Catches shifted lines — a statement filed
+    under one id, a salt under another. Prints id-level pairings only, no content."""
+    import itertools
+    vault = [norm(e) for e in load_vault(Path(a.vault))]
+    if len(vault) < 2:
+        die("matrix needs the full clutch in the vault")
+    ids = [e["id"] for e in vault]
+    sts = {e["id"]: str(e.get("statement", "")) for e in vault}
+    bas = {e["id"]: str(e.get("resolution_basis", "")) for e in vault}
+    sls = {e["id"]: str(e.get("salt", "")) for e in vault}
+    tss = {e["id"]: str(e.get("timestamp", "")) for e in vault}
+    prs = {e["id"]: str(e.get("probability", "")) for e in vault}
+    dls = {e["id"]: str(e.get("deadline", "")) for e in vault}
+    targets = {e["id"]: e.get("commitment") for e in vault if e.get("commitment")}
+
+    def ts_variants(ts):
+        seen = {ts, ts.replace("Z", ""), ts.replace("T", " "),
+                ts.replace("T", " ").replace("Z", ""), ts[:10]}
+        return [t for t in seen if t]
+
+    orders = [("id", "timestamp", "statement", "resolution_basis", "salt"),
+              ("id", "timestamp", "statement", "resolution_basis", "probability",
+               "deadline", "salt"),
+              ("statement", "resolution_basis", "probability", "deadline", "salt"),
+              ("statement", "resolution_basis", "salt")]
+    seps = ("|", "", " | ")
+    found, open_ = [], []
+    for kid, target in targets.items():
+        hit = None
+        for si, bi, ki in itertools.product(ids, ids, ids):
+            fields = {"id": kid, "statement": sts[si], "resolution_basis": bas[bi],
+                      "salt": sls[ki], "probability": prs[kid], "deadline": dls[kid]}
+            done = False
+            for tsv in ts_variants(tss[kid]):
+                fields["timestamp"] = tsv
+                for order in orders:
+                    for sep in seps:
+                        for esc_on in (True, False):
+                            parts = [esc(fields.get(x, "")) if esc_on and x in
+                                     ("statement", "resolution_basis")
+                                     else fields.get(x, "") for x in order]
+                            pre = sep.join(parts)
+                            if hashlib.sha256(pre.encode("utf-8")).hexdigest() == target:
+                                hit = (si, bi, ki, order, sep, esc_on, tsv)
+                                done = True
+                            if not done and "salt" in order:
+                                try:
+                                    raw = sep.encode().join(
+                                        x.encode("utf-8") if f != "salt"
+                                        else bytes.fromhex(fields["salt"])
+                                        for f, x in zip(order, parts))
+                                    if hashlib.sha256(raw).hexdigest() == target:
+                                        hit = (si, bi, ki, order, sep, esc_on,
+                                               tsv + " · salt-as-bytes")
+                                        done = True
+                                except ValueError:
+                                    pass
+                            if done: break
+                        if done: break
+                    if done: break
+                if done: break
+            if done: break
+        if hit:
+            si, bi, ki, order, sep, esc_on, tsv = hit
+            tag = "ALIGNED" if si == bi == ki == kid else "SHIFTED"
+            found.append((kid, tag, si, bi, ki, order, sep, esc_on, tsv))
+        else:
+            open_.append(kid)
+
+    for kid, tag, si, bi, ki, order, sep, esc_on, tsv in found:
+        loc = "" if tag == "ALIGNED" else f"  st<-{si} basis<-{bi} salt<-{ki}"
+        print(f"{tag:<8} {kid}{loc}")
+        print(f"         order={'|'.join(order)}  sep={sep!r}  esc={esc_on}  ts={tsv!r}")
+    if open_:
+        print(f"UNSOLVED {len(open_)}: {', '.join(open_)}")
+    if found and not open_:
+        print("\nAll nine reproduce. If any row reads SHIFTED, the export mis-filed "
+              "fields across ids;\nre-file per the pairings above, re-run adopt, then "
+              "verify goes green.")
+    elif not found:
+        print("\nNothing reproduces even cross-paired: the sealed TEXT differs from "
+              "the export.\nThe session record is the only recovery path left.")
+    return 0 if found and not open_ else 1
+
 # ----------------------------------------------------------------- import
 FIELD_MAP = {
     "id": "id", "kall": "id", "kall id": "id", "ref": "id",
     "timestamp": "timestamp", "timestamp utc": "timestamp", "time": "timestamp",
     "sealed": "timestamp", "utc": "timestamp", "date": "timestamp",
+    "timestamp note": "timestamp", "sealed utc": "timestamp",
     "statement": "statement", "claim": "statement", "call": "statement",
     "prediction": "statement", "text": "statement",
     "resolution basis": "resolution_basis", "basis": "resolution_basis",
     "resolution": "resolution_basis", "resolves": "resolution_basis",
     "resolution criterion": "resolution_basis", "criterion": "resolution_basis",
     "salt": "salt", "nonce": "salt",
-    "verify": "resolution_basis", "verification": "resolution_basis",
-    "how to verify": "resolution_basis", "test": "resolution_basis",
-    "check": "resolution_basis", "resolved when": "resolution_basis",
+    "resolved when": "resolution_basis",
     "commitment": "commitment", "hash": "commitment", "seal": "commitment",
     "sha256": "commitment", "sha 256": "commitment", "hash sha 256": "commitment",
     "p": "probability", "probability": "probability", "prob": "probability",
@@ -573,15 +808,33 @@ def cmd_adopt(a) -> int:
         for n, i in enumerate(idx):
             block = lines[i:idx[n + 1] if n + 1 < len(idx) else len(lines)]
             e: dict = {"id": KID_RE.search(lines[i]).group(0)}
-            for l in block:
-                m = re.match(r"\s*[-*]?\s*\*{0,2}([A-Za-z0-9 ]{2,28})\*{0,2}\s*[:：]"
+            last = None
+            for l in block[1:]:
+                m = re.match(r"\s*[-*]?\s*\*{0,2}([A-Za-z0-9 _\\-]{2,28})\*{0,2}\s*[:：]"
                              r"\s*\*{0,2}\s*(.+)", l)
                 if m:
                     k = _key(m.group(1))
                     if k and k not in e:
-                        e[k] = _clean(m.group(2))
+                        e[k] = _clean(m.group(2)); last = ("f", k)
                     elif not k:
-                        e.setdefault("_extra", {})[m.group(1).strip()] = _clean(m.group(2))
+                        lbl = m.group(1).strip()
+                        e.setdefault("_extra", {})[lbl] = _clean(m.group(2))
+                        last = ("x", lbl)
+                    else:
+                        last = None
+                    continue
+                t = l.strip()
+                if (not t or t.startswith("#") or t.startswith("|")
+                        or re.fullmatch(r"[-=_\\]{3,}", t) or KID_RE.fullmatch(t)):
+                    last = None
+                    continue
+                if last:                            # wrapped continuation of the prior value
+                    kind, key = last
+                    tgt = e if kind == "f" else e.setdefault("_extra", {})
+                    prev, add = tgt.get(key, ""), _clean(t)
+                    hexish = lambda x: bool(re.fullmatch(r"[0-9a-fA-F]+", x))
+                    tgt[key] = prev + add if (hexish(prev) and hexish(add)) \
+                        else (prev + " " + add).strip()
             sect.append(e)
     if out and sect:
         by_id = {e["id"]: e for e in out}
@@ -591,8 +844,15 @@ def cmd_adopt(a) -> int:
                 out.append(e)
             else:
                 for kk, vv in e.items():
-                    if kk not in tgt or not str(tgt.get(kk, "")).strip():
+                    if kk == "_extra":
+                        tgt.setdefault("_extra", {}).update(vv)
+                    elif kk not in tgt or not str(tgt.get(kk, "")).strip():
                         tgt[kk] = vv
+                    elif str(tgt[kk]).strip() != str(vv).strip():
+                        tgt.setdefault("_alt", {})[kk] = str(vv).strip()
+                        print(f"  CONFLICT   {e['id']}.{kk}: table and section disagree "
+                              f"(table kept; section value retained as alternate)",
+                              file=sys.stderr)
     elif sect:
         out = sect
     if not out:
@@ -653,6 +913,9 @@ def cmd_adopt(a) -> int:
             bad += 1
         else:
             untestable += 1
+    sl = sorted({len(str(e.get("salt", ""))) for e in out if e.get("salt")})
+    print(f"  salt hex lengths seen: {sl or '—'}"
+          + ("   <-- MIXED: some salts likely truncated by line wrap" if len(sl) > 1 else ""))
     print(f"\ncommitment check: {ok} reproduce · {bad} mismatch · {untestable} untestable")
     if bad:
         print("A mismatch means the export's construction differs from KNP 2.01. The published\n"
@@ -687,7 +950,7 @@ def cmd_import(a) -> int:
                                "status": r["status"] if r["status"] in STATUSES else "SEALED"})
         added += 1
     log["records"].sort(key=lambda x: (x["timestamp"], x["id"]))
-    save_json(Path(a.hashlog), log)
+    save_json(Path(a.hashlog), stamp_log(log))
     print(f"imported {added} record(s) -> {a.hashlog}  (total {len(log['records'])})")
     if unopenable:
         print(f"\nNO VAULT RECORD for {len(unopenable)}: {', '.join(unopenable)}")
@@ -705,7 +968,7 @@ def cmd_anchor(a) -> int:
     log["anchor"] = anchor
     log["anchored_over"] = [r["id"] for r in rows]
     log["head"] = log.get("head") or anchor
-    save_json(Path(a.hashlog), log)
+    save_json(Path(a.hashlog), stamp_log(log))
     print(f"anchor : {anchor}\nover   : {len(rows)} ({rows[0]['id']} … {rows[-1]['id']})")
     print("\nNon-normative extension. KNP 4.03 is satisfied by git history and the external\n"
           "beacon, NOT by this chain — a chain the committer can recompute end-to-end is\n"
@@ -730,6 +993,8 @@ def main() -> int:
     s = sub.add_parser("count", **P); s.set_defaults(fn=cmd_count)
     s = sub.add_parser("beacon", **P); s.set_defaults(fn=cmd_beacon)
     s = sub.add_parser("solve", **P); s.add_argument("--source"); s.set_defaults(fn=cmd_solve)
+    s = sub.add_parser("probe", **P); s.add_argument("--id", required=True); s.set_defaults(fn=cmd_probe)
+    s = sub.add_parser("matrix", **P); s.set_defaults(fn=cmd_matrix)
     s = sub.add_parser("adopt", **P); s.add_argument("--source", required=True)
     s.add_argument("--dry-run", action="store_true"); s.set_defaults(fn=cmd_adopt)
     s = sub.add_parser("import", **P); s.set_defaults(fn=cmd_import)
