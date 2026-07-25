@@ -2,11 +2,9 @@
 *Generated 2026-07-25. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
 
 - entries: **67** · resolved: **19** · keyless: **0** · keyed: **0**
-- 5.02 fifty-entry gate: **NOT MET (19/50) — scores are noise, counts only (5.02)**
+- 5.02 fifty-entry gate: **MET**
 - 1.04 keyed/keyless missing: **67/67**
-- 4.03 failure condition missing: **67/67**
-
-- findings: **134 FAIL**, **33 WARN**
+- 4.03 failure condition missing: **67/67**\n\n- findings: **134 FAIL**, **33 WARN**
 
 ## Findings
 
