@@ -161,9 +161,13 @@ def main():
     print(f"entries: {len(entries)} | resolved: {resolved} | keyless: {keyless} | keyed: {keyed}")
     print(f"findings: {tally['FAIL']} FAIL · {tally['WARN']} WARN\n")
 
-    # the gate that matters most, printed loud
-    fifty = "PASS" if resolved >= 50 else f"NOT MET ({resolved}/50) — scores are noise, counts only (5.02)"
+    # the gates that matter most, printed loud — two DIFFERENT floors:
+    # 5.02 fifty ENTRIES before any score is computed/examined; the desk's
+    # standing thirty-RESOLVED noise floor governs whether a score MEANS anything.
+    fifty = "MET" if len(entries) >= 50 else f"NOT MET ({len(entries)}/50 entries) — no score may be computed (5.02)"
     print(f"  [5.02 fifty-entry gate] {fifty}")
+    noise = "cleared" if resolved >= 30 else f"below floor ({resolved}/30 resolved) — any score is noise, and must say so on its face"
+    print(f"  [thirty-resolved floor] {noise}")
     kkmissing = sum(1 for e in entries if (e.get('keyed_keyless') or e.get('keyed') or 'unset').lower() in ('', 'unset'))
     print(f"  [1.04 master law]       {kkmissing}/{len(entries)} entries lack keyed/keyless — 7.02 blocks scoring until set")
     fcmissing = sum(1 for e in entries if not (e.get('failure_condition') or '').strip() or e.get('failure_condition')==UNSET)
@@ -183,24 +187,6 @@ def main():
                      f"Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*\n\n")
             fh.write(f"- entries: **{len(entries)}** · resolved: **{resolved}** · keyless: **{keyless}** · keyed: **{keyed}**\n")
             fh.write(f"- 5.02 fifty-entry gate: **{fifty}**\n")
+            fh.write(f"- thirty-resolved noise floor: **{noise}**\n")
             fh.write(f"- 1.04 keyed/keyless missing: **{kkmissing}/{len(entries)}**\n")
-            fh.write(f"- 4.03 failure condition missing: **{fcmissing}/{len(entries)}**\n\n")
-            fh.write(f"- findings: **{tally['FAIL']} FAIL**, **{tally['WARN']} WARN**\n\n## Findings\n\n")
-            fh.write("| id | severity | RPAS | finding |\n|---|---|---|---|\n")
-            for eid, sev, code, msg in rows:
-                fh.write(f"| {eid} | {sev} | {code} | {msg} |\n")
-        print(f"\nreport written -> {R}")
-
-    # ---- optional migration ----
-    if a.migrate:
-        n = sum(migrate_entry(e) for e in entries)
-        bak = path.with_suffix(".json.pre_rpas")
-        bak.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")  # safety copy of ORIGINAL-as-loaded
-        path.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"\nmigrated {n} entries (added conformance placeholders). backup -> {bak.name}")
-        print("NEXT: fill each 'UNSET' failure_condition and keyed/keyless BY HAND, before the entry's")
-        print("resolution where still open. Per 4.03, a determination made after resolution is KEYED by rule.")
-
-
-if __name__ == "__main__":
-    main()
+            fh.write(f"- 4.03 failure condition missing:
