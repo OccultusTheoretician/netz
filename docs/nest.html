@@ -20,11 +20,11 @@ th,td{border-bottom:1px solid var(--line);padding:.5rem .7rem;text-align:left;fo
 th{font-family:"IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--dim);text-transform:uppercase;font-size:.72rem}
 a{color:var(--brass)}footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--dim);font-size:.78rem}
 </style></head><body><nav><div class="wrap"><a href="index.html">Desk</a><a href="report.html">Report</a><a href="ledger.html">Ledger</a><a href="kkr.html">KKR</a><a href="kraehes_kalls.html">Kalls</a><a href="standards.html">Standards</a><a href="conformance.html">Conformance</a><a href="verify.html" id="nv">Verify</a><a href="nest.html" id="nn">Nest</a></div></nav>
-<header><div class="wrap"><div class="kicker">KNP-26 Ch. 6 · a reader, not a server</div>
+<header><div class="wrap"><div class="kicker">KNP-26 Ch. 6 · The Prophet Board · a reader, not a server</div>
 <h1>The Nest</h1>
 <p class="dek">A read-only aggregator of KNP-26 conformant hashlogs. Each committer runs their own sealer and publishes their own log on their own surface — the way RSS federates. No account, no backend, no central store. The Nest fetches each listed log in your browser, validates the §4.01 contract, and renders the state.</p>
 </div></header>
-<section><div class="wrap"><h2>Committers</h2>
+<section><div class="wrap"><h2>The Prophet Board</h2>
 <div class="tw"><table><thead><tr><th>committer</th><th>sealed</th><th>revealed</th><th>resolved</th><th>reveal rate</th><th>log</th></tr></thead>
 <tbody id="rows"><tr><td colspan="6" class="note">reading logs…</td></tr></tbody></table></div>
 <p class="note" id="floor"></p>
@@ -33,7 +33,7 @@ a{color:var(--brass)}footer{border-top:1px solid var(--line);padding:1.4rem 0;co
 <p>Per KNP 6.05 the Nest must not rank committers as prescient or present aggregate display as evidence of foresight. Calibration, where shown, appears only past a thirty-resolved floor and carries its noise caveat on its face. Per 6.06: this page is an aggregator of commitments, not a publisher vouching for content. Sealed commitments are opaque. For revealed content, each Kall is attributed to its source log; material that is unlawful or targets private individuals is removed from display on notice.</p>
 </div></section>
 <section><div class="wrap"><h2>Join the federation</h2>
-<p>Publish a KNP-26 conformant hashlog — <a href="https://github.com/OccultusTheoretician/netz/blob/main/KRAEHE_NEST_PROTOCOL.md">the protocol</a> specifies the container, record shape, and mandatory public construction block; <a href="https://github.com/OccultusTheoretician/netz/blob/main/kalls.py">kalls.py</a> is a working reference sealer. Host the log anywhere CORS-open (a raw GitHub URL works). Then add yourself to <a href="https://github.com/OccultusTheoretician/netz/blob/main/docs/nest_sources.json">nest_sources.json</a> by pull request. Your seals stay yours; the Nest only reads.</p>
+<p>Publish a KNP-26 conformant hashlog — <a href="https://github.com/OccultusTheoretician/netz/blob/main/KRAEHE_NEST_PROTOCOL.md">the protocol</a> specifies the container, record shape, and mandatory public construction block; <a href="https://github.com/OccultusTheoretician/netz/blob/main/kalls.py">kalls.py</a> is a working reference sealer. Host the log anywhere CORS-open (a raw GitHub URL works). Then add yourself to <a href="https://github.com/OccultusTheoretician/netz/blob/main/docs/nest_sources.json">nest_sources.json</a> by pull request. Your seals stay yours; the Nest only reads. Create your fate — seal it, and let the record do the telling.</p>
 </div></section>
 <footer><div class="wrap">NEBELKRÄHE · THE PRESCIENT DESK — the Nest reads; it never holds.</div></footer>
 <script>
