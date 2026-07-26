@@ -298,12 +298,13 @@ footer li a{font-size:.85rem;color:var(--fg)}
 
 <header class="hero-wrap"><div class="wrap"><div class="hero">
   <div class="rv in">
-    <div class="kicker">The Prescient Desk · Instrument under public test</div>
+    <div class="kicker">The Prescient Desk™ · Instrument under public test</div>
     <h1>Retro-Prescient Audit<span class="tm">™</span></h1>
     <p class="dek">A method for telling foresight from arithmetic. Forecasts sealed before
     their outcomes, adjudicated blind, and scored on a record that keeps its own misses —
     permanently, in public.</p>
     <p class="motto">Calling our shots in the fog. Soaring through our misses.</p>
+    <p style="font:500 .7rem var(--mono,monospace);letter-spacing:.16em;text-transform:uppercase;color:var(--dim,#8b8b85);margin:.9rem 0 0">Retro-Prescient Audit™ — the method &nbsp;·&nbsp; The Prescient Desk™ — the instrument that runs it</p>
     <div class="actions">
       <a class="btn primary" href="ledger.html">Read the Ledger</a>
       <a class="btn ghost" href="#method">The Method</a>
@@ -311,6 +312,7 @@ footer li a{font-size:.85rem;color:var(--fg)}
   </div>
   <div class="leuchte" role="img" aria-label="The Nebelkrähe sigil within sighting rings, a slow light sweeping the fog behind it">
     <div class="beam" aria-hidden="true"></div>
+    <div id="scope-ticker" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:4.5%;text-align:center;font:600 8px var(--mono,monospace);letter-spacing:.34em;color:var(--dim,#8b8b85);opacity:.0;transition:opacity .8s;text-transform:uppercase;pointer-events:none"></div>
     <svg class="rings" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="200" cy="200" r="192"/>
       <circle cx="200" cy="200" r="158" class="mark"/>
@@ -318,7 +320,7 @@ footer li a{font-size:.85rem;color:var(--fg)}
       <circle cx="200" cy="200" r="88" class="mark"/>
       <text x="200" y="26" text-anchor="middle">SEALED · ADJUDICATED · SCORED</text>
       <text x="200" y="386" text-anchor="middle">DIE KRÄHE SIEHT DURCH DEN NEBEL</text>
-    </svg>
+    <g id="contacts"></g></svg>
     <img class="crow" src="crow.png" alt="">
   </div>
 </div></div></header>
@@ -597,4 +599,89 @@ footer li a{font-size:.85rem;color:var(--fg)}
   }
 })();
 </script>
+
+
+<script>
+(function(){
+var BEAM_OFFSET = 0; /* degrees; nudge if paint leads or lags the light */
+var SWEEP_MS = 22000;
+var svgNS='http://www.w3.org/2000/svg';
+var g=document.getElementById('contacts'); var beam=document.querySelector('.beam');
+var tick=document.getElementById('scope-ticker');
+if(!g)return;
+var CAT=[
+ ['battleship \u00b7 dreadnought era','sea',0.013,'<path d="M-11,0 L-8,-2.4 L8,-2.4 L11,0 L8,2.4 L-8,2.4 Z"/><circle cx="-5" cy="0" r="1.3"/><circle cx="0" cy="0" r="1.3"/><circle cx="6" cy="0" r="1.3"/>'],
+ ['carrier \u00b7 straight deck, prop age','sea',0.012,'<path d="M-11,-2.6 L11,-2.6 L11,2.6 L-11,2.6 Z"/><rect x="4" y="-4" width="3" height="1.6"/>'],
+ ['carrier \u00b7 angled deck, jet age','sea',0.015,'<path d="M-11,-3 L9,-3 L11,-1 L11,3 L-7,3 L-11,1 Z"/><rect x="3" y="-4.4" width="3" height="1.6"/>'],
+ ['cruiser','sea',0.018,'<path d="M-9,0 L-6.5,-1.8 L6.5,-1.8 L9,0 L6.5,1.8 L-6.5,1.8 Z"/><circle cx="-3" cy="0" r="1.1"/><circle cx="3.5" cy="0" r="1.1"/>'],
+ ['destroyer','sea',0.022,'<path d="M-7,0 L-5,-1.4 L5,-1.4 L7,0 L5,1.4 L-5,1.4 Z"/><circle cx="0" cy="0" r="1"/>'],
+ ['submarine \u00b7 surfaced','sea',0.010,'<path d="M-8,0 Q0,-2.2 8,0 Q0,2.2 -8,0 Z"/><rect x="-1" y="-2.6" width="2" height="1.8"/>'],
+ ['biplane','air',0.045,'<g fill="none" stroke-width="1.1"><path d="M-5,-2 L5,-2 M-4,1 L4,1 M0,-2 L0,3 M-1.6,3 L1.6,3"/></g>'],
+ ['fighter \u00b7 prop age','air',0.07,'<path d="M0,-8 L1.2,-2.2 L1.2,5.5 L0,8 L-1.2,5.5 L-1.2,-2.2 Z"/><path d="M-8,-.5 L-1.2,-1.6 L-1.2,1.4 Z"/><path d="M8,-.5 L1.2,-1.6 L1.2,1.4 Z"/><path d="M-3,6.4 L3,6.4 L0,5.2 Z"/>'],
+ ['fighter \u00b7 swept wing','air',0.10,'<path d="M0,-8 L1,-2 L1,6 L0,7.5 L-1,6 L-1,-2 Z"/><path d="M-7.5,4.5 L-1,-1 L-1,1.8 Z"/><path d="M7.5,4.5 L1,-1 L1,1.8 Z"/>'],
+ ['interceptor \u00b7 delta','air',0.12,'<path d="M0,-7.5 L5.5,5.5 L0,3.6 L-5.5,5.5 Z"/>'],
+ ['helicopter','air',0.035,'<ellipse cx="0" cy="1" rx="2" ry="3"/><g fill="none"><path d="M0,1 L0,7 M-1.4,7 L1.4,7" stroke-width="1.1"/><path d="M-6,-5 L6,7 M-6,7 L6,-5" stroke-width=".8" opacity=".8"/></g>']
+];
+var PHRASES=['FATE UNKNOWN','CREATE YOUR FATE','THE PROPHET BOARD','SEALED \u00b7 ADJUDICATED \u00b7 SCORED'];
+var tickTimer=null;
+function say(t,hold){if(!tick)return;tick.textContent=t;tick.style.opacity='.55';
+ clearTimeout(tickTimer);tickTimer=setTimeout(function(){tick.style.opacity='0';},hold||3200);}
+var idleI=0; setInterval(function(){if(tick&&tick.style.opacity==='0'){say(PHRASES[idleI++%PHRASES.length],2600);}},11000);
+var contacts=[]; var departures=0;
+function spawn(){
+ var idx=Math.floor(Math.random()*CAT.length);
+ var a=Math.random()*360, r=80+Math.random()*100;
+ var t=(a-90)*Math.PI/180;
+ var c={cls:CAT[idx], x:200+r*Math.cos(t), y:200+r*Math.sin(t),
+  heading:Math.random()*360, speed:CAT[idx][2]*(0.7+Math.random()*0.7),
+  maxO:0.55+Math.random()*0.4, born:performance.now(),
+  life:SWEEP_MS*(2+Math.random()*2), dying:0, el:document.createElementNS(svgNS,'g')};
+ c.el.setAttribute('fill','var(--messing3,#dcb65e)');
+ c.el.setAttribute('stroke','var(--messing3,#dcb65e)');
+ c.el.setAttribute('opacity','0');
+ c.el.innerHTML=c.cls[3]+'<title>'+c.cls[0]+' \u00b7 fate unknown</title>';
+ g.appendChild(c.el); contacts.push(c);
+ say('CREATE YOUR FATE');
+}
+function depart(c){
+ if(c.dying)return; c.dying=performance.now(); departures++;
+ say(departures%5===0?'FATE-ALITY':'FATE UNKNOWN');
+ var wait=800+Math.random()*8200;
+ setTimeout(function(){if(contacts.length<9)spawn();},wait);
+}
+var N=5+Math.floor(Math.random()*3);
+for(var i=0;i<N;i++)spawn();
+var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduced){contacts.forEach(function(c){c.el.setAttribute('opacity','0.4');
+ c.el.setAttribute('transform','translate('+c.x+','+c.y+') rotate('+c.heading+') scale(0.9)');});return;}
+var t0=performance.now(), last=t0;
+function beamAngle(now){
+ if(beam){var tr=getComputedStyle(beam).transform;
+  var mm=tr&&tr!=='none'&&tr.match(/matrix\(([-\d.e]+),\s*([-\d.e]+)/);
+  if(mm)return (Math.atan2(parseFloat(mm[2]),parseFloat(mm[1]))*180/Math.PI+360+BEAM_OFFSET)%360;}
+ return (((now-t0)/SWEEP_MS)*360+BEAM_OFFSET)%360;
+}
+function loop(now){
+ var dt=Math.min(50,now-last); last=now;
+ var ang=beamAngle(now);
+ for(var i=contacts.length-1;i>=0;i--){
+  var c=contacts[i];
+  var h=(c.heading-90)*Math.PI/180;
+  c.x+=Math.cos(h)*c.speed*dt; c.y+=Math.sin(h)*c.speed*dt;
+  var dx=c.x-200, dy=c.y-200, rr=Math.sqrt(dx*dx+dy*dy);
+  if(!c.dying&&(rr>188||rr<62||now-c.born>c.life))depart(c);
+  var aCur=(Math.atan2(dy,dx)*180/Math.PI+90+360)%360;
+  var trail=((ang-aCur)%360+360)%360;
+  var o=trail<8?c.maxO:c.maxO*Math.pow(0.5,trail/40);
+  if(o<0.04)o=0.04;
+  if(c.dying){var f=1-(now-c.dying)/1500; if(f<=0){c.el.remove();contacts.splice(i,1);continue;} o*=f;}
+  c.el.setAttribute('opacity',o.toFixed(2));
+  c.el.setAttribute('transform','translate('+c.x.toFixed(1)+','+c.y.toFixed(1)+') rotate('+c.heading+') scale(0.9)');
+ }
+ requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+})();
+</script>
+
 </body></html>
