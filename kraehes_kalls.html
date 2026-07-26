@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Krähe's Kalls · The Abduction Log · Nebelkrähe</title>
+<meta name="description" content="Abductions sealed at the moment they fire — contents dark, count committed. Reveal at his sole discretion; the misses stay bound. A separate instrument from the KKR ledger.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Retro-Prescient Audit™">
+<meta property="og:title" content="Krähe's Kalls — The Abduction Log">
+<meta property="og:description" content="Sealed guesses in his own hand, before the outcome. Contents abyssal, count committed, reveal at will.">
+<meta property="og:image" content="https://retroprescientaudit.com/crow.png">
+<meta property="og:url" content="https://retroprescientaudit.com/kraehes_kalls.html">
+<link rel="icon" type="image/png" href="crow.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nacht:#080B0F; --nacht2:#0C1015; --rauch:#12171E; --rauch2:#161C24;
+  --line:#1B222C; --line2:#28313D; --hair:#1E2630;
+  --fg:#AEB9C6; --fg2:#ECF1F7; --dim:#5A6675; --nebel:#8E9DAC;
+  --messing:#B8933F; --messing2:#DCB65E; --messing3:#8A6E30;
+  --hit:#6FA36F; --miss:#B0605A; --sealed:#7C8A99;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--nacht);color:var(--fg);font:16px/1.75 var(--sans);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+::selection{background:var(--messing3);color:var(--fg2)}
+a{color:var(--fg2);text-decoration:none;transition:color .2s}
+a:hover{color:var(--messing2)}
+:focus-visible{outline:2px solid var(--messing2);outline-offset:2px}
+img{max-width:100%;display:block}
+
+/* fog field, matched to the desk */
+.nebelfeld{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bank{position:absolute;width:140vw;height:70vh;filter:blur(60px);opacity:.5;will-change:transform}
+.bank.b1{top:-12vh;left:-25vw;
+  background:radial-gradient(55% 60% at 35% 45%, rgba(142,157,172,.10), transparent 70%),
+             radial-gradient(40% 50% at 70% 60%, rgba(142,157,172,.06), transparent 70%);
+  animation:drift1 160s linear infinite alternate}
+.bank.b2{top:28vh;left:-15vw;
+  background:radial-gradient(50% 55% at 60% 40%, rgba(142,157,172,.08), transparent 72%);
+  animation:drift2 210s linear infinite alternate}
+@keyframes drift1{from{transform:translateX(-4vw)}to{transform:translateX(9vw) translateY(2vh)}}
+@keyframes drift2{from{transform:translateX(6vw)}to{transform:translateX(-7vw)}}
+.grund{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 0%, var(--nacht2) 0%, var(--nacht) 55%)}
+.korn{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(8,11,15,.72);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:.85rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.nav-mark{display:flex;align-items:center;gap:.65rem}
+.nav-mark img{width:26px;height:26px;filter:drop-shadow(0 0 6px rgba(220,182,94,.25))}
+.nav-mark span{font-family:var(--mono);font-size:.68rem;font-weight:600;
+  letter-spacing:.3em;color:var(--fg2);text-transform:uppercase;white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.nav-links a{font-family:var(--mono);font-size:.62rem;font-weight:500;
+  letter-spacing:.18em;color:var(--dim);text-transform:uppercase}
+.nav-links a:hover{color:var(--fg2)}
+.nav-links a.here{color:var(--messing2)}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 2rem;position:relative;z-index:2}
+
+/* hero */
+.hero{padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--line);position:relative;z-index:2}
+.kicker{font-family:var(--mono);font-size:.62rem;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--messing2);margin-bottom:1.3rem;display:flex;align-items:center;gap:.8rem}
+.kicker::before{content:"";width:2.2rem;height:1px;background:var(--messing3)}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5vw,3.9rem);
+  line-height:1.05;color:var(--fg2);letter-spacing:.01em}
+.sub{margin-top:.4rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--nebel)}
+.dek{margin-top:1.6rem;max-width:46rem;font-size:1.05rem;line-height:1.85;color:var(--fg)}
+.dek em{font-family:var(--serif);font-style:italic;font-size:1.1em;color:var(--nebel)}
+.motto{margin-top:1.2rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--nebel)}
+
+/* the standing band */
+.band{border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(18,23,30,.9), rgba(12,16,21,.9));
+  backdrop-filter:blur(8px);position:relative;z-index:3}
+.band-in{max-width:1180px;margin:0 auto;padding:1.05rem 2rem;
+  display:flex;align-items:center;gap:0;flex-wrap:wrap}
+.stat{padding:0 1.7rem;border-right:1px solid var(--hair);display:flex;flex-direction:column;gap:.22rem}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:none}
+.stat .n{font-family:var(--mono);font-size:1.5rem;font-weight:600;color:var(--fg2);line-height:1}
+.stat .l{font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim)}
+.stat .n.dark{color:var(--sealed)}
+
+/* section frame */
+section{padding:3.2rem 0;position:relative;z-index:2}
+.sec-num{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--messing3);margin-bottom:.3rem}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3vw,2.2rem);
+  color:var(--fg2);margin-bottom:1.4rem;letter-spacing:.01em}
+.lede{max-width:44rem;font-size:1.02rem;line-height:1.85;color:var(--fg);margin-bottom:1.2rem}
+.lede strong{color:var(--fg2);font-weight:600}
+
+/* the clutch table */
+.clutch{border:1px solid var(--line);border-radius:2px;overflow:hidden;margin-top:1.6rem}
+.clutch-head{display:grid;grid-template-columns:130px 66px 108px 1fr 118px;
+  gap:0;padding:.7rem 1.1rem;background:var(--rauch);border-bottom:1px solid var(--line2);
+  font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.egg{display:grid;grid-template-columns:130px 66px 108px 1fr 118px;gap:0;
+  padding:1rem 1.1rem;border-bottom:1px solid var(--hair);align-items:center;
+  transition:background .18s}
+.egg:last-child{border-bottom:none}
+.egg:hover{background:rgba(22,28,36,.5)}
+.egg .id{font-family:var(--mono);font-size:.72rem;color:var(--messing2);letter-spacing:.02em}
+.egg .p{font-family:var(--mono);font-size:.95rem;font-weight:600;color:var(--fg2)}
+.egg .dl{font-family:var(--mono);font-size:.72rem;color:var(--nebel)}
+.egg .st{font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sealed);display:flex;align-items:center;gap:.45rem}
+.egg .st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sealed);
+  box-shadow:0 0 8px rgba(124,138,153,.5);flex:none}
+.egg .hash{font-family:var(--mono);font-size:.66rem;color:var(--dim);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:1rem}
+.egg .hash b{color:var(--nebel);font-weight:400}
+
+/* the abyssal note */
+.abyssal{margin-top:1.8rem;padding:1.3rem 1.5rem;border-left:2px solid var(--messing3);
+  background:rgba(18,23,30,.45);font-size:.95rem;line-height:1.8;color:var(--nebel)}
+.abyssal strong{color:var(--fg2)}
+
+/* law list */
+.laws{list-style:none;margin-top:1rem;max-width:46rem}
+.laws li{padding:.75rem 0 .75rem 2.2rem;border-bottom:1px solid var(--hair);position:relative;
+  font-size:.98rem;line-height:1.7;color:var(--fg)}
+.laws li:last-child{border-bottom:none}
+.laws li::before{content:counter(l);counter-increment:l;position:absolute;left:0;top:.75rem;
+  font-family:var(--mono);font-size:.7rem;color:var(--messing2);
+  border:1px solid var(--line2);width:1.4rem;height:1.4rem;display:grid;place-items:center;border-radius:50%}
+.laws{counter-reset:l}
+.laws li strong{color:var(--fg2)}
+
+/* verify box */
+.verify{margin-top:1.4rem;padding:1.1rem 1.3rem;background:var(--nacht2);
+  border:1px solid var(--line);border-radius:2px;font-family:var(--mono);font-size:.72rem;
+  color:var(--nebel);overflow-x:auto;line-height:1.7}
+.verify .c{color:var(--messing2)}
+
+/* footer */
+footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.6rem 0;position:relative;z-index:2}
+.foot-in{max-width:1180px;margin:0 auto;padding:0 2rem;display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem}
+.foot-brand{display:flex;flex-direction:column;gap:.8rem}
+.foot-brand img{width:40px;height:auto;filter:drop-shadow(0 0 10px rgba(220,182,94,.18))}
+.foot-brand .nm{font-family:var(--mono);font-size:.66rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--fg2)}
+.foot-brand p{font-size:.82rem;color:var(--dim);line-height:1.65;max-width:22rem}
+.foot-col h4{font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--messing2);margin-bottom:.9rem}
+.foot-col a{display:block;font-size:.85rem;color:var(--fg);padding:.28rem 0}
+.foot-col a:hover{color:var(--messing2)}
+.foot-bar{max-width:1180px;margin:2rem auto 0;padding:1.3rem 2rem 0;border-top:1px solid var(--hair);
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+@media(max-width:760px){
+  .clutch-head{display:none}
+  .egg{grid-template-columns:1fr;gap:.5rem;padding:1.1rem}
+  .egg .hash{white-space:normal}
+  .egg .id::after{content:" · sealed";color:var(--dim)}
+  .band-in{gap:.5rem}
+  .stat{padding:.5rem 1rem;border-right:none;border-bottom:1px solid var(--hair);width:100%}
+  .foot-in{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="nebelfeld"><div class="bank b1"></div><div class="bank b2"></div></div>
+<div class="grund"></div><div class="korn"></div>
+
+<nav class="nav"><div class="nav-in">
+  <a class="nav-mark" href="/"><img src="crow.png" alt=""><span>Nebelkrähe</span></a>
+  <div class="nav-links">
+    <a href="/">Desk</a>
+    <a href="/ledger.html">The Ledger</a>
+    <a href="/report.html">Daily Report</a>
+    <a href="/standards.html">Standards</a>
+    <a class="here" href="/kraehes_kalls.html">Krähe's Kalls</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="kicker">Unclassified · The Abduction Log</div>
+  <h1>Krähe's Kalls</h1>
+  <div class="sub">Sealed at the moment they fire · resolved by his own hand</div>
+  <p class="dek">The ledger scores the world on a public clock. This is the other instrument:
+    the calls that arrive mid-synthesis, in his own domains — <em>abductions</em>, sealed
+    the instant they are spoken and held in the dark. Each is hashed before its outcome exists.
+    The contents stay abyssal until he chooses to open them; the count is committed the moment
+    the egg is laid. You can see how many there are. You cannot see what they say — until he tells you.</p>
+  <p class="motto">Schrödinger's guesses. Each one a hit and a miss until the clock opens it.</p>
+</div></header>
+
+<div class="band"><div class="band-in">
+  <div class="stat"><span class="n dark" id="stat-sealed">9</span><span class="l">Sealed</span></div>
+  <div class="stat"><span class="n" id="stat-revealed">0</span><span class="l">Revealed</span></div>
+  <div class="stat"><span class="n" id="stat-resolved">0</span><span class="l">Resolved</span></div>
+  <div class="stat"><span class="n">SHA-256</span><span class="l">Commitment</span></div>
+  <div class="stat"><span class="n dark">Abyssal</span><span class="l">Default state</span></div>
+</div></div>
+
+<section><div class="wrap">
+  <div class="sec-num">I.</div>
+  <h2>The Clutch — sealed 2026-07-25</h2>
+  <p class="lede">Nine eggs, laid in one session. Every hash below was computed over the full
+    call — statement, resolution basis, probability, deadline, and a secret salt — <strong>before any
+    outcome existed</strong>. The hash reveals nothing about the content. When a Kall is opened, its plaintext
+    and salt are published, and anyone can recompute the hash to confirm it existed, unedited, at the sealed timestamp.</p>
+
+  <div class="clutch" id="clutch">
+    <div class="clutch-head">
+      <span>ID</span><span>Conf</span><span>Deadline</span><span>Commitment · SHA-256</span><span>Status</span>
+    </div>
+    <div class="egg">
+      <span class="id">KK-20260725-01</span><span class="p">60%</span><span class="dl">2027-01-01</span>
+      <span class="hash"><b>b8a0d9b0</b>c78216b93ba2f535a79f9294041053077b7d25f82e1a7ab85438e704</span>
+      <span class="st">Sealed</span>
+    </div>
+    <div class="egg">
+      <span class="id">KK-20260725-02</span><span class="p">35%</span><span class="dl">2026-10-25</span>
+      <span class="hash"><b>82858231</b>5c2cbff61c44e33cd8da9f754c0b76746c0c89b2df69cbd368376d24</span>
+      <span class="st">Sealed</span>
+    </div>
+    <div class="egg">
+      <span class="id">KK-20260725-03</span><span class="p">70%</span><span class="dl">2026-12-31</span>
+      <span class="hash"><b>89ebf3e0</b>5db9ad245a43730a53aad7ac9c0b4469a30eebb012bbd85d8b2de93f</span>
+      <span class="st">Sealed</span>
+    </div>
+    <div class="egg">
+      <span class="id">KK-20260725-04</span><span class="p">50%</span><span class="dl">2026-08-31</span>
+      <span class="hash"><b>9b0f0d3c</b>46e9ac421c1aca5bfe10564c4b8ba1565cb3f17dafb13c756cca710e</span>
+      <span class="st">Sealed</span>
+    </div>
+    <div class="egg">
+      <span class="id">KK-20260725-05</span><span class="p">25%</span><span class="dl">2028-01-25</span>
+      <span class="hash"><b>bb655c33</b>02475b6c3a3c8ed61910a04856d2ce51ec8283d7a889750c886b77c6</span>
+      <span class="st">Sealed</span>
+    </div>
+    <div class="egg">
+      <span class="id">KK-20260725-06</span><span class="p">20%</span><span class="dl">2028-11-30</span>
+      <span class="hash"><b>a049926a</b>6be10e370093ea291d17ba0dbd54c162fc7d6ad85934b02df6232b54</span>
+      <span class="st">Sealed</span>
+    </div>
+    <div class="egg">
+      <span class="id">KK-20260725-07</span><span class="p">5%</span><span class="dl">2030-07-25</span>
+      <span class="hash"><b>85443dfc</b>97f48f9be23b3e91ac917db1b35472bec12b294c7d72ba09aabff261</span>
+      <span class="st">Sealed</span>
+    </div>
+    <div class="egg">
+      <span class="id">KK-20260725-08</span><span class="p">50%</span><span class="dl">2036-07-25</span>
+      <span class="hash"><b>f72b09b5</b>f7766c8627a93b871a900d4c2c17616548e350485466555b9b77f817</span>
+      <span class="st">Sealed</span>
+    </div>
+    <div class="egg">
+      <span class="id">KK-20260725-09</span><span class="p">50%</span><span class="dl">2026-12-31</span>
+      <span class="hash"><b>39fd767b</b>0d5d28266c10c7f63ae2dab931af354c9725d1a673fffd84cb008731</span>
+      <span class="st">Sealed</span>
+    </div>
+  </div>
+
+  <div class="abyssal">
+    <strong>These are forward calls, sealed today, resolving in the future.</strong> No prior or
+    already-resolved call is in this nest. A seal certifies only the moment of sealing — it cannot reach
+    backward and certify a call made before the instrument existed. The nest begins clean, now, and its
+    whole worth is that it begins with nothing behind it.
+  </div>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-num">II.</div>
+  <h2>What binds it</h2>
+  <p class="lede">Krähe's Kalls is a <strong>separate instrument</strong> from the KKR ledger, and it makes
+    a narrower claim. The ledger's forecasts resolve under blind third-party adjudication against
+    pre-stated criteria. A Kall resolves by <strong>his own judgment</strong> at reveal, against the basis
+    sealed with it. That is a softer evidentiary object — and it is tagged apart so it is never cited as the
+    ledger's weight. What it shares with the ledger is the discipline underneath.</p>
+  <ol class="laws">
+    <li><strong>Sealed before the outcome.</strong> Hashed the moment it is spoken. A call produced after the
+      reveal is not a call.</li>
+    <li><strong>The misses stay bound.</strong> Contents may stay abyssal; existence may not be shed. The count
+      is committed by the append-only record, so withholding is legible and the clutch cannot be cherry-picked.</li>
+    <li><strong>Keyed from keyless.</strong> At reveal, a hit deducible from priors already held is named as
+      abduction — arithmetic, not foresight. Only the keyless reach tests the faculty.</li>
+    <li><strong>Under thirty resolved, the record is noise.</strong> This log makes no frequency claim until it
+      can carry one.</li>
+  </ol>
+
+  <div class="verify">
+    <div style="color:var(--dim);margin-bottom:.5rem">// verify a revealed Kall — recompute its hash from the published plaintext + salt</div>
+    <span class="c">python</span> -c "import hashlib; print(hashlib.sha256('ID|TIMESTAMP|STATEMENT|BASIS|SALT'.encode()).hexdigest())"
+    <div style="color:var(--dim);margin-top:.5rem">// a match against the sealed hash proves the call existed, unedited, at that timestamp.</div>
+  </div>
+</div></section>
+
+<footer>
+  
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-num">III.</div>
+  <h2>Declaration under KNM-26 (rev. 2)</h2>
+  <p class="lede"><strong>Conformance configuration of the clutch above:</strong> Level 1 — discretionary reveal · Architecture A — private opening material · single custodian. (KNM 2.02, 5.06)</p>
+  <p><strong>Residual-discretion statement (KNM 6.03).</strong> Reveal of any Kall above is at the committer's sole discretion. Resolution is adjudicated by the committer against each Kall's sealed basis. The committer holds sole custody of the opening material. No independent party has examined the population or any resolution. This record supports statements about published calls and about how much is withheld; it does not support a calibration claim over the committer's forecasting generally, and none is made.</p>
+  <p><strong>Custody findings, printed (KNM A.02).</strong> At sealing: custody was single-location against horizons reaching 2036, and no recovery drill had been executed. These are control weaknesses in the deployment, not defects in the seals; binding is unaffected. Remediation is logged on the public log as it lands, drill dates included (KNM 4.05).</p>
+  <p><strong>Count anchoring (KNM 3.02).</strong> The external anchor for this log is the public commit history of this repository. Any deletion or edit of a sealed row is detectable against prior-published state.</p>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-num">IV.</div>
+  <h2>Verification — construction public, log self-verifying</h2>
+  <p class="lede">Under KNP-26 rev. 2 (§4.01b) the preimage construction is published in the hashlog itself. Verifying a revealed Kall requires <strong>no material from this desk</strong> — only the public log and the reveal.</p>
+  <div class="abyssal" id="construction-block">
+    <strong>Construction (from the live hashlog):</strong><br>
+    preimage&nbsp;=&nbsp;id&nbsp;|&nbsp;timestamp&nbsp;|&nbsp;statement&nbsp;|&nbsp;resolution_basis&nbsp;|&nbsp;salt · separator "|" · SHA-256 · UTF-8 · pipe escaped as \u007C
+  </div>
+  <p><strong>Verification record.</strong> The construction was verified against all nine published commitments by independent re-derivation from the vault — 9/9 reproduce — recorded in the KNP-26 rev. 2 revision history. Re-verified 9/9 on 2026-07-25 after the 4.01b container upgrade landed on the public log (kalls.py verify).</p>
+  <p><a href="https://github.com/OccultusTheoretician/netz/blob/main/docs/kalls_hashlog.json">the hashlog</a> · <a href="https://github.com/OccultusTheoretician/netz/blob/main/KRAEHE_NEST_PROTOCOL.md">KNP-26</a> · <a href="https://github.com/OccultusTheoretician/netz/blob/main/kalls.py">reference implementation</a> · <a href="standards.html">the standards register</a></p>
+</div></section>
+<div class="foot-in">
+    <div class="foot-brand">
+      <img src="crow.png" alt="">
+      <span class="nm">Nebelkrähe · The Prescient Desk</span>
+      <p>The ledger scores the world; the Kalls hold the abductions. Contents dark until he opens them;
+        the nest shows how many there are.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Instruments</h4>
+      <a href="/ledger.html">The Ledger</a>
+      <a href="/report.html">Daily Report</a>
+      <a href="/kkr.html">Forecasts</a>
+      <a href="/kraehes_kalls.html">Krähe's Kalls</a>
+    </div>
+    <div class="foot-col">
+      <h4>Method</h4>
+      <a href="/#method">The five laws</a>
+      <a href="/standards.html">Standards</a>
+      <a href="https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md">Sealed definition</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <a href="mailto:audit@retroprescientaudit.com">audit@retroprescientaudit.com</a>
+      <a href="https://bsky.app/profile/occultustheory.bsky.social">Bluesky</a>
+      <a href="https://x.com/OccultusTheory">X</a>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>▲ Unclassified · Open Sources</span>
+    <span>Krähe's Kalls — abyssal by default · sealed in commit history</span>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  function cap(s){return s?s.charAt(0)+s.slice(1).toLowerCase():s;}
+  fetch('kalls_hashlog.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    var recs=d.records||[]; var c={};
+    recs.forEach(function(r){var s=r.status||'SEALED';c[s]=(c[s]||0)+1;});
+    var res=(c.RESOLVED_HIT||0)+(c.RESOLVED_MISS||0);
+    var el;
+    if((el=document.getElementById('stat-sealed')))el.textContent=c.SEALED||0;
+    if((el=document.getElementById('stat-revealed')))el.textContent=c.REVEALED||0;
+    if((el=document.getElementById('stat-resolved')))el.textContent=res;
+    var cl=document.getElementById('clutch'); if(!cl)return;
+    var head=cl.querySelector('.clutch-head'); var h='';
+    recs.forEach(function(r){
+      var hash=r.commitment||''; var st=(r.status||'SEALED').replace('RESOLVED_','Resolved ');
+      h+='<div class="egg"><span class="id">'+r.id+'</span><span class="p">'+
+         (r.probability!=null?r.probability+'%':'—')+'</span><span class="dl">'+(r.deadline||'—')+
+         '</span><span class="hash"><b>'+hash.slice(0,8)+'</b>'+hash.slice(8)+
+         '</span><span class="st">'+cap(st)+'</span></div>';
+    });
+    cl.innerHTML=''; if(head)cl.appendChild(head); cl.insertAdjacentHTML('beforeend',h);
+    var con=d.construction, cb=document.getElementById('construction-block');
+    if(con&&cb){cb.innerHTML='<strong>Construction (from the live hashlog):</strong><br>preimage&nbsp;=&nbsp;'+
+      (con.preimage_order||[]).join('&nbsp;|&nbsp;')+' · separator "'+con.separator+'" · '+con.hash+' · '+con.encoding+' · pipe escaped as '+con.pipe_escape;}
+  }).catch(function(e){/* static fallback stands */});
+})();
+</script>
+</body>
+</html>
