@@ -50,9 +50,24 @@ def build_post() -> tuple[str, str]:
     return line, sha
 
 
+def kalls_line() -> str:
+    """Kalls hashlog stat + full SHA-256; empty string if no hashlog."""
+    p = HERE / "docs" / "kalls_hashlog.json"
+    if not p.exists():
+        return ""
+    raw = p.read_bytes()
+    ksha = hashlib.sha256(raw).hexdigest()
+    recs = json.loads(raw).get("records", [])
+    c = Counter(r.get("status", "SEALED") for r in recs)
+    resolved = c.get("RESOLVED_HIT", 0) + c.get("RESOLVED_MISS", 0)
+    return (f"KALLS · {c.get('SEALED',0)} sealed · {c.get('REVEALED',0)} revealed · "
+            f"{resolved} resolved\nkalls_hashlog sha256: {ksha}\n")
+
+
 def main() -> None:
     line, sha = build_post()
     body = f"{line}\nledger.json sha256: {sha}\n"
+    body += kalls_line()
     print(body + LEDGER_URL)
 
     if "--dry-run" in sys.argv:

@@ -41,3 +41,5 @@
 **Count anchoring (KNM 3.02).** The external anchor for this log is the public commit history of this repository. Any deletion or edit of a row above is detectable against prior-published state.
 
 **Sufficiency floor (KNM 6.05).** 0 of 9 resolved. Under thirty resolved, no figure from this record is evidence of skill.
+
+**Verification record (appended 2026-07-25, rows above untouched).** The construction was verified against all nine published commitments by independent re-derivation from the vault — 9/9 reproduce — recorded in the KNP-26 rev. 2 revision history. Re-verified 9/9 on 2026-07-25 after the 4.01b container upgrade landed on the public log.
