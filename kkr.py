@@ -219,7 +219,6 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     now = datetime.now(timezone.utc)
     dtg = now.strftime("%d%H%MZ %b %y").upper()
     data = load_ledger()
-    stats = brier_and_calibration(data["projections"])
     below35 = sum(1 for p in accepted if p["probability"] < 35)
     out = ["**UNCLASSIFIED // OPEN SOURCES**\n",
            f"# KAOS KONTROL REPORT — {dtg}\n",
@@ -251,14 +250,30 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     open_n = sum(1 for p in data["projections"] if p["status"] == "open")
     overdue = [p for p in data["projections"] if p["status"] == "open" and
                datetime.strptime(p["deadline"], "%Y-%m-%d").date() < now.date()]
-    if stats.get("n_resolved"):
-        out.append(f"{len(data['projections'])} issued all-time · {open_n} open "
-                   f"({len(overdue)} past deadline — run `python kkr.py --resolve`) · "
-                   f"{stats['hits']} hits / {stats['misses']} misses · "
-                   f"**Brier {stats['brier']:.3f}** (0 = oracle, 0.25 = coin-flip on 50s)")
+    arms = arm_stats(data["projections"])
+    plural = "s" if len(arms) != 1 else ""
+    out.append(f"{len(data['projections'])} issued all-time across {len(arms)} "
+               f"forecaster arm{plural} · {open_n} open "
+               f"({len(overdue)} past deadline — run `python kkr.py --resolve`). "
+               f"**No pooled score is published** — a Brier score belongs to one "
+               f"forecaster; an average across arms is nobody's record.\n")
+    mine = arms.get(model_tag, {"issued": 0, "open": 0, "n_resolved": 0})
+    if mine["n_resolved"]:
+        skill = "—" if mine["skill"] is None else f"{mine['skill']:+.3f}"
+        noise = " · under 30 resolved, this is noise" if mine["n_resolved"] < 30 else ""
+        out.append(f"**This arm — `{model_tag}`:** {mine['issued']} issued · "
+                   f"{mine['open']} open · {mine['n_resolved']} resolved · "
+                   f"{mine['hits']} hits / {mine['misses']} misses · "
+                   f"**Brier {mine['brier']:.3f}** against its own base rate "
+                   f"{mine['base_rate']:.1%} (climatological {mine['clim']:.3f}) · "
+                   f"**skill {skill}**{noise}.\n")
     else:
-        out.append(f"{len(data['projections'])} issued all-time · {open_n} open · "
-                   f"nothing resolved yet — the ledger earns meaning at first resolution.")
+        out.append(f"**This arm — `{model_tag}`:** {mine['issued']} issued · "
+                   f"{mine['open']} open · nothing resolved yet — this arm earns a "
+                   f"score at its first resolution.\n")
+    out.append("### STANDING BY ARM\n")
+    out.extend(_arm_table(arms))
+    out.append("")
     out.append("\nFull ledger: LEDGER.md / ledger.html\n")
     out.append("---\n**UNCLASSIFIED // OPEN SOURCES** · *the gate is mechanical; the ledger "
                "is permanent; the system gets scored, not the operator.*")
@@ -334,10 +349,54 @@ def brier_and_calibration(projs: list) -> dict:
                             for (lo, hi), (n, h) in sorted(buckets.items())}}
 
 
+def arm_stats(projs: list) -> dict:
+    """Per-forecaster-arm record.
+
+    A Brier score is a property of ONE forecaster. Averaging across arms produces
+    a number that describes nobody and flatters or damns whichever arm has fewer
+    resolved rows. Nothing in this file may publish a pooled score.
+    """
+    arms = {}
+    for p in projs:
+        arms.setdefault(p.get("model") or "unattributed", []).append(p)
+    out = {}
+    for tag, rows in sorted(arms.items()):
+        s = brier_and_calibration(rows)
+        rec = {"issued": len(rows),
+               "open": sum(1 for p in rows if p["status"] == "open"),
+               "void": sum(1 for p in rows if p["status"] == "void"),
+               "n_resolved": s.get("n_resolved", 0)}
+        if rec["n_resolved"]:
+            base = s["hits"] / s["n_resolved"]      # realized base rate
+            clim = base * (1 - base)                # climatological Brier
+            rec.update({"hits": s["hits"], "misses": s["misses"],
+                        "brier": s["brier"], "base_rate": base, "clim": clim,
+                        "skill": (1 - s["brier"] / clim) if clim else None,
+                        "calibration": s["calibration"]})
+        out[tag] = rec
+    return out
+
+
+def _arm_table(arms: dict) -> list:
+    """Per-arm standing table. Never emits a pooled row."""
+    rows = ["| forecaster arm | issued | open | resolved | hits | misses | Brier | "
+            "base rate | climatological | skill |",
+            "|---|---|---|---|---|---|---|---|---|---|"]
+    for tag, r in arms.items():
+        if not r["n_resolved"]:
+            rows.append(f"| `{tag}` | {r['issued']} | {r['open']} | 0 | — | — | "
+                        f"not computed | — | — | — |")
+            continue
+        skill = "—" if r["skill"] is None else f"{r['skill']:+.3f}"
+        rows.append(f"| `{tag}` | {r['issued']} | {r['open']} | {r['n_resolved']} | "
+                    f"{r['hits']} | {r['misses']} | {r['brier']:.3f} | "
+                    f"{r['base_rate']:.1%} | {r['clim']:.3f} | {skill} |")
+    return rows
+
+
 def render_ledger():
     data = load_ledger()
     projs = data["projections"]
-    stats = brier_and_calibration(projs)
     now = datetime.now(timezone.utc)
     open_p = [p for p in projs if p["status"] == "open"]
     resolved = [p for p in projs if p["status"] in ("hit", "miss")]
@@ -349,19 +408,35 @@ def render_ledger():
            f"# KKR PREDICTIVE LEDGER — {now.strftime('%d%H%MZ %b %y').upper()}\n",
            "**A standing Retro-Prescient Audit™** · method: "
            "[RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)\n"]
-    if stats.get("n_resolved"):
-        out.append(f"Window: all-time · {len(projs)} issued · {len(open_p)} open "
-                   f"({len(overdue)} past deadline, unresolved) · "
-                   f"{stats['hits']} hits / {stats['misses']} misses · "
-                   f"**Brier {stats['brier']:.3f}** (0=oracle, 0.25=coin-flip on 50s)\n")
-        out.append("| stated probability | n resolved | realized frequency |")
-        out.append("|---|---|---|")
-        for band, d in stats["calibration"].items():
-            out.append(f"| {band} | {d['n']} | {d['realized']:.0%} |")
-        out.append("")
+    arms = arm_stats(projs)
+    plural = "s" if len(arms) != 1 else ""
+    out.append(f"Window: all-time · {len(projs)} issued across {len(arms)} forecaster "
+               f"arm{plural} · {len(open_p)} open "
+               f"({len(overdue)} past deadline, unresolved)\n")
+    out.append("**No pooled score is published.** A Brier score is a property of one "
+               "forecaster; an average across arms is nobody's record. Every figure "
+               "below is segregated by the arm that issued the projection. Skill is "
+               "measured against that arm's OWN realized base rate — the strategy of "
+               "stating the base rate every single time. Negative skill means the arm "
+               "is losing to that strategy.\n")
+    out.append("## STANDING BY FORECASTER ARM\n")
+    out.extend(_arm_table(arms))
+    out.append("")
+    scored = [(t, r) for t, r in arms.items() if r["n_resolved"]]
+    thin = [t for t, r in scored if r["n_resolved"] < 30]
+    if thin:
+        out.append("*Under 30 resolved a Brier score is noise, not a record: "
+                   + ", ".join("`" + t + "`" for t in thin) + ".*\n")
+    if scored:
+        for tag, r in scored:
+            out.append(f"### CALIBRATION — `{tag}` ({r['n_resolved']} resolved)\n")
+            out.append("| stated probability | n resolved | realized frequency |")
+            out.append("|---|---|---|")
+            for band, d in r["calibration"].items():
+                out.append(f"| {band} | {d['n']} | {d['realized']:.0%} |")
+            out.append("")
     else:
-        out.append(f"Window: all-time · {len(projs)} issued · {len(open_p)} open · "
-                   f"nothing resolved yet — the ledger earns meaning at first resolution\n")
+        out.append("Nothing resolved yet — the ledger earns meaning at first resolution.\n")
 
     if overdue:
         out.append("## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)\n")
@@ -372,10 +447,11 @@ def render_ledger():
 
     out.append("## OPEN PROJECTIONS\n")
     if open_p:
-        out.append("| id | issued | deadline | p | domain | statement |")
-        out.append("|---|---|---|---|---|---|")
+        out.append("| id | arm | issued | deadline | p | domain | statement |")
+        out.append("|---|---|---|---|---|---|---|")
         for p in sorted(open_p, key=lambda x: x["deadline"]):
-            out.append(f"| {p['id']} | {p['date_issued']} | {p['deadline']} | "
+            out.append(f"| {p['id']} | `{p.get('model') or 'unattributed'}` | "
+                       f"{p['date_issued']} | {p['deadline']} | "
                        f"{p['probability']}% | {p['domain']} | {p['statement']} |")
     else:
         out.append("None open.")
@@ -385,7 +461,8 @@ def render_ledger():
     if resolved:
         for p in sorted(resolved, key=lambda x: x["resolved_date"] or "", reverse=True):
             mark = "✓ HIT" if p["status"] == "hit" else "✗ MISS"
-            out.append(f"- **{mark}** {p['id']} ({p['probability']}%, due {p['deadline']}, "
+            out.append(f"- **{mark}** {p['id']} [`{p.get('model') or 'unattributed'}`] "
+                       f"({p['probability']}%, due {p['deadline']}, "
                        f"resolved {p['resolved_date']}): {p['statement']}"
                        + (f" — *{p['notes']}*" if p["notes"] else ""))
     else:
@@ -726,7 +803,7 @@ def main():
         print(json.dumps(brier_and_calibration(all_p), indent=2))
         lanes = {}
         for p in all_p:
-            lanes.setdefault(p.get("model", "?").split("/")[0], []).append(p)
+            lanes.setdefault(p.get("model") or "unattributed", []).append(p)
         for lane, ps in sorted(lanes.items()):
             s = brier_and_calibration(ps)
             if s.get("n_resolved"):
