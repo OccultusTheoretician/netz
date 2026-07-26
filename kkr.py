@@ -293,7 +293,7 @@ def append_projections(projs: list, model_tag: str, source_report: str) -> list:
     for i, p in enumerate(projs, existing_today + 1):
         p.update({"id": f"KKR-{today}-{i:02d}",
                   "date_issued": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-                  "model": model_tag, "source_report": source_report,
+                  "model": model_tag, "source_report": source_report, "source_packet": str(globals().get("_LAST_PACKET", "")),
                   "status": "open", "resolved_date": None, "notes": ""})
         data["projections"].append(p)
         added.append(p)
@@ -421,8 +421,11 @@ def cmd_generate(args):
 
     # the packet is always written — the manual Fable path costs nothing
     OUT.mkdir(exist_ok=True)
-    packet = OUT / f"kkr_packet_{now.strftime('%Y-%m-%d')}.md"
+    packet = OUT / f"kkr_packet_{now.strftime('%Y-%m-%d_%H%M')}.md"
+    _latest_packet = OUT / "kkr_packet_latest.md"
+    globals()["_LAST_PACKET"] = packet.name
     packet.write_text(prompt, encoding="utf-8")
+    _latest_packet.write_text(prompt, encoding="utf-8")
     print(f"KKR · packet → {packet}", file=sys.stderr)
     if args.packet_only:
         return
