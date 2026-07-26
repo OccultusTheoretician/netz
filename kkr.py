@@ -271,6 +271,11 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
         out.append(f"**This arm — `{model_tag}`:** {mine['issued']} issued · "
                    f"{mine['open']} open · nothing resolved yet — this arm earns a "
                    f"score at its first resolution.\n")
+    _void_n = sum(1 for _p in data["projections"] if _p.get("status") == "void")
+    if _void_n:
+        out.append(f"*{_void_n} projection(s) voided — terminated as unadjudicable, "
+                   f"never edited; each is itemised with its reason in "
+                   f"[LEDGER.md](LEDGER.md).*\n")
     out.append("### STANDING BY ARM\n")
     out.extend(_arm_table(arms))
     out.append("")
@@ -467,9 +472,26 @@ def render_ledger():
                        + (f" — *{p['notes']}*" if p["notes"] else ""))
     else:
         out.append("None yet. Misses will be listed here and never removed.")
+    out.append("\n## VOIDED — TERMINATED, NOT CORRECTED\n")
     if voided:
-        out.append(f"\n*Voided (unresolvable as stated): "
-                   f"{', '.join(p['id'] for p in voided)}*")
+        out.append("A sealed projection is never edited. Where one cannot be "
+                   "adjudicated as written, the only legitimate disposition is to "
+                   "terminate it and print why. The statement below is reproduced "
+                   "exactly as sealed, defect included. A void removes a position "
+                   "from scoring, which favours the forecaster — so every one is "
+                   "itemised here with its reason rather than listed as an id.\n")
+        out.append(f"*{len(voided)} of {len(projs)} issued "
+                   f"({len(voided) / len(projs):.1%}) have been voided.*\n")
+        for p in sorted(voided, key=lambda x: x["id"]):
+            out.append(f"- **{p['id']}** [`{p.get('model') or 'unattributed'}`] "
+                       f"({p['probability']}%, due {p['deadline']}"
+                       + (f", voided {p['resolved_date']}" if p.get("resolved_date") else "")
+                       + f") — statement as sealed: \u201c{p['statement']}\u201d"
+                       + (f"\n    - *Reason:* {p['notes']}" if p.get("notes")
+                          else "\n    - *Reason: NOT RECORDED — this void predates the "
+                               "printed-reason rule and is itself a conformance defect.*"))
+    else:
+        out.append("None. No projection has been terminated.")
     out.append("\n---\n**UNCLASSIFIED // OPEN SOURCES** · *the ledger scores the system, "
                "not the operator; consistency is not correctness — resolution is.*")
 
