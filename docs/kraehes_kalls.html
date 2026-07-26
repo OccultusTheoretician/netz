@@ -205,9 +205,9 @@ footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.6rem 0;positio
 </div></header>
 
 <div class="band"><div class="band-in">
-  <div class="stat"><span class="n dark">9</span><span class="l">Sealed</span></div>
-  <div class="stat"><span class="n">0</span><span class="l">Revealed</span></div>
-  <div class="stat"><span class="n">0</span><span class="l">Resolved</span></div>
+  <div class="stat"><span class="n dark" id="stat-sealed">9</span><span class="l">Sealed</span></div>
+  <div class="stat"><span class="n" id="stat-revealed">0</span><span class="l">Revealed</span></div>
+  <div class="stat"><span class="n" id="stat-resolved">0</span><span class="l">Resolved</span></div>
   <div class="stat"><span class="n">SHA-256</span><span class="l">Commitment</span></div>
   <div class="stat"><span class="n dark">Abyssal</span><span class="l">Default state</span></div>
 </div></div>
@@ -220,7 +220,7 @@ footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.6rem 0;positio
     outcome existed</strong>. The hash reveals nothing about the content. When a Kall is opened, its plaintext
     and salt are published, and anyone can recompute the hash to confirm it existed, unedited, at the sealed timestamp.</p>
 
-  <div class="clutch">
+  <div class="clutch" id="clutch">
     <div class="clutch-head">
       <span>ID</span><span>Conf</span><span>Deadline</span><span>Commitment · SHA-256</span><span>Status</span>
     </div>
@@ -306,7 +306,28 @@ footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.6rem 0;positio
 </div></section>
 
 <footer>
-  <div class="foot-in">
+  
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-num">III.</div>
+  <h2>Declaration under KNM-26 (rev. 2)</h2>
+  <p class="lede"><strong>Conformance configuration of the clutch above:</strong> Level 1 — discretionary reveal · Architecture A — private opening material · single custodian. (KNM 2.02, 5.06)</p>
+  <p><strong>Residual-discretion statement (KNM 6.03).</strong> Reveal of any Kall above is at the committer's sole discretion. Resolution is adjudicated by the committer against each Kall's sealed basis. The committer holds sole custody of the opening material. No independent party has examined the population or any resolution. This record supports statements about published calls and about how much is withheld; it does not support a calibration claim over the committer's forecasting generally, and none is made.</p>
+  <p><strong>Custody findings, printed (KNM A.02).</strong> At sealing: custody was single-location against horizons reaching 2036, and no recovery drill had been executed. These are control weaknesses in the deployment, not defects in the seals; binding is unaffected. Remediation is logged on the public log as it lands, drill dates included (KNM 4.05).</p>
+  <p><strong>Count anchoring (KNM 3.02).</strong> The external anchor for this log is the public commit history of this repository. Any deletion or edit of a sealed row is detectable against prior-published state.</p>
+</div></section>
+
+<section style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="sec-num">IV.</div>
+  <h2>Verification — construction public, log self-verifying</h2>
+  <p class="lede">Under KNP-26 rev. 2 (§4.01b) the preimage construction is published in the hashlog itself. Verifying a revealed Kall requires <strong>no material from this desk</strong> — only the public log and the reveal.</p>
+  <div class="abyssal" id="construction-block">
+    <strong>Construction (from the live hashlog):</strong><br>
+    preimage&nbsp;=&nbsp;id&nbsp;|&nbsp;timestamp&nbsp;|&nbsp;statement&nbsp;|&nbsp;resolution_basis&nbsp;|&nbsp;salt · separator "|" · SHA-256 · UTF-8 · pipe escaped as \u007C
+  </div>
+  <p><strong>Verification record.</strong> The construction was verified against all nine published commitments by independent re-derivation from the vault — 9/9 reproduce — recorded in the KNP-26 rev. 2 revision history. Re-verified 9/9 on 2026-07-25 after the 4.01b container upgrade landed on the public log (kalls.py verify).</p>
+  <p><a href="https://github.com/OccultusTheoretician/netz/blob/main/docs/kalls_hashlog.json">the hashlog</a> · <a href="https://github.com/OccultusTheoretician/netz/blob/main/KRAEHE_NEST_PROTOCOL.md">KNP-26</a> · <a href="https://github.com/OccultusTheoretician/netz/blob/main/kalls.py">reference implementation</a> · <a href="standards.html">the standards register</a></p>
+</div></section>
+<div class="foot-in">
     <div class="foot-brand">
       <img src="crow.png" alt="">
       <span class="nm">Nebelkrähe · The Prescient Desk</span>
@@ -339,5 +360,33 @@ footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.6rem 0;positio
   </div>
 </footer>
 
+
+<script>
+(function(){
+  function cap(s){return s?s.charAt(0)+s.slice(1).toLowerCase():s;}
+  fetch('kalls_hashlog.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    var recs=d.records||[]; var c={};
+    recs.forEach(function(r){var s=r.status||'SEALED';c[s]=(c[s]||0)+1;});
+    var res=(c.RESOLVED_HIT||0)+(c.RESOLVED_MISS||0);
+    var el;
+    if((el=document.getElementById('stat-sealed')))el.textContent=c.SEALED||0;
+    if((el=document.getElementById('stat-revealed')))el.textContent=c.REVEALED||0;
+    if((el=document.getElementById('stat-resolved')))el.textContent=res;
+    var cl=document.getElementById('clutch'); if(!cl)return;
+    var head=cl.querySelector('.clutch-head'); var h='';
+    recs.forEach(function(r){
+      var hash=r.commitment||''; var st=(r.status||'SEALED').replace('RESOLVED_','Resolved ');
+      h+='<div class="egg"><span class="id">'+r.id+'</span><span class="p">'+
+         (r.probability!=null?r.probability+'%':'—')+'</span><span class="dl">'+(r.deadline||'—')+
+         '</span><span class="hash"><b>'+hash.slice(0,8)+'</b>'+hash.slice(8)+
+         '</span><span class="st">'+cap(st)+'</span></div>';
+    });
+    cl.innerHTML=''; if(head)cl.appendChild(head); cl.insertAdjacentHTML('beforeend',h);
+    var con=d.construction, cb=document.getElementById('construction-block');
+    if(con&&cb){cb.innerHTML='<strong>Construction (from the live hashlog):</strong><br>preimage&nbsp;=&nbsp;'+
+      (con.preimage_order||[]).join('&nbsp;|&nbsp;')+' · separator "'+con.separator+'" · '+con.hash+' · '+con.encoding+' · pipe escaped as '+con.pipe_escape;}
+  }).catch(function(e){/* static fallback stands */});
+})();
+</script>
 </body>
 </html>
