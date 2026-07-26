@@ -1,0 +1,42 @@
+{
+  "_note": "Single source of truth for the watch list, shared by the hosted CI channel and the local desk. Lifted verbatim from desk_config.json 'spion' on 2026-07-26 — these URLs are live-verified by prior runs, unlike any list I construct. Patch cmd_spion to read this file so the two instruments provably watch the same pages.",
+  "user_agent": "scouter/1.0 spion (audit-standards change monitor; polite; low-frequency)",
+  "contact_url": "https://occultustheoretician.github.io/netz/spion.html",
+  "sources": [
+    {
+      "id": "fasb-technical-agenda",
+      "name": "FASB technical agenda",
+      "org": "FASB",
+      "url": "https://storage.fasb.org/FASB%20Technical%20Agenda%20Overview.pdf",
+      "tier": "PRIMARY"
+    },
+    {
+      "id": "pcaob-standard-setting-projects",
+      "name": "PCAOB standard-setting projects",
+      "org": "PCAOB",
+      "url": "https://pcaobus.org/oversight/standards/standard-setting-research-projects",
+      "tier": "PRIMARY"
+    },
+    {
+      "id": "gao-yellow-book-page",
+      "name": "GAO Yellow Book page",
+      "org": "GAO",
+      "url": "https://www.gao.gov/yellowbook",
+      "tier": "PRIMARY"
+    },
+    {
+      "id": "aicpa-exposure-drafts-landing",
+      "name": "AICPA exposure drafts landing",
+      "org": "AICPA",
+      "url": "https://www.aicpa-cima.com/resources/landing/aicpa-exposure-drafts-of-proposed-sass-ssaes-and-sqmss",
+      "tier": "PRIMARY"
+    },
+    {
+      "id": "gasb-documents-for-comment",
+      "name": "GASB documents for comment",
+      "org": "GASB",
+      "url": "https://www.gasb.org/documents-for-public-comment",
+      "tier": "PRIMARY"
+    }
+  ]
+}
