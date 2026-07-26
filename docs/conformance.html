@@ -57,6 +57,14 @@ footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--dim);font-s
 </table></div>
 <p class="note" id="arm-note">No arm's score is comparable to another's until both clear the thirty-resolved floor. Below that floor a Brier is printed because the rule is print-and-caveat, not suppress — it is not evidence of skill in either direction.</p>
 </div></section>
+<section><div class="wrap"><h2>Against a named baseline</h2>
+<p class="note">A Brier score alone cannot tell a reader whether a forecaster beat the dumbest available strategy. RPAS's fourth law requires a named baseline, so this page prints one: the <em>climatological</em> forecast, which ignores every question and states the arm's own realized base rate every time. Its Brier is b(1−b). Skill is 1 − (Brier ÷ climatological): above zero beats the baseline, below zero loses to it.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Arm</th><th>Resolved</th><th>Brier</th><th>Base rate</th><th>Climatological</th><th>Skill</th></tr></thead>
+<tbody id="base-rows"><tr><td colspan="6" class="note">Computing from ledger.json…</td></tr></tbody>
+</table></div>
+<p class="note">The baseline is a lower bound on competence, not a target. It is also self-referential — it is computed from the same resolved set it is compared against — so it flatters no one and is only meaningful once the resolution count is large. At the counts on this page, a skill score of either sign is noise and should be read as one.</p>
+</div></section>
 <section><div class="wrap"><h2>Gates and floors</h2>
 <div class="gate"><span>RPAS 5.02 · fifty-entry gate</span><span id="g-fifty" class="pass">MET (77)</span></div>
 <div class="gate"><span>Thirty-resolved noise floor (whole ledger)</span><span id="g-thirty" class="warn">below floor (13/30) — any score is noise</span></div>
@@ -77,6 +85,12 @@ footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--dim);font-s
 </div>
 
 <p class="note">A conformance page that flattered the desk would be worthless. The FAIL rows are the point: the standard is real enough to fail its own author, in public, with paragraph numbers.</p>
+
+<div class="finding">
+<div class="fh">Standing disclosure · the pre-RPAS ledger copy</div>
+<p>The repository carries <span class="tag">ledger.json.pre_rpas</span>, a copy of the ledger taken before the RPAS-26 rescoring pass. It is public deliberately. Anyone may diff it against the live <a href="ledger.json">ledger.json</a> and see exactly which entries changed when the standard was applied.</p>
+<p>It is published because a record that can be rescored and offers no way to inspect the rescoring is asking to be trusted rather than checked, and this desk's whole proposition is the opposite. The before-copy is the evidence; naming it here is what separates a disclosed methodology change from a quiet one.</p>
+</div>
 </div></section>
 <footer><div class="wrap">NEBELKRÄHE · THE PRESCIENT DESK — conformance is computed, not asserted.</div></footer>
 <script>
@@ -116,6 +130,23 @@ fetch('ledger.json',{cache:'no-store'}).then(function(r){return r.json();}).then
     if(a2.fc||a2.kk){fcparts.push(esc(LABEL[k]||k)+' — '+a2.fc+' fc, '+a2.kk+' k/k');}
   }
   var tb=document.getElementById('arm-rows');if(tb)tb.innerHTML=rows||'<tr><td colspan="9" class="note">No projections found.</td></tr>';
+
+  var brows='';
+  for(i=0;i<keys.length;i++){
+    k=keys[i];var a3=arms[k],r3=a3.hit+a3.miss;
+    var bb='—',cc='—',ss='—',br3='—';
+    if(r3>0){
+      br3=(a3.bs/a3.bn).toFixed(3);
+      var base=a3.hit/r3;bb=(base*100).toFixed(1)+'%';
+      var clim=base*(1-base);cc=clim.toFixed(3);
+      if(clim>0){var sk=1-((a3.bs/a3.bn)/clim);ss=(sk>=0?'+':'')+sk.toFixed(3);}
+      else{ss='n/a';}
+    }
+    brows+='<tr><td>'+esc(LABEL[k]||k)+'<div class="tag">'+esc(k)+'</div></td>'+
+      '<td class="num">'+r3+'</td><td class="num">'+br3+'</td><td class="num">'+bb+'</td>'+
+      '<td class="num">'+cc+'</td><td class="num">'+ss+'</td></tr>';
+  }
+  var bt=document.getElementById('base-rows');if(bt)bt.innerHTML=brows||'<tr><td colspan="6" class="note">No projections found.</td></tr>';
 
   var g=document.getElementById('g-fifty');if(g){g.textContent=p.length>=50?'MET ('+p.length+')':'NOT MET ('+p.length+'/50)';g.className=p.length>=50?'pass':'fail';}
   g=document.getElementById('g-thirty');if(g){g.textContent=res>=30?'MET ('+res+'/30)':'below floor ('+res+'/30) — any score is noise';g.className=res>=30?'pass':'warn';}
