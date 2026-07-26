@@ -705,7 +705,22 @@ def main():
     elif args.score:
         render_ledger()
         all_p = load_ledger()["projections"]
-        print("=== OVERALL ==="); print(json.dumps(brier_and_calibration(all_p), indent=2))
+        _ov_arms = {}
+        for _ov_x in (all_p or []):
+            if isinstance(_ov_x, dict) and _ov_x.get("status") in ("hit", "miss"):
+                _ov_k = _ov_x.get("model") or "(untagged)"
+                _ov_arms[_ov_k] = _ov_arms.get(_ov_k, 0) + 1
+        if len(_ov_arms) > 1:
+            _ov_d = ", ".join("%s %d" % (k, v) for k, v in sorted(_ov_arms.items()))
+            print("=== OVERALL - POOLED across %d arms (%s). NOT a forecaster's record. "
+                  "Diagnostic only; do not publish or quote. See per-lane blocks. ===" % (len(_ov_arms), _ov_d))
+        elif len(_ov_arms) == 1:
+            _ov_k, _ov_v = list(_ov_arms.items())[0]
+            print("=== OVERALL - one arm only (%s, %d resolved). Equals that arm's record; "
+                  "label it by arm if quoted. ===" % (_ov_k, _ov_v))
+        else:
+            print("=== OVERALL - no resolved entries ===")
+        print(json.dumps(brier_and_calibration(all_p), indent=2))
         lanes = {}
         for p in all_p:
             lanes.setdefault(p.get("model", "?").split("/")[0], []).append(p)
