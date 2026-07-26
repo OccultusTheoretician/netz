@@ -1,9 +1,11 @@
 # KRÄHE'S NEST PROTOCOL
-## First Edition · 2026
+## First Edition · 2026 · Revision 2
 **KNP-26 · Issued by the Retro-Prescient Audit Desk**
 *Implementer specification for the Selective-Disclosure Commitment Method (KNM-26). This document is buildable-to: an implementer who follows it produces a conformant sealer, hashlog, and aggregator without further reference to the desk.*
 
-**PROVENANCE: DRAFT** (Claude-drafted under direction, 2026-07-25. The reference hash construction matches the first Krähe's Kalls clutch sealed the same day. His only after rework. An implementer should treat the JSON shapes below as normative and the prose as explanatory.)
+**PROVENANCE: DRAFT** (Claude-drafted under direction; revision 2 of 2026-07-26 UTC. His only after rework. The JSON shapes are normative and the prose explanatory. The 2.01 construction was verified against the demonstration clutch on 2026-07-26 UTC, the day following the 2026-07-25T18:30:00Z seal: all nine published commitments reproduce under it, independently re-derived from the vault by a second working session with no sight of the sealing code. The construction paragraph survived its first audit unamended.)
+
+**WHAT CHANGED IN REVISION 2.** Two findings, both from independent working sessions converging on the same gaps. First: revision 1 never pinned the hashlog's container, so two conformant implementations could disagree on the first byte of the file — 4.01 now defines the top-level object. Second: the preimage construction lived only in spec prose and in committers' private vaults, but 5.02 verification is impossible without it — 4.01b now requires the construction as public machine-readable metadata in every hashlog. Also added: optional `level`, `architecture`, and `reveal_date` record fields carrying the KNM-26 rev. 2 conformance declarations (KNM Ch. 4–5) into the wire format.
 
 ---
 
@@ -85,7 +87,15 @@ Any language producing the identical byte sequence for the preimage yields the i
 
 ## CHAPTER 4 — THE HASHLOG
 
-**4.01 Hashlog record (normative shape).** The public log carries only opaque and non-sensitive fields — never statement, basis, or salt:
+**4.01 Hashlog container and record (normative shape).** The hashlog is a single JSON **object** — not a bare array — with exactly this top-level shape:
+```json
+{
+  "protocol": "KNP-26",
+  "construction": { ... },
+  "records": [ ... ]
+}
+```
+Each entry of `records` carries only opaque and non-sensitive fields — never statement, basis, or salt:
 ```json
 {
   "id": "KK-20260725-01",
@@ -94,10 +104,25 @@ Any language producing the identical byte sequence for the preimage yields the i
   "probability": 60,
   "deadline": "2027-01-01",
   "status": "SEALED",
-  "domain": "military_conflict"
+  "domain": "military_conflict",
+  "level": 1,
+  "architecture": "A",
+  "reveal_date": null
 }
 ```
-`status` is one of `SEALED` | `REVEALED` | `RESOLVED_HIT` | `RESOLVED_MISS` | `VOID`. `probability`, `deadline`, and `domain` are publishable metadata (they reveal nothing about the specific claim content and let the aggregator render the collation). If a committer wishes even the probability abyssal, it may be omitted; the interoperability contract is only `id`, `timestamp`, `commitment`, `status`.
+`status` is one of `SEALED` | `REVEALED` | `RESOLVED_HIT` | `RESOLVED_MISS` | `VOID`. `probability`, `deadline`, and `domain` are publishable metadata; they are **outside the preimage** and therefore anchored by §4.03, not bound by the hash — a hashlog **should** say so on its face. `level` and `architecture` carry the committer's KNM-26 conformance declarations (KNM 2.02, 5.06); `reveal_date` is required where `level` is 2. The interoperability contract is `protocol`, `construction`, and per-record `id`, `timestamp`, `commitment`, `status`.
+
+**4.01b The construction block (must — added rev. 2).** The `construction` object states the preimage recipe in machine-readable form:
+```json
+{
+  "preimage_order": ["id", "timestamp", "statement", "resolution_basis", "salt"],
+  "separator": "|",
+  "hash": "SHA-256",
+  "encoding": "UTF-8",
+  "pipe_escape": "\\u007C"
+}
+```
+This block exists because §5.02 verification is impossible without the recipe: a stranger holding a reveal and a bare commitment cannot recompute unless the construction is public. Revision 1 left the recipe in spec prose and in the committer's private store — which meant the one artifact verification depends on lived behind the same wall as the secrets. A hashlog without a construction block is not conformant with revision 2. The block describes §2.01's construction and must match it; a committer using a legacy construction (sealed before this revision) publishes the construction actually used, and the published commitment always governs over any spec text.
 
 **4.02 Append-only (must).** The hashlog is append-only. New Kalls append; a reveal or resolution *updates the status field of an existing record in place* but must never remove a record or alter its `commitment`. The committed count is the number of records.
 
@@ -115,7 +140,7 @@ Without external anchoring, the count is not committed — the committer could r
 
 **5.01 Reveal (must).** To reveal a Kall, the committer publishes its `statement`, `resolution_basis`, and `salt` (the vault fields), and updates the hashlog record's `status` to `REVEALED` (or a resolved status). Reveal is voluntary, per-Kall, and irreversible (a revealed Kall's content is now public).
 
-**5.02 Verification (normative procedure).** Any party verifies a revealed Kall by reconstructing the canonical preimage from the published fields and recomputing the hash:
+**5.02 Verification (normative procedure).** Any party verifies a revealed Kall by reconstructing the canonical preimage — per the hashlog's own `construction` block (4.01b) — from the published fields and recomputing the hash:
 ```
 recomputed = SHA-256( id | timestamp | statement | resolution_basis | salt )
 verified   = (recomputed == published_commitment)
@@ -150,7 +175,7 @@ A match proves the revealed content is exactly what was sealed at `timestamp`, u
 
 **7.01** A **conformant sealer** implements Chapters 2, 3, 5 (§5.01–5.03): canonical preimage, mandatory high-entropy salt, vault/hashlog separation with the vault kept private, append-only status updates, and voluntary per-Kall reveal with no forced-reveal path.
 
-**7.02** A **conformant hashlog** satisfies Chapter 4: the §4.01 record shape (at minimum the four-field interoperability contract), append-only with in-place status updates, and external anchoring per §4.03.
+**7.02** A **conformant hashlog** satisfies Chapter 4: the §4.01 container and record shape (at minimum `protocol`, `construction`, and the four per-record fields), the §4.01b construction block, append-only with in-place status updates, and external anchoring per §4.03.
 
 **7.03** A **conformant aggregator** satisfies Chapter 6: read-only, no submissions, no faculty ranking, verification-on-display, and revealed-content responsibility.
 
@@ -161,3 +186,13 @@ A match proves the revealed content is exactly what was sealed at `timestamp`, u
 ---
 
 *End of KNP-26. The method this protocol implements is KNM-26. Together they define Krähe's Nest: a federated, trustless, selective-disclosure prediction-commitment protocol in which each committer holds their own vault and the Nest only reads.*
+
+---
+
+## REVISION HISTORY
+
+**Rev. 2 · 2026-07-26 UTC.** Container pinned as a JSON object (4.01), closing the finding that two conformant implementations could disagree on the file's first byte. Construction block made mandatory public metadata (4.01b) so §5.02 verification never depends on private material; this and the container finding were reached independently by two working sessions operating without sight of each other, and the convergence is recorded here as the reason for the change. Optional `level`, `architecture`, `reveal_date` fields added, carrying KNM-26 rev. 2 declarations into the wire format. Separately recorded: §2.01's construction was verified against the nine published commitments of the demonstration clutch by independent re-derivation from the vault — 9/9 reproduce — on 2026-07-26 UTC, the day following the 2026-07-25T18:30:00Z seal. The construction paragraph stands unamended.
+
+**Correction · 2026-07-26 UTC.** This revision was originally stamped 2026-07-25 while recording a verification performed after 00:00Z on 2026-07-26 — a document dated before the events it records. Both dates were locally true: the desk operates at UTC−6, so the 2026-07-25T18:30:00Z seal fell on the committer's 25th and the verification ran on the committer's evening of that same local day but the following UTC day. That is precisely why relative-day language and local dates are out of house style: every date in this document family is absolute UTC. The stamp is corrected here rather than silently substituted. The commitments, the construction, and the 9/9 reproduction are unaffected.
+
+**Rev. 1 · 2026-07-25.** First edition, issued the day the demonstration clutch was sealed.
