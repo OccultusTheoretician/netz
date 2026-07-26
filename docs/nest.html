@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><title>The Nest — federation of committed forecasters</title><style>
+:root{--bg:#0c0e11;--fg:#d6d3cb;--dim:#8b8b85;--brass:#dcb65e;--line:#26292f;--bad:#c76a5a;--good:#7fa86e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 "IBM Plex Sans",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 1.25rem}
+nav{border-bottom:1px solid var(--line);padding:.7rem 0}nav .wrap{display:flex;gap:1.1rem;flex-wrap:wrap}
+nav a{color:var(--dim);text-decoration:none;font:500 .78rem "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+nav a:hover{color:var(--brass)}header{padding:3rem 0 1.5rem}h1{font-size:1.9rem;margin:.2rem 0}
+.kicker{font:600 .72rem "IBM Plex Mono",monospace;letter-spacing:.22em;color:var(--brass);text-transform:uppercase}
+.dek{color:var(--dim);max-width:46rem}section{border-top:1px solid var(--line);padding:2.2rem 0}
+h2{font:600 .8rem "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+textarea{width:100%;min-height:200px;background:#101317;color:var(--fg);border:1px solid var(--line);padding:.8rem;font:13px/1.5 "IBM Plex Mono",monospace}
+button{background:var(--brass);color:#14110a;border:0;padding:.65rem 1.3rem;font:600 .8rem "IBM Plex Mono",monospace;letter-spacing:.1em;cursor:pointer;margin-top:.7rem}
+.verdict{font:600 1rem "IBM Plex Mono",monospace;padding:1rem;border:1px solid var(--line);margin-top:1rem;word-break:break-all}
+.ok{color:var(--good);border-color:var(--good)}.no{color:var(--bad);border-color:var(--bad)}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:.82rem;word-break:break-all}.note{color:var(--dim);font-size:.85rem}
+table{border-collapse:collapse;min-width:100%;width:max-content}.tw{overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:.5rem .7rem;text-align:left;font-size:.85rem}
+th{font-family:"IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--dim);text-transform:uppercase;font-size:.72rem}
+a{color:var(--brass)}footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--dim);font-size:.78rem}
+</style></head><body><nav><div class="wrap"><a href="index.html">Desk</a><a href="report.html">Report</a><a href="ledger.html">Ledger</a><a href="kkr.html">KKR</a><a href="kraehes_kalls.html">Kalls</a><a href="standards.html">Standards</a><a href="conformance.html">Conformance</a><a href="verify.html" id="nv">Verify</a><a href="nest.html" id="nn">Nest</a></div></nav>
+<header><div class="wrap"><div class="kicker">KNP-26 Ch. 6 · a reader, not a server</div>
+<h1>The Nest</h1>
+<p class="dek">A read-only aggregator of KNP-26 conformant hashlogs. Each committer runs their own sealer and publishes their own log on their own surface — the way RSS federates. No account, no backend, no central store. The Nest fetches each listed log in your browser, validates the §4.01 contract, and renders the state.</p>
+</div></header>
+<section><div class="wrap"><h2>Committers</h2>
+<div class="tw"><table><thead><tr><th>committer</th><th>sealed</th><th>revealed</th><th>resolved</th><th>reveal rate</th><th>log</th></tr></thead>
+<tbody id="rows"><tr><td colspan="6" class="note">reading logs…</td></tr></tbody></table></div>
+<p class="note" id="floor"></p>
+</div></section>
+<section><div class="wrap"><h2>No faculty ranking — by rule</h2>
+<p>Per KNP 6.05 the Nest must not rank committers as prescient or present aggregate display as evidence of foresight. Calibration, where shown, appears only past a thirty-resolved floor and carries its noise caveat on its face. Per 6.06: this page is an aggregator of commitments, not a publisher vouching for content. Sealed commitments are opaque. For revealed content, each Kall is attributed to its source log; material that is unlawful or targets private individuals is removed from display on notice.</p>
+</div></section>
+<section><div class="wrap"><h2>Join the federation</h2>
+<p>Publish a KNP-26 conformant hashlog — <a href="https://github.com/OccultusTheoretician/netz/blob/main/KRAEHE_NEST_PROTOCOL.md">the protocol</a> specifies the container, record shape, and mandatory public construction block; <a href="https://github.com/OccultusTheoretician/netz/blob/main/kalls.py">kalls.py</a> is a working reference sealer. Host the log anywhere CORS-open (a raw GitHub URL works). Then add yourself to <a href="https://github.com/OccultusTheoretician/netz/blob/main/docs/nest_sources.json">nest_sources.json</a> by pull request. Your seals stay yours; the Nest only reads.</p>
+</div></section>
+<footer><div class="wrap">NEBELKRÄHE · THE PRESCIENT DESK — the Nest reads; it never holds.</div></footer>
+<script>
+(function(){
+fetch('nest_sources.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(srcs){
+  var tb=document.getElementById('rows'); tb.innerHTML='';
+  var below=false;
+  srcs.forEach(function(s){
+    fetch(s.hashlog,{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+      var recs=d.records||[]; var ok=(d.protocol==='KNP-26');
+      var c={}; recs.forEach(function(r){var t=r.status||'SEALED'; c[t]=(c[t]||0)+1;});
+      var res=(c.RESOLVED_HIT||0)+(c.RESOLVED_MISS||0);
+      var rev=(c.REVEALED||0)+res; var rate=recs.length?Math.round(100*rev/recs.length):0;
+      if(res<30)below=true;
+      var tr=document.createElement('tr');
+      tr.innerHTML='<td><a href="'+(s.home||s.hashlog)+'">'+s.name+'</a>'+(ok?'':' <span class="note">(non-conformant)</span>')+'</td><td>'+(c.SEALED||0)+'</td><td>'+(c.REVEALED||0)+'</td><td>'+res+'</td><td>'+rate+'%</td><td class="mono"><a href="'+s.hashlog+'">json</a></td>';
+      tb.appendChild(tr);
+      document.getElementById('floor').textContent=below?'Committers below the thirty-resolved floor carry no calibration display: under thirty resolutions, any score is noise, and the Nest says so rather than printing one.':'';
+    }).catch(function(){
+      var tr=document.createElement('tr'); tr.innerHTML='<td>'+s.name+'</td><td colspan="5" class="note">log unreachable (host must be CORS-open)</td>'; tb.appendChild(tr);
+    });
+  });
+}).catch(function(){document.getElementById('rows').innerHTML='<tr><td colspan="6" class="note">nest_sources.json unreachable</td></tr>';});
+})();
+</script></body></html>

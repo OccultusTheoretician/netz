@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><title>Verify a Kall — The Prescient Desk</title><style>
+:root{--bg:#0c0e11;--fg:#d6d3cb;--dim:#8b8b85;--brass:#dcb65e;--line:#26292f;--bad:#c76a5a;--good:#7fa86e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 "IBM Plex Sans",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 1.25rem}
+nav{border-bottom:1px solid var(--line);padding:.7rem 0}nav .wrap{display:flex;gap:1.1rem;flex-wrap:wrap}
+nav a{color:var(--dim);text-decoration:none;font:500 .78rem "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+nav a:hover{color:var(--brass)}header{padding:3rem 0 1.5rem}h1{font-size:1.9rem;margin:.2rem 0}
+.kicker{font:600 .72rem "IBM Plex Mono",monospace;letter-spacing:.22em;color:var(--brass);text-transform:uppercase}
+.dek{color:var(--dim);max-width:46rem}section{border-top:1px solid var(--line);padding:2.2rem 0}
+h2{font:600 .8rem "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+textarea{width:100%;min-height:200px;background:#101317;color:var(--fg);border:1px solid var(--line);padding:.8rem;font:13px/1.5 "IBM Plex Mono",monospace}
+button{background:var(--brass);color:#14110a;border:0;padding:.65rem 1.3rem;font:600 .8rem "IBM Plex Mono",monospace;letter-spacing:.1em;cursor:pointer;margin-top:.7rem}
+.verdict{font:600 1rem "IBM Plex Mono",monospace;padding:1rem;border:1px solid var(--line);margin-top:1rem;word-break:break-all}
+.ok{color:var(--good);border-color:var(--good)}.no{color:var(--bad);border-color:var(--bad)}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:.82rem;word-break:break-all}.note{color:var(--dim);font-size:.85rem}
+table{border-collapse:collapse;min-width:100%;width:max-content}.tw{overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:.5rem .7rem;text-align:left;font-size:.85rem}
+th{font-family:"IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--dim);text-transform:uppercase;font-size:.72rem}
+a{color:var(--brass)}footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--dim);font-size:.78rem}
+</style></head><body><nav><div class="wrap"><a href="index.html">Desk</a><a href="report.html">Report</a><a href="ledger.html">Ledger</a><a href="kkr.html">KKR</a><a href="kraehes_kalls.html">Kalls</a><a href="standards.html">Standards</a><a href="conformance.html">Conformance</a><a href="verify.html" id="nv">Verify</a><a href="nest.html" id="nn">Nest</a></div></nav>
+<header><div class="wrap"><div class="kicker">KNP-26 §5.02 · trust nothing, recompute</div>
+<h1>Verify a Kall</h1>
+<p class="dek">Paste a reveal block. Your browser reconstructs the canonical preimage per the construction published in the hashlog itself (§4.01b), recomputes SHA-256 locally via WebCrypto, and compares it to the sealed commitment on the public log. Nothing is sent anywhere; the desk is not consulted; the desk could not interfere if it wanted to.</p>
+</div></header>
+<section><div class="wrap"><h2>The reveal block</h2>
+<p class="note">A reveal is JSON published by the committer when a Kall is opened — at minimum the fields named by the construction (for this log: <span class="mono" id="fields">id, timestamp, statement, resolution_basis, salt</span>).</p>
+<textarea id="reveal" placeholder='{"id":"KK-20260725-01","timestamp":"2026-07-25T18:30:00Z","statement":"...","resolution_basis":"...","salt":"..."}'></textarea>
+<button id="go">RECOMPUTE &amp; COMPARE</button>
+<div id="out" class="verdict" style="display:none"></div>
+<div class="note" style="margin-top:1rem">Construction in force (read live from <a href="kalls_hashlog.json">the hashlog</a>): <span class="mono" id="con">loading…</span></div>
+</div></section>
+<section><div class="wrap"><h2>What a match proves — and what it does not</h2>
+<p>A match proves this exact content existed, unedited, at the sealed timestamp — before the outcome. It does not prove the call was wise, that resolution was fair, or anything about the sealed-but-unrevealed remainder. Per KNM 6.03 those discretions survive the mechanism and are disclosed, not hidden. The count of what remains dark is public: that is the whole design.</p>
+</div></section>
+<footer><div class="wrap">NEBELKRÄHE · THE PRESCIENT DESK — verification requires no material from this desk.</div></footer>
+<script>
+(function(){
+var CON=null;
+function esc(s,pe){return String(s).split('|').join(pe);}
+fetch('kalls_hashlog.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+  CON=d; var c=d.construction||{};
+  document.getElementById('con').textContent=(c.preimage_order||[]).join(' | ')+'  ·  sep "'+c.separator+'"  ·  '+c.hash+'  ·  '+c.encoding+'  ·  pipe -> '+c.pipe_escape;
+  document.getElementById('fields').textContent=(c.preimage_order||[]).join(', ');
+}).catch(function(){document.getElementById('con').textContent='hashlog unreachable — open this page from the live site';});
+document.getElementById('go').onclick=function(){
+  var out=document.getElementById('out'); out.style.display='block'; out.className='verdict';
+  var rv; try{rv=JSON.parse(document.getElementById('reveal').value);}catch(e){out.textContent='Not valid JSON: '+e.message; out.className='verdict no'; return;}
+  if(!CON||!CON.construction){out.textContent='Hashlog/construction not loaded.'; out.className='verdict no'; return;}
+  var c=CON.construction, order=c.preimage_order||[], pe=c.pipe_escape||'\\u007C', sep=c.separator||'|';
+  for(var i=0;i<order.length;i++){if(rv[order[i]]==null){out.textContent='Reveal missing field: '+order[i]; out.className='verdict no'; return;}}
+  var pre=order.map(function(f){return esc(rv[f],pe);}).join(sep);
+  crypto.subtle.digest('SHA-256', new TextEncoder().encode(pre)).then(function(buf){
+    var hex=Array.prototype.map.call(new Uint8Array(buf),function(b){return ('0'+b.toString(16)).slice(-2);}).join('');
+    var rec=(CON.records||[]).filter(function(r){return r.id===rv.id;})[0];
+    if(!rec){out.textContent='No record with id '+rv.id+' on the public log.\ncomputed: '+hex; out.className='verdict no'; return;}
+    if(hex===rec.commitment){out.innerHTML='VERIFIED — recomputed hash matches the sealed commitment.<br>id '+rec.id+' · sealed '+rec.timestamp+' · status '+rec.status+'<br><span class="mono">'+hex+'</span>'; out.className='verdict ok';}
+    else{out.innerHTML='MISMATCH — this reveal does not reproduce the sealed commitment.<br>computed <span class="mono">'+hex+'</span><br>sealed &nbsp;&nbsp;<span class="mono">'+rec.commitment+'</span>'; out.className='verdict no';}
+  });
+};
+})();
+</script></body></html>
