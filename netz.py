@@ -639,7 +639,7 @@ blockquote{margin:.6rem 0; padding:.55rem .95rem;
   letter-spacing:.02em}
 
 /* ---- TABLES ---- */
-.tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1rem 0}
+.secnav{display:flex;gap:.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.5rem 0 .6rem;margin:0 0 1rem;border-bottom:1px solid var(--line)}.secnav a{flex:0 0 auto;font:600 .66rem var(--mono);letter-spacing:.1em;color:var(--dim);text-decoration:none;border:1px solid var(--line);padding:.28rem .55rem;text-transform:uppercase;scroll-margin-top:1rem}.secnav a:hover{color:var(--brass);border-color:var(--brass)}.pmk{font:600 .6rem var(--mono);letter-spacing:.14em;color:var(--dim);margin-right:.55rem;vertical-align:middle}.snum{font-family:var(--mono);color:var(--brass);margin-right:.45rem}.stop{float:right;font-size:.68rem;color:var(--dim);text-decoration:none}.stop:hover{color:var(--brass)}h2{scroll-margin-top:1.2rem}.tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1rem 0}
 .tablewrap table{margin:0}
 table{border-collapse:collapse; min-width:100%; width:max-content; font-size:.79rem;
   font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums;
@@ -805,6 +805,30 @@ def _split_sections(md: str):
     return preamble, secs
 
 
+
+def _intel_sections(inner: str, scope: str) -> str:
+    """Pane-scoped sectioning: jump chips, ids, portion marks, numbering."""
+    import re as _re
+    h2s = _re.findall(r"<h2>(.*?)</h2>", inner, _re.DOTALL)
+    if len(h2s) < 3:
+        return inner
+    chips, box = [], {"i": 0}
+    def _repl(m):
+        box["i"] += 1
+        i = box["i"]
+        title = m.group(1)
+        sid = f"{scope}_h{i:02d}"
+        plain = _re.sub(r"<[^>]+>", "", title).strip()[:26]
+        chips.append(f"<a href='#{sid}'>{i:02d} · {plain}</a>")
+        return (f"<h2 id='{sid}'><span class='pmk'>(U//OS)</span>"
+                f"<span class='snum'>{i:02d}.</span> {title}"
+                f"<a class='stop' href='#{scope}_nav'>\u25b2</a></h2>")
+    inner = _re.sub(r"<h2>(.*?)</h2>", _repl, inner, flags=_re.DOTALL)
+    nav = f"<nav class='secnav' id='{scope}_nav'>" + "".join(chips) + "</nav>"
+    return nav + inner
+
+
+
 def render_html(md: str, title: str) -> str:
     # ---- letterhead + dashboard data ----
     dtg_m = re.search(r"—\s*(\d{6}Z\s+\w{3}\s+\d{2})", md)
@@ -864,7 +888,7 @@ def render_html(md: str, title: str) -> str:
     _, sections = _split_sections(md)
     if is_ledger or len(sections) < 4:
         body = _render_md_body(re.sub(r"(?m)^#\s+.+$", "", md))  # strip H1, keep rest
-        page = f"{letterhead}{body}{footer}"
+        page = f"{letterhead}{_intel_sections(body, 's')}{footer}"
     else:
         # assign each section to a tab bucket
         buckets = {label: [] for label, _ in _TAB_MAP}
@@ -890,6 +914,7 @@ def render_html(md: str, title: str) -> str:
                 f"<button class='tab{' active' if first else ''}' onclick=\"netzTab('{tid}',this)\">{label}</button>")
             inner = "".join(f"<h2>{md_inline(h.lstrip('# '))}</h2>{_render_md_body(b)}"
                              for h, b in secs)
+            inner = _intel_sections(inner, tid)
             panes_html.append(
                 f"<div class='pane{' active' if first else ''}' id='{tid}'>{inner}</div>")
             first = False
