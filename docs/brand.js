@@ -74,4 +74,16 @@
     if (!queued) { queued = true; requestAnimationFrame(frame); }
   }
   window.addEventListener("pointermove", move, { passive: true });
+
+  /* The site tells every visitor to recompute the hashes. Typing the word it
+     keeps using is the entry requirement, which makes finding it an act of
+     doing what was asked rather than knowing a cheat code. */
+  var buf = "";
+  window.addEventListener("keydown", function (e) {
+    if (e.key.length !== 1) return;
+    var t = e.target && e.target.tagName;
+    if (t === "INPUT" || t === "TEXTAREA" || (e.target && e.target.isContentEditable)) return;
+    buf = (buf + e.key.toLowerCase()).slice(-8);
+    if (buf.indexOf("verify") !== -1) { buf = ""; location.href = "konsole.html"; }
+  });
 })();
