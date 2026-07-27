@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>KriegForeKaster — a scored order of battle · The Prescient Desk</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="An order of battle where every claim carries a grade, a source, and an expiry date.">
+<style>
+:root{
+  --bg:#0e0f11; --panel:#15171a; --line:#2a2d32; --ink:#d9d6cf;
+  --dim:#8b8d92; --accent:#c9a227; --bad:#a8492f; --ok:#4f7a52;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--serif)}
+#wrap{display:flex;flex-direction:column;height:100%}
+header{padding:.7rem 1rem;border-bottom:1px solid var(--line);flex:0 0 auto}
+header h1{margin:0;font-size:1.05rem;font-weight:600;letter-spacing:.02em}
+header .sub{font-family:var(--mono);font-size:.7rem;color:var(--dim);margin-top:.25rem}
+#banner{background:#2a1e12;border-bottom:1px solid var(--line);color:#d8b978;
+  font-family:var(--mono);font-size:.7rem;padding:.5rem 1rem;display:none}
+#main{flex:1 1 auto;display:flex;min-height:0}
+#rail{width:310px;flex:0 0 auto;border-right:1px solid var(--line);overflow:auto;
+  background:var(--panel);padding:.6rem}
+#stage{flex:1 1 auto;position:relative;min-width:0}
+#detail{width:360px;flex:0 0 auto;border-left:1px solid var(--line);overflow:auto;
+  background:var(--panel);padding:.8rem;font-size:.82rem}
+svg{width:100%;height:100%;display:block;cursor:grab}
+svg.drag{cursor:grabbing}
+.country{fill:#191c20;stroke:#31353b;stroke-width:.6;vector-effect:non-scaling-stroke}
+.fac{margin-bottom:.7rem}
+.fac>.hd{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--dim);padding:.2rem 0;border-bottom:1px solid var(--line)}
+.node{padding:.16rem 0 .16rem .2rem;font-size:.83rem;cursor:pointer;border-left:2px solid transparent}
+.node:hover{background:#1c1f23}
+.node.sel{border-left-color:var(--accent);background:#1c1f23}
+.node .ech{font-family:var(--mono);font-size:.62rem;color:var(--dim);margin-right:.35rem}
+.node .warn{color:var(--bad);font-family:var(--mono);font-size:.62rem;margin-left:.3rem}
+.tw{display:inline-block;width:.9em;color:var(--dim);font-family:var(--mono)}
+.blk{border:1px solid var(--line);padding:.5rem;margin:.5rem 0;background:#111316}
+.blk h4{margin:0 0 .3rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--dim)}
+.g{display:inline-block;font-family:var(--mono);font-size:.62rem;padding:.05rem .35rem;
+  border:1px solid var(--line);margin-right:.3rem}
+.g.CONFESSED,.g.PROOF-VERBATIM{color:#8fbf8f;border-color:#3d5a3d}
+.g.DOCUMENTED{color:#a9c3d6;border-color:#3a4c59}
+.g.REPORTED{color:#c9b978;border-color:#5a5030}
+.g.DERIVED{color:#c99a6b;border-color:#5c422a}
+.g.SPECULATIVE{color:#a97b7b;border-color:#5c3434}
+.age{font-family:var(--mono);font-size:.65rem;color:var(--dim)}
+.age.decayed{color:#c9873f}.age.stale{color:var(--bad)}.age.undated{color:var(--bad)}
+.src a{color:#7fa8c9;font-size:.72rem;word-break:break-all}
+.rat{font-style:italic;color:var(--dim);font-size:.76rem}
+.empty{color:var(--dim);font-style:italic}
+footer{flex:0 0 auto;border-top:1px solid var(--line);padding:.45rem 1rem;
+  font-family:var(--mono);font-size:.65rem;color:var(--dim)}
+.legend span{margin-right:.9rem}
+@media(max-width:900px){#main{flex-direction:column}#rail,#detail{width:auto;max-height:34vh}}
+</style>
+<div id="wrap">
+<header>
+  <h1>KriegForeKaster — a scored order of battle</h1>
+  <div class="sub" id="hdr">loading…</div>
+</header>
+<div id="banner"></div>
+<div id="main">
+  <div id="rail"></div>
+  <div id="stage"><svg id="map"><g id="geo"></g><g id="marks"></g></svg></div>
+  <div id="detail"><p class="empty">Select a formation. Nothing is drawn that does not carry a grade, a source and a date.</p></div>
+</div>
+<footer>
+  <span class="legend">
+    <span>solid = within half-life</span>
+    <span style="color:#c9873f">dashed = decayed</span>
+    <span style="color:#a8492f">hollow = stale</span>
+    <span>&#8203;</span>
+  </span>
+  <span id="foot"></span>
+</footer>
+</div>
+<script>
+// Half-lives must match orbat.py. A claim past its half-life is not asserted
+// wrong — it means nobody has checked recently, and the map says so rather than
+// rendering a stale position with the same confidence as a fresh one.
+const HALF_LIFE = {existence:365, composition:180, commander:60, posture:21, location:14};
+const BLOCKS = ["existence","composition","posture","location","commander"];
+const ECH = {"theater":"XXXXXX","front":"XXXXX","army group":"XXXXX","army":"XXXX",
+             "corps":"XXX","division":"XX","brigade":"X","regiment":"III",
+             "battalion":"II","company":"I","detachment":"\u2022"};
+const W = 2000, H = 1000;
+let DATA=null, FAC={}, SEL=null, VB={x:0,y:0,w:W,h:H};
+
+const $ = s => document.querySelector(s);
+const svg = $("#map"), geo = $("#geo"), marks = $("#marks");
+const proj = (lat,lon) => [ (lon+180)/360*W, (90-lat)/180*H ];
+const days = s => { const d=Date.parse(s+"T00:00:00Z");
+  return isNaN(d)?null:Math.floor((Date.now()-d)/864e5); };
+
+function state(block, name){
+  if(!block) return null;
+  const a = days(block.as_of);
+  if(a===null) return {s:"undated", a:null};
+  const hl = HALF_LIFE[name];
+  return {s: a<=hl ? "fresh" : (a<=hl*3 ? "decayed" : "stale"), a, hl};
+}
+
+function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,
+  c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+// ---------- basemap ----------
+function drawGeo(gj){
+  const parts=[];
+  for(const f of gj.features){
+    const g=f.geometry, polys = g.type==="Polygon"?[g.coordinates]:g.coordinates;
+    let d="";
+    for(const poly of polys) for(const ring of poly){
+      d += "M" + ring.map(c=>{const p=proj(c[1],c[0]);return p[0].toFixed(1)+" "+p[1].toFixed(1);}).join("L") + "Z";
+    }
+    if(d) parts.push('<path class="country" d="'+d+'"></path>');
+  }
+  geo.innerHTML = parts.join("");
+}
+
+// ---------- markers ----------
+function drawMarks(){
+  const k = VB.w / W * 1.6 + 0.25;   // counter-scale so symbols hold size on zoom
+  const out=[];
+  for(const f of DATA.formations){
+    if(!f.location) continue;
+    const [x,y] = proj(+f.location.lat, +f.location.lon);
+    const st = state(f.location,"location");
+    const col = (FAC[f.faction]||{}).color || "#999";
+    const dash = st.s==="decayed" ? ' stroke-dasharray="3 2"' : "";
+    const fill = st.s==="fresh" ? col : "none";
+    const op   = st.s==="stale" ? .5 : 1;
+    const tick = ECH[f.echelon]||"";
+    const sel  = SEL===f.id ? ' stroke-width="2.4"' : ' stroke-width="1.2"';
+    out.push(
+      '<g class="mk" data-id="'+esc(f.id)+'" transform="translate('+x.toFixed(1)+','+y.toFixed(1)+') scale('+k.toFixed(3)+')" opacity="'+op+'" style="cursor:pointer">'+
+        '<rect x="-9" y="-5.5" width="18" height="11" fill="'+fill+'" fill-opacity="'+(st.s==="fresh"?.55:0)+'" stroke="'+col+'"'+dash+sel+'></rect>'+
+        '<text x="0" y="-8" text-anchor="middle" font-size="7" fill="'+col+'" font-family="ui-monospace,monospace">'+tick+'</text>'+
+        '<text x="0" y="15" text-anchor="middle" font-size="7" fill="#9aa0a6" font-family="ui-monospace,monospace">'+esc(f.designation||f.id)+'</text>'+
+      '</g>');
+  }
+  marks.innerHTML = out.join("");
+  marks.querySelectorAll(".mk").forEach(g=>g.onclick=e=>{e.stopPropagation();select(g.dataset.id);});
+}
+
+function setVB(){ svg.setAttribute("viewBox",[VB.x,VB.y,VB.w,VB.h].join(" ")); drawMarks(); }
+
+function fit(){
+  const pts = DATA.formations.filter(f=>f.location)
+    .map(f=>proj(+f.location.lat,+f.location.lon));
+  if(!pts.length){ VB={x:0,y:0,w:W,h:H}; return setVB(); }
+  let x0=Math.min(...pts.map(p=>p[0])), x1=Math.max(...pts.map(p=>p[0]));
+  let y0=Math.min(...pts.map(p=>p[1])), y1=Math.max(...pts.map(p=>p[1]));
+  let w=Math.max(x1-x0,40)*2.2, h=Math.max(y1-y0,20)*2.2;
+  const r = svg.clientWidth/Math.max(svg.clientHeight,1);
+  if(w/h < r) w = h*r; else h = w/r;
+  VB={x:(x0+x1)/2-w/2, y:(y0+y1)/2-h/2, w, h};
+  setVB();
+}
+
+// ---------- rail ----------
+function tree(){
+  const byFac={};
+  for(const f of DATA.formations) (byFac[f.faction]=byFac[f.faction]||[]).push(f);
+  const kids = id => DATA.formations.filter(f=>(f.parent||null)===id);
+  let html="";
+  for(const fac of DATA.factions){
+    const list = byFac[fac.id]||[];
+    const unloc = list.filter(f=>!f.location).length;
+    html += '<div class="fac"><div class="hd" style="color:'+esc(fac.color)+'">'+
+            esc(fac.name)+' · '+list.length+' formations'+
+            (unloc?' · '+unloc+' unlocated':'')+'</div>';
+    const walk = (parent,depth)=>{
+      let s="";
+      for(const f of kids(parent)){
+        if(f.faction!==fac.id) continue;
+        const bad = BLOCKS.filter(b=>f[b]&&["decayed","stale","undated"].includes(state(f[b],b).s));
+        s += '<div class="node" data-id="'+esc(f.id)+'" style="padding-left:'+(depth*12+4)+'px">'+
+             '<span class="ech">'+esc(ECH[f.echelon]||"")+'</span>'+esc(f.name)+
+             (f.location?'':'<span class="warn">unlocated</span>')+
+             (bad.length?'<span class="warn">'+bad.length+' decayed</span>':'')+
+             '</div>';
+        s += walk(f.id,depth+1);
+      }
+      return s;
+    };
+    html += walk(null,0);
+    html += '</div>';
+  }
+  $("#rail").innerHTML = html;
+  $("#rail").querySelectorAll(".node").forEach(n=>n.onclick=()=>select(n.dataset.id));
+}
+
+// ---------- detail ----------
+function blockHtml(name, b){
+  if(!b) return '<div class="blk"><h4>'+name+'</h4><span class="empty">no claim recorded</span></div>';
+  const st = state(b,name);
+  const agetxt = st.a===null ? "UNDATED — a claim that cannot expire can never be wrong"
+    : st.a+" days old · half-life "+st.hl+"d · "+st.s.toUpperCase();
+  let body="";
+  if(name==="commander") body = esc(b.rank?b.rank+" ":"")+esc(b.name||"");
+  else if(name==="location") body = esc(b.place||"")+" ("+(+b.lat).toFixed(3)+", "+(+b.lon).toFixed(3)+")";
+  else if(name==="posture") body = esc(b.value||"");
+  else if(name==="composition") body = esc(b.summary||"");
+  else body = esc(b.note||"asserted");
+  const srcs = (b.sources||[]).map(u=>'<div class="src"><a href="'+esc(u)+'" rel="noopener">'+esc(u)+'</a></div>').join("");
+  return '<div class="blk"><h4>'+name+'</h4>'+
+    '<span class="g '+esc(b.grade)+'">'+esc(b.grade)+'</span>'+
+    '<span class="age '+st.s+'">'+esc(b.as_of||"")+' · '+agetxt+'</span>'+
+    '<div style="margin:.35rem 0">'+body+'</div>'+
+    (b.rationale?'<div class="rat">rationale: '+esc(b.rationale)+'</div>':'')+
+    (srcs||'<div class="empty" style="font-size:.72rem">no source — permitted only for DERIVED and SPECULATIVE</div>')+
+    '</div>';
+}
+
+function select(id){
+  SEL=id; drawMarks();
+  $("#rail").querySelectorAll(".node").forEach(n=>n.classList.toggle("sel",n.dataset.id===id));
+  const f = DATA.formations.find(x=>x.id===id);
+  if(!f) return;
+  const fac = FAC[f.faction]||{};
+  let h = '<div style="font-family:var(--mono);font-size:.66rem;color:var(--dim)">'+esc(f.id)+
+          ' · '+esc(f.echelon)+' · <span style="color:'+esc(fac.color)+'">'+esc(fac.name)+'</span></div>'+
+          '<h3 style="margin:.2rem 0 .1rem;font-size:1rem">'+esc(f.name)+'</h3>';
+  if(f.parent){ const p=DATA.formations.find(x=>x.id===f.parent);
+    h += '<div class="age">subordinate to '+esc(p?p.name:f.parent)+'</div>'; }
+  h += BLOCKS.map(b=>blockHtml(b,f[b])).join("");
+  h += '<div class="blk"><h4>ledger</h4>'+
+       ((f.projections&&f.projections.length)
+        ? f.projections.map(p=>'<div class="src">'+esc(p)+'</div>').join("")
+          + '<div class="rat">These are dated forecasts about this formation, scored hit or miss in the public ledger.</div>'
+        : '<span class="empty">no projection issued against this formation</span>')+
+       '</div>';
+  if(f.notes) h += '<div class="rat" style="margin-top:.4rem">'+esc(f.notes)+'</div>';
+  $("#detail").innerHTML = h;
+}
+
+// ---------- pan / zoom ----------
+let drag=null;
+svg.addEventListener("mousedown",e=>{drag={x:e.clientX,y:e.clientY,vx:VB.x,vy:VB.y};svg.classList.add("drag");});
+addEventListener("mouseup",()=>{drag=null;svg.classList.remove("drag");});
+addEventListener("mousemove",e=>{ if(!drag)return;
+  const s=VB.w/svg.clientWidth;
+  VB.x=drag.vx-(e.clientX-drag.x)*s; VB.y=drag.vy-(e.clientY-drag.y)*s; setVB(); });
+svg.addEventListener("wheel",e=>{ e.preventDefault();
+  const f = e.deltaY>0?1.15:1/1.15;
+  const r = svg.getBoundingClientRect();
+  const mx = VB.x + (e.clientX-r.left)/r.width*VB.w;
+  const my = VB.y + (e.clientY-r.top)/r.height*VB.h;
+  VB.x = mx-(mx-VB.x)*f; VB.y = my-(my-VB.y)*f;
+  VB.w*=f; VB.h*=f; setVB(); },{passive:false});
+
+// ---------- boot ----------
+Promise.all([
+  fetch("KriegForeKaster.json",{cache:"no-store"}).then(r=>r.json()),
+  fetch("world.geojson",{cache:"no-store"}).then(r=>r.json()).catch(()=>null)
+]).then(([d,gj])=>{
+  DATA=d; d.factions.forEach(f=>FAC[f.id]=f);
+  if(gj) drawGeo(gj);
+  const nLoc = d.formations.filter(f=>f.location).length;
+  const decayed = d.formations.reduce((n,f)=>n+BLOCKS.filter(b=>f[b]&&["decayed","stale","undated"].includes(state(f[b],b).s)).length,0);
+  $("#hdr").textContent = d.theater+" · "+d.formations.length+" formations · "+
+    nLoc+" located, "+(d.formations.length-nLoc)+" not · "+decayed+" claims past half-life · file as_of "+d.as_of;
+  $("#foot").textContent = "schema "+d.schema+" · claims expire on a published schedule · no marker without a grade, a source and a date";
+  if(d.disclosure || d.factions.some(f=>f.id.startsWith("EXAMPLE"))){
+    $("#banner").style.display="block";
+    $("#banner").textContent = d.disclosure || "This file contains EXAMPLE records.";
+  }
+  tree(); fit();
+}).catch(e=>{
+  $("#hdr").textContent = "failed to load KriegForeKaster.json — "+e;
+});
+addEventListener("resize",()=>setVB());
+</script>

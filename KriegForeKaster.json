@@ -1,0 +1,151 @@
+{
+  "schema": "orbat/1.0",
+  "generator": "KriegForeKaster.py",
+  "as_of": "2026-07-27T01:00:00Z",
+  "theater": "EXAMPLE — synthetic placeholder theater, no real claims",
+  "disclosure": "Every formation in this file is a placeholder with faction EXAMPLE, sitting at Null Island (0,0) so it cannot be mistaken for an assertion about any real force. KriegForeKaster.py refuses to issue EXAMPLE records into the predictive ledger. Replace them with sourced records; do not edit these into real ones, create new ids.",
+  "factions": [
+    {
+      "id": "EXAMPLE",
+      "name": "EXAMPLE — placeholder faction",
+      "color": "#8a8a8a"
+    },
+    {
+      "id": "EXAMPLE-OPFOR",
+      "name": "EXAMPLE — placeholder opposing faction",
+      "color": "#7a5c3e"
+    }
+  ],
+  "formations": [
+    {
+      "id": "EX-0001",
+      "faction": "EXAMPLE",
+      "echelon": "army",
+      "parent": null,
+      "name": "EXAMPLE 1st Placeholder Army",
+      "designation": "EX/1A",
+      "existence": {
+        "grade": "DOCUMENTED",
+        "as_of": "2026-07-20",
+        "sources": ["https://example.invalid/placeholder-order-of-battle"],
+        "note": "Shape demonstration. Real records name the institution and link the document."
+      },
+      "composition": {
+        "grade": "REPORTED",
+        "as_of": "2026-05-02",
+        "sources": ["https://example.invalid/placeholder-composition"],
+        "summary": "Two placeholder corps, one placeholder reserve brigade.",
+        "note": "Deliberately 86 days old so the linter flags it decayed against a 180-day half-life only when it crosses; adjust to see the state change."
+      },
+      "posture": {
+        "value": "committed",
+        "grade": "REPORTED",
+        "as_of": "2026-07-24",
+        "sources": ["https://example.invalid/placeholder-posture"]
+      },
+      "location": {
+        "lat": 0.0,
+        "lon": 0.0,
+        "place": "Null Island — placeholder coordinate",
+        "grade": "REPORTED",
+        "as_of": "2026-07-25",
+        "sources": ["https://example.invalid/placeholder-location"]
+      },
+      "commander": {
+        "name": "EXAMPLE — name withheld in placeholder",
+        "rank": "placeholder rank",
+        "grade": "REPORTED",
+        "as_of": "2026-05-01",
+        "sources": ["https://example.invalid/placeholder-commander"],
+        "note": "87 days old against a 60-day half-life — this record exists to show the decay state rendering."
+      },
+      "projections": [],
+      "notes": "Root of the example tree."
+    },
+    {
+      "id": "EX-0002",
+      "faction": "EXAMPLE",
+      "echelon": "corps",
+      "parent": "EX-0001",
+      "name": "EXAMPLE II Placeholder Corps",
+      "designation": "EX/II",
+      "existence": {
+        "grade": "REPORTED",
+        "as_of": "2026-07-18",
+        "sources": ["https://example.invalid/placeholder-corps"]
+      },
+      "posture": {
+        "value": "reserve",
+        "grade": "DERIVED",
+        "as_of": "2026-07-22",
+        "sources": [],
+        "rationale": "Placeholder rationale. DERIVED claims stand without a source only when the reasoning from other records in this file is written out here."
+      },
+      "location": {
+        "lat": 0.35,
+        "lon": 0.2,
+        "place": "Null Island — placeholder coordinate",
+        "grade": "DERIVED",
+        "as_of": "2026-06-20",
+        "sources": [],
+        "rationale": "Placeholder rationale for an inferred position, 37 days old against a 14-day half-life so it renders decayed."
+      },
+      "projections": [],
+      "notes": "Demonstrates DERIVED grade with rationale in place of a source."
+    },
+    {
+      "id": "EX-0003",
+      "faction": "EXAMPLE",
+      "echelon": "division",
+      "parent": "EX-0002",
+      "name": "EXAMPLE 33rd Placeholder Division",
+      "designation": "EX/33",
+      "existence": {
+        "grade": "CONFESSED",
+        "as_of": "2026-07-26",
+        "sources": ["https://example.invalid/placeholder-official-statement"],
+        "note": "CONFESSED means the party itself said so, on the record."
+      },
+      "posture": {
+        "value": "reconstituting",
+        "grade": "REPORTED",
+        "as_of": "2026-07-26",
+        "sources": ["https://example.invalid/placeholder-posture-2"]
+      },
+      "commander": {
+        "name": "EXAMPLE — name withheld in placeholder",
+        "rank": "placeholder rank",
+        "grade": "DOCUMENTED",
+        "as_of": "2026-07-15",
+        "sources": ["https://example.invalid/placeholder-appointment-order"]
+      },
+      "projections": [],
+      "notes": "UNLOCATED BY DESIGN — carries no location block. Real records like this exist constantly and belong in the rail, not on the map. The viewer counts them explicitly rather than dropping them."
+    },
+    {
+      "id": "EX-0101",
+      "faction": "EXAMPLE-OPFOR",
+      "echelon": "brigade",
+      "parent": null,
+      "name": "EXAMPLE 9th Placeholder Brigade",
+      "designation": "EX-O/9",
+      "existence": {
+        "grade": "SPECULATIVE",
+        "as_of": "2026-07-10",
+        "sources": [],
+        "rationale": "Placeholder. SPECULATIVE is the held-open grade: recorded so the gap is visible, never issued into the ledger, never displayed as an assertion."
+      },
+      "location": {
+        "lat": -0.3,
+        "lon": 0.45,
+        "place": "Null Island — placeholder coordinate",
+        "grade": "SPECULATIVE",
+        "as_of": "2026-07-10",
+        "sources": [],
+        "rationale": "Placeholder rationale for a held-open position."
+      },
+      "projections": [],
+      "notes": "Demonstrates the floor of the ladder. KriegForeKaster.py refuses to issue a SPECULATIVE claim as a forecast."
+    }
+  ]
+}
