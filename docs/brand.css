@@ -153,3 +153,30 @@ h2::before{
 }
 .leuchte .crow-mark{ width:24% }
 @media(max-width:960px){ .leuchte{ width:min(340px,80vw) } }
+
+
+/* ---------- the Marks treatment, site-wide -------------------------------
+   Marks reads better than the other pages for one reason: almost nothing on it
+   paints over the field. Flat plate, hairline rules, and the lattice visible
+   through the whole column. Everywhere else the field is technically present
+   and buried under full-width fills.
+
+   So: full-width section wrappers go transparent and keep their rules, while
+   cards and panels stay opaque, because text needs a plate to sit on and the
+   lattice underneath a paragraph is noise rather than texture. Anything that
+   genuinely wants a fill states it locally and still wins on specificity. */
+main, article, section, .band, .wrap > section, .hero-wrap, .instruments,
+.standing, .method, .dash, footer{
+  background:transparent !important;
+}
+.band{border-top:1px solid var(--brand-line);border-bottom:1px solid var(--brand-line)}
+section{border-top:1px solid var(--brand-line)}
+
+/* the field earns its keep only if it is actually legible */
+#brandbg .lattice{opacity:1}
+#brandbg .watermark{opacity:.05}
+#brandbg .sweep{opacity:.85}
+
+/* Marks' hairline-and-plate grammar, generalised */
+.card, .blk, .panel{background:#10141a}
+h2{color:var(--brand-brass-lit)}
