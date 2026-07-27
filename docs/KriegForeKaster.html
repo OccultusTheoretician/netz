@@ -145,8 +145,13 @@ footer{flex:0 0 auto;border-top:1px solid var(--line);padding:.45rem 1rem;
 // Half-lives must match orbat.py. A claim past its half-life is not asserted
 // wrong — it means nobody has checked recently, and the map says so rather than
 // rendering a stale position with the same confidence as a fresh one.
-const HALF_LIFE = {existence:365, composition:180, commander:60, posture:21, location:14};
-const BLOCKS = ["existence","composition","posture","location","commander"];
+const HALF_LIFE = {existence:365, composition:180, subordination:730,
+                   commander:60, posture:21, location:14};
+const BLOCKS = ["existence","composition","subordination","posture","location","commander"];
+// subordination lives under `parent`; it is a claim like any other and carries
+// a grade, a source and a date. Read it under its claim name everywhere.
+const blk = (f,b) => b==="subordination" ? (typeof f.parent==="object" ? f.parent : null)
+                                         : f[b];
 const ECH = {"theater":"XXXXXX","front":"XXXXX","army group":"XXXXX","army":"XXXX",
              "corps":"XXX","division":"XX","brigade":"X","regiment":"III",
              "battalion":"II","company":"I","detachment":"\u2022"};
@@ -167,7 +172,7 @@ function visible(f){
     if(idx<0 || idx>FILTER.grade) return false;
   }
   if(FILTER.fresh!=="all"){
-    const states=BLOCKS.filter(b=>f[b]).map(b=>state(f[b],b).s);
+    const states=BLOCKS.filter(b=>blk(f,b)).map(b=>state(blk(f,b),b).s);
     const anyOld=states.some(x=>["decayed","stale","undated"].includes(x));
     if(FILTER.fresh==="decayed" && !anyOld) return false;
     if(FILTER.fresh==="fresh" && anyOld) return false;
@@ -277,7 +282,9 @@ function fit(){
 function tree(){
   const byFac={};
   for(const f of DATA.formations) (byFac[f.faction]=byFac[f.faction]||[]).push(f);
-  const kids = id => DATA.formations.filter(f=>(f.parent||null)===id);
+  const pid = f => (f.parent && typeof f.parent==="object") ? f.parent.id
+                   : (typeof f.parent==="string" ? f.parent : null);
+  const kids = id => DATA.formations.filter(f=>pid(f)===id);
   let html="";
   for(const fac of DATA.factions){
     const list = byFac[fac.id]||[];
@@ -296,7 +303,7 @@ function tree(){
       let s="";
       for(const f of kids(parent)){
         if(f.faction!==fac.id || !visible(f)) continue;
-        const bad = BLOCKS.filter(b=>f[b]&&["decayed","stale","undated"].includes(state(f[b],b).s));
+        const bad = BLOCKS.filter(b=>blk(f,b)&&["decayed","stale","undated"].includes(state(blk(f,b),b).s));
         s += '<div class="node" data-id="'+esc(f.id)+'" style="padding-left:'+(depth*12+4)+'px">'+
              '<span class="ech">'+esc(ECH[f.echelon]||"")+'</span>'+esc(f.name)+
              (f.location?'':'<span class="warn">unlocated</span>')+
@@ -321,7 +328,14 @@ function blockHtml(name, b){
     : st.a+" days old · half-life "+st.hl+"d · "+st.s.toUpperCase();
   let body="";
   if(name==="commander") body = esc(b.rank?b.rank+" ":"")+esc(b.name||"");
-  else if(name==="location") body = esc(b.place||"")+" ("+(+b.lat).toFixed(3)+", "+(+b.lon).toFixed(3)+")";
+  else if(name==="location"){
+    const dn = b.denotes||"undeclared";
+    body = esc(b.place||"")+" ("+(+b.lat).toFixed(3)+", "+(+b.lon).toFixed(3)+")"
+         + '<div class="age' + (dn==="headquarters"?"":" decayed") + '">coordinate denotes: '
+         + esc(dn) + (dn==="capital centroid"
+            ? " &mdash; this locates the state, not the command" : "") + "</div>";
+  }
+  else if(name==="subordination") body = "subordinate to "+esc(b.id||"");
   else if(name==="posture") body = esc(b.value||"");
   else if(name==="composition") body = esc(b.summary||"");
   else body = esc(b.note||"asserted");
@@ -344,9 +358,12 @@ function select(id){
   let h = '<div style="font-family:var(--mono);font-size:.66rem;color:var(--dim)">'+esc(f.id)+
           ' · '+esc(f.echelon)+' · <span style="color:'+esc(fac.color)+'">'+esc(fac.name)+'</span></div>'+
           '<h3 style="margin:.2rem 0 .1rem;font-size:1rem">'+esc(f.name)+'</h3>';
-  if(f.parent){ const p=DATA.formations.find(x=>x.id===f.parent);
-    h += '<div class="age">subordinate to '+esc(p?p.name:f.parent)+'</div>'; }
-  h += BLOCKS.map(b=>blockHtml(b,f[b])).join("");
+  const par = (f.parent && typeof f.parent==="object") ? f.parent.id
+            : (typeof f.parent==="string" ? f.parent : null);
+  if(par){ const p=DATA.formations.find(x=>x.id===par);
+    h += '<div class="age">subordinate to '+esc(p?p.name:par)+'</div>'; }
+  else h += '<div class="age" style="color:var(--bad)">no subordination claim recorded</div>';
+  h += BLOCKS.map(b=>blockHtml(b,blk(f,b))).join("");
   h += '<div class="blk"><h4>ledger</h4>'+
        ((f.projections&&f.projections.length)
         ? f.projections.map(p=>'<div class="src">'+esc(p)+'</div>').join("")
@@ -409,7 +426,7 @@ Promise.all([
   DATA=d; d.factions.forEach(f=>FAC[f.id]=f);
   if(gj) drawGeo(gj);
   const nLoc = d.formations.filter(f=>f.location).length;
-  const decayed = d.formations.reduce((n,f)=>n+BLOCKS.filter(b=>f[b]&&["decayed","stale","undated"].includes(state(f[b],b).s)).length,0);
+  const decayed = d.formations.reduce((n,f)=>n+BLOCKS.filter(b=>blk(f,b)&&["decayed","stale","undated"].includes(state(blk(f,b),b).s)).length,0);
   $("#hdr").textContent = d.theater+" · "+d.formations.length+" formations · "+
     nLoc+" located, "+(d.formations.length-nLoc)+" not · "+decayed+" claims past half-life · file as_of "+d.as_of;
   $("#foot").textContent = "schema "+d.schema+" · claims expire on a published schedule · no marker without a grade, a source and a date";
