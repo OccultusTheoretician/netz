@@ -330,8 +330,43 @@ def load_ledger() -> dict:
     return {"projections": []}
 
 
+LEDGER_SCHEMA = "kkr-ledger/1.1"
+DOCS = HERE / "docs"
+
+
 def save_ledger(data: dict):
-    LEDGER.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    """Write the ledger with a self-describing envelope.
+
+    A copy of ledger.json that cannot state what produced it or when it was
+    written is a file, not evidence. `projections` is unchanged and is what
+    every reader keys off, so the envelope is additive.
+    """
+    out = {"schema": LEDGER_SCHEMA,
+           "generator": "kkr.py",
+           "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+           "projections": data["projections"]}
+    for k, v in data.items():
+        if k not in out:
+            out[k] = v
+    LEDGER.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def publish_served():
+    """Copy the canonical artifacts into the directory Pages actually serves.
+
+    Every time the served copy was left as a manual step it drifted. Making it a
+    build product of the render is the only version that cannot rot.
+    """
+    if not DOCS.exists():
+        return
+    src_html = OUT / "ledger.html"
+    if src_html.exists():
+        (DOCS / "ledger.html").write_text(src_html.read_text(encoding="utf-8"),
+                                          encoding="utf-8")
+    if LEDGER.exists():
+        (DOCS / "ledger.json").write_text(LEDGER.read_text(encoding="utf-8"),
+                                          encoding="utf-8")
+    print(f"KKR · served copies synced -> {DOCS}", file=sys.stderr)
 
 
 def append_projections(projs: list, model_tag: str, source_report: str) -> list:
@@ -528,6 +563,7 @@ def render_ledger():
     OUT.mkdir(exist_ok=True)
     (OUT / "LEDGER.md").write_text(md, encoding="utf-8")
     (OUT / "ledger.html").write_text(render_html(md, "KKR Ledger"), encoding="utf-8")
+    publish_served()
     print(f"KKR · ledger → {OUT / 'LEDGER.md'} + ledger.html", file=sys.stderr)
 
 
@@ -589,6 +625,18 @@ def cmd_generate(args):
 
 
 def cmd_ingest(args):
+    # Which packet was this arm forecasting against? cmd_generate records it;
+    # this path never did, so every manual/fable row carried a blank
+    # source_packet. An explicit --packet wins. Otherwise the newest packet on
+    # disk is assumed AND PRINTED — a wrong assumption should be visible.
+    pk = getattr(args, "packet", None)
+    if not pk:
+        packets = sorted(OUT.glob("kkr_packet_2*.md"))
+        pk = packets[-1].name if packets else ""
+        if pk:
+            print(f"KKR · source_packet assumed: {pk} "
+                  f"(newest on disk; pass --packet to override)", file=sys.stderr)
+    globals()["_LAST_PACKET"] = pk
     raw = Path(args.ingest).read_text(encoding="utf-8")
     projs = parse_projections(raw)
     if not projs:
@@ -600,11 +648,16 @@ def cmd_ingest(args):
         (rejected.append((p, reasons)) if reasons else accepted_raw.append(p))
     rep = latest_report()
     src_name = rep.name if rep else "manual"
-    added = append_projections(accepted_raw, "manual/fable", src_name) if accepted_raw else []
-    print(f"KKR · gate: {len(added)} accepted, {len(rejected)} rejected from {args.ingest}",
-          file=sys.stderr)
+    # DEFECT D — the ingest path hardcoded one arm tag. Any second manual lane
+    # (operator, a different frontier model, the ORBAT bridge) would have been
+    # silently written into the ledger as manual/fable. Same attribution class as
+    # the pooled Brier, one level down.
+    arm = getattr(args, "arm", None) or "manual/fable"
+    added = append_projections(accepted_raw, arm, src_name) if accepted_raw else []
+    print(f"KKR · gate: {len(added)} accepted, {len(rejected)} rejected from "
+          f"{args.ingest} [arm: {arm}]", file=sys.stderr)
     render_ledger()
-    render_kkr(added, rejected, "manual/fable", src_name)
+    render_kkr(added, rejected, arm, src_name)
 
 
 def cmd_resolve(args):
@@ -813,6 +866,10 @@ def main():
     ap.add_argument("--lmstudio-url", default="http://localhost:1234/v1")
     ap.add_argument("--packet-only", action="store_true")
     ap.add_argument("--ingest", metavar="FILE")
+    ap.add_argument("--packet", metavar="NAME",
+                    help="with --ingest: the packet filename this arm forecast against")
+    ap.add_argument("--arm", metavar="TAG",
+                    help="with --ingest: forecaster arm tag (default manual/fable)")
     ap.add_argument("--resolve", action="store_true")
     ap.add_argument("--all", action="store_true", help="with --resolve: include not-yet-due")
     ap.add_argument("--score", action="store_true")
