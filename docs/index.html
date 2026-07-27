@@ -3,15 +3,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Retro-Prescient Audit™ — Nebelkrähe · The Prescient Desk</title>
 <meta name="description" content="Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses — permanently, in public.">
-<link rel="icon" type="image/png" href="crow.png">
+<link rel="icon" type="image/svg+xml" href="crow_mark.svg">
+<link rel="alternate icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://retroprescientaudit.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Retro-Prescient Audit™">
 <meta property="og:title" content="Retro-Prescient Audit™ — The Prescient Desk">
 <meta property="og:description" content="Foresight, told from arithmetic. Sealed forecasts, blind adjudication, misses kept permanently. A light that sweeps the fog on a fixed period and reports what it finds.">
 <meta property="og:url" content="https://retroprescientaudit.com/">
-<meta property="og:image" content="https://retroprescientaudit.com/crow.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
+<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Retro-Prescient Audit™","alternateName":"The Prescient Desk · Nebelkrähe","url":"https://retroprescientaudit.com/","description":"Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,8 +83,9 @@ img{max-width:100%;display:block}
 
 /* ---------- hero: the sighted crow in the fog ---------- */
 header.hero-wrap{position:relative;z-index:2;border-bottom:1px solid var(--line)}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;
-  padding:5.5rem 0 4.5rem;min-height:74vh}
+.hero{display:grid;grid-template-columns:1.02fr 1.18fr;gap:2.2rem;align-items:center;
+  padding:5.5rem 0 4.5rem;min-height:78vh}
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:2.6rem}}
 .kicker{font-family:var(--mono);font-size:.62rem;letter-spacing:.34em;
   text-transform:uppercase;color:var(--messing2);margin-bottom:1.4rem}
 .kicker::before{content:"";display:inline-block;width:2.2rem;height:1px;
@@ -103,7 +106,7 @@ h1 .tm{font-size:.32em;vertical-align:super;color:var(--dim);font-family:var(--s
 .btn.ghost:hover{border-color:var(--messing);color:var(--messing2)}
 
 /* the lighthouse: a light that sweeps the fog on a fixed period */
-.leuchte{position:relative;width:min(380px,80vw);aspect-ratio:1;margin:0 auto;
+.leuchte{position:relative;width:min(620px,100%);aspect-ratio:1;margin:0 auto;
   display:grid;place-items:center}
 .beam{position:absolute;inset:-12%;border-radius:50%;
   background:conic-gradient(from 0deg,
@@ -115,8 +118,17 @@ h1 .tm{font-size:.32em;vertical-align:super;color:var(--dim);font-family:var(--s
 .rings circle{fill:none;stroke:var(--line2);stroke-width:1;opacity:.55}
 .rings circle.mark{stroke:var(--messing3);stroke-dasharray:2 10;opacity:.8}
 .rings text{fill:var(--dim);font-family:var(--mono);font-size:7.5px;letter-spacing:.28em}
-.crow{position:relative;width:44%;filter:drop-shadow(0 0 34px rgba(220,182,94,.16))
-  drop-shadow(0 8px 20px rgba(0,0,0,.6))}
+.crow-orbit{position:absolute;inset:0;animation:sweep 22s linear infinite;
+  pointer-events:none;z-index:4}
+.crow-mark{position:absolute;left:50%;top:10.5%;width:14%;
+  transform:translate(-50%,-50%) scaleX(-1);
+  filter:drop-shadow(0 0 22px rgba(220,182,94,.42))
+         drop-shadow(0 0 60px rgba(220,182,94,.16))
+         drop-shadow(0 3px 10px rgba(0,0,0,.75))}
+.hub{position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;
+  border-radius:50%;background:var(--messing2);box-shadow:0 0 12px rgba(220,182,94,.7)}
+.rings text{letter-spacing:.28em}
+@media(prefers-reduced-motion:reduce){.crow-orbit{animation:none}}
 @keyframes sweep{to{transform:rotate(360deg)}}
 
 /* ---------- the instrument band: the fog never covers the record ---------- */
@@ -282,7 +294,7 @@ footer li a{font-size:.85rem;color:var(--fg)}
 <div class="korn" aria-hidden="true"></div>
 
 <nav class="nav" aria-label="Primary"><div class="nav-in">
-  <a class="nav-mark" href="/"><img src="crow.png" alt=""><span>Nebelkrähe</span></a>
+  <a class="nav-mark" href="/"><img src="crow_mark.svg" alt=""><span>Nebelkrähe</span></a>
   <div class="nav-links">
     <a href="#method">Method</a>
     <a href="#instruments">Instruments</a>
@@ -323,7 +335,8 @@ footer li a{font-size:.85rem;color:var(--fg)}
       <text x="200" y="26" text-anchor="middle">SEALED · ADJUDICATED · SCORED</text>
       <text x="200" y="386" text-anchor="middle">DIE KRÄHE SIEHT DURCH DEN NEBEL</text>
     <g id="contacts"></g></svg>
-    <img class="crow" src="crow.png" alt="">
+    <div class="crow-orbit" aria-hidden="true"><img class="crow-mark" src="crow_mark.svg" alt=""></div>
+    <div class="hub" aria-hidden="true"></div>
   </div>
 </div></div></header>
 
@@ -385,9 +398,11 @@ footer li a{font-size:.85rem;color:var(--fg)}
     <a class="card" href="ledger.html">
       <span class="card-k">Primary instrument</span>
       <span class="card-t">The KKR Ledger</span>
-      <span class="card-d">Every projection ever issued — open and resolved, hits and
-      misses, Brier score and calibration table. The only surface here that constitutes
-      evidence of skill.</span>
+      <span class="card-d"><b>KKR is the Kaos Kontrol Report</b>, the daily forecasting
+      stage that issues the projections. This is its ledger: every projection ever issued,
+      open and resolved, hits and misses, Brier score and calibration table, segregated by
+      the forecaster arm that issued it. The only surface here that constitutes evidence of
+      skill.</span>
       <span class="card-go">Read the record →</span>
     </a>
     <a class="card" href="report.html#tab_wardesk">
@@ -410,8 +425,8 @@ footer li a{font-size:.85rem;color:var(--fg)}
       <span class="card-go">Today's desk →</span>
     </a>
     <a class="card" href="kkr.html">
-      <span class="card-k">Working surface</span>
-      <span class="card-t">Latest Forecasts</span>
+      <span class="card-k">Working surface · KKR</span>
+      <span class="card-t">The Kaos Kontrol Report</span>
       <span class="card-d">The current issuance — sealed projections with deadlines,
       resolution criteria, and stated probabilities, committed before any outcome
       exists.</span>
@@ -480,7 +495,7 @@ footer li a{font-size:.85rem;color:var(--fg)}
 <footer>
   <div class="foot">
     <div class="foot-mark">
-      <img src="crow.png" alt="">
+      <img src="crow_mark.svg" alt="">
       <div>
         <div class="fm-t">Nebelkrähe · The Prescient Desk</div>
         <div class="fm-d">Machine-collated open sources. Deterministic grading.
@@ -646,14 +661,15 @@ var idleI=0; setInterval(function(){if(tick&&tick.style.opacity==='0'){say(PHRAS
 var contacts=[]; var departures=0;
 function spawn(){
  var idx=Math.floor(Math.random()*CAT.length);
- var a=Math.random()*360, r=80+Math.random()*100;
+ var a=Math.random()*360, r=78+Math.random()*104;
  var t=(a-90)*Math.PI/180;
  var c={cls:CAT[idx], x:200+r*Math.cos(t), y:200+r*Math.sin(t),
   heading:Math.random()*360, speed:CAT[idx][2]*(0.7+Math.random()*0.7),
-  maxO:0.55+Math.random()*0.4, born:performance.now(),
+  maxO:0.70+Math.random()*0.30, born:performance.now(),
   life:SWEEP_MS*(2+Math.random()*2), dying:0, el:document.createElementNS(svgNS,'g')};
  c.el.setAttribute('fill','var(--messing3,#dcb65e)');
  c.el.setAttribute('stroke','var(--messing3,#dcb65e)');
+ c.el.setAttribute('stroke-width','1.15');
  c.el.setAttribute('opacity','0');
  c.el.innerHTML=c.cls[3]+'<title>'+c.cls[0]+' \u00b7 fate unknown</title>';
  g.appendChild(c.el); contacts.push(c);
@@ -663,13 +679,13 @@ function depart(c){
  if(c.dying)return; c.dying=performance.now(); departures++;
  say(departures%5===0?'FATE-ALITY':'FATE UNKNOWN');
  var wait=800+Math.random()*8200;
- setTimeout(function(){if(contacts.length<9)spawn();},wait);
+ setTimeout(function(){if(contacts.length<12)spawn();},wait);
 }
-var N=5+Math.floor(Math.random()*3);
+var N=7+Math.floor(Math.random()*4);
 for(var i=0;i<N;i++)spawn();
 var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(reduced){contacts.forEach(function(c){c.el.setAttribute('opacity','0.4');
- c.el.setAttribute('transform','translate('+c.x+','+c.y+') rotate('+c.heading+') scale(0.9)');});return;}
+ c.el.setAttribute('transform','translate('+c.x+','+c.y+') rotate('+c.heading+') scale(1.55)');});return;}
 var t0=performance.now(), last=t0;
 function beamAngle(now){
  if(beam){var tr=getComputedStyle(beam).transform;
@@ -688,11 +704,11 @@ function loop(now){
   if(!c.dying&&(rr>188||rr<62||now-c.born>c.life))depart(c);
   var aCur=(Math.atan2(dy,dx)*180/Math.PI+90+360)%360;
   var trail=((ang-aCur)%360+360)%360;
-  var o=trail<8?c.maxO:c.maxO*Math.pow(0.5,trail/40);
-  if(o<0.04)o=0.04;
+  var o=trail<10?c.maxO:c.maxO*Math.pow(0.5,trail/52);
+  if(o<0.11)o=0.11;
   if(c.dying){var f=1-(now-c.dying)/1500; if(f<=0){c.el.remove();contacts.splice(i,1);continue;} o*=f;}
   c.el.setAttribute('opacity',o.toFixed(2));
-  c.el.setAttribute('transform','translate('+c.x.toFixed(1)+','+c.y.toFixed(1)+') rotate('+c.heading+') scale(0.9)');
+  c.el.setAttribute('transform','translate('+c.x.toFixed(1)+','+c.y.toFixed(1)+') rotate('+c.heading+') scale(1.55)');
  }
  requestAnimationFrame(loop);
 }

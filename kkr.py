@@ -251,6 +251,7 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     below35 = sum(1 for p in accepted if p["probability"] < 35)
     out = ["**UNCLASSIFIED // OPEN SOURCES**\n",
            f"# KAOS KONTROL REPORT — {dtg}\n",
+           "**KKR is the Kaos Kontrol Report** \u2014 the daily forecasting stage of the Prescient Desk. It reads the open-source collation, elicits falsifiable projections from a named forecaster arm, runs them through a mechanical gate that publishes its rejections with reasons, and seals what survives into the ledger before any outcome exists.\n",
            f"Window: this run · source: {source_report} · forecaster: {model_tag} · "
            f"{len(accepted)} accepted / {len(rejected)} rejected by validation gate · "
            f"{below35} rated below 35% (base-rate discipline)\n"]
@@ -319,6 +320,7 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     html_doc = render_html(md, f"KKR {stamp}")
     (OUT / f"KKR_{stamp}.html").write_text(html_doc, encoding="utf-8")
     (OUT / "KKR_latest.html").write_text(html_doc, encoding="utf-8")
+    publish_served()
     print(f"KKR · report → {OUT / ('KKR_' + stamp + '.md')} (+ KKR_latest.html)",
           file=sys.stderr)
 
@@ -366,6 +368,11 @@ def publish_served():
     if LEDGER.exists():
         (DOCS / "ledger.json").write_text(LEDGER.read_text(encoding="utf-8"),
                                           encoding="utf-8")
+    # the report face is the third mirror that drifted; it is a build product too
+    src_kkr = OUT / "KKR_latest.html"
+    if src_kkr.exists():
+        (DOCS / "kkr.html").write_text(src_kkr.read_text(encoding="utf-8"),
+                                       encoding="utf-8")
     print(f"KKR · served copies synced -> {DOCS}", file=sys.stderr)
 
 
@@ -474,7 +481,8 @@ def render_ledger():
                if datetime.strptime(p["deadline"], "%Y-%m-%d").date() < now.date()]
 
     out = ["**UNCLASSIFIED // OPEN SOURCES**\n",
-           f"# KKR PREDICTIVE LEDGER — {now.strftime('%d%H%MZ %b %y').upper()}\n",
+           f"# KAOS KONTROL REPORT — PREDICTIVE LEDGER — {now.strftime('%d%H%MZ %b %y').upper()}\n",
+           "**KKR is the Kaos Kontrol Report** \u2014 the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.\n",
            "**A standing Retro-Prescient Audit™** · method: "
            "[RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)\n"]
     arms = arm_stats(projs)
