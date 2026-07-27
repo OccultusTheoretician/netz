@@ -1,0 +1,71 @@
+{
+  "schema": "kfk-freshness/1.0",
+  "generator": "KriegForeKaster.py",
+  "as_of": "2026-07-27T01:37:47Z",
+  "theater": "US Army — XVIII Airborne Corps proving set",
+  "formations": 3,
+  "claim_states": {
+    "fresh": 10,
+    "stale": 1
+  },
+  "by_claim_class": {
+    "existence": {
+      "n": 3,
+      "half_life_days": 365,
+      "median_age_days": -1,
+      "max_age_days": 9,
+      "past_half_life": 0
+    },
+    "composition": {
+      "n": 1,
+      "half_life_days": 180,
+      "median_age_days": -1,
+      "max_age_days": -1,
+      "past_half_life": 0
+    },
+    "commander": {
+      "n": 3,
+      "half_life_days": 60,
+      "median_age_days": 9,
+      "max_age_days": 41,
+      "past_half_life": 0
+    },
+    "posture": {
+      "n": 1,
+      "half_life_days": 21,
+      "median_age_days": 124,
+      "max_age_days": 124,
+      "past_half_life": 1
+    },
+    "location": {
+      "n": 3,
+      "half_life_days": 14,
+      "median_age_days": -1,
+      "max_age_days": 9,
+      "past_half_life": 0
+    }
+  },
+  "by_formation": {
+    "F-XVIII": {
+      "name": "XVIII Airborne Corps",
+      "stalest_claim": "commander",
+      "age_days": 41,
+      "half_lives_elapsed": 0.68,
+      "unlocated": false
+    },
+    "F-82ABN": {
+      "name": "82nd Airborne Division",
+      "stalest_claim": "posture",
+      "age_days": 124,
+      "half_lives_elapsed": 5.9,
+      "unlocated": false
+    },
+    "F-3ID": {
+      "name": "3rd Infantry Division",
+      "stalest_claim": "location",
+      "age_days": 9,
+      "half_lives_elapsed": 0.64,
+      "unlocated": false
+    }
+  }
+}

@@ -54,7 +54,7 @@ import argparse
 import json
 import shutil
 import sys
-from datetime import datetime, timezone, date
+from datetime import datetime, timezone, date, timedelta
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -247,6 +247,106 @@ def stats(d: dict):
 
 
 # ----------------------------------------------------------------------
+def freshness(d: dict) -> dict:
+    """The freshness layer.
+
+    Nobody can beat Janes on where the formation is. What nobody publishes at
+    all is how long it has been since anyone could say. That is computable from
+    open sources alone, it is honest, and it is the one number a coverage vendor
+    is structurally barred from printing, because their product is confidence.
+    """
+    per_class = {b: [] for b in CLAIM_BLOCKS}
+    per_form, states = {}, {}
+    for f in d["formations"]:
+        worst = None
+        for b in CLAIM_BLOCKS:
+            blk = f.get(b)
+            if not blk:
+                continue
+            st, a = decay_state(b, blk)
+            states[st] = states.get(st, 0) + 1
+            if a is None:
+                continue
+            per_class[b].append(a)
+            ratio = a / HALF_LIFE[b]
+            if worst is None or ratio > worst[1]:
+                worst = (b, ratio, a)
+        per_form[f["id"]] = {
+            "name": f["name"],
+            "stalest_claim": worst[0] if worst else None,
+            "age_days": worst[2] if worst else None,
+            "half_lives_elapsed": round(worst[1], 2) if worst else None,
+            "unlocated": f.get("location") is None}
+    summary = {}
+    for b, ages in per_class.items():
+        rec = {"n": len(ages), "half_life_days": HALF_LIFE[b]}
+        if ages:
+            ages = sorted(ages)
+            rec.update({"median_age_days": ages[len(ages) // 2],
+                        "max_age_days": ages[-1],
+                        "past_half_life": sum(1 for a in ages if a > HALF_LIFE[b])})
+        summary[b] = rec
+    return {"schema": "kfk-freshness/1.0",
+            "generator": "KriegForeKaster.py",
+            "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "theater": d["theater"],
+            "formations": len(d["formations"]),
+            "claim_states": states,
+            "by_claim_class": summary,
+            "by_formation": per_form}
+
+
+def halflife_projections(d: dict, claim: str = "commander", horizon: int = None):
+    """Turn the decay model into forecasts that score it.
+
+    A half-life is an assertion, and assertions are what this whole apparatus
+    exists to distrust. Issued at exactly one half-life the model says fifty
+    percent, so these rows can never show SKILL — a 50% row costs 0.25 whatever
+    happens. What they test is CALIBRATION: across enough of them the realised
+    frequency should land near the stated one. That is why they belong on their
+    own arm and must never be pooled with judgement forecasts.
+    """
+    h = HALF_LIFE[claim]
+    t = horizon or h
+    out, skipped = [], []
+    for f in d["formations"]:
+        blk = f.get(claim)
+        if not blk:
+            skipped.append((f["id"], f"no {claim} claim"))
+            continue
+        if blk.get("grade") in NEVER_ISSUE:
+            skipped.append((f["id"], f"{claim} graded {blk['grade']}"))
+            continue
+        as_of = parse_day(blk.get("as_of"))
+        if as_of is None:
+            skipped.append((f["id"], "undated claim"))
+            continue
+        deadline = as_of + timedelta(days=t)
+        if deadline <= date.today() + timedelta(days=3):
+            skipped.append((f["id"], f"deadline {deadline} inside the ledger 3-day floor"))
+            continue
+        p = max(5, min(95, int(round((1 - 0.5 ** (t / h)) * 100))))
+        src = (blk.get("sources") or [""])[0]
+        if claim == "commander":
+            who = " ".join(x for x in (blk.get("rank"), blk.get("name")) if x)
+            stmt = (f"{who} will no longer be named as commanding officer of the "
+                    f"{f['name']} in the source of record on {deadline.isoformat()}.")
+            res = (f"Resolved on {deadline.isoformat()} by inspecting {src} : hit if a "
+                   f"different officer is named, miss if the same officer is named.")
+        else:
+            val = blk.get("value") or blk.get("place") or blk.get("summary") or "the recorded value"
+            stmt = (f"The {claim} of the {f['name']} recorded as {val} will differ in "
+                    f"the source of record on {deadline.isoformat()}.")
+            res = (f"Resolved on {deadline.isoformat()} by inspecting {src} : hit if the "
+                   f"recorded {claim} differs, miss if it is unchanged.")
+        out.append({"statement": stmt, "domain": "military/conflict",
+                    "probability": p, "resolution": res,
+                    "deadline": deadline.isoformat(), "citations": [0],
+                    "_formation": f["id"]})
+    return out, skipped, t, h
+
+
+# ----------------------------------------------------------------------
 def issue(d, fid, claim, prob, deadline, resolution, statement=None):
     f = next((x for x in d["formations"] if x["id"] == fid), None)
     if f is None:
@@ -306,6 +406,11 @@ def main():
     sub.add_parser("lint")
     sub.add_parser("stats")
     sub.add_parser("publish")
+    sub.add_parser("freshness")
+    hl = sub.add_parser("halflife")
+    hl.add_argument("--claim", choices=CLAIM_BLOCKS, default="commander")
+    hl.add_argument("--horizon", type=int, default=None,
+                    help="days; defaults to one half-life, where the model says 50%%")
     i = sub.add_parser("issue")
     i.add_argument("formation")
     i.add_argument("claim", choices=CLAIM_BLOCKS)
@@ -365,6 +470,56 @@ def main():
         if not publish():
             print(f"no docs/ directory at {DOCS} — nothing published")
             return 1
+        return 0
+
+    if a.cmd == "freshness":
+        fr = freshness(d)
+        print(f"FRESHNESS — {fr['theater']} · as of {fr['as_of']}\n")
+        for b, r in fr["by_claim_class"].items():
+            if not r["n"]:
+                print(f"  {b:12s} no claims recorded")
+                continue
+            print(f"  {b:12s} n={r['n']:<3d} half-life {r['half_life_days']:>3d}d · "
+                  f"median {r['median_age_days']:>4d}d · oldest {r['max_age_days']:>4d}d · "
+                  f"{r['past_half_life']} past half-life")
+        print("\n  stalest claim per formation:")
+        for fid, r in sorted(fr["by_formation"].items(),
+                             key=lambda kv: -(kv[1]["half_lives_elapsed"] or 0)):
+            hl = r["half_lives_elapsed"]
+            print(f"    {fid:10s} {r['name'][:34]:34s} {str(r['stalest_claim']):11s} "
+                  f"{str(r['age_days']):>5s}d = {hl} half-lives"
+                  + ("  [unlocated]" if r["unlocated"] else ""))
+        print(f"\n  claim states: {fr['claim_states']}")
+        if DOCS.exists():
+            (DOCS / "freshness.json").write_text(
+                json.dumps(fr, indent=2, ensure_ascii=False), encoding="utf-8")
+            print(f"\npublished -> {DOCS / 'freshness.json'}")
+        else:
+            print(f"\nno docs/ at {DOCS} — not published")
+        return 0
+
+    if a.cmd == "halflife":
+        rows, skipped, t, h = halflife_projections(d, a.claim, a.horizon)
+        print(f"HALF-LIFE CALIBRATION SET — claim '{a.claim}', half-life {h}d, "
+              f"horizon {t}d, model probability "
+              f"{max(5, min(95, int(round((1 - 0.5 ** (t / h)) * 100))))}%\n")
+        for r in rows:
+            print(f"  {r['_formation']:10s} p={r['probability']:>2d}% due {r['deadline']}")
+            print(f"             {r['statement']}")
+        for fid, why in skipped:
+            print(f"  SKIP {fid:10s} {why}")
+        if not rows:
+            print("\nNothing to issue.")
+            return 1
+        clean = [{k: v for k, v in r.items() if not k.startswith("_")} for r in rows]
+        PROJ_OUT.write_text(json.dumps(clean, indent=2, ensure_ascii=False),
+                            encoding="utf-8")
+        print(f"\nwritten -> {PROJ_OUT}")
+        print("\nThese rows test CALIBRATION, not skill: at one half-life the model "
+              "says 50%, and a 50% row costs 0.25 whatever happens. They must go on "
+              "their own arm and never be pooled with judgement calls.\n")
+        print(f"  python kkr.py --ingest {PROJ_OUT.name} --arm kfk/halflife")
+        print("then link each id back with:  python KriegForeKaster.py link <F-id> <KKR-id>")
         return 0
 
     if a.cmd == "issue":
