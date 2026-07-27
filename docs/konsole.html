@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>konsole · Nebelkr&auml;he</title>
+<title>konsole · NebelKr&auml;he</title>
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="crow_mark.svg">
 <style>
@@ -23,7 +23,7 @@ a{color:var(--brass)}
 </style></head><body>
 <canvas id="rain"></canvas>
 <div id="term"></div>
-<div id="row" style="padding:0 1.1rem 1.2rem"><span id="ps">nebelkr&auml;he&gt;</span><input id="in" autofocus autocomplete="off" spellcheck="false"></div>
+<div id="row" style="padding:0 1.1rem 1.2rem"><span id="ps">nebelKr&auml;he&gt;</span><input id="in" autofocus autocomplete="off" spellcheck="false"></div>
 <script>
 (function(){
 "use strict";
@@ -235,7 +235,7 @@ var CMDS={
 };
 function run(line){
   var a=line.trim().split(/\s+/), c=(a[0]||"").toLowerCase();
-  out("<span class='br'>nebelkrähe&gt;</span> "+esc(line));
+  out("<span class='br'>nebelKrähe&gt;</span> "+esc(line));
   if(!c) return;
   if(c==="draw") return fogDraw(a[1]?parseInt(a[1],10):1);
   if(c==="p"||c==="say") return fogCommit(parseInt(a[1],10));
@@ -248,7 +248,7 @@ IN.addEventListener("keydown",function(e){
 });
 document.addEventListener("click",function(){IN.focus();});
 
-out("Nebelkrähe konsole · unlisted","br");
+out("NebelKrähe konsole · unlisted","br");
 out("You found this by doing what the site told you to do.","dim");
 out("<span class='br'>help</span> for commands. <span class='br'>fog</span> to be scored.","dim");
 })();

@@ -2,7 +2,7 @@
 """
 mark_build.py — one geometry, every asset.
 
-The Nebelkraehe mark exists in exactly one place: the vertex table below. Every
+The NebelKraehe mark exists in exactly one place: the vertex table below. Every
 file the site serves is generated from it. Nothing is hand-edited downstream,
 for the same reason docs/ledger.json is a build product and not a copy someone
 remembers to make.
@@ -15,7 +15,7 @@ Emits
     crow_mark_512.png       raster fallback
     apple-touch-icon.png    180x180, opaque dark plate
     favicon.png             48x48
-    og_nebelkraehe.png      1200x630 social card
+    og_nebelKraehe.png      1200x630 social card
 """
 
 import json, math, sys
@@ -97,7 +97,7 @@ def svg(pad=4, square=False, plate=None):
         f'<stop offset="{o:.2f}" stop-color="#{c[0]:02x}{c[1]:02x}{c[2]:02x}" stop-opacity="{a}"/>'
         for o,c,a in FOG)
     bg = f'\n  <rect width="{w}" height="{h}" fill="{plate}"/>' if plate else ""
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Nebelkr&#228;he mark">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="NebelKr&#228;he mark">
   <defs>
     <linearGradient id="fog" gradientUnits="userSpaceOnUse" x1="{g1[0]}" y1="{g1[1]}" x2="{g2[0]}" y2="{g2[1]}">
       {stops}
@@ -170,7 +170,7 @@ def main():
     raster(512).save(OUT/"crow_mark_512.png")
     raster(180, pad_frac=.12, plate=PLATE, canvas=(180,180)).save(OUT/"apple-touch-icon.png")
     raster(48,  pad_frac=.06, canvas=(48,48)).save(OUT/"favicon.png")
-    raster(1200, pad_frac=.22, plate=PLATE, canvas=(1200,630)).save(OUT/"og_nebelkraehe.png")
+    raster(1200, pad_frac=.22, plate=PLATE, canvas=(1200,630)).save(OUT/"og_nebelKraehe.png")
     for f in sorted(OUT.iterdir()):
         print(f"  {f.name:24s} {f.stat().st_size:>8,} bytes")
 
