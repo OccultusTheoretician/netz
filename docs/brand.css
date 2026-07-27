@@ -1,0 +1,155 @@
+/* brand.css — Nebelkrähe site furniture.
+   Angular, hard-cut, HUD-adjacent; brass on near-black, not Terminator red.
+   Everything here is additive and selector-driven: no page markup changes, no
+   external dependency, nothing that breaks if it fails to load. One clock —
+   22 seconds — shared with the radar sweep, so the whole page breathes on the
+   same period as the instrument. */
+
+:root{
+  --brand-brass:#c9a227;
+  --brand-brass-lit:#dcb65e;
+  --brand-line:rgba(201,162,39,.16);
+  --brand-line-faint:rgba(180,190,200,.055);
+  --brand-cut:14px;          /* chamfer depth */
+  --brand-cut-sm:8px;
+  --brand-period:22s;        /* the radar's period. do not desync. */
+}
+
+/* ---------- the field ------------------------------------------------ */
+#brandbg{
+  position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden;
+  contain:strict;
+}
+#brandbg > *{position:absolute; inset:-8%}
+#brandbg .lattice{
+  opacity:.9;
+  will-change:transform;
+  transition:transform .45s cubic-bezier(.2,.7,.3,1);
+}
+#brandbg .grain{
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 3px);
+  mix-blend-mode:overlay;
+}
+/* a slow brass wash crossing the field, on the sweep's clock */
+#brandbg .sweep{
+  background:linear-gradient(105deg,
+     transparent 0%, transparent 38%,
+     rgba(201,162,39,.055) 47%,
+     rgba(220,182,94,.10) 50%,
+     rgba(201,162,39,.055) 53%,
+     transparent 62%, transparent 100%);
+  transform:translateX(-60%);
+  animation:brand-sweep var(--brand-period) linear infinite;
+}
+@keyframes brand-sweep{ to{ transform:translateX(60%);} }
+
+/* the crest, large and nearly gone, anchored bottom-right of the field */
+#brandbg .watermark{
+  inset:auto -6% -10% auto; width:min(58vw,760px); height:auto;
+  opacity:.032; filter:grayscale(1) contrast(1.4);
+  transform:scaleX(-1) rotate(-4deg);
+}
+
+/* Keep the field behind everything WITHOUT touching any element's position.
+   An earlier draft set `body > *{position:relative;z-index:1}`, which would
+   have overridden nav{position:sticky} on every page and killed the sticky
+   masthead site-wide. Instead the field drops to z-index:-1 and the page
+   background moves from body to html, because a negative-z child paints behind
+   its parent's own background. Nothing else in the page is touched. */
+html{background:var(--nacht, var(--field, #080B0F))}
+body{background:transparent}
+
+/* ---------- chamfer: the angular grammar ----------------------------- */
+.card, .blk, .panel, .instrument, .dash > *, .standing, .rv > .box{
+  clip-path:polygon(
+    var(--brand-cut) 0, 100% 0,
+    100% calc(100% - var(--brand-cut)), calc(100% - var(--brand-cut)) 100%,
+    0 100%, 0 var(--brand-cut));
+}
+.cta, .cta-min, a.cta, button.cta{
+  clip-path:polygon(
+    var(--brand-cut-sm) 0, 100% 0,
+    100% calc(100% - var(--brand-cut-sm)), calc(100% - var(--brand-cut-sm)) 100%,
+    0 100%, 0 var(--brand-cut-sm));
+}
+
+/* corner brackets on cards — the HUD tell, drawn not imaged */
+.card{position:relative}
+.card::after{
+  content:""; position:absolute; right:0; bottom:0;
+  width:var(--brand-cut); height:var(--brand-cut);
+  background:linear-gradient(45deg, var(--brand-line) 0 50%, transparent 50%);
+  pointer-events:none;
+}
+
+/* ---------- viewport reticle ----------------------------------------- */
+#brandhud{
+  position:fixed; inset:0; z-index:3; pointer-events:none;
+  --r:18px; --w:1px;
+}
+#brandhud i{position:absolute; width:var(--r); height:var(--r); opacity:.5}
+#brandhud i::before,#brandhud i::after{
+  content:""; position:absolute; background:var(--brand-line);
+}
+#brandhud i::before{width:100%; height:var(--w)}
+#brandhud i::after{width:var(--w); height:100%}
+#brandhud .tl{top:14px; left:14px}
+#brandhud .tr{top:14px; right:14px}
+#brandhud .tr::before{right:0} #brandhud .tr::after{right:0}
+#brandhud .bl{bottom:14px; left:14px}
+#brandhud .bl::before{bottom:0} #brandhud .bl::after{bottom:0}
+#brandhud .br{bottom:14px; right:14px}
+#brandhud .br::before{bottom:0; right:0} #brandhud .br::after{bottom:0; right:0}
+
+/* ---------- the crest as punctuation --------------------------------- */
+.crest-rule{
+  display:flex; align-items:center; gap:.9rem; margin:2.4rem 0;
+  opacity:.55;
+}
+.crest-rule::before,.crest-rule::after{
+  content:""; flex:1 1 auto; height:1px;
+  background:linear-gradient(90deg,transparent,var(--brand-line),transparent);
+}
+.crest-rule img{width:34px; height:auto; opacity:.75; filter:grayscale(1)}
+
+/* section headings get a small angular tick in brass */
+h2::before{
+  content:""; display:inline-block; width:.55em; height:.55em;
+  margin-right:.55em; vertical-align:.06em;
+  background:var(--brand-brass); opacity:.55;
+  clip-path:polygon(0 0,100% 50%,0 100%);
+}
+
+/* ---------- restraint ------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  #brandbg .sweep{animation:none; opacity:.35}
+  #brandbg .lattice{transition:none}
+}
+@media (max-width:760px){
+  :root{--brand-cut:10px}
+  #brandbg .watermark{width:86vw; opacity:.028}
+  #brandhud{display:none}
+}
+@media print{ #brandbg,#brandhud{display:none} }
+
+
+/* ---------- the mark, at sizes where it actually resolves -------------
+   Two defects this corrects, both found by looking at the ledger page where
+   the crest renders at 180px and the grey trim, the panels and the slit all
+   read. Everywhere else it was worse.
+
+   The masthead forced the mark into a 26x26 square. The mark is 729x300 —
+   an aspect of 2.43:1 — so a fixed square squashed it on every page, which
+   MARK.md §6 forbids in as many words. Height is now authoritative and the
+   width follows the ratio.
+
+   The hero rendered it at 14% of the scope, about 87px, which is above the
+   44px floor but well below where the grey work resolves. 24% puts it near
+   150px on desktop, and the mobile scope grows so it clears the floor there
+   too. Scoped to .leuchte so the 180px on the generated faces is untouched. */
+.nav-mark img, .desknav .home img, nav .home img{
+  width:auto !important; height:24px !important;
+}
+.leuchte .crow-mark{ width:24% }
+@media(max-width:960px){ .leuchte{ width:min(340px,80vw) } }
