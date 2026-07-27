@@ -29,7 +29,7 @@ DOCS = ROOT / "docs"
 SKIP = {"kkr.html", "ledger.html", "report.html"}
 
 # documented in MARK.md as downloadable assets, not page references
-INTENTIONAL = {"crow_mark_512.png", "crow_mark_square.svg", "og_nebelkraehe.png"}
+INTENTIONAL = {"crow_mark_512.png", "crow_mark_square.svg", "og_nebelKraehe.png"}
 
 BLOCK = ('<link rel="stylesheet" href="brand.css">\n'
          '<script defer src="brand.js"></script>')

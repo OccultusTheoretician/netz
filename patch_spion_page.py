@@ -32,7 +32,7 @@ ROOT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(r"C:\netz")
 TARGET = ROOT / "docs" / "spion.html"
 
 NAV = '''<nav id="sitenav">
-  <a class="home" href="index.html"><img src="crow_mark.svg" alt="">Nebelkr&auml;he</a>
+  <a class="home" href="index.html"><img src="crow_mark.svg" alt="">NebelKr&auml;he</a>
   <span class="sp"></span>
   <a href="index.html">Home</a>
   <a href="standards.html">Standards</a>

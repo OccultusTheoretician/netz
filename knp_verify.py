@@ -254,7 +254,7 @@ VECTORS = [
               "salt": "00112233445566778899aabbccddeeff"}},
     {"name": "unicode statement",
      "item": {"id": "KK-20260101-02", "timestamp": "2026-01-01T00:00:00Z",
-              "statement": "Nebelkrähe — Straße, 日本語, emoji 🜁",
+              "statement": "NebelKrähe — Straße, 日本語, emoji 🜁",
               "resolution_basis": "Vérification à la source.",
               "salt": "ffeeddccbbaa99887766554433221100"}},
     {"name": "pipe in statement (escaped)",

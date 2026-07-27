@@ -14,7 +14,7 @@ Changes
   docs/*.html   <img src="crow.png">            -> crow_mark.svg
                 <link rel=icon href=crow.png>   -> crow_mark.svg, plus
                                                    apple-touch-icon
-                og:image                        -> og_nebelkraehe.png
+                og:image                        -> og_nebelKraehe.png
   netz.py       CROW_SVG base64 blob            -> <img src="crow_mark.svg">
                 desknav crow.png                -> crow_mark.svg
 
@@ -46,7 +46,7 @@ def patch_html(p: Path):
         s = re.sub(r'<link rel="icon"[^>]*href="crow\.png"\s*/?>', ICON_BLOCK, s, count=1)
     # social card
     s = s.replace("https://retroprescientaudit.com/crow.png",
-                  "https://retroprescientaudit.com/og_nebelkraehe.png")
+                  "https://retroprescientaudit.com/og_nebelKraehe.png")
     s = s.replace('name="twitter:card" content="summary"',
                   'name="twitter:card" content="summary_large_image"')
     if s != orig:
@@ -59,7 +59,7 @@ def patch_netz(p: Path):
     s = orig = p.read_text(encoding="utf-8")
     # the embedded base64 mark: ~40 KB baked into every generated page
     s = re.sub(r"CROW_SVG = '''<img class=\"crow-mark\"[^\n]*?'''",
-               "CROW_SVG = '''<img class=\"crow-mark\" alt=\"Nebelkr&auml;he\" "
+               "CROW_SVG = '''<img class=\"crow-mark\" alt=\"NebelKr&auml;he\" "
                "src=\"crow_mark.svg\"/>'''", s, count=1, flags=re.S)
     s = s.replace('<img src="crow.png" alt=""', '<img src="crow_mark.svg" alt=""')
     # the generated pages' own <head> icon link, single-quoted inside an f-string
@@ -78,7 +78,7 @@ def main():
         print(f"FAIL — no docs directory at {DOCS}")
         return 1
     need = ["crow_mark.svg", "crow_mark_square.svg", "favicon.png",
-            "apple-touch-icon.png", "og_nebelkraehe.png", "crow_mark_512.png"]
+            "apple-touch-icon.png", "og_nebelKraehe.png", "crow_mark_512.png"]
     missing = [n for n in need if not (DOCS / n).exists()]
     if missing:
         print("FAIL — these assets are not in docs/ yet:")
