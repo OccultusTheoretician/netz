@@ -1,27 +1,5 @@
 {
   "protocol": "KNP-26",
-  "construction": {
-    "preimage_order": [
-      "id",
-      "timestamp",
-      "statement",
-      "resolution_basis",
-      "salt"
-    ],
-    "separator": "|",
-    "hash": "SHA-256",
-    "encoding": "UTF-8",
-    "pipe_escape": "\\u007C"
-  },
-  "anchor": {
-    "mechanism": "public version-control history",
-    "description": "This hashlog is published in a public git repository. Every append is a commit with an independent timestamp and hash chain that the committer cannot rewrite without the rewrite being visible to anyone holding an earlier clone. The commit history is the append-only mechanism required by KNP 4.03, and it is not under the committer's sole control.",
-    "repository": "https://github.com/OccultusTheoretician/netz",
-    "path": "docs/kalls_hashlog.json",
-    "history": "https://github.com/OccultusTheoretician/netz/commits/main/docs/kalls_hashlog.json",
-    "verify": "Clone the repository, walk the history of this path, and confirm no record was ever removed and no commitment ever altered. python knp_verify.py <current> --previous <earlier> asserts it across any two snapshots."
-  },
-  "disclosure": "probability, deadline and domain are published OUTSIDE the canonical preimage and are therefore NOT BOUND by the commitment hash. They are anchored only by the append-only record described in 'anchor'. The fields bound by the hash are exactly those named in 'construction.preimage_order'. A reader checking a reveal recomputes over the preimage fields alone; the published commitment governs.",
   "records": [
     {
       "id": "KK-20260725-01",
@@ -95,5 +73,18 @@
       "deadline": "2026-12-31",
       "status": "SEALED"
     }
-  ]
+  ],
+  "construction": {
+    "preimage_order": [
+      "id",
+      "timestamp",
+      "statement",
+      "resolution_basis",
+      "salt"
+    ],
+    "separator": "|",
+    "hash": "SHA-256",
+    "encoding": "UTF-8",
+    "pipe_escape": "\\u007C"
+  }
 }
