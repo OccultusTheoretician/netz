@@ -1,12 +1,12 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 271432Z JUL 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 271503Z JUL 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 106 issued across 4 forecaster arms · 83 open (0 past deadline, unresolved)
+Window: all-time · 111 issued across 4 forecaster arms · 88 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -15,7 +15,7 @@ Window: all-time · 106 issued across 4 forecaster arms · 83 open (0 past deadl
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
 | `kfk/halflife` | 10 | 10 | 0 | — | — | not computed | — | — | — |
-| `lmstudio/auto` | 55 | 35 | 13 | 4 | 9 | 0.221 | 30.8% | 0.213 | -0.038 |
+| `lmstudio/auto` | 60 | 40 | 13 | 4 | 9 | 0.221 | 30.8% | 0.213 | -0.038 |
 | `manual/fable` | 35 | 35 | 0 | — | — | not computed | — | — | — |
 | `operator/human` | 6 | 3 | 0 | — | — | not computed | — | — | — |
 
@@ -38,6 +38,11 @@ Window: all-time · 106 issued across 4 forecaster arms · 83 open (0 past deadl
 | KKR-20260720-02 | `lmstudio/auto` | 2026-07-20 | 2026-07-28 | 40% | economics/markets | The Nasdaq Composite Index will close below 18,000 on 2026-07-28, based on official market data from Yahoo Finance or Bloomberg. |
 | KKR-20260724-02 | `lmstudio/auto` | 2026-07-24 | 2026-07-28 | 25% | military_conflict | The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. |
 | KKR-20260720-04 | `lmstudio/auto` | 2026-07-20 | 2026-07-29 | 60% | economics/markets | The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. |
+| KKR-20260727-11 | `lmstudio/auto` | 2026-07-27 | 2026-07-30 | 35% | economics/markets | New York City rental listings on StreetEasy and Zillow will show a 20% or greater drop in available units for rent in Manhattan and Brooklyn between 2026-07-27 and 2026-07-30. |
+| KKR-20260727-12 | `lmstudio/auto` | 2026-07-27 | 2026-07-30 | 30% | cyber | A confirmed breach of a critical infrastructure provider's system via an unpatched n8n instance will be reported by 2026-07-30. |
+| KKR-20260727-13 | `lmstudio/auto` | 2026-07-27 | 2026-07-30 | 25% | political | The UK Labour Party's lead over Reform UK in the latest poll will narrow to less than 5 points by 2026-07-30. |
+| KKR-20260727-14 | `lmstudio/auto` | 2026-07-27 | 2026-07-30 | 35% | economics/markets | Oil prices will fall below $85 a barrel on the London Brent market by 2026-07-30. |
+| KKR-20260727-15 | `lmstudio/auto` | 2026-07-27 | 2026-07-30 | 40% | political | The Home Office will publicly confirm the blocking of the evacuation of women and children from Gaza by 2026-07-30. |
 | KKR-20260721-01 | `lmstudio/auto` | 2026-07-21 | 2026-07-31 | 30% | political | The Lebanese Armed Forces will release a formal statement confirming Israeli fire near their troops between 2026-07-28 and 2026-07-31. |
 | KKR-20260723-02 | `lmstudio/auto` | 2026-07-23 | 2026-08-01 | 45% | cyber | By 2026-08-01, the Chaos ransomware group will be linked to a new campaign using msaRAT to route C2 traffic through compromised headless browsers, with at least two new malware samples detected on VirusTotal. |
 | KKR-20260722-03 | `lmstudio/auto` | 2026-07-22 | 2026-08-02 | 40% | disaster | Between 2026-07-29 and 2026-08-02, the Japan Meteorological Agency issues a new heatwave alert for Tokyo and Osaka, with temperatures exceeding 40°C for three consecutive days. |
@@ -138,7 +143,7 @@ Window: all-time · 106 issued across 4 forecaster arms · 83 open (0 past deadl
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*10 of 106 issued (9.4%) have been voided.*
+*10 of 111 issued (9.0%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
