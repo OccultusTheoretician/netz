@@ -1,10 +1,10 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KKR PREDICTIVE LEDGER — 270031Z JUL 26
+# KKR PREDICTIVE LEDGER — 270037Z JUL 26
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 96 issued across 3 forecaster arms · 77 open (0 past deadline, unresolved)
+Window: all-time · 96 issued across 3 forecaster arms · 73 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -12,9 +12,9 @@ Window: all-time · 96 issued across 3 forecaster arms · 77 open (0 past deadli
 
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
-| `lmstudio/auto` | 55 | 36 | 13 | 4 | 9 | 0.221 | 30.8% | 0.213 | -0.038 |
+| `lmstudio/auto` | 55 | 35 | 13 | 4 | 9 | 0.221 | 30.8% | 0.213 | -0.038 |
 | `manual/fable` | 35 | 35 | 0 | — | — | not computed | — | — | — |
-| `operator/human` | 6 | 6 | 0 | — | — | not computed | — | — | — |
+| `operator/human` | 6 | 3 | 0 | — | — | not computed | — | — | — |
 
 *Under 30 resolved a Brier score is noise, not a record: `lmstudio/auto`.*
 
@@ -32,7 +32,6 @@ Window: all-time · 96 issued across 3 forecaster arms · 77 open (0 past deadli
 | id | arm | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|---|
 | KKR-20260723-01 | `lmstudio/auto` | 2026-07-23 | 2026-07-27 | 65% | economics | Between 2026-07-24 and 2026-07-27, Brent crude oil will close above $100 per barrel for three consecutive trading days. |
-| KKR-20260724-01 | `lmstudio/auto` | 2026-07-24 | 2026-07-27 | 30% | disaster | Over 80,000 people will have been evacuated from the Cap Ferret peninsula and surrounding areas near Madrid due to wildfires between 2026-07-24 and 2026-07-27. |
 | KKR-20260720-02 | `lmstudio/auto` | 2026-07-20 | 2026-07-28 | 40% | economics/markets | The Nasdaq Composite Index will close below 18,000 on 2026-07-28, based on official market data from Yahoo Finance or Bloomberg. |
 | KKR-20260724-02 | `lmstudio/auto` | 2026-07-24 | 2026-07-28 | 25% | military_conflict | The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. |
 | KKR-20260720-04 | `lmstudio/auto` | 2026-07-20 | 2026-07-29 | 60% | economics/markets | The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. |
@@ -57,8 +56,6 @@ Window: all-time · 96 issued across 3 forecaster arms · 77 open (0 past deadli
 | KKR-20260725-06 | `manual/fable` | 2026-07-25 | 2026-08-10 | 22% | disaster | The French national government formally declares a nationwide state of emergency for the wildfires between 2026-07-27 and 2026-08-10. |
 | KKR-20260720-17 | `lmstudio/auto` | 2026-07-20 | 2026-08-12 | 50% | political | The U.S. will announce a new round of sanctions against Iran’s Revolutionary Guard Corps by 2026-08-12, citing continued aggression in the region. |
 | KKR-20260722-02 | `lmstudio/auto` | 2026-07-22 | 2026-08-12 | 25% | economics/markets | On 2026-08-12, the U.S. Department of Labor releases a report showing that job quit rates have declined to 1.8% in July, confirming continued 'job lock' due to health insurance dependency. |
-| KKR-20260722-07 | `operator/human` | 2026-07-22 | 2026-08-12 | 45% | disaster | Yes |
-| KKR-20260722-08 | `operator/human` | 2026-07-22 | 2026-08-12 | 95% | military | Yes |
 | KKR-20260722-09 | `operator/human` | 2026-07-22 | 2026-08-12 | 65% | economics | Brent crude settles above 90 dollars on at least three trading days between 2026-07-23 and 2026-08-12 |
 | KKR-20260726-13 | `lmstudio/auto` | 2026-07-26 | 2026-08-13 | 20% | political | Romania formally protests to the UN Security Council over Russian drone activity in its airspace between 2026-08-10 and 2026-08-13. |
 | KKR-20260722-15 | `manual/fable` | 2026-07-22 | 2026-08-14 | 70% | economics | Brent crude front-month settles above 90 dollars per barrel on at least three trading days between 2026-07-23 and 2026-08-14 |
@@ -98,7 +95,6 @@ Window: all-time · 96 issued across 3 forecaster arms · 77 open (0 past deadli
 | KKR-20260725-10 | `manual/fable` | 2026-07-25 | 2026-10-31 | 45% | political | A US federal court or the Supreme Court issues a ruling in a challenge to Trump administration tariffs between 2026-07-27 and 2026-10-31. |
 | KKR-20260722-01 | `lmstudio/auto` | 2026-07-22 | 2026-11-05 | 30% | political | Andy Biggs wins the Arizona gubernatorial general election on 2026-11-05, defeating Katie Hobbs in a recount that confirms his victory by 1,200 votes. |
 | KKR-20260726-16 | `lmstudio/auto` | 2026-07-26 | 2026-11-15 | 25% | economics/markets | The European Central Bank announces a 0.5 percentage point interest rate hike on or before 2026-11-15, citing inflation concerns. |
-| KKR-20260722-05 | `operator/human` | 2026-07-22 | 2026-11-19 | 85% | political | No |
 | KKR-20260722-11 | `manual/fable` | 2026-07-22 | 2026-12-15 | 45% | political | Andy Biggs wins the Arizona gubernatorial general election, defeating Katie Hobbs by any margin, with results certified between 2026-11-05 and 2026-12-15 |
 | KKR-20260726-05 | `manual/fable` | 2026-07-26 | 2026-12-31 | 30% | military_conflict | A NATO member formally requests Article 4 consultations over Russian drone or airspace incursions between 2026-08-02 and 2026-12-31. |
 | KKR-20260726-01 | `manual/fable` | 2026-07-26 | 2027-01-15 | 25% | economics_markets | Brent crude front-month futures settle above 120.00 USD per barrel on any trading day between 2026-08-02 and 2027-01-15. |
@@ -129,7 +125,7 @@ Window: all-time · 96 issued across 3 forecaster arms · 77 open (0 past deadli
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*6 of 96 issued (6.2%) have been voided.*
+*10 of 96 issued (10.4%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
@@ -143,6 +139,14 @@ A sealed projection is never edited. Where one cannot be adjudicated as written,
     - *Reason:* NATO ally likely model error for adversary; unadjudicable as stated
 - **KKR-20260720-26** [`lmstudio/auto`] (35%, due 2026-07-23, voided 2026-07-24) — statement as sealed: “Iran will respond to U.S. strikes with a confirmed cyberattack on a U.S. government or financial institution within 72 hours, as reported by Al Jazeera and BBC World.”
     - *Reason:* ambiguous - could read either way
+- **KKR-20260722-05** [`operator/human`] (85%, due 2026-11-19, voided 2026-07-27) — statement as sealed: “No”
+    - *Reason:* Statement field contains no proposition — the text is the single word 'No'. Unadjudicable as written under RPAS law 2.
+- **KKR-20260722-07** [`operator/human`] (45%, due 2026-08-12, voided 2026-07-27) — statement as sealed: “Yes”
+    - *Reason:* Statement field contains no proposition — the text is the single word 'Yes'. Unadjudicable as written under RPAS law 2. Gate defect, not a forecasting defect; the projection this was meant to carry is lost.
+- **KKR-20260722-08** [`operator/human`] (95%, due 2026-08-12, voided 2026-07-27) — statement as sealed: “Yes”
+    - *Reason:* Statement field contains no proposition — the text is the single word 'Yes'. Unadjudicable as written under RPAS law 2. Issued at 95%, the highest confidence on the open book, and therefore the most costly gate failure in the set.
+- **KKR-20260724-01** [`lmstudio/auto`] (30%, due 2026-07-27, voided 2026-07-27) — statement as sealed: “Over 80,000 people will have been evacuated from the Cap Ferret peninsula and surrounding areas near Madrid due to wildfires between 2026-07-24 and 2026-07-27.”
+    - *Reason:* Statement is geographically incoherent: names the Cap Ferret peninsula (Gironde, France) as being near Madrid (Spain), roughly 700 km apart. No blind adjudicator can determine which evacuation zone is meant.
 
 ---
 **UNCLASSIFIED // OPEN SOURCES** · *the ledger scores the system, not the operator; consistency is not correctness — resolution is.*
