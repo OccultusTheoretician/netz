@@ -77,7 +77,8 @@
         "sources": [
           "https://home.army.mil/bragg/index.php/units-tenants/xviii-airborne-co"
         ],
-        "note": "Installation centroid, approximate. Home station, not a deployed position. A headquarters at its home station is the least interesting location claim there is and the easiest to keep fresh, which is exactly why it is the right place to start."
+        "note": "Installation centroid, approximate. Home station, not a deployed position. A headquarters at its home station is the least interesting location claim there is and the easiest to keep fresh, which is exactly why it is the right place to start.",
+        "denotes": "installation centroid"
       },
       "commander": {
         "name": "Gregory K. Anderson",
@@ -99,7 +100,15 @@
       "id": "F-82ABN",
       "faction": "united-states",
       "echelon": "division",
-      "parent": "F-XVIII",
+      "parent": {
+        "id": "F-XVIII",
+        "grade": "DOCUMENTED",
+        "as_of": "2026-07-27",
+        "sources": [
+          "https://home.army.mil/bragg/units-tenants/82nd-airborne-division"
+        ],
+        "note": "The Army's own installation page describes this division as the primary fighting arm of XVIII Airborne Corps. Recorded as a claim rather than a bare id: subordination determines the structure of the board and was the only load-bearing field here carrying no grade, source or date."
+      },
       "name": "82nd Airborne Division",
       "designation": "82 ABN",
       "existence": {
@@ -127,7 +136,8 @@
         "sources": [
           "https://home.army.mil/bragg/units-tenants/82nd-airborne-division"
         ],
-        "note": "Home station. Installation centroid, approximate. Read alongside the posture claim: elements were reported deploying elsewhere and that reporting has not been re-verified, so home station and posture sit in tension by design rather than by error."
+        "note": "Home station. Installation centroid, approximate. Read alongside the posture claim: elements were reported deploying elsewhere and that reporting has not been re-verified, so home station and posture sit in tension by design rather than by error.",
+        "denotes": "installation centroid"
       },
       "posture": {
         "value": "committed",
@@ -178,7 +188,8 @@
         "sources": [
           "https://www.wkdzradio.com/2026/07/17/former-fort-campbell-commander-nominated-to-lead-xviii-airborne-corps/news-edge/"
         ],
-        "note": "Installation centroid, approximate. Home station."
+        "note": "Installation centroid, approximate. Home station.",
+        "denotes": "installation centroid"
       },
       "commander": {
         "name": "John W. Lubas",
@@ -219,7 +230,8 @@
         "sources": [
           "https://home.army.mil/campbell/about/leadership/senior-commander"
         ],
-        "note": "Installation centroid, approximate. Home station."
+        "note": "Installation centroid, approximate. Home station.",
+        "denotes": "installation centroid"
       },
       "commander": {
         "name": "David W. Gardner",
@@ -259,7 +271,8 @@
         "sources": [
           "https://home.army.mil/drum/about/leadership/10th-mountain-division-li-and-fort-drum-commander"
         ],
-        "note": "Installation centroid, approximate. Home station."
+        "note": "Installation centroid, approximate. Home station.",
+        "denotes": "installation centroid"
       },
       "commander": {
         "name": "Scott M. Naumann",
@@ -305,7 +318,8 @@
         "grade": "DERIVED",
         "as_of": "2026-07-27",
         "sources": [],
-        "rationale": "Capital centroid. The Chief of the Armed Forces is directly subordinate to the head of the Federal Department of Defence, Civil Protection and Sport, which sits in Bern; no source in hand states a headquarters coordinate, so this is graded DERIVED rather than DOCUMENTED and carries no source."
+        "rationale": "Capital centroid. The Chief of the Armed Forces is directly subordinate to the head of the Federal Department of Defence, Civil Protection and Sport, which sits in Bern; no source in hand states a headquarters coordinate, so this is graded DERIVED rather than DOCUMENTED and carries no source.",
+        "denotes": "approximate"
       },
       "commander": {
         "name": "Benedikt Roos",
@@ -319,7 +333,29 @@
         "note": "Chief of the Armed Forces (Chef der Armee) since 1 January 2026, succeeding Lt Gen Thomas Süssli. Rank Korpskommandant, NATO OF-8. A commander-in-chief at four-star rank is elected only in wartime, so the peacetime commander-in-chief post is vacant by design — which is itself a record most order-of-battle products get wrong."
       },
       "projections": [],
-      "notes": "First non-US record and the first at national-command echelon. Coverage goes shallow and wide before it goes deep: one record per national command is sourceable from the ministry's own pages, where division-level order of battle is not."
+      "notes": "First non-US record and the first at national-command echelon. Coverage goes shallow and wide before it goes deep: one record per national command is sourceable from the ministry's own pages, where division-level order of battle is not.",
+      "order_of_battle": {
+        "grade": "DOCUMENTED",
+        "as_of": "2026-07-27",
+        "sources": [
+          "https://www.vtg.admin.ch/en/the-swiss-armed-forces"
+        ],
+        "note": "EXAMPLE SHAPE — figures not yet sourced. Every empty field is a gap the report prints.",
+        "active_personnel": null
+      },
+      "factionalization": {
+        "grade": "DERIVED",
+        "as_of": "2026-07-27",
+        "sources": [],
+        "rationale": "Scored from published constitutional and organisational structure only. Switzerland runs a single chain under the Chief of the Armed Forces, has no regime-protection formation, appoints through the Federal Council with Assembly election of a wartime commander-in-chief, mans by militia conscription, and has no coup record. Architecture only; no claim about anyone's intent is made or recordable here.",
+        "parallel_forces": 0,
+        "praetorian_units": 0,
+        "appointment_control": 1,
+        "recruitment_basis": 1,
+        "command_rotation": 1,
+        "internal_security_role": 1,
+        "coup_record": 0
+      }
     },
     {
       "id": "F-SEED-VAT",
@@ -343,7 +379,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -370,7 +407,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -397,7 +435,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -424,7 +463,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -451,7 +491,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -478,7 +519,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -505,7 +547,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -532,7 +575,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -559,7 +603,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -586,7 +631,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -613,7 +659,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -640,7 +687,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -667,7 +715,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -694,7 +743,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -721,7 +771,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -748,7 +799,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -775,7 +827,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -802,7 +855,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -829,7 +883,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -856,7 +911,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -883,7 +939,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -910,7 +967,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -937,7 +995,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -964,7 +1023,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -991,7 +1051,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1018,7 +1079,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1045,7 +1107,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1072,7 +1135,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1099,7 +1163,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1126,7 +1191,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1153,7 +1219,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1180,7 +1247,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1207,7 +1275,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1234,7 +1303,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1261,7 +1331,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1288,7 +1359,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1315,7 +1387,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1342,7 +1415,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1369,7 +1443,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1396,7 +1471,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1423,7 +1499,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1450,7 +1527,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1477,7 +1555,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1504,7 +1583,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1531,7 +1611,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1558,7 +1639,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1585,7 +1667,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1612,7 +1695,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1639,7 +1723,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1666,7 +1751,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1693,7 +1779,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1720,7 +1807,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1747,7 +1835,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1776,7 +1865,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
@@ -1813,7 +1903,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1840,7 +1931,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1867,7 +1959,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1894,7 +1987,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1921,7 +2015,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1948,7 +2043,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -1975,7 +2071,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2002,7 +2099,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2029,7 +2127,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2056,7 +2155,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2083,7 +2183,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2110,7 +2211,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2137,7 +2239,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2164,7 +2267,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2193,7 +2297,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Abuja. The source names Defence Headquarters, Abuja as the chief of defence staff's seat, but gives no coordinate, so this remains the capital centroid rather than the headquarters point.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
@@ -2230,7 +2335,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2257,7 +2363,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2284,7 +2391,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2311,7 +2419,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2338,7 +2447,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2365,7 +2475,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2392,7 +2503,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2419,7 +2531,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2446,7 +2559,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2473,7 +2587,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2500,7 +2615,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2527,7 +2643,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2554,7 +2671,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2581,7 +2699,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2608,7 +2727,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2635,7 +2755,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2662,7 +2783,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2689,7 +2811,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2716,7 +2839,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2743,7 +2867,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2770,7 +2895,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2797,7 +2923,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2824,7 +2951,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2851,7 +2979,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2878,7 +3007,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2905,7 +3035,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2932,7 +3063,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2959,7 +3091,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -2988,7 +3121,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
@@ -3025,7 +3159,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3052,7 +3187,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3079,7 +3215,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3106,7 +3243,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3133,7 +3271,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3160,7 +3299,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3187,7 +3327,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3214,7 +3355,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3241,7 +3383,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3268,7 +3411,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3295,7 +3439,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3322,7 +3467,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3349,7 +3495,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3376,7 +3523,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3403,7 +3551,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3430,7 +3579,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3457,7 +3607,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3484,7 +3635,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3511,7 +3663,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3538,7 +3691,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3565,7 +3719,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3592,7 +3747,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3619,7 +3775,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3646,7 +3803,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3673,7 +3831,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3700,7 +3859,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3727,7 +3887,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3754,7 +3915,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3781,7 +3943,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3808,7 +3971,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3835,7 +3999,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3862,7 +4027,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3889,7 +4055,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3916,7 +4083,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3943,7 +4111,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3970,7 +4139,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -3997,7 +4167,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4024,7 +4195,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4051,7 +4223,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4078,7 +4251,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4105,7 +4279,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4132,7 +4307,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4159,7 +4335,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4186,7 +4363,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4213,7 +4391,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4240,7 +4419,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4267,7 +4447,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4294,7 +4475,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4321,7 +4503,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4348,7 +4531,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4375,7 +4559,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4402,7 +4587,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4429,7 +4615,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4456,7 +4643,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4483,7 +4671,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4510,7 +4699,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4537,7 +4727,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4564,7 +4755,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4591,7 +4783,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4618,7 +4811,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4645,7 +4839,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4672,7 +4867,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4699,7 +4895,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4726,7 +4923,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4753,7 +4951,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4780,7 +4979,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4807,7 +5007,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4834,7 +5035,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4861,7 +5063,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4888,7 +5091,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4915,7 +5119,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4942,7 +5147,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4969,7 +5175,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -4996,7 +5203,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5023,7 +5231,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5050,7 +5259,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5077,7 +5287,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5104,7 +5315,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5131,7 +5343,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5158,7 +5371,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5185,7 +5399,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5212,7 +5427,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5239,7 +5455,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5268,7 +5485,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
@@ -5305,7 +5523,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5332,7 +5551,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5359,7 +5579,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5388,7 +5609,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
@@ -5425,7 +5647,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5452,7 +5675,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5479,7 +5703,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5506,7 +5731,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5533,7 +5759,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5560,7 +5787,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5587,7 +5815,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5614,7 +5843,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
@@ -5641,7 +5871,8 @@
         "sources": [
           "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places_simple.geojson"
         ],
-        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
+        "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command.",
+        "denotes": "capital centroid"
       },
       "projections": [],
       "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
