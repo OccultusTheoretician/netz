@@ -193,26 +193,7 @@ def check_dirty():
     return "warn", f"{n} uncommitted change(s)"
 
 
-def check_identity():
-    """A name on a published surface cannot be recalled. The guard holds only
-    hashes, so this check discloses nothing about what it is looking for."""
-    g = ROOT / "identity_guard.py"
-    if not g.exists():
-        return "skip", "identity_guard.py not present"
-    try:
-        r = subprocess.run([sys.executable, str(g), "scan"], cwd=str(ROOT),
-                           capture_output=True, text=True, timeout=120)
-    except Exception as e:
-        return "skip", f"guard did not run: {e}"
-    if r.returncode == 0:
-        return "pass", "no configured term in any tracked file"
-    n = sum(1 for l in r.stdout.splitlines() if ":" in l and l.strip().startswith(("d", "b", "s", "k", "m", "i", "f", "a", "c", "p", "r", "t", "w", "n", "o", "l", "e", "g", "h", "j", "q", "u", "v", "x", "y", "z", ".")))
-    return "fail", (f"a configured identity term appears in tracked files — run "
-                    f"`python identity_guard.py scan` for locations")
-
-
-CHECKS = [("identity guard", check_identity),
-          ("ledger envelope", check_envelope),
+CHECKS = [("ledger envelope", check_envelope),
           ("vault leak", check_vault_leak),
           ("working tree", check_dirty),
           ("remote", check_remote)]

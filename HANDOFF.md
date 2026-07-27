@@ -1,112 +1,159 @@
-# HANDOFF — 2026-07-25 (session close)
-*Overwrites prior. Current as of the close of the 24–25 July session. Board state, not direction.*
+# HANDOFF — THE PRESCIENT DESK
+*Written 2026-07-27. State, not steering. Every item fires on his hand only.*
+*Supersedes the 2026-07-25 revision entirely — replace it, do not keep both.*
+
+**REDACTION NOTICE.** Line 72 of the prior revision carried an identity term in
+plaintext, annotated as such. It was found by `identity_guard.py` on that tool's
+first run against the tracked tree. This revision carries no identity term, and
+the guard is now an invariant: `desk.py ship` refuses while one is tracked.
+Printed here rather than fixed silently, because a correction that leaves no
+trace is the same failure class the whole apparatus exists to refuse.
+
+**Still open on that finding:** git history retains the string. Redacting the
+working file stops it appearing to a reader and stops the guard failing; it does
+not remove it from prior commits, which remain recoverable by anyone who clones.
+The three dispositions — accept history, rewrite with filter-repo and force-push,
+or shrink the term list — are ruled by him and by nobody else. Unruled as of this
+writing.
 
 ---
 
-## SESSION RECORD — what happened 24→25 July
+## 1. WHERE THE LEDGER STANDS
 
-**Three standards issued and sealed in one night.** RPAS-26 (forecast verification), LIAS-26 (the language-model instrument), and the GAGAS/AU-C standards mapping. All three live on the desk, all three committed and archived. The family now reads: RPAS governs forecasts, IQ/DTSP governs institutions, LIAS governs the instrument.
+**121 issued · 4 hits · 9 misses · 10 void · 98 open.**
+**13 resolved of the 30 the standard requires before a score is a record.**
 
-**The site went live.** retroprescientaudit.com serving index + standards.html + all three standards documents + the conformance report, with Standards wired into the nav.
+| arm | issued | resolved | note |
+|---|---|---|---|
+| `lmstudio/auto` | 60 | 13 | local Qwen; Brier 0.221, skill −0.038 against its own base rate |
+| `manual/fable` | 45 | 0 | frontier LLM, operator-elicited; holds the corpus, so its independence is procedural not informational |
+| `operator/human` | 6 | 0 | his own calls |
+| `kfk/halflife` | 10 | 0 | **not a forecaster.** A formula. Emits 50% at one half-life because the arithmetic says so — the mechanical baseline the other arms should be scored against |
 
-**Two instruments built and validated.** `rpas_audit.py` (grades the live ledger against RPAS, migrates schema conservatively) and `candidate_desk.py` (creates born-conformant entries, veil enforced in code — refuses to seal if the probability wasn't entered cold).
+No pooled score is published anywhere. A Brier belongs to one forecaster.
+Nothing is overdue. Ten resolve inside seven days, which is the block that starts
+moving 13 toward 30.
 
-**The ledger was migrated.** All 67 entries now carry `failure_condition` and `keyed_keyless` as visible `UNSET` placeholders. Honest state, not silent gap.
+**Zero rows declare a `precondition`.** The abyssal sequence tree is therefore
+flat, and says so. It starts earning at the first conditional projection.
 
-**The conformance report published.** 67 entries, 19 resolved, 134 FAIL, 33 WARN — every failure one of the two systemic gaps, zero idiosyncratic breaks. The desk printed its own findings one nav-click from its own rules. 6.04 executed in public.
+## 2. THE INSTRUMENTS, AND WHAT EACH REFUSES
 
-**A compartment breach was caught and purged.** The carrier line on standards.html carried Utah + a decade + public-finance — a small-pool descriptor on a pseudonymous surface. Caught by HIM on read, genericized to "a government-finance and audit professional," force-pushed to remove from reachable history. Residual: orphaned commits remain fetchable by exact SHA until GitHub garbage-collects; a support ticket forces it if ever wanted.
+Every one of these is a device for forcing the check to exist *before* the
+outcome. That is the through-line and it is not accidental.
 
-**The gate held three times.** `netz_wardesk.session` (Telegram auth key) was never committed — verified by `git ls-files`, closed by gitignore before any add touched it. Bundles, warroom, scrape outputs all confirmed absent from the public repo.
+- **`desk.py`** — one entry point. `status` is the archaeology done once;
+  `verify` asserts the invariants and exits non-zero; `ship` refuses to run if
+  they fail; `due` is the resolution queue.
+- **`knp_verify.py`** — third-party conformance verifier, knows nothing about any
+  committer. `--selftest` prints the interoperability vectors. The live hashlog
+  returns **CONFORMANT, 0 must, 0 should**.
+- **`fogsim.py`** — sealed-set deterministic scenario runs. The count is committed
+  before anything executes, so publishing a subset is visible. Runs are pure
+  functions of (scenario, rules, seed), so verification is *re-execution* rather
+  than trust. First campaign: 8 declared, **8 revealed, 0 withheld**.
+- **`dialektik.py`** — stated-versus-operational divergence for a conflict dyad.
+  Refuses to score a live dyad until the calibration set separates known cases;
+  the market indicator scores **zero** without a pre-registration id, because a
+  threshold chosen after the event proves nothing.
+- **`abyss.py`** — the sequence tree. Foreclosure is its own class: a sound
+  question the world's path removed, never scored, never confused with void. A
+  condition declared after its parent resolved is **not honoured**, because that
+  is how a miss gets laundered into a foreclosure.
+- **`KriegForeKaster.py`** — 201 formations, **11 sourced**, 11 with a commander.
+  Subordination is a graded claim. Coordinates must declare what they denote:
+  **195 are capital centroids**, which locate a state and not a command. The
+  factionalization block records **architecture only** — there is no field for
+  intent, control or allegiance, by design.
+- **`mspaudit.py`** — workbook-estate findings engine. Against the FY22 estate:
+  48 workbooks, 252,440 formulas, **326 findings**, 230 of them interior formula
+  inconsistencies. Output must never land in the repo.
+- **`identity_guard.py`** — hashed deny-list. Stores no plaintext, prints no
+  matched term, reports file and line only. Token matching is a floor: it will
+  not catch a name split across a line, rendered into a PNG, or sitting in EXIF.
 
-**The Gehlen audit was built.** Graded evidence base (deep research pass) + full ~4,500-word cold essay draft, carrier-clean, with its own weaknesses printed in Section VII.
+## 3. STANDARDS AND STANDING
 
-**The Dune corpus landed.** 247 unique videos, 241 hours, 385 transcripts — including the McNelly 1969 tape in triplicate.
+Four first editions — **RPAS, LIAS, KNM, KNP** — with letters of issuance and
+paragraph citation. `register.html` is live and its tally line computes third-party
+versus self-assessed entries, printing *"until that first number moves, this is a
+house rule with a register"* while the count is zero. It is zero. The single entry
+is self-assessed and labelled as the weakest class on the page.
 
-**Two carrier rulings made.** CIA-hire hand: not yet, gate conditions set. "FBI-trained by my father": ruled out as credential, routed to memoir.
+**A standard becomes a standard at the first conformer with an incentive not to
+conform.** Everything else is documentation.
 
----
+## 4. OPEN — RANKED
 
-## LANE 1 — THE DESK (retroprescientaudit.com / RPA)
+1. **The redaction disposition** (§ above). Unruled.
+2. **PCAOB comment letter — closes 2026-08-07.** The only dated item. Release
+   2026-005, `comments@pcaobus.org`, subject line carrying the release number.
+   Gated on the §2 weld ruling: the bracketed block is the strongest exhibit and
+   the least reversible thing on the surface, because PCAOB posts letters by name,
+   permanently, on a page he does not administer.
+3. **Custody drill (KNM 4.05).** Blocked on D: not being mounted. The argument for
+   it is the four-hour window when the hashes did not recompute: *recompute the
+   hashes* is only true as long as they do, and it has never been tested on a
+   schedule.
+4. **`index.html` does not link `register.html`.** The highest-value page on the
+   site is reachable only from Spion and from itself.
+5. **`war_desk.json` is three days stale** at 2026-07-24T22:41Z and the front page
+   fetches it with no as-of shown.
+6. **Spion: two of five PRIMARY sources unreachable** — GAO and GASB, both 403 from
+   GitHub runners. Bot detection on the runner range, not permission. Owed as a
+   disclosure on the standards face.
+7. **256-bit salts.** KNP requires 128. With id and timestamp published and the
+   statement guessable, security rests on salt entropy alone, so Grover against a
+   128-bit salt is 2^64 rather than 2^128. Thirty-two more hex characters closes it
+   for anything with a long reveal horizon.
+8. **Dialektik calibration set unscored** — five cases, seven indicators each. If
+   they do not separate, the null is the publishable result and the better essay.
+9. **ForeKaster coverage.** 5 sourced of 201. Shallow-and-wide at national command
+   is tractable; division-level global is the Janes problem and is not.
 
-**Live:** index.html · standards.html · RPAS_FIRST_EDITION_2026_v1.md · LIAS_FIRST_EDITION_2026_v1.md · STANDARDS_MAPPING_RPA_2026-07-24.md · REPORT_conformance.md · ledger.html · report.html · kkr.html
+## 5. THE COMMERCIAL READ
 
-**Ledger state:** 67 entries · 19 resolved · 0 keyed · 0 keyless · fifty-entry gate MET · thirty-resolved noise floor NOT met (19/30)
+Three of the four surfaces are not sellable and the standards say so: coverage
+loses to Janes, 13 resolutions with negative skill cannot support a foresight
+claim under RPAS 1.06, and 9 sealed with 0 revealed has proven nothing yet.
 
-**Open:**
-- **The backfill.** 67 entries need keyed/keyless + failure_condition by hand. Open entries can still take a pre-registered failure condition (4.02e). Resolved entries' keyed/keyless is post-hoc and therefore KEYED by rule (4.03) — the honest move is to mark them KEYED-UNKNOWN rather than adjudicate them now.
-- **First born-conformant entry.** `candidate_desk.py` is live and tested; nothing sealed through it yet. Twelve pre-registered candidate questions were drafted (macro / US institutional / war desk / two controls) and remain unsealed.
-- **conformance.html.** Ruled to publish ("prob 1"). Not built. Wants the migrated ledger as input so it shows reconciled state.
-- **28 WARN** — resolution criteria naming no concrete source. Some may name one in prose the regex missed; worth an eye.
-- **5 void entries** carrying no audit verdict — a void should record why it voided (5.06).
-- **Yellow Book paragraph pins** — Ch. 8 evidence/findings/documentation paragraph numbers and the EQR range. Printed as queued in the standards page's own register, so publishing without them is conformant; pinning is one mechanical pass with the PDF.
-- **ARTIFACT rows** on standards.html are prose. Dek now honestly says "names," so no false claim — swapping to live URLs is an upgrade, not a fix.
-- **The fourth standard candidate:** claim-propagation auditing (the Dune instrument). Qualifies under the genesis rule — the competence is already running. Not built.
-- **`.conformance_last`** added to gitignore; `conformance.bat` / `seal.bat` / hardened `publish.bat` in place.
+The asset is the fourth: four standards, a working third-party verifier, and a
+public-finance and audit credential to sign them. Standards are not sold;
+**assurance against one is.** Two markets are open — LIAS-style instrument-versus-
+author audit as AI disclosure tightens, and predictive-claim assurance for anyone
+publishing a track record nobody checks.
 
-**The CPA vector — UNRULED.** The profession is at principles-level on AI-in-audit while LIAS is at mechanism-level. Channels: practitioner journals (Journal of Accountancy, CPA Journal class) and comment letters when ASB/GAO open AI-adjacent guidance. Both run under real names. Fork: named-lane parallel articulation without citing the desk (career-positive, forfeits priority until weld) / desk-only and let the profession find it slowly / early weld (spends the reveal on a trade byline — rejected on its face).
+**And `mspaudit.py` is the one where he is the incumbent rather than the
+challenger.** Every state running a weighted-pupil formula has the same
+undocumented estate and the same single person holding the graph. Aspen Peaks is
+the named lead: a new LEA standing up its books is the one moment someone will pay
+to have the system documented rather than inherited.
 
----
+## 6. OPERATIONAL NOTES THAT COST TIME
 
-## LANE 2 — VENUE SUBMISSIONS
+- `publish.bat` runs `git add -A`. Helper scripts belong in Documents, never in
+  the repo. Patch scripts write their backups next to themselves for this reason.
+- PowerShell `>` redirection writes UTF-16LE; `Out-File -Encoding utf8` writes a
+  BOM. Let Python write its own files. Every JSON reader in the newer tools sniffs
+  for BOMs because of this.
+- PowerShell strips backticks on paste. One `Add-Content` per line.
+- `Move-Item` with a comma list moves what it can and errors on the rest — check
+  what landed rather than assuming the whole list failed.
+- Verify pushes from the remote (`git ls-remote origin main`), never the console.
+- The repo now has a writer on GitHub's clock four times a day. Every local push
+  races the cron; `desk ship` rebases.
+- Downloads do not always arrive. When a step fails on a missing file, check
+  before re-deriving the problem.
 
-**In flight, clocks self-running, no action:**
-- Orphan Systemizer → Nautilus (~9 July)
-- The Hidden King → Noema (~9 July)
+## 7. THE MARK
 
-**Ready to move:**
-- **THE_LEGEND_WAS_THE_PRODUCT_draft_v1.md** — Gehlen audit, ~4,500 words, cold desk register, carrier-clean byline. Needs: his rework pass, 6 open verification items pinned, cover letter. Venue: third venue, top-down, one at a time — Aeon / LARB / The Baffler / Lapham's (if theme fits). Noema and Nautilus are occupied.
-- Six open verification items listed in the draft's tail. None block the rework pass; all block submission.
+One vertex table in `mark_build.py`; **69 files** generated from it across
+`mark_package.py` and `banners.py`. Nothing downstream is hand-edited, for the
+same reason `docs/ledger.json` is a build product. Below 64px use the small
+variant — the trim goes sub-pixel and the fog turns to mud. Aspect is 729:300 and
+it never stretches.
 
-**Standing carrier rulings (both made this session):**
-- **CIA-hire hand: NOT YET.** Gates: (1) the 50 U.S.C. §3003 test actually run and cleared — definitional, unanswered; (2) deploy only from a position where it's redundant, i.e. after the record establishes competence — anti-Kwisatz applied to credentials; (3) the weld is the natural moment; (4) the container rule may simply be the answer. Operational flag, once: if any such relationship is live/pending/historical, prepublication-review obligations may attach — confirm-before, not discover-after; a question for whoever holds the paperwork and for Richter, not for the chat.
-- **"FBI-trained by my father": RULED OUT as credential.** Sole witness unavailable, no program/dates/curriculum, no third party — SPECULATIVE tier resting on an unavailable source, the weakest position available. Category error too: what exists is *formation*, not training, and the gap between the phrase and what it supports is the exact gap the Gehlen essay convicts. Routed to **The Man Who Taught Me to Look**, Preacher lane. Container holds him; the credential chain does not.
-
----
-
-## LANE 3 — THE MASKS / SUBSTACK CONSTELLATION
-
-- **OccultusTheoretician / NebelKrähe** (flagship — name resolves to legal identity once the memoir circulates; content rule is a real-name liability screen, not an anonymity screen). Live: "MindKiller is MindKontrolle" + the Dune Layer Ledger as an open working instrument with a pre-registered verse-hunt protocol. Queued: the **Save Paul** six-part arc (architecture drawn, Part I drafted; anti-Kwisatz spine, seer gradient, Paul–Leto non-reconciliation is the strongest original material). Candidate: the Dune **propagation read** once chronology unlocks.
-- **TSATO (The Stated and the Operational)** — anonymous, 3 posts live. Karp Title Page recommended as next on register match. Shadow Rising stays (deletion creates the weld it was designed to prevent).
-- **The Preacher and the Spy / The Last Hussite** — "Paranoia Remaining" live (finalized J1–J7; the "M.C." cipher intact). Rework queue: **CIArious v1**, two his-call flags open — the torrenting beat, the closer's temperature. Routed here: the **Synoptic Jesus** essay (post 3 or 4; The Investigator holds post 2 with the only live clock) — full publishable draft exists across six sections. Now also: **The Man Who Taught Me to Look** (Shaughn + John Earl [REDACTED]; Reserve-class).
-- **[REDACTED] [REDACTED] (real name)** — The Systemizer's Confession routing still **UNRULED**: named-lane companion vs. Occultus mask. Anime mask dissolved, assets transferred here.
-- **Apokalypsis Auditor** — "The Assayer," About page anchored to Zeno's shipwreck and the public assayer office. Designed, unlaunched.
-- **Slaughterer** — held pending legal resolution.
-- **Stripe/Substack monetization** — deferred on home-address exposure via email footer. PO box before proceeding.
-- **Reddit** — accounts seasoning; platform bans AI-generated content, so every post must be rewritten in his own voice. r/exmormon draft exists from journal material.
-
----
-
-## LANE 4 — DUNE CORPUS
-
-**Have:** 247 unique videos · 241 hours · 385 transcript files · 599 .vtt · frequency scan run (4,685 hits post-dedupe)
-
-**The find:** the **McNelly 1969 interview, in triplicate** — three uploads of the same ~80-minute recording (the "(1965)" title is an uploader mislabel). Three independent caption passes of one audio = built-in tri-witness reconciliation on the CONFESSED-class anchor.
-
-**The honest negative, printed:** a full verse-lexicon sweep of all 3,374 caption segments of that tape returned **zero confession-class segments**. Either the confession isn't on this recording, or the auto-captions garbled it (they're poor — the three copies disagree on basic words), or it evades the lexicon. **The tape is a candidate carrier, not a confirmed one, until listened through.** The print documentation of the confession stands independently.
-
-**Open:**
-- `patch_dates.py` written, **not run.** Flat enumeration dropped every upload date, so the chronology scan currently excludes the whole corpus by its own pre-registered rule. Run it → re-index → chronology scan. That unlocks the propagation read.
-- **P1 listen:** McNelly tape, full 80 min, ears on (use the Restored Audio upload as master, other two as cross-check).
-- **P2:** "The Origins of Dune" (68 min) — captions at ~14:02 describe Dune's structure in terms of harmony, rhythm, melody. **Provenance unverified** — establish what the recording actually is before anything rests on it. If it authenticates as Herbert, it's primary authorial-method material adjacent to the concealed-verse channel.
-- **P3:** UCLA 4/17/1985 (54 min). **P4:** Willis McNelly on Dune (12 min).
-- **Tier-A triage** — 243 items caught payload plus essay-noise; ~15 min pass to demote explainers/video essays to B and drop strays.
-- **Propagation targets once dated:** Fullerton archive references (57), Ibn Khaldun (13), the Blanch cluster, "Herbert said/claimed/admitted" (53 checkable attributions), and the known-miss MK tracer (16) against the channel's own published adjudication.
-
----
-
-## LANE 5 — LONGER ARCS (no action this session)
-
-- **The Diptych** — memoir ~22.7k words / 31 chapters assembled; five blood chapters remain (The Mother, Kay, The Faculty, Shaughn, The Accounting) — HIS, Claude pushes, never originates load-bearing sentences. Ship checkpoint ~45k with blood landed → stop expanding, CUT, then venue. Novel: one opening movement (Vorien, panopticon path), cold register, voice test.
-- **SI-11 cohort** — locked. Herbert = Chapter 13 authorial-argument subject, outside the SI-11 by design. Miyazaki/Martin rulings settled via substrate-vs-channel.
-- **Unfound figures, high priority** — Jünger/*Eumeswil* (nearest prior art to the Gray Man vector; requires cite-and-distinguish), then Kobayashi, Wolfe, Deathspell Omega, Culianu, Melville, Pope, Lem, Traven, Yoko Taro, Perturbator, Tarkovsky, Oshii, Peirce. All biographical specifics audit-before-use.
-- **The open Abyssal-Philosophy essay** — scaffold in Genesis, he fills the blanks.
-- **Prime Meridian retrieval** — 2008–09 run not yet deposited.
-- **Batched rulings still open** from the archival session: 2009 email handle meaning, "Alex Good" identity, group-project byline, HS presentation authorship, hosting-timeline discrepancy.
-- **Promotion** — logged as a dated prediction in the Predictive Ledger.
-
----
-
-## STANDING GATES (enforced silently; listed here for reference only)
-
-Richter / active litigation · the §1983 memorandum · Notes_from_a_Long_Night · Kay handling terms · Dachau and The Analyst (undecided, raise only when he does) · Carol's assessment kept clean of the frameworks · Roosa/[REDACTED] lineage held open not asserted · minors out until legal resolution · Book of the Abyss declined as standing care decision · cipher sweeps CLOSED (etymological channel remains live) · no cognitive estimates, "self-reported ~140" the only permitted formulation.
+`banners.py` reads the operator's name from `identity.local.json`, which is
+gitignored and absent by default, falling back to the callsign. A repository that
+never holds the name cannot publish it by accident. **The exported PNGs are the
+blind spot** — the guard reads text, not pixels.
