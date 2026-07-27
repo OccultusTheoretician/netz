@@ -2,6 +2,8 @@
 <meta charset="utf-8">
 <title>KriegForeKaster — a scored order of battle · The Prescient Desk</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="crow_mark.svg">
+<link rel="stylesheet" href="brand.css">
 <meta name="description" content="An order of battle where every claim carries a grade, a source, and an expiry date.">
 <style>
 :root{
@@ -13,6 +15,16 @@
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:var(--serif)}
 #wrap{display:flex;flex-direction:column;height:100vh;max-height:100vh;overflow:hidden}
+#nav{flex:0 0 auto;display:flex;align-items:center;gap:.15rem;flex-wrap:wrap;
+  padding:.4rem .8rem;border-bottom:1px solid var(--line);background:#101215;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.06em}
+#nav a{color:var(--dim);text-decoration:none;padding:.25rem .5rem;
+  text-transform:uppercase;white-space:nowrap}
+#nav a:hover{color:var(--accent)}
+#nav a.home{color:var(--ink);display:flex;align-items:center;gap:.45rem;
+  text-transform:none;letter-spacing:.02em;font-size:.78rem}
+#nav a.home img{height:16px;width:auto}
+#nav .sp{flex:1 1 auto}
 header{padding:.7rem 1rem;border-bottom:1px solid var(--line);flex:0 0 auto}
 header h1{margin:0;font-size:1.05rem;font-weight:600;letter-spacing:.02em}
 header .sub{font-family:var(--mono);font-size:.7rem;color:var(--dim);margin-top:.25rem}
@@ -41,8 +53,11 @@ svg{width:100%;height:100%;display:block;cursor:grab}
 svg.drag{cursor:grabbing}
 .country{fill:#1b1f24;stroke:#3a4048;stroke-width:.9;vector-effect:non-scaling-stroke}
 .fac{margin-bottom:.7rem}
-.fac>.hd{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--dim);padding:.2rem 0;border-bottom:1px solid var(--line)}
+.fac>.hd{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--dim);padding:.25rem 0;
+  border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.4rem}
+.fac>.hd .chev{width:.5rem;height:.5rem;flex:0 0 auto;display:inline-block;
+  clip-path:polygon(0 0,100% 50%,0 100%)}
 .node{padding:.16rem 0 .16rem .2rem;font-size:.83rem;cursor:pointer;border-left:2px solid transparent}
 .node:hover{background:#1c1f23}
 .node.sel{border-left-color:var(--accent);background:#1c1f23}
@@ -70,6 +85,19 @@ footer{flex:0 0 auto;border-top:1px solid var(--line);padding:.45rem 1rem;
 @media(max-width:900px){#main{flex-direction:column}#rail,#detail{width:auto;max-height:34vh}}
 </style>
 <div id="wrap">
+<div id="nav">
+  <a class="home" href="index.html"><img src="crow_mark.svg" alt="">Nebelkr&auml;he</a>
+  <span class="sp"></span>
+  <a href="index.html">Home</a>
+  <a href="ledger.html">Ledger</a>
+  <a href="kkr.html">Forecasts</a>
+  <a href="standards.html">Standards</a>
+  <a href="conformance.html">Conformance</a>
+  <a href="nest.html">Nest</a>
+  <a href="kraehes_kalls.html">Kr&auml;he's Kalls</a>
+  <a href="marks.html">Marks</a>
+  <a href="spion.html">Spion</a>
+</div>
 <header>
   <h1>KriegForeKaster — a scored order of battle</h1>
   <div class="sub" id="hdr">loading…</div>
@@ -254,8 +282,15 @@ function tree(){
   for(const fac of DATA.factions){
     const list = byFac[fac.id]||[];
     const unloc = list.filter(f=>!f.location).length;
+    const shownList = list.filter(visible);
+    if(!shownList.length) continue;
+    const sourced = shownList.filter(f=>f.existence &&
+        ["CONFESSED","PROOF-VERBATIM","DOCUMENTED"].includes(f.existence.grade)).length;
     html += '<div class="fac"><div class="hd" style="color:'+esc(fac.color)+'">'+
-            esc(fac.name)+' · '+list.length+' formations'+
+            '<b class="chev" style="background:'+esc(fac.color)+'"></b>'+
+            esc(fac.name)+' · '+shownList.length+
+            (shownList.length!==list.length?' of '+list.length:'')+
+            ' · '+sourced+' sourced'+
             (unloc?' · '+unloc+' unlocated':'')+'</div>';
     const walk = (parent,depth)=>{
       let s="";
