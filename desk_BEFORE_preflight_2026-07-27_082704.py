@@ -160,23 +160,14 @@ def check_vault_leak():
         if hits else ("pass", "no vault-tier file tracked")
 
 
-PREFLIGHT = False   # True only while ship() is checking itself
-
-
 def check_remote():
     rc, local, _ = git("rev-parse", "HEAD")
     rc2, ls, _ = git("ls-remote", "origin", "main")
     if rc or rc2 or not ls:
         return "skip", "remote unreachable"
     remote = ls.split()[0]
-    if local == remote:
-        return "pass", f"in sync at {local[:7]}"
-    # ahead is the normal pre-ship state; behind is not
-    rc3, cnt, _ = git("rev-list", "--count", f"{remote}..{local}")
-    ahead = cnt.isdigit() and int(cnt) > 0
-    if PREFLIGHT and ahead:
-        return "info", f"local {local[:7]} is ahead of origin — which is what shipping is for"
-    return "warn", f"local {local[:7]} != remote {remote[:7]} — unpushed or behind"
+    return ("pass", f"in sync at {local[:7]}") if local == remote else \
+           ("warn", f"local {local[:7]} != remote {remote[:7]} — unpushed or behind")
 
 
 def check_dirty():
@@ -184,11 +175,7 @@ def check_dirty():
     if rc:
         return "skip", "git not available"
     n = len([l for l in out.splitlines() if l.strip()])
-    if n == 0:
-        return "pass", "clean"
-    if PREFLIGHT:
-        return "info", f"{n} change(s) staged for this ship"
-    return "warn", f"{n} uncommitted change(s)"
+    return ("pass", "clean") if n == 0 else ("warn", f"{n} uncommitted change(s)")
 
 
 CHECKS = [("ledger envelope", check_envelope),
@@ -208,8 +195,7 @@ def run_verify(quiet=False):
         head("VERIFY")
         for name, state, note in results:
             mark = {"pass": ok("PASS"), "fail": bad("FAIL"),
-                    "warn": warn("WARN"), "skip": dim("SKIP"),
-                    "info": dim("INFO")}[state]
+                    "warn": warn("WARN"), "skip": dim("SKIP")}[state]
             print(f"  [{mark}] {name:26s} {note}")
     failed = [r for r in results if r[1] == "fail"]
     return failed
@@ -352,9 +338,7 @@ def cmd_ship(args):
     if not msg:
         print(bad("FAIL — a commit message is required:  python desk.py ship -m \"...\""))
         return 1
-    globals()["PREFLIGHT"] = True
     failed = run_verify()
-    globals()["PREFLIGHT"] = False
     if failed:
         print()
         print(bad("  REFUSING TO SHIP — fix the invariants above first."))
