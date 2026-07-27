@@ -27,6 +27,17 @@ header .sub{font-family:var(--mono);font-size:.7rem;color:var(--dim);margin-top:
   overflow-y:auto;overflow-x:hidden;background:var(--panel);padding:.8rem;
   font-size:.82rem;word-break:break-word}
 svg{width:100%;height:100%;display:block;cursor:grab}
+#bar{position:absolute;top:.5rem;left:.5rem;right:.5rem;display:flex;flex-wrap:wrap;
+  gap:.35rem;align-items:center;z-index:5;font-family:var(--mono);font-size:.68rem}
+#bar button,#bar select,#bar input{font-family:var(--mono);font-size:.68rem;
+  background:rgba(21,23,26,.92);color:var(--ink);border:1px solid var(--line);
+  padding:.28rem .5rem;cursor:pointer;
+  clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+#bar button:hover,#bar select:hover{border-color:var(--accent);color:#fff}
+#bar input{cursor:text;min-width:9rem}
+#bar .sp{flex:1 1 auto}
+#bar .count{color:var(--dim);background:none;border:none;padding:.28rem .2rem}
+#bar label{color:var(--dim);margin-left:.4rem}
 svg.drag{cursor:grabbing}
 .country{fill:#1b1f24;stroke:#3a4048;stroke-width:.9;vector-effect:non-scaling-stroke}
 .fac{margin-bottom:.7rem}
@@ -66,7 +77,30 @@ footer{flex:0 0 auto;border-top:1px solid var(--line);padding:.45rem 1rem;
 <div id="banner"></div>
 <div id="main">
   <div id="rail"></div>
-  <div id="stage"><svg id="map"><g id="geo"></g><g id="marks"></g></svg></div>
+  <div id="stage">
+    <div id="bar">
+      <button id="zin" title="zoom in">+</button>
+      <button id="zout" title="zoom out">&minus;</button>
+      <button id="zfit" title="fit to located formations">fit</button>
+      <label for="fFresh">claims</label>
+      <select id="fFresh">
+        <option value="all">all</option>
+        <option value="decayed">past half-life only</option>
+        <option value="fresh">fresh only</option>
+      </select>
+      <label for="fGrade">grade floor</label>
+      <select id="fGrade">
+        <option value="0">any</option>
+        <option value="3">REPORTED and above</option>
+        <option value="2">DOCUMENTED and above</option>
+        <option value="0.5">CONFESSED only</option>
+      </select>
+      <input id="fText" type="search" placeholder="search name, place, commander">
+      <span class="sp"></span>
+      <span class="count" id="shown"></span>
+    </div>
+    <svg id="map"><g id="geo"></g><g id="marks"></g></svg>
+  </div>
   <div id="detail"><p class="empty">Select a formation. Nothing is drawn that does not carry a grade, a source and a date.</p></div>
 </div>
 <footer>
@@ -90,6 +124,35 @@ const ECH = {"theater":"XXXXXX","front":"XXXXX","army group":"XXXXX","army":"XXX
              "battalion":"II","company":"I","detachment":"\u2022"};
 const W = 2000, H = 1000;
 let DATA=null, FAC={}, SEL=null, VB={x:0,y:0,w:W,h:H};
+const LADDER=["CONFESSED","PROOF-VERBATIM","DOCUMENTED","REPORTED","DERIVED","SPECULATIVE"];
+let FILTER={fresh:"all", grade:0, text:""};
+
+// A formation is shown when it clears the grade floor on its existence claim,
+// matches the freshness filter on ANY claim, and matches the search text.
+// Hiding a record is a view state, never a deletion: the readout always prints
+// how many of the total are showing, so a filtered board cannot be mistaken
+// for the whole board.
+function visible(f){
+  const ex=f.existence;
+  if(FILTER.grade){
+    const idx = ex ? LADDER.indexOf(ex.grade) : 99;
+    if(idx<0 || idx>FILTER.grade) return false;
+  }
+  if(FILTER.fresh!=="all"){
+    const states=BLOCKS.filter(b=>f[b]).map(b=>state(f[b],b).s);
+    const anyOld=states.some(x=>["decayed","stale","undated"].includes(x));
+    if(FILTER.fresh==="decayed" && !anyOld) return false;
+    if(FILTER.fresh==="fresh" && anyOld) return false;
+  }
+  if(FILTER.text){
+    const hay=[f.name,f.designation,f.id,
+               f.location&&f.location.place,
+               f.commander&&f.commander.name,
+               f.commander&&f.commander.rank].filter(Boolean).join(" ").toLowerCase();
+    if(hay.indexOf(FILTER.text)<0) return false;
+  }
+  return true;
+}
 
 const $ = s => document.querySelector(s);
 const svg = $("#map"), geo = $("#geo"), marks = $("#marks");
@@ -132,13 +195,13 @@ function drawMarks(){
   // marks fan out by a fixed screen offset and stay legible at any zoom.
   const bucket = {};
   for(const f of DATA.formations){
-    if(!f.location) continue;
+    if(!f.location || !visible(f)) continue;
     const key = (+f.location.lat).toFixed(3)+","+(+f.location.lon).toFixed(3);
     (bucket[key] = bucket[key] || []).push(f.id);
   }
   const out=[];
   for(const f of DATA.formations){
-    if(!f.location) continue;
+    if(!f.location || !visible(f)) continue;
     const [x,y] = proj(+f.location.lat, +f.location.lon);
     const key = (+f.location.lat).toFixed(3)+","+(+f.location.lon).toFixed(3);
     const stack = bucket[key], si = stack.indexOf(f.id);
@@ -170,7 +233,7 @@ function drawMarks(){
 function setVB(){ svg.setAttribute("viewBox",[VB.x,VB.y,VB.w,VB.h].join(" ")); drawMarks(); }
 
 function fit(){
-  const pts = DATA.formations.filter(f=>f.location)
+  const pts = DATA.formations.filter(f=>f.location && visible(f))
     .map(f=>proj(+f.location.lat,+f.location.lon));
   if(!pts.length){ VB={x:0,y:0,w:W,h:H}; return setVB(); }
   let x0=Math.min(...pts.map(p=>p[0])), x1=Math.max(...pts.map(p=>p[0]));
@@ -197,7 +260,7 @@ function tree(){
     const walk = (parent,depth)=>{
       let s="";
       for(const f of kids(parent)){
-        if(f.faction!==fac.id) continue;
+        if(f.faction!==fac.id || !visible(f)) continue;
         const bad = BLOCKS.filter(b=>f[b]&&["decayed","stale","undated"].includes(state(f[b],b).s));
         s += '<div class="node" data-id="'+esc(f.id)+'" style="padding-left:'+(depth*12+4)+'px">'+
              '<span class="ech">'+esc(ECH[f.echelon]||"")+'</span>'+esc(f.name)+
@@ -259,6 +322,35 @@ function select(id){
   $("#detail").innerHTML = h;
 }
 
+// ---------- controls ----------
+function zoom(f){
+  const cx=VB.x+VB.w/2, cy=VB.y+VB.h/2;
+  VB.w*=f; VB.h*=f; VB.x=cx-VB.w/2; VB.y=cy-VB.h/2; setVB();
+}
+function refresh(){
+  tree(); drawMarks();
+  const tot=DATA.formations.length, vis=DATA.formations.filter(visible).length;
+  $("#shown").textContent = vis===tot ? tot+" formations"
+                                      : vis+" of "+tot+" shown";
+}
+function wire(){
+  $("#zin").onclick=()=>zoom(1/1.35);
+  $("#zout").onclick=()=>zoom(1.35);
+  $("#zfit").onclick=()=>fit();
+  $("#fFresh").onchange=e=>{FILTER.fresh=e.target.value; refresh(); fit();};
+  $("#fGrade").onchange=e=>{FILTER.grade=parseFloat(e.target.value); refresh(); fit();};
+  let t=null;
+  $("#fText").oninput=e=>{clearTimeout(t); t=setTimeout(()=>{
+    FILTER.text=e.target.value.trim().toLowerCase(); refresh();},160);};
+  addEventListener("keydown",e=>{
+    if(e.key==="/" && document.activeElement!==$("#fText")){e.preventDefault();$("#fText").focus();}
+    if(e.key==="Escape"){$("#fText").value="";FILTER.text="";refresh();}
+    if(e.key==="+"||e.key==="=") zoom(1/1.35);
+    if(e.key==="-") zoom(1.35);
+    if(e.key==="0") fit();
+  });
+}
+
 // ---------- pan / zoom ----------
 let drag=null;
 svg.addEventListener("mousedown",e=>{drag={x:e.clientX,y:e.clientY,vx:VB.x,vy:VB.y};svg.classList.add("drag");});
@@ -290,7 +382,7 @@ Promise.all([
     $("#banner").style.display="block";
     $("#banner").textContent = d.disclosure || "This file contains EXAMPLE records.";
   }
-  tree(); fit();
+  wire(); refresh(); fit();
 }).catch(e=>{
   $("#hdr").textContent = "failed to load KriegForeKaster.json — "+e;
 });
