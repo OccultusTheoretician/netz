@@ -57,7 +57,7 @@
    masthead site-wide. Instead the field drops to z-index:-1 and the page
    background moves from body to html, because a negative-z child paints behind
    its parent's own background. Nothing else in the page is touched. */
-html{background:var(--nacht, var(--field, #080B0F))}
+html{background:var(--nacht, var(--field, var(--bg, #080B0F)))}
 body{background:transparent}
 
 /* ---------- chamfer: the angular grammar ----------------------------- */

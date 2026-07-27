@@ -20,7 +20,16 @@ from pathlib import Path
 
 ROOT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(r"C:\netz")
 DOCS = ROOT / "docs"
-SKIP = {"KriegForeKaster.html"}
+# KriegForeKaster.html links brand.css itself and is no longer skipped: the
+# field sits at z-index:-1 behind a full-viewport layout, which works.
+# kkr.html, ledger.html and report.html are BUILD PRODUCTS of netz.py, which
+# this script also patches. Wiring both ends makes the served copy differ from
+# the canonical render until the next build — which is exactly the drift
+# `desk.py verify` exists to catch, and it caught it. They inherit from netz.py.
+SKIP = {"kkr.html", "ledger.html", "report.html"}
+
+# documented in MARK.md as downloadable assets, not page references
+INTENTIONAL = {"crow_mark_512.png", "crow_mark_square.svg", "og_nebelkraehe.png"}
 
 BLOCK = ('<link rel="stylesheet" href="brand.css">\n'
          '<script defer src="brand.js"></script>')
@@ -76,6 +85,8 @@ def orphan_images():
     out = []
     for img in DOCS.iterdir():
         if img.suffix.lower() in (".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".ico"):
+            if img.name in INTENTIONAL:
+                continue
             if img.name not in text:
                 out.append((img.name, img.stat().st_size))
     return sorted(out, key=lambda t: -t[1])
@@ -114,8 +125,7 @@ def main():
             print(f"    {name:26s} {size:>9,} bytes")
             total += size
         print(f"    {'':26s} {total:>9,} bytes served for nothing")
-        print("  crow.png is the original artwork — move it to the repo root rather")
-        print("  than deleting it, so it stays archived but stops being served.")
+        print("  Assets documented in MARK.md as downloads are not listed here.")
 
     print("\n  Generated faces pick this up on the next: python kkr.py --score")
     return 0
