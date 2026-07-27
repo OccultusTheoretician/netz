@@ -1,10 +1,10 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KKR PREDICTIVE LEDGER — 270113Z JUL 26
+# KKR PREDICTIVE LEDGER — 270138Z JUL 26
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 96 issued across 3 forecaster arms · 73 open (0 past deadline, unresolved)
+Window: all-time · 99 issued across 4 forecaster arms · 76 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -12,6 +12,7 @@ Window: all-time · 96 issued across 3 forecaster arms · 73 open (0 past deadli
 
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
+| `kfk/halflife` | 3 | 3 | 0 | — | — | not computed | — | — | — |
 | `lmstudio/auto` | 55 | 35 | 13 | 4 | 9 | 0.221 | 30.8% | 0.213 | -0.038 |
 | `manual/fable` | 35 | 35 | 0 | — | — | not computed | — | — | — |
 | `operator/human` | 6 | 3 | 0 | — | — | not computed | — | — | — |
@@ -61,6 +62,7 @@ Window: all-time · 96 issued across 3 forecaster arms · 73 open (0 past deadli
 | KKR-20260722-15 | `manual/fable` | 2026-07-22 | 2026-08-14 | 70% | economics | Brent crude front-month settles above 90 dollars per barrel on at least three trading days between 2026-07-23 and 2026-08-14 |
 | KKR-20260724-03 | `manual/fable` | 2026-07-24 | 2026-08-14 | 42% | economics | WTI front-month crude futures settle at or above 95.00 USD per barrel on at least one trading day between 2026-07-27 and 2026-08-14. |
 | KKR-20260725-01 | `manual/fable` | 2026-07-25 | 2026-08-14 | 30% | economics | ICE Brent front-month crude settles at or above 100.00 USD per barrel on at least one trading day between 2026-07-27 and 2026-08-14. |
+| KKR-20260727-01 | `kfk/halflife` | 2026-07-27 | 2026-08-14 | 50% | military/conflict | Lieutenant General Gregory K. Anderson will no longer be named as commanding officer of the XVIII Airborne Corps in the source of record on 2026-08-14. |
 | KKR-20260720-15 | `lmstudio/auto` | 2026-07-20 | 2026-08-15 | 45% | disaster | The Deloitte-run Medicaid system failure will result in a formal government audit or public report by 2026-08-15, citing systemic IT vulnerabilities. |
 | KKR-20260721-02 | `lmstudio/auto` | 2026-07-21 | 2026-08-15 | 25% | economic | Nvidia will announce the disbursement of its $2 billion investment in Nebius by 2026-08-15. |
 | KKR-20260725-09 | `manual/fable` | 2026-07-25 | 2026-08-15 | 35% | political | Iranian state broadcaster IRIB airs the full presidential speech it was reported to have censored, with resolution of the dispute confirmed, between 2026-07-27 and 2026-08-15. |
@@ -78,6 +80,8 @@ Window: all-time · 96 issued across 3 forecaster arms · 73 open (0 past deadli
 | KKR-20260722-14 | `manual/fable` | 2026-07-22 | 2026-09-15 | 65% | military | At least two independent wire services report a new United States or Israeli military strike on Iranian territory or Iranian-flagged maritime assets between 2026-07-23 and 2026-09-15 |
 | KKR-20260724-10 | `manual/fable` | 2026-07-24 | 2026-09-15 | 25% | cyber | CISA adds the Certighost Active Directory vulnerability to its Known Exploited Vulnerabilities catalog between 2026-07-25 and 2026-09-15. |
 | KKR-20260725-08 | `manual/fable` | 2026-07-25 | 2026-09-15 | 40% | cyber | CISA adds a Fastjson or GitLab remote-code-execution CVE to its Known Exploited Vulnerabilities catalog between 2026-07-27 and 2026-09-15. |
+| KKR-20260727-03 | `kfk/halflife` | 2026-07-27 | 2026-09-15 | 50% | military/conflict | Major General John W. Lubas will no longer be named as commanding officer of the 3rd Infantry Division in the source of record on 2026-09-15. |
+| KKR-20260727-02 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | Major General Brandon R. Tegtmeier will no longer be named as commanding officer of the 82nd Airborne Division in the source of record on 2026-09-25. |
 | KKR-20260726-17 | `lmstudio/auto` | 2026-07-26 | 2026-09-28 | 10% | cyber | A major cyberattack on a U.S. state government website results in public data exposure between 2026-09-25 and 2026-09-28. |
 | KKR-20260722-16 | `manual/fable` | 2026-07-22 | 2026-09-30 | 55% | economics | The United States 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-09-30 |
 | KKR-20260724-05 | `manual/fable` | 2026-07-24 | 2026-09-30 | 38% | markets | The S&P 500 index closes below 7000 on at least one trading day between 2026-07-27 and 2026-09-30. |
@@ -125,7 +129,7 @@ Window: all-time · 96 issued across 3 forecaster arms · 73 open (0 past deadli
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*10 of 96 issued (10.4%) have been voided.*
+*10 of 99 issued (10.1%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
