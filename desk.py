@@ -126,7 +126,9 @@ MIRRORS = [("ledger.json", ROOT/"ledger.json", DOCS/"ledger.json"),
            ("KriegForeKaster.json", ROOT/"KriegForeKaster.json",
             DOCS/"KriegForeKaster.json")]
 
-VAULT_PATTERNS = ["kalls_vault", "kalls_rescue", "_VAULT.md", "vault/"]
+# Anything holding opening material for something not yet revealed.
+VAULT_PATTERNS = ["kalls_vault", "kalls_rescue", "_VAULT.md", "vault/",
+                  "fogsim_campaign", "_campaign.json"]
 
 
 def check_mirrors():
