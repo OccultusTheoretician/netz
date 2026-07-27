@@ -1,0 +1,65 @@
+{
+  "protocol": "FOGSIM-26",
+  "construction": {
+    "preimage_order": [
+      "scenario_hash",
+      "rules_version",
+      "index",
+      "seed",
+      "question",
+      "salt"
+    ],
+    "separator": "|",
+    "hash": "SHA-256",
+    "encoding": "UTF-8",
+    "pipe_escape": "\\u007C"
+  },
+  "declared_runs": 8,
+  "scenario_hash": "ad2a6291a649e202aa2d27a352f6abbed6ba1f73c83acac850e22effaea1203e",
+  "rules_version": "fogsim-lanchester/1.0",
+  "question": "Does BLUE hold under the stated attrition parameters?",
+  "sealed_at": "2026-07-27T14:52:26Z",
+  "count_commitment": "This campaign declares 8 runs and publishes 8 commitments before any run is executed. Publishing a subset of outcomes is therefore detectable: an index with a commitment and no reveal is a run that was executed and withheld, or never executed. Either is visible. (KNM 3.02)",
+  "records": [
+    {
+      "index": 1,
+      "commitment": "824b1d71209a434a8ce740005083ad2700f3bed154afff3b779767d5704378f3",
+      "status": "SEALED"
+    },
+    {
+      "index": 2,
+      "commitment": "bf1c4218a5a58ece03dbb31907583304f6e1246edd996001709a1c124f9dcbd8",
+      "status": "SEALED"
+    },
+    {
+      "index": 3,
+      "commitment": "2eff3fb696cb68cef0baadda86b98056a201f47745245f32a413a29c77e226d0",
+      "status": "SEALED"
+    },
+    {
+      "index": 4,
+      "commitment": "27bf3cb35bc4c6174bbd377654c10b238474582820c314664e040bddbf84c357",
+      "status": "SEALED"
+    },
+    {
+      "index": 5,
+      "commitment": "f38d805446008df4c1a3cc7bacdf707a3fee17a05297365d1fc0b28ae4cfee90",
+      "status": "SEALED"
+    },
+    {
+      "index": 6,
+      "commitment": "0c9faf33ef1896450f5ef9c437ba929097a3b405e69b6e47409403c8cb1e95d5",
+      "status": "SEALED"
+    },
+    {
+      "index": 7,
+      "commitment": "892fa659387b1e1c9d5daac833b36a831a1f08facb3e31f58a5d33cfd82b9ccd",
+      "status": "SEALED"
+    },
+    {
+      "index": 8,
+      "commitment": "bd11bbac7207b521553ab503a8355cc21ae524a30de2fd96b74b061da6838f6e",
+      "status": "SEALED"
+    }
+  ]
+}
