@@ -946,6 +946,8 @@ function netzTab(id, btn){
     return (f"<!doctype html><html lang='en'><head><meta charset='utf-8'>"
             f"<meta name='viewport' content='width=device-width,initial-scale=1'>"
             f"<link rel='icon' type='image/svg+xml' href='crow_mark.svg'>"
+            f"<link rel='stylesheet' href='brand.css'>"
+            f"<script defer src='brand.js'></script>"
             f"<link rel='apple-touch-icon' href='apple-touch-icon.png'>"
             f"<title>{html.escape(title)} · Nebelkrähe</title><style>{HTML_CSS}</style></head>"
             f"<body>{fog}{desknav}<main>{page}</main>{tabjs}</body></html>")
