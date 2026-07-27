@@ -67,8 +67,9 @@ GRADES = ["CONFESSED", "PROOF-VERBATIM", "DOCUMENTED", "REPORTED",
 NEEDS_RATIONALE = {"DERIVED", "SPECULATIVE"}
 NEVER_ISSUE = {"SPECULATIVE"}
 
-ECHELONS = ["theater", "front", "army group", "army", "corps", "division",
-            "brigade", "regiment", "battalion", "company", "detachment"]
+ECHELONS = ["armed forces", "service", "theater", "front", "army group", "army",
+            "corps", "division", "brigade", "regiment", "battalion", "company",
+            "detachment"]
 
 # days after which a claim is stale enough that displaying it as current is a lie
 HALF_LIFE = {"existence": 365, "composition": 180, "commander": 60,
@@ -317,6 +318,13 @@ def halflife_projections(d: dict, claim: str = "commander", horizon: int = None)
         if blk.get("grade") in NEVER_ISSUE:
             skipped.append((f["id"], f"{claim} graded {blk['grade']}"))
             continue
+        # A formation already carrying a projection is not re-issued. Two live rows
+        # on the same claim are correlated by construction, and correlated rows are
+        # not independent observations against the thirty-resolution floor.
+        if f.get("projections"):
+            skipped.append((f["id"], f"already carries {len(f['projections'])} "
+                                     f"projection(s) — link before re-issuing"))
+            continue
         as_of = parse_day(blk.get("as_of"))
         if as_of is None:
             skipped.append((f["id"], "undated claim"))
@@ -344,6 +352,76 @@ def halflife_projections(d: dict, claim: str = "commander", horizon: int = None)
                     "deadline": deadline.isoformat(), "citations": [0],
                     "_formation": f["id"]})
     return out, skipped, t, h
+
+
+# ----------------------------------------------------------------------
+TEMPLATE = {
+    "id": "F-XXXX",
+    "faction": "faction-id-declared-in-the-file",
+    "echelon": "armed forces",
+    "parent": None,
+    "name": "",
+    "designation": "",
+    "existence": {"grade": "DOCUMENTED", "as_of": "TODAY", "sources": [""],
+                  "note": "what the source is, and whether as_of is a publication "
+                          "date or a retrieval date"},
+    "location": {"lat": 0.0, "lon": 0.0, "place": "",
+                 "grade": "DOCUMENTED", "as_of": "TODAY", "sources": [""],
+                 "note": "centroid, approximate; headquarters not deployed position"},
+    "commander": {"name": "", "rank": "", "grade": "DOCUMENTED",
+                  "as_of": "TODAY", "sources": [""], "note": ""},
+    "projections": [],
+    "notes": "",
+}
+
+
+def cmd_template():
+    t = json.loads(json.dumps(TEMPLATE).replace("TODAY", date.today().isoformat()))
+    print(json.dumps(t, indent=2, ensure_ascii=False))
+    print("\n# Fill it, drop the blocks you have no source for, then:", file=sys.stderr)
+    print("#   python KriegForeKaster.py add --from new.json", file=sys.stderr)
+    print("# A block with no source is rejected unless it is graded DERIVED or",
+          file=sys.stderr)
+    print("# SPECULATIVE and carries a rationale. That is the point of the gate.",
+          file=sys.stderr)
+    return 0
+
+
+def cmd_add(d, path):
+    """Insert one formation, but only if it survives the same audit as the file.
+
+    Intake is where an order of battle rots. A record entered without a source
+    is indistinguishable from one entered with a source a week later, so the
+    gate runs before the write, not after.
+    """
+    try:
+        new = json.loads(Path(path).read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"FAIL — cannot read {path}: {e}", file=sys.stderr); return 1
+    if isinstance(new, list):
+        incoming = new
+    else:
+        incoming = [new]
+    ids = {f["id"] for f in d["formations"]}
+    for rec_ in incoming:
+        if rec_.get("id") in ids:
+            print(f"FAIL — {rec_.get('id')} already exists", file=sys.stderr); return 1
+        if rec_.get("id", "").startswith("F-XXXX"):
+            print("FAIL — the template id was not replaced", file=sys.stderr); return 1
+    trial = json.loads(json.dumps(d))
+    trial["formations"].extend(incoming)
+    errs = validate(trial)
+    if errs:
+        print(f"REJECTED — {len(errs)} finding(s), nothing written:", file=sys.stderr)
+        for e in errs:
+            print(f"  · {e}", file=sys.stderr)
+        return 1
+    d["formations"].extend(incoming)
+    save(d)
+    for rec_ in incoming:
+        print(f"added · {rec_['id']} · {rec_['name']}")
+    print(f"{len(d['formations'])} formations")
+    return 0
 
 
 # ----------------------------------------------------------------------
@@ -406,6 +484,10 @@ def main():
     sub.add_parser("lint")
     sub.add_parser("stats")
     sub.add_parser("publish")
+    sub.add_parser("template")
+    ad = sub.add_parser("add")
+    ad.add_argument("--from", dest="src", required=True,
+                    help="JSON file holding one formation, or an array of them")
     sub.add_parser("freshness")
     hl = sub.add_parser("halflife")
     hl.add_argument("--claim", choices=CLAIM_BLOCKS, default="commander")
@@ -423,7 +505,13 @@ def main():
     l.add_argument("kkr_id")
     a = ap.parse_args()
 
+    if a.cmd == "template":
+        return cmd_template()
+
     d = load()
+
+    if a.cmd == "add":
+        return cmd_add(d, a.src)
 
     if a.cmd == "validate":
         errs = validate(d)

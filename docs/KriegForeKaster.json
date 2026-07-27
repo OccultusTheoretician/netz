@@ -1,7 +1,7 @@
 {
   "schema": "orbat/1.0",
   "generator": "KriegForeKaster.py",
-  "as_of": "2026-07-27T02:00:00Z",
+  "as_of": "2026-07-27T14:32:32Z",
   "theater": "Global — national commands and selected formations",
   "disclosure": "A proving set under construction, not a conflict picture. Every record rests on an official defence-ministry or armed-forces page, or on dated public-affairs reporting, chosen because resolution is unambiguous and nothing here is sensitive. Its purpose is to put the decay model under forecast: if a sixty-day half-life on command is calibrated, command-change projections issued at sixty days should resolve near fifty percent. Coordinates are installation or capital centroids, approximate, and denote headquarters rather than any deployed position. Observation dates follow the Spion rule, observed at rather than checked at: where a source page carries no publication date, as_of is the date the page was retrieved. Coverage is deliberately shallow and wide before it is deep: national command first, formations second. COVERAGE NOTE: records with ids beginning F-SEED- are a global skeleton, not knowledge. Their existence claims are SPECULATIVE and they carry no commander. They exist so the shape of what is NOT known is visible on the same board as what is. Filter to DOCUMENTED and above to see only sourced records.",
   "factions": [
@@ -90,7 +90,9 @@
         ],
         "note": "In command since 2024-12-06. Last dated confirmation in post is the corps change-of-responsibility ceremony of 2026-06-15. SUCCESSION PENDING: Maj. Gen. John W. Lubas was nominated on 2026-07-17 for promotion to lieutenant general and assignment as commanding general of this corps, subject to Senate confirmation. The generated sixty-day baseline of fifty percent is knowably wrong on this record, which is the whole reason the baseline prints separately from a judgement."
       },
-      "projections": [],
+      "projections": [
+        "KKR-20260727-01"
+      ],
       "notes": "Root of the proving set."
     },
     {
@@ -147,7 +149,9 @@
         ],
         "note": "Assumed command 2025-08-28 from Maj. Gen. James Work. Currently listed on the official division page, so as_of is the retrieval date."
       },
-      "projections": [],
+      "projections": [
+        "KKR-20260727-02"
+      ],
       "notes": "The record that carries the whole argument: a fresh, well-sourced command claim sitting beside a four-month-old posture claim. Both are true as recorded. Only one of them is current."
     },
     {
@@ -186,7 +190,9 @@
         ],
         "note": "Nominated 2026-07-17 for promotion to lieutenant general and assignment as commanding general of XVIII Airborne Corps, subject to Senate confirmation. If confirmed, this claim and the XVIII Airborne Corps command claim flip on the same event, which makes any two projections issued against them correlated. Correlated rows are not independent observations against the thirty-resolution floor and must not be counted as two."
       },
-      "projections": [],
+      "projections": [
+        "KKR-20260727-03"
+      ],
       "notes": "PARENT UNVERIFIED. This division's higher formation has not been checked against a source, so the field is left null rather than filled from memory. A visible gap is worth more than a plausible guess."
     },
     {
@@ -1754,10 +1760,12 @@
       "name": "Sierra Leone — national armed forces",
       "designation": "SLE",
       "existence": {
-        "grade": "SPECULATIVE",
+        "grade": "REPORTED",
         "as_of": "2026-07-27",
-        "sources": [],
-        "rationale": "Assumed from sovereignty, NOT verified. Several states maintain no standing armed forces at all — Costa Rica, Iceland, Panama and others — so a blanket assumption is wrong for some entries here. SPECULATIVE is the held-open grade: recorded so the gap is visible, never issued as a forecast, never displayed as an assertion. Upgrading this to DOCUMENTED requires the state's own defence-ministry page."
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_the_Defence_Staff_(Sierra_Leone)"
+        ],
+        "note": "Upgraded from the SPECULATIVE seed on a single encyclopedia source that names a serving chief of defence, which establishes the force exists. REPORTED, not DOCUMENTED: the ministry's own page has not been checked. That upgrade is the next step for this record."
       },
       "location": {
         "lat": 8.472,
@@ -1771,7 +1779,17 @@
         "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
       },
       "projections": [],
-      "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
+      "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
+      "commander": {
+        "name": "Sullay Ibrahim Sesay",
+        "rank": "Lieutenant General",
+        "grade": "REPORTED",
+        "as_of": "2026-07-27",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_the_Defence_Staff_(Sierra_Leone)"
+        ],
+        "note": "Chief of the Defence Staff since 29 June 2020. Nominated by the President, appointed by Parliament. Single-source. as_of is the retrieval date, not a publication date, per the Spion rule."
+      }
     },
     {
       "id": "F-SEED-PAK",
@@ -2159,10 +2177,12 @@
       "name": "Nigeria — national armed forces",
       "designation": "NGA",
       "existence": {
-        "grade": "SPECULATIVE",
+        "grade": "REPORTED",
         "as_of": "2026-07-27",
-        "sources": [],
-        "rationale": "Assumed from sovereignty, NOT verified. Several states maintain no standing armed forces at all — Costa Rica, Iceland, Panama and others — so a blanket assumption is wrong for some entries here. SPECULATIVE is the held-open grade: recorded so the gap is visible, never issued as a forecast, never displayed as an assertion. Upgrading this to DOCUMENTED requires the state's own defence-ministry page."
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_Defence_Staff_(Nigeria)"
+        ],
+        "note": "Upgraded from the SPECULATIVE seed on a single encyclopedia source that names a serving chief of defence, which establishes the force exists. REPORTED, not DOCUMENTED: the ministry's own page has not been checked. That upgrade is the next step for this record."
       },
       "location": {
         "lat": 9.0546,
@@ -2176,7 +2196,17 @@
         "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
       },
       "projections": [],
-      "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
+      "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
+      "commander": {
+        "name": "Olufemi Oluyede",
+        "rank": "General",
+        "grade": "REPORTED",
+        "as_of": "2026-07-27",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_Defence_Staff_(Nigeria)"
+        ],
+        "note": "Chief of Defence Staff since October 2025, succeeding General Christopher Musa. Based at Defence Headquarters, Abuja. Single-source. as_of is the retrieval date, not a publication date, per the Spion rule."
+      }
     },
     {
       "id": "F-SEED-GNB",
@@ -2942,10 +2972,12 @@
       "name": "Ivory Coast — national armed forces",
       "designation": "CIV",
       "existence": {
-        "grade": "SPECULATIVE",
+        "grade": "REPORTED",
         "as_of": "2026-07-27",
-        "sources": [],
-        "rationale": "Assumed from sovereignty, NOT verified. Several states maintain no standing armed forces at all — Costa Rica, Iceland, Panama and others — so a blanket assumption is wrong for some entries here. SPECULATIVE is the held-open grade: recorded so the gap is visible, never issued as a forecast, never displayed as an assertion. Upgrading this to DOCUMENTED requires the state's own defence-ministry page."
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_the_Defence_Staff_(Ivory_Coast)"
+        ],
+        "note": "Upgraded from the SPECULATIVE seed on a single encyclopedia source that names a serving chief of defence, which establishes the force exists. REPORTED, not DOCUMENTED: the ministry's own page has not been checked. That upgrade is the next step for this record."
       },
       "location": {
         "lat": 6.8184,
@@ -2959,7 +2991,17 @@
         "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
       },
       "projections": [],
-      "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
+      "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
+      "commander": {
+        "name": "Lassina Doumbia",
+        "rank": "Army corps general",
+        "grade": "REPORTED",
+        "as_of": "2026-07-27",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_the_Defence_Staff_(Ivory_Coast)"
+        ],
+        "note": "Chef d'etat-major des armees (CEMA) since 28 December 2018. Term length not fixed. Single-source. as_of is the retrieval date, not a publication date, per the Spion rule."
+      }
     },
     {
       "id": "F-SEED-CAN",
@@ -5210,10 +5252,12 @@
       "name": "United Kingdom — national armed forces",
       "designation": "GBR",
       "existence": {
-        "grade": "SPECULATIVE",
+        "grade": "REPORTED",
         "as_of": "2026-07-27",
-        "sources": [],
-        "rationale": "Assumed from sovereignty, NOT verified. Several states maintain no standing armed forces at all — Costa Rica, Iceland, Panama and others — so a blanket assumption is wrong for some entries here. SPECULATIVE is the held-open grade: recorded so the gap is visible, never issued as a forecast, never displayed as an assertion. Upgrading this to DOCUMENTED requires the state's own defence-ministry page."
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_the_Defence_Staff_(United_Kingdom)"
+        ],
+        "note": "Upgraded from the SPECULATIVE seed on a single encyclopedia source that names a serving chief of defence, which establishes the force exists. REPORTED, not DOCUMENTED: the ministry's own page has not been checked. That upgrade is the next step for this record."
       },
       "location": {
         "lat": 51.5019,
@@ -5227,7 +5271,17 @@
         "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
       },
       "projections": [],
-      "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
+      "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
+      "commander": {
+        "name": "Richard Knighton",
+        "rank": "Air Chief Marshal",
+        "grade": "REPORTED",
+        "as_of": "2026-07-27",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_the_Defence_Staff_(United_Kingdom)"
+        ],
+        "note": "Chief of the Defence Staff since September 2025, succeeding Admiral Sir Tony Radakin. Single-source. as_of is the retrieval date, not a publication date, per the Spion rule."
+      }
     },
     {
       "id": "F-SEED-SAU",
@@ -5318,10 +5372,12 @@
       "name": "Italy — national armed forces",
       "designation": "ITA",
       "existence": {
-        "grade": "SPECULATIVE",
+        "grade": "REPORTED",
         "as_of": "2026-07-27",
-        "sources": [],
-        "rationale": "Assumed from sovereignty, NOT verified. Several states maintain no standing armed forces at all — Costa Rica, Iceland, Panama and others — so a blanket assumption is wrong for some entries here. SPECULATIVE is the held-open grade: recorded so the gap is visible, never issued as a forecast, never displayed as an assertion. Upgrading this to DOCUMENTED requires the state's own defence-ministry page."
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_the_Defence_Staff_(Italy)"
+        ],
+        "note": "Upgraded from the SPECULATIVE seed on a single encyclopedia source that names a serving chief of defence, which establishes the force exists. REPORTED, not DOCUMENTED: the ministry's own page has not been checked. That upgrade is the next step for this record."
       },
       "location": {
         "lat": 41.8979,
@@ -5335,7 +5391,17 @@
         "note": "Capital centroid from Natural Earth 110m populated places, a named public dataset. A capital is not a headquarters; this locates the state, not the command."
       },
       "projections": [],
-      "notes": "SEEDED SKELETON. Coverage without knowledge. Carries no commander claim because none has been sourced, and the freshness layer counts that absence rather than hiding it. Every F-SEED- record is removable in one pass."
+      "notes": "Upgraded from seed. Location remains the capital centroid from Natural Earth and still locates the state rather than the command.",
+      "commander": {
+        "name": "Luciano Portolano",
+        "rank": "General",
+        "grade": "REPORTED",
+        "as_of": "2026-07-27",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chief_of_the_Defence_Staff_(Italy)"
+        ],
+        "note": "Capo di Stato Maggiore della Difesa since 4 October 2024. Appointed by the President of Italy in consultation with the Council of Ministers. Single-source. as_of is the retrieval date, not a publication date, per the Spion rule."
+      }
     },
     {
       "id": "F-SEED-CHN",
