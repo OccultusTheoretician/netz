@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>konsole · Nebelkr&auml;he</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="crow_mark.svg">
+<style>
+:root{--bg:#07090c;--fg:#cfd3d8;--dim:#7d838c;--brass:#dcb65e;--brass2:#c9a227;
+  --good:#7fb08a;--bad:#a8492f;--line:#1d2228;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font-family:var(--mono)}
+#rain{position:fixed;inset:0;z-index:0;opacity:0;transition:opacity .8s;pointer-events:none}
+#term{position:relative;z-index:1;height:100%;overflow-y:auto;padding:1rem 1.1rem 3rem;
+  font-size:13.5px;line-height:1.6}
+.l{white-space:pre-wrap;word-break:break-word}
+.dim{color:var(--dim)}.br{color:var(--brass)}.gd{color:var(--good)}.bd{color:var(--bad)}
+.b{color:#fff}
+#row{display:flex;gap:.5rem;align-items:baseline;position:relative;z-index:1}
+#ps{color:var(--brass);flex:0 0 auto}
+#in{flex:1 1 auto;background:none;border:none;outline:none;color:var(--fg);
+  font:inherit;caret-color:var(--brass)}
+a{color:var(--brass)}
+</style></head><body>
+<canvas id="rain"></canvas>
+<div id="term"></div>
+<div id="row" style="padding:0 1.1rem 1.2rem"><span id="ps">nebelkr&auml;he&gt;</span><input id="in" autofocus autocomplete="off" spellcheck="false"></div>
+<script>
+(function(){
+"use strict";
+var T=document.getElementById("term"), IN=document.getElementById("in");
+function out(s,cls){var d=document.createElement("div");d.className="l "+(cls||"");
+  d.innerHTML=s;T.appendChild(d);T.scrollTop=T.scrollHeight;return d;}
+function esc(s){return String(s==null?"":s).replace(/[&<>]/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];});}
+function pad(s,n){s=String(s);return s+" ".repeat(Math.max(0,n-s.length));}
+
+/* ---------- deterministic RNG so a seed reproduces a run ---------- */
+function Rng(seed){this.s=seed>>>0;}
+Rng.prototype.next=function(){this.s=(this.s*1664525+1013904223)>>>0;return this.s/4294967296;};
+
+/* ---------- fog: the desk in ninety seconds ---------- */
+var fog=null;
+function fogStart(seedArg){
+  var seed=seedArg||Math.floor(Math.random()*1e9);
+  fog={rng:new Rng(seed),seed:seed,round:0,rounds:8,rows:[],bias:0,drawn:[],budget:0};
+  out("");
+  out("FOG · calibration under purchased observation","br");
+  out("seed "+seed+"   ·   type <span class='br'>fog "+seed+"</span> to replay this exact run","dim");
+  out("");
+  out("Each round hides an urn with an unknown red/black bias. Spend draws to","dim");
+  out("learn it — draws are free in count and expensive in information, because","dim");
+  out("you only get eight rounds and the bias is redrawn every time. Then state","dim");
+  out("a probability that the NEXT draw is red, and it resolves.","dim");
+  out("");
+  out("You are scored by Brier. Under 0.25 beats a coin. Misses are printed.","dim");
+  fogRound();
+}
+function fogRound(){
+  fog.round++;
+  if(fog.round>fog.rounds) return fogScore();
+  fog.bias=0.05+fog.rng.next()*0.9;
+  fog.drawn=[];
+  out("");
+  out("── round "+fog.round+" of "+fog.rounds+" ──","br");
+  out("<span class='dim'>draw N</span> to sample · <span class='dim'>p NN</span> to commit a probability that the next draw is red");
+}
+function fogDraw(n){
+  if(!fog) return out("no run in progress. <span class='br'>fog</span> starts one.","dim");
+  n=Math.max(1,Math.min(20,n|0));
+  var s="";
+  for(var i=0;i<n;i++){var r=fog.rng.next()<fog.bias;fog.drawn.push(r);
+    s+=r?"<span class='bd'>R</span>":"<span class='dim'>b</span>";}
+  var reds=fog.drawn.filter(Boolean).length;
+  out("  "+s+"   <span class='dim'>"+reds+" red of "+fog.drawn.length+"</span>");
+}
+function fogCommit(p){
+  if(!fog) return out("no run in progress.","dim");
+  if(!(p>=0&&p<=100)) return out("probability must be 0-100.","bd");
+  var truth=fog.rng.next()<fog.bias;
+  var brier=Math.pow(p/100-(truth?1:0),2);
+  fog.rows.push({r:fog.round,p:p,truth:truth,n:fog.drawn.length,brier:brier,bias:fog.bias});
+  out("  you said <span class='b'>"+p+"%</span> after "+fog.drawn.length+" draw(s) · outcome "+
+      (truth?"<span class='bd'>RED</span>":"<span class='dim'>black</span>")+
+      " · loss "+brier.toFixed(3)+" · true bias was "+(fog.bias*100).toFixed(0)+"%",
+      brier<0.25?"gd":"");
+  fogRound();
+}
+function fogScore(){
+  var n=fog.rows.length, b=fog.rows.reduce(function(a,x){return a+x.brier;},0)/n;
+  var hits=fog.rows.filter(function(x){return x.truth;}).length;
+  var base=hits/n, clim=base*(1-base);
+  out("");out("── result ──","br");
+  out("  "+pad("round",7)+pad("stated",9)+pad("draws",8)+pad("outcome",10)+"loss","dim");
+  fog.rows.forEach(function(x){
+    out("  "+pad(x.r,7)+pad(x.p+"%",9)+pad(x.n,8)+
+        pad(x.truth?"RED":"black",10)+x.brier.toFixed(3),
+        x.brier>0.25?"bd":"");
+  });
+  out("");
+  out("  Brier <span class='b'>"+b.toFixed(3)+"</span>   ·   coin-flip on 50s is 0.250");
+  out("  your realized base rate "+(base*100).toFixed(0)+"% · climatological "+clim.toFixed(3)+
+      " · skill "+(clim?(1-b/clim).toFixed(3):"—"));
+  out("");
+  if(n<30) out("  Eight rounds is noise. Under thirty resolutions a score is not a record —","dim");
+  if(n<30) out("  which is the same reason the ledger on this site prints 13 of 30 and","dim");
+  if(n<30) out("  refuses to claim anything yet.","dim");
+  out("");
+  out("  <span class='br'>fog</span> again, or <span class='br'>ledger</span> to see the real one.","dim");
+  fog=null;
+}
+
+/* ---------- live data ---------- */
+function grab(u){return fetch(u,{cache:"no-store"}).then(function(r){
+  if(!r.ok) throw new Error(r.status);return r.json();});}
+function cmdLedger(){
+  out("reading ledger.json …","dim");
+  grab("ledger.json").then(function(d){
+    var p=d.projections,arms={};
+    p.forEach(function(x){var k=x.model||"unattributed";(arms[k]=arms[k]||[]).push(x);});
+    out("");out("KAOS KONTROL REPORT · PREDICTIVE LEDGER","br");
+    out("schema "+d.schema+" · as of "+d.as_of,"dim");
+    out("");
+    out("  "+pad("arm",18)+pad("issued",8)+pad("open",6)+pad("void",6)+pad("res",5)+
+        pad("H/M",8)+"Brier","dim");
+    Object.keys(arms).sort().forEach(function(k){
+      var r=arms[k],res=r.filter(function(x){return x.status==="hit"||x.status==="miss";}),
+          h=res.filter(function(x){return x.status==="hit";}).length;
+      var br="—";
+      if(res.length) br=(res.reduce(function(a,x){
+        return a+Math.pow(x.probability/100-(x.status==="hit"?1:0),2);},0)/res.length).toFixed(3);
+      out("  "+pad(k,18)+pad(r.length,8)+
+          pad(r.filter(function(x){return x.status==="open";}).length,6)+
+          pad(r.filter(function(x){return x.status==="void";}).length,6)+
+          pad(res.length,5)+pad(res.length?h+"/"+(res.length-h):"—",8)+br);
+    });
+    out("");
+    out("No pooled score. A Brier belongs to one forecaster.","dim");
+    out("Full record: <a href='ledger.html'>ledger.html</a>","dim");
+  }).catch(function(e){out("ledger unavailable ("+e+")","bd");});
+}
+function cmdOrbat(){
+  out("reading KriegForeKaster.json …","dim");
+  grab("KriegForeKaster.json").then(function(d){
+    var f=d.formations,g={};
+    f.forEach(function(x){["existence","composition","posture","location","commander"]
+      .forEach(function(b){if(x[b])g[x[b].grade]=(g[x[b].grade]||0)+1;});});
+    out("");out("KRIEGFOREKASTER · "+esc(d.theater),"br");
+    out("  "+f.length+" formations · "+
+        f.filter(function(x){return x.commander;}).length+" with a commander claim");
+    out("");
+    ["CONFESSED","PROOF-VERBATIM","DOCUMENTED","REPORTED","DERIVED","SPECULATIVE"]
+      .forEach(function(k){ if(g[k]) out("  "+pad(k,18)+g[k],
+        k==="SPECULATIVE"?"dim":""); });
+    out("");
+    out("SPECULATIVE is the held-open grade: recorded so the gap is visible,","dim");
+    out("never issued as a forecast. Most of that board is what is NOT known.","dim");
+    out("The board: <a href='KriegForeKaster.html'>KriegForeKaster.html</a>","dim");
+  }).catch(function(e){out("orbat unavailable ("+e+")","bd");});
+}
+function cmdKalls(){
+  out("reading kalls_hashlog.json …","dim");
+  grab("kalls_hashlog.json").then(function(d){
+    out("");out("KRÄHE'S KALLS · "+d.protocol,"br");
+    out("  "+d.records.length+" sealed commitment(s)");
+    d.records.slice(0,12).forEach(function(r){
+      out("  "+pad(r.id,20)+r.commitment.slice(0,32)+"…  <span class='dim'>"+r.status+"</span>");
+    });
+    out("");
+    out("Each is SHA-256 over id|timestamp|statement|resolution_basis|salt.","dim");
+    out("The statements are not here. That is the point — they cannot be","dim");
+    out("changed, and they cannot yet be read.","dim");
+  }).catch(function(e){out("hashlog unavailable ("+e+")","bd");});
+}
+
+/* ---------- rain, in brass ---------- */
+var rainOn=false, rainT=null;
+function matrix(){
+  var c=document.getElementById("rain"),x=c.getContext("2d");
+  if(rainOn){rainOn=false;clearInterval(rainT);c.style.opacity=0;
+    return out("rain off","dim");}
+  rainOn=true;c.style.opacity=1;
+  function size(){c.width=innerWidth;c.height=innerHeight;}
+  size();addEventListener("resize",size);
+  var glyphs="0123456789ABCDEF",cols=Math.floor(c.width/14),
+      y=new Array(cols).fill(0).map(function(){return Math.random()*-50;});
+  rainT=setInterval(function(){
+    x.fillStyle="rgba(7,9,12,0.10)";x.fillRect(0,0,c.width,c.height);
+    x.font="13px monospace";
+    for(var i=0;i<cols;i++){
+      var g=glyphs[Math.floor(Math.random()*glyphs.length)];
+      x.fillStyle=Math.random()<0.03?"#f0e0b0":"rgba(201,162,39,0.55)";
+      x.fillText(g,i*14,y[i]*16);
+      y[i]=(y[i]*16>c.height&&Math.random()>0.975)?0:y[i]+1;
+    }
+  },52);
+  out("hexadecimal rain. it is brass, not green — this is not that site.","dim");
+  out("<span class='br'>matrix</span> again to stop.","dim");
+}
+
+/* ---------- shell ---------- */
+var CMDS={
+  help:function(){
+    out("");
+    out("  <span class='br'>ledger</span>    the real predictive ledger, per forecaster arm");
+    out("  <span class='br'>orbat</span>     KriegForeKaster, by evidence grade");
+    out("  <span class='br'>kalls</span>     the sealed commitments");
+    out("  <span class='br'>verify</span>    how to check any of it yourself");
+    out("  <span class='br'>fog</span>       calibration game · <span class='dim'>fog &lt;seed&gt; to replay</span>");
+    out("  <span class='br'>draw N</span>    inside fog: buy N samples");
+    out("  <span class='br'>p NN</span>      inside fog: commit a probability");
+    out("  <span class='br'>matrix</span>    rain");
+    out("  <span class='br'>whoami</span> · <span class='br'>clear</span> · <span class='br'>exit</span>");
+    out("");
+  },
+  whoami:function(){
+    out("");
+    out("  You are a visitor who typed <span class='br'>verify</span> on a page that told you to.","dim");
+    out("  That is the whole entry requirement and it is not an accident.","dim");
+    out("");
+  },
+  verify:function(){
+    out("");
+    out("  Nothing here asks to be believed.","dim");
+    out("  · Every forecast was sealed before its outcome — <a href='kraehes_kalls.html'>the commitments</a>");
+    out("  · The verifier is standard-library Python and knows nothing about this desk:");
+    out("    <span class='dim'>python knp_verify.py https://retroprescientaudit.com/kalls_hashlog.json</span>");
+    out("  · Misses are permanent — <a href='ledger.html'>the ledger</a>");
+    out("  · Conformance certifies process, never foresight — <a href='register.html'>the register</a>");
+    out("");
+  },
+  clear:function(){T.innerHTML="";},
+  exit:function(){out("there is no exit. try <span class='br'>help</span>.","dim");},
+  ledger:cmdLedger, orbat:cmdOrbat, kalls:cmdKalls, matrix:matrix,
+  fog:function(a){fogStart(a[1]?parseInt(a[1],10):0);}
+};
+function run(line){
+  var a=line.trim().split(/\s+/), c=(a[0]||"").toLowerCase();
+  out("<span class='br'>nebelkrähe&gt;</span> "+esc(line));
+  if(!c) return;
+  if(c==="draw") return fogDraw(a[1]?parseInt(a[1],10):1);
+  if(c==="p"||c==="say") return fogCommit(parseInt(a[1],10));
+  if(/^\d+$/.test(c) && fog) return fogCommit(parseInt(c,10));
+  if(CMDS[c]) return CMDS[c](a);
+  out("unknown: "+esc(c)+" · <span class='br'>help</span>","bd");
+}
+IN.addEventListener("keydown",function(e){
+  if(e.key==="Enter"){var v=IN.value;IN.value="";run(v);}
+});
+document.addEventListener("click",function(){IN.focus();});
+
+out("Nebelkrähe konsole · unlisted","br");
+out("You found this by doing what the site told you to do.","dim");
+out("<span class='br'>help</span> for commands. <span class='br'>fog</span> to be scored.","dim");
+})();
+</script>
+</body></html>
