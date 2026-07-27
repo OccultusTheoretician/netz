@@ -72,10 +72,85 @@ ECHELONS = ["armed forces", "service", "theater", "front", "army group", "army",
             "detachment"]
 
 # days after which a claim is stale enough that displaying it as current is a lie
-HALF_LIFE = {"existence": 365, "composition": 180, "commander": 60,
-             "posture": 21, "location": 14}
+# Subordination joins the ladder. It was the only load-bearing field in this
+# schema carrying no grade, no source and no date — a relationship determining
+# the whole structure of the board, settable by anyone and checkable by no one.
+# That is the undocumented-tab defect and it does not get to live here.
+HALF_LIFE = {"existence": 365, "composition": 180, "subordination": 730,
+             "order_of_battle": 180, "factionalization": 365,
+             "commander": 60, "posture": 21, "location": 14}
 
 CLAIM_BLOCKS = list(HALF_LIFE.keys())
+
+# What a coordinate actually points at. Precision is DECLARED, never implied:
+# 195 of these locate a capital, which locates a state and not a command.
+DENOTES = ["headquarters", "installation centroid", "capital centroid", "approximate"]
+
+# ----------------------------------------------------------------------
+# ORDER OF BATTLE — counts, by class, each with its own source
+# ----------------------------------------------------------------------
+OOB_FIELDS = ["active_personnel", "reserve_personnel", "paramilitary_personnel",
+              "manoeuvre_divisions", "manoeuvre_brigades", "main_battle_tanks",
+              "artillery_systems", "combat_aircraft", "rotary_wing",
+              "principal_surface_combatants", "submarines", "special_operations_units"]
+
+# ----------------------------------------------------------------------
+# FACTIONALIZATION — coup-proofing structure, and ONLY structure.
+#
+# These are the observable, sourceable features of a force built to be
+# survivable against its own officers: parallel chains, praetorian units,
+# who appoints generals, how soldiers are recruited, whether commands rotate.
+# All of it is published — constitutions, org charts, defence white papers,
+# the standard literature on coup-proofing in authoritarian regimes.
+#
+# What is deliberately absent is a field for INTENT. There is nowhere in this
+# schema to record that one faction secretly controls another, that a coup is
+# being prepared, or who is really in charge. Structure is checkable and
+# purpose is not, and a board that asserts hidden purpose about a real
+# military is unfalsifiable — which is the property this entire apparatus
+# exists to refuse. Record the architecture. Let a reader draw the inference,
+# and let the forecast be the thing that tests it.
+# ----------------------------------------------------------------------
+FACTION_INDICATORS = {
+    "parallel_forces": ("Armed services with independent chains of command to the "
+                        "head of state, outside the regular defence ministry.",
+                        ["single unified chain", "one semi-autonomous branch",
+                         "two chains, overlapping missions",
+                         "two chains, competing missions and separate procurement",
+                         "three or more, with separate industrial bases"]),
+    "praetorian_units": ("Formations whose stated mission is regime or leadership "
+                         "protection, standing outside the regular order of battle.",
+                         ["none", "ceremonial guard only", "brigade-scale, armed",
+                          "division-scale with armour",
+                          "corps-scale with independent logistics and air"]),
+    "appointment_control": ("Who appoints and removes general officers.",
+                            ["merit board, published criteria",
+                             "defence ministry with legislative confirmation",
+                             "defence ministry, executive discretion",
+                             "head of state directly, no confirmation",
+                             "head of state directly, with a political vetting body"]),
+    "recruitment_basis": ("How the force is manned, and whether documented sources "
+                          "report ethnic, sectarian or regional stacking in the "
+                          "officer corps.",
+                          ["volunteer, no reported stacking",
+                           "conscription, no reported stacking",
+                           "reported stacking in selected formations",
+                           "documented stacking in the officer corps",
+                           "documented stacking with a formal quota or exclusion"]),
+    "command_rotation": ("Whether senior commands rotate on a published schedule, "
+                         "which limits constituency-building in a formation.",
+                         ["published rotation, observed", "published, observed unevenly",
+                          "no published policy, rotation occurs",
+                          "long tenures common", "indefinite tenure normal"]),
+    "internal_security_role": ("Whether regular armed forces hold a standing domestic "
+                               "security mission.",
+                               ["none, constitutionally barred", "disaster response only",
+                                "border and counter-terror", "standing domestic mission",
+                                "primary mission is internal"]),
+    "coup_record": ("Documented coups or attempted coups in the last fifty years.",
+                    ["none", "one attempt, failed", "one successful",
+                     "two or more attempts", "two or more successful"]),
+}
 POSTURES = ["committed", "reserve", "reconstituting", "transiting",
             "withdrawn", "unknown"]
 
@@ -168,22 +243,29 @@ def validate(d: dict) -> list:
             errs.append(f"{p}: no name")
 
         par = f.get("parent")
-        if par:
-            if par not in ids:
-                errs.append(f"{p}: parent '{par}' does not exist")
+        if isinstance(par, str) and par:
+            errs.append(f"{p}: parent is a bare id with no grade, source or date. "
+                        f"Subordination determines the structure of this board and "
+                        f"must be recorded as a claim like any other.")
+        elif isinstance(par, dict):
+            pid = par.get("id")
+            if not pid:
+                errs.append(f"{p}.subordination: no parent id")
+            elif pid not in ids:
+                errs.append(f"{p}.subordination: parent '{pid}' does not exist")
             else:
-                pf = next(x for x in d["formations"] if x["id"] == par)
+                pf = next(x for x in d["formations"] if x["id"] == pid)
                 if (pf.get("echelon") in ECHELONS and f.get("echelon") in ECHELONS
                         and ECHELONS.index(pf["echelon"]) >= ECHELONS.index(f["echelon"])):
-                    errs.append(f"{p}: parent '{par}' is not a higher echelon")
+                    errs.append(f"{p}.subordination: '{pid}' is not a higher echelon")
 
         if not f.get("existence"):
             errs.append(f"{p}: no existence claim — a formation with no evidence "
                         f"that it exists is not a record, it is a guess")
 
         for b in CLAIM_BLOCKS:
-            blk = f.get(b)
-            if not blk:
+            blk = f.get("parent") if b == "subordination" else f.get(b)
+            if not blk or not isinstance(blk, dict):
                 continue
             q = f"{p}.{b}"
             g = blk.get("grade")
@@ -204,7 +286,32 @@ def validate(d: dict) -> list:
             if g in NEEDS_RATIONALE and not blk.get("rationale"):
                 errs.append(f"{q}: grade {g} requires a rationale")
 
+        oob = f.get("order_of_battle")
+        if isinstance(oob, dict):
+            for k in oob:
+                if k in ("grade", "as_of", "sources", "note", "rationale"):
+                    continue
+                if k not in OOB_FIELDS:
+                    errs.append(f"{p}.order_of_battle: '{k}' is not a recognised count "
+                                f"field; add it to OOB_FIELDS or drop it")
+        fx = f.get("factionalization")
+        if isinstance(fx, dict):
+            for k, v in fx.items():
+                if k in ("grade", "as_of", "sources", "note", "rationale"):
+                    continue
+                if k not in FACTION_INDICATORS:
+                    errs.append(f"{p}.factionalization: '{k}' is not a structural "
+                                f"indicator. This block records ARCHITECTURE only — "
+                                f"there is no field here for intent, control or "
+                                f"allegiance, by design.")
+                elif not (isinstance(v, int) and 0 <= v <= 4):
+                    errs.append(f"{p}.factionalization.{k}: score must be 0-4")
+
         loc = f.get("location")
+        if loc and loc.get("denotes") not in DENOTES:
+            errs.append(f"{p}.location: denotes is {loc.get('denotes')!r} — a coordinate "
+                        f"must state what it points at, one of {DENOTES}. A capital "
+                        f"centroid locates a state, not a command.")
         if loc:
             try:
                 lat, lon = float(loc["lat"]), float(loc["lon"])
@@ -225,7 +332,8 @@ def lint(d: dict) -> list:
     rows = []
     for f in d["formations"]:
         for b in CLAIM_BLOCKS:
-            state, a = decay_state(b, f.get(b))
+            blk = f.get("parent") if b == "subordination" else f.get(b)
+            state, a = decay_state(b, blk if isinstance(blk, dict) else None)
             if state in ("decayed", "stale", "undated"):
                 rows.append((f["id"], f["name"], b, state, a, HALF_LIFE[b]))
     return rows
@@ -239,9 +347,10 @@ def stats(d: dict):
     unloc = 0
     for f in d["formations"]:
         for b in CLAIM_BLOCKS:
-            if f.get(b):
-                gx[f[b].get("grade")] += 1
-                dx[decay_state(b, f[b])[0]] += 1
+            blk = f.get("parent") if b == "subordination" else f.get(b)
+            if isinstance(blk, dict):
+                gx[blk.get("grade")] += 1
+                dx[decay_state(b, blk)[0]] += 1
         if not f.get("location"):
             unloc += 1
     return fx, gx, dx, unloc, len(d["formations"])
@@ -261,8 +370,8 @@ def freshness(d: dict) -> dict:
     for f in d["formations"]:
         worst = None
         for b in CLAIM_BLOCKS:
-            blk = f.get(b)
-            if not blk:
+            blk = f.get("parent") if b == "subordination" else f.get(b)
+            if not blk or not isinstance(blk, dict):
                 continue
             st, a = decay_state(b, blk)
             states[st] = states.get(st, 0) + 1
@@ -311,8 +420,8 @@ def halflife_projections(d: dict, claim: str = "commander", horizon: int = None)
     t = horizon or h
     out, skipped = [], []
     for f in d["formations"]:
-        blk = f.get(claim)
-        if not blk:
+        blk = f.get("parent") if claim == "subordination" else f.get(claim)
+        if not isinstance(blk, dict) or not blk:
             skipped.append((f["id"], f"no {claim} claim"))
             continue
         if blk.get("grade") in NEVER_ISSUE:
@@ -365,7 +474,7 @@ TEMPLATE = {
     "existence": {"grade": "DOCUMENTED", "as_of": "TODAY", "sources": [""],
                   "note": "what the source is, and whether as_of is a publication "
                           "date or a retrieval date"},
-    "location": {"lat": 0.0, "lon": 0.0, "place": "",
+    "location": {"lat": 0.0, "lon": 0.0, "place": "", "denotes": "headquarters",
                  "grade": "DOCUMENTED", "as_of": "TODAY", "sources": [""],
                  "note": "centroid, approximate; headquarters not deployed position"},
     "commander": {"name": "", "rank": "", "grade": "DOCUMENTED",
@@ -373,6 +482,78 @@ TEMPLATE = {
     "projections": [],
     "notes": "",
 }
+
+
+def report(d, fid):
+    """A full battle report for one force, printing the GAPS as loudly as the
+    facts. A report that shows only what is known reads as knowledge; this one
+    shows the shape of the ignorance next to it, which is the honest form."""
+    f = next((x for x in d["formations"] if x["id"] == fid), None)
+    if f is None:
+        print(f"FAIL — no formation {fid}", file=sys.stderr); return 1
+    fac = next((x for x in d["factions"] if x["id"] == f.get("faction")), {})
+    print(f"\n{'='*70}")
+    print(f"  {f['name']}")
+    print(f"  {f.get('designation','')} · {f.get('echelon','')} · {fac.get('name','')}")
+    print(f"{'='*70}")
+
+    for b in CLAIM_BLOCKS:
+        blk = f.get("parent") if b == "subordination" else f.get(b)
+        title = b.replace("_", " ").upper()
+        if not isinstance(blk, dict):
+            print(f"\n  {title}\n    — no claim recorded")
+            continue
+        st, age = decay_state(b, blk)
+        print(f"\n  {title}   [{blk.get('grade')}]  as of {blk.get('as_of')}"
+              f"  ({st}{'' if age is None else f', {age}d, half-life {HALF_LIFE[b]}d'})")
+        if b == "order_of_battle":
+            any_ = False
+            for k in OOB_FIELDS:
+                v = blk.get(k)
+                if v is not None:
+                    print(f"    {k.replace('_',' '):32s} {v:>12,}" if isinstance(v, int)
+                          else f"    {k.replace('_',' '):32s} {v}")
+                    any_ = True
+                else:
+                    print(f"    {k.replace('_',' '):32s} {'—':>12}")
+            if not any_:
+                print("    every field empty — the block exists and states nothing")
+        elif b == "factionalization":
+            for k, (desc, levels) in FACTION_INDICATORS.items():
+                v = blk.get(k)
+                if isinstance(v, int) and 0 <= v <= 4:
+                    print(f"    {k.replace('_',' '):24s} {v}  {levels[v]}")
+                else:
+                    print(f"    {k.replace('_',' '):24s} —  unscored")
+            idx = faction_index(blk)
+            print(f"    {'─'*60}")
+            if idx is None:
+                print("    no index — nothing scored")
+            else:
+                print(f"    structural factionalization index  {idx:.2f}")
+                print("    0 = one chain, merit appointment, no praetorians.")
+                print("    1 = parallel armies, praetorian corps, personal appointment.")
+                print("    This measures ARCHITECTURE. It says nothing about anyone's")
+                print("    intent, and there is no field in this schema to record any.")
+        else:
+            for k in ("summary", "value", "name", "rank", "place", "id", "note",
+                      "rationale", "denotes"):
+                if blk.get(k):
+                    print(f"    {k}: {blk[k]}")
+        for u in (blk.get("sources") or []):
+            print(f"    source: {u}")
+        if not (blk.get("sources") or []):
+            print("    source: none — permitted only for DERIVED and SPECULATIVE")
+    if f.get("projections"):
+        print(f"\n  UNDER FORECAST\n    " + ", ".join(f["projections"]))
+    print()
+    return 0
+
+
+def faction_index(blk):
+    vals = [blk.get(k) for k in FACTION_INDICATORS]
+    vals = [v for v in vals if isinstance(v, int) and 0 <= v <= 4]
+    return (sum(vals) / (4 * len(vals))) if vals else None
 
 
 def cmd_template():
@@ -485,6 +666,8 @@ def main():
     sub.add_parser("stats")
     sub.add_parser("publish")
     sub.add_parser("template")
+    rp = sub.add_parser("report")
+    rp.add_argument("formation")
     ad = sub.add_parser("add")
     ad.add_argument("--from", dest="src", required=True,
                     help="JSON file holding one formation, or an array of them")
@@ -512,6 +695,9 @@ def main():
 
     if a.cmd == "add":
         return cmd_add(d, a.src)
+
+    if a.cmd == "report":
+        return report(d, a.formation)
 
     if a.cmd == "validate":
         errs = validate(d)
