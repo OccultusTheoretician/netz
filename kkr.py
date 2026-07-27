@@ -175,10 +175,39 @@ VAGUE_PHRASES = ["tensions will", "tension will", "pressure will", "will continu
                  "is expected to evolve", "will likely evolve", "dynamics will"]
 
 
+# A settlement verb alone does not mean a market. A comment period closes; a
+# vulnerability is closed; a border closes. The weekend rule fires only when a
+# settlement token and a market referent BOTH appear, each word-boundaried.
+SETTLE_TOKENS = re.compile(
+    r"\b(?:clos(?:e|es|ing)|settl(?:e|es|ed|ing|ement)|trading\s+day|"
+    r"market\s+data|last\s+trade)\b", re.I)
+MARKET_REFERENT = re.compile(
+    r"\b(?:price|prices|index|indices|share|shares|stock|stocks|equity|equities|"
+    r"yield|yields|future|futures|contract|contracts|ticker|spot|barrel|bushel|"
+    r"basis\s+point|basis\s+points|bond|bonds|treasury|treasuries|exchange\s+rate|"
+    r"S&P|Nasdaq|Dow|Brent|WTI|NYMEX|Comex|ICE|Nikkei|FTSE|DAX|"
+    r"per\s+barrel|per\s+ounce|per\s+share)\b", re.I)
+
+# A statement a third party cannot read on its own is not a forecast.
+BARE_TOKENS = {"yes", "no", "true", "false", "maybe", "n/a", "tbd",
+               "confirmed", "unconfirmed", "correct", "incorrect"}
+
+
 def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list:
     """Return list of rejection reasons; empty list = accepted."""
     reasons = []
     text = (p["statement"] + " " + p["resolution"]).lower()
+    stmt = (p.get("statement") or "").strip()
+    if stmt.lower().strip(".!? ") in BARE_TOKENS:
+        reasons.append(f"statement is the bare token '{stmt}' — a statement must "
+                       "carry the claim itself, not an answer to an unstated question")
+    elif len(stmt) < 40:
+        reasons.append(f"statement too thin to adjudicate ({len(stmt)} chars) — a "
+                       "third party reading the statement alone must be able to say "
+                       "what was claimed")
+    elif len(stmt.split()) < 6:
+        reasons.append(f"statement is {len(stmt.split())} words — too compressed to "
+                       "adjudicate without the surrounding context")
     if len(p["resolution"]) < 25:
         reasons.append("resolution criterion too thin to adjudicate")
     for v in VAGUE_PHRASES:
@@ -201,8 +230,8 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
         reasons.append("relative timeframe in statement — use absolute date windows; "
                        "the deadline field governs and relative phrasing creates "
                        "adjudication conflict")
-    if re.search(r"clos(?:e|ing)|settle|trading day|market data", 
-                 p["statement"] + " " + p["resolution"], re.I):
+    both = p["statement"] + " " + p["resolution"]
+    if SETTLE_TOKENS.search(both) and MARKET_REFERENT.search(both):
         try:
             if datetime.strptime(p["deadline"], "%Y-%m-%d").weekday() >= 5:
                 reasons.append("market-price resolution with weekend deadline — no "
