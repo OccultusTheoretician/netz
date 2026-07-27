@@ -52,6 +52,7 @@ should be the same gate, not a second one that drifts.
 
 import argparse
 import json
+import shutil
 import sys
 from datetime import datetime, timezone, date
 from pathlib import Path
@@ -89,20 +90,24 @@ def load() -> dict:
 def save(d: dict):
     d["as_of"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     DATA_FILE.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
-    publish(d)
+    publish()
 
 
-def publish(d: dict = None):
-    """Write the served copy. Same rule the ledger learned the hard way: the
-    thing an auditor reads is a build product of the canonical file, never a
-    manual copy anyone has to remember."""
+def publish():
+    """Copy the canonical file, byte for byte, to the directory Pages serves.
+
+    Two rules, both learned expensively. First: the served copy is a build
+    product, never a manual copy anyone has to remember. Second: it is a COPY,
+    not a re-serialization. Re-dumping produces a file with identical content and
+    a different hash, which means the published artifact can never be checked
+    against the canonical one by hash — and 'recompute the hashes' is the whole
+    claim. A derived artifact that re-encodes is where damage enters unseen; the
+    Kalls export proved that at cost.
+    """
     if not DOCS.exists():
         return False
-    if d is None:
-        d = load()
-    (DOCS / "KriegForeKaster.json").write_text(
-        json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"published -> {DOCS / 'KriegForeKaster.json'}")
+    shutil.copyfile(DATA_FILE, DOCS / "KriegForeKaster.json")
+    print(f"published -> {DOCS / 'KriegForeKaster.json'} (byte copy)")
     return True
 
 
@@ -357,7 +362,7 @@ def main():
         return 0
 
     if a.cmd == "publish":
-        if not publish(d):
+        if not publish():
             print(f"no docs/ directory at {DOCS} — nothing published")
             return 1
         return 0
