@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Conformance Register · Nebelkr&auml;he</title>
+<meta name="description" content="Parties that have made a conformance statement against the Kr&auml;he's Nest standards, and the verifier output behind each one.">
+<link rel="icon" type="image/svg+xml" href="crow_mark.svg">
+<link rel="alternate icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Conformance Register">
+<meta property="og:description" content="Who has claimed conformance, at what level, and what the verifier said.">
+<meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="brand.css">
+<style>
+:root{--bg:#080B0F;--panel:#101318;--line:#242a31;--fg:#d9d6cf;--dim:#8b8d92;
+  --brass:#c9a227;--brass2:#dcb65e;--good:#7fb08a;--warn:#c9873f;--bad:#a8492f;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --serif:"Cormorant Garamond",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.7 "IBM Plex Sans","Segoe UI",system-ui,sans-serif}
+nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:.15rem;
+  flex-wrap:wrap;padding:.45rem .9rem;background:rgba(8,11,15,.82);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.06em}
+nav a{color:var(--dim);text-decoration:none;padding:.25rem .5rem;text-transform:uppercase}
+nav a:hover{color:var(--brass2)}
+nav a.home{color:var(--fg);display:flex;align-items:center;gap:.45rem;
+  text-transform:none;letter-spacing:.02em;font-size:.8rem}
+nav a.home img{height:17px;width:auto}
+nav .sp{flex:1 1 auto}
+.wrap{max-width:1080px;margin:0 auto;padding:2.4rem 1.1rem 5rem}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3.1rem);
+  line-height:1.06;margin:.2rem 0 .6rem}
+h2{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim);margin:2.6rem 0 .8rem}
+.mark{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--brass);
+  text-transform:uppercase}
+.lede{font-size:1.06rem;color:#c2c6cb;max-width:62ch}
+.panel{background:var(--panel);border:1px solid var(--line);padding:1rem 1.1rem;margin:1rem 0}
+.warnbox{border-left:3px solid var(--warn)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;margin:.6rem 0}
+th,td{text-align:left;padding:.55rem .5rem;border-bottom:1px solid var(--line);
+  vertical-align:top}
+th{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--dim);font-weight:400}
+td.mono,code{font-family:var(--mono);font-size:.78rem}
+.tag{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;
+  padding:.08rem .4rem;border:1px solid var(--line);text-transform:uppercase}
+.tag.self{color:var(--warn);border-color:#5c4224}
+.tag.third{color:var(--good);border-color:#33513c}
+.tag.unmod{color:var(--good)}
+.tag.mod{color:var(--warn)}
+.tag.none{color:var(--bad);border-color:#5c2f22}
+a{color:#8fb6d6}
+.small{font-size:.82rem;color:var(--dim)}
+ol{max-width:70ch}
+ol li{margin:.5rem 0}
+footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1rem;
+  font-family:var(--mono);font-size:.66rem;color:var(--dim)}
+</style></head><body>
+
+<nav>
+  <a class="home" href="index.html"><img src="crow_mark.svg" alt="">Nebelkr&auml;he</a>
+  <span class="sp"></span>
+  <a href="index.html">Home</a>
+  <a href="standards.html">Standards</a>
+  <a href="conformance.html">Conformance</a>
+  <a href="verify.html">Verify</a>
+  <a href="nest.html">Nest</a>
+  <a href="ledger.html">Ledger</a>
+  <a href="kraehes_kalls.html">Kalls</a>
+  <a href="KriegForeKaster.html">ForeKaster</a>
+  <a href="spion.html">Spion</a>
+</nav>
+
+<div class="wrap">
+  <p class="mark">(U//OS) &middot; The Prescient Desk &middot; Register</p>
+  <h1>Conformance Register</h1>
+  <p class="lede">Every party that has made a conformance statement against these
+  standards, the level claimed, who assessed it, and what the verifier said. A
+  standard with one conformer is a house rule. This page exists so that fact stays
+  visible rather than implied.</p>
+
+  <div class="panel warnbox">
+    <p style="margin:.1rem 0"><b>What listing is not.</b> Appearing here is not an
+    endorsement, a certification, or an assessment of anyone's forecasting ability.
+    Conformance certifies process only &mdash; that a record was sealed before its
+    outcome, that misses are present, that the count is committed. It certifies
+    <i>nothing</i> about the quality of what was predicted. That is RPAS 1.06,
+    LIAS 1.05 and KNM 1.07, and it is the whole reason this register can exist
+    without becoming a credentialing machine.</p>
+  </div>
+
+  <h2>Register</h2>
+  <table id="reg"><thead><tr>
+    <th>Party</th><th>Standard</th><th>Statement</th><th>Assessed by</th>
+    <th>Scope</th><th>Verified</th><th>Record</th>
+  </tr></thead><tbody id="rows">
+    <tr><td colspan="7" class="small">loading&hellip;</td></tr>
+  </tbody></table>
+  <p class="small" id="tally"></p>
+
+  <h2>How to be listed</h2>
+  <ol>
+    <li>Seal your forecasts <b>locally</b>. Nothing is submitted here and nothing is
+    stored here. A scheme in which a server receives, stores, or could edit
+    predictions is not an implementation of this method (KNM 1.05), so this register
+    holds no vault and accepts no submission (KNP 1.02).</li>
+    <li>Publish your own hashlog at a URL you control, with an append-only mechanism
+    you do not solely control &mdash; a public repository history, a timestamp
+    authority, a chain anchor (KNP 4.03).</li>
+    <li>Run the verifier against it:
+    <code>python knp_verify.py &lt;your hashlog URL&gt; --json</code></li>
+    <li>Send the URL and the verifier's JSON output. Nothing else is needed and
+    nothing else is wanted.</li>
+    <li>The entry lands with whatever the verifier said, unedited, including the
+    should-departures. A modified statement is a normal outcome and is listed as
+    such (KNM 2.03).</li>
+  </ol>
+  <p class="small">The verifier is standard-library Python, knows nothing about any
+  particular committer, and is published here:
+  <a href="https://github.com/OccultusTheoretician/netz/blob/main/knp_verify.py">knp_verify.py</a>.
+  Run <code>--selftest</code> for the interoperability vectors if you are implementing
+  in another language.</p>
+
+  <footer>
+    Conformance certifies commitment integrity only. Listing is not endorsement.
+    <span id="asof"></span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,
+    function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function tag(cls,txt){return '<span class="tag '+cls+'">'+esc(txt)+'</span>';}
+  fetch("register.json",{cache:"no-store"}).then(function(r){return r.json();})
+  .then(function(d){
+    var rows=d.entries||[], out=[];
+    rows.forEach(function(e){
+      var st = e.statement==="unmodified" ? tag("unmod","unmodified")
+             : e.statement==="modified"   ? tag("mod","modified")
+             : tag("none","no statement");
+      var by = e.assessed_by==="third party" ? tag("third","third party")
+             : tag("self","self-assessed");
+      out.push("<tr><td>"+esc(e.party)+
+        (e.note?'<div class="small">'+esc(e.note)+"</div>":"")+"</td>"+
+        '<td class="mono">'+esc(e.standard)+"</td><td>"+st+"</td><td>"+by+"</td>"+
+        '<td class="small">'+esc(e.scope||"")+"</td>"+
+        '<td class="mono">'+esc(e.verified||"")+"</td>"+
+        "<td>"+(e.record?'<a href="'+esc(e.record)+'">hashlog</a>':
+                '<span class="small">&mdash;</span>')+"</td></tr>");
+    });
+    document.getElementById("rows").innerHTML = out.join("") ||
+      '<tr><td colspan="7" class="small">No entries.</td></tr>';
+    var self_=rows.filter(function(e){return e.assessed_by!=="third party";}).length;
+    document.getElementById("tally").textContent =
+      rows.length+" entr"+(rows.length===1?"y":"ies")+" \u00b7 "+
+      (rows.length-self_)+" assessed by a third party \u00b7 "+self_+" self-assessed."+
+      (rows.length-self_===0 ? "  Until that first number moves, this is a house rule with a register." : "");
+    document.getElementById("asof").textContent = d.as_of ? "\u00b7 as of "+d.as_of : "";
+  }).catch(function(e){
+    document.getElementById("rows").innerHTML =
+      '<tr><td colspan="7" class="small">register.json unavailable &mdash; '+esc(e)+"</td></tr>";
+  });
+})();
+</script>
+</body></html>

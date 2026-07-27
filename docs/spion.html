@@ -92,8 +92,35 @@
 </style>
 <link rel="stylesheet" href="brand.css">
 <script defer src="brand.js"></script>
+<style>
+#sitenav{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:.15rem;
+  flex-wrap:wrap;padding:.45rem .9rem;background:rgba(8,11,15,.82);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line,#242a31);
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.68rem;letter-spacing:.06em}
+#sitenav a{color:var(--dim,#8b8d92);text-decoration:none;padding:.25rem .5rem;
+  text-transform:uppercase}
+#sitenav a:hover{color:var(--brass2,#dcb65e)}
+#sitenav a.home{color:var(--fg,#d9d6cf);display:flex;align-items:center;gap:.45rem;
+  text-transform:none;letter-spacing:.02em;font-size:.8rem}
+#sitenav a.home img{height:17px;width:auto}
+#sitenav .sp{flex:1 1 auto}
+</style>
 </head>
 <body>
+<nav id="sitenav">
+  <a class="home" href="index.html"><img src="crow_mark.svg" alt="">Nebelkr&auml;he</a>
+  <span class="sp"></span>
+  <a href="index.html">Home</a>
+  <a href="standards.html">Standards</a>
+  <a href="conformance.html">Conformance</a>
+  <a href="register.html">Register</a>
+  <a href="verify.html">Verify</a>
+  <a href="nest.html">Nest</a>
+  <a href="ledger.html">Ledger</a>
+  <a href="kraehes_kalls.html">Kalls</a>
+  <a href="KriegForeKaster.html">ForeKaster</a>
+</nav>
+
 <main id="spion">
 
   <p class="mark">(U//OS) · The Prescient Desk · Spion</p>
@@ -145,8 +172,8 @@
   <p><b>Observed at, not checked at.</b> The runner is GitHub's scheduler, which is
   best-effort and defers under load. Times below are when an observation was written,
   which is the earliest the change can be asserted — never the moment it happened.</p>
-  <p><b>Whose clock.</b> The watch runs on infrastructure the desk does not control
-  and commits under a machine identity. That is deliberate. A monitoring record kept
+  <p><b>Whose clock.</b> The watch runs on infrastructure the desk does not control.
+  <b>Correction, 2026-07-27:</b> this paragraph previously said it commits under a machine identity. It does not. The workflow declares a committer address in GitHub's legacy no-reply form, which resolves to the account of an unrelated third party, so every observation commit is currently attributed to someone with no connection to this desk. The commits are real and the timestamps are the runner's; only the attribution is wrong. It is being corrected in the workflow, and this notice stays until it is. The point the paragraph was making still holds, and now holds against its own author: A monitoring record kept
   entirely on the operator's own machine is worth exactly as much as his word.</p>
 
   <p class="mark" style="margin-top:2.4rem">
