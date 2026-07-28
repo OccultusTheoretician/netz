@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KriegForeKaster — Compendium · The Prescient Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10131a; --ink2:#161a23; --ink3:#1d222d;
+  --bone:#e6e2d8; --fog:#7c8697; --fog2:#59616f;
+  --brass:#b08949; --brass-dim:#6d552e; --void:#2b3242;
+  --rule:#242b38; --warn:#8c5a4a;
+  --serif:"Iowan Old Style",Charter,Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --display:"Cinzel",var(--serif);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--ink);color:var(--bone);font-family:var(--serif);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+a{color:var(--brass);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px 64px}
+
+/* masthead */
+header.mast{border-bottom:1px solid var(--rule);padding:26px 0 18px;margin-bottom:0}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--fog2)}
+h1{font-family:var(--display);font-weight:700;letter-spacing:.10em;font-size:clamp(21px,4.4vw,34px);margin:.35em 0 .15em;text-transform:uppercase}
+.sub{font-size:14.5px;color:var(--fog);max-width:66ch;margin:0}
+
+/* the absence banner — signature, never dismissible */
+.absence{margin:18px 0 0;border:1px solid var(--void);border-left:3px solid var(--warn);background:var(--ink2);padding:12px 14px}
+.absence b{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:5px}
+.absence p{margin:0;font-size:14px;color:var(--fog)}
+
+/* global coverage strip */
+.cov{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:18px 0 0}
+.cov div{background:var(--ink2);padding:9px 11px}
+.cov .k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--fog2)}
+.cov .v{font-family:var(--mono);font-size:15px;color:var(--bone);margin-top:3px}
+.cov .bar{height:3px;background:var(--void);margin-top:6px}
+.cov .bar i{display:block;height:3px;background:var(--brass)}
+.cov .zero .v{color:var(--warn)}
+.cov .zero .bar i{background:var(--warn)}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:20px 0 12px}
+input[type=search],select{background:var(--ink2);border:1px solid var(--rule);color:var(--bone);font-family:var(--mono);font-size:13px;padding:9px 11px;min-width:0}
+input[type=search]{flex:1 1 220px}
+.seg{display:flex;border:1px solid var(--rule)}
+.seg button{background:var(--ink2);border:0;color:var(--fog);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--brass-dim);color:var(--bone)}
+.count{font-family:var(--mono);font-size:11.5px;color:var(--fog2);margin-left:auto;letter-spacing:.08em}
+
+/* panes */
+.panes{display:grid;grid-template-columns:300px 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);min-height:60vh}
+.pane{background:var(--ink);overflow:auto}
+#list{max-height:74vh}
+.row{display:flex;align-items:center;gap:9px;padding:9px 12px;border-bottom:1px solid var(--rule);cursor:pointer;width:100%;background:none;border-left:0;border-right:0;border-top:0;text-align:left;color:inherit;font:inherit}
+.row:hover{background:var(--ink2)}
+.row[aria-current=true]{background:var(--ink3);box-shadow:inset 3px 0 0 var(--brass)}
+.row .nm{flex:1;font-size:14.5px}
+.row .rg{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fog2)}
+
+/* the absence rail — the signature element */
+.rail{display:flex;gap:2px;flex:0 0 auto}
+.rail i{width:5px;height:13px;background:var(--void);display:block}
+.rail i.on{background:var(--brass)}
+
+/* detail */
+#detail{padding:20px 22px}
+.dh{border-bottom:1px solid var(--rule);padding-bottom:14px;margin-bottom:16px}
+.dh h2{font-family:var(--display);font-weight:700;letter-spacing:.06em;font-size:24px;margin:0 0 6px;text-transform:uppercase}
+.dh .meta{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--fog2)}
+.railbig{display:flex;gap:3px;margin-top:12px;align-items:center}
+.railbig i{width:9px;height:18px;background:var(--void)}
+.railbig i.on{background:var(--brass)}
+.railbig span{font-family:var(--mono);font-size:11px;color:var(--fog2);margin-left:9px;letter-spacing:.1em}
+
+.f{border-bottom:1px solid var(--rule);padding:13px 0}
+.f .lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fog2);margin-bottom:5px}
+.f .val{font-size:15px;line-height:1.55}
+.f .prov{font-family:var(--mono);font-size:10.5px;color:var(--fog2);margin-top:6px;letter-spacing:.04em}
+.f.empty{border-left:2px solid var(--void);padding-left:11px}
+.f.empty .val{color:var(--fog2);font-style:italic}
+.f.empty .lab{color:var(--void);color:#4a5364}
+.chip{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;border:1px solid var(--brass-dim);color:var(--brass);padding:1px 5px;margin-left:7px;vertical-align:1px}
+.chip.no{border-color:var(--void);color:#55607a}
+
+table.milex{border-collapse:collapse;font-family:var(--mono);font-size:12.5px;margin-top:4px}
+table.milex td{padding:2px 16px 2px 0;color:var(--bone)}
+table.milex td:first-child{color:var(--fog2)}
+
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{background:var(--ink2);border:1px solid var(--rule);color:var(--bone);font-family:var(--mono);font-size:11.5px;padding:5px 9px;cursor:pointer}
+.tag:hover{border-color:var(--brass-dim);color:var(--brass)}
+.tag .n{color:var(--fog2);margin-left:6px}
+
+.empty-state{padding:60px 24px;text-align:center;color:var(--fog)}
+.empty-state code{font-family:var(--mono);font-size:12.5px;color:var(--brass);display:block;margin-top:10px}
+
+footer{border-top:1px solid var(--rule);margin-top:26px;padding-top:16px;font-family:var(--mono);font-size:11px;color:var(--fog2);letter-spacing:.05em}
+
+@media (max-width:800px){
+  .panes{grid-template-columns:1fr}
+  #list{max-height:none}
+  body.detail-open #list{display:none}
+  body:not(.detail-open) #detail{display:none}
+  .backbtn{display:block}
+}
+.backbtn{display:none;background:var(--ink2);border:1px solid var(--rule);color:var(--fog);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;margin-bottom:14px;cursor:pointer}
+@media (prefers-reduced-motion:no-preference){.row,.tag{transition:background .12s ease,border-color .12s ease}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <div class="eyebrow">The Prescient Desk · KriegForeKaster</div>
+  <h1>Order of Battle Compendium</h1>
+  <p class="sub">Armed forces, security services and listed armed actors, by state. Every value on this page
+  carries the source it came from and the year that source stamped it. Fields no open source fills are
+  printed empty rather than filled with an estimate.</p>
+
+  <div class="absence" id="absence">
+    <b>Standing coverage disclosure</b>
+    <p id="absence-text">Loading the record.</p>
+  </div>
+
+  <div class="cov" id="cov"></div>
+</header>
+
+<div class="controls">
+  <input type="search" id="q" placeholder="Search states or armed actors" autocomplete="off" aria-label="Search">
+  <select id="region" aria-label="Filter by region"><option value="">All regions</option></select>
+  <div class="seg" role="group" aria-label="View">
+    <button id="v-states" aria-pressed="true">States</button>
+    <button id="v-actors" aria-pressed="false">Armed actors</button>
+  </div>
+  <span class="count" id="count"></span>
+</div>
+
+<div class="panes">
+  <div class="pane" id="list"></div>
+  <div class="pane" id="detail"><div class="empty-state">Select an entry to read its record.</div></div>
+</div>
+
+<footer id="foot">UNCLASSIFIED // OPEN SOURCES</footer>
+</div>
+
+<script>
+const FIELD_ORDER = [
+  ["service_branches","Service branches"],
+  ["personnel","Personnel strength"],
+  ["milex_pct_gdp","Military expenditure (% GDP)"],
+  ["equipment_note","Equipment inventory"],
+  ["service_obligation","Service age and obligation"],
+  ["deployments","Foreign deployments"],
+  ["posture_note","Posture note"],
+  ["chief_of_defence","Chief of defence"],
+  ["service_chiefs","Service chiefs"],
+  ["hq_coordinates","Command HQ location"]
+];
+let DATA=null, VIEW="states", SEL=null;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function railHTML(a,big){
+  const cls=big?"railbig":"rail";
+  let h=`<div class="${cls}">`;
+  for(const [k] of FIELD_ORDER){ h+=`<i class="${a.fields[k]&&a.fields[k].value?"on":""}"></i>`; }
+  if(big) h+=`<span>${a.coverage.sourced} of ${a.coverage.total} field classes sourced</span>`;
+  return h+"</div>";
+}
+
+function fieldHTML(a,key,label){
+  const f=a.fields[key]||{};
+  if(!f.value){
+    const why=f.unavailable_at_source?"Source reports this as not available.":"No open bulk source supplies this field. Unsourced, not zero.";
+    return `<div class="f empty"><div class="lab">${esc(label)}<span class="chip no">empty</span></div>
+      <div class="val">${why}</div></div>`;
+  }
+  let val;
+  if(key==="milex_pct_gdp"){
+    val="<table class='milex'>"+Object.entries(f.value).sort((x,y)=>y[0]-x[0])
+      .map(([y,t])=>`<tr><td>${esc(y)}</td><td>${esc(t)}</td></tr>`).join("")+"</table>";
+  } else { val=esc(f.value).replace(/ \| /g,"<br>"); }
+  const grade=f.grade?`<span class="chip">${esc(f.grade)}</span>`:"";
+  const asof=f.as_of?`as of ${esc(f.as_of)} · `:"";
+  return `<div class="f"><div class="lab">${esc(label)}${grade}</div>
+    <div class="val">${val}</div>
+    <div class="prov">${asof}${esc(f.source||"unattributed")}</div></div>`;
+}
+
+function renderState(a){
+  document.body.classList.add("detail-open");
+  const acts=a.listed_actors.length
+    ? `<div class="tags">`+a.listed_actors.map(l=>
+        `<button class="tag" data-actor="${esc(l.name)}">${esc(l.name)}</button>`).join("")+`</div>
+       <div class="prov">as of ${esc(a.listed_actors[0].as_of||"undated")} · ${esc(a.listed_actors[0].source)}</div>`
+    : `<div class="val" style="color:var(--fog2);font-style:italic">No armed actors listed for this state in the source.</div>`;
+  $("#detail").innerHTML=`
+    <button class="backbtn" id="back">&larr; List</button>
+    <div class="dh">
+      <h2>${esc(a.name)}</h2>
+      <div class="meta">${esc(a.region.replace(/-/g," "))} · ${esc(a.actor_id)}</div>
+      ${railHTML(a,true)}
+    </div>
+    ${FIELD_ORDER.map(([k,l])=>fieldHTML(a,k,l)).join("")}
+    <div class="f"><div class="lab">Listed armed actors</div>${acts}</div>
+    <div class="f empty"><div class="lab">Formations<span class="chip no">empty</span></div>
+      <div class="val">Named formations, their commanders and their garrisons are not published in bulk by any open source. Each one enters this record individually, from a named source, or not at all.</div></div>`;
+  $("#detail").querySelectorAll("[data-actor]").forEach(b=>b.onclick=()=>{VIEW="actors";syncSeg();$("#q").value=b.dataset.actor;draw();selectActor(b.dataset.actor);});
+  const bk=$("#back"); if(bk) bk.onclick=()=>document.body.classList.remove("detail-open");
+}
+
+function selectActor(name){
+  document.body.classList.add("detail-open");
+  const states=DATA.actor_index[name]||[];
+  const sample=(DATA.actors.find(a=>a.listed_actors.some(l=>l.name===name))||{listed_actors:[{}]})
+    .listed_actors.find(l=>l.name===name)||{};
+  $("#detail").innerHTML=`
+    <button class="backbtn" id="back">&larr; List</button>
+    <div class="dh"><h2>${esc(name)}</h2>
+      <div class="meta">Listed armed actor · present in ${states.length} state record${states.length===1?"":"s"}</div></div>
+    <div class="f"><div class="lab">Listed in</div>
+      <div class="tags">${states.map(s=>`<button class="tag" data-state="${esc(s)}">${esc(s)}</button>`).join("")}</div>
+      <div class="prov">as of ${esc(sample.as_of||"undated")} · ${esc(sample.source||"unattributed")}</div></div>
+    <div class="f empty"><div class="lab">Leader<span class="chip no">empty</span></div>
+      <div class="val">Unsourced. Enters the record from a named source only.</div></div>
+    <div class="f empty"><div class="lab">Lineage and splits<span class="chip no">empty</span></div>
+      <div class="val">Predecessor organisations, splits and mergers. Unsourced.</div></div>
+    <div class="f empty"><div class="lab">Patrons<span class="chip no">empty</span></div>
+      <div class="val">State or non-state backers. Unsourced.</div></div>
+    <div class="f empty"><div class="lab">Formations<span class="chip no">empty</span></div>
+      <div class="val">Named subordinate formations. Unsourced.</div></div>
+    <div class="f"><div class="lab">What this listing does and does not say</div>
+      <div class="val">The source lists this actor as present or operating in the states above. It does not
+      assert strength, command structure, control of territory, or relationship to any government.</div></div>`;
+  $("#detail").querySelectorAll("[data-state]").forEach(b=>b.onclick=()=>{
+    VIEW="states";syncSeg();$("#q").value=b.dataset.state;draw();
+    const a=DATA.actors.find(x=>x.name===b.dataset.state); if(a){SEL=a.actor_id;renderState(a);markRow();}});
+  const bk=$("#back"); if(bk) bk.onclick=()=>document.body.classList.remove("detail-open");
+}
+
+function markRow(){document.querySelectorAll(".row").forEach(r=>r.setAttribute("aria-current",r.dataset.id===SEL?"true":"false"));}
+function syncSeg(){$("#v-states").setAttribute("aria-pressed",VIEW==="states");$("#v-actors").setAttribute("aria-pressed",VIEW==="actors");}
+
+function draw(){
+  const q=$("#q").value.trim().toLowerCase(), rg=$("#region").value;
+  let html="",n=0;
+  if(VIEW==="states"){
+    for(const a of DATA.actors){
+      if(rg&&a.region!==rg) continue;
+      if(q&&!a.name.toLowerCase().includes(q)&&!a.listed_actors.some(l=>l.name.toLowerCase().includes(q))) continue;
+      n++;
+      html+=`<button class="row" data-id="${esc(a.actor_id)}" aria-current="false">
+        <span class="nm">${esc(a.name)}</span>
+        <span class="rg">${esc(a.region.slice(0,3))}</span>${railHTML(a)}</button>`;
+    }
+    $("#count").textContent=`${n} states`;
+    $("#list").innerHTML=html||`<div class="empty-state">No state matches that search. Clear the box to see all 251.</div>`;
+    $("#list").querySelectorAll(".row").forEach(r=>r.onclick=()=>{
+      SEL=r.dataset.id;renderState(DATA.actors.find(a=>a.actor_id===SEL));markRow();});
+  } else {
+    for(const [name,states] of Object.entries(DATA.actor_index)){
+      if(q&&!name.toLowerCase().includes(q)) continue;
+      if(rg&&!states.some(s=>(DATA.actors.find(a=>a.name===s)||{}).region===rg)) continue;
+      n++;
+      html+=`<button class="row" data-actor="${esc(name)}" aria-current="false">
+        <span class="nm">${esc(name)}</span><span class="rg">${states.length} st</span></button>`;
+    }
+    $("#count").textContent=`${n} armed actors`;
+    $("#list").innerHTML=html||`<div class="empty-state">No listed actor matches that search.</div>`;
+    $("#list").querySelectorAll(".row").forEach(r=>r.onclick=()=>selectActor(r.dataset.actor));
+  }
+  markRow();
+}
+
+function boot(d){
+  DATA=d;
+  const N=d.actors.length;
+  const tally={};
+  for(const [k,l] of FIELD_ORDER) tally[k]={label:l,n:d.actors.filter(a=>a.fields[k]&&a.fields[k].value).length};
+  const zero=Object.entries(tally).filter(([,v])=>v.n===0);
+  $("#absence-text").innerHTML=
+    `${N} state records built from ${esc(d.spine_source)}. `+
+    `${zero.length} of the ${FIELD_ORDER.length} field classes on this page have <b style="color:var(--warn)">zero coverage worldwide</b>`+
+    (zero.length?` — ${zero.map(([,v])=>esc(v.label.toLowerCase())).join(", ")}. `:". ")+
+    `No open bulk source publishes them, so they are printed empty on every record rather than filled with a centroid or an estimate. `+
+    `An empty field on this page means unsourced. It never means zero.`;
+  $("#cov").innerHTML=FIELD_ORDER.map(([k,l])=>{
+    const v=tally[k].n,p=Math.round(v/N*100);
+    return `<div class="${v?"":"zero"}"><div class="k">${esc(l)}</div><div class="v">${v}<span style="color:var(--fog2)">/${N}</span></div>
+      <div class="bar"><i style="width:${p}%"></i></div></div>`;}).join("");
+  const regions=[...new Set(d.actors.map(a=>a.region))].sort();
+  $("#region").innerHTML+=regions.map(r=>`<option value="${esc(r)}">${esc(r.replace(/-/g," "))}</option>`).join("");
+  $("#foot").textContent=`UNCLASSIFIED // OPEN SOURCES · schema ${d.schema} · spine generated ${d.generated_at||"undated"} · ${Object.keys(d.actor_index).length} distinct listed armed actors across ${N} state records`;
+  $("#q").oninput=draw; $("#region").onchange=draw;
+  $("#v-states").onclick=()=>{VIEW="states";syncSeg();draw();};
+  $("#v-actors").onclick=()=>{VIEW="actors";syncSeg();draw();};
+  draw();
+}
+
+fetch("kfk_spine.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(boot)
+.catch(e=>{
+  document.querySelector(".panes").innerHTML=
+   `<div class="empty-state" style="grid-column:1/-1">Could not read <b>kfk_spine.json</b> (${esc(e.message)}).
+    Put it in the same directory as this page and reload.<code>python kfk_spine_build.py</code></div>`;
+  $("#absence-text").textContent="Record not loaded.";
+});
+</script>
+</body>
+</html>

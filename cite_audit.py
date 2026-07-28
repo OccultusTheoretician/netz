@@ -1,0 +1,221 @@
+#!/usr/bin/env python3
+"""
+cite_audit.py - citation SUPPORT audit for a Prescient Desk battle report.
+
+The existing audit counts sentences carrying no citation. That catches the
+uncited. It does not catch the MISCITED, which ships clean today: a sentence
+with [4] attached asserting a figure that appears nowhere in item 4.
+
+This checks three things the current block does not:
+
+  MISCITED   a numeric claim whose figure does not appear in any cited item
+  UNRESOLVED a citation index with no matching item in that section's record
+  FORWARD    a completed-tense assertion about a date later than the report DTG
+
+Limitation, stated because it governs how findings should be read: a report's
+record carries item TITLES, not article bodies. So this tool proves support
+against the record AS PRINTED - which is the correct standard for this desk,
+because the record as printed is the only thing a reader can check. A finding
+means the desk asserted something its own published record does not carry.
+It does not by itself mean the figure is false.
+
+Usage:
+    python cite_audit.py battle_report_2026-07-27_1502.md
+    python cite_audit.py kkr_packet_latest.md --json findings.json
+    python cite_audit.py report.md --strict     # exit 1 on any MISCITED
+"""
+import argparse, json, re, sys, unicodedata
+from pathlib import Path
+
+SNAP_ROW   = re.compile(r"^\|\s*([A-Za-z0-9&/ ]+?)\s*\|\s*\$?([\d,]+\.?\d*)\s*\|\s*([+-]?[\d.]+)%\s*\|", re.M)
+DATEISH    = re.compile(r"\b(?:19|20)\d{2}\b|\b\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\b|\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}\b|\b20\d{2}-\d{2}-\d{2}\b", re.I)
+THRESHOLD  = re.compile(r"\b(below|above|under|over|exceed(?:s|ing)?|beyond|at least|more than|less than)\s*\$?\d", re.I)
+WATCHLINE  = re.compile(r"^\s*WATCH:", re.I)
+ASSERTION  = re.compile(r"\b(show|shows|showed|is|are|was|were|reached|has|have|gap|dropp?(?:ed|ing)?|fell|rose|surged)\b", re.I)
+
+SECTION_RE = re.compile(r"^##\s+([IVXL]+)\.\s+(.+?)\s*$", re.M)
+RECORD_RE  = re.compile(r"^\*\*The record:?\*\*\s*$", re.M)
+ITEM_RE    = re.compile(r"^\s*(\d+)\.\s+(.*)$")
+CITE_RE    = re.compile(r"\[([0-9]+(?:\s*,\s*[0-9]+)*)\]")
+DTG_RE     = re.compile(r"—\s*(\d{2})(\d{4})Z\s+([A-Z]{3})\s+(\d{2})")
+ISO_RE     = re.compile(r"\b(20\d{2})-(\d{2})-(\d{2})\b")
+DAYMON_RE  = re.compile(r"\b(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\b", re.I)
+MONTHS = {m.lower(): i for i, m in enumerate(
+    "January February March April May June July August September October November December".split(), 1)}
+
+# figures worth checking. bare small integers are excluded - too noisy.
+NUM_RE = re.compile(r"""
+    (?P<pct>\d{1,3}(?:\.\d+)?\s*(?:percent|%|-point|\s?point))
+  | (?P<money>\$\s?\d[\d,]*(?:\.\d+)?)
+  | (?P<big>\b\d{1,3}(?:,\d{3})+\b)
+  | (?P<dec>\b\d+\.\d+\b)
+  | (?P<plain>\b\d{2,}\b)
+""", re.X | re.I)
+
+COMPLETED = re.compile(
+    r"\b(has|have)\s+(reached|risen|fallen|dropped|surged|hit|exceeded|climbed|declined|topped)\b"
+    r"|\b(reached|rose|fell|dropped|surged|hit|exceeded|climbed|declined|topped)\b", re.I)
+
+def norm(s):
+    s = unicodedata.normalize("NFKC", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+def digits(s):
+    return re.sub(r"[^0-9.]", "", s)
+
+def report_date(text):
+    m = DTG_RE.search(text)
+    if not m: return None
+    day, _, mon, yy = m.groups()
+    mm = {"JAN":1,"FEB":2,"MAR":3,"APR":4,"MAY":5,"JUN":6,
+          "JUL":7,"AUG":8,"SEP":9,"OCT":10,"NOV":11,"DEC":12}.get(mon.upper())
+    if not mm: return None
+    return (2000 + int(yy), mm, int(day))
+
+def parse_sections(text):
+    """Return ordered sections, each with its prose span and its numbered record."""
+    marks = [(m.start(), m.group(1), norm(m.group(2))) for m in SECTION_RE.finditer(text)]
+    out = []
+    for i, (pos, numeral, title) in enumerate(marks):
+        end = marks[i + 1][0] if i + 1 < len(marks) else len(text)
+        body = text[pos:end]
+        rec_m = RECORD_RE.search(body)
+        prose, items = body, {}
+        if rec_m:
+            prose = body[:rec_m.start()]
+            for line in body[rec_m.end():].splitlines():
+                im = ITEM_RE.match(line)
+                if im: items[int(im.group(1))] = norm(im.group(2))
+        out.append({"numeral": numeral, "title": title, "prose": prose, "items": items})
+    return out
+
+def sentences(prose):
+    prose = re.sub(r"^\s*>.*$", "", prose, flags=re.M)          # drop existing audit banners
+    prose = re.sub(r"^\s*\|.*$", "", prose, flags=re.M)         # drop tables
+    prose = re.sub(r"\*\*(.+?)\*\*", r"\1", prose)
+    parts = re.split(r"(?<=[.!?])\s+(?=[A-Z(\u201c\"])", prose)
+    return [norm(p) for p in parts if len(norm(p)) > 30]
+
+def resolve_scope(sections, idx):
+    """KJ / I&W / OUTLOOK cite the Top Signals list, which lives in section I."""
+    sec = sections[idx]
+    if sec["items"]:
+        return sec["items"], sec["title"]
+    for s in sections:
+        if s["items"] and "KEY JUDGMENT" in s["title"].upper():
+            return s["items"], s["title"]
+    # Top Signals block is inside KEY JUDGMENTS in this template
+    for s in sections:
+        if "KEY JUDGMENT" in s["title"].upper():
+            top = {}
+            for line in s["prose"].splitlines():
+                im = ITEM_RE.match(line)
+                if im: top[int(im.group(1))] = norm(im.group(2))
+            if top: return top, s["title"] + " / Top signals"
+    return {}, sec["title"]
+
+def audit(path, verbose=False):
+    text = Path(path).read_text(encoding="utf-8", errors="replace")
+    rdate = report_date(text)
+    sections = parse_sections(text)
+    findings, checked = [], 0
+
+    for i, sec in enumerate(sections):
+        items, scope = resolve_scope(sections, i)
+        if not items: continue
+        for sent in sentences(sec["prose"]):
+            cites = []
+            for cm in CITE_RE.finditer(sent):
+                cites += [int(n) for n in re.split(r"\s*,\s*", cm.group(1))]
+            if not cites: continue
+            checked += 1
+
+            missing = [c for c in cites if c not in items]
+            if missing:
+                findings.append({"kind":"UNRESOLVED","section":sec["title"],"scope":scope,
+                                 "cites":cites,"detail":f"no item {missing} in this record",
+                                 "sentence":sent[:220]})
+
+            pool = " ".join(items[c] for c in cites if c in items)
+            pool_d = {digits(x) for x in NUM_RE.findall(pool) for x in ([x] if isinstance(x,str) else x) if digits(x)}
+            pool_d |= {digits(m.group(0)) for m in NUM_RE.finditer(pool)}
+
+            raw_body = CITE_RE.sub("", sent)
+            body = DATEISH.sub(" ", raw_body)
+            for m in NUM_RE.finditer(body):
+                tok = m.group(0)
+                d = digits(tok)
+                if not d or d in {"20", "24", "48", "72"}: continue     # window boilerplate
+                if d in pool_d: continue
+                if any(d in p for p in pool_d): continue
+                window = body[max(0,m.start()-40):m.end()+10]
+                if WATCHLINE.search(sent) or (THRESHOLD.search(window) and not ASSERTION.search(window)):
+                    kind = "THRESHOLD"
+                else:
+                    kind = "MISCITED"
+                findings.append({"kind":kind,"section":sec["title"],"scope":scope,
+                                 "cites":cites,"detail":f"figure {tok.strip()} absent from cited item(s)",
+                                 "sentence":sent[:220]})
+
+            if rdate and COMPLETED.search(raw_body):
+                for dm in ISO_RE.finditer(raw_body):
+                    if tuple(int(x) for x in dm.groups()) > rdate:
+                        findings.append({"kind":"FORWARD","section":sec["title"],"scope":scope,
+                                         "cites":cites,"detail":f"completed tense about {dm.group(0)}, after report date",
+                                         "sentence":sent[:220]})
+                for dm in DAYMON_RE.finditer(raw_body):
+                    d_, mon = int(dm.group(1)), MONTHS[dm.group(2).lower()]
+                    if (rdate[0], mon, d_) > rdate:
+                        findings.append({"kind":"FORWARD","section":sec["title"],"scope":scope,
+                                         "cites":cites,"detail":f"completed tense about {dm.group(0)}, after report date",
+                                         "sentence":sent[:220]})
+    snap = {norm(m.group(1)).lower(): (m.group(2).replace(",",""), m.group(3)) for m in SNAP_ROW.finditer(text)}
+    if snap:
+        for sec in sections:
+            for sent in sentences(sec["prose"]):
+                low = sent.lower()
+                for inst,(last,chg) in snap.items():
+                    if not re.search(r"\b"+re.escape(inst)+r"\b", low): continue
+                    for m in NUM_RE.finditer(DATEISH.sub(" ", CITE_RE.sub("", sent))):
+                        d = digits(m.group(0))
+                        if not d: continue
+                        try: v = float(d)
+                        except ValueError: continue
+                        ref_last, ref_chg = float(last), abs(float(chg))
+                        near_price  = abs(v - ref_last) / max(ref_last,1) < 0.06
+                        near_change = abs(v - ref_chg) < 1.0
+                        if 1 < v < 500 and not near_price and not near_change and v < ref_last*1.5:
+                            findings.append({"kind":"SNAPSHOT","section":sec["title"],"scope":"MARKET SNAPSHOT",
+                                             "cites":[],"detail":f"{inst} stated as {m.group(0).strip()} but the report's governing snapshot says {last} ({chg}%)",
+                                             "sentence":sent[:220]})
+                            break
+
+    return {"file": str(path),
+            "report_date": "-".join(f"{x:02d}" for x in rdate) if rdate else None,
+            "cited_sentences_checked": checked,
+            "findings": findings}
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("report")
+    ap.add_argument("--json", metavar="OUT")
+    ap.add_argument("--strict", action="store_true", help="exit 1 if any MISCITED found")
+    a = ap.parse_args()
+
+    r = audit(a.report)
+    counts = {}
+    for f in r["findings"]: counts[f["kind"]] = counts.get(f["kind"], 0) + 1
+    print(f"cite_audit · {r['file']} · report {r['report_date']} · "
+          f"{r['cited_sentences_checked']} cited sentences checked")
+    print("           · " + (", ".join(f"{k} {v}" for k, v in sorted(counts.items())) or "clean"))
+    for f in r["findings"]:
+        print(f"\n  [{f['kind']}] {f['section']}  cites {f['cites']}  (scope: {f['scope']})")
+        print(f"      {f['detail']}")
+        print(f"      \"{f['sentence']}\"")
+    if a.json:
+        Path(a.json).write_text(json.dumps(r, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"\nwrote {a.json}")
+    if a.strict and counts.get("MISCITED"): sys.exit(1)
+
+if __name__ == "__main__":
+    main()
