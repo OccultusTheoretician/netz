@@ -21,7 +21,7 @@
   // whose argument is dated records is the defect it exists to prevent.
   (function(){
     fetch('war_desk.json').then(function(r){return r.json()}).then(function(d){
-      var raw = d.generated_at || d.as_of || d.updated || null;
+      var raw = d.generated || d.generated_at || d.as_of || d.updated || null;
       var el  = document.getElementById('wardesk-asof');
       if(!el) return;
       if(!raw){ el.textContent = 'as-of not recorded'; el.className = 'stale'; return; }
