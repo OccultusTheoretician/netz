@@ -137,18 +137,12 @@ h1 .tm{font-size:.32em;vertical-align:super;color:var(--dim);font-family:var(--s
 .rings circle{fill:none;stroke:var(--line2);stroke-width:1;opacity:.55}
 .rings circle.mark{stroke:var(--messing3);stroke-dasharray:2 10;opacity:.8}
 .rings text{fill:var(--dim);font-family:var(--mono);font-size:7.5px;letter-spacing:.28em}
-.rings .ticker{fill:#e0483a;font-size:20px;font-weight:700;letter-spacing:.18em;
-  text-transform:uppercase;transition:opacity .3s;
-  filter:drop-shadow(0 0 9px rgba(224,72,58,.5)) drop-shadow(0 0 26px rgba(224,72,58,.22))}
-.rings .ticker.hot{animation:tflash .38s steps(1,end) 5}
-@keyframes tflash{0%,100%{opacity:.95}50%{opacity:.12}}
-@media(prefers-reduced-motion:reduce){.rings .ticker.hot{animation:none}}
 .crow-orbit{position:absolute;inset:0;animation:sweep 22s linear infinite;
   pointer-events:none;z-index:4}
 .crow-mark{position:absolute;left:50%;top:10.5%;width:14%;
   transform:translate(-50%,-50%) scaleX(-1);
   filter:drop-shadow(0 0 22px rgba(220,182,94,.42))
-         drop-shadow(0 0 32px rgba(220,182,94,.14))
+         drop-shadow(0 0 60px rgba(220,182,94,.16))
          drop-shadow(0 3px 10px rgba(0,0,0,.75))}
 .hub{position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;
   border-radius:50%;background:var(--messing2);box-shadow:0 0 12px rgba(220,182,94,.7)}
@@ -356,16 +350,16 @@ footer li a{font-size:.85rem;color:var(--fg)}
   </div>
   <div class="leuchte" role="img" aria-label="The NebelKrähe sigil within sighting rings, a slow light sweeping the fog behind it">
     <div class="beam" aria-hidden="true"></div>
-    
+    <div id="scope-ticker" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:4.5%;text-align:center;font:600 8px var(--mono,monospace);letter-spacing:.34em;color:var(--dim,#8b8b85);opacity:.0;transition:opacity .8s;text-transform:uppercase;pointer-events:none"></div>
     <svg class="rings" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="200" cy="200" r="192"/>
       <circle cx="200" cy="200" r="158" class="mark"/>
       <circle cx="200" cy="200" r="122"/>
       <circle cx="200" cy="200" r="88" class="mark"/>
-      <text x="200" y="16" text-anchor="middle">SEALED · ADJUDICATED · SCORED</text>
+      <text x="200" y="26" text-anchor="middle">SEALED · ADJUDICATED · SCORED</text>
       <text x="200" y="386" text-anchor="middle">DIE KRÄHE SIEHT DURCH DEN NEBEL</text>
-    <g id="contacts"></g><text id="scope-ticker" class="ticker" x="200" y="264" text-anchor="middle" style="opacity:0" aria-hidden="true"></text></svg>
-    <div class="crow-orbit" aria-hidden="true"><img class="crow-mark" src="crow_mark_small.svg" alt=""></div>
+    <g id="contacts"></g></svg>
+    <div class="crow-orbit" aria-hidden="true"><img class="crow-mark" src="crow_mark.svg" alt=""></div>
     <div class="hub" aria-hidden="true"></div>
   </div>
 </div></div></header>
@@ -681,32 +675,12 @@ var CAT=[
  ['fighter \u00b7 prop age','air',0.07,'<path d="M0,-8 L1.2,-2.2 L1.2,5.5 L0,8 L-1.2,5.5 L-1.2,-2.2 Z"/><path d="M-8,-.5 L-1.2,-1.6 L-1.2,1.4 Z"/><path d="M8,-.5 L1.2,-1.6 L1.2,1.4 Z"/><path d="M-3,6.4 L3,6.4 L0,5.2 Z"/>'],
  ['fighter \u00b7 swept wing','air',0.10,'<path d="M0,-8 L1,-2 L1,6 L0,7.5 L-1,6 L-1,-2 Z"/><path d="M-7.5,4.5 L-1,-1 L-1,1.8 Z"/><path d="M7.5,4.5 L1,-1 L1,1.8 Z"/>'],
  ['interceptor \u00b7 delta','air',0.12,'<path d="M0,-7.5 L5.5,5.5 L0,3.6 L-5.5,5.5 Z"/>'],
- ['helicopter','air',0.035,'<ellipse cx="0" cy="1" rx="2" ry="3"/><g fill="none"><path d="M0,1 L0,7 M-1.4,7 L1.4,7" stroke-width="1.1"/><path d="M-6,-5 L6,7 M-6,7 L6,-5" stroke-width=".8" opacity=".8"/></g>'],
- ['submarine \u00b7 submerged','sub',0.008,'<path d="M-7,0 Q0,-1.7 7,0 Q0,1.7 -7,0 Z"/><rect x="-0.8" y="-3.1" width="1.6" height="2.1"/><path d="M0,-3.1 L0,-5" stroke-width=".8"/>'],
- ['submarine \u00b7 running deep','sub',0.006,'<path d="M-6,0 Q0,-1.5 6,0 Q0,1.5 -6,0 Z"/><path d="M0,-2.6 L0,-4.2" stroke-width=".7"/>'],
- ['patrol boat','sea',0.030,'<path d="M-5,0 L-3.5,-1.2 L3.5,-1.2 L5,0 L3.5,1.2 L-3.5,1.2 Z"/><rect x="-1" y="-2.2" width="2" height="1.4"/>'],
- ['minesweeper','sea',0.016,'<path d="M-6,0 L-4,-1.5 L4,-1.5 L6,0 L4,1.5 L-4,1.5 Z"/><g fill="none" stroke-width=".8"><path d="M-6,0 L-10,-2.4 M-6,0 L-10,2.4"/></g>'],
- ['landing craft','sea',0.014,'<path d="M-6,-2 L5,-2 L7,0 L5,2 L-6,2 Z"/><path d="M-6.6,-2.4 L-6.6,2.4" stroke-width="1.5"/>'],
- ['fleet tender','sea',0.011,'<path d="M-9,0 L-7,-2 L7,-2 L9,0 L7,2 L-7,2 Z"/><rect x="-2" y="-3.6" width="3.4" height="1.8"/>'],
- ['tank','land',0.011,'<path d="M-7,-2.4 L7,-2.4 L7,2.4 L-7,2.4 Z"/><rect x="-2.6" y="-4.2" width="5.2" height="2"/><path d="M2.6,-3.2 L9.4,-3.2" stroke-width="1"/>'],
- ['self-propelled gun','land',0.009,'<path d="M-7,-2.2 L6,-2.2 L7,0 L6,2.2 L-7,2.2 Z"/><path d="M0.5,-2.8 L11,-4.6" stroke-width="1.2"/>'],
- ['armoured column','land',0.008,'<rect x="-9.5" y="-1.7" width="4.6" height="3.4"/><rect x="-2.3" y="-1.7" width="4.6" height="3.4"/><rect x="4.9" y="-1.7" width="4.6" height="3.4"/>'],
- ['missile transporter','land',0.010,'<path d="M-8,-1.8 L6,-1.8 L6,1.8 L-8,1.8 Z"/><path d="M-4.5,-2.6 L9,-5" stroke-width="1.5"/><circle cx="-5" cy="2.4" r="1"/><circle cx="3" cy="2.4" r="1"/>'],
- ['SAM battery','land',0.004,'<path d="M-5,2.4 L5,2.4 L3.2,-0.6 L-3.2,-0.6 Z"/><g fill="none" stroke-width=".9"><path d="M-2.2,-0.6 L-3.4,-6.4 M0,-0.6 L0,-7 M2.2,-0.6 L3.4,-6.4"/></g>'],
- ['radar site','land',0.002,'<circle cx="0" cy="2.4" r="1.7"/><path d="M0,2.4 L0,-1.6" stroke-width="1"/><path d="M-4.4,-4.2 Q0,-7 4.4,-4.2" fill="none" stroke-width="1.3"/>'],
- ['UAV \u00b7 loitering','air',0.028,'<path d="M0,-6 L0.9,-1 L0.9,4 L0,6 L-0.9,4 L-0.9,-1 Z"/><path d="M-9.5,0.4 L9.5,0.4" stroke-width="1"/><path d="M-2.6,5.2 L2.6,5.2" stroke-width=".9"/>'],
- ['bomber \u00b7 heavy','air',0.055,'<path d="M0,-8 L1.7,-3 L1.7,5 L0,7 L-1.7,5 L-1.7,-3 Z"/><path d="M-11.5,2.4 L-1.7,-2.2 L-1.7,1.2 Z"/><path d="M11.5,2.4 L1.7,-2.2 L1.7,1.2 Z"/><path d="M-4.2,6.6 L4.2,6.6 L0,5.2 Z"/>'],
- ['AWACS','air',0.040,'<path d="M0,-7 L1.4,-2 L1.4,5 L0,7 L-1.4,5 L-1.4,-2 Z"/><path d="M-9.5,1.2 L-1.4,-1.6 L-1.4,1.2 Z"/><path d="M9.5,1.2 L1.4,-1.6 L1.4,1.2 Z"/><ellipse cx="0" cy="0.6" rx="4.4" ry="1.3" fill="none" stroke-width="1"/>'],
- ['transport \u00b7 four-engine','air',0.048,'<path d="M0,-7.5 L1.5,-2.5 L1.5,5 L0,7 L-1.5,5 L-1.5,-2.5 Z"/><path d="M-10.5,0.6 L-1.5,-2.2 L-1.5,1.4 Z"/><path d="M10.5,0.6 L1.5,-2.2 L1.5,1.4 Z"/><path d="M-3.8,6.4 L3.8,6.4 L0,5.2 Z"/>'],
- ['orbital pass','orb',0.180,'<rect x="-1.7" y="-2.1" width="3.4" height="4.2"/><rect x="-7.4" y="-1.3" width="4.6" height="2.6"/><rect x="2.8" y="-1.3" width="4.6" height="2.6"/><path d="M-2.8,0 L-1.7,0 M1.7,0 L2.8,0" stroke-width=".8"/>']
+ ['helicopter','air',0.035,'<ellipse cx="0" cy="1" rx="2" ry="3"/><g fill="none"><path d="M0,1 L0,7 M-1.4,7 L1.4,7" stroke-width="1.1"/><path d="M-6,-5 L6,7 M-6,7 L6,-5" stroke-width=".8" opacity=".8"/></g>']
 ];
-var PHRASES=['FATE UNKNOWN','CREATE YOUR FATE','THE PROPHET BOARD'];
+var PHRASES=['FATE UNKNOWN','CREATE YOUR FATE','THE PROPHET BOARD','SEALED \u00b7 ADJUDICATED \u00b7 SCORED'];
 var tickTimer=null;
-function say(t,hold,hot){if(!tick)return;tick.textContent=t;
- tick.setAttribute('class',hot?'ticker hot':'ticker');
- tick.style.opacity=hot?'.95':'.6';
- clearTimeout(tickTimer);tickTimer=setTimeout(function(){tick.style.opacity='0';
-  tick.setAttribute('class','ticker');},hold||3200);}
+function say(t,hold){if(!tick)return;tick.textContent=t;tick.style.opacity='.55';
+ clearTimeout(tickTimer);tickTimer=setTimeout(function(){tick.style.opacity='0';},hold||3200);}
 var idleI=0; setInterval(function(){if(tick&&tick.style.opacity==='0'){say(PHRASES[idleI++%PHRASES.length],2600);}},11000);
 var contacts=[]; var departures=0;
 function spawn(){
@@ -716,8 +690,6 @@ function spawn(){
  var c={cls:CAT[idx], x:200+r*Math.cos(t), y:200+r*Math.sin(t),
   heading:Math.random()*360, speed:CAT[idx][2]*(0.7+Math.random()*0.7),
   maxO:0.70+Math.random()*0.30, born:performance.now(),
-  rot:(CAT[idx][1]==='air'?0:-90), sub:(CAT[idx][1]==='sub'),
-  phase:Math.random()*6.28,
   life:SWEEP_MS*(2+Math.random()*2), dying:0, el:document.createElementNS(svgNS,'g')};
  c.el.setAttribute('fill','var(--messing3,#dcb65e)');
  c.el.setAttribute('stroke','var(--messing3,#dcb65e)');
@@ -725,12 +697,11 @@ function spawn(){
  c.el.setAttribute('opacity','0');
  c.el.innerHTML=c.cls[3]+'<title>'+c.cls[0]+' \u00b7 fate unknown</title>';
  g.appendChild(c.el); contacts.push(c);
- if(Math.random()<0.22)say('CREATE YOUR FATE',3200,true);
+ say('CREATE YOUR FATE');
 }
 function depart(c){
  if(c.dying)return; c.dying=performance.now(); departures++;
- if(departures%7===0)say('FATE-ALITY',3800,true);
- else if(Math.random()<0.18)say('FATE UNKNOWN',3000,true);
+ say(departures%5===0?'FATE-ALITY':'FATE UNKNOWN');
  var wait=800+Math.random()*8200;
  setTimeout(function(){if(contacts.length<12)spawn();},wait);
 }
@@ -738,7 +709,7 @@ var N=7+Math.floor(Math.random()*4);
 for(var i=0;i<N;i++)spawn();
 var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(reduced){contacts.forEach(function(c){c.el.setAttribute('opacity','0.4');
- c.el.setAttribute('transform','translate('+c.x+','+c.y+') rotate('+(c.heading+c.rot)+') scale(1.55)');});return;}
+ c.el.setAttribute('transform','translate('+c.x+','+c.y+') rotate('+c.heading+') scale(1.55)');});return;}
 var t0=performance.now(), last=t0;
 function beamAngle(now){
  if(beam){var tr=getComputedStyle(beam).transform;
@@ -759,10 +730,9 @@ function loop(now){
   var trail=((ang-aCur)%360+360)%360;
   var o=trail<10?c.maxO:c.maxO*Math.pow(0.5,trail/52);
   if(o<0.11)o=0.11;
-  if(c.sub){var ph=Math.sin((now-c.born)/3300+c.phase); o*=(ph>0.30?1:0.10);}
   if(c.dying){var f=1-(now-c.dying)/1500; if(f<=0){c.el.remove();contacts.splice(i,1);continue;} o*=f;}
   c.el.setAttribute('opacity',o.toFixed(2));
-  c.el.setAttribute('transform','translate('+c.x.toFixed(1)+','+c.y.toFixed(1)+') rotate('+(c.heading+c.rot)+') scale(1.55)');
+  c.el.setAttribute('transform','translate('+c.x.toFixed(1)+','+c.y.toFixed(1)+') rotate('+c.heading+') scale(1.55)');
  }
  requestAnimationFrame(loop);
 }
