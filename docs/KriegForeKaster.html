@@ -197,7 +197,7 @@ function state(block, name){
   if(!block) return null;
   const a = days(block.as_of);
   if(a===null) return {s:"undated", a:null};
-  const hl = HALF_LIFE[name];
+  const hl = (window.__HL || HALF_LIFE)[name];
   return {s: a<=hl ? "fresh" : (a<=hl*3 ? "decayed" : "stale"), a, hl};
 }
 
@@ -339,7 +339,10 @@ function blockHtml(name, b){
   else if(name==="posture") body = esc(b.value||"");
   else if(name==="composition") body = esc(b.summary||"");
   else body = esc(b.note||"asserted");
-  const srcs = (b.sources||[]).map(u=>'<div class="src"><a href="'+esc(u)+'" rel="noopener">'+esc(u)+'</a></div>').join("");
+  const safeURL = u => /^https?:\/\//i.test(String(u||"")) ? String(u) : null;
+  const srcs = (b.sources||[]).map(u=>safeURL(u)
+    ? '<div class="src"><a href="'+esc(safeURL(u))+'" rel="noopener noreferrer">'+esc(u)+'</a></div>'
+    : '<div class="src warn">source not a web address, not linked: '+esc(u)+'</div>').join("");
   return '<div class="blk"><h4>'+name+'</h4>'+
     '<span class="g '+esc(b.grade)+'">'+esc(b.grade)+'</span>'+
     '<span class="age '+st.s+'">'+esc(b.as_of||"")+' · '+agetxt+'</span>'+
@@ -421,16 +424,31 @@ svg.addEventListener("wheel",e=>{ e.preventDefault();
 // ---------- boot ----------
 Promise.all([
   fetch("KriegForeKaster.json",{cache:"no-store"}).then(r=>r.json()),
-  fetch("world.geojson",{cache:"no-store"}).then(r=>r.json()).catch(()=>null)
+  fetch("world.geojson",{cache:"no-store"}).then(r=>r.json()).catch(()=>"BASEMAP_FAILED")
 ]).then(([d,gj])=>{
+  window.__BASEMAP_FAILED = (gj === "BASEMAP_FAILED");
+  if (window.__BASEMAP_FAILED) gj = null;
   DATA=d; d.factions.forEach(f=>FAC[f.id]=f);
   if(gj) drawGeo(gj);
+  // Defect 2: prefer the schedule the record carries over the viewer's own copy,
+  // and record which one was used so drift between them is visible rather than silent.
+  window.__HL = (d.half_life && typeof d.half_life === "object") ? d.half_life : null;
+  window.__HL_SRC = window.__HL ? "record" : "viewer literal (not in JSON)";
+  // Defect 3: a basemap that failed to load must not look like an empty world.
+  if (window.__BASEMAP_FAILED) {
+    const w = document.createElement("div");
+    w.className = "warn";
+    w.style.cssText = "padding:6px 10px;font-size:12px";
+    w.textContent = "basemap did not load — country outlines are absent, not empty. "
+                  + "Marker positions are unaffected.";
+    document.body.insertBefore(w, document.body.firstChild);
+  }
   const nLoc = d.formations.filter(f=>f.location&&["headquarters","installation centroid"].includes(f.location.denotes)).length;
   const nState = d.formations.filter(f=>f.location&&!["headquarters","installation centroid"].includes(f.location.denotes)).length;
   const decayed = d.formations.reduce((n,f)=>n+BLOCKS.filter(b=>blk(f,b)&&["decayed","stale","undated"].includes(state(blk(f,b),b).s)).length,0);
   $("#hdr").textContent = d.theater+" · "+d.formations.length+" formations · "+
     nLoc+" located to a command, "+nState+" to a capital or approximate only, "+(d.formations.length-nLoc-nState)+" unlocated · "+decayed+" claims past half-life · file as_of "+d.as_of;
-  $("#foot").textContent = "schema "+d.schema+" · claims expire on a published schedule · no marker without a grade, a source and a date";
+  $("#foot").textContent = "schema "+d.schema+" · decay schedule from "+window.__HL_SRC+" ·  · claims expire on a published schedule · no marker without a grade, a source and a date";
   if(d.disclosure || d.factions.some(f=>f.id.startsWith("EXAMPLE"))){
     $("#banner").style.display="block";
     $("#banner").textContent = d.disclosure || "This file contains EXAMPLE records.";
