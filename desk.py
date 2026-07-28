@@ -291,9 +291,17 @@ def cmd_status(args):
                 if age > hl:
                     stale += 1
         n = len(k.get("formations", []))
-        loc = sum(1 for f in k.get("formations", []) if f.get("location"))
+        # Mirrors KriegForeKaster.COMMAND_PRECISION. These two literals are the
+        # only duplication permitted between the files; change them together.
+        _CMD = {"headquarters", "installation centroid"}
+        _STATE = {"capital centroid", "approximate"}
+        _fs = k.get("formations", [])
+        _den = lambda f: (f.get("location") or {}).get("denotes")
+        loc = sum(1 for f in _fs if _den(f) in _CMD)
+        st = sum(1 for f in _fs if _den(f) in _STATE)
+        nolo = len(_fs) - loc - st
         print(f"  {k.get('theater','?')}")
-        print(f"  {n} formations · {loc} located, {n-loc} not · "
+        print(f"  {n} formations · {loc} located to a command, {st} to a capital or approximate only, {nolo} unlocated · "
               + (warn(f"{stale} claims past half-life") if stale else ok("all claims fresh")))
 
     head("SPION")
