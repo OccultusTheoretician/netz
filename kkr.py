@@ -499,6 +499,22 @@ def render_ledger():
     out.append("## STANDING BY FORECASTER ARM\n")
     out.extend(_arm_table(arms))
     out.append("")
+    # --- arm independence disclosure (patch_pub_title) -----------------------
+    # LIAS-26 requires instrument attribution. A reader comparing arms needs to
+    # know that the elicited arms are not blind: they are given this desk's own
+    # corpus and standing instructions, so their independence is procedural —
+    # a separate instrument answering the same questions — not informational.
+    if any(t.startswith("manual/") for t in arms):
+        out.append(
+            "\n> **Disclosure — what the elicited arms are.** Arms tagged `manual/*` "
+            "are frontier language models elicited by the operator against the same "
+            "packet the machine arm receives. They are **not informationally "
+            "independent of this desk**: the model is given the desk's own corpus and "
+            "standing instructions as context. Their independence is procedural — a "
+            "separate instrument answering the same questions — not informational. "
+            "Rows are segregated by model, and no pooled score is published, because "
+            "a Brier belongs to one forecaster.\n")
+
     scored = [(t, r) for t, r in arms.items() if r["n_resolved"]]
     thin = [t for t, r in scored if r["n_resolved"] < 30]
     if thin:

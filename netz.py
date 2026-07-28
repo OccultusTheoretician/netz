@@ -989,6 +989,21 @@ def open_in_browser(path: Path):
 # report
 # ----------------------------------------------------------------------
 
+# --- published-surface headline policy (patch_pub_title) ---------------------
+# The full title is kept everywhere internally: clustering, dedup, the LLM packet
+# and cite_audit all read it. Only PUBLISHED surfaces shorten it, and each keeps
+# its link, so the record stays checkable. See UK NLA v Meltwater and EU DSM
+# Article 15 — the carve-out there covers "very short extracts", and a complete
+# headline is not obviously one. This shortens the reproduction, not the evidence.
+PUB_TITLE_WORDS = 10
+
+
+def pub_title(t, n: int = PUB_TITLE_WORDS) -> str:
+    w = str(t or "").split()
+    return " ".join(w) if len(w) <= n else " ".join(w[:n]) + " \u2026"
+# ----------------------------------------------------------------------------
+
+
 def fmt_when(dt) -> str:
     return dt.strftime("%d %b %H:%M UTC") if dt else "undated"
 
@@ -1054,7 +1069,7 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
     out.append("**Top signals (the record behind the judgments):**\n")
     for n, cl in enumerate(top, 1):
         rep = cl["rep"]
-        out.append(f"{n}. {delta_mark(cl)} **[{admiralty_grade(cl, rel_map)}] {rep['title']}** — "
+        out.append(f"{n}. {delta_mark(cl)} **[{admiralty_grade(cl, rel_map)}] {pub_title(rep['title'])}** — "
                    f"{cl['corroboration']}× corroborated ({', '.join(cl['sources'])}), "
                    f"{fmt_when(cl['newest'])} · [{cl['category']}] · [link]({rep['link']})")
     out.append("")
@@ -1079,7 +1094,7 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
             if p["hits"]:
                 for cl in p["hits"]:
                     out.append(f"- {delta_mark(cl)} [{admiralty_grade(cl, rel_map)}] "
-                               f"{cl['rep']['title']} · [link]({cl['rep']['link']})")
+                               f"{pub_title(cl['rep']['title'])} · [link]({cl['rep']['link']})")
             else:
                 out.append("- No collection against this requirement this window.")
             out.append("")
@@ -1159,7 +1174,7 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
             corr = f" · {cl['corroboration']}× ({', '.join(cl['sources'])})" \
                 if cl["corroboration"] > 1 else f" · {cl['sources'][0]} (single-source)"
             out.append(f"{n}. {delta_mark(cl)} [{admiralty_grade(cl, rel_map)}] "
-                       f"{rep['title']}{corr} · {fmt_when(cl['newest'])} · [link]({rep['link']})")
+                       f"{pub_title(rep['title'])}{corr} · {fmt_when(cl['newest'])} · [link]({rep['link']})")
         out.append("")
 
     out.append("## APPENDIX — FEED HEALTH\n")
