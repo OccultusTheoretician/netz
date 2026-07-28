@@ -595,6 +595,45 @@ def render_ledger():
 # commands
 # ----------------------------------------------------------------------
 
+# ----------------------------------------------------------------------
+# Rueckkopplungsverbot: no output of a forecasting run may appear in the
+# input to a subsequent run. The battle report carries model-authored prose
+# in Key Judgments, Indications & Warnings, and each category Synthesis
+# block. All three are stripped before the report becomes the prompt, so a
+# figure the model states cannot have been inherited from its own prior
+# assessment. Headers are kept so structure and numbering survive.
+# ----------------------------------------------------------------------
+_PROSE_SECTIONS = ("KEY JUDGMENTS", "INDICATIONS & WARNINGS")
+_WITHHELD = "*(prior-run analytic prose withheld from model input - record only)*"
+
+
+def _record_only(text):
+    out, skip_section, skip_synth = [], False, False
+    for line in text.split("\n"):
+        if line.startswith("## "):
+            head = line[3:].upper()
+            skip_section = any(s in head for s in _PROSE_SECTIONS)
+            skip_synth = False
+            out.append(line)
+            if skip_section:
+                out.append("")
+                out.append(_WITHHELD)
+            continue
+        if skip_section:
+            continue
+        if line.startswith("**Synthesis**"):
+            skip_synth = True
+            out.append(_WITHHELD)
+            continue
+        if skip_synth:
+            if line.startswith("**The record:**"):
+                skip_synth = False
+                out.append(line)
+            continue
+        out.append(line)
+    return "\n".join(out)
+
+
 def cmd_generate(args):
     rep = latest_report()
     if not rep:
@@ -605,7 +644,7 @@ def cmd_generate(args):
     prompt = PROJECTION_PROMPT.format(
         min_date=(now + timedelta(days=7)).strftime("%Y-%m-%d"),
         max_date=(now + timedelta(days=180)).strftime("%Y-%m-%d"),
-        report=report_text[:60000])
+        report=_record_only(report_text)[:60000])
 
     # the packet is always written — the manual Fable path costs nothing
     OUT.mkdir(exist_ok=True)
@@ -688,7 +727,7 @@ def cmd_resolve(args):
     data = load_ledger()
     today = datetime.now(timezone.utc).date()
     due = [p for p in data["projections"] if p["status"] == "open" and
-           (args.all or datetime.strptime(p["deadline"], "%Y-%m-%d").date() <= today)]
+           (args.all or datetime.strptime(p["deadline"], "%Y-%m-%d").date() < today)]
     if not due:
         print("KKR · nothing due for resolution", file=sys.stderr)
         render_ledger()
@@ -797,7 +836,7 @@ def cmd_audit_export(args):
     data = load_ledger()
     today = datetime.now(timezone.utc).date()
     due = [p for p in data["projections"] if p["status"] == "open" and
-           (args.all or datetime.strptime(p["deadline"], "%Y-%m-%d").date() <= today)]
+           (args.all or datetime.strptime(p["deadline"], "%Y-%m-%d").date() < today)]
     if not due:
         print("KKR · nothing past deadline to audit", file=sys.stderr)
         return
