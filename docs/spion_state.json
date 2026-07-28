@@ -1,14 +1,14 @@
 {
   "schema": "spion-state/1.0",
   "generator": "spion_ci.py/1.0",
-  "as_of": "2026-07-28T04:09:00Z",
-  "run_host": "local",
-  "run_url": null,
+  "as_of": "2026-07-28T10:13:31Z",
+  "run_host": "github-actions",
+  "run_url": "https://github.com/OccultusTheoretician/netz/actions/runs/30349893072",
   "counts": {
     "checked": 5,
-    "moved": 1,
-    "steady": 2,
-    "unreachable": 1
+    "moved": 0,
+    "steady": 3,
+    "unreachable": 2
   },
   "sources": {
     "fasb-technical-agenda": {
@@ -16,7 +16,7 @@
       "name": "FASB technical agenda",
       "org": "FASB",
       "url": "https://storage.fasb.org/FASB%20Technical%20Agenda%20Overview.pdf",
-      "last_checked_utc": "2026-07-28T04:09:01Z",
+      "last_checked_utc": "2026-07-28T10:13:31Z",
       "consecutive_errors": 0,
       "etag": "\"0a902d43575d19dd094e0f2c0d1cfe4e\"",
       "last_modified": "Mon, 27 Jul 2026 20:26:14 GMT",
@@ -24,7 +24,7 @@
       "mode": "bytes",
       "text_hash": "240901b21087b5be011013ac280390d9619fbe530853f6437703ea6c5590d75a",
       "bytes": 297858,
-      "condition": "moved",
+      "condition": "steady",
       "last_signal": "declared-304",
       "last_changed_utc": "2026-07-28T04:09:01Z"
     },
@@ -33,10 +33,10 @@
       "name": "PCAOB standard-setting projects",
       "org": "PCAOB",
       "url": "https://pcaobus.org/oversight/standards/standard-setting-research-projects",
-      "last_checked_utc": "2026-07-28T04:09:04Z",
+      "last_checked_utc": "2026-07-28T10:13:34Z",
       "consecutive_errors": 0,
       "etag": null,
-      "last_modified": "Mon, 27 Jul 2026 11:05:00 GMT",
+      "last_modified": "Tue, 28 Jul 2026 10:13:34 GMT",
       "content_type": "text/html",
       "mode": "text",
       "text_hash": "06b5a33ded4ae407b0959a40f7eacf6b790a4c8e96b21de39eb71f008ee985b3",
@@ -146,15 +146,15 @@
         "1015b00df3c2"
       ],
       "last_changed_utc": "2026-07-26T23:58:36Z",
-      "last_signal": "declared-304"
+      "last_signal": "declared-moved-text-steady"
     },
     "gao-yellow-book-page": {
       "id": "gao-yellow-book-page",
       "name": "GAO Yellow Book page",
       "org": "GAO",
       "url": "https://www.gao.gov/yellowbook",
-      "last_checked_utc": "2026-07-28T04:09:07Z",
-      "consecutive_errors": 3,
+      "last_checked_utc": "2026-07-28T10:13:37Z",
+      "consecutive_errors": 4,
       "last_error": "HTTP 403 Forbidden",
       "condition": "unreachable"
     },
@@ -163,9 +163,9 @@
       "name": "AICPA exposure drafts landing",
       "org": "AICPA",
       "url": "https://www.aicpa-cima.com/resources/landing/aicpa-exposure-drafts-of-proposed-sass-ssaes-and-sqmss",
-      "last_checked_utc": "2026-07-28T04:09:41Z",
+      "last_checked_utc": "2026-07-28T10:13:40Z",
       "consecutive_errors": 0,
-      "etag": "W/\"410c1-U3ZiMWQH6zSnt6z4qYuo7oOsR8s\"",
+      "etag": "W/\"410c1-Q0mXLFHJzOHTRZfwlUeWFLnj7sE\"",
       "last_modified": null,
       "content_type": "text/html",
       "mode": "text",
@@ -192,9 +192,9 @@
       "name": "GASB documents for comment",
       "org": "GASB",
       "url": "https://www.gasb.org/documents-for-public-comment",
-      "last_checked_utc": "2026-07-28T04:09:45Z",
-      "consecutive_errors": 0,
-      "condition": "baselined",
+      "last_checked_utc": "2026-07-28T10:13:43Z",
+      "consecutive_errors": 1,
+      "condition": "unreachable",
       "etag": null,
       "last_modified": null,
       "content_type": "text/html",
@@ -203,7 +203,8 @@
       "text_len": 0,
       "paragraphs": 0,
       "para_hashes": [],
-      "last_changed_utc": "2026-07-28T04:09:45Z"
+      "last_changed_utc": "2026-07-28T04:09:45Z",
+      "last_error": "HTTP 403 Forbidden"
     }
   }
 }
