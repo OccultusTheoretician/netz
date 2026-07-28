@@ -541,7 +541,7 @@ def fetch_kev(config: dict, hours: int) -> list:
 # ----------------------------------------------------------------------
 
 HTML_CSS = """
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,500;0,600;1,400&display=swap');
+@import url('fonts/fonts.css');
 :root{
   --field:#0B0D10; --panel:#10141A; --panel2:#151A22; --panel3:#1A2029;
   --line:#222A34; --line2:#2E3844; --fg:#C2CAD3; --fg2:#EDF2F7; --dim:#6A7580;
