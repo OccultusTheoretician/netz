@@ -14,7 +14,28 @@
 <meta property="og:url" content="https://retroprescientaudit.com/">
 <meta property="og:image" content="https://retroprescientaudit.com/og_nebelKraehe.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Retro-Prescient Audit™","alternateName":"The Prescient Desk · NebelKrähe","url":"https://retroprescientaudit.com/","description":"Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses."}</script>
+<script type="application/ld+json">
+  // --- war desk as-of (patch_site_nav) ---------------------------------
+  // The tile fetched war_desk.json and rendered it with no date shown, so a
+  // four-day-old cross-bias pull looked live. An undated figure on a desk
+  // whose argument is dated records is the defect it exists to prevent.
+  (function(){
+    fetch('war_desk.json').then(function(r){return r.json()}).then(function(d){
+      var raw = d.generated_at || d.as_of || d.updated || null;
+      var el  = document.getElementById('wardesk-asof');
+      if(!el) return;
+      if(!raw){ el.textContent = 'as-of not recorded'; el.className = 'stale'; return; }
+      var t = new Date(raw), hrs = (Date.now() - t.getTime()) / 3.6e6;
+      el.textContent = 'as of ' + t.toISOString().slice(0,16).replace('T',' ') + 'Z'
+                     + (hrs > 24 ? ' · STALE (' + Math.floor(hrs) + 'h)' : '');
+      el.className = hrs > 24 ? 'stale' : 'fresh';
+    }).catch(function(){
+      var el = document.getElementById('wardesk-asof');
+      if(el){ el.textContent = 'war desk unreadable'; el.className = 'stale'; }
+    });
+  })();
+  // ---------------------------------------------------------------------
+{"@context":"https://schema.org","@type":"WebSite","name":"Retro-Prescient Audit™","alternateName":"The Prescient Desk · NebelKrähe","url":"https://retroprescientaudit.com/","description":"Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -295,7 +316,7 @@ footer li a{font-size:.85rem;color:var(--fg)}
 </div>
 <div class="korn" aria-hidden="true"></div>
 
-<nav class="nav" aria-label="Primary"><div class="nav-in">
+<nav class="nav" aria-label="Primary"><a href="register.html">Register</a><a href="KriegForeKaster_compendium.html">Compendium</a><div class="nav-in">
   <a class="nav-mark" href="/"><img src="crow_mark.svg" alt=""><span>NebelKrähe</span></a>
   <div class="nav-links">
     <a href="#method">Method</a>
