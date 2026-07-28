@@ -96,8 +96,8 @@ footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--dim);font-s
 <footer><div class="wrap">NEBELKRÄHE · THE PRESCIENT DESK — conformance is computed, not asserted.</div></footer>
 <script>
 (function(){
-var LABEL={'lmstudio/auto':'Machine · local model','manual/fable':'Fable · second forecaster','operator/human':'Operator'};
-var ORDER=['lmstudio/auto','manual/fable','operator/human'];
+var LABEL={'lmstudio/auto':'Machine · local model','manual/fable':'Fable · second forecaster','manual/opus-5':'Opus 5 · third forecaster','kfk/halflife':'ForeKaster · half-life formula','operator/human':'Operator'};
+var ORDER=['lmstudio/auto','manual/fable','manual/opus-5','kfk/halflife','operator/human'];
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 fetch('ledger.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
   var p=d.projections||[],c={},arms={},i,k;
