@@ -288,7 +288,7 @@ function tree(){
   let html="";
   for(const fac of DATA.factions){
     const list = byFac[fac.id]||[];
-    const unloc = list.filter(f=>!f.location).length;
+    const unloc = list.filter(f=>!(f.location&&["headquarters","installation centroid"].includes(f.location.denotes))).length;
     const shownList = list.filter(visible);
     if(!shownList.length) continue;
     const sourced = shownList.filter(f=>f.existence &&
@@ -298,7 +298,7 @@ function tree(){
             esc(fac.name)+' · '+shownList.length+
             (shownList.length!==list.length?' of '+list.length:'')+
             ' · '+sourced+' sourced'+
-            (unloc?' · '+unloc+' unlocated':'')+'</div>';
+            (unloc?' · '+unloc+' not located to a command':'')+'</div>';
     const walk = (parent,depth)=>{
       let s="";
       for(const f of kids(parent)){
@@ -306,7 +306,7 @@ function tree(){
         const bad = BLOCKS.filter(b=>blk(f,b)&&["decayed","stale","undated"].includes(state(blk(f,b),b).s));
         s += '<div class="node" data-id="'+esc(f.id)+'" style="padding-left:'+(depth*12+4)+'px">'+
              '<span class="ech">'+esc(ECH[f.echelon]||"")+'</span>'+esc(f.name)+
-             (f.location?'':'<span class="warn">unlocated</span>')+
+             (f.location&&["headquarters","installation centroid"].includes(f.location.denotes)?'':'<span class="warn">'+(f.location?'state-only':'unlocated')+'</span>')+
              (bad.length?'<span class="warn">'+bad.length+' decayed</span>':'')+
              '</div>';
         s += walk(f.id,depth+1);
@@ -425,10 +425,11 @@ Promise.all([
 ]).then(([d,gj])=>{
   DATA=d; d.factions.forEach(f=>FAC[f.id]=f);
   if(gj) drawGeo(gj);
-  const nLoc = d.formations.filter(f=>f.location).length;
+  const nLoc = d.formations.filter(f=>f.location&&["headquarters","installation centroid"].includes(f.location.denotes)).length;
+  const nState = d.formations.filter(f=>f.location&&!["headquarters","installation centroid"].includes(f.location.denotes)).length;
   const decayed = d.formations.reduce((n,f)=>n+BLOCKS.filter(b=>blk(f,b)&&["decayed","stale","undated"].includes(state(blk(f,b),b).s)).length,0);
   $("#hdr").textContent = d.theater+" · "+d.formations.length+" formations · "+
-    nLoc+" located, "+(d.formations.length-nLoc)+" not · "+decayed+" claims past half-life · file as_of "+d.as_of;
+    nLoc+" located to a command, "+nState+" to a capital or approximate only, "+(d.formations.length-nLoc-nState)+" unlocated · "+decayed+" claims past half-life · file as_of "+d.as_of;
   $("#foot").textContent = "schema "+d.schema+" · claims expire on a published schedule · no marker without a grade, a source and a date";
   if(d.disclosure || d.factions.some(f=>f.id.startsWith("EXAMPLE"))){
     $("#banner").style.display="block";
