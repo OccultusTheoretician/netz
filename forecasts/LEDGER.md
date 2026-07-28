@@ -1,12 +1,12 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 272344Z JUL 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 280417Z JUL 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 131 issued across 5 forecaster arms · 108 open (0 past deadline, unresolved)
+Window: all-time · 131 issued across 5 forecaster arms · 108 open (1 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -20,6 +20,9 @@ Window: all-time · 131 issued across 5 forecaster arms · 108 open (0 past dead
 | `manual/opus-5` | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | `operator/human` | 6 | 3 | 0 | — | — | not computed | — | — | — |
 
+
+> **Disclosure — what the elicited arms are.** Arms tagged `manual/*` are frontier language models elicited by the operator against the same packet the machine arm receives. They are **not informationally independent of this desk**: the model is given the desk's own corpus and standing instructions as context. Their independence is procedural — a separate instrument answering the same questions — not informational. Rows are segregated by model, and no pooled score is published, because a Brier belongs to one forecaster.
+
 *Under 30 resolved a Brier score is noise, not a record: `lmstudio/auto`.*
 
 ### CALIBRATION — `lmstudio/auto` (13 resolved)
@@ -30,6 +33,10 @@ Window: all-time · 131 issued across 5 forecaster arms · 108 open (0 past dead
 | 20-40% | 7 | 29% |
 | 40-60% | 3 | 33% |
 | 60-80% | 2 | 50% |
+
+## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
+
+- **KKR-20260723-01** (65%, due 2026-07-27) Between 2026-07-24 and 2026-07-27, Brent crude oil will close above $100 per barrel for three consecutive trading days. — *resolves on:* The closing price of Brent crude oil on three consecutive weekdays between 2026-07-24 and 2026-07-27, as reported by Bloomberg or Reuters, will exceed $100 per barrel.
 
 ## OPEN PROJECTIONS
 
