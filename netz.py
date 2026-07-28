@@ -363,6 +363,26 @@ def llm_chat(base_url: str, model: str, system: str, user: str,
         return None
 
 
+# --- numeric provenance (patch_netz_numeric) --------------------------------
+# Every prompt already forbids outside knowledge. None of them said a FIGURE is
+# a claim, so the model wrote numbers as prose texture and cited whatever the
+# sentence was about. This closes that specifically, in the model's own terms.
+NUMERIC_RULE = (
+    " NUMBERS ARE CLAIMS. Do not write any figure — percentage, currency amount, "
+    "count, magnitude, area, casualty total, market level, or poll margin — unless "
+    "that exact figure appears in the text of an item you cite for that sentence. "
+    "If a figure would strengthen a sentence but is not in the record, write the "
+    "sentence without it: 'oil prices fell sharply [8]' is correct where "
+    "'oil prices fell 9% to below $88 [8]' is a fabrication if item 8 carries no "
+    "such number. Never compute, convert, round, or infer a figure from other "
+    "figures. Never restate a number from memory or general knowledge. Where the "
+    "provided market snapshot gives a level or a daily change, that snapshot "
+    "governs and no other value for the same instrument may be written. "
+    "Do not write a completed-tense claim about a date later than this report's "
+    "date. A sentence carrying an unsupported figure is worse than no sentence."
+)
+# ----------------------------------------------------------------------------
+
 SYSTEM_PROMPT = (
     "You are an OSINT analyst drafting a section of a daily intelligence report. "
     "Work ONLY from the numbered items provided. Every sentence must end with a "
@@ -377,7 +397,7 @@ SYSTEM_PROMPT = (
     "End with exactly one sentence beginning 'WATCH:' naming the single most "
     "concrete observable to monitor in the next 24-72h, with citation. "
     "Dense prose, no bullets, no headers, 100-190 words."
-)
+ + NUMERIC_RULE)
 
 BLUF_PROMPT = (
     "You are an OSINT analyst writing the KEY JUDGMENTS of a daily intelligence "
@@ -390,7 +410,7 @@ BLUF_PROMPT = (
     "multi-source-corroborated items support High confidence; single-source items "
     "cap at Moderate. Work ONLY from the items given. Lead with whatever crosses "
     "categories or carries the highest corroboration."
-)
+ + NUMERIC_RULE)
 
 IW_PROMPT = (
     "You are an OSINT analyst. From the numbered top signals below, produce the "
@@ -401,7 +421,7 @@ IW_PROMPT = (
     "estimative language, every sentence cited [n]>\n"
     "Work ONLY from the items given. Observables must be checkable from public "
     "reporting (a statement, a closure, a price level, an advisory), never vague."
-)
+ + NUMERIC_RULE)
 
 
 def number_items(clusters: list, limit: int):

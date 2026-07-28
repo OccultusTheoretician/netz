@@ -31,6 +31,8 @@ SNAP_ROW   = re.compile(r"^\|\s*([A-Za-z0-9&/ ]+?)\s*\|\s*\$?([\d,]+\.?\d*)\s*\|
 DATEISH    = re.compile(r"\b(?:19|20)\d{2}\b|\b\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\b|\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}\b|\b20\d{2}-\d{2}-\d{2}\b", re.I)
 THRESHOLD  = re.compile(r"\b(below|above|under|over|exceed(?:s|ing)?|beyond|at least|more than|less than)\s*\$?\d", re.I)
 WATCHLINE  = re.compile(r"^\s*WATCH:", re.I)
+FUTURE     = re.compile(r"\b(will|would|could|may|might|if|expect(?:ed)?|forecast|should|watch for|by the end of)\b", re.I)
+COMPLETED_V= re.compile(r"\b(consumed|burned|killed|injured|displaced|destroyed|lost|gained|now|since|already|so far|to date|down|up|fell|rose|dropped|surged|reached|hit|exceeded|climbed|declined|topped|stands? at|totall?ing)\b", re.I)
 ASSERTION  = re.compile(r"\b(show|shows|showed|is|are|was|were|reached|has|have|gap|dropp?(?:ed|ing)?|fell|rose|surged)\b", re.I)
 
 SECTION_RE = re.compile(r"^##\s+([IVXL]+)\.\s+(.+?)\s*$", re.M)
@@ -149,7 +151,10 @@ def audit(path, verbose=False):
                 if d in pool_d: continue
                 if any(d in p for p in pool_d): continue
                 window = body[max(0,m.start()-40):m.end()+10]
-                if WATCHLINE.search(sent) or (THRESHOLD.search(window) and not ASSERTION.search(window)):
+                if WATCHLINE.search(sent):
+                    kind = "THRESHOLD"
+                elif (THRESHOLD.search(window) and FUTURE.search(sent)
+                      and not COMPLETED_V.search(window) and not ASSERTION.search(window)):
                     kind = "THRESHOLD"
                 else:
                     kind = "MISCITED"
