@@ -62,6 +62,44 @@ def norm(s):
     s = unicodedata.normalize("NFKC", s)
     return re.sub(r"\s+", " ", s).strip()
 
+# --- full-title resolution (patch_ohrwurm_nav_and_cite) ----------------------
+# Published record items are truncated to ten words for copyright reasons. The
+# MODEL, however, is given the full headline in the packet. Checking figures
+# against the truncated form flags supported claims as fabrications, which is
+# the wrong question. Where a packet is present, resolve each item to its full
+# title and check against that; otherwise fall back and say so.
+PACKET_DIRS = ["forecasts", ".", "reports"]
+_PKT_ITEM = re.compile(r"^\s*(\d+)\.\s+(.*?)(?:\s+·\s|$)", re.M)
+
+
+def load_packet_titles(report_path):
+    """Return {section_title: {n: full_title}} from the newest packet, or None."""
+    base = Path(report_path).resolve().parent.parent
+    cands = []
+    for d in PACKET_DIRS:
+        p = base / d
+        if p.is_dir():
+            cands += list(p.glob("kkr_packet_*.md"))
+    if not cands:
+        return None, None
+    pkt = max(cands, key=lambda p: p.stat().st_mtime)
+    text = pkt.read_text(encoding="utf-8", errors="replace")
+    out, cur = {}, None
+    for line in text.splitlines():
+        m = re.match(r"^##\s+[IVXL]+\.\s+(.+?)\s*$", line)
+        if m:
+            cur = norm(m.group(1))
+            out.setdefault(cur, {})
+            continue
+        if cur:
+            im = _PKT_ITEM.match(line)
+            if im:
+                t = re.sub(r"^[^A-Za-z0-9\[]*", "", im.group(2))
+                t = re.sub(r"^\[[^\]]*\]\s*", "", t)
+                out[cur][int(im.group(1))] = norm(t.strip("* "))
+    return out, pkt.name
+# ----------------------------------------------------------------------------
+
 def digits(s):
     return re.sub(r"[^0-9.]", "", s)
 
@@ -120,6 +158,8 @@ def audit(path, verbose=False):
     text = Path(path).read_text(encoding="utf-8", errors="replace")
     rdate = report_date(text)
     sections = parse_sections(text)
+    pkt_titles, pkt_name = load_packet_titles(path)
+    title_src = f"full titles from {pkt_name}" if pkt_titles else "printed record (truncated)"
     findings, checked = [], 0
 
     for i, sec in enumerate(sections):
@@ -138,7 +178,14 @@ def audit(path, verbose=False):
                                  "cites":cites,"detail":f"no item {missing} in this record",
                                  "sentence":sent[:220]})
 
-            pool = " ".join(items[c] for c in cites if c in items)
+            # Prefer the packet's untruncated title for the same item number.
+            def _full(c):
+                if pkt_titles:
+                    for k, v in pkt_titles.items():
+                        if k.upper().startswith(scope.split(" /")[0].upper()[:8]) and c in v:
+                            return v[c] + " " + items.get(c, "")
+                return items.get(c, "")
+            pool = " ".join(_full(c) for c in cites if c in items)
             pool_d = {digits(x) for x in NUM_RE.findall(pool) for x in ([x] if isinstance(x,str) else x) if digits(x)}
             pool_d |= {digits(m.group(0)) for m in NUM_RE.finditer(pool)}
 
@@ -195,7 +242,7 @@ def audit(path, verbose=False):
                                              "sentence":sent[:220]})
                             break
 
-    return {"file": str(path),
+    return {"file": str(path), "title_source": title_src,
             "report_date": "-".join(f"{x:02d}" for x in rdate) if rdate else None,
             "cited_sentences_checked": checked,
             "findings": findings}
@@ -212,6 +259,7 @@ def main():
     for f in r["findings"]: counts[f["kind"]] = counts.get(f["kind"], 0) + 1
     print(f"cite_audit · {r['file']} · report {r['report_date']} · "
           f"{r['cited_sentences_checked']} cited sentences checked")
+    print(f"           · checked against: {r.get('title_source','?')}")
     print("           · " + (", ".join(f"{k} {v}" for k, v in sorted(counts.items())) or "clean"))
     for f in r["findings"]:
         print(f"\n  [{f['kind']}] {f['section']}  cites {f['cites']}  (scope: {f['scope']})")
