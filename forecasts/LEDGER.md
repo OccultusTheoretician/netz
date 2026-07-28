@@ -1,12 +1,12 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 280457Z JUL 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 281508Z JUL 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 131 issued across 5 forecaster arms · 108 open (1 past deadline, unresolved)
+Window: all-time · 141 issued across 5 forecaster arms · 118 open (1 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -17,7 +17,7 @@ Window: all-time · 131 issued across 5 forecaster arms · 108 open (1 past dead
 | `kfk/halflife` | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | `lmstudio/auto` | 60 | 40 | 13 | 4 | 9 | 0.221 | 30.8% | 0.213 | -0.038 |
 | `manual/fable` | 45 | 45 | 0 | — | — | not computed | — | — | — |
-| `manual/opus-5` | 10 | 10 | 0 | — | — | not computed | — | — | — |
+| `manual/opus-5` | 20 | 20 | 0 | — | — | not computed | — | — | — |
 | `operator/human` | 6 | 3 | 0 | — | — | not computed | — | — | — |
 
 
@@ -81,6 +81,7 @@ Window: all-time · 131 issued across 5 forecaster arms · 108 open (1 past dead
 | KKR-20260727-01 | `kfk/halflife` | 2026-07-27 | 2026-08-14 | 50% | military/conflict | Lieutenant General Gregory K. Anderson will no longer be named as commanding officer of the XVIII Airborne Corps in the source of record on 2026-08-14. |
 | KKR-20260727-18 | `manual/fable` | 2026-07-27 | 2026-08-14 | 40% | political | The German federal prosecutor will publicly classify the Berlin Pride vehicle attack as a terrorist offence rather than solely a hate crime, on or before 2026-08-14. |
 | KKR-20260727-26 | `manual/opus-5` | 2026-07-27 | 2026-08-14 | 35% | military/conflict | The United States conducts at least one military strike on Iranian territory between 2026-07-28 and 2026-08-14. |
+| KKR-20260728-01 | `manual/opus-5` | 2026-07-28 | 2026-08-14 | 25% | disaster/infrastructure | The official death toll from the 2026-07-28 Kyushu earthquake exceeds 50 as reported on 2026-08-14. |
 | KKR-20260720-15 | `lmstudio/auto` | 2026-07-20 | 2026-08-15 | 45% | disaster | The Deloitte-run Medicaid system failure will result in a formal government audit or public report by 2026-08-15, citing systemic IT vulnerabilities. |
 | KKR-20260721-02 | `lmstudio/auto` | 2026-07-21 | 2026-08-15 | 25% | economic | Nvidia will announce the disbursement of its $2 billion investment in Nebius by 2026-08-15. |
 | KKR-20260725-09 | `manual/fable` | 2026-07-25 | 2026-08-15 | 35% | political | Iranian state broadcaster IRIB airs the full presidential speech it was reported to have censored, with resolution of the dispute confirmed, between 2026-07-27 and 2026-08-15. |
@@ -93,6 +94,8 @@ Window: all-time · 131 issued across 5 forecaster arms · 108 open (1 past dead
 | KKR-20260727-16 | `manual/fable` | 2026-07-27 | 2026-08-26 | 45% | military/conflict | The United States will publicly confirm a resumption of military strikes on targets inside Iranian territory, reported by at least two of Reuters, the Associated Press and the BBC, between 2026-07-28 and 2026-08-26. |
 | KKR-20260722-10 | `operator/human` | 2026-07-22 | 2026-08-28 | 50% | economics | US 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-08-28 |
 | KKR-20260727-28 | `manual/opus-5` | 2026-07-27 | 2026-08-28 | 45% | economics/markets | ICE Brent front-month crude futures settle below 85.00 US dollars per barrel on 2026-08-28. |
+| KKR-20260728-02 | `manual/opus-5` | 2026-07-28 | 2026-08-28 | 25% | economics/markets | The Nasdaq Composite closes below 23,000 on 2026-08-28. |
+| KKR-20260728-03 | `manual/opus-5` | 2026-07-28 | 2026-08-28 | 40% | economics/markets | ICE Brent front-month crude futures settle below 80.00 US dollars per barrel on 2026-08-28. |
 | KKR-20260724-08 | `manual/fable` | 2026-07-24 | 2026-08-31 | 50% | public_health | The CDC publicly identifies a specific implicated food product or source for the US cyclosporiasis outbreak between 2026-07-25 and 2026-08-31. |
 | KKR-20260724-11 | `manual/fable` | 2026-07-24 | 2026-08-31 | 45% | public_health | The US cyclosporiasis case count reported by the CDC exceeds 15000 between 2026-07-25 and 2026-08-31. |
 | KKR-20260727-17 | `manual/fable` | 2026-07-27 | 2026-08-31 | 22% | economics/markets | Brent crude front-month futures will trade above 100.00 dollars per barrel at some point between 2026-07-28 and 2026-08-31. |
@@ -103,6 +106,8 @@ Window: all-time · 131 issued across 5 forecaster arms · 108 open (1 past dead
 | KKR-20260725-08 | `manual/fable` | 2026-07-25 | 2026-09-15 | 40% | cyber | CISA adds a Fastjson or GitLab remote-code-execution CVE to its Known Exploited Vulnerabilities catalog between 2026-07-27 and 2026-09-15. |
 | KKR-20260727-03 | `kfk/halflife` | 2026-07-27 | 2026-09-15 | 50% | military/conflict | Major General John W. Lubas will no longer be named as commanding officer of the 3rd Infantry Division in the source of record on 2026-09-15. |
 | KKR-20260727-33 | `manual/opus-5` | 2026-07-27 | 2026-09-15 | 20% | disaster/infrastructure | A Meteo-France station records a maximum air temperature of 45.0 degrees Celsius or higher in metropolitan France between 2026-07-28 and 2026-09-15. |
+| KKR-20260728-05 | `manual/opus-5` | 2026-07-28 | 2026-09-15 | 30% | military/conflict | The United States and Iran announce a signed written agreement or framework between 2026-07-29 and 2026-09-15. |
+| KKR-20260728-06 | `manual/opus-5` | 2026-07-28 | 2026-09-15 | 78% | military/conflict | At least one additional attack on a commercial vessel in the Red Sea or the Gulf is claimed by or attributed to Houthi forces between 2026-07-29 and 2026-09-15. |
 | KKR-20260727-04 | `kfk/halflife` | 2026-07-27 | 2026-09-18 | 50% | military/conflict | Major General David W. Gardner will no longer be named as commanding officer of the 101st Airborne Division (Air Assault) in the source of record on 2026-09-18. |
 | KKR-20260727-02 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | Major General Brandon R. Tegtmeier will no longer be named as commanding officer of the 82nd Airborne Division in the source of record on 2026-09-25. |
 | KKR-20260727-05 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | Lieutenant General Benedikt Roos will no longer be named as commanding officer of the Swiss Armed Forces in the source of record on 2026-09-25. |
@@ -133,6 +138,9 @@ Window: all-time · 131 issued across 5 forecaster arms · 108 open (1 past dead
 | KKR-20260726-04 | `manual/fable` | 2026-07-26 | 2026-10-30 | 85% | crime_security | German authorities announce the arrest or formal charging of a suspect in the Berlin Pride vehicle attack between 2026-07-26 and 2026-10-30. |
 | KKR-20260727-27 | `manual/opus-5` | 2026-07-27 | 2026-10-30 | 25% | economics/markets | The upper bound of the US federal funds target range is above 3.75 percent on 2026-10-30. |
 | KKR-20260727-29 | `manual/opus-5` | 2026-07-27 | 2026-10-30 | 15% | cyber | CISA adds a vulnerability in the n8n workflow automation platform to its Known Exploited Vulnerabilities catalog between 2026-07-28 and 2026-10-30. |
+| KKR-20260728-04 | `manual/opus-5` | 2026-07-28 | 2026-10-30 | 15% | economics/markets | The upper bound of the US federal funds target range is above 3.75 percent on 2026-10-30. |
+| KKR-20260728-07 | `manual/opus-5` | 2026-07-28 | 2026-10-30 | 55% | cyber | A US healthcare or medical-billing breach affecting more than 5,000,000 individuals is posted to the HHS breach portal between 2026-07-29 and 2026-10-30. |
+| KKR-20260728-09 | `manual/opus-5` | 2026-07-28 | 2026-10-30 | 45% | crime/security | At least one person is charged in connection with either shooting near the United States consulate in Toronto, on or before 2026-10-30. |
 | KKR-20260722-12 | `manual/fable` | 2026-07-22 | 2026-10-31 | 70% | political | At least one major social media platform (Meta, TikTok, Snap, or X) publicly announces an age-verification mechanism for French users between 2026-07-23 and 2026-10-31 |
 | KKR-20260725-10 | `manual/fable` | 2026-07-25 | 2026-10-31 | 45% | political | A US federal court or the Supreme Court issues a ruling in a challenge to Trump administration tariffs between 2026-07-27 and 2026-10-31. |
 | KKR-20260727-19 | `manual/fable` | 2026-07-27 | 2026-10-31 | 35% | political | The German federal cabinet will approve a draft bill tightening extremism or weapons law that explicitly references the Berlin Pride attack, on or before 2026-10-31. |
@@ -141,6 +149,8 @@ Window: all-time · 131 issued across 5 forecaster arms · 108 open (1 past dead
 | KKR-20260726-16 | `lmstudio/auto` | 2026-07-26 | 2026-11-15 | 25% | economics/markets | The European Central Bank announces a 0.5 percentage point interest rate hike on or before 2026-11-15, citing inflation concerns. |
 | KKR-20260727-25 | `manual/fable` | 2026-07-27 | 2026-11-30 | 52% | disaster/infrastructure | The European Forest Fire Information System will record more than 400000 hectares burned in Spain for calendar year 2026, as published on or before 2026-11-30. |
 | KKR-20260727-32 | `manual/opus-5` | 2026-07-27 | 2026-11-30 | 30% | political | The German federal government formally introduces draft legislation tightening extremism or hate-crime law in the Bundestag between 2026-07-28 and 2026-11-30. |
+| KKR-20260728-08 | `manual/opus-5` | 2026-07-28 | 2026-11-30 | 88% | political | The Federal Communications Commission takes no formal action to revoke or deny renewal of an ABC-affiliated broadcast license on or before 2026-11-30. |
+| KKR-20260728-10 | `manual/opus-5` | 2026-07-28 | 2026-11-30 | 40% | disaster/infrastructure | EFFIS reports more than 100,000 hectares burned in France for calendar year 2026, as published on or before 2026-11-30. |
 | KKR-20260722-11 | `manual/fable` | 2026-07-22 | 2026-12-15 | 45% | political | Andy Biggs wins the Arizona gubernatorial general election, defeating Katie Hobbs by any margin, with results certified between 2026-11-05 and 2026-12-15 |
 | KKR-20260726-05 | `manual/fable` | 2026-07-26 | 2026-12-31 | 30% | military_conflict | A NATO member formally requests Article 4 consultations over Russian drone or airspace incursions between 2026-08-02 and 2026-12-31. |
 | KKR-20260726-01 | `manual/fable` | 2026-07-26 | 2027-01-15 | 25% | economics_markets | Brent crude front-month futures settle above 120.00 USD per barrel on any trading day between 2026-08-02 and 2027-01-15. |
@@ -171,7 +181,7 @@ Window: all-time · 131 issued across 5 forecaster arms · 108 open (1 past dead
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*10 of 131 issued (7.6%) have been voided.*
+*10 of 141 issued (7.1%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
