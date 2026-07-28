@@ -1184,7 +1184,21 @@ def main():
     clusters = cluster_items(windowed, config.get("cluster_threshold", 0.45))
     mark_delta(clusters)
     conv = convergence(clusters)
+    # --- content classification + PIR routing (patch_netz_classify) ---------
+    # Category arrived from the feed table, not from the item. Al Jazeera, BBC
+    # World, DW and Defense One were all hardcoded military_conflict, which put
+    # an All-Ireland final and a death at 81 in the same bucket as an airstrike,
+    # and Top Signals ranked inside that bucket. reclassify() overrides the
+    # category from content and keeps the feed's opinion at cl["feed_category"].
+    # Every override is written to classify_log.json with the rule that fired.
+    import classify
+    classify.reclassify(clusters)
     pirs = pir_status(config, clusters)
+    # PIRs printed "no collection" on a day the record carried a chokepoint
+    # de-escalation and a surprise central-bank tightening. route_pirs fills
+    # only requirements that came back empty; anything matched upstream stands.
+    pirs = classify.route_pirs(config, clusters, pirs)
+    # ------------------------------------------------------------------------
     counts = {"fetched": len(items), "windowed": len(windowed), "stories": len(clusters)}
     print(f"NETZ · {counts['fetched']} fetched → {counts['windowed']} in window → "
           f"{counts['stories']} stories "
