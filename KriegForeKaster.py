@@ -86,6 +86,26 @@ CLAIM_BLOCKS = list(HALF_LIFE.keys())
 # 195 of these locate a capital, which locates a state and not a command.
 DENOTES = ["headquarters", "installation centroid", "capital centroid", "approximate"]
 
+# Which of those actually locate a COMMAND. This is the distinction the record
+# has always carried and the counts never read. A capital centroid is not a
+# defective coordinate — it is an honest one, declaring that nobody has sourced
+# where the formation sits. Counting it as "located" turned a truthful field
+# into a false claim on the face.
+COMMAND_PRECISION = {"headquarters", "installation centroid"}
+STATE_PRECISION = {"capital centroid", "approximate"}
+
+
+def command_located(f: dict) -> bool:
+    """True only where a coordinate points at a command. Unknown denotes -> False."""
+    loc = f.get("location") or {}
+    return loc.get("denotes") in COMMAND_PRECISION
+
+
+def state_only(f: dict) -> bool:
+    """A coordinate that locates the state and not the command."""
+    loc = f.get("location") or {}
+    return loc.get("denotes") in STATE_PRECISION
+
 # ----------------------------------------------------------------------
 # ORDER OF BATTLE — counts, by class, each with its own source
 # ----------------------------------------------------------------------
@@ -386,7 +406,11 @@ def freshness(d: dict) -> dict:
             "stalest_claim": worst[0] if worst else None,
             "age_days": worst[2] if worst else None,
             "half_lives_elapsed": round(worst[1], 2) if worst else None,
-            "unlocated": f.get("location") is None}
+            "command_located": command_located(f),
+            "state_only": state_only(f),
+            # unlocated now means NOT command-located, which is what every
+            # downstream reader already assumed it meant.
+            "unlocated": not command_located(f)}
     summary = {}
     for b, ages in per_class.items():
         rec = {"n": len(ages), "half_life_days": HALF_LIFE[b]}
@@ -736,7 +760,7 @@ def main():
         print("\nclaims by freshness:")
         for k, v in dx.most_common():
             print(f"  {str(k):16s} {v}")
-        print(f"\nunlocated formations: {unloc} of {total} — these are real "
+        print(f"\nnot located to a command: {unloc} of {total} — these are real "
               f"records that do not appear on the map, and the viewer says so.")
         return 0
 
@@ -762,7 +786,7 @@ def main():
             hl = r["half_lives_elapsed"]
             print(f"    {fid:10s} {r['name'][:34]:34s} {str(r['stalest_claim']):11s} "
                   f"{str(r['age_days']):>5s}d = {hl} half-lives"
-                  + ("  [unlocated]" if r["unlocated"] else ""))
+                  + ("  [state-only]" if r.get("state_only") else ("  [unlocated]" if r["unlocated"] else "")))
         print(f"\n  claim states: {fr['claim_states']}")
         if DOCS.exists():
             (DOCS / "freshness.json").write_text(
