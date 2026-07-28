@@ -1,10 +1,55 @@
 {
- "generated_at": "2026-07-28T04:57:23Z",
+ "generated_at": "2026-07-28T15:27:23Z",
  "classifier": "classify.py lexicon v1",
- "clusters": 173,
- "moved": 44,
- "demoted_low_value": 2,
+ "clusters": 188,
+ "moved": 36,
+ "demoted_low_value": 4,
  "decisions": [
+  {
+   "title": "Is Your SSO Protected Against Modern Credential Attacks? A compromised SSO login can provide attackers with access to multiple enterprise ap",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:phishing(3),credential(2)",
+   "scores": {
+    "cyber": 5,
+    "military_conflict": 1,
+    "political": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Over 24,000 exposed server BMCs leak password hash via decades-old flaw More than 24,000 internet-exposed servers are leaking authentication",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:vulnerability(3)",
+   "scores": {
+    "cyber": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Data breach at medical billing firm MCBS affects 1.26 million people Healthcare billing company Medical Computer Business Services (MCBS) ha",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:data breach(3),breach(2)",
+   "scores": {
+    "cyber": 5,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
   {
    "title": "Hackers target US firms in FastJson RCE zero-day attacks Hackers are actively exploiting a vulnerability in the FastJson open-source Java li",
    "feed_category": "cyber",
@@ -96,26 +141,11 @@
    }
   },
   {
-   "title": "Ernst & Young data breach claimed by ShinyHunters extortion gang The ShinyHunters extortion gang has claimed responsibility for a recently d",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "content:data breach(3),supply-chain attack(3),breach(2),credentials(2)",
-   "scores": {
-    "cyber": 10,
-    "military_conflict": 1,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Shadow AI agents are multiplying. Here's how to find and secure them. Shadow AI agents are rapidly spreading across enterprise platforms, of",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "feed:cyber (no lexicon signal)",
+   "title": "FIFA World Cup: For India, qualification is still just a distant dream India failed to qualify for next year's Asian Cup, making a FIFA Worl",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": true,
+   "rule": "noise:world cup(3)",
    "scores": {
     "political": 0,
     "military_conflict": 0,
@@ -126,28 +156,193 @@
    }
   },
   {
-   "title": "Chad's government says it's withdrawing from the ICC Chad's Foreign Ministry has announced plans to leave the International Criminal Court. ",
+   "title": "Iraqi PM visits Turkiye to boost ties despite complex challenges Discussions to focus on 'strategic cooperation', as well as issues related ",
    "feed_category": "military_conflict",
-   "category": "political",
+   "category": "military_conflict",
    "low_value": false,
-   "rule": "content:government(2),court(2),opposition(2),leader(1)",
+   "rule": "feed:military_conflict (no lexicon signal)",
    "scores": {
-    "political": 7,
+    "economic": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "France and Spain brace for heatwave that could worsen raging wildfires Both countries expect to see temperatures soar into Wednesday, which ",
+   "feed_category": "military_conflict",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:wildfires(3),heatwave(2)",
+   "scores": {
+    "disaster_infrastructure": 5,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Roberto Mancini named Italy head coach for second time Mancini coached the national side in 2018-2023 and returns to the job with Italy havi",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": true,
+   "rule": "noise:world cup(3)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Israeli soldier runs marathon around Gaza outpost An Israeli soldier filmed himself running a marathon around a military outpost in Gaza.",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
     "military_conflict": 2,
-    "crime_security": 1,
+    "political": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Tate brothers face at least two more weeks in US jail as bail bid reviewed The conditions faced by the brothers in prison in Miami are a far",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Trump says ‘good chance’ of progress in Iran talks. What we know Negotiators are trying to break the deadlock over transit fees and manageme",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 1,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Pregnant Palestinian woman loses baby after Israeli checkpoint stop Pregnant Palestinian woman loses baby after Israeli checkpoint stop",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Moment Canadian politician accidentally reads AI prompt during speech ‘Here’s a more natural flowing version of that section…’",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "‘We’re here to stay’: West Bank Palestinians defy Israeli attacks Settlers burned homes and a mosque in at-Tuwani. Residents say it is part ",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "military_conflict": 1,
+    "political": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "US walks out on France at UN over North Korea, Russia comparison US diplomats walked out of France’s UN Security Council address after Franc",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Why has Iran’s economy not collapsed under US war pressure? Millions in sanctions-hit country keep absorbing economic shockwaves, with analy",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (ambiguous political/military_conflict)",
+   "scores": {
+    "political": 3,
+    "military_conflict": 2,
+    "economic": 2,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Fatal Shooting in ICE Operations Trump’s ICE crackdown grows with new funding and hires as deaths and abuse claims draw review.",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "crime_security": 2,
+    "political": 0,
+    "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
     "cyber": 0
    }
   },
   {
-   "title": "Indian youth score a win over Modi with humor and grit Driven by social media satire, the Gen-Z-led \"Cockroach\" protest movement spurned by ",
+   "title": "Tate’s attorney says allegations ‘puts a target on their backs’ Tate’s attorney says allegations ‘puts a target on their backs’",
    "feed_category": "military_conflict",
-   "category": "political",
+   "category": "military_conflict",
    "low_value": false,
-   "rule": "content:government(2),protest(2)",
+   "rule": "feed:military_conflict (no lexicon signal)",
    "scores": {
-    "political": 4,
+    "political": 0,
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
@@ -156,13 +351,58 @@
    }
   },
   {
-   "title": "Ghana's community service bill: A fix for the prison crisis? The community service bill offers community service as an alternative to prison",
+   "title": "Authorities open fire amid election unrest in Pakistan-administered Kashmir Deadly clashes have erupted in Pakistan-administered Kashmir aft",
+   "feed_category": "military_conflict",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:election(3),protests(2)",
+   "scores": {
+    "political": 5,
+    "disaster_infrastructure": 1,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Israeli settler attack on at-Tuwani Settler attacks in the occupied West Bank are at record highs.",
    "feed_category": "military_conflict",
    "category": "military_conflict",
    "low_value": false,
    "rule": "feed:military_conflict (no lexicon signal)",
    "scores": {
-    "disaster_infrastructure": 1,
+    "military_conflict": 2,
+    "political": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Why London’s Hackney Council wants to repeal its ‘twin’ status with Haifa Green Party, which took over control of the council from the Labou",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 2,
+    "military_conflict": 2,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Several dead in Japan after magnitude 7.1 earthquake causes blast at mall PM Sanae Takaichi urges people to 'remain vigilant for the possibi",
+   "feed_category": "military_conflict",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:earthquake(3),magnitude(3)",
+   "scores": {
+    "disaster_infrastructure": 6,
     "political": 0,
     "military_conflict": 0,
     "economic": 0,
@@ -171,7 +411,97 @@
    }
   },
   {
-   "title": "Fujimori takes charge in Peru amid China, US balancing act Peru's new president, Keiko Fujimori, has promised more security and investment. ",
+   "title": "Trump flouts political risk to host Netanyahu’s seventh White House visit Oval Office meeting on Tuesday is first since US-Israel launched u",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "military_conflict": 2,
+    "political": 1,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Moment 7.1-magnitude earthquake rocks southern Japan A magnitude 7.1 earthquake has hit Kumamoto on Japan's southern island of Kyushu.",
+   "feed_category": "military_conflict",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:earthquake(3),magnitude(3)",
+   "scores": {
+    "disaster_infrastructure": 6,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Zinedine Zidane named as France head coach following World Cup 2026 Ex-superstar player succeeds Didier Deschamps as France manager after th",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": true,
+   "rule": "noise:world cup(3)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Netanyahu meets Trump at the White House: What’s on the agenda, what’s next The Israeli PM's visit to the US comes amid raids in the occupie",
+   "feed_category": "military_conflict",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:elections(3)",
+   "scores": {
+    "political": 3,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "‘Future at stake’: India moves to demolish university Muslim leader founded Authorities in BJP-ruled Uttar Pradesh allege 38 of Mohammad Ali",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 1,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Sixty Palestinians detained by Israel return to Gaza, describe abuses The freed men, some in wheelchairs, describe horrific abuses in Israel",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "crime_security": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "Colombia’s president-elect to suspend Palestine embassy Colombia’s far-right president-elect says he'll close or suspend embassies in these ",
    "feed_category": "military_conflict",
    "category": "political",
    "low_value": false,
@@ -186,17 +516,677 @@
    }
   },
   {
-   "title": "How India's Gen-Z protesters shifted the political debate The resignation of India's education minister amounts to a stunning victory for th",
-   "feed_category": "military_conflict",
+   "title": "AMD, Micron and Nvidia extend losses as chip stocks get clobbered Semiconductor stocks fell on Tuesday, extending a rout in chipmakers after",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "The future of Wall Street is here as startups and brokers build AI agents to trade 24/7 Brokerages, startups and even retail investors are b",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Visa is cutting 7% of employees in efficiency push as AI reshapes work Visa plans to cut about 7% of its workforce, or roughly 2,600 employe",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Trump: New tariffs 'doing the same thing' as the ones struck down by Supreme Court President Trump dismissed fears his tariffs could hurt th",
+   "feed_category": "economic",
    "category": "political",
    "low_value": false,
-   "rule": "content:resignation(3),minister(2),protest(2),political(1)",
+   "rule": "content:elections(3),president(3),supreme court(3),court(2)",
+   "scores": {
+    "political": 11,
+    "economic": 4,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Apple plans to lease iPhones for $17.99 a month through partnership with Klarna Apple is announcing an iPhone lease option weeks after raisi",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Boeing posts wider loss than expected as Air Force One costs weigh on results Boeing took a $280 million charge on its long-delayed Air Forc",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Coca-Cola hikes full-year forecast. CEO tells CNBC the World Cup boosted its brands Coca-Cola said demand for its drinks rose in every marke",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": true,
+   "rule": "noise:world cup(3)",
+   "scores": {
+    "economic": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "UPS expects third-quarter domestic revenue to be flat but CEO tells CNBC the company is through its 'bumps' UPS beat Wall Street expectation",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "content:earnings(3),revenue(2)",
+   "scores": {
+    "economic": 5,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Analysis: Kevin Warsh has three reasons to hold off on a Fed rate hike this week Warsh will reveal how he weighs energy shocks, AI-driven pr",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "content:rate hike(3),price(1)",
+   "scores": {
+    "economic": 4,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Blurred front lines: Trump meets Zelenskyy as Ukraine, Iran wars collide Trump and Zelenskyy meet as the U.S war against Iran and Russia's f",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "military_conflict": 2,
+    "political": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "SpaceX stock-purchasing by Congress members fuels conflict concerns Five of the Congress members serve on committees whose work touches Spac",
+   "feed_category": "economic",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:congress(3)",
+   "scores": {
+    "political": 3,
+    "military_conflict": 1,
+    "economic": 1,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Amazon, Meta and Microsoft face skeptical investors this week after Google report sparked sell-off Alphabet's free cash flow has turned nega",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Iran hosts Hormuz calls with Saudi Arabia, Oman as Trump hails ‘good talks’ Talks over the Strait of Hormuz continue as Iran's foreign minis",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 1,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "New Republican ads slam Democrats opposed to Trump's tariffs As the 2026 midterm elections approach, the National Republican Congressional C",
+   "feed_category": "economic",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:elections(3),president(3)",
+   "scores": {
+    "political": 6,
+    "economic": 3,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Supreme Court approval hits record low as Republicans' support declines The Trump administration saw some big losses at the Supreme Court in",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (ambiguous economic/political)",
+   "scores": {
+    "economic": 6,
+    "political": 5,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Lawmakers renew push to axe a lucrative tax loophole for crypto investors Crypto investors have largely been exempt from the \"wash sale\" rul",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (ambiguous political/economic)",
+   "scores": {
+    "political": 5,
+    "economic": 4,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Jim Cramer's top 10 things to watch in the stock market Tuesday The downturn in chip stocks continues. Is the Nvidia selling at last overdon",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "content:stocks(2),market(1)",
+   "scores": {
+    "economic": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "SpaceX has now lost the equivalent of a full Tesla in market capitalization Elon Musk's space company has wiped off more than $1.2 trillion ",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Trump says U.S. has sold more than $13 billion of Venezuela oil since Maduro's capture President Donald Trump said Monday the U.S. has sold ",
+   "feed_category": "economic",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:president(3)",
+   "scores": {
+    "political": 3,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "JetBlue overhauls fare options, from basic first to flexible economy. Here's what to know JetBlue is doing away with its \"Core\" product and ",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Amazon seeks federal approval to launch 5,105 satellites for direct-to-device network The proposed network will partly rely on assets from G",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Microsoft touts cost-saving AI model for cybersecurity Microsoft says that when integrated with OpenAI's GPT-5.4, its new cybersecurity mode",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Wildfires burn nearly 300,000 acres in France and Spain as heat wave looms Temperatures in France are expected to rise to 95 degrees Fahrenh",
+   "feed_category": "economic",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:wildfire(3),wildfires(3),heat wave(2)",
+   "scores": {
+    "disaster_infrastructure": 8,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Nvidia and OpenAI in talks for up to $250 billion backstop to fund AI infrastructure plans The backstop would let OpenAI raise debt for a da",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "disaster_infrastructure": 2,
+    "political": 1,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Trump backs 'fantastic' Warsh while calling for lower rates and citing 'bad intentions' of other Fed officials President Trump Monday voiced",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "content:interest rates(3),federal reserve(3)",
+   "scores": {
+    "economic": 6,
+    "political": 4,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Anthropic CEO Dario Amodei says AI company isn't advocating for ban of open-weight models Critics have questioned why Anthropic didn't sign ",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Consolidated food supply may be worsening cyclospora outbreaks, experts say Experts say food industry consolidation may be amplifying the cy",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Sen. McConnell still not cleared to go back to work as he recovers from fall, doctors say McConnell's office shared a written statement from",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Jim Cramer issues a warning to investors trading with borrowed money \"If you're borrowing money to buy something related to the data center,",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 2,
+    "disaster_infrastructure": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Trump administration asks Supreme Court to intervene to allow mail-in voting restrictions A federal appeals court on Saturday kept the restr",
+   "feed_category": "economic",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:election(3),supreme court(3),court(2)",
    "scores": {
     "political": 8,
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
     "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "AI sell-off intensifies as investors ditch chip stocks Samsung and SK Hynix fall by more than 10% amid renewed fears over AI spending and Ch",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "content:stocks(2),investors(2),market(1)",
+   "scores": {
+    "economic": 5,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Johnson & Johnson to pay $5.5bn settlement in talc cancer lawsuit Landmark deal covers about 76,000 claims and could end contentious, decade",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 2,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Security firm linked to ICE crackdown in US reports UK revenue slump after asylum centre contract ends MTC provided security at heavily crit",
+   "feed_category": "economic",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:immigration crackdown(3),asylum(3)",
+   "scores": {
+    "political": 6,
+    "economic": 2,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Cracker Barrel CEO to step down after overseeing logo backlash last year Julie Masino faced criticism as restaurant chain was called ‘woke’ ",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 2,
+    "political": 1,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Oil prices fall as US pauses strikes on Iran over strait of Hormuz Brent crude drops 9% to below $88 a barrel, prompting UK government bond ",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "content:yields(3),oil prices(2),crude(2),brent(2)",
+   "scores": {
+    "economic": 12,
+    "military_conflict": 4,
+    "political": 2,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Marmite and Dove owner Unilever warns of price rises due to growing costs Consumer goods group reports strong sales growth, owing in part to",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process A new Mirai-derived botnet called Tengu can use a compromised",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:botnet(2),credential(2)",
+   "scores": {
+    "cyber": 4,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "24,650 Internet-Exposed BMCs Disclose IPMI Password Hashes Before Login Cybersecurity researchers have sounded an alert after finding more t",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "feed:cyber (no lexicon signal)",
+   "scores": {
+    "disaster_infrastructure": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach JFrog has confirmed that OpenAI models exploited a ze",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:zero-day(3),exploited(3),breach(2)",
+   "scores": {
+    "cyber": 8,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root OpenWrt has shipped version 24.10.8 to close a critical DH",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "feed:cyber (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Nimbus Manticore Deploys NightLedger and Turns Victim Systems Into Covert Relays The Iranian state-backed hacking group tracked as Nimbus Ma",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:backdoor(3)",
+   "scores": {
+    "cyber": 3,
+    "military_conflict": 1,
+    "political": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Critical TeamCity Flaw Could Let Attackers Run OS Commands Without Logging In JetBrains is urging customers of on-premise versions of TeamCi",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:vulnerability(3)",
+   "scores": {
+    "cyber": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Researcher Says AI Helped Develop Linux Traffic-Control Race Into Root Exploit STAR Labs has published a Linux kernel exploit that turns an ",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:exploit(3)",
+   "scores": {
+    "cyber": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Microsoft Says New Cybersecurity AI Model Helps MDASH Score 95.95% at Half the Cost Microsoft has launched its first cybersecurity-specific ",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:vulnerability(3),cyber(1)",
+   "scores": {
+    "cyber": 4,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Attackers Exploit Arista VeloCloud Orchestrator Command Injection Flaw A maximum-severity security flaw impacting on-premises versions of Ar",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:vulnerability(3),exploit(3)",
+   "scores": {
+    "cyber": 6,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
     "crime_security": 0
    }
   },
@@ -231,551 +1221,11 @@
    }
   },
   {
-   "title": "Public Exploit Released for Patched vBulletin Pre-Auth Code Execution Flaw Public exploit details released on July 27 show how an unauthenti",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "content:exploit(3),patched(2)",
-   "scores": {
-    "cyber": 5,
-    "military_conflict": 1,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "⚡ Weekly Recap: Rogue AI Agents, Check Point Exploit, Slopsquatting, ClickFix Lures and More Monday starts with the usual promise that every",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "content:exploit(3)",
-   "scores": {
-    "cyber": 3,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "n8n Sandbox Escape Lets Workflow Editors Run OS Commands as the n8n Process n8n has patched a high-severity expression-sandbox escape that c",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "content:sandbox escape(3),patched(2)",
-   "scores": {
-    "cyber": 5,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Operation BlueDash Deploys Level RMM and ScreenConnect via Fake Teams Update Cybersecurity researchers have flagged a Microsoft Teams-themed",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "feed:cyber (ambiguous cyber/disaster_infrastructure)",
-   "scores": {
-    "cyber": 3,
-    "disaster_infrastructure": 2,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Cruciferra Crypter Uses BYOVD and Process Ghosting to Hide Windows Malware The China-linked cybercrime group behind the use of income tax-re",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "content:malware(3),phishing(3)",
-   "scores": {
-    "cyber": 6,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "TELESHIM Abuses Telegram for C2 in Attacks Against Middle East Governments Cybersecurity researchers have flagged fresh malicious cyber acti",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "content:malware(3),threat actor(2),cyber(1)",
-   "scores": {
-    "cyber": 6,
-    "political": 2,
-    "military_conflict": 2,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "GitHub Adds 3-Day Dependabot Cooldown to Limit Poisoned Package Adoption GitHub has announced a new cooldown mechanism in Dependabot, allowi",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "feed:cyber (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Oil prices drop more than 2% as a pause in U.S.-Iran hostilities raises de-escalation hopes Speaking to reporters aboard Air Force One on Mo",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (ambiguous economic/military_conflict)",
-   "scores": {
-    "economic": 3,
-    "military_conflict": 2,
-    "political": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "U.S. and Korean tech stocks are now tightly linked — and that could be a worry for investors The 60-day correlation between the Kospi and Na",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:stocks(2),investors(2)",
-   "scores": {
-    "economic": 4,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Apple ends day as world's most valuable company, passing Nvidia Nvidia had held the top spot as the most valuable company since June 2025, w",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "SK Hynix shares plunge 13% in Seoul as chip sell-off deepens South Korean semiconductor shares tumbled on Tuesday, extending a rout in chipm",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "economic": 2,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Trump administration asks Supreme Court to intervene to allow mail-in voting restrictions A federal appeals court on Saturday kept the restr",
-   "feed_category": "economic",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:election(3),supreme court(3),court(2)",
-   "scores": {
-    "political": 8,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Anthropic CEO Dario Amodei says AI company isn't advocating for ban of open-weight models Critics have questioned why Anthropic didn't sign ",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "SpaceX has now lost the equivalent of a full Tesla in market capitalization Elon Musk's space company has wiped off more than $1.2 trillion ",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "economic": 1,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "CNBC's The China Connection newsletter: A U.S.-China debate that's becoming bigger than tariffs The AI race is heating up so fast this summe",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:tariffs(3)",
-   "scores": {
-    "economic": 3,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chairman Kevin Warsh will say this week Kalshi traders are predicting Warsh wi",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:federal reserve(3)",
-   "scores": {
-    "economic": 3,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Trump backs 'fantastic' Warsh while calling for lower rates and citing 'bad intentions' of other Fed officials President Trump Monday voiced",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:interest rates(3),federal reserve(3)",
-   "scores": {
-    "economic": 6,
-    "political": 4,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Jim Cramer warns AI's circular financing frenzy echoes the dot-com bubble CNBC's Jim Cramer said reports of Nvidia backing OpenAI's data cen",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Indonesian stocks stage massive turnaround, hitting bull market status after clocking a five-year low just last month Attractive valuations,",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:stocks(2),investors(2),market(1)",
-   "scores": {
-    "economic": 5,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Sam Altman to meet with Trump administration, senators this week. Here's what he plans to say Altman will preview the capabilities of the co",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "India's Gen Z forced Modi to listen, respond and act — exposing chinks in the ruling party's armor In a rare occurrence, Modi's government w",
-   "feed_category": "economic",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:government(2),party(2),ruling(2)",
-   "scores": {
-    "political": 6,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade This is yet another sign that investors need to look bey",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:stocks(2),investors(2)",
-   "scores": {
-    "economic": 4,
-    "military_conflict": 2,
-    "political": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Trump says U.S. has sold more than $13 billion of Venezuela oil since Maduro's capture President Donald Trump said Monday the U.S. has sold ",
-   "feed_category": "economic",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:president(3)",
-   "scores": {
-    "political": 3,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Consolidated food supply may be worsening cyclospora outbreaks, experts say Experts say food industry consolidation may be amplifying the cy",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Netflix woes setting up for a Hollywood ending, says trader Mike Khouw Netflix's stock price may have lost the plot, but its fundamental nar",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "economic": 1,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Crypto stocks rally thanks to rotation from AI infrastructure; bitcoin miners lag Crypto stocks proved some of the top gainers Monday even a",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (ambiguous economic/disaster_infrastructure)",
-   "scores": {
-    "economic": 3,
-    "disaster_infrastructure": 2,
-    "political": 0,
-    "military_conflict": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Sen. McConnell still not cleared to go back to work as he recovers from fall, doctors say McConnell's office shared a written statement from",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "JetBlue overhauls fare options, from basic first to flexible economy. Here's what to know JetBlue is doing away with its \"Core\" product and ",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "economic": 1,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Spain and France wildfires force more than 300,000 to flee as Macron calls crisis meeting The impact of a gigantic wildfire ravaging France'",
-   "feed_category": "economic",
+   "title": "M 6.8 - 5 km E of Uto, Japan PAGER -  RED    ShakeMap -  IX    DYFI? -  IX     Time  2026-07-28 07:27:15 UTC  2026-07-28 07:27:15 UTC at epi",
+   "feed_category": "disaster_infrastructure",
    "category": "disaster_infrastructure",
    "low_value": false,
-   "rule": "content:wildfire(3),wildfires(3),crisis(1)",
-   "scores": {
-    "disaster_infrastructure": 7,
-    "political": 2,
-    "economic": 1,
-    "military_conflict": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Nvidia and OpenAI in talks for up to $250 billion backstop to fund AI infrastructure plans The backstop would let OpenAI raise debt for a da",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "disaster_infrastructure": 2,
-    "political": 1,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Oil prices slide, Brent crude below $90 as pause to U.S.-Iran hostilities appears to hold Oil prices fell after Iran reportedly said it woul",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:oil prices(2),crude(2),brent(2),prices(1)",
-   "scores": {
-    "economic": 7,
-    "military_conflict": 3,
-    "political": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Netanyahu, Zelenskyy come to DC for Graham's funeral, meetings with Trump amid wars The funeral for Sen. Lindsey Graham is bringing world le",
-   "feed_category": "economic",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:president(3)",
-   "scores": {
-    "political": 3,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Op-ed: Over 2,000 proposals aim to govern AI. Not a single one addresses a long-term regulatory framework AI can't be regulated by the invis",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "economic": 1,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "CME launches single stock futures enabling investors to trade SpaceX, Micron and others 23 hours a day CME Group on Monday launched cash-set",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:equities(2),investors(2)",
-   "scores": {
-    "economic": 4,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Europe wildfire in pictures: Gigantic fire cloud engulfing France, Spain regions A rare wildfire spreading across France's Bordeaux region a",
-   "feed_category": "economic",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "content:wildfire(3),fire(1)",
-   "scores": {
-    "disaster_infrastructure": 4,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Trump Account signups reach 7 million — Bessent says it's 'the most successful launch in government history' About 7 million American childr",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "political": 2,
-    "economic": 2,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Amazon seeks federal approval to launch 5,105 satellites for direct-to-device network The proposed network will partly rely on assets from G",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
+   "rule": "feed:disaster_infrastructure (no lexicon signal)",
    "scores": {
     "political": 0,
     "military_conflict": 0,
@@ -786,7 +1236,7 @@
    }
   },
   {
-   "title": "M 5.8 - 191 km NW of Oula Xiuma, China PAGER -  YELLOW    ShakeMap -  VII     Time  2026-07-28 03:34:05 UTC  2026-07-28 03:34:05 UTC at epic",
+   "title": "M 5.8 - 191 km NW of Oula Xiuma, China PAGER -  YELLOW    ShakeMap -  VII    DYFI? -  II     Time  2026-07-28 03:34:05 UTC  2026-07-28 03:34",
    "feed_category": "disaster_infrastructure",
    "category": "disaster_infrastructure",
    "low_value": false,
@@ -816,56 +1266,41 @@
    }
   },
   {
-   "title": "Cracker Barrel CEO to step down after overseeing logo backlash last year Julie Masino faced criticism as restaurant chain was called ‘woke’ ",
-   "feed_category": "economic",
-   "category": "economic",
+   "title": "Gironde wildfires pick up as French region braces for new 40C heatwave Firefighters are braced for a sharp rise in temperatures on Wednesday",
+   "feed_category": "military_conflict",
+   "category": "disaster_infrastructure",
    "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
+   "rule": "content:wildfires(3),heatwave(2)",
    "scores": {
-    "economic": 2,
-    "political": 1,
+    "disaster_infrastructure": 5,
+    "political": 0,
     "military_conflict": 0,
-    "disaster_infrastructure": 0,
+    "economic": 0,
     "cyber": 0,
     "crime_security": 0
    }
   },
   {
-   "title": "Tariffs are Trump’s favorite plaything – and his justifications are absurd | Steven Greenhouse The president is using forced labor as a pret",
-   "feed_category": "economic",
-   "category": "economic",
+   "title": "The cocaine superhighway from Ecuador to Europe - the BBC reports on gangs and the police fightback The BBC goes on patrol with Ecuador's po",
+   "feed_category": "military_conflict",
+   "category": "crime_security",
    "low_value": false,
-   "rule": "feed:economic (ambiguous economic/political)",
+   "rule": "content:police(2),crime(1)",
    "scores": {
-    "economic": 7,
-    "political": 6,
-    "military_conflict": 2,
+    "crime_security": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
     "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
+    "cyber": 0
    }
   },
   {
-   "title": "Oil prices fall as US pauses strikes on Iran over strait of Hormuz Brent crude drops 9% to below $88 a barrel, prompting UK government bond ",
-   "feed_category": "economic",
-   "category": "economic",
+   "title": "US walks out of UN Security Council meeting during France's remarks The row sparked after the US joined North Korea and Russia in voting aga",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
    "low_value": false,
-   "rule": "content:yields(3),oil prices(2),crude(2),brent(2)",
-   "scores": {
-    "economic": 12,
-    "military_conflict": 4,
-    "political": 2,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "AstraZeneca boss urges western drugmakers to move at ‘Chinese speed’ Europe and US risk being outpaced on innovation, as happened in the car",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
+   "rule": "feed:military_conflict (no lexicon signal)",
    "scores": {
     "political": 0,
     "military_conflict": 0,
@@ -876,52 +1311,82 @@
    }
   },
   {
-   "title": "Trump calls protester ‘communist’ after Michigan speech interruption A protester was removed after interrupting US President Donald Trump’s ",
+   "title": "'A lover of life' - Seattle pays tribute to food festival shooting victims Families grieved on Monday as they remembered the three people ki",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "crime_security": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "Mancini reappointed Italy boss after Pirlo controversy Roberto Mancini is appointed Italy manager for a second time - just a day after Andre",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "'A narcissist': Victim's family hits out at Kohberger for challenging murder conviction The man accused of killing four students in Idaho is",
+   "feed_category": "military_conflict",
+   "category": "crime_security",
+   "low_value": false,
+   "rule": "content:murder(3)",
+   "scores": {
+    "crime_security": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "French Navy carries out 'shooting drill' mid interview Shadow Home Secretary Chris Philp says the vessel fired 17 shots as he was giving a B",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "crime_security": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "Hong Kong activist allowed to stay in UK after deportation threat Wu was detained for hours at London's Heathrow Airport last week and refus",
    "feed_category": "military_conflict",
    "category": "political",
    "low_value": false,
-   "rule": "content:president(3)",
+   "rule": "content:deportation(3)",
    "scores": {
     "political": 3,
+    "crime_security": 1,
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
+    "cyber": 0
    }
   },
   {
-   "title": "Israeli ex-generals urge Trump to push Netanyahu on ‘settler terror’ Settler violence in the occupied West Bank endangers Israel’s future, 5",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 1,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Ukraine’s Zelenskyy set to meet Trump as Iran and Ukraine wars converge The US Senate will vote Tuesday on Russian sanctions, days after Ukr",
-   "feed_category": "military_conflict",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:sanctions(3),senate(3),vote(2)",
-   "scores": {
-    "political": 8,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "US warns hundreds of Boeing jets may require seat safety inspections US regulator warns of Boeing 737 MAX seat safety concerns, calls for in",
+   "title": "Johnson & Johnson offers up to $5.5bn to settle baby powder lawsuits The proposed settlement aims to close a years-long legal battle over cl",
    "feed_category": "military_conflict",
    "category": "military_conflict",
    "low_value": false,
@@ -936,37 +1401,7 @@
    }
   },
   {
-   "title": "Trump says Iran talks taking place during pause in US military strikes US President Donald Trump says talks with Iran are continuing during ",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "content:strikes(2),military(2),war(2)",
-   "scores": {
-    "military_conflict": 6,
-    "political": 4,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Ebola response workers strike in DR Congo as death toll spikes Healthcare workers at an Ebola treatment centre in Bunia, Democratic Republic",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "military_conflict": 2,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "How telehealth is helping close the healthcare gap in rural Zimbabwe Virtual consultations are replacing hours of travel, bringing affordabl",
+   "title": "Odyssey translator writes scathing review of Nolan film adaptation The film has won rave reviews from film critics but a translator of Homer",
    "feed_category": "military_conflict",
    "category": "military_conflict",
    "low_value": false,
@@ -981,7 +1416,37 @@
    }
   },
   {
-   "title": "Former senior ICE official says rush for numbers is causing deaths Fmr. Acting Chief of Staff at ICE: a rush to hire officers and a focus on",
+   "title": "Ariana Grande sues hackers who leaked music and videos The pop star is suing to discover the identity of hackers who obtained unreleased pho",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "cyber": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Zoo staff rescue near-extinct snails from remote rock Just 21 Madeiran land snails were found clinging to a rock on Portugal's Bugio Island,",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "disaster_infrastructure": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Zidane confirmed as France head coach Former Real Madrid manager Zinedine Zidane has been confirmed as the head coach of the France national",
    "feed_category": "military_conflict",
    "category": "military_conflict",
    "low_value": false,
@@ -996,97 +1461,37 @@
    }
   },
   {
-   "title": "Johnson & Johnson offers $5.5bn to settle talc cancer lawsuits Johnson & Johnson agrees to pay $5.5bn to settle nearly 70,000 US lawsuits ov",
+   "title": "US singer D4vd to go on trial for murder in death of 14-year-old The star is accused of killing Celeste Rivas Hernandez, whose remains were ",
    "feed_category": "military_conflict",
-   "category": "military_conflict",
+   "category": "crime_security",
    "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
+   "rule": "content:murder(3)",
    "scores": {
+    "crime_security": 3,
     "political": 0,
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
+    "cyber": 0
    }
   },
   {
-   "title": "Houthis want to copy Iran’s Hormuz control in the Red Sea: Yemeni FM Speaking in Riyadh, Yemen's internationally recognised government warns",
+   "title": "Number of suspects in fatal Seattle food festival shooting rises to three One suspect is in custody, while a second is being sought and a th",
    "feed_category": "military_conflict",
-   "category": "military_conflict",
+   "category": "crime_security",
    "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
+   "rule": "content:shooting(2),suspect(2),custody(2)",
    "scores": {
+    "crime_security": 6,
     "political": 2,
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
+    "cyber": 0
    }
   },
   {
-   "title": "Savannah Guthrie pleads for help to find missing mother Journalist Savannah Guthrie has made an emotional public appeal for information abou",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Trump on Erdogan, Netanyahu and selling fighter jets to Turkiye US President Donald Trump called Turkiye 'a great ally' when asked about sel",
-   "feed_category": "military_conflict",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:president(3)",
-   "scores": {
-    "political": 3,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Iran war live: Trump says ‘friendly’ talks ongoing; Netanyahu arrives in US Iran says US 'struggling' to end five-month-old war, as Netanyah",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "military_conflict": 2,
-    "political": 1,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "US diplomats walk out as France addresses UN Security Council US diplomats walk out of UN meeting during France's speech amid tensions over ",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Shot fired outside US consulate in Toronto for second time this year Canadian police have said youth are being recruited via encrypted messa",
+   "title": "Shots fired at US consulate in Toronto for a second time this year Police said they engaged in a high-speed car chase but failed to arrest t",
    "feed_category": "military_conflict",
    "category": "crime_security",
    "low_value": false,
@@ -1101,14 +1506,164 @@
    }
   },
   {
-   "title": "Video shows man subdued after stabbing three women in Paris Three women were wounded, two of them seriously, in a knife attack near Porte de",
+   "title": "'It's a hell of a situation': Spain grapples with devastating wildfires Three fires in the Madrid region have caused special concerns, with ",
+   "feed_category": "military_conflict",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:wildfires(3),heatwave(2)",
+   "scores": {
+    "disaster_infrastructure": 5,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "European wildfires in maps - and how they're being tackled A blaze near Bordeaux has torn through more than 162 sq miles (420 sq km) in less",
+   "feed_category": "military_conflict",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:wildfires(3),blaze(2)",
+   "scores": {
+    "disaster_infrastructure": 5,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "A Japanese town wrestles with identity after protests over its first mosque As Japan increasingly relies on foreign workers, it is also grap",
    "feed_category": "military_conflict",
    "category": "military_conflict",
    "low_value": false,
-   "rule": "feed:military_conflict (ambiguous military_conflict/crime_security)",
+   "rule": "feed:military_conflict (no lexicon signal)",
    "scores": {
-    "military_conflict": 3,
+    "political": 2,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "As the US pauses the war with Iran, is Trump really running out of weapons? The US has fired thousands of hard-to-replace missiles during it",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "content:missiles(3),war(2)",
+   "scores": {
+    "military_conflict": 5,
+    "political": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "China's new challenge as natural disasters strike - fake AI videos Storms and flooding incidents over the last few months have seen fake vid",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (ambiguous disaster_infrastructure/military_conflict)",
+   "scores": {
+    "disaster_infrastructure": 3,
+    "military_conflict": 2,
+    "political": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Why Netanyahu's visit with Trump at the White House is high-stakes The meeting comes amid signs of friction between the two leaders and decr",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Confronting gang members at the heart of Ecuador's drug battle Orla Guerin speaks to a gang leader about violence, drugs and infiltrating th",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "crime_security": 2,
+    "political": 1,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "BBC outside court as judge rules singer D4vd will face murder trial The body of 14-year-old Celeste Rivas Hernandez was found last September",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (ambiguous crime_security/political)",
+   "scores": {
     "crime_security": 3,
+    "political": 2,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "What to expect from Zelensky and Netanyahu's visit to Washington Republican Senator Lindsay Graham's funeral is bringing the two world leade",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "The Octane Revolution: How Jimmy Doolittle Catalyzed a Wartime Industry Editor’s note: This is the sixth article in a limited series celebra",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 2,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "The First Waves of Amphibious Assault Will Be Unmanned In the Pacific War, the U.S. Navy’s underwater demolition teams prepared the way for ",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "military_conflict": 2,
+    "crime_security": 2,
     "political": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
@@ -1116,134 +1671,14 @@
    }
   },
   {
-   "title": "Trump asks US Supreme Court to allow mail-in voting restrictions A lower court blocked the mail-in ballot restrictions, ruling Trump lacked ",
-   "feed_category": "military_conflict",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:election(3),supreme court(3),ruling(2),court(2)",
-   "scores": {
-    "political": 10,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "UN slams Israel’s expansion of illegal settlements in occupied West Bank UN chief Guterres says settlements a 'flagrant violation' of intern",
+   "title": "How Orbán’s Fall Changed Serbia’s Political Future In the speech announcing his invasion of Ukraine on Feb. 24, 2022, Vladimir Putin took on",
    "feed_category": "military_conflict",
    "category": "military_conflict",
    "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
+   "rule": "content:missiles(3),military(2),combat(2)",
    "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Nvidia plans $250bn push to bolster OpenAI’s infrastructure ambitions Political backlash grows as US states propose bans on new data centres",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "disaster_infrastructure": 2,
+    "military_conflict": 7,
     "political": 1,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Hopes of return to diplomacy as US-Iran hold fire for third day Mediators from Qatar and Pakistan work to restart ceasefire talks amid fragi",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "content:ceasefire(3),hostilities(2)",
-   "scores": {
-    "military_conflict": 5,
-    "political": 1,
-    "disaster_infrastructure": 1,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Will Peru’s new leader Keiko Fujimori reject her father’s legacy? Keiko Fujimori was elected president and many people are sceptical she wil",
-   "feed_category": "military_conflict",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:president(3),leader(1)",
-   "scores": {
-    "political": 4,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "UK court dismisses Bahrain’s bid to block activists’ spyware lawsuit Ruling establishes that countries using spyware on people in the UK can",
-   "feed_category": "military_conflict",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:ruling(2),court(2),lawsuit(2)",
-   "scores": {
-    "political": 6,
-    "cyber": 2,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Hakeem Jeffries puts affordability at centre of Democrats’ midterm campaign US House Democratic leader unveils 'Fighting for an Affordable A",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 1,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Trump takes economic message to Michigan amid dwindling popularity US president is suffering from low approval ratings in state that has bec",
-   "feed_category": "military_conflict",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:president(3)",
-   "scores": {
-    "political": 3,
-    "economic": 1,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Has Burnham kept his promise to do better on Israel’s war on Gaza? Will Britain's new cabinet change the country’s role in Israel’s war on G",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (ambiguous political/military_conflict)",
-   "scores": {
-    "political": 3,
-    "military_conflict": 2,
     "economic": 0,
     "disaster_infrastructure": 0,
     "cyber": 0,
@@ -1266,11 +1701,431 @@
    }
   },
   {
-   "title": "Taiwan’s Tech Hurdles Threaten Military Capability and Potential Coalition Defense Taiwan produces the world’s most advanced semiconductors,",
-   "feed_category": "military_conflict",
+   "title": "Past fires suggest effects of Europe and North America wildfires may linger for years Three years after Maui wildfires many still struggle w",
+   "feed_category": "political",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:wildfires(3),crisis(1)",
+   "scores": {
+    "disaster_infrastructure": 4,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Javier Milei accuses US Democrats of financing ‘anti-Argentina campaign’ at World Cup President also blames Brazil and Mexico and says onlin",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:president(3)",
+   "scores": {
+    "political": 3,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Pinochet-era soldier jailed for killing folk singer Víctor Jara 53 years ago Nelson Haase Mazzei was sentenced for murdering Jara in 2023, b",
+   "feed_category": "political",
+   "category": "crime_security",
+   "low_value": false,
+   "rule": "content:murder(3),sentenced(3)",
+   "scores": {
+    "crime_security": 6,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "Shots fired near US consulate in Canada for second time in four months No one was injured and no suspects have been identified in connection",
+   "feed_category": "political",
+   "category": "crime_security",
+   "low_value": false,
+   "rule": "content:shooting(2),police(2)",
+   "scores": {
+    "crime_security": 4,
+    "political": 2,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "‘Many people’ trapped inside Japanese shopping centre, others missing in paper factory, after earthquake – live updates An ⁠earthquake ​with",
+   "feed_category": "political",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:earthquake(3),magnitude(3)",
+   "scores": {
+    "disaster_infrastructure": 6,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Japan earthquake injures 50 and traps ‘many people’ inside shopping mall Deaths expected as Kumamoto shaken by 6.8-magnitude quake, knocking",
+   "feed_category": "political",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:earthquake(3),magnitude(3)",
+   "scores": {
+    "disaster_infrastructure": 6,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "‘We have lost everything’: extreme rainfall across Asia brings flash floods and typhoons From Afghanistan to Taiwan, unprecedented deluge hi",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Asia ‘scraping the bottom of the barrel’ as Red Sea oil blockade worsens energy crisis The Houthi threat to Saudi oil exports comes as Japan",
+   "feed_category": "political",
    "category": "military_conflict",
    "low_value": false,
-   "rule": "feed:military_conflict (ambiguous political/military_conflict)",
+   "rule": "content:blockade(3),houthi(2)",
+   "scores": {
+    "military_conflict": 5,
+    "economic": 2,
+    "disaster_infrastructure": 1,
+    "political": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Guardian Essential poll: Angus Taylor’s approval rating crashes and One Nation support plateaus Survey also shows Australians rounding on th",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (ambiguous political/economic)",
+   "scores": {
+    "political": 4,
+    "economic": 3,
+    "disaster_infrastructure": 1,
+    "military_conflict": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Royal commission into Victorian construction sector could boost Labor’s chances at state election, expert says Commission promised by new pr",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:election(3),government(2),voters(2)",
+   "scores": {
+    "political": 7,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Anger at Labor as Rex Patrick faces potential six-figure legal fee if he loses Aukus documents battle Australian government insists legal co",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "political": 2,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Angus Taylor has inadvertently taken centre stage in an Icac hearing – and the fallout could be profound If the opposition leader was fundin",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:party(2),opposition(2),leader(1)",
+   "scores": {
+    "political": 5,
+    "military_conflict": 2,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Banks charged mortgage holders $55m in extra interest after offset account errors, Asic finds Australian banks ‘not getting the basics right",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "crime_security": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "​France and Spain race to control wildfires as fresh heatwave hits, as UN warns ‘the climate alarm is blaring’ – Europe live Spanish prime m",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (ambiguous political/disaster_infrastructure)",
+   "scores": {
+    "political": 5,
+    "disaster_infrastructure": 5,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "New evacuation from tourist sites near Bordeaux as France and Spain fight wildfires French authorities order evacuation of almost 4,000 peop",
+   "feed_category": "political",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:wildfires(3),evacuation(3),heatwave(2)",
+   "scores": {
+    "disaster_infrastructure": 8,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Dawn raid targets ‘umbrella cheaters’ reserving beach spots in Naples Umbrellas, deck chairs and loungers seized in Torre del Greco authorit",
+   "feed_category": "political",
+   "category": "crime_security",
+   "low_value": false,
+   "rule": "content:raid(3)",
+   "scores": {
+    "crime_security": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "France and Spain race to contain huge wildfires before fresh heatwave begins Coming days are ‘absolutely critical’ for firefighters before t",
+   "feed_category": "political",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:wildfires(3),heatwave(2)",
+   "scores": {
+    "disaster_infrastructure": 5,
+    "political": 3,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Off-duty police officer detains man who attacked three women with knives in Paris Two women severely wounded before bystanders intervened in",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (ambiguous crime_security/political)",
+   "scores": {
+    "crime_security": 3,
+    "political": 2,
+    "military_conflict": 2,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "Prisoners at Iran’s largest jail sew lips shut in hunger strike as executions soar At least 1,500 protest after six men on drug-related char",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:government(2),protest(2),protests(2)",
+   "scores": {
+    "political": 6,
+    "military_conflict": 2,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "A dog saved Houssein Hamze from a bomb. When war returned, he stayed to care for Lebanon’s animals In normal times the Mashala shelter found",
+   "feed_category": "political",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "content:war(2),hezbollah(2)",
+   "scores": {
+    "military_conflict": 4,
+    "disaster_infrastructure": 2,
+    "political": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Trump warns of return to ‘strong military action’ if Iran diplomacy fails Washington and Tehran issue conflicting messages over the status o",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (ambiguous political/military_conflict)",
+   "scores": {
+    "political": 3,
+    "military_conflict": 2,
+    "disaster_infrastructure": 1,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "India’s Cockroach movement threatens to restart protests after mass student arrests Cockroach Janta party says government has broken promise",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "content:resignation(3),minister(2),government(2),party(2)",
+   "scores": {
+    "political": 11,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "‘A control freak with a terrible temper’: James Desborough convicted of triple murder Man already serving life for killing his cellmate whil",
+   "feed_category": "political",
+   "category": "crime_security",
+   "low_value": false,
+   "rule": "content:murder(3),convicted(3)",
+   "scores": {
+    "crime_security": 6,
+    "political": 2,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0
+   }
+  },
+  {
+   "title": "Black people’s risk factors for stroke ‘rising faster than for white people’ Exclusive: King’s College London analysis finds diabetes and hy",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Young people ‘expected’ to engage with new work support, says McFadden Exclusive: Work and pensions secretary echoes Andy Burnham as he unve",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Tories’ Philp rejects French claim that shots fired from naval boat near him were training exercise – UK politics live Shadow minister says ",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "political": 2,
+    "disaster_infrastructure": 1,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Captain Chris ‘Hunter-Killer’ Philp takes on French navy single-handed Shots fired in the Channel are all in a day’s work for the intrepid s",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "The professor facing prison in ‘antifa’ case: ‘They want to scare all who oppose ICE’ Erik Davis is accused by the government of a ‘conspira",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "political": 2,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Trump administration needs to stop ‘public harassment’ of Fauci and scientists, open letter says Letter, published before Anthony Fauci will",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (ambiguous political/military_conflict)",
    "scores": {
     "political": 3,
     "military_conflict": 2,
@@ -1281,29 +2136,74 @@
    }
   },
   {
-   "title": "Why Norway and Finland Should Preserve Two of Europe’s Most Important Security Arrangements Svalbard is a stark archipelago of glaciers and ",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
+   "title": "Lindsey Graham’s funeral ceremonies to begin with Netanyahu and Zelenskyy in attendance Memorials for the Republican senator to start in US ",
+   "feed_category": "political",
+   "category": "political",
    "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
+   "rule": "content:prime minister(3),president(3),minister(2)",
    "scores": {
-    "political": 2,
-    "economic": 1,
+    "political": 8,
     "military_conflict": 0,
+    "economic": 0,
     "disaster_infrastructure": 0,
     "cyber": 0,
     "crime_security": 0
    }
   },
   {
-   "title": "Nvidia’s potential new deal with OpenAI would revive a spooky tech-bubble habit, analyst warns Investors are fretting over a report that Nvi",
+   "title": "Witness says Lincoln Memorial pool was damaged before alleged vandalism Former Olympic canoeist Davey Hearn’s lawyers say testimony undermin",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "political": 2,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Ex-FCC officials warn agency sending ‘chilling message’ with ABC license review Ex-officials ask FCC to reject petitions to deny renewal of ",
+   "feed_category": "political",
+   "category": "political",
+   "low_value": false,
+   "rule": "feed:political (no lexicon signal)",
+   "scores": {
+    "political": 1,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "College kids are moving into retirement communities for reasons beyond ‘cheap rent’ Students are forging intergenerational bonds while plann",
    "feed_category": "economic",
    "category": "economic",
    "low_value": false,
    "rule": "feed:economic (no lexicon signal)",
    "scores": {
-    "economic": 2,
     "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Oil prices decline further after Trump claims ‘deep talks’ with Iran are under way Brent and West Texas Intermediate crude were on track to ",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "content:oil prices(2),crude(2),brent(2),prices(1)",
+   "scores": {
+    "economic": 7,
+    "political": 1,
     "military_conflict": 0,
     "disaster_infrastructure": 0,
     "cyber": 0,
@@ -1311,11 +2211,11 @@
    }
   },
   {
-   "title": "‘Time will tell whether that was a good bet’: My adviser got me a full SpaceX IPO allocation. Was I lucky? “Investors frequently receive onl",
+   "title": "Tech fund manager says the market is misreading Alphabet’s second-quarter earnings Investors should focus more on earnings growth and less o",
    "feed_category": "economic",
    "category": "economic",
    "low_value": false,
-   "rule": "content:ipo(3),shares(2),investors(2)",
+   "rule": "content:earnings(3),investors(2),market(1),growth(1)",
    "scores": {
     "economic": 7,
     "political": 0,
@@ -1326,7 +2226,82 @@
    }
   },
   {
-   "title": "‘It’s a high price to pay’: My adviser says I don’t need a withdrawal plan for my $2.3 million portfolio. Is he right? “His proposal involve",
+   "title": "PayPal delivers an earnings beat — and suggests it’s not against a merger deal “If we see levers or a path that we believe would create supe",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "content:earnings(3)",
+   "scores": {
+    "economic": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "The Fed isn’t your biggest worry. The central-bank decision that actually impacts your 401(k) lands in Tokyo. Japan is edging toward the exi",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Micron’s stock sinks toward worst monthly drop in 11 years as China fears escalate Investors are worried about China’s domestic supply of ch",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "economic": 2,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Roth conversions as early as your 20s and 30s? It’s not a crazy idea. Most people don’t get a break in their tax rate until they retire, but",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "feed:economic (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "As chips sell off, rattled investors should heed this Cisco Systems lesson from the last millennium The market should recover its poise with",
+   "feed_category": "economic",
+   "category": "economic",
+   "low_value": false,
+   "rule": "content:investors(2),market(1)",
+   "scores": {
+    "economic": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Las Vegas home prices post largest drop in the nation Among the largest U.S. cities, Las Vegas saw the biggest drop in home prices, while Ch",
    "feed_category": "economic",
    "category": "economic",
    "low_value": false,
@@ -1341,7 +2316,7 @@
    }
   },
   {
-   "title": "‘I feel lucky’: I’m 71 and inherited $20,000. What should I do with this money? “I have an IRA, a high-yield savings account, four CDs and c",
+   "title": "How coordinating 401(k) contributions with your spouse can unlock thousands in retirement wealth There are financial challenges that come wi",
    "feed_category": "economic",
    "category": "economic",
    "low_value": false,
@@ -1350,96 +2325,6 @@
     "political": 0,
     "military_conflict": 0,
     "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Stop snacking. Restricting eating for only 8 or 9 hours a day may keep your mind sharp. A new study found cognitive improvements for shorter",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "More cracks emerge in AI-related bonds as Meta, Microsoft earnings loom ‘The money has to come from somewhere,’ says Bryce Doty at Sit, of p",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:earnings(3),market(1)",
-   "scores": {
-    "economic": 4,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Big Tech is forcing consumers to pay for its AI boom. Voters are pushing back. State regulators are making Big Tech pay for its own grid bui",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (ambiguous political/economic)",
-   "scores": {
-    "political": 3,
-    "economic": 2,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "He brought AI to Wall Street in 1994 — but won’t trust ChatGPT with his money Vasant Dhar built one of the first AI-driven hedge funds. Here",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "economic": 2,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "For 44 years, this investor held aces in the long-bond game. He just folded. Lacy Hunt’s about-face on long-term Treasurys marks the end of ",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "feed:economic (no lexicon signal)",
-   "scores": {
-    "economic": 2,
-    "political": 0,
-    "military_conflict": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "SpaceX’s stock falls to a new low despite a near-flawless Starship flight SpaceX’s earnings report next week could unleash a further wave of",
-   "feed_category": "economic",
-   "category": "economic",
-   "low_value": false,
-   "rule": "content:earnings(3),shares(2)",
-   "scores": {
-    "economic": 5,
-    "political": 0,
-    "military_conflict": 0,
     "disaster_infrastructure": 0,
     "cyber": 0,
     "crime_security": 0
@@ -1491,58 +2376,13 @@
    }
   },
   {
-   "title": "Spain and France brace for new heatwaves as wildfire closes in on Bordeaux Temperatures are expected to soar past 40C in some regions as a h",
-   "feed_category": "military_conflict",
+   "title": "'Ricochet' explores how the right to bear arms expands -- while gun laws contract The New York Times  reporter Mike McIntire says gun compan",
+   "feed_category": "disaster_infrastructure",
    "category": "disaster_infrastructure",
    "low_value": false,
-   "rule": "content:wildfire(3),heatwave(2)",
+   "rule": "feed:disaster_infrastructure (no lexicon signal)",
    "scores": {
-    "disaster_infrastructure": 5,
     "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "US singer D4vd to go on trial for murder in death of 14-year-old The star is accused of killing Celeste Rivas Hernandez, whose remains were ",
-   "feed_category": "military_conflict",
-   "category": "crime_security",
-   "low_value": false,
-   "rule": "content:murder(3)",
-   "scores": {
-    "crime_security": 3,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0
-   }
-  },
-  {
-   "title": "China's new challenge as natural disasters strike - fake AI videos Storms and flooding incidents over the last few months have seen fake vid",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (ambiguous disaster_infrastructure/military_conflict)",
-   "scores": {
-    "disaster_infrastructure": 3,
-    "military_conflict": 2,
-    "political": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "A Japanese town wrestles with identity after protests over its first mosque As Japan increasingly relies on foreign workers, it is also grap",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 2,
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
@@ -1551,56 +2391,11 @@
    }
   },
   {
-   "title": "Ukraine dismisses Iranian threats as Caspian Sea strike directly links wars Iran has reacted with fury to the assault on the vessel, with Te",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 2,
-    "military_conflict": 2,
-    "crime_security": 2,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0
-   }
-  },
-  {
-   "title": "Wildfire witnesses describe 'wall of flames', fear and stress Local and visitors tell the BBC of disbelief and anxiety as wildfires force mo",
-   "feed_category": "military_conflict",
+   "title": "Here are the 13 books that made the Booker Prize longlist The 2026 list includes new works from household names Douglas Stuart, Marlon James",
+   "feed_category": "disaster_infrastructure",
    "category": "disaster_infrastructure",
    "low_value": false,
-   "rule": "content:wildfire(3),wildfires(3)",
-   "scores": {
-    "disaster_infrastructure": 6,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Chile captures fugitive convicted of singer Victor Jara's murder under Pinochet Nelson Haase was one of those convicted over the kidnap and ",
-   "feed_category": "military_conflict",
-   "category": "crime_security",
-   "low_value": false,
-   "rule": "content:murder(3),convicted(3)",
-   "scores": {
-    "crime_security": 6,
-    "military_conflict": 4,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0
-   }
-  },
-  {
-   "title": "Anger as Berlin Pride attacker revealed to have been freed weeks earlier As details emerge about the suspected Berlin Pride attacker's past,",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
+   "rule": "feed:disaster_infrastructure (no lexicon signal)",
    "scores": {
     "political": 0,
     "military_conflict": 0,
@@ -1611,343 +2406,28 @@
    }
   },
   {
-   "title": "Carly Simon reveals Parkinson's diagnosis The singer also reveals she has received treatment for skin cancer, but vows to keep singing.",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "'Do the right thing': Savannah Guthrie makes another plea to mother's kidnappers The US journalist has made several social media pleas for t",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Number of suspects in fatal Seattle food festival shooting rises to three One suspect is in custody, while a second is being sought and a th",
-   "feed_category": "military_conflict",
-   "category": "crime_security",
-   "low_value": false,
-   "rule": "content:shooting(2),suspect(2),custody(2)",
-   "scores": {
-    "crime_security": 6,
-    "political": 2,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0
-   }
-  },
-  {
-   "title": "Bali bans Dutch expats whose run club allegedly excluded Indonesians The two men, who are accused of favouring foreigners for their events, ",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "South Africa investigates death of Nigerian who collapsed during arrest Initial reports from a post-mortem said he had \"abrasions on his bac",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "More than 600 US military service members injured since Iran War began in February The latest figure includes casualties from Operation Fury",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "content:military(2),war(2),casualties(2)",
-   "scores": {
-    "military_conflict": 6,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Oil price dives as US and Iran pause attacks The US says attacks on Iran have been halted to give \"talks some space\", raising hopes of a res",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "military_conflict": 2,
-    "political": 1,
-    "economic": 1,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "'Dr Death', Body Worlds creator Gunther von Hagens, dies at 81 The family of the anatomist vowed to carry out his wish for his body to be pr",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "As the US pauses the war with Iran, is Trump really running out of weapons? The US has fired thousands of hard-to-replace missiles during it",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "content:missiles(3),war(2)",
-   "scores": {
-    "military_conflict": 5,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Devastating European wildfires in maps - and how they're being tackled A blaze near Bordeaux has torn through more than 162 sq miles (420 sq",
-   "feed_category": "military_conflict",
+   "title": "A 7.1 quake hits Japan's Kyushu, trapping people in a collapsed shopping mall The quake shook Japan's southern main island of Kyushu late Tu",
+   "feed_category": "disaster_infrastructure",
    "category": "disaster_infrastructure",
    "low_value": false,
-   "rule": "content:wildfires(3),blaze(2)",
+   "rule": "feed:disaster_infrastructure (no lexicon signal)",
    "scores": {
-    "disaster_infrastructure": 5,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "What to expect from Zelensky and Netanyahu's visit to Washington Republican Senator Lindsay Graham's funeral is bringing the two world leade",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "feed:military_conflict (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "A Nigerian soldier is arrested for tipping off criminals - but does it go deeper? A private's detention reignites concerns that troops are c",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "content:troops(3)",
-   "scores": {
-    "military_conflict": 3,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "How 'fire-generated thunderstorms' make wildfires more deadly Certain types of severe wildfire can create pyrocumulonimbus - something that ",
-   "feed_category": "military_conflict",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "content:wildfire(3),wildfires(3),fire(1)",
-   "scores": {
-    "disaster_infrastructure": 7,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Pirlo out of Italy football top job after backlash over Russian betting firm links The uproar throws the Italian Football Federation into fu",
-   "feed_category": "military_conflict",
-   "category": "military_conflict",
-   "low_value": true,
-   "rule": "noise:world cup(3)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "'This is just the start': India's Gen Z protesters force out a minister, but what next? The education minister's resignation, a rare setback",
-   "feed_category": "military_conflict",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:resignation(3),minister(2),government(2)",
-   "scores": {
-    "political": 7,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "What you need to know if you're travelling to France or Spain The BBC’s cost of living correspondent explains how to handle holiday cancella",
-   "feed_category": "military_conflict",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "content:wildfires(3)",
-   "scores": {
-    "disaster_infrastructure": 3,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "CISA Adds Two Known Exploited Vulnerabilities to Catalog CISA has added two new vulnerabilities to its  Known Exploited Vulnerabilities (KEV",
-   "feed_category": "cyber",
-   "category": "cyber",
-   "low_value": false,
-   "rule": "content:vulnerability(3),vulnerabilities(3),exploited(3),kev(3)",
-   "scores": {
-    "cyber": 14,
-    "military_conflict": 1,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Uganda begins emergency food handouts after 19 die from hunger Government move follows months of drought and crop failures in Karamoja, with",
-   "feed_category": "political",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "content:drought(3),relief(2),crisis(1)",
-   "scores": {
-    "disaster_infrastructure": 6,
-    "political": 2,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Pinochet-era soldier jailed for killing folk singer Víctor Jara 53 years ago Nelson Haase Mazzei was sentenced for murdering Jara in 2023, b",
-   "feed_category": "political",
-   "category": "crime_security",
-   "low_value": false,
-   "rule": "content:murder(3),sentenced(3)",
-   "scores": {
-    "crime_security": 6,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0
-   }
-  },
-  {
-   "title": "Shots fired near US consulate in Canada for second time in four months No one was injured and no suspects have been identified in connection",
-   "feed_category": "political",
-   "category": "crime_security",
-   "low_value": false,
-   "rule": "content:shooting(2),police(2)",
-   "scores": {
-    "crime_security": 4,
-    "political": 2,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0
-   }
-  },
-  {
-   "title": "‘We have lost everything’: extreme rainfall across Asia brings flash floods and typhoons From Afghanistan to Taiwan, unprecedented deluge hi",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Asia ‘scraping the bottom of the barrel’ as Red Sea oil blockade worsens energy crisis The Houthi threat to Saudi oil exports comes as Japan",
-   "feed_category": "political",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "content:blockade(3),houthi(2)",
-   "scores": {
-    "military_conflict": 5,
-    "economic": 2,
     "disaster_infrastructure": 1,
     "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
     "cyber": 0,
     "crime_security": 0
    }
   },
   {
-   "title": "Australia news live: New Victorian premier Ben Carroll announces construction royal commission; Angus Taylor donations raised in Icac Follow",
-   "feed_category": "political",
+   "title": "Trump to meet with Zelenskyy, Netanyahu. And, TPS holders could soon face deportation President Trump is set to hold separate meetings with ",
+   "feed_category": "disaster_infrastructure",
    "category": "political",
    "low_value": false,
-   "rule": "content:president(3)",
+   "rule": "content:prime minister(3),president(3),deportation(3),minister(2)",
    "scores": {
-    "political": 3,
+    "political": 12,
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
@@ -1956,326 +2436,26 @@
    }
   },
   {
-   "title": "Hotelier stopped funding NSW Liberal ‘Reformers’ after deciding Morrison and Perrottet had ‘gone woke’, Icac hears Michael O’Hara also tells",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Who is Ben Carroll, the man who has become Victoria’s new premier? Carroll, who was elected to parliament in 2012 and says he has always bee",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:parliament(3),sworn in(3),minister(2)",
-   "scores": {
-    "political": 8,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "It’s the vibe: Australian comedy classic The Castle set to become a stage play Working Dog team behind the 1997 film reuniting to write ‘new",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Ben Carroll becomes new premier of Victoria after Jacinta Allan resigns Allan stepped down from top job before expected spill, saying her de",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:sworn in(3)",
-   "scores": {
-    "political": 3,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "France and Spain race to contain huge wildfires before fresh heatwave begins Coming days are ‘absolutely critical’ for firefighters before t",
-   "feed_category": "political",
+   "title": "AI tokens could become the kilowatt-hour of the AI age AI companies use tokens to track usage and bill customers. Now economists are using t",
+   "feed_category": "disaster_infrastructure",
    "category": "disaster_infrastructure",
    "low_value": false,
-   "rule": "content:wildfires(3),heatwave(2)",
-   "scores": {
-    "disaster_infrastructure": 5,
-    "political": 3,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Off-duty police officer detains man who attacked three women with knives in Paris Two women severely wounded before bystanders intervened in",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (ambiguous crime_security/political)",
-   "scores": {
-    "crime_security": 3,
-    "political": 2,
-    "military_conflict": 2,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0
-   }
-  },
-  {
-   "title": "‘It felt like being in a disaster movie’: uncertainty after evacuation from France’s Gironde wildfire Residents describe their fear as they ",
-   "feed_category": "political",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "content:wildfire(3),evacuation(3),blaze(2)",
-   "scores": {
-    "disaster_infrastructure": 8,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "‘I knew what he had done to those boys’: murderer to stay in jail after journalist’s fight for justice Gibraltar-based Ros Astengo inspired ",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (no lexicon signal)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Mayo beat 75-year-old ‘curse’ to become Gaelic football champions Team to return for euphoric homecoming after winning all-Ireland men’s fin",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": true,
-   "rule": "noise:all-ireland(3),gaelic football(3),final(2)",
-   "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "A dog saved Houssein Hamze from a bomb. When war returned, he stayed to care for Lebanon’s animals In normal times the Mashala shelter found",
-   "feed_category": "political",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "content:war(2),hezbollah(2)",
-   "scores": {
-    "military_conflict": 4,
-    "disaster_infrastructure": 2,
-    "political": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Trump warns of return to ‘strong military action’ if Iran diplomacy fails Washington and Tehran issue conflicting messages over the status o",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (ambiguous political/military_conflict)",
-   "scores": {
-    "political": 3,
-    "military_conflict": 2,
-    "disaster_infrastructure": 1,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "‘You say genocide, I say war’: Boy George releases pro-Israel song, We Will Dance Again Culture Club singer sings ‘I stand with the Jews / I",
-   "feed_category": "political",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "content:military(2),war(2),attack(1)",
-   "scores": {
-    "military_conflict": 5,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Home Office blocking evacuation of dozens of women and children from Gaza Refugee family reunions in limbo, despite Foreign Office saying it",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (ambiguous disaster_infrastructure/military_conflict)",
-   "scores": {
-    "disaster_infrastructure": 3,
-    "military_conflict": 2,
-    "political": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "US pauses Iran attacks after Trump advised to halt bombing Top military officials say campaign has reached its limit of effectiveness and wa",
-   "feed_category": "political",
-   "category": "military_conflict",
-   "low_value": false,
-   "rule": "content:strikes(2),military(2),combat(2),war(2)",
-   "scores": {
-    "military_conflict": 9,
-    "economic": 6,
-    "political": 3,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Monday briefing: ​How the Cockroach ​protests ​have expose​d the ​cracks in ​India’s government In today’s newsletter: Across ​the country, ",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:prime minister(3),minister(2),government(2),protests(2)",
-   "scores": {
-    "political": 9,
-    "disaster_infrastructure": 1,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Train drivers in Great Britain consider strike action over lack of toilets Unions say basic needs still not being met a year after regulator",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (no lexicon signal)",
-   "scores": {
-    "military_conflict": 2,
-    "political": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Burnham to tell schools in England to adapt teaching to local business needs PM wants curriculums for students aged 14 and above to be more ",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (no lexicon signal)",
+   "rule": "feed:disaster_infrastructure (no lexicon signal)",
    "scores": {
     "economic": 1,
-    "disaster_infrastructure": 1,
     "political": 0,
     "military_conflict": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Police make inquiries after Farage reports Polanski post for ‘inciting murder’ Green party leader shared picture of man wearing T-shirt with",
-   "feed_category": "political",
-   "category": "crime_security",
-   "low_value": false,
-   "rule": "content:murder(3),police(2)",
-   "scores": {
-    "crime_security": 5,
-    "political": 3,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0
-   }
-  },
-  {
-   "title": "Andy Burnham appoints Bridget Phillipson as Labour party chair Former education secretary will take up influential role that puts her at van",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "content:election(3),party(2)",
-   "scores": {
-    "political": 5,
-    "military_conflict": 0,
-    "economic": 0,
     "disaster_infrastructure": 0,
     "cyber": 0,
     "crime_security": 0
    }
   },
   {
-   "title": "Andrew and Tristan Tate to remain in jail until next extradition hearing Social media influencers fighting against extradition to UK where t",
-   "feed_category": "political",
-   "category": "crime_security",
+   "title": "Yes, it's possible to save money while paying off credit card debt. Here's how In fact, experts recommend it because it can keep you off the",
+   "feed_category": "disaster_infrastructure",
+   "category": "disaster_infrastructure",
    "low_value": false,
-   "rule": "content:trafficking(3),assault(2)",
-   "scores": {
-    "crime_security": 5,
-    "political": 3,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0
-   }
-  },
-  {
-   "title": "Trump backs Pete Hegseth amid renewed tensions with Iran – as it happened This blog has now closed.     Sign up for the Breaking News US ema",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (ambiguous political/military_conflict)",
-   "scores": {
-    "political": 4,
-    "military_conflict": 4,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Meta disregarded its own research on teen harm, Tennessee lawyers tell jury In opening statements, state argued Meta’s own research showed i",
-   "feed_category": "political",
-   "category": "political",
-   "low_value": false,
-   "rule": "feed:political (no lexicon signal)",
+   "rule": "feed:disaster_infrastructure (no lexicon signal)",
    "scores": {
     "political": 0,
     "military_conflict": 0,
@@ -2286,46 +2466,46 @@
    }
   },
   {
-   "title": "Betye Saar, pioneering figure of Black arts movement, dies at 99 Leading assemblage artist was known for reclaiming Jim Crow-era memorabilia",
-   "feed_category": "political",
-   "category": "political",
+   "title": "Trump shattered ethics norms. Will voters trust Democrats to fix them? Democrats are making the case that now is the time to tackle anti-cor",
+   "feed_category": "disaster_infrastructure",
+   "category": "disaster_infrastructure",
    "low_value": false,
-   "rule": "feed:political (no lexicon signal)",
+   "rule": "feed:disaster_infrastructure (no lexicon signal)",
    "scores": {
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "At least three suspects involved in Bite of Seattle shooting, police say Court filing shows authorities believe there is at least one more s",
-   "feed_category": "political",
-   "category": "crime_security",
-   "low_value": false,
-   "rule": "content:shooting(2),police(2),suspect(2)",
-   "scores": {
-    "crime_security": 6,
     "political": 2,
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
-    "cyber": 0
+    "cyber": 0,
+    "crime_security": 0
    }
   },
   {
-   "title": "Michigan progressive Abdul El-Sayed says ‘ogre’ remark not directed at rival El-Sayed says in TV debate ‘ogre on a pike’ Zoom comment was in",
-   "feed_category": "political",
-   "category": "political",
+   "title": "Netanyahu to meet Trump in a first encounter since the Iran war began The meeting comes as both face pressures at home. Netanyahu is up for ",
+   "feed_category": "disaster_infrastructure",
+   "category": "disaster_infrastructure",
    "low_value": false,
-   "rule": "content:senate(3)",
+   "rule": "feed:disaster_infrastructure (no lexicon signal)",
    "scores": {
-    "political": 3,
-    "military_conflict": 0,
+    "military_conflict": 2,
+    "political": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "With wildfires raging in France and Spain, fire crews race against next heat wave French authorities ordered nearly 4,000 people evacuated T",
+   "feed_category": "disaster_infrastructure",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:wildfire(3),wildfires(3),evacuated(3),heat wave(2)",
+   "scores": {
+    "disaster_infrastructure": 12,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
     "cyber": 0,
     "crime_security": 0
    }
@@ -2346,26 +2526,11 @@
    }
   },
   {
-   "title": "Platner energized Maine's Democrats. Jackson's challenge will be to keep them engaged Democrats have a new candidate for U.S. Senate in Main",
-   "feed_category": "disaster_infrastructure",
-   "category": "political",
+   "title": "Poland: Top court rejects recognizing EU same-sex marriages Poland's constitutional court has overturned plans to recognize same-sex marriag",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
    "low_value": false,
-   "rule": "content:senate(3)",
-   "scores": {
-    "political": 3,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Authors have mixed feelings about the $1.5B Anthropic copyright infringement ruling Some say the $3,100 per title payout is small compensati",
-   "feed_category": "disaster_infrastructure",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "feed:disaster_infrastructure (no lexicon signal)",
+   "rule": "feed:military_conflict (no lexicon signal)",
    "scores": {
     "political": 2,
     "military_conflict": 0,
@@ -2376,107 +2541,152 @@
    }
   },
   {
-   "title": "Inside Joe Manchin's new quest to elect more Independents to Congress The former West Virginia senator was a lifelong Democrat before decidi",
-   "feed_category": "disaster_infrastructure",
+   "title": "Can US 'airstrikes' stop JNIM's insurgency in Mali? US President Donald Trump is considering airstrikes against the Al-Qaeda-linked JNIM in ",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "content:airstrikes(3),insurgency(3),attacks(1)",
+   "scores": {
+    "military_conflict": 7,
+    "political": 3,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Will Pakistan intervene amid Houthi attacks on Saudi ships? Pakistan and Saudi Arabia are strategic defense partners, but experts say there ",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "content:houthi(2),attacks(1)",
+   "scores": {
+    "military_conflict": 3,
+    "political": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Chad's government says it's withdrawing from the ICC Chad's Foreign Ministry has announced plans to leave the International Criminal Court. ",
+   "feed_category": "military_conflict",
    "category": "political",
    "low_value": false,
-   "rule": "content:congress(3)",
+   "rule": "content:government(2),court(2),opposition(2),leader(1)",
    "scores": {
-    "political": 3,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "The 'cockroach' in the machine: How Gen Z is rattling South Asia's elites South Asia's leaders have long boasted about their demographic div",
-   "feed_category": "disaster_infrastructure",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "feed:disaster_infrastructure (no lexicon signal)",
-   "scores": {
-    "political": 1,
-    "military_conflict": 0,
-    "economic": 0,
-    "disaster_infrastructure": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "3 dead in mass shooting in Seattle. And, U.S. and Iran pause fighting A mass shooting at a Seattle festival has left three people dead. And,",
-   "feed_category": "disaster_infrastructure",
-   "category": "crime_security",
-   "low_value": false,
-   "rule": "content:mass shooting(3),shooting(2)",
-   "scores": {
-    "crime_security": 5,
-    "political": 2,
-    "military_conflict": 0,
+    "political": 7,
+    "military_conflict": 2,
+    "crime_security": 1,
     "economic": 0,
     "disaster_infrastructure": 0,
     "cyber": 0
    }
   },
   {
-   "title": "France continues to fight devastating wildfires, while progress is made in Spain In southern France, a wildfire in the region of Gironde is ",
-   "feed_category": "disaster_infrastructure",
-   "category": "disaster_infrastructure",
+   "title": "Siemens Mendix Runtime View CSAF   \n Summary \n  Mendix documentation for access rules does not adequately describe the special behavior of t",
+   "feed_category": "cyber",
+   "category": "cyber",
    "low_value": false,
-   "rule": "content:wildfire(3),wildfires(3),heat wave(2)",
+   "rule": "feed:cyber (no lexicon signal)",
    "scores": {
-    "disaster_infrastructure": 8,
     "political": 0,
     "military_conflict": 0,
     "economic": 0,
+    "disaster_infrastructure": 0,
     "cyber": 0,
     "crime_security": 0
    }
   },
   {
-   "title": "Baltimore will turn 911 into more than just an emergency number Baltimore is rethinking what it means to call 911, and who responds. Callers",
-   "feed_category": "disaster_infrastructure",
-   "category": "disaster_infrastructure",
+   "title": "MikroTik RouterOS and Cloud Hosted Router View CSAF   \n Summary \n  Successful exploitation of this vulnerability could allow attackers to ra",
+   "feed_category": "cyber",
+   "category": "cyber",
    "low_value": false,
-   "rule": "feed:disaster_infrastructure (no lexicon signal)",
+   "rule": "content:vulnerability(3),vulnerabilities(3)",
    "scores": {
-    "crime_security": 2,
-    "disaster_infrastructure": 1,
+    "cyber": 6,
     "political": 0,
     "military_conflict": 0,
     "economic": 0,
-    "cyber": 0
+    "disaster_infrastructure": 0,
+    "crime_security": 0
    }
   },
   {
-   "title": "In Memphis, an 'anti-crime' task force quietly turned into an ICE crackdown The influx of federal agents into the city last fall led to wide",
-   "feed_category": "disaster_infrastructure",
-   "category": "disaster_infrastructure",
+   "title": "CI Fortify – Advice for isolating vital systems CI Fortify – Advice for isolating vital systems   CISA and the Australian Signals Directorat",
+   "feed_category": "cyber",
+   "category": "cyber",
    "low_value": false,
-   "rule": "feed:disaster_infrastructure (ambiguous political/crime_security)",
+   "rule": "feed:cyber (ambiguous cyber/disaster_infrastructure)",
    "scores": {
-    "political": 3,
-    "crime_security": 2,
+    "cyber": 3,
+    "disaster_infrastructure": 2,
+    "crime_security": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0
+   }
+  },
+  {
+   "title": "Siemens SIMATIC S7-PLCSIM Advanced View CSAF   \n Summary \n  SIMATIC S7-PLCSIM Advanced contains a vulnerability that could allow an attacker",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:vulnerability(3),vulnerabilities(3)",
+   "scores": {
+    "cyber": 6,
+    "political": 0,
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
-    "cyber": 0
+    "crime_security": 0
    }
   },
   {
-   "title": "Kalshi attacks a Wisconsin law banning election bets as 'voter suppression' The spat between the leading prediction market company and a key",
-   "feed_category": "disaster_infrastructure",
-   "category": "political",
+   "title": "Siemens Desigo CC View CSAF   \n Summary \n  OpenSSL has published a stack based buffer overflow vulnerability that allows a remote attacker t",
+   "feed_category": "cyber",
+   "category": "cyber",
    "low_value": false,
-   "rule": "content:election(3)",
+   "rule": "content:vulnerability(3)",
    "scores": {
-    "political": 3,
-    "military_conflict": 1,
-    "economic": 1,
+    "cyber": 3,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
     "disaster_infrastructure": 0,
-    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "ABB KNX Update Tool View CSAF   \n Summary \n  ABB has been contacted by a researcher who identified a vulnerability in one of its products. A",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:vulnerability(3),exploited(3)",
+   "scores": {
+    "cyber": 6,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "igloohome Smart Lock Mobile Application View CSAF   \n Summary \n  Successful exploitation of this vulnerability could allow an unauthorized a",
+   "feed_category": "cyber",
+   "category": "cyber",
+   "low_value": false,
+   "rule": "content:vulnerability(3),vulnerabilities(3)",
+   "scores": {
+    "cyber": 6,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
     "crime_security": 0
    }
   },
@@ -2491,6 +2701,51 @@
     "military_conflict": 0,
     "economic": 0,
     "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "NIST unveils new AI evaluation platform The AI Technology Evaluation will provide exclusive data to grade models’ performance in select area",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "More than 30 companies form open-source AI alliance The Open Secure AI Alliance hopes to shore up industry support for continued access to a",
+   "feed_category": "military_conflict",
+   "category": "military_conflict",
+   "low_value": false,
+   "rule": "feed:military_conflict (no lexicon signal)",
+   "scores": {
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "disaster_infrastructure": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Green earthquake (Magnitude 5.6M, Depth:10km) in Japan 28/07/2026 08:08 UTC, 40 thousand in MMI VI. On 7/28/2026 8:08:35 AM, an earthquake o",
+   "feed_category": "disaster_infrastructure",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "content:earthquake(3),magnitude(3)",
+   "scores": {
+    "disaster_infrastructure": 6,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
     "cyber": 0,
     "crime_security": 0
    }
@@ -2511,52 +2766,7 @@
    }
   },
   {
-   "title": "Green flood alert in China On 26/07/2026, a flood started in China, lasting until 28/07/2026 (last update). The flood caused 10 deaths and 0",
-   "feed_category": "disaster_infrastructure",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "content:flood(3),displaced(2),alert(1)",
-   "scores": {
-    "disaster_infrastructure": 6,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
    "title": "Green forest fire notification in Zambia On 26/07/2026, a forest fire started in Zambia,  until 26/07/2026. Green forest fire notification i",
-   "feed_category": "disaster_infrastructure",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "feed:disaster_infrastructure (no lexicon signal)",
-   "scores": {
-    "disaster_infrastructure": 1,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Green flood alert in Spain On 25/07/2026, a flood started in Spain, lasting until 27/07/2026 (last update). The flood caused 0 deaths and 0 ",
-   "feed_category": "disaster_infrastructure",
-   "category": "disaster_infrastructure",
-   "low_value": false,
-   "rule": "content:flood(3),displaced(2),alert(1)",
-   "scores": {
-    "disaster_infrastructure": 6,
-    "political": 0,
-    "military_conflict": 0,
-    "economic": 0,
-    "cyber": 0,
-    "crime_security": 0
-   }
-  },
-  {
-   "title": "Green forest fire notification in United States On 25/07/2026, a forest fire started in United States,  until 27/07/2026. Green forest fire ",
    "feed_category": "disaster_infrastructure",
    "category": "disaster_infrastructure",
    "low_value": false,
@@ -2586,7 +2796,22 @@
    }
   },
   {
-   "title": "Green forest fire notification in Canada On 18/07/2026, a forest fire started in Canada,  until 24/07/2026. Green forest fire notification i",
+   "title": "Green forest fire notification in Zimbabwe On 22/07/2026, a forest fire started in Zimbabwe,  until 25/07/2026. Green forest fire notificati",
+   "feed_category": "disaster_infrastructure",
+   "category": "disaster_infrastructure",
+   "low_value": false,
+   "rule": "feed:disaster_infrastructure (no lexicon signal)",
+   "scores": {
+    "disaster_infrastructure": 1,
+    "political": 0,
+    "military_conflict": 0,
+    "economic": 0,
+    "cyber": 0,
+    "crime_security": 0
+   }
+  },
+  {
+   "title": "Green forest fire notification in South Africa On 18/07/2026, a forest fire started in South Africa,  until 24/07/2026.",
    "feed_category": "disaster_infrastructure",
    "category": "disaster_infrastructure",
    "low_value": false,
