@@ -1,12 +1,12 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 281508Z JUL 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 281538Z JUL 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 141 issued across 5 forecaster arms · 118 open (1 past deadline, unresolved)
+Window: all-time · 141 issued across 5 forecaster arms · 116 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -15,7 +15,7 @@ Window: all-time · 141 issued across 5 forecaster arms · 118 open (1 past dead
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
 | `kfk/halflife` | 10 | 10 | 0 | — | — | not computed | — | — | — |
-| `lmstudio/auto` | 60 | 40 | 13 | 4 | 9 | 0.221 | 30.8% | 0.213 | -0.038 |
+| `lmstudio/auto` | 60 | 38 | 15 | 4 | 11 | 0.231 | 26.7% | 0.196 | -0.179 |
 | `manual/fable` | 45 | 45 | 0 | — | — | not computed | — | — | — |
 | `manual/opus-5` | 20 | 20 | 0 | — | — | not computed | — | — | — |
 | `operator/human` | 6 | 3 | 0 | — | — | not computed | — | — | — |
@@ -25,25 +25,19 @@ Window: all-time · 141 issued across 5 forecaster arms · 118 open (1 past dead
 
 *Under 30 resolved a Brier score is noise, not a record: `lmstudio/auto`.*
 
-### CALIBRATION — `lmstudio/auto` (13 resolved)
+### CALIBRATION — `lmstudio/auto` (15 resolved)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 0-20% | 1 | 0% |
 | 20-40% | 7 | 29% |
-| 40-60% | 3 | 33% |
-| 60-80% | 2 | 50% |
-
-## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
-
-- **KKR-20260723-01** (65%, due 2026-07-27) Between 2026-07-24 and 2026-07-27, Brent crude oil will close above $100 per barrel for three consecutive trading days. — *resolves on:* The closing price of Brent crude oil on three consecutive weekdays between 2026-07-24 and 2026-07-27, as reported by Bloomberg or Reuters, will exceed $100 per barrel.
+| 40-60% | 4 | 25% |
+| 60-80% | 3 | 33% |
 
 ## OPEN PROJECTIONS
 
 | id | arm | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|---|
-| KKR-20260723-01 | `lmstudio/auto` | 2026-07-23 | 2026-07-27 | 65% | economics | Between 2026-07-24 and 2026-07-27, Brent crude oil will close above $100 per barrel for three consecutive trading days. |
-| KKR-20260720-02 | `lmstudio/auto` | 2026-07-20 | 2026-07-28 | 40% | economics/markets | The Nasdaq Composite Index will close below 18,000 on 2026-07-28, based on official market data from Yahoo Finance or Bloomberg. |
 | KKR-20260724-02 | `lmstudio/auto` | 2026-07-24 | 2026-07-28 | 25% | military_conflict | The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. |
 | KKR-20260720-04 | `lmstudio/auto` | 2026-07-20 | 2026-07-29 | 60% | economics/markets | The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. |
 | KKR-20260727-11 | `lmstudio/auto` | 2026-07-27 | 2026-07-30 | 35% | economics/markets | New York City rental listings on StreetEasy and Zillow will show a 20% or greater drop in available units for rent in Manhattan and Brooklyn between 2026-07-27 and 2026-07-30. |
@@ -163,6 +157,8 @@ Window: all-time · 141 issued across 5 forecaster arms · 118 open (1 past dead
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
+- **✗ MISS** KKR-20260720-02 [`lmstudio/auto`] (40%, due 2026-07-28, resolved 2026-07-28): The Nasdaq Composite Index will close below 18,000 on 2026-07-28, based on official market data from Yahoo Finance or Bloomberg.
+- **✗ MISS** KKR-20260723-01 [`lmstudio/auto`] (65%, due 2026-07-27, resolved 2026-07-28): Between 2026-07-24 and 2026-07-27, Brent crude oil will close above $100 per barrel for three consecutive trading days. — *2026-07-28 shows Brent 86.81; never approached the threshold.*
 - **✓ HIT** KKR-20260720-08 [`lmstudio/auto`] (45%, due 2026-07-23, resolved 2026-07-24): The Hugging Face breach involving an autonomous AI agent will be confirmed by a public statement from Hugging Face or a major cybersecurity organization within 72 hours of 2026-07-20. — *[claude] Hugging Face published its own security incident disclosure confirming an intrusion driven end to end by an autonomous AI agent system. BleepingComputer covered it 2026-07-20 under the headline that Hugging Face warns an autonomous AI agent hacked its network; The Hacker News covered it the same day; Axios also reported the company statement 2026-07-20.*
 - **✓ HIT** KKR-20260720-21 [`lmstudio/auto`] (65%, due 2026-07-23, resolved 2026-07-24): The U.S. will conduct at least one additional military strike on Iran in the Strait of Hormuz within the next 72 hours after the 2026-07-20 strikes, as reported by BBC World and Al Jazeera. — *[claude] Al Jazeera reported US strikes on Iran on 2026-07-21 (11th consecutive night), 2026-07-22 (12th night) and 2026-07-23 (13th night), each citing CENTCOM statements that the strikes were to further degrade Iran ability to threaten commercial shipping in the Strait of Hormuz. Targets included Jask and Sirik near the Strait and other southern coastal sites.*
 - **✗ MISS** KKR-20260720-25 [`lmstudio/auto`] (70%, due 2026-07-23, resolved 2026-07-24): An AI-powered malware campaign targeting cloud-based AI platforms will be confirmed by cybersecurity researchers within 48 hours, as reported by BleepingComputer and The Hacker News. — *[claude] A qualifying campaign does exist: the JADEPUFFER AI-agent-driven operator deploying ENCFORGE, a Go ransomware built to encrypt model weights, vector indexes and training datasets, documented by Sysdig against a Langflow server. The Hacker News published on it 2026-07-21; BleepingComputer published on it 2026-07-20 at approximately 21:08 UTC, roughly three hours before the window opened.*
