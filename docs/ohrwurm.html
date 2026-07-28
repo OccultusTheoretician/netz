@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ohrwurm — Phrase Propagation · The Prescient Desk</title>
+<style>
+:root{
+  --ink:#10131a; --ink2:#161a23; --ink3:#1d222d;
+  --bone:#e6e2d8; --fog:#7c8697; --fog2:#59616f;
+  --brass:#b08949; --brass-dim:#6d552e; --void:#2b3242; --rule:#242b38;
+  --cross:#7fa88c; --confined:#a8735f; --warn:#8c5a4a;
+  --serif:"Iowan Old Style",Charter,Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--ink);color:var(--bone);font-family:var(--serif);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px 64px}
+
+header.mast{border-bottom:1px solid var(--rule);padding:26px 0 18px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--fog2)}
+h1{font-weight:700;letter-spacing:.10em;font-size:clamp(21px,4.4vw,32px);margin:.35em 0 .15em;text-transform:uppercase;font-variant:small-caps}
+.sub{font-size:14.5px;color:var(--fog);max-width:70ch;margin:0}
+
+.caveat{margin:18px 0 0;border:1px solid var(--void);border-left:3px solid var(--warn);background:var(--ink2);padding:12px 14px}
+.caveat b{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:5px}
+.caveat p{margin:0;font-size:14px;color:var(--fog)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:18px 0 0}
+.stats div{background:var(--ink2);padding:9px 11px}
+.stats .k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--fog2)}
+.stats .v{font-family:var(--mono);font-size:17px;color:var(--bone);margin-top:3px}
+.stats .v small{font-size:11px;color:var(--fog2)}
+
+.seg{display:flex;flex-wrap:wrap;border:1px solid var(--rule);margin:20px 0 14px}
+.seg button{background:var(--ink2);border:0;color:var(--fog);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:10px 15px;cursor:pointer;flex:1 1 auto}
+.seg button[aria-pressed=true]{background:var(--brass-dim);color:var(--bone)}
+
+.note{font-size:14px;color:var(--fog);border-left:2px solid var(--void);padding-left:12px;margin:0 0 18px}
+
+.ph{border:1px solid var(--rule);background:var(--ink2);margin-bottom:1px;padding:14px 16px}
+.ph .p{font-family:var(--mono);font-size:15px;color:var(--bone);word-break:break-word}
+.ph .p::before{content:"[";color:var(--fog2)}
+.ph .p::after{content:"]";color:var(--fog2)}
+.ph .meta{font-family:var(--mono);font-size:11px;color:var(--fog2);margin-top:5px;letter-spacing:.03em}
+
+/* signature: the propagation track */
+.track{position:relative;height:44px;margin:14px 0 6px;border-bottom:1px solid var(--void)}
+.track .axis{position:absolute;left:0;right:0;top:26px;height:1px;background:var(--void)}
+.track .seg2{position:absolute;top:25px;height:3px;background:var(--brass-dim)}
+.track .segx{position:absolute;top:25px;height:3px;background:var(--cross)}
+.track i{position:absolute;top:20px;width:11px;height:11px;margin-left:-5px;border-radius:50%;background:var(--brass);border:2px solid var(--ink2)}
+.track i.x{background:var(--cross)}
+.track i.c{background:var(--confined)}
+.track span{position:absolute;top:0;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--fog2);transform:translateX(-50%);white-space:nowrap}
+.track span.r{transform:translateX(-100%)}
+.track em{position:absolute;top:34px;font-family:var(--mono);font-size:9.5px;color:var(--fog2);font-style:normal;transform:translateX(-50%)}
+
+.bal{display:flex;gap:2px;margin-top:9px;height:7px}
+.bal b{display:block;height:7px}
+.balk{font-family:var(--mono);font-size:10px;color:var(--fog2);margin-top:5px;letter-spacing:.05em}
+
+.sil{border:1px solid var(--rule);background:var(--ink2);padding:11px 14px;margin-bottom:1px;font-size:14.5px}
+.sil .z{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+.sil .m{color:var(--fog);font-family:var(--mono);font-size:12px;margin-top:4px}
+
+.seal{font-family:var(--mono);font-size:12px;border-bottom:1px solid var(--rule);padding:9px 0;color:var(--bone)}
+.seal b{color:var(--brass);font-weight:400}
+
+.empty{padding:48px 20px;text-align:center;color:var(--fog)}
+.empty code{font-family:var(--mono);font-size:12.5px;color:var(--brass);display:block;margin-top:10px}
+footer{border-top:1px solid var(--rule);margin-top:26px;padding-top:16px;font-family:var(--mono);font-size:11px;color:var(--fog2);letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <div class="eyebrow">The Prescient Desk · Kaos Kontrol</div>
+  <h1>Ohrwurm — Phrase Propagation</h1>
+  <p class="sub">Which wording appeared first, on whose channel, and how long before it reached
+  the other side of the divide. The War Desk grades whether an event happened. This grades how
+  the words about it moved.</p>
+
+  <div class="caveat">
+    <b>Standing limit on every claim below</b>
+    <p id="cav">Loading.</p>
+  </div>
+
+  <div class="stats" id="stats"></div>
+</header>
+
+<div class="seg" role="group" aria-label="View">
+  <button id="t-cross" aria-pressed="true">Crossed</button>
+  <button id="t-conf" aria-pressed="false">Confined</button>
+  <button id="t-sil" aria-pressed="false">Silence</button>
+  <button id="t-seal" aria-pressed="false">Seals</button>
+</div>
+
+<div id="note" class="note"></div>
+<div id="body"></div>
+
+<footer id="foot">UNCLASSIFIED // OPEN SOURCES</footer>
+</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const SIDE_HUE={RU:"#a8735f",UA:"#7fa88c",AXIS:"#b08949",WEST:"#6f8bab",IL:"#8c7fa8",PS:"#a89a5f"};
+const hue=s=>SIDE_HUE[s]||"#59616f";
+let D=null, VIEW="cross";
+
+function track(r){
+  // one phrase, one time axis: origin -> second channel -> side crossing -> last seen
+  const span=Math.max(r.span_hours||0,0.01);
+  const pct=h=>Math.min(100,Math.max(0,(h/span)*100));
+  const s2=r.hours_to_second_channel, xs=r.hours_to_cross_side;
+  let h=`<div class="track"><div class="axis"></div>`;
+  if(s2!=null) h+=`<div class="seg2" style="left:0;width:${pct(s2)}%"></div>`;
+  if(xs!=null) h+=`<div class="segx" style="left:${pct(s2!=null?s2:0)}%;width:${Math.max(0,pct(xs)-pct(s2!=null?s2:0))}%"></div>`;
+  h+=`<i style="left:0"></i><span style="left:0;transform:none">origin · ${esc(r.origin.side)}</span>`;
+  h+=`<em style="left:0;transform:none">${esc(r.origin.channel)}</em>`;
+  if(s2!=null&&s2>0) h+=`<i style="left:${pct(s2)}%"></i><em style="left:${pct(s2)}%">+${s2}h</em>`;
+  if(xs!=null){
+    h+=`<i class="x" style="left:${pct(xs)}%"></i>`;
+    h+=`<span style="left:${pct(xs)}%">→ ${esc(r.crossed_to.side)}</span>`;
+    h+=`<em style="left:${pct(xs)}%">+${xs}h · ${esc(r.crossed_to.channel)}</em>`;
+  }
+  h+=`<i class="${xs!=null?'x':'c'}" style="left:100%"></i><span class="r" style="left:100%">${span}h</span>`;
+  return h+`</div>`;
+}
+
+function balance(r){
+  const tot=Object.values(r.side_balance).reduce((a,b)=>a+b,0)||1;
+  const bars=Object.entries(r.side_balance).filter(([s])=>s!=="?")
+    .map(([s,n])=>`<b style="width:${(n/tot*100).toFixed(1)}%;background:${hue(s)}" title="${esc(s)} ${n}"></b>`).join("");
+  const key=Object.entries(r.side_balance).map(([s,n])=>`${esc(s)} ${n}`).join(" · ");
+  return `<div class="bal">${bars}</div><div class="balk">${key}</div>`;
+}
+
+function phrase(r){
+  return `<div class="ph">
+    <div class="p">${esc(r.phrase)}</div>
+    <div class="meta">${esc(r.zone)} · ${r.reports} reports · ${r.channels} channels · ${r.sides} sides · first seen ${esc(r.origin.at.slice(0,16).replace("T"," "))}Z</div>
+    ${track(r)}
+    ${balance(r)}
+  </div>`;
+}
+
+function draw(){
+  const live=D.phrases.filter(p=>!p.template);
+  const crossed=live.filter(p=>!p.confined_to_origin_side);
+  const confined=live.filter(p=>p.confined_to_origin_side);
+  const B=$("#body"), N=$("#note");
+
+  if(VIEW==="cross"){
+    N.innerHTML="A phrase that crosses a side boundary is either an event both sides can see, or an injection that took. This instrument does not distinguish those two — it dates the crossing and prints the balance. The reader judges which it was.";
+    B.innerHTML=crossed.length?crossed.map(phrase).join(""):`<div class="empty">No phrase above the floor crossed a side boundary this window.</div>`;
+  } else if(VIEW==="conf"){
+    N.innerHTML="Volume without crossing is a side talking to itself. That is the shape of a line being distributed rather than an event being observed — and it is the material the War Desk correctly rejects as echo when grading whether something happened.";
+    B.innerHTML=confined.length?confined.map(phrase).join(""):`<div class="empty">Nothing confined above the floor.</div>`;
+  } else if(VIEW==="sil"){
+    N.innerHTML="A channel assigned to a zone that does not speak in it is data. Absence of collection and absence of event render identically unless this is printed.";
+    const s=D.silence||{};
+    if(s._unavailable){
+      B.innerHTML=`<div class="empty">Not measured — ${esc(s._unavailable[0])}.<br><br>A zone with no assigned channels and a zone whose channels went quiet are different facts, and this instrument will not guess which it is looking at.</div>`;
+    } else if(!Object.keys(s).length){
+      B.innerHTML=`<div class="empty">Every channel assigned to a zone spoke in it this window.</div>`;
+    } else {
+      B.innerHTML=Object.entries(s).map(([z,miss])=>{
+        const spoke=(D.zone_channel_counts||{})[z]||0;
+        return `<div class="sil"><div class="z">${esc(z)}</div>
+          <div class="m">${spoke} of ${spoke+miss.length} assigned channels spoke · <b style="color:var(--warn)">${miss.length} silent</b></div>
+          <div class="m">${miss.map(esc).join(" · ")}</div></div>`;
+      }).join("");
+    }
+  } else {
+    N.innerHTML="Each carries the SHA-256 of its own statement. Committing one under KNP dates a first-appearance call before the phrase becomes salient — the retro-prescient shape applied to language rather than to events.";
+    B.innerHTML=(D.seal_ready||[]).map(s=>
+      `<div class="seal"><b>${esc(s.sha256.slice(0,24))}…</b> &nbsp; ${esc(s.phrase)}</div>`).join("")
+      || `<div class="empty">No origin claims above the floor.</div>`;
+  }
+}
+
+function boot(d){
+  D=d;
+  $("#cav").textContent=d.caveat||"corpus-local origin claim";
+  const live=d.phrases.filter(p=>!p.template);
+  const crossed=live.filter(p=>!p.confined_to_origin_side).length;
+  const cells=[
+    ["phrases above floor",d.phrases.length,""],
+    ["crossed a side",crossed,""],
+    ["confined to one side",live.length-crossed,""],
+    ["suppressed as template",d.phrases.length-live.length,""],
+    ["gram range",`${d.floors.gram_range[0]}–${d.floors.gram_range[1]}`,"tokens"],
+    ["floor",d.floors.min_reports,`rpt / ${d.floors.min_channels} chan`],
+  ];
+  $("#stats").innerHTML=cells.map(([k,v,s])=>
+    `<div><div class="k">${esc(k)}</div><div class="v">${esc(v)} <small>${esc(s)}</small></div></div>`).join("");
+  $("#foot").textContent=
+    `UNCLASSIFIED // OPEN SOURCES · schema ${d.schema} · pull ${d.source_pull} · generated ${String(d.generated).slice(0,16).replace("T"," ")}Z · side map ${d.side_map_source}`
+    + ((d.unmapped_sides||[]).length?` · UNMAPPED: ${d.unmapped_sides.join(", ")}`:"");
+  const set=v=>{VIEW=v;["cross","conf","sil","seal"].forEach(x=>
+    $("#t-"+x).setAttribute("aria-pressed",String(x===v)));draw();};
+  $("#t-cross").onclick=()=>set("cross"); $("#t-conf").onclick=()=>set("conf");
+  $("#t-sil").onclick=()=>set("sil");     $("#t-seal").onclick=()=>set("seal");
+  draw();
+}
+
+fetch("ohrwurm_latest.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(boot)
+.catch(e=>{
+  $("#body").innerHTML=`<div class="empty">Could not read <b>ohrwurm_latest.json</b> (${esc(e.message)}).
+    Run the instrument, which writes the served copy itself.<code>python ohrwurm.py --latest</code></div>`;
+  $("#cav").textContent="Record not loaded.";
+});
+</script>
+</body>
+</html>

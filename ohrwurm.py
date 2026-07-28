@@ -476,7 +476,7 @@ def main():
     FORECASTS.mkdir(exist_ok=True)
     jf = FORECASTS / f"ohrwurm_{out_stamp}.json"
     mf = FORECASTS / f"OHRWURM_{out_stamp}.md"
-    jf.write_text(json.dumps({
+    payload = {
         "schema": "ohrwurm/v1",
         "generated": datetime.now(timezone.utc).isoformat(),
         "source_pull": src.name,
@@ -489,10 +489,19 @@ def main():
         "zone_channel_counts": zone_counts,
         "silence": silence,
         "seal_ready": seal_records(rows),
-    }, ensure_ascii=False, indent=1), encoding="utf-8")
+    }
+    blob = json.dumps(payload, ensure_ascii=False, indent=1)
+    jf.write_text(blob, encoding="utf-8")
     mf.write_text(face, encoding="utf-8")
     print(f"  → {jf}")
     print(f"  → {mf}")
+
+    # The served copy is a build product, never a manual copy. Same rule the
+    # ledger mirrors learned the hard way: three drifted in one night before
+    # render_ledger was made to publish them itself.
+    if DOCS.exists():
+        (DOCS / "ohrwurm_latest.json").write_text(blob, encoding="utf-8")
+        print(f"  → {DOCS / 'ohrwurm_latest.json'}  (served copy)")
     return 0
 
 
