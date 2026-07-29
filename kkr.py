@@ -305,11 +305,11 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     if _void_n:
         out.append(f"*{_void_n} projection(s) voided — terminated as unadjudicable, "
                    f"never edited; each is itemised with its reason in "
-                   f"[LEDGER.md](LEDGER.md).*\n")
+                   f"[the ledger](ledger.html).*\n")
     out.append("### STANDING BY ARM\n")
     out.extend(_arm_table(arms))
     out.append("")
-    out.append("\nFull ledger: LEDGER.md / ledger.html\n")
+    out.append("\nFull ledger: ledger.html\n")
     out.append("---\n**UNCLASSIFIED // OPEN SOURCES** · *the gate is mechanical; the ledger "
                "is permanent; the system gets scored, not the operator.*")
 
