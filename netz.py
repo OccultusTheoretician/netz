@@ -764,6 +764,8 @@ def _render_md_body(md: str) -> str:
             continue
         if line.startswith("# "):
             close_lists(); out.append(f"<h1>{md_inline(line[2:])}</h1>")
+        elif line.startswith("### "):
+            close_lists(); out.append(f"<h3>{md_inline(line[4:])}</h3>")
         elif line.startswith("## "):
             close_lists(); out.append(f"<h2>{md_inline(line[3:])}</h2>")
         elif line.startswith("> "):
