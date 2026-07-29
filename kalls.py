@@ -13,15 +13,24 @@ KNP 2.01, 3.01, and 4.01. They are not stylistic choices — an implementation t
 renames them stops interoperating, which is the one thing the protocol exists to
 prevent.
 
-CANONICAL PREIMAGE (KNP 2.01)
-    id | timestamp | statement | resolution_basis | salt
+CANONICAL PREIMAGES (rev. 3: per-record construction, KNP 2.01/2.01b)
+    knp-1 (records sealed before rev. 3; a record without a `construction`
+           field is knp-1 — the 2026-07 clutch verifies unchanged)
+        id | timestamp | statement | resolution_basis | salt
+    knp-2 (everything sealed from rev. 3 on — binds the scored inputs)
+        id | timestamp | statement | resolution_basis | probability | deadline | salt
 joined with the ASCII pipe, no padding, UTF-8, SHA-256, lowercase hex.
 Pipes inside statement or resolution_basis are escaped to \\u007C before joining
-and unescaped on reveal (KNP 2.01).
+and unescaped on reveal (KNP 2.01). probability renders as the integer percent —
+decimal ASCII, no sign, no point, no percent sign (KNP 2.01b). deadline is the
+stored YYYY-MM-DD, verbatim. The other preimage fields are constrained grammars
+that cannot contain the separator.
 
-NOT BOUND BY THE HASH: probability, deadline, status, domain. These are published
-hashlog metadata and are tamper-evident only through the external anchor (KNP 4.03),
-not through the commitment. See the note at `beacon`.
+NOT BOUND BY THE HASH under knp-1: probability, deadline — the two inputs to
+every Brier score; anchored only through KNP 4.03 history, which the rev. 3
+finding prints on the log's face. status and domain are unbound under both
+constructions and are frozen-at-sealing per KNP 4.02 as amended (a restated
+probability is the cheap cheat; the verifier now compares it across snapshots).
 
 SUBCOMMANDS
     selftest  reproduce a known published commitment — run this before trusting anything
@@ -53,6 +62,17 @@ PIPE_ESC = "\\u007C"
 CHAIN_LABEL = "KRAEHES-KALLS-CHAIN-v1"
 STATUSES = ("SEALED", "REVEALED", "RESOLVED_HIT", "RESOLVED_MISS", "VOID")
 CONSTRUCTION: dict | None = None          # set by solve, honoured by every hash op
+
+# KNP 2.01/2.01b — the versioned constructions (rev. 3). A record names its
+# construction; absence means knp-1 so the pre-rev.3 clutch verifies untouched.
+CONSTRUCTIONS: dict[str, dict] = {
+    "knp-1": {"order": ["id", "timestamp", "statement", "resolution_basis", "salt"],
+              "separator": SEP, "effective": "2026-07-25"},
+    "knp-2": {"order": ["id", "timestamp", "statement", "resolution_basis",
+                        "probability", "deadline", "salt"],
+              "separator": SEP, "effective": "2026-07-29"},
+}
+SEAL_CONSTRUCTION = "knp-2"               # KNP 2.01b: new seals bind probability+deadline
 VAULT = Path("vault/kalls_vault.json")
 HASHLOG = Path("docs/kalls_hashlog.json")
 TABLE = Path("docs/kraehes_kalls.md")
@@ -70,8 +90,13 @@ def unesc(s: str) -> str:
     return s.replace(PIPE_ESC, SEP)
 
 
+def canon_prob(v) -> str:
+    """KNP 2.01b: the integer percent — decimal ASCII, no sign, no point, no %."""
+    return str(int(round(float(v))))
+
+
 def preimage(e: dict, sep: str = SEP) -> str:
-    if CONSTRUCTION:
+    if CONSTRUCTION:                      # forensic override from `solve` — recovery only
         c = CONSTRUCTION
         parts = []
         for f in c["order"]:
@@ -85,8 +110,22 @@ def preimage(e: dict, sep: str = SEP) -> str:
                 v = esc(v)
             parts.append(v)
         return c["separator"].join(parts)
-    return sep.join([e["id"], e["timestamp"], esc(e["statement"]),
-                     esc(e["resolution_basis"]), e["salt"]])
+    ver = e.get("construction", "knp-1")  # KNP 2.01b: absent = knp-1, always
+    c = CONSTRUCTIONS.get(ver)
+    if c is None:
+        die(f"{e.get('id', '?')} names unknown construction {ver!r} — refusing to "
+            f"hash under a guess; the published commitment governs (KNP 4.01b)")
+    parts = []
+    for f in c["order"]:
+        if f == "probability":
+            parts.append(canon_prob(e[f]))
+        elif f in ("statement", "resolution_basis"):
+            parts.append(esc(e[f]))
+        else:
+            parts.append(str(e[f]))
+    # sep stays honoured for knp-1 so `selftest`/`solve` can still hunt legacy
+    # separators; knp-2 is pinned to its own declared separator by definition.
+    return (sep if ver == "knp-1" else c["separator"]).join(parts)
 
 
 def commit_of(e: dict, sep: str = SEP) -> str:
@@ -108,12 +147,13 @@ def load_construction(vault: str) -> None:
         CONSTRUCTION = json.loads(p.read_text(encoding="utf-8"))
 
 
-def construction_line() -> str:
+def construction_line(ver: str = "knp-1") -> str:
     if CONSTRUCTION:
         return (f"SHA-256( {CONSTRUCTION['separator'].join(CONSTRUCTION['order'])} )"
                 if CONSTRUCTION["separator"].strip()
                 else f"SHA-256( {' + '.join(CONSTRUCTION['order'])}, no separator )")
-    return "SHA-256( id | timestamp | statement | resolution_basis | salt )"
+    c = CONSTRUCTIONS.get(ver, CONSTRUCTIONS["knp-1"])
+    return f"SHA-256( {' | '.join(c['order'])} )"
 
 
 def die(msg: str, code: int = 2):
@@ -125,17 +165,36 @@ def load_json(p: Path, default):
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else default
 
 
+def _con_block(ver: str) -> dict:
+    c = CONSTRUCTIONS[ver]
+    return {"version": ver, "preimage_order": list(c["order"]), "separator": c["separator"],
+            "hash": "SHA-256", "encoding": "UTF-8", "pipe_escape": PIPE_ESC,
+            "probability_render": "integer percent, decimal ASCII (KNP 2.01b)"
+            if "probability" in c["order"] else None,
+            "effective": c["effective"]}
+
+
 def stamp_log(log: dict) -> dict:
     log["protocol"] = "KNP-26"
     if CONSTRUCTION:
         log["construction"] = {
             "preimage_order": CONSTRUCTION["order"], "separator": CONSTRUCTION["separator"],
             "hash": "SHA-256", "encoding": "UTF-8", "pipe_escape": PIPE_ESC}
-    else:
-        log.setdefault("construction", {
-            "preimage_order": ["id", "timestamp", "statement", "resolution_basis", "salt"],
-            "separator": SEP, "hash": "SHA-256", "encoding": "UTF-8",
-            "pipe_escape": PIPE_ESC})
+        return log
+    # KNP 4.01c: the singular block states the log's EARLIEST construction so a
+    # rev.2 verifier stays correct on every legacy record (conservative failure:
+    # it false-alarms on a knp-2 reveal, it never false-passes). The history
+    # carries every construction; a record's own `construction` field selects.
+    log.setdefault("construction", {
+        "preimage_order": ["id", "timestamp", "statement", "resolution_basis", "salt"],
+        "separator": SEP, "hash": "SHA-256", "encoding": "UTF-8",
+        "pipe_escape": PIPE_ESC})
+    log["construction"].setdefault("version", "knp-1")
+    hist = {b["version"]: b for b in log.get("construction_history", [])
+            if isinstance(b, dict) and b.get("version")}
+    for ver in CONSTRUCTIONS:
+        hist.setdefault(ver, {k: v for k, v in _con_block(ver).items() if v is not None})
+    log["construction_history"] = [hist[v] for v in sorted(hist)]
     return log
 
 
@@ -220,6 +279,15 @@ def cmd_seal(a) -> int:
     drafts = [drafts] if isinstance(drafts, dict) else drafts
     vault = [norm(e) for e in load_vault(Path(a.vault))]
     log = load_log(Path(a.hashlog))
+    # KNP 4.02 standing guard (rev. 3): never extend a log whose past does not
+    # verify. Every existing vault record is recomputed under its own declared
+    # construction before a single byte is written; one failure aborts the seal.
+    dirty = [e["id"] for e in vault
+             if e.get("commitment") and commit_of(e, SEP) != e["commitment"]]
+    if dirty:
+        die(f"{len(dirty)} existing record(s) fail verification under their own "
+            f"construction: {', '.join(dirty)} — sealing refused. Run `verify`; "
+            f"print the finding; never repair silently (KNP 4.02).")
     known = ({e["id"] for e in vault} | {r["id"] for r in log["records"]}
              | {r["id"] for r in parse_table(Path(a.table))} | set(log.get("anchored_over", [])))
 
@@ -248,10 +316,12 @@ def cmd_seal(a) -> int:
         e = {"id": kid, "timestamp": now, "statement": d["statement"].strip(),
              "resolution_basis": d["resolution_basis"].strip(),
              "probability": int(round(p)), "deadline": d["deadline"],
-             "salt": secrets.token_hex(16)}                      # KNP 2.01: 128-bit minimum
+             "salt": secrets.token_hex(16),                      # KNP 2.01: 128-bit minimum
+             "construction": SEAL_CONSTRUCTION}                  # KNP 2.01b: binds prob+deadline
         e["commitment"] = commit_of(e, SEP)
         rec = {"id": kid, "timestamp": now, "commitment": e["commitment"],
-               "probability": e["probability"], "deadline": e["deadline"], "status": "SEALED"}
+               "probability": e["probability"], "deadline": e["deadline"],
+               "construction": SEAL_CONSTRUCTION, "status": "SEALED"}
         for opt in ("domain", "level", "architecture", "reveal_date"):
             if d.get(opt) is not None:
                 rec[opt] = e[opt] = d[opt]
@@ -293,6 +363,7 @@ def cmd_verify(a) -> int:
         if e.get("commitment") and commit_of(e, a.sep) != e["commitment"]:
             print(f"COMMITMENT MISMATCH  {e['id']} — vault content does not reproduce its "
                   f"own hash", file=sys.stderr); bad += 1
+    by_vid = {e["id"]: e for e in vault}
     for r in log["records"]:
         if r["id"] in table and table[r["id"]]["commitment"] != r["commitment"]:
             print(f"LOG/TABLE DIVERGE    {r['id']}", file=sys.stderr); bad += 1
@@ -302,6 +373,20 @@ def cmd_verify(a) -> int:
         if r["id"] not in vids:
             print(f"UNOPENABLE           {r['id']} — published, no vault record; "
                   f"permanently dark (KNP 3.04)", file=sys.stderr); bad += 1
+        v = by_vid.get(r["id"])
+        if v is not None:                    # KNP 4.02 (rev. 3): frozen at sealing
+            if "probability" in r and "probability" in v and \
+                    canon_prob(r["probability"]) != canon_prob(v["probability"]):
+                print(f"METADATA DIVERGE     {r['id']} — probability differs between "
+                      f"vault and hashlog; a restated probability is the cheap cheat "
+                      f"(KNP 4.02)", file=sys.stderr); bad += 1
+            if "deadline" in r and "deadline" in v and \
+                    str(r["deadline"]) != str(v["deadline"]):
+                print(f"METADATA DIVERGE     {r['id']} — deadline differs between "
+                      f"vault and hashlog (KNP 4.02)", file=sys.stderr); bad += 1
+            if r.get("construction", "knp-1") != v.get("construction", "knp-1"):
+                print(f"CONSTRUCTION SPLIT   {r['id']} — vault and hashlog name "
+                      f"different constructions (KNP 2.01b)", file=sys.stderr); bad += 1
     head = log.get("head")  # chain seed, not the KNP 4.03 disclosure block
     if head:
         for r in log["records"]:
@@ -332,13 +417,15 @@ def cmd_reveal(a) -> int:
     c = e.get("commitment") or commit_of(e, a.sep)
     if commit_of(e, a.sep) != c:
         die(f"{a.id} fails its own check — refusing to publish an unverifiable reveal")
+    ver = e.get("construction", "knp-1")
     block = (f"## REVEAL — {e['id']}\n\n"
              f"**Sealed:** {e['timestamp']}  ·  **Probability:** {e['probability']}%  ·  "
              f"**Deadline:** {e['deadline']}\n\n"
              f"**Statement:** {unesc(e['statement'])}\n\n"
              f"**Resolution basis:** {unesc(e['resolution_basis'])}\n\n"
              f"**Salt:** `{e['salt']}`\n\n**Commitment:** `{c}`\n\n"
-             f"Verify per KNP 5.02: `{construction_line()}`\n")
+             f"**Construction:** `{ver}`\n\n"
+             f"Verify per KNP 5.02: `{construction_line(ver)}`\n")
     if a.out:
         Path(a.out).write_text(block, encoding="utf-8")
         print(f"reveal written: {a.out}")
@@ -360,6 +447,9 @@ def cmd_check(a) -> int:
     g = lambda lbl: (re.search(rf"\*\*{lbl}:?\*\*\s*`?([^\n`]+)`?", txt) or [None, None])[1]
     kid = re.search(r"REVEAL\s*[—\-]\s*([A-Za-z0-9\-]*KK-\d{8}-\d+)", txt)
     ts = re.search(r"\*\*Sealed:\*\*\s*([0-9TZ:\-]+)", txt)
+    pr = re.search(r"\*\*Probability:\*\*\s*(\d+)\s*%", txt)
+    dl = re.search(r"\*\*Deadline:\*\*\s*([0-9\-]+)", txt)
+    cn = re.search(r"\*\*Construction:\*\*\s*`?(knp-\d+)`?", txt)
     e = {"id": kid.group(1) if kid else None,
          "timestamp": ts.group(1).strip() if ts else None,
          "statement": (g("Statement") or "").strip(),
@@ -367,9 +457,18 @@ def cmd_check(a) -> int:
          "salt": (g("Salt") or "").strip()}
     if not all(e.values()):
         die("reveal block incomplete — cannot verify")
+    log_recs = load_log(Path(a.hashlog))["records"]
+    hrec = next((r for r in log_recs if r["id"] == e["id"]), None)
+    ver = (cn.group(1) if cn else None) or (hrec or {}).get("construction", "knp-1")
+    if ver != "knp-1":
+        if not (pr and dl):
+            die(f"a {ver} reveal must carry Probability and Deadline — both are "
+                f"preimage fields (KNP 2.01b)")
+        e["probability"] = int(pr.group(1))
+        e["deadline"] = dl.group(1)
+        e["construction"] = ver
     computed = commit_of(e, a.sep)
-    published = next((r["commitment"] for r in load_log(Path(a.hashlog))["records"]
-                      if r["id"] == e["id"]), None)
+    published = hrec["commitment"] if hrec else None
     if published is None:
         published = next((r["commitment"] for r in parse_table(Path(a.table))
                           if r["id"] == e["id"]), None)
@@ -408,11 +507,20 @@ def cmd_beacon(a) -> int:
     recs = log["records"]
     resolved = sum(1 for r in recs if str(r.get("status", "")).startswith("RESOLVED"))
     revealed = sum(1 for r in recs if r.get("status") == "REVEALED") + resolved
+    dig = hashlib.sha256(raw).hexdigest()
     print(f"KRÄHE'S KALLS · {len(recs)} sealed · {revealed} revealed · {resolved} resolved")
-    print(f"kalls_hashlog.json sha256: {hashlib.sha256(raw).hexdigest()}")
+    print(f"kalls_hashlog.json sha256: {dig}")
     print("\nKNP 4.03b: post this to a surface you do not control. syndicate.py already does\n"
           "exactly this for ledger.json — extend it rather than writing a second poster.\n"
           "Until the count is externally anchored, the count is not committed.")
+    print("\nKNP 4.03c (rev. 3) — external timestamp token over this exact file. A social\n"
+          "post is deletable by its author; an RFC 3161 token cannot be un-issued. Run,\n"
+          "one line at a time, then commit the .tsr beside the hashlog and declare its\n"
+          "covered sha256 in the anchor object:")
+    print(f"openssl ts -query -data {a.hashlog} -sha256 -cert -out {a.hashlog}.tsq")
+    print(f"curl.exe -s -H \"Content-Type: application/timestamp-query\" "
+          f"--data-binary @{a.hashlog}.tsq https://freetsa.org/tsr -o {a.hashlog}.tsr")
+    print(f"openssl ts -reply -in {a.hashlog}.tsr -text")
     return 0
 
 

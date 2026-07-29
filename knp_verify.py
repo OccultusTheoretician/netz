@@ -30,6 +30,19 @@ from anything hardcoded here. A committer using a legacy construction is
 verified against the recipe they published; the published commitment governs
 (KNP 4.01b).
 
+Revision 3 additions. A hashlog may publish a `construction_history` (KNP
+4.01c): every construction ever used, keyed by version, with each record
+naming its own via a `construction` field (absent = the log's earliest). A
+reveal is recomputed under the construction its record names. `probability`
+inside a preimage renders canonically as the integer percent (KNP 2.01b).
+Across two snapshots, a change to a sealed record's `probability` or
+`deadline` is a MUST failure identical in class to an altered commitment
+(KNP 4.02) — restating a probability downward on a row heading toward a miss
+is the cheap cheat, and this is where a stranger catches it. The external
+anchor is tested structurally (KNP 4.03b): an object that resolves, not a
+word that appears. The standing line is recomputed from the records and any
+published line that disagrees fails (KNP 4.04).
+
 Standard library only. No network required except to fetch an https hashlog.
 """
 
@@ -77,29 +90,63 @@ def check_container(h):
     return True
 
 
+def _validate_con(c, where):
+    for k in REQUIRED_CONSTRUCTION:
+        if k not in c:
+            rec("MUST", "KNP 4.01b", f"{where} missing '{k}'")
+    order = c.get("preimage_order")
+    if not isinstance(order, list) or not order:
+        rec("MUST", "KNP 4.01b", f"{where}: preimage_order is not a non-empty list")
+    if str(c.get("hash", "")).upper().replace("-", "") != "SHA256":
+        rec("MUST", "KNP 2.02", f"{where}: hash is {c.get('hash')!r}; KNP-26 commits "
+                                f"with SHA-256")
+    if str(c.get("encoding", "")).upper().replace("-", "") != "UTF8":
+        rec("MUST", "KNP 2.01", f"{where}: encoding is {c.get('encoding')!r}; the "
+                                f"preimage is UTF-8")
+    if "pipe_escape" not in c and c.get("separator") == "|":
+        rec("SHOULD", "KNP 2.01", f"{where}: no pipe_escape declared while the separator "
+                                  f"is a pipe; a statement containing '|' cannot be "
+                                  f"unambiguously recomputed")
+
+
 def check_construction(h):
+    """Returns (singular_construction, history_map). history_map is
+    version -> construction and always contains at least the singular block."""
     c = h.get("construction")
     if not isinstance(c, dict):
         rec("MUST", "KNP 4.01b",
             "no construction block. A stranger holding a reveal and a bare "
             "commitment cannot recompute without the recipe; revision 2 requires "
             "it be published.")
-        return None
-    for k in REQUIRED_CONSTRUCTION:
-        if k not in c:
-            rec("MUST", "KNP 4.01b", f"construction block missing '{k}'")
-    order = c.get("preimage_order")
-    if not isinstance(order, list) or not order:
-        rec("MUST", "KNP 4.01b", "preimage_order is not a non-empty list")
-    if str(c.get("hash", "")).upper().replace("-", "") != "SHA256":
-        rec("MUST", "KNP 2.02", f"hash is {c.get('hash')!r}; KNP-26 commits with SHA-256")
-    if str(c.get("encoding", "")).upper().replace("-", "") != "UTF8":
-        rec("MUST", "KNP 2.01", f"encoding is {c.get('encoding')!r}; the preimage is UTF-8")
-    if "pipe_escape" not in c and c.get("separator") == "|":
-        rec("SHOULD", "KNP 2.01", "no pipe_escape declared while the separator is a "
-                                  "pipe; a statement containing '|' cannot be "
-                                  "unambiguously recomputed")
-    return c
+        return None, {}
+    _validate_con(c, "construction block")
+    hist = {}
+    hraw = h.get("construction_history")
+    if hraw is not None:
+        if not isinstance(hraw, list) or not all(isinstance(b, dict) for b in hraw):
+            rec("MUST", "KNP 4.01c", "construction_history is not a list of objects")
+            hraw = []
+        for b in hraw:
+            ver = b.get("version")
+            if not ver:
+                rec("MUST", "KNP 4.01c", "construction_history entry lacks a version")
+                continue
+            _validate_con(b, f"construction_history[{ver}]")
+            hist[ver] = b
+    default_ver = c.get("version") or (sorted(hist)[0] if hist else "knp-1")
+    hist.setdefault(default_ver, c)
+    # Every construction a record names must be published in the history.
+    named = {str(r.get("construction")) for r in h.get("records", [])
+             if isinstance(r, dict) and r.get("construction")}
+    for ver in sorted(named - set(hist)):
+        rec("MUST", "KNP 4.01c",
+            f"records name construction {ver!r} but the hashlog publishes no such "
+            f"entry in construction_history — those records cannot be recomputed "
+            f"by a stranger")
+    if len({v for v in named} | {default_ver}) > 1 and hraw is None:
+        rec("MUST", "KNP 4.01c", "records are sealed under more than one construction "
+                                 "but no construction_history is published")
+    return c, hist
 
 
 def check_records(h):
@@ -157,24 +204,80 @@ def check_disclosure(h):
 
 
 def check_anchor(h, src):
-    blob = json.dumps(h).lower()
-    declared = any(w in blob for w in ("anchor", "timestamp_authority", "beacon",
-                                       "opentimestamps", "git"))
+    """KNP 4.03b (rev. 3): the anchor is an object that resolves, not a word that
+    appears. A hashlog stating 'we anchor by vibes' no longer passes."""
+    a = h.get("anchor")
     vcs = str(src).startswith("https://raw.githubusercontent.com/")
-    if declared:
-        rec("INFO", "KNP 4.03", "hashlog declares an external anchor on its face")
-    elif vcs:
-        rec("INFO", "KNP 4.03",
-            "served from a public version-control host — the commit history is the "
-            "append-only mechanism, but it is not declared in the hashlog itself. "
-            "A reader who receives this file by any other route cannot tell what "
-            "anchors it.")
-    else:
-        rec("MUST", "KNP 4.03",
-            "no external anchor is declared and the source is not a public "
-            "version-control host. Without an append-only mechanism the committer "
-            "does not solely control, the count is not committed and cherry-picking "
-            "is undetectable.")
+    if not isinstance(a, dict):
+        msg = ("no structured anchor object is published. Without an append-only "
+               "mechanism the committer does not solely control, the count is not "
+               "committed and cherry-picking is undetectable.")
+        if vcs:
+            msg += (" (Served from a public version-control host, which may in fact "
+                    "anchor it — but a reader receiving this file by any other route "
+                    "cannot tell, and prose is not a declaration.)")
+        rec("MUST", "KNP 4.03b", msg)
+        return
+    mech = str(a.get("mechanism", "")).lower()
+    if not mech:
+        rec("MUST", "KNP 4.03b", "anchor object lacks a 'mechanism'")
+        return
+    resolvable = False
+    if "version-control" in mech or "git" in mech:
+        repo, hist = a.get("repository"), a.get("history")
+        if not (isinstance(repo, str) and repo.startswith("https://")):
+            rec("MUST", "KNP 4.03b", "version-control anchor lacks a resolvable "
+                                     "'repository' URL")
+        elif not (isinstance(hist, str) and hist.startswith("https://")):
+            rec("MUST", "KNP 4.03b", "version-control anchor lacks a resolvable "
+                                     "'history' URL — the history IS the anchor")
+        else:
+            resolvable = True
+            rec("INFO", "KNP 4.03b", f"anchor resolves to version-control history: "
+                                     f"{hist}")
+    ts = a.get("rfc3161") or a.get("timestamp_token")
+    if isinstance(ts, dict):
+        tok, dig = ts.get("token"), str(ts.get("sha256", ""))
+        if not tok or not HEX64.match(dig):
+            rec("MUST", "KNP 4.03c", "timestamp anchor declared without a token "
+                                     "location and a 64-hex covered digest")
+        else:
+            resolvable = True
+            rec("INFO", "KNP 4.03c",
+                f"RFC 3161 token declared over sha256 {dig[:16]}…; a reader verifies "
+                f"with: openssl ts -verify -digest {dig} -sha256 -in {tok} "
+                f"-CAfile <tsa-ca.pem>")
+    elif "rfc3161" in mech or "timestamp" in mech:
+        rec("MUST", "KNP 4.03c", "mechanism names a timestamping authority but no "
+                                 "token object is published")
+    if not resolvable and mech:
+        rec("MUST", "KNP 4.03b",
+            f"anchor mechanism {mech!r} publishes no pointer this verifier "
+            f"recognizes as resolvable (version-control repository+history URLs, "
+            f"or an rfc3161 token+digest object)")
+    if "rfc3161" not in json.dumps(a).lower() and "timestamp_token" not in a:
+        rec("SHOULD", "KNP 4.03c",
+            "no external timestamp token is declared. Version-control history "
+            "anchors the sequence; a timestamp token from an authority the "
+            "committer cannot amend anchors existence. Hashlogs first published "
+            "after revision 3 must carry one.")
+
+
+def check_standing(h):
+    """KNP 4.04 (rev. 3): the standing line is a derivation, not a self-report."""
+    recs = [r for r in h.get("records", []) if isinstance(r, dict)]
+    resolved = sum(1 for r in recs if str(r.get("status", "")).startswith("RESOLVED"))
+    revealed = sum(1 for r in recs if r.get("status") == "REVEALED") + resolved
+    line = f"{len(recs)} sealed · {revealed} revealed · {resolved} resolved"
+    rec("INFO", "KNP 4.04", f"standing line, recomputed from the records: {line}")
+    asserted = h.get("standing")
+    if asserted is None:
+        return
+    nums = [int(n) for n in re.findall(r"\d+", str(asserted))][:3]
+    if nums != [len(recs), revealed, resolved]:
+        rec("MUST", "KNP 4.04",
+            f"published standing line {asserted!r} disagrees with the recomputation "
+            f"({line}) — the visible denominator is being asserted, not derived")
 
 
 def check_append_only(h, prev):
@@ -193,6 +296,14 @@ def check_append_only(h, prev):
                                     f"for the entire set")
         if o.get("timestamp") != n.get("timestamp"):
             rec("MUST", "KNP 4.02", f"{rid}: timestamp altered")
+        for f in ("probability", "deadline"):
+            if f in o and str(o.get(f)) != str(n.get(f)):
+                rec("MUST", "KNP 4.02",
+                    f"{rid}: {f} altered after sealing ({o.get(f)!r} -> {n.get(f)!r}). "
+                    f"Deletion was never the efficient cheat — restating the {f} is, "
+                    f"and it is a failure identical in class to an altered commitment.")
+        if o.get("construction") != n.get("construction"):
+            rec("MUST", "KNP 2.01b", f"{rid}: construction reassigned after sealing")
     rec("INFO", "KNP 4.02", f"append-only holds across the two snapshots "
                             f"({len(old)} → {len(new)} records)")
 
@@ -208,14 +319,17 @@ def build_preimage(item, con):
         v = item.get(f)
         if v is None:
             raise KeyError(f)
-        v = str(v)
+        if f == "probability":
+            v = str(int(round(float(v))))     # KNP 2.01b: canonical integer percent
+        else:
+            v = str(v)
         if esc and sep in v and f != "salt":
             v = v.replace(sep, esc)
         parts.append(v)
     return sep.join(parts)
 
 
-def check_reveals(h, con, reveals):
+def check_reveals(h, con, hist, reveals):
     by_id = {r.get("id"): r for r in h["records"] if isinstance(r, dict)}
     matched = 0
     for item in reveals:
@@ -227,11 +341,17 @@ def check_reveals(h, con, reveals):
         if len(salt) < 32:
             rec("MUST", "KNP 2.04", f"{rid}: salt is {len(salt)} hex chars; the minimum "
                                     f"is 128 bits (32 hex)")
+        # KNP 2.01b/4.01c: recompute under the construction the sealed record names.
+        ver = by_id[rid].get("construction") or item.get("construction")
+        rcon = hist.get(ver, con) if ver else con
+        if ver and ver not in hist:
+            rec("MUST", "KNP 4.01c", f"{rid}: names construction {ver!r} which the "
+                                     f"hashlog does not publish"); continue
         try:
-            pre = build_preimage(item, con)
+            pre = build_preimage(item, rcon)
         except KeyError as e:
             rec("MUST", "KNP 2.01", f"{rid}: reveal missing preimage field {e}"); continue
-        got = hashlib.sha256(pre.encode(con.get("encoding", "utf-8"))).hexdigest()
+        got = hashlib.sha256(pre.encode(rcon.get("encoding", "utf-8"))).hexdigest()
         want = by_id[rid].get("commitment")
         if got == want:
             matched += 1
@@ -268,19 +388,58 @@ DEFAULT_CON = {"preimage_order": ["id", "timestamp", "statement",
                "separator": "|", "hash": "SHA-256", "encoding": "UTF-8",
                "pipe_escape": "\\u007C"}
 
+V2_CON = {"version": "knp-2",
+          "preimage_order": ["id", "timestamp", "statement", "resolution_basis",
+                             "probability", "deadline", "salt"],
+          "separator": "|", "hash": "SHA-256", "encoding": "UTF-8",
+          "pipe_escape": "\\u007C"}
+
+V2_VECTORS = [
+    {"name": "knp-2 baseline (probability and deadline bound)",
+     "item": {"id": "KK-20260729-91", "timestamp": "2026-07-29T00:00:00Z",
+              "statement": "A test statement.", "resolution_basis": "A test basis.",
+              "probability": 35, "deadline": "2026-12-31",
+              "salt": "00112233445566778899aabbccddeeff"}},
+    {"name": "knp-2 canonical probability (35.0 and '35' hash identically to 35)",
+     "item": {"id": "KK-20260729-92", "timestamp": "2026-07-29T00:00:00Z",
+              "statement": "Canonicalization test.", "resolution_basis": "KNP 2.01b.",
+              "probability": "35.0", "deadline": "2026-12-31",
+              "salt": "ffeeddccbbaa99887766554433221100"}},
+    {"name": "knp-2 pipe in statement (escaped)",
+     "item": {"id": "KK-20260729-93", "timestamp": "2026-07-29T00:00:00Z",
+              "statement": "Either A | or B will occur.",
+              "resolution_basis": "Reported by two wire services.",
+              "probability": 5, "deadline": "2030-07-25",
+              "salt": "0123456789abcdef0123456789abcdef"}},
+]
+
 
 def selftest():
     print("KNP-26 INTEROPERABILITY VECTORS")
     print("An independent implementation is conformant when it produces these exact")
     print("digests from these exact inputs (KNP 2.03: byte-for-byte identity is the")
     print("interoperability contract).\n")
+    print("construction knp-1 (KNP 2.01)\n")
     for v in VECTORS:
         pre = build_preimage(v["item"], DEFAULT_CON)
         dig = hashlib.sha256(pre.encode("utf-8")).hexdigest()
         print(f"  {v['name']}")
         print(f"    preimage   {pre}")
         print(f"    sha256     {dig}\n")
-    return 0
+    print("construction knp-2 (KNP 2.01b — probability and deadline bound)\n")
+    for v in V2_VECTORS:
+        pre = build_preimage(v["item"], V2_CON)
+        dig = hashlib.sha256(pre.encode("utf-8")).hexdigest()
+        print(f"  {v['name']}")
+        print(f"    preimage   {pre}")
+        print(f"    sha256     {dig}\n")
+    a = hashlib.sha256(build_preimage(V2_VECTORS[0]["item"], V2_CON)
+                       .encode("utf-8")).hexdigest()
+    b = hashlib.sha256(build_preimage(dict(V2_VECTORS[0]["item"], probability="35"),
+                                      V2_CON).encode("utf-8")).hexdigest()
+    print(f"  canonicalization invariant: int 35 == str '35' under knp-2: "
+          f"{'PASS' if a == b else 'FAIL'}\n")
+    return 0 if a == b else 1
 
 
 # ----------------------------------------------------------------------
@@ -295,7 +454,7 @@ def report(as_json, src, nrec):
             "should_departures": [{"cite": c, "message": m} for _, c, m in shoulds],
             "notes": [{"cite": c, "message": m} for l, c, m in findings if l == "INFO"],
             "verified_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "verifier": "knp_verify/1.0"}, indent=2))
+            "verifier": "knp_verify/1.1"}, indent=2))
         return 1 if musts else 0
 
     print(f"\nKNP-26 CONFORMANCE — {src}")
@@ -345,10 +504,11 @@ def main():
 
     if not check_container(h):
         return report(a.json, a.hashlog, 0)
-    con = check_construction(h)
+    con, hist = check_construction(h)
     recs = check_records(h)
     check_disclosure(h)
     check_anchor(h, a.hashlog)
+    check_standing(h)
     if a.previous:
         try:
             check_append_only(h, load(a.previous))
@@ -359,7 +519,7 @@ def main():
             reveals = json.loads(Path(a.reveal).read_text(encoding="utf-8"))
             if isinstance(reveals, dict):
                 reveals = [reveals]
-            check_reveals(h, con or DEFAULT_CON, reveals)
+            check_reveals(h, con or DEFAULT_CON, hist, reveals)
         except Exception as e:
             rec("MUST", "KNM 3.04", f"reveal file unreadable: {e}")
     else:
