@@ -203,6 +203,94 @@ BODIES = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# CADENCE. Keyed by abbrev. Two claims per entry and they have DIFFERENT
+# reliability, which is why they are separate fields:
+#
+#   pattern   the structural cadence - "8 scheduled meetings per year", "three
+#             year code cycle". Stable over decades. Asserted with confidence.
+#   dates     whether the body PUBLISHES its schedule in advance. This is what
+#             determines whether a sealed forecast can key off a known date, and
+#             it is the field that matters to a ledger.
+#
+# A SPECIFIC next-meeting date is NOT recorded here. Those move, and a stale
+# date in a reference file is worse than an absent one. The probe looks them up.
+#
+# An absent entry means unknown, not continuous. 115 bodies, and the gaps are
+# informative: a body with no discoverable cadence is a body whose decisions
+# cannot be anticipated, which is itself a finding about that sector.
+CADENCE = {
+    # fixed calendar, published ahead - the forecastable tier
+    "FRB":    ("8 scheduled FOMC meetings per year", True, "high"),
+    "ECB":    ("monetary policy decisions every six weeks", True, "high"),
+    "BoE":    ("8 scheduled MPC meetings per year", True, "high"),
+    "FERC":   ("monthly open meeting", True, "high"),
+    "ACIP":   ("about three regular meetings per year", True, "high"),
+    "NAIC":   ("three national meetings per year, spring summer fall", True, "high"),
+    "IETF":   ("three plenary meetings per year", True, "high"),
+    "ICANN":  ("three public meetings per year", True, "high"),
+    "3GPP":   ("quarterly plenary meetings", True, "high"),
+    "BCBS":   ("meets about quarterly", True, "medium"),
+    "FSB":    ("plenary about twice yearly", True, "medium"),
+    "IAEA":   ("General Conference annually in September", True, "high"),
+    "Codex":  ("Commission session annually", True, "high"),
+    "IOSCO":  ("annual meeting", True, "medium"),
+    "FASB":   ("board meetings roughly weekly, continuous agenda", True, "high"),
+    "GASB":   ("board meetings roughly monthly, continuous agenda", True, "high"),
+    # fixed revision cycles - the most forecastable of all, years ahead
+    "ICC":    ("three year code development cycle", True, "high"),
+    "NFPA":   ("three to five year cycle per document, NEC every three years", True, "high"),
+    "ASHRAE": ("three year cycle on 90.1 and 62.1", True, "high"),
+    "WADA":   ("Prohibited List annually, published about September, effective 1 January", True, "high"),
+    "ICAO":   ("Assembly every three years", True, "high"),
+    "ITU":    ("World Radiocommunication Conference every three to four years", True, "high"),
+    "WTO":    ("Ministerial Conference about every two years", True, "medium"),
+    "IPCC":   ("assessment cycle of roughly six to eight years", True, "medium"),
+    "ISO":    ("continuous, with systematic review of each standard every five years", True, "medium"),
+    "IEC":    ("continuous, with systematic review cycles", True, "medium"),
+    "CMS":    ("annual payment rule cycle, proposed spring and final summer", True, "high"),
+    "IMO":    ("MSC and MEPC each meet roughly annually", True, "medium"),
+    # continuous - no meeting to key off, but a dated publication stream
+    "CISA":   ("continuous additions to the KEV catalog and advisories", False, "high"),
+    "NIST":   ("continuous publication, draft and final comment windows", False, "medium"),
+    "SEC":    ("continuous rulemaking, agenda in the semiannual Unified Agenda", True, "medium"),
+    "FDA":    ("continuous, advisory committee meetings noticed in advance", True, "high"),
+    "EPA":    ("continuous rulemaking, Unified Agenda", True, "medium"),
+    "OSHA":   ("continuous rulemaking, Unified Agenda", True, "medium"),
+    "FCC":    ("monthly open meeting, agenda published three weeks ahead", True, "high"),
+    "PCAOB":  ("open meetings as needed, standard-setting agenda published", True, "medium"),
+    "FINRA":  ("continuous rule filings with the SEC", False, "medium"),
+    "NERC":   ("continuous standards development, ballot windows published", True, "medium"),
+    "NRC":    ("continuous licensing and rulemaking", False, "low"),
+    "ECHA":   ("continuous, with REACH deadline milestones", True, "medium"),
+    "EMA":    ("CHMP meets monthly", True, "high"),
+    "FSIS":   ("continuous rulemaking and directives", False, "low"),
+    "IASB":   ("board meetings roughly monthly, work plan published", True, "high"),
+    "IAASB":  ("meets about four times a year", True, "medium"),
+    "IESBA":  ("meets about four times a year", True, "medium"),
+    "IPSASB": ("meets about four times a year", True, "medium"),
+    "GAO":    ("Yellow Book revised irregularly, roughly every three to five years", False, "low"),
+    "AICPA":  ("continuous, ASB meets several times a year", True, "medium"),
+    "MSRB":   ("board meets quarterly", True, "medium"),
+    "CFTC":   ("continuous rulemaking, open meetings noticed", True, "medium"),
+    "ESMA":   ("continuous, annual work programme published", True, "medium"),
+    "FCA":    ("continuous, policy statements and annual business plan", True, "medium"),
+    "USITC":  ("continuous, statutory investigation deadlines", True, "high"),
+    "WCO":    ("Harmonized System revised every five years", True, "high"),
+    "IAIS":   ("annual general meeting, continuous standard setting", True, "medium"),
+    "NHTSA":  ("continuous rulemaking, Unified Agenda", True, "medium"),
+    "SAE":    ("continuous, five year document review", False, "low"),
+    "ASTM":   ("continuous, committee ballot cycles", False, "low"),
+    "W3C":    ("continuous, annual TPAC", True, "medium"),
+    "IEEE-SA": ("continuous, standards board meets several times a year", True, "medium"),
+    "CAS":    ("continuous, awards published on decision", False, "medium"),
+    "IOC":    ("Session annually, Executive Board several times a year", True, "medium"),
+    "WOAH":   ("General Session annually in May", True, "high"),
+    "ILO":    ("International Labour Conference annually in June", True, "high"),
+    "WHO":    ("World Health Assembly annually in May", True, "high"),
+    "COPUOS": ("Scientific and Technical Subcommittee annually in February", True, "medium"),
+}
+
 def main():
     ap = argparse.ArgumentParser(description="build the standard-setting compendium")
     ap.add_argument("--dry-run", action="store_true")
@@ -224,6 +312,10 @@ def main():
             "reachable": None,
             "feed": None,
             "last_probed": None,
+            "cadence": (CADENCE.get(abbr, (None, None, None))[0]
+                        or "unknown - no cadence established for this body"),
+            "calendar_published": CADENCE.get(abbr, (None, None, None))[1],
+            "forecast_utility": CADENCE.get(abbr, (None, None, None))[2],
             "note": ("Name, sector and jurisdiction asserted with confidence. "
                      "Domain is an UNVERIFIED guess until a probe returns a "
                      "response. An unverified entry is a lead, not a fact."),
@@ -233,10 +325,11 @@ def main():
     juris = Counter(e["jurisdiction"] for e in entries)
 
     doc = {
-        "schema": "spion-compendium/0.1",
+        "schema": "spion-compendium/0.2",
         "generated": now,
         "count": len(entries),
         "verified_count": 0,
+        "schema_note": "v0.2 adds cadence. See digest_covers on the hash.",
         "disclosure": {
             "what_this_is": ("An index of bodies that set standards, publish "
                              "rules or hold decision calendars, across every "
@@ -272,8 +365,19 @@ def main():
         "bodies": entries,
     }
 
+    # The digest covers the BODIES ARRAY ONLY. v0.1 hashed the whole document
+    # including its own `generated` timestamp, so two runs of identical content
+    # produced different digests and the sidecar could answer "is this the same
+    # file" but never "did the content change". This one answers the second.
+    content = json.dumps(doc["bodies"], indent=2, ensure_ascii=False,
+                         sort_keys=True)
+    digest = hashlib.sha256(content.encode("utf-8")).hexdigest()
+    doc["content_sha256"] = digest
+    doc["digest_covers"] = ("the bodies array only, sorted by key, excluding "
+                            "the generated timestamp - so two versions are "
+                            "comparable on content rather than on when they "
+                            "were built")
     blob = json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
-    digest = hashlib.sha256(blob.encode("utf-8")).hexdigest()
 
     print("")
     print("STANDARD-SETTING BODY COMPENDIUM")
