@@ -68,14 +68,18 @@ def rec(level, cite, msg):
     findings.append((level, cite, msg))
 
 
+_RAW = {}          # src -> exact bytes as loaded, for digest checks (KNP 4.03c)
+
+
 def load(src):
     if str(src).startswith(("http://", "https://")):
-        req = Request(str(src), headers={"User-Agent": "knp_verify/1.0"})
+        req = Request(str(src), headers={"User-Agent": "knp_verify/1.1"})
         with urlopen(req, timeout=30) as r:
-            raw = r.read().decode("utf-8")
+            b = r.read()
     else:
-        raw = Path(src).read_text(encoding="utf-8")
-    return json.loads(raw)
+        b = Path(src).read_bytes()
+    _RAW[str(src)] = b
+    return json.loads(b.decode("utf-8"))
 
 
 # ----------------------------------------------------------------------
@@ -203,7 +207,7 @@ def check_disclosure(h):
             f"therefore not bound by the hash; the hashlog should say so on its face")
 
 
-def check_anchor(h, src):
+def check_anchor(h, src):  # noqa: C901
     """KNP 4.03b (rev. 3): the anchor is an object that resolves, not a word that
     appears. A hashlog stating 'we anchor by vibes' no longer passes."""
     a = h.get("anchor")
@@ -236,7 +240,36 @@ def check_anchor(h, src):
             rec("INFO", "KNP 4.03b", f"anchor resolves to version-control history: "
                                      f"{hist}")
     ts = a.get("rfc3161") or a.get("timestamp_token")
-    if isinstance(ts, dict):
+    if isinstance(ts, dict) and ts.get("index"):
+        idx_ref = str(ts["index"])
+        try:
+            if str(src).startswith(("http://", "https://")):
+                from urllib.parse import urljoin
+                idx = load(urljoin(str(src), idx_ref.split("/")[-1]))
+            else:
+                idx = load(Path(src).parent / Path(idx_ref).name)
+            toks = idx.get("tokens") or []
+            last = toks[-1]
+            dig = str(last.get("covers_sha256", ""))
+            served = hashlib.sha256(_RAW.get(str(src), b"")).hexdigest()
+            if not HEX64.match(dig) or not last.get("tsr"):
+                rec("MUST", "KNP 4.03c", "token index entry lacks a covered digest "
+                                         "or a token location")
+            elif dig == served:
+                resolvable = True
+                rec("INFO", "KNP 4.03c",
+                    f"latest RFC 3161 token covers these exact bytes (sha256 "
+                    f"{dig[:16]}…); verify: openssl ts -verify -digest {dig} "
+                    f"-sha256 -in {last['tsr']} -CAfile <tsa-ca.pem>")
+            else:
+                resolvable = True
+                rec("SHOULD", "KNP 4.03c",
+                    f"latest token covers a prior state of this hashlog (token "
+                    f"{dig[:12]}… vs served {served[:12]}…) — stale until the next "
+                    f"token run; the sequence anchor governs the gap")
+        except Exception as e:
+            rec("MUST", "KNP 4.03c", f"declared token index is unreadable: {e}")
+    elif isinstance(ts, dict):
         tok, dig = ts.get("token"), str(ts.get("sha256", ""))
         if not tok or not HEX64.match(dig):
             rec("MUST", "KNP 4.03c", "timestamp anchor declared without a token "

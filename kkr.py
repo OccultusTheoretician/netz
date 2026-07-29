@@ -335,6 +335,58 @@ def load_ledger() -> dict:
 LEDGER_SCHEMA = "kkr-ledger/1.1"
 DOCS = HERE / "docs"
 
+# RPAS 4.02g, wired at the choke point (rev of 2026-07-29). Every ledger write
+# flows through save_ledger; entries issued from the cutover are sealed at first
+# save — which for a new entry is seal-at-issue. Entries issued earlier stay
+# bare per the finding printed on the ledger's face: no retro-binding (RPAS 4.01).
+# One seal implementation exists (candidate_desk.seal); importing it is what
+# keeps the desk's and a stranger's recomputation byte-identical.
+from candidate_desk import seal as rpas_seal
+RPAS_SEAL_CUTOVER = "2026-07-30"
+
+
+# The dated finding, printed on the ledger's own face per RPAS 6.04 — the desk
+# is bound by its standards in public, with the same ceremony as any finding it
+# publishes about others. Emitted by every save so it cannot rot out of a copy.
+RPAS_DISCLOSURE = (
+    "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued "
+    "through 2026-07-29 carry no per-entry seal hash: their statements, "
+    "probabilities, and deadlines are supported by this repository's public "
+    "commit history (RPAS 4.04) and the external beacon (4.05), not by "
+    "per-entry commitment. All 15 resolved entries lack a keyed/keyless "
+    "determination made before resolution; by RPAS 4.03 their hits are KEYED "
+    "by rule and bear on no faculty claim — the published Brier stands as "
+    "arm-calibration arithmetic only, which is the only claim the arm ever "
+    "made. Entries issued from 2026-07-30 are sealed at first save under the "
+    "4.02g construction: SHA-256 over the sorted-JSON of the eight "
+    "pre-registered fields (statement, resolution, deadline, probability, "
+    "failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). "
+    "Separately, 94 open entries issued through 2026-07-29 (30 manual/fable, "
+    "30 manual/opus-5, 24 lmstudio/auto, 10 kfk/halflife) carry no explicit "
+    "failure_condition (RPAS 4.02e, 4.03); none has resolved. Failure "
+    "conditions and keyed/keyless determinations may still be added to open "
+    "entries before their resolution (4.02f); an entry resolving without them "
+    "is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are "
+    "refused a seal while the failure condition is absent (4.03). Nothing "
+    "sealed or published is altered by this finding; it is printed, not "
+    "repaired.")
+
+RPAS_ANCHOR = {
+    "mechanism": "public version-control history",
+    "description": "This ledger is published in a public git repository. Every "
+                   "write is a commit with an independent timestamp that the "
+                   "desk cannot rewrite without the rewrite being visible to "
+                   "anyone holding an earlier clone (RPAS 4.04); the commitment "
+                   "hash is additionally beaconed to a channel the desk does "
+                   "not control (RPAS 4.05).",
+    "repository": "https://github.com/OccultusTheoretician/netz",
+    "path": "docs/ledger.json",
+    "history": "https://github.com/OccultusTheoretician/netz/commits/main/docs/ledger.json",
+    "verify": "python rpas_verify.py https://raw.githubusercontent.com/"
+              "OccultusTheoretician/netz/main/docs/ledger.json recomputes every "
+              "seal and every figure; --previous asserts append-only across any "
+              "two snapshots."}
+
 
 def save_ledger(data: dict):
     """Write the ledger with a self-describing envelope.
@@ -346,7 +398,17 @@ def save_ledger(data: dict):
     out = {"schema": LEDGER_SCHEMA,
            "generator": "kkr.py",
            "as_of": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+           "disclosure": RPAS_DISCLOSURE,
+           "anchor": RPAS_ANCHOR,
            "projections": data["projections"]}
+    for e in out["projections"]:                      # RPAS 4.02g at the choke point
+        if not e.get("seal_sha256") and str(e.get("date_issued", "")) >= RPAS_SEAL_CUTOVER:
+            if not str(e.get("failure_condition", "")).strip():
+                print(f"KKR · UNSEALED · {e.get('id','?')} lacks a failure condition "
+                      f"— refusing the seal (RPAS 4.03); rpas_verify will flag it "
+                      f"until the entry is falsifiable", file=sys.stderr)
+                continue
+            rpas_seal(e)
     for k, v in data.items():
         if k not in out:
             out[k] = v
