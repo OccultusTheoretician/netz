@@ -961,15 +961,46 @@ function netzTab(id, btn){
         h_ledger, h_kkr, h_report = "", "here", ""
     else:
         h_ledger, h_kkr, h_report = "", "", "here"
-    desknav = ("""<nav class="desknav"><div class="desknav-in"><a class="home" href="index.html"><img src="crow_mark.svg" alt=""><span>NebelKr&auml;he</span></a><div class="dn-links"><a class="{H_report}" href="report.html">Report</a><a class="{H_ledger}" href="ledger.html">Ledger</a><a class="{H_kkr}" href="kkr.html">Forecasts</a><a href="register.html">Register</a><a href="KriegForeKaster_compendium.html">Compendium</a><a href="ohrwurm.html">Ohrwurm</a><a href="https://github.com/OccultusTheoretician/netz">GitHub</a><a class="cta-min" href="index.html">Home</a></div></div></nav>""").replace("{H_report}",h_report).replace("{H_ledger}",h_ledger).replace("{H_kkr}",h_kkr)
+    desknav = ("""<nav class="desknav"><div class="desknav-in"><a class="home" href="index.html"><img src="crow_mark.svg" alt=""><span>NebelKr&auml;he</span></a><div class="dn-links"><a class="{H_report}" href="report.html">Report</a><a class="{H_ledger}" href="ledger.html">Ledger</a><a class="{H_kkr}" href="kkr.html">Forecasts</a><a href="register.html">Register</a><a href="KriegForeKaster_compendium.html">Compendium</a><a href="ohrwurm.html">Ohrwurm</a><a href="fogsim.html">FogSim</a><a href="https://github.com/OccultusTheoretician/netz">GitHub</a><a class="cta-min" href="index.html">Home</a></div></div></nav>""").replace("{H_report}",h_report).replace("{H_ledger}",h_ledger).replace("{H_kkr}",h_kkr)
     fog = ("""<div class="field-bg"></div><div class="facets"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B8933F" stop-opacity=".10"/><stop offset="1" stop-color="#7A97B4" stop-opacity=".04"/></linearGradient></defs><g stroke="#28313D" stroke-width="1" fill="none" opacity=".6"><path d="M0,180 L360,90 L720,220 L1080,110 L1440,240"/><path d="M0,420 L300,520 L640,400 L980,540 L1440,430"/><path d="M0,680 L380,760 L760,640 L1120,780 L1440,660"/><path d="M360,90 L300,520 M720,220 L640,400 M1080,110 L980,540"/></g><g fill="url(#fg)" opacity=".5"><polygon points="360,90 720,220 640,400 300,520"/><polygon points="1080,110 1440,240 1440,430 980,540"/><polygon points="0,680 380,760 300,520 0,420"/></g></svg></div><div class="grain"></div>""")
+    # ---- per-page meta: description and og tags -------------------------
+    # Page identity comes from the nav "here" markers computed just above,
+    # not from a second test on the title string. One signal, one source of
+    # truth: if the nav is right, the canonical URL is right.
+    if h_ledger == "here":
+        _slug = "ledger.html"
+        _desc = ("The permanent record: every projection ever sealed, resolved "
+                 "or open, hits and misses alike, segregated by the forecaster "
+                 "arm that issued it.")
+    elif h_kkr == "here":
+        _slug = "kkr.html"
+        _desc = ("The Kaos Kontrol Report: falsifiable projections elicited from "
+                 "a named forecaster arm, passed through a mechanical gate that "
+                 "publishes its rejections, and sealed before any outcome exists.")
+    else:
+        _slug = "report.html"
+        _desc = ("Machine-collated open-source intelligence. Every synthesised "
+                 "claim traces to the record; the record traces to source.")
+    _site = "https://retroprescientaudit.com"
+    _ttl = html.escape(title)
+    # og_nebelkraehe.png is lowercase on purpose - Pages is case-sensitive and
+    # a capital K here once broke every link preview on the site.
+    _meta = (
+        f'<meta name="description" content="{_desc}">'
+        f'<meta property="og:title" content="{_ttl} &middot; The Prescient Desk">'
+        f'<meta property="og:description" content="{_desc}">'
+        f'<meta property="og:image" content="{_site}/og_nebelkraehe.png">'
+        f'<meta property="og:url" content="{_site}/{_slug}">'
+        f'<meta property="og:type" content="website">'
+        f'<meta name="twitter:card" content="summary_large_image">'
+    )
     return (f"<!doctype html><html lang='en'><head><meta charset='utf-8'>"
             f"<meta name='viewport' content='width=device-width,initial-scale=1'>"
             f"<link rel='icon' type='image/svg+xml' href='crow_mark.svg'>"
             f"<link rel='stylesheet' href='brand.css'>"
             f"<script defer src='brand.js'></script>"
             f"<link rel='apple-touch-icon' href='apple-touch-icon.png'>"
-            f"<title>{html.escape(title)} · NebelKrähe</title><style>{HTML_CSS}</style></head>"
+            f"<title>{html.escape(title)} · NebelKrähe</title>{_meta}<style>{HTML_CSS}</style></head>"
             f"<body>{fog}{desknav}<main>{page}</main>{tabjs}</body></html>")
 
 
