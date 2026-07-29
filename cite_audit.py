@@ -30,6 +30,19 @@ from pathlib import Path
 SNAP_ROW   = re.compile(r"^\|\s*([A-Za-z0-9&/ ]+?)\s*\|\s*\$?([\d,]+\.?\d*)\s*\|\s*([+-]?[\d.]+)%\s*\|", re.M)
 DATEISH    = re.compile(r"\b(?:19|20)\d{2}\b|\b\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\b|\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}\b|\b20\d{2}-\d{2}-\d{2}\b", re.I)
 THRESHOLD  = re.compile(r"\b(below|above|under|over|exceed(?:s|ing)?|beyond|at least|more than|less than)\s*\$?\d", re.I)
+# Identifiers are not claims. NUM_RE's plain branch matches any bare integer of
+# two or more digits, and DATEISH strips the 2026 out of CVE-2026-53921, leaving
+# a five-digit serial to be flagged as an unsupported figure. Same for the 00 in
+# "15:00 UTC". Scrubbed before extraction, exactly as dates already are. Kept
+# deliberately narrow: only the two patterns actually observed misfiring, so
+# this cannot quietly swallow a real figure. ORDER MATTERS: IDENT_RE must run
+# BEFORE DATEISH, because DATEISH strips the 2026 out of CVE-2026-53921 and
+# destroys the pattern IDENT_RE is looking for.
+IDENT_RE   = re.compile(r"\bCVE-\d{4}-\d+\b|\b\d{1,2}:\d{2}\b", re.I)
+# "the next 48 hours" is not a claim about anything. This lived inline in the
+# figure loop and was missing from the snapshot loop, so in one run 48 was
+# excluded from one check and flagged by the other. One rule, one place.
+WINDOW_BOILERPLATE = {"20", "24", "48", "72"}
 WATCHLINE  = re.compile(r"^\s*WATCH:", re.I)
 FUTURE     = re.compile(r"\b(will|would|could|may|might|if|expect(?:ed)?|forecast|should|watch for|by the end of)\b", re.I)
 COMPLETED_V= re.compile(r"\b(consumed|burned|killed|injured|displaced|destroyed|lost|gained|now|since|already|so far|to date|down|up|fell|rose|dropped|surged|reached|hit|exceeded|climbed|declined|topped|stands? at|totall?ing)\b", re.I)
@@ -73,16 +86,43 @@ _PKT_ITEM = re.compile(r"^\s*(\d+)\.\s+(.*?)(?:\s+·\s|$)", re.M)
 
 
 def load_packet_titles(report_path):
-    """Return {section_title: {n: full_title}} from the newest packet, or None."""
-    base = Path(report_path).resolve().parent.parent
-    cands = []
-    for d in PACKET_DIRS:
-        p = base / d
-        if p.is_dir():
-            cands += list(p.glob("kkr_packet_*.md"))
-    if not cands:
+    """Return {section_title: {n: full_title}} from the packet that PAIRS
+    with this report, by filename stem - never by modification time.
+
+    battle_report_2026-07-28_1502.md pairs with kkr_packet_2026-07-28_1502.md.
+    The previous version accepted report_path and then ignored it, taking
+    whichever packet was newest, so the finding count depended on clock
+    skew and a mispaired packet would repoint every citation index onto a
+    different numbered list without saying so.
+    """
+    rp = Path(report_path).resolve()
+    base = rp.parent.parent
+    stem, matched = rp.name, False
+    for pre in ("battle_report_", "report_"):
+        if stem.startswith(pre):
+            stem, matched = stem[len(pre):], True
+            break
+    if not matched:
+        print("  cite_audit: WARNING - %s carries no known report prefix, so no "
+              "packet can be paired to it. Figures will be checked against the "
+              "report's own record section, whose titles are truncated."
+              % rp.name)
         return None, None
-    pkt = max(cands, key=lambda p: p.stat().st_mtime)
+    want = "kkr_packet_" + stem
+    pkt = None
+    for d in PACKET_DIRS:
+        cand = base / d / want
+        if cand.exists():
+            pkt = cand
+            break
+    if pkt is None:
+        print("  cite_audit: WARNING - no %s found under %s. NOT falling back to "
+              "the newest packet: pairing by modification time makes the finding "
+              "count a function of clock skew, and citation indices resolve "
+              "positionally, so the wrong packet silently repoints every index. "
+              "Checking against the report's own record section instead."
+              % (want, "/".join(PACKET_DIRS)))
+        return None, None
     text = pkt.read_text(encoding="utf-8", errors="replace")
     out, cur = {}, None
     for line in text.splitlines():
@@ -190,11 +230,11 @@ def audit(path, verbose=False):
             pool_d |= {digits(m.group(0)) for m in NUM_RE.finditer(pool)}
 
             raw_body = CITE_RE.sub("", sent)
-            body = DATEISH.sub(" ", raw_body)
+            body = DATEISH.sub(" ", IDENT_RE.sub(" ", raw_body))
             for m in NUM_RE.finditer(body):
                 tok = m.group(0)
                 d = digits(tok)
-                if not d or d in {"20", "24", "48", "72"}: continue     # window boilerplate
+                if not d or d in WINDOW_BOILERPLATE: continue
                 if d in pool_d: continue
                 if any(d in p for p in pool_d): continue
                 window = body[max(0,m.start()-40):m.end()+10]
@@ -228,9 +268,10 @@ def audit(path, verbose=False):
                 low = sent.lower()
                 for inst,(last,chg) in snap.items():
                     if not re.search(r"\b"+re.escape(inst)+r"\b", low): continue
-                    for m in NUM_RE.finditer(DATEISH.sub(" ", CITE_RE.sub("", sent))):
+                    for m in NUM_RE.finditer(
+                            DATEISH.sub(" ", IDENT_RE.sub(" ", CITE_RE.sub("", sent)))):
                         d = digits(m.group(0))
-                        if not d: continue
+                        if not d or d in WINDOW_BOILERPLATE: continue
                         try: v = float(d)
                         except ValueError: continue
                         ref_last, ref_chg = float(last), abs(float(chg))
