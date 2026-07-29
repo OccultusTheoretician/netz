@@ -227,7 +227,7 @@ def cmd_seal(a) -> int:
     day = now[:10].replace("-", "")
     pre = a.prefix + "-" if a.prefix else ""
     seq = 1 + sum(1 for i in known if i.startswith(f"{pre}KK-{day}-"))
-    head = log.get("head") or log.get("anchor")
+    head = log.get("head")  # NOT anchor: anchor is a prose disclosure object, not a chain hash
 
     new_v, new_p = [], []
     for d in drafts:
@@ -302,7 +302,7 @@ def cmd_verify(a) -> int:
         if r["id"] not in vids:
             print(f"UNOPENABLE           {r['id']} — published, no vault record; "
                   f"permanently dark (KNP 3.04)", file=sys.stderr); bad += 1
-    head = log.get("anchor")
+    head = log.get("head")  # chain seed, not the KNP 4.03 disclosure block
     if head:
         for r in log["records"]:
             head = sha_raw(SEP.join([head, r["commitment"]]))
@@ -965,9 +965,9 @@ def cmd_anchor(a) -> int:
         die("no rows parsed from the table")
     anchor = sha_raw(SEP.join([CHAIN_LABEL] + [r["commitment"] for r in rows]))
     log = load_log(Path(a.hashlog))
-    log["anchor"] = anchor
+    log["chain_anchor"] = anchor  # never overwrite anchor: that holds the KNP 4.03 declaration
     log["anchored_over"] = [r["id"] for r in rows]
-    log["head"] = log.get("head") or anchor
+    log["head"] = log.get("head") or anchor  # seeded from chain_anchor above
     save_json(Path(a.hashlog), stamp_log(log))
     print(f"anchor : {anchor}\nover   : {len(rows)} ({rows[0]['id']} … {rows[-1]['id']})")
     print("\nNon-normative extension. KNP 4.03 is satisfied by git history and the external\n"
