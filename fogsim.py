@@ -66,22 +66,52 @@ def state_path(label):
     return HERE / ("fogsim_campaign_%s.json" % label)
 
 
-def resolve_state(label=None, scenario=None):
-    """Return the opening-material path for a campaign, or None.
+def all_states():
+    """Every campaign state file on disk, newest first."""
+    return sorted(HERE.glob("fogsim_campaign*.json"),
+                  key=lambda p: p.stat().st_mtime, reverse=True)
 
-    Order: explicit label, then the scenario's own hash, then the unsuffixed
-    legacy file so campaigns sealed before this change keep working.
+
+def resolve_state(label=None, scenario=None):
+    """Find the opening material for a campaign. Returns (path, error).
+
+    Resolution is by recorded content, never by a guessed filename. An
+    explicit label wins; otherwise every campaign file on disk is read and
+    matched on its own scenario_hash.
+
+    The previous version guessed a filename from the hash and fell through to
+    the legacy file when the guess missed, so a campaign sealed under
+    --campaign reported "the scenario does not hash to the sealed one" when
+    the real cause was that the runner was reading a different campaign
+    entirely. A silent fallback that yields a confident wrong diagnosis is
+    worse than a clean failure.
     """
-    cands = []
     if label:
-        cands.append(state_path(label))
-    if scenario is not None:
-        cands.append(state_path(scenario_hash(scenario)[:16]))
-    cands.append(LEGACY_STATE)
-    for p in cands:
+        p = state_path(label)
         if p.exists():
-            return p
-    return None
+            return p, None
+        return None, "no campaign labelled '%s' - looked for %s" % (label, p.name)
+    if scenario is None:
+        if LEGACY_STATE.exists():
+            return LEGACY_STATE, None
+        return None, "no campaign given. Pass --campaign or --scenario."
+    sh = scenario_hash(scenario)
+    hits = []
+    for p in all_states():
+        try:
+            st = read_json(p)
+        except Exception:
+            continue
+        if st.get("scenario_hash") == sh:
+            hits.append(p)
+    if not hits:
+        return None, ("no sealed campaign matches this scenario (hash %s). "
+                      "Seal one first, or name it with --campaign." % sh[:16])
+    if len(hits) > 1:
+        return None, ("%d campaigns were sealed against this scenario: %s. "
+                      "Pass --campaign to choose."
+                      % (len(hits), ", ".join(p.name for p in hits)))
+    return hits[0], None
 
 SEP = "|"
 PIPE_ESC = "\\u007C"
@@ -266,16 +296,21 @@ def cmd_seal(a):
 
 def cmd_run(a):
     scenario = read_json(Path(a.scenario))
-    sp = resolve_state(getattr(a, "campaign", None), scenario)
+    sp, err = resolve_state(getattr(a, "campaign", None), scenario)
     if sp is None:
-        print("FAIL - no opening material for this scenario. Seal a campaign first.",
-              file=sys.stderr)
+        print("FAIL - %s" % err, file=sys.stderr)
         return 1
     print("campaign state: %s" % sp.name, file=sys.stderr)
     st = read_json(sp)
     if scenario_hash(scenario) != st["scenario_hash"]:
-        print("FAIL — this scenario does not hash to the sealed one. Editing the "
-              "scenario after sealing breaks every commitment in the campaign.",
+        print("FAIL — campaign %s was sealed against a different scenario." % sp.name,
+              file=sys.stderr)
+        print("  sealed   : %s" % str(st.get("scenario_hash", "?"))[:16],
+              file=sys.stderr)
+        print("  supplied : %s" % scenario_hash(scenario)[:16], file=sys.stderr)
+        print("  Either the wrong --campaign was named, or this scenario file was",
+              file=sys.stderr)
+        print("  edited after sealing - which breaks every commitment in it.",
               file=sys.stderr)
         return 1
     o = next((x for x in st["opens"] if x["index"] == a.index), None)
@@ -289,10 +324,9 @@ def cmd_run(a):
 
 def cmd_reveal(a):
     scen = read_json(Path(a.scenario)) if getattr(a, "scenario", None) else None
-    sp = resolve_state(getattr(a, "campaign", None), scen)
+    sp, err = resolve_state(getattr(a, "campaign", None), scen)
     if sp is None:
-        print("FAIL - no opening material found. Pass --campaign or --scenario.",
-              file=sys.stderr)
+        print("FAIL - %s" % err, file=sys.stderr)
         return 1
     st = read_json(sp)
     if scen is not None and scenario_hash(scen) != st["scenario_hash"]:
