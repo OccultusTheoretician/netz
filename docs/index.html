@@ -14,12 +14,16 @@
 <meta property="og:url" content="https://retroprescientaudit.com/">
 <meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-  // --- war desk as-of (patch_site_nav) ---------------------------------
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Retro-Prescient Audit™","alternateName":"The Prescient Desk · NebelKrähe","url":"https://retroprescientaudit.com/","description":"Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses."}</script>
+<script>
+  // --- war desk as-of --------------------------------------------------
   // The tile fetched war_desk.json and rendered it with no date shown, so a
   // four-day-old cross-bias pull looked live. An undated figure on a desk
   // whose argument is dated records is the defect it exists to prevent.
-  (function(){
+  // (Relocated 2026-07-29: this block was patched inside the ld+json element,
+  // where it never executed and broke the structured data — printed here
+  // rather than silently tidied.)
+  document.addEventListener('DOMContentLoaded', function(){
     fetch('war_desk.json').then(function(r){return r.json()}).then(function(d){
       var raw = d.generated || d.generated_at || d.as_of || d.updated || null;
       var el  = document.getElementById('wardesk-asof');
@@ -33,9 +37,9 @@
       var el = document.getElementById('wardesk-asof');
       if(el){ el.textContent = 'war desk unreadable'; el.className = 'stale'; }
     });
-  })();
+  });
   // ---------------------------------------------------------------------
-{"@context":"https://schema.org","@type":"WebSite","name":"Retro-Prescient Audit™","alternateName":"The Prescient Desk · NebelKrähe","url":"https://retroprescientaudit.com/","description":"Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses."}</script>
+</script>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
@@ -310,6 +314,16 @@ footer li a{font-size:.85rem;color:var(--fg)}
   .foot{grid-template-columns:1fr}
   h1{font-size:2.5rem}
 }
+.pruef{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--nacht2)}
+.pruef-in{max-width:1180px;margin:0 auto;padding:1.15rem 2rem}
+.pruef-head{font:600 .62rem var(--mono);letter-spacing:.24em;color:var(--messing2)}
+.pruef-cmd{font:12.5px/1.75 var(--mono);color:var(--fg2);background:var(--rauch);
+  border:1px solid var(--line);padding:.7rem .95rem;margin:.65rem 0 .55rem;
+  overflow-x:auto;white-space:pre}
+.pruef-note{font-size:.8rem;line-height:1.7;color:var(--dim);max-width:64rem}
+.pruef-note a{color:var(--messing2)}
+.pruef-mono{font-family:var(--mono);font-size:.75rem;color:var(--fg)}
+@media (max-width:720px){.pruef-in{padding-left:1.1rem;padding-right:1.1rem}}
 </style><link rel="stylesheet" href="brand.css">
 <script defer src="brand.js"></script>
 </head><body>
@@ -350,6 +364,7 @@ footer li a{font-size:.85rem;color:var(--fg)}
     <p style="font:500 .7rem var(--mono,monospace);letter-spacing:.16em;text-transform:uppercase;color:var(--dim,#8b8b85);margin:.9rem 0 0">Retro-Prescient Audit™ — the method &nbsp;·&nbsp; The Prescient Desk™ — the instrument that runs it</p>
     <div class="actions">
       <a class="btn primary" href="ledger.html">Read the Ledger</a>
+      <a class="btn ghost" href="#pruefung">Verify the Desk</a>
       <a class="btn ghost" href="#method">The Method</a>
     </div>
   </div>
@@ -383,6 +398,20 @@ footer li a{font-size:.85rem;color:var(--fg)}
 <div class="siegel" aria-label="Live commitment seal">
   <div class="siegel-track" id="siegel-track">
     <span class="siegel-run" id="siegel-run">COMMITMENT SEAL · SHA-256(ledger.json) · computing…</span>
+  </div>
+</div>
+
+<div class="pruef" id="pruefung" aria-label="Verify this desk">
+  <div class="pruef-in">
+    <div class="pruef-head">DON'T TAKE THE DESK'S WORD · RUN THE CHECK</div>
+    <pre class="pruef-cmd">python knp_verify.py  https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/kalls_hashlog.json
+python rpas_verify.py https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/ledger.json</pre>
+    <div class="pruef-note">Two reference verifiers — Python standard library, no account, no material from this desk.
+    Each returns a verdict with paragraph citations: every seal recomputed, every figure rederived from the
+    records, every finding read off the record's own face. Save a snapshot and add
+    <span class="pruef-mono">--previous</span> to prove nothing sealed was ever restated.
+    A NONCONFORMANT verdict against this desk publishes like any other finding.
+    <a href="verify.html">Verify page →</a>&nbsp;&nbsp;<a href="conformance.html">Latest verdicts →</a></div>
   </div>
 </div>
 

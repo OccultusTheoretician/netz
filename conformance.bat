@@ -9,6 +9,10 @@ if exist .conformance_last set /p LAST=<.conformance_last
 if "%CUR%"=="%LAST%" if "%FORCE%"=="0" ( echo conformance: ledger unchanged ^& goto sync )
 python rpas_audit.py --ledger ledger.json --report REPORT_conformance.md
 if errorlevel 1 ( echo conformance: AUDIT FAILED ^& exit /b 1 )
+REM Stranger's verdicts, published as JSON for conformance.html to render.
+REM No errorlevel gate: a NONCONFORMANT verdict publishes like any other finding.
+python rpas_verify.py ledger.json --json > docs\rpas_verdict.json
+python knp_verify.py docs\kalls_hashlog.json --json > docs\knp_verdict.json
 echo %CUR%>.conformance_last
 :sync
 copy /Y REPORT_conformance.md docs\ >nul

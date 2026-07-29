@@ -1,0 +1,28 @@
+{
+  "source": "docs/kalls_hashlog.json",
+  "records": 10,
+  "conformant": true,
+  "must_failures": [],
+  "should_departures": [
+    {
+      "cite": "KNP 4.03c",
+      "message": "no external timestamp token is declared. Version-control history anchors the sequence; a timestamp token from an authority the committer cannot amend anchors existence. Hashlogs first published after revision 3 must carry one."
+    }
+  ],
+  "notes": [
+    {
+      "cite": "KNP 4.03b",
+      "message": "anchor resolves to version-control history: https://github.com/OccultusTheoretician/netz/commits/main/docs/kalls_hashlog.json"
+    },
+    {
+      "cite": "KNP 4.04",
+      "message": "standing line, recomputed from the records: 10 sealed \u00b7 0 revealed \u00b7 0 resolved"
+    },
+    {
+      "cite": "KNM 3.04",
+      "message": "no reveal supplied \u2014 structure checked, contents not recomputed. A sealed record proves only that something was committed."
+    }
+  ],
+  "verified_at": "2026-07-29T23:15:11Z",
+  "verifier": "knp_verify/1.1"
+}

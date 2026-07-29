@@ -46,6 +46,35 @@ footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--dim);font-s
 <h1>Conformance</h1>
 <p class="dek">The live ledger audited against the desk's own published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden. The ledger holds more than one forecaster, so accuracy is scored per arm and never pooled — a pooled score belongs to no forecaster. Numbers below compute from <a href="ledger.json">ledger.json</a> in your browser at load time — nothing is hand-typed.</p>
 </div></header>
+<section><div class="wrap"><h2>The stranger's verdicts — both instruments</h2>
+<p class="note">Written at build time by the two reference verifiers and published as JSON beside the
+records they judge; your browser reads the same files a stranger would. Reproduce either verdict with
+the commands on <a href="verify.html">the verify page</a> against the live URLs.</p>
+<div class="grid">
+  <div class="cell"><div class="n" id="v-rpas">—</div><div class="l">rpas_verify · ledger.json · <span id="v-rpas-n">—</span> entries</div></div>
+  <div class="cell"><div class="n" id="v-knp">—</div><div class="l">knp_verify · kalls_hashlog.json · <span id="v-knp-n">—</span> records</div></div>
+</div>
+<div class="gate"><span>must-failures / should-departures</span><span id="v-counts">—</span></div>
+<div class="gate"><span>verdicts written</span><span id="v-when">—</span></div>
+<p class="note">Raw verdicts: <a href="rpas_verdict.json">rpas_verdict.json</a> · <a href="knp_verdict.json">knp_verdict.json</a>.
+<noscript>Scripts are off — the verdict files above publish regardless; open them directly.</noscript></p>
+<script>
+(function(){
+function put(id,t,cls){var e=document.getElementById(id);if(!e)return;e.textContent=t;if(cls)e.classList.add(cls);}
+function one(u,vid,nid){return fetch(u,{cache:'no-store'}).then(function(r){return r.json();}).then(function(j){
+  put(vid, j.conformant?'CONFORMANT':'NONCONFORMANT', j.conformant?'pass':'fail');
+  put(nid, j.entries!=null?j.entries:j.records);
+  return j;}).catch(function(){put(vid,'unavailable','warn');return null;});}
+Promise.all([one('rpas_verdict.json','v-rpas','v-rpas-n'),one('knp_verdict.json','v-knp','v-knp-n')]).then(function(a){
+  var r=a[0],k=a[1];
+  if(r&&k){
+    put('v-counts', r.must_failures.length+' / '+r.should_departures.length+'  (rpas)   ·   '+k.must_failures.length+' / '+k.should_departures.length+'  (knp)');
+    put('v-when', (r.verified_at||'—')+'  ·  '+(k.verified_at||'—'));
+  }
+});
+})();
+</script>
+</div></section>
 <section><div class="wrap"><h2>The population — every status printed</h2>
 <div class="grid">
 <div class="cell"><div class="n" id="c-n">&mdash;</div><div class="l">issued</div></div>
