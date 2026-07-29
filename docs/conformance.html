@@ -1,6 +1,13 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Conformance — RPAS-26 · The Prescient Desk</title>
+<meta name="description" content="Machine-checkable conformance against the Retro-Prescient Audit Standards, computed in the browser from the published ledger. Failures are printed with paragraph numbers.">
+<meta property="og:title" content="Conformance &middot; The Prescient Desk">
+<meta property="og:description" content="Machine-checkable conformance against the Retro-Prescient Audit Standards, computed in the browser from the published ledger. Failures are printed with paragraph numbers.">
+<meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
+<meta property="og:url" content="https://retroprescientaudit.com/conformance.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--bg:#0c0e11;--fg:#d6d3cb;--dim:#8b8b85;--brass:#dcb65e;--line:#26292f;--bad:#c76a5a;--good:#7fa86e}
@@ -41,12 +48,12 @@ footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--dim);font-s
 </div></header>
 <section><div class="wrap"><h2>The population — every status printed</h2>
 <div class="grid">
-<div class="cell"><div class="n" id="c-n">77</div><div class="l">issued</div></div>
-<div class="cell"><div class="n" id="c-arms">3</div><div class="l">forecasters</div></div>
-<div class="cell"><div class="n" id="c-open">58</div><div class="l">open</div></div>
-<div class="cell"><div class="n" id="c-hit">4</div><div class="l">hits</div></div>
-<div class="cell"><div class="n" id="c-miss">9</div><div class="l">misses</div></div>
-<div class="cell"><div class="n" id="c-void">6</div><div class="l">void</div></div>
+<div class="cell"><div class="n" id="c-n">&mdash;</div><div class="l">issued</div></div>
+<div class="cell"><div class="n" id="c-arms">&mdash;</div><div class="l">forecasters</div></div>
+<div class="cell"><div class="n" id="c-open">&mdash;</div><div class="l">open</div></div>
+<div class="cell"><div class="n" id="c-hit">&mdash;</div><div class="l">hits</div></div>
+<div class="cell"><div class="n" id="c-miss">&mdash;</div><div class="l">misses</div></div>
+<div class="cell"><div class="n" id="c-void">&mdash;</div><div class="l">void</div></div>
 </div>
 <p class="note">Issued = open + hits + misses + void. The denominator reconciles on this face by construction; a category the ledger carries is a category this page prints. Counts pool legitimately because they are population, not performance. Scores do not.</p>
 </div></section>
@@ -67,8 +74,8 @@ footer{border-top:1px solid var(--line);padding:1.4rem 0;color:var(--dim);font-s
 <p class="note">The baseline is a lower bound on competence, not a target. It is also self-referential — it is computed from the same resolved set it is compared against — so it flatters no one and is only meaningful once the resolution count is large. At the counts on this page, a skill score of either sign is noise and should be read as one.</p>
 </div></section>
 <section><div class="wrap"><h2>Gates and floors</h2>
-<div class="gate"><span>RPAS 5.02 · fifty-entry gate</span><span id="g-fifty" class="pass">MET (77)</span></div>
-<div class="gate"><span>Thirty-resolved noise floor (whole ledger)</span><span id="g-thirty" class="warn">below floor (13/30) — any score is noise</span></div>
+<div class="gate"><span>RPAS 5.02 · fifty-entry gate</span><span id="g-fifty" class="warn">requires JavaScript</span></div>
+<div class="gate"><span>Thirty-resolved noise floor (whole ledger)</span><span id="g-thirty" class="warn">requires JavaScript</span></div>
 <div class="gate"><span>Brier over the pooled population</span><span id="g-brier" class="warn">not computed — three forecasters, see per-arm table</span></div>
 <div class="gate"><span>RPAS 4.02e/4.03 · failure condition present</span><span id="g-fc" class="fail">10 missing</span></div>
 <div class="gate"><span>RPAS 4.02f/1.04 · keyed/keyless determined</span><span id="g-kk" class="fail">10 missing</span></div>
