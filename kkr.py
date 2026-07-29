@@ -533,6 +533,20 @@ def render_ledger():
 
     if overdue:
         out.append("## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)\n")
+        out.append(
+            "A projection appears here when its window has closed and it has "
+            "not yet been adjudicated. That is not the same as neglect. Most "
+            "criteria on this book ask whether an event *occurred* inside the "
+            "window, not whether it was *reported* inside it — so an event "
+            "confirmed on the 30th can satisfy a criterion that closed on the "
+            "28th, and resolving before the sources land would be guessing. "
+            "Collation takes the time it takes, and the queue is printed rather "
+            "than hidden while it does.\n")
+        out.append(
+            "The bound that keeps this from becoming a parking space: a row "
+            "sitting here more than **fourteen days** past its deadline is a "
+            "defect in this desk, not in the world. The count is published on "
+            "this page so that it is visible when it happens.\n")
         for p in overdue:
             out.append(f"- **{p['id']}** ({p['probability']}%, due {p['deadline']}) "
                        f"{p['statement']} — *resolves on:* {p['resolution']}")

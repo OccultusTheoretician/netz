@@ -1,6 +1,6 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 291513Z JUL 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 291518Z JUL 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
@@ -35,6 +35,10 @@ Window: all-time · 161 issued across 5 forecaster arms · 136 open (1 past dead
 | 60-80% | 3 | 33% |
 
 ## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
+
+A projection appears here when its window has closed and it has not yet been adjudicated. That is not the same as neglect. Most criteria on this book ask whether an event *occurred* inside the window, not whether it was *reported* inside it — so an event confirmed on the 30th can satisfy a criterion that closed on the 28th, and resolving before the sources land would be guessing. Collation takes the time it takes, and the queue is printed rather than hidden while it does.
+
+The bound that keeps this from becoming a parking space: a row sitting here more than **fourteen days** past its deadline is a defect in this desk, not in the world. The count is published on this page so that it is visible when it happens.
 
 - **KKR-20260724-02** (25%, due 2026-07-28) The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. — *resolves on:* At least one confirmed U.S. military strike on Iranian military or strategic infrastructure, reported by a major news outlet such as BBC World or Guardian World, occurred between 2026-07-25 and 2026-07-28.
 
