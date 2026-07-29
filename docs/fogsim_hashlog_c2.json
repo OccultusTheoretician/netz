@@ -1,0 +1,65 @@
+{
+  "protocol": "FOGSIM-26",
+  "construction": {
+    "preimage_order": [
+      "scenario_hash",
+      "rules_version",
+      "index",
+      "seed",
+      "question",
+      "salt"
+    ],
+    "separator": "|",
+    "hash": "SHA-256",
+    "encoding": "UTF-8",
+    "pipe_escape": "\\u007C"
+  },
+  "declared_runs": 8,
+  "scenario_hash": "b657de37f7abad3472b8584dfdc8d3fe99243b255949ccb7b936b7e555ab006d",
+  "rules_version": "fogsim-lanchester/1.0",
+  "question": "Does BLUE hold under the stated attrition parameters when the run is allowed to terminate?",
+  "sealed_at": "2026-07-29T00:41:00Z",
+  "count_commitment": "This campaign declares 8 runs and publishes 8 commitments before any run is executed. Publishing a subset of outcomes is therefore detectable: an index with a commitment and no reveal is a run that was executed and withheld, or never executed. Either is visible. (KNM 3.02)",
+  "records": [
+    {
+      "index": 1,
+      "commitment": "80e0aa2b732663bd6b0618c9e873e00c4f9ba1f80ef2ae039f1ddf15d0aeaed5",
+      "status": "SEALED"
+    },
+    {
+      "index": 2,
+      "commitment": "b3f14956a63aaf7f50bf44b7d972d58e31925b6e8e249d2ddaa9f0e7f64cecc6",
+      "status": "SEALED"
+    },
+    {
+      "index": 3,
+      "commitment": "66ade022013a2cdd1f6e8089d67f70218f34d4a20137c722c0cc162bd92f3b26",
+      "status": "SEALED"
+    },
+    {
+      "index": 4,
+      "commitment": "419ce04cdbbfece9c3149852006746188134439f278dc56eeccfc2f44dde96dd",
+      "status": "SEALED"
+    },
+    {
+      "index": 5,
+      "commitment": "22ac2aebfeb7776feb5ae6b99665488eab8bf31feb224a2fc0b62dc892edba2d",
+      "status": "SEALED"
+    },
+    {
+      "index": 6,
+      "commitment": "ca4c96e6195d29f1a7c13306c71b4c3e74212b0e013de27ec1c7a5e85dc08e5a",
+      "status": "SEALED"
+    },
+    {
+      "index": 7,
+      "commitment": "e8a894f3a109cff17cc8c3cb9f48bec175f6572d8cc88c65e1d6287082c16f9b",
+      "status": "SEALED"
+    },
+    {
+      "index": 8,
+      "commitment": "b917e42132c5ff8e88400a093ff0d93df1e1bbff4cad61c4d8f77e40c3e14fc6",
+      "status": "SEALED"
+    }
+  ]
+}
