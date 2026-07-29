@@ -43,3 +43,27 @@
 **Sufficiency floor (KNM 6.05).** 0 of 9 resolved. Under thirty resolved, no figure from this record is evidence of skill.
 
 **Verification record (appended 2026-07-25, rows above untouched).** The construction was verified against all nine published commitments by independent re-derivation from the vault — 9/9 reproduce — recorded in the KNP-26 rev. 2 revision history. Re-verified 9/9 on 2026-07-25 after the 4.01b container upgrade landed on the public log.
+
+\---
+
+##
+
+## SEALED 2026-07-29 - a single Kall, not part of the clutch above
+
+This Kall was sealed alone, four days after the first clutch, by the reference
+implementation. It is recorded here in its own section so that no row is added
+to a table whose declaration is scoped to nine commitments sealed on one day.
+
+|KK-20260729-01|2026-07-29T02:22:06Z|`bb070f97ef3aadb4494ab5a4602f0c27ae6a6f61f39ecfdd4e07ff3addceb105`|35%|2026-10-31|SEALED|
+
+**Conformance configuration of this Kall:** Level 1 - discretionary reveal, Architecture A - private opening material, single custodian. (KNM 2.02, 5.06) Unchanged from the clutch above.
+
+**Residual-discretion statement (KNM 6.03).** Reveal is at the committer's sole discretion. Resolution is adjudicated by the committer against the sealed basis. The committer holds sole custody of the opening material. No independent party has examined it. This record supports statements about what was committed and when; it does not support a calibration claim, and none is made.
+
+**Custody findings, printed (KNM A.02).** Opening material for this Kall sits in the same single-location vault as the clutch above, backed up privately on the day of sealing. No recovery drill has been executed. This is a control weakness in the deployment, not a defect in the seal; binding is unaffected.
+
+**Count anchoring (KNM 3.02).** As above: the external anchor for this log is the public commit history of this repository.
+
+**Sufficiency floor (KNM 6.05).** 0 of 1 resolved. One commitment is not a record, and no figure is claimed from it.
+
+**Verification record (appended 2026-07-29).** Sealed by kalls.py, which wrote the commitment and its 128-bit salt to the vault in the same operation. The commitment recomputes from the vault under kalls.py verify. The published hashlog was checked by knp_verify.py against the live URL and returned CONFORMANT over ten records. Independent re-derivation by a third party has NOT been performed for this Kall, and is not claimed.
