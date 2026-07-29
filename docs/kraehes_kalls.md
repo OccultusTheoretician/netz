@@ -8,7 +8,7 @@
 
 **Seal:** `SHA-256( id | timestamp\_utc | statement | resolution\_basis | salt )`. Public = id, timestamp, hash, probability, deadline, status. Private (vault, never pushed) = statement, basis, salt.
 
-**Timestamp note:** this clutch was sealed as a batch at 2026-07-25T18:30:00Z. These are FORWARD calls sealed today, resolving in the future. No prior/already-resolved call  is in this nest — those cannot be sealed after the fact; a seal certifies only the moment of sealing. The nest begins clean, now.
+**Timestamp note:** this klutch was sealed as a batch at 2026-07-25T18:30:00Z. These are FORWARD calls sealed today, resolving in the future. No prior/already-resolved call  is in this nest — those cannot be sealed after the fact; a seal certifies only the moment of sealing. The nest begins clean, now.
 
 \---
 
@@ -32,7 +32,7 @@
 
 ## DECLARATION UNDER KNM-26 (rev. 2) — appended 2026-07-25, rows above untouched
 
-**Conformance configuration of the clutch above:** Level 1 — discretionary reveal · Architecture A — private opening material · single custodian. (KNM 2.02, 5.06)
+**Conformance configuration of the klutch above:** Level 1 — discretionary reveal · Architecture A — private opening material · single custodian. (KNM 2.02, 5.06)
 
 **Residual-discretion statement (KNM 6.03).** Reveal of any Kall above is at the committer's sole discretion. Resolution is adjudicated by the committer against each Kall's sealed basis. The committer holds sole custody of the opening material. No independent party has examined the population or any resolution. This record supports statements about published calls and about how much is withheld; it does not support a calibration claim over the committer's forecasting generally, and none is made.
 
@@ -48,19 +48,19 @@
 
 ##
 
-## SEALED 2026-07-29 - a single Kall, not part of the clutch above
+## SEALED 2026-07-29 - a single Kall, not part of the klutch above
 
-This Kall was sealed alone, four days after the first clutch, by the reference
+This Kall was sealed alone, four days after the first klutch, by the reference
 implementation. It is recorded here in its own section so that no row is added
 to a table whose declaration is scoped to nine commitments sealed on one day.
 
 |KK-20260729-01|2026-07-29T02:22:06Z|`bb070f97ef3aadb4494ab5a4602f0c27ae6a6f61f39ecfdd4e07ff3addceb105`|35%|2026-10-31|SEALED|
 
-**Conformance configuration of this Kall:** Level 1 - discretionary reveal, Architecture A - private opening material, single custodian. (KNM 2.02, 5.06) Unchanged from the clutch above.
+**Conformance configuration of this Kall:** Level 1 - discretionary reveal, Architecture A - private opening material, single custodian. (KNM 2.02, 5.06) Unchanged from the klutch above.
 
 **Residual-discretion statement (KNM 6.03).** Reveal is at the committer's sole discretion. Resolution is adjudicated by the committer against the sealed basis. The committer holds sole custody of the opening material. No independent party has examined it. This record supports statements about what was committed and when; it does not support a calibration claim, and none is made.
 
-**Custody findings, printed (KNM A.02).** Opening material for this Kall sits in the same single-location vault as the clutch above, backed up privately on the day of sealing. No recovery drill has been executed. This is a control weakness in the deployment, not a defect in the seal; binding is unaffected.
+**Custody findings, printed (KNM A.02).** Opening material for this Kall sits in the same single-location vault as the klutch above, backed up privately on the day of sealing. No recovery drill has been executed. This is a control weakness in the deployment, not a defect in the seal; binding is unaffected.
 
 **Count anchoring (KNM 3.02).** As above: the external anchor for this log is the public commit history of this repository.
 
