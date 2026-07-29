@@ -1,0 +1,74 @@
+name: Guest Kall — seal a forecast on this desk
+description: Your forecast, sealed under the desk's published standards. The gate is mechanical and publishes its rejections with reasons. Misses stay on the record under your login, forever. That is the deal.
+title: "[GUEST KALL] "
+labels: ["guest-kall"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **How this works.** Your submission runs the same mechanical gate the desk's own forecasting arms face. If it passes, the operator seals it into the public ledger as arm `guest/<your-login>` — cryptographically committed before the outcome exists, resolved hit or miss in public, verifiable by anyone running `rpas_verify.py` against the ledger URL. Policy limits (open-submission cap, account age, daily seal cap) are published in `guest_policy.json`. Read the standards at retroprescientaudit.com/standards.html before submitting.
+  - type: textarea
+    id: statement
+    attributes:
+      label: Statement
+      description: The predictive claim, in language a hostile reader cannot stretch. Minimum 40 characters. No predictions about named private individuals.
+      placeholder: "The ECB main refinancing operations rate on 2026-12-31 is unchanged from its 2026-07-30 level."
+    validations:
+      required: true
+  - type: input
+    id: probability
+    attributes:
+      label: Probability (percent, 5-95)
+      description: Your confidence this resolves YES, as a whole percent from 5 to 95 — the band the desk's own arms are held to.
+      placeholder: "65"
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline (YYYY-MM-DD)
+      description: Between 3 and 800 days out. Weekday-adjust if your instrument settles on business days.
+      placeholder: "2026-12-31"
+    validations:
+      required: true
+  - type: textarea
+    id: resolution
+    attributes:
+      label: Resolution basis
+      description: The named public instrument a stranger reads to adjudicate this mechanically — a specific feed, series, docket, or settlement. See guest_policy.json for accepted instrument classes.
+      placeholder: "Resolved from the ECB Data Portal series FM.D.U2.EUR.4F.KR.MRR_FR.LEV read on 2026-12-31."
+    validations:
+      required: true
+  - type: textarea
+    id: failure_condition
+    attributes:
+      label: Failure condition
+      description: What outcome scores this a MISS, stated so the miss is undeniable (RPAS 4.02e). An entry without one is unfalsifiable and will not be sealed.
+      placeholder: "The series shows any different value on that date."
+    validations:
+      required: true
+  - type: dropdown
+    id: keyed_keyless
+    attributes:
+      label: Keyed or keyless (RPAS 4.02f)
+      description: Keyed — information you already hold makes this deducible; it is arithmetic, not foresight. Keyless — a genuine call with no prior sufficient to deduce it. Decided now, before resolution; misdeclaring keyed as keyless is the one lie this record is built to expose over time.
+      options:
+        - keyless
+        - keyed
+    validations:
+      required: true
+  - type: textarea
+    id: kk_rationale
+    attributes:
+      label: Keyed/keyless rationale
+      description: One or two sentences on what priors you hold.
+      placeholder: "Public information only; no position or inside knowledge of the rate path."
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: The record's terms
+      options:
+        - label: I understand this forecast, if sealed, is public and permanent under my GitHub login, that misses are never removed, and that the desk's standards (RPAS-26, KNP-26) govern.
+          required: true

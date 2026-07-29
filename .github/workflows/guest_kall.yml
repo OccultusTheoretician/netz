@@ -1,0 +1,126 @@
+name: GUEST KALL
+
+# Strangers seal forecasts on this desk. Two jobs, one valve:
+#   gate — on issue open/edit: the same validator the desk's arms face, plus
+#          published policy. Comments the verdict either way; rejections
+#          close with every reason printed.
+#   seal — ONLY on the operator's `seal` label. Anyone else labeling is a
+#          no-op by the actor check below. Re-gates (post-gate edits fail),
+#          seals under candidate_desk's 4.02g construction, appends to the
+#          canonical ledger as arm guest/<login>, commits narrowly.
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: guest-kall-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    if: >
+      contains(github.event.issue.labels.*.name, 'guest-kall') &&
+      (github.event.action == 'opened' || github.event.action == 'edited')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Gather policy inputs
+        id: inputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          set -euo pipefail
+          echo "created=$(gh api users/$AUTHOR --jq .created_at)" >> "$GITHUB_OUTPUT"
+          echo "open=$(gh issue list --label guest-kall --state open --author "$AUTHOR" --json number --jq length)" >> "$GITHUB_OUTPUT"
+      - name: Run the gate
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          AUTHOR_CREATED_AT: ${{ steps.inputs.outputs.created }}
+          OPEN_GUEST_COUNT: ${{ steps.inputs.outputs.open }}
+        run: python guest_gate.py
+      - name: Post the verdict
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh issue comment ${{ github.event.issue.number }} --body-file gate_comment.md
+          if python -c "import json,sys; sys.exit(0 if json.load(open('gate_verdict.json'))['accept'] else 1)"; then
+            gh issue edit ${{ github.event.issue.number }} --add-label gate-passed
+          else
+            gh issue edit ${{ github.event.issue.number }} --add-label gate-rejected
+            gh issue close ${{ github.event.issue.number }} --reason "not planned"
+          fi
+
+  seal:
+    if: >
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'seal' &&
+      github.actor == github.repository_owner &&
+      contains(github.event.issue.labels.*.name, 'guest-kall')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Gather inputs
+        id: inputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          set -euo pipefail
+          echo "created=$(gh api users/$AUTHOR --jq .created_at)" >> "$GITHUB_OUTPUT"
+      - name: Seal into the ledger
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          AUTHOR_CREATED_AT: ${{ steps.inputs.outputs.created }}
+          OPEN_GUEST_COUNT: "0"
+        run: python guest_seal.py
+      - name: Commit the seal
+        run: |
+          set -euo pipefail
+          git config user.name  "guestkall[bot]"
+          git config user.email "guestkall@retroprescientaudit.com"
+          git add ledger.json docs/ledger.json
+          if git diff --cached --quiet; then
+            echo "nothing sealed"
+            exit 1
+          fi
+          GK=$(python -c "import json; r=json.load(open('ledger.json'))['projections']; print([e['id'] for e in r if str(e['id']).startswith('GK-')][-1])")
+          git commit -m "guest kall: ${GK} by ${{ github.event.issue.user.login }} (#${{ github.event.issue.number }})"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "pushed on attempt ${attempt}"
+              break
+            fi
+            echo "push rejected; rebasing and retrying"
+            git pull --rebase --autostash origin main
+            sleep $((attempt * 5))
+          done
+      - name: Confirm on the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh issue comment ${{ github.event.issue.number }} --body-file seal_comment.md
+          gh issue edit ${{ github.event.issue.number }} --add-label sealed
+          gh issue close ${{ github.event.issue.number }} --reason completed
