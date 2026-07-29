@@ -97,13 +97,11 @@ The RPAS ledger's per-row seal (`candidate_desk.py`) already binds probability a
 
 ```
 cd C:\netz
-python kalls.py selftest
 python kalls.py verify
-copy KNP_REV3_AMENDMENTS.md .
-```
-Then replace `kalls.py` and `knp_verify.py` with the revision-3 implementations delivered with this document, and:
-```
-python kalls.py selftest
+Copy-Item "$env:USERPROFILE\Downloads\kalls.py" C:\netz\kalls.py -Force
+Copy-Item "$env:USERPROFILE\Downloads\knp_verify.py" C:\netz\knp_verify.py -Force
+Copy-Item "$env:USERPROFILE\Downloads\KNP_REV3_AMENDMENTS.md" C:\netz\KNP_REV3_AMENDMENTS.md -Force
+python kalls.py selftest --id KK-20260725-01
 python knp_verify.py --selftest
 python kalls.py verify
 python knp_verify.py docs/kalls_hashlog.json
@@ -111,4 +109,4 @@ git add kalls.py knp_verify.py KNP_REV3_AMENDMENTS.md
 git commit -m "KNP-26 rev3: bind probability and deadline (knp-2), construction history, metadata frozen across snapshots, anchor resolves structurally, standing line externally computable, conformance taxonomy stated"
 git push
 ```
-The first `verify` runs the ten under `knp-1` on the machine that holds the vault, **before** anything is replaced; the revision-3 `cmd_seal` additionally refuses to extend any log whose existing records fail verification, so the guard becomes standing rather than one-time. Spec-file edits to `KRAEHE_NEST_PROTOCOL.md` and `KRAEHE_NEST_METHOD.md` are the operator's paste from this document — the amendments are drop-in paragraphs by design. The first post-revision append is the moment 4.03c activates: run the openssl request line the new `beacon` prints, commit the `.tsr` beside the hashlog.
+The first `verify` runs the ten under `knp-1` on the machine that holds the vault, **before** anything is replaced — it recomputes every vault commitment, which is strictly stronger than a one-id selftest. The post-replace `selftest --id KK-20260725-01` is the regression that matters: new code, oldest record, reproduced under per-record dispatch. The revision-3 `cmd_seal` additionally refuses to extend any log whose existing records fail verification, so the guard becomes standing rather than one-time. Spec-file edits to `KRAEHE_NEST_PROTOCOL.md` and `KRAEHE_NEST_METHOD.md` are the operator's paste from this document — the amendments are drop-in paragraphs by design. The first post-revision append is the moment 4.03c activates: run the openssl request line the new `beacon` prints, commit the `.tsr` beside the hashlog.
