@@ -273,6 +273,8 @@ footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.6rem 0;positio
     </div>
   </div>
 
+  <div id="later"></div>
+
   <div class="abyssal">
     <strong>These are forward calls, sealed today, resolving in the future.</strong> No prior or
     already-resolved call is in this nest. A seal certifies only the moment of sealing — it cannot reach
@@ -374,16 +376,48 @@ footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.6rem 0;positio
     if((el=document.getElementById('stat-sealed')))el.textContent=c.SEALED||0;
     if((el=document.getElementById('stat-revealed')))el.textContent=c.REVEALED||0;
     if((el=document.getElementById('stat-resolved')))el.textContent=res;
-    var cl=document.getElementById('clutch'); if(!cl)return;
-    var head=cl.querySelector('.clutch-head'); var h='';
-    recs.forEach(function(r){
+    // The Klutch is a NAMED SET - nine Kalls sealed in one sitting on
+    // 2026-07-25. Rendering every record into it put a Kall sealed four days
+    // later under a heading asserting that date. Partition on the seal day,
+    // which the id carries by construction: kalls.py builds KK-<YYYYMMDD>-<NN>
+    // from the sealing timestamp.
+    var KLUTCH_DAY='20260725';
+    function sealDay(r){ var m=/KK-(\d{8})-/.exec(r.id||''); return m?m[1]:''; }
+    function eggRow(r){
       var hash=r.commitment||''; var st=(r.status||'SEALED').replace('RESOLVED_','Resolved ');
-      h+='<div class="egg"><span class="id">'+r.id+'</span><span class="p">'+
+      return '<div class="egg"><span class="id">'+r.id+'</span><span class="p">'+
          (r.probability!=null?r.probability+'%':'—')+'</span><span class="dl">'+(r.deadline||'—')+
          '</span><span class="hash"><b>'+hash.slice(0,8)+'</b>'+hash.slice(8)+
          '</span><span class="st">'+cap(st)+'</span></div>';
-    });
-    cl.innerHTML=''; if(head)cl.appendChild(head); cl.insertAdjacentHTML('beforeend',h);
+    }
+    var cl=document.getElementById('clutch');
+    if(cl){
+      var head=cl.querySelector('.clutch-head'); var h='';
+      recs.filter(function(r){return sealDay(r)===KLUTCH_DAY;}).forEach(function(r){ h+=eggRow(r); });
+      cl.innerHTML=''; if(head)cl.appendChild(head); cl.insertAdjacentHTML('beforeend',h);
+    }
+    // Everything sealed outside the Klutch renders into its own dated section,
+    // generated from the same hashlog. No prose to keep in step.
+    var later=document.getElementById('later');
+    if(later){
+      var rest=recs.filter(function(r){ var d=sealDay(r); return d && d!==KLUTCH_DAY; });
+      var by={}; rest.forEach(function(r){ var d=sealDay(r); (by[d]=by[d]||[]).push(r); });
+      var out='';
+      Object.keys(by).sort().forEach(function(d){
+        var iso=d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8);
+        var n=by[d].length;
+        out+='<h2>Sealed '+iso+'</h2>';
+        out+='<p class="lede">'+n+' Kall'+(n===1?'':'s')+' sealed on this date, '+
+             'outside the Klutch above. Same construction, same discipline, a '+
+             'different sitting. The Klutch is a set of nine and stays nine.</p>';
+        out+='<div class="clutch"><div class="clutch-head"><span>ID</span>'+
+             '<span>Conf</span><span>Deadline</span>'+
+             '<span>Commitment &middot; SHA-256</span><span>Status</span></div>';
+        by[d].forEach(function(r){ out+=eggRow(r); });
+        out+='</div>';
+      });
+      later.innerHTML=out;
+    }
     var con=d.construction, cb=document.getElementById('construction-block');
     if(con&&cb){cb.innerHTML='<strong>Construction (from the live hashlog):</strong><br>preimage&nbsp;=&nbsp;'+
       (con.preimage_order||[]).join('&nbsp;|&nbsp;')+' · separator "'+con.separator+'" · '+con.hash+' · '+con.encoding+' · pipe escaped as '+con.pipe_escape;}
