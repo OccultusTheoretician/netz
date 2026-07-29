@@ -1,7 +1,16 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-07-29T15:13:42Z",
+  "as_of": "2026-07-29T22:57:16Z",
+  "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, 94 open entries issued through 2026-07-29 (30 manual/fable, 30 manual/opus-5, 24 lmstudio/auto, 10 kfk/halflife) carry no explicit failure_condition (RPAS 4.02e, 4.03); none has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
+  "anchor": {
+    "mechanism": "public version-control history",
+    "description": "This ledger is published in a public git repository. Every write is a commit with an independent timestamp that the desk cannot rewrite without the rewrite being visible to anyone holding an earlier clone (RPAS 4.04); the commitment hash is additionally beaconed to a channel the desk does not control (RPAS 4.05).",
+    "repository": "https://github.com/OccultusTheoretician/netz",
+    "path": "docs/ledger.json",
+    "history": "https://github.com/OccultusTheoretician/netz/commits/main/docs/ledger.json",
+    "verify": "python rpas_verify.py https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/ledger.json recomputes every seal and every figure; --previous asserts append-only across any two snapshots."
+  },
   "projections": [
     {
       "statement": "The Sinaloa Cartel will experience a confirmed internal leadership split or factional violence within 72 hours of Ismael 'El Mayo' Zambada's sentencing, as evidenced by at least two independent news reports documenting a violent clash between rival factions in Sinaloa state.",

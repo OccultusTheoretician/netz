@@ -524,6 +524,95 @@ def cmd_beacon(a) -> int:
     return 0
 
 
+# ------------------------------------------------------------------ token
+def cmd_token(a) -> int:
+    """KNP 4.03c: obtain an RFC 3161 timestamp token over the hashlog AS SERVED.
+
+    Two-phase and self-guiding. Phase 1: if the served hashlog does not yet
+    declare the token index in its anchor object, the pointer is added to the
+    LOCAL copy and the command tells you to commit and push, because the token
+    must cover the bytes a stranger fetches — including the pointer itself.
+    Phase 2: fetch the served bytes, digest them, request the token, store it
+    beside the hashlog, append the index. Nothing is committed by this tool.
+    """
+    import subprocess, tempfile, urllib.request, urllib.error
+    def fetch(url: str) -> bytes:
+        if not str(url).startswith(("http://", "https://")):
+            return Path(url).read_bytes()
+        req = urllib.request.Request(url, headers={"User-Agent": "kalls/rev3"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return r.read()
+    local = Path(a.hashlog)
+    index_rel = "docs/kalls_anchor_tokens.json"
+    served = fetch(a.url)
+    served_log = json.loads(served.decode("utf-8"))
+    anc = served_log.get("anchor") or {}
+    if not (isinstance(anc.get("rfc3161"), dict) and anc["rfc3161"].get("index")):
+        log = load_log(local)
+        log.setdefault("anchor", {})["rfc3161"] = {
+            "index": index_rel,
+            "tsa": a.tsa,
+            "note": "Each entry timestamps the SHA-256 of this file as served; "
+                    "the token cannot be un-issued by the committer (KNP 4.03c)."}
+        save_json(local, stamp_log(log))
+        print("PHASE 1 · token index pointer written into the local hashlog anchor.")
+        print("The token must cover the bytes a stranger fetches — commit and push")
+        print("first, then run this command again:")
+        print(f"git add {a.hashlog}")
+        print('git commit -m "KNP 4.03c: declare the timestamp token index in the anchor object"')
+        print("git push")
+        print("python kalls.py token")
+        return 0
+    dig = hashlib.sha256(served).hexdigest()
+    tmp = Path(tempfile.mkstemp(suffix=".served.json")[1]); tmp.write_bytes(served)
+    tsq = local.with_suffix(local.suffix + ".tsq")
+    tsr = local.with_suffix(local.suffix + ".tsr")
+    made = False
+    for exe in ("openssl", r"C:\Program Files\Git\usr\bin\openssl.exe"):
+        try:
+            subprocess.run([exe, "ts", "-query", "-data", str(tmp), "-sha256",
+                            "-cert", "-out", str(tsq)], check=True,
+                           capture_output=True)
+            made = True; break
+        except (OSError, subprocess.CalledProcessError):
+            continue
+    if not made:
+        die("openssl not found or ts -query failed — install openssl or use Git's "
+            r"copy at C:\Program Files\Git\usr\bin\openssl.exe")
+    tmp.unlink(missing_ok=True)
+    try:
+        req = urllib.request.Request(a.tsa, data=tsq.read_bytes(),
+                                     headers={"Content-Type":
+                                              "application/timestamp-query"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            tsr.write_bytes(r.read())
+    except Exception as e:
+        print(f"KALLS · token request failed ({e}). The .tsq is written; request "
+              f"it by hand, one line:", file=sys.stderr)
+        print(f'curl.exe -s -H "Content-Type: application/timestamp-query" '
+              f'--data-binary @{tsq} {a.tsa} -o {tsr}', file=sys.stderr)
+        return 1
+    for exe in ("openssl", r"C:\Program Files\Git\usr\bin\openssl.exe"):
+        try:
+            subprocess.run([exe, "ts", "-reply", "-in", str(tsr), "-text"],
+                           check=True); break
+        except (OSError, subprocess.CalledProcessError):
+            continue
+    ix = Path(index_rel)
+    doc = load_json(ix, {"tokens": []})
+    doc["tokens"].append({"covers_sha256": dig, "tsr": tsr.name, "tsa": a.tsa,
+                          "obtained": dt.datetime.now(dt.timezone.utc)
+                          .strftime("%Y-%m-%dT%H:%M:%SZ"),
+                          "source_url": a.url})
+    save_json(ix, doc)
+    print(f"\ntoken obtained · covers sha256 {dig}")
+    print("Review, then commit by hand:")
+    print(f"git add {tsr} {index_rel}")
+    print('git commit -m "KNP 4.03c: RFC 3161 token over the served hashlog"')
+    print("git push")
+    return 0
+
+
 # ----------------------------------------------------------------- anchor
 
 # ------------------------------------------------------------------ solve
@@ -1095,6 +1184,11 @@ def main() -> int:
     s = sub.add_parser("seal", **P); s.add_argument("--draft", required=True)
     s.add_argument("--timestamp"); s.add_argument("--dry-run", action="store_true"); s.set_defaults(fn=cmd_seal)
     s = sub.add_parser("verify", **P); s.set_defaults(fn=cmd_verify)
+    s = sub.add_parser("token", **P)
+    s.add_argument("--url", default="https://raw.githubusercontent.com/"
+                   "OccultusTheoretician/netz/main/docs/kalls_hashlog.json")
+    s.add_argument("--tsa", default="https://freetsa.org/tsr")
+    s.set_defaults(fn=cmd_token)
     s = sub.add_parser("reveal", **P); s.add_argument("--id", required=True)
     s.add_argument("--out"); s.add_argument("--no-status", action="store_true"); s.set_defaults(fn=cmd_reveal)
     s = sub.add_parser("check", **P); s.add_argument("--reveal", required=True); s.set_defaults(fn=cmd_check)
