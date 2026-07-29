@@ -1,0 +1,187 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='icon' type='image/svg+xml' href='crow_mark.svg'><link rel='stylesheet' href='brand.css'><script defer src='brand.js'></script><link rel='apple-touch-icon' href='apple-touch-icon.png'><title>FogSim &middot; NebelKr&auml;he</title>
+<meta name="description" content="Sealed deterministic scenario runs. The count is committed before the first result exists, and every run is a pure function of scenario, rules version and seed - so a third party re-executes rather than trusts.">
+<meta property="og:title" content="FogSim &middot; The Prescient Desk">
+<meta property="og:description" content="Sealed deterministic scenario runs with a declared count. Re-execute them yourself.">
+<meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
+<meta property="og:url" content="https://retroprescientaudit.com/fogsim.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@import url('fonts/fonts.css');
+:root{
+  --field:#0B0D10; --panel:#10141A; --panel2:#151A22; --panel3:#1A2029;
+  --line:#222A34; --line2:#2E3844; --fg:#C2CAD3; --fg2:#EDF2F7; --dim:#6A7580;
+  --brass:#C29B45; --brass2:#DCB55F; --green:#4E9E71; --red:#C05149;
+  --blue:#7195B5; --crow:#9AA4B0; --ink:#8D97A2;
+  --bg:var(--field); --amber:var(--brass); --amber2:var(--brass2); --redglow:var(--red);
+  --brass3:#8A6E30; --steel:#7A97B4;
+}
+
+/* ===== GEOMETRIC FOG FIELD (matches landing) ===== */
+.field-bg{position:fixed; inset:0; z-index:-2; background:var(--field);
+  background-image:
+    linear-gradient(135deg, transparent 0%, rgba(20,26,35,.55) 50%, transparent 100%),
+    radial-gradient(80% 50% at 50% -5%, rgba(184,147,63,.055), transparent 60%)}
+.facets{position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.42}
+.facets svg{width:100%; height:100%; display:block}
+.grain{position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.022;
+  background-image:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 3px)}
+
+/* ===== PERSISTENT DESK NAV (every interior page) ===== */
+.desknav{position:sticky; top:0; z-index:60; background:rgba(8,10,13,.86);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.desknav-in{max-width:900px; margin:0 auto; padding:.6rem 1.25rem; display:flex; align-items:center; gap:1rem}
+.desknav .home{display:flex; align-items:center; gap:.6rem; margin-right:auto}
+.desknav .home img{width:26px; height:auto; display:block; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
+.desknav .home span{font-family:'IBM Plex Mono',monospace; font-size:.66rem; font-weight:600;
+  letter-spacing:.26em; color:var(--fg2); text-transform:uppercase; white-space:nowrap}
+.desknav .dn-links{display:flex; gap:1rem; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+.desknav .dn-links a{font-family:'IBM Plex Mono',monospace; font-size:.64rem; font-weight:500;
+  letter-spacing:.14em; color:var(--dim); text-transform:uppercase; padding:.2rem 0; border-bottom:2px solid transparent}
+.desknav .dn-links a:hover{color:var(--fg2)}
+.desknav .dn-links a.here{color:var(--brass2); border-bottom-color:var(--brass)}
+.desknav .dn-links a.cta-min{color:var(--brass2); border:1px solid var(--line2); padding:.28rem .6rem;
+  clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+.desknav .dn-links a.cta-min:hover{border-color:var(--brass)}
+body{position:relative}
+*{box-sizing:border-box}
+html{background:var(--field)}
+body{
+  background:var(--field); color:var(--fg); margin:0; padding:0;
+  font:15.5px/1.65 'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+main{max-width:900px; margin:0 auto; padding:0 1.25rem 4rem}
+
+/* ---- LETTERHEAD ---- */
+.letterhead{padding:1.8rem 0 0; margin-bottom:1.5rem}
+.classbar{
+  font-family:'IBM Plex Mono',monospace; font-size:.66rem; font-weight:600;
+  letter-spacing:.34em; color:var(--brass); text-transform:uppercase;
+  display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+  padding:.55rem .2rem; margin-bottom:1.7rem;
+  border-top:1px solid var(--line2); border-bottom:1px solid var(--line2);
+}
+.classbar .dtg{color:var(--fg2); letter-spacing:.18em}
+.classbar .live{color:var(--fg2); letter-spacing:.18em}
+.crest{display:flex; align-items:center; gap:1.5rem;
+  padding-bottom:1.5rem; border-bottom:1px solid var(--line2)}
+.crow-mark{width:180px; height:auto; flex-shrink:0}
+.crest-text{display:flex; flex-direction:column; gap:.2rem; flex:1}
+.crest-org{font-family:'IBM Plex Mono',monospace; font-size:.7rem; font-weight:600;
+  letter-spacing:.32em; color:var(--crow); text-transform:uppercase}
+.crest-title{font-family:'Spectral',Georgia,serif; font-size:1.65rem; font-weight:600;
+  color:var(--fg2); letter-spacing:.01em; line-height:1.15; margin:.15rem 0}
+.crest-line{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--brass2);
+  letter-spacing:.06em; font-weight:500}
+.crest-motto{font-family:'Spectral',serif; font-style:italic; font-size:.86rem;
+  color:var(--ink); margin-top:.5rem; line-height:1.55}
+
+/* ---- DASHBOARD TILES ---- */
+.dash{display:grid; grid-template-columns:repeat(4,1fr); gap:.6rem; margin:1.4rem 0 1.6rem}
+.tile{position:relative; background:var(--panel); border:1px solid var(--line);
+  padding:.75rem .9rem .65rem; transition:border-color .15s, transform .15s;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%)}
+.tile::before{content:"";position:absolute;top:0;left:0;width:2px;height:100%;background:var(--brass3)}
+.tile:hover{border-color:var(--line2); transform:translateY(-1px)}
+.tile.alert::before{background:var(--red)}
+.tile.alert{border-top-color:var(--red)}
+.tile-k{font-family:'IBM Plex Mono',monospace; font-size:.6rem; letter-spacing:.16em;
+  color:var(--dim); text-transform:uppercase}
+.tile-v{font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums;
+  font-size:1.35rem; font-weight:700; color:var(--fg2); line-height:1.2; margin-top:.28rem}
+.tile-v.amber{color:var(--brass2)} .tile-v.red{color:var(--red)} .tile-v.green{color:var(--green)}
+.tile-s{font-family:'IBM Plex Mono',monospace; font-size:.62rem; color:var(--dim); margin-top:.12rem}
+@media(max-width:640px){.dash{grid-template-columns:repeat(2,1fr)} .crow-mark{width:110px}
+  .crest{gap:1rem} .crest-title{font-size:1.28rem}}
+
+/* ---- HEADINGS ---- */
+h1{display:none}
+h2{font-family:'IBM Plex Mono',monospace; font-size:.8rem; font-weight:700;
+  color:var(--brass2); letter-spacing:.24em; text-transform:uppercase;
+  margin:2.7rem 0 1rem; padding-bottom:.55rem;
+  border-bottom:1px solid var(--line2)}
+p{margin:.6rem 0; color:var(--fg)}
+.meta{color:var(--dim); font-family:'IBM Plex Mono',monospace; font-size:.74rem;
+  letter-spacing:.02em; line-height:1.75; padding:.6rem .9rem;
+  background:var(--panel); border:1px solid var(--line); margin:.4rem 0 1rem}
+a{color:var(--blue); text-decoration:none}
+a:hover{color:var(--brass2); text-decoration:underline; text-underline-offset:2px}
+strong{color:var(--fg2); font-weight:600}
+em{color:var(--ink); font-style:italic}
+
+/* ---- DUAL VOICE ---- */
+.synthesis{font-family:'IBM Plex Mono',monospace; font-size:.82rem; line-height:1.7;
+  background:var(--panel); border:1px solid var(--line); border-left:2px solid var(--blue);
+  padding:.8rem 1rem; margin:.7rem 0; color:var(--fg)}
+ol,ul{padding-left:1.5rem} li{margin:.48rem 0; padding-left:.2rem}
+ol li::marker{color:var(--brass); font-family:'IBM Plex Mono',monospace; font-weight:700}
+ul li::marker{color:var(--dim)}
+
+/* ---- WARNINGS ---- */
+blockquote{margin:.6rem 0; padding:.55rem .95rem;
+  background:rgba(192,81,73,.08); border-left:2px solid var(--red);
+  color:var(--fg); font-size:.8rem; font-family:'IBM Plex Mono',monospace;
+  letter-spacing:.02em}
+
+/* ---- TABLES ---- */
+.secnav{display:flex;gap:.5rem;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.5rem 0 .6rem;margin:0 0 1rem;border-bottom:1px solid var(--line)}.secnav a{flex:0 0 auto;font:600 .66rem var(--mono);letter-spacing:.1em;color:var(--dim);text-decoration:none;border:1px solid var(--line);padding:.28rem .55rem;text-transform:uppercase;scroll-margin-top:1rem}.secnav a:hover{color:var(--brass);border-color:var(--brass)}.pmk{font:600 .6rem var(--mono);letter-spacing:.14em;color:var(--dim);margin-right:.55rem;vertical-align:middle}.snum{font-family:var(--mono);color:var(--brass);margin-right:.45rem}.stop{float:right;font-size:.68rem;color:var(--dim);text-decoration:none}.stop:hover{color:var(--brass)}h2{scroll-margin-top:1.2rem}.tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1rem 0}
+.tablewrap table{margin:0}
+table{border-collapse:collapse; min-width:100%; width:max-content; font-size:.79rem;
+  font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums;
+  margin:1rem 0; border:1px solid var(--line2)}
+th,td{border-bottom:1px solid var(--line); padding:.5rem .75rem;
+  text-align:left; vertical-align:top}
+th{background:var(--panel2); color:var(--brass); text-transform:uppercase;
+  letter-spacing:.13em; font-size:.64rem; font-weight:700;
+  border-bottom:1px solid var(--line2)}
+td{color:var(--fg)}
+tr:nth-child(even) td{background:rgba(255,255,255,.012)}
+
+.corr{color:var(--brass2); font-weight:600}
+.single{color:var(--dim); font-style:italic}
+hr{border:0; height:1px; background:var(--line2); margin:2.6rem 0}
+
+.footbar{margin-top:3rem; padding:.55rem .2rem;
+  border-top:1px solid var(--line2); border-bottom:1px solid var(--line2);
+  font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.34em;
+  color:var(--brass); text-transform:uppercase; text-align:center}
+.colophon{font-family:'Spectral',serif; font-style:italic; font-size:.82rem;
+  color:var(--ink); text-align:center; margin-top:.9rem; line-height:1.65}
+.discl{display:block; margin-top:.7rem; font-family:'IBM Plex Mono',monospace;
+  font-style:normal; font-size:.68rem; line-height:1.7; color:var(--dim)}
+.byline{font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.14em;
+  color:var(--crow); text-align:center; margin-top:.6rem; text-transform:uppercase}
+
+/* ---- TABS ---- */
+.tabbar{display:flex; flex-wrap:wrap; gap:.15rem; margin:0 0 1.6rem;
+  padding:0; background:transparent; border-bottom:1px solid var(--line2);
+  position:sticky; top:41px; z-index:20; background:rgba(8,10,13,.92); backdrop-filter:blur(8px)}
+.tab{font-family:'IBM Plex Mono',monospace; font-size:.72rem; font-weight:600;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--dim);
+  background:transparent; border:0; border-bottom:2px solid transparent;
+  padding:.6rem .85rem; cursor:pointer; transition:color .15s, border-color .15s}
+.tab:hover{color:var(--fg2)}
+.tab.active{color:var(--fg2); border-bottom-color:var(--brass)}
+.pane{display:none; opacity:0; transform:translateY(4px)}
+.pane.active{display:block; animation:paneIn .28s ease forwards}
+@keyframes paneIn{to{opacity:1; transform:none}}
+@media(prefers-reduced-motion:reduce){.pane.active{animation:none; opacity:1; transform:none}}
+.pane h2:first-child{margin-top:.5rem}
+
+/* ---- PRINT: the working paper ---- */
+@media print{
+  :root{--field:#fff; --panel:#fff; --panel2:#f2f2f2; --panel3:#eee;
+    --line:#999; --line2:#333; --fg:#111; --fg2:#000; --dim:#444;
+    --brass:#000; --brass2:#000; --green:#1c5c3c; --red:#7a1f1f;
+    --blue:#00358a; --crow:#222; --ink:#333}
+  body{background:#fff; font-size:11pt}
+  .tabbar{display:none}
+  .pane{display:block !important}
+  .crow-mark{width:110px}
+  a{color:var(--blue); text-decoration:none}
+  .tile{border:1px solid #333; border-top:2px solid #000}
+  table,th,td{border-color:#333}
+}
+</style></head><body><nav class="desknav"><div class="desknav-in"><a class="home" href="index.html"><img src="crow_mark.svg" alt=""><span>NebelKr&auml;he</span></a><div class="dn-links"><a class="" href="report.html">Report</a><a class="" href="ledger.html">Ledger</a><a class="" href="kkr.html">Forecasts</a><a href="register.html">Register</a><a href="KriegForeKaster_compendium.html">Compendium</a><a href="ohrwurm.html">Ohrwurm</a><a href="https://github.com/OccultusTheoretician/netz">GitHub</a><a class="cta-min" href="index.html">Home</a></div></div></nav><main><h1>FogSim</h1><p><strong>Sealed deterministic scenario runs with a declared count.</strong> A scenario runner invites infinite attempts: run a hundred, publish the three that landed. That is an epistemic problem, not a capacity one, so a FogSim campaign seals a <em>set</em>. Every commitment is published before any run executes, which makes a withheld run visible as a commitment with nothing opened against it.</p><p><strong>And the runs are deterministic, which is the stronger property.</strong> A run is a pure function of scenario, rules version and seed. A third party does not verify a hash and take the publisher's word for the output &mdash; they re-execute the run and get the same output. Recomputation replaces trust.</p><p>Verify either campaign yourself:</p><pre><code>python fogsim.py verify --hashlog fogsim_hashlog.json \
+  --reveal fogsim_reveal.json --scenario fogsim_scenario.json</code></pre><h3>Campaign 1 &mdash; the ceiling</h3><p>These outcomes were produced by re-executing the runs, not by reading them from a stored file.</p><p class="meta">sealed 2026-07-27T14:52:26Z &middot; declared 8 runs &middot; 8 commitments &middot; 8 revealed &middot; 0 withheld &middot; scenario hash MATCH &middot; rules <code>fogsim-lanchester/1.0</code></p><p class="meta">BLUE 1000.0 at effectiveness 0.0012 &middot; RED 900.0 at 0.0014 &middot; break fraction 0.55 &middot; ceiling 400 ticks</p><blockquote>Eight runs, sealed 2026-07-27, all eight revealed. Every run terminated at the 400-tick ceiling without a decision. That was read at the time as a property of the model. It was not: the forces are decisive, and the ceiling cut the run off before the decision arrived. Campaign 2 tests exactly that.</blockquote><div class='tablewrap'><table><thead><tr><th>run</th><th>outcome</th><th>ticks</th><th>blue remaining</th><th>red remaining</th><th>commitment</th></tr></thead><tbody><tr><td>1</td><td>no_decision</td><td>400</td><td>0.616</td><td>0.573</td><td>recomputes</td></tr><tr><td>2</td><td>no_decision</td><td>400</td><td>0.614</td><td>0.576</td><td>recomputes</td></tr><tr><td>3</td><td>no_decision</td><td>400</td><td>0.605</td><td>0.590</td><td>recomputes</td></tr><tr><td>4</td><td>no_decision</td><td>400</td><td>0.611</td><td>0.588</td><td>recomputes</td></tr><tr><td>5</td><td>no_decision</td><td>400</td><td>0.607</td><td>0.577</td><td>recomputes</td></tr><tr><td>6</td><td>no_decision</td><td>400</td><td>0.605</td><td>0.590</td><td>recomputes</td></tr><tr><td>7</td><td>no_decision</td><td>400</td><td>0.602</td><td>0.574</td><td>recomputes</td></tr><tr><td>8</td><td>no_decision</td><td>400</td><td>0.614</td><td>0.581</td><td>recomputes</td></tr></tbody></table></div><p class="meta">commitments recompute 8/8 &middot; runs re-executed 8/8 &middot; <a href="fogsim_hashlog.json">hashlog</a> &middot; <a href="fogsim_reveal.json">reveal</a></p><h3>Campaign 2 &mdash; the same forces, allowed to terminate</h3><p>These outcomes were produced by re-executing the runs, not by reading them from a stored file.</p><p class="meta">sealed 2026-07-29T00:41:00Z &middot; declared 8 runs &middot; 8 commitments &middot; 8 revealed &middot; 0 withheld &middot; scenario hash MATCH &middot; rules <code>fogsim-lanchester/1.0</code></p><p class="meta">BLUE 1000.0 at effectiveness 0.0012 &middot; RED 900.0 at 0.0014 &middot; break fraction 0.55 &middot; ceiling 600 ticks</p><blockquote>Identical forces and identical rules version. One parameter changed: max_ticks, 400 to 600. All eight runs resolve. The first campaign's eight non-results were a truncation artefact of a held-fixed assumption, and the first campaign is left sealed and published exactly as it was rather than corrected.</blockquote><div class='tablewrap'><table><thead><tr><th>run</th><th>outcome</th><th>ticks</th><th>blue remaining</th><th>red remaining</th><th>commitment</th></tr></thead><tbody><tr><td>1</td><td>blue_holds</td><td>437</td><td>0.579</td><td>0.550</td><td>recomputes</td></tr><tr><td>2</td><td>blue_holds</td><td>426</td><td>0.594</td><td>0.549</td><td>recomputes</td></tr><tr><td>3</td><td>blue_holds</td><td>432</td><td>0.589</td><td>0.550</td><td>recomputes</td></tr><tr><td>4</td><td>blue_holds</td><td>438</td><td>0.587</td><td>0.549</td><td>recomputes</td></tr><tr><td>5</td><td>blue_holds</td><td>438</td><td>0.585</td><td>0.550</td><td>recomputes</td></tr><tr><td>6</td><td>blue_holds</td><td>447</td><td>0.569</td><td>0.550</td><td>recomputes</td></tr><tr><td>7</td><td>blue_holds</td><td>436</td><td>0.585</td><td>0.549</td><td>recomputes</td></tr><tr><td>8</td><td>blue_holds</td><td>459</td><td>0.558</td><td>0.549</td><td>recomputes</td></tr></tbody></table></div><p class="meta">commitments recompute 8/8 &middot; runs re-executed 8/8 &middot; <a href="fogsim_hashlog_c2.json">hashlog</a> &middot; <a href="fogsim_reveal_c2.json">reveal</a></p><h3>What this does not certify</h3><blockquote><strong>The scenario represents no real force.</strong> Two aggregates under stochastic Lanchester attrition. Verification certifies the integrity of the campaign record &mdash; that the count was committed first, that nothing was withheld, and that the outputs recompute. It certifies nothing whatsoever about whether the model resembles war. The verification machinery here is complete and the content behind it is not, and that is stated rather than left to be discovered.</blockquote><p class="meta">16 runs re-executed on build &middot; 0 withheld across all campaigns</p></main></body></html>
