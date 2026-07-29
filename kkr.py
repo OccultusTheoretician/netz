@@ -306,7 +306,7 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
         out.append(f"*{_void_n} projection(s) voided — terminated as unadjudicable, "
                    f"never edited; each is itemised with its reason in "
                    f"[the ledger](ledger.html).*\n")
-    out.append("### STANDING BY ARM\n")
+    out.append("**STANDING BY ARM** — segregated per RPAS 5.04; no pooled figure exists.\n")
     out.extend(_arm_table(arms))
     out.append("")
     out.append("\nFull ledger: ledger.html\n")
@@ -522,11 +522,11 @@ def _arm_table(arms: dict) -> list:
             "|---|---|---|---|---|---|---|---|---|---|"]
     for tag, r in arms.items():
         if not r["n_resolved"]:
-            rows.append(f"| `{tag}` | {r['issued']} | {r['open']} | 0 | — | — | "
+            rows.append(f"| {tag} | {r['issued']} | {r['open']} | 0 | — | — | "
                         f"not computed | — | — | — |")
             continue
         skill = "—" if r["skill"] is None else f"{r['skill']:+.3f}"
-        rows.append(f"| `{tag}` | {r['issued']} | {r['open']} | {r['n_resolved']} | "
+        rows.append(f"| {tag} | {r['issued']} | {r['open']} | {r['n_resolved']} | "
                     f"{r['hits']} | {r['misses']} | {r['brier']:.3f} | "
                     f"{r['base_rate']:.1%} | {r['clim']:.3f} | {skill} |")
     return rows
@@ -584,7 +584,7 @@ def render_ledger():
                    + ", ".join("`" + t + "`" for t in thin) + ".*\n")
     if scored:
         for tag, r in scored:
-            out.append(f"### CALIBRATION — `{tag}` ({r['n_resolved']} resolved)\n")
+            out.append(f"**CALIBRATION — {tag}** ({r['n_resolved']} resolved)\n")
             out.append("| stated probability | n resolved | realized frequency |")
             out.append("|---|---|---|")
             for band, d in r["calibration"].items():
