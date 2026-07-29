@@ -1,12 +1,12 @@
 **UNCLASSIFIED // OPEN SOURCES**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 282330Z JUL 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 290012Z JUL 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 141 issued across 5 forecaster arms · 116 open (0 past deadline, unresolved)
+Window: all-time · 141 issued across 5 forecaster arms · 116 open (1 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -33,6 +33,10 @@ Window: all-time · 141 issued across 5 forecaster arms · 116 open (0 past dead
 | 20-40% | 7 | 29% |
 | 40-60% | 4 | 25% |
 | 60-80% | 3 | 33% |
+
+## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
+
+- **KKR-20260724-02** (25%, due 2026-07-28) The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. — *resolves on:* At least one confirmed U.S. military strike on Iranian military or strategic infrastructure, reported by a major news outlet such as BBC World or Guardian World, occurred between 2026-07-25 and 2026-07-28.
 
 ## OPEN PROJECTIONS
 

@@ -52,8 +52,36 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-STATE = HERE / "fogsim_campaign.json"
+LEGACY_STATE = HERE / "fogsim_campaign.json"
 RULES_VERSION = "fogsim-lanchester/1.0"
+
+
+def state_path(label):
+    """Opening material is per-campaign.
+
+    A single global state file means the next seal silently destroys the seeds
+    and salts of every unopened run in the previous campaign - which is
+    precisely what the count commitment exists to protect.
+    """
+    return HERE / ("fogsim_campaign_%s.json" % label)
+
+
+def resolve_state(label=None, scenario=None):
+    """Return the opening-material path for a campaign, or None.
+
+    Order: explicit label, then the scenario's own hash, then the unsuffixed
+    legacy file so campaigns sealed before this change keep working.
+    """
+    cands = []
+    if label:
+        cands.append(state_path(label))
+    if scenario is not None:
+        cands.append(state_path(scenario_hash(scenario)[:16]))
+    cands.append(LEGACY_STATE)
+    for p in cands:
+        if p.exists():
+            return p
+    return None
 
 SEP = "|"
 PIPE_ESC = "\\u007C"
@@ -177,6 +205,23 @@ def cmd_scenario(a):
 def cmd_seal(a):
     scenario = read_json(Path(a.scenario))
     sh = scenario_hash(scenario)
+    label = getattr(a, "campaign", None) or sh[:16]
+    sp = state_path(label)
+    if sp.exists() and not getattr(a, "force", False):
+        prev = read_json(sp)
+        print("FAIL - opening material already exists for this campaign.",
+              file=sys.stderr)
+        print("  file     : %s" % sp.name, file=sys.stderr)
+        print("  scenario : %s" % str(prev.get("scenario_hash", "?"))[:16],
+              file=sys.stderr)
+        print("  runs     : %s" % prev.get("runs", "?"), file=sys.stderr)
+        print("  Overwriting destroys the seeds and salts of every unopened run",
+              file=sys.stderr)
+        print("  in that campaign. Use --campaign NAME for a distinct campaign,",
+              file=sys.stderr)
+        print("  or --force only if that campaign is fully revealed and finished.",
+              file=sys.stderr)
+        return 1
     master = hashlib.sha256(
         (sh + datetime.now(timezone.utc).isoformat() + str(a.runs)).encode()).hexdigest()
     salts = [hashlib.sha256(f"{master}|salt|{i}".encode()).hexdigest()[:32]
@@ -208,12 +253,12 @@ def cmd_seal(a):
     }
     Path(a.out).write_text(json.dumps(hashlog, indent=2, ensure_ascii=False) + "\n",
                            encoding="utf-8")
-    STATE.write_text(json.dumps({"scenario_hash": sh, "question": a.question,
-                                 "master": master, "runs": a.runs, "opens": opens},
-                                indent=2), encoding="utf-8")
+    sp.write_text(json.dumps({"scenario_hash": sh, "question": a.question,
+                              "master": master, "runs": a.runs, "opens": opens},
+                             indent=2), encoding="utf-8")
     print(f"sealed {a.runs} runs · scenario {sh[:16]}…")
     print(f"  hashlog → {a.out}   (publish this)")
-    print(f"  opening material → {STATE.name}   (KEEP PRIVATE until reveal)")
+    print(f"  opening material → {sp.name}   (KEEP PRIVATE until reveal)")
     print("\nNothing has been executed yet. That is the point: the count is committed")
     print("before the first result exists.")
     return 0
@@ -221,7 +266,13 @@ def cmd_seal(a):
 
 def cmd_run(a):
     scenario = read_json(Path(a.scenario))
-    st = read_json(STATE)
+    sp = resolve_state(getattr(a, "campaign", None), scenario)
+    if sp is None:
+        print("FAIL - no opening material for this scenario. Seal a campaign first.",
+              file=sys.stderr)
+        return 1
+    print("campaign state: %s" % sp.name, file=sys.stderr)
+    st = read_json(sp)
     if scenario_hash(scenario) != st["scenario_hash"]:
         print("FAIL — this scenario does not hash to the sealed one. Editing the "
               "scenario after sealing breaks every commitment in the campaign.",
@@ -237,7 +288,18 @@ def cmd_run(a):
 
 
 def cmd_reveal(a):
-    st = read_json(STATE)
+    scen = read_json(Path(a.scenario)) if getattr(a, "scenario", None) else None
+    sp = resolve_state(getattr(a, "campaign", None), scen)
+    if sp is None:
+        print("FAIL - no opening material found. Pass --campaign or --scenario.",
+              file=sys.stderr)
+        return 1
+    st = read_json(sp)
+    if scen is not None and scenario_hash(scen) != st["scenario_hash"]:
+        print("FAIL - resolved campaign does not match the supplied scenario.",
+              file=sys.stderr)
+        return 1
+    print("campaign state: %s" % sp.name, file=sys.stderr)
     idxs = [a.index] if a.index else [x["index"] for x in st["opens"]]
     out = []
     for i in idxs:
@@ -329,12 +391,21 @@ def main():
     s.add_argument("--runs", type=int, required=True)
     s.add_argument("--question", required=True)
     s.add_argument("--out", default="fogsim_hashlog.json")
+    s.add_argument("--campaign",
+                   help="label for this campaign's opening material; defaults to "
+                        "the first 16 hex of the scenario hash")
+    s.add_argument("--force", action="store_true",
+                   help="overwrite existing opening material - destroys the seeds "
+                        "and salts of every unopened run in that campaign")
     r = sub.add_parser("run")
     r.add_argument("--scenario", required=True)
     r.add_argument("--index", type=int, required=True)
+    r.add_argument("--campaign")
     v = sub.add_parser("reveal")
     v.add_argument("--index", type=int)
     v.add_argument("--out", default="fogsim_reveal.json")
+    v.add_argument("--campaign")
+    v.add_argument("--scenario")
     w = sub.add_parser("verify")
     w.add_argument("--hashlog", required=True)
     w.add_argument("--reveal", required=True)
