@@ -49,8 +49,8 @@ the construction vectors are the interoperability contract. A NONCONFORMANT verd
 publishes like any other finding.</p>
 </div></section>
 <section><div class="wrap"><h2>One Kall, in your browser</h2>
-<p class="note">A reveal is JSON published by the committer when a Kall is opened — at minimum the fields named by the construction (for this log: <span class="mono" id="fields">id, timestamp, statement, resolution_basis, salt</span>).</p>
-<textarea id="reveal" placeholder='{"id":"KK-20260725-01","timestamp":"2026-07-25T18:30:00Z","statement":"...","resolution_basis":"...","salt":"..."}'></textarea>
+<p class="note">A reveal is JSON published by the committer when a Kall is opened — at minimum the fields named by the construction (for this log: <span class="mono" id="fields">the construction’s fields load from the hashlog with scripts — with scripts off, read <span class="mono">construction.preimage_order</span> in <a href="kalls_hashlog.json">kalls_hashlog.json</a></span>).</p>
+<textarea id="reveal" aria-label="a published Kall reveal, as JSON, to recompute against the sealed commitment" placeholder='{"id":"KK-20260725-01","timestamp":"2026-07-25T18:30:00Z","statement":"...","resolution_basis":"...","salt":"..."}'></textarea>
 <button id="go">RECOMPUTE &amp; COMPARE</button>
 <div id="out" class="verdict" style="display:none"></div>
 <div class="note" style="margin-top:1rem">Construction in force (read live from <a href="kalls_hashlog.json">the hashlog</a>): <span class="mono" id="con">loading…</span></div>
@@ -79,7 +79,7 @@ consistent decode, which is the construction, not a boast. The decoder below shi
 the key exists. The day the key publishes, paste it here and your own browser opens the plate:
 XOR, then both hash checks, locally. The desk is not consulted at its own reveal.</p>
 <div class="tw"><table><tbody id="pl"><tr><td class="note">reading plate.json …</td></tr></tbody></table></div>
-<textarea id="pkey" style="min-height:90px" placeholder="the key, as hex, when it publishes — nothing pasted here leaves this page"></textarea>
+<textarea id="pkey" aria-label="the plate key as hex, once it publishes" style="min-height:90px" placeholder="the key, as hex, when it publishes — nothing pasted here leaves this page"></textarea>
 <button id="popen">OPEN THE PLATE</button>
 <div id="pout" class="verdict" style="display:none"></div>
 </div></section>
@@ -88,7 +88,7 @@ XOR, then both hash checks, locally. The desk is not consulted at its own reveal
 licensed, sold, or gated. Type a claim, get a commitment. Post the hash anywhere that timestamps
 it; keep the preimage; publish it when the claim resolves — hit or miss. Everything below runs in
 your browser; no field is transmitted, stored, or seen by this desk.</p>
-<textarea id="fstmt" style="min-height:90px" placeholder="the claim, exactly as you will publish it later — include your probability and deadline in the text"></textarea>
+<textarea id="fstmt" aria-label="the claim to commit - exactly as you will publish it later" style="min-height:90px" placeholder="the claim, exactly as you will publish it later — include your probability and deadline in the text"></textarea>
 <button id="fgo">FORGE COMMITMENT</button>
 <div id="fout" class="verdict" style="display:none"></div>
 <p class="note" id="fnote" style="display:none"></p>

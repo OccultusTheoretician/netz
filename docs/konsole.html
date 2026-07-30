@@ -24,10 +24,16 @@ a{color:var(--brass)}
   align-items:center;justify-content:center;flex-direction:column;gap:.6rem}
 #game{background:#0a0d11;border:1px solid var(--line);max-width:96vw;max-height:80vh}
 #ghud{color:var(--dim);font:600 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase}
+@media (prefers-reduced-motion: reduce){
+  /* The rain is ornament; the games are the point. Honour the setting: kill the
+     ambient animation outright and let the cabinet say why before it runs. */
+  #rain{display:none !important}
+  *{transition:none !important;animation:none !important}
+}
 </style></head><body><nav class="desknav-unified" aria-label="site" style="display:flex;gap:.85rem;flex-wrap:wrap;align-items:center;padding:.7rem 1.1rem;border-bottom:1px solid #26292f;background:rgba(7,9,12,.55);position:relative;z-index:20"><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="index.html">Desk</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="report.html">Report</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="ledger.html">Ledger</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="kkr.html">Forecasts</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="kraehes_kalls.html">Kalls</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="KriegForeKaster.html">ForeKaster</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="okk.html">OberKommando</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="standards.html">Standards</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="conformance.html">Conformance</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="verify.html">Verify</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="register.html">Register</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="KriegForeKaster_compendium.html">Compendium</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="ohrwurm.html">Ohrwurm</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="spion.html">Spion</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="fogsim.html">FogSim</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="nest.html">Nest</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="marks.html">Marks</a><a aria-current="page" style="color:#dcb65e;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="konsole.html">Konsole</a><a style="color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase" href="https://github.com/OccultusTheoretician/netz">GitHub</a></nav>
 <canvas id="rain"></canvas>
 <div id="term"></div>
-<div id="row" style="padding:0 1.1rem 1.2rem"><span id="ps">nebelKr&auml;he&gt;</span><input id="in" autofocus autocomplete="off" spellcheck="false"></div>
+<div id="row" style="padding:0 1.1rem 1.2rem"><span id="ps">nebelKr&auml;he&gt;</span><input id="in" aria-label="konsole command line - type help" autofocus autocomplete="off" spellcheck="false"></div>
 <div id="gwrap"><canvas id="game" width="640" height="400"></canvas><div id="ghud">esc to leave the cabinet</div></div>
 <script>
 (function(){
@@ -184,7 +190,11 @@ function cmdKalls(){
 
 /* ---------- rain, in brass ---------- */
 var rainOn=false, rainT=null;
+var STILL = (window.matchMedia &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches) || false;
 function matrix(){
+  if(STILL) return out("your system asks for reduced motion, so the rain stays off. "
+    + "nothing in this room depends on it.","dim");
   var c=document.getElementById("rain"),x=c.getContext("2d");
   if(rainOn){rainOn=false;clearInterval(rainT);c.style.opacity=0;
     return out("rain off","dim");}
@@ -396,6 +406,11 @@ var GW=document.getElementById("gwrap"),GC=document.getElementById("game"),
     game=null,rafId=null;
 function bestGet(k){var v=parseInt(stGet(k)||"0",10);return isNaN(v)?0:v;}
 function gameOpen(g,hud){
+  if(STILL){
+    out("your system asks for reduced motion. these two are animated by nature \u2014 "
+      + "type <span class=\'br\'>motion on</span> to run them anyway.","dim");
+    return;
+  }
   game=g;GW.style.display="flex";GHUD.textContent=hud;IN.blur();
   function loop(){
     if(!game)return;
@@ -679,6 +694,13 @@ var CMDS={
   ledger:cmdLedger, orbat:cmdOrbat, kalls:cmdKalls, matrix:matrix,
   manifesto:cmdManifesto, hunt:cmdHunt, vault:cmdVault, plate:cmdPlate, scores:cmdScores,
   reset:cmdReset,
+  motion:function(a){
+    var v=(a[1]||"").toLowerCase();
+    if(v==="on"){STILL=false;return out("motion enabled for this session.","gd");}
+    if(v==="off"){STILL=true;return out("motion suppressed for this session.","dim");}
+    out("motion is currently "+(STILL?"OFF (your system asked for that)":"ON")
+      +" \u00b7 <span class=\'br\'>motion on</span> / <span class=\'br\'>motion off</span>","dim");
+  },
   feldschuss:startFeld, feld:startFeld,
   abwehr:startAbwehr,
   key:function(a){cmdKey(a.slice(1).join(" "));},

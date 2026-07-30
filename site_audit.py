@@ -346,6 +346,146 @@ def audit_site(r, verbose):
         r.ok("no BOMs in served text files")
 
 
+def audit_degradation(r, verbose):
+    """Two properties this desk claims but never checked by enumeration.
+
+    ACCESSIBILITY is not decoration here. The whole thesis is that a stranger
+    who owes the desk nothing can read and check the record; a page a screen
+    reader cannot navigate, or one that hides its own numbers behind an
+    unlabelled control, fails that on its own terms.
+
+    JS-OFF HONESTY is the harder property. Several pages recompute their
+    figures client-side. With scripts blocked, the correct behaviour is to
+    say so — a page that renders a stale figure, or an empty frame that looks
+    like an empty world, is making a claim it cannot support. This check reads
+    every element the scripts are supposed to fill and asks whether its
+    pre-script contents are honest about being unfilled.
+    """
+    r.head("DEGRADATION AND ACCESS")
+    served = {l.split(chr(47))[-1] for l in git(["ls-files", "docs/"]).splitlines()
+              if l.lower().endswith(".html") and l.count(chr(47)) == 1}
+    pages = sorted(p for p in DOCS.glob("*.html") if p.name in served)
+    texts = {p.name: p.read_text(encoding="utf-8", errors="replace") for p in pages}
+
+    # --- language, title, viewport ---------------------------------------
+    miss = []
+    for name, s in texts.items():
+        if not re.search(r"<html[^>]*\slang=", s, re.I):
+            miss.append((name, "no lang= on <html> (screen readers guess)"))
+        if not re.search(r"<title>\s*\S", s, re.I):
+            miss.append((name, "no non-empty <title>"))
+        if not re.search(r'name=["\']viewport["\']', s, re.I):
+            miss.append((name, "no viewport meta (unreadable on a phone)"))
+    r.sub("document basics", len(texts) * 3, "checks over served pages")
+    if miss:
+        for n, why in miss:
+            r.bad("DOC", "%s: %s" % (n, why))
+    else:
+        r.ok("every page declares a language, a title and a viewport")
+
+    # --- images carry alt ------------------------------------------------
+    n_img = 0
+    noalt = []
+    for name, s in texts.items():
+        for tag in re.findall(r"<img\b[^>]*>", s, re.I):
+            n_img += 1
+            if not re.search(r"\salt=", tag, re.I):
+                noalt.append((name, tag[:70]))
+    r.sub("image alternatives", n_img, "img elements")
+    if noalt:
+        for n, t in noalt:
+            r.bad("ALT", "%s: %s" % (n, t))
+    else:
+        r.ok("every img carries an alt attribute (empty alt is correct for marks)")
+
+    # --- form controls are labelled --------------------------------------
+    n_ctl = 0
+    unlabelled = []
+    for name, s in texts.items():
+        labelled = set(re.findall(r"<label[^>]*\sfor=[\"']([^\"']+)", s, re.I))
+        for tag in re.findall(r"<(?:input|select|textarea)\b[^>]*>", s, re.I):
+            n_ctl += 1
+            if re.search(r'type=["\']?(hidden|submit|button)', tag, re.I):
+                continue
+            idm = re.search(r'\sid=["\']([^"\']+)', tag)
+            has = bool(re.search(r"aria-label=|aria-labelledby=|title=", tag, re.I))
+            if idm and idm.group(1) in labelled:
+                has = True
+            # a placeholder is a hint, never a label, but it is not nothing
+            if not has:
+                unlabelled.append((name, (idm.group(1) if idm else tag[:50])))
+    r.sub("labelled controls", n_ctl, "form controls")
+    if unlabelled:
+        for n, t in unlabelled:
+            r.bad("LABEL", "%s: control %s has no label, aria-label or title"
+                  % (n, t))
+        print("    A placeholder is a hint, not a name: it disappears on input")
+        print("    and is not announced as the control's label.")
+    else:
+        r.ok("every visible control has a programmatic name")
+
+    # --- JS-off honesty --------------------------------------------------
+    # Elements a script fills, read as a browser with scripts blocked would.
+    # Only elements the script actually WRITES a value into count: an id is
+    # often grabbed just to attach a handler, and a button reading "RUN" with
+    # scripts off is honest — it is a control, not a figure. Buttons, options
+    # and inputs are excluded for the same reason.
+    HONEST = re.compile(r"loading|unavailable|reading |requires javascript|"
+                        r"scripts? (?:are |is )?(?:blocked|disabled|off)|"
+                        r"did not load|is empty|not published|unreachable|"
+                        r"recomput|select |choose |no findings yet|load with scripts|"
+                        r"^[-\u2014\u2013.\u2026\s]*$", re.I)
+    WRITE = re.compile(
+        r"(?:getElementById\(['\"]([^'\"]+)['\"]\)|\$\(['\"]#([^'\"]+)['\"]\))"
+        r"\s*\.\s*(?:textContent|innerHTML)\s*=")
+    n_slots = 0
+    dishonest = []
+    for name, s in texts.items():
+        script = "\n".join(re.findall(r"<script>([\s\S]*?)</script>", s))
+        if not script:
+            continue
+        written = {a or b for a, b in WRITE.findall(script)}
+        for eid in sorted(written):
+            m = re.search(r"<(\w+)[^>]*\sid=[\"']" + re.escape(eid)
+                          + r"[\"'][^>]*>([\s\S]{0,400}?)</", s)
+            if not m:
+                continue
+            if m.group(1).lower() in ("button", "option", "input", "select",
+                                      "textarea"):
+                continue
+            n_slots += 1
+            inner = re.sub(r"<[^>]+>", " ", m.group(2))
+            inner = re.sub(r"\s+", " ", inner).strip()
+            if not inner:
+                continue          # empty is honest: nothing is claimed
+            if not HONEST.search(inner):
+                dishonest.append((name, eid, inner[:70]))
+    r.sub("script-filled slots", n_slots, "elements a script writes into")
+    if dishonest:
+        for n, eid, txt in dishonest:
+            r.bad("NOJS", "%s: #%s reads %r with scripts off - a figure that "
+                  "is not being recomputed must not look like one that is"
+                  % (n, eid, txt))
+    else:
+        r.ok("with scripts blocked every computed slot is empty or says so")
+
+    # --- motion ----------------------------------------------------------
+    movers = [n for n, s in texts.items()
+              if re.search(r"requestAnimationFrame|setInterval\(", s)]
+    guarded = [n for n in movers
+               if "prefers-reduced-motion" in texts[n]]
+    r.sub("motion", len(movers), "pages that animate")
+    if movers and len(guarded) < len(movers):
+        for n in movers:
+            if n not in guarded:
+                r.bad("MOTION", "%s animates without a prefers-reduced-motion "
+                      "path" % n)
+    elif movers:
+        r.ok("every animating page honours prefers-reduced-motion")
+    else:
+        r.ok("nothing animates")
+
+
 def audit_git(r, verbose):
     r.head("REPOSITORY")
     tracked = [l for l in git(["ls-files"]).splitlines() if l]
@@ -445,6 +585,7 @@ def main():
     print("SITE AND REPOSITORY AUDIT - by enumeration, not sampling")
     if a.section in ("site", "all"):
         audit_site(r, a.verbose)
+        audit_degradation(r, a.verbose)
     if a.section in ("git", "all"):
         audit_git(r, a.verbose)
 

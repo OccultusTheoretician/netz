@@ -40,13 +40,13 @@ claim about any conflict.</p>
 </div></header>
 <section><div class="wrap"><h2>The matchup</h2>
 <div style="display:flex;gap:1rem;flex-wrap:wrap">
-<div style="flex:1;min-width:260px"><p class="note">BLUE</p><select id="blue" style="width:100%;background:#101317;color:var(--fg);border:1px solid var(--line);padding:.5rem;font:13px 'IBM Plex Mono',monospace"></select><div class="note" id="bprov"></div></div>
-<div style="flex:1;min-width:260px"><p class="note">RED</p><select id="red" style="width:100%;background:#101317;color:var(--fg);border:1px solid var(--line);padding:.5rem;font:13px 'IBM Plex Mono',monospace"></select><div class="note" id="rprov"></div></div>
+<div style="flex:1;min-width:260px"><p class="note">BLUE</p><select id="blue" aria-label="BLUE side: state whose sourced personnel figure sets its strength" style="width:100%;background:#101317;color:var(--fg);border:1px solid var(--line);padding:.5rem;font:13px 'IBM Plex Mono',monospace"></select><div class="note" id="bprov"></div></div>
+<div style="flex:1;min-width:260px"><p class="note">RED</p><select id="red" aria-label="RED side: state whose sourced personnel figure sets its strength" style="width:100%;background:#101317;color:var(--fg);border:1px solid var(--line);padding:.5rem;font:13px 'IBM Plex Mono',monospace"></select><div class="note" id="rprov"></div></div>
 </div>
 <p class="note">Only states whose personnel figure parses under the desk's published rules are selectable —
 <span id="nok">…</span> of <span id="ntot">…</span>. The refused remainder is listed at the bottom of each
 menu with the refusal reason, disabled: an unparsed figure is a gap on the record, not a zero.</p>
-<p style="margin-top:.6rem"><span class="note">seed</span> <input id="seed" style="background:#101317;color:var(--fg);border:1px solid var(--line);padding:.45rem;font:13px 'IBM Plex Mono',monospace;width:9rem">
+<p style="margin-top:.6rem"><span class="note">seed</span> <input id="seed" aria-label="run seed: the integer that makes a run replayable" style="background:#101317;color:var(--fg);border:1px solid var(--line);padding:.45rem;font:13px 'IBM Plex Mono',monospace;width:9rem">
 <button id="run">RUN</button> <button id="run8" style="background:#101317;color:var(--brass);border:1px solid var(--brass)">RUN ×8</button></p>
 <canvas id="ch" width="860" height="240" style="width:100%;max-width:860px;border:1px solid var(--line);background:#101317;margin-top:.8rem"></canvas>
 <div id="out" class="verdict" style="display:none"></div>

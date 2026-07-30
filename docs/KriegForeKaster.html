@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <meta charset="utf-8">
 <title>KriegForeKaster — a scored order of battle · The Prescient Desk</title>
 <meta name="description" content="Order-of-battle claims with graded existence and location, each carrying its source and retrieval date, and a half-life clock.">
@@ -133,7 +134,7 @@ footer{flex:0 0 auto;border-top:1px solid var(--line);padding:.45rem 1rem;
         <option value="2">DOCUMENTED and above</option>
         <option value="0.5">CONFESSED only</option>
       </select>
-      <input id="fText" type="search" placeholder="search name, place, commander">
+      <input id="fText" aria-label="search formations by name, designation, place or commander" type="search" placeholder="search name, place, commander">
       <span class="sp"></span>
       <span class="count" id="shown"></span>
     </div>
@@ -473,3 +474,4 @@ addEventListener("resize",()=>setVB());
 <script src="kontrols.js" defer></script>
 
 <script defer src="brand.js"></script>
+</html>
