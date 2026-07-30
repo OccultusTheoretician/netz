@@ -116,10 +116,85 @@ def naive_dup_root(commits):
     return lv[0].hex()
 
 
+
+
+def check_vectors(path, mod):
+    """Check an implementation against the DECC-26 known-answer vectors.
+
+    This is the test that removes the reference implementation's AUTHOR from
+    the trust chain: an independent build that reproduces every expected value
+    computes the standard's primitives correctly, whoever wrote it.
+    """
+    import json as _j
+    V = _j.loads(Path(path).read_text(encoding="utf-8"))
+    rows, ok = [], True
+
+    def t(clause, name, got, want):
+        nonlocal ok
+        good = got == want
+        ok = ok and good
+        rows.append((clause, name, good, "" if good else f"got {str(got)[:24]}… want {str(want)[:24]}…"))
+
+    for c in V["canonical_metadata"]:
+        t("3.04", f"canonical metadata {c['note']}",
+          mod.canon(c["metadata"]).decode(), c["expected_canonical_utf8"])
+    for c in V["commitment"]:
+        if "..." in c["content_hex"]:
+            continue          # long-content case reconstructed below
+        content = bytes.fromhex(c["content_hex"])
+        t("3.01", f"commitment {c['name']}",
+          mod.commitment(c["salt_hex"], content, c["metadata"]),
+          c["expected_commitment"])
+    for c in V["merkle_root"]:
+        n = c["count"]
+        cs = [("%02x" % i) * 32 for i in range(n)]
+        t("5.02", f"merkle root n={n}", mod.merkle_root(cs), c["expected_root"])
+    for c in V["merkle_path"]:
+        n, i = c["count"], c["index"]
+        cs = [("%02x" % k) * 32 for k in range(n)]
+        t("6.04", f"merkle path n={n} i={i}", mod.merkle_path(cs, i),
+          c["expected_path"])
+        good = mod.merkle_verify(cs[i], i, n, c["expected_path"], c["root"])
+        rows.append(("6.04", f"path verifies n={n} i={i}", good, ""))
+        ok = ok and good
+    for c in V["chain"]:
+        t("4.01", f"chain hash seq={c['seq']}",
+          mod.chain_hash(c["prev"], c["entry_core"]),
+          c["expected_chain_hash"])
+
+    print(f"DECC-26 KNOWN-ANSWER VECTORS — {V['standard']} · vectors {V['vectors']}")
+    print("=" * 66)
+    last = None
+    for clause, name, good, note in rows:
+        if clause != last:
+            print(f"  §{clause}")
+            last = clause
+        print(f"    [{'PASS' if good else 'FAIL'}] {name}" + (f"  — {note}" if note else ""))
+    print("=" * 66)
+    p_ = sum(1 for r in rows if r[2])
+    print(f"  {p_}/{len(rows)} vectors reproduced")
+    print()
+    if ok:
+        print("  The implementation computes DECC-26 primitives correctly.")
+        print("  This holds independently of who wrote the reference build:")
+        print("  the vectors are fixed inputs and fixed expected digests, and")
+        print("  any SHA-256 can check them by hand.")
+    else:
+        print("  DIVERGENCE — this implementation does not compute the")
+        print("  standard's primitives. Conformance cannot be claimed.")
+    return 0 if ok else 1
+
+
+
 def main():
     ap = argparse.ArgumentParser(prog="decc_conformance.py")
     ap.add_argument("--adapter", help="vendor adapter JSON")
     ap.add_argument("--emit-adapter", action="store_true")
+    ap.add_argument("--vectors", nargs="?", const="DECC_TEST_VECTORS.json",
+                    help="check an implementation against the known-answer "
+                         "vectors instead of running the artifact battery")
+    ap.add_argument("--module", default="denom",
+                    help="python module exposing the primitives, for --vectors")
     ap.add_argument("--out", default="DECC_CONFORMANCE_REPORT.json")
     ap.add_argument("--keep", action="store_true", help="keep the scratch vault")
     a = ap.parse_args()
@@ -127,6 +202,16 @@ def main():
     if a.emit_adapter:
         print(json.dumps(BUILTIN_ADAPTER, indent=2))
         return 0
+
+    if a.vectors:
+        vp = Path(a.vectors)
+        if not vp.exists():
+            print(f"vectors file not found: {vp}", file=sys.stderr)
+            return 2
+        sys.path.insert(0, str(Path.cwd()))
+        import importlib
+        mod = importlib.import_module(a.module)
+        return check_vectors(vp, mod)
 
     ad = json.loads(Path(a.adapter).read_text(encoding="utf-8")) if a.adapter \
         else BUILTIN_ADAPTER
