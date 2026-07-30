@@ -83,42 +83,153 @@ def parse_personnel(text):
     t = str(text or "").lower()
     if not t:
         return None, "no personnel string"
-    # find the first number, optionally a range (take low end), optional scale
-    m = re.search(r"([\d.,]+)\s*(?:[-–to]+\s*[\d.,]+)?\s*(million|thousand)?", t)
+    # Four defects the naive "first number wins" scan produced on the live
+    # spine, each of which shipped a figure a reader would have believed:
+    #   Sudan  -> 2023        a YEAR ("...fighting ... in 2023, size
+    #                         estimates ... up to 200,000 SAF ...")
+    #   Gaza   -> 2023        a year RANGE ("the 2023-2025 conflict")
+    #   Mali   -> 35          low end of "35-40,000", whose scale lives on
+    #   Guinea -> 10          the high end only
+    # A first pass at the fix introduced a fifth, worse one: scanning for a
+    # range ANYWHERE let China's parenthetical "950,000-1 million Ground"
+    # override its own headline "approximately 2 million", yielding 9.5e11.
+    # So: strip years, anchor on the FIRST digit in the string, and only then
+    # ask whether that token opens a range.
+    t = re.sub(r"\b(?:19|20)\d{2}\s*[-\u2013]\s*(?:19|20)\d{2}\b", " ", t)
+    t = re.sub(r"\(\s*(?:19|20)\d{2}(?:\s*est\.?)?\s*\)", " ", t)
+    t = re.sub(r"\b(?:in|since|as of|during)\s+(?:19|20)\d{2}\b", " ", t)
+
+    NUM = r"\d[\d.,]*"           # must START with a digit: a bare comma is
+    m = re.search(NUM, t)         # not a number (it read as one before)
     if not m:
         return None, "no number in personnel string"
-    raw = m.group(1).replace(",", "")
+    lo_s = m.group(0).rstrip(".,")
+    tail = t[m.end():]
+    rng = re.match(r"\s*(?:[-\u2013]|to)\s*(" + NUM + r")", tail)
+    hi_s = rng.group(1).rstrip(".,") if rng else None
+    after = tail[rng.end():] if rng else tail
+    scale = None
+    sm = re.match(r"\s*(million|thousand)\b", after)
+    if sm:
+        scale = sm.group(1)
     try:
-        val = float(raw)
+        val = float(lo_s.replace(",", ""))
     except ValueError:
-        return None, f"unparseable number {raw!r}"
-    scale = m.group(2)
+        return None, f"unparseable number {lo_s!r}"
+    note = "point figure"
+    if hi_s:
+        note = "low end of a stated range"
+        # "35-40,000": a bare low end inherits the high end's magnitude.
+        if "," in hi_s and "," not in lo_s:
+            try:
+                hival = float(hi_s.replace(",", ""))
+            except ValueError:
+                hival = 0.0
+            if hival > val:
+                digits = len(hi_s.replace(",", "").split(".")[0])
+                val *= 10 ** (digits - len(lo_s.split(".")[0]))
     if scale == "million":
         val *= 1_000_000
     elif scale == "thousand":
         val *= 1_000
-    ranged = bool(re.search(r"[\d.,]+\s*[-–]\s*[\d.,]+", t))
-    note = ("low end of a stated range" if ranged else "point figure")
+    if val < 500:
+        return None, (f"figure {val:g} below the plausibility floor for a "
+                      f"national force — string not parsed confidently, so "
+                      f"nothing is claimed")
+    if val > 5_000_000:
+        return None, (f"figure {val:g} above the plausibility ceiling for a "
+                      f"national force — refused rather than published")
     return round(val, 0), note
 
 
+# Bare substring matching bound the wrong actor on 17 name pairs in the live
+# spine — 'india' inside 'British Indian Ocean Territory', 'niger' inside
+# 'Nigeria', 'mali' inside 'Somalia', 'oman' inside 'Romania', 'sudan' inside
+# 'South Sudan', 'guinea' inside three others. First match won, silently, and
+# the scenario then carried another country's personnel figure with full
+# provenance dressing. Matching is now tiered, and ambiguity is REFUSED
+# rather than resolved by loop order.
+_ALIAS = {
+    "usa": "united states", "us": "united states", "u.s.": "united states",
+    "america": "united states", "united states of america": "united states",
+    "uk": "united kingdom", "u.k.": "united kingdom",
+    "great britain": "united kingdom", "britain": "united kingdom",
+    "drc": "congo, democratic republic of the",
+    "dr congo": "congo, democratic republic of the",
+    "north korea": "korea, north", "south korea": "korea, south",
+    "prc": "china", "roc": "taiwan", "uae": "united arab emirates",
+    "russian federation": "russia", "czechia": "czech republic",
+    "burma": "burma", "myanmar": "burma", "turkiye": "turkey",
+}
+
+
+def _norm(s):
+    s = str(s or "").lower()
+    s = s.replace(" — national armed forces", "")
+    s = re.sub(r"[^a-z0-9,\s-]", " ", s)
+    s = re.sub(r"[\s-]+", " ", s).strip()
+    s = re.sub(r"^the\s+", "", s)
+    return _ALIAS.get(s, s)
+
+
+def _invert(s):
+    """'korea, north' -> 'north korea'; leaves other forms alone."""
+    if "," in s:
+        head, tail = s.split(",", 1)
+        return f"{tail.strip()} {head.strip()}".strip()
+    return s
+
+
+def _candidates(key, actors):
+    """Tier 1 exact, tier 2 comma-inverted exact, tier 3 whole-word prefix.
+
+    Tier 3 requires the key to match at a word boundary AND to be the leading
+    words of the actor name, which is what kills 'india' -> 'British Indian
+    Ocean Territory' and 'oman' -> 'Romania' while keeping 'china' ->
+    'China'. Substring-anywhere is never used.
+    """
+    exact = [a for a in actors if _norm(a.get("name")) == key]
+    if exact:
+        return exact, "exact name"
+    inv = [a for a in actors
+           if _invert(_norm(a.get("name"))) == key
+           or _norm(a.get("name")) == _invert(key)]
+    if inv:
+        return inv, "name matched after comma inversion"
+    pref = [a for a in actors
+            if re.match(r"^" + re.escape(key) + r"\b", _norm(a.get("name")))]
+    if pref:
+        return pref, "leading whole-word match"
+    return [], "no spine actor matched"
+
+
 def spine_personnel_for(name, spine):
-    key = str(name).lower().replace(" — national armed forces", "").strip()
-    for a in spine.get("actors", []):
-        if a.get("actor_type") != "state":
-            continue
-        an = str(a.get("name", "")).lower()
-        if key == an or key in an or an in key:
+    key = _norm(name)
+    if len(key) < 3:
+        return {"strength": None,
+                "why": f"key {key!r} too short to match safely"}
+    actors = [a for a in spine.get("actors", [])
+              if a.get("actor_type") == "state"]
+    cands, how = _candidates(key, actors)
+    if len(cands) > 1:
+        names = ", ".join(sorted(str(c.get("name")) for c in cands)[:6])
+        return {"strength": None,
+                "why": (f"ambiguous: {key!r} matched {len(cands)} spine "
+                        f"actors ({names}) — refused rather than guessed; "
+                        f"name the formation with --blue-ids/--red-ids")}
+    for a in cands:
+        if True:
             fld = a.get("fields", {}).get("personnel", {})
             n, why = parse_personnel(fld.get("value"))
             if n:
                 return {"strength": n, "basis": "sourced personnel",
-                        "detail": why, "source": fld.get("source"),
+                        "detail": f"{why}; {how}", "source": fld.get("source"),
                         "grade": fld.get("grade"), "as_of": fld.get("as_of"),
-                        "raw": str(fld.get("value", ""))[:200]}
-            return {"strength": None, "why": why,
+                        "raw": str(fld.get("value", ""))[:200],
+                        "matched": str(a.get("name"))}
+            return {"strength": None, "why": f"{why} ({how})",
                     "source": fld.get("source")}
-    return {"strength": None, "why": "no spine actor matched"}
+    return {"strength": None, "why": how}
 
 
 def load_board():
@@ -131,6 +242,14 @@ def pick(formations, faction=None, ids=None, detail=False):
         return [f for f in formations if f.get("id") in want]
     if faction:
         key = faction.strip().lower()
+        # The board's faction slugs are hyphenated ("united-states") and the
+        # tool's own error text recommends that form, but the seed formations
+        # are named with spaces ("United States of America — national armed
+        # forces"). So `--blue united-states` missed the seed and silently
+        # returned 13 sub-national echelon proxies (strength 1090) while
+        # `--blue "united states"` returned the sourced national figure
+        # (1,280,000). Same command, two incomparable scenarios, no warning.
+        nkey = re.sub(r"[-_]+", " ", key).strip()
         # A country name should resolve to its single national armed-forces
         # seed formation (sourced personnel), giving a clean state-vs-state
         # matchup where both sides rest on the same sourced layer. Only when
@@ -139,17 +258,37 @@ def pick(formations, faction=None, ids=None, detail=False):
         # sub-national OOB, not against a national aggregate.
         seed = [f for f in formations
                 if f.get("echelon") == "armed forces"
-                and key in str(f.get("name", "")).lower()]
+                and (key in str(f.get("name", "")).lower()
+                     or nkey in re.sub(r"[-_]+", " ",
+                                       str(f.get("name", "")).lower()))]
         subnat = [f for f in formations
                   if f.get("echelon") != "armed forces"
                   and str(f.get("faction", "")).lower() == key]
-        if detail and subnat:
+        # Branch order, corrected: an explicit --oob-detail request must not
+        # fall through to the national aggregate when a side has no
+        # sub-national formations on the board. Silently swapping echelon
+        # proxies for a sourced national figure changes what the run means
+        # and hid the substitution inside a matching strength number.
+        if detail:
+            if not subnat:
+                print(f"--oob-detail requested for {faction!r} but the board "
+                      f"carries no sub-national formations for it; refusing "
+                      f"to substitute the national aggregate. Drop "
+                      f"--oob-detail for a state-vs-state run, or name "
+                      f"formations with --blue-ids/--red-ids.",
+                      file=sys.stderr)
             return subnat
         if seed:
-            # exact-name seed preferred over a faction-slug sweep of many seeds
-            exact = [f for f in seed
-                     if key in str(f.get("name", "")).lower()]
-            return exact or seed
+            # One seed per country is the intent; more than one means the
+            # board has drifted and the operator should see it, not have it
+            # averaged away. (The former "exact" filter here re-applied the
+            # same test that built `seed` and could never narrow anything.)
+            if len(seed) > 1:
+                print(f"warning: {faction!r} matched {len(seed)} "
+                      f"armed-forces seeds on the board: "
+                      f"{', '.join(str(f.get('name')) for f in seed)}",
+                      file=sys.stderr)
+            return seed
         return subnat
     return []
 
@@ -217,6 +356,22 @@ def cmd_build(a):
         fac = sorted({str(f.get("faction")) for f in forms})
         print("factions on the board:", ", ".join(fac), file=sys.stderr)
         return 1
+    bb = side_block(a.blue or "BLUE", blue, spine)
+    rb = side_block(a.red or "RED", red, spine)
+    bp0, rp0 = bb["provenance"], rb["provenance"]
+    mixed = ((bp0["sourced_personnel"] and not rp0["sourced_personnel"])
+             or (rp0["sourced_personnel"] and not bp0["sourced_personnel"]))
+    if mixed and not getattr(a, "allow_mixed_basis", False):
+        print(f"REFUSED — mixed strength bases. BLUE rests on "
+              f"{'sourced personnel' if bp0['sourced_personnel'] else 'echelon proxies'} "
+              f"(strength {bb['strength']}), RED on "
+              f"{'sourced personnel' if rp0['sourced_personnel'] else 'echelon proxies'} "
+              f"(strength {rb['strength']}). Personnel counts and echelon "
+              f"proxy weights differ by ~3 orders of magnitude; a run across "
+              f"them is arithmetic, not a matchup. Put both sides on the same "
+              f"layer, or pass --allow-mixed-basis to seal it anyway with the "
+              f"mismatch stamped into the artifact.", file=sys.stderr)
+        return 1
     scenario = {
         "name": a.name or f"{a.blue or 'BLUE'} vs {a.red or 'RED'} — "
                           f"documented OOB, illustrative only",
@@ -227,8 +382,15 @@ def cmd_build(a):
             "board_as_of": board.get("as_of"),
             "built_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         },
-        "blue": side_block(a.blue or "BLUE", blue, spine),
-        "red": side_block(a.red or "RED", red, spine),
+        "blue": bb,
+        "red": rb,
+        "basis_comparability": ("both sides on the same strength layer"
+                               if not mixed else
+                               "MIXED BASIS, sealed under explicit override: "
+                               "one side is sourced personnel, the other "
+                               "echelon proxies; the strengths are not "
+                               "commensurable and this run's outcome carries "
+                               "that defect"),
         "parameters": {"dt": 1.0, "max_ticks": a.max_ticks,
                        "break_fraction": a.break_fraction, "shock": a.shock},
     }
@@ -331,6 +493,9 @@ def main():
     b.add_argument("--max-ticks", type=int, default=600)
     b.add_argument("--break-fraction", type=float, default=0.55)
     b.add_argument("--shock", type=float, default=0.35)
+    b.add_argument("--allow-mixed-basis", action="store_true",
+                   help="seal a run whose sides rest on different strength "
+                        "layers; the mismatch is stamped into the artifact")
     b.add_argument("--oob-detail", action="store_true",
                    help="draw sub-national formations (echelon proxies) "
                         "instead of the sourced national seed; match only "

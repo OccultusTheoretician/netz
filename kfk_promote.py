@@ -166,14 +166,50 @@ def main():
               if x.get("actor_type") == "state"}
     rows = [f for f in board["formations"]
             if f.get("echelon") == "armed forces"]
-    matched, unmatched = {}, []
+
+    # The board carries common English names; the spine carries Factbook
+    # headings. Six rows matched nothing for that reason alone and were
+    # printed as unmatched on every run — a standing 6-row hole in promotion,
+    # not a data gap. Each entry below is a NAME EQUIVALENCE ONLY: it asserts
+    # that two headings denote the same state, and nothing about any claim.
+    # Verified against the spine's actual actor names 2026-07-30.
+    ALIAS = {
+        "vatican": "holy-see-vatican-city",
+        "east-timor": "timor-leste",
+        "ivory-coast": "c-ocirc-te-d-ivoire",
+        "myanmar": "burma",
+        "cape-verde": "cabo-verde",
+        "congo-kinshasa": "congo-democratic-republic-of-the",
+    }
+
+    def _alias_hit(*cands):
+        for c in cands:
+            tgt = ALIAS.get(c)
+            if not tgt:
+                continue
+            if tgt in actors:
+                return actors[tgt]
+            # tolerate slug drift in the spine heading (entity escapes,
+            # punctuation) by matching on the alias target's word stem
+            stem = tgt.split("-")[0]
+            hit = [v for k, v in actors.items() if k.startswith(stem)]
+            if len(hit) == 1:
+                return hit[0]
+        return None
+
+    matched, unmatched, via_alias = {}, [], 0
     for f in rows:
         key = slug(f.get("faction", ""))
+        ns = slug(f.get("name", ""))
+        bare = re.sub(r"-*national-armed-forces$", "", ns).strip("-")
         act = actors.get(key)
         if not act:
-            ns = slug(f.get("name", ""))
             act = next((v for k, v in actors.items()
                         if k and (k in ns or ns in k)), None)
+        if not act:
+            act = _alias_hit(bare, key)
+            if act:
+                via_alias += 1
         if act:
             matched[f["id"]] = (f, act)
         else:
@@ -181,7 +217,8 @@ def main():
 
     print(f"KFK PROMOTE — {len(rows)} armed-forces rows · "
           f"{len(matched)} matched to spine states · "
-          f"{len(unmatched)} unmatched (printed, never guessed)")
+          f"{len(unmatched)} unmatched (printed, never guessed)"
+          + (f" · {via_alias} via the name-alias map" if via_alias else ""))
     for n in unmatched[:8]:
         print(f"    unmatched: {n}")
     if len(unmatched) > 8:
