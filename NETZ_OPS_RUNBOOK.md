@@ -166,8 +166,10 @@ Snapshots stack. An earlier capture is never undone by a later one — it become
 Before any push that changes public-facing text, sweep every served surface for identity terms and local paths:
 
 ```powershell
-Select-String -Path docs\\\*.html,docs\\\*.md,\*.html,\*.md -Pattern "Utah|Attila|C:\\\\Users" | Select-Object -First 20
+Select-String -Path docs\*.html,docs\*.md,*.html,*.md -Pattern (Get-Content identity_sweep.local.txt -Raw).Trim() | Select-Object -First 20
 ```
+
+The pattern lives in `identity_sweep.local.txt`, which is gitignored: a runbook that prints the descriptors it screens for publishes exactly what it protects. Keep that file local; it is a soft sweep, not the hashed guard, because a place name appears legitimately in feed content and would block every ship if it entered `identity_guard.json`.
 
 Also sweep generated JSON payloads — `notes` and `evidence` fields in pipeline output can carry local paths and names that never appear in source.
 
