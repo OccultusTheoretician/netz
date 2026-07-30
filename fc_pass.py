@@ -34,18 +34,71 @@ PROPOSALS = HERE / "fc_proposals.json"
 REVIEW = HERE / "FC_REVIEW.md"
 
 
+# Abbreviations whose internal period is not a sentence end. Without this
+# guard the splitter cut "A U.S. presidential candidate ..." to "A U.S",
+# yielding 13 truncated failure conditions on the 2026-07-30 pass.
+_ABBR = (r"U\.S|U\.K|E\.U|U\.N|N\.Y|D\.C|i\.e|e\.g|etc|approx|est|no|vs"
+         r"|Inc|Corp|Ltd|Co|Mr|Mrs|Ms|Dr|St|Mt|Ft|Sen|Rep|Gov|Gen|Lt|Col"
+         r"|Adm|Capt|Sgt|Jr|Sr|a\.m|p\.m|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep"
+         r"|Sept|Oct|Nov|Dec")
+_GUARD = "\x00"
+
+
+def first_sentence(text: str) -> str:
+    """Split on the first real sentence end, protecting abbreviations."""
+    t = (text or "").strip()
+    t = re.sub(r"\b(" + _ABBR + r")\.", lambda m: m.group(1) + _GUARD, t,
+               flags=re.I)
+    first = re.split(r"(?<=[.!?])\s", t)[0]
+    return first.replace(_GUARD, ".")
+
+
+def miss_branch(resolution: str) -> str:
+    """A 'hit if X, miss if Y' basis already states its own failure. Return Y.
+
+    Negating such a basis produced self-contradicting text ("... hit if a
+    different officer is named ... does not show the stated outcome"), so the
+    stated miss branch is used verbatim instead. 11 rows on the 2026-07-30
+    pass carried this shape.
+    """
+    m = re.search(r"\bmiss\s+(?:if\s+)?(.+?)\s*$", (resolution or "").strip(),
+                  flags=re.I | re.S)
+    if not m:
+        return ""
+    branch = re.sub(r"\s+", " ", m.group(1)).strip().rstrip(".")
+    return branch
+
+
 def source_clause(resolution: str) -> str:
-    first = re.split(r"(?<=[.!?])\s", (resolution or "").strip())[0]
+    first = first_sentence(resolution)
     first = re.sub(r"^resolved\s+(from|via|by|using)\s+", "", first,
                    flags=re.I).strip().rstrip(".")
     first = re.sub(r"\s+on\s+\d{4}-\d{2}-\d{2}$", "", first)
+    # A bare URL is machinery, not prose the published face should carry.
+    first = re.sub(r"https?://\S+", "the source of record", first)
+    first = re.sub(r"\s*:\s*$", "", first).strip(" :")
     return first or "the named source in the resolution basis"
 
 
 def propose(e: dict) -> str:
-    return (f"{source_clause(e.get('resolution',''))} does not show the "
-            f"stated outcome on or before {e.get('deadline','the deadline')}; "
-            f"absence at the deadline scores this entry a MISS.")
+    deadline = e.get("deadline", "the deadline")
+    branch = miss_branch(e.get("resolution", ""))
+    if branch:
+        if branch.lower() in ("otherwise", "not otherwise", "in any other case"):
+            return (f"the resolution basis does not report the stated outcome "
+                    f"in the window; absence at {deadline} scores this entry "
+                    f"a MISS.")
+        return (f"{branch}, as read from the resolution basis on {deadline}; "
+                f"that reading scores this entry a MISS.")
+    # One frame that stays grammatical whether the basis names a SOURCE
+    # ("a public notice from the Treasury") or states the CONDITION itself
+    # ("the yield exceeds 4.8% on 2026-07-29"). The earlier template assumed
+    # the former and produced "<whole condition> does not show the stated
+    # outcome", which read as nonsense on the majority of rows.
+    return (f"the condition stated in this entry's resolution basis — "
+            f"{source_clause(e.get('resolution',''))} — is not met on or "
+            f"before {deadline}; absence at the deadline scores this entry "
+            f"a MISS.")
 
 
 def cmd_draft() -> int:
