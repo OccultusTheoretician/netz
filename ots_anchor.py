@@ -1,0 +1,284 @@
+#!/usr/bin/env python3
+"""
+ots_anchor.py — the trustless clock. OpenTimestamps anchoring for the desk.
+
+WHY THIS EXISTS
+
+    The desk's own standing rule: a seal hash must be published somewhere the
+    operator does not control the clock. Two mechanisms already serve that, and
+    both require trusting somebody.
+
+      · Version-control history (RPAS 4.04) — anchored, public, and checkable,
+        but GitHub could in principle be compelled or could err, and the
+        operator holds the account.
+      · RFC 3161 timestamping (the kalls token) — a trusted third party signs
+        the time. Better. Still a party you trust.
+
+    OpenTimestamps removes the trusted party. It aggregates a digest into a
+    Merkle tree, commits the tree root into a Bitcoin transaction, and hands
+    back a receipt that proves the digest existed before that block. Verifying
+    it requires trusting no one — only that Bitcoin's history is what it is.
+    That is the exact cryptographic embodiment of what this desk claims, and it
+    costs nothing.
+
+WHAT IS ANCHORED, AND WHEN
+
+    Commit-time only. The served pages never call out — site_audit enforces
+    "zero external stylesheets or scripts, nothing phones home", and that
+    property is an asset, not an inconvenience. This runs from the operator's
+    machine, writes a .ots receipt beside the file, and the receipt is committed
+    like any other artifact. The READER verifies with their own client against
+    their own view of the chain; the desk is not consulted at its own audit.
+
+THE TWO-PHASE SHAPE, WHICH MUST NOT BE MISREPRESENTED
+
+    A fresh receipt is NOT yet a Bitcoin attestation. `ots stamp` returns
+    commitments from calendar servers, which promise to include the digest in a
+    future block. Aggregation into a block takes hours. Only after
+    `ots upgrade` does the receipt carry a real Bitcoin attestation and become
+    independently verifiable.
+
+    So a receipt has two honest states, and this tool prints which one it is in:
+
+      PENDING  — calendar commitments only. Proves the calendars saw the digest.
+                 Does NOT yet prove a block height. Publishable, but must be
+                 labelled pending.
+      ANCHORED — upgraded, carries a Bitcoin attestation, verifiable by a
+                 stranger with no trust in this desk or in the calendars.
+
+    Claiming a pending receipt is "anchored in Bitcoin" would be exactly the
+    stated-versus-operational gap this desk exists to audit. Don't.
+
+USE
+    python ots_anchor.py --stamp              stamp ledger + hashlog digests
+    python ots_anchor.py --upgrade            try to upgrade pending receipts
+    python ots_anchor.py --status             report each receipt's real state
+    python ots_anchor.py --stamp --dry-run    show what would be stamped
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import shutil
+import subprocess
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+DOCS = HERE / "docs"
+
+# The artifacts whose existence-in-time is the load-bearing claim.
+TARGETS = [
+    "ledger.json",
+    "kalls_hashlog.json",
+    "plate.json",
+]
+
+STATE = DOCS / "ots_anchors.json"
+
+
+def have_ots():
+    return shutil.which("ots") is not None
+
+
+def run(args, timeout=90):
+    try:
+        p = subprocess.run(["ots"] + args, capture_output=True, text=True,
+                           timeout=timeout)
+        return p.returncode, (p.stdout or "") + (p.stderr or "")
+    except subprocess.TimeoutExpired:
+        return 124, "timed out"
+    except FileNotFoundError:
+        return 127, "ots not installed"
+
+
+def sha256_file(p: Path):
+    h = hashlib.sha256()
+    with p.open("rb") as f:
+        for chunk in iter(lambda: f.read(65536), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def receipt_state(receipt: Path):
+    """Read the receipt's REAL state rather than assuming it succeeded.
+
+    `ots info` prints the attestation set. A Bitcoin attestation names a block
+    height; calendar commitments name a URL. That distinction is the whole
+    difference between 'pending' and 'anchored', so it is read, not inferred.
+    """
+    if not receipt.exists():
+        return "absent", None, ""
+    code, out = run(["info", str(receipt)], timeout=30)
+    if code != 0:
+        return "unreadable", None, out.strip()[:200]
+    low = out.lower()
+    if "bitcoin block" in low:
+        height = None
+        for tok in out.replace(",", " ").split():
+            if tok.isdigit() and len(tok) >= 6:
+                height = int(tok)
+                break
+        return "anchored", height, out.strip()[:400]
+    if "pendingattestation" in low.replace(" ", "") or "calendar" in low:
+        return "pending", None, out.strip()[:400]
+    return "unknown", None, out.strip()[:400]
+
+
+def do_stamp(dry):
+    files = [DOCS / t for t in TARGETS if (DOCS / t).exists()]
+    missing = [t for t in TARGETS if not (DOCS / t).exists()]
+    if missing:
+        print("  not present, skipped: " + ", ".join(missing))
+    if not files:
+        print("Nothing to stamp.", file=sys.stderr)
+        return 1
+    print("Digests to be anchored (SHA-256 of the exact bytes served):")
+    for f in files:
+        print(f"  {f.name:22} {sha256_file(f)}")
+    if dry:
+        print("\n(dry run — nothing submitted)")
+        return 0
+    if not have_ots():
+        print("\n`ots` not found. Install with:  "
+              "pip install opentimestamps-client", file=sys.stderr)
+        return 2
+
+    results = {}
+    for f in files:
+        print(f"\nstamping {f.name} …")
+        code, out = run(["stamp", str(f)])
+        rec = f.with_suffix(f.suffix + ".ots")
+        if rec.exists():
+            st, h, _ = receipt_state(rec)
+            results[f.name] = {"receipt": rec.name, "state": st,
+                               "digest": sha256_file(f)}
+            print(f"  receipt {rec.name} · state {st.upper()}")
+            if st == "pending":
+                print("  PENDING is correct and expected: calendars have the "
+                      "digest, Bitcoin does not yet.")
+                print("  Re-run with --upgrade in a few hours, then commit the "
+                      "upgraded receipt.")
+        else:
+            # The exact failure seen when calendars are unreachable:
+            #   "Failed to create timestamp: need at least 2 attestations
+            #    but received 0 within timeout"
+            reason = "calendars unreachable or refused"
+            if "need at least" in out:
+                reason = ("fewer than two calendars answered — OpenTimestamps "
+                          "requires 2 attestations minimum")
+            print(f"  NO RECEIPT WRITTEN — {reason}")
+            print("  Nothing was published and nothing is claimed. Retry when "
+                  "the network is available.")
+            results[f.name] = {"receipt": None, "state": "failed",
+                               "reason": reason, "digest": sha256_file(f)}
+
+    write_state(results)
+    return 0
+
+
+def do_upgrade():
+    if not have_ots():
+        print("`ots` not found.", file=sys.stderr)
+        return 2
+    recs = sorted(DOCS.glob("*.ots"))
+    if not recs:
+        print("No receipts to upgrade. Run --stamp first.")
+        return 0
+    changed = 0
+    for rec in recs:
+        before, _, _ = receipt_state(rec)
+        if before == "anchored":
+            print(f"{rec.name}: already ANCHORED — nothing to do")
+            continue
+        code, out = run(["upgrade", str(rec)], timeout=120)
+        after, height, _ = receipt_state(rec)
+        arrow = f"{before.upper()} -> {after.upper()}"
+        extra = f" · Bitcoin block {height}" if height else ""
+        print(f"{rec.name}: {arrow}{extra}")
+        if after == "anchored":
+            changed += 1
+        elif "not found" in out.lower() or before == after:
+            print("  still pending — the calendar has not aggregated into a "
+                  "block yet. Hours, not minutes.")
+    if changed:
+        print(f"\n{changed} receipt(s) now carry a Bitcoin attestation. Commit "
+              f"the upgraded .ots file(s); a stranger can now verify the date "
+              f"with no trust in this desk.")
+    return 0
+
+
+def do_status():
+    recs = sorted(DOCS.glob("*.ots"))
+    if not recs:
+        print("No receipts. Run --stamp.")
+        return 0
+    print(f"{'receipt':30} {'state':10} {'block':>9}  digest matches served file")
+    print("-" * 76)
+    for rec in recs:
+        st, height, _ = receipt_state(rec)
+        src = rec.with_suffix("")
+        match = "—"
+        if src.exists():
+            saved = load_state().get(src.name, {}).get("digest")
+            cur = sha256_file(src)
+            match = ("yes" if saved == cur else
+                     "NO — the file changed since stamping" if saved
+                     else "unrecorded")
+        print(f"{rec.name:30} {st.upper():10} {str(height or '—'):>9}  {match}")
+    print("")
+    print("A receipt proves the digest existed before its block. It says")
+    print("nothing about whether the contents were true — same as every other")
+    print("seal on this desk.")
+    return 0
+
+
+def load_state():
+    if STATE.exists():
+        try:
+            return json.loads(STATE.read_text(encoding="utf-8")).get("files", {})
+        except Exception:
+            return {}
+    return {}
+
+
+def write_state(results):
+    payload = {
+        "schema": "ots_anchors/v1",
+        "generated": datetime.now(timezone.utc).isoformat(),
+        "construction": ("SHA-256 over the exact served bytes, submitted to "
+                         "OpenTimestamps calendars, aggregated into a Bitcoin "
+                         "transaction. Verification requires no trust in this "
+                         "desk or in the calendars."),
+        "two_phase_note": ("a PENDING receipt carries calendar commitments "
+                           "only and does NOT prove a block height; only an "
+                           "ANCHORED receipt does. Pending must never be "
+                           "described as anchored."),
+        "verify_command": "ots verify docs/<file>.ots",
+        "files": {**load_state(), **results},
+    }
+    STATE.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    print(f"\nstate → {STATE}")
+
+
+def main():
+    ap = argparse.ArgumentParser(description="OpenTimestamps anchoring")
+    ap.add_argument("--stamp", action="store_true")
+    ap.add_argument("--upgrade", action="store_true")
+    ap.add_argument("--status", action="store_true")
+    ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args()
+    if not (a.stamp or a.upgrade or a.status):
+        ap.print_help()
+        return 1
+    if a.stamp:
+        return do_stamp(a.dry_run)
+    if a.upgrade:
+        return do_upgrade()
+    return do_status()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

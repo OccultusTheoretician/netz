@@ -469,6 +469,83 @@ def audit_degradation(r, verbose):
     else:
         r.ok("with scripts blocked every computed slot is empty or says so")
 
+    # --- machine translation vs load-bearing exact strings ----------------
+    # Every browser ships one-tap page translation, and it rewrites text nodes
+    # in place. Most of this site SHOULD be translated — the arguments are the
+    # point. But a translated SHA-256 verifies nothing (the hash commits to the
+    # English bytes), a translated shell command does not run, and the konsole
+    # cipher instructs the reader to number the manifesto's words and take first
+    # letters — translate that prose and the puzzle silently yields garbage.
+    # This check enumerates the strings whose exact bytes are load-bearing and
+    # confirms each sits inside a translate="no" subtree.
+    EXACT = [
+        (re.compile(r"\b[0-9a-f]{64}\b"), "a SHA-256 digest"),
+        (re.compile(r"\b[0-9a-f]{40,}\b"), "a long hex run (key or ciphertext)"),
+        (re.compile(r"python\s+\w+\.py"), "a runnable command"),
+    ]
+    n_exact = 0
+    unprotected = []
+    for name, s in texts.items():
+        # Browsers translate DOM text nodes, not script source. A hash or a
+        # command sitting in a JS string literal is not at risk where it sits;
+        # what matters is the container it is written INTO, and that container's
+        # protection is checked on its own. Scanning script bodies here would
+        # report false positives — konsole's cipher payloads and its printed
+        # verifier command are exactly that case, and #term carries the shield.
+        script_spans = [(m.start(), m.end()) for m in
+                        re.finditer(r"<script[\s\S]*?</script>", s, re.I)]
+        # spans of the document that ARE protected: a translate="no" element and
+        # everything nested in it, approximated by scanning tag depth from each
+        # opening tag that carries the attribute.
+        prot = []
+        for m in re.finditer(r"<(\w+)([^>]*\btranslate=\"no\"[^>]*)>", s):
+            tag = m.group(1).lower()
+            if tag in ("input", "br", "img", "meta", "hr"):
+                prot.append((m.start(), m.end()))
+                continue
+            depth, i = 1, m.end()
+            open_re = re.compile(r"<" + tag + r"(?![a-z])", re.I)
+            close_re = re.compile(r"</" + tag + r"\s*>", re.I)
+            while depth > 0 and i < len(s):
+                no = open_re.search(s, i)
+                nc = close_re.search(s, i)
+                if not nc:
+                    break
+                if no and no.start() < nc.start():
+                    depth += 1
+                    i = no.end()
+                else:
+                    depth -= 1
+                    i = nc.end()
+            prot.append((m.start(), i))
+
+        def inside(pos):
+            return any(a <= pos < b for a, b in prot)
+
+        for rx, what in EXACT:
+            for m in rx.finditer(s):
+                # a URL is not reader-facing prose; browsers do not translate
+                # attribute values, so skip matches inside a tag
+                lt = s.rfind("<", 0, m.start())
+                gt = s.rfind(">", 0, m.start())
+                if lt > gt:
+                    continue
+                if any(a <= m.start() < b for a, b in script_spans):
+                    continue
+                n_exact += 1
+                if not inside(m.start()):
+                    unprotected.append((name, what, m.group(0)[:24]))
+    r.sub("exact strings shielded from translation", n_exact,
+          "hashes, keys and commands in reader-facing text")
+    if unprotected:
+        for nm, what, frag in unprotected[:12]:
+            r.bad("XLATE", "%s: %s (%s...) is not inside translate=\"no\" - "
+                  "machine translation would rewrite it and it would verify "
+                  "nothing" % (nm, what, frag))
+        print("    Add translate=\"no\" to the element, or its container.")
+    else:
+        r.ok("every hash, key and command sits in a translate=\"no\" subtree")
+
     # --- motion ----------------------------------------------------------
     movers = [n for n, s in texts.items()
               if re.search(r"requestAnimationFrame|setInterval\(", s)]
