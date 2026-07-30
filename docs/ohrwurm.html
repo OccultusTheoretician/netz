@@ -77,6 +77,23 @@ h1{font-weight:700;letter-spacing:.10em;font-size:clamp(21px,4.4vw,32px);margin:
 .seal{font-family:var(--mono);font-size:12px;border-bottom:1px solid var(--rule);padding:9px 0;color:var(--bone)}
 .seal b{color:var(--brass);font-weight:400}
 
+/* velocity: full multi-channel adoption timeline */
+.vhead{border:1px solid var(--rule);background:var(--ink2);padding:14px 16px;margin-bottom:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--rule)}
+.vhead div{background:var(--ink2);padding:9px 11px}
+.vhead .k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--fog2)}
+.vhead .v{font-family:var(--mono);font-size:17px;color:var(--bone);margin-top:3px}
+.vhead .v small{font-size:11px;color:var(--fog2)}
+.vtrack{position:relative;height:52px;margin:16px 0 8px}
+.vtrack .axis{position:absolute;left:0;right:0;top:30px;height:1px;background:var(--void)}
+.vtrack .fill{position:absolute;top:29px;height:3px;background:var(--brass-dim);left:0}
+.vtrack .cx{position:absolute;top:27px;bottom:auto;height:24px;width:2px;background:var(--cross);opacity:.5}
+.vtrack i{position:absolute;top:24px;width:10px;height:10px;margin-left:-5px;border-radius:50%;border:2px solid var(--ink2);background:var(--brass)}
+.vtrack em{position:absolute;top:38px;font-family:var(--mono);font-size:9px;color:var(--fog2);font-style:normal;transform:translateX(-50%);white-space:nowrap;max-width:110px;overflow:hidden;text-overflow:ellipsis}
+.vtrack b{position:absolute;top:2px;font-family:var(--mono);font-size:9px;font-weight:400;color:var(--fog2);transform:translateX(-50%);white-space:nowrap}
+.velbadge{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;padding:2px 7px;border:1px solid var(--void);color:var(--bone);margin-left:8px}
+.velbadge.fast{border-color:var(--cross);color:var(--cross)}
+.accel{border:1px solid var(--void);border-left:3px solid var(--brass);background:var(--ink2);padding:11px 14px;margin:0 0 14px;font-size:14px;color:var(--fog)}
+.accel b{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:5px}
 .empty{padding:48px 20px;text-align:center;color:var(--fog)}
 .empty code{font-family:var(--mono);font-size:12.5px;color:var(--brass);display:block;margin-top:10px}
 footer{border-top:1px solid var(--rule);margin-top:26px;padding-top:16px;font-family:var(--mono);font-size:11px;color:var(--fog2);letter-spacing:.05em}
@@ -103,7 +120,8 @@ footer{border-top:1px solid var(--rule);margin-top:26px;padding-top:16px;font-fa
 </header>
 
 <div class="seg" role="group" aria-label="View">
-  <button id="t-cross" aria-pressed="true">Crossed</button>
+  <button id="t-vel" aria-pressed="true">Velocity</button>
+  <button id="t-cross" aria-pressed="false">Crossed</button>
   <button id="t-conf" aria-pressed="false">Confined</button>
   <button id="t-sil" aria-pressed="false">Silence</button>
   <button id="t-seal" aria-pressed="false">Seals</button>
@@ -120,7 +138,7 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const SIDE_HUE={RU:"#a8735f",UA:"#7fa88c",AXIS:"#b08949",WEST:"#6f8bab",IL:"#8c7fa8",PS:"#a89a5f"};
 const hue=s=>SIDE_HUE[s]||"#59616f";
-let D=null, VIEW="cross";
+let D=null, V=null, VIEW="vel";
 
 function track(r){
   // one phrase, one time axis: origin -> second channel -> side crossing -> last seen
@@ -159,12 +177,75 @@ function phrase(r){
   </div>`;
 }
 
+function vtrack(r){
+  const span=Math.max(r.span_hours||0,0.01);
+  const pct=h=>Math.min(100,Math.max(0,(h/span)*100));
+  let h=`<div class="vtrack"><div class="axis"></div>`;
+  h+=`<div class="fill" style="width:100%"></div>`;
+  if(r.hours_to_cross_side!=null){
+    h+=`<div class="cx" style="left:${pct(r.hours_to_cross_side)}%"></div>`;
+  }
+  // one dot per channel first-use, colored by side
+  (r.timeline||[]).forEach((e,i)=>{
+    const x=pct(e.h);
+    h+=`<i style="left:${x}%;background:${hue(e.side)}" title="${esc(e.channel)} · ${esc(e.side)} · +${e.h}h"></i>`;
+    if(i===0) h+=`<em style="left:${x}%">${esc(e.channel)}</em>`;
+    else if(i===(r.timeline.length-1)) h+=`<em style="left:${x}%">${esc(e.channel)}</em>`;
+  });
+  h+=`<b style="left:0">origin · ${esc(r.origin.side)}</b>`;
+  h+=`<b style="left:100%;transform:translateX(-100%)">${span}h · ${r.channels}ch</b>`;
+  if(r.hours_to_cross_side!=null){
+    h+=`<b style="left:${pct(r.hours_to_cross_side)}%;color:var(--cross)">→${esc(r.crossed_to.side)} +${r.hours_to_cross_side}h</b>`;
+  }
+  return h+`</div>`;
+}
+function vphrase(r){
+  const fast=r.hours_to_cross_side!=null && r.hours_to_cross_side<1.0;
+  const vel=r.velocity_chan_per_hr;
+  const badge=vel!=null?`<span class="velbadge${fast?' fast':''}">${vel} ch/hr</span>`:"";
+  const cross=r.confined?`confined to ${esc(r.origin.side)}`:`crossed ${esc(r.origin.side)}→${esc(r.crossed_to.side)} in ${r.hours_to_cross_side}h`;
+  return `<div class="ph">
+    <div class="p">${esc(r.phrase)}${badge}</div>
+    <div class="meta">${esc(r.zone)} · ${r.reports} reports · ${r.channels} channels · ${cross}${r.cross_fraction!=null?` · crossed at ${(r.cross_fraction*100).toFixed(0)}% of span`:""}</div>
+    ${vtrack(r)}
+    ${balance(r)}
+  </div>`;
+}
+function drawVelocity(){
+  const B=$("#body"), N=$("#note");
+  if(!V){
+    N.innerHTML="The propagation-velocity tile is not published yet.";
+    B.innerHTML=`<div class="empty">Run <code>python ohrwurm_velocity.py --latest</code> to generate <b>ohrwurm_velocity.json</b>, then reload.</div>`;
+    return;
+  }
+  const s=V.summary||{};
+  N.innerHTML="How fast a phrasing spread, and how quickly it jumped the hostile boundary. A dot is a channel's first use; the vertical mark is the side crossing. Fast cross-side adoption — a framing that jumped the divide in under an hour — is either an event both sides genuinely saw at once, or one side's line the other picked up almost instantly. Dated and rated; which of the two, the reader judges.";
+  let h="";
+  // acceleration slot: only when a non-overlapping prior tile was supplied
+  const ac=V.acceleration;
+  if(ac && ac.status==="measured"){
+    h+=`<div class="accel"><b>Acceleration vs prior window</b>${esc(ac.reading)} — median cross-side latency ${ac.current_median_cross_latency_hrs}h now versus ${ac.prior_median_cross_latency_hrs}h in ${esc(ac.prior_pull)} (Δ ${ac.delta_hrs}h). ${esc(ac.caveat)}.</div>`;
+  } else {
+    h+=`<div class="accel"><b>Acceleration — dormant</b>Velocity below is a snapshot of one pull. Whether cross-side adoption is speeding up week over week needs a second dated pull from a non-overlapping window; none is loaded, so no trend is shown rather than a faked one.</div>`;
+  }
+  h+=`<div class="vhead">
+    <div><div class="k">phrases</div><div class="v">${s.phrases_total||0}</div></div>
+    <div><div class="k">crossed a side</div><div class="v">${s.crossed_side||0}</div></div>
+    <div><div class="k">median velocity</div><div class="v">${s.median_velocity!=null?s.median_velocity:"—"} <small>ch/hr</small></div></div>
+    <div><div class="k">median cross latency</div><div class="v">${s.median_cross_latency_hrs!=null?s.median_cross_latency_hrs:"—"} <small>h</small></div></div>
+    <div><div class="k">crossed under 1h</div><div class="v">${s.crossed_under_1hr||0}</div></div>
+  </div>`;
+  const crossed=(V.phrases||[]).filter(p=>!p.confined);
+  h+=crossed.length?crossed.map(vphrase).join(""):`<div class="empty">No phrase crossed a side boundary in this pull.</div>`;
+  B.innerHTML=h;
+}
 function draw(){
   const live=D.phrases.filter(p=>!p.template);
   const crossed=live.filter(p=>!p.confined_to_origin_side);
   const confined=live.filter(p=>p.confined_to_origin_side);
   const B=$("#body"), N=$("#note");
 
+  if(VIEW==="vel"){ drawVelocity(); return; }
   if(VIEW==="cross"){
     N.innerHTML="A phrase that crosses a side boundary is either an event both sides can see, or an injection that took. This instrument does not distinguish those two — it dates the crossing and prints the balance. The reader judges which it was.";
     B.innerHTML=crossed.length?crossed.map(phrase).join(""):`<div class="empty">No phrase above the floor crossed a side boundary this window.</div>`;
@@ -219,6 +300,15 @@ function boot(d){
   draw();
 }
 
+["t-vel","t-cross","t-conf","t-sil","t-seal"].forEach(id=>{
+  const b=document.getElementById(id); if(!b) return;
+  b.onclick=()=>{
+    VIEW=id.slice(2)==="vel"?"vel":id.slice(2)==="cross"?"cross":id.slice(2)==="conf"?"confined":id.slice(2)==="sil"?"silence":"seal";
+    ["t-vel","t-cross","t-conf","t-sil","t-seal"].forEach(o=>{const e=document.getElementById(o);if(e)e.setAttribute("aria-pressed",String(o===id));});
+    if(VIEW==="vel"){ drawVelocity(); } else if(D){ draw(); } else { $("#body").innerHTML=`<div class="empty">Loading the base tile…</div>`; }
+  };
+});
+fetch("ohrwurm_velocity.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(v=>{V=v; if(VIEW==="vel") drawVelocity();}).catch(()=>{});
 fetch("ohrwurm_latest.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(boot)
 .catch(e=>{
   $("#body").innerHTML=`<div class="empty">Could not read <b>ohrwurm_latest.json</b> (${esc(e.message)}).
