@@ -291,9 +291,13 @@ def audit_site(r, verbose):
     # --- BOM --------------------------------------------------------------
     n = 0
     boms = []
+    # Pages serves the repository tree: a gitignored local file never
+    # publishes, so scanning it flags a surface that does not exist.
+    _served = set(git(["ls-files", "docs"]).splitlines())
     for p in sorted(DOCS.rglob("*")):
-        if p.is_file() and p.suffix.lower() in (".html", ".json", ".css",
-                                                ".js", ".xml", ".md", ".txt"):
+        if (p.is_file() and str(p.as_posix()) in _served
+                and p.suffix.lower() in (".html", ".json", ".css",
+                                         ".js", ".xml", ".md", ".txt")):
             n += 1
             if p.read_bytes()[:3] == b"\xef\xbb\xbf":
                 boms.append(str(p).replace("\\", "/"))
