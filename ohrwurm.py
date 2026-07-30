@@ -323,8 +323,12 @@ def analyse(msgs, fmap, min_reports, min_channels, gram_lo, gram_hi):
 
 
 def seal_records(rows, limit=12):
+    """Origin claims as sealed statements. Content hash, KNP-shaped.
+    Also writes the sidecar forecasts/ohrwurm_records_latest.json at this
+    chokepoint so ohrwurm_log.py can append them to the anchored register —
+    the page prints them, the sidecar persists them, the register commits
+    them."""
     rows = [r for r in rows if not r.get("template")]
-    """Origin claims as sealed statements. Content hash, KNP-shaped."""
     out = []
     for r in rows[:limit]:
         stmt = (f"In the NETZ watched-channel corpus, the phrase [{r['phrase']}] "
@@ -334,6 +338,13 @@ def seal_records(rows, limit=12):
         out.append({"statement": stmt,
                     "sha256": hashlib.sha256(stmt.encode("utf-8")).hexdigest(),
                     "phrase": r["phrase"], "kind": "origin_claim"})
+    try:
+        FORECASTS.mkdir(exist_ok=True)
+        (FORECASTS / "ohrwurm_records_latest.json").write_text(
+            json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    except Exception as _e:
+        print(f"ohrwurm: sidecar write failed ({_e}) — page unaffected",
+              file=sys.stderr)
     return out
 
 
