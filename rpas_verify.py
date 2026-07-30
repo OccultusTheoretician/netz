@@ -300,9 +300,16 @@ def check_append_only(h, prev):
             continue
         n = new[rid]
         for f in FIELDS:
-            if o.get(f) != n.get(f) and not (f == "keyed_keyless" and
-                                             str(o.get(f)) in ("None", "unset") and
-                                             o.get("status") == "open"):
+            # The 4.02f window, as the ledger's own disclosure grants it: a
+            # failure condition, keyed/keyless determination, or its rationale
+            # may be ADDED to a still-open entry (empty -> value). Changing an
+            # existing value, or touching any other pre-registered field, is
+            # the cheap cheat and fails.
+            fillable = (f in ("keyed_keyless", "failure_condition",
+                              "keyed_keyless_rationale")
+                        and str(o.get(f) or "").strip() in ("", "None", "unset")
+                        and o.get("status") == "open")
+            if o.get(f) != n.get(f) and not fillable:
                 rec("MUST", "RPAS 4.01", f"{rid}: pre-registered field '{f}' changed "
                                          f"after issue ({o.get(f)!r} -> {n.get(f)!r})")
         if o.get("seal_sha256") and o.get("seal_sha256") != n.get("seal_sha256"):
