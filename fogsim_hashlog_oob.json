@@ -1,0 +1,65 @@
+{
+  "protocol": "FOGSIM-26",
+  "construction": {
+    "preimage_order": [
+      "scenario_hash",
+      "rules_version",
+      "index",
+      "seed",
+      "question",
+      "salt"
+    ],
+    "separator": "|",
+    "hash": "SHA-256",
+    "encoding": "UTF-8",
+    "pipe_escape": "\\u007C"
+  },
+  "declared_runs": 8,
+  "scenario_hash": "02f41d51d36317c9634fdcff96111cc93c845fa54c266c55b614eec8ea7f7eef",
+  "rules_version": "fogsim-lanchester/1.0",
+  "question": "modal outcome, USA vs RUS sourced-personnel scenario",
+  "sealed_at": "2026-07-30T01:43:21Z",
+  "count_commitment": "This campaign declares 8 runs and publishes 8 commitments before any run is executed. Publishing a subset of outcomes is therefore detectable: an index with a commitment and no reveal is a run that was executed and withheld, or never executed. Either is visible. (KNM 3.02)",
+  "records": [
+    {
+      "index": 1,
+      "commitment": "0cf2f302789187818715eaa66a0f154720f1132fa123aef5c46ab8be25f28a3f",
+      "status": "SEALED"
+    },
+    {
+      "index": 2,
+      "commitment": "73d5873a95dc941598e44e5d5a93ea3cbc58def13a898fd9d75e136da5318ffd",
+      "status": "SEALED"
+    },
+    {
+      "index": 3,
+      "commitment": "da72958c6c78c5975e818ca5f07eceac3fa93e3aee805f6efb8de648b8c1c241",
+      "status": "SEALED"
+    },
+    {
+      "index": 4,
+      "commitment": "73e078f96b8e8a0d8ea1aaf2f0cc477cc4a49b7e3ffd98ad46777b9f199013f2",
+      "status": "SEALED"
+    },
+    {
+      "index": 5,
+      "commitment": "5cf07a1083862b7709973c46d9ada6203caa3806890c96d28ca1c12c4a41e7d4",
+      "status": "SEALED"
+    },
+    {
+      "index": 6,
+      "commitment": "a8bd86f609dfb7f4d8126835f99e9f4b1cf40f75aef862723fe51608a7fd8b0b",
+      "status": "SEALED"
+    },
+    {
+      "index": 7,
+      "commitment": "b6035c43079b372df9605d74f684591def8c84dd11369f1adfeb4e379a628ae5",
+      "status": "SEALED"
+    },
+    {
+      "index": 8,
+      "commitment": "57af56a4318943efe2becf8e6d630a623238884a6b208fa33aff424a11ee0c1c",
+      "status": "SEALED"
+    }
+  ]
+}

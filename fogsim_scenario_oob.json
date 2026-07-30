@@ -1,0 +1,72 @@
+{
+  "name": "USA vs RUS - sourced personnel, illustrative",
+  "simulated": true,
+  "disclosure": "SIMULATED. This scenario is seeded from the Kaster's graded order of battle but represents a MODEL, not a conflict picture. Aggregate strengths are derived from documented formation records under a stated rule; the run certifies the integrity of the campaign record, never that the model resembles war. First in this model is not first in the world.",
+  "seeded_from": {
+    "board": "KriegForeKaster.json",
+    "board_as_of": "2026-07-30T01:06:17Z",
+    "built_at": "2026-07-30T01:40:49Z"
+  },
+  "blue": {
+    "label": "united states",
+    "strength": 1280000.0,
+    "effectiveness": 0.0013,
+    "provenance": {
+      "formation_count": 1,
+      "sourced_personnel": 1,
+      "echelon_fallback": 0,
+      "members": [
+        {
+          "id": "F-SEED-USA",
+          "name": "United States of America — national armed forces",
+          "echelon": "armed forces",
+          "lat": 38.9015,
+          "lon": -77.0114,
+          "existence_grade": "SPECULATIVE",
+          "basis": "sourced personnel",
+          "weight": 1280000.0,
+          "personnel_source": "CIA World Factbook (public domain) via factbook/factbook.json",
+          "personnel_grade": "A2",
+          "personnel_as_of": "2025",
+          "personnel_raw": "approximately 1.28 million active duty Armed Forces (450,000 Army; 334,000 Navy; 317,000 Air Force; 10,000 Space Force; 168,000 Marine Corps); 42,000 Coast Guard) (2025)",
+          "basis_detail": "point figure"
+        }
+      ],
+      "strength_model": "strength = sum of real active-personnel figures where the spine sources them (1 of 1), echelon proxy otherwise (0); personnel is a real but crude measure — no equipment quality or readiness. IISS-class data is licensed, cited not ingested."
+    }
+  },
+  "red": {
+    "label": "russia",
+    "strength": 1100000.0,
+    "effectiveness": 0.0013,
+    "provenance": {
+      "formation_count": 1,
+      "sourced_personnel": 1,
+      "echelon_fallback": 0,
+      "members": [
+        {
+          "id": "F-SEED-RUS",
+          "name": "Russia — national armed forces",
+          "echelon": "armed forces",
+          "lat": 55.7541,
+          "lon": 37.6136,
+          "existence_grade": "SPECULATIVE",
+          "basis": "sourced personnel",
+          "weight": 1100000.0,
+          "personnel_source": "CIA World Factbook (public domain) via factbook/factbook.json",
+          "personnel_grade": "A2",
+          "personnel_as_of": "2025",
+          "personnel_raw": "estimated 1.1-1.2 million active Armed Forces; estimated 350,000 Federal National Guard Troops (2025)",
+          "basis_detail": "low end of a stated range"
+        }
+      ],
+      "strength_model": "strength = sum of real active-personnel figures where the spine sources them (1 of 1), echelon proxy otherwise (0); personnel is a real but crude measure — no equipment quality or readiness. IISS-class data is licensed, cited not ingested."
+    }
+  },
+  "parameters": {
+    "dt": 1.0,
+    "max_ticks": 600,
+    "break_fraction": 0.55,
+    "shock": 0.35
+  }
+}
