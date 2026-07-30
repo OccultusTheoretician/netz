@@ -196,6 +196,59 @@ def receipt_state(receipt: Path):
     return "unknown", None, out.strip()[:400]
 
 
+CALENDARS = ["https://a.pool.opentimestamps.org",
+             "https://b.pool.opentimestamps.org",
+             "https://a.pool.eternitywall.com",
+             "https://ots.btc.catallaxy.com"]
+
+
+def do_probe(timeout=8):
+    """Ask each calendar directly. Stamping needs two of these to answer, so
+    when a stamp fails this says WHICH ones are the problem rather than leaving
+    'unreachable' to cover everything from DNS to a corporate proxy."""
+    import urllib.request
+    import urllib.error
+    print("Calendar reachability (stamping requires 2 to answer):")
+    ok = 0
+    inconclusive = 0
+    for url in CALENDARS:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "netz-ots-probe"})
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                code = r.status
+            print(f"  OK    {url}  (HTTP {code})")
+            ok += 1
+        except urllib.error.HTTPError as e:
+            # A 404 or 405 on the root proves the calendar host answered. A 403
+            # does NOT: an intercepting proxy returns 403 too, and at this layer
+            # the two are indistinguishable. Counting 403 as reachable made this
+            # probe print "4 of 4 answered, retry" on a machine where every
+            # stamp failed — a probe that falsely reassures is worse than none.
+            if e.code in (404, 405, 400):
+                print(f"  OK    {url}  (HTTP {e.code} on root — host answered)")
+                ok += 1
+            elif e.code in (401, 403, 407):
+                print(f"  INCONCLUSIVE  {url}  (HTTP {e.code} — this is what an "
+                      f"intercepting proxy returns; cannot tell proxy from host)")
+                inconclusive += 1
+            else:
+                print(f"  FAIL  {url}  (HTTP {e.code})")
+        except Exception as e:
+            print(f"  FAIL  {url}  ({type(e).__name__}: {e})")
+    print(f"\n{ok} answered, {inconclusive} inconclusive, "
+          f"{len(CALENDARS) - ok - inconclusive} failed.")
+    if ok >= 2:
+        print("Enough answered for a stamp — retry --stamp.")
+    elif inconclusive:
+        print("Cannot conclude. An intercepting proxy or captive network is "
+              "the usual cause;\nthe calendars may be fine and unreachable "
+              "from here anyway. Try another network.")
+    else:
+        print("Not enough reachable. DNS, firewall, or ISP block — nothing "
+              "about this desk.")
+    return 0 if ok >= 2 else 1
+
+
 def do_stamp(dry):
     files = [DOCS / t for t in TARGETS if (DOCS / t).exists()]
     missing = [t for t in TARGETS if not (DOCS / t).exists()]
@@ -245,6 +298,18 @@ def do_stamp(dry):
                 reason = ("fewer than two calendars answered — OpenTimestamps "
                           "requires 2 attestations minimum")
             print(f"  NO RECEIPT WRITTEN — {reason}")
+            # THIRD swallow of the night in this codebase, so it ends here: the
+            # client's own words are the diagnosis and a summary is not. LM
+            # Studio's 400 body and the otsclient import exception were the
+            # first two; each cost a cycle that printing the output would have
+            # saved.
+            if out.strip():
+                print("  --- ots said, verbatim ---")
+                for line in out.strip().splitlines()[-14:]:
+                    print("  | " + line)
+            else:
+                print("  (ots produced no output at all — check that the "
+                      "client can reach the network)")
             print("  Nothing was published and nothing is claimed. Retry when "
                   "the network is available.")
             results[f.name] = {"receipt": None, "state": "failed",
@@ -343,9 +408,13 @@ def main():
     ap.add_argument("--stamp", action="store_true")
     ap.add_argument("--upgrade", action="store_true")
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--probe", action="store_true",
+                    help="test calendar reachability and name which fail")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
-    if not (a.stamp or a.upgrade or a.status):
+    if a.probe:
+        return do_probe()
+    if not (a.stamp or a.upgrade or a.status or a.probe):
         ap.print_help()
         return 1
     if a.stamp:
