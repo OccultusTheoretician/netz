@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+r"""
 tg_translate.py — NETZ War Desk · Module 1: Translation Pass
 
 Takes a tg_wardesk_*.json pull, sends every non-English message through your
@@ -16,10 +16,44 @@ Usage:
 Requires LM Studio running with Qwen3-30B loaded (the model you already have).
 No additional packages beyond what NETZ already uses.
 """
+import os
 import json, sys, pathlib, datetime, time, re, urllib.request, urllib.error
 
 LM_URL = "http://localhost:1234/v1/chat/completions"
-MODEL  = "qwen3-30b"           # adjust to your exact LM Studio model name if needed
+# A hardcoded model id is a silent trap: LM Studio rejects an unknown id with a
+# bare HTTP 400, and the old handler printed only "Bad Request" — 420 messages
+# failed for a name mismatch that took a /v1/models call to see. The id is now
+# resolved from the server itself, overridable by NETZ_LM_MODEL, and any 400
+# prints the server's own explanation.
+MODEL  = os.environ.get("NETZ_LM_MODEL", "")   # blank = ask the server
+MODELS_URL = "http://localhost:1234/v1/models"
+
+
+def resolve_model() -> str:
+    """Ask LM Studio what is actually loaded. Never guess a model id."""
+    global MODEL
+    if MODEL:
+        return MODEL
+    try:
+        with urllib.request.urlopen(MODELS_URL, timeout=15) as r:
+            ids = [m.get("id") for m in json.loads(r.read()).get("data", [])
+                   if m.get("id")]
+    except Exception as e:
+        print("LM Studio is not answering at %s (%s).\n"
+              "  Start it, load a model, and enable the local server "
+              "(Developer tab -> Start Server)." % (MODELS_URL, e),
+              file=sys.stderr)
+        sys.exit(2)
+    if not ids:
+        print("LM Studio is running but has no model loaded — load one in the "
+              "Chat or Developer tab, then rerun.", file=sys.stderr)
+        sys.exit(2)
+    pref = [i for i in ids if "qwen" in i.lower()]
+    MODEL = (pref or ids)[0]
+    print("LM model: %s%s" % (MODEL,
+          "" if len(ids) == 1 else "  (of %d loaded: %s)" % (len(ids), ", ".join(ids))),
+          file=sys.stderr)
+    return MODEL
 BATCH  = 8                     # messages per LM call — tune to your VRAM
 RETRY  = 2
 
@@ -30,7 +64,7 @@ def lm_translate(texts: list[str]) -> list[str]:
     """Send a batch of texts to local Qwen, get English translations back."""
     numbered = "\n".join(f"[{i+1}] {t[:600]}" for i,t in enumerate(texts))
     payload = {
-        "model": MODEL,
+        "model": resolve_model(),
         "temperature": 0.1,
         "max_tokens": 2048,
         "messages": [
@@ -58,6 +92,23 @@ def lm_translate(texts: list[str]) -> list[str]:
                 # fallback: split by newlines if regex misfired
                 lines = [l for l in raw.splitlines() if l.strip()]
                 return (lines + [""] * len(texts))[:len(texts)]
+        except urllib.error.HTTPError as e:
+            # The body carries the reason; without it a 400 is unreadable.
+            try:
+                detail = e.read().decode("utf-8", "replace")[:300]
+            except Exception:
+                detail = "(no body)"
+            print(f"  LM HTTP {e.code}: {detail}", file=sys.stderr)
+            if e.code == 400 and "model" in detail.lower():
+                print("  -> the model id was rejected. Set the right one:\n"
+                      "     $env:NETZ_LM_MODEL=\"<id from "
+                      "http://localhost:1234/v1/models>\"", file=sys.stderr)
+                return ["[TRANSLATION FAILED]"] * len(texts)
+            if attempt < RETRY-1:
+                print("  retrying in 3s...", file=sys.stderr)
+                time.sleep(3)
+                continue
+            return ["[TRANSLATION FAILED]"] * len(texts)
         except Exception as e:
             if attempt < RETRY-1:
                 print(f"  LM error ({e}); retrying in 3s...", file=sys.stderr)
