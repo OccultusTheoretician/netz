@@ -79,13 +79,82 @@ TARGETS = [
 STATE = DOCS / "ots_anchors.json"
 
 
+# DEFECT, 2026-07-30: this checked shutil.which("ots") only. pip installs the
+# console script into a per-user Scripts directory that is frequently NOT on
+# PATH — it prints that warning during install — so the tool reported "ots not
+# found" on a machine where opentimestamps was correctly installed. The console
+# script is a two-line wrapper around otsclient.ots:main, so invoking the module
+# with the running interpreter works regardless of PATH and is now the fallback.
+def ots_candidates():
+    """Every place the console script actually lands, then the module.
+
+    Fix history, both defects measured on live runs:
+      1. Checked only shutil.which("ots") — pip installs the script into a
+         per-user Scripts directory that is routinely NOT on PATH, and says so
+         during install. The binary existed; the tool declared it missing.
+      2. Fell back to importing otsclient and SWALLOWED the exception, so a
+         failing dependency looked identical to a missing package. The import
+         error is now printed, because a hidden reason is the thing that cost
+         an hour tonight in a different tool.
+    """
+    out = []
+    w = shutil.which("ots")
+    if w:
+        out.append(("PATH", [w]))
+    # user + platform script directories, where pip actually puts it
+    import sysconfig, site
+    dirs = []
+    for key in ("scripts", "purelib"):
+        for scheme in ("nt_user", "posix_user", "nt", "posix_prefix"):
+            try:
+                d = sysconfig.get_path("scripts", scheme)
+            except Exception:
+                d = None
+            if d:
+                dirs.append(Path(d))
+        break
+    try:
+        ub = Path(site.getuserbase())
+        dirs += [ub / "Scripts", ub / "bin"]
+    except Exception:
+        pass
+    for d in dirs:
+        for name in ("ots.exe", "ots"):
+            p = d / name
+            if p.exists():
+                out.append((str(d), [str(p)]))
+    out.append(("module", [sys.executable, "-c",
+                "import sys;from otsclient.ots import main;"
+                "sys.argv[0]='ots';sys.exit(main())"]))
+    return out
+
+
+def ots_argv(verbose=False):
+    for where, argv in ots_candidates():
+        if where == "module":
+            try:
+                import otsclient.ots  # noqa: F401
+            except Exception as e:
+                if verbose:
+                    print(f"  module import failed: {type(e).__name__}: {e}",
+                          file=sys.stderr)
+                continue
+        if verbose:
+            print(f"  using ots from: {where}", file=sys.stderr)
+        return argv
+    return None
+
+
 def have_ots():
-    return shutil.which("ots") is not None
+    return ots_argv(verbose=True) is not None
 
 
 def run(args, timeout=90):
+    argv = ots_argv()
+    if argv is None:
+        return 127, "opentimestamps-client not importable"
     try:
-        p = subprocess.run(["ots"] + args, capture_output=True, text=True,
+        p = subprocess.run(argv + args, capture_output=True, text=True,
                            timeout=timeout)
         return p.returncode, (p.stdout or "") + (p.stderr or "")
     except subprocess.TimeoutExpired:
@@ -142,8 +211,14 @@ def do_stamp(dry):
         print("\n(dry run — nothing submitted)")
         return 0
     if not have_ots():
-        print("\n`ots` not found. Install with:  "
-              "pip install opentimestamps-client", file=sys.stderr)
+        print("\nCould not locate the ots client. Places checked:",
+              file=sys.stderr)
+        for where, argv in ots_candidates():
+            print(f"    {where}: {argv[0]}", file=sys.stderr)
+        print("\nopentimestamps-client is neither on PATH nor importable.\n"
+              "  pip install opentimestamps-client\n"
+              "  (if pip warns its Scripts directory is not on PATH, that is "
+              "fine — this tool falls back to the module.)", file=sys.stderr)
         return 2
 
     results = {}
