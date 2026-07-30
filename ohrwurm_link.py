@@ -421,7 +421,7 @@ def main():
     print(f"events: {ev_path.name}\npull:   {pull_path.name}", file=sys.stderr)
 
     ow = load_ohrwurm()
-    pull = json.loads(pull_path.read_text(encoding="utf-8"))
+    pull = json.loads(pull_path.read_text(encoding="utf-8-sig"))
     msgs = ow.find_messages(pull)
     det = ow.detect(msgs)
     fmap = det[0] if isinstance(det, tuple) else det
@@ -458,7 +458,7 @@ def main():
     per_msg, first_corpus, msg_text = phrase_index(
         ow, msgs, fmap, a.gram_lo, a.gram_hi, text_field)
 
-    events = json.loads(ev_path.read_text(encoding="utf-8")).get("events", [])
+    events = json.loads(ev_path.read_text(encoding="utf-8-sig")).get("events", [])
     floor = GRADE_ORDER[a.min_grade]
     graded = [e for e in events
               if GRADE_ORDER.get(str(e.get("grade", "F"))[0], 3) <= floor]

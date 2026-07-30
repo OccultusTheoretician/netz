@@ -19,7 +19,7 @@ OUT = pathlib.Path("forecasts")  # NETZ intake dir; adjust to your report intake
 SESSION = "netz_wardesk"         # .session cache; GITIGNORE THIS
 
 def load_reg():
-    return json.loads(REG.read_text(encoding="utf-8"))
+    return json.loads(REG.read_text(encoding="utf-8-sig"))
 
 def save_reg(reg):
     REG.write_text(json.dumps(reg, indent=2, ensure_ascii=False), encoding="utf-8")

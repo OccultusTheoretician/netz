@@ -71,7 +71,7 @@ ECHELON_WEIGHT = {
 
 def load_spine():
     try:
-        return json.loads(SPINE.read_text(encoding="utf-8"))
+        return json.loads(SPINE.read_text(encoding="utf-8-sig"))
     except Exception:
         return {"actors": []}
 
@@ -233,7 +233,7 @@ def spine_personnel_for(name, spine):
 
 
 def load_board():
-    return json.loads(BOARD.read_text(encoding="utf-8"))
+    return json.loads(BOARD.read_text(encoding="utf-8-sig"))
 
 
 def pick(formations, faction=None, ids=None, detail=False):
@@ -416,7 +416,7 @@ def cmd_build(a):
 def cmd_forecast(a):
     """Bind a sealed ledger forecast about the run's outcome, before it runs.
     Uses the ledger's own seal + gate, arm fogsim/scenario."""
-    scen = json.loads((HERE / a.scenario).read_text(encoding="utf-8"))
+    scen = json.loads((HERE / a.scenario).read_text(encoding="utf-8-sig"))
     if not scen.get("simulated"):
         print("refusing: scenario is not stamped simulated — this arm is for "
               "model forecasts only, never a claim about the real world.",

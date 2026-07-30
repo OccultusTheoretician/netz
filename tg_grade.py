@@ -498,7 +498,7 @@ def latest_events_file() -> Path | None:
 
 
 def load_events(path: Path) -> list[dict]:
-    data = json.loads(path.read_text(encoding="utf-8"))
+    data = json.loads(path.read_text(encoding="utf-8-sig"))
     if isinstance(data, dict):
         for k in ("events", "clusters", "results", "items"):
             if isinstance(data.get(k), list):

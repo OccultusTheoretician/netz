@@ -128,8 +128,8 @@ def main():
         return 1
 
     now = datetime.now(timezone.utc)
-    spine = json.loads(SPINE.read_text(encoding="utf-8"))
-    board = json.loads(BOARD_ROOT.read_text(encoding="utf-8"))
+    spine = json.loads(SPINE.read_text(encoding="utf-8-sig"))
+    board = json.loads(BOARD_ROOT.read_text(encoding="utf-8-sig"))
 
     if a.redate_promoted:
         fixed = 0

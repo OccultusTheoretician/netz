@@ -549,7 +549,7 @@ def main():
             rec("INFO", "KNP 4.02", f"previous snapshot unreadable: {e}")
     if a.reveal:
         try:
-            reveals = json.loads(Path(a.reveal).read_text(encoding="utf-8"))
+            reveals = json.loads(Path(a.reveal).read_text(encoding="utf-8-sig"))
             if isinstance(reveals, dict):
                 reveals = [reveals]
             check_reveals(h, con or DEFAULT_CON, hist, reveals)

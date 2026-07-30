@@ -33,7 +33,7 @@ def main():
     pages = [p for p in served() if p.exists()]
     navs = {}
     for p in pages:
-        m = NAV.search(p.read_text(encoding="utf-8"))
+        m = NAV.search(p.read_text(encoding="utf-8-sig"))
         if not m:
             print("NO NAV: %s — not a navigated page, skipped" % p.name)
             continue
@@ -82,7 +82,7 @@ def main():
             style = STYLE
         link = '<a%s style="%s" href="%s">%s</a>' % (cur, style, a.href, a.label)
         new_nav = nav[:m.end()] + link + nav[m.end():]
-        s = p.read_text(encoding="utf-8")
+        s = p.read_text(encoding="utf-8-sig")
         s2 = s.replace(nav, new_nav, 1)
         if s2 == s:
             print("SKIP %s — replacement was a no-op" % p.name)

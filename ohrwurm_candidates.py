@@ -62,7 +62,7 @@ def load_tile(explicit=None):
               [DOCS / "ohrwurm_velocity.json",
                FORECASTS / "ohrwurm_velocity_latest.json"]):
         if p.exists():
-            return json.loads(p.read_text(encoding="utf-8")), p
+            return json.loads(p.read_text(encoding="utf-8-sig")), p
     return None, None
 
 

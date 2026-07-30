@@ -67,7 +67,7 @@ def load(src):
         with urlopen(req, timeout=30) as r:
             raw = r.read().decode("utf-8")
     else:
-        raw = Path(src).read_text(encoding="utf-8")
+        raw = Path(src).read_text(encoding="utf-8-sig")
     return json.loads(raw)
 
 

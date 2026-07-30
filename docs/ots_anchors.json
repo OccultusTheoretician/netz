@@ -1,0 +1,27 @@
+{
+  "schema": "ots_anchors/v1",
+  "generated": "2026-07-30T06:44:45.641599+00:00",
+  "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
+  "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
+  "verify_command": "ots verify docs/<file>.ots",
+  "files": {
+    "ledger.json": {
+      "receipt": null,
+      "state": "failed",
+      "reason": "the ots client itself failed to start \u2014 NOT a network problem; read the traceback below\n  Known cause: python-bitcoinlib cannot locate an OpenSSL DLL on this interpreter. Run ots under Python 3.12/3.13, or put libcrypto/libssl on PATH.",
+      "digest": "957bac081715c9639ef5eb518ec09ff43a40645bef4e7748d8d6edf199317623"
+    },
+    "kalls_hashlog.json": {
+      "receipt": null,
+      "state": "failed",
+      "reason": "the ots client itself failed to start \u2014 NOT a network problem; read the traceback below\n  Known cause: python-bitcoinlib cannot locate an OpenSSL DLL on this interpreter. Run ots under Python 3.12/3.13, or put libcrypto/libssl on PATH.",
+      "digest": "8a921ba0f5bc447e4f91f4584f6ded3a6d660a7b9dabefc3eadf148f2aa5994d"
+    },
+    "plate.json": {
+      "receipt": null,
+      "state": "failed",
+      "reason": "the ots client itself failed to start \u2014 NOT a network problem; read the traceback below\n  Known cause: python-bitcoinlib cannot locate an OpenSSL DLL on this interpreter. Run ots under Python 3.12/3.13, or put libcrypto/libssl on PATH.",
+      "digest": "6336f3f532b2d3fb493d699a36573172cc16482c4df17c42ab423205c88efd2d"
+    }
+  }
+}

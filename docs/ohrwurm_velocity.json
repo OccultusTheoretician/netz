@@ -1,6 +1,6 @@
 {
   "schema": "ohrwurm_velocity/v1",
-  "generated": "2026-07-30T07:06:32.864589+00:00",
+  "generated": "2026-07-30T07:15:10.716233+00:00",
   "source_pull": "tg_translated_2026-07-30_0706.json",
   "floors": {
     "min_reports": 3,
@@ -25,7 +25,15 @@
       "velocity": 0.2
     }
   },
-  "acceleration": null,
+  "acceleration": {
+    "status": "measured",
+    "prior_pull": "tg_translated_2026-07-30_0512.json",
+    "prior_median_cross_latency_hrs": 3.88,
+    "current_median_cross_latency_hrs": 2.88,
+    "delta_hrs": -1.0,
+    "reading": "cross-side adoption is FASTER than the prior window",
+    "caveat": "valid only if the two windows do not overlap — the operator confirms that, this tool does not"
+  },
   "phrases": [
     {
       "phrase": "drone strike",

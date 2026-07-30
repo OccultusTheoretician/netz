@@ -73,6 +73,22 @@ def parse_ts(v):
     return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
 
 
+def read_json_text(path: Path) -> str:
+    """Read text whatever the shell wrote.
+
+    PowerShell 5.1 has no BOM-free UTF-8 output: `>` and Out-File write UTF-16LE,
+    Set-Content -Encoding UTF8 writes UTF-8-with-BOM. A tool on a Windows-primary
+    desk that only accepts clean UTF-8 will reject files the operator produced
+    correctly, so the byte-order mark is sniffed instead of assumed.
+    """
+    raw = path.read_bytes()
+    if raw[:2] in (b"\xff\xfe", b"\xfe\xff"):
+        return raw.decode("utf-16")
+    if raw[:3] == b"\xef\xbb\xbf":
+        return raw.decode("utf-8-sig")
+    return raw.decode("utf-8", "replace")
+
+
 def newest(pattern):
     hits = sorted(FORECASTS.glob(pattern))
     return hits[-1] if hits else None
@@ -248,7 +264,7 @@ def main():
     print(f"pull: {path.name}", file=sys.stderr)
 
     ow = load_ohrwurm()
-    doc = json.loads(path.read_text(encoding="utf-8"))
+    doc = json.loads(path.read_text(encoding="utf-8-sig"))
     msgs = ow.find_messages(doc)
     det = ow.detect(msgs)
     fmap = det[0] if isinstance(det, tuple) else det
@@ -260,7 +276,7 @@ def main():
     if a.prior:
         pr = Path(a.prior)
         if pr.exists():
-            prior = json.loads(pr.read_text(encoding="utf-8"))
+            prior = json.loads(read_json_text(pr))
             pw = prior.get("window") or {}
             here_lo = min((e["h"] for r in rows for e in r["timeline"]),
                           default=None)

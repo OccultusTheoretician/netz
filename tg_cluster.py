@@ -391,7 +391,7 @@ def statement_pass(msgs):
 def load_msgs(paths):
     seen, out = set(), []
     for p in paths:
-        d = json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
+        d = json.loads(pathlib.Path(p).read_text(encoding="utf-8-sig"))
         for m in d["messages"]:
             k = (m["channel"], m["id"])
             if k in seen:

@@ -131,7 +131,7 @@ def cmd_draft() -> int:
 
 
 def cmd_apply(which: str) -> int:
-    props = json.loads(PROPOSALS.read_text(encoding="utf-8"))
+    props = json.loads(PROPOSALS.read_text(encoding="utf-8-sig"))
     ids = set(props) if which == "all" else {i.strip()
                                             for i in which.split(",")}
     data = kkr.load_ledger()

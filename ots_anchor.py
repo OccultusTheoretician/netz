@@ -390,7 +390,7 @@ def do_status():
 def load_state():
     if STATE.exists():
         try:
-            return json.loads(STATE.read_text(encoding="utf-8")).get("files", {})
+            return json.loads(STATE.read_text(encoding="utf-8-sig")).get("files", {})
         except Exception:
             return {}
     return {}
