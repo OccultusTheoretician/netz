@@ -294,7 +294,19 @@ def do_stamp(dry):
             #   "Failed to create timestamp: need at least 2 attestations
             #    but received 0 within timeout"
             reason = "calendars unreachable or refused"
-            if "need at least" in out:
+            # DEFECT: this label was printed even when the client had CRASHED,
+            # which is a different fact and sent the diagnosis down the wrong
+            # road — the probe said 4 of 4 calendars answered while this said
+            # unreachable. A traceback is not a network condition.
+            if "Traceback" in out or "Error:" in out or "LoadLibrary" in out:
+                reason = ("the ots client itself failed to start — NOT a "
+                          "network problem; read the traceback below")
+                if "bitcoin.core.key" in out or "find_library" in out:
+                    reason += ("\n  Known cause: python-bitcoinlib cannot "
+                               "locate an OpenSSL DLL on this interpreter. "
+                               "Run ots under Python 3.12/3.13, or put "
+                               "libcrypto/libssl on PATH.")
+            elif "need at least" in out:
                 reason = ("fewer than two calendars answered — OpenTimestamps "
                           "requires 2 attestations minimum")
             print(f"  NO RECEIPT WRITTEN — {reason}")
