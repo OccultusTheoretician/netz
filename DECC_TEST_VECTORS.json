@@ -1,0 +1,434 @@
+{
+ "standard": "DECC-26 rev.1",
+ "vectors": "1.0",
+ "generated": "2026-07-30",
+ "_readme": "Known-answer test vectors for DECC-26. Any implementation that reproduces every expected value below computes the standard's primitives correctly, WITHOUT trusting the reference implementation or its author. All byte strings are hex; content and metadata are given both as source and as hex so encoding differences surface immediately. Verify with decc_conformance.py --vectors, or by hand with any SHA-256.",
+ "constants": {
+  "TAG_COMMIT_utf8": "DENOM1|commit|",
+  "TAG_COMMIT_hex": "44454e4f4d317c636f6d6d69747c",
+  "TAG_CHAIN_utf8": "DENOM1|chain|",
+  "TAG_CHAIN_hex": "44454e4f4d317c636861696e7c",
+  "MERKLE_LEAF_PREFIX": "00",
+  "MERKLE_NODE_PREFIX": "01",
+  "GENESIS_PREV": "0000000000000000000000000000000000000000000000000000000000000000",
+  "canonical_json": "sorted keys, separators (',' ':'), UTF-8, no ASCII escaping"
+ },
+ "commitment": [
+  {
+   "name": "v1-simple",
+   "note": "§3.01 minimal",
+   "salt_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+   "content_hex": "68656c6c6f",
+   "content_sha256": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+   "metadata": {
+    "model": "x"
+   },
+   "canonical_metadata_utf8": "{\"model\":\"x\"}",
+   "metadata_sha256": "78b0e11c6754fc9671c2034f4a068d3a0e53c1c22a5a33900dd46bc8cd9136f3",
+   "expected_commitment": "c98639916c00fa6b0b7796ff41695d4746a760970581a6d9546cdbbf327b79fc"
+  },
+  {
+   "name": "v2-empty-meta",
+   "note": "§3.01 empty content and empty metadata",
+   "salt_hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "content_hex": "",
+   "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "metadata": {},
+   "canonical_metadata_utf8": "{}",
+   "metadata_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+   "expected_commitment": "d69b9f211e54347b7438ff9c828d6ff88a9fe117f4567dd74a1e9c7194063e14"
+  },
+  {
+   "name": "v3-unicode",
+   "note": "§3.04 non-ASCII in content and metadata",
+   "salt_hex": "a1b2a1b2a1b2a1b2a1b2a1b2a1b2a1b2a1b2a1b2a1b2a1b2a1b2a1b2a1b2a1b2",
+   "content_hex": "d0bfd0b5d180d0b5d0bad0bbd0b0d0b4",
+   "content_sha256": "2536958eb069bd38bfd2ce28b32ed9f4dfd580c9fe5d2a904e706e7442c9bcf6",
+   "metadata": {
+    "zone": "russia_ukraine",
+    "note": "Krähe"
+   },
+   "canonical_metadata_utf8": "{\"note\":\"Krähe\",\"zone\":\"russia_ukraine\"}",
+   "metadata_sha256": "4715785d62268152d43e6a7d263d9621e8a78f5f18f11684cc437ec6cc3f8fa6",
+   "expected_commitment": "f921a907cb704dfaa8a19d0da91f0ee9ddd21dd962299637d07e3946c444da83"
+  },
+  {
+   "name": "v4-key-order",
+   "note": "§3.04 metadata key order must not affect the digest",
+   "salt_hex": "5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a",
+   "content_hex": "6f726465722074657374",
+   "content_sha256": "1bbd20f67f92d58fe3781fed79695f0cd314b015ab89db98007e8ac5ad6a97ad",
+   "metadata": {
+    "b": "2",
+    "a": "1",
+    "c": "3"
+   },
+   "canonical_metadata_utf8": "{\"a\":\"1\",\"b\":\"2\",\"c\":\"3\"}",
+   "metadata_sha256": "4e75b6b87b799c6d1a635d57f9ffc03b5276f1953a18afc8a7d8eb459cd13a3f",
+   "expected_commitment": "eafc2243180cbe07fd4a7fc5e512fb8abc04527e26d599f4fcf0dba8bcc7b825"
+  },
+  {
+   "name": "v5-long",
+   "note": "§3.01 10 KB content",
+   "salt_hex": "0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f",
+   "content_hex": "7878787878787878787878787878787878787878787878787878787878787878...(10000 bytes total)",
+   "content_sha256": "e4ee97ec252749d2096447e849628d0d7734f51700416eefbb33574bf0b3ee75",
+   "metadata": {
+    "k": "v"
+   },
+   "canonical_metadata_utf8": "{\"k\":\"v\"}",
+   "metadata_sha256": "666c1aa02e8068c6d5cc1d3295009432c16790bec28ec8ce119d0d1a18d61319",
+   "expected_commitment": "c4c7bb48bccac7729d43ae39f40d96f54f06980ecbf70c3c96f872e8825a4e3a"
+  }
+ ],
+ "canonical_metadata": [
+  {
+   "metadata": {},
+   "note": "empty",
+   "expected_canonical_utf8": "{}",
+   "expected_canonical_hex": "7b7d",
+   "expected_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+   "metadata": {
+    "a": "1"
+   },
+   "note": "single",
+   "expected_canonical_utf8": "{\"a\":\"1\"}",
+   "expected_canonical_hex": "7b2261223a2231227d",
+   "expected_sha256": "9afeb0f2b203f254312ec8ded441d0318b7c34c57f8695ede42d2215a30c0960"
+  },
+  {
+   "metadata": {
+    "b": "2",
+    "a": "1"
+   },
+   "note": "reordered must equal sorted",
+   "expected_canonical_utf8": "{\"a\":\"1\",\"b\":\"2\"}",
+   "expected_canonical_hex": "7b2261223a2231222c2262223a2232227d",
+   "expected_sha256": "21f76dfbfe6dfe21f762080ef484112cf2952974cef30741fd1931e1c6d92112"
+  },
+  {
+   "metadata": {
+    "note": "Krähe",
+    "zone": "iran"
+   },
+   "note": "non-ASCII value preserved raw",
+   "expected_canonical_utf8": "{\"note\":\"Krähe\",\"zone\":\"iran\"}",
+   "expected_canonical_hex": "7b226e6f7465223a224b72c3a46865222c227a6f6e65223a226972616e227d",
+   "expected_sha256": "ca369b97fc932fbd0cb4d958c9680afa9223a3d711c90e391a0b186454a299dc"
+  }
+ ],
+ "merkle_root": [
+  {
+   "count": 1,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000"
+   ],
+   "expected_root": "7f9c9e31ac8256ca2f258583df262dbc7d6f68f2a03043d5c99a4ae5a7396ce9",
+   "note": "§5.02 odd counts exercise the no-duplicate-leaf rule"
+  },
+  {
+   "count": 2,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000",
+    "0101010101010101010101010101010101010101010101010101010101010101"
+   ],
+   "expected_root": "28fb81e496897e0ce886f08602392e9239b65c659041e5202163e58ad898f444",
+   "note": "§5.02 power-of-two/even"
+  },
+  {
+   "count": 3,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000",
+    "0101010101010101010101010101010101010101010101010101010101010101",
+    "0202020202020202020202020202020202020202020202020202020202020202"
+   ],
+   "expected_root": "ba8d94b7fbcecae7b81c4c80574fe24734a6917bf9c1ecd66ff3e0c34ead4620",
+   "note": "§5.02 odd counts exercise the no-duplicate-leaf rule"
+  },
+  {
+   "count": 4,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000",
+    "0101010101010101010101010101010101010101010101010101010101010101",
+    "0202020202020202020202020202020202020202020202020202020202020202",
+    "0303030303030303030303030303030303030303030303030303030303030303"
+   ],
+   "expected_root": "fdea52008cdae79fa8bf806261959e23f5e11681646a2fa2bc9b5e56b32030a2",
+   "note": "§5.02 power-of-two/even"
+  },
+  {
+   "count": 5,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000",
+    "0101010101010101010101010101010101010101010101010101010101010101",
+    "0202020202020202020202020202020202020202020202020202020202020202",
+    "0303030303030303030303030303030303030303030303030303030303030303",
+    "0404040404040404040404040404040404040404040404040404040404040404"
+   ],
+   "expected_root": "85e20cac1f02fda7bcdb2fc3f908568c57018c77815f1fa361acad13994f08bf",
+   "note": "§5.02 odd counts exercise the no-duplicate-leaf rule"
+  },
+  {
+   "count": 7,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000",
+    "0101010101010101010101010101010101010101010101010101010101010101",
+    "0202020202020202020202020202020202020202020202020202020202020202",
+    "...",
+    "(7 total, commitment i = byte i repeated 32x)"
+   ],
+   "expected_root": "7318881c41fce3c1de3640df8e8c110c93f43f686b74204a9d1ad5b8c71c2047",
+   "note": "§5.02 odd counts exercise the no-duplicate-leaf rule"
+  },
+  {
+   "count": 8,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000",
+    "0101010101010101010101010101010101010101010101010101010101010101",
+    "0202020202020202020202020202020202020202020202020202020202020202",
+    "...",
+    "(8 total, commitment i = byte i repeated 32x)"
+   ],
+   "expected_root": "f907f23f76aa01b755a614d31ef9832909f44638b4590073301e61e6d01f9a1d",
+   "note": "§5.02 power-of-two/even"
+  },
+  {
+   "count": 9,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000",
+    "0101010101010101010101010101010101010101010101010101010101010101",
+    "0202020202020202020202020202020202020202020202020202020202020202",
+    "...",
+    "(9 total, commitment i = byte i repeated 32x)"
+   ],
+   "expected_root": "57a92667ebb7ab5e021d0d10dce29b3111769aff9ef206339797bea4494d09f3",
+   "note": "§5.02 odd counts exercise the no-duplicate-leaf rule"
+  },
+  {
+   "count": 16,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000",
+    "0101010101010101010101010101010101010101010101010101010101010101",
+    "0202020202020202020202020202020202020202020202020202020202020202",
+    "...",
+    "(16 total, commitment i = byte i repeated 32x)"
+   ],
+   "expected_root": "84fb9f7d0cda4cf0f272f2a17e5e54dfee9c83424e9226b8589582299fc160b8",
+   "note": "§5.02 power-of-two/even"
+  },
+  {
+   "count": 17,
+   "commitments": [
+    "0000000000000000000000000000000000000000000000000000000000000000",
+    "0101010101010101010101010101010101010101010101010101010101010101",
+    "0202020202020202020202020202020202020202020202020202020202020202",
+    "...",
+    "(17 total, commitment i = byte i repeated 32x)"
+   ],
+   "expected_root": "ff620f24c279d16b6f7a54eb16ae7a8354005c9f55d92cee3627f6db7442e8f3",
+   "note": "§5.02 odd counts exercise the no-duplicate-leaf rule"
+  }
+ ],
+ "merkle_path": [
+  {
+   "count": 3,
+   "index": 0,
+   "leaf_commitment": "0000000000000000000000000000000000000000000000000000000000000000",
+   "root": "ba8d94b7fbcecae7b81c4c80574fe24734a6917bf9c1ecd66ff3e0c34ead4620",
+   "expected_path": [
+    {
+     "hash": "dcffe786ded16d283c663846ad0c4ff26558fccde36ca9d30b2ea19eade9fc0e",
+     "side": "R"
+    },
+    {
+     "hash": "cba8c596120bdb69debbd923d92cba948bde7c7d06a465a1bb7d98d3116038fa",
+     "side": "R"
+    }
+   ],
+   "note": "§6.04 inclusion proof; sides are L/R as seen from the leaf upward"
+  },
+  {
+   "count": 3,
+   "index": 1,
+   "leaf_commitment": "0101010101010101010101010101010101010101010101010101010101010101",
+   "root": "ba8d94b7fbcecae7b81c4c80574fe24734a6917bf9c1ecd66ff3e0c34ead4620",
+   "expected_path": [
+    {
+     "hash": "7f9c9e31ac8256ca2f258583df262dbc7d6f68f2a03043d5c99a4ae5a7396ce9",
+     "side": "L"
+    },
+    {
+     "hash": "cba8c596120bdb69debbd923d92cba948bde7c7d06a465a1bb7d98d3116038fa",
+     "side": "R"
+    }
+   ],
+   "note": "§6.04 inclusion proof; sides are L/R as seen from the leaf upward"
+  },
+  {
+   "count": 3,
+   "index": 2,
+   "leaf_commitment": "0202020202020202020202020202020202020202020202020202020202020202",
+   "root": "ba8d94b7fbcecae7b81c4c80574fe24734a6917bf9c1ecd66ff3e0c34ead4620",
+   "expected_path": [
+    {
+     "hash": "28fb81e496897e0ce886f08602392e9239b65c659041e5202163e58ad898f444",
+     "side": "L"
+    }
+   ],
+   "note": "§6.04 inclusion proof; sides are L/R as seen from the leaf upward"
+  },
+  {
+   "count": 5,
+   "index": 3,
+   "leaf_commitment": "0303030303030303030303030303030303030303030303030303030303030303",
+   "root": "85e20cac1f02fda7bcdb2fc3f908568c57018c77815f1fa361acad13994f08bf",
+   "expected_path": [
+    {
+     "hash": "cba8c596120bdb69debbd923d92cba948bde7c7d06a465a1bb7d98d3116038fa",
+     "side": "L"
+    },
+    {
+     "hash": "28fb81e496897e0ce886f08602392e9239b65c659041e5202163e58ad898f444",
+     "side": "L"
+    },
+    {
+     "hash": "1da033bf8927ed69376d91533748494f7f5e88c20603dede2afc9bfd43d46f17",
+     "side": "R"
+    }
+   ],
+   "note": "§6.04 inclusion proof; sides are L/R as seen from the leaf upward"
+  },
+  {
+   "count": 9,
+   "index": 0,
+   "leaf_commitment": "0000000000000000000000000000000000000000000000000000000000000000",
+   "root": "57a92667ebb7ab5e021d0d10dce29b3111769aff9ef206339797bea4494d09f3",
+   "expected_path": [
+    {
+     "hash": "dcffe786ded16d283c663846ad0c4ff26558fccde36ca9d30b2ea19eade9fc0e",
+     "side": "R"
+    },
+    {
+     "hash": "fc264939b1ac77b06378c5ece54a7b57b6b6c821eb80627bb674d8785c8dc8ca",
+     "side": "R"
+    },
+    {
+     "hash": "2e2d377b6f1faa1bbb10885d1232b4be13d48ed90a1db9d78ea9caf2c9e8ef43",
+     "side": "R"
+    },
+    {
+     "hash": "b4ae265fb769f0f6c8584d58f94e723169226a0c002a5c92dd6189df5cecdd6b",
+     "side": "R"
+    }
+   ],
+   "note": "§6.04 inclusion proof; sides are L/R as seen from the leaf upward"
+  },
+  {
+   "count": 9,
+   "index": 4,
+   "leaf_commitment": "0404040404040404040404040404040404040404040404040404040404040404",
+   "root": "57a92667ebb7ab5e021d0d10dce29b3111769aff9ef206339797bea4494d09f3",
+   "expected_path": [
+    {
+     "hash": "f3ab555d06a67b08ab25039fdbe2a6fcb305c83bc165492ce81d3dea13ec1fbf",
+     "side": "R"
+    },
+    {
+     "hash": "3ebd606fb49a3b46ea6025f6ca81438c59c6644eff2a753ae4b564ffbf0eb06a",
+     "side": "R"
+    },
+    {
+     "hash": "fdea52008cdae79fa8bf806261959e23f5e11681646a2fa2bc9b5e56b32030a2",
+     "side": "L"
+    },
+    {
+     "hash": "b4ae265fb769f0f6c8584d58f94e723169226a0c002a5c92dd6189df5cecdd6b",
+     "side": "R"
+    }
+   ],
+   "note": "§6.04 inclusion proof; sides are L/R as seen from the leaf upward"
+  },
+  {
+   "count": 9,
+   "index": 8,
+   "leaf_commitment": "0808080808080808080808080808080808080808080808080808080808080808",
+   "root": "57a92667ebb7ab5e021d0d10dce29b3111769aff9ef206339797bea4494d09f3",
+   "expected_path": [
+    {
+     "hash": "f907f23f76aa01b755a614d31ef9832909f44638b4590073301e61e6d01f9a1d",
+     "side": "L"
+    }
+   ],
+   "note": "§6.04 inclusion proof; sides are L/R as seen from the leaf upward"
+  },
+  {
+   "count": 17,
+   "index": 10,
+   "leaf_commitment": "0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a",
+   "root": "ff620f24c279d16b6f7a54eb16ae7a8354005c9f55d92cee3627f6db7442e8f3",
+   "expected_path": [
+    {
+     "hash": "4d414fa05fdd09ebf7373900aac852d37b74c997721df9c04712c1b940c2c503",
+     "side": "R"
+    },
+    {
+     "hash": "ac04ff9cba8ef7fc2c6c73ffe2e65044a02158c87261fddd2be77585aeebb491",
+     "side": "L"
+    },
+    {
+     "hash": "de9e7fe7b6f2712725a1b2c83f342ab2e82719d189ac5214880270a3713d57a0",
+     "side": "R"
+    },
+    {
+     "hash": "f907f23f76aa01b755a614d31ef9832909f44638b4590073301e61e6d01f9a1d",
+     "side": "L"
+    },
+    {
+     "hash": "43ae429222de02a7c98ae311dc03df201f18ad6079fdb0ad7488fadd6a5ce15b",
+     "side": "R"
+    }
+   ],
+   "note": "§6.04 inclusion proof; sides are L/R as seen from the leaf upward"
+  }
+ ],
+ "chain": [
+  {
+   "seq": 0,
+   "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+   "entry_core": {
+    "seq": 0,
+    "ts": "2026-01-01T00:00:00Z",
+    "commit": "abababababababababababababababababababababababababababababababab"
+   },
+   "canonical_core_utf8": "{\"commit\":\"abababababababababababababababababababababababababababababababab\",\"seq\":0,\"ts\":\"2026-01-01T00:00:00Z\"}",
+   "expected_chain_hash": "7fa509841fb84faeae562a17721e570ec6ebab9cb4823a07059c16cb6a378802",
+   "note": "§4.01 genesis prev is 64 zeros"
+  },
+  {
+   "seq": 1,
+   "prev": "7fa509841fb84faeae562a17721e570ec6ebab9cb4823a07059c16cb6a378802",
+   "entry_core": {
+    "seq": 1,
+    "ts": "2026-01-01T00:00:01Z",
+    "commit": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+   },
+   "canonical_core_utf8": "{\"commit\":\"cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd\",\"seq\":1,\"ts\":\"2026-01-01T00:00:01Z\"}",
+   "expected_chain_hash": "d0cba0cff138339722473af3dfc4a8c7259e19cafc92edbfe9796492c8673310",
+   "note": "§4.01 chained"
+  },
+  {
+   "seq": 2,
+   "prev": "d0cba0cff138339722473af3dfc4a8c7259e19cafc92edbfe9796492c8673310",
+   "entry_core": {
+    "seq": 2,
+    "ts": "2026-01-01T00:00:02Z",
+    "commit": "efefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefef"
+   },
+   "canonical_core_utf8": "{\"commit\":\"efefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefef\",\"seq\":2,\"ts\":\"2026-01-01T00:00:02Z\"}",
+   "expected_chain_hash": "c4568aac3b21f7733579337eabb1106305426da8ca1d602de3ba205e6db9c67e",
+   "note": "§4.01 chained"
+  }
+ ]
+}
