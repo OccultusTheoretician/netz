@@ -623,7 +623,7 @@ def render_ledger():
         for p in sorted(open_p, key=lambda x: x["deadline"]):
             out.append(f"| {p['id']} | `{p.get('model') or 'unattributed'}` | "
                        f"{p['date_issued']} | {p['deadline']} | "
-                       f"{p['probability']}% | {p['domain']} | {p['statement']} |")
+                       f"{p['probability']}% | {p.get('domain','\u2014')} | {p['statement']} |")
     else:
         out.append("None open.")
     out.append("")

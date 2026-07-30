@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-07-30T03:51:02Z",
+  "as_of": "2026-07-30T16:33:13Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -3502,6 +3502,568 @@
       "notes": "SIMULATED forecast; scenario seeded from board 2026-07-30T01:06:17Z",
       "sealed_at": "2026-07-30T01:44:20.888981+00:00",
       "seal_sha256": "8e6ab4b113d571e17ea905100b8bc41f79440b72cdc2ae9515b7908d06f11727"
+    },
+    {
+      "statement": "The Strait of Hormuz is closed to commercial shipping for 24 or more consecutive hours between 2026-07-31 and 2026-09-30, as reported by at least two of Reuters, the Associated Press and Lloyds List.",
+      "domain": "military/conflict",
+      "probability": 15,
+      "resolution": "Resolved on 2026-09-30 by searching Reuters, AP and Lloyds List archives: hit if at least two report a closure or halt of commercial transits lasting 24 or more hours dated in the window, miss otherwise.",
+      "deadline": "2026-09-30",
+      "citations": [
+        2,
+        12,
+        15,
+        19
+      ],
+      "id": "KKR-20260730-01",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "NATO invokes Article 5 of the North Atlantic Treaty in response to the missile impact on Polish territory reported on 2026-07-30, with the invocation announced between 2026-07-31 and 2026-09-30.",
+      "domain": "military/conflict",
+      "probability": 8,
+      "resolution": "Resolved on 2026-09-30: hit if NATO or the North Atlantic Council announces an Article 5 invocation tied to the Poland missile impact, per nato.int or two major wires, dated in the window; miss otherwise.",
+      "deadline": "2026-09-30",
+      "citations": [
+        1,
+        6,
+        11,
+        23
+      ],
+      "id": "KKR-20260730-02",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The Federal Reserve announces a reduction of the federal funds target range at its September 2026 FOMC meeting, with the decision published between 2026-09-01 and 2026-09-30.",
+      "domain": "economics/markets",
+      "probability": 45,
+      "resolution": "Resolved on 2026-09-30 from the FOMC statement at federalreserve.gov: hit if the September 2026 meeting statement announces a lower target range than the prior meeting, miss otherwise.",
+      "deadline": "2026-09-30",
+      "citations": [
+        13,
+        15,
+        24
+      ],
+      "id": "KKR-20260730-03",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Situational Awareness LP or Leopold Aschenbrenner publicly announces that the fund is winding down, closing or returning external capital, between 2026-07-31 and 2026-10-30.",
+      "domain": "economics/markets",
+      "probability": 25,
+      "resolution": "Resolved on 2026-10-30: hit if at least two of Bloomberg, CNBC, FT or Reuters report an announced wind-down, closure or return of external capital for the fund, dated in the window; miss otherwise.",
+      "deadline": "2026-10-30",
+      "citations": [
+        1
+      ],
+      "id": "KKR-20260730-04",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "CISA issues an Emergency Directive that names CVE-2026-20316, the Cisco Secure Firewall Management Center hard-coded credential vulnerability, between 2026-07-30 and 2026-08-21.",
+      "domain": "cyber",
+      "probability": 30,
+      "resolution": "Resolved on 2026-08-21 at the cisa.gov directives page: hit if an Emergency Directive issued in the window names CVE-2026-20316, miss otherwise.",
+      "deadline": "2026-08-21",
+      "citations": [
+        12,
+        15
+      ],
+      "id": "KKR-20260730-05",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The Pakistani armed forces or ISPR publicly announce a new named military operation in Khyber Pakhtunkhwa or the former tribal districts between 2026-07-31 and 2026-10-30.",
+      "domain": "crime/security",
+      "probability": 35,
+      "resolution": "Resolved on 2026-10-30: hit if ISPR or the Pakistani government announces a named operation in those areas within the window, per two major wires or ispr.gov.pk; miss otherwise.",
+      "deadline": "2026-10-30",
+      "citations": [
+        3
+      ],
+      "id": "KKR-20260730-06",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Hadi Matar is sentenced on his federal terrorism-related convictions between 2026-07-31 and 2027-01-26.",
+      "domain": "crime/security",
+      "probability": 70,
+      "resolution": "Resolved on 2027-01-26: hit if at least two of AP, Reuters, BBC or Al Jazeera report a federal sentence imposed on Matar dated in the window, miss otherwise.",
+      "deadline": "2027-01-26",
+      "citations": [
+        4
+      ],
+      "id": "KKR-20260730-07",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The government of Cameroon officially announces the death or the resignation of President Paul Biya between 2026-07-31 and 2027-01-26.",
+      "domain": "political",
+      "probability": 30,
+      "resolution": "Resolved on 2027-01-26: hit if an official Cameroonian government announcement of Biya death or resignation, reported by at least two major international wires, is dated in the window; miss otherwise.",
+      "deadline": "2027-01-26",
+      "citations": [
+        10
+      ],
+      "id": "KKR-20260730-08",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Ugandan authorities release Kizza Besigye from detention, including any transfer to house arrest or medical release abroad, between 2026-07-31 and 2026-09-30.",
+      "domain": "political",
+      "probability": 35,
+      "resolution": "Resolved on 2026-09-30: hit if at least two of BBC, Al Jazeera, Reuters or AP report Besigye released from detention in the window, miss otherwise.",
+      "deadline": "2026-09-30",
+      "citations": [
+        9,
+        16
+      ],
+      "id": "KKR-20260730-09",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The confirmed death toll of firefighters in the 2026 Crete wildfires reaches five or more between 2026-07-31 and 2026-08-31.",
+      "domain": "disaster",
+      "probability": 25,
+      "resolution": "Resolved on 2026-08-31: hit if at least two of BBC, Guardian, DW or Reuters report five or more firefighter deaths attributed to the Crete fires, miss otherwise.",
+      "deadline": "2026-08-31",
+      "citations": [
+        5,
+        11
+      ],
+      "id": "KKR-20260730-10",
+      "date_issued": "2026-07-30",
+      "model": "manual/fable-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Between 2026-08-06 and 2026-09-30, US Central Command or the Department of Defense publicly confirms at least one new military strike on targets inside Iranian territory.",
+      "domain": "military_conflict",
+      "probability": 85,
+      "resolution": "True if an official US military or DoD statement, carried by two or more major outlets, confirms a strike inside Iran occurring between 2026-08-06 and 2026-09-30.",
+      "deadline": "2026-09-30",
+      "citations": [
+        2,
+        15,
+        19
+      ],
+      "id": "KKR-20260730-11",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Front-month Brent crude futures settle above 100.00 US dollars per barrel on at least one trading day between 2026-08-06 and 2026-10-30.",
+      "domain": "economic",
+      "probability": 38,
+      "resolution": "True if ICE front-month Brent settlement exceeds 100.00 dollars on any session from 2026-08-06 through 2026-10-30, per exchange or major financial press data.",
+      "deadline": "2026-10-30",
+      "citations": [
+        12,
+        15,
+        19
+      ],
+      "id": "KKR-20260730-12",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "NATO holds a formal Article 4 consultation at the request of a member state between 2026-08-06 and 2026-09-30.",
+      "domain": "military_conflict",
+      "probability": 30,
+      "resolution": "True if NATO or a member government publicly confirms an Article 4 consultation held between 2026-08-06 and 2026-09-30. Routine North Atlantic Council statements do not resolve this true.",
+      "deadline": "2026-09-30",
+      "citations": [
+        1,
+        6,
+        11,
+        23
+      ],
+      "id": "KKR-20260730-13",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The Nasdaq Composite closes below 22,485 on at least one trading day between 2026-08-06 and 2026-11-30.",
+      "domain": "economic",
+      "probability": 30,
+      "resolution": "True if the official Nasdaq Composite close is below 22,485 on any session from 2026-08-06 through 2026-11-30, per exchange or major financial press data.",
+      "deadline": "2026-11-30",
+      "citations": [
+        2,
+        12,
+        22
+      ],
+      "id": "KKR-20260730-14",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Public reporting attributes exploitation of Cisco CVE-2026-20316 to a specifically named nation-state actor or tracked threat group between 2026-08-06 and 2026-10-30.",
+      "domain": "cyber",
+      "probability": 45,
+      "resolution": "True if a report from Cisco Talos, CISA, or a major security vendor published between 2026-08-06 and 2026-10-30 names a specific state actor or tracked group exploiting CVE-2026-20316.",
+      "deadline": "2026-10-30",
+      "citations": [
+        12,
+        15
+      ],
+      "id": "KKR-20260730-15",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "All commercial shipping transits of the Strait of Hormuz halt for at least 72 consecutive hours between 2026-08-06 and 2026-11-30.",
+      "domain": "economic",
+      "probability": 8,
+      "resolution": "True if Lloyds List, the IMO, or the US Navy publicly confirm zero commercial transits of the strait across 72 consecutive hours falling between 2026-08-06 and 2026-11-30.",
+      "deadline": "2026-11-30",
+      "citations": [
+        2,
+        12
+      ],
+      "id": "KKR-20260730-16",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The Federal Open Market Committee announces a reduction in the federal funds target range at a scheduled meeting held between 2026-08-06 and 2026-10-30.",
+      "domain": "economic",
+      "probability": 55,
+      "resolution": "True if an FOMC statement issued between 2026-08-06 and 2026-10-30 announces a lower target range for the federal funds rate.",
+      "deadline": "2026-10-30",
+      "citations": [
+        13,
+        15,
+        24
+      ],
+      "id": "KKR-20260730-17",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The US Senate confirms Todd Blanche as Attorney General between 2026-08-06 and 2026-10-30.",
+      "domain": "political",
+      "probability": 45,
+      "resolution": "True if the Senate record shows a successful confirmation vote seating Todd Blanche as Attorney General between 2026-08-06 and 2026-10-30.",
+      "deadline": "2026-10-30",
+      "citations": [
+        6,
+        25
+      ],
+      "id": "KKR-20260730-18",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The confirmed death toll from the magnitude 6.8 Uto, Japan earthquake reaches 50 or more between 2026-08-06 and 2026-08-31.",
+      "domain": "disaster",
+      "probability": 22,
+      "resolution": "True if Japanese government or major wire reporting between 2026-08-06 and 2026-08-31 states a confirmed death toll of at least 50 from that earthquake.",
+      "deadline": "2026-08-31",
+      "citations": [
+        2,
+        17,
+        20
+      ],
+      "id": "KKR-20260730-19",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "A single attack in Pakistan kills at least 10 police or military personnel between 2026-08-06 and 2026-10-30.",
+      "domain": "crime_security",
+      "probability": 72,
+      "resolution": "True if credible international reporting confirms one attack in Pakistan between 2026-08-06 and 2026-10-30 killing 10 or more police or military personnel.",
+      "deadline": "2026-10-30",
+      "citations": [
+        3
+      ],
+      "id": "KKR-20260730-20",
+      "date_issued": "2026-07-30",
+      "model": "manual/opus-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The United States military will conduct at least one additional publicly reported airstrike on targets inside Iranian territory between 2026-07-30 and 2026-08-13.",
+      "domain": "military/conflict",
+      "probability": 85,
+      "resolution": "True if U.S. Central Command, the Pentagon, or a major wire service (Reuters, AP, BBC, Al Jazeera) reports a new U.S. strike on Iranian soil between 2026-07-30 and 2026-08-13; otherwise false.",
+      "deadline": "2026-08-13",
+      "citations": [
+        2,
+        15,
+        19
+      ],
+      "id": "KKR-20260730-21",
+      "date_issued": "2026-07-30",
+      "model": "manual/sonnet-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Between 2026-07-30 and 2026-08-20, NATO will hold or announce formal Article 4 consultations in response to the reported Russian missile breach of Polish airspace.",
+      "domain": "military/conflict",
+      "probability": 22,
+      "resolution": "True if NATO, a NATO member government, Reuters, or AP reports that Article 4 consultations were formally requested or held over this specific incident between 2026-07-30 and 2026-08-20; otherwise false.",
+      "deadline": "2026-08-20",
+      "citations": [
+        1,
+        6,
+        11,
+        23
+      ],
+      "id": "KKR-20260730-22",
+      "date_issued": "2026-07-30",
+      "model": "manual/sonnet-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Between 2026-07-30 and 2026-08-27, at least one additional commercial or military vessel will be struck by a drone, missile, or mine in the Persian Gulf, Red Sea, Strait of Hormuz, or eastern Mediterranean in connection with the Iran conflict.",
+      "domain": "military/conflict",
+      "probability": 55,
+      "resolution": "True if a major wire service (Reuters, AP) or Lloyds List reports a new vessel strike in these waters tied to the Iran conflict between 2026-07-30 and 2026-08-27; otherwise false.",
+      "deadline": "2026-08-27",
+      "citations": [
+        2,
+        12,
+        15,
+        19
+      ],
+      "id": "KKR-20260730-23",
+      "date_issued": "2026-07-30",
+      "model": "manual/sonnet-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The confirmed death toll from the magnitude 6.8 Uto, Japan earthquake will exceed 40 between 2026-07-30 and 2026-08-14.",
+      "domain": "disaster",
+      "probability": 35,
+      "resolution": "True if Japanese government authorities, NHK, or a major wire service reports a confirmed death toll above 40 for this earthquake between 2026-07-30 and 2026-08-14; otherwise false.",
+      "deadline": "2026-08-14",
+      "citations": [
+        2,
+        17,
+        20
+      ],
+      "id": "KKR-20260730-24",
+      "date_issued": "2026-07-30",
+      "model": "manual/sonnet-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Between 2026-07-30 and 2026-09-15, a U.S. federal agency or critical-infrastructure operator will be publicly confirmed as compromised via the Cisco Secure Firewall Management Center hard-coded credential flaw CVE-2026-20316.",
+      "domain": "cyber",
+      "probability": 18,
+      "resolution": "True if CISA, a federal agency, or a major outlet (Reuters, Hacker News, BleepingComputer) confirms a specific victim compromised through CVE-2026-20316 between 2026-07-30 and 2026-09-15; otherwise false.",
+      "deadline": "2026-09-15",
+      "citations": [
+        12,
+        15
+      ],
+      "id": "KKR-20260730-25",
+      "date_issued": "2026-07-30",
+      "model": "manual/sonnet-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Meta Platforms stock will close lower than its 2026-07-30 closing price at least once more between 2026-07-31 and 2026-08-06.",
+      "domain": "economics/markets",
+      "probability": 58,
+      "resolution": "True if Meta Platforms common stock records at least one additional daily close below its 2026-07-30 close on any trading day between 2026-07-31 and 2026-08-06; otherwise false.",
+      "deadline": "2026-08-06",
+      "citations": [
+        2,
+        22
+      ],
+      "id": "KKR-20260730-26",
+      "date_issued": "2026-07-30",
+      "model": "manual/sonnet-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "The U.S. Senate will vote to confirm Todd Blanche as Attorney General between 2026-07-30 and 2026-09-30.",
+      "domain": "political",
+      "probability": 25,
+      "resolution": "True if the U.S. Senate holds a floor vote confirming Todd Blanche as Attorney General, as reported by a major outlet, between 2026-07-30 and 2026-09-30; otherwise false.",
+      "deadline": "2026-09-30",
+      "citations": [
+        25
+      ],
+      "id": "KKR-20260730-27",
+      "date_issued": "2026-07-30",
+      "model": "manual/sonnet-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "A militant group will publicly claim responsibility for the attack on the northwest Pakistan police post that killed 11 officers, between 2026-07-30 and 2026-08-13.",
+      "domain": "crime/security",
+      "probability": 68,
+      "resolution": "True if a group such as Tehrik-i-Taliban Pakistan or an affiliate issues a public claim of responsibility reported by a major outlet between 2026-07-30 and 2026-08-13; otherwise false.",
+      "deadline": "2026-08-13",
+      "citations": [
+        3
+      ],
+      "id": "KKR-20260730-28",
+      "date_issued": "2026-07-30",
+      "model": "manual/sonnet-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
+    },
+    {
+      "statement": "Confirmed fatalities from the current Crete, Greece wildfire event will exceed 5 between 2026-07-30 and 2026-08-20.",
+      "domain": "disaster",
+      "probability": 28,
+      "resolution": "True if Greek civil protection authorities or a major wire service reports more than 5 confirmed deaths from this wildfire event between 2026-07-30 and 2026-08-20; otherwise false.",
+      "deadline": "2026-08-20",
+      "citations": [
+        5,
+        11
+      ],
+      "id": "KKR-20260730-29",
+      "date_issued": "2026-07-30",
+      "model": "manual/sonnet-5",
+      "source_report": "battle_report_2026-07-30_1503.md",
+      "source_packet": "kkr_packet_2026-07-30_1503.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": ""
     }
   ]
 }
