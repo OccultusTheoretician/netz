@@ -2,7 +2,7 @@
 
 *Method: a claim is single-source until an independently-biased channel corroborates it. Grade A = three or more hostile SIDES agree on a specific sub-zone anchor. Grade B = two sides. Grade C = repeated inside one side, which is echo, not corroboration. Grade F = single source, counted and withheld. Sides are counted, not outlet labels: three Kremlin-aligned channels are one voice, not three.*
 
-Pull: tg_events_2026-07-30_0439.json · 89 clustered events (40 kinetic, 49 statement) · kinetic: **1A** 10B 7C 22 withheld · statements: **0A** 11B · rendered 300439Z JUL 26
+Pull: tg_events_2026-07-30_0512.json · 88 clustered events (40 kinetic, 48 statement) · kinetic: **1A** 10B 7C 22 withheld · statements: **0A** 11B · rendered 300512Z JUL 26
 
 **⬛ GRADE A — CONFIRMED**
 
@@ -142,10 +142,10 @@ Pull: tg_events_2026-07-30_0439.json · 89 clustered events (40 kinetic, 49 stat
 - Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
 - Window: 6.1h · first seen 27 Jul 1904Z
 
-**[B] “Blockade” · Israel-Gaza-Levant Theatre**
+**[B] “Blockade” · Israel-Gaza-Levant Theatre · around: trump**
 
-- 3 reports across **2 hostile sides** (AXIS, IL)
-- Report balance: AXIS 2 · IL 1
+- 4 reports across **2 hostile sides** (AXIS, IL)
+- Report balance: AXIS 2 · IL 2
 - Channels per side: AXIS 1, IL 1 — **every side here is a single outlet**
 - Window: 1.2h · first seen 27 Jul 1912Z
 
@@ -198,12 +198,12 @@ Pull: tg_events_2026-07-30_0439.json · 89 clustered events (40 kinetic, 49 stat
 - Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
 - Window: 5.4h · first seen 27 Jul 1725Z
 
-**[B] “Escalation” · Iran Theatre · around: un**
+**[B] “Escalation” · Iran Theatre**
 
 - 2 reports across **2 hostile sides** (AXIS, WEST)
-- Report balance: WEST 1 · AXIS 1
+- Report balance: AXIS 1 · WEST 1
 - Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
-- Window: 7.5h · first seen 27 Jul 1137Z
+- Window: 4.8h · first seen 27 Jul 1904Z
 
 **[B] “Sanctions” · Iran Theatre**
 
@@ -212,6 +212,6 @@ Pull: tg_events_2026-07-30_0439.json · 89 clustered events (40 kinetic, 49 stat
 - Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
 - Window: 0.5h · first seen 27 Jul 1015Z
 
-*Single-side statement echo (not corroborated): Sanctions · Russia-Ukraine Theatre (3 rpt, RU); Negotiation · Iran Theatre (3 rpt, WEST); Negotiation · Iran Theatre (3 rpt, WEST).*
+*Single-side statement echo (not corroborated): Sanctions · Russia-Ukraine Theatre (3 rpt, RU); Negotiation · Iran Theatre (3 rpt, WEST).*
 
 *35 single-source statement claims logged, not reported.*
