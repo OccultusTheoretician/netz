@@ -250,6 +250,37 @@ def audit_site(r, verbose):
         stack.extend(graph[cur])
     orphans = sorted(set(graph) - seen)
     r.sub("reachability from index.html", len(graph), "pages")
+
+    # --- nav consistency ---------------------------------------------------
+    # Every served page must carry a navigation whose internal-link SET is
+    # identical, so a visitor sees the same map from every page. Drift here
+    # is the most visible unprofessionalism a multi-page site can have, and
+    # it accretes silently as pages are hand-edited — so it is enumerated.
+    import re as _re
+    navsets = {}
+    for _p in sorted(DOCS.glob("*.html")):
+        _t = _p.read_text(encoding="utf-8", errors="replace")
+        _m = _re.search(r"<nav\b.*?</nav>", _t, _re.S)
+        if not _m:
+            r.warn("nav consistency", f"{_p.name}: no <nav> element")
+            continue
+        _hrefs = frozenset(h for h in _re.findall(r'href="([^"]+\.html)"',
+                                                  _m.group(0))
+                           if not h.startswith("http"))
+        navsets.setdefault(_hrefs, []).append(_p.name)
+    if len(navsets) <= 1:
+        _n = len(next(iter(navsets))) if navsets else 0
+        r.ok(f"every page's nav offers the identical {_n}-page map")
+    else:
+        big = max(navsets, key=lambda k: len(navsets[k]))
+        for _hrefs, _pages in navsets.items():
+            if _hrefs is big:
+                continue
+            miss = sorted(big - _hrefs)[:6]
+            r.finding("NAVDRIFT", f"{len(_pages)} page(s) diverge from the "
+                      f"majority nav (e.g. {_pages[0]} misses {miss})")
+    r.sub("nav consistency", len(list(DOCS.glob("*.html"))), "pages")
+
     if orphans:
         for o in orphans:
             s = texts[o]
