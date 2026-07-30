@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verify a Sealed Disclosure — DECC-26</title>
+<meta name="description" content="Verify a denominator-committed disclosure bundle in your browser. Nothing is uploaded; verification runs entirely on your machine.">
+<style>
+:root{
+  --nacht:#080B0F; --panel:#10141A; --line:#1B222C; --hair:#1E2630;
+  --fg:#C9CFD7; --fg2:#ECF1F7; --dim:#5A6675;
+  --messing:#DCB65E; --messing3:#8A6E30;
+  --gut:#4F9A6A; --schlecht:#B2544B;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--nacht);color:var(--fg);font:15px/1.7 var(--sans);
+  padding:2.2rem 1.2rem 5rem;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto}
+h1{font:600 1.5rem/1.25 var(--mono);letter-spacing:.04em;color:var(--fg2);
+  margin-bottom:.5rem}
+.kick{font:600 .58rem var(--mono);letter-spacing:.24em;text-transform:uppercase;
+  color:var(--messing3);margin-bottom:.9rem}
+.dek{color:var(--dim);max-width:62ch;margin-bottom:1.9rem}
+.dek strong{color:var(--fg)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  padding:1.3rem;margin-bottom:1.1rem}
+.lbl{font:600 .58rem var(--mono);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);display:block;margin-bottom:.5rem}
+input[type=file]{font:12px var(--mono);color:var(--fg);width:100%;
+  background:#0B0F14;border:1px dashed var(--hair);border-radius:3px;
+  padding:.75rem;cursor:pointer}
+input[type=file]::file-selector-button{font:600 .62rem var(--mono);
+  letter-spacing:.1em;text-transform:uppercase;background:var(--messing3);
+  color:#0B0F14;border:0;border-radius:2px;padding:.45rem .8rem;
+  margin-right:.8rem;cursor:pointer}
+.hint{color:var(--dim);font-size:.78rem;margin-top:.5rem}
+button.go{font:600 .7rem var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  background:var(--messing);color:#0B0F14;border:0;border-radius:2px;
+  padding:.75rem 1.5rem;cursor:pointer}
+button.go:disabled{background:var(--hair);color:var(--dim);cursor:not-allowed}
+#out{margin-top:1.3rem}
+.verdict{border-left:3px solid var(--hair);padding:1rem 1.15rem;
+  background:var(--panel);margin-bottom:1rem}
+.verdict.ok{border-left-color:var(--gut)}
+.verdict.bad{border-left-color:var(--schlecht)}
+.verdict h2{font:600 .95rem var(--mono);letter-spacing:.05em;color:var(--fg2);
+  margin-bottom:.45rem}
+.verdict.ok h2{color:var(--gut)} .verdict.bad h2{color:var(--schlecht)}
+table{width:100%;border-collapse:collapse;font:12px var(--mono);margin-top:.5rem}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--hair);
+  vertical-align:top}
+th{color:var(--dim);font-weight:600;font-size:.58rem;letter-spacing:.16em;
+  text-transform:uppercase}
+td.st-ok{color:var(--gut)} td.st-bad{color:var(--schlecht)}
+.mono{font-family:var(--mono);font-size:.74rem;color:var(--dim);
+  word-break:break-all}
+.denom{font:600 1.05rem var(--mono);color:var(--messing)}
+.note{color:var(--dim);font-size:.82rem;margin-top:.9rem;
+  border-top:1px solid var(--hair);padding-top:.9rem}
+.note b{color:var(--fg)}
+footer{color:var(--dim);font-size:.75rem;margin-top:2.5rem;
+  border-top:1px solid var(--hair);padding-top:1rem}
+code{font-family:var(--mono);font-size:.85em;color:var(--messing)}
+</style>
+</head>
+<body><div class="wrap">
+
+<div class="kick">DECC-26 · Denominator-Committed Evidence</div>
+<h1>Verify a sealed disclosure</h1>
+<p class="dek">Drop in a disclosure bundle. This page checks that every disclosed
+record reopens its commitment <strong>and</strong> that the disclosed set came
+from a sealed population of the committed size — so a partial disclosure cannot
+hide how much was held back. <strong>Nothing is uploaded.</strong> Verification
+runs entirely in your browser; this page makes no network requests of any kind.
+You do not have to trust the party who gave you the bundle, and you do not have
+to trust this page — read the source, it is all here.</p>
+
+<div class="card">
+  <label class="lbl" for="bundle">Disclosure bundle (JSON)</label>
+  <input type="file" id="bundle" accept=".json,application/json">
+  <div class="hint">Produced by <code>denom.py disclose</code> or any
+    DECC-26 conformant implementation.</div>
+</div>
+
+<div class="card">
+  <label class="lbl" for="anchor">Independently published anchor (JSON, optional)</label>
+  <input type="file" id="anchor" accept=".json,application/json">
+  <div class="hint">Supply the anchor from wherever the operator published it.
+    If given, it must match the anchor embedded in the bundle — that comparison
+    is what binds the disclosure to a record the operator does not control.</div>
+</div>
+
+<button class="go" id="run" disabled>Verify</button>
+<div id="out"></div>
+
+<footer>
+  DECC-26 rev.1 · browser verifier 0.1.0 · SHA-256 via WebCrypto ·
+  RFC 6962 inclusion proofs · no network, no storage, no telemetry.
+</footer>
+</div>
+
+<script>
+"use strict";
+const enc = new TextEncoder();
+const $ = id => document.getElementById(id);
+const hex = buf => [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,"0")).join("");
+const bytes = h => { const a=new Uint8Array(h.length/2);
+  for(let i=0;i<a.length;i++) a[i]=parseInt(h.substr(i*2,2),16); return a; };
+const cat = (...arrs) => { let n=0; arrs.forEach(a=>n+=a.length);
+  const o=new Uint8Array(n); let p=0; arrs.forEach(a=>{o.set(a,p);p+=a.length}); return o; };
+const sha = async u8 => hex(await crypto.subtle.digest("SHA-256", u8));
+const shaRaw = async u8 => new Uint8Array(await crypto.subtle.digest("SHA-256", u8));
+
+// Canonical JSON: sorted keys, no whitespace, UTF-8 — byte-identical to
+// Python json.dumps(sort_keys=True, separators=(",",":"), ensure_ascii=False)
+function canon(obj){
+  if (obj === null || typeof obj !== "object")
+    return JSON.stringify(obj);
+  if (Array.isArray(obj))
+    return "[" + obj.map(canon).join(",") + "]";
+  return "{" + Object.keys(obj).sort().map(
+    k => JSON.stringify(k) + ":" + canon(obj[k])).join(",") + "}";
+}
+
+const TAG_COMMIT = enc.encode("DENOM1|commit|");
+const LEAF = new Uint8Array([0x00]), NODE = new Uint8Array([0x01]);
+
+async function commitment(saltHex, contentU8, meta){
+  const ch = bytes(await sha(contentU8));
+  const mh = bytes(await sha(enc.encode(canon(meta))));
+  return await sha(cat(TAG_COMMIT, bytes(saltHex), ch, mh));
+}
+
+// RFC 6962 shape: expected sibling sides for (index, count)
+function expectedSides(index, count){
+  let i=index, n=count; const out=[];
+  while(n>1){
+    let k=1; while(k*2<n) k*=2;
+    if(i<k){ out.push("R"); n=k; } else { out.push("L"); i-=k; n-=k; }
+  }
+  return out.reverse();
+}
+
+async function inclusionOK(commitHex, index, count, path, rootHex){
+  if(!(index>=0 && index<count)) return false;
+  const want = expectedSides(index, count);
+  if(path.length !== want.length) return false;
+  for(let i=0;i<path.length;i++) if(path[i].side !== want[i]) return false;
+  let h = await shaRaw(cat(LEAF, bytes(commitHex)));
+  for(const step of path){
+    const sib = bytes(step.hash);
+    h = step.side === "R" ? await shaRaw(cat(NODE, h, sib))
+                          : await shaRaw(cat(NODE, sib, h));
+  }
+  return hex(h) === rootHex;
+}
+
+const b64 = s => { const bin = atob(s); const a = new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) a[i]=bin.charCodeAt(i); return a; };
+
+let BUNDLE=null, ANCHOR=null;
+function readFile(el, set){
+  el.addEventListener("change", async () => {
+    const f = el.files[0]; if(!f) return;
+    try { set(JSON.parse(await f.text())); }
+    catch(e){ set(null); alert("Not valid JSON: " + e.message); }
+    $("run").disabled = !BUNDLE;
+  });
+}
+readFile($("bundle"), v => BUNDLE = v);
+readFile($("anchor"), v => ANCHOR = v);
+
+$("run").addEventListener("click", async () => {
+  const out = $("out"); out.innerHTML = "";
+  const B = BUNDLE;
+  const disclosed = B.disclosed || B.records || [];
+  const embedded = B.anchor || {};
+  const anchor = ANCHOR || embedded;
+  const n = Number(anchor.count);
+  const root = anchor.merkle_root;
+  let fail = [], rows = [];
+
+  if(!disclosed.length) fail.push("bundle contains no disclosed records");
+  if(!Number.isFinite(n) || n <= 0)
+    fail.push("no denominator — the bundle does not carry the population count (DECC-26 §6.02)");
+  if(!root) fail.push("no merkle root in the anchor");
+
+  if(ANCHOR && canon(ANCHOR) !== canon(embedded))
+    fail.push("the supplied anchor does not match the anchor embedded in the bundle");
+
+  for(const d of disclosed){
+    let status="OK", why="";
+    try{
+      const content = b64(d.content_b64);
+      if(await sha(content) !== d.content_sha256){ status="FAIL"; why="content hash mismatch"; }
+      else if(await commitment(d.salt, content, d.meta || {}) !== d.commit){
+        status="FAIL"; why="commitment does not reopen"; }
+      else if(!(await inclusionOK(d.commit, d.seq, n, d.path || [], root))){
+        status="FAIL"; why="inclusion proof invalid"; }
+    }catch(e){ status="FAIL"; why="malformed record: " + e.message; }
+    if(status==="FAIL") fail.push(`seq ${d.seq}: ${why}`);
+    rows.push({seq:d.seq, ts:d.ts||"", status, why,
+               size:(d.content_b64? b64(d.content_b64).length : 0)});
+  }
+
+  const ok = fail.length === 0;
+  const pct = n ? (100*disclosed.length/n).toFixed(1) : "?";
+  let h = "";
+  h += `<div class="verdict ${ok?"ok":"bad"}"><h2>${ok?"VERIFIED":"VERIFICATION FAILED"}</h2>`;
+  if(ok){
+    h += `<div>${disclosed.length} disclosed record(s) reopen correctly and prove
+      membership in a sealed population of exactly <span class="denom">${n}</span>
+      — a <span class="denom">${pct}%</span> disclosure.</div>`;
+  } else {
+    h += `<div>Do not rely on this bundle.<ul style="margin:.5rem 0 0 1.1rem">` +
+         fail.map(f=>`<li>${f}</li>`).join("") + `</ul></div>`;
+  }
+  h += `</div>`;
+
+  h += `<table><thead><tr><th>Seq</th><th>Sealed</th><th>Bytes</th><th>Result</th></tr></thead><tbody>`;
+  for(const r of rows)
+    h += `<tr><td>${r.seq}</td><td class="mono">${r.ts}</td><td>${r.size}</td>
+      <td class="${r.status==="OK"?"st-ok":"st-bad"}">${r.status}${r.why?" — "+r.why:""}</td></tr>`;
+  h += `</tbody></table>`;
+
+  h += `<div class="mono" style="margin-top:.9rem">
+      anchor count ${anchor.count} · root ${root||"—"} · head ${anchor.chain_head||"—"}
+      ${anchor.generated_at? " · generated "+anchor.generated_at : ""}</div>`;
+
+  if(ok){
+    h += `<div class="note">
+      <b>What this proves.</b> Each disclosed record existed, byte-for-byte
+      unmodified, when the anchor was made, inside a population whose size the
+      operator committed to in advance.<br><br>
+      <b>What it does not prove.</b> That the sealed population contains every
+      record the operator's system produced (DECC-26 §8.01a — a deployment
+      control, not a property of this bundle); nor anything about the
+      ${n - disclosed.length} record(s) held back. The denominator is honest;
+      the sampling is still the discloser's choice, made in the open.<br><br>
+      <b>Where the anchor was published matters.</b> An anchor that only ever
+      existed on the operator's own disk binds nothing. Its evidentiary weight
+      equals the independence of the venue it was published to (§5.04).</div>`;
+  }
+  out.innerHTML = h;
+});
+</script>
+</body>
+</html>
