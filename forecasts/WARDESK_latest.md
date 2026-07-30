@@ -2,216 +2,151 @@
 
 *Method: a claim is single-source until an independently-biased channel corroborates it. Grade A = three or more hostile SIDES agree on a specific sub-zone anchor. Grade B = two sides. Grade C = repeated inside one side, which is echo, not corroboration. Grade F = single source, counted and withheld. Sides are counted, not outlet labels: three Kremlin-aligned channels are one voice, not three.*
 
-Pull: tg_events_2026-07-30_0512.json · 88 clustered events (40 kinetic, 48 statement) · kinetic: **1A** 10B 7C 22 withheld · statements: **0A** 11B · rendered 300512Z JUL 26
+Pull: tg_events_2026-07-30_0706.json · 67 clustered events (42 kinetic, 25 statement) · kinetic: **3A** 8B 9C 22 withheld · statements: **0A** 3B · rendered 300706Z JUL 26
 
 **⬛ GRADE A — CONFIRMED**
 
+**Bushehr · Iran Theatre**
+
+- 6 reports, 5 distinct channels across **4 hostile sides** (AXIS, IL, RU, WEST)
+- Report balance: AXIS 3 · RU 1 · IL 1 · WEST 1
+- Camp labels behind those sides: iranian, pro-hezbollah/axis, pro-israel, russian, western — 5 labels, 4 sides. Labels do not grade.
+- Channels per side: AXIS 2, IL 1, RU 1, WEST 1 — IL, RU, WEST rest on one outlet each
+- Weapons reported: airstrike, missile
+- Casualties: none stated in the corroborating reports.
+- Window: 4.7h · first seen 30 Jul 0102Z
+
+**Gaza City · Israel-Gaza-Levant Theatre**
+
+- 24 reports, 3 distinct channels across **3 hostile sides** (AXIS, IL, PS)
+- Report balance: PS 19 · AXIS 4 · IL 1 — **one side carries most of the volume**; the others corroborate but do not independently substantiate
+- Channels per side: AXIS 1, IL 1, PS 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
+- Weapons reported: airstrike, drone, missile
+- Casualties: none stated in the corroborating reports.
+- Window: 7.7h · first seen 29 Jul 1646Z
+
 **Tehran · Iran Theatre**
 
-- 4 reports, 3 distinct channels across **3 hostile sides** (AXIS, UA, WEST)
-- Report balance: AXIS 2 · UA 1 · WEST 1
-- Channels per side: AXIS 1, UA 1, WEST 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
+- 3 reports, 3 distinct channels across **3 hostile sides** (AXIS, RU, WEST)
+- Report balance: RU 1 · AXIS 1 · WEST 1
+- Channels per side: AXIS 1, RU 1, WEST 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
+- Weapons reported: ballistic, missile
 - Casualties: none stated in the corroborating reports.
-- Window: 6.1h · first seen 27 Jul 1749Z
+- Window: 1.7h · first seen 29 Jul 2050Z
 
 **◼ GRADE B — CORROBORATED**
 
 **Donetsk · Russia-Ukraine Theatre**
 
-- 7 reports, 4 distinct channels across **2 hostile sides** (RU, UA)
-- Report balance: RU 6 · UA 1 — **one side carries most of the volume**; the others corroborate but do not independently substantiate
-- Camp labels behind those sides: pro-kremlin, pro-russia, pro-ukraine, russian — 4 labels, 2 sides. Labels do not grade.
-- Channels per side: RU 3, UA 1 — UA rests on one outlet each
-- 1 of these reports is a roundup post naming four or more places — weaker evidence than a dedicated report.
-- Weapons reported: drone, missile, s-400, uav
+- 3 reports, 2 distinct channels across **2 hostile sides** (RU, UA)
+- Report balance: RU 2 · UA 1
+- Channels per side: RU 1, UA 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
+- Weapons reported: kab
 - Casualties: none stated in the corroborating reports.
-- Window: 7.1h · first seen 27 Jul 0913Z
+- Window: 1.3h · first seen 29 Jul 0817Z
 
 **Nablus · Israel-Gaza-Levant Theatre**
 
-- 7 reports, 2 distinct channels across **2 hostile sides** (AXIS, PS)
-- Report balance: PS 6 · AXIS 1 — **one side carries most of the volume**; the others corroborate but do not independently substantiate
-- Channels per side: AXIS 1, PS 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
+- 3 reports, 2 distinct channels across **2 hostile sides** (AXIS, IL)
+- Report balance: IL 2 · AXIS 1
+- Channels per side: AXIS 1, IL 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
 - Casualties: none stated in the corroborating reports.
-- Window: 7.9h · first seen 27 Jul 1554Z
+- Window: 6.3h · first seen 29 Jul 0811Z
 
-**Jerusalem · Israel-Gaza-Levant Theatre**
+**Beirut · Lebanon**
 
-- 7 reports, 2 distinct channels across **2 hostile sides** (AXIS, PS)
-- Report balance: PS 6 · AXIS 1 — **one side carries most of the volume**; the others corroborate but do not independently substantiate
-- Reported under 2 spellings of the same place: Al-Quds, Jerusalem — matched through the alias table. The sides do not use the same name for this ground.
-- Channels per side: AXIS 1, PS 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
+- 3 reports, 2 distinct channels across **2 hostile sides** (AXIS, WEST)
+- Report balance: WEST 2 · AXIS 1
+- Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
 - Casualties: none stated in the corroborating reports.
-- Window: 5.7h · first seen 27 Jul 1413Z
+- Window: 7.2h · first seen 29 Jul 1048Z
 
 **Tehran · Iran Theatre**
 
-- 5 reports, 3 distinct channels across **2 hostile sides** (AXIS, WEST)
-- Report balance: AXIS 3 · WEST 2
-- Camp labels behind those sides: iranian, pro-hezbollah/axis, western — 3 labels, 2 sides. Labels do not grade.
-- Channels per side: AXIS 2, WEST 1 — WEST rests on one outlet each
+- 2 reports, 2 distinct channels across **2 hostile sides** (AXIS, UA)
+- Report balance: UA 1 · AXIS 1
+- Channels per side: AXIS 1, UA 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
 - Casualties: none stated in the corroborating reports.
-- Window: 7.2h · first seen 27 Jul 0556Z
-
-**Kharkiv/Sumy · Russia-Ukraine Theatre**
-
-- 4 reports, 3 distinct channels across **2 hostile sides** (RU, UA)
-- Report balance: RU 3 · UA 1 — **one side carries most of the volume**; the others corroborate but do not independently substantiate
-- Camp labels behind those sides: pro-kremlin, pro-russia, pro-ukraine — 3 labels, 2 sides. Labels do not grade.
-- Reported under 2 spellings of the same place: Kharkiv, Sumy — matched through the alias table. The sides do not use the same name for this ground.
-- Channels per side: RU 2, UA 1 — UA rests on one outlet each
-- 1 of these reports is a roundup post naming four or more places — weaker evidence than a dedicated report.
-- Weapons reported: geran, missile
-- Casualties: none stated in the corroborating reports.
-- Window: 4.8h · first seen 27 Jul 0841Z
-
-**Crimea · Russia-Ukraine Theatre**
-
-- 4 reports, 4 distinct channels across **2 hostile sides** (RU, UA)
-- Report balance: RU 2 · UA 2
-- Camp labels behind those sides: pro-kremlin, pro-russia, pro-ukraine — 3 labels, 2 sides. Labels do not grade.
-- Channels per side: RU 2, UA 2
-- 1 of these reports is a roundup post naming four or more places — weaker evidence than a dedicated report.
-- Weapons reported: drone, missile, s-400, uav
-- Casualties: none stated in the corroborating reports.
-- Window: 4.4h · first seen 27 Jul 0530Z
-
-**Crimea · Russia-Ukraine Theatre**
-
-- 4 reports, 3 distinct channels across **2 hostile sides** (RU, UA)
-- Report balance: RU 2 · UA 2
-- Camp labels behind those sides: pro-kremlin, pro-russia, pro-ukraine — 3 labels, 2 sides. Labels do not grade.
-- Channels per side: RU 2, UA 1 — UA rests on one outlet each
-- Weapons reported: drone
-- Casualties: none stated in the corroborating reports.
-- Window: 5.5h · first seen 27 Jul 1432Z
+- Window: 6.7h · first seen 29 Jul 1249Z
 
 **Kharkiv · Russia-Ukraine Theatre**
 
 - 2 reports, 2 distinct channels across **2 hostile sides** (RU, UA)
 - Report balance: RU 1 · UA 1
 - Channels per side: RU 1, UA 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
-- 1 of these reports is a roundup post naming four or more places — weaker evidence than a dedicated report.
-- Weapons reported: drone
 - Casualties: none stated in the corroborating reports.
-- Window: 0.5h · first seen 27 Jul 2002Z
+- Window: 5.6h · first seen 29 Jul 0955Z
 
-**Kherson · Russia-Ukraine Theatre**
+**Crimea · Russia-Ukraine Theatre**
 
 - 2 reports, 2 distinct channels across **2 hostile sides** (RU, UA)
 - Report balance: RU 1 · UA 1
 - Channels per side: RU 1, UA 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
-- 1 of these reports is a roundup post naming four or more places — weaker evidence than a dedicated report.
-- Weapons reported: drone, geran, missile, s-400, uav
+- Weapons reported: drone, uav
 - Casualties: none stated in the corroborating reports.
-- Window: 1.2h · first seen 27 Jul 0841Z
+- Window: 2.3h · first seen 30 Jul 0424Z
 
-**Beirut · Lebanon**
+**Bandar Abbas · Iran Theatre**
 
-- 2 reports, 2 distinct channels across **2 hostile sides** (AXIS, IL)
-- Report balance: IL 1 · AXIS 1
-- Channels per side: AXIS 1, IL 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
-- Weapons reported: drone
+- 2 reports, 2 distinct channels across **2 hostile sides** (AXIS, WEST)
+- Report balance: AXIS 1 · WEST 1
+- Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
+- Weapons reported: airstrike, missile
 - Casualties: none stated in the corroborating reports.
-- Window: 5.7h · first seen 27 Jul 0958Z
+- Window: 4.9h · first seen 29 Jul 2036Z
+
+**Gaza City · Israel-Gaza-Levant Theatre**
+
+- 2 reports, 2 distinct channels across **2 hostile sides** (AXIS, PS)
+- Report balance: PS 1 · AXIS 1
+- Channels per side: AXIS 1, PS 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
+- Weapons reported: airstrike, drone
+- Casualties: none stated in the corroborating reports.
+- Window: 2.5h · first seen 30 Jul 0235Z
 
 **▨ GRADE C — REPEATED WITHIN ONE SIDE — NOT CORROBORATED**
 
 > These are the dangerous ones. Volume inside a single side reads like confirmation and is not: allied outlets repeating each other is still one voice. Listed so the reader can see what the method rejected, not as reporting.
 
-- **Ramallah** · Israel-Gaza-Levant Theatre — 7 reports, all from *PS* · 6.2h
-- **Odesa** · Russia-Ukraine Theatre — 4 reports, all from *RU* · 5.9h
-- **Zaporizhzhia** · Russia-Ukraine Theatre — 3 reports, all from *RU* · 3.7h
-- **Belgorod** · Russia-Ukraine Theatre — 3 reports, all from *RU* · 2.7h
-- **Jabalia** · Israel-Gaza-Levant Theatre — 3 reports, all from *PS* · 1.5h
-- **Tel Aviv** · Israel-Gaza-Levant Theatre — 3 reports, all from *AXIS* · 4.6h
-- **Isfahan** · Iran Theatre — 3 reports, all from *WEST* · 1.1h
+- **Jenin** · Israel-Gaza-Levant Theatre — 5 reports, all from *PS* · 4.7h
+- **Sumy** · Russia-Ukraine Theatre — 4 reports, all from *RU* · 7.5h
+- **Jerusalem** · Israel-Gaza-Levant Theatre — 4 reports, all from *PS* · 5.2h
+- **Sumy** · Russia-Ukraine Theatre — 3 reports, all from *RU* · 5.3h
+- **Odesa** · Russia-Ukraine Theatre — 3 reports, all from *RU* · 7.7h
+- **Belgorod** · Russia-Ukraine Theatre — 3 reports, all from *RU* · 1.6h
+- **Hebron** · Israel-Gaza-Levant Theatre — 3 reports, all from *PS* · 7.8h
+- **Khan Younis** · Israel-Gaza-Levant Theatre — 3 reports, all from *PS* · 5.4h
+- **Khan Younis** · Israel-Gaza-Levant Theatre — 3 reports, all from *PS* · 1.1h
 
 **◻ WITHHELD — SINGLE-SOURCE (F)**
 
-22 single-source claims across 4 zones — Russia-Ukraine Theatre (11), Israel-Gaza-Levant Theatre (9), Yemen (1), Syria (1). Not reported. Logged and available on analyst query.
+22 single-source claims across 4 zones — Russia-Ukraine Theatre (12), Israel-Gaza-Levant Theatre (7), Iran Theatre (2), Yemen (1). Not reported. Logged and available on analyst query.
 
 **◈ STATEMENT TRACK — CROSS-SIDE CONFIRMED CLAIMS**
 
 *A statement confirmed across hostile sides means the claim circulated on both sides of the divide — it does not mean the claim is true. Kinetic cross-bias confirms an event happened; statement cross-bias confirms an utterance exists. The desk grades circulation, the reader judges content.*
 
-**[B] “Blockade” · Iran Theatre · around: defense ministry**
-
-- 5 reports across **2 hostile sides** (AXIS, WEST)
-- Report balance: AXIS 3 · WEST 2
-- Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
-- Window: 6.1h · first seen 27 Jul 1904Z
-
-**[B] “Blockade” · Israel-Gaza-Levant Theatre · around: trump**
-
-- 4 reports across **2 hostile sides** (AXIS, IL)
-- Report balance: AXIS 2 · IL 2
-- Channels per side: AXIS 1, IL 1 — **every side here is a single outlet**
-- Window: 1.2h · first seen 27 Jul 1912Z
-
-**[B] “Nuclear” · Israel-Gaza-Levant Theatre · around: netanyahu, trump, white house**
+**[B] “Tanker” · Iran Theatre · around: irgc**
 
 - 3 reports across **2 hostile sides** (AXIS, WEST)
 - Report balance: AXIS 2 · WEST 1
 - Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
-- Window: 5.4h · first seen 27 Jul 1550Z
+- Window: 7.3h · first seen 29 Jul 1221Z
 
-**[B] “Negotiation” · Israel-Gaza-Levant Theatre · around: nato, trump**
+**[B] “Sanctions” · Iran Theatre · around: irgc**
 
-- 3 reports across **2 hostile sides** (AXIS, PS)
-- Report balance: AXIS 2 · PS 1
-- Channels per side: AXIS 1, PS 1 — **every side here is a single outlet**
-- Window: 7.9h · first seen 27 Jul 1041Z
-
-**[B] “Tanker” · Iran Theatre**
-
-- 3 reports across **2 hostile sides** (AXIS, WEST)
-- Report balance: AXIS 2 · WEST 1
+- 2 reports across **2 hostile sides** (AXIS, WEST)
+- Report balance: AXIS 1 · WEST 1
 - Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
-- Window: 5.5h · first seen 27 Jul 1904Z
+- Window: 0.0h · first seen 29 Jul 2300Z
 
-**[B] “Strait Of Hormuz” · Iran Theatre · around: centcom, foreign ministry**
-
-- 3 reports across **2 hostile sides** (AXIS, WEST)
-- Report balance: WEST 2 · AXIS 1
-- Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
-- Window: 3.9h · first seen 27 Jul 0759Z
-
-**[B] “Mobilization” · Russia-Ukraine Theatre · around: putin, zelensky, zelenskyy**
-
-- 2 reports across **2 hostile sides** (RU, UA)
-- Report balance: UA 1 · RU 1
-- Channels per side: RU 1, UA 1 — **every side here is a single outlet**
-- Window: 2.9h · first seen 27 Jul 1504Z
-
-**[B] “Escalation” · Israel-Gaza-Levant Theatre**
-
-- 2 reports across **2 hostile sides** (AXIS, IL)
-- Report balance: IL 1 · AXIS 1
-- Channels per side: AXIS 1, IL 1 — **every side here is a single outlet**
-- Window: 1.1h · first seen 27 Jul 1917Z
-
-**[B] “Red Sea” · Iran Theatre**
+**[B] “Closure” · Iran Theatre · around: irgc**
 
 - 2 reports across **2 hostile sides** (AXIS, WEST)
 - Report balance: WEST 1 · AXIS 1
 - Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
-- Window: 5.4h · first seen 27 Jul 1725Z
+- Window: 0.3h · first seen 29 Jul 2148Z
 
-**[B] “Escalation” · Iran Theatre**
+*Single-side statement echo (not corroborated): Retaliation · Israel-Gaza-Levant Theatre (3 rpt, AXIS); Mobilization · Israel-Gaza-Levant Theatre (3 rpt, AXIS); Strait Of Hormuz · Iran Theatre (3 rpt, AXIS).*
 
-- 2 reports across **2 hostile sides** (AXIS, WEST)
-- Report balance: AXIS 1 · WEST 1
-- Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
-- Window: 4.8h · first seen 27 Jul 1904Z
-
-**[B] “Sanctions” · Iran Theatre**
-
-- 2 reports across **2 hostile sides** (AXIS, WEST)
-- Report balance: AXIS 1 · WEST 1
-- Channels per side: AXIS 1, WEST 1 — **every side here is a single outlet**
-- Window: 0.5h · first seen 27 Jul 1015Z
-
-*Single-side statement echo (not corroborated): Sanctions · Russia-Ukraine Theatre (3 rpt, RU); Negotiation · Iran Theatre (3 rpt, WEST).*
-
-*35 single-source statement claims logged, not reported.*
+*19 single-source statement claims logged, not reported.*
