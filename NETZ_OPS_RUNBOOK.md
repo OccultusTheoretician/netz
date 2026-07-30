@@ -1,77 +1,78 @@
 # NETZ OPS RUNBOOK — v1 (2026-07-25)
+
 *Operational procedure for the desk's repository and publishing chain. Not canon, not theory — the sequence of commands and the error classes that produced them. Every rule below was paid for.*
 
----
+\---
 
-## 0. THE THREE WORDS
+## 0\. THE THREE WORDS
 
 Everything routine is three commands:
 
-| word | what it does |
-|---|---|
-| `daily` | `daily.bat` — netz.py + kkr.py collection run |
-| `seal` | `seal.bat` — veiled entry → conformance regen → commit → push → prompts external clock |
-| `publish` | `publish.bat` — review gate → conformance regen + standards sync → targeted add → timestamped commit → push |
+|word|what it does|
+|-|-|
+|`daily`|`daily.bat` — netz.py + kkr.py collection run|
+|`seal`|`seal.bat` — veiled entry → conformance regen → commit → push → prompts external clock|
+|`publish`|`publish.bat` — review gate → conformance regen + standards sync → targeted add → timestamped commit → push|
 
 If a task isn't one of those three, it's below.
 
----
+\---
 
-## 1. THE SHELL — know which one you're in before pasting
+## 1\. THE SHELL — know which one you're in before pasting
 
-**The prompt tells you.** `PS C:\netz>` is PowerShell. `C:\netz>` is cmd.exe. Every procedure in this runbook is PowerShell. Pasting PowerShell into cmd fails on `$vars`, `[Type]::Method()`, and semicolon chaining.
+**The prompt tells you.** `PS C:\\netz>` is PowerShell. `C:\\netz>` is cmd.exe. Every procedure in this runbook is PowerShell. Pasting PowerShell into cmd fails on `$vars`, `\[Type]::Method()`, and semicolon chaining.
 
 Recovery: type `powershell` and press enter. Prompt changes to `PS`.
 
-**Never paste a command containing angle-bracket placeholders.** `cd <netz>` — PowerShell reads `<` as a reserved operator and the whole line dies. Literal paths only: `cd C:\netz`.
+**Never paste a command containing angle-bracket placeholders.** `cd <netz>` — PowerShell reads `<` as a reserved operator and the whole line dies. Literal paths only: `cd C:\\netz`.
 
-**`.NET file calls do not follow `cd`.** `[IO.File]::ReadAllText('docs\index.html')` resolves against the process's working directory, not the shell's. Always anchor: `$f="$PWD\docs\index.html"`.
+\*\*`.NET file calls do not follow `cd`.\*\* `\[IO.File]::ReadAllText('docs\\index.html')`resolves against the process's working directory, not the shell's. Always anchor:`$f="$PWD\\docs\\index.html"`.
 
----
+\---
 
-## 2. THE GATE — always first, no exceptions
+## 2\. THE GATE — always first, no exceptions
 
 Nothing gets added, committed, or pushed until the gate is verified. The gate is `.gitignore`.
 
 ```powershell
-cd C:\netz; git status --short; git check-ignore -v netz_wardesk.session netz_bundle.zip warroom.html
+cd C:\\netz; git status --short; git check-ignore -v netz\_wardesk.session netz\_bundle.zip warroom.html
 ```
 
 `check-ignore` must print a match line for each. `git status --short` must not show any sensitive file as tracked or staged.
 
-**Permanently excluded classes:** `*.session` (auth keys — a Telegram session file operates the account without a password), bundles/zips, raw scrape output (`forecasts/tg_*`), `warroom.html` / `warroom.py`, `state.json`, `*.bak`, `*_backup.py`, test dirs, `.conformance_last`.
+**Permanently excluded classes:** `\*.session` (auth keys — a Telegram session file operates the account without a password), bundles/zips, raw scrape output (`forecasts/tg\_\*`), `warroom.html` / `warroom.py`, `state.json`, `\*.bak`, `\*\_backup.py`, test dirs, `.conformance\_last`.
 
 **If a sensitive file is already tracked:** revoke the credential first (terminate the session in the app), *then* deal with git. Revocation kills the exposed key regardless of what history says. History rewriting is second, never first.
 
----
+\---
 
-## 3. NEVER `git add -A`
+## 3\. NEVER `git add -A`
 
 `-A` stages whatever happens to be in the folder — including files the gate doesn't cover yet, working files, and anything a pipeline dropped since the last commit. `publish.bat` has been rewritten to use a targeted add list for this reason.
 
 **Rule:** name every path. If the list is long, that's the cost of knowing what shipped.
 
----
+\---
 
-## 4. EDITING FILES — the download path is canonical
+## 4\. EDITING FILES — the download path is canonical
 
 **Tonight's most expensive error class.** Long code pasted into notepad picks up line-wraps from chat rendering and produces syntax errors (an f-string split across lines). Then the broken file gets committed, and the fix attempts compound.
 
-**Rule: anything over ~100 lines is downloaded, not pasted.** Chat link → Downloads → `Copy-Item ... -Force`.
+**Rule: anything over \~100 lines is downloaded, not pasted.** Chat link → Downloads → `Copy-Item ... -Force`.
 
-**For surgical edits, use Python — not PowerShell string replacement.** The working copy is CRLF. PowerShell `-replace` and `.Replace()` patterns written with `\n` silently miss every line in a `\r\n` file, and the command reports success while changing nothing. Python read in text mode normalizes newlines and matches reliably.
+**For surgical edits, use Python — not PowerShell string replacement.** The working copy is CRLF. PowerShell `-replace` and `.Replace()` patterns written with `\\n` silently miss every line in a `\\r\\n` file, and the command reports success while changing nothing. Python read in text mode normalizes newlines and matches reliably.
 
 Pattern for a surgical edit:
 
 ```powershell
-cd C:\netz
+cd C:\\netz
 @'
 import io
 p="target.py"
 src=io.open(p,encoding="utf-8").read()
 # ... anchor-based edit, with an assert to prove it took ...
 assert src.count("expected marker")==1
-io.open(p,"w",encoding="utf-8",newline="\n").write(src)
+io.open(p,"w",encoding="utf-8",newline="\\n").write(src)
 print("patched OK")
 '@ | Set-Content -Encoding UTF8 patch.py
 python patch.py
@@ -81,12 +82,12 @@ python patch.py
 
 **Prefer anchor-based block rewrites over line matching.** Find a stable start and end marker, replace everything between. Line-level matching breaks on whitespace and newline drift; block rewriting doesn't.
 
----
+\---
 
-## 5. THE COMPILE GATE — never push an unrun script
+## 5\. THE COMPILE GATE — never push an unrun script
 
 ```powershell
-python -m py_compile target.py
+python -m py\_compile target.py
 if($LASTEXITCODE -eq 0){ <run, add, commit, push> } else {"COMPILE FAILED - stop"}
 ```
 
@@ -94,9 +95,9 @@ Tonight a crashed script's broken source got committed while the output it shoul
 
 **Same principle for generated output:** if the generator crashes, the artifact is stale. Check the artifact, not the exit code of the commit.
 
----
+\---
 
-## 6. VERIFY FROM THE SERVED BRANCH, NOT THE LOCAL COPY
+## 6\. VERIFY FROM THE SERVED BRANCH, NOT THE LOCAL COPY
 
 Local success does not mean published success. Verify what the world sees.
 
@@ -112,9 +113,9 @@ Pull the tarball and read the files out of it. That is ground truth.
 
 **When a check contradicts expectation, suspect the instrument before the artifact.** An empty API response, a rate-limit message, a cached read — these are *non-findings*, not clean results. Distinguish "the check returned clean" from "the check did not run." (LIAS 3.04 exists because of this.)
 
----
+\---
 
-## 7. GITHUB PAGES — what actually gets served
+## 7\. GITHUB PAGES — what actually gets served
 
 **Pages serves `docs/` only.** A file at repo root is in the repository but not on the site. Tonight's 404 on the conformance report was exactly this.
 
@@ -128,9 +129,9 @@ Pull the tarball and read the files out of it. That is ground truth.
 
 **Cloudflare sits in front.** After a push, allow a minute or two for Pages to rebuild, then check in incognito. Purge cache from the dashboard if stale.
 
----
+\---
 
-## 8. HISTORY PURGE (use sparingly)
+## 8\. HISTORY PURGE (use sparingly)
 
 When something that shouldn't be public has been committed and pushed, and the content is cosmetic-to-moderate sensitivity:
 
@@ -145,9 +146,9 @@ This collapses everything since the clean commit into one commit and removes the
 
 **Limits, stated honestly:** orphaned commits stay fetchable by exact SHA until GitHub garbage-collects. Nobody browses to them, but they exist. A support ticket forces the GC if the belt-and-suspenders is wanted. Anything genuinely secret (credentials, keys) is **revoked, not purged** — purging is for embarrassment, revocation is for security.
 
----
+\---
 
-## 9. THE ARCHIVE SEQUENCE (external clock — RPAS 4.05)
+## 9\. THE ARCHIVE SEQUENCE (external clock — RPAS 4.05)
 
 After a publication that matters:
 
@@ -158,23 +159,23 @@ After a publication that matters:
 
 Snapshots stack. An earlier capture is never undone by a later one — it becomes a timestamped earlier state. **This means: fix before archiving when possible, but never treat an existing snapshot as a reason not to correct.**
 
----
+\---
 
-## 10. PRE-PUBLICATION SWEEP (compartment)
+## 10\. PRE-PUBLICATION SWEEP (compartment)
 
 Before any push that changes public-facing text, sweep every served surface for identity terms and local paths:
 
 ```powershell
-Select-String -Path docs\*.html,docs\*.md,*.html,*.md -Pattern "Utah|Attila|C:\\Users" | Select-Object -First 20
+Select-String -Path docs\\\*.html,docs\\\*.md,\*.html,\*.md -Pattern "Utah|Attila|C:\\\\Users" | Select-Object -First 20
 ```
 
 Also sweep generated JSON payloads — `notes` and `evidence` fields in pipeline output can carry local paths and names that never appear in source.
 
-**The lesson from tonight:** small-pool descriptors are the risk, not names. "A public-finance and audit professional with a decade of Utah state service" names nobody and identifies one person. Compartment discipline is about *inference chains*, not literal identifiers.
+**The lesson from tonight:** small-pool descriptors are the risk, not names. Names nobody and identifies one person. Compartment discipline is about *inference chains*, not literal identifiers.
 
----
+\---
 
-## 11. WHEN A COMMAND CHAIN FAILS
+## 11\. WHEN A COMMAND CHAIN FAILS
 
 Order of suspicion, in order:
 
@@ -187,18 +188,19 @@ Order of suspicion, in order:
 
 **Stop after two failed surgical attempts.** The third attempt is where compounding damage happens. Fall back to the download path (§4), which is slower and always works.
 
----
+\---
 
-## APPENDIX — FILE INVENTORY (what lives where, C:\netz)
+## APPENDIX — FILE INVENTORY (what lives where, C:\\netz)
 
-**Automation:** `daily.bat` · `publish.bat` (review gate, hardened) · `conformance.bat` · `seal.bat` · `score.bat` · `syndicate.bat` · `run_netz.bat` · `kkr.bat` · `mine.bat` · `archiv_*.bat` · `audit_*.bat` · `fable_*.bat`
+**Automation:** `daily.bat` · `publish.bat` (review gate, hardened) · `conformance.bat` · `seal.bat` · `score.bat` · `syndicate.bat` · `run\_netz.bat` · `kkr.bat` · `mine.bat` · `archiv\_\*.bat` · `audit\_\*.bat` · `fable\_\*.bat`
 
-**Instruments:** `rpas_audit.py` (conformance auditor + migration) · `candidate_desk.py` (veiled entry creation) · `netz.py` · `kkr.py` · `tg_*.py` · `warroom.py` (local only, gitignored) · `syndicate.py` (external clock) · `wardesk_wire.py`
+**Instruments:** `rpas\_audit.py` (conformance auditor + migration) · `candidate\_desk.py` (veiled entry creation) · `netz.py` · `kkr.py` · `tg\_\*.py` · `warroom.py` (local only, gitignored) · `syndicate.py` (external clock) · `wardesk\_wire.py`
 
-**Records:** `ledger.json` (canonical) · `ledger.json.pre_rpas` (pre-migration backup, gitignored-adjacent — leave it) · `REPORT_conformance.md` · `war_channels.json` · `audit_verdicts*.json` · `forecasts/`
+**Records:** `ledger.json` (canonical) · `ledger.json.pre\_rpas` (pre-migration backup, gitignored-adjacent — leave it) · `REPORT\_conformance.md` · `war\_channels.json` · `audit\_verdicts\*.json` · `forecasts/`
 
-**Standards:** `RPAS_FIRST_EDITION_2026_v1.md` · `LIAS_FIRST_EDITION_2026_v1.md` · `STANDARDS_MAPPING_RPA_2026-07-24.md` · `RETRO_PRESCIENT_AUDIT.md` (the sealed definition)
+**Standards:** `RPAS\_FIRST\_EDITION\_2026\_v1.md` · `LIAS\_FIRST\_EDITION\_2026\_v1.md` · `STANDARDS\_MAPPING\_RPA\_2026-07-24.md` · `RETRO\_PRESCIENT\_AUDIT.md` (the sealed definition)
 
-**Served (`docs/`):** `index.html` · `standards.html` · `ledger.html` · `report.html` · `kkr.html` · the three standards + conformance report · `ledger.json` · `war_desk.json` · `crow.png` · `CNAME` · `.nojekyll`
+**Served (`docs/`):** `index.html` · `standards.html` · `ledger.html` · `report.html` · `kkr.html` · the three standards + conformance report · `ledger.json` · `war\_desk.json` · `crow.png` · `CNAME` · `.nojekyll`
 
-**Held out deliberately (untracked, not gitignored):** `forecasts/WARDESK_2026-07-24_*.md` — six files, pipeline output, unreviewed. Ruling pending: open one; if clean graded output, publish the set as dated record; if raw-scrape residue, one ignore line classifies the class.
+**Held out deliberately (untracked, not gitignored):** `forecasts/WARDESK\_2026-07-24\_\*.md` — six files, pipeline output, unreviewed. Ruling pending: open one; if clean graded output, publish the set as dated record; if raw-scrape residue, one ignore line classifies the class.
+
