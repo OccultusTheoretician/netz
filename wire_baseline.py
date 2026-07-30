@@ -295,7 +295,7 @@ def main():
     if not ev_path or not ev_path.exists():
         print("Need --events or --latest.", file=sys.stderr)
         return 1
-    events = json.loads(ev_path.read_text(encoding="utf-8")).get("events", [])
+    events = json.loads(ev_path.read_text(encoding="utf-8-sig")).get("events", [])
     floor = GRADE_ORDER[a.min_grade]
     graded = [e for e in events
               if GRADE_ORDER.get(str(e.get("grade", "F"))[0], 3) <= floor]

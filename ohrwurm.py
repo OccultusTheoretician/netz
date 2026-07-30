@@ -292,7 +292,7 @@ def analyse(msgs, fmap, min_reports, min_channels, gram_lo, gram_hi):
     silence = {}
     if registry.exists():
         try:
-            reg = json.loads(registry.read_text(encoding="utf-8"))
+            reg = json.loads(registry.read_text(encoding="utf-8-sig"))
             expect = defaultdict(set)
             def walk(node, zone=None):
                 if isinstance(node, dict):
@@ -445,7 +445,7 @@ def main():
             return 1
         src = pulls[0]
 
-    doc = json.loads(src.read_text(encoding="utf-8"))
+    doc = json.loads(src.read_text(encoding="utf-8-sig"))
     msgs = find_messages(doc)
     if not msgs:
         print(f"no message list found in {src.name}. Top-level keys: {list(doc)[:12]}")

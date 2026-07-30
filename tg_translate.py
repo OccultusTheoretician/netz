@@ -128,7 +128,7 @@ def needs_translation(msg: dict) -> bool:
     return True
 
 def run(src: pathlib.Path):
-    data = json.loads(src.read_text(encoding="utf-8"))
+    data = json.loads(src.read_text(encoding="utf-8-sig"))
     msgs = data["messages"]
 
     to_translate = [(i,m) for i,m in enumerate(msgs) if needs_translation(m)]
