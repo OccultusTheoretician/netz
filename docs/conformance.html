@@ -191,8 +191,8 @@ fetch('ledger.json',{cache:'no-store'}).then(function(r){return r.json();}).then
 <div class="gate"><span>RPAS 5.02 · fifty-entry gate</span><span id="g-fifty" class="warn">requires JavaScript</span></div>
 <div class="gate"><span>Thirty-resolved noise floor (whole ledger)</span><span id="g-thirty" class="warn">requires JavaScript</span></div>
 <div class="gate"><span>Brier over the pooled population</span><span id="g-brier" class="warn">not computed — three forecasters, see per-arm table</span></div>
-<div class="gate"><span>RPAS 4.02e/4.03 · failure condition present</span><span id="g-fc" class="fail">10 missing</span></div>
-<div class="gate"><span>RPAS 4.02f/1.04 · keyed/keyless determined</span><span id="g-kk" class="fail">10 missing</span></div>
+<div class="gate"><span>RPAS 4.02e/4.03 · failure condition present</span><span id="g-fc">recomputes from the ledger with scripts</span></div>
+<div class="gate"><span>RPAS 4.02f/1.04 · keyed/keyless determined</span><span id="g-kk">recomputes from the ledger with scripts</span></div>
 <p class="note" id="defect-note">Failure-condition and keyed/keyless gaps are per-entry conformance defects, not performance, so they are counted across the whole ledger; the arm each defect sits in is printed for remediation, not for comparison.</p>
 </div></section>
 <section><div class="wrap"><h2>The dated findings register</h2>
