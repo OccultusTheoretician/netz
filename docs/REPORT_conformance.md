@@ -1,9 +1,9 @@
 # RPAS-26 Conformance Report — ledger.json
 *Generated 2026-07-29. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
 
-- entries: **161** · resolved: **25** · keyless: **0** · keyed: **0**
+- entries: **161** · resolved: **15** · keyless: **0** · keyed: **0**
 - 5.02 fifty-entry gate: **MET**
-- thirty-resolved noise floor: **below floor (25/30 resolved) — any score is noise, and must say so on its face**
+- thirty-resolved noise floor: **below floor (15/30 resolved) — any score is noise, and must say so on its face**
 - 1.04 keyed/keyless missing: **161/161**
 - 4.03 failure condition missing: **161/161**
 

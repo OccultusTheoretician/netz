@@ -133,7 +133,10 @@ def check_entries(rows):
 def check_failure_conditions(h, rows):
     """RPAS 4.02e/4.03, aggregated. Post-cutover: always MUST. Pre-cutover:
     conformant-as-disclosed when the ledger prints the finding (6.04)."""
-    miss = [e for e in rows if not str(e.get("failure_condition", "")).strip()]
+    miss = [e for e in rows
+            if not str(e.get("failure_condition", "")).strip()
+            or str(e.get("failure_condition", ""))
+            .strip().lower().startswith("unset")]
     if not miss:
         return
     post = [e.get("id","?") for e in miss

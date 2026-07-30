@@ -50,8 +50,11 @@ def propose(e: dict) -> str:
 
 def cmd_draft() -> int:
     rows = kkr.load_ledger()["projections"]
+    def _empty(v):
+        v = str(v or "").strip()
+        return not v or v.lower().startswith("unset")
     targets = [e for e in rows if e.get("status") == "open"
-               and not str(e.get("failure_condition", "")).strip()]
+               and _empty(e.get("failure_condition"))]
     props = {e["id"]: propose(e) for e in targets}
     PROPOSALS.write_text(json.dumps(props, ensure_ascii=False, indent=2),
                          encoding="utf-8")
@@ -83,8 +86,9 @@ def cmd_apply(which: str) -> int:
     for e in data["projections"]:
         if e.get("id") not in ids:
             continue
-        if e.get("status") != "open" or str(
-                e.get("failure_condition", "")).strip():
+        cur = str(e.get("failure_condition", "")).strip()
+        if e.get("status") != "open" or (cur and not
+                                         cur.lower().startswith("unset")):
             skipped += 1
             continue
         e["failure_condition"] = props[e["id"]]

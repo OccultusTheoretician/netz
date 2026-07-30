@@ -34,7 +34,8 @@ from pathlib import Path
 
 UNSET = "UNSET — pre-registration required (RPAS 4.02)"
 KEYCLASSES = {"keyed", "keyless", "unset", "n/a"}
-RESOLVED = {"hit", "miss", "keyed", "null", "void", "confirmed", "partial"}
+RESOLVED = {"hit", "miss", "confirmed"}   # adjudicated against the world
+TERMINAL = RESOLVED | {"void", "null", "partial", "keyed"}  # 5.03 verdict scope
 SOURCE_HINT = re.compile(r"\b(reuters|ap|associated press|bbc|al jazeera|guardian|"
                          r"bloomberg|cnn|afp|reﬀ|nyt|new york times|official|filing|"
                          r"repo|hash|records?)\b", re.I)
@@ -100,7 +101,7 @@ def audit_entry(e: dict) -> list[tuple[str, str, str]]:
 
     # 5.03 resolved entries carry a verdict
     st = (e.get("status") or e.get("state") or "").strip().lower()
-    if st in RESOLVED:
+    if st in TERMINAL:
         aud = e.get("audit") or {}
         if not aud.get("verdict"):
             out.append(("WARN", "5.03", f"resolved ({st}) but no audit verdict recorded"))
