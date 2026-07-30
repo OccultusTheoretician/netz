@@ -58,6 +58,41 @@ publishes like any other finding.</p>
 <section><div class="wrap"><h2>What a match proves — and what it does not</h2>
 <p>A match proves this exact content existed, unedited, at the sealed timestamp — before the outcome. It does not prove the call was wise, that resolution was fair, or anything about the sealed-but-unrevealed remainder. Per KNM 6.03 those discretions survive the mechanism and are disclosed, not hidden. The count of what remains dark is public: that is the whole design.</p>
 </div></section>
+<section><div class="wrap"><h2>The ledger, recomputed in this tab</h2>
+<p>The scores this desk prints are not asked for below — they are <em>recomputed</em>, in your
+browser, from the raw rows of <a href="ledger.json">ledger.json</a>, the moment this page loaded.
+If the desk's stated figures ever disagree with what your own machine just computed, the desk is
+wrong and you have the receipt.</p>
+<div class="tw"><table id="lg"><thead><tr><th>arm</th><th>issued</th><th>open</th><th>void</th>
+<th>resolved</th><th>hit / miss</th><th>Brier (recomputed)</th></tr></thead>
+<tbody><tr><td colspan="7" class="note">reading ledger.json …</td></tr></tbody></table></div>
+<p class="note" id="lgstamp"></p>
+<p class="note">No pooled score is computed — a Brier belongs to one forecaster. Any arm under
+thirty resolutions is noise, and says so on the <a href="conformance.html">conformance page</a>
+in the same breath as the number.</p>
+</div></section>
+<section><div class="wrap"><h2>The plate — a lock published before its key</h2>
+<p>On the back wall of the <a href="konsole.html">konsole</a> vault hangs
+<a href="plate.json">a sealed plate</a>: a one-time-pad ciphertext with the SHA-256 of its key and
+of its plaintext committed beside it. It has no solve — every plaintext of that length is an equally
+consistent decode, which is the construction, not a boast. The decoder below shipped <em>before</em>
+the key exists. The day the key publishes, paste it here and your own browser opens the plate:
+XOR, then both hash checks, locally. The desk is not consulted at its own reveal.</p>
+<div class="tw"><table><tbody id="pl"><tr><td class="note">reading plate.json …</td></tr></tbody></table></div>
+<textarea id="pkey" style="min-height:90px" placeholder="the key, as hex, when it publishes — nothing pasted here leaves this page"></textarea>
+<button id="popen">OPEN THE PLATE</button>
+<div id="pout" class="verdict" style="display:none"></div>
+</div></section>
+<section><div class="wrap"><h2>Forge your own seal — the method is not property</h2>
+<p>KNM 7.04 in one tool: sealing a claim before its outcome is not this desk's invention and is not
+licensed, sold, or gated. Type a claim, get a commitment. Post the hash anywhere that timestamps
+it; keep the preimage; publish it when the claim resolves — hit or miss. Everything below runs in
+your browser; no field is transmitted, stored, or seen by this desk.</p>
+<textarea id="fstmt" style="min-height:90px" placeholder="the claim, exactly as you will publish it later — include your probability and deadline in the text"></textarea>
+<button id="fgo">FORGE COMMITMENT</button>
+<div id="fout" class="verdict" style="display:none"></div>
+<p class="note" id="fnote" style="display:none"></p>
+</div></section>
 <footer><div class="wrap">NEBELKRÄHE · THE PRESCIENT DESK — verification requires no material from this desk.</div></footer>
 <script>
 (function(){
@@ -91,6 +126,112 @@ document.getElementById('go').onclick=function(){
     if(!rec){out.textContent='No record with id '+rv.id+' on the public log.\ncomputed ('+ver+'): '+hex; out.className='verdict no'; return;}
     if(hex===rec.commitment){out.innerHTML='VERIFIED — recomputed hash matches the sealed commitment.<br>id '+rec.id+' · sealed '+rec.timestamp+' · status '+rec.status+' · construction '+ver+'<br><span class="mono">'+hex+'</span>'; out.className='verdict ok';}
     else{out.innerHTML='MISMATCH — this reveal does not reproduce the sealed commitment under '+ver+'.<br>computed <span class="mono">'+hex+'</span><br>sealed &nbsp;&nbsp;<span class="mono">'+rec.commitment+'</span>'; out.className='verdict no';}
+  });
+};
+})();
+</script>
+<script>
+(function(){
+"use strict";
+function hex(buf){return Array.prototype.map.call(new Uint8Array(buf),function(b){return ('0'+b.toString(16)).slice(-2);}).join('');}
+function sha(bytes){return crypto.subtle.digest('SHA-256', bytes);}
+function pad2(n){return ('0'+n).slice(-2);}
+
+/* ---- the ledger, recomputed ---- */
+fetch('ledger.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+  var arms={};
+  (d.projections||[]).forEach(function(x){var k=x.model||'unattributed';(arms[k]=arms[k]||[]).push(x);});
+  var tb=document.querySelector('#lg tbody'); tb.innerHTML='';
+  Object.keys(arms).sort().forEach(function(k){
+    var r=arms[k];
+    var res=r.filter(function(x){return x.status==='hit'||x.status==='miss';});
+    var h=res.filter(function(x){return x.status==='hit';}).length;
+    var br='—';
+    if(res.length){br=(res.reduce(function(a,x){return a+Math.pow(x.probability/100-(x.status==='hit'?1:0),2);},0)/res.length).toFixed(4);}
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td class="mono">'+k+'</td><td>'+r.length+'</td>'
+      +'<td>'+r.filter(function(x){return x.status==='open';}).length+'</td>'
+      +'<td>'+r.filter(function(x){return x.status==='void';}).length+'</td>'
+      +'<td>'+res.length+'</td><td>'+(res.length?h+' / '+(res.length-h):'—')+'</td>'
+      +'<td class="mono">'+br+(res.length&&res.length<30?' <span class="note">(n&lt;30: noise)</span>':'')+'</td>';
+    tb.appendChild(tr);
+  });
+  var now=new Date();
+  document.getElementById('lgstamp').textContent='Recomputed in this tab at '
+    +now.getUTCFullYear()+'-'+pad2(now.getUTCMonth()+1)+'-'+pad2(now.getUTCDate())
+    +' '+pad2(now.getUTCHours())+':'+pad2(now.getUTCMinutes())+' UTC from ledger schema '
+    +(d.schema||'?')+', as_of '+(d.as_of||'?')+'. The figures above were not read from any page of this site.';
+}).catch(function(e){
+  document.querySelector('#lg tbody').innerHTML='<tr><td colspan="7" class="note">ledger.json unreachable ('+e+') — open this page from the live site.</td></tr>';
+});
+
+/* ---- the plate: commitment shown now, decoder armed for the reveal ---- */
+var PLATE=null;
+fetch('plate.json',{cache:'no-store'}).then(function(r){
+  if(!r.ok) throw new Error(r.status);
+  return r.json();
+}).then(function(p){
+  PLATE=p;
+  var rows=[['id',p.id],['sealed (UTC)',p.sealed_utc],['cipher',p.cipher],
+    ['length',p.length_bytes+' bytes'],
+    ['SHA-256 of the key',p.sha256_key],
+    ['SHA-256 of the plaintext',p.sha256_plaintext]];
+  document.getElementById('pl').innerHTML=rows.map(function(r){
+    return '<tr><th style="white-space:nowrap">'+r[0]+'</th><td class="mono">'+r[1]+'</td></tr>';}).join('');
+}).catch(function(){
+  document.getElementById('pl').innerHTML='<tr><td class="note">The mount is empty — no plate is published yet. When one hangs, its commitment renders here and the decoder below goes live.</td></tr>';
+});
+document.getElementById('popen').onclick=function(){
+  var out=document.getElementById('pout'); out.style.display='block'; out.className='verdict';
+  if(!PLATE){out.textContent='No plate is published.'; out.className='verdict no'; return;}
+  var kx=(document.getElementById('pkey').value||'').replace(/[^0-9a-fA-F]/g,'');
+  if(!kx){out.textContent='The key has not been published yet. When it is, paste it here — until then this lock has no solve, by construction.'; out.className='verdict no'; return;}
+  if(kx.length%2){out.textContent='Key hex has odd length after cleanup — check the paste.'; out.className='verdict no'; return;}
+  var key=new Uint8Array(kx.length/2);
+  for(var i=0;i<key.length;i++)key[i]=parseInt(kx.substr(2*i,2),16);
+  var cx=PLATE.ciphertext_hex, ct=new Uint8Array(cx.length/2);
+  for(var j=0;j<ct.length;j++)ct[j]=parseInt(cx.substr(2*j,2),16);
+  if(key.length!==ct.length){out.textContent='REJECTED — key length '+key.length+' does not match ciphertext length '+ct.length+' (a one-time pad key is exactly as long as its message).'; out.className='verdict no'; return;}
+  sha(key).then(function(kb){
+    if(hex(kb)!==PLATE.sha256_key){
+      out.innerHTML='REJECTED — this key does not match the committed key hash. With a one-time pad, <em>any</em> plaintext is reachable by choosing a key after the fact; the committed H(key) is exactly what makes that forgery fail.<br>computed <span class="mono">'+hex(kb)+'</span><br>committed <span class="mono">'+PLATE.sha256_key+'</span>';
+      out.className='verdict no'; return;
+    }
+    var pt=new Uint8Array(ct.length);
+    for(var m=0;m<ct.length;m++)pt[m]=ct[m]^key[m];
+    sha(pt).then(function(pb){
+      if(hex(pb)!==PLATE.sha256_plaintext){
+        out.innerHTML='KEY HASH PASSED but the decoded plaintext does not match the committed plaintext hash — the published artifacts are inconsistent, which is itself a finding against the desk.<br>computed <span class="mono">'+hex(pb)+'</span>';
+        out.className='verdict no'; return;
+      }
+      var text=new TextDecoder('utf-8').decode(pt);
+      out.innerHTML='OPEN — both committed hashes reproduced in this tab. What follows is exactly as old as '+PLATE.sealed_utc+'.<br><br><div style="white-space:pre-wrap;font:400 .95rem/1.6 \'IBM Plex Sans\',sans-serif;color:var(--fg)">'
+        +text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</div>';
+      out.className='verdict ok';
+    });
+  });
+};
+
+/* ---- forge your own ---- */
+document.getElementById('fgo').onclick=function(){
+  var out=document.getElementById('fout'), note=document.getElementById('fnote');
+  out.style.display='block'; out.className='verdict';
+  var stmt=(document.getElementById('fstmt').value||'').trim();
+  if(!stmt){out.textContent='Type the claim first — the exact text you will publish when it resolves.'; out.className='verdict no'; return;}
+  var salt=new Uint8Array(16); crypto.getRandomValues(salt);
+  var saltHex=hex(salt.buffer);
+  var pre=stmt.split('|').join('\\u007C')+'|'+saltHex;
+  sha(new TextEncoder().encode(pre)).then(function(buf){
+    var h=hex(buf);
+    out.innerHTML='commitment (SHA-256):<br><span class="mono">'+h+'</span>';
+    out.className='verdict ok';
+    note.style.display='block';
+    note.innerHTML='Preimage was <span class="mono">statement|salt</span> with salt '
+      +'<span class="mono">'+saltHex+'</span> (generated here, shown only to you). '
+      +'<strong>Save the exact statement and this salt now</strong> — post only the hash, anywhere '
+      +'that dates it (a repository commit, a signed email to yourself, a notary, a public post). '
+      +'When the claim resolves, publish statement and salt together; anyone can recompute. '
+      +'Lose the salt and your own seal becomes unopenable — the same rule this desk lives under.';
   });
 };
 })();
