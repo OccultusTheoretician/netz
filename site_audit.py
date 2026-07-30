@@ -258,7 +258,11 @@ def audit_site(r, verbose):
     # it accretes silently as pages are hand-edited — so it is enumerated.
     import re as _re
     navsets = {}
-    for _p in sorted(DOCS.glob("*.html")):
+    # Scope to `pages` — the tracked-and-served set computed above — not the
+    # raw disk glob, so a gitignored scratch page (warroom and its kin) is
+    # never audited as a served surface. Every other site check uses this
+    # scope; the nav check regressed to the glob and must not.
+    for _p in pages:
         _t = _p.read_text(encoding="utf-8", errors="replace")
         _m = _re.search(r"<nav\b.*?</nav>", _t, _re.S)
         if not _m:
