@@ -381,6 +381,22 @@ def cmd_ship(args):
     if not msg:
         print(bad("FAIL — a commit message is required:  python desk.py ship -m \"...\""))
         return 1
+    # nav normalization before verify: generators rewrite pages without
+    # nav; stamping here means verify checks the post-nav mirrors. WARN,
+    # never block - a gate that fails on cosmetics gets disabled.
+    _ng = ROOT / "navgen.py"
+    if _ng.exists():
+        _r = subprocess.run([sys.executable, str(_ng)], cwd=str(ROOT),
+                            capture_output=True, text=True, timeout=60)
+        if _r.returncode != 0:
+            print(warn("  [WARN] navgen failed - shipping without nav "
+                       "normalization"))
+            print(dim((_r.stdout + _r.stderr).strip()[-300:]))
+        else:
+            _stamped = [l for l in _r.stdout.splitlines()
+                        if l.strip().startswith(("replaced", "inserted"))]
+            if _stamped:
+                print(dim(f"  nav: {len(_stamped)} page(s) re-stamped"))
     globals()["PREFLIGHT"] = True
     failed = run_verify()
     globals()["PREFLIGHT"] = False
