@@ -61,6 +61,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -86,6 +87,51 @@ def parse_ts(v):
     except ValueError:
         return None
     return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+
+
+# DEFECTS, 2026-07-30, all four measured on the first live run:
+#   1. 45 queries fired for 19 unique terms — anchors repeat across events
+#      (tehran x4, blockade x4, crimea x4) and every duplicate was re-queried.
+#   2. No delay between queries. GDELT throttles at roughly one query per five
+#      seconds; 45 back-to-back requests earned HTTP 429 and then SSL handshake
+#      timeouts as the throttling escalated.
+#   3. No retry. A 429 was terminal for that term.
+#   4. An event where one term answered and another 429'd was classified
+#      CONFIRMED while still printing the error — a partially measured event
+#      reported as a clean confirmation. That is the stated-versus-operational
+#      gap in miniature, in the tool that exists to measure it.
+_CACHE = {}
+_LAST_CALL = [0.0]
+
+
+def _throttle(min_gap):
+    wait = min_gap - (time.monotonic() - _LAST_CALL[0])
+    if wait > 0:
+        time.sleep(wait)
+    _LAST_CALL[0] = time.monotonic()
+
+
+def gdelt_cached(term, start, end, min_gap=5.0, retries=2, timeout=30):
+    """One network call per distinct (term, window), throttled and retried."""
+    key = (term.lower(), start.strftime("%Y%m%d%H%M"), end.strftime("%Y%m%d%H%M"))
+    if key in _CACHE:
+        return _CACHE[key]
+    delay = min_gap
+    for attempt in range(retries + 1):
+        _throttle(min_gap)
+        arts, err = gdelt_query(term, start, end, timeout=timeout)
+        if err and ("429" in err or "timed out" in err.lower()
+                    or "handshake" in err.lower()):
+            if attempt < retries:
+                delay *= 2
+                print(f"    throttled on '{term}' ({err}) — backing off "
+                      f"{delay:.0f}s", file=sys.stderr)
+                time.sleep(delay)
+                continue
+        _CACHE[key] = (arts, err)
+        return arts, err
+    _CACHE[key] = (None, "throttled after retries")
+    return _CACHE[key]
 
 
 def gdelt_query(term, start, end, timeout=30, maxrecords=75):
@@ -164,9 +210,18 @@ def anchors_of(ev):
 GRADE_ORDER = {"A": 0, "B": 1, "C": 2, "F": 3}
 
 
-def classify(n_articles, err):
-    if err is not None:
+def classify(n_articles, n_ok, n_failed):
+    """n_ok / n_failed count TERMS, not articles.
+
+    A term that never got an answer cannot contribute silence. So:
+      no term answered            -> NOT-MEASURED (we did not ask successfully)
+      some answered, some failed  -> PARTIAL-* (say which, never launder it)
+      all answered                -> CONFIRMED / WIRE-SILENT
+    """
+    if n_ok == 0:
         return "NOT-MEASURED"
+    if n_failed:
+        return "PARTIAL-CONFIRMED" if n_articles > 0 else "PARTIAL-SILENT"
     return "CONFIRMED" if n_articles > 0 else "WIRE-SILENT"
 
 
@@ -200,9 +255,11 @@ def selftest():
         ok = ok and good
     # classification must never turn an error into a finding
     checks = [
-        (classify(0, None), "WIRE-SILENT"),
-        (classify(3, None), "CONFIRMED"),
-        (classify(0, "HTTP 429"), "NOT-MEASURED"),
+        (classify(0, 2, 0), "WIRE-SILENT"),
+        (classify(3, 2, 0), "CONFIRMED"),
+        (classify(0, 0, 2), "NOT-MEASURED"),
+        (classify(10, 1, 1), "PARTIAL-CONFIRMED"),
+        (classify(0, 1, 1), "PARTIAL-SILENT"),
     ]
     for got, want in checks:
         good = got == want
@@ -210,7 +267,8 @@ def selftest():
         ok = ok and good
     print("\n  An unreachable index reads NOT-MEASURED, never WIRE-SILENT — "
           "absence of\n  measurement and absence of coverage are different "
-          "facts.")
+          "facts. An event where one\n  term answered and another did not "
+          "reads PARTIAL, never CONFIRMED.")
     return 0 if ok else 1
 
 
@@ -221,6 +279,9 @@ def main():
     ap.add_argument("--hours", type=int, default=36,
                     help="wire window around each event's first_seen")
     ap.add_argument("--min-grade", default="B", choices=list("ABCF"))
+    ap.add_argument("--min-gap", type=float, default=5.0,
+                    help="seconds between network calls; GDELT throttles at "
+                         "roughly one query per five seconds")
     ap.add_argument("--selftest", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
@@ -252,11 +313,14 @@ def main():
             print(f"  would query {terms} "
                   f"{start:%Y-%m-%d %H:%M}Z → {end:%Y-%m-%d %H:%M}Z")
             continue
+        n_ok = n_failed = 0
         for t in terms[:3]:
-            arts, e = gdelt_query(t, start, end)
-            if e:
-                err = e
+            arts, e = gdelt_cached(t, start, end, min_gap=a.min_gap)
+            if e or arts is None:
+                err = e or "no result"
+                n_failed += 1
                 continue
+            n_ok += 1
             per_term[t] = len(arts)
             hits.extend(arts)
         # dedupe by url
@@ -265,7 +329,7 @@ def main():
             if h["url"] and h["url"] not in seen:
                 seen.add(h["url"])
                 uniq.append(h)
-        state = classify(len(uniq), err if not per_term else None)
+        state = classify(len(uniq), n_ok, n_failed)
         if state == "NOT-MEASURED":
             errors += 1
         rows.append({
@@ -278,6 +342,8 @@ def main():
             "wire_state": state,
             "wire_articles": len(uniq),
             "per_term_counts": per_term,
+            "terms_answered": n_ok,
+            "terms_failed": n_failed,
             "error": err,
             "domains": sorted({h["domain"] for h in uniq if h["domain"]})[:12],
             "sample": uniq[:4],
@@ -291,6 +357,7 @@ def main():
 
     conf = sum(1 for r in rows if r["wire_state"] == "CONFIRMED")
     silent = sum(1 for r in rows if r["wire_state"] == "WIRE-SILENT")
+    partial = sum(1 for r in rows if r["wire_state"].startswith("PARTIAL"))
     payload = {
         "schema": "wire_baseline/v1",
         "generated": datetime.now(timezone.utc).isoformat(),
@@ -298,7 +365,9 @@ def main():
         "wire_index": "GDELT DOC 2.0, sourcelang:english",
         "window_hours": a.hours,
         "summary": {"events": len(rows), "confirmed": conf,
-                    "wire_silent": silent, "not_measured": errors,
+                    "wire_silent": silent, "partial": partial,
+                    "not_measured": errors,
+                    "unique_queries": len(_CACHE),
                     "wire_silent_share": round(silent / len(rows), 4)
                     if rows else None},
         "limits": ("GDELT indexes COVERAGE, not facts. Absence of coverage is "
@@ -312,7 +381,8 @@ def main():
     (DOCS / "wire_baseline.json").write_text(
         json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nWIRE BASELINE · {conf} confirmed · {silent} wire-silent · "
-          f"{errors} not measured", file=sys.stderr)
+          f"{partial} partial · {errors} not measured · "
+          f"{len(_CACHE)} unique queries", file=sys.stderr)
     print(f"  → {DOCS / 'wire_baseline.json'}", file=sys.stderr)
     return 0
 
