@@ -79,10 +79,16 @@ def normalize_as_of(v):
     instrument needs a defined clock start, and pretending compendium years
     are undated hides rot instead of counting it."""
     s = str(v or "").strip()
+    if s in ("", "None", "null"):
+        return "", " (source undated)"
     if re.match(r"^\d{4}$", s):
         return f"{s}-07-01", " (source dated to the year; midpoint convention)"
     if re.match(r"^\d{4}-\d{2}$", s):
         return f"{s}-15", " (source dated to the month; midpoint convention)"
+    m = re.search(r"(\d{4})", s)
+    if m:
+        return (f"{m.group(1)}-07-01",
+                f" (source date {s!r} read as year; midpoint convention)")
     return s, ""
 
 
@@ -132,9 +138,17 @@ def main():
                 c = f.get(cls)
                 if isinstance(c, dict) and c.get("promoted"):
                     na, prec = normalize_as_of(c.get("as_of"))
-                    if na != c.get("as_of"):
+                    if na == "":
+                        # the board's own stated convention: an undated
+                        # source anchors to the retrieval date (cf. the
+                        # existence claims' note on official pages without
+                        # publication dates).
+                        na = str(spine.get("generated_at", ""))[:10]
+                        prec = (" (source undated; as_of is the spine "
+                                "retrieval date — house convention)")
+                    if na and na != str(c.get("as_of") or ""):
                         c["as_of"] = na
-                        if prec and "midpoint convention" not in str(
+                        if prec and prec.strip(" (").rstrip(")") not in str(
                                 c.get("note", "")):
                             c["note"] = str(c.get("note", "")) + prec
                         fixed += 1
