@@ -1,71 +1,1954 @@
 {
   "schema": "kfk-freshness/1.0",
   "generator": "KriegForeKaster.py",
-  "as_of": "2026-07-27T01:37:47Z",
-  "theater": "US Army — XVIII Airborne Corps proving set",
-  "formations": 3,
+  "as_of": "2026-07-30T01:08:37Z",
+  "theater": "Global — national commands and selected formations",
+  "formations": 209,
   "claim_states": {
-    "fresh": 10,
-    "stale": 1
+    "fresh": 438,
+    "stale": 8,
+    "decayed": 172,
+    "undated": 9
   },
   "by_claim_class": {
     "existence": {
-      "n": 3,
+      "n": 209,
       "half_life_days": 365,
-      "median_age_days": -1,
-      "max_age_days": 9,
+      "median_age_days": 2,
+      "max_age_days": 62,
       "past_half_life": 0
     },
     "composition": {
+      "n": 182,
+      "half_life_days": 180,
+      "median_age_days": 393,
+      "max_age_days": 758,
+      "past_half_life": 177
+    },
+    "subordination": {
+      "n": 11,
+      "half_life_days": 730,
+      "median_age_days": 0,
+      "max_age_days": 2,
+      "past_half_life": 0
+    },
+    "order_of_battle": {
       "n": 1,
       "half_life_days": 180,
-      "median_age_days": -1,
-      "max_age_days": -1,
+      "median_age_days": 2,
+      "max_age_days": 2,
+      "past_half_life": 0
+    },
+    "factionalization": {
+      "n": 1,
+      "half_life_days": 365,
+      "median_age_days": 2,
+      "max_age_days": 2,
       "past_half_life": 0
     },
     "commander": {
-      "n": 3,
+      "n": 11,
       "half_life_days": 60,
-      "median_age_days": 9,
-      "max_age_days": 41,
-      "past_half_life": 0
+      "median_age_days": 2,
+      "max_age_days": 62,
+      "past_half_life": 1
     },
     "posture": {
       "n": 1,
       "half_life_days": 21,
-      "median_age_days": 124,
-      "max_age_days": 124,
+      "median_age_days": 127,
+      "max_age_days": 127,
       "past_half_life": 1
     },
     "location": {
-      "n": 3,
+      "n": 202,
       "half_life_days": 14,
-      "median_age_days": -1,
-      "max_age_days": 9,
-      "past_half_life": 0
+      "median_age_days": 2,
+      "max_age_days": 62,
+      "past_half_life": 1
     }
   },
   "by_formation": {
     "F-XVIII": {
       "name": "XVIII Airborne Corps",
       "stalest_claim": "commander",
-      "age_days": 41,
-      "half_lives_elapsed": 0.68,
+      "age_days": 44,
+      "half_lives_elapsed": 0.73,
+      "command_located": true,
+      "state_only": false,
       "unlocated": false
     },
     "F-82ABN": {
       "name": "82nd Airborne Division",
       "stalest_claim": "posture",
-      "age_days": 124,
-      "half_lives_elapsed": 5.9,
+      "age_days": 127,
+      "half_lives_elapsed": 6.05,
+      "command_located": true,
+      "state_only": false,
       "unlocated": false
     },
     "F-3ID": {
       "name": "3rd Infantry Division",
       "stalest_claim": "location",
-      "age_days": 9,
-      "half_lives_elapsed": 0.64,
+      "age_days": 12,
+      "half_lives_elapsed": 0.86,
+      "command_located": true,
+      "state_only": false,
       "unlocated": false
+    },
+    "F-101ABN": {
+      "name": "101st Airborne Division (Air Assault)",
+      "stalest_claim": "commander",
+      "age_days": 9,
+      "half_lives_elapsed": 0.15,
+      "command_located": true,
+      "state_only": false,
+      "unlocated": false
+    },
+    "F-10MTN": {
+      "name": "10th Mountain Division (Light Infantry)",
+      "stalest_claim": "location",
+      "age_days": 62,
+      "half_lives_elapsed": 4.43,
+      "command_located": true,
+      "state_only": false,
+      "unlocated": false
+    },
+    "F-CH": {
+      "name": "Swiss Armed Forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-VAT": {
+      "name": "Vatican — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SMR": {
+      "name": "San Marino — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LIE": {
+      "name": "Liechtenstein — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LUX": {
+      "name": "Luxembourg — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-FSM": {
+      "name": "Federated States of Micronesia — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MHL": {
+      "name": "Marshall Islands — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TUV": {
+      "name": "Tuvalu — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-PLW": {
+      "name": "Palau — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MCO": {
+      "name": "Monaco — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-KIR": {
+      "name": "Kiribati — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-COM": {
+      "name": "Comoros — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 758,
+      "half_lives_elapsed": 4.21,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-AND": {
+      "name": "Andorra — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TTO": {
+      "name": "Trinidad and Tobago — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 28,
+      "half_lives_elapsed": 0.16,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-RWA": {
+      "name": "Rwanda — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SWZ": {
+      "name": "eSwatini — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SVN": {
+      "name": "Slovenia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SVK": {
+      "name": "Slovakia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-QAT": {
+      "name": "Qatar — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MNE": {
+      "name": "Montenegro — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CHE": {
+      "name": "Switzerland — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-KOS": {
+      "name": "Kosovo — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-DMA": {
+      "name": "Dominica — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-DJI": {
+      "name": "Djibouti — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GMB": {
+      "name": "The Gambia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MKD": {
+      "name": "North Macedonia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BRB": {
+      "name": "Barbados — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BDI": {
+      "name": "Burundi — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 758,
+      "half_lives_elapsed": 4.21,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-VCT": {
+      "name": "Saint Vincent and the Grenadines — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LCA": {
+      "name": "Saint Lucia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-KNA": {
+      "name": "Saint Kitts and Nevis — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MUS": {
+      "name": "Mauritius — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GRD": {
+      "name": "Grenada — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BHR": {
+      "name": "Bahrain — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ATG": {
+      "name": "Antigua and Barbuda — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-URY": {
+      "name": "Uruguay — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TGO": {
+      "name": "Togo — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TUN": {
+      "name": "Tunisia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ARE": {
+      "name": "United Arab Emirates — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TKM": {
+      "name": "Turkmenistan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ZMB": {
+      "name": "Zambia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ZWE": {
+      "name": "Zimbabwe — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TLS": {
+      "name": "East Timor — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-VUT": {
+      "name": "Vanuatu — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-HND": {
+      "name": "Honduras — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GUY": {
+      "name": "Guyana — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 28,
+      "half_lives_elapsed": 0.16,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ISL": {
+      "name": "Iceland — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-HTI": {
+      "name": "Haiti — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-UGA": {
+      "name": "Uganda — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SUR": {
+      "name": "Suriname — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 28,
+      "half_lives_elapsed": 0.16,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-NER": {
+      "name": "Niger — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TJK": {
+      "name": "Tajikistan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-PRY": {
+      "name": "Paraguay — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-NIC": {
+      "name": "Nicaragua — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SLE": {
+      "name": "Sierra Leone — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-PAK": {
+      "name": "Pakistan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-NPL": {
+      "name": "Nepal — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ZAF": {
+      "name": "South Africa — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-PNG": {
+      "name": "Papua New Guinea — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SLB": {
+      "name": "Solomon Islands — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-PAN": {
+      "name": "Panama — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MAR": {
+      "name": "Morocco — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MDA": {
+      "name": "Moldova — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MOZ": {
+      "name": "Mozambique — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SOM": {
+      "name": "Somalia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-OMN": {
+      "name": "Oman — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 758,
+      "half_lives_elapsed": 4.21,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LKA": {
+      "name": "Sri Lanka — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MNG": {
+      "name": "Mongolia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-NAM": {
+      "name": "Namibia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-NGA": {
+      "name": "Nigeria — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GNB": {
+      "name": "Guinea Bissau — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-JOR": {
+      "name": "Jordan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LTU": {
+      "name": "Lithuania — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LVA": {
+      "name": "Latvia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-KGZ": {
+      "name": "Kyrgyzstan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LSO": {
+      "name": "Lesotho — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MDG": {
+      "name": "Madagascar — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ECU": {
+      "name": "Ecuador — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CRI": {
+      "name": "Costa Rica — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SLV": {
+      "name": "El Salvador — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-JAM": {
+      "name": "Jamaica — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TCD": {
+      "name": "Chad — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GNQ": {
+      "name": "Equatorial Guinea — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ERI": {
+      "name": "Eritrea — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 758,
+      "half_lives_elapsed": 4.21,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-HRV": {
+      "name": "Croatia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-EST": {
+      "name": "Estonia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MWI": {
+      "name": "Malawi — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GTM": {
+      "name": "Guatemala — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GAB": {
+      "name": "Gabon — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-FJI": {
+      "name": "Fiji — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MRT": {
+      "name": "Mauritania — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MLI": {
+      "name": "Mali — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LBN": {
+      "name": "Lebanon — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GEO": {
+      "name": "Georgia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-KAZ": {
+      "name": "Kazakhstan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LAO": {
+      "name": "Laos — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-COG": {
+      "name": "Congo (Brazzaville) — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GIN": {
+      "name": "Guinea — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CIV": {
+      "name": "Ivory Coast — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CAN": {
+      "name": "Canada — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SRB": {
+      "name": "Serbia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BRN": {
+      "name": "Brunei — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BOL": {
+      "name": "Bolivia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BLZ": {
+      "name": "Belize — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CAF": {
+      "name": "Central African Republic — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CMR": {
+      "name": "Cameroon — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ALB": {
+      "name": "Albania — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ARM": {
+      "name": "Armenia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-AZE": {
+      "name": "Azerbaijan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-KHM": {
+      "name": "Cambodia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BEN": {
+      "name": "Benin — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BGR": {
+      "name": "Bulgaria — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BLR": {
+      "name": "Belarus — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BTN": {
+      "name": "Bhutan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BWA": {
+      "name": "Botswana — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-AUS": {
+      "name": "Australia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BFA": {
+      "name": "Burkina Faso — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BIH": {
+      "name": "Bosnia and Herzegovina — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MMR": {
+      "name": "Myanmar — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TON": {
+      "name": "Tonga — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SOL": {
+      "name": "Somaliland — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SYC": {
+      "name": "Seychelles — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-STP": {
+      "name": "Sao Tome and Principe — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-WSM": {
+      "name": "Samoa — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MLT": {
+      "name": "Malta — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MDV": {
+      "name": "Maldives — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ISR": {
+      "name": "Israel — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CPV": {
+      "name": "Cape Verde — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BHS": {
+      "name": "The Bahamas — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CYP": {
+      "name": "Cyprus — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-NZL": {
+      "name": "New Zealand — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-VNM": {
+      "name": "Vietnam — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TUR": {
+      "name": "Turkey — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-HUN": {
+      "name": "Hungary — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-YEM": {
+      "name": "Yemen — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ROU": {
+      "name": "Romania — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 758,
+      "half_lives_elapsed": 4.21,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SYR": {
+      "name": "Syria — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-PRT": {
+      "name": "Portugal — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SDN": {
+      "name": "Sudan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-NOR": {
+      "name": "Norway — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-POL": {
+      "name": "Poland — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-PRK": {
+      "name": "North Korea — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TZA": {
+      "name": "Tanzania — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-IRL": {
+      "name": "Ireland — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LBR": {
+      "name": "Liberia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MYS": {
+      "name": "Malaysia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CUB": {
+      "name": "Cuba — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CZE": {
+      "name": "Czechia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-KWT": {
+      "name": "Kuwait — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-DOM": {
+      "name": "Dominican Republic — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GHA": {
+      "name": "Ghana — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-LBY": {
+      "name": "Libya — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-FIN": {
+      "name": "Finland — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-DNK": {
+      "name": "Denmark — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BRA": {
+      "name": "Brazil — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BEL": {
+      "name": "Belgium — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-BGD": {
+      "name": "Bangladesh — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-AGO": {
+      "name": "Angola — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-DZA": {
+      "name": "Algeria — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-VEN": {
+      "name": "Venezuela — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-UKR": {
+      "name": "Ukraine — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-UZB": {
+      "name": "Uzbekistan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 758,
+      "half_lives_elapsed": 4.21,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ESP": {
+      "name": "Spain — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SWE": {
+      "name": "Sweden — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-THA": {
+      "name": "Thailand — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-PER": {
+      "name": "Peru — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SEN": {
+      "name": "Senegal — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-NLD": {
+      "name": "Netherlands — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-KOR": {
+      "name": "South Korea — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-PHL": {
+      "name": "Philippines — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-DEU": {
+      "name": "Germany — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-COD": {
+      "name": "Congo (Kinshasa) — national armed forces",
+      "stalest_claim": "location",
+      "age_days": 2,
+      "half_lives_elapsed": 0.14,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-IND": {
+      "name": "India — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GRC": {
+      "name": "Greece — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-IRQ": {
+      "name": "Iraq — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ETH": {
+      "name": "Ethiopia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-IRN": {
+      "name": "Iran — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ARG": {
+      "name": "Argentina — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-AFG": {
+      "name": "Afghanistan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-AUT": {
+      "name": "Austria — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-TWN": {
+      "name": "Taiwan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-USA": {
+      "name": "United States of America — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-GBR": {
+      "name": "United Kingdom — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SAU": {
+      "name": "Saudi Arabia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-RUS": {
+      "name": "Russia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-MEX": {
+      "name": "Mexico — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-ITA": {
+      "name": "Italy — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CHN": {
+      "name": "China — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-KEN": {
+      "name": "Kenya — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-IDN": {
+      "name": "Indonesia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-COL": {
+      "name": "Colombia — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-EGY": {
+      "name": "Egypt — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-JPN": {
+      "name": "Japan — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-FRA": {
+      "name": "France — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-CHL": {
+      "name": "Chile — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-SEED-SGP": {
+      "name": "Singapore — national armed forces",
+      "stalest_claim": "composition",
+      "age_days": 393,
+      "half_lives_elapsed": 2.18,
+      "command_located": false,
+      "state_only": true,
+      "unlocated": true
+    },
+    "F-16MPB": {
+      "name": "16th Military Police Brigade",
+      "stalest_claim": "existence",
+      "age_days": 0,
+      "half_lives_elapsed": 0.0,
+      "command_located": false,
+      "state_only": false,
+      "unlocated": true
+    },
+    "F-20EB": {
+      "name": "20th Engineer Brigade",
+      "stalest_claim": "existence",
+      "age_days": 0,
+      "half_lives_elapsed": 0.0,
+      "command_located": false,
+      "state_only": false,
+      "unlocated": true
+    },
+    "F-35SB": {
+      "name": "35th Signal Brigade",
+      "stalest_claim": "existence",
+      "age_days": 0,
+      "half_lives_elapsed": 0.0,
+      "command_located": false,
+      "state_only": false,
+      "unlocated": true
+    },
+    "F-3ESC": {
+      "name": "3rd Expeditionary Sustainment Command",
+      "stalest_claim": "existence",
+      "age_days": 0,
+      "half_lives_elapsed": 0.0,
+      "command_located": false,
+      "state_only": false,
+      "unlocated": true
+    },
+    "F-44MB": {
+      "name": "44th Medical Brigade",
+      "stalest_claim": "existence",
+      "age_days": 0,
+      "half_lives_elapsed": 0.0,
+      "command_located": false,
+      "state_only": false,
+      "unlocated": true
+    },
+    "F-525EMI": {
+      "name": "525th Expeditionary Military Intelligence Brigade",
+      "stalest_claim": "existence",
+      "age_days": 0,
+      "half_lives_elapsed": 0.0,
+      "command_located": false,
+      "state_only": false,
+      "unlocated": true
+    },
+    "F-7TBE": {
+      "name": "7th Transportation Brigade (Expeditionary)",
+      "stalest_claim": "existence",
+      "age_days": 0,
+      "half_lives_elapsed": 0.0,
+      "command_located": false,
+      "state_only": false,
+      "unlocated": true
+    },
+    "F-18FAB": {
+      "name": "18th Field Artillery Brigade",
+      "stalest_claim": "existence",
+      "age_days": 0,
+      "half_lives_elapsed": 0.0,
+      "command_located": false,
+      "state_only": false,
+      "unlocated": true
     }
   }
 }

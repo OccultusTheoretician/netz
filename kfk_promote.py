@@ -73,14 +73,28 @@ def age_days(as_of, now):
         return None
 
 
+def normalize_as_of(v):
+    """Year- or month-precision dates become full ISO at the midpoint, with
+    the precision convention printed into the claim note — a decaying
+    instrument needs a defined clock start, and pretending compendium years
+    are undated hides rot instead of counting it."""
+    s = str(v or "").strip()
+    if re.match(r"^\d{4}$", s):
+        return f"{s}-07-01", " (source dated to the year; midpoint convention)"
+    if re.match(r"^\d{4}-\d{2}$", s):
+        return f"{s}-15", " (source dated to the month; midpoint convention)"
+    return s, ""
+
+
 def build_claim(field, cls, now):
     board_grade, orig = grade_map(field.get("grade"))
+    as_of, prec = normalize_as_of(field.get("as_of"))
     claim = {
         "grade": board_grade,
-        "as_of": str(field.get("as_of", "")),
+        "as_of": as_of,
         "sources": [field.get("source", "")],
         "note": (f"Promoted from the spine (kfk_promote); original "
-                 f"reliability {orig or 'unstated'}. Value: "
+                 f"reliability {orig or 'unstated'}{prec}. Value: "
                  f"{str(field.get('value', ''))[:400]}"),
         "promoted": now.strftime("%Y-%m-%d"),
     }
@@ -94,6 +108,10 @@ def build_claim(field, cls, now):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--redate-promoted", action="store_true",
+                    help="repair pass: normalize year/month-precision as_of "
+                         "on claims this tool previously wrote (marker: "
+                         "'promoted' key). Touches nothing hand-authored.")
     ap.add_argument("--classes", default="commander,composition",
                     help="comma list from: " + ",".join(CLASS_MAP))
     a = ap.parse_args()
@@ -106,6 +124,27 @@ def main():
     now = datetime.now(timezone.utc)
     spine = json.loads(SPINE.read_text(encoding="utf-8"))
     board = json.loads(BOARD_ROOT.read_text(encoding="utf-8"))
+
+    if a.redate_promoted:
+        fixed = 0
+        for f in board["formations"]:
+            for cls in CLASS_MAP:
+                c = f.get(cls)
+                if isinstance(c, dict) and c.get("promoted"):
+                    na, prec = normalize_as_of(c.get("as_of"))
+                    if na != c.get("as_of"):
+                        c["as_of"] = na
+                        if prec and "midpoint convention" not in str(
+                                c.get("note", "")):
+                            c["note"] = str(c.get("note", "")) + prec
+                        fixed += 1
+        txt = json.dumps(board, ensure_ascii=False, indent=2)
+        BOARD_ROOT.write_text(txt, encoding="utf-8")
+        BOARD_DOCS.write_text(txt, encoding="utf-8")
+        print(f"REDATE — {fixed} promoted claim(s) normalized to full ISO "
+              f"(midpoint convention, printed in each note). Hand-authored "
+              f"claims untouched. Rerun freshness + publish, commit.")
+        return 0
 
     # join: spine state actors ↔ board 'armed forces' formations, by
     # faction-slug == name-slug, then by name containment. Unmatched print.
