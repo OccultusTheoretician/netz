@@ -156,7 +156,7 @@ footer{border-top:1px solid var(--rule);margin-top:26px;padding-top:16px;font-fa
   <div class="pane" id="detail"><div class="empty-state">Select an entry to read its record.</div></div>
 </div>
 
-<footer id="foot">UNCLASSIFIED // OPEN SOURCES — record counts and schema load with scripts</footer>
+<footer id="foot">NOTHING CLASSIFIED OR PRIVILEGED — record counts and schema load with scripts</footer>
 </div>
 
 <script>
@@ -306,7 +306,7 @@ function boot(d){
       <div class="bar"><i style="width:${p}%"></i></div></div>`;}).join("");
   const regions=[...new Set(d.actors.map(a=>a.region))].sort();
   $("#region").innerHTML+=regions.map(r=>`<option value="${esc(r)}">${esc(r.replace(/-/g," "))}</option>`).join("");
-  $("#foot").textContent=`UNCLASSIFIED // OPEN SOURCES · schema ${d.schema} · spine generated ${d.generated_at||"undated"} · ${Object.keys(d.actor_index).length} distinct listed armed actors across ${N} state records`;
+  $("#foot").textContent=`NOTHING CLASSIFIED OR PRIVILEGED · schema ${d.schema} · spine generated ${d.generated_at||"undated"} · ${Object.keys(d.actor_index).length} distinct listed armed actors across ${N} state records`;
   $("#q").oninput=draw; $("#region").onchange=draw;
   $("#v-states").onclick=()=>{VIEW="states";syncSeg();draw();};
   $("#v-actors").onclick=()=>{VIEW="actors";syncSeg();draw();};

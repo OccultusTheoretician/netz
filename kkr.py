@@ -249,7 +249,7 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     dtg = now.strftime("%d%H%MZ %b %y").upper()
     data = load_ledger()
     below35 = sum(1 for p in accepted if p["probability"] < 35)
-    out = ["**UNCLASSIFIED // OPEN SOURCES**\n",
+    out = ["**NOTHING CLASSIFIED OR PRIVILEGED**\n",
            f"# KAOS KONTROL REPORT — {dtg}\n",
            "**KKR is the Kaos Kontrol Report** \u2014 the daily forecasting stage of the Prescient Desk. It reads the open-source collation, elicits falsifiable projections from a named forecaster arm, runs them through a mechanical gate that publishes its rejections with reasons, and seals what survives into the ledger before any outcome exists.\n",
            f"Window: this run · source: {source_report} · forecaster: {model_tag} · "
@@ -310,7 +310,7 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     out.extend(_arm_table(arms))
     out.append("")
     out.append("\nFull ledger: ledger.html\n")
-    out.append("---\n**UNCLASSIFIED // OPEN SOURCES** · *the gate is mechanical; the ledger "
+    out.append("---\n**NOTHING CLASSIFIED OR PRIVILEGED** · *the gate is mechanical; the ledger "
                "is permanent; the system gets scored, not the operator.*")
 
     md = "\n".join(out)
@@ -544,7 +544,7 @@ def render_ledger():
     overdue = [p for p in open_p
                if datetime.strptime(p["deadline"], "%Y-%m-%d").date() < now.date()]
 
-    out = ["**UNCLASSIFIED // OPEN SOURCES**\n",
+    out = ["**NOTHING CLASSIFIED OR PRIVILEGED**\n",
            f"# KAOS KONTROL REPORT — PREDICTIVE LEDGER — {now.strftime('%d%H%MZ %b %y').upper()}\n",
            "**KKR is the Kaos Kontrol Report** \u2014 the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.\n",
            "**A standing Retro-Prescient Audit™** · method: "
@@ -658,7 +658,7 @@ def render_ledger():
                                "printed-reason rule and is itself a conformance defect.*"))
     else:
         out.append("None. No projection has been terminated.")
-    out.append("\n---\n**UNCLASSIFIED // OPEN SOURCES** · *the ledger scores the system, "
+    out.append("\n---\n**NOTHING CLASSIFIED OR PRIVILEGED** · *the ledger scores the system, "
                "not the operator; consistency is not correctness — resolution is.*")
 
     md = "\n".join(out)

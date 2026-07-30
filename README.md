@@ -1,4 +1,4 @@
-**UNCLASSIFIED // OPEN SOURCES**
+**NOTHING CLASSIFIED OR PRIVILEGED**
 
 # NETZ / KKR — open-source collation engine + scored forecast ledger
 
@@ -63,4 +63,4 @@ Python 3.10+, `pip install feedparser requests`, a local model via LM Studio
 `python kkr.py`. Config in `report_config.json`: feeds, reliability tiers,
 PIRs. No API keys required for any data source.
 
-**UNCLASSIFIED // OPEN SOURCES**
+**NOTHING CLASSIFIED OR PRIVILEGED**

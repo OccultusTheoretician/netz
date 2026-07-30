@@ -1,4 +1,4 @@
-**UNCLASSIFIED // OPEN SOURCES**
+**NOTHING CLASSIFIED OR PRIVILEGED**
 
 # KAOS KONTROL REPORT — PREDICTIVE LEDGER — 301633Z JUL 26
 
@@ -263,4 +263,4 @@ A sealed projection is never edited. Where one cannot be adjudicated as written,
     - *Reason:* Statement is geographically incoherent: names the Cap Ferret peninsula (Gironde, France) as being near Madrid (Spain), roughly 700 km apart. No blind adjudicator can determine which evacuation zone is meant.
 
 ---
-**UNCLASSIFIED // OPEN SOURCES** · *the ledger scores the system, not the operator; consistency is not correctness — resolution is.*
+**NOTHING CLASSIFIED OR PRIVILEGED** · *the ledger scores the system, not the operator; consistency is not correctness — resolution is.*

@@ -886,7 +886,7 @@ def render_html(md: str, title: str) -> str:
 
     letterhead = (
         f"<div class='letterhead'>"
-        f"<div class='classbar'><span>▲ UNCLASSIFIED // OPEN SOURCES</span>"
+        f"<div class='classbar'><span>▲ NOTHING CLASSIFIED OR PRIVILEGED</span>"
         f"<span class='dtg'>{dtg}</span></div>"
         f"<div class='crest'>{CROW_SVG}<div class='crest-text'>"
         f"<div class='crest-org'>NEBELKRÄHE · OSINT DESK</div>"
@@ -896,7 +896,7 @@ def render_html(md: str, title: str) -> str:
         f"</div></div>{tiles}</div>")
 
     footer = (
-        "<div class='footbar'>▲ UNCLASSIFIED // OPEN SOURCES</div>"
+        "<div class='footbar'>▲ NOTHING CLASSIFIED OR PRIVILEGED</div>"
         "<div class='byline'>NEBELKRÄHE · THE PRESCIENT DESK</div>"
         "<div class='colophon'>Machine-collated open-source intelligence. Every synthesized "
         "claim traces to the record; the record traces to source. Grades are mechanical, "
@@ -1082,7 +1082,7 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
     sec = iter(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
                 "XI", "XII", "XIII", "XIV", "XV", "XVI"])
     out = []
-    out.append("**UNCLASSIFIED // OPEN SOURCES**\n")
+    out.append("**NOTHING CLASSIFIED OR PRIVILEGED**\n")
     out.append(f"# THE PRESCIENT DESK\u2122 — DAILY INTELLIGENCE REPORT — {dtg}\n")
     synth_line = f"synthesis: {model_used}" if model_used else "synthesis: OFF — collation only"
     out.append(f"Window: last {hours}h · {counts['fetched']} items → {counts['stories']} stories "
@@ -1221,7 +1221,7 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
     if dead:
         out.append("\nDead/degraded feeds this run: " +
                    ", ".join(f"{h['source']} ({h['error'][:60]})" for h in dead))
-    out.append(f"\n---\n**UNCLASSIFIED // OPEN SOURCES**\n\n*The Prescient Desk\u2122 · engine NETZ v2.0 · every synthesized "
+    out.append(f"\n---\n**NOTHING CLASSIFIED OR PRIVILEGED**\n\n*The Prescient Desk\u2122 · engine NETZ v2.0 · every synthesized "
                f"claim must trace to the record; the record traces to source links; the links "
                f"are the audit trail. Admiralty grades are mechanical (feed tier × "
                f"corroboration), not analyst judgment.*")
