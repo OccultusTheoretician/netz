@@ -332,6 +332,39 @@ def forecast(path):
     return 0
 
 
+def record(path, case):
+    """Score a calibration case and write its index into the calibration file.
+
+    Pre-gate by design: scoring the calibration set is the act that lets the
+    gate pass, so this MUST NOT call check(). It verifies the case name is real
+    and that the file yields a countable index before writing.
+    """
+    if not CAL.exists():
+        # create the seeded file so the case names exist to match against
+        calibrate()
+    c = read_json(CAL)
+    known = {x["dyad"] for band in ("expect_low", "expect_high", "contested_control")
+             for x in c["cases"][band]}
+    if case not in known:
+        print(f"  no calibration case named exactly:\n    {case}")
+        print("  known cases:")
+        for k in sorted(known):
+            print(f"    {k}")
+        return 1
+    d = read_json(path)
+    idx, n, counted, skipped = score_dyad(d, verbose=True)
+    if idx is None:
+        print("\n  REFUSING to record: the file yields no countable index. An "
+              "all-unscored\n  file must not register as 0.00. Fill scores, grades "
+              "and sources first.")
+        return 1
+    c.setdefault("scored", {})[case] = round(idx, 4)
+    CAL.write_text(json.dumps(c, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"\n  recorded {case} -> index {idx:.2f} ({n} indicator(s) counted)")
+    print("  run: python dialektik.py check")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser(description="dialektik — stated vs operational divergence")
     sub = ap.add_subparsers(dest="cmd")
@@ -341,6 +374,10 @@ def main():
     sub.add_parser("calibrate")
     sub.add_parser("check")
     f = sub.add_parser("forecast"); f.add_argument("--dyad", required=True)
+    r = sub.add_parser("record")
+    r.add_argument("--dyad", required=True)
+    r.add_argument("--case", required=True,
+                   help="exact calibration dyad name to record this index under")
     a = ap.parse_args()
     if not a.cmd:
         ap.print_help(); return 0
@@ -360,6 +397,8 @@ def main():
         return 0
     if a.cmd == "forecast":
         return forecast(a.dyad)
+    if a.cmd == "record":
+        return record(a.dyad, a.case)
 
 
 if __name__ == "__main__":
