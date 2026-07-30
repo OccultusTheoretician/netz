@@ -262,7 +262,7 @@ def audit_site(r, verbose):
         _t = _p.read_text(encoding="utf-8", errors="replace")
         _m = _re.search(r"<nav\b.*?</nav>", _t, _re.S)
         if not _m:
-            r.warn("nav consistency", f"{_p.name}: no <nav> element")
+            r.bad("NONAV", "%s carries no <nav> element" % _p.name)
             continue
         _hrefs = frozenset(h for h in _re.findall(r'href="([^"]+\.html)"',
                                                   _m.group(0))
@@ -277,7 +277,7 @@ def audit_site(r, verbose):
             if _hrefs is big:
                 continue
             miss = sorted(big - _hrefs)[:6]
-            r.finding("NAVDRIFT", f"{len(_pages)} page(s) diverge from the "
+            r.bad("NAVDRIFT", f"{len(_pages)} page(s) diverge from the "
                       f"majority nav (e.g. {_pages[0]} misses {miss})")
     r.sub("nav consistency", len(list(DOCS.glob("*.html"))), "pages")
 
