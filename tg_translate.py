@@ -163,7 +163,7 @@ def run(src: pathlib.Path):
     print(file=sys.stderr)
 
     # write enriched file
-    stamp = datetime.datetime.utcnow().strftime("%Y-%m-%d_%H%M")
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d_%H%M")
     out   = src.parent / f"tg_translated_{stamp}.json"
     data["_meta"]["translated"] = stamp+"Z"
     data["_meta"]["note"] = (data["_meta"].get("note","") +
