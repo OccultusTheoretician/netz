@@ -94,6 +94,15 @@ def maximal(rows):
 def build(ow, msgs, fmap, min_reports, min_channels, gram_lo, gram_hi):
     # phrase -> [(ts, channel, side, zone)]
     seen = defaultdict(list)
+    # token -> how many messages contain it. The stoplists are per-language and
+    # DEMONSTRABLY partial (they carry 44 Cyrillic entries but miss "при",
+    # "этом", "том", "числе"), so frequency ranking floats function words to the
+    # top in any language whose list is thin. Document frequency is the
+    # language-neutral discriminator: a content phrase contains at least one
+    # relatively rare token; a function-word phrase is common tokens all the way
+    # down. This does not fix the stoplists — it measures around them, visibly.
+    tok_df = defaultdict(int)
+    n_msgs = 0
     for m in msgs:
         if not isinstance(m, dict):
             continue
@@ -110,6 +119,9 @@ def build(ow, msgs, fmap, min_reports, min_channels, gram_lo, gram_hi):
                 and t not in ow.FURNITURE_TOKENS]
         if len(toks) < gram_lo:
             continue
+        n_msgs += 1
+        for t in set(toks):
+            tok_df[t] += 1
         for g in set(ow.grams(toks, gram_lo, gram_hi)):
             if not ow.FURNITURE.search(g):
                 seen[g].append((ts, ch, sd, zn))
@@ -150,8 +162,17 @@ def build(ow, msgs, fmap, min_reports, min_channels, gram_lo, gram_hi):
         for _, _, s, _ in hits:
             sides[s] += 1
 
+        # the rarest token in the phrase, as a share of all messages
+        parts = phrase.split()
+        dfs = [tok_df.get(t, 0) for t in parts]
+        rarest = min(dfs) if dfs else 0
+        rarest_share = round(rarest / n_msgs, 4) if n_msgs else None
+
         rows.append({
             "phrase": phrase,
+            "rarest_token_msg_share": rarest_share,
+            "function_shaped": bool(rarest_share is not None
+                                    and rarest_share >= 0.02),
             "reports": len(hits),
             "channels": n_chan,
             "sides": len([s for s in sides if s != "?"]),
@@ -188,6 +209,7 @@ def summarise(rows):
             and r["hours_to_cross_side"] < 1.0]
     return {
         "phrases_total": len(rows),
+        "function_shaped": sum(1 for r in rows if r.get("function_shaped")),
         "crossed_side": len(crossed),
         "confined": len(rows) - len(crossed),
         "median_velocity": sorted(vels)[len(vels) // 2] if vels else None,
@@ -279,7 +301,10 @@ def main():
         "caveat": ("velocity is measured WITHIN this pull; acceleration needs "
                    "two dated pulls with non-overlapping windows and is not "
                    "computed unless --prior supplies one. First-in-this-corpus "
-                   "is not first in the world."),
+                   "is not first in the world. Per-language stoplists are "
+                   "partial — Cyrillic coverage misses common function words — "
+                   "so each phrase carries rarest_token_msg_share and a "
+                   "function_shaped flag as a language-neutral guard."),
         "summary": summ,
         "acceleration": accel,
         "phrases": rows,
