@@ -215,7 +215,7 @@ function drawVelocity(){
   const B=$("#body"), N=$("#note");
   if(!V){
     N.innerHTML="The propagation-velocity tile is not published yet.";
-    B.innerHTML=`<div class="empty">Run <code>python ohrwurm_velocity.py --latest</code> to generate <b>ohrwurm_velocity.json</b>, then reload.</div>`;
+    B.innerHTML=`<div class="empty">Run <code translate="no">python ohrwurm_velocity.py --latest</code> to generate <b>ohrwurm_velocity.json</b>, then reload.</div>`;
     return;
   }
   const s=V.summary||{};
@@ -312,7 +312,7 @@ fetch("ohrwurm_velocity.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).th
 fetch("ohrwurm_latest.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(boot)
 .catch(e=>{
   $("#body").innerHTML=`<div class="empty">Could not read <b>ohrwurm_latest.json</b> (${esc(e.message)}).
-    Run the instrument, which writes the served copy itself.<code>python ohrwurm.py --latest</code></div>`;
+    Run the instrument, which writes the served copy itself.<code translate="no">python ohrwurm.py --latest</code></div>`;
   $("#cav").textContent="Record not loaded.";
 });
 </script>

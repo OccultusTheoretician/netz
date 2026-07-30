@@ -317,7 +317,7 @@ fetch("kfk_spine.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.jso
 .catch(e=>{
   document.querySelector(".panes").innerHTML=
    `<div class="empty-state" style="grid-column:1/-1">Could not read <b>kfk_spine.json</b> (${esc(e.message)}).
-    Put it in the same directory as this page and reload.<code>python kfk_spine_build.py</code></div>`;
+    Put it in the same directory as this page and reload.<code translate="no">python kfk_spine_build.py</code></div>`;
   $("#absence-text").textContent="Record not loaded.";
 });
 </script>

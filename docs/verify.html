@@ -38,7 +38,7 @@ locally, nothing sent anywhere. The desk is not consulted and could not interfer
 <p>Two reference verifiers — Python standard library, no account, no material from this desk — take
 the public URLs and return a conformance verdict with paragraph citations: every seal recomputed,
 every figure rederived from the records, every finding read off the record's own face.</p>
-<pre class="mono" style="background:#101317;border:1px solid var(--line);padding:.8rem;overflow-x:auto;line-height:1.7">python knp_verify.py  https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/kalls_hashlog.json
+<pre class="mono" style="background:#101317;border:1px solid var(--line);padding:.8rem;overflow-x:auto;line-height:1.7" translate="no">python knp_verify.py  https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/kalls_hashlog.json
 python rpas_verify.py https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/ledger.json</pre>
 <p class="note">Both live in <a href="https://github.com/OccultusTheoretician/netz">the repository</a>
 (<span class="mono">knp_verify.py</span>, <span class="mono">rpas_verify.py</span>). Save a snapshot of
@@ -49,11 +49,11 @@ the construction vectors are the interoperability contract. A NONCONFORMANT verd
 publishes like any other finding.</p>
 </div></section>
 <section><div class="wrap"><h2>One Kall, in your browser</h2>
-<p class="note">A reveal is JSON published by the committer when a Kall is opened — at minimum the fields named by the construction (for this log: <span class="mono" id="fields">the construction’s fields load from the hashlog with scripts — with scripts off, read <span class="mono">construction.preimage_order</span> in <a href="kalls_hashlog.json">kalls_hashlog.json</a></span>).</p>
-<textarea id="reveal" aria-label="a published Kall reveal, as JSON, to recompute against the sealed commitment" placeholder='{"id":"KK-20260725-01","timestamp":"2026-07-25T18:30:00Z","statement":"...","resolution_basis":"...","salt":"..."}'></textarea>
+<p class="note">A reveal is JSON published by the committer when a Kall is opened — at minimum the fields named by the construction (for this log: <span class="mono" id="fields" translate="no">the construction’s fields load from the hashlog with scripts — with scripts off, read <span class="mono">construction.preimage_order</span> in <a href="kalls_hashlog.json">kalls_hashlog.json</a></span>).</p>
+<textarea id="reveal" translate="no" aria-label="a published Kall reveal, as JSON, to recompute against the sealed commitment" placeholder='{"id":"KK-20260725-01","timestamp":"2026-07-25T18:30:00Z","statement":"...","resolution_basis":"...","salt":"..."}'></textarea>
 <button id="go">RECOMPUTE &amp; COMPARE</button>
-<div id="out" class="verdict" style="display:none"></div>
-<div class="note" style="margin-top:1rem">Construction in force (read live from <a href="kalls_hashlog.json">the hashlog</a>): <span class="mono" id="con">loading…</span></div>
+<div id="out" translate="no" class="verdict" style="display:none"></div>
+<div class="note" style="margin-top:1rem">Construction in force (read live from <a href="kalls_hashlog.json">the hashlog</a>): <span class="mono" id="con" translate="no">loading…</span></div>
 </div></section>
 <section><div class="wrap"><h2>What a match proves — and what it does not</h2>
 <p>A match proves this exact content existed, unedited, at the sealed timestamp — before the outcome. It does not prove the call was wise, that resolution was fair, or anything about the sealed-but-unrevealed remainder. Per KNM 6.03 those discretions survive the mechanism and are disclosed, not hidden. The count of what remains dark is public: that is the whole design.</p>
@@ -63,10 +63,10 @@ publishes like any other finding.</p>
 browser, from the raw rows of <a href="ledger.json">ledger.json</a>, the moment this page loaded.
 If the desk's stated figures ever disagree with what your own machine just computed, the desk is
 wrong and you have the receipt.</p>
-<div class="tw"><table id="lg"><thead><tr><th>arm</th><th>issued</th><th>open</th><th>void</th>
+<div class="tw"><table id="lg" translate="no"><thead><tr><th>arm</th><th>issued</th><th>open</th><th>void</th>
 <th>resolved</th><th>hit / miss</th><th>Brier (recomputed)</th></tr></thead>
 <tbody><tr><td colspan="7" class="note">reading ledger.json …</td></tr></tbody></table></div>
-<p class="note" id="lgstamp"></p>
+<p class="note" id="lgstamp" translate="no"></p>
 <p class="note">No pooled score is computed — a Brier belongs to one forecaster. Any arm under
 thirty resolutions is noise, and says so on the <a href="conformance.html">conformance page</a>
 in the same breath as the number.</p>
@@ -79,18 +79,18 @@ consistent decode, which is the construction, not a boast. The decoder below shi
 the key exists. The day the key publishes, paste it here and your own browser opens the plate:
 XOR, then both hash checks, locally. The desk is not consulted at its own reveal.</p>
 <div class="tw"><table><tbody id="pl"><tr><td class="note">reading plate.json …</td></tr></tbody></table></div>
-<textarea id="pkey" aria-label="the plate key as hex, once it publishes" style="min-height:90px" placeholder="the key, as hex, when it publishes — nothing pasted here leaves this page"></textarea>
+<textarea id="pkey" translate="no" aria-label="the plate key as hex, once it publishes" style="min-height:90px" placeholder="the key, as hex, when it publishes — nothing pasted here leaves this page"></textarea>
 <button id="popen">OPEN THE PLATE</button>
-<div id="pout" class="verdict" style="display:none"></div>
+<div id="pout" translate="no" class="verdict" style="display:none"></div>
 </div></section>
 <section><div class="wrap"><h2>Forge your own seal — the method is not property</h2>
 <p>KNM 7.04 in one tool: sealing a claim before its outcome is not this desk's invention and is not
 licensed, sold, or gated. Type a claim, get a commitment. Post the hash anywhere that timestamps
 it; keep the preimage; publish it when the claim resolves — hit or miss. Everything below runs in
 your browser; no field is transmitted, stored, or seen by this desk.</p>
-<textarea id="fstmt" aria-label="the claim to commit - exactly as you will publish it later" style="min-height:90px" placeholder="the claim, exactly as you will publish it later — include your probability and deadline in the text"></textarea>
+<textarea id="fstmt" translate="no" aria-label="the claim to commit - exactly as you will publish it later" style="min-height:90px" placeholder="the claim, exactly as you will publish it later — include your probability and deadline in the text"></textarea>
 <button id="fgo">FORGE COMMITMENT</button>
-<div id="fout" class="verdict" style="display:none"></div>
+<div id="fout" translate="no" class="verdict" style="display:none"></div>
 <p class="note" id="fnote" style="display:none"></p>
 </div></section>
 <footer><div class="wrap">NEBELKRÄHE · THE PRESCIENT DESK — verification requires no material from this desk.</div></footer>
