@@ -102,6 +102,91 @@ Promise.all([one('rpas_verdict.json','v-rpas','v-rpas-n'),one('knp_verdict.json'
 </table></div>
 <p class="note">The baseline is a lower bound on competence, not a target. It is also self-referential — it is computed from the same resolved set it is compared against — so it flatters no one and is only meaningful once the resolution count is large. At the counts on this page, a skill score of either sign is noise and should be read as one.</p>
 </div></section>
+<section><div class="wrap"><h2>The record, explorable — recomputed in your browser</h2>
+<p class="note">Nothing below is hand-typed. Calibration, trajectory, and the clock all derive from
+<a href="ledger.json">ledger.json</a> at load time, per arm, never pooled. Under thirty resolved,
+every figure is data, not evidence of skill (KNM 6.05).</p>
+<div id="x-cal"></div>
+<h2 style="margin-top:2rem">Brier trajectory — the score as each resolution landed</h2>
+<p class="note">Cumulative Brier after every resolution, in resolved-date order. A record compounds
+on a clock; this is the clock.</p>
+<div id="x-traj"></div>
+<h2 style="margin-top:2rem">Next resolutions — what the record answers for next</h2>
+<div class="tablewrap"><table><thead><tr><th>id</th><th>arm</th><th>deadline</th><th>status</th></tr></thead>
+<tbody id="x-next"></tbody></table></div>
+<p class="note" id="x-horizon"></p>
+<script>
+(function(){
+fetch('ledger.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+  var rows=d.projections||[];
+  var res=rows.filter(function(e){return e.status==='hit'||e.status==='miss';});
+  var byArm={};
+  res.forEach(function(e){(byArm[e.model]=byArm[e.model]||[]).push(e);});
+  // calibration bins, per arm with resolutions
+  var cal=document.getElementById('x-cal'), html='';
+  Object.keys(byArm).sort().forEach(function(arm){
+    var es=byArm[arm], bins={};
+    es.forEach(function(e){var b=Math.min(Math.floor(e.probability/10),9);
+      var t=bins[b]||[0,0]; t[0]++; if(e.status==='hit')t[1]++; bins[b]=t;});
+    html+='<p class="note" style="margin-bottom:.3rem"><b>'+arm+'</b> · '+es.length+
+          ' resolved'+(es.length<30?' — below the noise floor':'')+'</p>'+
+          '<div class="tablewrap"><table><thead><tr><th>stated bin</th><th>n</th>'+
+          '<th>hits</th><th>observed</th></tr></thead><tbody>';
+    Object.keys(bins).sort(function(a,b){return a-b;}).forEach(function(b){
+      var t=bins[b];
+      html+='<tr><td>'+(b*10)+'–'+(b*10+9)+'%</td><td class="num">'+t[0]+
+            '</td><td class="num">'+t[1]+'</td><td class="num">'+
+            Math.round(100*t[1]/t[0])+'%</td></tr>';});
+    html+='</tbody></table></div>';
+  });
+  cal.innerHTML=html||'<p class="note">no resolved entries yet</p>';
+  // trajectory svg — per arm with resolutions, cumulative mean squared error
+  var tr=document.getElementById('x-traj'), out='';
+  Object.keys(byArm).sort().forEach(function(arm){
+    var es=byArm[arm].slice().sort(function(a,b){
+      return String(a.resolved_date).localeCompare(String(b.resolved_date));});
+    var s=0, pts=[];
+    es.forEach(function(e,i){var err=e.probability/100-(e.status==='hit'?1:0);
+      s+=err*err; pts.push(s/(i+1));});
+    if(!pts.length)return;
+    var W=560,H=120,P=28, max=Math.max.apply(null,pts.concat([0.3]));
+    var xy=pts.map(function(v,i){
+      var x=P+i*(W-2*P)/Math.max(pts.length-1,1);
+      var y=H-P-(v/max)*(H-2*P); return x.toFixed(1)+','+y.toFixed(1);});
+    out+='<p class="note" style="margin-bottom:.2rem"><b>'+arm+'</b> · final '+
+         pts[pts.length-1].toFixed(4)+' over '+pts.length+'</p>'+
+         '<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;max-width:'+W+
+         'px;display:block" role="img" aria-label="Brier trajectory for '+arm+'">'+
+         '<line x1="'+P+'" y1="'+(H-P)+'" x2="'+(W-P)+'" y2="'+(H-P)+
+         '" stroke="#26292f"/><polyline fill="none" stroke="#dcb65e" '+
+         'stroke-width="1.5" points="'+xy.join(' ')+'"/>'+
+         xy.map(function(p){var c=p.split(',');
+           return '<circle cx="'+c[0]+'" cy="'+c[1]+'" r="2" fill="#dcb65e"/>';
+         }).join('')+'</svg>';
+  });
+  tr.innerHTML=out||'<p class="note">no resolved entries yet</p>';
+  // next resolutions
+  var today=new Date().toISOString().slice(0,10);
+  var open=rows.filter(function(e){return e.status==='open';})
+    .sort(function(a,b){return String(a.deadline).localeCompare(String(b.deadline));});
+  var tb=document.getElementById('x-next'), body='';
+  open.slice(0,8).forEach(function(e){
+    var od=e.deadline<today, first=(e.model==='operator/human');
+    body+='<tr><td class="fl">'+e.id+'</td><td>'+e.model+
+          (first?' <span class="tag">— the operator\u2019s first score sits in this arm</span>':'')+
+          '</td><td class="num">'+e.deadline+'</td><td class="'+
+          (od?'fail':'')+'">'+(od?'overdue — run kkr --resolve':'open')+'</td></tr>';});
+  tb.innerHTML=body;
+  if(open.length){
+    document.getElementById('x-horizon').textContent=
+      'Open horizon: '+open.length+' entries from '+open[0].deadline+' to '+
+      open[open.length-1].deadline+'. The record answers on a schedule it cannot dodge.';
+  }
+}).catch(function(){
+  document.getElementById('x-cal').innerHTML='<p class="note">ledger unreachable</p>';});
+})();
+</script>
+</div></section>
 <section><div class="wrap"><h2>Gates and floors</h2>
 <div class="gate"><span>RPAS 5.02 · fifty-entry gate</span><span id="g-fifty" class="warn">requires JavaScript</span></div>
 <div class="gate"><span>Thirty-resolved noise floor (whole ledger)</span><span id="g-thirty" class="warn">requires JavaScript</span></div>
