@@ -400,9 +400,17 @@ def main():
 
     ev_path = Path(a.events) if a.events else (
         newest("tg_events_*.json") if a.latest else None)
-    pull_path = Path(a.pull) if a.pull else (
-        newest("tg_wardesk_*.json") or newest("tg_translated_*.json")
-        if a.latest else None)
+    # DEFECT, 2026-07-30: this preferred tg_wardesk_* (the RAW pull) over
+    # tg_translated_*, so --latest silently selected an untranslated file, the
+    # comparison fell back to source language, and the run wrote an artifact
+    # reading median convergence 0.000 with fifteen ANCHOR-ONLY flags — all of
+    # it an artefact of the wrong input, not a finding about any source. The
+    # translated pull is now preferred and named on stderr.
+    pull_path = None
+    if a.pull:
+        pull_path = Path(a.pull)
+    elif a.latest:
+        pull_path = newest("tg_translated_*.json") or newest("tg_wardesk_*.json")
     if not ev_path or not pull_path:
         print("Need --events and --pull, or --latest.", file=sys.stderr)
         return 1
@@ -428,6 +436,25 @@ def main():
              "cross-alphabet sides CANNOT share a phrase and divergence will "
              "read 1.00 by construction")
     print("comparison basis: " + basis, file=sys.stderr)
+    # A metric that reads 0.000 by construction must not be written to disk.
+    # If the chosen pull has no translations while the graded events span more
+    # than one language, every convergence figure is a fact about alphabets.
+    if text_field is None and not a.source_lang:
+        langs = set()
+        for m in msgs:
+            if isinstance(m, dict) and m.get("lang"):
+                langs.add(str(m["lang"]))
+        if len(langs) > 1:
+            print("\nREFUSED — this pull carries no translation field and the "
+                  "corpus spans %d languages (%s). Convergence would read 0.000 "
+                  "for every cross-alphabet pair by construction, and the "
+                  "ANCHOR-ONLY flag would fire on clusters that are fine.\n"
+                  "  Run tg_translate.py first, then point --pull at the "
+                  "resulting forecasts/tg_translated_*.json.\n"
+                  "  To measure source-language overlap deliberately anyway, "
+                  "pass --source-lang."
+                  % (len(langs), ", ".join(sorted(langs)[:8])), file=sys.stderr)
+            return 2
     per_msg, first_corpus, msg_text = phrase_index(
         ow, msgs, fmap, a.gram_lo, a.gram_hi, text_field)
 
