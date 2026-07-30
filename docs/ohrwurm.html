@@ -130,7 +130,7 @@ footer{border-top:1px solid var(--rule);margin-top:26px;padding-top:16px;font-fa
 <div id="note" class="note"></div>
 <div id="body"></div>
 
-<footer id="foot">UNCLASSIFIED // OPEN SOURCES — record counts and schema load with scripts</footer>
+<footer id="foot">NOTHING CLASSIFIED OR PRIVILEGED — record counts and schema load with scripts</footer>
 </div>
 
 <script>
@@ -291,7 +291,7 @@ function boot(d){
   $("#stats").innerHTML=cells.map(([k,v,s])=>
     `<div><div class="k">${esc(k)}</div><div class="v">${esc(v)} <small>${esc(s)}</small></div></div>`).join("");
   $("#foot").textContent=
-    `UNCLASSIFIED // OPEN SOURCES · schema ${d.schema} · pull ${d.source_pull} · generated ${String(d.generated).slice(0,16).replace("T"," ")}Z · side map ${d.side_map_source}`
+    `NOTHING CLASSIFIED OR PRIVILEGED · schema ${d.schema} · pull ${d.source_pull} · generated ${String(d.generated).slice(0,16).replace("T"," ")}Z · side map ${d.side_map_source}`
     + ((d.unmapped_sides||[]).length?` · UNMAPPED: ${d.unmapped_sides.join(", ")}`:"");
   const set=v=>{VIEW=v;["cross","conf","sil","seal"].forEach(x=>
     $("#t-"+x).setAttribute("aria-pressed",String(x===v)));draw();};
