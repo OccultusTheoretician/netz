@@ -1,6 +1,6 @@
 {
   "schema": "ohrwurm_velocity/v1",
-  "generated": "2026-07-30T05:43:45.394402+00:00",
+  "generated": "2026-07-30T05:48:40.023416+00:00",
   "source_pull": "tg_translated_2026-07-30_0512.json",
   "floors": {
     "min_reports": 3,
@@ -10,9 +10,10 @@
       5
     ]
   },
-  "caveat": "velocity is measured WITHIN this pull; acceleration needs two dated pulls with non-overlapping windows and is not computed unless --prior supplies one. First-in-this-corpus is not first in the world.",
+  "caveat": "velocity is measured WITHIN this pull; acceleration needs two dated pulls with non-overlapping windows and is not computed unless --prior supplies one. First-in-this-corpus is not first in the world. Per-language stoplists are partial — Cyrillic coverage misses common function words — so each phrase carries rarest_token_msg_share and a function_shaped flag as a language-neutral guard.",
   "summary": {
     "phrases_total": 95,
+    "function_shaped": 24,
     "crossed_side": 29,
     "confined": 66,
     "median_velocity": 0.4,
@@ -28,6 +29,8 @@
   "phrases": [
     {
       "phrase": "israeli occupation forces",
+      "rarest_token_msg_share": 0.0649,
+      "function_shaped": true,
       "reports": 25,
       "channels": 3,
       "sides": 2,
@@ -70,6 +73,8 @@
     },
     {
       "phrase": "israeli occupation",
+      "rarest_token_msg_share": 0.0649,
+      "function_shaped": true,
       "reports": 31,
       "channels": 3,
       "sides": 2,
@@ -112,6 +117,8 @@
     },
     {
       "phrase": "oil facilities",
+      "rarest_token_msg_share": 0.0188,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 2,
@@ -154,6 +161,8 @@
     },
     {
       "phrase": "armed forces",
+      "rarest_token_msg_share": 0.0251,
+      "function_shaped": true,
       "reports": 11,
       "channels": 4,
       "sides": 2,
@@ -201,6 +210,8 @@
     },
     {
       "phrase": "prime minister",
+      "rarest_token_msg_share": 0.023,
+      "function_shaped": true,
       "reports": 11,
       "channels": 5,
       "sides": 3,
@@ -254,6 +265,8 @@
     },
     {
       "phrase": "satellite imagery",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 2,
@@ -296,6 +309,8 @@
     },
     {
       "phrase": "prime minister andy burnham",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 3,
@@ -339,6 +354,8 @@
     },
     {
       "phrase": "southern lebanon",
+      "rarest_token_msg_share": 0.0335,
+      "function_shaped": true,
       "reports": 13,
       "channels": 3,
       "sides": 2,
@@ -381,6 +398,8 @@
     },
     {
       "phrase": "kfar tebnit",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 2,
@@ -423,6 +442,8 @@
     },
     {
       "phrase": "benjamin netanyahu",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 2,
@@ -465,6 +486,8 @@
     },
     {
       "phrase": "against iran",
+      "rarest_token_msg_share": 0.0418,
+      "function_shaped": true,
       "reports": 6,
       "channels": 3,
       "sides": 2,
@@ -507,6 +530,8 @@
     },
     {
       "phrase": "saudi aramco",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 2,
@@ -549,6 +574,8 @@
     },
     {
       "phrase": "caspian sea",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 5,
       "channels": 2,
       "sides": 2,
@@ -586,6 +613,8 @@
     },
     {
       "phrase": "north occupied",
+      "rarest_token_msg_share": 0.0167,
+      "function_shaped": false,
       "reports": 4,
       "channels": 2,
       "sides": 2,
@@ -623,6 +652,8 @@
     },
     {
       "phrase": "energy facilities",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -660,6 +691,8 @@
     },
     {
       "phrase": "aggression against",
+      "rarest_token_msg_share": 0.0314,
+      "function_shaped": true,
       "reports": 5,
       "channels": 3,
       "sides": 2,
@@ -702,6 +735,8 @@
     },
     {
       "phrase": "israeli attacks",
+      "rarest_token_msg_share": 0.0377,
+      "function_shaped": true,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -739,6 +774,8 @@
     },
     {
       "phrase": "gaza strip",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 7,
       "channels": 2,
       "sides": 2,
@@ -776,6 +813,8 @@
     },
     {
       "phrase": "foreign policy",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -813,6 +852,8 @@
     },
     {
       "phrase": "persian gulf",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -850,6 +891,8 @@
     },
     {
       "phrase": "occupied west bank",
+      "rarest_token_msg_share": 0.0356,
+      "function_shaped": true,
       "reports": 16,
       "channels": 2,
       "sides": 2,
@@ -887,6 +930,8 @@
     },
     {
       "phrase": "west bank",
+      "rarest_token_msg_share": 0.0356,
+      "function_shaped": true,
       "reports": 17,
       "channels": 2,
       "sides": 2,
@@ -924,6 +969,8 @@
     },
     {
       "phrase": "same time",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -961,6 +1008,8 @@
     },
     {
       "phrase": "president donald trump",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 5,
       "channels": 2,
       "sides": 2,
@@ -998,6 +1047,8 @@
     },
     {
       "phrase": "diplomatic relations",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -1035,6 +1086,8 @@
     },
     {
       "phrase": "national security",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -1072,6 +1125,8 @@
     },
     {
       "phrase": "others injured",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 4,
       "channels": 2,
       "sides": 2,
@@ -1109,6 +1164,8 @@
     },
     {
       "phrase": "people killed",
+      "rarest_token_msg_share": 0.0209,
+      "function_shaped": true,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -1146,6 +1203,8 @@
     },
     {
       "phrase": "explains how",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -1183,6 +1242,8 @@
     },
     {
       "phrase": "oil tankers",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 4,
       "channels": 2,
       "sides": 1,
@@ -1216,6 +1277,8 @@
     },
     {
       "phrase": "доступа мессенджеру",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1249,6 +1312,8 @@
     },
     {
       "phrase": "россия продолжает",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1282,6 +1347,8 @@
     },
     {
       "phrase": "islamic resistance iraq",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1315,6 +1382,8 @@
     },
     {
       "phrase": "заявил путин",
+      "rarest_token_msg_share": 0.0251,
+      "function_shaped": true,
       "reports": 4,
       "channels": 2,
       "sides": 1,
@@ -1348,6 +1417,8 @@
     },
     {
       "phrase": "российский народ",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1381,6 +1452,8 @@
     },
     {
       "phrase": "действовать аккуратно настойчиво",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1414,6 +1487,8 @@
     },
     {
       "phrase": "добиваясь поставленных",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1447,6 +1522,8 @@
     },
     {
       "phrase": "нескольких недель",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1480,6 +1557,8 @@
     },
     {
       "phrase": "военного назначения",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 4,
       "channels": 2,
       "sides": 1,
@@ -1513,6 +1592,8 @@
     },
     {
       "phrase": "победить поле боя",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 1,
@@ -1551,6 +1632,8 @@
     },
     {
       "phrase": "добьется своих целей сво",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 1,
@@ -1589,6 +1672,8 @@
     },
     {
       "phrase": "террористические методы",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 1,
@@ -1627,6 +1712,8 @@
     },
     {
       "phrase": "делают ставку",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 1,
@@ -1665,6 +1752,8 @@
     },
     {
       "phrase": "поле боя",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 7,
       "channels": 3,
       "sides": 1,
@@ -1703,6 +1792,8 @@
     },
     {
       "phrase": "своих целей",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 1,
@@ -1741,6 +1832,8 @@
     },
     {
       "phrase": "foreign ministry spokesperson",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 5,
       "channels": 2,
       "sides": 1,
@@ -1774,6 +1867,8 @@
     },
     {
       "phrase": "ministry spokesperson",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 6,
       "channels": 2,
       "sides": 1,
@@ -1807,6 +1902,8 @@
     },
     {
       "phrase": "foreign ministry",
+      "rarest_token_msg_share": 0.0251,
+      "function_shaped": true,
       "reports": 6,
       "channels": 2,
       "sides": 1,
@@ -1840,6 +1937,8 @@
     },
     {
       "phrase": "eastern saudi arabia",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1873,6 +1972,8 @@
     },
     {
       "phrase": "saudi arabia",
+      "rarest_token_msg_share": 0.0126,
+      "function_shaped": false,
       "reports": 6,
       "channels": 2,
       "sides": 1,
@@ -1906,6 +2007,8 @@
     },
     {
       "phrase": "saudi enemy",
+      "rarest_token_msg_share": 0.0167,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1939,6 +2042,8 @@
     },
     {
       "phrase": "iran armed forces",
+      "rarest_token_msg_share": 0.0251,
+      "function_shaped": true,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -1972,6 +2077,8 @@
     },
     {
       "phrase": "два сухогруза",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 1,
@@ -2010,6 +2117,8 @@
     },
     {
       "phrase": "днепропетровской области",
+      "rarest_token_msg_share": 0.0188,
+      "function_shaped": false,
       "reports": 9,
       "channels": 4,
       "sides": 1,
@@ -2053,6 +2162,8 @@
     },
     {
       "phrase": "дронами поражены",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2086,6 +2197,8 @@
     },
     {
       "phrase": "порту николаев",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2119,6 +2232,8 @@
     },
     {
       "phrase": "при этом",
+      "rarest_token_msg_share": 0.0314,
+      "function_shaped": true,
       "reports": 7,
       "channels": 3,
       "sides": 1,
@@ -2157,6 +2272,8 @@
     },
     {
       "phrase": "даже если",
+      "rarest_token_msg_share": 0.023,
+      "function_shaped": true,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2190,6 +2307,8 @@
     },
     {
       "phrase": "два человека погибли",
+      "rarest_token_msg_share": 0.0126,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2223,6 +2342,8 @@
     },
     {
       "phrase": "поражены два",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 1,
@@ -2261,6 +2382,8 @@
     },
     {
       "phrase": "одесской области",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2294,6 +2417,8 @@
     },
     {
       "phrase": "июля 2026 года",
+      "rarest_token_msg_share": 0.0167,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2327,6 +2452,8 @@
     },
     {
       "phrase": "новой зеландии",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 1,
@@ -2365,6 +2492,8 @@
     },
     {
       "phrase": "2026 года",
+      "rarest_token_msg_share": 0.0167,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 1,
@@ -2403,6 +2532,8 @@
     },
     {
       "phrase": "под контроль",
+      "rarest_token_msg_share": 0.0167,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 1,
@@ -2441,6 +2572,8 @@
     },
     {
       "phrase": "против россии",
+      "rarest_token_msg_share": 0.0272,
+      "function_shaped": true,
       "reports": 3,
       "channels": 3,
       "sides": 1,
@@ -2479,6 +2612,8 @@
     },
     {
       "phrase": "атаки всу",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2512,6 +2647,8 @@
     },
     {
       "phrase": "киевского режима",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 1,
@@ -2550,6 +2687,8 @@
     },
     {
       "phrase": "saudi oil",
+      "rarest_token_msg_share": 0.0335,
+      "function_shaped": true,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2583,6 +2722,8 @@
     },
     {
       "phrase": "против ирана",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 4,
       "channels": 2,
       "sides": 1,
@@ -2616,6 +2757,8 @@
     },
     {
       "phrase": "коммунаровка христофоровка",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2649,6 +2792,8 @@
     },
     {
       "phrase": "больше чем",
+      "rarest_token_msg_share": 0.0209,
+      "function_shaped": true,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2682,6 +2827,8 @@
     },
     {
       "phrase": "интересах всу",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 1,
@@ -2720,6 +2867,8 @@
     },
     {
       "phrase": "crude oil",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -2753,6 +2902,8 @@
     },
     {
       "phrase": "том числе",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 6,
       "channels": 4,
       "sides": 1,
@@ -2796,6 +2947,8 @@
     },
     {
       "phrase": "тимура иванова",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 1,
@@ -2834,6 +2987,8 @@
     },
     {
       "phrase": "united states",
+      "rarest_token_msg_share": 0.0209,
+      "function_shaped": true,
       "reports": 7,
       "channels": 2,
       "sides": 1,
@@ -2867,6 +3022,8 @@
     },
     {
       "phrase": "саудовской аравии",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 5,
       "channels": 3,
       "sides": 1,
@@ -2905,6 +3062,8 @@
     },
     {
       "phrase": "кроме того",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 1,
@@ -2943,6 +3102,8 @@
     },
     {
       "phrase": "зоне сво",
+      "rarest_token_msg_share": 0.0167,
+      "function_shaped": false,
       "reports": 4,
       "channels": 3,
       "sides": 1,
@@ -2981,6 +3142,8 @@
     },
     {
       "phrase": "strait hormuz",
+      "rarest_token_msg_share": 0.0209,
+      "function_shaped": true,
       "reports": 9,
       "channels": 2,
       "sides": 1,
@@ -3014,6 +3177,8 @@
     },
     {
       "phrase": "yemeni armed forces",
+      "rarest_token_msg_share": 0.0146,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -3047,6 +3212,8 @@
     },
     {
       "phrase": "телефонный разговор",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 4,
       "channels": 2,
       "sides": 1,
@@ -3080,6 +3247,8 @@
     },
     {
       "phrase": "israeli prime minister",
+      "rarest_token_msg_share": 0.023,
+      "function_shaped": true,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -3113,6 +3282,8 @@
     },
     {
       "phrase": "лет колонии",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -3146,6 +3317,8 @@
     },
     {
       "phrase": "белгородской области",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 3,
       "sides": 1,
@@ -3184,6 +3357,8 @@
     },
     {
       "phrase": "российская армия",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -3217,6 +3392,8 @@
     },
     {
       "phrase": "israeli regime",
+      "rarest_token_msg_share": 0.023,
+      "function_shaped": true,
       "reports": 4,
       "channels": 2,
       "sides": 1,
@@ -3250,6 +3427,8 @@
     },
     {
       "phrase": "against iranian",
+      "rarest_token_msg_share": 0.0335,
+      "function_shaped": true,
       "reports": 4,
       "channels": 2,
       "sides": 1,
@@ -3283,6 +3462,8 @@
     },
     {
       "phrase": "patriot thaad",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -3316,6 +3497,8 @@
     },
     {
       "phrase": "населенные пункты",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -3349,6 +3532,8 @@
     },
     {
       "phrase": "ali al-taher",
+      "rarest_token_msg_share": 0.0063,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -3382,6 +3567,8 @@
     },
     {
       "phrase": "islamic republic",
+      "rarest_token_msg_share": 0.0084,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -3415,6 +3602,8 @@
     },
     {
       "phrase": "получили ранения",
+      "rarest_token_msg_share": 0.0105,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
@@ -3448,6 +3637,8 @@
     },
     {
       "phrase": "пять человек",
+      "rarest_token_msg_share": 0.0126,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
