@@ -1,0 +1,65 @@
+name: KALLS TOKEN
+
+# KNP 4.03c, automated: an RFC 3161 timestamp token over the served hashlog
+# on every change. First run is MANUAL by policy — the workflow_dispatch
+# button below is the operator's first run through the same code path the
+# schedule would use. After one successful dispatch, uncomment the push
+# trigger and the existence anchor becomes unattended.
+
+on:
+  workflow_dispatch:
+  # push:
+  #   paths:
+  #     - "docs/kalls_hashlog.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kalls-token
+  cancel-in-progress: false
+
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Phase one — declare the pointer if absent
+        run: |
+          set -euo pipefail
+          git config user.name  "kalls-token[bot]"
+          git config user.email "kalls-token@retroprescientaudit.com"
+          python kalls.py token || true
+          if ! git diff --quiet docs/kalls_hashlog.json; then
+            git add docs/kalls_hashlog.json
+            git commit -m "KNP 4.03c: declare the timestamp token index in the anchor object"
+            for a in 1 2 3; do
+              git push origin HEAD:main && break
+              git pull --rebase --autostash origin main; sleep $((a*5))
+            done
+            sleep 20   # let the raw URL serve the pushed bytes
+          fi
+      - name: Phase two — token over the served bytes
+        run: |
+          set -euo pipefail
+          python kalls.py token
+          git add docs/kalls_anchor_tokens.json docs/kalls_hashlog.json.tsr docs/kalls_hashlog.json.tsq 2>/dev/null || git add docs/kalls_anchor_tokens.json
+          if git diff --cached --quiet; then
+            echo "no token artifacts to commit"; exit 1
+          fi
+          git commit -m "KNP 4.03c: RFC 3161 token over the served hashlog"
+          for a in 1 2 3; do
+            git push origin HEAD:main && break
+            git pull --rebase --autostash origin main; sleep $((a*5))
+          done
+      - name: Verify from the remote
+        run: |
+          git fetch origin main --quiet
+          echo "remote main is now $(git rev-parse --short origin/main)"

@@ -1,5 +1,5 @@
 # KRÄHE'S NEST PROTOCOL
-## First Edition · 2026 · Revision 2
+## First Edition · 2026 · Revision 3
 **KNP-26 · Issued by the Retro-Prescient Audit Desk**
 *Implementer specification for the Selective-Disclosure Commitment Method (KNM-26). This document is buildable-to: an implementer who follows it produces a conformant sealer, hashlog, and aggregator without further reference to the desk.*
 
@@ -43,6 +43,20 @@ id | timestamp | statement | resolution_basis | salt
 - `statement` — the predictive claim, UTF-8. Must not contain the pipe character; if the claim requires a pipe, the implementer must escape it as `\u007C` before joining and unescape on reveal (documented per implementation).
 - `resolution_basis` — the criterion by which the committer will judge the Kall at reveal. UTF-8, pipe-escaped as above.
 - `salt` — a cryptographically random secret, minimum 128 bits, hex-encoded (32 hex chars). One salt per Kall. Never reused.
+
+**2.01b Construction v2 (`knp-2`).** For Kalls sealed under revision 3 or later, the canonical preimage is formed by joining exactly these fields with the ASCII pipe `|` in exactly this order:
+
+```
+id | timestamp | statement | resolution_basis | probability | deadline | salt
+```
+
+- `probability` — the integer percent, rendered as a decimal ASCII integer with no sign, no leading zeros, no decimal point, no percent sign (`35`, never `35.0`, `035`, or `35%`). The sealer coerces to this form before hashing and stores the same integer in the vault and the hashlog. Values ≤ 0 or ≥ 100 are certainty claims, not forecasts, and must be refused at sealing.
+- `deadline` — the ISO 8601 calendar date exactly as stored, `YYYY-MM-DD`.
+- All other fields as in 2.01. The pipe-escape rule applies to `statement` and `resolution_basis` only; `id`, `timestamp`, `probability`, `deadline`, and `salt` are constrained grammars that cannot contain the separator, so escaping them is a defined no-op in every conformant implementation.
+
+Every record in the hashlog and the vault carries a `construction` field naming its version (`knp-1`, `knp-2`). **A record without a `construction` field is a `knp-1` record** — this default exists so the ten Kalls sealed before this revision remain verifiable without alteration. A commitment is verified under the construction it names, always; the published commitment governs (4.01b). Sealing new Kalls under `knp-1` after this revision is nonconformant.
+
+Rationale, printed rather than implied: under `knp-1`, the two inputs to every Brier score sit outside the commitment. The construction that binds them was in fact the method's stated intent — KNM-26 revision 1's paragraph 3.01 described a commitment over statement, basis, probability, and deadline, and was reconciled *downward* to match the deployed construction in revision 2. This paragraph restores the original intent going forward without breaking a single existing seal.
 
 **2.02** The commitment is `SHA-256(preimage)`, lowercase hex. This is the value published in the hashlog. The preimage (and therefore the salt, statement, and basis) stays in the vault.
 
@@ -124,7 +138,13 @@ Each entry of `records` carries only opaque and non-sensitive fields — never s
 ```
 This block exists because §5.02 verification is impossible without the recipe: a stranger holding a reveal and a bare commitment cannot recompute unless the construction is public. Revision 1 left the recipe in spec prose and in the committer's private store — which meant the one artifact verification depends on lived behind the same wall as the secrets. A hashlog without a construction block is not conformant with revision 2. The block describes §2.01's construction and must match it; a committer using a legacy construction (sealed before this revision) publishes the construction actually used, and the published commitment always governs over any spec text.
 
+**4.01c The construction history.** A hashlog containing records sealed under more than one construction must publish a `construction_history` array carrying every construction ever used, each entry bearing a `version` string, the full recipe in the 4.01b shape, and an `effective` date. The singular `construction` block of 4.01b remains and **must state the recipe of the log's earliest records** (`knp-1` for the reference deployment), so that a verifier written against revision 2 — which applies the singular block to every reveal — continues to return correct verdicts on every record sealed before this revision. A version bump without a preserved history destroys the verifiability of the rows it did not touch, which is a worse defect than the one it repairs.
+
+Failure direction, stated: a revision-2 verifier handed a `knp-2` reveal will recompute under `knp-1` and report a mismatch — a false alarm on a valid record, never a false pass. That is the conservative direction, and this paragraph chooses it deliberately. Verification of `knp-2` records requires a revision-3 verifier.
+
 **4.02 Append-only (must).** The hashlog is append-only. New Kalls append; a reveal or resolution *updates the status field of an existing record in place* but must never remove a record or alter its `commitment`. The committed count is the number of records.
+
+A reveal or resolution updates the `status` field (and, at reveal, may add nothing else); it must never remove a record or alter its `commitment`, `timestamp`, `probability`, or `deadline`. For `knp-2` records the last two are bound by the hash; for `knp-1` records they are not, and this sentence is therefore load-bearing: **restating a sealed probability or deadline is the cheap cheat** — it leaves the count undisturbed, the denominator unchanged, and the standing line identical while reducing the Brier cost of an approaching miss. 5.05 guards the expensive cheat (deletion); this sentence guards the efficient one. A conformant verifier comparing two snapshots of the same hashlog treats any change to a sealed record's `probability` or `deadline` as a MUST failure, identical in class to an altered commitment.
 
 **4.03 External anchoring (must — this is the count commitment, KNM 3.02).** The append-only property must be enforced by a mechanism the committer does not solely control. Any of:
 a. **Public version control** — the hashlog lives in a public git repository; commit history makes the sequence of states tamper-evident (a silent deletion shows in the diff).
@@ -132,7 +152,13 @@ b. **External beacon** — the committer periodically posts the count and a hash
 c. **Both** (recommended). The reference deployment uses git commit history as the primary clock and a periodic external beacon as the secondary.
 Without external anchoring, the count is not committed — the committer could rewrite the log — and the scheme degrades to gameable per-item commitment (KNM 1.04). This requirement is what makes the method's integrity real.
 
-**4.04 The standing line (should).** The hashlog (or its rendered page) carries a standing summary: `N sealed · M revealed · K resolved`. This is the visible denominator that makes withholding legible (KNM 3.02).
+**4.03b The anchor object (must).** The hashlog carries a structured `anchor` object declaring the append-only mechanism: at minimum a `mechanism` string and, per mechanism, the pointer fields a stranger needs to walk it (`repository` and `history` URLs for public version control; token path and digest fields for a timestamping authority; witness key and cosignature fields for a cosigned checkpoint). A conformance verifier must test that the object exists, is structured, and that its pointers are well-formed and internally consistent; prose containing the word "anchor" satisfies nothing. Where the verifier can resolve a pointer without credentials, it should; where it cannot, it prints the exact command a reader would run.
+
+**4.03c External timestamp anchoring (must for hashlogs published after this revision).** On each append, the committer obtains a timestamp token from an external authority over the SHA-256 digest of the hashlog file as published — an RFC 3161 timestamping authority, an OpenTimestamps attestation, or a transparency-log witness cosignature per c2sp.org/tlog-witness — and publishes the token beside the hashlog with its covered digest declared in the anchor object. Version-control history (4.03a) remains required; it is the *sequence* anchor. The timestamp token is the *existence* anchor: a dated third-party artifact the committer cannot amend or un-issue, which a repository host's history — however unlikely the rewrite — does not by itself provide against its own operator, and which a deletable social post does not provide against the committer.
+
+**Split-view, stated honestly (replaces any statement that split-view detection is unavailable to a single-operator log).** Serving different views to different readers is the transparency-log attack class. Gossip — readers comparing signed tree heads among themselves — was Certificate Transparency's 2013 answer and was never widely deployed even there. The operational answer since 2016 is proactive **witness cosigning** (Syta et al., IEEE S&P 2016; standardized in the C2SP tlog-checkpoint / tlog-cosignature / tlog-witness specifications; deployed by Sigsum and by the public witness network operated under transparency.dev): independent third parties verify append-only consistency and cosign each head, and a head lacking the cosignatures a reader's policy requires is rejected. Witnesses are not conformers; a federation of one can obtain them. Accordingly: a single-operator log **must** anchor per 4.03c, **should** obtain witness cosignatures where a witness will serve it, and cross-conformer view comparison activates at N ≥ 2 as an additional layer, not as the first available one. The operator-side mirror invariant (canonical-versus-served comparison before publish) is a required control of the sealer and an insufficient one — it compares two copies the operator holds and the operator can disable it; paired with 4.03c it becomes evidentiary, because a served view diverging from an externally-timestamped canonical digest is provable after the fact by any reader holding both.
+
+**4.04 The standing line (must).** The hashlog's rendered surfaces carry the standing summary `N sealed · M revealed · K resolved`. Each figure must be computable by a third party from the published hashlog alone — `N` is the record count, `M` and `K` are counts over the `status` field — and a conformance verifier recomputes them and treats any published standing line that disagrees with its own recomputation as a MUST failure. A standing line computed only by the committer over his own log is a self-report; this paragraph makes it a derivation.
 
 ---
 
@@ -173,6 +199,8 @@ A match proves the revealed content is exactly what was sealed at `timestamp`, u
 
 ## CHAPTER 7 — CONFORMANCE
 
+**7.00 What this chapter is, in the standards-body sense.** Chapter 7 is a **conformance clause**, and `knp_verify.py` is a **conformance test suite**: pass/fail against numbered requirements, runnable by anyone. It is **not a conformance program** — a program, in the sense the standards literature (NIST's conformity-assessment vocabulary) gives the term, includes an administrative apparatus with a dispute-resolution body of impartial experts, and no such body exists here or is claimed. The distinction is load-bearing, not pedantic: the independent security analysis of C2PA (ePrint 2026/804) found a conformance program that certified products without technical review or defined requirements, and the inflated word was part of what the analysis indicted. This specification takes the smaller, true word.
+
 **7.01** A **conformant sealer** implements Chapters 2, 3, 5 (§5.01–5.03): canonical preimage, mandatory high-entropy salt, vault/hashlog separation with the vault kept private, append-only status updates, and voluntary per-Kall reveal with no forced-reveal path.
 
 **7.02** A **conformant hashlog** satisfies Chapter 4: the §4.01 container and record shape (at minimum `protocol`, `construction`, and the four per-record fields), the §4.01b construction block, append-only with in-place status updates, and external anchoring per §4.03.
@@ -190,6 +218,8 @@ A match proves the revealed content is exactly what was sealed at `timestamp`, u
 ---
 
 ## REVISION HISTORY
+
+**Rev. 3 · 2026-07-30 UTC.** Six amendments applied as drafted 2026-07-29 in KNP_REV3_AMENDMENTS.md (this repository): construction v2 `knp-2` binding probability and deadline (2.01b); the construction history (4.01c); published metadata frozen at sealing, the cheap-cheat guard (4.02, appended); the structured anchor object, external timestamp anchoring, and the witness-cosigning statement replacing the false split-view sentence (4.03b/4.03c); the standing line made a must and externally computable (4.04, replaced); the conformance taxonomy stated (7.00). The construction finding prints in the hashlog disclosure. The ten `knp-1` records are unaltered; retro-binding is forbidden by this standard.
 
 **Rev. 2 · 2026-07-26 UTC.** Container pinned as a JSON object (4.01), closing the finding that two conformant implementations could disagree on the file's first byte. Construction block made mandatory public metadata (4.01b) so §5.02 verification never depends on private material; this and the container finding were reached independently by two working sessions operating without sight of each other, and the convergence is recorded here as the reason for the change. Optional `level`, `architecture`, `reveal_date` fields added, carrying KNM-26 rev. 2 declarations into the wire format. Separately recorded: §2.01's construction was verified against the nine published commitments of the demonstration clutch by independent re-derivation from the vault — 9/9 reproduce — on 2026-07-26 UTC, the day following the 2026-07-25T18:30:00Z seal. The construction paragraph stands unamended.
 
