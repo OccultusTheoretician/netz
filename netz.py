@@ -898,6 +898,7 @@ def render_html(md: str, title: str) -> str:
     footer = (
         "<div class='footbar'>▲ NOTHING CLASSIFIED OR PRIVILEGED</div>"
         "<div class='byline'>NEBELKRÄHE · THE PRESCIENT DESK</div>"
+        "<div class='legalline' style='font-size:.72rem;opacity:.7;margin:.2rem 0 .5rem'><a href='terms.html'>Terms</a> · <a href='privacy.html'>Privacy</a></div>"
         "<div class='colophon'>Machine-collated open-source intelligence. Every synthesized "
         "claim traces to the record; the record traces to source. Grades are mechanical, "
         "not judgment. A ledger that keeps its own misses.<br>"
