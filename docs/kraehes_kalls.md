@@ -1,6 +1,6 @@
 # KRÄHE'S KALLS — THE ABDUCTION LOG
 
-### Nebelkrähe · sealed guesses in his own hand, before the outcome
+### NebelKrähe · sealed guesses in his own hand, before the outcome
 
 **Separate instrument from KKR.** KKR carries world-outcome forecasts under third-party-adjudicated resolution. Krähe's Kalls carries *abductions* sealed at the moment spoken, resolved by his own judgment at reveal against the stated basis. Different evidentiary class, tagged apart, never cited as KKR's weight.
 

@@ -32,7 +32,7 @@ GEN_NEW = ("        \"<div class='byline'>NEBELKR\u00c4HE \u00b7 THE PRESCIENT D
 
 SHELL_TOP = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title} \u00b7 Nebelkr\u00e4he</title>
+<title>{title} \u00b7 NebelKr\u00e4he</title>
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{title} &middot; The Prescient Desk">
 <meta property="og:description" content="{desc}">
@@ -55,7 +55,7 @@ body{{color:#c9c9c2}}h1{{color:#e8eaed}}strong{{color:#e8eaed}}a{{color:#dcb65e}
 """
 
 SHELL_BOT = """<footer>NEBELKR\u00c4HE \u00b7 THE PRESCIENT DESK \u2014 {footline}
-<br>\u00a9 2026 Nebelkr\u00e4he \u00b7 <a href="https://github.com/OccultusTheoretician/netz/blob/main/LICENSE">LICENSE</a> \u00b7 <a href="terms.html">Terms</a> \u00b7 <a href="privacy.html">Privacy</a></footer>
+<br>\u00a9 2026 NebelKr\u00e4he \u00b7 <a href="https://github.com/OccultusTheoretician/netz/blob/main/LICENSE">LICENSE</a> \u00b7 <a href="terms.html">Terms</a> \u00b7 <a href="privacy.html">Privacy</a></footer>
 </body></html>
 """
 
@@ -103,7 +103,7 @@ reporting \u2014 not its truth. Forecast resolution criteria adjudicate what
 public reporting states by a deadline, not underlying facts.</p>
 
 <h2>Intellectual property</h2>
-<p>\u00a9 2026 Nebelkr\u00e4he. The repository <a
+<p>\u00a9 2026 NebelKr\u00e4he. The repository <a
 href="https://github.com/OccultusTheoretician/netz/blob/main/LICENSE">LICENSE</a>
 governs reuse: the standards are citable and conformable but not forkable
 under their names; the instruments are free to run. Marks are listed on the
