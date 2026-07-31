@@ -208,9 +208,12 @@ footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.6rem 0;positio
 <section><div class="wrap">
   <div class="sec-num">I.</div>
   <h2>The Klutch — sealed 2026-07-25</h2>
-  <p class="lede">Nine eggs, laid in one session. Every hash below was computed over the full
-    call — statement, resolution basis, probability, deadline, and a secret salt — <strong>before any
-    outcome existed</strong>. The hash reveals nothing about the content. When a Kall is opened, its plaintext
+  <p class="lede">Nine eggs, laid in one session, each hash computed <strong>before any outcome
+    existed</strong> over the statement, its resolution basis, and a secret salt (construction
+    <span translate="no">knp-1</span>). The probability and deadline shown are <em>not</em> bound by these
+    hashes — they are carried by the append-only anchored history, a defect this desk found in its
+    own construction and printed as Revision 3; Kalls sealed after that revision bind them
+    (<span translate="no">knp-2</span>). The hash reveals nothing about the content. When a Kall is opened, its plaintext
     and salt are published, and anyone can recompute the hash to confirm it existed, unedited, at the sealed timestamp.</p>
 
   <div class="clutch" id="clutch">
