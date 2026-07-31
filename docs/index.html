@@ -137,7 +137,9 @@ h1 .tm{font-size:.32em;vertical-align:super;color:var(--dim);font-family:var(--s
     rgba(220,182,94,.05) 342deg, rgba(220,182,94,.14) 352deg,
     rgba(236,241,247,.10) 356deg, transparent 360deg);
   animation:sweep 22s linear infinite;filter:blur(2px)}
-.rings{position:absolute;inset:0}
+.sigil{position:absolute;left:50%;top:50%;width:54%;transform:translate(-50%,-50%);z-index:1;
+  filter:drop-shadow(0 0 26px rgba(220,182,94,.26)) drop-shadow(0 4px 14px rgba(0,0,0,.6))}
+.rings{position:absolute;inset:0;z-index:2}
 .rings circle{fill:none;stroke:var(--line2);stroke-width:1;opacity:.55}
 .rings circle.mark{stroke:var(--messing3);stroke-dasharray:2 10;opacity:.8}
 .rings text{fill:var(--dim);font-family:var(--mono);font-size:7.5px;letter-spacing:.28em}
@@ -154,7 +156,7 @@ h1 .tm{font-size:.32em;vertical-align:super;color:var(--dim);font-family:var(--s
   filter:drop-shadow(0 0 22px rgba(220,182,94,.42))
          drop-shadow(0 0 32px rgba(220,182,94,.14))
          drop-shadow(0 3px 10px rgba(0,0,0,.75))}
-.hub{position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;
+.hub{position:absolute;z-index:3;left:50%;top:50%;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;
   border-radius:50%;background:var(--messing2);box-shadow:0 0 12px rgba(220,182,94,.7)}
 .rings text{letter-spacing:.28em}
 @media(prefers-reduced-motion:reduce){.crow-orbit{animation:none}}
@@ -301,7 +303,9 @@ footer li a{font-size:.85rem;color:var(--fg)}
 }
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;min-height:0;padding:3.5rem 0 3rem;gap:2.5rem}
-  .leuchte{order:-1;width:min(260px,70vw)}
+  .leuchte{order:-1;width:min(300px,76vw)}
+  .masthead-crow img{width:112px}
+  .masthead-crow .mc-word{font-size:1.05rem}
   .method-grid{grid-template-columns:1fr}
   .foot{grid-template-columns:1fr 1fr}
 }
@@ -337,12 +341,12 @@ footer li a{font-size:.85rem;color:var(--fg)}
 <style id="desknav-style">.desknav-unified{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;align-items:baseline;padding:.7rem 1.1rem;border-bottom:1px solid #26292f;background:rgba(7,9,12,.55);position:relative;z-index:20}.desknav-unified .ng-group{display:inline-flex;flex-wrap:wrap;gap:.15rem .85rem;align-items:baseline}.desknav-unified .ng-label{color:#565650;font:600 .58rem 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-right:.15rem;user-select:none}.desknav-unified a{color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}.desknav-unified a:hover{color:#c9c9c2}.desknav-unified a[aria-current="page"]{color:#dcb65e}</style><nav class="desknav-unified" data-navgen="2" aria-label="site" translate="no"><span class="ng-group"><span class="ng-label">DESK</span><a aria-current="page" href="index.html">Desk</a><a href="report.html">Report</a><a href="spion.html">Spion</a></span><span class="ng-group"><span class="ng-label">FORECASTING</span><a href="kkr.html">Forecasts</a><a href="ledger.html">Ledger</a><a href="KriegForeKaster.html">ForeKaster</a><a href="KriegForeKaster_compendium.html">Compendium</a><a href="globalkaster.html">GlobalKaster</a><a href="fogsim.html">FogSim</a><a href="okk.html">OberKommando</a></span><span class="ng-group"><span class="ng-label">FEDERATION</span><a href="kraehes_kalls.html">Kalls</a><a href="nest.html">Nest</a></span><span class="ng-group"><span class="ng-label">STANDARDS</span><a href="standards.html">Standards</a><a href="conformance.html">Conformance</a><a href="register.html">Register</a><a href="verify.html">Verify</a><a href="decc.html">Verify Seal</a></span><span class="ng-group"><span class="ng-label">CABINET</span><a href="ohrwurm.html">Ohrwurm</a><a href="konsole.html">Konsole</a><a href="marks.html">Marks</a></span><span class="ng-group"><span class="ng-label">&nbsp;</span><a href="https://github.com/OccultusTheoretician/netz">GitHub</a></span></nav>
 
 <style id="masthead-crow-style">
-.masthead-crow{display:flex;align-items:center;gap:.7rem;margin:0 0 1.15rem}
-.masthead-crow img{width:38px;height:38px;opacity:.94}
-.masthead-crow .mc-word{font:600 .95rem 'IBM Plex Mono',ui-monospace,monospace;
-  letter-spacing:.26em;text-transform:uppercase;color:#ECF1F7}
-.masthead-crow .mc-sub{font:600 .56rem 'IBM Plex Mono',ui-monospace,monospace;
-  letter-spacing:.2em;text-transform:uppercase;color:#5A6675;margin-top:.15rem}
+.masthead-crow{display:flex;align-items:center;gap:1rem;margin:0 0 1.4rem}
+.masthead-crow img{width:150px;height:auto;opacity:.96;filter:drop-shadow(0 0 14px rgba(220,182,94,.22))}
+.masthead-crow .mc-word{font:600 1.3rem 'IBM Plex Mono',ui-monospace,monospace;
+  letter-spacing:.3em;text-transform:uppercase;color:#ECF1F7}
+.masthead-crow .mc-sub{font:600 .66rem 'IBM Plex Mono',ui-monospace,monospace;
+  letter-spacing:.22em;text-transform:uppercase;color:#5A6675;margin-top:.2rem}
 </style><header class="hero-wrap"><div class="wrap"><div class="hero">
   <div class="rv in">
     <div class="masthead-crow" aria-label="Nebelkr&auml;he">
@@ -364,6 +368,7 @@ footer li a{font-size:.85rem;color:var(--fg)}
   </div>
   <div class="leuchte" role="img" aria-label="The Nebelkrähe sigil within sighting rings, a slow light sweeping the fog behind it">
     <div class="beam" aria-hidden="true"></div>
+    <img class="sigil" src="crow_mark.svg" alt="" aria-hidden="true">
     
     <svg class="rings" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="200" cy="200" r="192"/>
@@ -625,7 +630,7 @@ python rpas_verify.py https://raw.githubusercontent.com/OccultusTheoretician/net
     <span class="cls">▲ NOTHING CLASSIFIED OR PRIVILEGED</span>
     <span>Retro-Prescient Audit™ · VoidSection™ — first use sealed in commit history</span>
   </div></div>
-</footer>
+<br>© 2026 Nebelkrähe</footer>
 
 <script>
 (function(){

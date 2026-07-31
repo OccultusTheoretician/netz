@@ -47,7 +47,8 @@ SHELL_TOP = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <style>body{{max-width:46rem;margin:0 auto;padding:0 1.1rem 3rem}}
 h1{{font-size:1.6rem;margin:1.6rem 0 .4rem}}h2{{font-size:1.05rem;margin:1.6rem 0 .3rem}}
 p{{line-height:1.55;margin:.55rem 0}}.kicker{{color:#8a8a84;font:600 .68rem 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;margin-top:1.4rem}}
-footer{{margin-top:2.5rem;padding-top:1rem;border-top:1px solid #26292f;font-size:.8rem;opacity:.8}}</style>
+footer{{margin-top:2.5rem;padding-top:1rem;border-top:1px solid #26292f;font-size:.8rem;opacity:.8}}
+body{{color:#c9c9c2}}h1{{color:#e8eaed}}strong{{color:#e8eaed}}a{{color:#dcb65e}}</style>
 </head><body>
 <div class="kicker">{kicker}</div>
 <h1>{title}</h1>

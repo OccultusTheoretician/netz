@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-mark_package.py — the full NebelKraehe graphics package.
+mark_package.py — the full Nebelkraehe graphics package.
 
 Imports the geometry from mark_build.py. There is still exactly one vertex
 table; this only renders it more ways. Nothing here duplicates a coordinate.
