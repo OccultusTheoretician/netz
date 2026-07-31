@@ -2,7 +2,7 @@
 """
 mark_build.py — one geometry, every asset.
 
-The NebelKraehe mark exists in exactly one place: the vertex table below. Every
+The Nebelkraehe mark exists in exactly one place: the vertex table below. Every
 file the site serves is generated from it. Nothing is hand-edited downstream,
 for the same reason docs/ledger.json is a build product and not a copy someone
 remembers to make.
