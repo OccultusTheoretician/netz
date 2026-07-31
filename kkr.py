@@ -159,7 +159,8 @@ def parse_projections(raw: str) -> list:
                      "probability": prob,
                      "resolution": str(p["resolution"]).strip(),
                      "deadline": p["deadline"],
-                     "citations": [int(c) for c in p.get("citations", [])]}
+                     "citations": [int(c) for c in p.get("citations", [])
+                                   if str(c).strip().lstrip("-").isdigit()]}
             # RPAS 4.02g passthrough: a batch arriving with its seal
             # fields enters sealed; absent fields change nothing.
             for k in ("failure_condition", "keyed_keyless",
@@ -292,7 +293,7 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     out.append(f"{len(data['projections'])} issued all-time across {len(arms)} "
                f"forecaster arm{plural} · {open_n} open "
                f"({len(overdue)} past deadline — run "
-               f"<code translate=\"no\">python kkr.py --resolve</code>). "
+               f"`python kkr.py --resolve`). "
                f"**No pooled score is published** — a Brier score belongs to one "
                f"forecaster; an average across arms is nobody's record.\n")
     mine = arms.get(model_tag, {"issued": 0, "open": 0, "n_resolved": 0})
@@ -757,6 +758,7 @@ def cmd_generate(args):
     if not raw:
         print("KKR · no model output — packet written, ledger unchanged", file=sys.stderr)
         return
+    (OUT / "kkr_raw_last.txt").write_text(raw, encoding="utf-8")  # audit copy, unconditional
     projs = parse_projections(raw)
     if not projs:
         print("KKR · model output unparseable — nothing ingested. Raw saved for audit.",
