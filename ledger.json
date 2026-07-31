@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-07-30T16:33:13Z",
+  "as_of": "2026-07-31T00:11:39Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -103,9 +103,9 @@
       "date_issued": "2026-07-20",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-20_2106.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-07-31",
+      "notes": "10-year Treasury constant-maturity yield closed 2026-07-29 at approximately 4.66% following the FOMC decision to hold rates. CNBC quote data for the session shows open 4.671%, day high 4.712%, day low 4.651%, prior close 4.622%. The 4.8% threshold was not reached on a closing or intraday basis. Trading Economics reported the 10-year rising to 4.66% on 07-29 after the Fed left the funds rate unchanged with three dissents favoring a 25bp increase.",
       "failure_condition": "the condition stated in this entry's resolution basis — The 10-year U.S. Treasury yield exceeds 4.8% on 2026-07-29, as reported by the U.S. Department of the Treasury or Bloomberg — is not met on or before 2026-07-29; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "unset",
       "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
@@ -1311,9 +1311,9 @@
       "date_issued": "2026-07-24",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-24_1503.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-07-31",
+      "notes": "Window 2026-07-25 to 2026-07-28. No US strike on Iranian military or strategic infrastructure reported in-window. Al Jazeera 2026-07-26 reported a second consecutive day of no strikes by either side amid renewed diplomatic efforts. CENTCOM's 2026-07-25 release concerns naval blockade enforcement. Iran's attempted attack on US forces 07-28 runs opposite to the criterion. US retaliatory strikes on Bandar Abbas and Kish began 2026-07-29 20:00 ET per CENTCOM, corroborated by CNN and Bloomberg — one day past deadline. Disconfirming: CENTCOM reported disabling two vessels enforcing the blockade of Iranian ports inside the window; ruled not a strike on infrastructure, criterion-drafting note for future issuance.",
       "failure_condition": "the condition stated in this entry's resolution basis — At least one confirmed U.S. military strike on Iranian military or strategic infrastructure, reported by a major news outlet such as BBC World or Guardian World, occurred between 2026-07-25 and 2026-07-28 — is not met on or before 2026-07-28; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "unset",
       "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
