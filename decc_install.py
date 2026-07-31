@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 r"""
-decc_install.py — install DECC-26 into the netz repo without an exposure slip.
+decc_install.py — install DECC-26™ into the netz repo without an exposure slip.
 
 ORDER IS THE SAFETY PROPERTY. Ignore rules are written BEFORE any file is
 copied, so a `git add -A` between steps cannot sweep vault material. Nothing is

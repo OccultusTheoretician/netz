@@ -3,7 +3,7 @@
 **Mark:** Retro-Prescient Audit™, asserted on the basis of first public use. This repository's
 append-only commit history is the dated record of that use; the companion publication is
 [COMPANION POST URL — inserted at publication]. The method is offered under this mark by
-NebelKrähe (Occultus Theoretician).
+Nebelkrähe (Occultus Theoretician).
 
 ## Definition
 

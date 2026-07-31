@@ -47,7 +47,7 @@ SAYINGS = [
     ("Calling our shots in the fog.\nSoaring through our misses.", "the tagline"),
     ("Die Kr\u00e4he sieht\ndurch den Nebel.", "the callsign"),
     ("No credential is offered.\nRecompute the hashes.", "the invitation"),
-    ("A method for telling\nforesight from arithmetic.", "Retro-Prescient Audit\u2122"),
+    ("A method for telling\nforesight from arithmetic.", "Retro-Prescient Audit™\u2122"),
     ("Conformance certifies process,\nnever foresight.", "RPAS 1.06"),
     ("The stated, compared\nto the operational.", "the one method"),
     ("Sealed before the outcome.\nAdjudicated blind. Scored.", "the discipline"),
