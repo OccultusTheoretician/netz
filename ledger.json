@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-07-31T05:31:05Z",
+  "as_of": "2026-07-31T05:36:21Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -3522,7 +3522,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No closure or halt of commercial Strait of Hormuz transits lasting 24 or more consecutive hours, dated 2026-07-31 through 2026-09-30, is reported by at least two of Reuters, AP and Lloyds List as read on 2026-09-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Operator searches three archives and judges whether reported disruption meets the 24-hour closure characterization.",
+      "sealed_at": "2026-07-31T05:36:21.904593+00:00",
+      "seal_sha256": "c9f48dd16257f6e7578bdcf36bcb08176c3eed715c60aea92ff021f0aec0b395"
     },
     {
       "statement": "NATO invokes Article 5 of the North Atlantic Treaty in response to the missile impact on Polish territory reported on 2026-07-30, with the invocation announced between 2026-07-31 and 2026-09-30.",
@@ -3543,7 +3548,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No Article 5 invocation tied to the 2026-07-30 Poland missile impact appears on nato.int or two major wires, dated in the window, as read on 2026-09-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "The tie between an invocation and this specific incident is an operator attribution judgment.",
+      "sealed_at": "2026-07-31T05:36:21.904814+00:00",
+      "seal_sha256": "39f82adde434b21b7568326c1b3421c484941c04ca611f8bae8af93bd5f771fd"
     },
     {
       "statement": "The Federal Reserve announces a reduction of the federal funds target range at its September 2026 FOMC meeting, with the decision published between 2026-09-01 and 2026-09-30.",
@@ -3563,7 +3573,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "The September 2026 FOMC statement at federalreserve.gov announces a target range equal to or higher than the prior meeting's, or no September statement exists by 2026-09-30; either reading scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "Single named instrument; mechanical comparison of two published target ranges.",
+      "sealed_at": "2026-07-31T05:36:21.904871+00:00",
+      "seal_sha256": "68527e49a9072320a26773eb62ee198cecf717026d9040274d5e9cbb9a1dee2e"
     },
     {
       "statement": "Situational Awareness LP or Leopold Aschenbrenner publicly announces that the fund is winding down, closing or returning external capital, between 2026-07-31 and 2026-10-30.",
@@ -3581,7 +3596,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "Fewer than two of Bloomberg, CNBC, FT and Reuters report an announced wind-down, closure or return of external capital for Situational Awareness LP dated in the window, as read on 2026-10-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Multi-outlet search plus operator characterization of what counts as a wind-down announcement.",
+      "sealed_at": "2026-07-31T05:36:21.904908+00:00",
+      "seal_sha256": "a812a80013adef844ef7c5e5ff86d6e924d57b7eb373d8a925b63bf85cea7878"
     },
     {
       "statement": "CISA issues an Emergency Directive that names CVE-2026-20316, the Cisco Secure Firewall Management Center hard-coded credential vulnerability, between 2026-07-30 and 2026-08-21.",
@@ -3600,7 +3620,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No Emergency Directive naming CVE-2026-20316 appears on the cisa.gov directives page with an issue date between 2026-07-30 and 2026-08-21, as read on 2026-08-21; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "Single named page; presence of a named CVE string in an ED issued in-window is mechanical.",
+      "sealed_at": "2026-07-31T05:36:21.904983+00:00",
+      "seal_sha256": "29e940f9537d98e605f3269485de313180fd70153baca77678694503811186dd"
     },
     {
       "statement": "The Pakistani armed forces or ISPR publicly announce a new named military operation in Khyber Pakhtunkhwa or the former tribal districts between 2026-07-31 and 2026-10-30.",
@@ -3618,7 +3643,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No named military operation in Khyber Pakhtunkhwa or the former tribal districts is announced by ISPR or the Pakistani government in the window, per ispr.gov.pk or two major wires, as read on 2026-10-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Operator judges what constitutes a new named operation in the specified areas across sources.",
+      "sealed_at": "2026-07-31T05:36:21.905008+00:00",
+      "seal_sha256": "ad9c21768a528b9a5f38b85465fc60df78ec1fb6a1e3ac281037c10ac1551f54"
     },
     {
       "statement": "Hadi Matar is sentenced on his federal terrorism-related convictions between 2026-07-31 and 2027-01-26.",
@@ -3636,7 +3666,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "Fewer than two of AP, Reuters, BBC and Al Jazeera report a federal sentence imposed on Hadi Matar dated 2026-07-31 through 2027-01-26, as read on 2027-01-26; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Two-wire confirmation requires operator search and reading of sentencing coverage.",
+      "sealed_at": "2026-07-31T05:36:21.905032+00:00",
+      "seal_sha256": "12acf613cfa6146a663ec91b8adf1ad70a720b1ae49c8c1d6d867e6befdff6c1"
     },
     {
       "statement": "The government of Cameroon officially announces the death or the resignation of President Paul Biya between 2026-07-31 and 2027-01-26.",
@@ -3654,7 +3689,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No official Cameroonian government announcement of President Biya's death or resignation, carried by at least two major international wires and dated in the window, exists as read on 2027-01-26; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Operator reads whether an announcement is official and government-sourced across wires.",
+      "sealed_at": "2026-07-31T05:36:21.905056+00:00",
+      "seal_sha256": "8be96930f1de79bde58084e9794db55a51a747c835defdaaf992d17b78fc071d"
     },
     {
       "statement": "Ugandan authorities release Kizza Besigye from detention, including any transfer to house arrest or medical release abroad, between 2026-07-31 and 2026-09-30.",
@@ -3673,7 +3713,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "Fewer than two of BBC, Al Jazeera, Reuters and AP report Kizza Besigye released from detention (including house arrest or medical release abroad) dated in the window, as read on 2026-09-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Release-status characterization across outlets is an operator reading.",
+      "sealed_at": "2026-07-31T05:36:21.905080+00:00",
+      "seal_sha256": "149cac2b276388dde4149058187a6f9c33ef8e6014636de4cdbabe4d606f1e63"
     },
     {
       "statement": "The confirmed death toll of firefighters in the 2026 Crete wildfires reaches five or more between 2026-07-31 and 2026-08-31.",
@@ -3692,7 +3737,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "Fewer than two of BBC, Guardian, DW and Reuters report a confirmed firefighter death toll of five or more attributed to the 2026 Crete wildfires, dated in the window, as read on 2026-08-31; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Numeric threshold but resolved by reading attribution in multi-outlet casualty reporting.",
+      "sealed_at": "2026-07-31T05:36:21.905108+00:00",
+      "seal_sha256": "0dd252b69066a355727eb560542eca8dd3c1611f6c8172bbd5914ca4d178b9b3"
     },
     {
       "statement": "Between 2026-08-06 and 2026-09-30, US Central Command or the Department of Defense publicly confirms at least one new military strike on targets inside Iranian territory.",
@@ -3712,7 +3762,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No official US military or DoD statement confirming a new strike inside Iranian territory occurring 2026-08-06 through 2026-09-30 is carried by two or more major outlets, as read on 2026-09-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Operator confirms official sourcing and two-outlet carriage of a qualifying strike.",
+      "sealed_at": "2026-07-31T05:36:21.905130+00:00",
+      "seal_sha256": "f90b6da9186a73b6ed3e272dc92dc49bcfba5cb3deb82ddc4e22d35380def045"
     },
     {
       "statement": "Front-month Brent crude futures settle above 100.00 US dollars per barrel on at least one trading day between 2026-08-06 and 2026-10-30.",
@@ -3732,7 +3787,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No ICE front-month Brent settlement exceeds 100.00 USD on any session 2026-08-06 through 2026-10-30, per exchange or major financial press settlement data as read on 2026-10-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "Named exchange settlement series against a fixed numeric threshold; mechanical.",
+      "sealed_at": "2026-07-31T05:36:21.905154+00:00",
+      "seal_sha256": "763786033e6eb17da75bd3b4de7202d778f2358767d5a4d257b874cff61a4b3d"
     },
     {
       "statement": "NATO holds a formal Article 4 consultation at the request of a member state between 2026-08-06 and 2026-09-30.",
@@ -3753,7 +3813,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No formal Article 4 consultation requested by a member state and held 2026-08-06 through 2026-09-30 is publicly confirmed by NATO or a member government, as read on 2026-09-30 - routine North Atlantic Council statements not qualifying; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "The criterion's own routine-statement exclusion is an operator judgment key.",
+      "sealed_at": "2026-07-31T05:36:21.905178+00:00",
+      "seal_sha256": "f4219d76b597c5a26cf2eb8ed4485a56ce6440bd4f7941b4ea5f788084d2aa63"
     },
     {
       "statement": "The Nasdaq Composite closes below 22,485 on at least one trading day between 2026-08-06 and 2026-11-30.",
@@ -3773,7 +3838,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "The official Nasdaq Composite close is 22,485 or higher on every session 2026-08-06 through 2026-11-30, per exchange or major financial press data as read on 2026-11-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "Named index official close against a fixed numeric threshold; mechanical.",
+      "sealed_at": "2026-07-31T05:36:21.905202+00:00",
+      "seal_sha256": "1d6107fd157ca0f8c21c26c8efb4c97dd86b9d88bfb2f6689c540e84e84184e1"
     },
     {
       "statement": "Public reporting attributes exploitation of Cisco CVE-2026-20316 to a specifically named nation-state actor or tracked threat group between 2026-08-06 and 2026-10-30.",
@@ -3792,7 +3862,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No report from Cisco Talos, CISA, or a major security vendor published 2026-08-06 through 2026-10-30 names a specific state actor or tracked group exploiting CVE-2026-20316, as read on 2026-10-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Operator judges whether attribution names a specific tracked actor versus generic activity.",
+      "sealed_at": "2026-07-31T05:36:21.905225+00:00",
+      "seal_sha256": "cbf3c71a2aceaf150d57c84496e871a2c5adb5c70e8d07a42aeeb64b21732c05"
     },
     {
       "statement": "All commercial shipping transits of the Strait of Hormuz halt for at least 72 consecutive hours between 2026-08-06 and 2026-11-30.",
@@ -3811,7 +3886,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No public confirmation by Lloyds List, the IMO, or the US Navy of zero commercial Strait of Hormuz transits across 72 consecutive hours falling 2026-08-06 through 2026-11-30 exists as read on 2026-11-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Operator reads whether a named authority's statement amounts to confirmation of a 72-hour total halt.",
+      "sealed_at": "2026-07-31T05:36:21.905248+00:00",
+      "seal_sha256": "089345c792da65ddee3226b81691c40ccac382be9487f9e2a31f2cb62fb81850"
     },
     {
       "statement": "The Federal Open Market Committee announces a reduction in the federal funds target range at a scheduled meeting held between 2026-08-06 and 2026-10-30.",
@@ -3831,7 +3911,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No FOMC statement issued 2026-08-06 through 2026-10-30 announces a lower federal funds target range, as read at federalreserve.gov on 2026-10-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "Single named instrument; mechanical comparison of announced target ranges.",
+      "sealed_at": "2026-07-31T05:36:21.905272+00:00",
+      "seal_sha256": "2c782c4ebfc16c6ba15dedfa1d320c547b6c99b7f22ac6261d8cfeba0cf8ac59"
     },
     {
       "statement": "The US Senate confirms Todd Blanche as Attorney General between 2026-08-06 and 2026-10-30.",
@@ -3850,7 +3935,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "The Senate record shows no successful confirmation vote seating Todd Blanche as Attorney General between 2026-08-06 and 2026-10-30, as read on 2026-10-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "Senate roll-call record is a single mechanical public instrument.",
+      "sealed_at": "2026-07-31T05:36:21.905294+00:00",
+      "seal_sha256": "9c296bc54764644f81adf6d6c5cb2b23cb78125114b036ec29a4eab02f5ffe34"
     },
     {
       "statement": "The confirmed death toll from the magnitude 6.8 Uto, Japan earthquake reaches 50 or more between 2026-08-06 and 2026-08-31.",
@@ -3870,7 +3960,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "Japanese government or major wire reporting dated 2026-08-06 through 2026-08-31 states no confirmed death toll of 50 or more from the magnitude 6.8 Uto earthquake, as read on 2026-08-31; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Toll confirmation and attribution read from official and wire reporting.",
+      "sealed_at": "2026-07-31T05:36:21.905318+00:00",
+      "seal_sha256": "4f039fc45f56d8614aaa18ff8b29e9e731bd675c53e8494aa1b17d78fe7230da"
     },
     {
       "statement": "A single attack in Pakistan kills at least 10 police or military personnel between 2026-08-06 and 2026-10-30.",
@@ -3888,7 +3983,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No single attack in Pakistan killing 10 or more police or military personnel between 2026-08-06 and 2026-10-30 is confirmed by credible international reporting, as read on 2026-10-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Single-attack scoping and credibility of reporting are operator judgments.",
+      "sealed_at": "2026-07-31T05:36:21.905342+00:00",
+      "seal_sha256": "60c546a3e3f9522f3564d978b66618484fd054296973cce4fbb7741701a7e4fe"
     },
     {
       "statement": "The United States military will conduct at least one additional publicly reported airstrike on targets inside Iranian territory between 2026-07-30 and 2026-08-13.",
@@ -3908,7 +4008,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No new U.S. strike on Iranian soil between 2026-07-30 and 2026-08-13 is reported by U.S. Central Command, the Pentagon, or a major wire service (Reuters, AP, BBC, Al Jazeera), as read on 2026-08-13; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Operator reads official and wire coverage for a qualifying new strike.",
+      "sealed_at": "2026-07-31T05:36:21.905368+00:00",
+      "seal_sha256": "6b7725f86376e682f6ed9aca6d5cc8ce25d00c3e8bddfb04c80b019cfad715ab"
     },
     {
       "statement": "Between 2026-07-30 and 2026-08-20, NATO will hold or announce formal Article 4 consultations in response to the reported Russian missile breach of Polish airspace.",
@@ -3929,7 +4034,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No report by NATO, a NATO member government, Reuters, or AP that Article 4 consultations were formally requested or held over the reported Russian missile breach of Polish airspace, dated 2026-07-30 through 2026-08-20, exists as read on 2026-08-20; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Incident-specific linkage of consultations to this breach is an operator judgment.",
+      "sealed_at": "2026-07-31T05:36:21.905392+00:00",
+      "seal_sha256": "70259033db4351dcd8da114a36b8e33061823ef924f14dc4ba2a3ca4c1e282f7"
     },
     {
       "statement": "Between 2026-07-30 and 2026-08-27, at least one additional commercial or military vessel will be struck by a drone, missile, or mine in the Persian Gulf, Red Sea, Strait of Hormuz, or eastern Mediterranean in connection with the Iran conflict.",
@@ -3950,7 +4060,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No new strike on a commercial or military vessel in the Persian Gulf, Red Sea, Strait of Hormuz, or eastern Mediterranean tied to the Iran conflict is reported by Reuters, AP, or Lloyds List dated 2026-07-30 through 2026-08-27, as read on 2026-08-27; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "The connection-to-conflict qualifier is an explicit operator attribution key.",
+      "sealed_at": "2026-07-31T05:36:21.905416+00:00",
+      "seal_sha256": "507512327333a78cb96298684f36262a8d2eead201c07cf104b955f4efdacb27"
     },
     {
       "statement": "The confirmed death toll from the magnitude 6.8 Uto, Japan earthquake will exceed 40 between 2026-07-30 and 2026-08-14.",
@@ -3970,7 +4085,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No report by Japanese government authorities, NHK, or a major wire service dated 2026-07-30 through 2026-08-14 states a confirmed death toll above 40 for the magnitude 6.8 Uto earthquake, as read on 2026-08-14; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Toll confirmation read from official and wire reporting.",
+      "sealed_at": "2026-07-31T05:36:21.905550+00:00",
+      "seal_sha256": "4a099d46a086bda30d600cf47bbecbe80be663dbcafbaa1fe4f265734d7456b8"
     },
     {
       "statement": "Between 2026-07-30 and 2026-09-15, a U.S. federal agency or critical-infrastructure operator will be publicly confirmed as compromised via the Cisco Secure Firewall Management Center hard-coded credential flaw CVE-2026-20316.",
@@ -3989,7 +4109,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No confirmation by CISA, a federal agency, or a major outlet (Reuters, The Hacker News, BleepingComputer) of a specific U.S. federal agency or critical-infrastructure victim compromised through CVE-2026-20316, dated 2026-07-30 through 2026-09-15, exists as read on 2026-09-15; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Victim-specificity and compromise attribution are operator readings of disclosure language.",
+      "sealed_at": "2026-07-31T05:36:21.905621+00:00",
+      "seal_sha256": "236b7cb09882403f6cdc223b280f1e4fec21c485309eaf13389048f3353c9260"
     },
     {
       "statement": "Meta Platforms stock will close lower than its 2026-07-30 closing price at least once more between 2026-07-31 and 2026-08-06.",
@@ -4008,7 +4133,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "Meta Platforms common stock records no daily close below its 2026-07-30 close on any trading day 2026-07-31 through 2026-08-06, per official exchange closing data as read on 2026-08-06; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "Official closing-price series against a fixed reference close; mechanical.",
+      "sealed_at": "2026-07-31T05:36:21.905658+00:00",
+      "seal_sha256": "63c4d7acc2c97a0a946ccea37cab1874f9fa33c30946472c68be7f430f7bcce0"
     },
     {
       "statement": "The U.S. Senate will vote to confirm Todd Blanche as Attorney General between 2026-07-30 and 2026-09-30.",
@@ -4026,7 +4156,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No Senate floor vote confirming Todd Blanche as Attorney General between 2026-07-30 and 2026-09-30 is reported by a major outlet, as read on 2026-09-30; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Resolution basis names outlet reporting rather than the Senate record; operator reads coverage.",
+      "sealed_at": "2026-07-31T05:36:21.905688+00:00",
+      "seal_sha256": "e49185b7c0657d64f66426772388399b72dde287d64ffeb29b003d06e232a5f9"
     },
     {
       "statement": "A militant group will publicly claim responsibility for the attack on the northwest Pakistan police post that killed 11 officers, between 2026-07-30 and 2026-08-13.",
@@ -4044,7 +4179,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No public claim of responsibility for the northwest Pakistan police-post attack that killed 11 officers, issued by a militant group and reported by a major outlet dated 2026-07-30 through 2026-08-13, exists as read on 2026-08-13; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Claim authenticity and incident linkage are operator readings of coverage.",
+      "sealed_at": "2026-07-31T05:36:21.905712+00:00",
+      "seal_sha256": "68f40c160e226e1ad5c16b28522cb91b6031845822c1ed09854ed4275073b2ec"
     },
     {
       "statement": "Confirmed fatalities from the current Crete, Greece wildfire event will exceed 5 between 2026-07-30 and 2026-08-20.",
@@ -4063,7 +4203,12 @@
       "source_packet": "kkr_packet_2026-07-30_1503.md",
       "status": "open",
       "resolved_date": null,
-      "notes": ""
+      "notes": "",
+      "failure_condition": "No report by Greek civil protection authorities or a major wire service dated 2026-07-30 through 2026-08-20 states more than 5 confirmed deaths from the current Crete wildfire event, as read on 2026-08-20; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Event scoping and toll confirmation read from official and wire reporting.",
+      "sealed_at": "2026-07-31T05:36:21.905736+00:00",
+      "seal_sha256": "9b5ef66ed2203cdf7a5c9c8580c4816efeedd803dace6e46307087c8b0ba5000"
     }
   ]
 }
