@@ -1,6 +1,6 @@
 ## WAR DESK EVIDENCE — corpus support for open rows
 
-Pull: `tg_events_2026-07-30_0745.json` · grades A only · rendered 301907Z JUL 26 · proposes only, resolves nothing
+Pull: `tg_events_2026-07-30_0745.json` · grades A only · rendered 310001Z JUL 26 · proposes only, resolves nothing
 
 **KKR-20260720-17** · `lmstudio/auto` · 50% · deadline 2026-08-12
 > The U.S. will announce a new round of sanctions against Iran’s Revolutionary Guard Corps by 2026-08-12, citing continued aggression in the region.
