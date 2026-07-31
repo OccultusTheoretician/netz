@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 301633Z JUL 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 310011Z JUL 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 191 issued across 8 forecaster arms · 166 open (2 past deadline, unresolved)
+Window: all-time · 191 issued across 8 forecaster arms · 164 open (5 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -16,7 +16,7 @@ Window: all-time · 191 issued across 8 forecaster arms · 166 open (2 past dead
 |---|---|---|---|---|---|---|---|---|---|
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 10 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto | 70 | 48 | 15 | 4 | 11 | 0.231 | 26.7% | 0.196 | -0.179 |
+| lmstudio/auto | 70 | 46 | 17 | 4 | 13 | 0.228 | 23.5% | 0.180 | -0.268 |
 | manual/fable | 45 | 45 | 0 | — | — | not computed | — | — | — |
 | manual/fable-5 | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | manual/opus-5 | 40 | 40 | 0 | — | — | not computed | — | — | — |
@@ -28,14 +28,14 @@ Window: all-time · 191 issued across 8 forecaster arms · 166 open (2 past dead
 
 *Under 30 resolved a Brier score is noise, not a record: `lmstudio/auto`.*
 
-**CALIBRATION — lmstudio/auto** (15 resolved)
+**CALIBRATION — lmstudio/auto** (17 resolved)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 0-20% | 1 | 0% |
-| 20-40% | 7 | 29% |
+| 20-40% | 8 | 25% |
 | 40-60% | 4 | 25% |
-| 60-80% | 3 | 33% |
+| 60-80% | 4 | 25% |
 
 ## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
 
@@ -43,15 +43,16 @@ A projection appears here when its window has closed and it has not yet been adj
 
 The bound that keeps this from becoming a parking space: a row sitting here more than **fourteen days** past its deadline is a defect in this desk, not in the world. The count is published on this page so that it is visible when it happens.
 
-- **KKR-20260720-04** (60%, due 2026-07-29) The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. — *resolves on:* The 10-year U.S. Treasury yield exceeds 4.8% on 2026-07-29, as reported by the U.S. Department of the Treasury or Bloomberg.
-- **KKR-20260724-02** (25%, due 2026-07-28) The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. — *resolves on:* At least one confirmed U.S. military strike on Iranian military or strategic infrastructure, reported by a major news outlet such as BBC World or Guardian World, occurred between 2026-07-25 and 2026-07-28.
+- **KKR-20260727-11** (35%, due 2026-07-30) New York City rental listings on StreetEasy and Zillow will show a 20% or greater drop in available units for rent in Manhattan and Brooklyn between 2026-07-27 and 2026-07-30. — *resolves on:* Public data from StreetEasy and Zillow, accessible via their official platforms, shows a 20% or greater decrease in available rental units in Manhattan and Brooklyn between 2026-07-27 and 2026-07-30.
+- **KKR-20260727-12** (30%, due 2026-07-30) A confirmed breach of a critical infrastructure provider's system via an unpatched n8n instance will be reported by 2026-07-30. — *resolves on:* A public report from a credible source confirms a breach of a critical infrastructure provider's system due to an unpatched n8n vulnerability by 2026-07-30.
+- **KKR-20260727-13** (25%, due 2026-07-30) The UK Labour Party's lead over Reform UK in the latest poll will narrow to less than 5 points by 2026-07-30. — *resolves on:* A YouGov poll published by the Guardian or BBC on or before 2026-07-30 shows Labour's lead over Reform UK at less than 5 percentage points.
+- **KKR-20260727-14** (35%, due 2026-07-30) Oil prices will fall below $85 a barrel on the London Brent market by 2026-07-30. — *resolves on:* The London Brent crude oil price, as reported by Reuters or Bloomberg, drops below $85 per barrel by 2026-07-30.
+- **KKR-20260727-15** (40%, due 2026-07-30) The Home Office will publicly confirm the blocking of the evacuation of women and children from Gaza by 2026-07-30. — *resolves on:* A public statement from the UK Home Office, published by the Guardian or BBC, confirms the blocking of the evacuation of women and children from Gaza by 2026-07-30.
 
 ## OPEN PROJECTIONS
 
 | id | arm | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|---|
-| KKR-20260724-02 | `lmstudio/auto` | 2026-07-24 | 2026-07-28 | 25% | military_conflict | The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. |
-| KKR-20260720-04 | `lmstudio/auto` | 2026-07-20 | 2026-07-29 | 60% | economics/markets | The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. |
 | KKR-20260727-11 | `lmstudio/auto` | 2026-07-27 | 2026-07-30 | 35% | economics/markets | New York City rental listings on StreetEasy and Zillow will show a 20% or greater drop in available units for rent in Manhattan and Brooklyn between 2026-07-27 and 2026-07-30. |
 | KKR-20260727-12 | `lmstudio/auto` | 2026-07-27 | 2026-07-30 | 30% | cyber | A confirmed breach of a critical infrastructure provider's system via an unpatched n8n instance will be reported by 2026-07-30. |
 | KKR-20260727-13 | `lmstudio/auto` | 2026-07-27 | 2026-07-30 | 25% | political | The UK Labour Party's lead over Reform UK in the latest poll will narrow to less than 5 points by 2026-07-30. |
@@ -219,6 +220,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
+- **✗ MISS** KKR-20260720-04 [`lmstudio/auto`] (60%, due 2026-07-29, resolved 2026-07-31): The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. — *10-year Treasury constant-maturity yield closed 2026-07-29 at approximately 4.66% following the FOMC decision to hold rates. CNBC quote data for the session shows open 4.671%, day high 4.712%, day low 4.651%, prior close 4.622%. The 4.8% threshold was not reached on a closing or intraday basis. Trading Economics reported the 10-year rising to 4.66% on 07-29 after the Fed left the funds rate unchanged with three dissents favoring a 25bp increase.*
+- **✗ MISS** KKR-20260724-02 [`lmstudio/auto`] (25%, due 2026-07-28, resolved 2026-07-31): The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. — *Window 2026-07-25 to 2026-07-28. No US strike on Iranian military or strategic infrastructure reported in-window. Al Jazeera 2026-07-26 reported a second consecutive day of no strikes by either side amid renewed diplomatic efforts. CENTCOM's 2026-07-25 release concerns naval blockade enforcement. Iran's attempted attack on US forces 07-28 runs opposite to the criterion. US retaliatory strikes on Bandar Abbas and Kish began 2026-07-29 20:00 ET per CENTCOM, corroborated by CNN and Bloomberg — one day past deadline. Disconfirming: CENTCOM reported disabling two vessels enforcing the blockade of Iranian ports inside the window; ruled not a strike on infrastructure, criterion-drafting note for future issuance.*
 - **✗ MISS** KKR-20260720-02 [`lmstudio/auto`] (40%, due 2026-07-28, resolved 2026-07-28): The Nasdaq Composite Index will close below 18,000 on 2026-07-28, based on official market data from Yahoo Finance or Bloomberg.
 - **✗ MISS** KKR-20260723-01 [`lmstudio/auto`] (65%, due 2026-07-27, resolved 2026-07-28): Between 2026-07-24 and 2026-07-27, Brent crude oil will close above $100 per barrel for three consecutive trading days. — *2026-07-28 shows Brent 86.81; never approached the threshold.*
 - **✓ HIT** KKR-20260720-08 [`lmstudio/auto`] (45%, due 2026-07-23, resolved 2026-07-24): The Hugging Face breach involving an autonomous AI agent will be confirmed by a public statement from Hugging Face or a major cybersecurity organization within 72 hours of 2026-07-20. — *[claude] Hugging Face published its own security incident disclosure confirming an intrusion driven end to end by an autonomous AI agent system. BleepingComputer covered it 2026-07-20 under the headline that Hugging Face warns an autonomous AI agent hacked its network; The Hacker News covered it the same day; Axios also reported the company statement 2026-07-20.*
