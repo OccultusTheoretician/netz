@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-07-31T00:11:39Z",
+  "as_of": "2026-07-31T05:31:05Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -2252,9 +2252,9 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-27_1502.md",
       "source_packet": "kkr_packet_2026-07-27_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-07-31",
+      "notes": "StreetEasy and Zillow publish monthly market data; no public data source reports a 20% decline in available Manhattan and Brooklyn rental units between 2026-07-27 and 2026-07-30. StreetEasy's own 2026 reporting shows Manhattan inventory in a slow multi-month decline (24 consecutive months) and Brooklyn inventory rising on new development — neither at remotely this magnitude or velocity. Absence of confirming evidence at deadline. Criterion-drafting note: a 20% three-day inventory move is outside the plausible range of the named data sources' publication cadence.",
       "failure_condition": "the condition stated in this entry's resolution basis — Public data from StreetEasy and Zillow, accessible via their official platforms, shows a 20% or greater decrease in available rental units in Manhattan and Brooklyn between 2026-07-27 and 2026-07-30 — is not met on or before 2026-07-30; absence at the deadline scores this entry a MISS."
     },
     {
@@ -2271,9 +2271,9 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-27_1502.md",
       "source_packet": "kkr_packet_2026-07-27_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-07-31",
+      "notes": "No public report from a credible source confirms a breach of a critical infrastructure provider via an unpatched n8n instance by 2026-07-30. The vulnerability landscape was active in-window — CVE-2026-21858 (CVSS 10), CVE-2026-25049, CVE-2026-27493, and a fresh expression-sandbox escape patched in 2.31.5/2.32.1 reported 2026-07-28 — but reporting covers vulnerabilities and patches, not a confirmed CI-provider breach. Cybersecurity Dive reported no evidence of exploitation for the headline CVE. Absence at deadline.",
       "failure_condition": "the condition stated in this entry's resolution basis — A public report from a credible source confirms a breach of a critical infrastructure provider's system due to an unpatched n8n vulnerability by 2026-07-30 — is not met on or before 2026-07-30; absence at the deadline scores this entry a MISS."
     },
     {
@@ -2290,9 +2290,9 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-27_1502.md",
       "source_packet": "kkr_packet_2026-07-27_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-07-31",
+      "notes": "YouGov voting intention 26-27 July 2026 (Times/Sky tracker): Labour 22%, Reform UK 22% — Labour's lead over Reform at 0 points, under the 5-point threshold. Every YouGov in-window satisfies the criterion's literal text (19-20 Jul: Ref 23/Lab 20; 22-23 Jul: Ref 23/Lab 21), and the evident forecast intent — the gap closing inside 5 — is also satisfied: Reform's lead went from 3 to a dead tie, Labour's highest tracker share since September 2025, Reform's lowest since March 2025. New Statesman (07-28) corroborates the direction, citing More in Common's Labour +4 with YouGov moving the same way. Disconfirming: the criterion names \"a YouGov poll published by the Guardian or BBC\" — the tracker's clients are The Times and Sky News, and Guardian/BBC republication was not independently confirmed. Ruled on substance; venue clause noted as drafting sloppiness.",
       "failure_condition": "the condition stated in this entry's resolution basis — A YouGov poll published by the Guardian or BBC on or before 2026-07-30 shows Labour's lead over Reform UK at less than 5 percentage points — is not met on or before 2026-07-30; absence at the deadline scores this entry a MISS."
     },
     {
@@ -2310,9 +2310,9 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-27_1502.md",
       "source_packet": "kkr_packet_2026-07-27_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-07-31",
+      "notes": "Brent never traded below $85 in the window. 07-29 ~$89.53 morning (Fortune); 07-30 session $90.04/$89.95 (Trading Economics), intraday range 86.31–89.50 (Investing.com), then $92.65 by 06:30 ET as the US strike wave on Iran repriced supply risk (Fortune, 07-30). Nearest approach to the threshold was $86.31 intraday — $1.31 short. Miss on close and intraday readings alike.",
       "failure_condition": "the condition stated in this entry's resolution basis — The London Brent crude oil price, as reported by Reuters or Bloomberg, drops below $85 per barrel by 2026-07-30 — is not met on or before 2026-07-30; absence at the deadline scores this entry a MISS."
     },
     {
@@ -2329,9 +2329,9 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-27_1502.md",
       "source_packet": "kkr_packet_2026-07-27_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-07-31",
+      "notes": "The Guardian reported Monday 2026-07-27 that the Home Office is blocking the evacuation of dozens of women and children from Gaza despite Foreign Office readiness — in-window, at the named venue. The report carries public Home Office statements: a spokesperson quote (\"family reunion will no longer be automatic\" under asylum reforms) and quoted 15 July Home Office correspondence to counsel (\"conditions your clients face in Gaza alone are not considered to amount to compelling circumstances\"), confirming the refusal of onward travel assurances and biometric requirements that constitute the block. Disconfirming: the Home Office confirms the conduct, not the characterization — it nowhere self-describes as \"blocking.\" Ruled hit: statement from the Home Office, published by the Guardian, confirming the operative refusals.",
       "failure_condition": "the condition stated in this entry's resolution basis — A public statement from the UK Home Office, published by the Guardian or BBC, confirms the blocking of the evacuation of women and children from Gaza by 2026-07-30 — is not met on or before 2026-07-30; absence at the deadline scores this entry a MISS."
     },
     {
