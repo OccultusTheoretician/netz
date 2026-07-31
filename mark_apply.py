@@ -59,7 +59,7 @@ def patch_netz(p: Path):
     s = orig = p.read_text(encoding="utf-8")
     # the embedded base64 mark: ~40 KB baked into every generated page
     s = re.sub(r"CROW_SVG = '''<img class=\"crow-mark\"[^\n]*?'''",
-               "CROW_SVG = '''<img class=\"crow-mark\" alt=\"NebelKr&auml;he\" "
+               "CROW_SVG = '''<img class=\"crow-mark\" alt=\"Nebelkr&auml;he\" "
                "src=\"crow_mark.svg\"/>'''", s, count=1, flags=re.S)
     s = s.replace('<img src="crow.png" alt=""', '<img src="crow_mark.svg" alt=""')
     # the generated pages' own <head> icon link, single-quoted inside an f-string
