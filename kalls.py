@@ -535,7 +535,7 @@ def cmd_token(a) -> int:
     Phase 2: fetch the served bytes, digest them, request the token, store it
     beside the hashlog, append the index. Nothing is committed by this tool.
     """
-    import subprocess, tempfile, urllib.request, urllib.error
+    import os, subprocess, tempfile, urllib.request, urllib.error
     def fetch(url: str) -> bytes:
         if not str(url).startswith(("http://", "https://")):
             return Path(url).read_bytes()
@@ -564,7 +564,9 @@ def cmd_token(a) -> int:
         print("python kalls.py token")
         return 0
     dig = hashlib.sha256(served).hexdigest()
-    tmp = Path(tempfile.mkstemp(suffix=".served.json")[1]); tmp.write_bytes(served)
+    _fd, _p = tempfile.mkstemp(suffix=".served.json")
+    os.close(_fd)  # Windows: an open descriptor blocks the later unlink
+    tmp = Path(_p); tmp.write_bytes(served)
     tsq = local.with_suffix(local.suffix + ".tsq")
     tsr = local.with_suffix(local.suffix + ".tsr")
     made = False
