@@ -397,6 +397,17 @@ def cmd_ship(args):
                         if l.strip().startswith(("replaced", "inserted"))]
             if _stamped:
                 print(dim(f"  nav: {len(_stamped)} page(s) re-stamped"))
+    # NOTHING-TO-SHIP GATE (KK17): a ship with no payload prints a
+    # message describing work the commit does not contain - the
+    # d77e59c class. Clean tree + remote in sync = refuse. Clean but
+    # ahead = push-only, which the tolerant sequence below performs.
+    _ds, _ = check_dirty()
+    _rs, _ = check_remote()
+    if _ds == "pass" and _rs == "pass":
+        print(bad("\n  NOTHING TO SHIP \u2014 working tree clean, remote in sync."))
+        print(dim("  A message without a payload is the d77e59c defect class."))
+        print(dim("  Make the change first; FIX prints, or nothing ships."))
+        return 1
     globals()["PREFLIGHT"] = True
     failed = run_verify()
     globals()["PREFLIGHT"] = False
