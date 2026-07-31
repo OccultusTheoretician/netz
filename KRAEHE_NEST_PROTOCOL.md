@@ -1,6 +1,6 @@
 # KRÄHE'S NEST PROTOCOL
 ## First Edition · 2026 · Revision 3
-**KNP-26 · Issued by the Retro-Prescient Audit Desk**
+**KNP-26 · Issued by the Retro-Prescient Audit™ Desk**
 *Implementer specification for the Selective-Disclosure Commitment Method (KNM-26). This document is buildable-to: an implementer who follows it produces a conformant sealer, hashlog, and aggregator without further reference to the desk.*
 
 **PROVENANCE: DRAFT** (Claude-drafted under direction; revision 2 of 2026-07-26 UTC. His only after rework. The JSON shapes are normative and the prose explanatory. The 2.01 construction was verified against the demonstration clutch on 2026-07-26 UTC, the day following the 2026-07-25T18:30:00Z seal: all nine published commitments reproduce under it, independently re-derived from the vault by a second working session with no sight of the sealing code. The construction paragraph survived its first audit unamended.)
@@ -213,7 +213,7 @@ A match proves the revealed content is exactly what was sealed at `timestamp`, u
 
 ---
 
-*End of KNP-26. The method this protocol implements is KNM-26. Together they define Krähe's Nest: a federated, trustless, selective-disclosure prediction-commitment protocol in which each committer holds their own vault and the Nest only reads.*
+*End of KNP-26. The method this protocol implements is KNM-26. Together they define Krähe's Nest™: a federated, trustless, selective-disclosure prediction-commitment protocol in which each committer holds their own vault and the Nest only reads.*
 
 ---
 

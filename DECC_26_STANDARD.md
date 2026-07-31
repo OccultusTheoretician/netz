@@ -1,8 +1,8 @@
-# DECC-26 — DENOMINATOR-COMMITTED EVIDENCE STANDARD
+# DECC-26™ — DENOMINATOR-COMMITTED EVIDENCE STANDARD
 ## Evidentiary completeness for machine-generated records
 ### First Edition · 2026 · Revision 1
 
-**Issued by the Retro-Prescient Audit Desk**
+**Issued by the Retro-Prescient Audit™ Desk**
 *Companion to the reference implementation `denom.py`. This document defines the
 METHOD; the implementation is one conformant build of it.*
 

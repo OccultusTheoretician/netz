@@ -1,6 +1,6 @@
 # RETRO-PRESCIENT AUDIT STANDARDS
 ## First Edition · 2026
-**RPAS-26 · Issued by the Retro-Prescient Audit Desk**
+**RPAS-26 · Issued by the Retro-Prescient Audit™ Desk**
 
 **PROVENANCE: DRAFT (Claude-drafted under direction, 2026-07-24, codifying the desk's existing instruments — the Battery, the Prediction Protocol, the war-desk grading rules, the Wohlstetter protocol. His only after rework pass. Definitional language carried from the standing instruments.)**
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-decc_conformance.py — the DECC-26 conformance test suite.
+decc_conformance.py — the DECC-26™ conformance test suite.
 Version 0.1.0 · standard library only.
 
 WHY THIS FILE IS THE ASSET

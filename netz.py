@@ -719,7 +719,7 @@ hr{border:0; height:1px; background:var(--line2); margin:2.6rem 0}
 }
 """
 
-# The crow mark — the real NebelKrähe crest, embedded.
+# The crow mark — the real Nebelkrähe crest, embedded.
 CROW_SVG = '''<img class="crow-mark" alt="NebelKr&auml;he" src="crow_mark.svg"/>'''
 
 
@@ -1002,7 +1002,7 @@ function netzTab(id, btn){
             f"<link rel='stylesheet' href='brand.css'>"
             f"<script defer src='brand.js'></script>"
             f"<link rel='apple-touch-icon' href='apple-touch-icon.png'>"
-            f"<title>{html.escape(title)} · NebelKrähe</title>{_meta}<style>{HTML_CSS}</style></head>"
+            f"<title>{html.escape(title)} · Nebelkrähe</title>{_meta}<style>{HTML_CSS}</style></head>"
             f"<body>{fog}{desknav}<main>{page}</main>{tabjs}<script src='kontrols.js' defer></script></body></html>")
 
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-denom_capture.py — capture completeness (DECC-26 Level 4).
+denom_capture.py — capture completeness (DECC-26™ Level 4).
 Version 0.1.0 · companion to denom.py · standard library only.
 
 THE GAP THIS CLOSES

@@ -1,11 +1,11 @@
 # THE SELECTIVE-DISCLOSURE COMMITMENT METHOD
 ## First Edition · 2026 · Revision 3
-**KNM-26 · Issued by the Retro-Prescient Audit Desk**
+**KNM-26 · Issued by the Retro-Prescient Audit™ Desk**
 *Companion to the protocol specification KNP-26. This document formalizes the method; KNP-26 specifies the wire format an implementer builds to.*
 
 **PROVENANCE: DRAFT** (Claude-drafted under direction, revision 2 of 2026-07-25. His only after rework pass. The novel-combination claim at 3.03 and the prior-art boundary at Chapter 7 are stated conservatively and are his to verify before any ownership assertion is made in public. Every professional-standards citation in this document is named at concept level and requires paragraph-level verification against the current authoritative text before it is printed as a citation.)
 
-**MARK:** *Krähe's Nest* and *Krähe's Kalls* are coined marks pending; first use seals by the desk's standing three-clock mechanics and this header carries it. "KNM" is the citation prefix, not the mark.
+**MARK:** *Krähe's Nest™* and *Krähe's Kalls™* are coined marks pending; first use seals by the desk's standing three-clock mechanics and this header carries it. "KNM" is the citation prefix, not the mark.
 
 **WHAT CHANGED IN REVISION 2.** Three substantive additions and one correction. Added: a two-level conformance structure separating discretionary reveal from scheduled reveal (Chapter 5); a custody and key-management chapter, absent from revision 1 and the method's largest unaddressed control weakness (Chapter 4); and an independence chapter stating the discretions that survive the mechanism, as a disclosed scope limitation rather than an implied absence (Chapter 6). Corrected: revision 1's paragraph 3.01 described a commitment over statement, resolution basis, probability, and deadline, while KNP-26 revision 1 specified a preimage excluding probability and deadline. The two documents contradicted each other and the reference clutch could not have satisfied both. The construction actually used by the demonstration clutch governs; 3.01 and KNP 2.01 are reconciled to it, and the discrepancy is printed in the revision history rather than silently repaired.
 
