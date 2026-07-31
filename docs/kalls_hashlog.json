@@ -11,7 +11,8 @@
     "separator": "|",
     "hash": "SHA-256",
     "encoding": "UTF-8",
-    "pipe_escape": "\\u007C"
+    "pipe_escape": "\\u007C",
+    "version": "knp-1"
   },
   "anchor": {
     "mechanism": "public version-control history",
@@ -19,7 +20,12 @@
     "repository": "https://github.com/OccultusTheoretician/netz",
     "path": "docs/kalls_hashlog.json",
     "history": "https://github.com/OccultusTheoretician/netz/commits/main/docs/kalls_hashlog.json",
-    "verify": "Clone the repository, walk the history of this path, and confirm no record was ever removed and no commitment ever altered. python knp_verify.py <current> --previous <earlier> asserts it across any two snapshots."
+    "verify": "Clone the repository, walk the history of this path, and confirm no record was ever removed and no commitment ever altered. python knp_verify.py <current> --previous <earlier> asserts it across any two snapshots.",
+    "rfc3161": {
+      "index": "docs/kalls_anchor_tokens.json",
+      "tsa": "https://freetsa.org/tsr",
+      "note": "Each entry timestamps the SHA-256 of this file as served; the token cannot be un-issued by the committer (KNP 4.03c)."
+    }
   },
   "disclosure": "probability, deadline and domain are published OUTSIDE the canonical preimage and are therefore NOT BOUND by the commitment hash. They are anchored only by the append-only record described in 'anchor'. The fields bound by the hash are exactly those named in 'construction.preimage_order'. A reader checking a reveal recomputes over the preimage fields alone; the published commitment governs.",
   "records": [
@@ -103,6 +109,41 @@
       "deadline": "2026-10-31",
       "status": "SEALED",
       "domain": "method/calibration"
+    }
+  ],
+  "construction_history": [
+    {
+      "version": "knp-1",
+      "preimage_order": [
+        "id",
+        "timestamp",
+        "statement",
+        "resolution_basis",
+        "salt"
+      ],
+      "separator": "|",
+      "hash": "SHA-256",
+      "encoding": "UTF-8",
+      "pipe_escape": "\\u007C",
+      "effective": "2026-07-25"
+    },
+    {
+      "version": "knp-2",
+      "preimage_order": [
+        "id",
+        "timestamp",
+        "statement",
+        "resolution_basis",
+        "probability",
+        "deadline",
+        "salt"
+      ],
+      "separator": "|",
+      "hash": "SHA-256",
+      "encoding": "UTF-8",
+      "pipe_escape": "\\u007C",
+      "probability_render": "integer percent, decimal ASCII (KNP 2.01b)",
+      "effective": "2026-07-29"
     }
   ]
 }
