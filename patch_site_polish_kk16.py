@@ -6,14 +6,14 @@ A. LEGAL-PAGE LEGIBILITY — privacy.html/terms.html declare no text or link col
    links to default blue/purple. Adds body/h1/strong/a colors from the site palette
    to both pages AND to patch_legal_pages.py (the generator of record).
 B. CASING — every remaining `NebelK` (capital K, all encodings: ä / &auml; / &#228;)
-   becomes `Nebelk`. Skips, by name and with reason: the dated site-audit record and
+   becomes `NebelK`. Skips, by name and with reason: the dated site-audit record and
    the four patcher scripts whose NebelK strings are search patterns for this defect.
-C. COPYRIGHT — footer line `© 2026 Nebelkrähe` on every docs/*.html that has a
+C. COPYRIGHT — footer line `© 2026 NebelKrähe` on every docs/*.html that has a
    <footer> and lacks one. Legal pages already carry it; pages with no footer element
    are left alone.
 D. HERO — the masthead crow was 38x38 on a 729x300 SVG (letterboxed to a ~15px-tall
    bird); enlarged to a proper lockup. The leuchte's aria-label promises "the
-   Nebelkrähe sigil within sighting rings" but the center held only a 5px hub — the
+   NebelKrähe sigil within sighting rings" but the center held only a 5px hub — the
    sigil now sits centered under the rings, with the ticker and orbit above it.
 
 Idempotent: run twice, second run reports nothing to do. All edits are byte-level
@@ -39,7 +39,7 @@ FOOT_RULE = b"footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid #26
 LEGIBILITY_ADD = FOOT_RULE + b"\nbody{color:#c9c9c2}h1{color:#e8eaed}strong{color:#e8eaed}a{color:#dcb65e}"
 LEGIBILITY_MARK = b"body{color:#c9c9c2}"
 
-COPY_LINE = "<br>\u00a9 2026 Nebelkr\u00e4he".encode("utf-8")
+COPY_LINE = "<br>\u00a9 2026 NebelKr\u00e4he".encode("utf-8")
 COPY_MARK = "\u00a9 2026".encode("utf-8")
 
 HERO = [
@@ -135,7 +135,7 @@ def main():
         n = b.count(b"NebelK")
         if n:
             if a.apply:
-                p.write_bytes(b.replace(b"NebelK", b"Nebelk"))
+                p.write_bytes(b.replace(b"NebelK", b"NebelK"))
             log.append(("FIX" if a.apply else "WOULD", f, f"casing x{n}")); hits += n
 
     # C — footer copyright on docs pages that have a footer and lack the mark
@@ -154,7 +154,7 @@ def main():
             if j > i:
                 if a.apply:
                     p.write_bytes(b[:j] + COPY_LINE + b[j:])
-                log.append(("FIX" if a.apply else "WOULD", f, "footer \u00a9 2026 Nebelkr\u00e4he"))
+                log.append(("FIX" if a.apply else "WOULD", f, "footer \u00a9 2026 NebelKr\u00e4he"))
                 break
 
     # D — hero

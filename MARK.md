@@ -1,4 +1,4 @@
-# THE MARK — Nebelkrähe
+# THE MARK — NebelKrähe
 
 *Specification of record. Revision 1, 2026-07-27.*
 

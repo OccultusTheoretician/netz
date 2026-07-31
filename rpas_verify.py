@@ -349,7 +349,7 @@ def selftest():
     missing = dict(v); missing.pop("keyed_keyless_rationale")
     stable = HEX64.match(seal_digest(missing)) is not None
     print(f"  absent-field-serializes-as-null:  {'PASS' if stable else 'FAIL'}")
-    u = dict(v, statement="Nebelkrähe — Straße, 日本語.")
+    u = dict(v, statement="NebelKrähe — Straße, 日本語.")
     raw = json.dumps({k: u.get(k) for k in FIELDS}, sort_keys=True,
                      ensure_ascii=False).encode("utf-8")
     esc = json.dumps({k: u.get(k) for k in FIELDS}, sort_keys=True,
