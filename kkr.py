@@ -154,12 +154,19 @@ def parse_projections(raw: str) -> list:
         try:
             prob = max(5, min(95, int(p["probability"])))
             datetime.strptime(p["deadline"], "%Y-%m-%d")
-            out.append({"statement": str(p["statement"]).strip(),
-                        "domain": str(p.get("domain", "general")).strip().lower(),
-                        "probability": prob,
-                        "resolution": str(p["resolution"]).strip(),
-                        "deadline": p["deadline"],
-                        "citations": [int(c) for c in p.get("citations", [])]})
+            entry = {"statement": str(p["statement"]).strip(),
+                     "domain": str(p.get("domain", "general")).strip().lower(),
+                     "probability": prob,
+                     "resolution": str(p["resolution"]).strip(),
+                     "deadline": p["deadline"],
+                     "citations": [int(c) for c in p.get("citations", [])]}
+            # RPAS 4.02g passthrough: a batch arriving with its seal
+            # fields enters sealed; absent fields change nothing.
+            for k in ("failure_condition", "keyed_keyless",
+                      "keyed_keyless_rationale"):
+                if str(p.get(k, "")).strip():
+                    entry[k] = str(p[k]).strip()
+            out.append(entry)
         except (KeyError, ValueError, TypeError):
             continue
     return out
