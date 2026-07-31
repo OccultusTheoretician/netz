@@ -604,7 +604,7 @@ main{max-width:900px; margin:0 auto; padding:0 1.25rem 4rem}
 .crest-text{display:flex; flex-direction:column; gap:.2rem; flex:1}
 .crest-org{font-family:'IBM Plex Mono',monospace; font-size:.7rem; font-weight:600;
   letter-spacing:.32em; color:var(--crow); text-transform:uppercase}
-.crest-title{font-family:'Spectral',Georgia,serif; font-size:1.65rem; font-weight:600;
+.crest-title{margin:0; font-family:'Spectral',Georgia,serif; font-size:1.65rem; font-weight:600;
   color:var(--fg2); letter-spacing:.01em; line-height:1.15; margin:.15rem 0}
 .crest-line{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--brass2);
   letter-spacing:.06em; font-weight:500}
@@ -890,7 +890,7 @@ def render_html(md: str, title: str) -> str:
         f"<span class='dtg'>{dtg}</span></div>"
         f"<div class='crest'>{CROW_SVG}<div class='crest-text'>"
         f"<div class='crest-org'>NEBELKRÄHE · OSINT DESK</div>"
-        f"<div class='crest-title'>THE PRESCIENT DESK\u2122 · {doc_kind}</div>"
+        f"<h1 class='crest-title'>THE PRESCIENT DESK\u2122 · {doc_kind}</h1>"
         f"<div class='crest-line'>Forecasts kept on the record</div>"
         f"<div class='crest-motto'>Calling our shots in the fog. Soaring through our misses.</div>"
         f"</div></div>{tiles}</div>")
@@ -996,13 +996,27 @@ function netzTab(id, btn){
         f'<meta property="og:type" content="website">'
         f'<meta name="twitter:card" content="summary_large_image">'
     )
+    # Structured data: tells a crawler what this page IS. Without it a
+    # search for the desk's own name surfaces unrelated audit firms.
+    _jsonld = (
+        '<script type="application/ld+json">{"@context":"https://schema.org",'
+        '"@type":"WebPage","name":"' + _ttl + '",'
+        '"description":"' + _desc.replace('"', "'") + '",'
+        '"url":"' + _site + '/' + _slug + '",'
+        '"isPartOf":{"@type":"WebSite","name":"Retro-Prescient Audit",'
+        '"url":"' + _site + '"},'
+        '"publisher":{"@type":"Organization","name":"The Prescient Desk"}}'
+        '</script>'
+    )
     return (f"<!doctype html><html lang='en'><head><meta charset='utf-8'>"
             f"<meta name='viewport' content='width=device-width,initial-scale=1'>"
             f"<link rel='icon' type='image/svg+xml' href='crow_mark.svg'>"
             f"<link rel='stylesheet' href='brand.css'>"
             f"<script defer src='brand.js'></script>"
             f"<link rel='apple-touch-icon' href='apple-touch-icon.png'>"
-            f"<title>{html.escape(title)} · Nebelkrähe</title>{_meta}<style>{HTML_CSS}</style></head>"
+            f"<link rel='canonical' href='{_site}/{_slug}'>"
+            f"<title>{html.escape(title)} · Nebelkrähe</title>{_meta}"
+            f"{_jsonld}<style>{HTML_CSS}</style></head>"
             f"<body>{fog}{desknav}<main>{page}</main>{tabjs}<script src='kontrols.js' defer></script></body></html>")
 
 

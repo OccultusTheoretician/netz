@@ -134,7 +134,7 @@ def render(pad=4, square=False, mono=None, trim=None, fog=True, plate=None,
                         f'fill="{dim}">{tagline}</text>')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" '
             f'width="{W:.0f}" height="{H:.0f}" role="img" '
-            f'aria-label="NebelKr&#228;he">'
+            f'aria-label="Nebelkr&#228;he">'
             f'<defs>{grad}<clipPath id="body"><path d="{P["body"]}"/></clipPath></defs>'
             f'{bg}'
             f'<path d="{P["body"]}" fill="{fill}"/>'
@@ -221,7 +221,7 @@ def wordmark_only(reverse=False, mono=None, tagline=True):
               f'font-size="{fs*0.24:.1f}" letter-spacing="{fs*0.11:.1f}" '
               f'fill="{dim}">THE PRESCIENT DESK</text>')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
-            f'width="{W}" height="{H}" role="img" aria-label="NebelKr&#228;he">{t}</svg>\n')
+            f'width="{W}" height="{H}" role="img" aria-label="Nebelkr&#228;he">{t}</svg>\n')
 
 
 def monogram(reverse=False):
@@ -238,7 +238,7 @@ def monogram(reverse=False):
     grey = "#9aa0a8" if reverse else M.GREY
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" '
             f'width="{side:.0f}" height="{side:.0f}" role="img" '
-            f'aria-label="NebelKr&#228;he monogram">'
+            f'aria-label="Nebelkr&#228;he monogram">'
             f'<defs><clipPath id="b"><path d="{P["body"]}"/></clipPath></defs>'
             f'<path d="{P["body"]}" fill="{ink}"/>'
             f'<g clip-path="url(#b)"><path d="{P["neck"]}" fill="none" stroke="{grey}" '
