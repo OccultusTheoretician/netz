@@ -233,7 +233,7 @@ def main():
         f'<figure><figcaption>{f}</figcaption>'
         f'<img src="{f}" alt=""></figure>' for f in files)
     (OUT / "export.html").write_text(f"""<!doctype html><meta charset="utf-8">
-<title>NebelKr&auml;he &middot; banner export</title>
+<title>Nebelkr&auml;he &middot; banner export</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>body{{margin:0;background:#15171a;color:#cfd3d8;
 font:14px/1.6 ui-monospace,Menlo,Consolas,monospace;padding:2rem}}

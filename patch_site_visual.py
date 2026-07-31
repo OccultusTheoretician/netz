@@ -119,7 +119,7 @@ CROW_CSS = """<style id="masthead-crow-style">
   letter-spacing:.2em;text-transform:uppercase;color:#5A6675;margin-top:.15rem}
 </style>"""
 
-CROW_HTML = """<div class="masthead-crow" aria-label="NebelKr&auml;he">
+CROW_HTML = """<div class="masthead-crow" aria-label="Nebelkr&auml;he">
   <img src="crow_mark.svg" alt="">
   <div><div class="mc-word">Nebelkr&auml;he</div><div class="mc-sub">The Prescient Desk</div></div>
 </div>"""
