@@ -284,7 +284,8 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     plural = "s" if len(arms) != 1 else ""
     out.append(f"{len(data['projections'])} issued all-time across {len(arms)} "
                f"forecaster arm{plural} · {open_n} open "
-               f"({len(overdue)} past deadline — run `python kkr.py --resolve`). "
+               f"({len(overdue)} past deadline — run "
+               f"<code translate=\"no\">python kkr.py --resolve</code>). "
                f"**No pooled score is published** — a Brier score belongs to one "
                f"forecaster; an average across arms is nobody's record.\n")
     mine = arms.get(model_tag, {"issued": 0, "open": 0, "n_resolved": 0})

@@ -97,7 +97,7 @@ def svg(pad=4, square=False, plate=None):
         f'<stop offset="{o:.2f}" stop-color="#{c[0]:02x}{c[1]:02x}{c[2]:02x}" stop-opacity="{a}"/>'
         for o,c,a in FOG)
     bg = f'\n  <rect width="{w}" height="{h}" fill="{plate}"/>' if plate else ""
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="NebelKr&#228;he mark">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Nebelkr&#228;he mark">
   <defs>
     <linearGradient id="fog" gradientUnits="userSpaceOnUse" x1="{g1[0]}" y1="{g1[1]}" x2="{g2[0]}" y2="{g2[1]}">
       {stops}
