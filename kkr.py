@@ -202,6 +202,93 @@ BARE_TOKENS = {"yes", "no", "true", "false", "maybe", "n/a", "tbd",
                "confirmed", "unconfirmed", "correct", "incorrect"}
 
 
+_CITE_STOP = set("""a an and are as at be been being between by for from had has have
+her his in into is it its of on or that the their there these they this to was were
+will with within after before during over under more most least than then when where
+which who whom whose about above below across against among around because but each
+either how if into just like near new now only other same since so some such through
+until up upon very what while would could should may might must can also per not no
+report reports reported reporting confirm confirms confirmed confirming public
+statement source sources credible outlet outlets news least via data official"""
+.split())
+
+
+def _content_words(s: str) -> set:
+    """Substantive vocabulary only. Dates, pure numbers and identifier tokens
+    are stripped so a shared '2026' or 'CVE' can never read as support."""
+    toks = re.findall(r"[A-Za-z][A-Za-z'-]{2,}", s.lower())
+    out = set()
+    for t in toks:
+        t = t.strip("'-")
+        if len(t) < 4 or t in _CITE_STOP:
+            continue
+        out.add(t[:-1] if t.endswith("s") and len(t) > 4 else t)
+    return out
+
+
+def _citation_support(p: dict):
+    """Do the cited report items share ANY substantive vocabulary with the
+    claim? Blunt by design - it cannot judge relevance, only whether the
+    forecaster's declared priors are readable as priors at all.
+
+    Returns a rejection reason, or None. Returns None (passes) whenever the
+    source report is unavailable: an absent file is not evidence of a bad
+    citation, and the gate must not reject on what it cannot see.
+    """
+    src = p.get("source_report") or ""
+    if not src:
+        return None
+    path = Path(__file__).resolve().parent / "reports" / src
+    if not path.exists():
+        return None
+    cites = {int(c) for c in (p.get("citations") or [])
+             if str(c).strip().lstrip("-").isdigit() and int(c) > 0}
+    if not cites:
+        return None                       # [0] is the operator sentinel
+    try:
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    except Exception:
+        return None
+    cited_text, found = [], set()
+    for line in lines:
+        m = re.match(r"\s*(\d+)\.\s+(.*)", line)
+        if m and int(m.group(1)) in cites:
+            cited_text.append(re.sub(r"\[link\]\(\S+\)", "", m.group(2)))
+            found.add(int(m.group(1)))
+    if not found:
+        return None                       # cannot resolve; do not reject blind
+    claim = _content_words(p.get("statement", "") + " " + p.get("resolution", ""))
+    prior = _content_words(" ".join(cited_text))
+    if claim and prior and not (claim & prior):
+        return ("cited items share no substantive vocabulary with the claim "
+                "\u2014 a citation that does not support its entry makes the "
+                "4.02f priors unreadable and forces the keyed/keyless call to "
+                "default; cite an item that grounds THIS claim")
+    return None
+
+
+_MARKET_ANCHOR_WARN_ONLY = True
+
+
+def _market_anchor(p: dict):
+    """A price or yield threshold is keyed or keyless by the SIZE of the gap
+    between the level held and the level claimed. With no reference stated the
+    gap is unmeasurable and the row defaults to keyed forever - which would
+    make the markets domain permanently unable to carry keyless weight (5.05).
+    """
+    both = (p.get("statement", "") + " " + p.get("resolution", ""))
+    if not re.search(r"\b(settle[sd]?|close[sd]?|yield|per barrel|index|"
+                     r"exchange rate|front-month)\b", both, re.I):
+        return None
+    if re.search(r"\b(reference|as of|currently|prevailing|last (?:close|settle))\b",
+                 both, re.I):
+        return None
+    return ("market-threshold row states no reference level \u2014 without the "
+            "level held at seal the keyed/keyless gap cannot be measured and "
+            "the entry defaults to keyed (4.03/5.05); add e.g. "
+            "'Reference: NN.NN on the packet date'")
+
+
 def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list:
     """Return list of rejection reasons; empty list = accepted."""
     reasons = []
@@ -234,6 +321,10 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
         reasons.append("unparseable deadline")
     if not p.get("citations"):
         reasons.append("no grounding citations to the report record")
+    else:
+        _unsup = _citation_support(p)
+        if _unsup:
+            reasons.append(_unsup)
     # citations == [0] is the sentinel for operator/human calls (no report record) — allowed
     if re.search(r"within\s+(?:the\s+)?(?:next\s+)?\d+\s+(?:hours|days)", p["statement"], re.I):
         reasons.append("relative timeframe in statement — use absolute date windows; "
@@ -313,6 +404,13 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                            "registered before sealing")
     if not (5 <= p["probability"] <= 95):
         reasons.append("probability outside 5-95")
+    _anchor = _market_anchor(p)
+    if _anchor:
+        if _MARKET_ANCHOR_WARN_ONLY:
+            print(f"KKR \u00b7 NOTE \u00b7 {p.get('id','(new)')}: {_anchor}",
+                  file=sys.stderr)
+        else:
+            reasons.append(_anchor)
     return reasons
 
 
@@ -583,6 +681,37 @@ def brier_and_calibration(projs: list) -> dict:
             "misses": sum(1 for p in resolved if p["status"] == "miss"),
             "calibration": {f"{lo}-{hi}%": {"n": n, "realized": h / n}
                             for (lo, hi), (n, h) in sorted(buckets.items())}}
+
+
+def canon_domain(raw) -> str:
+    """Canonical domain for RPAS 5.05 counting.
+
+    The book carries several spellings per domain. Counting them separately
+    would make the multi-domain bar look cleared on one domain written five
+    ways - an error that always flatters. Sealed rows keep their string
+    (5.06); this resolves the reading.
+    """
+    s = str(raw or "").strip().lower()
+    path = Path(__file__).resolve().parent / "domains.json"
+    if not path.exists():
+        return s or "unclassified"
+    try:
+        m = json.loads(path.read_text(encoding="utf-8"))["aliases"]
+    except Exception:
+        return s or "unclassified"
+    if s in m:
+        return m[s]
+    norm = s.replace("_", "/").split("/")[0]
+    return m.get(norm, s or "unclassified")
+
+
+def domain_spread(projs: list) -> dict:
+    """Canonical domain -> count. What 5.05 should actually be reading."""
+    out = {}
+    for p in projs:
+        d = canon_domain(p.get("domain"))
+        out[d] = out.get(d, 0) + 1
+    return dict(sorted(out.items(), key=lambda kv: -kv[1]))
 
 
 def arm_stats(projs: list) -> dict:
@@ -1421,6 +1550,282 @@ def cmd_lane_run(args):
             print(f"KKR - ingest failed for {tag}: {exc}", file=sys.stderr)
 
 
+def _priors_for(p: dict) -> list:
+    """The forecaster's declared priors: the cited items of its source report.
+
+    RPAS 4.02f wants the priors recorded, not just a label. For these lanes
+    the priors are exactly the numbered report items the entry cites, so they
+    are recoverable verbatim rather than reconstructed from memory.
+    """
+    cites = [int(c) for c in (p.get("citations") or [])
+             if str(c).strip().lstrip("-").isdigit() and int(c) > 0]
+    if not cites:
+        return []
+    src = p.get("source_report") or ""
+    path = HERE / "reports" / src
+    if not src or not path.exists():
+        return [f"(source report {src or 'unnamed'} not on disk - "
+                f"cites items {', '.join(map(str, cites))})"]
+    out, want = [], set(cites)
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        m = re.match(r"\s*(\d+)\.\s+(.*)", line)
+        if m and int(m.group(1)) in want:
+            body = re.sub(r"\[link\]\(\S+\)", "", m.group(2))
+            body = re.sub(r"[*_`]|\ud83c[\udd70-\udfff]|\ud83d[\udc00-\ude4f]",
+                          "", body)
+            out.append(f"[{m.group(1)}] {re.sub(r'  +', ' ', body).strip()}")
+            want.discard(int(m.group(1)))
+    for n in sorted(want):
+        out.append(f"[{n}] (item not found in {src})")
+    return out
+
+
+TEMPLATE_WHY = "(state the priors YOU held at seal - this row is yours)"
+
+
+def _keys_pending(data, due_days=None):
+    today = datetime.now(timezone.utc).date()
+
+    def empty(v):
+        v = str(v or "").strip()
+        return not v or v.lower().startswith("unset")
+
+    out = []
+    for p in data["projections"]:
+        if p.get("status") != "open" or not empty(p.get("keyed_keyless")):
+            continue
+        try:
+            dl = datetime.strptime(p["deadline"], "%Y-%m-%d").date()
+        except Exception:
+            continue
+        if due_days and (dl - today).days > int(due_days):
+            continue
+        out.append((dl, p))
+    out.sort(key=lambda t: t[0])
+    return out
+
+
+def cmd_keys_export(args):
+    """Write the pass as a packet: a review sheet and a fill-in worksheet."""
+    data = load_ledger()
+    todo = _keys_pending(data, getattr(args, "keys_due", None))
+    if not todo:
+        print("KKR - nothing pending in scope", file=sys.stderr)
+        return
+    today = datetime.now(timezone.utc).date()
+    OUT.mkdir(exist_ok=True)
+    stamp = today.isoformat()
+
+    md = [f"# KEYED / KEYLESS WORKSHEET - {len(todo)} row(s)",
+          "",
+          f"Generated {stamp}. RPAS 4.02f: decided BEFORE resolution; after "
+          f"resolution the entry is KEYED by rule (4.03).",
+          "",
+          "**keyed** - a hit would be deducible from the priors listed. "
+          "**keyless** - no listed prior is sufficient.",
+          "",
+          "Fill `ruling` and `why` in the matching worksheet JSON, then:",
+          f"`python kkr.py --keys-import forecasts/keys_worksheet_{stamp}.json`",
+          ""]
+    sheet = {}
+    manual = 0
+    for dl, p in todo:
+        is_manual = str(p.get("model", "")).startswith("operator/")
+        if is_manual:
+            manual += 1
+        priors = _priors_for(p)
+        md.append("---")
+        md.append(f"\n## {p['id']} · {p.get('model')} · {p['deadline']} "
+                  f"({(dl - today).days}d) · {p.get('probability')}%"
+                  + ("  **[MANUAL - YOUR PRIORS]**" if is_manual else ""))
+        md.append(f"\n**Claim:** {p['statement']}")
+        md.append(f"\n**Resolves on:** {p['resolution']}")
+        if p.get("rationale"):
+            md.append(f"\n**Your seal-day rationale:** {p['rationale']}")
+        md.append("\n**Priors cited:**\n")
+        for pr in (priors or ["*(none cited)*"]):
+            md.append(f"- {pr}")
+        if is_manual:
+            md.append("\n> This row is yours. Its priors are not in any file - "
+                      "state what YOU held at seal. The import refuses a "
+                      "template rationale here.")
+        md.append("")
+        sheet[p["id"]] = {"ruling": "", "why": TEMPLATE_WHY if is_manual else "",
+                          "_claim": p["statement"][:160],
+                          "_arm": p.get("model"), "_deadline": p["deadline"]}
+
+    pmd = OUT / f"keys_packet_{stamp}.md"
+    pjs = OUT / f"keys_worksheet_{stamp}.json"
+    pmd.write_text("\n".join(md), encoding="utf-8")
+    pjs.write_text(json.dumps(sheet, indent=1, ensure_ascii=False) + "\n",
+                   encoding="utf-8")
+    print(f"KKR - keys packet ({len(todo)} rows, {manual} manual) -> {pmd}",
+          file=sys.stderr)
+    print(f"KKR - worksheet -> {pjs}", file=sys.stderr)
+    print("KKR - fill ruling (keyed|keyless) and why, then --keys-import",
+          file=sys.stderr)
+
+
+def cmd_keys_import(args):
+    """Validate a filled worksheet, then write. All-or-nothing."""
+    path = Path(args.keys_import)
+    sheet = json.loads(path.read_text(encoding="utf-8"))
+    data = load_ledger()
+    today = datetime.now(timezone.utc).date()
+    index = {p["id"]: p for p in data["projections"]}
+
+    def empty(v):
+        v = str(v or "").strip()
+        return not v or v.lower().startswith("unset")
+
+    errs, staged = [], []
+    for rid, rec in sheet.items():
+        ruling = str(rec.get("ruling", "")).strip().lower()
+        why = str(rec.get("why", "")).strip()
+        if not ruling:
+            continue                                  # left blank = skipped
+        p = index.get(rid)
+        if p is None:
+            errs.append(f"{rid}: not in the ledger"); continue
+        if p.get("status") != "open":
+            errs.append(f"{rid}: status is {p['status']}, not open - "
+                        f"4.03 has already ruled it KEYED"); continue
+        if not empty(p.get("keyed_keyless")):
+            errs.append(f"{rid}: already determined "
+                        f"({p['keyed_keyless']}) - sealed rows are not edited")
+            continue
+        if ruling not in ("keyed", "keyless"):
+            errs.append(f"{rid}: ruling '{ruling}' is not keyed or keyless")
+            continue
+        if not why:
+            errs.append(f"{rid}: no rationale - 4.02f requires the priors and "
+                        f"the deducibility condition, not a bare label")
+            continue
+        if str(p.get("model", "")).startswith("operator/") and \
+                why.strip() == TEMPLATE_WHY:
+            errs.append(f"{rid}: operator row still carries the template "
+                        f"rationale - state the priors YOU held at seal")
+            continue
+        staged.append((p, ruling, why))
+
+    if errs:
+        print(f"KKR - {len(errs)} problem(s). NOTHING WRITTEN:", file=sys.stderr)
+        for e in errs:
+            print(f"    {e}", file=sys.stderr)
+        return
+    if not staged:
+        print("KKR - no rulings filled in; nothing to write", file=sys.stderr)
+        return
+    for p, ruling, why in staged:
+        p["keyed_keyless"] = ruling
+        p["keyed_keyless_rationale"] = why[:400]
+        p["keyed_keyless_dated"] = today.strftime("%Y-%m-%d")
+    save_ledger(data)
+    k = sum(1 for _, r, _ in staged if r == "keyed")
+    print(f"KKR - {len(staged)} determination(s) written "
+          f"({k} keyed, {len(staged) - k} keyless)", file=sys.stderr)
+    render_ledger()
+
+
+def cmd_keys(args):
+    """The keyed/keyless pass. RPAS 4.02f, the one call no script can make.
+
+    Keyed   - a hit here would be DEDUCIBLE from the priors above. Arithmetic.
+    Keyless - no prior above is sufficient to deduce it. Only these bear on a
+              faculty claim (5.04).
+
+    The instrument grades the forecaster, never the operator. Ruling a row
+    keyed costs nothing but an honest label; ruling it keyless when the priors
+    hand you the answer is the failure mode this field exists to prevent.
+    """
+    data = load_ledger()
+    today = datetime.now(timezone.utc).date()
+
+    def empty(v):
+        v = str(v or "").strip()
+        return not v or v.lower().startswith("unset")
+
+    due_days = getattr(args, "keys_due", None)
+    todo = []
+    for p in data["projections"]:
+        if p.get("status") != "open" or not empty(p.get("keyed_keyless")):
+            continue
+        try:
+            dl = datetime.strptime(p["deadline"], "%Y-%m-%d").date()
+        except Exception:
+            continue
+        if due_days and (dl - today).days > int(due_days):
+            continue
+        todo.append((dl, p))
+    todo.sort(key=lambda t: t[0])
+
+    if not todo:
+        print("KKR - every open row in scope carries a determination.",
+              file=sys.stderr)
+        return
+    done_n = sum(1 for p in data["projections"]
+                 if not empty(p.get("keyed_keyless")))
+    print(f"\nKEYED / KEYLESS - {len(todo)} row(s) to rule "
+          f"({done_n} already determined on the book)")
+    print("RPAS 4.02f. Decided BEFORE resolution; after resolution it is "
+          "KEYED by rule (4.03).")
+    print("  [k]eyed    a hit would be deducible from the priors shown - arithmetic")
+    print("  [l]eyless  no prior shown is sufficient to deduce it")
+    print("  [s]kip     leave undetermined    [q]uit - everything ruled is "
+          "already saved\n")
+
+    ruled = 0
+    for dl, p in todo:
+        days = (dl - today).days
+        print("=" * 70)
+        print(f"{p['id']} · {p.get('model','?')} · deadline {p['deadline']} "
+              f"({days}d) · stated {p.get('probability','?')}%")
+        print(f"\n  CLAIM: {p['statement']}")
+        print(f"  RESOLVES ON: {p['resolution'][:300]}")
+        priors = _priors_for(p)
+        print("\n  PRIORS THE FORECASTER HELD (its cited report items):")
+        if priors:
+            for pr in priors:
+                print(f"    - {pr[:220]}")
+        else:
+            print("    - none cited. An entry with no declared prior cannot "
+                  "make a hit deducible; keyless is the usual reading.")
+        print("\n  Could this outcome be DEDUCED from those priors alone?")
+        try:
+            ans = input("  [k]eyed / [l]eyless / [s]kip / [q]uit > ").strip().lower()
+        except (EOFError, KeyboardInterrupt):
+            print("\nKKR - stopped. Everything ruled so far is saved.",
+                  file=sys.stderr)
+            break
+        if ans == "q":
+            print("KKR - stopped. Everything ruled so far is saved.",
+                  file=sys.stderr)
+            break
+        if ans not in ("k", "l"):
+            continue
+        val = "keyed" if ans == "k" else "keyless"
+        try:
+            why = input("  why (one line, recorded in the entry) > ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\nKKR - stopped before recording that row.", file=sys.stderr)
+            break
+        if not why:
+            why = ("deducible from the cited report items" if val == "keyed"
+                   else "no cited item is sufficient to deduce the outcome")
+        p["keyed_keyless"] = val
+        p["keyed_keyless_rationale"] = why[:400]
+        p["keyed_keyless_dated"] = today.strftime("%Y-%m-%d")
+        # Written after EVERY row: an interrupt must never discard the pass.
+        save_ledger(data)
+        ruled += 1
+        print(f"  -> {val.upper()}  (saved)\n")
+
+    print(f"\nKKR - {ruled} determination(s) written. "
+          f"{len(todo) - ruled} left in scope.", file=sys.stderr)
+    if ruled:
+        render_ledger()
+
+
 def main():
     ap = argparse.ArgumentParser(description="KKR — Kaos Kontrol Report: forecasts + predictive ledger")
     ap.add_argument("--provider", choices=["lmstudio", "anthropic", "auto"], default="lmstudio")
@@ -1442,6 +1847,15 @@ def main():
                     help="ingest an auditor's verdict JSON; you rule on each")
     ap.add_argument("--jury", nargs=2, metavar=("A.json", "B.json"),
                     help="blind jury: two verdict files from the same blinded packet")
+    ap.add_argument("--keys-export", action="store_true",
+                    help="write the keys pass as a packet + fill-in worksheet")
+    ap.add_argument("--keys-import", metavar="FILE",
+                    help="apply a filled keys worksheet; validates all or none")
+    ap.add_argument("--keys", action="store_true",
+                    help="rule the keyed/keyless determination on open rows "
+                         "(RPAS 4.02f); deadline order, saves after each row")
+    ap.add_argument("--keys-due", metavar="DAYS",
+                    help="with --keys: only rows resolving within DAYS")
     ap.add_argument("--lane-run", action="store_true",
                     help="write the packet, run every manual lane over the API, "
                          "and ingest each under its own arm tag")
@@ -1465,6 +1879,12 @@ def main():
         cmd_audit_export(args)
     elif args.audit_ingest:
         cmd_audit_ingest(args)
+    elif args.keys_export:
+        cmd_keys_export(args)
+    elif args.keys_import:
+        cmd_keys_import(args)
+    elif args.keys or args.keys_due:
+        cmd_keys(args)
     elif args.lane_run:
         cmd_lane_run(args)
     elif args.jury_run:

@@ -74,6 +74,14 @@ TARGETS = [
     "ledger.json",
     "kalls_hashlog.json",
     "plate.json",
+    # KK18: the doctrine documents. A novelty claim's precedence cannot rest
+    # on git history alone - the operator holds that account (4.05). The
+    # claim's own text is what needs a clock the operator does not hold.
+    "ABYSS_DOCTRINE_DRAFT_v1.md",
+    "RPAS_FIRST_EDITION_2026_v1.md",
+    "KRAEHE_NEST_METHOD.md",
+    "KRAEHE_NEST_PROTOCOL.md",
+    "LIAS_FIRST_EDITION_2026_v1.md",
 ]
 
 STATE = DOCS / "ots_anchors.json"
