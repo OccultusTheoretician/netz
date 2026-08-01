@@ -2,7 +2,7 @@
  "schema": "arms-registry/1.0",
  "created": "2026-07-31",
  "purpose": "Arm identity is instrument configuration: lane, model, tool access. Sealed rows are never edited - historical identity lives here, not in the rows. Scoring may bucket a tag by era; no pooled score is ever published; a Brier belongs to one forecaster.",
- "grammar": "New tags: lane/model/access, access in {searched, cold, advised, n-a}. unknown is a classification of history, never a forward tag.",
+ "grammar": "New tags: lane/model/access, access in {searched, cold, advised, unattested, n-a}. unknown is a classification of history, never a forward tag. unattested is a forward tag and means the session COULD have retrieved and the sealed text cites nothing - availability likely, use unevidenced. Prefer searched or cold whenever the run makes access provable. `cadence` records how often an arm is polled; arms with different cadences carry different row counts for that reason and no other.",
  "arms": [
   {
    "tag": "operator/human",
@@ -35,7 +35,8 @@
      "id": "post-verbot",
      "from": "2026-07-28"
     }
-   ]
+   ],
+   "cadence": "daily - local model, no marginal cost per run."
   },
   {
    "tag": "manual/fable",
@@ -74,42 +75,48 @@
    "lane": "manual",
    "model": "claude-fable-5",
    "access": "searched",
-   "status": "active"
+   "status": "active",
+   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
   },
   {
    "tag": "manual/fable-5/cold",
    "lane": "manual",
    "model": "claude-fable-5",
    "access": "cold",
-   "status": "active"
+   "status": "active",
+   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
   },
   {
    "tag": "manual/opus-5/searched",
    "lane": "manual",
    "model": "claude-opus-5",
    "access": "searched",
-   "status": "active"
+   "status": "active",
+   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
   },
   {
    "tag": "manual/opus-5/cold",
    "lane": "manual",
    "model": "claude-opus-5",
    "access": "cold",
-   "status": "active"
+   "status": "active",
+   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
   },
   {
    "tag": "manual/sonnet-5/searched",
    "lane": "manual",
    "model": "claude-sonnet-5",
    "access": "searched",
-   "status": "active"
+   "status": "active",
+   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
   },
   {
    "tag": "manual/sonnet-5/cold",
    "lane": "manual",
    "model": "claude-sonnet-5",
    "access": "cold",
-   "status": "active"
+   "status": "active",
+   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
   },
   {
    "tag": "fogsim/scenario",
@@ -126,7 +133,34 @@
    "access": "n-a",
    "status": "active",
    "note": "mechanical lane - rows produced by rule, not by a model with tools; kfk/halflife promotes KriegForeKaster claims, fogsim/scenario seals engine campaigns"
+  },
+  {
+   "tag": "manual/fable-5/unattested",
+   "lane": "manual",
+   "model": "claude-fable-5",
+   "access": "unattested",
+   "status": "active",
+   "note": "KK18 standing rule: session had search available, sealed text cites no retrieved source - availability likely, use unevidenced. /searched requires a cited retrieval; /cold requires a provably search-off session.",
+   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+  },
+  {
+   "tag": "manual/opus-5/unattested",
+   "lane": "manual",
+   "model": "claude-opus-5",
+   "access": "unattested",
+   "status": "active",
+   "note": "KK18 standing rule: see manual/fable-5/unattested.",
+   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+  },
+  {
+   "tag": "manual/sonnet-5/unattested",
+   "lane": "manual",
+   "model": "claude-sonnet-5",
+   "access": "unattested",
+   "status": "active",
+   "note": "KK18 standing rule: see manual/fable-5/unattested.",
+   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
   }
- ]
+ ],
+ "cadence_ruled": "2026-08-01"
 }
-

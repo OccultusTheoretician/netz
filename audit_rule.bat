@@ -5,5 +5,7 @@ if not exist C:\netz\audit_verdicts.json (
   pause
   exit /b
 )
-python C:\netz\kkr.py --audit-ingest C:\netz\audit_verdicts.json --auditor claude
+set AUD=%~1
+if "%AUD%"=="" set AUD=claude
+python C:\netz\kkr.py --audit-ingest C:\netz\audit_verdicts.json --auditor %AUD%
 pause

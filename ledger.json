@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-07-31T16:28:25Z",
+  "as_of": "2026-08-01T16:55:29Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -735,12 +735,27 @@
       "date_issued": "2026-07-21",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-21_1532.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-01",
+      "notes": "Qwen verdict discarded — cited outlets it has no access to (no search on the local arm). Basis is the claude arm alone. Concordance not claimed.",
       "failure_condition": "the condition stated in this entry's resolution basis — A public statement from the Lebanese Armed Forces confirming Israeli fire near their troops is published in a credible news outlet between 2026-07-28 and 2026-07-31 — is not met on or before 2026-07-31; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "e5a455ef443bcd9fa793de281b47273bc9b857ac4c4bcd5f305bcefba04e9ddf",
+        "concordant": true,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "MISS"
+        },
+        "evidence": "Checked LAF's own statement log (lebarmy.gov.lb/en/news_and_activities) for the complete 2026-07-28 to 2026-07-31 window: three posts in range (six arrests for opening fire in Bekaa, 7/28; 81st Army Day ceremony, 7/30; Zahle/Akkar/Baalbek arrests after a Jalala altercation, 7/31), none referencing Israeli fire near LAF troops. The last LAF statement confirming Israeli fire near troops (Kfar Tebnit, Nabatieh al-Fawqa, Zawtar al-Gharbiyeh, per Xinhua 7/26) predates the window by two days."
+      }
     },
     {
       "statement": "Nvidia will announce the disbursement of its $2 billion investment in Nebius by 2026-08-15.",
@@ -4907,6 +4922,562 @@
       "keyed_keyless_rationale": "Operator judges credibility of reporting and which of the three outcomes occurred.",
       "sealed_at": "2026-07-31T16:28:25.368951+00:00",
       "seal_sha256": "ccc9a51502bd4e9aa9c7239dbabc420f6be69b233e905ade0e63fb24a0aa1e0a"
+    },
+    {
+      "statement": "Between 2026-08-16 and 2026-08-23, a cyberattack exploiting the Adobe Campaign Classic CVSS 10.0 vulnerability will result in a data breach affecting over 1 million users.",
+      "domain": "cyber",
+      "probability": 25,
+      "resolution": "A public disclosure from Adobe or a third-party cybersecurity firm confirms that the Adobe Campaign Classic CVSS 10.0 vulnerability was exploited between 2026-08-16 and 2026-08-23, leading to a data breach affecting more than 1 million users.",
+      "deadline": "2026-08-23",
+      "citations": [
+        4
+      ],
+      "id": "KKR-20260801-01",
+      "date_issued": "2026-08-01",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — A public disclosure from Adobe or a third-party cybersecurity firm confirms that the Adobe Campaign Classic CVSS 10.0 vulnerability was exploited between 2026-08-16 and 2026-08-23, leading to a data breach affecting more than 1 million users — is not met on or before 2026-08-23; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613233+00:00",
+      "seal_sha256": "3e8f97e72012365f83ece94aae48ce8bfe5509ac94d1661a3d69a6d8ed37190b"
+    },
+    {
+      "statement": "Between 2026-09-09 and 2026-09-16, Iran will launch a missile strike on a U.S. military installation in the Persian Gulf region.",
+      "domain": "military/conflict",
+      "probability": 15,
+      "resolution": "A public report from at least two independent sources across hostile sides (AXIS, WEST) confirms a missile strike by Iran on a U.S. military installation in the Persian Gulf between 2026-09-09 and 2026-09-16, with no denial from U.S. defense sources.",
+      "deadline": "2026-09-16",
+      "citations": [
+        10
+      ],
+      "id": "KKR-20260801-02",
+      "date_issued": "2026-08-01",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — A public report from at least two independent sources across hostile sides (AXIS, WEST) confirms a missile strike by Iran on a U.S. military installation in the Persian Gulf between 2026-09-09 and 2026-09-16, with no denial from U.S. defense sources — is not met on or before 2026-09-16; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613339+00:00",
+      "seal_sha256": "ab516d37c541735a8987a54f1597c77821e29e14c4679fd99ff484ad9ce69a18"
+    },
+    {
+      "statement": "The US Department of Defense or the White House publicly confirms US military strikes on targets inside Iran between 2026-08-08 and 2026-10-30.",
+      "domain": "military/conflict",
+      "probability": 45,
+      "resolution": "Resolved from defense.gov news releases and whitehouse.gov briefing transcripts on 2026-10-30. Yes if any on-record item published in the window confirms US strikes on Iranian territory.",
+      "deadline": "2026-10-30",
+      "citations": [
+        10,
+        19,
+        23
+      ],
+      "id": "KKR-20260801-03",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any on-record item published in the window confirms US strikes on Iranian territory — is not met on or before 2026-10-30 as read from defense.gov news releases and whitehouse.gov briefing transcripts; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613360+00:00",
+      "seal_sha256": "103c7707dfbc78a307066f6e3cc093f41f78cd345b2917307476ccb2c141912d"
+    },
+    {
+      "statement": "At least one additional commercial vessel is struck by weapons in the Strait of Hormuz or Gulf of Oman between 2026-08-08 and 2026-09-30.",
+      "domain": "military/conflict",
+      "probability": 62,
+      "resolution": "Resolved from the UKMTO maritime incident report index on 2026-09-30. Yes if any advisory in the window records a commercial vessel struck by missile, drone or gunfire in those waters.",
+      "deadline": "2026-09-30",
+      "citations": [
+        10,
+        19
+      ],
+      "id": "KKR-20260801-04",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any advisory in the window records a commercial vessel struck by missile, drone or gunfire in those waters — is not met on or before 2026-09-30 as read from the UKMTO maritime incident report index; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613374+00:00",
+      "seal_sha256": "1979244f0572d2fe10bf9610373962883269ed8b9e823a38dd589db19228e0b2"
+    },
+    {
+      "statement": "ICE Brent front-month crude settles above 110.00 US dollars per barrel on at least one trading day between 2026-08-10 and 2026-10-30.",
+      "domain": "economics/markets",
+      "probability": 28,
+      "resolution": "Resolved from the official ICE Brent front-month settlement series read on 2026-10-30. Yes if any settlement in the window is above 110.00.",
+      "deadline": "2026-10-30",
+      "citations": [
+        19
+      ],
+      "id": "KKR-20260801-05",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any settlement in the window is above 110.00 — is not met on or before 2026-10-30 as read from the official ICE Brent front-month settlement series read; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613383+00:00",
+      "seal_sha256": "22d13ffa7f5b045326a884ac9327c7d21a7365d9851983da85272507b430634f"
+    },
+    {
+      "statement": "NYMEX WTI front-month crude settles above 95.00 US dollars per barrel on at least one trading day between 2026-08-10 and 2026-09-30.",
+      "domain": "economics/markets",
+      "probability": 45,
+      "resolution": "Resolved from the CME official NYMEX WTI front-month settlement series read on 2026-09-30. Yes if any settlement in the window is above 95.00.",
+      "deadline": "2026-09-30",
+      "citations": [
+        19
+      ],
+      "id": "KKR-20260801-06",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any settlement in the window is above 95.00 — is not met on or before 2026-09-30 as read from the CME official NYMEX WTI front-month settlement series read; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613392+00:00",
+      "seal_sha256": "5c242953a4a92503afdfb1874ce9d94adf02b8bc8fc5214d16fb3526598b80d8"
+    },
+    {
+      "statement": "An extraordinary European Council or Justice and Home Affairs Council session on the Ceuta migration crisis convenes between 2026-08-08 and 2026-09-30.",
+      "domain": "political",
+      "probability": 72,
+      "resolution": "Resolved from the Council of the EU meeting calendar on 2026-09-30. Yes if a special or extraordinary session in the window lists Ceuta or Spain-Morocco migration on its published agenda.",
+      "deadline": "2026-09-30",
+      "citations": [
+        1,
+        2,
+        6,
+        11
+      ],
+      "id": "KKR-20260801-07",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — a special or extraordinary session in the window lists Ceuta or Spain-Morocco migration on its published agenda — is not met on or before 2026-09-30 as read from the Council of the EU meeting calendar; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613401+00:00",
+      "seal_sha256": "682ba13ef13a7e29ce1313bef7f154c586b9f23c364413f6e9b2c00b9b42eba2"
+    },
+    {
+      "statement": "Gianni Infantino ceases to be FIFA president, by resignation or removal, announced between 2026-08-08 and 2026-12-18.",
+      "domain": "political",
+      "probability": 20,
+      "resolution": "Resolved from FIFA official media releases on 2026-12-18. Yes if a release in the window announces his resignation, removal, or replacement as president.",
+      "deadline": "2026-12-18",
+      "citations": [
+        8,
+        14
+      ],
+      "id": "KKR-20260801-08",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — a release in the window announces his resignation, removal, or replacement as president — is not met on or before 2026-12-18 as read from FIFA official media releases; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613409+00:00",
+      "seal_sha256": "17a71d6b0d040eec10fb19c19a02a79b5b668811bc21cfc30b90300190598af9"
+    },
+    {
+      "statement": "CISA adds an Adobe Campaign Classic vulnerability to its Known Exploited Vulnerabilities catalog between 2026-08-08 and 2026-10-30.",
+      "domain": "cyber",
+      "probability": 33,
+      "resolution": "Resolved from the CISA KEV catalog JSON on 2026-10-30. Yes if any entry has vendorProject Adobe, product matching Campaign Classic, and dateAdded inside the window.",
+      "deadline": "2026-10-30",
+      "citations": [
+        4
+      ],
+      "id": "KKR-20260801-09",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any entry has vendorProject Adobe, product matching Campaign Classic, and dateAdded inside the window — is not met on or before 2026-10-30 as read from the CISA KEV catalog JSON; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613418+00:00",
+      "seal_sha256": "a088ac9fbbda6718dc1d16ac51984c7b8254bbbb8d6409543e0f8a922e0ee0da"
+    },
+    {
+      "statement": "CISA publishes an advisory or alert confirming a cyber incident that disrupted operations at a named US water or wastewater utility, between 2026-08-08 and 2026-11-30.",
+      "domain": "cyber",
+      "probability": 55,
+      "resolution": "Resolved from the CISA cybersecurity advisories index on 2026-11-30. Yes if any item published in the window names a US water or wastewater utility with disrupted operations.",
+      "deadline": "2026-11-30",
+      "citations": [
+        12
+      ],
+      "id": "KKR-20260801-10",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any item published in the window names a US water or wastewater utility with disrupted operations — is not met on or before 2026-11-30 as read from the CISA cybersecurity advisories index; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613427+00:00",
+      "seal_sha256": "6ff541c8a04abbfd87e8d527be7f36fcb86cb4934c25f695ab302c38ca778b30"
+    },
+    {
+      "statement": "INGV records an earthquake of magnitude 4.0 or greater within 30 km of Naples between 2026-08-08 and 2026-11-30.",
+      "domain": "disaster",
+      "probability": 58,
+      "resolution": "Resolved from the INGV ISIDe event query, radius 30 km on 40.85N 14.27E, minmagnitude 4.0, starttime 2026-08-08, endtime 2026-11-30. Yes if any event returns.",
+      "deadline": "2026-11-30",
+      "citations": [
+        1
+      ],
+      "id": "KKR-20260801-11",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any event returns — is not met on or before 2026-11-30 as read from the INGV ISIDe event query, radius 30 km on 40.85N 14.27E, minmagnitude 4.0, starttime 2026-08-08, endtime 2026-11-30; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613435+00:00",
+      "seal_sha256": "9b98df50acaa6cc85bbea792c5cad65f8aff029458dfe84488d55893d06d0b0c"
+    },
+    {
+      "statement": "Spanish or Moroccan authorities announce criminal charges against ten or more people over the Ceuta mass border crossing between 2026-08-08 and 2026-11-30.",
+      "domain": "crime/security",
+      "probability": 40,
+      "resolution": "Resolved from Fiscalia General del Estado, Spanish Interior Ministry, and Moroccan MAP official releases on 2026-11-30. Yes if any names charges against ten or more individuals.",
+      "deadline": "2026-11-30",
+      "citations": [
+        9,
+        12,
+        15
+      ],
+      "id": "KKR-20260801-12",
+      "date_issued": "2026-08-01",
+      "model": "manual/opus-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any names charges against ten or more individuals — is not met on or before 2026-11-30 as read from Fiscalia General del Estado, Spanish Interior Ministry, and Moroccan MAP official releases; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613444+00:00",
+      "seal_sha256": "342de9c9ac9e5c5d2fe262aebaf1b6c40693ba3e3555c5062cb2d456ef2902f7"
+    },
+    {
+      "statement": "The United States or Israel will conduct a publicly confirmed military strike on Iranian oil, gas, or petrochemical infrastructure between 2026-08-08 and 2026-08-31.",
+      "domain": "military/conflict",
+      "probability": 68,
+      "resolution": "Resolved from defense.gov news releases and idf.il statements on 2026-08-31. Yes if any release in the window confirms a US or Israeli strike on Iranian oil, gas, or petrochemical infrastructure.",
+      "deadline": "2026-08-31",
+      "citations": [
+        10
+      ],
+      "id": "KKR-20260801-13",
+      "date_issued": "2026-08-01",
+      "model": "manual/sonnet-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any release in the window confirms a US or Israeli strike on Iranian oil, gas, or petrochemical infrastructure — is not met on or before 2026-08-31 as read from defense.gov news releases and idf.il statements; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613452+00:00",
+      "seal_sha256": "189d82511bfefe7dcb7188b16de84b5f3de9909b073cbd2ba7d65552fd9e3c8f"
+    },
+    {
+      "statement": "Russia and Ukraine will sign or jointly announce a ceasefire or peace agreement intended to end large-scale hostilities, effective on or before 2026-12-31.",
+      "domain": "military/conflict",
+      "probability": 10,
+      "resolution": "Resolved from kremlin.ru and president.gov.ua official statements on 2026-12-31. Yes if both confirm a signed or jointly announced ceasefire or peace agreement ending large-scale hostilities.",
+      "deadline": "2026-12-31",
+      "citations": [
+        7
+      ],
+      "id": "KKR-20260801-14",
+      "date_issued": "2026-08-01",
+      "model": "manual/sonnet-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — both confirm a signed or jointly announced ceasefire or peace agreement ending large-scale hostilities — is not met on or before 2026-12-31 as read from kremlin.ru and president.gov.ua official statements; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613461+00:00",
+      "seal_sha256": "df435bb73ea69230eb966c8d0d2a4f92551625460b78ef6e57ed56264e90dfc4"
+    },
+    {
+      "statement": "The Federal Reserve will cut the federal funds rate at the conclusion of its September 15-16, 2026 FOMC meeting.",
+      "domain": "economics/markets",
+      "probability": 28,
+      "resolution": "Resolved from the FOMC statement published on federalreserve.gov on 2026-09-16. Yes if the announced federal funds rate target range is lower than the range set after the July 2026 meeting.",
+      "deadline": "2026-09-16",
+      "citations": [
+        12
+      ],
+      "id": "KKR-20260801-15",
+      "date_issued": "2026-08-01",
+      "model": "manual/sonnet-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — the announced federal funds rate target range is lower than the range set after the July 2026 meeting — is not met on or before 2026-09-16 as read from the FOMC statement published on federalreserve.gov; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613470+00:00",
+      "seal_sha256": "0c057223244359843ef38359abec305b2d3d0d7d2910e7ccdfacfba11b133950"
+    },
+    {
+      "statement": "WTI crude oil front-month futures will settle above 95.00 USD per barrel on at least one trading day between 2026-08-08 and 2026-09-30.",
+      "domain": "economics/markets",
+      "probability": 32,
+      "resolution": "Resolved from the CME official NYMEX WTI front-month settlement series read on 2026-09-30. Yes if any settlement in the window is above 95.00.",
+      "deadline": "2026-09-30",
+      "citations": [
+        19
+      ],
+      "id": "KKR-20260801-16",
+      "date_issued": "2026-08-01",
+      "model": "manual/sonnet-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any settlement in the window is above 95.00 — is not met on or before 2026-09-30 as read from the CME official NYMEX WTI front-month settlement series read; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613478+00:00",
+      "seal_sha256": "fc4b00cf9d14dc29f45a21743e2c883931d580d366d3a1c661274aed03c15b9d"
+    },
+    {
+      "statement": "CISA, EPA, or FBI will issue an advisory, or Reuters or AP will report, that a cyberattack disrupted operational technology at a US water or wastewater utility, between 2026-08-08 and 2026-10-31.",
+      "domain": "cyber",
+      "probability": 30,
+      "resolution": "Resolved from the CISA cybersecurity advisories index on 2026-10-31. Yes if any advisory published in the window names a US water or wastewater utility with disrupted operations.",
+      "deadline": "2026-10-31",
+      "citations": [
+        12
+      ],
+      "id": "KKR-20260801-17",
+      "date_issued": "2026-08-01",
+      "model": "manual/sonnet-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any advisory published in the window names a US water or wastewater utility with disrupted operations — is not met on or before 2026-10-31 as read from the CISA cybersecurity advisories index; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613486+00:00",
+      "seal_sha256": "41fde01c7b9ceecbfca78abe6b1cd838a2c83cbfd9773c146c3af3689ef6ad56"
+    },
+    {
+      "statement": "OpenAI, Anthropic, Google DeepMind, or xAI will disclose a new case, beyond incidents already public as of 2026-08-01, of one of its models autonomously breaching third-party systems, between 2026-08-08 and 2026-10-31.",
+      "domain": "cyber",
+      "probability": 52,
+      "resolution": "Resolved from openai.com, anthropic.com, deepmind.google, and x.ai safety disclosures, cross-checked against Reuters and AP, on 2026-10-31. Yes if any confirms a new case, beyond incidents public by 2026-08-01, of autonomous third-party system breach.",
+      "deadline": "2026-10-31",
+      "citations": [
+        11
+      ],
+      "id": "KKR-20260801-18",
+      "date_issued": "2026-08-01",
+      "model": "manual/sonnet-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any confirms a new case, beyond incidents public by 2026-08-01, of autonomous third-party system breach — is not met on or before 2026-10-31 as read from openai.com, anthropic.com, deepmind.google, and x.ai safety disclosures, cross-checked against Reuters and AP,; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613494+00:00",
+      "seal_sha256": "d89dd96c9fc7cc55c8f692f9acfbf986ed378a71719713cc9aefbfc19945ff4f"
+    },
+    {
+      "statement": "The Department of Justice will publicly release the Epstein-related documents subject to the New Mexico deadline noted in reporting as of 2026-08-01, on or before 2026-09-25.",
+      "domain": "crime/security",
+      "probability": 15,
+      "resolution": "Resolved from justice.gov releases and the docket of the underlying New Mexico court matter on 2026-09-25. Yes if DOJ has publicly released the documents subject to that deadline.",
+      "deadline": "2026-09-25",
+      "citations": [
+        13
+      ],
+      "id": "KKR-20260801-19",
+      "date_issued": "2026-08-01",
+      "model": "manual/sonnet-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — DOJ has publicly released the documents subject to that deadline — is not met on or before 2026-09-25 as read from justice.gov releases and the docket of the underlying New Mexico court matter; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613504+00:00",
+      "seal_sha256": "e0a8e847f57a4886d33cc8d586fcf79d21502e35a1854c2f7263bdf46c73b05e"
+    },
+    {
+      "statement": "A magnitude 4.0 or greater earthquake will strike the Campi Flegrei or greater Naples area of Italy, between 2026-08-08 and 2026-12-15.",
+      "domain": "disaster",
+      "probability": 60,
+      "resolution": "Resolved from the INGV ISIDe event query, radius 20 km on 40.827N 14.139E, minmagnitude 4.0, starttime 2026-08-08, endtime 2026-12-15. Yes if any event returns.",
+      "deadline": "2026-12-15",
+      "citations": [
+        1
+      ],
+      "id": "KKR-20260801-20",
+      "date_issued": "2026-08-01",
+      "model": "manual/sonnet-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any event returns — is not met on or before 2026-12-15 as read from the INGV ISIDe event query, radius 20 km on 40.827N 14.139E, minmagnitude 4.0, starttime 2026-08-08, endtime 2026-12-15; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613513+00:00",
+      "seal_sha256": "7a6bc12e7f9a7970e30707eb6647d066105f7800622d21cbd65f965354adfefd"
+    },
+    {
+      "statement": "A commercial oil tanker will be attacked in the Strait of Hormuz or Gulf of Oman, reported by Reuters, AP, or a maritime security firm, between 2026-08-08 and 2026-09-30.",
+      "domain": "military/conflict",
+      "probability": 55,
+      "resolution": "Resolved from the UKMTO maritime incident report index on 2026-09-30. Yes if any advisory in the window records a commercial oil tanker struck by weapons in the Strait of Hormuz or Gulf of Oman.",
+      "deadline": "2026-09-30",
+      "citations": [
+        19
+      ],
+      "id": "KKR-20260801-21",
+      "date_issued": "2026-08-01",
+      "model": "manual/sonnet-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — any advisory in the window records a commercial oil tanker struck by weapons in the Strait of Hormuz or Gulf of Oman — is not met on or before 2026-09-30 as read from the UKMTO maritime incident report index; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613522+00:00",
+      "seal_sha256": "b28e99069654cd4f80b922d8b74875ca8d3a59e3df774b1d4f759148eb50b578"
+    },
+    {
+      "statement": "Commercial vessel transit through the Strait of Hormuz is suspended for 48 or more consecutive hours between 2026-08-02 and 2026-10-30.",
+      "domain": "military/conflict",
+      "probability": 12,
+      "resolution": "YES if at least two major international wire services report suspension of commercial transit through the Strait of Hormuz lasting 48 or more consecutive hours between 2026-08-02 and 2026-10-30; otherwise NO.",
+      "deadline": "2026-10-30",
+      "citations": [
+        10
+      ],
+      "id": "KKR-20260801-22",
+      "date_issued": "2026-08-01",
+      "model": "manual/fable-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — at least two major international wire services report suspension of commercial transit through the Strait of Hormuz lasting 48 or more consecutive hours between 2026-08-02 and 2026-10-30 — is not met on or before 2026-10-30; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613530+00:00",
+      "seal_sha256": "8d44ccdec88f9889b8854745c7ff7dea0c63f4dd8a8bfe19a6d9ad73f28843eb"
+    },
+    {
+      "statement": "US or Israeli forces strike Iranian oil or gas export infrastructure at Kharg Island, Bandar Abbas, or Asaluyeh between 2026-08-02 and 2026-09-30.",
+      "domain": "military/conflict",
+      "probability": 55,
+      "resolution": "YES if at least two major international news agencies report a US or Israeli strike on Iranian oil or gas export facilities at Kharg Island, Bandar Abbas, or Asaluyeh between 2026-08-02 and 2026-09-30; otherwise NO.",
+      "deadline": "2026-09-30",
+      "citations": [
+        10
+      ],
+      "id": "KKR-20260801-23",
+      "date_issued": "2026-08-01",
+      "model": "manual/fable-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — at least two major international news agencies report a US or Israeli strike on Iranian oil or gas export facilities at Kharg Island, Bandar Abbas, or Asaluyeh between 2026-08-02 and 2026-09-30 — is not met on or before 2026-09-30; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613538+00:00",
+      "seal_sha256": "3822ac403b539e6a40cacd89f7708efbf4d6d60a987248dea3839b35537f9012"
+    },
+    {
+      "statement": "The 10-year US Treasury constant maturity yield closes at or above 5.00 percent on at least one trading day between 2026-08-03 and 2026-12-31.",
+      "domain": "economics/markets",
+      "probability": 30,
+      "resolution": "YES if the US Treasury daily par yield curve shows the 10-year rate at or above 5.00 percent for any date between 2026-08-03 and 2026-12-31; otherwise NO.",
+      "deadline": "2026-12-31",
+      "citations": [
+        12
+      ],
+      "id": "KKR-20260801-24",
+      "date_issued": "2026-08-01",
+      "model": "manual/fable-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — the US Treasury daily par yield curve shows the 10-year rate at or above 5.00 percent for any date between 2026-08-03 and 2026-12-31 — is not met on or before 2026-12-31; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613547+00:00",
+      "seal_sha256": "a6c28051d7a58ba675d9f1677075c828998d72c28436e59a42c43b1dba06c26a"
+    },
+    {
+      "statement": "Gianni Infantino ceases to hold the FIFA presidency by resignation, removal, or formal suspension between 2026-08-02 and 2026-12-18.",
+      "domain": "political",
+      "probability": 25,
+      "resolution": "YES if FIFA or two major international news outlets report that Infantino resigned, was removed, or was formally suspended as FIFA president between 2026-08-02 and 2026-12-18; otherwise NO.",
+      "deadline": "2026-12-18",
+      "citations": [
+        8,
+        14
+      ],
+      "id": "KKR-20260801-25",
+      "date_issued": "2026-08-01",
+      "model": "manual/fable-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — FIFA or two major international news outlets report that Infantino resigned, was removed, or was formally suspended as FIFA president between 2026-08-02 and 2026-12-18 — is not met on or before 2026-12-18; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613555+00:00",
+      "seal_sha256": "bd36dbfe581cc615ea6c7d4959eb1f134301ff5289e5a53157e72de0b78b25be"
+    },
+    {
+      "statement": "CISA adds an Adobe Campaign Classic vulnerability first disclosed between 2026-07-28 and 2026-08-01 to the Known Exploited Vulnerabilities catalog between 2026-08-02 and 2026-10-30.",
+      "domain": "cyber",
+      "probability": 22,
+      "resolution": "YES if the CISA KEV catalog lists an Adobe Campaign Classic entry with dateAdded between 2026-08-02 and 2026-10-30; otherwise NO.",
+      "deadline": "2026-10-30",
+      "citations": [
+        4
+      ],
+      "id": "KKR-20260801-26",
+      "date_issued": "2026-08-01",
+      "model": "manual/fable-5/unattested",
+      "source_report": "battle_report_2026-08-01_1501.md",
+      "source_packet": "kkr_packet_2026-08-01_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "failure_condition": "the condition stated in this entry's resolution basis — the CISA KEV catalog lists an Adobe Campaign Classic entry with dateAdded between 2026-08-02 and 2026-10-30 — is not met on or before 2026-10-30; absence at the deadline scores this entry a MISS.",
+      "sealed_at": "2026-08-01T16:55:29.613564+00:00",
+      "seal_sha256": "8edc1dde9c00f9433c192bdde3ba73eb07a3059d362e87eb40b997b2b92be846"
     }
   ]
 }

@@ -80,6 +80,24 @@ def source_clause(resolution: str) -> str:
     return first or "the named source in the resolution basis"
 
 
+def condition_clause(resolution: str) -> str:
+    """The Yes-if branch: the thing that must HOLD for a hit.
+
+    The R2 manual arms write a two-sentence basis - venue first, condition
+    second - so taking the first sentence returned a bare source of record
+    and dropped the condition. A source cannot be met; a condition can.
+    """
+    t = re.sub(r"\s+", " ", (resolution or "").strip())
+    m = re.search(r"\b(?:yes|hit)\s+if\s+(.+)$", t, flags=re.I)
+    if not m:
+        return ""
+    body = m.group(1).strip()
+    # drop the explicit otherwise-branch; the frame already states the miss
+    body = re.sub(r"[;,]?\s*otherwise\s+(?:no|NO)\b.*$", "", body,
+                  flags=re.I).strip()
+    return body.rstrip(". ").strip()
+
+
 def propose(e: dict) -> str:
     deadline = e.get("deadline", "the deadline")
     branch = miss_branch(e.get("resolution", ""))
@@ -95,8 +113,21 @@ def propose(e: dict) -> str:
     # ("the yield exceeds 4.8% on 2026-07-29"). The earlier template assumed
     # the former and produced "<whole condition> does not show the stated
     # outcome", which read as nonsense on the majority of rows.
+    res = e.get("resolution", "")
+    cond = condition_clause(res)
+    if cond:
+        src = source_clause(res)
+        # If the condition already sits in the first sentence, the source
+        # clause is the same text - state it once.
+        tail = ""
+        if src and src.lower() not in cond.lower() \
+                and cond.lower() not in src.lower():
+            tail = f" as read from {src}"
+        return (f"the condition stated in this entry's resolution basis — "
+                f"{cond} — is not met on or before {deadline}{tail}; "
+                f"absence at the deadline scores this entry a MISS.")
     return (f"the condition stated in this entry's resolution basis — "
-            f"{source_clause(e.get('resolution',''))} — is not met on or "
+            f"{source_clause(res)} — is not met on or "
             f"before {deadline}; absence at the deadline scores this entry "
             f"a MISS.")
 

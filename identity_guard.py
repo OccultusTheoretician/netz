@@ -37,8 +37,30 @@ TEXT_EXT = {".md", ".txt", ".html", ".css", ".js", ".py", ".json", ".yml", ".yam
 SKIP_DIR = {".git", "__pycache__", "node_modules"}
 
 
+_SALT_PATH = HERE / "identity_salt.local.txt"
+
+
+def _salt() -> bytes:
+    """Secret salt, kept off the repo. Generated on first use.
+
+    KK18: unsalted single-word SHA-256 is invertible by wordlist, so the
+    published store disclosed most of itself to anyone who knew the domain.
+    The salt makes the digests real. It is gitignored under *.local.txt.
+    """
+    if _SALT_PATH.exists():
+        s = _SALT_PATH.read_text(encoding="utf-8").strip()
+        if s:
+            return s.encode("utf-8")
+    import secrets
+    s = secrets.token_hex(32)
+    _SALT_PATH.write_text(s + "\n", encoding="utf-8")
+    print("  identity_guard: new salt written to identity_salt.local.txt - "
+          "back it up; losing it means re-adding every term.", file=sys.stderr)
+    return s.encode("utf-8")
+
+
 def h(s):
-    return hashlib.sha256(s.strip().lower().encode("utf-8")).hexdigest()
+    return hashlib.sha256(_salt() + s.strip().lower().encode("utf-8")).hexdigest()
 
 
 def load():
