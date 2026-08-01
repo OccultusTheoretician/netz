@@ -71,7 +71,6 @@ FC_REVIEW.md
 fc_proposals.json
 plate_key_PRIVATE.bin
 fogsim_scenario_check.json
-docs/ots_anchors.json
 forecasts/ohrwurm_velocity_PRIOR_*.json
 identity_sweep.local.txt
 *.local.txt
@@ -89,3 +88,7 @@ RECONCILIATION_*.json
 ANCHOR_*.json
 DECC_CONFORMANCE_REPORT.json
 patch_*.py
+# KK18: docs/ots_anchors.json is DELIBERATELY tracked. It binds each
+# .ots receipt to the filename and digest it covers; without it a
+# reader cannot tell whether the served file still matches the one
+# that was anchored. It discloses nothing not already public.
