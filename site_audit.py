@@ -104,6 +104,7 @@ BAD_TRACKED = [
     ("backup copy", re.compile(r"\.(bak\d*|orig|old|save|pre[a-z]+)$", re.I)),
     ("session file", re.compile(r"\.session$", re.I)),
     ("vault tier", re.compile(r"(^|/)vault/", re.I)),
+    ("patch script", re.compile(r"(^|/)patch_[^/]*\.py$", re.I)),
     ("opening material", re.compile(r"campaign.*\.json$", re.I)),
 ]
 
@@ -583,7 +584,7 @@ def audit_git(r, verbose):
             r.bad("TRACKED", "%s is tracked and served (%s)" % (f, label))
         print("    git rm --cached removes it from Pages. History keeps it.")
     else:
-        r.ok("no backup, session or vault-tier file is tracked")
+        r.ok("no backup, session, vault-tier or patch-script file is tracked")
 
     # --- missing ----------------------------------------------------------
     gone = [f for f in tracked if not Path(f).exists()]
