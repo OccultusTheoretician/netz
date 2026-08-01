@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-01T16:55:29Z",
+  "as_of": "2026-08-01T18:58:51Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -256,8 +256,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — Daily closing price data from MarketWatch or Bloomberg confirms oil prices (Brent or WTI) above $85 for three or more consecutive days within the specified window — is not met on or before 2026-08-05; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "At least one additional CVE will be publicly disclosed for a major AI platform (e.g., Cursor, Codex, Gemini CLI, Antigravity) within 48 hours of the report, citing a new exploit or vulnerability.",
@@ -318,8 +319,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — FIFA’s official website or press release confirms a disciplinary action (e.g., suspension, fine) against one or more players related to the on-pitch brawl, with the decision dated on or before 2026-08-10 — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The U.S. will launch a new cyber operation targeting a critical infrastructure system in a NATO ally within 72 hours of the report, resulting in a confirmed disruption.",
@@ -359,8 +361,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — A public report from the U.S. Department of Health and Human Services or a congressional committee confirms a formal audit of the Deloitte Medicaid system with findings of systemic IT failures — is not met on or before 2026-08-15; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "A new AI agent will be confirmed to have breached a government or financial institution’s internal network by 2026-08-08, with public disclosure from the affected organization.",
@@ -380,8 +383,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — An official press release or public statement from a government agency or financial institution confirms a breach by an autonomous AI agent, with the incident date on or before 2026-08-08 — is not met on or before 2026-08-08; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The U.S. will announce a new round of sanctions against Iran’s Revolutionary Guard Corps by 2026-08-12, citing continued aggression in the region.",
@@ -402,8 +406,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — A public statement from the U.S. Department of Treasury or State Department confirms the imposition of new sanctions on the IRGC, with the announcement date on or before 2026-08-12 — is not met on or before 2026-08-12; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "A magnitude 6.0 or higher earthquake will be reported in the Pacific Northwest (Washington, Oregon, or Northern California) with at least one fatality by 2026-09-15.",
@@ -464,8 +469,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — An official disclosure from a major organization (e.g., Fortune 500 company, government agency) confirms a data breach due to CVE-2026-6875, with the breach affecting at least 100,000 users, reported by 2026-08-20 — is not met on or before 2026-08-20; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The U.S. will conduct at least one additional military strike on Iran in the Strait of Hormuz within the next 72 hours after the 2026-07-20 strikes, as reported by BBC World and Al Jazeera.",
@@ -774,8 +780,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — A press release from Nvidia or Nebius confirming the disbursement of the $2 billion investment in neocloud is published by 2026-08-15 — is not met on or before 2026-08-15; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The Houthi movement will launch a naval blockade of the Bab el-Mandeb Strait by 2026-08-10.",
@@ -794,8 +801,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — A confirmed statement from the Houthi movement or a credible news source reporting the implementation of a naval blockade of the Bab el-Mandeb Strait is published by 2026-08-10 — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "A confirmed exploit of CVE-2026-60137 in WordPress Core will be reported in a public security advisory by 2026-08-05.",
@@ -814,8 +822,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — A public advisory from CISA, the WordPress Project, or a major cybersecurity firm confirms exploitation of CVE-2026-60137 in WordPress Core by 2026-08-05 — is not met on or before 2026-08-05; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Oil prices will exceed $92 per barrel on the NYMEX market between 2026-08-01 and 2026-08-04.",
@@ -834,8 +843,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — The closing price of Brent crude oil on the NYMEX market exceeds $92 per barrel on at least one day between 2026-08-01 and 2026-08-04 — is not met on or before 2026-08-04; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "k",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The U.S. Treasury Department will issue a new sanction against Meliá Hotels International by 2026-08-20.",
@@ -854,8 +864,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — A public notice from the U.S. Treasury Department listing Meliá Hotels International as a sanctioned entity is published by 2026-08-20 — is not met on or before 2026-08-20; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03.",
@@ -874,8 +885,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — A public disclosure from a U.S. federal agency or CISA confirms a data breach caused by exploitation of CVE-2026-6 in the ServiceNow AI Platform between 2026-07-28 and 2026-08-03 — is not met on or before 2026-08-03; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "prior [14] reports exploitation in the wild; claim adds a specific target class (US federal agency) and public confirmation inside two weeks — neither is in the prior",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Andy Biggs wins the Arizona gubernatorial general election on 2026-11-05, defeating Katie Hobbs in a recount that confirms his victory by 1,200 votes.",
@@ -914,8 +926,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — The Bureau of Labor Statistics' monthly Job Openings and Labor Turnover Survey (JOLTS) report, published on or before 2026-08-12, shows a national job quit rate of 1.8% for July 2026 — is not met on or before 2026-08-12; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Between 2026-07-29 and 2026-08-02, the Japan Meteorological Agency issues a new heatwave alert for Tokyo and Osaka, with temperatures exceeding 40°C for three consecutive days.",
@@ -934,8 +947,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — The Japan Meteorological Agency's official website confirms that a heatwave alert was issued for Tokyo and Osaka between 2026-07-29 and 2026-08-02, with temperatures above 40°C recorded for at least three consecutive days — is not met on or before 2026-08-02; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "prior [5] gives a single 40C day; claim requires two cities above 40C on three consecutive days in a five-day window — the prior contains no streak and its wording signals rarity",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Between 2026-08-05 and 2026-08-08, the French Ministry of Health confirms that social media platforms have been fully blocked for users under 15 years old across the country.",
@@ -954,8 +968,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — The French Ministry of Health's official public statement or press release, published between 2026-08-05 and 2026-08-08, confirms that social media access is legally prohibited for all users under 15 years old nationwide — is not met on or before 2026-08-08; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "No",
@@ -1064,8 +1079,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — ICE Brent front-month official settlement price exceeds 90 dollars per barrel on three or more weekdays between 2026-07-23 and 2026-08-12, per exchange or EIA data — is not met on or before 2026-08-12; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no price level held at seal — did not check Brent and did not read model output into the call; the forecast rests on the stated causal chain (continued war lifts oil, serving Russian budget needs). Confound: the daily collation carries oil-direction headlines, so ambient direction was available; the specific 90-dollar threshold and three-settle count were not, and neither is deducible from directi",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "US 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-08-28",
@@ -1086,8 +1102,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — US Treasury daily yield curve data or Bloomberg records show a 10-year constant maturity closing yield above 4.80 percent on any weekday between 2026-07-23 and 2026-08-28 — is not met on or before 2026-08-28; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no yield level held at seal; basis is the thesis that inflation rises under current fiscal policy. Confound: the daily collation carries rate-direction headlines, so ambient direction was available; the 4.80 threshold was not, and is not deducible from direction alone",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Andy Biggs wins the Arizona gubernatorial general election, defeating Katie Hobbs by any margin, with results certified between 2026-11-05 and 2026-12-15",
@@ -1146,8 +1163,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — JMA official alert records or two independent wire reports confirm five or more distinct alert days for either city in the window — is not met on or before 2026-08-20; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "At least two independent wire services report a new United States or Israeli military strike on Iranian territory or Iranian-flagged maritime assets between 2026-07-23 and 2026-09-15",
@@ -1186,8 +1204,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — ICE Brent front-month official settlement prices exceed 90 dollars on three or more weekdays within the window per exchange or EIA data — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The United States 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-09-30",
@@ -1247,8 +1266,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — At least two new malware samples labeled as msaRAT or variants, originating from headless browser traffic, will be detected on VirusTotal by 2026-08-01 — is not met on or before 2026-08-01; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "sample proliferation follows public disclosure; arithmetic on the reporting pipeline",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "On or before 2026-08-05, the European Central Bank will announce a rate hike in response to energy price spikes driven by Middle East conflict.",
@@ -1268,8 +1288,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — The European Central Bank will publicly announce a rate increase on or before 2026-08-05, citing inflation pressures from energy shocks linked to Middle East conflict — is not met on or before 2026-08-05; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Between 2026-07-30 and 2026-08-03, a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz will be reported by Al Jazeera or BBC World.",
@@ -1289,8 +1310,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — Al Jazeera or BBC World will report a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz between 2026-07-30 and 2026-08-03 — is not met on or before 2026-08-03; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Over 80,000 people will have been evacuated from the Cap Ferret peninsula and surrounding areas near Madrid due to wildfires between 2026-07-24 and 2026-07-27.",
@@ -1351,8 +1373,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if any front-month WTI daily settlement reported by CME or major financial press between 2026-07-27 and 2026-08-14 is 95.00 USD or higher; else FALSE — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The 30-year US Treasury yield closes at or above 6.00 percent on at least one trading day between 2026-07-27 and 2026-10-30.",
@@ -1432,8 +1455,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if a named US official or spokesperson, in on-record public reporting between 2026-07-25 and 2026-08-03, confirms or denies the reported ceasefire proposal; else FALSE — is not met on or before 2026-08-03; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The CDC publicly identifies a specific implicated food product or source for the US cyclosporiasis outbreak between 2026-07-25 and 2026-08-31.",
@@ -1453,8 +1477,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if a CDC advisory or public statement between 2026-07-25 and 2026-08-31 names a specific food product or source linked to the outbreak; else FALSE — is not met on or before 2026-08-31; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "priors [6] and [8] establish an expanding outbreak and explicitly report recall confusion adding uncertainty; identification of a specific implicated product is an investigative outcome the priors argue against rather than toward",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The government of France declares a national state of emergency or equivalent nationwide wildfire emergency between 2026-07-25 and 2026-08-07.",
@@ -1474,8 +1499,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if the French national government formally declares a nationwide state of emergency for the wildfires, reported by major press between 2026-07-25 and 2026-08-07; else FALSE — is not met on or before 2026-08-07; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "CISA adds the Certighost Active Directory vulnerability to its Known Exploited Vulnerabilities catalog between 2026-07-25 and 2026-09-15.",
@@ -1515,8 +1541,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if a CDC report or advisory between 2026-07-25 and 2026-08-31 states a case count above 15000 for the cyclosporiasis outbreak; else FALSE — is not met on or before 2026-08-31; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "prior [6] gives 7,400 cases already expanding across nine states; roughly doubling over five weeks is extrapolation of the growth the prior itself states, not a departure from it",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "ICE Brent front-month crude settles at or above 100.00 USD per barrel on at least one trading day between 2026-07-27 and 2026-08-14.",
@@ -1534,7 +1561,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if any ICE Brent front-month official daily settlement reported by ICE or major financial press between 2026-07-27 and 2026-08-14 is 100.00 USD or higher; else FALSE — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if any ICE Brent front-month official daily settlement reported by ICE or major financial press between 2026-07-27 and 2026-08-14 is 100.00 USD or higher; else FALSE — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The S&P 500 closes at or below 7000 on at least one trading day between 2026-07-27 and 2026-09-30.",
@@ -1588,7 +1618,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if two or more of Reuters, AP, AFP, BBC, or Al Jazeera publish reports of a new strike on Iranian territory or Iranian-flagged vessels dated within the window; else FALSE — is not met on or before 2026-08-24; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if two or more of Reuters, AP, AFP, BBC, or Al Jazeera publish reports of a new strike on Iranian territory or Iranian-flagged vessels dated within the window; else FALSE — is not met on or before 2026-08-24; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The United States and Iran publicly announce a ceasefire or formal cessation of hostilities between 2026-07-27 and 2026-09-30.",
@@ -1625,7 +1658,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if the French national government formally declares a nationwide state of emergency covering the wildfires, reported by two independent wire services within the window; else FALSE — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if the French national government formally declares a nationwide state of emergency covering the wildfires, reported by two independent wire services within the window; else FALSE — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The UK Ministry of Defence publicly confirms deployment of military assets to assist wildfire suppression in Scotland between 2026-07-27 and 2026-08-07.",
@@ -1643,7 +1679,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if the UK MoD or Scottish Government confirms deployment of military personnel or aircraft to the Cairngorms wildfire, reported by major press within the window; else FALSE — is not met on or before 2026-08-07; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if the UK MoD or Scottish Government confirms deployment of military personnel or aircraft to the Cairngorms wildfire, reported by major press within the window; else FALSE — is not met on or before 2026-08-07; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "CISA adds a Fastjson or GitLab remote-code-execution CVE to its Known Exploited Vulnerabilities catalog between 2026-07-27 and 2026-09-15.",
@@ -1680,7 +1719,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if Al Jazeera, Reuters, or AP report that IRIB broadcast the previously withheld speech or that the government-broadcaster dispute was formally resolved within the window; else FALSE — is not met on or before 2026-08-15; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — TRUE if Al Jazeera, Reuters, or AP report that IRIB broadcast the previously withheld speech or that the government-broadcaster dispute was formally resolved within the window; else FALSE — is not met on or before 2026-08-15; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "A US federal court or the Supreme Court issues a ruling in a challenge to Trump administration tariffs between 2026-07-27 and 2026-10-31.",
@@ -1904,7 +1946,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — At least one Iranian vessel in the Caspian Sea is confirmed damaged by a Ukrainian strike, as reported by at least two independent news outlets with verified timestamps between 2026-08-02 and 2026-08-05 — is not met on or before 2026-08-05; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — At least one Iranian vessel in the Caspian Sea is confirmed damaged by a Ukrainian strike, as reported by at least two independent news outlets with verified timestamps between 2026-08-02 and 2026-08-05 — is not met on or before 2026-08-05; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The S&P 500 closes below 7,200 points on or before 2026-10-15 due to sustained investor panic over AI sector overvaluation.",
@@ -1943,7 +1988,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — A formal protest letter from Romania to the UN Security Council, citing Russian drone incursions, is published in the UN official document system between 2026-08-10 and 2026-08-13 — is not met on or before 2026-08-13; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — A formal protest letter from Romania to the UN Security Council, citing Russian drone incursions, is published in the UN official document system between 2026-08-10 and 2026-08-13 — is not met on or before 2026-08-13; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "France experiences a new major wildfire in the Provence-Alpes-Côte d'Azur region between 2026-10-01 and 2026-10-04, forcing evacuations of at least 10,000 people.",
@@ -1982,7 +2030,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — At least two independent news outlets report that Iran conducted a military exercise in the Caspian Sea involving missile launches, with the event occurring between 2026-08-20 and 2026-08-23 — is not met on or before 2026-08-23; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — At least two independent news outlets report that Iran conducted a military exercise in the Caspian Sea involving missile launches, with the event occurring between 2026-08-20 and 2026-08-23 — is not met on or before 2026-08-23; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The European Central Bank announces a 0.5 percentage point interest rate hike on or before 2026-11-15, citing inflation concerns.",
@@ -2042,7 +2093,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — A transcript or video of a televised address by UK Prime Minister Andy Burnham, published by a major news outlet, contains a direct public criticism of Donald Trump's foreign policy, with the event occurring between 2026-08-15 and 2026-08-18 — is not met on or before 2026-08-18; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — A transcript or video of a televised address by UK Prime Minister Andy Burnham, published by a major news outlet, contains a direct public criticism of Donald Trump's foreign policy, with the event occurring between 2026-08-15 and 2026-08-18 — is not met on or before 2026-08-18; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "A new political party led by Senegal's Faye formally registers with the country's electoral commission between 2026-08-03 and 2026-08-06.",
@@ -2061,7 +2115,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — The Senegalese electoral commission publishes a formal registration of a new political party led by Faye, as confirmed by Al Jazeera or a government press release, between 2026-08-03 and 2026-08-06 — is not met on or before 2026-08-06; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — The Senegalese electoral commission publishes a formal registration of a new political party led by Faye, as confirmed by Al Jazeera or a government press release, between 2026-08-03 and 2026-08-06 — is not met on or before 2026-08-06; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Lieutenant General Gregory K. Anderson will no longer be named as commanding officer of the XVIII Airborne Corps in the source of record on 2026-08-14.",
@@ -2080,7 +2137,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the same officer is named, as read from the resolution basis on 2026-08-14; that reading scores this entry a MISS."
+      "failure_condition": "the same officer is named, as read from the resolution basis on 2026-08-14; that reading scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Major General Brandon R. Tegtmeier will no longer be named as commanding officer of the 82nd Airborne Division in the source of record on 2026-09-25.",
@@ -2368,7 +2428,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the resolution basis does not report the stated outcome in the window; absence at 2026-08-26 scores this entry a MISS."
+      "failure_condition": "the resolution basis does not report the stated outcome in the window; absence at 2026-08-26 scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Brent crude front-month futures will trade above 100.00 dollars per barrel at some point between 2026-07-28 and 2026-08-31.",
@@ -2387,7 +2450,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — ICE Brent front-month intraday high exceeds 100.00 dollars on any session in the window per published exchange data — is not met on or before 2026-08-31; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — ICE Brent front-month intraday high exceeds 100.00 dollars on any session in the window per published exchange data — is not met on or before 2026-08-31; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "the resolution states its own anchor, Brent 90.14 on the packet date, so the level was held; 100.00 is an eleven percent crossing above it and nothing in the declared priors reaches toward a move of that size",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The German federal prosecutor will publicly classify the Berlin Pride vehicle attack as a terrorist offence rather than solely a hate crime, on or before 2026-08-14.",
@@ -2407,7 +2473,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — a statement on the Generalbundesanwalt website, or reporting by two of Deutsche Presse-Agentur, Deutsche Welle and Reuters dated on or before 2026-08-14 — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — a statement on the Generalbundesanwalt website, or reporting by two of Deutsche Presse-Agentur, Deutsche Welle and Reuters dated on or before 2026-08-14 — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The German federal cabinet will approve a draft bill tightening extremism or weapons law that explicitly references the Berlin Pride attack, on or before 2026-10-31.",
@@ -2465,7 +2534,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — White House schedules or pool reports, or by two wire services, showing both leaders in a face-to-face meeting with Trump in the window — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — White House schedules or pool reports, or by two wire services, showing both leaders in a face-to-face meeting with Trump in the window — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The United States Senate will confirm Jay Clayton to the intelligence post for which he was nominated, on or before 2026-09-30.",
@@ -2563,7 +2635,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — Resolved yes if US Central Command or the Department of Defense confirms a strike on Iranian territory in that window, or if two or more of AP, Reuters and AFP report one — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — Resolved yes if US Central Command or the Department of Defense confirms a strike on Iranian territory in that window, or if two or more of AP, Reuters and AFP report one — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The upper bound of the US federal funds target range is above 3.75 percent on 2026-10-30.",
@@ -2604,7 +2679,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — the official ICE settlement price for the front-month Brent contract — is not met on or before 2026-08-28; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — the official ICE settlement price for the front-month Brent contract — is not met on or before 2026-08-28; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "cited items [8] and [13] are unrelated to oil pricing and the row states no reference level; prevailing Brent is ordinary supplied knowledge, so a single-day settle below 85 is a distributional read from a level already held rather than foresight",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "CISA adds a vulnerability in the n8n workflow automation platform to its Known Exploited Vulnerabilities catalog between 2026-07-28 and 2026-10-30.",
@@ -2764,7 +2842,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — Japan Fire and Disaster Management Agency or Cabinet Office figures — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — Japan Fire and Disaster Management Agency or Cabinet Office figures — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The Nasdaq Composite closes below 23,000 on 2026-08-28.",
@@ -2786,7 +2867,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — the official Nasdaq closing value — is not met on or before 2026-08-28; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — the official Nasdaq closing value — is not met on or before 2026-08-28; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "priors [3] and [8] give equity sentiment but no index level; prevailing Nasdaq is ordinary supplied knowledge, and a single-day close against a known level is a distributional read on a random walk, which is arithmetic",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "ICE Brent front-month crude futures settle below 80.00 US dollars per barrel on 2026-08-28.",
@@ -2806,7 +2890,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — the official ICE settlement for the front-month Brent contract — is not met on or before 2026-08-28; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — the official ICE settlement for the front-month Brent contract — is not met on or before 2026-08-28; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "cited items [7] and [20] are unrelated to oil pricing and the row states no reference level; a single-day settle below 80 is a distributional read from prevailing Brent, which is ordinary supplied knowledge",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "The upper bound of the US federal funds target range is above 3.75 percent on 2026-10-30.",
@@ -2978,7 +3065,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — At least 15 water utility systems in the U.S. report a confirmed public shutdown of operational control systems due to a cyberattack between 2026-08-05 and 2026-08-15, as verified by CISA or a major news outlet — is not met on or before 2026-08-15; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — At least 15 water utility systems in the U.S. report a confirmed public shutdown of operational control systems due to a cyberattack between 2026-08-05 and 2026-08-15, as verified by CISA or a major news outlet — is not met on or before 2026-08-15; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Between 2026-09-10 and 2026-09-17, the S&P 500 index closes below 7,000 points for three consecutive trading days.",
@@ -3188,7 +3278,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — The EUR/USD exchange rate falls to 1.08 or lower between 2026-08-20 and 2026-08-27, as reported by Bloomberg or Reuters — is not met on or before 2026-08-27; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — The EUR/USD exchange rate falls to 1.08 or lower between 2026-08-20 and 2026-08-27, as reported by Bloomberg or Reuters — is not met on or before 2026-08-27; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "twenty-five cited items carry no FX content and the resolution states no reference rate; ruled keyed on the conservative rule (4.03) because a citation dump does not establish what the forecaster held, and EUR/USD direction is ordinary supplied knowledge",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "On or before 2026-12-25, a new U.S. federal law is passed that mandates the use of SBOMs for all software used in critical infrastructure.",
@@ -3379,7 +3472,10 @@
       "status": "open",
       "resolved_date": null,
       "notes": "",
-      "failure_condition": "the condition stated in this entry's resolution basis — Japan Fire and Disaster Management Agency or Cabinet Office figures published on or before 2026-08-31 — is not met on or before 2026-08-31; absence at the deadline scores this entry a MISS."
+      "failure_condition": "the condition stated in this entry's resolution basis — Japan Fire and Disaster Management Agency or Cabinet Office figures published on or before 2026-08-31 — is not met on or before 2026-08-31; absence at the deadline scores this entry a MISS.",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "prior [25] establishes an active rescue effort but carries no casualty figure; a threshold of 100 confirmed dead has no anchor in the declared priors",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "USGS records at least one earthquake of magnitude 5.5 or greater within 100 km of the 2026-07-28 Uto epicentre between 2026-07-30 and 2026-09-30.",
@@ -4942,7 +5038,10 @@
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — A public disclosure from Adobe or a third-party cybersecurity firm confirms that the Adobe Campaign Classic CVSS 10.0 vulnerability was exploited between 2026-08-16 and 2026-08-23, leading to a data breach affecting more than 1 million users — is not met on or before 2026-08-23; absence at the deadline scores this entry a MISS.",
       "sealed_at": "2026-08-01T16:55:29.613233+00:00",
-      "seal_sha256": "3e8f97e72012365f83ece94aae48ce8bfe5509ac94d1661a3d69a6d8ed37190b"
+      "seal_sha256": "3e8f97e72012365f83ece94aae48ce8bfe5509ac94d1661a3d69a6d8ed37190b",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "deducible from the cited report items",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Between 2026-09-09 and 2026-09-16, Iran will launch a missile strike on a U.S. military installation in the Persian Gulf region.",
@@ -5203,7 +5302,10 @@
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — any release in the window confirms a US or Israeli strike on Iranian oil, gas, or petrochemical infrastructure — is not met on or before 2026-08-31 as read from defense.gov news releases and idf.il statements; absence at the deadline scores this entry a MISS.",
       "sealed_at": "2026-08-01T16:55:29.613452+00:00",
-      "seal_sha256": "189d82511bfefe7dcb7188b16de84b5f3de9909b073cbd2ba7d65552fd9e3c8f"
+      "seal_sha256": "189d82511bfefe7dcb7188b16de84b5f3de9909b073cbd2ba7d65552fd9e3c8f",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "cited item [10] concerns Chinese-speaking hackers targeting Central Asian governments and is unrelated to US or Israeli strikes on Iranian energy infrastructure; the declared prior does not establish what the forecaster held, so deducibility is undeterminable - keyed by the conservative rule, pending cite_audit",
+      "keyed_keyless_dated": "2026-08-01"
     },
     {
       "statement": "Russia and Ukraine will sign or jointly announce a ceasefire or peace agreement intended to end large-scale hostilities, effective on or before 2026-12-31.",
