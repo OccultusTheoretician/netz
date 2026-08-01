@@ -200,6 +200,19 @@ def main():
     for path, active in targets:
         nav_html = render_nav(manifest, active)
         action, new = stamp(path, nav_html)
+        # canonical-ensure (KK17): every stamped page carries one
+        # <link rel="canonical"> derived from its basename, so
+        # regenerated faces self-heal on the next ship like the nav.
+        base = new if new is not None else path.read_text(encoding="utf-8")
+        canon = ('<link rel="canonical" href="https://retroprescientaudit.com/'
+                 + active + '">')
+        if 'rel="canonical"' not in base and "</title>" in base:
+            base = base.replace("</title>", "</title>\n" + canon, 1)
+            if action == "current":
+                action = "inserted"
+            new = base
+        elif new is not None:
+            new = base
         rel = path.relative_to(HERE)
         if a.check:
             if action != "current":
