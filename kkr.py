@@ -991,14 +991,18 @@ def cmd_audit_export(args):
         return
     due.sort(key=lambda p: p["deadline"])
     now = datetime.now(timezone.utc)
+    import hashlib as _hl
     body = AUDIT_PROMPT_HEADER.format(
         stamp=now.strftime("%d%H%MZ %b %y").upper(), n=len(due))
+    body += ("\n_adjudication-prompt sha256: "
+             + _hl.sha256(AUDIT_PROMPT_HEADER.encode("utf-8")).hexdigest() + "_\n")
     for p in due:
         body += (f"\n### {p['id']}\n"
                  f"- **Issued:** {p['date_issued']}  ·  **Deadline:** {p['deadline']}\n"
                  f"- **Domain:** {p.get('domain','general')}\n"
                  f"- **Claim:** {p['statement']}\n"
-                 f"- **Resolution criterion:** {p['resolution']}\n")
+                 f"- **Resolution criterion:** {p['resolution']}\n"
+                 f"- **Failure condition:** {p.get('failure_condition') or '(none recorded)'}\n")
     OUT.mkdir(exist_ok=True)
     path = OUT / f"audit_packet_{now.strftime('%Y-%m-%d')}.md"
     path.write_text(body, encoding="utf-8")
@@ -1071,6 +1075,123 @@ def cmd_audit_ingest(args):
     render_ledger()
 
 
+def _jury_parse(path):
+    raw = Path(path).read_text(encoding="utf-8")
+    txt = _normalize_json_text(re.sub(r"```(?:json)?", "", raw).strip())
+    m = re.search(r"\[.*\]", txt, re.S)
+    if not m:
+        print(f"KKR - no JSON array in {path}", file=sys.stderr); sys.exit(1)
+    try:
+        vs = json.loads(m.group(0))
+    except json.JSONDecodeError:
+        last = m.group(0).rfind("}")
+        vs = json.loads(m.group(0)[:last + 1] + "]") if last != -1 else []
+    return {v.get("id"): v for v in vs if v.get("id")}
+
+
+def cmd_jury_ingest(args):
+    """Blind jury: two adjudicators, same blinded packet, same committed
+    prompt. Concordance resolves as a recommendation; discord escalates to
+    the operator with both opinions printed. The jury recommends; you rule;
+    nothing is written without your key. Kappa is printed and logged."""
+    import hashlib as _hl
+    a_name, b_name = args.auditors
+    A = _jury_parse(args.jury[0])
+    B = _jury_parse(args.jury[1])
+    ph = _hl.sha256(AUDIT_PROMPT_HEADER.encode("utf-8")).hexdigest()
+    data = load_ledger()
+    today = datetime.now(timezone.utc).date()
+    open_ids = [p["id"] for p in data["projections"] if p["status"] == "open"]
+    both = [i for i in open_ids if i in A and i in B]
+    agree = sum(1 for i in both if str(A[i].get("verdict", "")).upper()
+                == str(B[i].get("verdict", "")).upper())
+    kappa = None
+    if len(both) >= 2:
+        cats = ("HIT", "MISS", "AMBIGUOUS")
+        na = {c: 0 for c in cats}
+        nb = {c: 0 for c in cats}
+        for i in both:
+            va = str(A[i].get("verdict", "")).upper()
+            vb = str(B[i].get("verdict", "")).upper()
+            na[va if va in cats else "AMBIGUOUS"] += 1
+            nb[vb if vb in cats else "AMBIGUOUS"] += 1
+        po = agree / len(both)
+        pe = sum(na[c] * nb[c] for c in cats) / (len(both) ** 2)
+        kappa = (po - pe) / (1 - pe) if pe < 1 else 1.0
+    print(f"\nBLIND JURY - {a_name} + {b_name} - prompt sha256 {ph[:16]}...")
+    print(f"rows juried by both: {len(both)} - concordant: {agree}"
+          + (f" - kappa {kappa:+.3f}" if kappa is not None else " - kappa n/a (n<2)"))
+    print("[a]ccept concordant - [1] take " + a_name + " - [2] take " + b_name
+          + " - [h]it [m]iss [v]oid [s]kip\n", file=sys.stderr)
+    ruled = 0
+    vmapd = {"HIT": "hit", "MISS": "miss"}
+    for p in data["projections"]:
+        if p["status"] != "open" or (p["id"] not in A and p["id"] not in B):
+            continue
+        va = A.get(p["id"])
+        vb = B.get(p["id"])
+        print(f"\n{p['id']} - deadline {p['deadline']}")
+        print(f"  CLAIM: {p['statement']}")
+        print(f"  CRITERION: {p['resolution']}")
+        for nm, v in ((a_name, va), (b_name, vb)):
+            if v is None:
+                print(f"  --- {nm}: no verdict ---")
+                continue
+            print(f"  --- {nm}: {v.get('verdict','?')} (conf {v.get('confidence','?')}) ---")
+            print(f"      EVIDENCE: {str(v.get('evidence','-'))[:300]}")
+            print(f"      DISCONFIRMING: {str(v.get('disconfirming','-'))[:200]}")
+        conc = bool(va and vb and str(va.get("verdict", "")).upper()
+                    == str(vb.get("verdict", "")).upper())
+        print("  JURY: " + ("CONCORDANT - " + str(va.get("verdict")).upper() if conc
+                            else "DISCORD - operator rules"))
+        ans = input("  [a/1/2/h/m/v/s] > ").strip().lower()
+        mapped = None
+        basis = None
+        if ans == "a" and conc:
+            mapped = vmapd.get(str(va.get("verdict", "")).upper())
+            basis = "jury-concordant"
+            if mapped is None:
+                print("  jury said AMBIGUOUS - left open", file=sys.stderr)
+                continue
+        elif ans == "1" and va:
+            mapped = vmapd.get(str(va.get("verdict", "")).upper())
+            basis = a_name
+        elif ans == "2" and vb:
+            mapped = vmapd.get(str(vb.get("verdict", "")).upper())
+            basis = b_name
+        elif ans in ("h", "m", "v"):
+            mapped = {"h": "hit", "m": "miss", "v": "void"}[ans]
+            basis = "operator"
+        if mapped:
+            p["status"] = mapped
+            p["resolved_date"] = today.strftime("%Y-%m-%d")
+            p["audit"] = {"mode": "blind-jury", "auditors": [a_name, b_name],
+                          "prompt_sha256": ph, "concordant": conc,
+                          "basis": basis,
+                          "verdicts": {a_name: (va or {}).get("verdict"),
+                                       b_name: (vb or {}).get("verdict")},
+                          "evidence": str(((va or vb) or {}).get("evidence", ""))[:600]}
+            note = input("  your note (enter = juror evidence) > ").strip()
+            p["notes"] = note or f"[jury] {str(((va or vb) or {}).get('evidence',''))[:600]}"
+            ruled += 1
+    save_ledger(data)
+    logp = HERE / "jury_log.json"
+    log = []
+    if logp.exists():
+        try:
+            log = json.loads(logp.read_text(encoding="utf-8"))
+        except Exception:
+            log = []
+    log.append({"date": today.strftime("%Y-%m-%d"), "auditors": [a_name, b_name],
+                "prompt_sha256": ph, "juried_by_both": len(both),
+                "concordant": agree,
+                "kappa": (round(kappa, 3) if kappa is not None else None),
+                "ruled": ruled})
+    logp.write_text(json.dumps(log, indent=1) + "\n", encoding="utf-8")
+    print(f"\nKKR - {ruled} ruled and written - jury_log.json appended", file=sys.stderr)
+    render_ledger()
+
+
 def main():
     ap = argparse.ArgumentParser(description="KKR — Kaos Kontrol Report: forecasts + predictive ledger")
     ap.add_argument("--provider", choices=["lmstudio", "anthropic", "auto"], default="lmstudio")
@@ -1090,6 +1211,11 @@ def main():
                     help="export past-deadline projections as an audit packet")
     ap.add_argument("--audit-ingest", metavar="FILE",
                     help="ingest an auditor's verdict JSON; you rule on each")
+    ap.add_argument("--jury", nargs=2, metavar=("A.json", "B.json"),
+                    help="blind jury: two verdict files from the same blinded packet")
+    ap.add_argument("--auditors", nargs=2, default=["claude", "qwen"],
+                    metavar=("NAME_A", "NAME_B"),
+                    help="juror names for provenance (default claude qwen)")
     ap.add_argument("--auditor", default="claude",
                     help="name of the auditor for provenance (claude/qwen/other)")
     args = ap.parse_args()
@@ -1098,6 +1224,8 @@ def main():
         cmd_audit_export(args)
     elif args.audit_ingest:
         cmd_audit_ingest(args)
+    elif args.jury:
+        cmd_jury_ingest(args)
     elif args.mine:
         cmd_mine(args)
     elif args.resolve:
