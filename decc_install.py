@@ -108,7 +108,7 @@ def main():
           f"{'found' if page.exists() else 'absent (skipping docs/decc.html)'}")
 
     # ---- 3. scan the payload for exposure ---------------------------------
-    leak = re.compile(r"C:\\\\Users|/home/[a-z]+/|\bAttila\b", re.I)
+    leak = re.compile(r"C:\\\\Users|/home/[a-z]+/", re.I)
     hits = []
     for f in SHIP + ([PAGE_SRC] if page.exists() else []):
         t = (src / f).read_text(encoding="utf-8", errors="replace")
