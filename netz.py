@@ -725,6 +725,7 @@ CROW_SVG = '''<img class="crow-mark" alt="NebelKr&auml;he" src="crow_mark.svg"/>
 
 def md_inline(text: str) -> str:
     t = html.escape(text, quote=False)
+    t = re.sub(r"`([^`]+)`", r'<code translate="no">\1</code>', t)
     t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2" target="_blank">\1</a>', t)
     t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
     t = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", t)
