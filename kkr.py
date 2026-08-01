@@ -1106,9 +1106,28 @@ def main():
         render_ledger()
         all_p = load_ledger()["projections"]
         _ov_arms = {}
+        # era-aware (arms-registry): the overall census counts effective
+        # forecasters, so era-carrying tags bucket by date_issued here too.
+        _ov_regp = Path(__file__).resolve().parent / "arms.json"
+        _ov_reg = {}
+        if _ov_regp.exists():
+            try:
+                _ov_reg = {a["tag"]: a for a in
+                           json.loads(_ov_regp.read_text(encoding="utf-8"))["arms"]}
+            except Exception:
+                _ov_reg = {}
         for _ov_x in (all_p or []):
             if isinstance(_ov_x, dict) and _ov_x.get("status") in ("hit", "miss"):
                 _ov_k = _ov_x.get("model") or "(untagged)"
+                _ov_e = _ov_reg.get(_ov_k, {}).get("eras")
+                if _ov_e:
+                    _ov_d2 = str(_ov_x.get("date_issued") or "")
+                    for _e in _ov_e:
+                        if _e.get("until") and _ov_d2 and _ov_d2 < _e["until"]:
+                            _ov_k = _ov_k + "[" + _e["id"] + "]"
+                            break
+                        if _e.get("from") and _ov_d2 and _ov_d2 >= _e["from"]:
+                            _ov_k = _ov_k + "[" + _e["id"] + "]"
                 _ov_arms[_ov_k] = _ov_arms.get(_ov_k, 0) + 1
         if len(_ov_arms) > 1:
             _ov_d = ", ".join("%s %d" % (k, v) for k, v in sorted(_ov_arms.items()))
