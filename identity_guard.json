@@ -1,17 +1,27 @@
 {
-  "schema": "identity-guard/1.0",
-  "note": "SHA-256 only. This file discloses nothing.",
+  "schema": "identity-guard/1.1",
+  "note": "Salted SHA-256 of terms that must never reach a published surface. The salt lives in identity_salt.local.txt, which is gitignored and never leaves the desk machine; without it these digests are not invertible by wordlist. This file therefore discloses nothing in fact, not only in claim. Losing the salt means re-adding every term - the plaintext is retained nowhere. Add with `python identity_guard.py add`.",
   "terms": [
-    "c35d6aaf3b3885dfc9f36cddf48a65e93a919e13165fbbcfc0f9de5636279559",
-    "d02adb3ac78f50b971a501d8a02b8c23e467d25fe5610a4f0252673b265bcf87",
-    "cdf30c6b345276278bedc7bcedd9d5582f5b8e0c1dd858f46ef4ea231f92731d",
-    "5f54706780ff33dba70dd4a4f8f6e9af30fa81431f0d7da2e5f9b81ed807cb6f",
-    "e6984e82c7b9d99b5ce2e61b29c767498706298a776c024ff88d499dc19a7786",
-    "a372175c1a0da26848196c031b2b78931708cb19872f730650724278c71f7e48",
-    "7aa7ecc2a319385e1fd583eeaa85e8e32b7c90345991926762f0d40eeb8b567f"
+    "1f89e51ab888b21e3c6951925190ca5790a55cb36f2be78eadff4a8fc07e0bff",
+    "242fb6546af7125a13c102de40aaae645206adea5d63e0aa13ff149d29d92bb0",
+    "5e2f6b38e954b1b789e59cbc64539a0b71e11134ee5e876d1f8bbdd296ffd817",
+    "68778a579ff432405ea5942315f35d512b8b1a7d882e9d0dfadea51345bee06d",
+    "981199fe9717e060542292fb5996340e603f3065655a19f3ec6d556e17175ea3",
+    "9be822ac674f1c27d3e4087514a96e669d7827fd24f0431835c20bacc45078b8",
+    "a69d4628d455ca4d6bd25228269a1db50ffa06eeb96097d0be52e10772849a91",
+    "e8aa57b4dc7bbd9ade257d22f158192947b76ef033635ad3ae19dc5ad63557c5",
+    "e9b24787cf5149a1cf4f675857fb291d4beec5e07a6bb8ee4fa46b1fadf7cff7"
   ],
   "bigrams": [
-    "35314a89094857ea497504b49da5630cdef676b5c710a6ddc2af282ed1e3f4d3",
-    "37ad9fe218d4a14c3a44e5a4c9d84564cb3c6983788aa0f04681db35a0c37b92"
-  ]
+    "19989801b3826fda2667dc72feb798a24196e565d07e06cb464243d61498f35d",
+    "8b821a88f17d0abf731e65db716dc18c8f5ae5e110cbd75a60d8d411ffad268b",
+    "aea47bf641428c6bbaadd4ec00fd51642360f3f36af742dc03e5f377dc7240c0",
+    "e3aae041d610d0cb8d39f36d9cf4709b73898d30dd0654d45f542517d118b50e",
+    "ea2e4d9923669c7b2a5fde6a84732bd880c4787d73b7fa45c2600de71476c1e9",
+    "f4f124a06d6df24d6437b453589f0a6aced9f29dabfdd7fcc1b4d7d920dca3f1"
+  ],
+  "legacy_unsalted": [
+    "a372175c1a0da26848196c031b2b78931708cb19872f730650724278c71f7e48"
+  ],
+  "legacy_note": "Unsalted digests from schema 1.0 whose plaintext was not recovered at migration. Still matched against unsalted token hashes so coverage is not lost; re-add the term to retire the entry."
 }

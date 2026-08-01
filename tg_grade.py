@@ -33,7 +33,7 @@ import json
 import re
 import sys
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -287,6 +287,14 @@ def render_section(events: list[dict], src: Path, divergences: list[str]) -> str
              "which is echo, not corroboration. Grade F = single source, counted and "
              "withheld. Sides are counted, not outlet labels: three Kremlin-aligned "
              "channels are one voice, not three.*\n")
+    _age = pull_age_days(src)
+    globals()['_stale_exit'] = bool(_age is not None and _age >= 1)
+    if _age is not None and _age >= 1:
+        o.append(f"> **STALE PULL — {_age} day{'s' if _age != 1 else ''} old.** "
+                 f"This section is rendered {datetime.now(timezone.utc).date().isoformat()} "
+                 f"from `{src.name}`, not from a pull taken today. The grades "
+                 f"below describe that older window. Treat the render stamp as "
+                 f"a render time, never as an observation time.\n")
     o.append(f"Pull: {src.name} \u00b7 {len(events)} clustered event{'s' if len(events)!=1 else ''} "
              f"({len(kin)} kinetic, {len(stm)} statement) \u00b7 "
              f"kinetic: **{len(by['A'])}A** {len(by['B'])}B {len(by['C'])}C {len(by['F'])} withheld \u00b7 "
@@ -497,6 +505,24 @@ def latest_events_file() -> Path | None:
     return cands[-1] if cands else None
 
 
+def pull_age_days(src: Path):
+    """Days between the pull's own filename stamp and today, or None.
+
+    KK18: --latest means newest-on-disk, not fresh. When tg_fetch yields
+    nothing the render silently reuses an old corpus, and the face still
+    says "rendered <today>". The age is computed from the stamp because
+    mtime lies after any copy, sync or checkout.
+    """
+    m = re.search(r"tg_events_(\d{4})-?(\d{2})-?(\d{2})", src.name)
+    if not m:
+        return None
+    try:
+        d = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+    except ValueError:
+        return None
+    return (datetime.now(timezone.utc).date() - d).days
+
+
 def load_events(path: Path) -> list[dict]:
     data = json.loads(path.read_text(encoding="utf-8-sig"))
     if isinstance(data, dict):
@@ -518,6 +544,8 @@ def schema_report() -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="NETZ WAR DESK — Module 3")
+    ap.add_argument("--stale-ok", action="store_true",
+                    help="render from an old pull without a non-zero exit")
     ap.add_argument("--latest", action="store_true", help="use newest tg_events_*.json")
     ap.add_argument("--file", help="explicit events file")
     ap.add_argument("--dry-run", action="store_true", help="print, write nothing")
@@ -576,6 +604,12 @@ def main() -> int:
     dated.write_text(section, encoding="utf-8")
     (FORECASTS / "WARDESK_latest.md").write_text(section, encoding="utf-8")
     print(f"WARDESK · section \u2192 {dated} (+ WARDESK_latest.md)", file=sys.stderr)
+    if _stale_exit and not getattr(args, "stale_ok", False):
+        print("WARDESK - STALE PULL: refusing a silent pass; "
+              "re-run tg_fetch.py, or pass --stale-ok to accept it.",
+              file=sys.stderr)
+        sys.exit(2)
+
 
     if not args.no_tile:
         DOCS.mkdir(parents=True, exist_ok=True)

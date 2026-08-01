@@ -51,7 +51,8 @@ Every projection MUST:
 3. Carry "resolution": the exact criterion that settles it true or false.
 4. Carry "deadline": an ISO date between {min_date} and {max_date}. If the resolution depends on a market close or settlement, the deadline must be a weekday.
 5. Carry "citations": a list of item numbers from the report's record that ground it.
-6. Base-rate discipline: most discrete events do not happen; do not cluster probabilities at 60-80%. At least two projections must be rated BELOW 35%.
+6. Carry "failure_condition": one sentence naming what, observed at the deadline, makes this entry a MISS. State the CONDITION that must fail, not the source that reports it. Pre-register it now; it is not editable later.
+7. Base-rate discipline: most discrete events do not happen; do not cluster probabilities at 60-80%. At least two projections must be rated BELOW 35%.
 
 Use plain ASCII straight quotes only. Do NOT use curly quotes. Do NOT put quotation marks inside any statement or resolution string — refer to names and phrases without quoting them.
 Return ONLY a JSON array — no markdown fences, no commentary before or after:
@@ -247,7 +248,28 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
         except ValueError:
             pass
     res = p.get("resolution", "")
-    if re.search(r"\b[A-Z][\w.&-]{1,}\s+or\s+(?:the\s+)?[A-Z]", res):
+    # KK18 patch: context-anchored venue-'or'. Old caps-or-caps proxy missed
+    # lowercase alternatives and false-fired on actor disjunctions.
+    _vmask = re.sub(r"\b(?:at|on)\s+or\s+(?:above|below|before|after)\b"
+                    r"|\bor\s+(?:more|greater|higher|later|fewer|less)\b",
+                    " ", res, flags=re.I)
+    _vscopes = re.findall(
+        r"(?:resolved from|reported by|verified by|confirmed by|published by|"
+        r"according to|per|disclosure from|statement from|advisory from|"
+        r"report from|releases? from|\bfrom)\s+([^;]*?)(?=\.\s|\.$|;|$)", _vmask, re.I)
+    _vclass = re.search(
+        r"\b(?:two|three|four|\d+)\s+(?:or more\s+)?(?:major\s+|independent\s+|"
+        r"international\s+|credible\s+)*(?:news\s+)?"
+        r"(?:sources|outlets|agencies|wire services)\b", _vmask, re.I)
+    _vhit = False
+    if _vscopes:
+        _vhit = any(re.search(r"\s+or\s+", _s) for _s in _vscopes)
+    elif not _vclass:
+        _vhit = bool(
+            re.search(r"\b[A-Z][\w.&'-]+,?\s+or\s+(?:the\s+)?[A-Z]", _vmask) or
+            re.search(r"\b[A-Z][\w.&'-]+\s+or\s+an?\s+[\w-]+(?:\s+[\w-]+){0,3}\s+"
+                      r"(?:firm|source|outlet|agency|service|publication)\b", _vmask))
+    if _vhit:
         reasons.append("resolution names alternative venues joined by 'or' \u2014 "
                        "name ONE source of record or define the venue class; "
                        "an adjudicator must not choose the venue after the fact")
@@ -259,11 +281,18 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     if not (_src_hint or _src_noun or _src_dom):
         reasons.append("resolution names no source of record \u2014 a stranger "
                        "must know exactly where to look on the deadline date")
-    if re.search(r"\b(?:price|yield|rate|index|level|magnitude|count|total|"
+    if re.search(r"\b(?:price|yield|rate|level|magnitude|count|total|"
                  r"threshold|close[sd]?|above|below|exceed)\b", both, re.I) \
             and not re.search(r"(?:above|below|exceed\w*|at least|at or|over|"
                               r"under|reach\w*|close[sd]?|threshold|magnitude|"
-                              r"least)\D{0,12}[\$\u20ac]?\d", both, re.I):
+                              r"least)\D{0,12}[\$\u20ac]?"
+                              r"(?:\d|one\b|two\b|three\b|four\b|five\b|"
+                              r"six\b|seven\b|eight\b|nine\b|ten\b)", both, re.I) \
+            and not re.search(r"\d[\d.,]*\s*(?:percentage[ -]points?|pp\b|"
+                              r"bps\b|basis[ -]points?|percent\b|%)", both, re.I) \
+            and not re.search(r"\b(?:lower|higher|less|greater|above|below)\s+than\s+"
+                              r"the\s+\w+(?:\s+\w+){0,5}\s+(?:set|published|announced|"
+                              r"recorded|established|adopted)\b", both, re.I):
         reasons.append("measurable claim without a numeric threshold \u2014 "
                        "a row about a quantity must state the number next to its comparator; identifier digits (H.15, S&P 500) do not count")
     if re.search(r"^\s*if\b|\bonly if\b|\bprovided that\b|\bin the event\b",
@@ -332,7 +361,29 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
                f"`python kkr.py --resolve`). "
                f"**No pooled score is published** — a Brier score belongs to one "
                f"forecaster; an average across arms is nobody's record.\n")
-    mine = arms.get(model_tag, {"issued": 0, "open": 0, "n_resolved": 0})
+    mine = arms.get(model_tag)
+    if mine is None:
+        # KK18 patch: era-split registry tags never appear bare in arm_stats.
+        # Show the CURRENT era bucket - the effective forecaster - per 84020db.
+        _bk = sorted(k for k in arms if k.startswith(model_tag + "["))
+        if _bk:
+            _pick = _bk[-1]
+            try:
+                _eras = {a["tag"]: a.get("eras") for a in json.loads(
+                    (Path(__file__).resolve().parent / "arms.json")
+                    .read_text(encoding="utf-8"))["arms"]}.get(model_tag)
+                _td = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                for _e in _eras or []:
+                    if _e.get("from") and _td >= _e["from"] and not _e.get("until"):
+                        _c = model_tag + "[" + _e["id"] + "]"
+                        if _c in arms:
+                            _pick = _c
+            except Exception:
+                pass
+            model_tag = _pick
+            mine = arms[_pick]
+    if mine is None:
+        mine = {"issued": 0, "open": 0, "n_resolved": 0}
     if mine["n_resolved"]:
         skill = "—" if mine["skill"] is None else f"{mine['skill']:+.3f}"
         noise = " · under 30 resolved, this is noise" if mine["n_resolved"] < 30 else ""
@@ -1192,6 +1243,184 @@ def cmd_jury_ingest(args):
     render_ledger()
 
 
+def call_anthropic_search(model: str | None, prompt: str) -> str | None:
+    """Juror A: Anthropic API with server-side web search enabled.
+    Returns concatenated text blocks, or None (no key / call failed)."""
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        return None
+    try:
+        r = requests.post("https://api.anthropic.com/v1/messages", timeout=600,
+                          headers={"x-api-key": key,
+                                   "anthropic-version": "2023-06-01",
+                                   "content-type": "application/json"},
+                          json={"model": model or "claude-sonnet-4-6",
+                                "max_tokens": 6000,
+                                "tools": [{"type": "web_search_20250305",
+                                           "name": "web_search",
+                                           "max_uses": 8}],
+                                "messages": [{"role": "user", "content": prompt}]})
+        r.raise_for_status()
+        return "".join(b.get("text", "") for b in r.json().get("content", [])
+                       if b.get("type") == "text")
+    except Exception as exc:
+        print(f"KKR - searched-juror call failed: {exc}", file=sys.stderr)
+        return None
+
+
+def cmd_jury_run(args):
+    """The whole jury loop, one command. Export -> two jurors -> your ruling.
+    Juror A = Anthropic API with web search (access: searched).
+    Juror B = local LM Studio model on the same blinded packet (access: cold,
+    until evidence-attachment lands - weigh B's verdict accordingly).
+    The interactive ruling is unchanged: nothing writes without your key."""
+    import types as _types
+    cmd_audit_export(args)
+    now = datetime.now(timezone.utc)
+    packet = OUT / f"audit_packet_{now.strftime('%Y-%m-%d')}.md"
+    if not packet.exists():
+        return  # audit_export already said nothing is due
+    prompt = packet.read_text(encoding="utf-8")
+    stamp = now.strftime("%Y-%m-%d")
+    a_path = OUT / f"jury_A_{stamp}.json"
+    b_path = OUT / f"jury_B_{stamp}.json"
+
+    print("KKR - juror A (API, searched) ...", file=sys.stderr)
+    a_txt = call_anthropic_search(None, prompt)
+    if a_txt is None:
+        print("KKR - no ANTHROPIC_API_KEY in the environment.\n"
+              "      One-time setup:  setx ANTHROPIC_API_KEY <key>  (new shell after)\n"
+              "      Until then, manual path: give the packet to Claude, save the\n"
+              "      JSON as " + str(a_path) + " and run:\n"
+              "      python kkr.py --jury " + a_path.name + " " + b_path.name,
+              file=sys.stderr)
+    else:
+        a_path.write_text(a_txt, encoding="utf-8")
+        print(f"KKR - juror A verdicts -> {a_path}", file=sys.stderr)
+
+    print("KKR - juror B (local, cold) ...", file=sys.stderr)
+    b_txt = call_lmstudio(args.lmstudio_url,
+                          None if args.provider == "auto" else args.model, prompt)
+    if b_txt is None:
+        print("KKR - local juror unavailable (is LM Studio serving?). "
+              "Run daily.bat or `lms server start` and retry.", file=sys.stderr)
+    else:
+        b_path.write_text(b_txt, encoding="utf-8")
+        print(f"KKR - juror B verdicts -> {b_path}", file=sys.stderr)
+
+    if a_txt is None or b_txt is None:
+        print("KKR - jury needs both verdict files; ruling not started.",
+              file=sys.stderr)
+        return
+    j = _types.SimpleNamespace(jury=[str(a_path), str(b_path)],
+                               auditors=args.auditors)
+    cmd_jury_ingest(j)
+
+
+LANE_MODELS = {
+    "opus-5": "claude-opus-5",
+    "sonnet-5": "claude-sonnet-5",
+    "fable-5": "claude-fable-5",
+}
+
+
+def call_anthropic_lane(model_id: str, prompt: str, searched: bool):
+    """One manual-lane forecast call. Tools attached only when searched.
+
+    A bare call carries no tools, so cold is a property of the call rather
+    than an assumption about a session - which is what lets the row tag
+    /cold as an instrument fact.
+    """
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        return None
+    body = {"model": model_id, "max_tokens": 6000,
+            "messages": [{"role": "user", "content": prompt}]}
+    if searched:
+        body["tools"] = [{"type": "web_search_20250305", "name": "web_search",
+                          "max_uses": 10}]
+    try:
+        r = requests.post("https://api.anthropic.com/v1/messages", timeout=900,
+                          headers={"x-api-key": key,
+                                   "anthropic-version": "2023-06-01",
+                                   "content-type": "application/json"},
+                          json=body)
+        r.raise_for_status()
+        return "".join(b.get("text", "") for b in r.json().get("content", [])
+                       if b.get("type") == "text")
+    except Exception as exc:
+        print(f"KKR - {model_id} lane call failed: {exc}", file=sys.stderr)
+        return None
+
+
+def cmd_lane_run(args):
+    """The manual R2 lane without the hand-carry.
+
+    Writes the packet, fires it at each selected lane over the API in
+    parallel, writes each arm's projections file, and ingests each under its
+    own arm tag. The gate, the seal rules and the ledger writes are the
+    existing ones - nothing about adjudication or scoring changes here.
+    """
+    import concurrent.futures as _cf
+    import types as _types
+
+    args.packet_only = True
+    cmd_generate(args)                       # writes kkr_packet_<stamp>.md
+    packet = OUT / "kkr_packet_latest.md"
+    if not packet.exists():
+        print("KKR - no packet written; nothing to run", file=sys.stderr)
+        return
+    prompt = packet.read_text(encoding="utf-8")
+    packet_name = str(globals().get("_LAST_PACKET", packet.name))
+
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        print("KKR - no ANTHROPIC_API_KEY in the environment.\n"
+              "      setx ANTHROPIC_API_KEY <key>   (new shell after)\n"
+              "      Packet is written; the manual paste path still works.",
+              file=sys.stderr)
+        return
+
+    want = [s.strip() for s in (getattr(args, "lanes", None) or
+                                "opus-5,sonnet-5,fable-5").split(",") if s.strip()]
+    bad = [w for w in want if w not in LANE_MODELS]
+    if bad:
+        print(f"KKR - unknown lane(s): {', '.join(bad)}. "
+              f"Known: {', '.join(LANE_MODELS)}", file=sys.stderr)
+        return
+    access = "searched" if getattr(args, "lane_searched", False) else "cold"
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    print(f"KKR - lane run: {', '.join(want)} (access: {access})", file=sys.stderr)
+    with _cf.ThreadPoolExecutor(max_workers=len(want)) as ex:
+        futs = {ex.submit(call_anthropic_lane, LANE_MODELS[w], prompt,
+                          access == "searched"): w for w in want}
+        out = {}
+        for f in _cf.as_completed(futs):
+            w = futs[f]
+            txt = f.result()
+            if txt:
+                p = OUT / f"{w.replace('-', '')}_projections_{stamp}.json"
+                p.write_text(txt, encoding="utf-8")
+                out[w] = p
+                print(f"KKR - {w} -> {p.name}", file=sys.stderr)
+            else:
+                print(f"KKR - {w} returned nothing; skipped", file=sys.stderr)
+
+    if getattr(args, "no_ingest", False):
+        print("KKR - --no-ingest: files written, ledger untouched", file=sys.stderr)
+        return
+    for w, p in sorted(out.items()):
+        tag = f"manual/{w}/{access}"
+        print(f"\nKKR - ingesting {p.name} as {tag}", file=sys.stderr)
+        a = _types.SimpleNamespace(ingest=str(p), arm=tag, packet=packet_name)
+        try:
+            cmd_ingest(a)
+        except SystemExit:
+            raise
+        except Exception as exc:
+            print(f"KKR - ingest failed for {tag}: {exc}", file=sys.stderr)
+
+
 def main():
     ap = argparse.ArgumentParser(description="KKR — Kaos Kontrol Report: forecasts + predictive ledger")
     ap.add_argument("--provider", choices=["lmstudio", "anthropic", "auto"], default="lmstudio")
@@ -1213,6 +1442,18 @@ def main():
                     help="ingest an auditor's verdict JSON; you rule on each")
     ap.add_argument("--jury", nargs=2, metavar=("A.json", "B.json"),
                     help="blind jury: two verdict files from the same blinded packet")
+    ap.add_argument("--lane-run", action="store_true",
+                    help="write the packet, run every manual lane over the API, "
+                         "and ingest each under its own arm tag")
+    ap.add_argument("--lanes", metavar="LIST",
+                    help="comma list of lanes (default opus-5,sonnet-5,fable-5)")
+    ap.add_argument("--lane-searched", action="store_true",
+                    help="attach web search to the lane calls; tags /searched")
+    ap.add_argument("--no-ingest", action="store_true",
+                    help="with --lane-run: write the files, do not touch the ledger")
+    ap.add_argument("--jury-run", action="store_true",
+                    help="one command: export packet, run API-searched juror + "
+                         "local juror, then the interactive jury ruling")
     ap.add_argument("--auditors", nargs=2, default=["claude", "qwen"],
                     metavar=("NAME_A", "NAME_B"),
                     help="juror names for provenance (default claude qwen)")
@@ -1224,6 +1465,10 @@ def main():
         cmd_audit_export(args)
     elif args.audit_ingest:
         cmd_audit_ingest(args)
+    elif args.lane_run:
+        cmd_lane_run(args)
+    elif args.jury_run:
+        cmd_jury_run(args)
     elif args.jury:
         cmd_jury_ingest(args)
     elif args.mine:
