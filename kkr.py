@@ -270,6 +270,18 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                  p["statement"], re.I) and "void" not in res.lower():
         reasons.append("conditional trigger without a void clause \u2014 "
                        "pre-register what happens when the antecedent fails")
+    _regp = Path(__file__).resolve().parent / "arms.json"
+    if _regp.exists():
+        try:
+            _active = {a["tag"] for a in
+                       json.loads(_regp.read_text(encoding="utf-8"))["arms"]
+                       if a.get("status") == "active"}
+        except Exception:
+            _active = None
+        if _active and p.get("model") and p["model"] not in _active:
+            reasons.append("arm tag not registered active in arms.json \u2014 "
+                           "identity is explicit this era: lane/model/access, "
+                           "registered before sealing")
     if not (5 <= p["probability"] <= 95):
         reasons.append("probability outside 5-95")
     return reasons
@@ -532,6 +544,31 @@ def arm_stats(projs: list) -> dict:
     arms = {}
     for p in projs:
         arms.setdefault(p.get("model") or "unattributed", []).append(p)
+    # era split (arms-registry): a tag whose registry entry carries eras is
+    # bucketed by date_issued - pre and post are different effective
+    # forecasters and a Brier belongs to one forecaster.
+    _regp = Path(__file__).resolve().parent / "arms.json"
+    if _regp.exists():
+        try:
+            _reg = {a["tag"]: a for a in
+                    json.loads(_regp.read_text(encoding="utf-8"))["arms"]}
+        except Exception:
+            _reg = {}
+        for _tag in list(arms):
+            _eras = _reg.get(_tag, {}).get("eras")
+            if not _eras:
+                continue
+            _rows = arms.pop(_tag)
+            for _p in _rows:
+                _d = str(_p.get("date_issued") or "")
+                _bucket = _tag
+                for _e in _eras:
+                    if _e.get("until") and _d and _d < _e["until"]:
+                        _bucket = _tag + "[" + _e["id"] + "]"
+                        break
+                    if _e.get("from") and _d and _d >= _e["from"]:
+                        _bucket = _tag + "[" + _e["id"] + "]"
+                arms.setdefault(_bucket, []).append(_p)
     out = {}
     for tag, rows in sorted(arms.items()):
         s = brier_and_calibration(rows)
@@ -1087,6 +1124,30 @@ def main():
         lanes = {}
         for p in all_p:
             lanes.setdefault(p.get("model") or "unattributed", []).append(p)
+        # era split (arms-registry): same law as the ledger face - a tag
+        # with registry eras buckets by date_issued before scoring.
+        _regp = Path(__file__).resolve().parent / "arms.json"
+        if _regp.exists():
+            try:
+                _reg = {a["tag"]: a for a in
+                        json.loads(_regp.read_text(encoding="utf-8"))["arms"]}
+            except Exception:
+                _reg = {}
+            for _tag in list(lanes):
+                _eras = _reg.get(_tag, {}).get("eras")
+                if not _eras:
+                    continue
+                _rows = lanes.pop(_tag)
+                for _p in _rows:
+                    _d = str(_p.get("date_issued") or "")
+                    _bucket = _tag
+                    for _e in _eras:
+                        if _e.get("until") and _d and _d < _e["until"]:
+                            _bucket = _tag + "[" + _e["id"] + "]"
+                            break
+                        if _e.get("from") and _d and _d >= _e["from"]:
+                            _bucket = _tag + "[" + _e["id"] + "]"
+                    lanes.setdefault(_bucket, []).append(_p)
         for lane, ps in sorted(lanes.items()):
             s = brier_and_calibration(ps)
             if s.get("n_resolved"):

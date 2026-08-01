@@ -286,15 +286,17 @@ def audit_site(r, verbose):
                       f"majority nav (e.g. {_pages[0]} misses {miss})")
     r.sub("nav consistency", len(list(DOCS.glob("*.html"))), "pages")
 
-    if orphans:
-        for o in orphans:
-            s = texts[o]
-            ni = ROBOTS_NOINDEX.search(s)
-            tag = " [declares noindex - deliberate]" if (
-                ni and "noindex" in ni.group(1).lower()) else ""
-            r.bad("ORPHAN", "%s reachable from nothing%s" % (o, tag))
-    else:
-        r.ok("every page reachable by following links from the front page")
+    flagged = 0
+    for o in orphans:
+        s = texts[o]
+        ni = ROBOTS_NOINDEX.search(s)
+        if ni and "noindex" in ni.group(1).lower():
+            r.ok("%s unreachable by design - declares noindex" % o)
+            continue
+        r.bad("ORPHAN", "%s reachable from nothing" % o)
+        flagged += 1
+    if not flagged:
+        r.ok("every indexable page reachable by following links from the front page")
 
     # --- sitemap ----------------------------------------------------------
     sm = DOCS / "sitemap.xml"
