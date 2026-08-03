@@ -1,21 +1,34 @@
 {
   "source": "ledger.json",
-  "entries": 161,
-  "conformant": true,
-  "must_failures": [],
+  "entries": 254,
+  "conformant": false,
+  "must_failures": [
+    {
+      "cite": "RPAS 5.06",
+      "message": "KKR-20260801-01: SEAL DOES NOT RECOMPUTE \u2014 a pre-registered field was edited after sealing, or the construction diverged. A retroactive edit to a sealed entry scores as a MISS where recoverable and voids the span where not."
+    },
+    {
+      "cite": "RPAS 5.06",
+      "message": "KKR-20260801-13: SEAL DOES NOT RECOMPUTE \u2014 a pre-registered field was edited after sealing, or the construction diverged. A retroactive edit to a sealed entry scores as a MISS where recoverable and voids the span where not."
+    }
+  ],
   "should_departures": [],
   "notes": [
     {
       "cite": "RPAS 6.04",
-      "message": "161 pre-2026-07-30 entries lack a failure condition and the ledger's own disclosure prints the finding \u2014 conformant-as-disclosed; the 4.02f window to add one before resolution stands open"
+      "message": "25 pre-2026-07-30 entries lack a failure condition and the ledger's own disclosure prints the finding \u2014 conformant-as-disclosed; the 4.02f window to add one before resolution stands open"
     },
     {
       "cite": "RPAS 4.02f",
-      "message": "15 resolved entries carry no pre-resolution keyed/keyless determination. By RPAS 4.03 the 4 hit(s) among them are KEYED by rule and bear on no faculty claim; scores over these entries are calibration arithmetic only. The ledger's own disclosure prints this finding \u2014 conformant-as-disclosed (6.04)."
+      "message": "23 resolved entries carry no pre-resolution keyed/keyless determination. By RPAS 4.03 the 6 hit(s) among them are KEYED by rule and bear on no faculty claim; scores over these entries are calibration arithmetic only. The ledger's own disclosure prints this finding \u2014 conformant-as-disclosed (6.04)."
     },
     {
       "cite": "RPAS 6.04",
       "message": "161 pre-2026-07-30 entries are unsealed and the ledger's own disclosure prints the finding \u2014 conformant-as-disclosed; those entries rest on the anchored history (4.04/4.05), not on per-entry commitment"
+    },
+    {
+      "cite": "RPAS 4.02g",
+      "message": "91 seal(s) recompute to their published digest; 2 do not"
     },
     {
       "cite": "RPAS 4.04",
@@ -23,11 +36,15 @@
     },
     {
       "cite": "RPAS 5.03",
+      "message": "fogsim/scenario: issued 1 \u00b7 open 1 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
+    },
+    {
+      "cite": "RPAS 5.03",
       "message": "kfk/halflife: issued 10 \u00b7 open 10 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
     },
     {
       "cite": "RPAS 5.03",
-      "message": "lmstudio/auto: issued 70 \u00b7 open 48 \u00b7 void 7 \u00b7 resolved 15 \u00b7 H/M 4/11 \u00b7 Brier 0.2305 \u2014 under thirty resolved this figure is noise, not evidence of anything"
+      "message": "lmstudio/auto: issued 80 \u00b7 open 50 \u00b7 void 7 \u00b7 resolved 23 \u00b7 H/M 6/17 \u00b7 Brier 0.2273 \u2014 under thirty resolved this figure is noise, not evidence of anything"
     },
     {
       "cite": "RPAS 5.03",
@@ -35,7 +52,27 @@
     },
     {
       "cite": "RPAS 5.03",
-      "message": "manual/opus-5: issued 30 \u00b7 open 30 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
+      "message": "manual/fable-5: issued 20 \u00b7 open 20 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
+    },
+    {
+      "cite": "RPAS 5.03",
+      "message": "manual/fable-5/unattested: issued 5 \u00b7 open 5 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
+    },
+    {
+      "cite": "RPAS 5.03",
+      "message": "manual/opus-5: issued 50 \u00b7 open 50 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
+    },
+    {
+      "cite": "RPAS 5.03",
+      "message": "manual/opus-5/unattested: issued 10 \u00b7 open 10 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
+    },
+    {
+      "cite": "RPAS 5.03",
+      "message": "manual/sonnet-5: issued 18 \u00b7 open 18 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
+    },
+    {
+      "cite": "RPAS 5.03",
+      "message": "manual/sonnet-5/unattested: issued 9 \u00b7 open 9 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
     },
     {
       "cite": "RPAS 5.03",
@@ -46,6 +83,6 @@
       "message": "no pooled score is computed by this verifier \u2014 a Brier belongs to one forecaster; pooling launders the weaker record into the stronger"
     }
   ],
-  "verified_at": "2026-07-30T00:11:31Z",
+  "verified_at": "2026-08-03T14:24:50Z",
   "verifier": "rpas_verify/1.0"
 }
