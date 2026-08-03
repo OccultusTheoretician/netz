@@ -1,49 +1,75 @@
 {
   "schema": "ots_anchors/v1",
-  "generated": "2026-08-03T13:58:35.935318+00:00",
+  "generated": "2026-08-03T16:19:39.069471+00:00",
   "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
   "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
+  "pairing_note": "digest_at_stamp is read from the receipt and is fixed; digest_served is computed live from the bytes on this site. pairing=MATCH means the receipt covers what you can download. pairing=DRIFT means the file has changed since it was stamped and the receipt covers the older bytes only. DRIFT is disclosed, not corrected: a receipt is never re-issued to make a later file look anchored.",
   "verify_command": "ots verify docs/<file>.ots",
   "files": {
     "ledger.json": {
       "receipt": "ledger.json.ots",
       "state": "anchored",
-      "digest": "5a5e9defcaec390dbc0c3c9d46cb802e4dd9c467b33c0580e5ca8a7b61d4d04e"
+      "digest": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
+      "digest_at_stamp": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
+      "digest_served": "97c9409142d6b9e253e980b1524c9aacd78527e6267afa7c73385cb3cdcbd4f1",
+      "pairing": "DRIFT",
+      "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
     "kalls_hashlog.json": {
       "receipt": "kalls_hashlog.json.ots",
       "state": "anchored",
-      "digest": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3"
+      "digest": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3",
+      "digest_at_stamp": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3",
+      "digest_served": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3",
+      "pairing": "MATCH"
     },
     "plate.json": {
       "receipt": "plate.json.ots",
       "state": "anchored",
-      "digest": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f"
+      "digest": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f",
+      "digest_at_stamp": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f",
+      "digest_served": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f",
+      "pairing": "MATCH"
     },
     "ABYSS_DOCTRINE_DRAFT_v1.md": {
       "receipt": "ABYSS_DOCTRINE_DRAFT_v1.md.ots",
       "state": "anchored",
-      "digest": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d"
+      "digest": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d",
+      "digest_at_stamp": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d",
+      "digest_served": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d",
+      "pairing": "MATCH"
     },
     "RPAS_FIRST_EDITION_2026_v1.md": {
       "receipt": "RPAS_FIRST_EDITION_2026_v1.md.ots",
       "state": "anchored",
-      "digest": "9d04c1c7db9bfcbecd4ebe85456251711eadeb0d114c9d6dbfd6b10ee7db805d"
+      "digest": "9d04c1c7db9bfcbecd4ebe85456251711eadeb0d114c9d6dbfd6b10ee7db805d",
+      "digest_at_stamp": "9d04c1c7db9bfcbecd4ebe85456251711eadeb0d114c9d6dbfd6b10ee7db805d",
+      "digest_served": "9d04c1c7db9bfcbecd4ebe85456251711eadeb0d114c9d6dbfd6b10ee7db805d",
+      "pairing": "MATCH"
     },
     "KRAEHE_NEST_METHOD.md": {
       "receipt": "KRAEHE_NEST_METHOD.md.ots",
       "state": "anchored",
-      "digest": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3"
+      "digest": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3",
+      "digest_at_stamp": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3",
+      "digest_served": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3",
+      "pairing": "MATCH"
     },
     "KRAEHE_NEST_PROTOCOL.md": {
       "receipt": "KRAEHE_NEST_PROTOCOL.md.ots",
       "state": "anchored",
-      "digest": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d"
+      "digest": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d",
+      "digest_at_stamp": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d",
+      "digest_served": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d",
+      "pairing": "MATCH"
     },
     "LIAS_FIRST_EDITION_2026_v1.md": {
       "receipt": "LIAS_FIRST_EDITION_2026_v1.md.ots",
       "state": "anchored",
-      "digest": "fb6a428f2a4edf58b4c6854f4564128a6f09a8717408c8e321a546af34837f3b"
+      "digest": "fb6a428f2a4edf58b4c6854f4564128a6f09a8717408c8e321a546af34837f3b",
+      "digest_at_stamp": "fb6a428f2a4edf58b4c6854f4564128a6f09a8717408c8e321a546af34837f3b",
+      "digest_served": "fb6a428f2a4edf58b4c6854f4564128a6f09a8717408c8e321a546af34837f3b",
+      "pairing": "MATCH"
     }
   }
 }
