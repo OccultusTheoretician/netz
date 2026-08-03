@@ -1,0 +1,161 @@
+{
+  "generated": "2026-08-01T20:37:09.664551+00:00",
+  "engagement": {
+    "schema": "rpas-type3-engagement/1.0",
+    "engagement_type": "III",
+    "subject": {
+      "name": "The Prescient Desk (self)",
+      "kind": "published record",
+      "record_url": "https://retroprescientaudit.com/ledger.json",
+      "record_file": "ledger.json",
+      "retrieved": "2026-08-01",
+      "notes": "the desk's own canonical ledger, audited under 6.04"
+    },
+    "subject_is_self": true,
+    "scope": {
+      "period_start": "2026-07-20",
+      "period_end": "2026-08-01",
+      "entries_in_scope": "all entries in the retrieved record",
+      "excluded": [],
+      "basis": "public inputs only; no access to subject's internal systems"
+    },
+    "independence": {
+      "auditor_holds_position_in_subject": false,
+      "auditor_competes_with_subject": false,
+      "disclosure": "Self-application under 6.04. The auditor IS the subject; this is a Type I in form and is published to demonstrate the standard is applied inward before outward."
+    },
+    "mapping": {
+      "_note": "declared field mapping. Left side = RPAS concept, right side = key in the subject's record, or null if absent. A null is a SCOPE LIMITATION, never a finding.",
+      "entries_path": "projections",
+      "id": "id",
+      "statement": "statement",
+      "resolution_basis": "resolution",
+      "failure_condition": "failure_condition",
+      "probability": "probability",
+      "deadline": "deadline",
+      "date_issued": "date_issued",
+      "status": "status",
+      "resolved_date": "resolved_date",
+      "priors_declared": null,
+      "keyed_keyless": "keyed_keyless",
+      "is_control": null,
+      "seal": "seal_sha256"
+    },
+    "status_values": {
+      "open": [
+        "open"
+      ],
+      "hit": [
+        "hit",
+        "yes",
+        "resolved_yes",
+        "true"
+      ],
+      "miss": [
+        "miss",
+        "no",
+        "resolved_no",
+        "false"
+      ],
+      "void": [
+        "void",
+        "annulled",
+        "ambiguous",
+        "n/a"
+      ]
+    },
+    "public_claims": {
+      "_note": "what the subject publicly asserts about its own record. Procedures P10-P12 test the claims, not the auditor's impression of them. Quote or leave empty.",
+      "publishes_scores": true,
+      "claims_verifiability_without_trust": true,
+      "claims_contamination_resistance": null
+    }
+  },
+  "results": [
+    {
+      "procedure": "P01_falsifiability",
+      "code": "CONFORMS",
+      "cite": "RPAS 4.03",
+      "headline": "every entry in scope carries a failure condition",
+      "detail": ""
+    },
+    {
+      "procedure": "P02_prereg_completeness",
+      "code": "CONFORMS",
+      "cite": "RPAS 4.02",
+      "headline": "every entry carries the full pre-registration field set",
+      "detail": ""
+    },
+    {
+      "procedure": "P03_absolute_dates",
+      "code": "FINDING",
+      "cite": "RPAS 4.02",
+      "headline": "18 entries state a relative timeframe in the claim",
+      "detail": "A relative window resolves differently depending on when it is read. Ids: KKR-20260720-01, KKR-20260720-03, KKR-20260720-05, KKR-20260720-07, KKR-20260720-08, KKR-20260720-09, KKR-20260720-11, KKR-20260720-12, KKR-20260720-14, KKR-20260720-21"
+    },
+    {
+      "procedure": "P04_misfire_inclusion",
+      "code": "CONFORMS",
+      "cite": "RPAS 5.03",
+      "headline": "misses present alongside hits (6 hit / 17 miss)",
+      "detail": ""
+    },
+    {
+      "procedure": "P05_fifty_entry_gate",
+      "code": "CONFORMS",
+      "cite": "RPAS 5.02",
+      "headline": "246 entries in scope; the gate is satisfied",
+      "detail": ""
+    },
+    {
+      "procedure": "P06_keyed_keyless",
+      "code": "FINDING",
+      "cite": "RPAS 4.02f / 4.03",
+      "headline": "95 entries carry no determination",
+      "detail": "4.03: a determination made after resolution is KEYED by rule."
+    },
+    {
+      "procedure": "P07_controls",
+      "code": "SCOPE",
+      "cite": "RPAS 4.06",
+      "headline": "the record does not distinguish control entries",
+      "detail": "4.06 is a SHOULD. Its absence is not a departure from a must, but a record with no control has not demonstrated that its hits are distinguishable from apophenia, and the decoy-detection rate is the apophenia tell."
+    },
+    {
+      "procedure": "P08_commitment",
+      "code": "FINDING",
+      "cite": "RPAS 4.04",
+      "headline": "161 entries carry no commitment",
+      "detail": ""
+    },
+    {
+      "procedure": "P09_deadline_integrity",
+      "code": "FINDING",
+      "cite": "RPAS 5.06",
+      "headline": "13 entries resolved after their stated deadline",
+      "detail": "Resolution after the deadline is not by itself a defect; resolution after the deadline WITHOUT the deadline being stated as extended is. Examples: KKR-20260720-04 due 2026-07-29, resolved 2026-07-31; KKR-20260720-08 due 2026-07-23, resolved 2026-07-24; KKR-20260720-21 due 2026-07-23, resolved 2026-07-24; KKR-20260720-25 due 2026-07-23, resolved 2026-07-24; KKR-20260720-26 due 2026-07-23, resolved 2026-07-24; KKR-20260721-01 due 2026-07-31, resolved 2026-08-01"
+    },
+    {
+      "procedure": "P10_open_past_deadline",
+      "code": "CONFORMS",
+      "cite": "RPAS 5.06",
+      "headline": "no entry is open past its deadline",
+      "detail": ""
+    },
+    {
+      "procedure": "P11_stated_vs_operational",
+      "code": "CONFORMS",
+      "cite": "RPAS 6.03",
+      "headline": "no stated-versus-operational gap detected in scope",
+      "detail": ""
+    },
+    {
+      "procedure": "P12_recomputability",
+      "code": "CONFORMS",
+      "cite": "RPAS 6.03",
+      "headline": "the record exposes the fields needed to recompute grades",
+      "detail": ""
+    }
+  ],
+  "entries_in_scope": 246
+}

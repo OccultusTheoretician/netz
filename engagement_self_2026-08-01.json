@@ -1,0 +1,71 @@
+{
+ "schema": "rpas-type3-engagement/1.0",
+ "engagement_type": "III",
+ "subject": {
+  "name": "The Prescient Desk (self)",
+  "kind": "published record",
+  "record_url": "https://retroprescientaudit.com/ledger.json",
+  "record_file": "ledger.json",
+  "retrieved": "2026-08-01",
+  "notes": "the desk's own canonical ledger, audited under 6.04"
+ },
+ "subject_is_self": true,
+ "scope": {
+  "period_start": "2026-07-20",
+  "period_end": "2026-08-01",
+  "entries_in_scope": "all entries in the retrieved record",
+  "excluded": [],
+  "basis": "public inputs only; no access to subject's internal systems"
+ },
+ "independence": {
+  "auditor_holds_position_in_subject": false,
+  "auditor_competes_with_subject": false,
+  "disclosure": "Self-application under 6.04. The auditor IS the subject; this is a Type I in form and is published to demonstrate the standard is applied inward before outward."
+ },
+ "mapping": {
+  "_note": "declared field mapping. Left side = RPAS concept, right side = key in the subject's record, or null if absent. A null is a SCOPE LIMITATION, never a finding.",
+  "entries_path": "projections",
+  "id": "id",
+  "statement": "statement",
+  "resolution_basis": "resolution",
+  "failure_condition": "failure_condition",
+  "probability": "probability",
+  "deadline": "deadline",
+  "date_issued": "date_issued",
+  "status": "status",
+  "resolved_date": "resolved_date",
+  "priors_declared": null,
+  "keyed_keyless": "keyed_keyless",
+  "is_control": null,
+  "seal": "seal_sha256"
+ },
+ "status_values": {
+  "open": [
+   "open"
+  ],
+  "hit": [
+   "hit",
+   "yes",
+   "resolved_yes",
+   "true"
+  ],
+  "miss": [
+   "miss",
+   "no",
+   "resolved_no",
+   "false"
+  ],
+  "void": [
+   "void",
+   "annulled",
+   "ambiguous",
+   "n/a"
+  ]
+ },
+ "public_claims": {
+  "_note": "what the subject publicly asserts about its own record. Procedures P10-P12 test the claims, not the auditor's impression of them. Quote or leave empty.",
+  "publishes_scores": true,
+  "claims_verifiability_without_trust": true,
+  "claims_contamination_resistance": null
+ }
+}
