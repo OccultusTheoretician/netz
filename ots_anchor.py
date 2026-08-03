@@ -179,6 +179,60 @@ def sha256_file(p: Path):
     return h.hexdigest()
 
 
+_OTS_MAGIC = bytes.fromhex("004f70656e54696d657374616d7073000050726f6f66"
+                           "00bf89e2e884e89294")
+
+
+def receipt_digest(receipt: Path):
+    """The digest this receipt actually commits, read from its own bytes.
+
+    Layout: magic, one version byte, one file-hash op byte (0x08 = SHA-256),
+    then the 32-byte digest. `ots info` does not print it, so it is parsed
+    here rather than inferred from whatever file happens to sit beside the
+    receipt. This value is fixed for the life of the receipt.
+    """
+    try:
+        b = receipt.read_bytes()
+    except OSError:
+        return None
+    if not b.startswith(_OTS_MAGIC):
+        return None
+    off = len(_OTS_MAGIC) + 1
+    if len(b) < off + 33 or b[off] != 0x08:
+        return None
+    return b[off + 1:off + 33].hex()
+
+
+def _entry(src: Path, rec: Path, state, height=None):
+    """One row of the published state file.
+
+    Carries what the receipt commits AND what is being served, because
+    publishing only one of the two lets a changed file sit beside an unchanged
+    receipt looking like a matched pair. A stranger needs both numbers to
+    check anything.
+    """
+    at_stamp = receipt_digest(rec)
+    served = sha256_file(src) if src.exists() else None
+    if at_stamp and served:
+        pairing = "MATCH" if at_stamp == served else "DRIFT"
+    else:
+        pairing = "UNKNOWN"
+    e = {"receipt": rec.name, "state": state,
+         "digest": at_stamp or served,
+         "digest_at_stamp": at_stamp,
+         "digest_served": served,
+         "pairing": pairing}
+    if height:
+        e["bitcoin_block"] = height
+    if pairing == "DRIFT":
+        e["pairing_note"] = ("the served file has changed since this receipt "
+                             "was created. The receipt still proves the "
+                             "ORIGINAL bytes existed before its block and "
+                             "proves nothing whatever about the file served "
+                             "now.")
+    return e
+
+
 def receipt_state(receipt: Path):
     """Read the receipt's REAL state rather than assuming it succeeded.
 
@@ -289,8 +343,7 @@ def do_stamp(dry):
         rec = f.with_suffix(f.suffix + ".ots")
         if rec.exists():
             st, h, _ = receipt_state(rec)
-            results[f.name] = {"receipt": rec.name, "state": st,
-                               "digest": sha256_file(f)}
+            results[f.name] = _entry(f, rec, st, h)
             print(f"  receipt {rec.name} · state {st.upper()}")
             if st == "pending":
                 print("  PENDING is correct and expected: calendars have the "
@@ -348,6 +401,7 @@ def do_upgrade():
         print("No receipts to upgrade. Run --stamp first.")
         return 0
     changed = 0
+    results = {}
     for rec in recs:
         before, _, _ = receipt_state(rec)
         if before == "anchored":
@@ -355,6 +409,9 @@ def do_upgrade():
             continue
         code, out = run(["upgrade", str(rec)], timeout=120)
         after, height, _ = receipt_state(rec)
+        src = rec.with_suffix("")
+        if src.exists():
+            results[src.name] = _entry(src, rec, after, height)
         arrow = f"{before.upper()} -> {after.upper()}"
         extra = f" · Bitcoin block {height}" if height else ""
         print(f"{rec.name}: {arrow}{extra}")
@@ -367,6 +424,8 @@ def do_upgrade():
         print(f"\n{changed} receipt(s) now carry a Bitcoin attestation. Commit "
               f"the upgraded .ots file(s); a stranger can now verify the date "
               f"with no trust in this desk.")
+    if results:
+        write_state(results)
     return 0
 
 
@@ -416,6 +475,15 @@ def write_state(results):
                            "only and does NOT prove a block height; only an "
                            "ANCHORED receipt does. Pending must never be "
                            "described as anchored."),
+        "pairing_note": ("digest_at_stamp is read from the receipt and is "
+                         "fixed; digest_served is computed live from the "
+                         "bytes on this site. pairing=MATCH means the "
+                         "receipt covers what you can download. "
+                         "pairing=DRIFT means the file has changed since "
+                         "it was stamped and the receipt covers the older "
+                         "bytes only. DRIFT is disclosed, not corrected: a "
+                         "receipt is never re-issued to make a later file "
+                         "look anchored."),
         "verify_command": "ots verify docs/<file>.ots",
         "files": {**load_state(), **results},
     }

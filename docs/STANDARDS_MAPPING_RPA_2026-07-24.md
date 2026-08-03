@@ -1,4 +1,4 @@
-# STANDARDS MAPPING — The Retro-Prescient Audit Desk
+# STANDARDS MAPPING — The Retro-Prescient Audit™ Desk
 ### Mapped to Government Auditing Standards (2024 Revision) and AICPA Professional Standards
 **PROVENANCE: DRAFT (Claude-authored under direction, 2026-07-24). His only after rework. Cites verified against GAO-24-106786 as fetched 2026-07-24; verification queue printed at end.**
 
@@ -51,7 +51,7 @@ A government-finance and audit professional. The Yellow Book's own definition is
 **Artifact.** Single-source labels in the statement track; the release rule printed in the section.
 
 ### 6. Stated-versus-operational gap scoring → the findings architecture
-**Desk mechanism.** VoidSection scores the gap between what an entity states (its published commitments, forecasts, rules) and what it operationally does — against a rubric frozen and hashed *before* measurement, so the criteria cannot drift toward the desired result. A trend under a frozen rubric is a measurement; a level claim is an opinion; the entity is its own control.
+**Desk mechanism.** VoidSection™ scores the gap between what an entity states (its published commitments, forecasts, rules) and what it operationally does — against a rubric frozen and hashed *before* measurement, so the criteria cannot drift toward the desired result. A trend under a frozen rubric is a measurement; a level claim is an opinion; the entity is its own control.
 **Standards concept.** This is the Yellow Book's findings architecture. A GAGAS finding is built from four elements — criteria (the standard the condition is measured against), condition (what is), cause, and effect (GAGAS Chapter 8, "Findings," 2024 Revision pp. 214–218). Stated-versus-operational is criteria-versus-condition by construction: the entity's own stated commitments are the criteria, its operational record is the condition, and the scored gap is the finding. The frozen pre-hashed rubric is the desk's answer to criteria-shopping — the fixing of criteria before evidence, which is the discipline the findings architecture assumes and the desk makes cryptographically checkable.
 **Artifact.** The VoidSection engine and its pre-registered, hash-committed rubrics; published gap scores.
 
