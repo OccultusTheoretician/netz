@@ -41,18 +41,20 @@ PROJECTION_PROMPT = """You are a forecasting analyst. Before writing ANY project
 GATE 1 SCOPE — for each candidate, name exactly what would be observed at the deadline. If you cannot name a concrete observable, discard it.
 GATE 2 EVIDENCE — cite which numbered report items support it. No item support = discard.
 GATE 3 ATTACK — argue the OPPOSITE outcome. Ask: what is the base rate for this class of event? Most discrete events do NOT happen. If your probability ignores the base rate, correct it DOWN.
-GATE 4 VERIFY — check the resolution criterion is adjudicable by a third party from public reporting, and the deadline is an absolute weekday date inside the window. Fix or discard.
+GATE 4 VERIFY — check the resolution criterion is adjudicable by a third party from public reporting, and the deadline is an absolute weekday date at least 2 days after the event window closes. Fix or discard.
 GATE 5 REPORT — only projections that survive all four gates go in the array.
 Apply the gates, then: From the intelligence report below, generate 8-10 falsifiable projections (keep each resolution under 40 words so the full JSON array fits) spanning at least 4 domains (military/conflict, economics/markets, cyber, political, crime/security, disaster).
 
 Every projection MUST:
-1. Be a single observable claim a third party could verify from public reporting at the deadline. No vague language ("tensions will continue", "pressure will mount"). ABSOLUTE DATES ONLY: never write "within 72 hours" or "within the next N days" — write the explicit window ("between 2026-07-21 and 2026-07-24") in both statement and resolution, matching the deadline field.
+1. Be a single observable claim a third party could verify from public reporting at the deadline. No vague language ("tensions will continue", "pressure will mount"). ABSOLUTE DATES ONLY: never write "within 72 hours" or "within the next N days" — write the explicit event window ("between 2026-07-21 and 2026-07-24") in both statement and resolution. The window is when the EVENT may occur; the deadline is when it is ADJUDICATED. They are not the same date.
 2. Carry "probability": an integer 5-95, never 0 or 100.
 3. Carry "resolution": the exact criterion that settles it true or false.
-4. Carry "deadline": an ISO date between {min_date} and {max_date}. If the resolution depends on a market close or settlement, the deadline must be a weekday.
+4. Carry "deadline": an ISO date between {min_date} and {max_date}. If the resolution depends on a market close or settlement, the deadline must be a weekday. If the resolution depends on third-party confirmation (two sources, hostile sides, an agency feed, a wire service), the deadline must fall at least 2 days AFTER the last day of the event window — corroboration does not exist on the day the event happens, and a row adjudicated the next morning is graded MISS before its own evidence can appear.
 5. Carry "citations": a list of item numbers from the report's record that ground it.
 6. Carry "failure_condition": one sentence naming what, observed at the deadline, makes this entry a MISS. State the CONDITION that must fail, not the source that reports it. Pre-register it now; it is not editable later.
 7. Base-rate discipline: most discrete events do not happen; do not cluster probabilities at 60-80%. At least two projections must be rated BELOW 35%.
+8. WINDOW, NOT DATE: an unscheduled event (strike, attack, wildfire, earthquake, outbreak, cyberattack, resignation, indictment) MUST be given a window of at least 7 days. Never require an unscheduled event to occur on one named calendar day. The probability of a stochastic event on a specific date is a small fraction of its probability across a window, and pricing a single date at window rates is the most common scoring error in this record. Only events with a published schedule (elections, central bank meetings, hearings, contract expiries, scheduled releases) may name one date.
+9. NEVER write a condition about the ABSENCE of reporting. Phrases like "with no casualties reported" describe the source record, not the world. The report line "Casualties: none stated in the corroborating reports" is a statement about the reports themselves. Do not lift it into a projection; it cannot be adjudicated as a property of the event.
 
 Use plain ASCII straight quotes only. Do NOT use curly quotes. Do NOT put quotation marks inside any statement or resolution string — refer to names and phrases without quoting them.
 Return ONLY a JSON array — no markdown fences, no commentary before or after:
@@ -404,6 +406,41 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                            "registered before sealing")
     if not (5 <= p["probability"] <= 95):
         reasons.append("probability outside 5-95")
+    # --- KK19 gate: window discipline ---
+    _dates = sorted(set(re.findall(r"\b(20\d{2}-\d{2}-\d{2})\b", both)))
+    _sched = re.search(r"\b(?:scheduled|calendar|election|referendum|summit|"
+                       r"fomc|meeting|hearing|verdict|sentencing|expir\w*|"
+                       r"settle\w*|auction|inaugurat\w*|swearing|"
+                       r"regularly scheduled|already announced)\b", both, re.I)
+    _confirm = re.search(r"\b(?:confirmed by|reported by|verified by|"
+                         r"corroborat\w+|independent sources|hostile sides|"
+                         r"wire services|news agencies)\b", both, re.I)
+    if _dates and _dates[0] == _dates[-1] and not _sched:
+        reasons.append("single-day resolution window for an unscheduled event — "
+                       f"the row requires this to occur on {_dates[0]} exactly. "
+                       "Price a day, not a window: widen the window or state why "
+                       "the date is fixed")
+    if _dates and _confirm:
+        try:
+            _wend = datetime.strptime(_dates[-1], "%Y-%m-%d").date()
+            _dl = datetime.strptime(p["deadline"], "%Y-%m-%d").date()
+            if (_dl - _wend).days < 2:
+                reasons.append("deadline leaves no settling margin — resolution "
+                               "requires third-party confirmation and the "
+                               f"deadline ({_dl}) is {(_dl - _wend).days} day(s) "
+                               f"after the window closes ({_wend}). Cross-bias "
+                               "confirmation does not exist yet on the morning "
+                               "the resolver walks the row; allow >= 2 days")
+        except ValueError:
+            pass
+    if re.search(r"\bwith\s+no\s+\w+(?:\s+\w+){0,2}\s+"
+                 r"(?:reported|stated|confirmed|recorded|observed)\b", both, re.I) \
+            or re.search(r"\bno\s+casualties\s+(?:are\s+)?"
+                         r"(?:reported|stated|mentioned)\b", both, re.I):
+        reasons.append("negated-observation clause — 'with no X reported' is a "
+                       "claim about the source record, not about the event. The "
+                       "war desk prints it to describe its own reports; it "
+                       "cannot be adjudicated as a property of the world")
     _anchor = _market_anchor(p)
     if _anchor:
         if _MARKET_ANCHOR_WARN_ONLY:

@@ -1,166 +1,171 @@
 {
- "schema": "arms-registry/1.0",
- "created": "2026-07-31",
- "purpose": "Arm identity is instrument configuration: lane, model, tool access. Sealed rows are never edited - historical identity lives here, not in the rows. Scoring may bucket a tag by era; no pooled score is ever published; a Brier belongs to one forecaster.",
- "grammar": "New tags: lane/model/access, access in {searched, cold, advised, unattested, n-a}. unknown is a classification of history, never a forward tag. unattested is a forward tag and means the session COULD have retrieved and the sealed text cites nothing - availability likely, use unevidenced. Prefer searched or cold whenever the run makes access provable. `cadence` records how often an arm is polled; arms with different cadences carry different row counts for that reason and no other.",
- "arms": [
-  {
-   "tag": "operator/human",
-   "lane": "operator",
-   "model": "human",
-   "access": "n-a",
-   "status": "active"
-  },
-  {
-   "tag": "operator/advised",
-   "lane": "operator",
-   "model": "human+model-evidence",
-   "access": "advised",
-   "status": "reserved",
-   "note": "centaur arm - flips active with the knp-2 era; model supplies evidence and base rates, operator commits probability cold; advisory content stays out of every other arm's prompts"
-  },
-  {
-   "tag": "lmstudio/auto",
-   "lane": "lmstudio",
-   "model": "qwen/qwen3-30b-a3b-2507",
-   "access": "cold",
-   "status": "active",
-   "note": "local model, no network - cold is certain. Era split at d36fd3f (record-only model input, Rueckkopplungsverbot): before it, model prose re-entered prompts, so pre- and post-verbot are different effective forecasters. Scoring buckets by date_issued; rows are never edited.",
-   "eras": [
+  "schema": "arms-registry/1.0",
+  "created": "2026-07-31",
+  "purpose": "Arm identity is instrument configuration: lane, model, tool access. Sealed rows are never edited - historical identity lives here, not in the rows. Scoring may bucket a tag by era; no pooled score is ever published; a Brier belongs to one forecaster.",
+  "grammar": "New tags: lane/model/access, access in {searched, cold, advised, unattested, n-a}. unknown is a classification of history, never a forward tag. unattested is a forward tag and means the session COULD have retrieved and the sealed text cites nothing - availability likely, use unevidenced. Prefer searched or cold whenever the run makes access provable. `cadence` records how often an arm is polled; arms with different cadences carry different row counts for that reason and no other.",
+  "arms": [
     {
-     "id": "pre-verbot",
-     "until": "2026-07-28"
+      "tag": "operator/human",
+      "lane": "operator",
+      "model": "human",
+      "access": "n-a",
+      "status": "active"
     },
     {
-     "id": "post-verbot",
-     "from": "2026-07-28"
+      "tag": "operator/advised",
+      "lane": "operator",
+      "model": "human+model-evidence",
+      "access": "advised",
+      "status": "reserved",
+      "note": "centaur arm - flips active with the knp-2 era; model supplies evidence and base rates, operator commits probability cold; advisory content stays out of every other arm's prompts"
+    },
+    {
+      "tag": "lmstudio/auto",
+      "lane": "lmstudio",
+      "model": "qwen/qwen3-30b-a3b-2507",
+      "access": "cold",
+      "status": "active",
+      "note": "local model, no network - cold is certain. Era split at d36fd3f (record-only model input, Rueckkopplungsverbot): before it, model prose re-entered prompts, so pre- and post-verbot are different effective forecasters. Scoring buckets by date_issued; rows are never edited. Second split at the KK19 window patch: the elicitation prompt barred point-date windows for unscheduled events, required a settling margin between window close and deadline, and barred conditions about the absence of reporting. Boundary is 2026-08-03 because 2026-08-02 already carries rows sealed under the old prompt.",
+      "eras": [
+        {
+          "id": "pre-verbot",
+          "until": "2026-07-28"
+        },
+        {
+          "id": "post-verbot",
+          "from": "2026-07-28",
+          "until": "2026-08-03"
+        },
+        {
+          "id": "post-window",
+          "from": "2026-08-03"
+        }
+      ],
+      "cadence": "daily - local model, no marginal cost per run."
+    },
+    {
+      "tag": "manual/fable",
+      "lane": "manual",
+      "model": "claude-chat",
+      "access": "unknown",
+      "status": "retired",
+      "note": "web access likely available on the chat surface, use unevidenced: zero sealed texts cite retrieved sources. The desk does not upgrade an assumption to an instrument fact. Retired: new manual rows carry lane/model/access."
+    },
+    {
+      "tag": "manual/fable-5",
+      "lane": "manual",
+      "model": "claude-fable-5",
+      "access": "unknown",
+      "status": "retired",
+      "note": "same basis as manual/fable"
+    },
+    {
+      "tag": "manual/opus-5",
+      "lane": "manual",
+      "model": "claude-opus-5",
+      "access": "unknown",
+      "status": "retired",
+      "note": "same basis as manual/fable"
+    },
+    {
+      "tag": "manual/sonnet-5",
+      "lane": "manual",
+      "model": "claude-sonnet-5",
+      "access": "unknown",
+      "status": "retired",
+      "note": "same basis as manual/fable"
+    },
+    {
+      "tag": "manual/fable-5/searched",
+      "lane": "manual",
+      "model": "claude-fable-5",
+      "access": "searched",
+      "status": "active",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "manual/fable-5/cold",
+      "lane": "manual",
+      "model": "claude-fable-5",
+      "access": "cold",
+      "status": "active",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "manual/opus-5/searched",
+      "lane": "manual",
+      "model": "claude-opus-5",
+      "access": "searched",
+      "status": "active",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "manual/opus-5/cold",
+      "lane": "manual",
+      "model": "claude-opus-5",
+      "access": "cold",
+      "status": "active",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "manual/sonnet-5/searched",
+      "lane": "manual",
+      "model": "claude-sonnet-5",
+      "access": "searched",
+      "status": "active",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "manual/sonnet-5/cold",
+      "lane": "manual",
+      "model": "claude-sonnet-5",
+      "access": "cold",
+      "status": "active",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "fogsim/scenario",
+      "lane": "fogsim",
+      "model": "scenario",
+      "access": "n-a",
+      "status": "active",
+      "note": "mechanical lane - deterministic engine output sealed under its rules id; no tool access axis applies"
+    },
+    {
+      "tag": "kfk/halflife",
+      "lane": "kfk",
+      "model": "halflife",
+      "access": "n-a",
+      "status": "active",
+      "note": "mechanical lane - rows produced by rule, not by a model with tools; kfk/halflife promotes KriegForeKaster claims, fogsim/scenario seals engine campaigns"
+    },
+    {
+      "tag": "manual/fable-5/unattested",
+      "lane": "manual",
+      "model": "claude-fable-5",
+      "access": "unattested",
+      "status": "active",
+      "note": "KK18 standing rule: session had search available, sealed text cites no retrieved source - availability likely, use unevidenced. /searched requires a cited retrieval; /cold requires a provably search-off session.",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "manual/opus-5/unattested",
+      "lane": "manual",
+      "model": "claude-opus-5",
+      "access": "unattested",
+      "status": "active",
+      "note": "KK18 standing rule: see manual/fable-5/unattested.",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "manual/sonnet-5/unattested",
+      "lane": "manual",
+      "model": "claude-sonnet-5",
+      "access": "unattested",
+      "status": "active",
+      "note": "KK18 standing rule: see manual/fable-5/unattested.",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
     }
-   ],
-   "cadence": "daily - local model, no marginal cost per run."
-  },
-  {
-   "tag": "manual/fable",
-   "lane": "manual",
-   "model": "claude-chat",
-   "access": "unknown",
-   "status": "retired",
-   "note": "web access likely available on the chat surface, use unevidenced: zero sealed texts cite retrieved sources. The desk does not upgrade an assumption to an instrument fact. Retired: new manual rows carry lane/model/access."
-  },
-  {
-   "tag": "manual/fable-5",
-   "lane": "manual",
-   "model": "claude-fable-5",
-   "access": "unknown",
-   "status": "retired",
-   "note": "same basis as manual/fable"
-  },
-  {
-   "tag": "manual/opus-5",
-   "lane": "manual",
-   "model": "claude-opus-5",
-   "access": "unknown",
-   "status": "retired",
-   "note": "same basis as manual/fable"
-  },
-  {
-   "tag": "manual/sonnet-5",
-   "lane": "manual",
-   "model": "claude-sonnet-5",
-   "access": "unknown",
-   "status": "retired",
-   "note": "same basis as manual/fable"
-  },
-  {
-   "tag": "manual/fable-5/searched",
-   "lane": "manual",
-   "model": "claude-fable-5",
-   "access": "searched",
-   "status": "active",
-   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
-  },
-  {
-   "tag": "manual/fable-5/cold",
-   "lane": "manual",
-   "model": "claude-fable-5",
-   "access": "cold",
-   "status": "active",
-   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
-  },
-  {
-   "tag": "manual/opus-5/searched",
-   "lane": "manual",
-   "model": "claude-opus-5",
-   "access": "searched",
-   "status": "active",
-   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
-  },
-  {
-   "tag": "manual/opus-5/cold",
-   "lane": "manual",
-   "model": "claude-opus-5",
-   "access": "cold",
-   "status": "active",
-   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
-  },
-  {
-   "tag": "manual/sonnet-5/searched",
-   "lane": "manual",
-   "model": "claude-sonnet-5",
-   "access": "searched",
-   "status": "active",
-   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
-  },
-  {
-   "tag": "manual/sonnet-5/cold",
-   "lane": "manual",
-   "model": "claude-sonnet-5",
-   "access": "cold",
-   "status": "active",
-   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
-  },
-  {
-   "tag": "fogsim/scenario",
-   "lane": "fogsim",
-   "model": "scenario",
-   "access": "n-a",
-   "status": "active",
-   "note": "mechanical lane - deterministic engine output sealed under its rules id; no tool access axis applies"
-  },
-  {
-   "tag": "kfk/halflife",
-   "lane": "kfk",
-   "model": "halflife",
-   "access": "n-a",
-   "status": "active",
-   "note": "mechanical lane - rows produced by rule, not by a model with tools; kfk/halflife promotes KriegForeKaster claims, fogsim/scenario seals engine campaigns"
-  },
-  {
-   "tag": "manual/fable-5/unattested",
-   "lane": "manual",
-   "model": "claude-fable-5",
-   "access": "unattested",
-   "status": "active",
-   "note": "KK18 standing rule: session had search available, sealed text cites no retrieved source - availability likely, use unevidenced. /searched requires a cited retrieval; /cold requires a provably search-off session.",
-   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
-  },
-  {
-   "tag": "manual/opus-5/unattested",
-   "lane": "manual",
-   "model": "claude-opus-5",
-   "access": "unattested",
-   "status": "active",
-   "note": "KK18 standing rule: see manual/fable-5/unattested.",
-   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
-  },
-  {
-   "tag": "manual/sonnet-5/unattested",
-   "lane": "manual",
-   "model": "claude-sonnet-5",
-   "access": "unattested",
-   "status": "active",
-   "note": "KK18 standing rule: see manual/fable-5/unattested.",
-   "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
-  }
- ],
- "cadence_ruled": "2026-08-01"
+  ],
+  "cadence_ruled": "2026-08-01"
 }
