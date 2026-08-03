@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 021502Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 031614Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 254 issued across 12 forecaster arms · 221 open (1 past deadline, unresolved)
+Window: all-time · 254 issued across 12 forecaster arms · 219 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -17,7 +17,7 @@ Window: all-time · 254 issued across 12 forecaster arms · 221 open (1 past dea
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-verbot] | 20 | 20 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[pre-verbot] | 60 | 30 | 23 | 6 | 17 | 0.227 | 26.1% | 0.193 | -0.179 |
+| lmstudio/auto[pre-verbot] | 60 | 28 | 24 | 6 | 18 | 0.224 | 25.0% | 0.188 | -0.197 |
 | manual/fable | 45 | 45 | 0 | — | — | not computed | — | — | — |
 | manual/fable-5 | 20 | 20 | 0 | — | — | not computed | — | — | — |
 | manual/fable-5/unattested | 5 | 5 | 0 | — | — | not computed | — | — | — |
@@ -32,29 +32,19 @@ Window: all-time · 254 issued across 12 forecaster arms · 221 open (1 past dea
 
 *Under 30 resolved a Brier score is noise, not a record: `lmstudio/auto[pre-verbot]`.*
 
-**CALIBRATION — lmstudio/auto[pre-verbot]** (23 resolved)
+**CALIBRATION — lmstudio/auto[pre-verbot]** (24 resolved)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 0-20% | 1 | 0% |
 | 20-40% | 13 | 23% |
-| 40-60% | 5 | 40% |
+| 40-60% | 6 | 33% |
 | 60-80% | 4 | 25% |
-
-## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
-
-A projection appears here when its window has closed and it has not yet been adjudicated. That is not the same as neglect. Most criteria on this book ask whether an event *occurred* inside the window, not whether it was *reported* inside it — so an event confirmed on the 30th can satisfy a criterion that closed on the 28th, and resolving before the sources land would be guessing. Collation takes the time it takes, and the queue is printed rather than hidden while it does.
-
-The bound that keeps this from becoming a parking space: a row sitting here more than **fourteen days** past its deadline is a defect in this desk, not in the world. The count is published on this page so that it is visible when it happens.
-
-- **KKR-20260723-02** (45%, due 2026-08-01) By 2026-08-01, the Chaos ransomware group will be linked to a new campaign using msaRAT to route C2 traffic through compromised headless browsers, with at least two new malware samples detected on VirusTotal. — *resolves on:* At least two new malware samples labeled as msaRAT or variants, originating from headless browser traffic, will be detected on VirusTotal by 2026-08-01.
 
 ## OPEN PROJECTIONS
 
 | id | arm | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|---|
-| KKR-20260723-02 | `lmstudio/auto` | 2026-07-23 | 2026-08-01 | 45% | cyber | By 2026-08-01, the Chaos ransomware group will be linked to a new campaign using msaRAT to route C2 traffic through compromised headless browsers, with at least two new malware samples detected on VirusTotal. |
-| KKR-20260722-03 | `lmstudio/auto` | 2026-07-22 | 2026-08-02 | 40% | disaster | Between 2026-07-29 and 2026-08-02, the Japan Meteorological Agency issues a new heatwave alert for Tokyo and Osaka, with temperatures exceeding 40°C for three consecutive days. |
 | KKR-20260721-07 | `lmstudio/auto` | 2026-07-21 | 2026-08-03 | 35% | cyber | A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03. |
 | KKR-20260723-04 | `lmstudio/auto` | 2026-07-23 | 2026-08-03 | 35% | military_conflict | Between 2026-07-30 and 2026-08-03, a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz will be reported by Al Jazeera or BBC World. |
 | KKR-20260724-07 | `manual/fable` | 2026-07-24 | 2026-08-03 | 40% | political | A United States government official publicly confirms or denies the reported rejected Iran ceasefire proposal between 2026-07-25 and 2026-08-03. |
@@ -277,6 +267,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
+- **✗ MISS** KKR-20260722-03 [`lmstudio/auto`] (40%, due 2026-08-02, resolved 2026-08-03): Between 2026-07-29 and 2026-08-02, the Japan Meteorological Agency issues a new heatwave alert for Tokyo and Osaka, with temperatures exceeding 40°C for three consecutive days.
 - **✗ MISS** KKR-20260721-01 [`lmstudio/auto`] (30%, due 2026-07-31, resolved 2026-08-01): The Lebanese Armed Forces will release a formal statement confirming Israeli fire near their troops between 2026-07-28 and 2026-07-31. — *Qwen verdict discarded — cited outlets it has no access to (no search on the local arm). Basis is the claude arm alone. Concordance not claimed.*
 - **✗ MISS** KKR-20260720-04 [`lmstudio/auto`] (60%, due 2026-07-29, resolved 2026-07-31): The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. — *10-year Treasury constant-maturity yield closed 2026-07-29 at approximately 4.66% following the FOMC decision to hold rates. CNBC quote data for the session shows open 4.671%, day high 4.712%, day low 4.651%, prior close 4.622%. The 4.8% threshold was not reached on a closing or intraday basis. Trading Economics reported the 10-year rising to 4.66% on 07-29 after the Fed left the funds rate unchanged with three dissents favoring a 25bp increase.*
 - **✗ MISS** KKR-20260724-02 [`lmstudio/auto`] (25%, due 2026-07-28, resolved 2026-07-31): The U.S. will carry out a new round of military strikes against Iranian targets in the Middle East between 2026-07-25 and 2026-07-28. — *Window 2026-07-25 to 2026-07-28. No US strike on Iranian military or strategic infrastructure reported in-window. Al Jazeera 2026-07-26 reported a second consecutive day of no strikes by either side amid renewed diplomatic efforts. CENTCOM's 2026-07-25 release concerns naval blockade enforcement. Iran's attempted attack on US forces 07-28 runs opposite to the criterion. US retaliatory strikes on Bandar Abbas and Kish began 2026-07-29 20:00 ET per CENTCOM, corroborated by CNN and Bloomberg — one day past deadline. Disconfirming: CENTCOM reported disabling two vessels enforcing the blockade of Iranian ports inside the window; ruled not a strike on infrastructure, criterion-drafting note for future issuance.*
@@ -305,7 +296,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*10 of 254 issued (3.9%) have been voided.*
+*11 of 254 issued (4.3%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
@@ -325,6 +316,8 @@ A sealed projection is never edited. Where one cannot be adjudicated as written,
     - *Reason:* Statement field contains no proposition — the text is the single word 'Yes'. Unadjudicable as written under RPAS law 2. Gate defect, not a forecasting defect; the projection this was meant to carry is lost.
 - **KKR-20260722-08** [`operator/human`] (95%, due 2026-08-12, voided 2026-07-27) — statement as sealed: “Yes”
     - *Reason:* Statement field contains no proposition — the text is the single word 'Yes'. Unadjudicable as written under RPAS law 2. Issued at 95%, the highest confidence on the open book, and therefore the most costly gate failure in the set.
+- **KKR-20260723-02** [`lmstudio/auto`] (45%, due 2026-08-01, voided 2026-08-03) — statement as sealed: “By 2026-08-01, the Chaos ransomware group will be linked to a new campaign using msaRAT to route C2 traffic through compromised headless browsers, with at least two new malware samples detected on VirusTotal.”
+    - *Reason:* Originating from headless browser traffic
 - **KKR-20260724-01** [`lmstudio/auto`] (30%, due 2026-07-27, voided 2026-07-27) — statement as sealed: “Over 80,000 people will have been evacuated from the Cap Ferret peninsula and surrounding areas near Madrid due to wildfires between 2026-07-24 and 2026-07-27.”
     - *Reason:* Statement is geographically incoherent: names the Cap Ferret peninsula (Gironde, France) as being near Madrid (Spain), roughly 700 km apart. No blind adjudicator can determine which evacuation zone is meant.
 
