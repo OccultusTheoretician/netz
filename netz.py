@@ -1098,6 +1098,12 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
     sec = iter(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
                 "XI", "XII", "XIII", "XIV", "XV", "XVI"])
     out = []
+    # RPAS 4.02f — an item number must identify ONE item. Sections used to
+    # renumber from 1, so 25 numbers carried 111 items and a citation resolved
+    # to up to twelve different stories; every support check read whichever
+    # line came last. Numbering is monotonic across the entire report from
+    # KK21 forward. Historical reports keep their numbering and their defect.
+    _item_seq = iter(range(1, 100000))
     out.append("**NOTHING CLASSIFIED OR PRIVILEGED**\n")
     out.append(f"# THE PRESCIENT DESK\u2122 — DAILY INTELLIGENCE REPORT — {dtg}\n")
     synth_line = f"synthesis: {model_used}" if model_used else "synthesis: OFF — collation only"
@@ -1116,7 +1122,8 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
     else:
         out.append("*Synthesis layer off — top signals listed without analytic judgments.*\n")
     out.append("**Top signals (the record behind the judgments):**\n")
-    for n, cl in enumerate(top, 1):
+    for cl in top:
+        n = next(_item_seq)
         rep = cl["rep"]
         out.append(f"{n}. {delta_mark(cl)} **[{admiralty_grade(cl, rel_map)}] {pub_title(rep['title'])}** — "
                    f"{cl['corroboration']}× corroborated ({', '.join(cl['sources'])}), "
@@ -1218,7 +1225,8 @@ def render_report(config, clusters, conv, health, synth, model_used, hours, coun
                            f"this desk shows its own unverified seams rather than "
                            f"quietly deleting them.\n")
         out.append("**The record:**\n")
-        for n, cl in enumerate(cls[:config.get("max_items_per_category", 25)], 1):
+        for cl in cls[:config.get("max_items_per_category", 25)]:
+            n = next(_item_seq)
             rep = cl["rep"]
             corr = f" · {cl['corroboration']}× ({', '.join(cl['sources'])})" \
                 if cl["corroboration"] > 1 else f" · {cl['sources'][0]} (single-source)"

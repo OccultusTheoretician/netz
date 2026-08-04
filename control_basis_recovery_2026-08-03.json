@@ -1,0 +1,172 @@
+{
+ "schema": "control-basis-recovery/1.0",
+ "generated": "2026-08-04T02:26:06Z",
+ "why": "kkr.parse_projections carried an allowlist that dropped control_basis, so nine control rows sealed on 2026-08-03 carry no provenance on the ledger. The basis was never lost - it is in control_packet.json. Sealed rows are never edited, so this is a companion record tying id to basis, not a rewrite. KK21 P2 fixes the passthrough forward; every control row sealed after it carries its own basis inline.",
+ "sealed_rows_edited": false,
+ "match_method": "exact statement text against control_packet.json",
+ "recovered": 8,
+ "unmatched": [
+  "KKR-20260803-01"
+ ],
+ "rows": [
+  {
+   "id": "KKR-20260804-09",
+   "date_issued": "2026-08-04",
+   "matched_on": "statement (exact)",
+   "control_basis": {
+    "arm": "control/baserate",
+    "rule": "climatological \u2014 same probability for every row drawn from the same reference class",
+    "rate": 0.25,
+    "n": 24,
+    "basis": "global",
+    "domain_canonical": "military/conflict",
+    "min_domain_n": 10,
+    "ledger_as_of": "2026-08-04T00:14:55Z",
+    "history_cutoff": "none \u2014 all resolved rows",
+    "clamped_to_gate_band": false,
+    "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+    "control_for": "KKR-20260804-01"
+   }
+  },
+  {
+   "id": "KKR-20260804-10",
+   "date_issued": "2026-08-04",
+   "matched_on": "statement (exact)",
+   "control_basis": {
+    "arm": "control/baserate",
+    "rule": "climatological \u2014 same probability for every row drawn from the same reference class",
+    "rate": 0.25,
+    "n": 24,
+    "basis": "global",
+    "domain_canonical": "cyber",
+    "min_domain_n": 10,
+    "ledger_as_of": "2026-08-04T00:14:55Z",
+    "history_cutoff": "none \u2014 all resolved rows",
+    "clamped_to_gate_band": false,
+    "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+    "control_for": "KKR-20260804-02"
+   }
+  },
+  {
+   "id": "KKR-20260804-11",
+   "date_issued": "2026-08-04",
+   "matched_on": "statement (exact)",
+   "control_basis": {
+    "arm": "control/baserate",
+    "rule": "climatological \u2014 same probability for every row drawn from the same reference class",
+    "rate": 0.25,
+    "n": 24,
+    "basis": "global",
+    "domain_canonical": "disaster",
+    "min_domain_n": 10,
+    "ledger_as_of": "2026-08-04T00:14:55Z",
+    "history_cutoff": "none \u2014 all resolved rows",
+    "clamped_to_gate_band": false,
+    "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+    "control_for": "KKR-20260804-03"
+   }
+  },
+  {
+   "id": "KKR-20260804-12",
+   "date_issued": "2026-08-04",
+   "matched_on": "statement (exact)",
+   "control_basis": {
+    "arm": "control/baserate",
+    "rule": "climatological \u2014 same probability for every row drawn from the same reference class",
+    "rate": 0.25,
+    "n": 24,
+    "basis": "global",
+    "domain_canonical": "political",
+    "min_domain_n": 10,
+    "ledger_as_of": "2026-08-04T00:14:55Z",
+    "history_cutoff": "none \u2014 all resolved rows",
+    "clamped_to_gate_band": false,
+    "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+    "control_for": "KKR-20260804-04"
+   }
+  },
+  {
+   "id": "KKR-20260804-13",
+   "date_issued": "2026-08-04",
+   "matched_on": "statement (exact)",
+   "control_basis": {
+    "arm": "control/baserate",
+    "rule": "climatological \u2014 same probability for every row drawn from the same reference class",
+    "rate": 0.25,
+    "n": 24,
+    "basis": "global",
+    "domain_canonical": "cyber",
+    "min_domain_n": 10,
+    "ledger_as_of": "2026-08-04T00:14:55Z",
+    "history_cutoff": "none \u2014 all resolved rows",
+    "clamped_to_gate_band": false,
+    "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+    "control_for": "KKR-20260804-05"
+   }
+  },
+  {
+   "id": "KKR-20260804-14",
+   "date_issued": "2026-08-04",
+   "matched_on": "statement (exact)",
+   "control_basis": {
+    "arm": "control/baserate",
+    "rule": "climatological \u2014 same probability for every row drawn from the same reference class",
+    "rate": 0.25,
+    "n": 24,
+    "basis": "global",
+    "domain_canonical": "political",
+    "min_domain_n": 10,
+    "ledger_as_of": "2026-08-04T00:14:55Z",
+    "history_cutoff": "none \u2014 all resolved rows",
+    "clamped_to_gate_band": false,
+    "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+    "control_for": "KKR-20260804-06"
+   }
+  },
+  {
+   "id": "KKR-20260804-15",
+   "date_issued": "2026-08-04",
+   "matched_on": "statement (exact)",
+   "control_basis": {
+    "arm": "control/baserate",
+    "rule": "climatological \u2014 same probability for every row drawn from the same reference class",
+    "rate": 0.25,
+    "n": 24,
+    "basis": "global",
+    "domain_canonical": "political",
+    "min_domain_n": 10,
+    "ledger_as_of": "2026-08-04T00:14:55Z",
+    "history_cutoff": "none \u2014 all resolved rows",
+    "clamped_to_gate_band": false,
+    "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+    "control_for": "KKR-20260804-07"
+   }
+  },
+  {
+   "id": "KKR-20260804-16",
+   "date_issued": "2026-08-04",
+   "matched_on": "statement (exact)",
+   "control_basis": {
+    "arm": "control/baserate",
+    "rule": "climatological \u2014 same probability for every row drawn from the same reference class",
+    "rate": 0.25,
+    "n": 24,
+    "basis": "global",
+    "domain_canonical": "cyber",
+    "min_domain_n": 10,
+    "ledger_as_of": "2026-08-04T00:14:55Z",
+    "history_cutoff": "none \u2014 all resolved rows",
+    "clamped_to_gate_band": false,
+    "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+    "control_for": "KKR-20260804-08"
+   }
+  }
+ ],
+ "finding_unmatched": {
+  "row": "KKR-20260803-01",
+  "what": "Not present in control_packet.json on disk. The eight recoverable rows carry deadlines 2026-08-12 and 2026-08-13; this row carries 2026-11-03, a three-month horizon out of line with the batch it sits in.",
+  "why_it_matters": "control_packet.json is a single mutable filename. Each baserate run overwrites it, so the pairing evidence for any earlier run is destroyed by the next one. This is the same structural defect as the OpenTimestamps false pair: a moving filename cannot evidence a specific run. It has now cost the provenance of one sealed row.",
+  "second_defect": "A control pairs same-run with the arm it controls, on the identical packet. A row with a 2026-11-03 deadline sitting in a batch deadlined 2026-08-12/13 either did not come from that pairing or the pairing crossed a horizon boundary. Which one cannot be determined from the repository as it stands - stated as a scope limitation, not guessed.",
+  "fix_direction": "Write dated packets - control_packet_YYYY-MM-DD_HHMM.json - and have baserate print the filename it wrote. Same remedy the anchoring defect took."
+ }
+}

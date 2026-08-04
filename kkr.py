@@ -55,6 +55,7 @@ Every projection MUST:
 7. Base-rate discipline: most discrete events do not happen; do not cluster probabilities at 60-80%. At least two projections must be rated BELOW 35%.
 8. WINDOW, NOT DATE: an unscheduled event (strike, attack, wildfire, earthquake, outbreak, cyberattack, resignation, indictment) MUST be given a window of at least 7 days. Never require an unscheduled event to occur on one named calendar day. The probability of a stochastic event on a specific date is a small fraction of its probability across a window, and pricing a single date at window rates is the most common scoring error in this record. Only events with a published schedule (elections, central bank meetings, hearings, contract expiries, scheduled releases) may name one date.
 9. NEVER write a condition about the ABSENCE of reporting. Phrases like "with no casualties reported" describe the source record, not the world. The report line "Casualties: none stated in the corroborating reports" is a statement about the reports themselves. Do not lift it into a projection; it cannot be adjudicated as a property of the event.
+10. CITE THE ITEM, NOT THE RECORD. "citations" names the specific numbered items that ground THIS claim - normally one to three, never more than seven. Citing the whole record is the same as citing nothing: a prior that excludes nothing predicts nothing, and a projection cited against every item cannot be graded for whether it went beyond its inputs. If no item grounds the claim, do not invent a citation - drop the projection.
 
 Use plain ASCII straight quotes only. Do NOT use curly quotes. Do NOT put quotation marks inside any statement or resolution string — refer to names and phrases without quoting them.
 Return ONLY a JSON array — no markdown fences, no commentary before or after:
@@ -170,6 +171,14 @@ def parse_projections(raw: str) -> list:
                       "keyed_keyless_rationale"):
                 if str(p.get(k, "")).strip():
                     entry[k] = str(p[k]).strip()
+            # A control row without its basis is not a control. baserate.py
+            # writes the rate, the n behind it, the reference class and the
+            # as-of date; the allowlist above used to drop the lot, sealing
+            # nine rows whose provenance lived only in the packet file.
+            # Structured passthrough, kept verbatim, never synthesised here.
+            if isinstance(p.get("control_basis"), dict):
+                entry["control_basis"] = p["control_basis"]
+                entry["is_control"] = True
             out.append(entry)
         except (KeyError, ValueError, TypeError):
             continue
@@ -228,6 +237,57 @@ def _content_words(s: str) -> set:
     return out
 
 
+# --- citation gate v2 (KK21) -------------------------------------------
+# The KK18 gate rejected a row only when the UNION of its cited items shared
+# no substantive vocabulary with the claim. Three failures walked through it:
+#
+#   SHOTGUN   cite every item and overlap is guaranteed. A prior that
+#             excludes nothing predicts nothing.
+#   THIN      overlap only on words common across the whole report. Shared
+#             vocabulary is not shared content.
+#   AMBIGUOUS one number resolving to several items (see P1). Charitable
+#             resolution: if ANY candidate supports, the row passes — the
+#             gate must never reject on a reference it cannot resolve.
+#
+# All three push the keyed/keyless call toward KEYLESS by making priors look
+# narrower than they are. That is the corruption the gate now closes.
+
+_CITE_SHOTGUN_ABS = 8       # citing >=8 items is not citing
+_CITE_SHOTGUN_FRAC = 0.50   # or >=50% of the record, whichever binds first
+_CITE_DF_RARE_FRAC = 0.25   # token in <=25% of items = discriminating
+
+
+def _report_items(path):
+    """Numbered items -> {n: [text, ...]}. A number may carry several texts:
+    that is the ambiguity, recorded rather than collapsed."""
+    items = {}
+    try:
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    except Exception:
+        return items
+    for line in lines:
+        m = re.match(r"\s*(\d+)\.\s+(.*)", line)
+        if m:
+            items.setdefault(int(m.group(1)), []).append(
+                re.sub(r"\[link\]\(\S+\)", "", m.group(2)))
+    return items
+
+
+def _rare_tokens(items):
+    """Content words appearing in <= _CITE_DF_RARE_FRAC of this report's items.
+    Rarity is measured inside the report: the discriminating question is
+    whether a token separates the cited item from its neighbours."""
+    from collections import Counter
+    df, total = Counter(), 0
+    for texts in items.values():
+        for t in texts:
+            total += 1
+            for w in _content_words(t):
+                df[w] += 1
+    cut = max(1, int(max(1, total) * _CITE_DF_RARE_FRAC))
+    return {w for w, c in df.items() if c <= cut}, total
+
+
 def _citation_support(p: dict):
     """Do the cited report items share ANY substantive vocabulary with the
     claim? Blunt by design - it cannot judge relevance, only whether the
@@ -259,14 +319,44 @@ def _citation_support(p: dict):
             found.add(int(m.group(1)))
     if not found:
         return None                       # cannot resolve; do not reject blind
+
+    items = _report_items(path)
+    total_items = sum(len(v) for v in items.values())
+    if total_items and (len(cites) >= _CITE_SHOTGUN_ABS
+                        or len(cites) / total_items >= _CITE_SHOTGUN_FRAC):
+        return (f"cites {len(cites)} of {total_items} items in the record "
+                "\u2014 a prior that excludes nothing predicts nothing, and a "
+                "keyless determination against the whole record is a "
+                "determination against no record; cite the items that ground "
+                "THIS claim")
+
+    rare, _ = _rare_tokens(items)
     claim = _content_words(p.get("statement", "") + " " + p.get("resolution", ""))
-    prior = _content_words(" ".join(cited_text))
-    if claim and prior and not (claim & prior):
+    if not claim:
+        return None
+    best, any_overlap = "NONE", False
+    for c in sorted(cites):
+        for txt in items.get(c, []):
+            shared = claim & _content_words(txt)
+            if not shared:
+                continue
+            any_overlap = True
+            if shared & rare:
+                best = "STRONG"
+                break
+        if best == "STRONG":
+            break
+    if best == "STRONG":
+        return None
+    if not any_overlap:
         return ("cited items share no substantive vocabulary with the claim "
                 "\u2014 a citation that does not support its entry makes the "
                 "4.02f priors unreadable and forces the keyed/keyless call to "
                 "default; cite an item that grounds THIS claim")
-    return None
+    return ("cited items overlap the claim only on vocabulary common across "
+            "the whole report \u2014 shared words are not shared content, and a "
+            "prior that fits every item grounds none of them; cite an item "
+            "carrying something specific to THIS claim")
 
 
 _MARKET_ANCHOR_WARN_ONLY = True
