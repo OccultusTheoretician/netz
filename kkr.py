@@ -700,6 +700,19 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     # a second run of the same UTC date overwrite the first run's published
     # rejection trail. Minute resolution, war-desk pattern.
     stamp = now.strftime("%Y-%m-%d_%H%M")
+    # KK21d: minute resolution still collides. Two arms ingested back to back
+    # wrote the same filename on 2026-08-04 and the second erased the first's
+    # rejection trail. A finer timestamp only postpones it; the arm is what
+    # actually makes the two runs different, so the arm goes in the name.
+    # No try/except here on purpose. The first cut of this patch wrapped the
+    # slug in a bare except and referenced the wrong variable name; the
+    # NameError was swallowed, the slug came back empty, and the two runs
+    # collided again with nothing printed - the exact failure this patch
+    # exists to remove, reintroduced by the fix. If model_tag is not there,
+    # this should raise.
+    _arm_slug = "".join(c if c.isalnum() else "-" for c in str(model_tag)).strip("-")
+    if _arm_slug:
+        stamp = f"{stamp}_{_arm_slug}"
     OUT.mkdir(exist_ok=True)
     (OUT / f"KKR_{stamp}.md").write_text(md, encoding="utf-8")
     html_doc = render_html(md, f"KKR {stamp}")
@@ -1225,12 +1238,35 @@ def cmd_ingest(args):
     if not projs:
         print("KKR · file unparseable — need the JSON array format", file=sys.stderr)
         sys.exit(1)
+    # KK21c: the report is resolved BEFORE validation and stamped on each row.
+    # It used to be resolved three lines after the gate ran, so
+    # _citation_support saw an empty source_report and returned pass every
+    # time. Every row that ever entered through --ingest was ungated on
+    # citations; cmd_generate set the field first, so only lmstudio/auto was
+    # ever checked.
+    _rep_name = getattr(args, "report", None)
+    if _rep_name:
+        rep = REPORTS / _rep_name
+        if not rep.exists():
+            print(f"KKR · no such report: {rep} — an arm cannot be attributed "
+                  f"to a record that is not on disk", file=sys.stderr)
+            sys.exit(1)
+    else:
+        rep = latest_report()
+        if rep:
+            print(f"KKR · source_report assumed: {rep.name} (newest on disk; "
+                  f"pass --report to name the record this arm actually read)",
+                  file=sys.stderr)
+    src_name = rep.name if rep else "manual"
     accepted_raw, rejected = [], []
     for p in projs:
+        if rep:
+            p["source_report"] = src_name
         reasons = validate_projection(p)
+        _cs = _citation_support(p)
+        if _cs:
+            reasons = list(reasons) + [_cs]
         (rejected.append((p, reasons)) if reasons else accepted_raw.append(p))
-    rep = latest_report()
-    src_name = rep.name if rep else "manual"
     # DEFECT D — the ingest path hardcoded one arm tag. Any second manual lane
     # (operator, a different frontier model, the ORBAT bridge) would have been
     # silently written into the ledger as manual/fable. Same attribution class as
@@ -2026,6 +2062,11 @@ def main():
     ap.add_argument("--ingest", metavar="FILE")
     ap.add_argument("--packet", metavar="NAME",
                     help="with --ingest: the packet filename this arm forecast against")
+    ap.add_argument("--report", metavar="NAME",
+                    help="with --ingest: the battle report this arm read. "
+                         "Citations resolve against it, so an assumed report "
+                         "checks the arm's priors against a record it never "
+                         "saw. Defaults to newest on disk and says so.")
     ap.add_argument("--arm", metavar="TAG",
                     help="with --ingest: forecaster arm tag (default manual/fable)")
     ap.add_argument("--resolve", action="store_true")

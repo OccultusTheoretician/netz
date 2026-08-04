@@ -335,6 +335,16 @@ def main():
         w("")
     w("## By arm")
     w("")
+    w("**Read this table with its defect attached.** Until 2026-08-04 the "
+      "`--ingest` path resolved `source_report` three lines AFTER the gate ran, "
+      "so `_citation_support` saw an empty field and returned pass on every row. "
+      "Every manual arm entered ungated on citations; `cmd_generate` set the "
+      "field first, so `lmstudio/auto` was the only arm ever checked at seal "
+      "time. These rates therefore compare one gated arm against arms that were "
+      "never gated, and the manual arms' rates are what an ungated lane "
+      "produced — not evidence that gating does or does not work. Rows sealed "
+      "from 2026-08-04 forward are gated on both paths (KK21c).")
+    w("")
     w("| arm | audited | defective | rate |")
     w("|---|---:|---:|---:|")
     for arm, (t, d) in sorted(by_arm.items(), key=lambda x: -x[1][1]):
