@@ -50,6 +50,7 @@ rejects a control row, that is a finding about the row, not about the control.
 """
 import argparse, json, sys
 from collections import Counter
+from datetime import datetime, timezone   # KK21e: default packet name needs today
 from datetime import date
 from pathlib import Path
 
@@ -236,10 +237,27 @@ def main():
                     help="permit pairing rows issued on an earlier day. A control "
                          "issued after a gate change cannot mirror the arm it is "
                          "supposed to control; this switch says you know that.")
-    ap.add_argument("-o", "--out", default="control_packet.json")
+    ap.add_argument("-o", "--out", default=None,
+                    help="output packet. Defaults to a name composed from the "
+                         "arm and date (--from-ledger) or the input filename "
+                         "(--pair). The old fixed default silently discarded "
+                         "the previous run's packet.")
     ap.add_argument("--as-of", dest="as_of", metavar="YYYY-MM-DD",
                     help="exclude rows resolved after this date from the rate")
     a = ap.parse_args()
+    # KK21e: compose a run-distinguishing default. A fixed filename cannot hold
+    # two runs and answers a second one by discarding the first, without error.
+    if not a.out:
+        if a.from_ledger:
+            _slug = "".join(c if c.isalnum() else "-"
+                            for c in str(a.from_ledger)).strip("-")
+            _day = a.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+            a.out = f"control_packet_{_day}_{_slug}.json"
+        elif a.pair:
+            _stem = Path(a.pair).stem
+            a.out = f"control_packet_{_stem}.json"
+        else:
+            a.out = "control_packet.json"
     if a.rates:
         return cmd_rates(a)
     if a.from_ledger:
