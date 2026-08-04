@@ -14,6 +14,7 @@ Reads only. Writes nothing, resolves nothing, seals nothing.
     python whatnow.py
 """
 
+import hashlib
 import json
 import subprocess
 import sys
@@ -87,6 +88,43 @@ def main():
         todo.append((f"{what} - the site is behind your work",
                      "publish.bat"))
 
+    # KK21m: the packet register, verified. Nothing else runs this — CI
+    # cannot, because the packets are gitignored and the runner never sees
+    # them, so the only machine that can check is the one holding the files.
+    # A committed packet whose bytes changed is an input a sealed entry names
+    # being rewritten after the fact.
+    try:
+        _reg = HERE / "docs" / "packet_register.json"
+        if _reg.exists():
+            _old = json.loads(_reg.read_text(encoding="utf-8"))
+            _drift, _gone = [], []
+            for _e in _old.get("entries", []):
+                _f = HERE / "forecasts" / _e["packet"]
+                if not _f.exists():
+                    _gone.append(_e["packet"])
+                    continue
+                _h = hashlib.sha256()
+                with _f.open("rb") as _fh:
+                    for _c in iter(lambda: _fh.read(1 << 20), b""):
+                        _h.update(_c)
+                if _h.hexdigest() != _e["sha256"]:
+                    _drift.append(_e["packet"])
+            if _drift:
+                todo.append((
+                    f"{len(_drift)} committed packet(s) CHANGED since commitment "
+                    f"- an input a sealed row names has been rewritten: "
+                    f"{', '.join(_drift[:3])}"
+                    + (" ..." if len(_drift) > 3 else ""),
+                    "python packet_commit.py --verify"))
+            if _gone:
+                todo.append((
+                    f"{len(_gone)} committed packet(s) no longer on disk: "
+                    f"{', '.join(_gone[:3])}" + (" ..." if len(_gone) > 3 else ""),
+                    "python packet_commit.py --verify"))
+    except Exception as _ex:
+        todo.append((f"packet register could not be verified ({type(_ex).__name__})",
+                     "python packet_commit.py --verify"))
+
     print()
     print("=" * 68)
     print(f"  WHAT NEEDS YOU - {today.isoformat()}")
@@ -112,6 +150,17 @@ def main():
     print("\n" + "-" * 68)
     print("  CLEAR")
     print("-" * 68)
+    try:
+        _reg = HERE / "docs" / "packet_register.json"
+        if _reg.exists():
+            _r = json.loads(_reg.read_text(encoding="utf-8"))
+            _n = sum(1 for p in rows if (p.get("source_packet") or "").strip())
+            print(f"    packet register .. {_r.get('packets', 0)} packet(s) "
+                  f"committed · {_n} of {len(rows)} rows name one · "
+                  f"{len(rows) - _n} name none (input destroyed, see "
+                  f"PACKET_LOSS_RECORD)")
+    except Exception:
+        pass
     print(f"    ledger .......... {len(rows)} rows · {len(openr)} open · "
           f"{sum(1 for p in rows if p['status'] in ('hit','miss'))} resolved · "
           f"{sum(1 for p in rows if p['status']=='void')} void")
