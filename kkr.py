@@ -224,6 +224,35 @@ statement source sources credible outlet outlets news least via data official"""
 .split())
 
 
+def _tokens_overlap(a: set, b: set) -> set:
+    """Overlap tolerant of the demonym and adjectival forms news headlines use.
+
+    Exact match, OR one token a prefix of the other at >= 4 chars
+    (iran/iranian, israel/israeli), OR a shared prefix of >= 5
+    (ukraine/ukrainian). KK21b judgment call: without it, a claim about
+    "Iranian officials" shares nothing with an item about "Iran". It cuts both
+    ways - looser matching also lets weak citations through - and the
+    thresholds are printed here so they can be argued with rather than
+    discovered.
+    """
+    hit = set()
+    for x in a:
+        for y in b:
+            if x == y:
+                hit.add(x)
+            elif len(x) >= 4 and len(y) >= 4 and (x.startswith(y) or y.startswith(x)):
+                hit.add(x)
+            else:
+                n = 0
+                for cx, cy in zip(x, y):
+                    if cx != cy:
+                        break
+                    n += 1
+                if n >= 5:
+                    hit.add(x)
+    return hit
+
+
 def _content_words(s: str) -> set:
     """Substantive vocabulary only. Dates, pure numbers and identifier tokens
     are stripped so a shared '2026' or 'CVE' can never read as support."""
@@ -337,11 +366,11 @@ def _citation_support(p: dict):
     best, any_overlap = "NONE", False
     for c in sorted(cites):
         for txt in items.get(c, []):
-            shared = claim & _content_words(txt)
+            shared = _tokens_overlap(claim, _content_words(txt))
             if not shared:
                 continue
             any_overlap = True
-            if shared & rare:
+            if _tokens_overlap(shared, rare):
                 best = "STRONG"
                 break
         if best == "STRONG":
@@ -497,7 +526,25 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     if not (5 <= p["probability"] <= 95):
         reasons.append("probability outside 5-95")
     # --- KK19 gate: window discipline ---
-    _dates = sorted(set(re.findall(r"\b(20\d{2}-\d{2}-\d{2})\b", both)))
+    # KK21b: bounds are read by ROLE, not by position. Taking the earliest and
+    # latest date anywhere in the row assumes every date is a window bound.
+    # A confirmation date and a baseline anchor are neither, and reading them
+    # as bounds rejected eight rows on 2026-08-03 for stating them explicitly.
+    _all_dates = sorted(set(re.findall(r"\b(20\d{2}-\d{2}-\d{2})\b", both)))
+    _win = re.search(r"\bbetween\s+(20\d{2}-\d{2}-\d{2})\s+and\s+"
+                     r"(20\d{2}-\d{2}-\d{2})\b", both, re.I)
+    _governed = set()
+    for _m in re.finditer(r"\b(?:confirm\w*|verif\w*|report\w*|corroborat\w*)"
+                          r"\s+(?:by|on)\s+(20\d{2}-\d{2}-\d{2})\b", both, re.I):
+        _governed.add(_m.group(1))
+    for _m in re.finditer(r"\b(?:in\s+effect\s+on|as\s+of|described\s+in\s+the|"
+                          r"dated|on\s+or\s+before|the)\s+(20\d{2}-\d{2}-\d{2})\b",
+                          both, re.I):
+        _governed.add(_m.group(1))
+    if _win:
+        _dates = sorted({_win.group(1), _win.group(2)})
+    else:
+        _dates = [d for d in _all_dates if d not in _governed] or _all_dates
     _sched = re.search(r"\b(?:scheduled|calendar|election|referendum|summit|"
                        r"fomc|meeting|hearing|verdict|sentencing|expir\w*|"
                        r"settle\w*|auction|inaugurat\w*|swearing|"
