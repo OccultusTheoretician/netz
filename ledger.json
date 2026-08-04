@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-04T00:17:45Z",
+  "as_of": "2026-08-04T02:53:48Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -6126,6 +6126,351 @@
       "notes": "",
       "sealed_at": "2026-08-04T00:17:45.652582+00:00",
       "seal_sha256": "1d20b879f8084ac3c94b85b5b3506a9374fd23a73db5683655dd67a882d9c9e2"
+    },
+    {
+      "statement": "Israeli air, drone, or artillery strikes inside Gaza City occur between 2026-08-10 and 2026-08-24.",
+      "domain": "military_conflict",
+      "probability": 88,
+      "resolution": "True if Al Jazeera and BBC World each report an Israeli air, drone, or artillery strike inside Gaza City occurring between 2026-08-10 and 2026-08-24.",
+      "deadline": "2026-08-27",
+      "citations": [
+        22,
+        18
+      ],
+      "failure_condition": "No Israeli strike inside Gaza City occurs during the window.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-17",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:44.336059+00:00",
+      "seal_sha256": "5ef75dafedf1987d2f91c0810c4054b3715be12c19a8da6b29a7217b69dedb16"
+    },
+    {
+      "statement": "Russia's Ministry of Defence claims 100 or more Ukrainian drones destroyed or intercepted over a single night between 2026-08-10 and 2026-08-24.",
+      "domain": "military_conflict",
+      "probability": 55,
+      "resolution": "True if Russia's Ministry of Defence publicly claims destroying or intercepting 100 or more Ukrainian drones over one overnight period between 2026-08-10 and 2026-08-24, per wire reporting.",
+      "deadline": "2026-08-27",
+      "citations": [
+        3,
+        19
+      ],
+      "failure_condition": "No single-night MoD claim reaches 100 drones during the window.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-18",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:44.336976+00:00",
+      "seal_sha256": "d927e97ada2d702e4c2b3a88f8d92861201f623c73187b67552bc2365e6260cd"
+    },
+    {
+      "statement": "Front-month Brent crude settles at or below 75.00 US dollars per barrel on at least one trading day between 2026-08-10 and 2026-09-30.",
+      "domain": "economic",
+      "probability": 45,
+      "resolution": "True if front-month Brent futures post a settlement price at or below 75.00 US dollars per barrel on any trading day between 2026-08-10 and 2026-09-30.",
+      "deadline": "2026-10-02",
+      "citations": [
+        15,
+        20
+      ],
+      "failure_condition": "Every Brent front-month settlement in the window prints above 75.00 US dollars.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-19",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:44.337001+00:00",
+      "seal_sha256": "aa18835c012ae13c1b07a7afb02e14daca13d87e5e7100340aab3bd59e868cb9"
+    },
+    {
+      "statement": "The FOMC raises the federal funds target range at a scheduled meeting held between 2026-08-10 and 2026-12-31.",
+      "domain": "economic",
+      "probability": 18,
+      "resolution": "True if an FOMC statement issued at a scheduled meeting within the window announces an increase to the federal funds target range.",
+      "deadline": "2027-01-04",
+      "citations": [
+        18,
+        7
+      ],
+      "failure_condition": "The target range is held or cut at every scheduled meeting in the window.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-20",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:44.337032+00:00",
+      "seal_sha256": "072bf7615199f3285cf79aa79c5c439ad60ea0154102b19543593569a42e0cbd"
+    },
+    {
+      "statement": "CISA adds a CVE affecting N-able N-central to the Known Exploited Vulnerabilities catalog between 2026-08-10 and 2026-09-30.",
+      "domain": "cyber",
+      "probability": 45,
+      "resolution": "True if the CISA KEV catalog contains an entry for a CVE in N-able N-central carrying a date-added value between 2026-08-10 and 2026-09-30.",
+      "deadline": "2026-10-02",
+      "citations": [
+        7
+      ],
+      "failure_condition": "No N-able N-central CVE receives a KEV date-added value inside the window.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-21",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:44.337043+00:00",
+      "seal_sha256": "488ee6d7f0bba25f3ab3b8ad68372a8e755d09a6508b0d17d225608db11c45c3"
+    },
+    {
+      "statement": "The UK Information Commissioners Office confirms a formal investigation or enforcement action over the PNLD breach between 2026-08-10 and 2026-09-30.",
+      "domain": "cyber",
+      "probability": 30,
+      "resolution": "True if the ICO publishes a statement, case page, or enforcement notice confirming formal investigation or enforcement action regarding the PNLD breach, dated within the window.",
+      "deadline": "2026-10-02",
+      "citations": [
+        5
+      ],
+      "failure_condition": "The ICO opens no formal investigation or enforcement action on PNLD in the window.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-22",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:44.337052+00:00",
+      "seal_sha256": "5c671f8318b837bebb3f07c178be1ef516be39ebd4366ec65aa34aa2e1c31d77"
+    },
+    {
+      "statement": "The US Senate confirms Todd Blanche as Attorney General between 2026-08-10 and 2026-09-30.",
+      "domain": "political",
+      "probability": 65,
+      "resolution": "True if the Senate roll call record shows a confirmation vote approving Todd Blanche as Attorney General on a date between 2026-08-10 and 2026-09-30.",
+      "deadline": "2026-10-02",
+      "citations": [
+        19,
+        1
+      ],
+      "failure_condition": "No successful Senate confirmation vote on Blanche occurs within the window.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-23",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:44.337060+00:00",
+      "seal_sha256": "6626b0194ce427db204e0b77625ba461ee4af82f3850644234a33f510a0bb816"
+    },
+    {
+      "statement": "The National Interagency Fire Center posts National Preparedness Level 5 on at least one day between 2026-08-10 and 2026-09-15.",
+      "domain": "disaster",
+      "probability": 40,
+      "resolution": "True if an NIFC daily situation report dated between 2026-08-10 and 2026-09-15 states National Preparedness Level 5.",
+      "deadline": "2026-09-17",
+      "citations": [
+        2,
+        17
+      ],
+      "failure_condition": "NIFC preparedness level stays at 4 or lower every day of the window.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-24",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:44.337067+00:00",
+      "seal_sha256": "73b04e6cb579dbc54903b08f620bb67cb804184d2f5f12f24e326d244a266b52"
+    },
+    {
+      "statement": "US and Iranian officials hold a confirmed direct bilateral meeting between 2026-08-10 and 2026-10-31.",
+      "domain": "political",
+      "probability": 35,
+      "resolution": "True if the US State Department and Iran's foreign ministry both confirm a direct bilateral meeting between US and Iranian officials held within the window.",
+      "deadline": "2026-11-03",
+      "citations": [
+        4,
+        14,
+        22
+      ],
+      "failure_condition": "No direct US-Iran bilateral meeting occurs in the window, mediated contact only.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-25",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:44.337075+00:00",
+      "seal_sha256": "ebce2948b0913d55c5a6f9841d14c5cf64fdc3fbf78f8169d1aae1b02e37b384"
+    },
+    {
+      "statement": "Israel and Palestinian armed factions in Gaza will be reported to have observed a continuous halt in strikes lasting at least 48 hours, beginning between 2026-08-04 and 2026-08-24.",
+      "domain": "military/conflict",
+      "probability": 20,
+      "resolution": "True if two or more wire services or the UN report a Gaza ceasefire holding at least 48 continuous hours with a start date between 2026-08-04 and 2026-08-24, confirmed by 2026-08-27.",
+      "deadline": "2026-08-27",
+      "citations": [
+        22
+      ],
+      "failure_condition": "No 48-hour continuous halt in Gaza strikes with a start date in the stated window is confirmed by two independent sources as of the deadline.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-26",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:48.987012+00:00",
+      "seal_sha256": "0a287d7d5d2ca0cbbf15d6192803a250860656269fbc684958441bfb8418a624"
+    },
+    {
+      "statement": "A UN body, the ICC, or a major human rights organization will announce it has opened a formal investigation into the 2026-08-03 Sudan army drone strike on a court session, between 2026-08-04 and 2026-08-25.",
+      "domain": "crime/security",
+      "probability": 30,
+      "resolution": "True if the UN, ICC, or a named human rights organization publicly announces a formal investigation or fact-finding inquiry into the strike, with the announcement dated between 2026-08-04 and 2026-08-25, confirmed by 2026-08-28.",
+      "deadline": "2026-08-28",
+      "citations": [
+        24
+      ],
+      "failure_condition": "No formal investigation or fact-finding inquiry into the strike is publicly announced by any of the named bodies within the stated window as of the deadline.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-27",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:48.987159+00:00",
+      "seal_sha256": "f5f6612afb8165cdb6b7d402b7cdda3fd39d85a532b4afc18545d7aabec4fe70"
+    },
+    {
+      "statement": "AstraZeneca and Bristol Myers Squibb will announce a signed definitive merger or acquisition agreement between 2026-08-04 and 2026-09-04.",
+      "domain": "economics/markets",
+      "probability": 18,
+      "resolution": "True if both companies issue a joint press release or regulatory filing confirming a signed definitive agreement, dated between 2026-08-04 and 2026-09-04, confirmed by 2026-09-08.",
+      "deadline": "2026-09-08",
+      "citations": [
+        6,
+        23
+      ],
+      "failure_condition": "No joint press release or regulatory filing confirming a signed definitive agreement between the two companies appears within the stated window as of the deadline.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-28",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:48.987184+00:00",
+      "seal_sha256": "ec11313c1ef6a40e83e3f3559e7981d189bf24684d50163f7f76437ae66ea689"
+    },
+    {
+      "statement": "The Federal Reserve will raise its federal funds target range above the level in effect on 2026-08-03, in an FOMC decision announced between 2026-08-10 and 2026-12-31.",
+      "domain": "economics/markets",
+      "probability": 15,
+      "resolution": "True if an FOMC post-meeting statement dated between 2026-08-10 and 2026-12-31 raises the target range above its 2026-08-03 level, confirmed via the Federal Reserve press release by 2027-01-06.",
+      "deadline": "2027-01-06",
+      "citations": [
+        18
+      ],
+      "failure_condition": "No FOMC statement dated in the window raises the target range above its 2026-08-03 level as of the deadline.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-29",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:48.987200+00:00",
+      "seal_sha256": "b111abb55ca47ab8755214d69cb0fd0c96f8dc1b4812fb99f3e677c36afc9613"
+    },
+    {
+      "statement": "The CISA Known Exploited Vulnerabilities catalog will add an entry for the N-able N-central vulnerability described in the 2026-08-03 report, with the addition dated between 2026-08-04 and 2026-08-18.",
+      "domain": "cyber",
+      "probability": 42,
+      "resolution": "True if the CISA KEV catalog lists an N-able N-central CVE with a date-added field between 2026-08-04 and 2026-08-18, confirmed by checking the catalog on 2026-08-21.",
+      "deadline": "2026-08-21",
+      "citations": [
+        7
+      ],
+      "failure_condition": "No N-able N-central CVE appears in the CISA KEV catalog with a date-added in the stated window as of the deadline.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-30",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:48.987213+00:00",
+      "seal_sha256": "cf8288bf0e34432fb7d99b0d5214bd6584a8fb52405554caad4a382ef3363442"
+    },
+    {
+      "statement": "The US Senate will hold a floor vote resulting in confirmation or rejection of the pending nomination of Todd Blanche, between 2026-08-04 and 2026-08-21.",
+      "domain": "political",
+      "probability": 62,
+      "resolution": "True if the Senate floor vote record (Congress.gov or a wire service) shows a confirmation or rejection vote on the nomination of Todd Blanche dated between 2026-08-04 and 2026-08-21, confirmed by 2026-08-24.",
+      "deadline": "2026-08-24",
+      "citations": [
+        1
+      ],
+      "failure_condition": "No Senate floor vote on the nomination of Todd Blanche, up or down, is recorded within the stated window as of the deadline.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-31",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:48.987224+00:00",
+      "seal_sha256": "1f4ff22d444f28964aa4f43fd1ebba2a6c940971554e7643abb2354fa6086497"
+    },
+    {
+      "statement": "The wildfire(s) reported destroying homes and forcing evacuations near Spokane, Washington on 2026-08-03 will reach full containment, as reported by state or federal fire authorities, between 2026-08-04 and 2026-08-21.",
+      "domain": "disaster",
+      "probability": 28,
+      "resolution": "True if Washington state fire authorities or InciWeb report the Spokane-area wildfire(s) at 100 percent containment, with the containment date between 2026-08-04 and 2026-08-21, confirmed by 2026-08-24.",
+      "deadline": "2026-08-24",
+      "citations": [
+        2
+      ],
+      "failure_condition": "No state or federal fire authority reports 100 percent containment of the Spokane-area wildfire(s) with a containment date in the stated window as of the deadline.",
+      "source_report": "battle_report_2026-08-03_1501.md",
+      "id": "KKR-20260804-32",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-03_1501.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T02:53:48.987235+00:00",
+      "seal_sha256": "89e77607bd9314f727a5921e43a2a2ba2670c4eaf881001f86d2178bc4d7e8a2"
     }
   ]
 }
