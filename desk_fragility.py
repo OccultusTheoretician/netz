@@ -22,6 +22,7 @@ import sys
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+from runguard import write_run_artifact   # KK21h
 
 HERE = Path(__file__).resolve().parent
 
@@ -131,7 +132,7 @@ def main():
     dest_dir.mkdir(exist_ok=True)
     dated = dest_dir / f"FRAGILITY_{stamp}.md"
     latest = dest_dir / "FRAGILITY_latest.md"
-    dated.write_text(md, encoding="utf-8")
+    dated = write_run_artifact(dated, md, tag="fragility")
     latest.write_text(md, encoding="utf-8")
 
     print(f"FRAGILITY · {len(graded)} graded · {len(full)} fully single-outlet "

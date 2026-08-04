@@ -35,6 +35,7 @@ import sys
 from collections import Counter
 from datetime import date, datetime, timezone
 from pathlib import Path
+from runguard import write_run_artifact   # KK21h
 
 HERE = Path(__file__).resolve().parent
 FORECASTS = HERE / "forecasts"
@@ -601,7 +602,11 @@ def main() -> int:
     FORECASTS.mkdir(parents=True, exist_ok=True)
     stamp = re.sub(r"^tg_events_|\.json$", "", src.name)
     dated = FORECASTS / f"WARDESK_{stamp}.md"
-    dated.write_text(section, encoding="utf-8")
+    # KK21h: this is KK20 defect #8. The stamp comes from the SOURCE filename,
+    # so re-grading an existing tg_events file with newer data rewrote a dated
+    # artifact under its original date - WARDESK_2026-07-30_0745.md held an
+    # 08-02 render. The guard makes that a second file and a printed line.
+    dated = write_run_artifact(dated, section, tag="wardesk")
     (FORECASTS / "WARDESK_latest.md").write_text(section, encoding="utf-8")
     print(f"WARDESK · section \u2192 {dated} (+ WARDESK_latest.md)", file=sys.stderr)
     if _stale_exit and not getattr(args, "stale_ok", False):
