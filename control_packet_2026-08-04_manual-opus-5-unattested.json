@@ -1,0 +1,235 @@
+[
+  {
+    "statement": "Israeli air, drone, or artillery strikes inside Gaza City occur between 2026-08-10 and 2026-08-24.",
+    "resolution": "True if Al Jazeera and BBC World each report an Israeli air, drone, or artillery strike inside Gaza City occurring between 2026-08-10 and 2026-08-24.",
+    "failure_condition": "No Israeli strike inside Gaza City occurs during the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-08-27",
+    "probability": 25,
+    "citations": [
+      22,
+      18
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 24,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-04T02:53:48Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260804-17"
+    }
+  },
+  {
+    "statement": "Russia's Ministry of Defence claims 100 or more Ukrainian drones destroyed or intercepted over a single night between 2026-08-10 and 2026-08-24.",
+    "resolution": "True if Russia's Ministry of Defence publicly claims destroying or intercepting 100 or more Ukrainian drones over one overnight period between 2026-08-10 and 2026-08-24, per wire reporting.",
+    "failure_condition": "No single-night MoD claim reaches 100 drones during the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-08-27",
+    "probability": 25,
+    "citations": [
+      3,
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 24,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-04T02:53:48Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260804-18"
+    }
+  },
+  {
+    "statement": "Front-month Brent crude settles at or below 75.00 US dollars per barrel on at least one trading day between 2026-08-10 and 2026-09-30.",
+    "resolution": "True if front-month Brent futures post a settlement price at or below 75.00 US dollars per barrel on any trading day between 2026-08-10 and 2026-09-30.",
+    "failure_condition": "Every Brent front-month settlement in the window prints above 75.00 US dollars.",
+    "domain": "economic",
+    "deadline": "2026-10-02",
+    "probability": 25,
+    "citations": [
+      15,
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 24,
+      "basis": "global",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-04T02:53:48Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260804-19"
+    }
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at a scheduled meeting held between 2026-08-10 and 2026-12-31.",
+    "resolution": "True if an FOMC statement issued at a scheduled meeting within the window announces an increase to the federal funds target range.",
+    "failure_condition": "The target range is held or cut at every scheduled meeting in the window.",
+    "domain": "economic",
+    "deadline": "2027-01-04",
+    "probability": 25,
+    "citations": [
+      18,
+      7
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 24,
+      "basis": "global",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-04T02:53:48Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260804-20"
+    }
+  },
+  {
+    "statement": "CISA adds a CVE affecting N-able N-central to the Known Exploited Vulnerabilities catalog between 2026-08-10 and 2026-09-30.",
+    "resolution": "True if the CISA KEV catalog contains an entry for a CVE in N-able N-central carrying a date-added value between 2026-08-10 and 2026-09-30.",
+    "failure_condition": "No N-able N-central CVE receives a KEV date-added value inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-02",
+    "probability": 25,
+    "citations": [
+      7
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 24,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-04T02:53:48Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260804-21"
+    }
+  },
+  {
+    "statement": "The UK Information Commissioners Office confirms a formal investigation or enforcement action over the PNLD breach between 2026-08-10 and 2026-09-30.",
+    "resolution": "True if the ICO publishes a statement, case page, or enforcement notice confirming formal investigation or enforcement action regarding the PNLD breach, dated within the window.",
+    "failure_condition": "The ICO opens no formal investigation or enforcement action on PNLD in the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-02",
+    "probability": 25,
+    "citations": [
+      5
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 24,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-04T02:53:48Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260804-22"
+    }
+  },
+  {
+    "statement": "The US Senate confirms Todd Blanche as Attorney General between 2026-08-10 and 2026-09-30.",
+    "resolution": "True if the Senate roll call record shows a confirmation vote approving Todd Blanche as Attorney General on a date between 2026-08-10 and 2026-09-30.",
+    "failure_condition": "No successful Senate confirmation vote on Blanche occurs within the window.",
+    "domain": "political",
+    "deadline": "2026-10-02",
+    "probability": 25,
+    "citations": [
+      19,
+      1
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 24,
+      "basis": "global",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-04T02:53:48Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260804-23"
+    }
+  },
+  {
+    "statement": "The National Interagency Fire Center posts National Preparedness Level 5 on at least one day between 2026-08-10 and 2026-09-15.",
+    "resolution": "True if an NIFC daily situation report dated between 2026-08-10 and 2026-09-15 states National Preparedness Level 5.",
+    "failure_condition": "NIFC preparedness level stays at 4 or lower every day of the window.",
+    "domain": "disaster",
+    "deadline": "2026-09-17",
+    "probability": 25,
+    "citations": [
+      2,
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 24,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-04T02:53:48Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260804-24"
+    }
+  },
+  {
+    "statement": "US and Iranian officials hold a confirmed direct bilateral meeting between 2026-08-10 and 2026-10-31.",
+    "resolution": "True if the US State Department and Iran's foreign ministry both confirm a direct bilateral meeting between US and Iranian officials held within the window.",
+    "failure_condition": "No direct US-Iran bilateral meeting occurs in the window, mediated contact only.",
+    "domain": "political",
+    "deadline": "2026-11-03",
+    "probability": 25,
+    "citations": [
+      4,
+      14,
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 24,
+      "basis": "global",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-04T02:53:48Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260804-25"
+    }
+  }
+]
