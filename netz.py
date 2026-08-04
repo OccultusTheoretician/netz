@@ -437,7 +437,46 @@ def number_items(clusters: list, limit: int):
     return "\n".join(lines), chosen
 
 
-def audit_citations(text: str, n_items: int):
+# KK21g: identifier families the sources carry. The finder is loose on
+# purpose so a MALFORMED token is caught rather than skipped - a strict
+# pattern would silently ignore the defect this exists to find.
+_IDENT_FAMILIES = [
+    ("CVE", re.compile(r"\bCVE-\d{4}-\d+\b"), re.compile(r"^CVE-\d{4}-\d{4,}$")),
+    ("CWE", re.compile(r"\bCWE-\d+\b"), re.compile(r"^CWE-\d{1,4}$")),
+]
+
+
+def audit_identifiers(text: str, source: str):
+    """Identifiers in synthesis prose that the record does not carry.
+
+    The synthesis prints under the claim that every sentence cites the record
+    below. An identifier absent from that record is a specific assertion the
+    record does not support - and it reads as more precise than the prose
+    around it, so a reader checks it least. Not a claim of falsehood: the
+    identifier may be real and correctly recalled. The claim is that this
+    document does not source it.
+    """
+    out = []
+    for name, finder, valid in _IDENT_FAMILIES:
+        present = set(finder.findall(source or ""))
+        bad, unsourced = [], []
+        for tok in dict.fromkeys(finder.findall(text or "")):
+            if not valid.match(tok):
+                bad.append(tok)
+            elif tok not in present:
+                unsourced.append(tok)
+        if bad:
+            out.append(f"malformed {name} identifier(s) in synthesis: "
+                       f"{', '.join(bad)} \u2014 refers to nothing and cannot "
+                       f"be looked up; do not carry into a projection")
+        if unsourced:
+            out.append(f"{name} identifier(s) not present in the record below: "
+                       f"{', '.join(unsourced)} \u2014 the synthesis asserts a "
+                       f"specific identifier this record does not source")
+    return out
+
+
+def audit_citations(text: str, n_items: int, source: str = ""):
     warnings = []
     cited = set()
     for m in CITE_RE.finditer(text):
@@ -451,6 +490,7 @@ def audit_citations(text: str, n_items: int):
                   if not CITE_RE.search(s) and not s.startswith(("I&W:", "OUTLOOK:")))
     if uncited:
         warnings.append(f"{uncited} sentence(s) carry no citation — audit before use")
+    warnings.extend(audit_identifiers(text, source))
     return text, warnings
 
 
@@ -1316,7 +1356,7 @@ def main():
                 text = llm_chat(base, model_used, SYSTEM_PROMPT,
                                 f"Category: {cat}{pir_note}\nItems:\n{numbered}")
                 if text:
-                    text, warnings = audit_citations(text, len(chosen))
+                    text, warnings = audit_citations(text, len(chosen), numbered)
                     synth[cat] = {"text": text, "warnings": warnings}
             top = sorted(clusters, key=lambda c: (-c["corroboration"],
                          -(c["newest"].timestamp() if c["newest"] else 0)))
