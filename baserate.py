@@ -72,7 +72,7 @@ def canon(domain: str) -> str:
         return (domain or "").strip().lower()
     try:
         m = json.loads(dp.read_text(encoding="utf-8"))
-        table = m.get("canon") or m.get("map") or m
+        table = (m.get("aliases") or m.get("canon") or m.get("map") or m)
         d = (domain or "").strip().lower()
         return table.get(d, d) if isinstance(table, dict) else d
     except Exception:

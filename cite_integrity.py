@@ -105,6 +105,29 @@ def content_words(s: str) -> set:
     return out
 
 
+def tokens_overlap(a: set, b: set) -> set:
+    """Overlap tolerant of demonym and adjectival forms. Must stay identical to
+    kkr._tokens_overlap: an auditor stricter than the gate it audits reports a
+    defect rate the gate would never have produced, which is a stated-versus-
+    operational gap on the desk's own masthead."""
+    hit = set()
+    for x in a:
+        for y in b:
+            if x == y:
+                hit.add(x)
+            elif len(x) >= 4 and len(y) >= 4 and (x.startswith(y) or y.startswith(x)):
+                hit.add(x)
+            else:
+                n = 0
+                for cx, cy in zip(x, y):
+                    if cx != cy:
+                        break
+                    n += 1
+                if n >= 5:
+                    hit.add(x)
+    return hit
+
+
 def parse_report(path: Path) -> dict:
     """Numbered items -> {n: [text, ...]}.
 
@@ -156,10 +179,10 @@ def audit_row(p: dict, items: dict, rare: set) -> dict:
         # reference it cannot resolve; the ambiguity is reported separately.
         best = "NONE"
         for txt in cands:
-            shared = claim & content_words(txt)
+            shared = tokens_overlap(claim, content_words(txt))
             if not shared:
                 continue
-            if shared & rare:
+            if tokens_overlap(shared, rare):
                 best = "STRONG"
                 break
             best = "WEAK"
