@@ -630,6 +630,47 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                     f"or later")
         except ValueError:
             pass
+    # --- KK21o: the resolution must test the statement ---------------------
+    # Rule 11 pushed rows toward named registers and the forecaster learned to
+    # name one and attach it to a claim the register cannot test. Two rows
+    # sealed on 2026-08-04 resolving on something other than what they assert.
+    # Distinctive tokens: proper nouns and identifiers, taken from the ORIGINAL
+    # casing. These name the SUBJECT. A resolution whose subject shares nothing
+    # with the statement's is testing a different fact - a drone strike on
+    # Odesa resolving on the CISA KEV catalog. Content-word coverage was tried
+    # first and rejected: it punishes a resolution that refers back to its own
+    # statement ("the same arrangement", "the outbreak in item 92") instead of
+    # restating it, which is economical writing, not drift.
+    _IDENT = re.compile("(?<![A-Za-z0-9])(?:[A-Z][A-Za-z]{2,}|[A-Z]{2,})(?![A-Za-z])")
+    _GENERIC = set("""TRUE FALSE Between The This That These Those Both Either
+    Neither If When Where While After Before During Per According By For And Or
+    Not No Any All At Least More Than Over Under Above Below Within From Until
+    January February March April May June July August September October November
+    December Monday Tuesday Wednesday Thursday Friday Saturday Sunday US USD
+    UTC""".split())
+    _sid = {w for w in _IDENT.findall(p.get("statement", "")) if w not in _GENERIC}
+    _rid = {w for w in _IDENT.findall(p.get("resolution", "")) if w not in _GENERIC}
+    if _sid and _rid and not _tokens_overlap({s.lower() for s in _sid},
+                                             {r.lower() for r in _rid}):
+        reasons.append(
+            "the resolution names a different subject than the statement — "
+            "the claim is about " + ", ".join(sorted(_sid)[:4])
+            + " and the resolution settles on " + ", ".join(sorted(_rid)[:4])
+            + ". A row whose resolution checks a different fact can be scored "
+            "correct while being wrong")
+    _QUAL = {"green", "orange", "amber", "yellow", "minor", "provisional",
+             "preliminary", "unconfirmed", "partial", "draft", "proposed",
+             "interim"}
+    _sw = _content_words(p.get("statement", ""))
+    _rw = _content_words(p.get("resolution", ""))
+    _added = (_rw & _QUAL) - _sw
+    if _added:
+        reasons.append(
+            "the resolution narrows the claim with a qualifier the statement "
+            "never makes — " + ", ".join(sorted(_added))
+            + ". The forecaster is graded on the statement; a severity or "
+            "status qualifier living only in the resolution is invisible to "
+            "anyone reading the claim")
     _anchor = _market_anchor(p)
     if _anchor:
         if _MARKET_ANCHOR_WARN_ONLY:
