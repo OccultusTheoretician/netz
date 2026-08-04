@@ -247,15 +247,39 @@ def resolve_gdacs(row_id, params, keep_raw=False):
     raw = _fetch(GDACS_URL)
     try:
         root = ET.fromstring(raw)
-        items = [(i.findtext("title", ""),
-                  "".join(i.itertext()).lower())
-                 for i in root.iter("item")]
+        items = []
+        for i in root.iter("item"):
+            title = i.findtext("title", "") or ""
+            # KK21k: the level is read STRUCTURALLY. The previous matcher
+            # tested `want_a in blob` against every string in the item
+            # flattened together, so "red" matched a legend, a URL fragment,
+            # or the word "hundred" — and on 2026-08-04 it returned YES on an
+            # item whose own title says Green. Namespaced element first, then
+            # the title's opening word, then nothing.
+            lvl = None
+            for el in i.iter():
+                if el.tag.rsplit("}", 1)[-1].lower() == "alertlevel" and el.text:
+                    lvl = el.text.strip().lower()
+                    break
+            if lvl is None:
+                first = title.strip().split(" ", 1)[0].lower()
+                if first in ("green", "orange", "red"):
+                    lvl = first
+            items.append((title, "".join(i.itertext()).lower(), lvl))
     except Exception as e:
         return _evidence(row_id, "gdacs", GDACS_URL, raw, params,
                          "INDETERMINATE", f"RSS parse failed: {e}", keep_raw)
     want_c = params["country"].lower()
     want_a = params["alertlevel"].lower()
-    hits = [t for t, blob in items if want_c in blob and want_a in blob]
+    if items and not any(lvl for _, _, lvl in items):
+        return _evidence(row_id, "gdacs", GDACS_URL, raw, params,
+                         "INDETERMINATE",
+                         f"no alert level readable on any of {len(items)} feed "
+                         f"items — neither a namespaced alertlevel element nor "
+                         f"a level-prefixed title. Refusing to infer the level "
+                         f"from item body text; that produced a false YES on "
+                         f"2026-08-04.", keep_raw)
+    hits = [t for t, blob, lvl in items if want_c in blob and lvl == want_a]
     if hits:
         return _evidence(row_id, "gdacs", GDACS_URL, raw, params, "YES",
                          f"live {params['alertlevel']} alert matching "
