@@ -1,6 +1,6 @@
 {
   "schema": "ots_anchors/v1",
-  "generated": "2026-08-03T16:19:39.069471+00:00",
+  "generated": "2026-08-04T12:22:08.407805+00:00",
   "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
   "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
   "pairing_note": "digest_at_stamp is read from the receipt and is fixed; digest_served is computed live from the bytes on this site. pairing=MATCH means the receipt covers what you can download. pairing=DRIFT means the file has changed since it was stamped and the receipt covers the older bytes only. DRIFT is disclosed, not corrected: a receipt is never re-issued to make a later file look anchored.",
@@ -11,7 +11,7 @@
       "state": "anchored",
       "digest": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
       "digest_at_stamp": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
-      "digest_served": "97c9409142d6b9e253e980b1524c9aacd78527e6267afa7c73385cb3cdcbd4f1",
+      "digest_served": "a8d8c837daeb28273cb4507030d590c755138a103ed1e68ac6e92993c1bbf597",
       "pairing": "DRIFT",
       "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
@@ -44,8 +44,9 @@
       "state": "anchored",
       "digest": "9d04c1c7db9bfcbecd4ebe85456251711eadeb0d114c9d6dbfd6b10ee7db805d",
       "digest_at_stamp": "9d04c1c7db9bfcbecd4ebe85456251711eadeb0d114c9d6dbfd6b10ee7db805d",
-      "digest_served": "9d04c1c7db9bfcbecd4ebe85456251711eadeb0d114c9d6dbfd6b10ee7db805d",
-      "pairing": "MATCH"
+      "digest_served": "090bd5ab4c4844b69f1b8e69326aa7f103b6389ef8bb8e81883548d7cf308cc8",
+      "pairing": "DRIFT",
+      "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
     "KRAEHE_NEST_METHOD.md": {
       "receipt": "KRAEHE_NEST_METHOD.md.ots",
@@ -68,8 +69,9 @@
       "state": "anchored",
       "digest": "fb6a428f2a4edf58b4c6854f4564128a6f09a8717408c8e321a546af34837f3b",
       "digest_at_stamp": "fb6a428f2a4edf58b4c6854f4564128a6f09a8717408c8e321a546af34837f3b",
-      "digest_served": "fb6a428f2a4edf58b4c6854f4564128a6f09a8717408c8e321a546af34837f3b",
-      "pairing": "MATCH"
+      "digest_served": "3cbd0acea6ebf2b535e71d5e98a4e3069ff247ed470c1aae36dfe363e373b6d3",
+      "pairing": "DRIFT",
+      "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     }
   }
 }
