@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 040258Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 040309Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 303 issued across 14 forecaster arms · 268 open (3 past deadline, unresolved)
+Window: all-time · 303 issued across 14 forecaster arms · 265 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -19,8 +19,8 @@ Window: all-time · 303 issued across 14 forecaster arms · 268 open (3 past dea
 | kfk/halflife | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-verbot] | 20 | 20 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-window] | 8 | 8 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[pre-verbot] | 60 | 28 | 24 | 6 | 18 | 0.224 | 25.0% | 0.188 | -0.197 |
-| manual/fable | 45 | 45 | 0 | — | — | not computed | — | — | — |
+| lmstudio/auto[pre-verbot] | 60 | 26 | 26 | 7 | 19 | 0.228 | 26.9% | 0.197 | -0.160 |
+| manual/fable | 45 | 44 | 1 | 1 | 0 | 0.360 | 100.0% | 0.000 | — |
 | manual/fable-5 | 20 | 20 | 0 | — | — | not computed | — | — | — |
 | manual/fable-5/unattested | 5 | 5 | 0 | — | — | not computed | — | — | — |
 | manual/opus-5 | 50 | 50 | 0 | — | — | not computed | — | — | — |
@@ -32,34 +32,27 @@ Window: all-time · 303 issued across 14 forecaster arms · 268 open (3 past dea
 
 > **Disclosure — what the elicited arms are.** Arms tagged `manual/*` are frontier language models elicited by the operator against the same packet the machine arm receives. They are **not informationally independent of this desk**: the model is given the desk's own corpus and standing instructions as context. Their independence is procedural — a separate instrument answering the same questions — not informational. Rows are segregated by model, and no pooled score is published, because a Brier belongs to one forecaster.
 
-*Under 30 resolved a Brier score is noise, not a record: `lmstudio/auto[pre-verbot]`.*
+*Under 30 resolved a Brier score is noise, not a record: `lmstudio/auto[pre-verbot]`, `manual/fable`.*
 
-**CALIBRATION — lmstudio/auto[pre-verbot]** (24 resolved)
+**CALIBRATION — lmstudio/auto[pre-verbot]** (26 resolved)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 0-20% | 1 | 0% |
-| 20-40% | 13 | 23% |
+| 20-40% | 15 | 27% |
 | 40-60% | 6 | 33% |
 | 60-80% | 4 | 25% |
 
-## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
+**CALIBRATION — manual/fable** (1 resolved)
 
-A projection appears here when its window has closed and it has not yet been adjudicated. That is not the same as neglect. Most criteria on this book ask whether an event *occurred* inside the window, not whether it was *reported* inside it — so an event confirmed on the 30th can satisfy a criterion that closed on the 28th, and resolving before the sources land would be guessing. Collation takes the time it takes, and the queue is printed rather than hidden while it does.
-
-The bound that keeps this from becoming a parking space: a row sitting here more than **fourteen days** past its deadline is a defect in this desk, not in the world. The count is published on this page so that it is visible when it happens.
-
-- **KKR-20260721-07** (35%, due 2026-08-03) A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03. — *resolves on:* A public disclosure from a U.S. federal agency or CISA confirms a data breach caused by exploitation of CVE-2026-6 in the ServiceNow AI Platform between 2026-07-28 and 2026-08-03.
-- **KKR-20260723-04** (35%, due 2026-08-03) Between 2026-07-30 and 2026-08-03, a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz will be reported by Al Jazeera or BBC World. — *resolves on:* Al Jazeera or BBC World will report a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz between 2026-07-30 and 2026-08-03.
-- **KKR-20260724-07** (40%, due 2026-08-03) A United States government official publicly confirms or denies the reported rejected Iran ceasefire proposal between 2026-07-25 and 2026-08-03. — *resolves on:* TRUE if a named US official or spokesperson, in on-record public reporting between 2026-07-25 and 2026-08-03, confirms or denies the reported ceasefire proposal; else FALSE.
+| stated probability | n resolved | realized frequency |
+|---|---|---|
+| 40-60% | 1 | 100% |
 
 ## OPEN PROJECTIONS
 
 | id | arm | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|---|
-| KKR-20260721-07 | `lmstudio/auto` | 2026-07-21 | 2026-08-03 | 35% | cyber | A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03. |
-| KKR-20260723-04 | `lmstudio/auto` | 2026-07-23 | 2026-08-03 | 35% | military_conflict | Between 2026-07-30 and 2026-08-03, a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz will be reported by Al Jazeera or BBC World. |
-| KKR-20260724-07 | `manual/fable` | 2026-07-24 | 2026-08-03 | 40% | political | A United States government official publicly confirms or denies the reported rejected Iran ceasefire proposal between 2026-07-25 and 2026-08-03. |
 | KKR-20260721-05 | `lmstudio/auto` | 2026-07-21 | 2026-08-04 | 30% | economic | Oil prices will exceed $92 per barrel on the NYMEX market between 2026-08-01 and 2026-08-04. |
 | KKR-20260720-10 | `lmstudio/auto` | 2026-07-20 | 2026-08-05 | 40% | economics/markets | Global oil prices will exceed $85 per barrel for at least three consecutive trading days between 2026-07-28 and 2026-08-05. |
 | KKR-20260721-04 | `lmstudio/auto` | 2026-07-21 | 2026-08-05 | 40% | cyber | A confirmed exploit of CVE-2026-60137 in WordPress Core will be reported in a public security advisory by 2026-08-05. |
@@ -328,6 +321,9 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
+- **✗ MISS** KKR-20260721-07 [`lmstudio/auto`] (35%, due 2026-08-03, resolved 2026-08-04): A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03.
+- **✓ HIT** KKR-20260723-04 [`lmstudio/auto`] (35%, due 2026-08-03, resolved 2026-08-04): Between 2026-07-30 and 2026-08-03, a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz will be reported by Al Jazeera or BBC World.
+- **✓ HIT** KKR-20260724-07 [`manual/fable`] (40%, due 2026-08-03, resolved 2026-08-04): A United States government official publicly confirms or denies the reported rejected Iran ceasefire proposal between 2026-07-25 and 2026-08-03. — *HIT on the generous reading of "confirms or denies," recorded as a judgment call. Carrying statement: President Trump, on record to reporters aboard Air Force One, 2026-07-27, reported by CNN — the US halted strikes on Iran at the regime's request, "They asked us very nicely, 'Please stop, let's meet,'" with strikes to resume if the two sides failed to reach a new ceasefire deal. A named US official publicly characterising the ceasefire posture on the record — that Iran sought a halt and that no ceasefire had been agreed — is read here as confirming the substance of the reported rejection. Secondary in-window support: White House Communications Director Steven Cheung, named, in a statement dated 2026-07-25 (CNN), urging Iran toward a negotiated deal. Contrary reading printed: no named US official addressed the al-Zaidi proposal specifically, and the only public denial of the New York Times account of 2026-07-24 came from the Iraqi government, not the United States; on a strict reading of "the reported ceasefire proposal" this row is a MISS. Trump's 2026-07-22 "not ready to make a deal" remark falls outside the window and was not relied on. Keyed by rule.*
 - **✗ MISS** KKR-20260722-03 [`lmstudio/auto`] (40%, due 2026-08-02, resolved 2026-08-03): Between 2026-07-29 and 2026-08-02, the Japan Meteorological Agency issues a new heatwave alert for Tokyo and Osaka, with temperatures exceeding 40°C for three consecutive days.
 - **✗ MISS** KKR-20260721-01 [`lmstudio/auto`] (30%, due 2026-07-31, resolved 2026-08-01): The Lebanese Armed Forces will release a formal statement confirming Israeli fire near their troops between 2026-07-28 and 2026-07-31. — *Qwen verdict discarded — cited outlets it has no access to (no search on the local arm). Basis is the claude arm alone. Concordance not claimed.*
 - **✗ MISS** KKR-20260720-04 [`lmstudio/auto`] (60%, due 2026-07-29, resolved 2026-07-31): The U.S. Treasury yield on the 10-year note will exceed 4.8% on 2026-07-29, based on official data from the U.S. Department of the Treasury. — *10-year Treasury constant-maturity yield closed 2026-07-29 at approximately 4.66% following the FOMC decision to hold rates. CNBC quote data for the session shows open 4.671%, day high 4.712%, day low 4.651%, prior close 4.622%. The 4.8% threshold was not reached on a closing or intraday basis. Trading Economics reported the 10-year rising to 4.66% on 07-29 after the Fed left the funds rate unchanged with three dissents favoring a 25bp increase.*
