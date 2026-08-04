@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 031617Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 040017Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 254 issued across 12 forecaster arms · 219 open (0 past deadline, unresolved)
+Window: all-time · 271 issued across 14 forecaster arms · 236 open (3 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -14,9 +14,11 @@ Window: all-time · 254 issued across 12 forecaster arms · 219 open (0 past dea
 
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
+| control/baserate | 9 | 9 | 0 | — | — | not computed | — | — | — |
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-verbot] | 20 | 20 | 0 | — | — | not computed | — | — | — |
+| lmstudio/auto[post-window] | 8 | 8 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[pre-verbot] | 60 | 28 | 24 | 6 | 18 | 0.224 | 25.0% | 0.188 | -0.197 |
 | manual/fable | 45 | 45 | 0 | — | — | not computed | — | — | — |
 | manual/fable-5 | 20 | 20 | 0 | — | — | not computed | — | — | — |
@@ -40,6 +42,16 @@ Window: all-time · 254 issued across 12 forecaster arms · 219 open (0 past dea
 | 20-40% | 13 | 23% |
 | 40-60% | 6 | 33% |
 | 60-80% | 4 | 25% |
+
+## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
+
+A projection appears here when its window has closed and it has not yet been adjudicated. That is not the same as neglect. Most criteria on this book ask whether an event *occurred* inside the window, not whether it was *reported* inside it — so an event confirmed on the 30th can satisfy a criterion that closed on the 28th, and resolving before the sources land would be guessing. Collation takes the time it takes, and the queue is printed rather than hidden while it does.
+
+The bound that keeps this from becoming a parking space: a row sitting here more than **fourteen days** past its deadline is a defect in this desk, not in the world. The count is published on this page so that it is visible when it happens.
+
+- **KKR-20260721-07** (35%, due 2026-08-03) A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03. — *resolves on:* A public disclosure from a U.S. federal agency or CISA confirms a data breach caused by exploitation of CVE-2026-6 in the ServiceNow AI Platform between 2026-07-28 and 2026-08-03.
+- **KKR-20260723-04** (35%, due 2026-08-03) Between 2026-07-30 and 2026-08-03, a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz will be reported by Al Jazeera or BBC World. — *resolves on:* Al Jazeera or BBC World will report a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz between 2026-07-30 and 2026-08-03.
+- **KKR-20260724-07** (40%, due 2026-08-03) A United States government official publicly confirms or denies the reported rejected Iran ceasefire proposal between 2026-07-25 and 2026-08-03. — *resolves on:* TRUE if a named US official or spokesperson, in on-record public reporting between 2026-07-25 and 2026-08-03, confirms or denies the reported ceasefire proposal; else FALSE.
 
 ## OPEN PROJECTIONS
 
@@ -67,9 +79,25 @@ Window: all-time · 254 issued across 12 forecaster arms · 219 open (0 past dea
 | KKR-20260720-17 | `lmstudio/auto` | 2026-07-20 | 2026-08-12 | 50% | political | The U.S. will announce a new round of sanctions against Iran’s Revolutionary Guard Corps by 2026-08-12, citing continued aggression in the region. |
 | KKR-20260722-02 | `lmstudio/auto` | 2026-07-22 | 2026-08-12 | 25% | economics/markets | On 2026-08-12, the U.S. Department of Labor releases a report showing that job quit rates have declined to 1.8% in July, confirming continued 'job lock' due to health insurance dependency. |
 | KKR-20260722-09 | `operator/human` | 2026-07-22 | 2026-08-12 | 65% | economics | Brent crude settles above 90 dollars on at least three trading days between 2026-07-23 and 2026-08-12 |
+| KKR-20260804-01 | `lmstudio/auto` | 2026-08-04 | 2026-08-12 | 30% | military/conflict | A drone attack on a Russian beach in Crimea kills at least seven people between 2026-08-03 and 2026-08-10. |
+| KKR-20260804-03 | `lmstudio/auto` | 2026-08-04 | 2026-08-12 | 40% | disaster | At least one major wildfire in the U.S. Southwest results in over 1,000 evacuations between 2026-08-03 and 2026-08-10. |
+| KKR-20260804-09 | `control/baserate` | 2026-08-04 | 2026-08-12 | 25% | military/conflict | A drone attack on a Russian beach in Crimea kills at least seven people between 2026-08-03 and 2026-08-10. |
+| KKR-20260804-11 | `control/baserate` | 2026-08-04 | 2026-08-12 | 25% | disaster | At least one major wildfire in the U.S. Southwest results in over 1,000 evacuations between 2026-08-03 and 2026-08-10. |
 | KKR-20260726-13 | `lmstudio/auto` | 2026-07-26 | 2026-08-13 | 20% | political | Romania formally protests to the UN Security Council over Russian drone activity in its airspace between 2026-08-10 and 2026-08-13. |
 | KKR-20260730-21 | `manual/sonnet-5` | 2026-07-30 | 2026-08-13 | 85% | military/conflict | The United States military will conduct at least one additional publicly reported airstrike on targets inside Iranian territory between 2026-07-30 and 2026-08-13. |
 | KKR-20260730-28 | `manual/sonnet-5` | 2026-07-30 | 2026-08-13 | 68% | crime/security | A militant group will publicly claim responsibility for the attack on the northwest Pakistan police post that killed 11 officers, between 2026-07-30 and 2026-08-13. |
+| KKR-20260804-02 | `lmstudio/auto` | 2026-08-04 | 2026-08-13 | 25% | cyber | A cyberattack exploiting CVE-2026-18577 compromises at least one critical infrastructure system in the United States between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-04 | `lmstudio/auto` | 2026-08-04 | 2026-08-13 | 20% | political | Iran and the United States announce a formal diplomatic dialogue on the Strait of Hormuz between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-05 | `lmstudio/auto` | 2026-08-04 | 2026-08-13 | 35% | cyber | A new ransomware variant named INC Ransomware is linked to a data breach affecting over 50,000 U.S. government employees between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-06 | `lmstudio/auto` | 2026-08-04 | 2026-08-13 | 50% | political | The U.S. House Ethics Committee formally censures Representative Chuck Edwards between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-07 | `lmstudio/auto` | 2026-08-04 | 2026-08-13 | 45% | political | The U.S. Senate confirms Todd Blanche as Attorney General by a vote of at least 60 in favor between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-08 | `lmstudio/auto` | 2026-08-04 | 2026-08-13 | 25% | cyber | A cyberattack on a major U.S. financial institution results in the theft of over $100 million in digital assets between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-10 | `control/baserate` | 2026-08-04 | 2026-08-13 | 25% | cyber | A cyberattack exploiting CVE-2026-18577 compromises at least one critical infrastructure system in the United States between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-12 | `control/baserate` | 2026-08-04 | 2026-08-13 | 25% | political | Iran and the United States announce a formal diplomatic dialogue on the Strait of Hormuz between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-13 | `control/baserate` | 2026-08-04 | 2026-08-13 | 25% | cyber | A new ransomware variant named INC Ransomware is linked to a data breach affecting over 50,000 U.S. government employees between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-14 | `control/baserate` | 2026-08-04 | 2026-08-13 | 25% | political | The U.S. House Ethics Committee formally censures Representative Chuck Edwards between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-15 | `control/baserate` | 2026-08-04 | 2026-08-13 | 25% | political | The U.S. Senate confirms Todd Blanche as Attorney General by a vote of at least 60 in favor between 2026-08-04 and 2026-08-11. |
+| KKR-20260804-16 | `control/baserate` | 2026-08-04 | 2026-08-13 | 25% | cyber | A cyberattack on a major U.S. financial institution results in the theft of over $100 million in digital assets between 2026-08-04 and 2026-08-11. |
 | KKR-20260722-15 | `manual/fable` | 2026-07-22 | 2026-08-14 | 70% | economics | Brent crude front-month settles above 90 dollars per barrel on at least three trading days between 2026-07-23 and 2026-08-14 |
 | KKR-20260724-03 | `manual/fable` | 2026-07-24 | 2026-08-14 | 42% | economics | WTI front-month crude futures settle at or above 95.00 USD per barrel on at least one trading day between 2026-07-27 and 2026-08-14. |
 | KKR-20260725-01 | `manual/fable` | 2026-07-25 | 2026-08-14 | 30% | economics | ICE Brent front-month crude settles at or above 100.00 USD per barrel on at least one trading day between 2026-07-27 and 2026-08-14. |
@@ -225,6 +253,7 @@ Window: all-time · 254 issued across 12 forecaster arms · 219 open (0 past dea
 | KKR-20260801-17 | `manual/sonnet-5/unattested` | 2026-08-01 | 2026-10-31 | 30% | cyber | CISA, EPA, or FBI will issue an advisory, or Reuters or AP will report, that a cyberattack disrupted operational technology at a US water or wastewater utility, between 2026-08-08 and 2026-10-31. |
 | KKR-20260801-18 | `manual/sonnet-5/unattested` | 2026-08-01 | 2026-10-31 | 52% | cyber | OpenAI, Anthropic, Google DeepMind, or xAI will disclose a new case, beyond incidents already public as of 2026-08-01, of one of its models autonomously breaching third-party systems, between 2026-08-08 and 2026-10-31. |
 | KKR-20260802-04 | `lmstudio/auto` | 2026-08-02 | 2026-11-03 | 35% | economics/markets | Between 2026-11-01 and 2026-11-03, a new financial regulation in the European Union will be enacted requiring all banks to report real-time transaction data to a central authority. |
+| KKR-20260803-01 | `control/baserate` | 2026-08-03 | 2026-11-03 | 25% | economics/markets | Between 2026-11-01 and 2026-11-03, a new financial regulation in the European Union will be enacted requiring all banks to report real-time transaction data to a central authority. |
 | KKR-20260722-01 | `lmstudio/auto` | 2026-07-22 | 2026-11-05 | 30% | political | Andy Biggs wins the Arizona gubernatorial general election on 2026-11-05, defeating Katie Hobbs in a recount that confirms his victory by 1,200 votes. |
 | KKR-20260729-04 | `lmstudio/auto` | 2026-07-29 | 2026-11-12 | 40% | political | Between 2026-11-05 and 2026-11-12, the U.S. Senate confirms a nominee to the Supreme Court who has previously served as a federal judge. |
 | KKR-20260726-16 | `lmstudio/auto` | 2026-07-26 | 2026-11-15 | 25% | economics/markets | The European Central Bank announces a 0.5 percentage point interest rate hike on or before 2026-11-15, citing inflation concerns. |
@@ -296,7 +325,7 @@ Window: all-time · 254 issued across 12 forecaster arms · 219 open (0 past dea
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*11 of 254 issued (4.3%) have been voided.*
+*11 of 271 issued (4.1%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists

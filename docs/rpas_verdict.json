@@ -1,6 +1,6 @@
 {
   "source": "ledger.json",
-  "entries": 254,
+  "entries": 255,
   "conformant": false,
   "must_failures": [
     {
@@ -10,6 +10,10 @@
     {
       "cite": "RPAS 5.06",
       "message": "KKR-20260801-13: SEAL DOES NOT RECOMPUTE \u2014 a pre-registered field was edited after sealing, or the construction diverged. A retroactive edit to a sealed entry scores as a MISS where recoverable and voids the span where not."
+    },
+    {
+      "cite": "RPAS 5.06",
+      "message": "KKR-20260802-01: SEAL DOES NOT RECOMPUTE \u2014 a pre-registered field was edited after sealing, or the construction diverged. A retroactive edit to a sealed entry scores as a MISS where recoverable and voids the span where not."
     }
   ],
   "should_departures": [],
@@ -28,11 +32,15 @@
     },
     {
       "cite": "RPAS 4.02g",
-      "message": "91 seal(s) recompute to their published digest; 2 do not"
+      "message": "91 seal(s) recompute to their published digest; 3 do not"
     },
     {
       "cite": "RPAS 4.04",
       "message": "anchor resolves to version-control history: https://github.com/OccultusTheoretician/netz/commits/main/docs/ledger.json"
+    },
+    {
+      "cite": "RPAS 5.03",
+      "message": "control/baserate: issued 1 \u00b7 open 1 \u00b7 void 0 \u00b7 resolved 0 \u00b7 H/M 0/0"
     },
     {
       "cite": "RPAS 5.03",
@@ -44,7 +52,7 @@
     },
     {
       "cite": "RPAS 5.03",
-      "message": "lmstudio/auto: issued 80 \u00b7 open 50 \u00b7 void 7 \u00b7 resolved 23 \u00b7 H/M 6/17 \u00b7 Brier 0.2273 \u2014 under thirty resolved this figure is noise, not evidence of anything"
+      "message": "lmstudio/auto: issued 80 \u00b7 open 48 \u00b7 void 8 \u00b7 resolved 24 \u00b7 H/M 6/18 \u00b7 Brier 0.2245 \u2014 under thirty resolved this figure is noise, not evidence of anything"
     },
     {
       "cite": "RPAS 5.03",
@@ -83,6 +91,6 @@
       "message": "no pooled score is computed by this verifier \u2014 a Brier belongs to one forecaster; pooling launders the weaker record into the stronger"
     }
   ],
-  "verified_at": "2026-08-03T14:24:50Z",
+  "verified_at": "2026-08-03T23:51:38Z",
   "verifier": "rpas_verify/1.0"
 }
