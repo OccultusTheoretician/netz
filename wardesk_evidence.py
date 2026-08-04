@@ -37,6 +37,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from runguard import write_run_artifact   # KK21h
 
 HERE = Path(__file__).resolve().parent
 
@@ -197,7 +198,8 @@ def main():
     stamp = src.stem.replace("tg_events_", "")
     dated = dest / f"EVIDENCE_{stamp}.md"
     latest = dest / "EVIDENCE_latest.md"
-    dated.write_text(md, encoding="utf-8")
+    # KK21h: dated artifacts go through the guard; the latest pointer does not.
+    dated = write_run_artifact(dated, md, tag="evidence")
     latest.write_text(md, encoding="utf-8")
 
     print(f"EVIDENCE · {len(rows)} open rows vs {len(pool)} graded kinetic "

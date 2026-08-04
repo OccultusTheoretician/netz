@@ -28,6 +28,8 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from runguard import write_run_artifact   # KK21h: one definition, not four
+
 import requests
 
 from netz import render_html, llm_probe  # same directory
@@ -602,7 +604,10 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     return reasons
 
 
-def write_run_artifact(path: Path, text: str, encoding: str = "utf-8") -> Path:
+def _kk21f_write_run_artifact_superseded(path: Path, text: str,
+                                         encoding: str = "utf-8") -> Path:
+    """Superseded by runguard.write_run_artifact (KK21h). Kept unreferenced
+    rather than deleted so the diff shows what moved and where."""
     """Write a run artifact without ever destroying another run's.
 
     KK21f. Five times in one day a run artifact was overwritten by a later run
