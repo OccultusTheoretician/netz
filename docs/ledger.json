@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-04T15:04:28Z",
+  "as_of": "2026-08-04T21:15:56Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -7762,6 +7762,267 @@
       "notes": "",
       "sealed_at": "2026-08-04T15:04:28.380760+00:00",
       "seal_sha256": "5ce9dcc4b60eb4aa673d7e02e77a79a022556c18ba1aebff6e6f38fac2312d88"
+    },
+    {
+      "statement": "Between 2026-08-04 and 2026-08-21 the United States and Iran both publicly announce a concluded agreement reopening the Strait of Hormuz to commercial transit.",
+      "domain": "military_conflict",
+      "probability": 52,
+      "resolution": "TRUE if a US government body and an Iranian government body each publicly confirm a concluded Hormuz transit agreement dated between 2026-08-04 and 2026-08-21, per two international wire services.",
+      "deadline": "2026-08-25",
+      "citations": [
+        67,
+        117,
+        122
+      ],
+      "failure_condition": "Both governments do not publicly confirm a concluded Hormuz transit agreement inside the stated window.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-56",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:54.485401+00:00",
+      "seal_sha256": "ec7d4cc48154bb3bd50bda5dad6898e7ea37d1ea724e501a1b5625a5c37f12fa"
+    },
+    {
+      "statement": "Between 2026-08-05 and 2026-08-25 a single long-range strike incident in Ukraine kills ten or more people.",
+      "domain": "military_conflict",
+      "probability": 45,
+      "resolution": "TRUE if Ukrainian state emergency or prosecution authorities report ten or more killed in one strike incident dated in the window, corroborated by two international wire services.",
+      "deadline": "2026-08-31",
+      "citations": [
+        93,
+        95
+      ],
+      "failure_condition": "No single strike incident dated in the window reaches a confirmed toll of ten or more killed.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-57",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:54.485539+00:00",
+      "seal_sha256": "925e6f878bc87a74a8bf8027df5b471efe065d7123c1dc120be8db8e1685b202"
+    },
+    {
+      "statement": "The S&P 500 closes down 3.00 percent or more from the prior close on at least one session between 2026-08-05 and 2026-09-30.",
+      "domain": "economic",
+      "probability": 28,
+      "resolution": "TRUE if official S&P 500 closing values show a single-session close-to-close decline of 3.00 percent or greater on any date between 2026-08-05 and 2026-09-30.",
+      "deadline": "2026-10-02",
+      "citations": [
+        71,
+        57,
+        74
+      ],
+      "failure_condition": "No session in the window produces an S&P 500 close-to-close decline of 3.00 percent or more.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-58",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:54.485564+00:00",
+      "seal_sha256": "aa835d1381bcab278904e0f7bcdc9a1d3e831858a03b8555a1d89c11c142fff7"
+    },
+    {
+      "statement": "The CISA KEV catalog adds a further N-able N-central vulnerability with a date-added value between 2026-08-05 and 2026-10-31.",
+      "domain": "cyber",
+      "probability": 18,
+      "resolution": "TRUE if the CISA KEV catalog contains an N-able N-central CVE other than CVE-2026-18577 and CVE-2026-18556 carrying a dateAdded value between 2026-08-05 and 2026-10-31.",
+      "deadline": "2026-11-03",
+      "citations": [
+        20,
+        26
+      ],
+      "failure_condition": "No further N-able N-central CVE carries a KEV date-added value inside the window.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-59",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:54.485579+00:00",
+      "seal_sha256": "b11b273c3dd3a24f1c1cd42fbe8561889d80e724bfb2148ecb47990dd7f8aec5"
+    },
+    {
+      "statement": "The United States Senate confirms Todd Blanche as Attorney General in a recorded floor vote held between 2026-08-05 and 2026-10-16.",
+      "domain": "political",
+      "probability": 85,
+      "resolution": "TRUE if a Congress.gov Senate roll call vote dated between 2026-08-05 and 2026-10-16 records confirmation of the Blanche nomination to be Attorney General.",
+      "deadline": "2026-10-20",
+      "citations": [
+        106
+      ],
+      "failure_condition": "No Senate roll call inside the window records Blanche confirmed as Attorney General.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-60",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:54.485591+00:00",
+      "seal_sha256": "1608893344b659c75105cf193b56b52abef68749b1a04005cf41a1149727c705"
+    },
+    {
+      "statement": "The man charged over the largest 2026 Washington state wildfire faces at least one arson count filed and not dismissed at any point between 2026-08-05 and 2026-09-30.",
+      "domain": "crime_security",
+      "probability": 84,
+      "resolution": "TRUE if the Washington state court docket for that defendant shows an arson count filed and not dismissed on a date between 2026-08-05 and 2026-09-30.",
+      "deadline": "2026-10-05",
+      "citations": [
+        9,
+        31,
+        43
+      ],
+      "failure_condition": "The docket shows no arson count, or every arson count is dismissed before 2026-09-30.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-61",
+      "date_issued": "2026-08-04",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:54.485604+00:00",
+      "seal_sha256": "8d5af8725c324c9335a2118bfb985d01e0582d23a462cab563a9fb2fe05b19f0"
+    },
+    {
+      "statement": "Between 2026-08-04 and 2026-08-18, a single Russian or Ukrainian long-range strike will be independently confirmed by two or more wire services, such as Reuters, AP, or AFP, to have killed 20 or more people in one incident.",
+      "domain": "military/conflict",
+      "probability": 30,
+      "resolution": "TRUE if two or more independent wire services report one strike in the window with a confirmed death toll of 20 or more; FALSE if no single incident reaches that two-source-confirmed toll by 2026-08-20.",
+      "deadline": "2026-08-20",
+      "citations": [
+        93
+      ],
+      "failure_condition": "No strike between 2026-08-04 and 2026-08-18 is confirmed by two or more independent wire services to have killed 20 or more people in one incident.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-62",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:56.905299+00:00",
+      "seal_sha256": "e3978a58ee77d9183268743cfcf9a5b2be5c1f5a661c66ba213f81cfc4c89b02"
+    },
+    {
+      "statement": "Between 2026-08-04 and 2026-08-25, the Israeli and Lebanese governments will each publicly confirm one specific written security arrangement, such as a troop withdrawal timeline, border demarcation, or disarmament mechanism, reached through the talks round described in item 90.",
+      "domain": "military/conflict",
+      "probability": 25,
+      "resolution": "TRUE if both governments confirm the same specific written arrangement by 2026-08-27; FALSE if talks continue, stall, or collapse without a jointly confirmed written arrangement.",
+      "deadline": "2026-08-27",
+      "citations": [
+        90
+      ],
+      "failure_condition": "By 2026-08-27, no joint Israeli and Lebanese government confirmation of one specific written security arrangement has been issued.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-63",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:56.905432+00:00",
+      "seal_sha256": "c03a55cad9e847565913f089b920278788347b2e47031f9004549bd611e1fee0"
+    },
+    {
+      "statement": "Between 2026-08-04 and 2026-09-08, the CISA Known Exploited Vulnerabilities catalog will add a second CVE, distinct from CVE-2026-18577, affecting N-able N-central.",
+      "domain": "cyber",
+      "probability": 15,
+      "resolution": "TRUE if the CISA KEV catalog lists any additional N-able N-central CVE with a date-added value in the window; FALSE if no such second entry appears by 2026-09-10.",
+      "deadline": "2026-09-10",
+      "citations": [
+        20,
+        26
+      ],
+      "failure_condition": "No CVE beyond CVE-2026-18577 affecting N-able N-central appears in the CISA KEV catalog with a date-added value in the window.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-64",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:56.905460+00:00",
+      "seal_sha256": "51271a5c5956f8957e65001dedee7dfa7e25b99042db9cd61a7515ca4b0412ac"
+    },
+    {
+      "statement": "Between 2026-08-04 and 2026-08-11, the Japan Meteorological Agency will issue a Special Warning, its highest alert level, for Typhoon Dolphin covering at least one prefecture.",
+      "domain": "disaster",
+      "probability": 20,
+      "resolution": "TRUE if JMA public advisories show a Special Warning issued for Typhoon Dolphin in the window; FALSE if JMA issues no Special Warning by 2026-08-13.",
+      "deadline": "2026-08-13",
+      "citations": [
+        36
+      ],
+      "failure_condition": "JMA does not issue a Special Warning for Typhoon Dolphin between 2026-08-04 and 2026-08-11, regardless of lower-tier warnings issued.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-65",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:56.905478+00:00",
+      "seal_sha256": "a7dd73266ba77fbd594f4fca47a959f3fa2c439b989f9a2eb89f9b1492a42a79"
+    },
+    {
+      "statement": "Between 2026-08-04 and 2026-11-04, the person charged with arson over the Old Trails wildfire in item 9 will be indicted or have an information filed advancing the case to Washington Superior Court.",
+      "domain": "crime/security",
+      "probability": 55,
+      "resolution": "TRUE if the county Superior Court docket shows the case advanced via indictment or filed information in the window; FALSE if it remains at initial charge, or is dismissed, by 2026-11-06.",
+      "deadline": "2026-11-06",
+      "citations": [
+        9
+      ],
+      "failure_condition": "No Washington Superior Court docket entry between 2026-08-04 and 2026-11-04 shows the case advancing beyond the original arson charge.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-66",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:56.905492+00:00",
+      "seal_sha256": "deb830dfca6f127028fba99d2edb245e9885ecb4fd1c63e698c82dfde86f3bae"
+    },
+    {
+      "statement": "Between 2026-08-04 and 2026-11-04, the Second Circuit Court of Appeals will enter an order or ruling, on the merits or on a stay motion, in New York's case over the ICE-officer mask ban blocked in item 113.",
+      "domain": "political",
+      "probability": 25,
+      "resolution": "TRUE if the Second Circuit public docket shows an order or ruling on this matter within the window; FALSE if none appears by 2026-11-06.",
+      "deadline": "2026-11-06",
+      "citations": [
+        113
+      ],
+      "failure_condition": "No Second Circuit order or ruling on this matter appears on the public docket between 2026-08-04 and 2026-11-04.",
+      "source_report": "battle_report_2026-08-04_1502.md",
+      "id": "KKR-20260804-67",
+      "date_issued": "2026-08-04",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-04_1502.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-04T21:15:56.905508+00:00",
+      "seal_sha256": "806fedaa7c6d10ec8b1fa223606d5dedfe4698e370576b6c8ee365d2018d8cf8"
     }
   ]
 }

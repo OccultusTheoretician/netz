@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "Between 2026-08-04 and 2026-08-21 the United States and Iran both publicly announce a concluded agreement reopening the Strait of Hormuz to commercial transit.",
+    "domain": "military_conflict",
+    "probability": 52,
+    "resolution": "TRUE if a US government body and an Iranian government body each publicly confirm a concluded Hormuz transit agreement dated between 2026-08-04 and 2026-08-21, per two international wire services.",
+    "deadline": "2026-08-25",
+    "citations": [67, 117, 122],
+    "failure_condition": "Both governments do not publicly confirm a concluded Hormuz transit agreement inside the stated window."
+  },
+  {
+    "statement": "Between 2026-08-05 and 2026-08-25 a single long-range strike incident in Ukraine kills ten or more people.",
+    "domain": "military_conflict",
+    "probability": 45,
+    "resolution": "TRUE if Ukrainian state emergency or prosecution authorities report ten or more killed in one strike incident dated in the window, corroborated by two international wire services.",
+    "deadline": "2026-08-31",
+    "citations": [93, 95],
+    "failure_condition": "No single strike incident dated in the window reaches a confirmed toll of ten or more killed."
+  },
+  {
+    "statement": "Front-month ICE Brent crude settles at or below USD 70.00 per barrel on at least one trading session between 2026-08-05 and 2026-09-30.",
+    "domain": "economic",
+    "probability": 32,
+    "resolution": "TRUE if the published ICE Brent front-month settlement price is 70.00 USD per barrel or lower on any trading session dated between 2026-08-05 and 2026-09-30.",
+    "deadline": "2026-10-02",
+    "citations": [74, 67, 81],
+    "failure_condition": "Front-month Brent settles above 70.00 USD on every trading session in the window."
+  },
+  {
+    "statement": "The FOMC leaves the federal funds target range at 3.50 to 3.75 percent at its scheduled 2026-09-16 decision.",
+    "domain": "economic",
+    "probability": 72,
+    "resolution": "TRUE if the FOMC policy statement released 2026-09-16 states a target range of 3.50 to 3.75 percent, per the Federal Reserve statement and FRED series DFEDTARU and DFEDTARL.",
+    "deadline": "2026-09-18",
+    "citations": [115, 57, 75],
+    "failure_condition": "The September FOMC statement sets any target range other than 3.50 to 3.75 percent."
+  },
+  {
+    "statement": "The S&P 500 closes down 3.00 percent or more from the prior close on at least one session between 2026-08-05 and 2026-09-30.",
+    "domain": "economic",
+    "probability": 28,
+    "resolution": "TRUE if official S&P 500 closing values show a single-session close-to-close decline of 3.00 percent or greater on any date between 2026-08-05 and 2026-09-30.",
+    "deadline": "2026-10-02",
+    "citations": [71, 57, 74],
+    "failure_condition": "No session in the window produces an S&P 500 close-to-close decline of 3.00 percent or more."
+  },
+  {
+    "statement": "The CISA KEV catalog adds a further N-able N-central vulnerability with a date-added value between 2026-08-05 and 2026-10-31.",
+    "domain": "cyber",
+    "probability": 18,
+    "resolution": "TRUE if the CISA KEV catalog contains an N-able N-central CVE other than CVE-2026-18577 and CVE-2026-18556 carrying a dateAdded value between 2026-08-05 and 2026-10-31.",
+    "deadline": "2026-11-03",
+    "citations": [20, 26],
+    "failure_condition": "No further N-able N-central CVE carries a KEV date-added value inside the window."
+  },
+  {
+    "statement": "The United States Senate confirms Todd Blanche as Attorney General in a recorded floor vote held between 2026-08-05 and 2026-10-16.",
+    "domain": "political",
+    "probability": 85,
+    "resolution": "TRUE if a Congress.gov Senate roll call vote dated between 2026-08-05 and 2026-10-16 records confirmation of the Blanche nomination to be Attorney General.",
+    "deadline": "2026-10-20",
+    "citations": [106],
+    "failure_condition": "No Senate roll call inside the window records Blanche confirmed as Attorney General."
+  },
+  {
+    "statement": "Federal defendants file a notice of appeal of the ruling blocking the New York ban on ICE officers wearing masks, docketed between 2026-08-05 and 2026-09-30.",
+    "domain": "political",
+    "probability": 68,
+    "resolution": "TRUE if the district court docket in that case shows a notice of appeal filed by federal defendants and dated between 2026-08-05 and 2026-09-30.",
+    "deadline": "2026-10-05",
+    "citations": [113],
+    "failure_condition": "No notice of appeal by federal defendants is docketed in that case inside the window."
+  },
+  {
+    "statement": "The man charged over the largest 2026 Washington state wildfire faces at least one arson count filed and not dismissed at any point between 2026-08-05 and 2026-09-30.",
+    "domain": "crime_security",
+    "probability": 84,
+    "resolution": "TRUE if the Washington state court docket for that defendant shows an arson count filed and not dismissed on a date between 2026-08-05 and 2026-09-30.",
+    "deadline": "2026-10-05",
+    "citations": [9, 31, 43],
+    "failure_condition": "The docket shows no arson count, or every arson count is dismissed before 2026-09-30."
+  },
+  {
+    "statement": "GDACS carries a tropical cyclone alert for Dolphin at orange or red level listing Japan among affected countries between 2026-08-04 and 2026-08-14.",
+    "domain": "disaster_infrastructure",
+    "probability": 78,
+    "resolution": "TRUE if the GDACS tropical cyclone event record for Dolphin shows an orange or red alert level with Japan listed as an affected country at any point in the window.",
+    "deadline": "2026-08-18",
+    "citations": [36, 53],
+    "failure_condition": "The GDACS Dolphin event never reaches orange or red alert with Japan listed as affected during the window."
+  }
+]
