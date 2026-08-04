@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-08-04T04:30:52Z · ledger `ledger.json` · 303 rows in scope
+Generated 2026-08-04T04:35:02Z · ledger `ledger.json` · 303 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -24,47 +24,21 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## The number that matters
 
-Rows determined **KEYLESS**: 112
-Of those, citations defective: **36** (32.1%)
+Rows determined **KEYLESS**: 86
+Of those, citations defective: **10** (11.6%)
 
 A keyless determination says the claim went beyond its declared priors. Where the priors are unreadable, that determination was made against nothing. These rows are listed so the keyless count can be stated with its defect rate attached rather than as a clean integer.
 
-- `KKR-20260722-14` · manual/fable · 2026-07-22 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260724-05` · manual/fable · 2026-07-24 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
 - `KKR-20260725-01` · manual/fable · 2026-07-25 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260726-01` · manual/fable · 2026-07-26 · UNSUPPORTED/AMBIGUOUS_REF · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260726-03` · manual/fable · 2026-07-26 · UNSUPPORTED/AMBIGUOUS_REF · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260726-12` · lmstudio/auto · 2026-07-26 · UNSUPPORTED/AMBIGUOUS_REF · 3 cites (0 strong, 0 weak, 3 none)
 - `KKR-20260726-16` · lmstudio/auto · 2026-07-26 · DEADWEIGHT/AMBIGUOUS_REF · 3 cites (1 strong, 0 weak, 2 none)
-- `KKR-20260726-17` · lmstudio/auto · 2026-07-26 · UNSUPPORTED/AMBIGUOUS_REF · 3 cites (0 strong, 0 weak, 3 none)
 - `KKR-20260727-17` · manual/fable · 2026-07-27 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
 - `KKR-20260727-27` · manual/opus-5 · 2026-07-27 · DEADWEIGHT/AMBIGUOUS_REF · 3 cites (1 strong, 0 weak, 2 none)
-- `KKR-20260728-04` · manual/opus-5 · 2026-07-28 · UNSUPPORTED/AMBIGUOUS_REF · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260729-02` · lmstudio/auto · 2026-07-29 · SHOTGUN/DEADWEIGHT/AMBIGUOUS_REF · 25 cites (5 strong, 0 weak, 20 none)
-- `KKR-20260729-06` · lmstudio/auto · 2026-07-29 · SHOTGUN/DEADWEIGHT/AMBIGUOUS_REF · 25 cites (9 strong, 0 weak, 16 none)
-- `KKR-20260729-09` · lmstudio/auto · 2026-07-29 · SHOTGUN/DEADWEIGHT/AMBIGUOUS_REF · 25 cites (10 strong, 0 weak, 15 none)
-- `KKR-20260729-10` · lmstudio/auto · 2026-07-29 · SHOTGUN/AMBIGUOUS_REF · 25 cites (9 strong, 16 weak, 0 none)
-- `KKR-20260729-17` · manual/opus-5 · 2026-07-29 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260729-18` · manual/opus-5 · 2026-07-29 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260729-19` · manual/opus-5 · 2026-07-29 · UNSUPPORTED/AMBIGUOUS_REF · 2 cites (0 strong, 0 weak, 2 none)
 - `KKR-20260730-03` · manual/fable-5 · 2026-07-30 · DEADWEIGHT/AMBIGUOUS_REF · 3 cites (1 strong, 0 weak, 2 none)
 - `KKR-20260730-12` · manual/opus-5 · 2026-07-30 · UNSUPPORTED/AMBIGUOUS_REF · 3 cites (0 strong, 0 weak, 3 none)
 - `KKR-20260730-14` · manual/opus-5 · 2026-07-30 · UNSUPPORTED/AMBIGUOUS_REF · 3 cites (0 strong, 0 weak, 3 none)
 - `KKR-20260731-23` · manual/opus-5 · 2026-07-31 · DEADWEIGHT/AMBIGUOUS_REF · 3 cites (1 strong, 0 weak, 2 none)
 - `KKR-20260731-27` · manual/opus-5 · 2026-07-31 · UNSUPPORTED/AMBIGUOUS_REF · 3 cites (0 strong, 0 weak, 3 none)
-- `KKR-20260801-05` · manual/opus-5/unattested · 2026-08-01 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260801-06` · manual/opus-5/unattested · 2026-08-01 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260801-15` · manual/sonnet-5/unattested · 2026-08-01 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260801-16` · manual/sonnet-5/unattested · 2026-08-01 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260801-24` · manual/fable-5/unattested · 2026-08-01 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
 - `KKR-20260802-01` · lmstudio/auto · 2026-08-02 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260802-02` · lmstudio/auto · 2026-08-02 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260802-04` · lmstudio/auto · 2026-08-02 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260802-05` · lmstudio/auto · 2026-08-02 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260802-07` · lmstudio/auto · 2026-08-02 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260802-08` · lmstudio/auto · 2026-08-02 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260804-08` · lmstudio/auto · 2026-08-04 · UNSUPPORTED/AMBIGUOUS_REF · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260804-24` · manual/opus-5/unattested · 2026-08-04 · UNSUPPORTED/AMBIGUOUS_REF · 2 cites (0 strong, 0 weak, 2 none)
 
 ## By arm
 
