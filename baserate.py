@@ -180,8 +180,21 @@ def cmd_pair(a):
         if p.get("id"):
             row["control_basis"]["control_for"] = p["id"]
         out.append(row)
-    Path(a.out).write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n",
-                           encoding="utf-8")
+    # KK21f: never destroy another run's packet. The fixed default did it on
+    # 2026-08-03 and cost KKR-20260803-01 its basis permanently; the composed
+    # default is better and still not a guarantee.
+    _txt = json.dumps(out, indent=2, ensure_ascii=False) + "\n"
+    _p = Path(a.out)
+    if _p.exists() and _p.read_text(encoding="utf-8", errors="replace") != _txt:
+        _n = 2
+        while _p.with_name(f"{Path(a.out).stem}_{_n}{_p.suffix}").exists():
+            _n += 1
+        _alt = _p.with_name(f"{Path(a.out).stem}_{_n}{_p.suffix}")
+        print(f"baserate · {_p.name} already holds a different run - writing "
+              f"{_alt.name} rather than discarding it", file=sys.stderr)
+        _p = _alt
+        a.out = str(_p)
+    _p.write_text(_txt, encoding="utf-8")
     b = Counter(x["control_basis"]["basis"] for x in out)
     pr = Counter(x["probability"] for x in out)
     print(f"{len(out)} control row(s) -> {a.out}")

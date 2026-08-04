@@ -602,6 +602,41 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     return reasons
 
 
+def write_run_artifact(path: Path, text: str, encoding: str = "utf-8") -> Path:
+    """Write a run artifact without ever destroying another run's.
+
+    KK21f. Five times in one day a run artifact was overwritten by a later run
+    and nothing was printed: a mutable anchor target, a control packet twice, a
+    report stamped by day, the same report stamped by minute and arm. Each fix
+    added a component to a filename and closed only the case that had just
+    happened, because a run always has one more distinguishing property than
+    the naming scheme anticipated.
+
+    So the guard is not a better name. If the path is taken by DIFFERENT bytes,
+    suffix and print. Identical bytes rewrite silently, because a rerun that
+    produces the same artifact is not a collision.
+    """
+    path = Path(path)
+    if path.exists():
+        try:
+            if path.read_text(encoding=encoding, errors="replace") == text:
+                path.write_text(text, encoding=encoding)
+                return path
+        except Exception:
+            pass
+        n = 2
+        while True:
+            alt = path.with_name(f"{path.stem}_{n}{path.suffix}")
+            if not alt.exists():
+                break
+            n += 1
+        print(f"KKR · {path.name} already holds a different run - writing "
+              f"{alt.name} rather than discarding it", file=sys.stderr)
+        path = alt
+    path.write_text(text, encoding=encoding)
+    return path
+
+
 def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: str):
     """The Kaos Kontrol Report — this run's validated forecasts + audit trail."""
     now = datetime.now(timezone.utc)
@@ -714,13 +749,12 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     if _arm_slug:
         stamp = f"{stamp}_{_arm_slug}"
     OUT.mkdir(exist_ok=True)
-    (OUT / f"KKR_{stamp}.md").write_text(md, encoding="utf-8")
+    _md_path = write_run_artifact(OUT / f"KKR_{stamp}.md", md)
     html_doc = render_html(md, f"KKR {stamp}")
-    (OUT / f"KKR_{stamp}.html").write_text(html_doc, encoding="utf-8")
+    write_run_artifact(OUT / f"{_md_path.stem}.html", html_doc)
     (OUT / "KKR_latest.html").write_text(html_doc, encoding="utf-8")
     publish_served()
-    print(f"KKR · report → {OUT / ('KKR_' + stamp + '.md')} (+ KKR_latest.html)",
-          file=sys.stderr)
+    print(f"KKR · report → {_md_path} (+ KKR_latest.html)", file=sys.stderr)
 
 
 def load_ledger() -> dict:
