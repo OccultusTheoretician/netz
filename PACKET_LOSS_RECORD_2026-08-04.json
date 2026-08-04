@@ -1,0 +1,923 @@
+{
+ "schema": "packet-loss-record/1.0",
+ "generated": "2026-08-04T04:04:14Z",
+ "finding": "The elicitation packet filename carried a DATE and no time while the reports it derives from carried a timestamp. Multiple report runs per day each overwrote the packet; the last one survived. This is the seventh instance of the artifact-overwrite class found on 2026-08-04 and the only one known to have destroyed evidence rather than risked it.",
+ "why_it_is_not_recoverable": "A row's packet name is derivable from the report it names, by prefix substitution. Zero of the 96 derive to a file that exists. The inputs were not merely unrecorded - the files were overwritten and are gone. RPAS-26 Amendment 2026-08-04b calls these entries unidentified; destroyed is the accurate word.",
+ "sealed_rows_edited": false,
+ "era": "2026-07-20 .. 2026-07-26 (date-only packet naming)",
+ "report_runs_in_era": 26,
+ "surviving_packets_in_era": 8,
+ "packets_destroyed": 19,
+ "by_date": [
+  {
+   "date": "2026-07-20",
+   "report_runs": 8,
+   "surviving_packets": 1,
+   "destroyed": 7
+  },
+  {
+   "date": "2026-07-21",
+   "report_runs": 3,
+   "surviving_packets": 1,
+   "destroyed": 2
+  },
+  {
+   "date": "2026-07-22",
+   "report_runs": 4,
+   "surviving_packets": 1,
+   "destroyed": 3
+  },
+  {
+   "date": "2026-07-23",
+   "report_runs": 2,
+   "surviving_packets": 1,
+   "destroyed": 1
+  },
+  {
+   "date": "2026-07-24",
+   "report_runs": 1,
+   "surviving_packets": 1,
+   "destroyed": 0
+  },
+  {
+   "date": "2026-07-25",
+   "report_runs": 7,
+   "surviving_packets": 1,
+   "destroyed": 6
+  },
+  {
+   "date": "2026-07-26",
+   "report_runs": 1,
+   "surviving_packets": 2,
+   "destroyed": 0
+  }
+ ],
+ "affected_rows": 96,
+ "affected_rows_keyless": 17,
+ "rows": [
+  {
+   "id": "KKR-20260720-01",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2106.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2106.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-02",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2106.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2106.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-03",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2106.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2106.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-04",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2106.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2106.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-05",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2106.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2106.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-06",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2106.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2106.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-07",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2106.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2106.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-08",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2106.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2106.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-09",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-10",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-11",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-12",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-13",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-14",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-15",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-16",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-17",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-18",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-19",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-20",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-20_2131.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2131.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-21",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2137.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2137.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-22",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2137.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2137.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-23",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2137.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2137.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-24",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2137.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2137.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-25",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2137.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2137.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-26",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2137.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2137.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-27",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2137.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2137.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-28",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2137.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2137.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260720-29",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-20",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-20_2137.md",
+   "packet_it_would_name": "kkr_packet_2026-07-20_2137.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260721-01",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-21",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-21_1532.md",
+   "packet_it_would_name": "kkr_packet_2026-07-21_1532.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260721-02",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-21",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-21_1532.md",
+   "packet_it_would_name": "kkr_packet_2026-07-21_1532.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260721-03",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-21",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-21_1532.md",
+   "packet_it_would_name": "kkr_packet_2026-07-21_1532.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260721-04",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-21",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-21_1532.md",
+   "packet_it_would_name": "kkr_packet_2026-07-21_1532.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260721-05",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-21",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-21_1532.md",
+   "packet_it_would_name": "kkr_packet_2026-07-21_1532.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260721-06",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-21",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-21_1532.md",
+   "packet_it_would_name": "kkr_packet_2026-07-21_1532.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260721-07",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-21",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-21_1532.md",
+   "packet_it_would_name": "kkr_packet_2026-07-21_1532.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-01",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-22_0409.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0409.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-02",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-22_0409.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0409.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-03",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-22_0409.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0409.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-04",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-22_0409.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0409.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-05",
+   "arm": "operator/human",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-06",
+   "arm": "operator/human",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-07",
+   "arm": "operator/human",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-08",
+   "arm": "operator/human",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-09",
+   "arm": "operator/human",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-10",
+   "arm": "operator/human",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-11",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-12",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-13",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-14",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-15",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260722-16",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-22",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-22_0416.md",
+   "packet_it_would_name": "kkr_packet_2026-07-22_0416.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260723-01",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-23",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-23_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-23_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260723-02",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-23",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-23_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-23_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260723-03",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-23",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-23_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-23_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260723-04",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-23",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-23_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-23_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-01",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-02",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-03",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-04",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-05",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-06",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-07",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-08",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-09",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-10",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "unset",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260724-11",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-24",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-24_1503.md",
+   "packet_it_would_name": "kkr_packet_2026-07-24_1503.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-01",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-02",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-03",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-04",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-05",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-06",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-07",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-08",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-09",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260725-10",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-25",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-25_1714.md",
+   "packet_it_would_name": "kkr_packet_2026-07-25_1714.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-01",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-02",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-03",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-04",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-05",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-06",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-07",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-08",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-09",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-10",
+   "arm": "manual/fable",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-11",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-12",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-13",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-14",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-15",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": "keyless",
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-16",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-17",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": null,
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-18",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  },
+  {
+   "id": "KKR-20260726-19",
+   "arm": "lmstudio/auto",
+   "date_issued": "2026-07-26",
+   "keyed_keyless": "keyed",
+   "source_report": "battle_report_2026-07-26_1500.md",
+   "packet_it_would_name": "kkr_packet_2026-07-26_1500.md",
+   "packet_exists": false
+  }
+ ]
+}

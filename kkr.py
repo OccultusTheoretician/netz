@@ -1257,8 +1257,16 @@ def cmd_generate(args):
     OUT.mkdir(exist_ok=True)
     packet = OUT / f"kkr_packet_{now.strftime('%Y-%m-%d_%H%M')}.md"
     _latest_packet = OUT / "kkr_packet_latest.md"
+    # KK21l: through the guard, and _LAST_PACKET set from the path ACTUALLY
+    # written. This writer destroyed 19 elicitation inputs between 07-20 and
+    # 07-26 — the filename carried a date while the reports carried a time, so
+    # eight runs on 07-20 left one packet. 96 sealed entries name a report
+    # whose packet no longer exists. Setting _LAST_PACKET before the write
+    # would, the first time the guard suffixed, make every entry in that run
+    # cite a packet it never read: a caught collision turned into a silent
+    # misattribution, which is worse than the collision.
+    packet = write_run_artifact(packet, prompt, tag="packet")
     globals()["_LAST_PACKET"] = packet.name
-    packet.write_text(prompt, encoding="utf-8")
     _latest_packet.write_text(prompt, encoding="utf-8")
     print(f"KKR · packet → {packet}", file=sys.stderr)
     if args.packet_only:
