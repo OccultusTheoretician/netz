@@ -1,6 +1,6 @@
 # LANGUAGE-MODEL INSTRUMENT AUDIT STANDARDS
 ## First Edition · 2026
-**LIAS-26 · Issued by the Retro-Prescient Audit Desk**
+**LIAS-26 · Issued by the Retro-Prescient Audit™ Desk**
 *Third standard of the family: RPAS-26 governs forecast verification; the Inversion Quotient and DTSP govern institutional inversion; LIAS-26 governs the wielding of the instrument itself.*
 
 **PROVENANCE: DRAFT (Claude-drafted under direction, 2026-07-24, codifying the desk's running practice — the NETZ citation-audit doctrine, the provenance-tier rules, RPAS 3.02/6.02, and the operator's standing verification discipline. His only after rework.)**

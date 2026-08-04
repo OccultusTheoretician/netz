@@ -1,13 +1,13 @@
 # RPAS-26 Conformance Report — ledger.json
 *Generated 2026-08-03. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
 
-- entries: **254** · resolved: **23** · keyless: **36** · keyed: **75**
+- entries: **255** · resolved: **24** · keyless: **37** · keyed: **75**
 - 5.02 fifty-entry gate: **MET**
-- thirty-resolved noise floor: **below floor (23/30 resolved) — any score is noise, and must say so on its face**
-- 1.04 keyed/keyless missing: **143/254**
-- 4.03 failure condition missing: **25/254**
+- thirty-resolved noise floor: **below floor (24/30 resolved) — any score is noise, and must say so on its face**
+- 1.04 keyed/keyless missing: **143/255**
+- 4.03 failure condition missing: **25/255**
 
-- findings: **168 FAIL**, **163 WARN**
+- findings: **168 FAIL**, **166 WARN**
 
 ## Findings
 
@@ -81,6 +81,7 @@
 | KKR-20260721-07 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260722-01 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260722-02 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260722-03 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260722-05 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260722-05 | FAIL | 4.02e/4.03 | no failure condition — UNFALSIFIABLE by 4.03 |
 | KKR-20260722-05 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
@@ -103,6 +104,7 @@
 | KKR-20260723-01 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260723-01 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260723-02 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260723-02 | WARN | 5.03 | resolved (void) but no audit verdict recorded |
 | KKR-20260723-03 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260724-01 | FAIL | 4.02e/4.03 | no failure condition — UNFALSIFIABLE by 4.03 |
 | KKR-20260724-01 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
@@ -330,7 +332,6 @@
 | KKR-20260801-26 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260801-26 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260802-01 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
-| KKR-20260802-01 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260802-02 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260802-02 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260802-03 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -344,3 +345,5 @@
 | KKR-20260802-07 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260802-08 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260802-08 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260803-01 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260803-01 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
