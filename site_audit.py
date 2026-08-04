@@ -252,6 +252,38 @@ def audit_site(r, verbose):
     orphans = sorted(set(graph) - seen)
     r.sub("reachability from index.html", len(graph), "pages")
 
+    # --- KK21p: orphaned DATA artifacts -----------------------------------
+    # The page walk above never looks at .md or .json under docs/, so the
+    # AUDIT workflow published its findings for nine hours before anyone
+    # noticed nothing linked them. Same for the packet register, the
+    # determination doctrine, and ots_anchors.json - the anchor manifest that
+    # is this desk's whole proof of external timestamping.
+    #
+    # Reachability is tested against the full text of every page AND script,
+    # not against href attributes: 30 artifacts here are loaded by fetch()
+    # and carry no link anywhere. An href-only check would report them as
+    # orphans and be ignored by its second run.
+    try:
+        _blob = ""
+        for _p in list(DOCS.glob("*.html")) + list(DOCS.rglob("*.js")):
+            _blob += _p.read_text(encoding="utf-8", errors="replace")
+        _SKIP = {".nojekyll", "CNAME", ".gitignore", "robots.txt", "sitemap.xml"}
+        _EXT = (".ots", ".png", ".ico", ".svg", ".css", ".js", ".html",
+                ".xml", ".txt", ".jpg", ".jpeg", ".webp", ".woff", ".woff2")
+        _arts = [f for f in DOCS.iterdir()
+                 if f.is_file() and f.name not in _SKIP
+                 and not f.name.endswith(_EXT)]
+        _orph = sorted(f.name for f in _arts if f.name not in _blob)
+        r.sub("data artifacts under docs/", len(_arts), "artifacts")
+        if _orph:
+            r.bad("FINDING", f"{len(_orph)} artifact(s) published and reachable from no "
+                   f"page or script: " + ", ".join(_orph[:6])
+                   + (" ..." if len(_orph) > 6 else "")
+                   + ". A finding nobody can navigate to is published in the "
+                     "same sense a sealed row nobody can verify is sealed.")
+    except Exception as _e:
+        r.bad("SCOPE", f"artifact reachability check failed: {type(_e).__name__}")
+
     # --- nav consistency ---------------------------------------------------
     # Every served page must carry a navigation whose internal-link SET is
     # identical, so a visitor sees the same map from every page. Drift here
