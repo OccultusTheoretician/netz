@@ -135,12 +135,57 @@ def main() -> int:
     ap.add_argument("--due", action="store_true")
     ap.add_argument("--row")
     ap.add_argument("--keep-raw", action="store_true")
+    ap.add_argument("--smoke", action="store_true",
+                    help="one row per resolver, regardless of deadline, forced "
+                         "probe. Verifies all six parsers against their live "
+                         "endpoints in one command. Writes probe records that "
+                         "cannot be mistaken for resolving evidence.")
     a = ap.parse_args()
 
     rows = json.loads((HERE / "ledger.json").read_text(
         encoding="utf-8"))["projections"]
     open_rows = [e for e in rows if e.get("status") == "open"]
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    if a.smoke:
+        seen, picked = set(), []
+        for e in open_rows:
+            name, params = map_row(e)
+            if name and name not in seen:
+                seen.add(name)
+                picked.append((name, params, e))
+        if not picked:
+            print("no mappable open rows — nothing to smoke")
+            return 1
+        print(f"\nPARSER SMOKE TEST — {len(picked)} resolver(s), forced probe")
+        print("-" * 66)
+        print("These fetches prove the parsers read their endpoints. They are")
+        print("NOT adjudications: every record is written with probe=true and")
+        print("carries a line saying it must not be cited in a resolution.\n")
+        bad = 0
+        for name, params, e in picked:
+            resolvers.set_row_context(deadline=e.get("deadline"), probe=True)
+            try:
+                meta = resolvers.REGISTRY[name](e["id"], params,
+                                                keep_raw=a.keep_raw)
+                v = meta.get("verdict_if_resolved_now",
+                             meta.get("verdict_proposed", "?"))
+                mark = "ok  " if v != "INDETERMINATE" else "IND "
+                if v == "INDETERMINATE":
+                    bad += 1
+                print(f"  {mark} {name:<12} {e['id']:<18} {v:<14} "
+                      f"{str(meta.get('detail',''))[:44]}")
+            except Exception as ex:
+                bad += 1
+                print(f"  FAIL {name:<12} {e['id']:<18} {type(ex).__name__}: "
+                      f"{str(ex)[:44]}")
+            finally:
+                resolvers.set_row_context()
+        print(f"\n  {len(picked) - bad} of {len(picked)} parser(s) returned a "
+              f"determinate read. An INDETERMINATE is the resolver refusing to "
+              f"guess, which is correct behaviour and still a parser that "
+              f"cannot yet be trusted.")
+        return 0
 
     if a.coverage or not (a.due or a.row):
         mapped = {}
@@ -176,7 +221,11 @@ def main() -> int:
             return 1
     elif a.due:
         targets = [e for e in open_rows
-                   if str(e.get("deadline", "9999")) <= today]
+                   # KK21i: was <=, which adjudicated rows deadlined TODAY.
+                   # kkr --resolve uses <, and the settling-margin rule (KK19)
+                   # is the reason: third-party confirmation does not exist on
+                   # the morning the resolver walks the row.
+                   if str(e.get("deadline", "9999")) < today]
         if not targets:
             print("nothing past deadline")
             return 0
@@ -191,7 +240,9 @@ def main() -> int:
             continue
         note = p.pop("_note", None)
         try:
+            resolvers.set_row_context(deadline=e.get("deadline"), probe=False)
             meta = resolvers.REGISTRY[name](e["id"], p, keep_raw=a.keep_raw)
+            resolvers.set_row_context()
         except Exception as ex:
             print(f"  {e['id']}: FETCH FAILED ({name}) — {ex}. No evidence "
                   f"written, nothing proposed.")

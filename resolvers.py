@@ -43,16 +43,43 @@ def _fetch(url: str, timeout: int = 45) -> bytes:
         return r.read()
 
 
+# KK21i: row context, set by the caller before a resolver runs. Without it an
+# evidence record cannot say whether it was taken to RESOLVE a row or merely
+# to test that the parser works — and those two files looked identical.
+_ROW_CTX = {"deadline": None, "probe": False}
+
+
+def set_row_context(deadline=None, probe: bool = False):
+    """Declare what this fetch is. A fetch before the row's deadline is a
+    probe: it proves the parser reads the endpoint, and it is not evidence of
+    anything about the row, because the window had not closed."""
+    _ROW_CTX["deadline"] = deadline
+    _ROW_CTX["probe"] = bool(probe)
+
+
 def _evidence(row_id: str, resolver: str, url: str, raw: bytes,
               params: dict, verdict: str, detail: str,
               keep_raw: bool = False) -> dict:
     EVIDENCE.mkdir(exist_ok=True)
     now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     sha = hashlib.sha256(raw).hexdigest()
+    dl = _ROW_CTX.get("deadline")
+    probe = bool(_ROW_CTX.get("probe")) or (
+        dl is not None and now[:8] < str(dl).replace("-", ""))
     meta = {"row": row_id, "resolver": resolver, "url": url,
             "fetched_at": now, "sha256_raw": sha, "bytes": len(raw),
-            "params": params, "verdict_proposed": verdict, "detail": detail}
-    stem = f"{row_id}_{now}"
+            "params": params, "detail": detail,
+            "row_deadline": dl,
+            "probe": probe}
+    # A verdict reached before the deadline is not a proposal about the row.
+    # It is what the instrument read on the day, and it is labelled as that.
+    meta["verdict_if_resolved_now" if probe else "verdict_proposed"] = verdict
+    if probe:
+        meta["not_resolving_evidence"] = (
+            "Fetched before the row's deadline. The window had not closed, so "
+            "this record proves the parser reads its endpoint and nothing "
+            "about the row. Do not cite it in a resolution note.")
+    stem = f"{row_id}_{now}" + ("_probe" if probe else "")
     (EVIDENCE / f"{stem}.meta.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
     if keep_raw:
