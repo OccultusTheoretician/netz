@@ -951,6 +951,21 @@ def publish_served():
     if src_kkr.exists():
         (DOCS / "kkr.html").write_text(src_kkr.read_text(encoding="utf-8"),
                                        encoding="utf-8")
+    # KK21q: the build products carry no nav, so this sync strips it from
+    # docs/ledger.html and docs/kkr.html every run. navgen put it back three
+    # times on 2026-08-04 and the next forecast took it off again. Between the
+    # two commands the live ledger and the current report are dead ends. Stamp
+    # it here so the served page is never without it.
+    try:
+        import subprocess
+        _r = subprocess.run([sys.executable, str(HERE / "navgen.py")],
+                            capture_output=True, text=True, timeout=60)
+        if _r.returncode != 0:
+            print(f"KKR · nav restamp failed (rc={_r.returncode}) — run "
+                  f"`python navgen.py` before publishing", file=sys.stderr)
+    except Exception as _e:
+        print(f"KKR · nav restamp skipped ({type(_e).__name__}) — run "
+              f"`python navgen.py` before publishing", file=sys.stderr)
     print(f"KKR · served copies synced -> {DOCS}", file=sys.stderr)
 
 
