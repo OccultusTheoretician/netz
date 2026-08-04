@@ -57,6 +57,7 @@ Every projection MUST:
 7. Base-rate discipline: most discrete events do not happen; do not cluster probabilities at 60-80%. At least two projections must be rated BELOW 35%.
 8. WINDOW, NOT DATE: an unscheduled event (strike, attack, wildfire, earthquake, outbreak, cyberattack, resignation, indictment) MUST be given a window of at least 7 days. Never require an unscheduled event to occur on one named calendar day. The probability of a stochastic event on a specific date is a small fraction of its probability across a window, and pricing a single date at window rates is the most common scoring error in this record. Only events with a published schedule (elections, central bank meetings, hearings, contract expiries, scheduled releases) may name one date.
 9. NEVER write a condition about the ABSENCE of reporting. Phrases like "with no casualties reported" describe the source record, not the world. The report line "Casualties: none stated in the corroborating reports" is a statement about the reports themselves. Do not lift it into a projection; it cannot be adjudicated as a property of the event.
+11. PREFER A MACHINE-READABLE SOURCE OF RECORD. Where the claim admits one, resolve against a named public register a script can fetch - CISA KEV or NVD for vulnerabilities, the Federal Register or a Congress.gov roll call for US government action, Treasury/FRED/ECB or a named exchange settlement for rates and prices, USGS/GDACS/NIFC/NWS for natural events, a court docket for legal outcomes. Write "the CISA KEV catalog carries a date-added value between A and B", not "two wire services report the vulnerability is exploited". Both are falsifiable; only one can be checked by anyone, in one fetch, years later. Where no such register exists - most military and conflict claims - name the outlets and the corroboration standard as before, and do not invent a register that does not exist.
 10. CITE THE ITEM, NOT THE RECORD. "citations" names the specific numbered items that ground THIS claim - normally one to three, never more than seven. Citing the whole record is the same as citing nothing: a prior that excludes nothing predicts nothing, and a projection cited against every item cannot be graded for whether it went beyond its inputs. If no item grounds the claim, do not invent a citation - drop the projection.
 
 Use plain ASCII straight quotes only. Do NOT use curly quotes. Do NOT put quotation marks inside any statement or resolution string — refer to names and phrases without quoting them.
@@ -495,6 +496,41 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     if not (_src_hint or _src_noun or _src_dom):
         reasons.append("resolution names no source of record \u2014 a stranger "
                        "must know exactly where to look on the deadline date")
+    # KK21k: prefer a MECHANICALLY CHECKABLE source of record. A row resolving
+    # on "two wire services report X" can never be settled by a script; the
+    # same claim against a named public register settles in one fetch, by
+    # anyone, forever. Mechanical coverage on 2026-08-04 was 10 of 265 rows,
+    # and ~172 of the 234 narrative rows sit in domains that HAVE a register.
+    # A NOTE, not a rejection: the operator may have a reason, and a warning
+    # that blocks work is a warning that gets switched off.
+    _MECH_BY_DOMAIN = {
+        "cyber": "CISA KEV catalog, NVD, or the vendor's own advisory page",
+        "economics/markets": "Treasury par-yield series, FRED, ECB Data Portal, "
+                             "or a named exchange settlement",
+        "economics": "Treasury par-yield series, FRED, or ECB Data Portal",
+        "political": "the Federal Register API or a Congress.gov roll-call record",
+        "disaster": "USGS FDSN, GDACS, NIFC situation reports, or NWS alerts",
+        "crime/security": "a court docket or a DOJ press release",
+        "public/health": "WHO, CDC, or HHS published data",
+    }
+    _dom_key = str(p.get("domain", "")).strip().lower().replace("_", "/")
+    _mech = _MECH_BY_DOMAIN.get(_dom_key)
+    if _mech and not re.search(
+            r"\b(?:kev|known exploited|nvd|cve|advisory|federal register|"
+            r"congress\.gov|roll[- ]call|treasury|fred|ecb|usgs|fdsn|gdacs|"
+            r"nifc|nws|inciweb|docket|department of justice|doj|who|cdc|hhs|"
+            r"eurostat|bls|census|sec\.gov|edgar|api|catalog|register|dataset)\b",
+            res, re.I) and re.search(
+            r"\b(?:wire service|news agency|news outlet|media report|press "
+            r"report|reported by|two or more (?:independent )?(?:sources|"
+            r"outlets|wire)|independent sources)\b", res, re.I):
+        print(f"KKR · NOTE · {p.get('id','(new)')}: resolution rests "
+              f"on press reporting in a domain that has a machine-readable "
+              f"register ({_mech}). A row settled by a named register is "
+              f"resolvable by anyone in one fetch, forever; a row settled by "
+              f"'wire services report' is a search problem at every future "
+              f"adjudication. Not rejected — name the register where the "
+              f"claim admits one.", file=sys.stderr)
     if re.search(r"\b(?:price|yield|rate|level|magnitude|count|total|"
                  r"threshold|close[sd]?|above|below|exceed)\b", both, re.I) \
             and not re.search(r"(?:above|below|exceed\w*|at least|at or|over|"
