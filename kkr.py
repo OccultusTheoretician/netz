@@ -1876,17 +1876,35 @@ def _priors_for(p: dict) -> list:
     if not src or not path.exists():
         return [f"(source report {src or 'unnamed'} not on disk - "
                 f"cites items {', '.join(map(str, cites))})"]
-    out, want = [], set(cites)
+    # KK21n: EVERY candidate, not the first. Report sections renumbered from 1
+    # before 2026-08-04, so one citation number resolves to as many as eight
+    # items and 286 sealed entries carry at least one. `want.discard()` took
+    # the first match and dropped the rest without saying so — and this is the
+    # text a human reads before ruling 1.04, the master law. Choosing one
+    # arbitrary candidate on the operator's behalf and presenting it as the
+    # record is the worst place on the desk for that to happen.
+    found = {}
     for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
         m = re.match(r"\s*(\d+)\.\s+(.*)", line)
-        if m and int(m.group(1)) in want:
+        if m and int(m.group(1)) in set(cites):
             body = re.sub(r"\[link\]\(\S+\)", "", m.group(2))
             body = re.sub(r"[*_`]|\ud83c[\udd70-\udfff]|\ud83d[\udc00-\ude4f]",
                           "", body)
-            out.append(f"[{m.group(1)}] {re.sub(r'  +', ' ', body).strip()}")
-            want.discard(int(m.group(1)))
-    for n in sorted(want):
-        out.append(f"[{n}] (item not found in {src})")
+            found.setdefault(int(m.group(1)), []).append(
+                re.sub(r"  +", " ", body).strip())
+    out = []
+    for n in sorted(set(cites)):
+        items = found.get(n)
+        if not items:
+            out.append(f"[{n}] (item not found in {src})")
+        elif len(items) == 1:
+            out.append(f"[{n}] {items[0]}")
+        else:
+            out.append(f"[{n}] AMBIGUOUS — this number names {len(items)} "
+                       f"different items in {src}. The forecaster cited one of "
+                       f"these and the record does not say which:")
+            for it in items:
+                out.append(f"      · {it}")
     return out
 
 
@@ -2092,6 +2110,36 @@ def cmd_keys(args):
               f"({days}d) · stated {p.get('probability','?')}%")
         print(f"\n  CLAIM: {p['statement']}")
         print(f"  RESOLVES ON: {p['resolution'][:300]}")
+        # KK21n: what cite_integrity already knows about this entry's
+        # citations, printed before the determination rather than after it.
+        # An entry whose cited items support nothing cannot honestly be ruled
+        # KEYLESS: "it went beyond its declared priors" is unanswerable when
+        # the declared priors ground nothing.
+        try:
+            _civ = HERE / "cite_integrity_2026-08-04.json"
+            if not _civ.exists():
+                _civ = max(HERE.glob("cite_integrity_*.json"), default=None)
+            if _civ:
+                _ci = json.loads(Path(_civ).read_text(encoding="utf-8"))
+                _row = next((r for r in _ci.get("rows", [])
+                             if r.get("id") == p.get("id")), None)
+                if _row and _row.get("flags"):
+                    print(f"\n  CITATION AUDIT: {'/'.join(_row['flags'])} "
+                          f"({_row.get('strong',0)} strong, "
+                          f"{_row.get('weak',0)} weak, {_row.get('none',0)} "
+                          f"unsupporting)")
+                    if "UNSUPPORTED" in _row["flags"]:
+                        print("    Nothing cited supports this claim. A KEYLESS "
+                              "ruling here asserts the entry went beyond priors "
+                              "that ground nothing — KEYED by rule is the "
+                              "defensible read (4.03).")
+                    if "SHOTGUN" in _row["flags"]:
+                        print("    This entry cites most of the record. A prior "
+                              "that excludes nothing cannot make a hit "
+                              "deducible, and cannot make it non-deducible "
+                              "either.")
+        except Exception:
+            pass
         priors = _priors_for(p)
         print("\n  PRIORS THE FORECASTER HELD (its cited report items):")
         if priors:
