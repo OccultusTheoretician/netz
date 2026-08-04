@@ -441,6 +441,20 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                        "claim about the source record, not about the event. The "
                        "war desk prints it to describe its own reports; it "
                        "cannot be adjudicated as a property of the world")
+    # --- KK20: window may not open before the seal ---
+    if _dates:
+        try:
+            _open = datetime.strptime(_dates[0], "%Y-%m-%d").date()
+            _now = datetime.now(timezone.utc).date()
+            if _open < _now:
+                reasons.append(
+                    f"event window opens {_open}, before this row is sealed "
+                    f"({_now}) — part of the window has already elapsed and the "
+                    f"outcome may already exist. A commitment made after the "
+                    f"fact is retrodiction, not forecast; open the window today "
+                    f"or later")
+        except ValueError:
+            pass
     _anchor = _market_anchor(p)
     if _anchor:
         if _MARKET_ANCHOR_WARN_ONLY:
@@ -545,7 +559,10 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
                "is permanent; the system gets scored, not the operator.*")
 
     md = "\n".join(out)
-    stamp = now.strftime("%Y-%m-%d")
+    # KK20: per-run stamp. The report is a run artifact; a per-day name let
+    # a second run of the same UTC date overwrite the first run's published
+    # rejection trail. Minute resolution, war-desk pattern.
+    stamp = now.strftime("%Y-%m-%d_%H%M")
     OUT.mkdir(exist_ok=True)
     (OUT / f"KKR_{stamp}.md").write_text(md, encoding="utf-8")
     html_doc = render_html(md, f"KKR {stamp}")
