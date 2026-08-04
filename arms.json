@@ -165,6 +165,15 @@
       "status": "active",
       "note": "KK18 standing rule: see manual/fable-5/unattested.",
       "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "control/baserate",
+      "lane": "control",
+      "model": "climatological",
+      "access": "n-a",
+      "status": "active",
+      "note": "The arm is not trying to be right. It emits the same probability for every row drawn from the same reference class, computed from this ledger's own resolved history as of the pairing date and pre-registered before the outcome existed. Its Brier is the floor a forecaster arm must clear to have demonstrated anything; a forecaster arm that does not beat it has skill zero regardless of its raw score. Paired same-run against the arm it controls, on the identical packet - a control issued later mirrors rows sealed under a different gate and is not a control. Every row carries control_basis: rate, n, reference class, as-of date.",
+      "cadence": "paired same-run with every sealed forecaster batch; never issued alone, never backfilled."
     }
   ],
   "cadence_ruled": "2026-08-01"

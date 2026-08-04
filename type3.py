@@ -111,8 +111,14 @@ TEMPLATE = {
         "priors_declared": None,
         "keyed_keyless": None,
         "is_control": None,
+        "arm": "model",
         "seal": None
     },
+    "control_arm_tags": [],
+    "_control_arm_tags_note": "arm tags whose rows ARE controls, e.g. "
+                              "['control/baserate']. Used when the record "
+                              "carries no per-row control flag. Declared in "
+                              "the engagement so the reading is on the record.",
     "status_values": {
         "open": ["open"],
         "hit": ["hit", "yes", "resolved_yes", "true"],
@@ -304,8 +310,27 @@ def P06_keyed_keyless(eng, rows):
 
 
 def P07_controls(eng, rows):
-    """4.06 — decoys, opposite-side slots, null questions."""
+    """4.06 — decoys, opposite-side slots, null questions.
+
+    A record may mark controls with a field OR carry them as a named arm.
+    Both are declarations; refusing to read the second was reporting zero
+    controls on a record that had nine.
+    """
     key = eng["mapping"]["is_control"]
+    arm_key = eng["mapping"].get("arm") or eng["mapping"].get("model")
+    ctl_tags = {t.strip().lower()
+                for t in (eng.get("control_arm_tags") or []) if t.strip()}
+    if key is None and arm_key and ctl_tags:
+        n = sum(1 for r in rows
+                if str(get(r, arm_key) or "").strip().lower() in ctl_tags)
+        if n == 0:
+            return ("FINDING", "RPAS 4.06",
+                    "declared control arms carry no entries in this record",
+                    "A faculty claim that has never returned a correct NULL "
+                    "on a control has not been tested.")
+        return ("CONFORMS", "RPAS 4.06",
+                f"{n} control entries present, identified by arm tag "
+                f"({', '.join(sorted(ctl_tags))})", "")
     if key is None:
         return ("SCOPE", "RPAS 4.06",
                 "the record does not distinguish control entries",
