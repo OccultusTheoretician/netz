@@ -1,22 +1,22 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-08-04T12:28:58Z · 45 report(s)
+Generated 2026-08-05T12:30:59Z · 46 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **45**
-- findings: **75**
+- reports audited: **46**
+- findings: **76**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 3
-  - UNSOURCED: 72
+  - UNSOURCED: 73
 - distinct tokens: **24**
 
 ## Reached a sealed row
 
-**8** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
+**11** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
 
 | row | token | finding | arm | status | k/kl |
 |---|---|---|---|---|---|
@@ -28,6 +28,9 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20260730-25` | `CVE-2026-20316` | UNSOURCED | manual/sonnet-5 | open | keyed |
 | `KKR-20260804-02` | `CVE-2026-18577` | UNSOURCED | lmstudio/auto | open | keyless |
 | `KKR-20260804-10` | `CVE-2026-18577` | UNSOURCED | control/baserate | open | keyed |
+| `KKR-20260804-49` | `CVE-2026-18577` | UNSOURCED | lmstudio/auto | open | — |
+| `KKR-20260804-59` | `CVE-2026-18577` | UNSOURCED | manual/opus-5/unattested | open | — |
+| `KKR-20260804-64` | `CVE-2026-18577` | UNSOURCED | manual/sonnet-5/unattested | open | — |
 
 ## Every finding
 
@@ -108,4 +111,5 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-08-03_1501.md | `CVE-2026-18577` | UNSOURCED |
 | battle_report_2026-08-03_2320.md | `CVE-2026-18577` | UNSOURCED |
 | battle_report_2026-08-03_2351.md | `CVE-2026-18577` | UNSOURCED |
+| battle_report_2026-08-04_1502.md | `CVE-2026-18577` | UNSOURCED |
 
