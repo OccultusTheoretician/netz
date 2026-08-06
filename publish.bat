@@ -14,6 +14,19 @@ if exist C:\netz\forecasts\KKR_latest.html copy /Y C:\netz\forecasts\KKR_latest.
 copy /Y C:\netz\ledger.json C:\netz\docs\ledger.json >nul
 cd /d C:\netz
 git add -A
+
+REM KK24: the guard was never in the publish path - everything it caught
+REM on 2026-08-06 was caught by a hand-run verify. Runs AFTER add -A so
+REM newly staged files are inside the scan surface. WARNs pass; FAILs stop.
+python desk.py verify
+if errorlevel 1 (
+  echo.
+  echo  VERIFY FAILED - an invariant is broken. NOTHING committed, NOTHING pushed.
+  echo  Read the FAIL line above; identity_guard findings are file:line only.
+  pause
+  exit /b 1
+)
+
 for /f "tokens=*" %%i in ('powershell -NoProfile -Command "(Get-Date).ToUniversalTime().ToString('yyyy-MM-dd_HHmm') + 'Z'"') do set STAMP=%%i
 git commit -m "publish %STAMP%"
 
