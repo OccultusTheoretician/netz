@@ -13,6 +13,7 @@ if exist C:\netz\forecasts\ledger.html copy /Y C:\netz\forecasts\ledger.html C:\
 if exist C:\netz\forecasts\KKR_latest.html copy /Y C:\netz\forecasts\KKR_latest.html C:\netz\docs\kkr.html >nul
 copy /Y C:\netz\ledger.json C:\netz\docs\ledger.json >nul
 cd /d C:\netz
+python health.py
 git add -A
 
 REM KK24: the guard was never in the publish path - everything it caught
