@@ -1,0 +1,95 @@
+[
+ {
+  "statement": "Between 2026-08-05 and 2026-09-19, the CISA Known Exploited Vulnerabilities catalog will change the Known Ransomware Campaign Use field for CVE-2026-9198 (IBM Langflow) from its current value to Known.",
+  "domain": "cyber",
+  "probability": 14,
+  "resolution": "True if the CISA KEV catalog page for CVE-2026-9198 shows Known Ransomware Campaign Use as Known when checked on 2026-09-22; false otherwise.",
+  "deadline": "2026-09-22",
+  "citations": [
+   21
+  ],
+  "failure_condition": "CVE-2026-9198 KEV entry still shows Known Ransomware Campaign Use as Unknown, or unchanged from its 2026-08-05 value, when checked on 2026-09-22."
+ },
+ {
+  "statement": "Between 2026-08-05 and 2026-08-26, Open VSX or the Eclipse Foundation will report that the cumulative count of malicious Evil Twin-style extensions removed in the campaign disclosed 2026-08-05 has reached 100 or more, up from 77.",
+  "domain": "cyber",
+  "probability": 27,
+  "resolution": "True if an Open VSX or Eclipse Foundation advisory, or a BleepingComputer or Hacker News follow-up citing one, states a cumulative removed-extension count of 100 or more by 2026-08-28; false otherwise.",
+  "deadline": "2026-08-28",
+  "citations": [
+   19,
+   27
+  ],
+  "failure_condition": "As of 2026-08-28 the most recently stated cumulative count for this campaign is 99 or fewer, including the baseline case where it remains at 77 with no escalation stated."
+ },
+ {
+  "statement": "Between 2026-08-06 and 2026-09-30, the S&P 500 index will close down 5.0% or more relative to the prior trading day close on at least one trading day.",
+  "domain": "economics/markets",
+  "probability": 22,
+  "resolution": "True if S&P 500 daily closing data, via FRED series SP500 or exchange records, shows any day between 2026-08-06 and 2026-09-30 down 5.0% or more from prior close; false otherwise.",
+  "deadline": "2026-10-02",
+  "citations": [
+   58,
+   61
+  ],
+  "failure_condition": "No single trading day between 2026-08-06 and 2026-09-30 shows an S&P 500 close-to-close decline of 5.0% or more."
+ },
+ {
+  "statement": "At its September 15-16, 2026 meeting, the FOMC will raise the federal funds target range above its 2026-08-05 level of 3.50-3.75%.",
+  "domain": "economics/markets",
+  "probability": 12,
+  "resolution": "True if the Federal Reserve official statement released 2026-09-16 sets the federal funds target range above 3.50-3.75%; false if the range is held or cut.",
+  "deadline": "2026-09-18",
+  "citations": [
+   72
+  ],
+  "failure_condition": "The FOMC September 16, 2026 statement holds the target range at 3.50-3.75% or lowers it below that range."
+ },
+ {
+  "statement": "Between 2026-08-05 and 2026-09-05, the US State Department, Omani Ministry of Foreign Affairs, or Iranian Foreign Ministry will publicly announce a concluded agreement governing tanker and shipping safety in the Strait of Hormuz.",
+  "domain": "military/conflict",
+  "probability": 25,
+  "resolution": "True if at least two of AP, Reuters, Al Jazeera, or BBC report an official US, Omani, or Iranian statement confirming a concluded Hormuz shipping-safety agreement by 2026-09-07; false otherwise.",
+  "deadline": "2026-09-07",
+  "citations": [
+   93,
+   57
+  ],
+  "failure_condition": "No formal shipping-safety agreement for the Strait of Hormuz is announced by any of the three governments within the window, or talks are instead reported stalled or collapsed."
+ },
+ {
+  "statement": "Between 2026-08-06 and 2026-08-20, the USGS Earthquake Catalog will record at least one earthquake of magnitude 6.0 or greater anywhere in the world.",
+  "domain": "disaster",
+  "probability": 90,
+  "resolution": "True if the USGS Earthquake Catalog lists any event of magnitude 6.0 or greater with origin time between 2026-08-06 and 2026-08-20, checked 2026-08-24; false otherwise.",
+  "deadline": "2026-08-24",
+  "citations": [
+   30,
+   35
+  ],
+  "failure_condition": "The USGS Earthquake Catalog shows no magnitude 6.0 or greater event globally with origin time in the stated window, as checked on 2026-08-24."
+ },
+ {
+  "statement": "Abdul El-Sayed will win the 2026 Michigan US Senate general election held on 2026-11-03.",
+  "domain": "political",
+  "probability": 55,
+  "resolution": "True if official Michigan certified results or an AP race call name Abdul El-Sayed the winner of the Michigan US Senate general election, checked 2026-11-10; false otherwise.",
+  "deadline": "2026-11-10",
+  "citations": [
+   100,
+   105
+  ],
+  "failure_condition": "El-Sayed is not certified or called as the winner of the Michigan Senate general election by 2026-11-10, whether another candidate wins or the race remains uncalled."
+ },
+ {
+  "statement": "Between 2026-08-05 and 2026-10-05, the House Committee on Ethics will publicly announce a finding, report, or disciplinary recommendation regarding its investigation into Representative Max Miller of Ohio.",
+  "domain": "political",
+  "probability": 10,
+  "resolution": "True if ethics.house.gov or Congress.gov shows a published report, finding, or committee action on Rep. Miller beyond the initial opening, between 2026-08-05 and 2026-10-07; false otherwise.",
+  "deadline": "2026-10-07",
+  "citations": [
+   37
+  ],
+  "failure_condition": "No published report, finding, or further committee action on Rep. Miller appears via official Ethics Committee channels within the window; the investigation remains at its initial opened status."
+ }
+]

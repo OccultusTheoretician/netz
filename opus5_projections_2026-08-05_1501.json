@@ -1,0 +1,123 @@
+[
+ {
+  "statement": "The FRED series DFEDTARU records a value on 2026-12-31 strictly higher than its value on 2026-08-05, reflecting a rate increase at the 2026-09-16, 2026-10-28, or 2026-12-09 FOMC decision.",
+  "domain": "economics",
+  "probability": 18,
+  "resolution": "The FRED observation for DFEDTARU dated 2026-12-31 exceeds the observation dated 2026-08-05. An equal or lower value resolves false.",
+  "deadline": "2027-01-06",
+  "citations": [
+   67,
+   68,
+   72
+  ],
+  "failure_condition": "The federal funds target range upper limit on 2026-12-31 is equal to or below its 2026-08-05 level."
+ },
+ {
+  "statement": "ICE Brent front-month crude futures settle at or below 70.00 USD per barrel on at least one settlement date between 2026-08-06 and 2026-10-30.",
+  "domain": "economics",
+  "probability": 48,
+  "resolution": "Any ICE-published front-month Brent settlement price with a settlement date between 2026-08-06 and 2026-10-30 is 70.00 or lower.",
+  "deadline": "2026-11-03",
+  "citations": [
+   57,
+   92,
+   93
+  ],
+  "failure_condition": "Every ICE front-month Brent settlement inside the window prints above 70.00 USD per barrel."
+ },
+ {
+  "statement": "A filing entered on the US Court of International Trade docket between 2026-08-06 and 2026-12-15 states that cumulative IEEPA tariff refunds issued have reached 150 billion USD or more.",
+  "domain": "economics",
+  "probability": 35,
+  "resolution": "A government filing on the CIT docket dated inside the window states cumulative IEEPA refunds of at least 150 billion USD. A lower stated figure resolves false.",
+  "deadline": "2026-12-18",
+  "citations": [
+   51
+  ],
+  "failure_condition": "Cumulative IEEPA refunds as stated in CIT filings remain below 150 billion USD through 2026-12-15."
+ },
+ {
+  "statement": "UKMTO issues an incident advisory, or CENTCOM issues a statement, reporting an attack on or seizure of a commercial vessel in the Strait of Hormuz or Gulf of Oman between 2026-08-06 and 2026-11-30.",
+  "domain": "military_conflict",
+  "probability": 35,
+  "resolution": "A UKMTO advisory or CENTCOM statement dated inside the window reports an attack on or seizure of a commercial vessel in the named waters.",
+  "deadline": "2026-12-04",
+  "citations": [
+   57,
+   92,
+   93
+  ],
+  "failure_condition": "No attack on or seizure of a commercial vessel occurs in the Strait of Hormuz or Gulf of Oman during the window."
+ },
+ {
+  "statement": "A single Russian strike event on Kyiv city or Kyiv oblast between 2026-08-06 and 2026-09-15 kills 10 or more people according to Ukrainian authorities.",
+  "domain": "military_conflict",
+  "probability": 45,
+  "resolution": "Ukraine State Emergency Service or the Kyiv city or oblast administration attributes 10 or more deaths to one strike event in the window, carried by two of Reuters, AP, BBC, Guardian.",
+  "deadline": "2026-09-18",
+  "citations": [
+   83,
+   90
+  ],
+  "failure_condition": "No single strike event on Kyiv city or oblast inside the window produces an official death toll of 10 or more."
+ },
+ {
+  "statement": "German federal or Saxony state authorities announce at least one arrest in the investigation of the explosive-laden drone found at Leipzig/Halle airport, between 2026-08-06 and 2026-10-15.",
+  "domain": "crime_security",
+  "probability": 25,
+  "resolution": "The Generalbundesanwalt, Bundeskriminalamt, or Saxony police announce an arrest tied to the Leipzig airport drone, carried by two of Reuters, DPA, Deutsche Welle, BBC.",
+  "deadline": "2026-10-20",
+  "citations": [
+   9,
+   76,
+   77,
+   117
+  ],
+  "failure_condition": "No arrest connected to the Leipzig airport drone incident is announced by German authorities inside the window."
+ },
+ {
+  "statement": "The CISA KEV catalog carries 50 or more entries with a dateAdded value between 2026-08-06 and 2026-10-05 inclusive.",
+  "domain": "cyber",
+  "probability": 50,
+  "resolution": "A count of entries in the CISA KEV JSON feed with dateAdded between 2026-08-06 and 2026-10-05 returns 50 or more. Fewer than 50 resolves false.",
+  "deadline": "2026-10-08",
+  "citations": [
+   21
+  ],
+  "failure_condition": "The KEV catalog holds fewer than 50 entries with a dateAdded value inside the window."
+ },
+ {
+  "statement": "The CISA KEV catalog carries at least one entry naming Gitea in its vendorProject or product field, with a dateAdded value between 2026-08-06 and 2026-12-31.",
+  "domain": "cyber",
+  "probability": 18,
+  "resolution": "A CISA KEV entry naming Gitea in vendorProject or product carries a dateAdded value inside the window. No such entry resolves false.",
+  "deadline": "2027-01-06",
+  "citations": [
+   17
+  ],
+  "failure_condition": "The KEV catalog holds no Gitea entry with a dateAdded value inside the window."
+ },
+ {
+  "statement": "The USGS earthquake catalog lists at least one event of magnitude 6.0 or greater within 300 km of the epicenter of USGS event us6000ti6x, with an origin time between 2026-08-06 and 2026-09-30.",
+  "domain": "disaster",
+  "probability": 38,
+  "resolution": "A USGS FDSN event query for magnitude 6.0 or greater, radius 300 km around the us6000ti6x epicenter, origin time inside the window, returns one or more events.",
+  "deadline": "2026-10-05",
+  "citations": [
+   30,
+   43
+  ],
+  "failure_condition": "The USGS catalog returns zero magnitude 6.0 or greater events within that radius and time window."
+ },
+ {
+  "statement": "The House Committee on Ethics publishes a statement or report on ethics.house.gov naming Representative Max Miller, dated between 2026-08-06 and 2026-11-30.",
+  "domain": "political",
+  "probability": 55,
+  "resolution": "A document published on ethics.house.gov and dated inside the window names Representative Max Miller. No such document resolves false.",
+  "deadline": "2026-12-04",
+  "citations": [
+   37
+  ],
+  "failure_condition": "The Committee on Ethics issues no public document naming Max Miller during the window."
+ }
+]

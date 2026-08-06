@@ -1,0 +1,121 @@
+[
+ {
+  "statement": "The FOMC raises the federal funds target range at its scheduled meeting of 2026-09-15 to 2026-09-16.",
+  "domain": "economics/markets",
+  "probability": 15,
+  "resolution": "TRUE if the FRED series DFEDTARU value dated 2026-09-17 exceeds its value dated 2026-09-14; FALSE otherwise.",
+  "deadline": "2026-09-21",
+  "citations": [
+   72,
+   59
+  ],
+  "failure_condition": "The target range upper limit effective 2026-09-17 is equal to or below its 2026-09-14 level."
+ },
+ {
+  "statement": "The WTI crude spot price falls below 70.00 USD on at least one trading day between 2026-08-06 and 2026-09-30.",
+  "domain": "economics/markets",
+  "probability": 45,
+  "resolution": "TRUE if any FRED DCOILWTICO daily value dated between 2026-08-06 and 2026-09-30 is below 70.00; FALSE if all published values in that range are 70.00 or higher.",
+  "deadline": "2026-10-07",
+  "citations": [
+   57,
+   93
+  ],
+  "failure_condition": "Every published WTI spot value inside the window is at or above 70.00 USD."
+ },
+ {
+  "statement": "The United States and Iran both publicly confirm a concluded agreement governing commercial transit of the Strait of Hormuz between 2026-08-06 and 2026-09-30.",
+  "domain": "military/conflict",
+  "probability": 35,
+  "resolution": "TRUE if official US and Iranian government statements confirming a concluded Hormuz transit agreement are issued in the window and reported by at least two of Reuters, AP, AFP; FALSE otherwise.",
+  "deadline": "2026-10-05",
+  "citations": [
+   93,
+   57
+  ],
+  "failure_condition": "By window close no concluded agreement has been confirmed by both governments; talks ongoing, stalled, or collapsed all grade MISS."
+ },
+ {
+  "statement": "A Russian missile or drone strike on Kyiv city kills at least 5 people in a single attack between 2026-08-06 and 2026-10-31, per Ukrainian official casualty statements.",
+  "domain": "military/conflict",
+  "probability": 60,
+  "resolution": "TRUE if Ukrainian authorities state at least 5 killed in one strike on Kyiv city within the window, reported by at least two international news outlets; FALSE otherwise.",
+  "deadline": "2026-11-04",
+  "citations": [
+   83,
+   90
+  ],
+  "failure_condition": "No single strike on Kyiv city within the window carries an official Ukrainian death toll of 5 or more."
+ },
+ {
+  "statement": "The CISA KEV catalog adds at least one entry for Gitea, n8n, or TP-Link Omada with a date-added value between 2026-08-06 and 2026-10-30.",
+  "domain": "cyber",
+  "probability": 25,
+  "resolution": "TRUE if the public CISA KEV catalog contains an entry whose vendor or product names Gitea, n8n, or TP-Link Omada with dateAdded between 2026-08-06 and 2026-10-30; FALSE otherwise.",
+  "deadline": "2026-11-03",
+  "citations": [
+   17,
+   18,
+   24
+  ],
+  "failure_condition": "The KEV catalog contains no Gitea, n8n, or TP-Link Omada entry with a dateAdded value inside the window."
+ },
+ {
+  "statement": "The CISA KEV catalog adds at least 12 new entries with date-added values between 2026-08-06 and 2026-09-30.",
+  "domain": "cyber",
+  "probability": 85,
+  "resolution": "TRUE if the public CISA KEV catalog contains 12 or more entries with dateAdded between 2026-08-06 and 2026-09-30 inclusive; FALSE otherwise.",
+  "deadline": "2026-10-05",
+  "citations": [
+   21
+  ],
+  "failure_condition": "Fewer than 12 KEV entries carry a dateAdded value inside the window."
+ },
+ {
+  "statement": "Abdul El-Sayed wins the Michigan US Senate general election held 2026-11-03.",
+  "domain": "political",
+  "probability": 55,
+  "resolution": "TRUE if AP declares El-Sayed the winner or Michigan certified results show him with the most votes for US Senate; FALSE otherwise.",
+  "deadline": "2026-12-01",
+  "citations": [
+   100,
+   110
+  ],
+  "failure_condition": "The certified or AP-called result shows another candidate winning the Michigan US Senate seat."
+ },
+ {
+  "statement": "Pete Hegseth departs the office of US Secretary of War, via announced resignation or removal, between 2026-08-06 and 2027-01-30.",
+  "domain": "political",
+  "probability": 25,
+  "resolution": "TRUE if the White House or the department officially announces the resignation, removal, or departure of Hegseth with the announcement dated in the window, reported by two major outlets; FALSE otherwise.",
+  "deadline": "2027-02-01",
+  "citations": [
+   82
+  ],
+  "failure_condition": "Hegseth remains in office through 2027-01-30 with no official departure announcement dated inside the window."
+ },
+ {
+  "statement": "German authorities publicly announce an arrest or a named suspect in the Leipzig airport explosive drone case between 2026-08-06 and 2026-11-30.",
+  "domain": "crime/security",
+  "probability": 30,
+  "resolution": "TRUE if German police or prosecutors announce an arrest or named suspect tied to the Leipzig airport drone device within the window, reported by at least two national or international outlets; FALSE otherwise.",
+  "deadline": "2026-12-03",
+  "citations": [
+   76,
+   77
+  ],
+  "failure_condition": "By window close German authorities have made no public arrest announcement and identified no suspect in the case."
+ },
+ {
+  "statement": "The USGS catalog records at least one magnitude 5.0 or greater earthquake within 100 km of the 2026-08-05 Sarangani M6.3 epicenter, with origin time between 2026-08-06 and 2026-09-04.",
+  "domain": "disaster",
+  "probability": 50,
+  "resolution": "TRUE if USGS ComCat lists at least one M5.0 or greater event within 100 km of USGS event us6000ti6x with origin time between 2026-08-06 and 2026-09-04 UTC; FALSE otherwise.",
+  "deadline": "2026-09-08",
+  "citations": [
+   30,
+   43
+  ],
+  "failure_condition": "ComCat shows no M5.0 or larger event within 100 km of the mainshock epicenter during the window."
+ }
+]
