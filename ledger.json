@@ -1,8 +1,8 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-06T03:39:32Z",
-  "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired.",
+  "as_of": "2026-08-06T04:28:04Z",
+  "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
     "description": "This ledger is published in a public git repository. Every write is a commit with an independent timestamp that the desk cannot rewrite without the rewrite being visible to anyone holding an earlier clone (RPAS 4.04); the commitment hash is additionally beaconed to a channel the desk does not control (RPAS 4.05).",
@@ -9066,6 +9066,138 @@
       "notes": "",
       "sealed_at": "2026-08-06T03:39:32.947085+00:00",
       "seal_sha256": "d893815a3095cafaad683a33ccc040c11c67b9a8075a3af4bd73fdc4acffdbae"
+    },
+    {
+      "statement": "Between 2026-08-15 and 2026-08-22, Iran and Oman will publicly confirm a maritime coordination agreement for the Strait of Hormuz via a joint statement from both foreign ministries.",
+      "domain": "military/conflict",
+      "probability": 30,
+      "resolution": "A joint statement issued by the foreign ministries of Iran and Oman confirms the establishment of a maritime coordination agreement for the Strait of Hormuz, specifying route coordinates and operational protocols.",
+      "deadline": "2026-08-24",
+      "citations": [
+        77,
+        124,
+        125
+      ],
+      "failure_condition": "No joint statement from the foreign ministries of Iran and Oman confirms a maritime coordination agreement for the Strait of Hormuz during the event window.",
+      "id": "KKR-20260806-31",
+      "date_issued": "2026-08-06",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-06_0426.md",
+      "source_packet": "kkr_packet_2026-08-06_0426.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-06T04:28:04.570520+00:00",
+      "seal_sha256": "11ade67c8196aa1d1ba50440e9abbd590287d43bfb7f423e0c233bb2b18b431c"
+    },
+    {
+      "statement": "Between 2026-08-18 and 2026-08-25, a verified cyberattack exploiting CVE-2026-63077 will be reported by at least two independent sources with differing geopolitical affiliations.",
+      "domain": "cyber",
+      "probability": 25,
+      "resolution": "At least two independent sources, one from a Western outlet and one from a non-Western outlet, report a confirmed cyberattack exploiting CVE-2026-63077 between 2026-08-18 and 2026-08-25.",
+      "deadline": "2026-08-27",
+      "citations": [
+        29,
+        36
+      ],
+      "failure_condition": "No such attack is reported by two independently biased sources during the event window.",
+      "id": "KKR-20260806-32",
+      "date_issued": "2026-08-06",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-06_0426.md",
+      "source_packet": "kkr_packet_2026-08-06_0426.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-06T04:28:04.570628+00:00",
+      "seal_sha256": "b05959f94aed340a3a2a3298c0a0798cea9083c591098393c946bd06723e324f"
+    },
+    {
+      "statement": "Between 2026-08-22 and 2026-08-29, the U.S. Federal Reserve will announce a rate hike of at least 25 basis points in a public statement.",
+      "domain": "economics/markets",
+      "probability": 35,
+      "resolution": "The Federal Reserve issues a public statement announcing a 25 basis point or greater increase in the federal funds rate between 2026-08-22 and 2026-08-29.",
+      "deadline": "2026-08-31",
+      "citations": [
+        74
+      ],
+      "failure_condition": "The Federal Reserve does not announce a rate hike of at least 25 basis points during the event window.",
+      "id": "KKR-20260806-33",
+      "date_issued": "2026-08-06",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-06_0426.md",
+      "source_packet": "kkr_packet_2026-08-06_0426.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-06T04:28:04.570645+00:00",
+      "seal_sha256": "40795bc5cfec231bc3ae23b059b93076c95f83732978d81eb95a0dbe5537a225"
+    },
+    {
+      "statement": "Between 2026-08-24 and 2026-08-31, a confirmed cyberattack using the Khunt post-exploitation toolkit will be reported by at least two independent sources with differing geopolitical affiliations.",
+      "domain": "cyber",
+      "probability": 20,
+      "resolution": "At least two independent sources, one from a Western outlet and one from a non-Western outlet, report a confirmed cyberattack using the Khunt post-exploitation toolkit between 2026-08-24 and 2026-08-31.",
+      "deadline": "2026-09-02",
+      "citations": [
+        18
+      ],
+      "failure_condition": "No such attack is reported by two independently biased sources during the event window.",
+      "id": "KKR-20260806-34",
+      "date_issued": "2026-08-06",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-06_0426.md",
+      "source_packet": "kkr_packet_2026-08-06_0426.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-06T04:28:04.570656+00:00",
+      "seal_sha256": "48efd2dba668e48a56786a4846708f01124a81c1e0370cee4fe689292f6b85b3"
+    },
+    {
+      "statement": "Between 2026-08-25 and 2026-09-01, a verified wildfire will be reported in the U.S. Southwest (Arizona, New Mexico, or Nevada) with a containment status of 'under control' or 'contained' by 2026-09-05.",
+      "domain": "disaster",
+      "probability": 40,
+      "resolution": "A wildfire in Arizona, New Mexico, or Nevada is reported by a U.S. government or international disaster alert system (e.g., GDACS) with a containment status of 'under control' or 'contained' by 2026-09-05.",
+      "deadline": "2026-09-07",
+      "citations": [
+        39,
+        40,
+        41
+      ],
+      "failure_condition": "No such wildfire is reported with a containment status of 'under control' or 'contained' by 2026-09-05.",
+      "id": "KKR-20260806-35",
+      "date_issued": "2026-08-06",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-06_0426.md",
+      "source_packet": "kkr_packet_2026-08-06_0426.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-06T04:28:04.570666+00:00",
+      "seal_sha256": "92751ddeb1810c5451ec32eedab8b0c98a97edbab347436b87a3d7dacf87b6b6"
+    },
+    {
+      "statement": "Between 2026-08-26 and 2026-09-02, a confirmed political resignation of a senior U.S. government official (e.g., cabinet member, senator, or agency head) will be reported by at least two independent news outlets with differing political leanings.",
+      "domain": "political",
+      "probability": 30,
+      "resolution": "A confirmed resignation of a senior U.S. government official (e.g., cabinet member, senator, or agency head) is reported by at least two independent news outlets with differing political affiliations between 2026-08-26 and 2026-09-02.",
+      "deadline": "2026-09-04",
+      "citations": [
+        102,
+        104
+      ],
+      "failure_condition": "No such resignation is reported by two independently biased outlets during the event window.",
+      "id": "KKR-20260806-36",
+      "date_issued": "2026-08-06",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-06_0426.md",
+      "source_packet": "kkr_packet_2026-08-06_0426.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "sealed_at": "2026-08-06T04:28:04.570675+00:00",
+      "seal_sha256": "afa0e05fccb1a1d136b5c20e8070ba97bd4658746f5bb7aea6b5df8013d141a2"
     }
   ]
 }
