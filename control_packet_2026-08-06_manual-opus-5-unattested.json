@@ -1,0 +1,157 @@
+[
+  {
+    "statement": "ICE Brent front-month crude futures settle at or below 70.00 USD per barrel on at least one settlement date between 2026-08-06 and 2026-10-30.",
+    "resolution": "Any ICE-published front-month Brent settlement price with a settlement date between 2026-08-06 and 2026-10-30 is 70.00 or lower.",
+    "failure_condition": "Every ICE front-month Brent settlement inside the window prints above 70.00 USD per barrel.",
+    "domain": "economics",
+    "deadline": "2026-11-03",
+    "probability": 31,
+    "citations": [
+      57,
+      92,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3125,
+      "n": 32,
+      "basis": "global",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-06T03:30:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260806-01"
+    }
+  },
+  {
+    "statement": "A filing entered on the US Court of International Trade docket between 2026-08-06 and 2026-12-15 states that cumulative IEEPA tariff refunds issued have reached 150 billion USD or more.",
+    "resolution": "A government filing on the CIT docket dated inside the window states cumulative IEEPA refunds of at least 150 billion USD. A lower stated figure resolves false.",
+    "failure_condition": "Cumulative IEEPA refunds as stated in CIT filings remain below 150 billion USD through 2026-12-15.",
+    "domain": "economics",
+    "deadline": "2026-12-18",
+    "probability": 31,
+    "citations": [
+      51
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3125,
+      "n": 32,
+      "basis": "global",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-06T03:30:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260806-02"
+    }
+  },
+  {
+    "statement": "UKMTO issues an incident advisory, or CENTCOM issues a statement, reporting an attack on or seizure of a commercial vessel in the Strait of Hormuz or Gulf of Oman between 2026-08-06 and 2026-11-30.",
+    "resolution": "A UKMTO advisory or CENTCOM statement dated inside the window reports an attack on or seizure of a commercial vessel in the named waters.",
+    "failure_condition": "No attack on or seizure of a commercial vessel occurs in the Strait of Hormuz or Gulf of Oman during the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-12-04",
+    "probability": 31,
+    "citations": [
+      57,
+      92,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3125,
+      "n": 32,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-06T03:30:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260806-03"
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog carries at least one entry naming Gitea in its vendorProject or product field, with a dateAdded value between 2026-08-06 and 2026-12-31.",
+    "resolution": "A CISA KEV entry naming Gitea in vendorProject or product carries a dateAdded value inside the window. No such entry resolves false.",
+    "failure_condition": "The KEV catalog holds no Gitea entry with a dateAdded value inside the window.",
+    "domain": "cyber",
+    "deadline": "2027-01-06",
+    "probability": 31,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3125,
+      "n": 32,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-06T03:30:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260806-04"
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog lists at least one event of magnitude 6.0 or greater within 300 km of the epicenter of USGS event us6000ti6x, with an origin time between 2026-08-06 and 2026-09-30.",
+    "resolution": "A USGS FDSN event query for magnitude 6.0 or greater, radius 300 km around the us6000ti6x epicenter, origin time inside the window, returns one or more events.",
+    "failure_condition": "The USGS catalog returns zero magnitude 6.0 or greater events within that radius and time window.",
+    "domain": "disaster",
+    "deadline": "2026-10-05",
+    "probability": 31,
+    "citations": [
+      30,
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3125,
+      "n": 32,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-06T03:30:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260806-05"
+    }
+  },
+  {
+    "statement": "The House Committee on Ethics publishes a statement or report on ethics.house.gov naming Representative Max Miller, dated between 2026-08-06 and 2026-11-30.",
+    "resolution": "A document published on ethics.house.gov and dated inside the window names Representative Max Miller. No such document resolves false.",
+    "failure_condition": "The Committee on Ethics issues no public document naming Max Miller during the window.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 31,
+    "citations": [
+      37
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3125,
+      "n": 32,
+      "basis": "global",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-06T03:30:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260806-06"
+    }
+  }
+]

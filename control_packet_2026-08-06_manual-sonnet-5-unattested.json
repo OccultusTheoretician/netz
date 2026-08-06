@@ -1,0 +1,54 @@
+[
+  {
+    "statement": "Between 2026-08-06 and 2026-08-20, the USGS Earthquake Catalog will record at least one earthquake of magnitude 6.0 or greater anywhere in the world.",
+    "resolution": "True if the USGS Earthquake Catalog lists any event of magnitude 6.0 or greater with origin time between 2026-08-06 and 2026-08-20, checked 2026-08-24; false otherwise.",
+    "failure_condition": "The USGS Earthquake Catalog shows no magnitude 6.0 or greater event globally with origin time in the stated window, as checked on 2026-08-24.",
+    "domain": "disaster",
+    "deadline": "2026-08-24",
+    "probability": 31,
+    "citations": [
+      30,
+      35
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3125,
+      "n": 32,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-06T03:30:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260806-07"
+    }
+  },
+  {
+    "statement": "Abdul El-Sayed will win the 2026 Michigan US Senate general election held on 2026-11-03.",
+    "resolution": "True if official Michigan certified results or an AP race call name Abdul El-Sayed the winner of the Michigan US Senate general election, checked 2026-11-10; false otherwise.",
+    "failure_condition": "El-Sayed is not certified or called as the winner of the Michigan Senate general election by 2026-11-10, whether another candidate wins or the race remains uncalled.",
+    "domain": "political",
+    "deadline": "2026-11-10",
+    "probability": 31,
+    "citations": [
+      100,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3125,
+      "n": 32,
+      "basis": "global",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-06T03:30:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260806-08"
+    }
+  }
+]
