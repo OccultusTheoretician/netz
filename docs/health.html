@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Instrument Health · NebelKr&auml;he</title>
+<link rel="canonical" href="https://retroprescientaudit.com/health.html">
+<meta name="description" content="Every served surface of the Prescient Desk, graded against the desk's own committed cadence. A LATE row is a finding, printed — the one method, pointed at the desk's own tempo.">
+<link rel="icon" type="image/svg+xml" href="crow_mark.svg">
+<link rel="alternate icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Instrument Health">
+<meta property="og:description" content="The desk's own uptime: stated cadence versus operational reality, per surface.">
+<meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="brand.css">
+<style>
+:root{--bg:#080B0F;--panel:#101318;--line:#242a31;--fg:#d9d6cf;--dim:#8b8d92;
+  --brass:#c9a227;--brass2:#dcb65e;--good:#7fb08a;--warn:#c9873f;--bad:#a8492f;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --serif:"Cormorant Garamond",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.7 "IBM Plex Sans","Segoe UI",system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:2.4rem 1.1rem 5rem}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3.1rem);
+  line-height:1.06;margin:.2rem 0 .6rem}
+h2{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim);margin:2.6rem 0 .8rem}
+.mark{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--brass);
+  text-transform:uppercase}
+.lede{font-size:1.06rem;color:#c2c6cb;max-width:62ch}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 .4rem;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em}
+.chip{border:1px solid var(--line);background:var(--panel);padding:.35rem .7rem;
+  border-radius:2px;color:var(--dim);text-transform:uppercase}
+.chip b{color:var(--fg);font-weight:600;margin-right:.35rem}
+.chip.ok b{color:var(--good)}.chip.late b{color:var(--warn)}
+.chip.stale b{color:var(--bad)}.chip.nodate b{color:var(--bad)}
+.laglin{font-family:var(--mono);font-size:.74rem;color:var(--dim);margin:.4rem 0 0}
+.laglin.behind{color:var(--warn)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);margin-top:1rem}
+table{border-collapse:collapse;width:100%;font-size:.84rem;min-width:760px}
+th{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);text-align:left;padding:.55rem .7rem;border-bottom:1px solid var(--line);
+  background:var(--panel);position:sticky;top:0}
+td{padding:.5rem .7rem;border-bottom:1px solid #1a1f25;vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.state{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;white-space:nowrap}
+.s-OK{color:var(--good)}.s-LATE{color:var(--warn)}.s-STALE{color:var(--bad);font-weight:700}
+.s-EVENT{color:var(--dim)}.s-NO-DATE{color:var(--bad)}
+td.mono,.mono{font-family:var(--mono);font-size:.74rem;color:#b9bcc1}
+td.note{color:var(--dim);font-size:.78rem;max-width:34ch}
+.caveat{margin:18px 0 0;border:1px solid var(--line);border-left:3px solid var(--warn);
+  background:var(--panel);padding:12px 14px}
+.caveat b{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--warn);display:block;margin-bottom:5px}
+.caveat p{margin:0;font-size:14px;color:#a9adb3}
+.empty{color:var(--dim);font-family:var(--mono);font-size:.78rem;padding:1rem}
+footer{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--dim)}
+footer a{color:var(--dim)}
+</style>
+</head><body>
+<style id="desknav-style">.desknav-unified{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;align-items:baseline;padding:.7rem 1.1rem;border-bottom:1px solid #26292f;background:rgba(7,9,12,.55);position:relative;z-index:20}.desknav-unified .ng-group{display:inline-flex;flex-wrap:wrap;gap:.15rem .85rem;align-items:baseline}.desknav-unified .ng-label{color:#565650;font:600 .58rem 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-right:.15rem;user-select:none}.desknav-unified a{color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}.desknav-unified a:hover{color:#c9c9c2}.desknav-unified a[aria-current="page"]{color:#dcb65e}</style><nav class="desknav-unified" data-navgen="2" aria-label="site" translate="no"><span class="ng-group"><span class="ng-label">DESK</span><a href="index.html">Desk</a><a href="report.html">Report</a><a href="spion.html">Spion</a><a aria-current="page" href="health.html">Health</a></span><span class="ng-group"><span class="ng-label">FORECASTING</span><a href="kkr.html">Forecasts</a><a href="ledger.html">Ledger</a><a href="KriegForeKaster.html">ForeKaster</a><a href="KriegForeKaster_compendium.html">Compendium</a><a href="globalkaster.html">GlobalKaster</a><a href="fogsim.html">FogSim</a><a href="okk.html">OberKommando</a></span><span class="ng-group"><span class="ng-label">FEDERATION</span><a href="kraehes_kalls.html">Kalls</a><a href="nest.html">Nest</a></span><span class="ng-group"><span class="ng-label">STANDARDS</span><a href="standards.html">Standards</a><a href="conformance.html">Conformance</a><a href="register.html">Register</a><a href="verify.html">Verify</a><a href="decc.html">DECC-26</a></span><span class="ng-group"><span class="ng-label">CABINET</span><a href="ohrwurm.html">Ohrwurm</a><a href="konsole.html">Konsole</a><a href="marks.html">Marks</a></span><span class="ng-group"><span class="ng-label">&nbsp;</span><a href="https://github.com/OccultusTheoretician/netz">GitHub</a></span></nav>
+<div class="wrap">
+<span class="mark">The Prescient Desk &middot; operational record</span>
+<h1>Instrument Health</h1>
+<p class="lede">Every served surface of this desk carries a committed cadence in a
+tracked file, and this page grades the desk against its own commitment — the
+disciplined comparison of the stated to the operational, pointed at the desk's
+own tempo. A LATE row is a finding. It is printed here rather than discovered
+three days later, because an instrument whose staleness is invisible on its own
+surface is the defect every other page on this site exists to name.</p>
+
+<div class="chips" id="chips"></div>
+<p class="laglin" id="lag"></p>
+<p class="mono" id="asof" translate="no"></p>
+<p class="mono">With scripts off this page is an empty frame by design; the record itself is <a href="health.json" translate="no">health.json</a>.</p>
+
+<h2>Surfaces</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>State</th><th>Surface</th><th>Lane</th><th>Cadence</th>
+<th>Last moved (UTC)</th><th>Age</th><th>Dated by</th><th>Commitment note</th></tr></thead>
+<tbody id="rows"></tbody>
+</table></div>
+
+<h2>Reading the states</h2>
+<div class="tablewrap"><table><tbody id="states"></tbody></table></div>
+
+<div class="caveat"><b>Limit, not a disclaimer</b>
+<p>This page reads <em>when</em> each surface last moved, not whether what it
+says is right — content defects belong to the conformance and citation audits.
+Dates come from the surface's own internal stamp where one exists, from the
+repository's commit history where it does not, and from file time only as a
+last resort, printed as untrusted. The cadences are the operator's commitments
+and can be revised; a revision is a public edit to
+<span translate="no">health_expect.json</span> and rides the commit history
+like everything else here. The packet-lag check runs only on the operator's
+machine, because the packets themselves are withheld from this repository — a
+limitation this desk states rather than papers over.</p></div>
+
+<footer>NOTHING CLASSIFIED OR PRIVILEGED — the board loads from
+<a href="health.json" translate="no">health.json</a>; the commitments live in
+<span translate="no">health_expect.json</span><br>&copy; 2026 NebelKr&auml;he &middot;
+<a href="https://github.com/OccultusTheoretician/netz/blob/main/LICENSE">LICENSE</a> &middot;
+<a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,
+  function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function age(h){if(h==null)return"—";return h<48?h.toFixed(1)+"h":(h/24).toFixed(1)+"d";}
+var ORDER={"STALE":0,"NO-DATE":1,"LATE":2,"OK":3,"EVENT":4};
+fetch("health.json",{cache:"no-store"}).then(function(r){
+  if(!r.ok)throw new Error("HTTP "+r.status);return r.json();
+}).then(function(d){
+  document.getElementById("asof").textContent=
+    "as of "+d.as_of+" · schema "+d.schema;
+  var s=d.summary||{},chips=[
+    ["ok","OK",s.OK],["late","LATE",s.LATE],["stale","STALE",s.STALE],
+    ["","EVENT",s.EVENT],["nodate","NO-DATE",s["NO-DATE"]]];
+  document.getElementById("chips").innerHTML=chips.map(function(c){
+    return '<span class="chip '+c[0]+'"><b>'+(c[2]||0)+"</b>"+c[1]+"</span>";
+  }).join("");
+  var lag=d.packet_lag||{},el=document.getElementById("lag");
+  if(lag.checkable===false){el.textContent="packet-register lag: "+lag.note;}
+  else{el.textContent="packet register "+(lag.behind?"BEHIND":"current")+
+    " — "+lag.note+(lag.lag_hours!=null?" ("+lag.lag_hours+"h)":"");
+    if(lag.behind)el.className="laglin behind";}
+  var rows=(d.surfaces||[]).slice().sort(function(a,b){
+    return(ORDER[a.state]-ORDER[b.state])||a.name.localeCompare(b.name);});
+  document.getElementById("rows").innerHTML=rows.map(function(r){
+    return "<tr><td class='state s-"+esc(r.state)+"'>"+esc(r.state)+"</td>"+
+      "<td>"+esc(r.name)+"</td><td class='mono'>"+esc(r.lane)+"</td>"+
+      "<td class='mono'>"+(r.cadence_hours?r.cadence_hours+"h":"event")+"</td>"+
+      "<td class='mono' translate='no'>"+esc(r.last_moved_utc||"—")+"</td>"+
+      "<td class='mono'>"+age(r.age_hours)+"</td>"+
+      "<td class='mono'>"+esc(r.provenance||"missing")+"</td>"+
+      "<td class='note'>"+esc(r.note)+"</td></tr>";
+  }).join("");
+  var st=d.states||{};
+  document.getElementById("states").innerHTML=Object.keys(st).map(function(k){
+    return "<tr><td class='state s-"+esc(k)+"'>"+esc(k)+"</td><td class='note'>"+
+      esc(st[k])+"</td></tr>";}).join("");
+}).catch(function(e){
+  document.getElementById("rows").innerHTML=
+    "<tr><td colspan='8' class='empty'>health.json failed to load ("+esc(e.message)+
+    "). The record is the file itself: <a href='health.json'>health.json</a>.</td></tr>";
+});
+})();
+</script>
+</body></html>
