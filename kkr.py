@@ -37,6 +37,57 @@ from netz import render_html, llm_probe  # same directory
 HERE = Path(__file__).resolve().parent
 LEDGER = HERE / "ledger.json"
 OUT = HERE / "forecasts"
+
+# KK23: the already-decided gate. A forecast must be open at seal; if the
+# elicitation packet the arm just read already decides the claim (KEV
+# date-added outside the claimed window, a quake already in the feed, a
+# casualty toll already in a cited item), the row is a finding, not a
+# forecast. Instances on the book: KKR-20260805-01/-02 (sealed, stand and
+# score, per the 2026-08-05 ruling); a sonnet-5 row caught pre-seal the same
+# day. Module lives beside this file like resolvers.py; fail-open if absent,
+# and the absence prints.
+try:
+    import foreclose_check as _fc
+except Exception:
+    _fc = None
+
+
+def _foreclosure_reasons(projs, packet_name):
+    """Return {id(p): reason} for rows the packet already decides. Fail-open
+    everywhere: no module, no packet on disk, or a parse error inside the
+    check all yield no rejection -- a gate must not reject on what it cannot
+    see. The absence of the module is printed once per run."""
+    out = {}
+    if _fc is None:
+        print("KKR \u00b7 NOTE \u00b7 foreclose_check.py not found beside kkr.py "
+              "-- already-decided gate SKIPPED (fail-open, printed)",
+              file=sys.stderr)
+        return out
+    if not packet_name:
+        return out
+    ppath = OUT / packet_name
+    if not ppath.exists():
+        print(f"KKR \u00b7 NOTE \u00b7 packet {packet_name} not on disk -- "
+              f"already-decided gate SKIPPED for this run (fail-open, printed)",
+              file=sys.stderr)
+        return out
+    try:
+        ptext = ppath.read_text(encoding="utf-8", errors="replace")
+        kev = _fc.parse_kev(ptext)
+        quakes = _fc.parse_quakes(ptext)
+        items = _fc.parse_packet_items(ptext)
+        for p in projs:
+            try:
+                v, reason = _fc.check_row(p, ptext, kev, quakes, items)
+            except Exception:
+                continue
+            if v.startswith("REJECT"):
+                out[id(p)] = reason
+    except Exception as ex:
+        print(f"KKR \u00b7 NOTE \u00b7 already-decided gate errored "
+              f"({type(ex).__name__}) -- SKIPPED (fail-open, printed)",
+              file=sys.stderr)
+    return out
 REPORTS = HERE / "reports"
 
 PROJECTION_PROMPT = """You are a forecasting analyst. Before writing ANY projection, run this discipline silently and do not output the working, only the final JSON:
@@ -885,7 +936,22 @@ RPAS_DISCLOSURE = (
     "is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are "
     "refused a seal while the failure condition is absent (4.03). Nothing "
     "sealed or published is altered by this finding; it is printed, not "
-    "repaired.")
+    "repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count "
+    "above was as of 2026-07-29; as of this amendment 23 of 27 resolved "
+    "entries lack a pre-resolution keyed/keyless determination -- a permanent "
+    "4.03 failure printed per row -- and 4 comply (determined 2026-08-01, "
+    "resolved 2026-08-03/04). 59 open entries carried undated determinations "
+    "until re-affirmed and dated 2026-08-05; the undated originals stand in "
+    "commit history. 26 determinations were corrected keyless-to-keyed on "
+    "2026-08-04 on mechanical cite_integrity grounds, authored by an "
+    "Anthropic model classifying Anthropic forecaster arms -- a "
+    "non-independent authority, disclosed as such pending blind "
+    "adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, "
+    "resolution-basis fidelity), voided before either claim's window opened, "
+    "itemised with reasons in the ledger. Two entries sealed 2026-08-05 were "
+    "already decided by the elicitation packet the arm read and stand to "
+    "score as printed findings, not forecasts; the already-decided gate "
+    "(foreclose_check) rejects the class at generation from 2026-08-06.")
 
 RPAS_ANCHOR = {
     "mechanism": "public version-control history",
@@ -1350,8 +1416,11 @@ def cmd_generate(args):
         (OUT / "kkr_raw_last.txt").write_text(raw, encoding="utf-8")
         return
     accepted_raw, rejected = [], []
+    _fc_rej = _foreclosure_reasons(projs, globals().get("_LAST_PACKET", ""))
     for p in projs:
         reasons = validate_projection(p)
+        if id(p) in _fc_rej:
+            reasons = list(reasons) + [_fc_rej[id(p)]]
         (rejected.append((p, reasons)) if reasons else accepted_raw.append(p))
     added = append_projections(accepted_raw, tag, rep.name) if accepted_raw else []
     print(f"KKR · gate: {len(added)} accepted, {len(rejected)} rejected", file=sys.stderr)
@@ -1398,6 +1467,7 @@ def cmd_ingest(args):
                   file=sys.stderr)
     src_name = rep.name if rep else "manual"
     accepted_raw, rejected = [], []
+    _fc_rej = _foreclosure_reasons(projs, pk)
     for p in projs:
         if rep:
             p["source_report"] = src_name
@@ -1405,6 +1475,8 @@ def cmd_ingest(args):
         _cs = _citation_support(p)
         if _cs:
             reasons = list(reasons) + [_cs]
+        if id(p) in _fc_rej:
+            reasons = list(reasons) + [_fc_rej[id(p)]]
         (rejected.append((p, reasons)) if reasons else accepted_raw.append(p))
     # DEFECT D — the ingest path hardcoded one arm tag. Any second manual lane
     # (operator, a different frontier model, the ORBAT bridge) would have been
