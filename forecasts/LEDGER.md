@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 042115Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 060330Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 322 issued across 14 forecaster arms · 284 open (0 past deadline, unresolved)
+Window: all-time · 324 issued across 14 forecaster arms · 279 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -18,8 +18,8 @@ Window: all-time · 322 issued across 14 forecaster arms · 284 open (0 past dea
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-verbot] | 20 | 20 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[post-window] | 15 | 15 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[pre-verbot] | 60 | 26 | 26 | 7 | 19 | 0.228 | 26.9% | 0.197 | -0.160 |
+| lmstudio/auto[post-window] | 17 | 15 | 0 | — | — | not computed | — | — | — |
+| lmstudio/auto[pre-verbot] | 60 | 21 | 31 | 9 | 22 | 0.222 | 29.0% | 0.206 | -0.075 |
 | manual/fable | 45 | 44 | 1 | 1 | 0 | 0.360 | 100.0% | 0.000 | — |
 | manual/fable-5 | 20 | 20 | 0 | — | — | not computed | — | — | — |
 | manual/fable-5/unattested | 5 | 5 | 0 | — | — | not computed | — | — | — |
@@ -32,15 +32,15 @@ Window: all-time · 322 issued across 14 forecaster arms · 284 open (0 past dea
 
 > **Disclosure — what the elicited arms are.** Arms tagged `manual/*` are frontier language models elicited by the operator against the same packet the machine arm receives. They are **not informationally independent of this desk**: the model is given the desk's own corpus and standing instructions as context. Their independence is procedural — a separate instrument answering the same questions — not informational. Rows are segregated by model, and no pooled score is published, because a Brier belongs to one forecaster.
 
-*Under 30 resolved a Brier score is noise, not a record: `lmstudio/auto[pre-verbot]`, `manual/fable`.*
+*Under 30 resolved a Brier score is noise, not a record: `manual/fable`.*
 
-**CALIBRATION — lmstudio/auto[pre-verbot]** (26 resolved)
+**CALIBRATION — lmstudio/auto[pre-verbot]** (31 resolved)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 0-20% | 1 | 0% |
-| 20-40% | 15 | 27% |
-| 40-60% | 6 | 33% |
+| 20-40% | 18 | 22% |
+| 40-60% | 8 | 50% |
 | 60-80% | 4 | 25% |
 
 **CALIBRATION — manual/fable** (1 resolved)
@@ -53,11 +53,6 @@ Window: all-time · 322 issued across 14 forecaster arms · 284 open (0 past dea
 
 | id | arm | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|---|
-| KKR-20260721-05 | `lmstudio/auto` | 2026-07-21 | 2026-08-04 | 30% | economic | Oil prices will exceed $92 per barrel on the NYMEX market between 2026-08-01 and 2026-08-04. |
-| KKR-20260720-10 | `lmstudio/auto` | 2026-07-20 | 2026-08-05 | 40% | economics/markets | Global oil prices will exceed $85 per barrel for at least three consecutive trading days between 2026-07-28 and 2026-08-05. |
-| KKR-20260721-04 | `lmstudio/auto` | 2026-07-21 | 2026-08-05 | 40% | cyber | A confirmed exploit of CVE-2026-60137 in WordPress Core will be reported in a public security advisory by 2026-08-05. |
-| KKR-20260723-03 | `lmstudio/auto` | 2026-07-23 | 2026-08-05 | 25% | economics | On or before 2026-08-05, the European Central Bank will announce a rate hike in response to energy price spikes driven by Middle East conflict. |
-| KKR-20260726-11 | `lmstudio/auto` | 2026-07-26 | 2026-08-05 | 25% | military_conflict | Ukraine conducts a second strike on Iranian vessels in the Caspian Sea between 2026-08-02 and 2026-08-05, resulting in confirmed damage to at least one vessel. |
 | KKR-20260726-19 | `lmstudio/auto` | 2026-07-26 | 2026-08-06 | 45% | political | A new political party led by Senegal's Faye formally registers with the country's electoral commission between 2026-08-03 and 2026-08-06. |
 | KKR-20260730-26 | `manual/sonnet-5` | 2026-07-30 | 2026-08-06 | 58% | economics/markets | Meta Platforms stock will close lower than its 2026-07-30 closing price at least once more between 2026-07-31 and 2026-08-06. |
 | KKR-20260724-09 | `manual/fable` | 2026-07-24 | 2026-08-07 | 28% | disaster | The government of France declares a national state of emergency or equivalent nationwide wildfire emergency between 2026-07-25 and 2026-08-07. |
@@ -101,6 +96,8 @@ Window: all-time · 322 issued across 14 forecaster arms · 284 open (0 past dea
 | KKR-20260728-01 | `manual/opus-5` | 2026-07-28 | 2026-08-14 | 25% | disaster/infrastructure | The official death toll from the 2026-07-28 Kyushu earthquake exceeds 50 as reported on 2026-08-14. |
 | KKR-20260730-24 | `manual/sonnet-5` | 2026-07-30 | 2026-08-14 | 35% | disaster | The confirmed death toll from the magnitude 6.8 Uto, Japan earthquake will exceed 40 between 2026-07-30 and 2026-08-14. |
 | KKR-20260731-12 | `manual/sonnet-5` | 2026-07-31 | 2026-08-14 | 62% | military/conflict | Between 2026-07-31 and 2026-08-14, Iran or Iran-aligned forces will conduct at least one additional strike on a vessel or a US-linked asset in the Gulf states or the Strait of Hormuz. |
+| KKR-20260805-01 | `lmstudio/auto` | 2026-08-05 | 2026-08-14 | 85% | cyber | The CISA KEV catalog includes CVE-2026-9198 (IBM Langflow Code Injection) as actively exploited between 2026-08-05 and 2026-08-12. |
+| KKR-20260805-02 | `lmstudio/auto` | 2026-08-05 | 2026-08-14 | 30% | disaster | A magnitude 6.0 or greater earthquake with a depth of less than 100km occurs in the Philippines between 2026-08-05 and 2026-08-12. |
 | KKR-20260720-15 | `lmstudio/auto` | 2026-07-20 | 2026-08-15 | 45% | disaster | The Deloitte-run Medicaid system failure will result in a formal government audit or public report by 2026-08-15, citing systemic IT vulnerabilities. |
 | KKR-20260721-02 | `lmstudio/auto` | 2026-07-21 | 2026-08-15 | 25% | economic | Nvidia will announce the disbursement of its $2 billion investment in Nebius by 2026-08-15. |
 | KKR-20260725-09 | `manual/fable` | 2026-07-25 | 2026-08-15 | 35% | political | Iranian state broadcaster IRIB airs the full presidential speech it was reported to have censored, with resolution of the dispute confirmed, between 2026-07-27 and 2026-08-15. |
@@ -108,7 +105,6 @@ Window: all-time · 322 issued across 14 forecaster arms · 284 open (0 past dea
 | KKR-20260802-01 | `lmstudio/auto` | 2026-08-02 | 2026-08-15 | 30% | military/conflict | On 2026-08-15, a drone strike targeting a military installation in Kharkiv, Ukraine, will be confirmed by at least two independent sources from hostile sides (RU, UA) with no casualties reported. |
 | KKR-20260726-18 | `lmstudio/auto` | 2026-07-26 | 2026-08-18 | 30% | political | The UK Prime Minister Andy Burnham publicly criticizes Donald Trump's foreign policy in a televised address between 2026-08-15 and 2026-08-18. |
 | KKR-20260731-19 | `manual/sonnet-5` | 2026-07-31 | 2026-08-18 | 30% | military/conflict | Between 2026-07-31 and 2026-08-18, Houthi forces and Saudi Arabia will exchange at least one additional publicly reported military strike, beyond the current flare-up in Yemen. |
-| KKR-20260804-49 | `lmstudio/auto` | 2026-08-04 | 2026-08-18 | 25% | cyber | Between 2026-08-06 and 2026-08-13, a cyberattack exploiting CVE-2026-18577 in N-able N-central systems results in unauthorized access to at least one critical infrastructure network. |
 | KKR-20260731-14 | `manual/sonnet-5` | 2026-07-31 | 2026-08-19 | 55% | political | Between 2026-07-31 and 2026-08-19, the confirmed death toll among migrants crossing the Spain-Morocco border at Ceuta during this surge will exceed 60. |
 | KKR-20260720-20 | `lmstudio/auto` | 2026-07-20 | 2026-08-20 | 40% | cyber | A major cyberattack exploiting the ServiceNow code execution flaw (CVE-2026-6875) will result in a data breach affecting at least 100,000 users by 2026-08-20. |
 | KKR-20260721-06 | `lmstudio/auto` | 2026-07-21 | 2026-08-20 | 25% | political | The U.S. Treasury Department will issue a new sanction against Meliá Hotels International by 2026-08-20. |
@@ -128,7 +124,6 @@ Window: all-time · 322 issued across 14 forecaster arms · 284 open (0 past dea
 | KKR-20260804-32 | `manual/sonnet-5/unattested` | 2026-08-04 | 2026-08-24 | 28% | disaster | The wildfire(s) reported destroying homes and forcing evacuations near Spokane, Washington on 2026-08-03 will reach full containment, as reported by state or federal fire authorities, between 2026-08-04 and 2026-08-21. |
 | KKR-20260804-47 | `control/baserate` | 2026-08-04 | 2026-08-24 | 25% | political | The US Senate will hold a floor vote resulting in confirmation or rejection of the pending nomination of Todd Blanche, between 2026-08-04 and 2026-08-21. |
 | KKR-20260804-48 | `control/baserate` | 2026-08-04 | 2026-08-24 | 25% | disaster | The wildfire(s) reported destroying homes and forcing evacuations near Spokane, Washington on 2026-08-03 will reach full containment, as reported by state or federal fire authorities, between 2026-08-04 and 2026-08-21. |
-| KKR-20260804-50 | `lmstudio/auto` | 2026-08-04 | 2026-08-25 | 35% | disaster | Between 2026-08-10 and 2026-08-17, a wildfire in the Russian Federation, as reported by GDACS Alerts, burns more than 10,000 hectares. |
 | KKR-20260804-56 | `manual/opus-5/unattested` | 2026-08-04 | 2026-08-25 | 52% | military_conflict | Between 2026-08-04 and 2026-08-21 the United States and Iran both publicly announce a concluded agreement reopening the Strait of Hormuz to commercial transit. |
 | KKR-20260727-16 | `manual/fable` | 2026-07-27 | 2026-08-26 | 45% | military/conflict | The United States will publicly confirm a resumption of military strikes on targets inside Iranian territory, reported by at least two of Reuters, the Associated Press and the BBC, between 2026-07-28 and 2026-08-26. |
 | KKR-20260804-51 | `lmstudio/auto` | 2026-08-04 | 2026-08-26 | 40% | political | Between 2026-08-11 and 2026-08-18, a new political scandal involving a U.S. federal official is reported by at least two independent outlets, including Al Jazeera and BBC World. |
@@ -340,6 +335,11 @@ Window: all-time · 322 issued across 14 forecaster arms · 284 open (0 past dea
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
+- **✓ HIT** KKR-20260720-10 [`lmstudio/auto`] (40%, due 2026-08-05, resolved 2026-08-06): Global oil prices will exceed $85 per barrel for at least three consecutive trading days between 2026-07-28 and 2026-08-05. — *HIT — Brent closed above $85 on 2026-07-28 through 07-31 (>=4 consecutive trading days in window); Fortune 07-31 print $92.27, Oilprice 8%-weekly-loss-to-~$92, TradingEconomics series concur.*
+- **✓ HIT** KKR-20260721-04 [`lmstudio/auto`] (40%, due 2026-08-05, resolved 2026-08-06): A confirmed exploit of CVE-2026-60137 in WordPress Core will be reported in a public security advisory by 2026-08-05. — *HIT — CISA KEV added CVE-2026-60137 on 2026-07-21 confirming active exploitation; Rapid7, VulnCheck, Tenable, Akamai published corroborating advisories before deadline.*
+- **✗ MISS** KKR-20260721-05 [`lmstudio/auto`] (30%, due 2026-08-04, resolved 2026-08-06): Oil prices will exceed $92 per barrel on the NYMEX market between 2026-08-01 and 2026-08-04. — *MISS — window's only trading days 2026-08-03/04 closed ~$83.5 and ~$79.4–81.8 (TradingEconomics, Forbes); no close above $92 recorded by any source*
+- **✗ MISS** KKR-20260723-03 [`lmstudio/auto`] (25%, due 2026-08-05, resolved 2026-08-06): On or before 2026-08-05, the European Central Bank will announce a rate hike in response to energy price spikes driven by Middle East conflict.
+- **✗ MISS** KKR-20260726-11 [`lmstudio/auto`] (25%, due 2026-08-05, resolved 2026-08-06): Ukraine conducts a second strike on Iranian vessels in the Caspian Sea between 2026-08-02 and 2026-08-05, resulting in confirmed damage to at least one vessel.
 - **✗ MISS** KKR-20260721-07 [`lmstudio/auto`] (35%, due 2026-08-03, resolved 2026-08-04): A confirmed cyberattack exploiting the ServiceNow AI Platform flaw (CVE-2026-6) will result in data breach at a U.S. federal agency between 2026-07-28 and 2026-08-03.
 - **✓ HIT** KKR-20260723-04 [`lmstudio/auto`] (35%, due 2026-08-03, resolved 2026-08-04): Between 2026-07-30 and 2026-08-03, a confirmed closure or major disruption of commercial shipping through the Strait of Hormuz will be reported by Al Jazeera or BBC World.
 - **✓ HIT** KKR-20260724-07 [`manual/fable`] (40%, due 2026-08-03, resolved 2026-08-04): A United States government official publicly confirms or denies the reported rejected Iran ceasefire proposal between 2026-07-25 and 2026-08-03. — *HIT on the generous reading of "confirms or denies," recorded as a judgment call. Carrying statement: President Trump, on record to reporters aboard Air Force One, 2026-07-27, reported by CNN — the US halted strikes on Iran at the regime's request, "They asked us very nicely, 'Please stop, let's meet,'" with strikes to resume if the two sides failed to reach a new ceasefire deal. A named US official publicly characterising the ceasefire posture on the record — that Iran sought a halt and that no ceasefire had been agreed — is read here as confirming the substance of the reported rejection. Secondary in-window support: White House Communications Director Steven Cheung, named, in a statement dated 2026-07-25 (CNN), urging Iran toward a negotiated deal. Contrary reading printed: no named US official addressed the al-Zaidi proposal specifically, and the only public denial of the New York Times account of 2026-07-24 came from the Iraqi government, not the United States; on a strict reading of "the reported ceasefire proposal" this row is a MISS. Trump's 2026-07-22 "not ready to make a deal" remark falls outside the window and was not relied on. Keyed by rule.*
@@ -372,7 +372,7 @@ Window: all-time · 322 issued across 14 forecaster arms · 284 open (0 past dea
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*11 of 322 issued (3.4%) have been voided.*
+*13 of 324 issued (4.0%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
@@ -396,6 +396,10 @@ A sealed projection is never edited. Where one cannot be adjudicated as written,
     - *Reason:* Originating from headless browser traffic
 - **KKR-20260724-01** [`lmstudio/auto`] (30%, due 2026-07-27, voided 2026-07-27) — statement as sealed: “Over 80,000 people will have been evacuated from the Cap Ferret peninsula and surrounding areas near Madrid due to wildfires between 2026-07-24 and 2026-07-27.”
     - *Reason:* Statement is geographically incoherent: names the Cap Ferret peninsula (Gironde, France) as being near Madrid (Spain), roughly 700 km apart. No blind adjudicator can determine which evacuation zone is meant.
+- **KKR-20260804-49** [`lmstudio/auto`] (25%, due 2026-08-18, voided 2026-08-05) — statement as sealed: “Between 2026-08-06 and 2026-08-13, a cyberattack exploiting CVE-2026-18577 in N-able N-central systems results in unauthorized access to at least one critical infrastructure network.”
+    - *Reason:* VOID under RPAS 4.06 (issued 2026-08-05): resolution basis tests a correlated precondition (KEV date-added for CVE-2026-18577) in place of the asserted consequence (unauthorized access). Voided before the claim's stated window opened 2026-08-06; outcome-blind by construction.
+- **KKR-20260804-50** [`lmstudio/auto`] (35%, due 2026-08-25, voided 2026-08-05) — statement as sealed: “Between 2026-08-10 and 2026-08-17, a wildfire in the Russian Federation, as reported by GDACS Alerts, burns more than 10,000 hectares.”
+    - *Reason:* VOID under RPAS 4.06 (issued 2026-08-05): resolution basis narrows the statement with a qualifier it never makes (green alert level; statement true at any level exceeding 10,000 ha). Voided before the claim's stated window opened 2026-08-10; outcome-blind by construction. See also the gdacs resolver alert-level guard of 2026-08-05.
 
 ---
 **NOTHING CLASSIFIED OR PRIVILEGED** · *the ledger scores the system, not the operator; consistency is not correctness — resolution is.*

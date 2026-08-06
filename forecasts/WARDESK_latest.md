@@ -2,9 +2,9 @@
 
 *Method: a claim is single-source until an independently-biased channel corroborates it. Grade A = three or more hostile SIDES agree on a specific sub-zone anchor. Grade B = two sides. Grade C = repeated inside one side, which is echo, not corroboration. Grade F = single source, counted and withheld. Sides are counted, not outlet labels: three Kremlin-aligned channels are one voice, not three.*
 
-> **STALE PULL — 1 day old.** This section is rendered 2026-08-04 from `tg_events_2026-08-03_2349.json`, not from a pull taken today. The grades below describe that older window. Treat the render stamp as a render time, never as an observation time.
+> **STALE PULL — 2 days old.** This section is rendered 2026-08-05 from `tg_events_2026-08-03_2349.json`, not from a pull taken today. The grades below describe that older window. Treat the render stamp as a render time, never as an observation time.
 
-Pull: tg_events_2026-08-03_2349.json · 86 clustered events (45 kinetic, 41 statement) · kinetic: **1A** 14B 10C 20 withheld · statements: **0A** 17B · rendered 041500Z AUG 26
+Pull: tg_events_2026-08-03_2349.json · 86 clustered events (45 kinetic, 41 statement) · kinetic: **1A** 14B 10C 20 withheld · statements: **0A** 17B · rendered 051500Z AUG 26
 
 **⬛ GRADE A — CONFIRMED**
 
