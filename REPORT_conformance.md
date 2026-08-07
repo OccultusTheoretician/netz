@@ -1,13 +1,13 @@
 # RPAS-26 Conformance Report — ledger.json
-*Generated 2026-08-05. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
+*Generated 2026-08-07. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
 
-- entries: **360** · resolved: **32** · keyless: **87** · keyed: **182**
+- entries: **364** · resolved: **32** · keyless: **87** · keyed: **182**
 - 5.02 fifty-entry gate: **MET**
 - thirty-resolved noise floor: **cleared**
-- 1.04 keyed/keyless missing: **91/360**
-- 4.03 failure condition missing: **25/360**
+- 1.04 keyed/keyless missing: **95/364**
+- 4.03 failure condition missing: **25/364**
 
-- findings: **116 FAIL**, **251 WARN**
+- findings: **120 FAIL**, **251 WARN**
 
 ## Findings
 
@@ -380,3 +380,7 @@
 | KKR-20260806-35 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260806-35 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260806-36 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-01 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-02 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-03 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-04 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |

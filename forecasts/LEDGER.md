@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 060428Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 072056Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 360 issued across 14 forecaster arms · 315 open (0 past deadline, unresolved)
+Window: all-time · 364 issued across 14 forecaster arms · 317 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -18,29 +18,29 @@ Window: all-time · 360 issued across 14 forecaster arms · 315 open (0 past dea
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-verbot] | 20 | 20 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[post-window] | 23 | 21 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[pre-verbot] | 60 | 21 | 31 | 9 | 22 | 0.222 | 29.0% | 0.206 | -0.075 |
+| lmstudio/auto[post-window] | 27 | 25 | 0 | — | — | not computed | — | — | — |
+| lmstudio/auto[pre-verbot] | 60 | 20 | 32 | 9 | 23 | 0.221 | 28.1% | 0.202 | -0.093 |
 | manual/fable | 45 | 44 | 1 | 1 | 0 | 0.360 | 100.0% | 0.000 | — |
 | manual/fable-5 | 20 | 20 | 0 | — | — | not computed | — | — | — |
 | manual/fable-5/unattested | 12 | 12 | 0 | — | — | not computed | — | — | — |
 | manual/opus-5 | 50 | 50 | 0 | — | — | not computed | — | — | — |
 | manual/opus-5/unattested | 31 | 31 | 0 | — | — | not computed | — | — | — |
-| manual/sonnet-5 | 18 | 18 | 0 | — | — | not computed | — | — | — |
+| manual/sonnet-5 | 18 | 17 | 1 | 0 | 1 | 0.336 | 0.0% | 0.000 | — |
 | manual/sonnet-5/unattested | 24 | 24 | 0 | — | — | not computed | — | — | — |
 | operator/human | 6 | 3 | 0 | — | — | not computed | — | — | — |
 
 
 > **Disclosure — what the elicited arms are.** Arms tagged `manual/*` are frontier language models elicited by the operator against the same packet the machine arm receives. They are **not informationally independent of this desk**: the model is given the desk's own corpus and standing instructions as context. Their independence is procedural — a separate instrument answering the same questions — not informational. Rows are segregated by model, and no pooled score is published, because a Brier belongs to one forecaster.
 
-*Under 30 resolved a Brier score is noise, not a record: `manual/fable`.*
+*Under 30 resolved a Brier score is noise, not a record: `manual/fable`, `manual/sonnet-5`.*
 
-**CALIBRATION — lmstudio/auto[pre-verbot]** (31 resolved)
+**CALIBRATION — lmstudio/auto[pre-verbot]** (32 resolved)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 0-20% | 1 | 0% |
 | 20-40% | 18 | 22% |
-| 40-60% | 8 | 50% |
+| 40-60% | 9 | 44% |
 | 60-80% | 4 | 25% |
 
 **CALIBRATION — manual/fable** (1 resolved)
@@ -49,12 +49,16 @@ Window: all-time · 360 issued across 14 forecaster arms · 315 open (0 past dea
 |---|---|---|
 | 40-60% | 1 | 100% |
 
+**CALIBRATION — manual/sonnet-5** (1 resolved)
+
+| stated probability | n resolved | realized frequency |
+|---|---|---|
+| 40-60% | 1 | 0% |
+
 ## OPEN PROJECTIONS
 
 | id | arm | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|---|
-| KKR-20260726-19 | `lmstudio/auto` | 2026-07-26 | 2026-08-06 | 45% | political | A new political party led by Senegal's Faye formally registers with the country's electoral commission between 2026-08-03 and 2026-08-06. |
-| KKR-20260730-26 | `manual/sonnet-5` | 2026-07-30 | 2026-08-06 | 58% | economics/markets | Meta Platforms stock will close lower than its 2026-07-30 closing price at least once more between 2026-07-31 and 2026-08-06. |
 | KKR-20260724-09 | `manual/fable` | 2026-07-24 | 2026-08-07 | 28% | disaster | The government of France declares a national state of emergency or equivalent nationwide wildfire emergency between 2026-07-25 and 2026-08-07. |
 | KKR-20260725-07 | `manual/fable` | 2026-07-25 | 2026-08-07 | 60% | political | The UK Ministry of Defence publicly confirms deployment of military assets to assist wildfire suppression in Scotland between 2026-07-27 and 2026-08-07. |
 | KKR-20260731-15 | `manual/sonnet-5` | 2026-07-31 | 2026-08-07 | 56% | economics/markets | Apple stock will record at least one additional daily close lower than its 2026-07-31 close on any trading day between 2026-08-03 and 2026-08-07. |
@@ -116,6 +120,10 @@ Window: all-time · 360 issued across 14 forecaster arms · 315 open (0 past dea
 | KKR-20260731-13 | `manual/sonnet-5` | 2026-07-31 | 2026-08-21 | 45% | cyber | Between 2026-07-31 and 2026-08-21, Anthropic will publish a public postmortem or security advisory specifically addressing the reported Claude-related breach of three organizations and the PyPI malware upload. |
 | KKR-20260804-30 | `manual/sonnet-5/unattested` | 2026-08-04 | 2026-08-21 | 42% | cyber | The CISA Known Exploited Vulnerabilities catalog will add an entry for the N-able N-central vulnerability described in the 2026-08-03 report, with the addition dated between 2026-08-04 and 2026-08-18. |
 | KKR-20260804-46 | `control/baserate` | 2026-08-04 | 2026-08-21 | 25% | cyber | The CISA Known Exploited Vulnerabilities catalog will add an entry for the N-able N-central vulnerability described in the 2026-08-03 report, with the addition dated between 2026-08-04 and 2026-08-18. |
+| KKR-20260807-01 | `lmstudio/auto` | 2026-08-07 | 2026-08-21 | 32% | military/conflict | A drone strike in Zaporizhzhia, Ukraine, results in at least one casualty between 2026-08-10 and 2026-08-17. |
+| KKR-20260807-02 | `lmstudio/auto` | 2026-08-07 | 2026-08-21 | 25% | military/conflict | A ceasefire agreement between Israel and Hamas is confirmed by both sides via a joint statement between 2026-08-10 and 2026-08-17. |
+| KKR-20260807-03 | `lmstudio/auto` | 2026-08-07 | 2026-08-21 | 30% | disaster | A new tropical cyclone named CHAN-HOM-26 causes at least one fatality in a country affected by the storm between 2026-08-10 and 2026-08-17. |
+| KKR-20260807-04 | `lmstudio/auto` | 2026-08-07 | 2026-08-21 | 22% | political | A new political scandal involving Todd Blanche, U.S. Attorney General nominee, is confirmed by two independent outlets between 2026-08-10 and 2026-08-17. |
 | KKR-20260726-15 | `lmstudio/auto` | 2026-07-26 | 2026-08-23 | 40% | military_conflict | Iran announces a new military exercise in the Caspian Sea involving missile launches between 2026-08-20 and 2026-08-23, confirmed by multiple international news sources. |
 | KKR-20260801-01 | `lmstudio/auto` | 2026-08-01 | 2026-08-23 | 25% | cyber | Between 2026-08-16 and 2026-08-23, a cyberattack exploiting the Adobe Campaign Classic CVSS 10.0 vulnerability will result in a data breach affecting over 1 million users. |
 | KKR-20260725-04 | `manual/fable` | 2026-07-25 | 2026-08-24 | 55% | military_conflict | At least two independent wire services report a new US or Israeli military strike on Iranian territory or Iranian-flagged maritime assets between 2026-07-27 and 2026-08-24. |
@@ -371,6 +379,8 @@ Window: all-time · 360 issued across 14 forecaster arms · 315 open (0 past dea
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
+- **✗ MISS** KKR-20260726-19 [`lmstudio/auto`] (45%, due 2026-08-06, resolved 2026-08-07): A new political party led by Senegal's Faye formally registers with the country's electoral commission between 2026-08-03 and 2026-08-06. — *[jury] Al Jazeera dated 2026-07-26 reported Faye launched Kiiraay - The Republican Patriots at a founding assembly in Dakar on Saturday 2026-07-25, before the window opened. No Al Jazeera report or Senegalese government press release records a formal registration of the party with the electoral commission between 2026-08-03 and 2026-08-06.*
+- **✗ MISS** KKR-20260730-26 [`manual/sonnet-5`] (58%, due 2026-08-06, resolved 2026-08-07): Meta Platforms stock will close lower than its 2026-07-30 closing price at least once more between 2026-07-31 and 2026-08-06. — *[jury] CNBC dated 2026-07-30 reports Meta fell roughly 8 to 9 percent in the 2026-07-30 session from a 2026-07-29 close of 585.61 per TradingKey, putting the reference close near 533 to 536. TradingKey dated 2026-07-31 reports META closed up 3.52 percent on 2026-07-31, and quote pages show closes of about 588.77 on 2026-08-04, 589.90 on 2026-08-05 per CNBC and Google Finance, and 587.69 on 2026-08-06 per Google Finance, all well above the reference.*
 - **✓ HIT** KKR-20260720-10 [`lmstudio/auto`] (40%, due 2026-08-05, resolved 2026-08-06): Global oil prices will exceed $85 per barrel for at least three consecutive trading days between 2026-07-28 and 2026-08-05. — *HIT — Brent closed above $85 on 2026-07-28 through 07-31 (>=4 consecutive trading days in window); Fortune 07-31 print $92.27, Oilprice 8%-weekly-loss-to-~$92, TradingEconomics series concur.*
 - **✓ HIT** KKR-20260721-04 [`lmstudio/auto`] (40%, due 2026-08-05, resolved 2026-08-06): A confirmed exploit of CVE-2026-60137 in WordPress Core will be reported in a public security advisory by 2026-08-05. — *HIT — CISA KEV added CVE-2026-60137 on 2026-07-21 confirming active exploitation; Rapid7, VulnCheck, Tenable, Akamai published corroborating advisories before deadline.*
 - **✗ MISS** KKR-20260721-05 [`lmstudio/auto`] (30%, due 2026-08-04, resolved 2026-08-06): Oil prices will exceed $92 per barrel on the NYMEX market between 2026-08-01 and 2026-08-04. — *MISS — window's only trading days 2026-08-03/04 closed ~$83.5 and ~$79.4–81.8 (TradingEconomics, Forbes); no close above $92 recorded by any source*
@@ -408,7 +418,7 @@ Window: all-time · 360 issued across 14 forecaster arms · 315 open (0 past dea
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*13 of 360 issued (3.6%) have been voided.*
+*13 of 364 issued (3.6%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists

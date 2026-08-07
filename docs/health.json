@@ -1,6 +1,6 @@
 {
   "schema": "health/1.0",
-  "as_of": "2026-08-06T18:58:08Z",
+  "as_of": "2026-08-07T21:53:42Z",
   "charter": "The cadences below are the desk's own stated commitments about how often each served surface moves. health.py grades the desk against them. A LATE or STALE row is a finding, printed — the same rule every other instrument on this site lives under. Editing a cadence here is a revision to a public commitment and rides the commit history like everything else.",
   "states": {
     "OK": "age <= cadence",
@@ -10,8 +10,8 @@
     "NO-DATE": "no internal date extractable and no git history — itself a finding"
   },
   "summary": {
-    "OK": 15,
-    "LATE": 2,
+    "OK": 11,
+    "LATE": 6,
     "STALE": 0,
     "EVENT": 2,
     "NO-DATE": 0
@@ -19,11 +19,11 @@
   "worst": "LATE",
   "packet_lag": {
     "checkable": true,
-    "newest_packet": "kkr_packet_2026-08-06_0426.md",
-    "newest_packet_utc": "2026-08-06T04:26Z",
-    "lag_hours": -13.5,
-    "behind": false,
-    "note": "register covers the newest packet on disk"
+    "newest_packet": "kkr_packet_2026-08-07_1747.md",
+    "newest_packet_utc": "2026-08-07T17:47Z",
+    "lag_hours": 23.8,
+    "behind": true,
+    "note": "register predates the newest packet — rows may be sealing against uncommitted inputs"
   },
   "surfaces": [
     {
@@ -31,8 +31,8 @@
       "path": "docs/ledger.json",
       "lane": "daily task / operator",
       "cadence_hours": 26,
-      "last_moved_utc": "2026-08-06T04:28Z",
-      "age_hours": 14.5,
+      "last_moved_utc": "2026-08-07T20:56Z",
+      "age_hours": 1.0,
       "provenance": "internal",
       "state": "OK",
       "note": "kkr.py writes on every elicitation; 26h allows the daily window"
@@ -43,9 +43,9 @@
       "lane": "daily task / operator",
       "cadence_hours": 26,
       "last_moved_utc": "2026-08-06T05:10Z",
-      "age_hours": 13.8,
+      "age_hours": 40.7,
       "provenance": "git",
-      "state": "OK",
+      "state": "LATE",
       "note": "netz.py synthesis; git-dated (no internal stamp field)"
     },
     {
@@ -53,10 +53,10 @@
       "path": "docs/kkr.html",
       "lane": "daily task / operator",
       "cadence_hours": 26,
-      "last_moved_utc": "2026-08-06T05:10Z",
-      "age_hours": 13.8,
+      "last_moved_utc": "2026-08-06T18:59Z",
+      "age_hours": 26.9,
       "provenance": "git",
-      "state": "OK",
+      "state": "LATE",
       "note": "mirror of forecasts/KKR_latest.html"
     },
     {
@@ -64,8 +64,8 @@
       "path": "docs/war_desk.json",
       "lane": "daily task / operator",
       "cadence_hours": 26,
-      "last_moved_utc": "2026-08-06T04:24Z",
-      "age_hours": 14.6,
+      "last_moved_utc": "2026-08-07T17:45Z",
+      "age_hours": 4.1,
       "provenance": "internal",
       "state": "OK",
       "note": "tg chain; grades cross-bias, so its own staleness matters double"
@@ -76,7 +76,7 @@
       "lane": "manual chain",
       "cadence_hours": 78,
       "last_moved_utc": "2026-08-06T04:35Z",
-      "age_hours": 14.4,
+      "age_hours": 41.3,
       "provenance": "internal",
       "state": "OK",
       "note": "phrase propagation; three-day commitment, hand-run"
@@ -87,7 +87,7 @@
       "lane": "manual chain",
       "cadence_hours": 78,
       "last_moved_utc": "2026-08-06T04:36Z",
-      "age_hours": 14.4,
+      "age_hours": 41.3,
       "provenance": "internal",
       "state": "OK",
       "note": "runs with the board"
@@ -98,7 +98,7 @@
       "lane": "manual chain",
       "cadence_hours": 78,
       "last_moved_utc": "2026-08-06T04:36Z",
-      "age_hours": 14.4,
+      "age_hours": 41.3,
       "provenance": "internal",
       "state": "OK",
       "note": "the join; runs with the board"
@@ -109,7 +109,7 @@
       "lane": "event",
       "cadence_hours": null,
       "last_moved_utc": "2026-08-06T04:35Z",
-      "age_hours": 14.4,
+      "age_hours": 41.3,
       "provenance": "internal",
       "state": "EVENT",
       "note": "origin claims append on ingest; the commit date is the proof"
@@ -120,7 +120,7 @@
       "lane": "manual chain",
       "cadence_hours": 170,
       "last_moved_utc": "2026-07-30T03:51Z",
-      "age_hours": 183.1,
+      "age_hours": 210.0,
       "provenance": "internal",
       "state": "LATE",
       "note": "weekly commitment; went 7 days dark before 2026-08-06 and this row exists because of it"
@@ -131,7 +131,7 @@
       "lane": "manual chain",
       "cadence_hours": 170,
       "last_moved_utc": "2026-08-06T17:59Z",
-      "age_hours": 1.0,
+      "age_hours": 27.9,
       "provenance": "internal",
       "state": "OK",
       "note": "the claim-decay layer; was the stalest tile on its own site on 2026-08-06"
@@ -142,7 +142,7 @@
       "lane": "operator / publish",
       "cadence_hours": 30,
       "last_moved_utc": "2026-08-06T17:59Z",
-      "age_hours": 1.0,
+      "age_hours": 27.9,
       "provenance": "internal",
       "state": "OK",
       "note": "packet_commit.py; the packet-loss class grows every day this lags the newest packet"
@@ -152,8 +152,8 @@
       "path": "docs/spion_state.json",
       "lane": "cron 6h (GitHub)",
       "cadence_hours": 8,
-      "last_moved_utc": "2026-08-06T10:17Z",
-      "age_hours": 8.7,
+      "last_moved_utc": "2026-08-07T09:43Z",
+      "age_hours": 12.2,
       "provenance": "internal",
       "state": "LATE",
       "note": ":17 past every 6 hours; 8h allows one missed slot before LATE"
@@ -163,8 +163,8 @@
       "path": "docs/ots_anchors.json",
       "lane": "cron daily (GitHub)",
       "cadence_hours": 30,
-      "last_moved_utc": "2026-08-06T12:22Z",
-      "age_hours": 6.6,
+      "last_moved_utc": "2026-08-07T08:34Z",
+      "age_hours": 13.3,
       "provenance": "internal",
       "state": "OK",
       "note": "OpenTimestamps anchor pass"
@@ -174,8 +174,8 @@
       "path": "docs/cite_integrity_latest.json",
       "lane": "cron daily (GitHub)",
       "cadence_hours": 30,
-      "last_moved_utc": "2026-08-06T12:29Z",
-      "age_hours": 6.5,
+      "last_moved_utc": "2026-08-07T08:41Z",
+      "age_hours": 13.2,
       "provenance": "internal",
       "state": "OK",
       "note": "audit.yml at 05:41Z"
@@ -185,8 +185,8 @@
       "path": "docs/ident_audit_latest.json",
       "lane": "cron daily (GitHub)",
       "cadence_hours": 30,
-      "last_moved_utc": "2026-08-06T12:29Z",
-      "age_hours": 6.5,
+      "last_moved_utc": "2026-08-07T08:41Z",
+      "age_hours": 13.2,
       "provenance": "internal",
       "state": "OK",
       "note": "audit.yml at 05:41Z"
@@ -197,9 +197,9 @@
       "lane": "daily task / operator",
       "cadence_hours": 30,
       "last_moved_utc": "2026-08-06T05:10Z",
-      "age_hours": 13.8,
+      "age_hours": 40.7,
       "provenance": "git",
-      "state": "OK",
+      "state": "LATE",
       "note": "conformance chain; carries no internal date — git-dated, and that gap is printed"
     },
     {
@@ -208,9 +208,9 @@
       "lane": "daily task / operator",
       "cadence_hours": 30,
       "last_moved_utc": "2026-08-06T05:10Z",
-      "age_hours": 13.8,
+      "age_hours": 40.7,
       "provenance": "git",
-      "state": "OK",
+      "state": "LATE",
       "note": "conformance chain; git-dated"
     },
     {
@@ -219,7 +219,7 @@
       "lane": "event",
       "cadence_hours": null,
       "last_moved_utc": "2026-07-31T20:56Z",
-      "age_hours": 142.0,
+      "age_hours": 169.0,
       "provenance": "git",
       "state": "EVENT",
       "note": "seals append on Kalls; age printed, never graded"
@@ -229,8 +229,8 @@
       "path": "docs/health.json",
       "lane": "operator / publish",
       "cadence_hours": 30,
-      "last_moved_utc": "2026-08-06T18:47Z",
-      "age_hours": 0.2,
+      "last_moved_utc": "2026-08-06T18:58Z",
+      "age_hours": 26.9,
       "provenance": "internal",
       "state": "OK",
       "note": "this instrument, listed under its own rule — the KFK-freshness irony, closed"
