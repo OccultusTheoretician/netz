@@ -51,6 +51,29 @@ try:
 except Exception:
     _fc = None
 
+# KK25: the register of record (registers.py + registers.json beside this
+# file, like arms.json and domains.json). Venue nouns, geographic entities,
+# scheduled-body calendars, and the side taxonomy resolve THERE; the gates
+# consult it rather than carrying their own copies. Fail-open if absent, and
+# the absence prints once per run -- the printed line is the only positive
+# proof the register-backed checks did not run.
+try:
+    import registers as _REG
+except Exception:
+    _REG = None
+_REG_NOTED = [False]
+
+
+def _reg_gate():
+    """Return the registers module or None, printing the SKIPPED note once."""
+    if _REG is None and not _REG_NOTED[0]:
+        _REG_NOTED[0] = True
+        print("KKR \u00b7 NOTE \u00b7 registers.py/registers.json not found "
+              "beside kkr.py -- venue/geo/calendar/complementarity register "
+              "checks SKIPPED, KK18 venue rule in effect (fail-open, printed)",
+              file=sys.stderr)
+    return _REG
+
 
 def _foreclosure_reasons(projs, packet_name):
     """Return {id(p): reason} for rows the packet already decides. Fail-open
@@ -403,6 +426,25 @@ def _citation_support(p: dict):
     if not found:
         return None                       # cannot resolve; do not reject blind
 
+    # KK25 / KK24-11.2: geographic-entity check against the register of
+    # record. A row claiming a US wildfire cited GDACS items for Angola,
+    # Zambia and the Russian Federation, and the content-word gate passed it
+    # on "forest fire". DISJOINT means every cited item that names a
+    # registered entity names one disjoint from the claim's LOCATIONAL
+    # entities; an item naming no geography abstains, and silence is never a
+    # finding.
+    _r25 = _reg_gate()
+    if _r25 is not None:
+        try:
+            _g25 = _r25.geo_support(p.get("statement", ""),
+                                    p.get("resolution", ""), cited_text)
+            if _g25.get("verdict") == "DISJOINT":
+                return _g25["reason"]
+        except Exception as _e:
+            print(f"KKR \u00b7 NOTE \u00b7 geo register check errored "
+                  f"({type(_e).__name__}) -- SKIPPED (fail-open, printed)",
+                  file=sys.stderr)
+
     items = _report_items(path)
     total_items = sum(len(v) for v in items.values())
     if total_items and (len(cites) >= _CITE_SHOTGUN_ABS
@@ -514,31 +556,54 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
         except ValueError:
             pass
     res = p.get("resolution", "")
-    # KK18 patch: context-anchored venue-'or'. Old caps-or-caps proxy missed
-    # lowercase alternatives and false-fired on actor disjunctions.
-    _vmask = re.sub(r"\b(?:at|on)\s+or\s+(?:above|below|before|after)\b"
-                    r"|\bor\s+(?:more|greater|higher|later|fewer|less)\b",
-                    " ", res, flags=re.I)
-    _vscopes = re.findall(
-        r"(?:resolved from|reported by|verified by|confirmed by|published by|"
-        r"according to|per|disclosure from|statement from|advisory from|"
-        r"report from|releases? from|\bfrom)\s+([^;]*?)(?=\.\s|\.$|;|$)", _vmask, re.I)
-    _vclass = re.search(
-        r"\b(?:two|three|four|\d+)\s+(?:or more\s+)?(?:major\s+|independent\s+|"
-        r"international\s+|credible\s+)*(?:news\s+)?"
-        r"(?:sources|outlets|agencies|wire services)\b", _vmask, re.I)
-    _vhit = False
-    if _vscopes:
-        _vhit = any(re.search(r"\s+or\s+", _s) for _s in _vscopes)
-    elif not _vclass:
-        _vhit = bool(
-            re.search(r"\b[A-Z][\w.&'-]+,?\s+or\s+(?:the\s+)?[A-Z]", _vmask) or
-            re.search(r"\b[A-Z][\w.&'-]+\s+or\s+an?\s+[\w-]+(?:\s+[\w-]+){0,3}\s+"
-                      r"(?:firm|source|outlet|agency|service|publication)\b", _vmask))
-    if _vhit:
-        reasons.append("resolution names alternative venues joined by 'or' \u2014 "
-                       "name ONE source of record or define the venue class; "
-                       "an adjudicator must not choose the venue after the fact")
+    # KK25 / KK24-11.3: venue rule re-anchored on VENUE NOUNS via the
+    # register of record. The KK18 rule matched DISJUNCTION, not venue: in
+    # one run it false-positived a single-venue quake row on its threshold
+    # and geography 'or's, and false-negatived a genuine venue disjunction
+    # softened by 'e.g.' ("a U.S. government or international disaster alert
+    # system (e.g., GDACS)"). EXEMPLARY is the missed half: the softener
+    # turns the named venue into an example, so the adjudicator still
+    # chooses -- the same defect as the disjunction, so the same severity.
+    # The KK18 block is preserved verbatim below and runs only when the
+    # register is absent (fail-open to the old rule, printed by _reg_gate).
+    _v25 = None
+    if _reg_gate() is not None:
+        try:
+            _v25 = _REG.venue_scope(res)
+        except Exception as _e:
+            print(f"KKR \u00b7 NOTE \u00b7 venue register check errored "
+                  f"({type(_e).__name__}) -- KK18 rule in effect "
+                  f"(fail-open, printed)", file=sys.stderr)
+            _v25 = None
+    if _v25 is not None:
+        if _v25.get("verdict") in ("DISJUNCT", "EXEMPLARY"):
+            reasons.append(_v25["reason"])
+    else:
+        # KK18 patch: context-anchored venue-'or'. Old caps-or-caps proxy missed
+        # lowercase alternatives and false-fired on actor disjunctions.
+        _vmask = re.sub(r"\b(?:at|on)\s+or\s+(?:above|below|before|after)\b"
+                        r"|\bor\s+(?:more|greater|higher|later|fewer|less)\b",
+                        " ", res, flags=re.I)
+        _vscopes = re.findall(
+            r"(?:resolved from|reported by|verified by|confirmed by|published by|"
+            r"according to|per|disclosure from|statement from|advisory from|"
+            r"report from|releases? from|\bfrom)\s+([^;]*?)(?=\.\s|\.$|;|$)", _vmask, re.I)
+        _vclass = re.search(
+            r"\b(?:two|three|four|\d+)\s+(?:or more\s+)?(?:major\s+|independent\s+|"
+            r"international\s+|credible\s+)*(?:news\s+)?"
+            r"(?:sources|outlets|agencies|wire services)\b", _vmask, re.I)
+        _vhit = False
+        if _vscopes:
+            _vhit = any(re.search(r"\s+or\s+", _s) for _s in _vscopes)
+        elif not _vclass:
+            _vhit = bool(
+                re.search(r"\b[A-Z][\w.&'-]+,?\s+or\s+(?:the\s+)?[A-Z]", _vmask) or
+                re.search(r"\b[A-Z][\w.&'-]+\s+or\s+an?\s+[\w-]+(?:\s+[\w-]+){0,3}\s+"
+                          r"(?:firm|source|outlet|agency|service|publication)\b", _vmask))
+        if _vhit:
+            reasons.append("resolution names alternative venues joined by 'or' \u2014 "
+                           "name ONE source of record or define the venue class; "
+                           "an adjudicator must not choose the venue after the fact")
     _src_hint = re.search(r"\b(?:per|according to|as (?:published|posted|listed|"
                           r"reported|recorded)|official|website|page|feed|register|"
                           r"filing|bulletin|dataset|catalog|api)\b", res, re.I)
@@ -582,6 +647,28 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
               f"'wire services report' is a search problem at every future "
               f"adjudication. Not rejected — name the register where the "
               f"claim admits one.", file=sys.stderr)
+    # KK25 / KK24-11.4: calendar-precluded-window advisory for
+    # scheduled-decision bodies, read from the register's calendars. The arm
+    # priced an FOMC action at 35% in a window containing no scheduled
+    # meeting. NOTE by ruling, never a rejection: the arm should be SCORED
+    # for pricing a ~1% event at 35%, and suppressing the row would hide a
+    # real calibration failure the ledger exists to print. The advisory fires
+    # only on a decision ACT inside an explicit window; a persisting-state
+    # claim ("the upper bound is above X on date D") is satisfied by an
+    # earlier meeting's range and gets no advisory -- pressing the calendar
+    # onto state claims was wrong on three of its first five flags in the
+    # KK25 sweep. UNPOPULATED also prints: a registered body with no dates is
+    # a hole the register discloses rather than guesses at.
+    if _reg_gate() is not None:
+        try:
+            _c25 = _REG.calendar_scope(p.get("statement", ""), res)
+            if _c25.get("verdict") in ("PRECLUDED", "UNPOPULATED"):
+                print(f"KKR \u00b7 NOTE \u00b7 {p.get('id','(new)')}: "
+                      f"{_c25['reason']}", file=sys.stderr)
+        except Exception as _e:
+            print(f"KKR \u00b7 NOTE \u00b7 calendar register check errored "
+                  f"({type(_e).__name__}) -- SKIPPED (fail-open, printed)",
+                  file=sys.stderr)
     if re.search(r"\b(?:price|yield|rate|level|magnitude|count|total|"
                  r"threshold|close[sd]?|above|below|exceed)\b", both, re.I) \
             and not re.search(r"(?:above|below|exceed\w*|at least|at or|over|"
@@ -722,6 +809,28 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
             + ". The forecaster is graded on the statement; a severity or "
             "status qualifier living only in the resolution is invisible to "
             "anyone reading the claim")
+    # KK25 / KK24-11.5: resolution/failure-condition complementarity.
+    # KKR-20260806-31 resolves on a joint statement "specifying route
+    # coordinates and operational protocols"; its failure condition drops the
+    # coordinates requirement, so a statement without coordinates satisfies
+    # NEITHER clause and the row has no verdict. Conformance 4.03 tests only
+    # that a failure condition exists. The check is deliberately narrow --
+    # conjunctive requirement clauses only -- because the first cut flagged
+    # 11 rows and 10 were vocabulary variation; narrowed, it flags exactly
+    # the printed gap across all 360 rows. A REJECTION, not a note: a row
+    # whose outcomes can satisfy neither clause is unadjudicable, the same
+    # class 4.03 exists for. The 4.03 complementarity amendment itself is
+    # append-only operator rework; this gate enforces ahead of the standard
+    # the way the foreclose gate does.
+    if _reg_gate() is not None and (p.get("failure_condition") or "").strip():
+        try:
+            _k25 = _REG.complementarity(res, p.get("failure_condition", ""))
+            if _k25.get("verdict") == "GAP":
+                reasons.append(_k25["reason"])
+        except Exception as _e:
+            print(f"KKR \u00b7 NOTE \u00b7 complementarity register check "
+                  f"errored ({type(_e).__name__}) -- SKIPPED (fail-open, "
+                  f"printed)", file=sys.stderr)
     _anchor = _market_anchor(p)
     if _anchor:
         if _MARKET_ANCHOR_WARN_ONLY:
@@ -1045,6 +1154,15 @@ def append_projections(projs: list, model_tag: str, source_report: str) -> list:
                   "date_issued": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
                   "model": model_tag, "source_report": source_report, "source_packet": str(globals().get("_LAST_PACKET", "")),
                   "status": "open", "resolved_date": None, "notes": ""})
+        # KK25: rows cite the register of record they were gated under, the
+        # way they name a packet and a source report. Prospective only;
+        # sealed rows are never touched. schema@digest, recomputable by
+        # anyone from the tracked registers.json.
+        if _REG is not None:
+            try:
+                p.setdefault("register", _REG.citation())
+            except Exception:
+                pass
         data["projections"].append(p)
         added.append(p)
     save_ledger(data)
