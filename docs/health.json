@@ -1,6 +1,6 @@
 {
   "schema": "health/1.0",
-  "as_of": "2026-08-07T23:24:34Z",
+  "as_of": "2026-08-07T23:27:02Z",
   "charter": "The cadences below are the desk's own stated commitments about how often each served surface moves. health.py grades the desk against them. A LATE or STALE row is a finding, printed — the same rule every other instrument on this site lives under. Editing a cadence here is a revision to a public commitment and rides the commit history like everything else.",
   "states": {
     "OK": "age <= cadence",
@@ -21,7 +21,7 @@
     "checkable": true,
     "newest_packet": "kkr_packet_2026-08-07_1747.md",
     "newest_packet_utc": "2026-08-07T17:47Z",
-    "lag_hours": -4.5,
+    "lag_hours": -5.6,
     "behind": false,
     "note": "register covers the newest packet on disk"
   },
@@ -54,7 +54,7 @@
       "lane": "daily task / operator",
       "cadence_hours": 26,
       "last_moved_utc": "2026-08-07T21:57Z",
-      "age_hours": 1.4,
+      "age_hours": 1.5,
       "provenance": "git",
       "state": "OK",
       "note": "mirror of forecasts/KKR_latest.html"
@@ -65,7 +65,7 @@
       "lane": "daily task / operator",
       "cadence_hours": 26,
       "last_moved_utc": "2026-08-07T17:45Z",
-      "age_hours": 5.6,
+      "age_hours": 5.7,
       "provenance": "internal",
       "state": "OK",
       "note": "tg chain; grades cross-bias, so its own staleness matters double"
@@ -76,7 +76,7 @@
       "lane": "manual chain",
       "cadence_hours": 78,
       "last_moved_utc": "2026-08-06T04:35Z",
-      "age_hours": 42.8,
+      "age_hours": 42.9,
       "provenance": "internal",
       "state": "OK",
       "note": "phrase propagation; three-day commitment, hand-run"
@@ -109,7 +109,7 @@
       "lane": "event",
       "cadence_hours": null,
       "last_moved_utc": "2026-08-06T04:35Z",
-      "age_hours": 42.8,
+      "age_hours": 42.9,
       "provenance": "internal",
       "state": "EVENT",
       "note": "origin claims append on ingest; the commit date is the proof"
@@ -131,7 +131,7 @@
       "lane": "manual chain",
       "cadence_hours": 170,
       "last_moved_utc": "2026-08-06T17:59Z",
-      "age_hours": 29.4,
+      "age_hours": 29.5,
       "provenance": "internal",
       "state": "OK",
       "note": "the claim-decay layer; was the stalest tile on its own site on 2026-08-06"
@@ -141,8 +141,8 @@
       "path": "docs/packet_register.json",
       "lane": "operator / publish",
       "cadence_hours": 30,
-      "last_moved_utc": "2026-08-07T22:19Z",
-      "age_hours": 1.1,
+      "last_moved_utc": "2026-08-07T23:26Z",
+      "age_hours": 0.0,
       "provenance": "internal",
       "state": "OK",
       "note": "packet_commit.py; the packet-loss class grows every day this lags the newest packet"
@@ -153,7 +153,7 @@
       "lane": "cron 6h (GitHub)",
       "cadence_hours": 8,
       "last_moved_utc": "2026-08-07T20:23Z",
-      "age_hours": 3.0,
+      "age_hours": 3.1,
       "provenance": "internal",
       "state": "OK",
       "note": ":17 past every 6 hours; 8h allows one missed slot before LATE"
@@ -164,7 +164,7 @@
       "lane": "cron daily (GitHub)",
       "cadence_hours": 30,
       "last_moved_utc": "2026-08-07T08:34Z",
-      "age_hours": 14.8,
+      "age_hours": 14.9,
       "provenance": "internal",
       "state": "OK",
       "note": "OpenTimestamps anchor pass"
@@ -175,7 +175,7 @@
       "lane": "cron daily (GitHub)",
       "cadence_hours": 30,
       "last_moved_utc": "2026-08-07T08:41Z",
-      "age_hours": 14.7,
+      "age_hours": 14.8,
       "provenance": "internal",
       "state": "OK",
       "note": "audit.yml at 05:41Z"
@@ -186,7 +186,7 @@
       "lane": "cron daily (GitHub)",
       "cadence_hours": 30,
       "last_moved_utc": "2026-08-07T08:41Z",
-      "age_hours": 14.7,
+      "age_hours": 14.8,
       "provenance": "internal",
       "state": "OK",
       "note": "audit.yml at 05:41Z"
@@ -229,8 +229,8 @@
       "path": "docs/health.json",
       "lane": "operator / publish",
       "cadence_hours": 30,
-      "last_moved_utc": "2026-08-07T22:20Z",
-      "age_hours": 1.1,
+      "last_moved_utc": "2026-08-07T23:24Z",
+      "age_hours": 0.0,
       "provenance": "internal",
       "state": "OK",
       "note": "this instrument, listed under its own rule — the KFK-freshness irony, closed"
