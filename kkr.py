@@ -1698,11 +1698,17 @@ RULES:
    unclear.
 4. Cite what you found: outlet, date, and what it said. Never assert without a source.
 5. You do not know who made these forecasts or at what probability. Do not speculate.
+6. HELD-EVIDENCE RULE. Where a projection carries a PYTHON-HELD EVIDENCE
+   block, it is the instrument's own fetched, hashed reading of the named
+   public source; weigh it above anything you recall. If you have NO search
+   capability and a projection carries NO held evidence, return ABSTAIN —
+   do not construct evidence from memory. A resolution nobody can re-fetch
+   is an assertion, not a verdict. ABSTAIN is a valid and honorable verdict.
 
 Return ONLY a JSON array, no commentary, no markdown fences. Use plain ASCII
 straight quotes and do not put quotation marks inside any string value:
 
-[{{"id": "KKR-YYYYMMDD-NN", "verdict": "HIT" | "MISS" | "AMBIGUOUS",
+[{{"id": "KKR-YYYYMMDD-NN", "verdict": "HIT" | "MISS" | "AMBIGUOUS" | "ABSTAIN",
   "confidence": "high" | "moderate" | "low",
   "evidence": "what you found, with outlet and date, 1-3 sentences",
   "disconfirming": "contrary evidence found, or: none found",
@@ -1711,6 +1717,69 @@ straight quotes and do not put quotation marks inside any string value:
 ## PROJECTIONS AWAITING AUDIT
 
 """
+
+
+def _gather_held_evidence(due):
+    """KK27-JURYFETCH — Python-held evidence for the jury packet.
+    Reuses the mechanical adjudicator's mapper and resolvers so the fetch,
+    hash, and evidence/ record are the same machinery --due uses. Returns
+    {row_id: {resolver,url,fetched_at,sha256_raw,detail}}. The resolver's
+    proposed verdict is deliberately NOT returned: jurors get the
+    observation, never the anchor. Fail-open throughout, every skip printed."""
+    held = {}
+    try:
+        import mechanical_adjudicator as _ma
+        import resolvers as _rv
+    except Exception as exc:
+        print(f"KKR - held-evidence SKIPPED (import failed: {exc}) - "
+              f"packet ships without held blocks", file=sys.stderr)
+        return held
+    for p in due:
+        name, params = _ma.map_row(p)
+        if not name:
+            continue
+        if isinstance(params, dict):
+            params.pop("_note", None)
+        try:
+            _rv.set_row_context(deadline=p.get("deadline"), probe=False)
+            meta = _rv.REGISTRY[name](p["id"], params, keep_raw=False)
+        except Exception as exc:
+            print(f"KKR - held-evidence fetch failed for {p['id']} "
+                  f"({name}): {exc} - row ships without a held block",
+                  file=sys.stderr)
+            continue
+        finally:
+            try:
+                _rv.set_row_context()
+            except Exception:
+                pass
+        held[p["id"]] = {"resolver": meta.get("resolver", name),
+                         "url": meta.get("url", ""),
+                         "fetched_at": meta.get("fetched_at", ""),
+                         "sha256_raw": meta.get("sha256_raw", ""),
+                         "detail": str(meta.get("detail", ""))[:400]}
+    return held
+
+
+def _load_held_sidecar(jury_paths):
+    """KK27-JURYFETCH — locate the held-evidence sidecar for a jury run.
+    Date is derived from the jury FILENAMES only; there is no
+    newest-on-disk fallback (the load_packet_titles lesson: assumed-newest
+    misattributes). Returns dict, or None when no sidecar exists."""
+    import re as _re
+    for jp in jury_paths:
+        m = _re.search(r"(\d{4}-\d{2}-\d{2})", Path(jp).name)
+        if not m:
+            continue
+        sp = OUT / f"held_evidence_{m.group(1)}.json"
+        if sp.exists():
+            try:
+                return json.loads(sp.read_text(encoding="utf-8"))
+            except Exception as exc:
+                print(f"KKR - held-evidence sidecar unreadable ({exc}) - "
+                      f"rule SKIPPED", file=sys.stderr)
+                return None
+    return None
 
 
 def cmd_audit_export(args):
@@ -1726,6 +1795,7 @@ def cmd_audit_export(args):
         print("KKR · nothing past deadline to audit", file=sys.stderr)
         return
     due.sort(key=lambda p: p["deadline"])
+    held = _gather_held_evidence(due)  # KK27-JURYFETCH
     now = datetime.now(timezone.utc)
     import hashlib as _hl
     body = AUDIT_PROMPT_HEADER.format(
@@ -1739,9 +1809,26 @@ def cmd_audit_export(args):
                  f"- **Claim:** {p['statement']}\n"
                  f"- **Resolution criterion:** {p['resolution']}\n"
                  f"- **Failure condition:** {p.get('failure_condition') or '(none recorded)'}\n")
+        hv = held.get(p["id"])  # KK27-JURYFETCH
+        if hv:
+            body += (f"- **PYTHON-HELD EVIDENCE** (rule 6 applies) - "
+                     f"{hv['resolver']} - fetched {hv['fetched_at']}Z - "
+                     f"sha256 {hv['sha256_raw'][:16]}...\n"
+                     f"  - instrument: {hv['url']}\n"
+                     f"  - observed: {hv['detail']}\n")
+        else:
+            body += ("- **PYTHON-HELD EVIDENCE:** NONE - no keyless "
+                     "instrument maps this criterion (rule 6: a juror "
+                     "without search returns ABSTAIN here).\n")
     OUT.mkdir(exist_ok=True)
     path = OUT / f"audit_packet_{now.strftime('%Y-%m-%d')}.md"
     path.write_text(body, encoding="utf-8")
+    if held:  # KK27-JURYFETCH sidecar - cmd_jury_ingest enforces from this
+        sp = OUT / f"held_evidence_{now.strftime('%Y-%m-%d')}.json"
+        sp.write_text(json.dumps(held, ensure_ascii=False, indent=1),
+                      encoding="utf-8")
+        print(f"KKR · held evidence for {len(held)} of {len(due)} row(s) → {sp}",
+              file=sys.stderr)
     print(f"KKR · audit packet ({len(due)} projections) → {path}", file=sys.stderr)
     print("KKR · give it to any auditor; save their JSON as audit_verdicts.json",
           file=sys.stderr)
@@ -1834,6 +1921,27 @@ def cmd_jury_ingest(args):
     a_name, b_name = args.auditors
     A = _jury_parse(args.jury[0])
     B = _jury_parse(args.jury[1])
+    # KK27-JURYFETCH - held-evidence rule, enforced on seat B (cold by
+    # convention; seat A's citations are real retrievals). Coercion runs
+    # BEFORE concordance/kappa so the statistics see the ruled verdicts.
+    HELD = _load_held_sidecar(args.jury)
+    if HELD is None:
+        print("KKR - no held-evidence sidecar for these jury files - rule "
+              "SKIPPED (fail-open; never guess)", file=sys.stderr)
+    else:
+        _coerced = 0
+        for _rid, _v in B.items():
+            if _rid not in HELD and str(_v.get("verdict", "")).upper() in ("HIT", "MISS"):
+                _v["evidence"] = ("[ABSTAIN BY RULE - no python-held evidence; "
+                                  "a cold-seat verdict here has no basis a "
+                                  "stranger can re-fetch. original verdict: "
+                                  + str(_v.get("verdict")) + "] "
+                                  + str(_v.get("evidence", "")))
+                _v["verdict"] = "ABSTAIN"
+                _coerced += 1
+        print(f"KKR - held-evidence rule: {len(HELD)} row(s) held; "
+              f"{_coerced} cold-seat verdict(s) coerced to ABSTAIN",
+              file=sys.stderr)
     ph = _hl.sha256(AUDIT_PROMPT_HEADER.encode("utf-8")).hexdigest()
     data = load_ledger()
     today = datetime.now(timezone.utc).date()
@@ -1843,7 +1951,7 @@ def cmd_jury_ingest(args):
                 == str(B[i].get("verdict", "")).upper())
     kappa = None
     if len(both) >= 2:
-        cats = ("HIT", "MISS", "AMBIGUOUS")
+        cats = ("HIT", "MISS", "AMBIGUOUS", "ABSTAIN")  # KK27-JURYFETCH
         na = {c: 0 for c in cats}
         nb = {c: 0 for c in cats}
         for i in both:
@@ -1887,7 +1995,7 @@ def cmd_jury_ingest(args):
             mapped = vmapd.get(str(va.get("verdict", "")).upper())
             basis = "jury-concordant"
             if mapped is None:
-                print("  jury said AMBIGUOUS - left open", file=sys.stderr)
+                print("  jury said AMBIGUOUS/ABSTAIN - left open", file=sys.stderr)
                 continue
         elif ans == "1" and va:
             mapped = vmapd.get(str(va.get("verdict", "")).upper())
@@ -1895,6 +2003,10 @@ def cmd_jury_ingest(args):
         elif ans == "2" and vb:
             mapped = vmapd.get(str(vb.get("verdict", "")).upper())
             basis = b_name
+            if mapped is None:  # KK27-JURYFETCH
+                print("  B has no adoptable verdict (ABSTAIN/AMBIGUOUS) - "
+                      "rule h/m with a re-fetchable basis instead "
+                      "(the two-instance precedent).", file=sys.stderr)
         elif ans in ("h", "m", "v"):
             mapped = {"h": "hit", "m": "miss", "v": "void"}[ans]
             basis = "operator"
