@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The US Senate confirms Todd Blanche as Attorney General on a recorded roll call vote held between 2026-08-07 and 2026-09-30.",
+    "domain": "political",
+    "probability": 85,
+    "resolution": "Congress.gov Senate roll call records show a successful confirmation vote on the nomination of Todd Blanche as Attorney General, vote date between 2026-08-07 and 2026-09-30.",
+    "deadline": "2026-10-05",
+    "citations": [104, 105, 112, 118],
+    "failure_condition": "No successful Senate confirmation vote on the Blanche nomination occurs inside the window, whether through delay past 2026-09-30, withdrawal, or defeat."
+  },
+  {
+    "statement": "The Russia sanctions bill passed by the Senate on 2026-08-07 becomes public law between 2026-08-08 and 2026-12-18.",
+    "domain": "political",
+    "probability": 25,
+    "resolution": "Congress.gov shows the Senate-passed Russia sanctions measure championed by Lindsey Graham with status Became Law, dated between 2026-08-08 and 2026-12-18.",
+    "deadline": "2026-12-22",
+    "citations": [103],
+    "failure_condition": "The measure is short of enactment at the deadline, whether stalled in the House, passed but unsigned, or vetoed without override."
+  },
+  {
+    "statement": "Levi Strauss and Co files a Form 8-K disclosing a material cybersecurity incident under Item 1.05 between 2026-08-08 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 18,
+    "resolution": "SEC EDGAR shows a Form 8-K filed by Levi Strauss and Co with filing date between 2026-08-08 and 2026-11-30 containing Item 1.05 Material Cybersecurity Incidents.",
+    "deadline": "2026-12-04",
+    "citations": [15],
+    "failure_condition": "No Item 1.05 disclosure by Levi Strauss and Co is filed inside the window, including where the incident is disclosed only under Item 8.01 or in a periodic report."
+  },
+  {
+    "statement": "CISA adds at least one WordPress core or WordPress plugin vulnerability to the Known Exploited Vulnerabilities catalog with a date added between 2026-08-08 and 2026-12-31.",
+    "domain": "cyber",
+    "probability": 32,
+    "resolution": "The CISA KEV catalog JSON contains at least one entry whose vendorProject or product field names WordPress, with dateAdded between 2026-08-08 and 2026-12-31.",
+    "deadline": "2027-01-07",
+    "citations": [18],
+    "failure_condition": "No KEV entry naming WordPress in vendorProject or product carries a dateAdded inside the window."
+  },
+  {
+    "statement": "At the FOMC meeting concluding in September 2026 the Committee lowers the federal funds target range by at least 25 basis points.",
+    "domain": "economic",
+    "probability": 70,
+    "resolution": "FRED series DFEDTARU dated 2026-09-30 is at least 0.25 lower than the same series value dated 2026-08-07.",
+    "deadline": "2026-10-01",
+    "citations": [38, 57, 81],
+    "failure_condition": "The upper limit of the target range on 2026-09-30 is unchanged from or above its 2026-08-07 level, including a hold or a cut of less than 25 basis points."
+  },
+  {
+    "statement": "Front-month ICE Brent crude settles above 95.00 US dollars per barrel on at least one trading day between 2026-08-10 and 2026-10-30.",
+    "domain": "economic",
+    "probability": 22,
+    "resolution": "ICE published settlement prices for the front-month Brent futures contract show at least one daily settlement above 95.00 between 2026-08-10 and 2026-10-30.",
+    "deadline": "2026-11-04",
+    "citations": [56, 72, 114],
+    "failure_condition": "Every front-month Brent settlement inside the window is at or below 95.00 US dollars per barrel."
+  },
+  {
+    "statement": "Houthi forces launch a ground assault on Marib city or its immediate outskirts between 2026-08-08 and 2026-09-30.",
+    "domain": "military_conflict",
+    "probability": 27,
+    "resolution": "Al Jazeera and at least one of Reuters, AP, or BBC report a Houthi ground offensive against Marib city or its immediate outskirts occurring inside the window.",
+    "deadline": "2026-10-05",
+    "citations": [86, 99],
+    "failure_condition": "Hostilities around Marib inside the window consist only of shelling, drone or missile strikes, or front-line skirmishing without a ground assault on the city or its outskirts."
+  },
+  {
+    "statement": "The Colombian government publicly announces suspension or termination of peace negotiations with the ELN between 2026-08-08 and 2026-11-30.",
+    "domain": "military_conflict",
+    "probability": 38,
+    "resolution": "Two of Reuters, AP, El Tiempo, or BBC report a Colombian government announcement suspending or ending negotiations with the ELN, dated inside the window.",
+    "deadline": "2026-12-04",
+    "citations": [88, 109],
+    "failure_condition": "No Colombian government act suspending or ending ELN negotiations occurs inside the window, including where talks stall or lapse without formal announcement."
+  },
+  {
+    "statement": "Spain formally reintroduces temporary border control on arrivals from Italy with a start date between 2026-08-08 and 2026-09-30.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "The European Commission list of Member State notifications of temporary reintroduction of internal border control carries a Spanish notification naming the Italian border, start date inside the window.",
+    "deadline": "2026-10-06",
+    "citations": [79, 82, 83],
+    "failure_condition": "The Spanish reciprocal checks remain rhetorical or are applied without a notified reintroduction of internal border control starting inside the window."
+  },
+  {
+    "statement": "The Copernicus Climate Change Service ranks August 2026 among the three warmest Augusts on record for Europe.",
+    "domain": "disaster",
+    "probability": 45,
+    "resolution": "The C3S monthly climate bulletin covering August 2026 states that European average surface air temperature ranked first, second, or third warmest for August in its record.",
+    "deadline": "2026-09-18",
+    "citations": [48, 122],
+    "failure_condition": "European average surface air temperature for August 2026 ranks fourth warmest or lower in the C3S record."
+  }
+]

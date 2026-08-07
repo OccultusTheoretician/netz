@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The US Senate confirms Todd Blanche as Attorney General by recorded roll call vote between 2026-08-07 and 2026-09-30.",
+    "domain": "political",
+    "probability": 88,
+    "resolution": "Congress.gov or senate.gov roll call record shows a Senate vote confirming Todd Blanche as United States Attorney General with a vote date between 2026-08-07 and 2026-09-30.",
+    "deadline": "2026-10-02",
+    "citations": [105, 112, 118],
+    "failure_condition": "The Senate holds no confirming vote on Blanche on or before 2026-09-30, whether through withdrawal of the nomination, failed cloture, or the vote never being scheduled."
+  },
+  {
+    "statement": "The Russia sanctions bill passed by the US Senate on 2026-08-07 is enacted into US public law between 2026-08-07 and 2026-11-06.",
+    "domain": "political",
+    "probability": 40,
+    "resolution": "Congress.gov status for the Russia sanctions measure passed by the Senate on 2026-08-07 shows Became Public Law with an enactment date on or before 2026-11-06.",
+    "deadline": "2026-11-10",
+    "citations": [103, 98],
+    "failure_condition": "The measure is not enacted by 2026-11-06 because the House does not pass it, the President does not sign it, or no veto override occurs by that date."
+  },
+  {
+    "statement": "Houthi forces take control of Marib city, Yemen, between 2026-08-08 and 2027-01-15.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "At least two of Reuters, AP, AFP, or Al Jazeera report Marib city under Houthi control, or the Yemeni government concedes its loss, with event dates inside the window.",
+    "deadline": "2027-01-19",
+    "citations": [86, 99],
+    "failure_condition": "Marib city remains under Yemeni government control through 2027-01-15, with no Houthi capture of the city occurring in the window."
+  },
+  {
+    "statement": "The Colombian government or the ELN publicly and formally declares the bilateral peace process or ceasefire suspended or ended between 2026-08-08 and 2026-11-30.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "At least two of Reuters, AP, AFP, or El Tiempo report an official Colombian government or ELN statement dated within the window declaring the peace process or ceasefire suspended or terminated.",
+    "deadline": "2026-12-02",
+    "citations": [88, 109],
+    "failure_condition": "Neither party issues a formal statement ending or suspending the process within the window and the process nominally continues through 2026-11-30."
+  },
+  {
+    "statement": "Front-month WTI crude futures settle at or above 95.00 USD per barrel on at least one NYMEX trading day between 2026-08-10 and 2026-11-30.",
+    "domain": "economics/markets",
+    "probability": 20,
+    "resolution": "Official CME NYMEX daily settlement for front-month WTI crude is at or above 95.00 USD on at least one trading day between 2026-08-10 and 2026-11-30, per CME or EIA records.",
+    "deadline": "2026-12-01",
+    "citations": [56, 72, 114],
+    "failure_condition": "Every front-month WTI daily settlement in the window is below 95.00 USD."
+  },
+  {
+    "statement": "The FOMC lowers the federal funds target range at its scheduled September 2026 meeting.",
+    "domain": "economics/markets",
+    "probability": 70,
+    "resolution": "The FOMC statement on federalreserve.gov concluding the scheduled September 2026 meeting announces a federal funds target range lower than the range in effect immediately before that meeting.",
+    "deadline": "2026-09-18",
+    "citations": [38, 57, 81],
+    "failure_condition": "The September 2026 FOMC statement holds or raises the target range, or the scheduled meeting does not take place."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least 8 CVE entries with dateAdded values between 2026-08-10 and 2026-09-04.",
+    "domain": "cyber",
+    "probability": 80,
+    "resolution": "The public CISA KEV JSON feed contains at least 8 entries whose dateAdded field falls between 2026-08-10 and 2026-09-04 inclusive.",
+    "deadline": "2026-09-08",
+    "citations": [15, 17, 30],
+    "failure_condition": "Fewer than 8 KEV entries carry a dateAdded value inside the window."
+  },
+  {
+    "statement": "A vulnerability in Claude Code or Gemini CLI disclosed in early August 2026 is added to the CISA KEV catalog with a dateAdded between 2026-08-08 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 10,
+    "resolution": "The CISA KEV JSON feed lists a CVE whose product or description names Claude Code or Gemini CLI, with dateAdded between 2026-08-08 and 2026-11-30.",
+    "deadline": "2026-12-02",
+    "citations": [26],
+    "failure_condition": "No KEV entry naming Claude Code or Gemini CLI carries a dateAdded value within the window."
+  },
+  {
+    "statement": "Meta files an appeal or notice of appeal of the 567 million USD New Mexico child-safety judgment between 2026-08-08 and 2026-11-30.",
+    "domain": "crime/security",
+    "probability": 85,
+    "resolution": "Court docket shows a Meta notice of appeal in the New Mexico 567 million USD child-safety case, or two of Reuters, AP, Bloomberg report the filing, dated within the window.",
+    "deadline": "2026-12-02",
+    "citations": [60, 101],
+    "failure_condition": "Meta makes no appellate filing in the window, including because it settles, pays, or obtains post-trial relief that removes the judgment before any appeal is filed."
+  },
+  {
+    "statement": "GDACS raises tropical cyclone CHAN-HOM-26 to Orange or Red alert level between 2026-08-08 and 2026-08-21.",
+    "domain": "disaster",
+    "probability": 20,
+    "resolution": "The GDACS event record for tropical cyclone CHAN-HOM-26, event id 1001299, shows an Orange or Red alert episode dated between 2026-08-08 and 2026-08-21.",
+    "deadline": "2026-08-25",
+    "citations": [50],
+    "failure_condition": "CHAN-HOM-26 remains at Green alert for all GDACS episodes dated in the window or dissipates without an Orange or Red episode."
+  }
+]
