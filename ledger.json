@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-06T04:28:04Z",
+  "as_of": "2026-08-07T20:56:17Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -2204,13 +2204,28 @@
       "date_issued": "2026-07-26",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-26_1500.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-07",
+      "notes": "[jury] Al Jazeera dated 2026-07-26 reported Faye launched Kiiraay - The Republican Patriots at a founding assembly in Dakar on Saturday 2026-07-25, before the window opened. No Al Jazeera report or Senegalese government press release records a formal registration of the party with the electoral commission between 2026-08-03 and 2026-08-06.",
       "failure_condition": "the condition stated in this entry's resolution basis — The Senegalese electoral commission publishes a formal registration of a new political party led by Faye, as confirmed by Al Jazeera or a government press release, between 2026-08-03 and 2026-08-06 — is not met on or before 2026-08-06; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "e5a455ef443bcd9fa793de281b47273bc9b857ac4c4bcd5f305bcefba04e9ddf",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "AMBIGUOUS"
+        },
+        "evidence": "Al Jazeera dated 2026-07-26 reported Faye launched Kiiraay - The Republican Patriots at a founding assembly in Dakar on Saturday 2026-07-25, before the window opened. No Al Jazeera report or Senegalese government press release records a formal registration of the party with the electoral commission between 2026-08-03 and 2026-08-06."
+      }
     },
     {
       "statement": "Lieutenant General Gregory K. Anderson will no longer be named as commanding officer of the XVIII Airborne Corps in the source of record on 2026-08-14.",
@@ -4559,16 +4574,31 @@
       "model": "manual/sonnet-5",
       "source_report": "battle_report_2026-07-30_1503.md",
       "source_packet": "kkr_packet_2026-07-30_1503.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-07",
+      "notes": "[jury] CNBC dated 2026-07-30 reports Meta fell roughly 8 to 9 percent in the 2026-07-30 session from a 2026-07-29 close of 585.61 per TradingKey, putting the reference close near 533 to 536. TradingKey dated 2026-07-31 reports META closed up 3.52 percent on 2026-07-31, and quote pages show closes of about 588.77 on 2026-08-04, 589.90 on 2026-08-05 per CNBC and Google Finance, and 587.69 on 2026-08-06 per Google Finance, all well above the reference.",
       "failure_condition": "Meta Platforms common stock records no daily close below its 2026-07-30 close on any trading day 2026-07-31 through 2026-08-06, per official exchange closing data as read on 2026-08-06; that reading scores this entry a MISS.",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "Official closing-price series against a fixed reference close; mechanical.",
       "sealed_at": "2026-07-31T05:36:21.905658+00:00",
       "seal_sha256": "63c4d7acc2c97a0a946ccea37cab1874f9fa33c30946472c68be7f430f7bcce0",
       "keyed_keyless_dated": "2026-08-05",
-      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit"
+      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "e5a455ef443bcd9fa793de281b47273bc9b857ac4c4bcd5f305bcefba04e9ddf",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "HIT"
+        },
+        "evidence": "CNBC dated 2026-07-30 reports Meta fell roughly 8 to 9 percent in the 2026-07-30 session from a 2026-07-29 close of 585.61 per TradingKey, putting the reference close near 533 to 536. TradingKey dated 2026-07-31 reports META closed up 3.52 percent on 2026-07-31, and quote pages show closes of about 588.77 on 2026-08-04, 589.90 on 2026-08-05 per CNBC and Google Finance, and 587.69 on 2026-08-06 per Google Finance, all well above the reference."
+      }
     },
     {
       "statement": "The U.S. Senate will vote to confirm Todd Blanche as Attorney General between 2026-07-30 and 2026-09-30.",
@@ -9198,6 +9228,95 @@
       "notes": "",
       "sealed_at": "2026-08-06T04:28:04.570675+00:00",
       "seal_sha256": "afa0e05fccb1a1d136b5c20e8070ba97bd4658746f5bb7aea6b5df8013d141a2"
+    },
+    {
+      "statement": "A drone strike in Zaporizhzhia, Ukraine, results in at least one casualty between 2026-08-10 and 2026-08-17.",
+      "domain": "military/conflict",
+      "probability": 32,
+      "resolution": "At least one report from a credible news outlet (BBC World, Al Jazeera, or Guardian World) published between 2026-08-12 and 2026-08-19 confirms a drone strike in Zaporizhzhia with at least one casualty.",
+      "deadline": "2026-08-21",
+      "citations": [
+        3
+      ],
+      "failure_condition": "No credible news outlet confirms a drone strike in Zaporizhzhia with at least one casualty between 2026-08-10 and 2026-08-17.",
+      "id": "KKR-20260807-01",
+      "date_issued": "2026-08-07",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-07_1747.md",
+      "source_packet": "kkr_packet_2026-08-07_1747.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-07T17:49:21.453869+00:00",
+      "seal_sha256": "493e37e5aba67bf9a490d40725b2b381a4932fef29944a7c79492f0c30bcf4b4"
+    },
+    {
+      "statement": "A ceasefire agreement between Israel and Hamas is confirmed by both sides via a joint statement between 2026-08-10 and 2026-08-17.",
+      "domain": "military/conflict",
+      "probability": 25,
+      "resolution": "A joint statement from both Israel and Hamas, published by at least two independent outlets (e.g., BBC World, Al Jazeera, Guardian World), confirms a ceasefire agreement between 2026-08-10 and 2026-08-17.",
+      "deadline": "2026-08-21",
+      "citations": [
+        2
+      ],
+      "failure_condition": "No joint statement from both Israel and Hamas confirming a ceasefire is published by at least two independent outlets between 2026-08-10 and 2026-08-17.",
+      "id": "KKR-20260807-02",
+      "date_issued": "2026-08-07",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-07_1747.md",
+      "source_packet": "kkr_packet_2026-08-07_1747.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-07T17:49:21.453905+00:00",
+      "seal_sha256": "9619a7899ce7618b1b8d44fb9e1b9bacc2baae73e37a14632678e6eb3cc56f2e"
+    },
+    {
+      "statement": "A new tropical cyclone named CHAN-HOM-26 causes at least one fatality in a country affected by the storm between 2026-08-10 and 2026-08-17.",
+      "domain": "disaster",
+      "probability": 30,
+      "resolution": "At least one credible news report (BBC World, Al Jazeera, Guardian World) published between 2026-08-12 and 2026-08-19 confirms a fatality linked to CHAN-HOM-26 in a country affected by the storm.",
+      "deadline": "2026-08-21",
+      "citations": [
+        50
+      ],
+      "failure_condition": "No credible news report confirms a fatality linked to CHAN-HOM-26 in a country affected by the storm between 2026-08-10 and 2026-08-17.",
+      "id": "KKR-20260807-03",
+      "date_issued": "2026-08-07",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-07_1747.md",
+      "source_packet": "kkr_packet_2026-08-07_1747.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-07T17:49:21.453921+00:00",
+      "seal_sha256": "8cb9bc20967b92180e3243f3af9e22839f4ac2da71c860eb664559142f83b5dd"
+    },
+    {
+      "statement": "A new political scandal involving Todd Blanche, U.S. Attorney General nominee, is confirmed by two independent outlets between 2026-08-10 and 2026-08-17.",
+      "domain": "political",
+      "probability": 22,
+      "resolution": "Two independent news outlets (e.g., Guardian World, CNBC, BBC World) publish reports between 2026-08-12 and 2026-08-19 confirming a new political scandal involving Todd Blanche.",
+      "deadline": "2026-08-21",
+      "citations": [
+        104,
+        105
+      ],
+      "failure_condition": "No two independent news outlets confirm a new political scandal involving Todd Blanche between 2026-08-10 and 2026-08-17.",
+      "id": "KKR-20260807-04",
+      "date_issued": "2026-08-07",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-07_1747.md",
+      "source_packet": "kkr_packet_2026-08-07_1747.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-07T17:49:21.453933+00:00",
+      "seal_sha256": "3b074ea08bbebd8282ca9f739cc571607889d6da56888335efc9cca7f5a7a60c"
     }
   ]
 }
