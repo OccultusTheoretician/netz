@@ -78,6 +78,11 @@ def _z(zone, *places):
 _z("russia_ukraine","konstantinovka","pokrovsk","bakhmut","avdiivka","kharkiv","kherson",
    "zaporizhzhia","kupiansk","kramatorsk","chasiv yar","toretsk","belgorod","kursk","crimea",
    "sevastopol","donetsk","luhansk","sumy","odesa","mariupol","melitopol","nikopol","vovchansk")
+# KK28-TOOLWORK (board 13): main-theatre capitals + recurring deep-strike
+# geography. The WARDESK's most-cited cities were unresolvable by this table.
+_z("russia_ukraine","kyiv","lviv","dnipro","mykolaiv","kryvyi rih","chernihiv","izium",
+   "sloviansk","moscow","st petersburg","engels","rostov-on-don","voronezh","bryansk",
+   "novorossiysk")
 _z("israel_gaza","rafah","khan younis","jabalia","jenin","nablus","tel aviv","haifa","tulkarem",
    "deir al-balah","gaza city","ramallah","hebron","jerusalem")
 _z("lebanon","beirut","dahiyeh")
@@ -92,6 +97,13 @@ _z("myanmar","naypyidaw","rakhine","kachin")
 # surface variant -> canonical. THE cross-bias instrument for place names:
 # the two sides that most need comparing use different names for the same ground.
 ALIASES = {
+ # KK28-TOOLWORK: Russian-form and transliteration variants for the additions —
+ # the cross-bias point of the table: both sides' names for the same ground.
+ "kiev":"kyiv", "kyyiv":"kyiv", "lvov":"lviv", "dnepr":"dnipro",
+ "dnipropetrovsk":"dnipro", "nikolaev":"mykolaiv", "mykolayiv":"mykolaiv",
+ "krivoy rog":"kryvyi rih", "kryvyi rig":"kryvyi rih", "chernigov":"chernihiv",
+ "izyum":"izium", "slavyansk":"sloviansk", "saint petersburg":"st petersburg",
+ "sankt-peterburg":"st petersburg", "moskva":"moscow", "rostov":"rostov-on-don",
  "kostiantynivka":"konstantinovka", "konstantinivka":"konstantinovka",
  "odessa":"odesa", "kharkov":"kharkiv", "kherson city":"kherson",
  "zaporozhye":"zaporizhzhia", "zaporizhia":"zaporizhzhia",

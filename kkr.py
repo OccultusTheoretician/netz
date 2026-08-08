@@ -1823,12 +1823,16 @@ def cmd_audit_export(args):
     OUT.mkdir(exist_ok=True)
     path = OUT / f"audit_packet_{now.strftime('%Y-%m-%d')}.md"
     path.write_text(body, encoding="utf-8")
-    if held:  # KK27-JURYFETCH sidecar - cmd_jury_ingest enforces from this
-        sp = OUT / f"held_evidence_{now.strftime('%Y-%m-%d')}.json"
-        sp.write_text(json.dumps(held, ensure_ascii=False, indent=1),
-                      encoding="utf-8")
-        print(f"KKR · held evidence for {len(held)} of {len(due)} row(s) → {sp}",
-              file=sys.stderr)
+    # KK28E-SIDECAR: always write, even empty. An absent sidecar is
+    # indistinguishable from a pre-rule run, so ingest fail-opened and the
+    # 8.07 coercion never fired on zero-held days (proven 2026-08-08: three
+    # statement-shape rows, no sidecar, rule SKIPPED). Empty now means the
+    # rule ran and nothing was holdable; every cold HIT/MISS coerces.
+    sp = OUT / f"held_evidence_{now.strftime('%Y-%m-%d')}.json"
+    sp.write_text(json.dumps(held, ensure_ascii=False, indent=1),
+                  encoding="utf-8")
+    print(f"KKR · held evidence for {len(held)} of {len(due)} row(s) → {sp}",
+          file=sys.stderr)
     print(f"KKR · audit packet ({len(due)} projections) → {path}", file=sys.stderr)
     print("KKR · give it to any auditor; save their JSON as audit_verdicts.json",
           file=sys.stderr)
