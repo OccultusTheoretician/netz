@@ -47,6 +47,11 @@ call :run "ohrwurm event-phrase join"  python ohrwurm_link.py --latest
 call :run "ohrwurm register append"    python ohrwurm_log.py
 call :run "dialektik feed iran"        python dialektik_feed.py --zone iran
 call :run "dialektik feed ru-ua"       python dialektik_feed.py --zone russia_ukraine
+REM KK33-PIPELINE: the three formerly-manual instruments, now nightly. All
+REM fail-open per stage, print INDETERMINATE on a bad read, touch no sealed row.
+call :run "kfk sightings"              python kfk_sightings.py
+call :run "kfk overlay"                python kfk_map.py
+call :run "dialektik meter"            python dialektik_meter.py --run
 call :run "kfk enrich (batch 15)"      python kfk_enrich.py --batch --limit 15
 call :run "archiv fetch (resume)"      python archiv.py fetch --vault D:\vault
 call :run "failure-condition drafts"   python fc_pass.py --draft
