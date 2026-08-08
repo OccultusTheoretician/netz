@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "Ukrainian authorities report at least one civilian killed by a Russian missile or drone strike in Kyiv city or Kyiv oblast between 2026-08-11 and 2026-09-10.",
+    "domain": "military_conflict",
+    "probability": 88,
+    "resolution": "Kyiv city or oblast military administration reports a civilian killed in a strike dated between 2026-08-11 and 2026-09-10, carried by two of Reuters, AP, AFP, BBC.",
+    "deadline": "2026-09-14",
+    "citations": [73],
+    "failure_condition": "No civilian death from a Russian strike occurs in Kyiv city or Kyiv oblast within the stated window."
+  },
+  {
+    "statement": "A continuing appropriations act extending US federal funding past 2026-09-30 is enacted into law between 2026-08-09 and 2026-09-30.",
+    "domain": "political",
+    "probability": 82,
+    "resolution": "Congress.gov shows a continuing appropriations measure with status Became Public Law, enactment date between 2026-08-09 and 2026-09-30, funding agencies beyond 2026-09-30.",
+    "deadline": "2026-10-02",
+    "citations": [101],
+    "failure_condition": "No such measure carries Became Public Law status with an enactment date inside the window."
+  },
+  {
+    "statement": "At least one commercial vessel is struck by missile, drone, mine, or explosive boat in the Strait of Hormuz, Persian Gulf, or Gulf of Oman between 2026-08-11 and 2026-09-30.",
+    "domain": "military_conflict",
+    "probability": 74,
+    "resolution": "UKMTO publishes an incident advisory placing a struck commercial vessel in that area between 2026-08-11 and 2026-09-30, and Reuters or AP reports the strike.",
+    "deadline": "2026-10-05",
+    "citations": [70, 74],
+    "failure_condition": "No commercial vessel is struck in the named waters during the window."
+  },
+  {
+    "statement": "GDACS issues a Red alert for a tropical cyclone in the Northwest Pacific basin with an event date between 2026-08-11 and 2026-10-15.",
+    "domain": "disaster",
+    "probability": 72,
+    "resolution": "The GDACS event record lists a Northwest Pacific tropical cyclone at alert level Red with an event date between 2026-08-11 and 2026-10-15.",
+    "deadline": "2026-10-19",
+    "citations": [25],
+    "failure_condition": "No Northwest Pacific tropical cyclone reaches GDACS Red alert level inside the window."
+  },
+  {
+    "statement": "CISA adds a Metabase vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-08-09 and 2026-10-15.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "The CISA KEV catalog JSON contains an entry naming Metabase in vendorProject or product with dateAdded between 2026-08-09 and 2026-10-15.",
+    "deadline": "2026-10-19",
+    "citations": [16, 19],
+    "failure_condition": "The KEV catalog holds no Metabase entry with a dateAdded value inside the window."
+  },
+  {
+    "statement": "CISA adds at least 25 distinct CVE records to the Known Exploited Vulnerabilities catalog with date-added values between 2026-08-10 and 2026-09-30.",
+    "domain": "cyber",
+    "probability": 48,
+    "resolution": "Count of distinct cveID entries in the CISA KEV catalog with dateAdded between 2026-08-10 and 2026-09-30 inclusive is 25 or greater.",
+    "deadline": "2026-10-02",
+    "citations": [18],
+    "failure_condition": "That count is 24 or fewer."
+  },
+  {
+    "statement": "The BLS Employment Situation released 2026-09-04 shows total nonfarm payroll employment change for August 2026 below zero.",
+    "domain": "economic",
+    "probability": 42,
+    "resolution": "Seasonally adjusted total nonfarm payroll change for August 2026, as first published by BLS on 2026-09-04, is a negative number.",
+    "deadline": "2026-09-08",
+    "citations": [66],
+    "failure_condition": "The first-published August 2026 nonfarm payroll change is zero or positive."
+  },
+  {
+    "statement": "Iran publicly announces an agreed arrangement permitting international commercial transit of the Strait of Hormuz between 2026-08-11 and 2026-10-15.",
+    "domain": "military_conflict",
+    "probability": 38,
+    "resolution": "The Iranian foreign ministry, IRGC, or presidency announces a Hormuz transit or reopening arrangement dated in the window, reported by two of Reuters, AP, AFP, Al Jazeera.",
+    "deadline": "2026-10-19",
+    "citations": [70],
+    "failure_condition": "No Iranian state announcement of a Hormuz transit arrangement occurs inside the window."
+  },
+  {
+    "statement": "The FOMC lowers the federal funds target range at its 2026-09-15 to 2026-09-16 meeting.",
+    "domain": "economic",
+    "probability": 28,
+    "resolution": "The FOMC statement issued 2026-09-16 sets a target range whose upper limit is below the FRED DFEDTARU value in effect on 2026-09-14.",
+    "deadline": "2026-09-18",
+    "citations": [66],
+    "failure_condition": "The upper limit of the target range on 2026-09-17 equals or exceeds the level in effect on 2026-09-14."
+  },
+  {
+    "statement": "ICE Brent front-month crude futures settle at or above 95.00 US dollars per barrel on at least one trading day between 2026-08-10 and 2026-09-30.",
+    "domain": "economic",
+    "probability": 22,
+    "resolution": "ICE published settlement for the front-month Brent contract is 95.00 or higher on at least one session between 2026-08-10 and 2026-09-30.",
+    "deadline": "2026-10-02",
+    "citations": [70, 74],
+    "failure_condition": "Every front-month Brent settlement in that range is below 95.00."
+  }
+]

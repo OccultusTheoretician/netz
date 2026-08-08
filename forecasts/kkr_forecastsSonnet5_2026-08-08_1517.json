@@ -1,0 +1,104 @@
+[
+  {
+    "statement": "Russia strikes Kyiv with a single wave using four or more distinct weapon types (missile, drone, glide bomb, cruise, ballistic, etc), corroborated by both Ukrainian and Russian-aligned sources, between 2026-08-11 and 2026-08-24.",
+    "domain": "military/conflict",
+    "probability": 62,
+    "resolution": "TRUE if Kyiv is struck by four or more distinct weapon types in one wave between 2026-08-11 and 2026-08-24, reported by both Ukrainian and Russian-aligned sources, adjudicated by 2026-08-26.",
+    "deadline": "2026-08-26",
+    "citations": [
+      73
+    ],
+    "failure_condition": "No Kyiv strike wave in the window is corroborated by both Ukrainian and Russian-aligned sources as using four or more distinct weapon types."
+  },
+  {
+    "statement": "A NATO member state reports intercepting or shooting down a Russian-attributed drone inside its own territory, between 2026-08-11 and 2026-08-24.",
+    "domain": "military/conflict",
+    "probability": 36,
+    "resolution": "TRUE if a NATO government or NATO itself publicly confirms intercepting or downing a Russian-attributed drone within a member state territory between 2026-08-11 and 2026-08-24, confirmed by 2026-08-26.",
+    "deadline": "2026-08-26",
+    "citations": [
+      76
+    ],
+    "failure_condition": "No NATO member government or NATO confirms intercepting or downing a Russian-attributed drone within its territory during the window."
+  },
+  {
+    "statement": "Iran imposes a closure or blockade on commercial shipping transit through the Strait of Hormuz at any point between 2026-08-11 and 2026-09-08.",
+    "domain": "military/conflict",
+    "probability": 12,
+    "resolution": "TRUE if Iran announces or enforces a closure, blockade, or de facto halt of transit through the Strait of Hormuz between 2026-08-11 and 2026-09-08, confirmed by two or more wire services by 2026-09-10.",
+    "deadline": "2026-09-10",
+    "citations": [
+      70,
+      74
+    ],
+    "failure_condition": "Commercial shipping transit through the Strait of Hormuz continues without an Iranian-imposed closure or blockade throughout the window."
+  },
+  {
+    "statement": "A CVE for the Metabase authentication-bypass or SQL-injection vulnerability reported as actively exploited on 2026-08-07 and 2026-08-08 is added to the CISA Known Exploited Vulnerabilities catalog, with dateAdded between 2026-08-09 and 2026-08-23.",
+    "domain": "cyber",
+    "probability": 74,
+    "resolution": "TRUE if the CISA KEV catalog lists a Metabase-related CVE with dateAdded between 2026-08-09 and 2026-08-23, checked by 2026-08-25.",
+    "deadline": "2026-08-25",
+    "citations": [
+      16,
+      19
+    ],
+    "failure_condition": "No Metabase-related CVE appears in the CISA KEV catalog with a dateAdded value in the window."
+  },
+  {
+    "statement": "CISA updates the Known Exploited Vulnerabilities catalog entry for CVE-2026-8037, the Progress LoadMaster command-injection vulnerability, so that knownRansomwareCampaignUse equals Known, at any point between 2026-08-09 and 2026-09-06.",
+    "domain": "cyber",
+    "probability": 14,
+    "resolution": "TRUE if the CISA KEV entry for CVE-2026-8037 shows knownRansomwareCampaignUse equal to Known at any check between 2026-08-09 and 2026-09-06, verified by 2026-09-08.",
+    "deadline": "2026-09-08",
+    "citations": [
+      18
+    ],
+    "failure_condition": "The CISA KEV entry for CVE-2026-8037 still shows knownRansomwareCampaignUse as Unknown at the deadline."
+  },
+  {
+    "statement": "The S&P 500 index closes below 7650.00 on at least one trading day between 2026-08-10 and 2026-08-21, giving back roughly half of the 2026-08-07 single-day rally.",
+    "domain": "economics/markets",
+    "probability": 46,
+    "resolution": "TRUE if the official S&P 500 closing value falls below 7650.00 on any trading day between 2026-08-10 and 2026-08-21, per exchange settlement data, checked 2026-08-24.",
+    "deadline": "2026-08-24",
+    "citations": [
+      66,
+      59
+    ],
+    "failure_condition": "The S&P 500 closes at or above 7650.00 on every trading day in the window."
+  },
+  {
+    "statement": "COMEX front-month gold futures settle at a fresh nominal all-time high above 4399.70 on at least one trading day between 2026-08-10 and 2026-08-21.",
+    "domain": "economics/markets",
+    "probability": 55,
+    "resolution": "TRUE if COMEX front-month gold futures settle above 4399.70 on any trading day between 2026-08-10 and 2026-08-21, per exchange settlement data, checked 2026-08-24.",
+    "deadline": "2026-08-24",
+    "citations": [
+      66
+    ],
+    "failure_condition": "COMEX front-month gold futures fail to settle above 4399.70 on every trading day in the window."
+  },
+  {
+    "statement": "The sitting Governor of Rhode Island leaves office, through resignation, recall, impeachment conviction, or removal, at any point between 2026-08-11 and 2026-09-08.",
+    "domain": "political",
+    "probability": 18,
+    "resolution": "TRUE if the individual holding the Rhode Island governorship on 2026-08-08 is no longer Governor of Rhode Island at any point between 2026-08-11 and 2026-09-08, confirmed by 2026-09-10.",
+    "deadline": "2026-09-10",
+    "citations": [
+      96
+    ],
+    "failure_condition": "The Governor of Rhode Island in office on 2026-08-08 remains Governor throughout the window."
+  },
+  {
+    "statement": "Typhoon Dolphin makes landfall on the coast of mainland China at any point between 2026-08-09 and 2026-08-16.",
+    "domain": "disaster",
+    "probability": 52,
+    "resolution": "TRUE if the China Meteorological Administration or the Joint Typhoon Warning Center records a mainland China landfall for Typhoon Dolphin between 2026-08-09 and 2026-08-16, confirmed by 2026-08-18.",
+    "deadline": "2026-08-18",
+    "citations": [
+      25
+    ],
+    "failure_condition": "Typhoon Dolphin dissipates, recurves, or otherwise fails to make landfall on mainland China during the window."
+  }
+]
