@@ -139,7 +139,12 @@ def parse_report(path: Path) -> dict:
     items = {}
     try:
         lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
-    except Exception:
+    except Exception as _e:
+        # KK31-INDETERMINATE: an unreadable report is not an empty report.
+        # Returning {} silently scored every citation in it against nothing.
+        print(f"  INDETERMINATE - cite_integrity could not read {path}: {_e}. "
+              f"Citations in this report are UNCHECKED, not clean.",
+              file=sys.stderr)
         return items
     for line in lines:
         m = re.match(r"\s*(\d+)\.\s+(.*)", line)
