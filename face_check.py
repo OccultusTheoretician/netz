@@ -147,7 +147,13 @@ def tracked_docs():
         r = subprocess.run(["git", "ls-files", "docs/"], capture_output=True,
                            text=True, check=False, errors="replace")
         out = r.stdout if r.returncode == 0 else ""
-    except Exception:
+        if r.returncode != 0:  # KK31-INDETERMINATE
+            print(f"  INDETERMINATE - face_check could not list docs/ "
+                  f"(git rc={r.returncode}). Faces are UNCHECKED, not absent.",
+                  file=sys.stderr)
+    except Exception as _e:
+        print(f"  INDETERMINATE - face_check could not list docs/: {_e}. "
+              f"Faces are UNCHECKED, not absent.", file=sys.stderr)
         out = ""
     return {l.split("/")[-1] for l in out.splitlines()
             if l.count("/") == 1 and l.lower().endswith((".html", ".md"))}

@@ -83,7 +83,11 @@ def split_report(path: Path):
     record, prose = [], []
     try:
         lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
-    except Exception:
+    except Exception as _e:
+        # KK31-INDETERMINATE: empty record + empty prose means no identifier
+        # can be flagged, so the report scored clean by construction.
+        print(f"  INDETERMINATE - ident_audit could not read {path}: {_e}. "
+              f"This report is UNSCANNED, not clean.", file=sys.stderr)
         return "", ""
     for line in lines:
         (record if ITEM_RE.match(line) else prose).append(line)
