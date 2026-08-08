@@ -289,7 +289,9 @@ def cmd_run(evs, reg, only=None):
            "observations": obs, "divergence_candidates": div}
     p = FORECASTS / f"dialektik_meter_{datetime.now(timezone.utc):%Y-%m-%d_%H%M}.json"
     p.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"\n  {len(obs)} observation(s) · {len(div)} divergence candidate(s) -> {p.name}")
+    import shutil as _sh  # KK33-PIPELINE: stable alias for the health board
+    _sh.copyfile(p, FORECASTS / "dialektik_meter_latest.json")
+    print(f"\n  {len(obs)} observation(s) · {len(div)} divergence candidate(s) -> {p.name} (+ latest)")
     for d in div[:8]:
         print(f"\n  {d['figure']} · {d['topic']}  [CANDIDATE - operator adjudicates]")
         print(f"    {str(d['a']['date'])[:16]}  {d['a']['stance']:8s} {d['a']['excerpt'][:90]}")
