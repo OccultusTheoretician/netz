@@ -1,121 +1,125 @@
 {
-  "_readme": "Single source of truth for site navigation. Edit groups/labels here, then run: python navgen.py  — every served page gets the identical grouped nav. Pages listed in 'skip' keep whatever nav they have and are exempt from --check drift. 'external' renders after the groups.",
-  "groups": [
+ "_readme": "Single source of truth for site navigation. Edit groups/labels here, then run: python navgen.py  — every served page gets the identical grouped nav. Pages listed in 'skip' keep whatever nav they have and are exempt from --check drift. 'external' renders after the groups.",
+ "groups": [
+  {
+   "label": "DESK",
+   "links": [
     {
-      "label": "DESK",
-      "links": [
-        {
-          "href": "index.html",
-          "text": "Desk"
-        },
-        {
-          "href": "report.html",
-          "text": "Report"
-        },
-        {
-          "href": "spion.html",
-          "text": "Spion"
-        },
-        {
-          "href": "health.html",
-          "text": "Health"
-        }
-      ]
+     "href": "index.html",
+     "text": "Desk"
     },
     {
-      "label": "FORECASTING",
-      "links": [
-        {
-          "href": "kkr.html",
-          "text": "Forecasts"
-        },
-        {
-          "href": "ledger.html",
-          "text": "Ledger"
-        },
-        {
-          "href": "KriegForeKaster.html",
-          "text": "ForeKaster"
-        },
-        {
-          "href": "KriegForeKaster_compendium.html",
-          "text": "Compendium"
-        },
-        {
-          "href": "globalkaster.html",
-          "text": "GlobalKaster"
-        },
-        {
-          "href": "fogsim.html",
-          "text": "FogSim"
-        },
-        {
-          "href": "okk.html",
-          "text": "OberKommando"
-        }
-      ]
+     "href": "report.html",
+     "text": "Report"
     },
     {
-      "label": "FEDERATION",
-      "links": [
-        {
-          "href": "kraehes_kalls.html",
-          "text": "Kalls"
-        },
-        {
-          "href": "nest.html",
-          "text": "Nest"
-        }
-      ]
+     "href": "spion.html",
+     "text": "Spion"
     },
     {
-      "label": "STANDARDS",
-      "links": [
-        {
-          "href": "standards.html",
-          "text": "Standards"
-        },
-        {
-          "href": "conformance.html",
-          "text": "Conformance"
-        },
-        {
-          "href": "register.html",
-          "text": "Register"
-        },
-        {
-          "href": "verify.html",
-          "text": "Verify"
-        },
-        {
-          "href": "decc.html",
-          "text": "DECC-26"
-        }
-      ]
-    },
-    {
-      "label": "CABINET",
-      "links": [
-        {
-          "href": "ohrwurm.html",
-          "text": "Ohrwurm"
-        },
-        {
-          "href": "konsole.html",
-          "text": "Konsole"
-        },
-        {
-          "href": "marks.html",
-          "text": "Marks"
-        }
-      ]
+     "href": "health.html",
+     "text": "Health"
     }
-  ],
-  "external": [
+   ]
+  },
+  {
+   "label": "FORECASTING",
+   "links": [
     {
-      "href": "https://github.com/OccultusTheoretician/netz",
-      "text": "GitHub"
+     "href": "kkr.html",
+     "text": "Forecasts"
+    },
+    {
+     "href": "ledger.html",
+     "text": "Ledger"
+    },
+    {
+     "href": "KriegForeKaster.html",
+     "text": "ForeKaster"
+    },
+    {
+     "href": "KriegForeKaster_compendium.html",
+     "text": "Compendium"
+    },
+    {
+     "href": "kfk_map.html",
+     "text": "Overlay"
+    },
+    {
+     "href": "globalkaster.html",
+     "text": "GlobalKaster"
+    },
+    {
+     "href": "fogsim.html",
+     "text": "FogSim"
+    },
+    {
+     "href": "okk.html",
+     "text": "OberKommando"
     }
-  ],
-  "skip": []
+   ]
+  },
+  {
+   "label": "FEDERATION",
+   "links": [
+    {
+     "href": "kraehes_kalls.html",
+     "text": "Kalls"
+    },
+    {
+     "href": "nest.html",
+     "text": "Nest"
+    }
+   ]
+  },
+  {
+   "label": "STANDARDS",
+   "links": [
+    {
+     "href": "standards.html",
+     "text": "Standards"
+    },
+    {
+     "href": "conformance.html",
+     "text": "Conformance"
+    },
+    {
+     "href": "register.html",
+     "text": "Register"
+    },
+    {
+     "href": "verify.html",
+     "text": "Verify"
+    },
+    {
+     "href": "decc.html",
+     "text": "DECC-26"
+    }
+   ]
+  },
+  {
+   "label": "CABINET",
+   "links": [
+    {
+     "href": "ohrwurm.html",
+     "text": "Ohrwurm"
+    },
+    {
+     "href": "konsole.html",
+     "text": "Konsole"
+    },
+    {
+     "href": "marks.html",
+     "text": "Marks"
+    }
+   ]
+  }
+ ],
+ "external": [
+  {
+   "href": "https://github.com/OccultusTheoretician/netz",
+   "text": "GitHub"
+  }
+ ],
+ "skip": []
 }
