@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 072156Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 080121Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 379 issued across 14 forecaster arms · 332 open (0 past deadline, unresolved)
+Window: all-time · 379 issued across 14 forecaster arms · 329 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -20,12 +20,12 @@ Window: all-time · 379 issued across 14 forecaster arms · 332 open (0 past dea
 | lmstudio/auto[post-verbot] | 20 | 20 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-window] | 27 | 25 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[pre-verbot] | 60 | 20 | 32 | 9 | 23 | 0.221 | 28.1% | 0.202 | -0.093 |
-| manual/fable | 45 | 44 | 1 | 1 | 0 | 0.360 | 100.0% | 0.000 | — |
+| manual/fable | 45 | 42 | 3 | 1 | 2 | 0.266 | 33.3% | 0.222 | -0.198 |
 | manual/fable-5 | 23 | 23 | 0 | — | — | not computed | — | — | — |
 | manual/fable-5/unattested | 12 | 12 | 0 | — | — | not computed | — | — | — |
 | manual/opus-5 | 57 | 57 | 0 | — | — | not computed | — | — | — |
 | manual/opus-5/unattested | 31 | 31 | 0 | — | — | not computed | — | — | — |
-| manual/sonnet-5 | 23 | 22 | 1 | 0 | 1 | 0.336 | 0.0% | 0.000 | — |
+| manual/sonnet-5 | 23 | 21 | 2 | 1 | 1 | 0.265 | 50.0% | 0.250 | -0.060 |
 | manual/sonnet-5/unattested | 24 | 24 | 0 | — | — | not computed | — | — | — |
 | operator/human | 6 | 3 | 0 | — | — | not computed | — | — | — |
 
@@ -43,25 +43,24 @@ Window: all-time · 379 issued across 14 forecaster arms · 332 open (0 past dea
 | 40-60% | 9 | 44% |
 | 60-80% | 4 | 25% |
 
-**CALIBRATION — manual/fable** (1 resolved)
+**CALIBRATION — manual/fable** (3 resolved)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
+| 20-40% | 1 | 0% |
 | 40-60% | 1 | 100% |
+| 60-80% | 1 | 0% |
 
-**CALIBRATION — manual/sonnet-5** (1 resolved)
+**CALIBRATION — manual/sonnet-5** (2 resolved)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
-| 40-60% | 1 | 0% |
+| 40-60% | 2 | 50% |
 
 ## OPEN PROJECTIONS
 
 | id | arm | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|---|
-| KKR-20260724-09 | `manual/fable` | 2026-07-24 | 2026-08-07 | 28% | disaster | The government of France declares a national state of emergency or equivalent nationwide wildfire emergency between 2026-07-25 and 2026-08-07. |
-| KKR-20260725-07 | `manual/fable` | 2026-07-25 | 2026-08-07 | 60% | political | The UK Ministry of Defence publicly confirms deployment of military assets to assist wildfire suppression in Scotland between 2026-07-27 and 2026-08-07. |
-| KKR-20260731-15 | `manual/sonnet-5` | 2026-07-31 | 2026-08-07 | 56% | economics/markets | Apple stock will record at least one additional daily close lower than its 2026-07-31 close on any trading day between 2026-08-03 and 2026-08-07. |
 | KKR-20260720-16 | `lmstudio/auto` | 2026-07-20 | 2026-08-08 | 30% | cyber | A new AI agent will be confirmed to have breached a government or financial institution’s internal network by 2026-08-08, with public disclosure from the affected organization. |
 | KKR-20260722-04 | `lmstudio/auto` | 2026-07-22 | 2026-08-08 | 35% | political | Between 2026-08-05 and 2026-08-08, the French Ministry of Health confirms that social media platforms have been fully blocked for users under 15 years old across the country. |
 | KKR-20260720-13 | `lmstudio/auto` | 2026-07-20 | 2026-08-10 | 55% | political | FIFA will issue a formal disciplinary sanction against at least one player involved in the Spain vs Argentina World Cup final on-pitch brawl by 2026-08-10. |
@@ -394,6 +393,9 @@ Window: all-time · 379 issued across 14 forecaster arms · 332 open (0 past dea
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
+- **✗ MISS** KKR-20260724-09 [`manual/fable`] (28%, due 2026-08-07, resolved 2026-08-08): The government of France declares a national state of emergency or equivalent nationwide wildfire emergency between 2026-07-25 and 2026-08-07. — *[jury] The national-emergency declaration in the late-July coverage belongs to Spain, not France: Fox News (late July 2026) states explicitly that Spain has declared a national emergency while France has deployed the military, and France 24 (July 25) reports Sanchez declaring Spain's civil-protection emergency. France's national-level measures in the window were EU Civil Protection Mechanism activation, roughly 1,500 troops to Gironde, and prefect-level bans (Wikipedia, 2026 France wildfires; Al Jazeera, July 28) - no French nationwide state-of-emergency declaration is reported by major press through*
+- **✗ MISS** KKR-20260725-07 [`manual/fable`] (60%, due 2026-08-07, resolved 2026-08-08): The UK Ministry of Defence publicly confirms deployment of military assets to assist wildfire suppression in Scotland between 2026-07-27 and 2026-08-07. — *[jury] The Scottish Government requested military aerial support around Aug 1 (UK Defence Journal); the UK Government answered with availability - Chinooks and standby battalions ready if requested (Press and Journal; UK Defence Journal, early Aug) - but the MoD could not supply the aerial firefighting capability sought and the offered support was declined, with Neil Gray saying ground crews had the resources needed (Wikipedia, 2026 Cairngorms wildfire; Press and Journal timeline). No MoD or Scottish Government confirmation of an actual military deployment to the fire appears in major press within th*
+- **✓ HIT** KKR-20260731-15 [`manual/sonnet-5`] (56%, due 2026-08-07, resolved 2026-08-08): Apple stock will record at least one additional daily close lower than its 2026-07-31 close on any trading day between 2026-08-03 and 2026-08-07. — *[jury] S&P Global daily table via stockanalysis.com (read after the Aug 7 close): Jul 31, 2026 close 308.91 (the -7.35 percent, 131M-share plunge day); Aug 3 close 303.42 - below the reference - then Aug 4 through Aug 7 closes 309.38, 311.00, 312.41, 313.33, all above. The criterion is satisfied by the Aug 3 close alone.*
 - **✗ MISS** KKR-20260726-19 [`lmstudio/auto`] (45%, due 2026-08-06, resolved 2026-08-07): A new political party led by Senegal's Faye formally registers with the country's electoral commission between 2026-08-03 and 2026-08-06. — *[jury] Al Jazeera dated 2026-07-26 reported Faye launched Kiiraay - The Republican Patriots at a founding assembly in Dakar on Saturday 2026-07-25, before the window opened. No Al Jazeera report or Senegalese government press release records a formal registration of the party with the electoral commission between 2026-08-03 and 2026-08-06.*
 - **✗ MISS** KKR-20260730-26 [`manual/sonnet-5`] (58%, due 2026-08-06, resolved 2026-08-07): Meta Platforms stock will close lower than its 2026-07-30 closing price at least once more between 2026-07-31 and 2026-08-06. — *[jury] CNBC dated 2026-07-30 reports Meta fell roughly 8 to 9 percent in the 2026-07-30 session from a 2026-07-29 close of 585.61 per TradingKey, putting the reference close near 533 to 536. TradingKey dated 2026-07-31 reports META closed up 3.52 percent on 2026-07-31, and quote pages show closes of about 588.77 on 2026-08-04, 589.90 on 2026-08-05 per CNBC and Google Finance, and 587.69 on 2026-08-06 per Google Finance, all well above the reference.*
 - **✓ HIT** KKR-20260720-10 [`lmstudio/auto`] (40%, due 2026-08-05, resolved 2026-08-06): Global oil prices will exceed $85 per barrel for at least three consecutive trading days between 2026-07-28 and 2026-08-05. — *HIT — Brent closed above $85 on 2026-07-28 through 07-31 (>=4 consecutive trading days in window); Fortune 07-31 print $92.27, Oilprice 8%-weekly-loss-to-~$92, TradingEconomics series concur.*

@@ -1,13 +1,13 @@
 # RPAS-26 Conformance Report — ledger.json
 *Generated 2026-08-07. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
 
-- entries: **364** · resolved: **32** · keyless: **87** · keyed: **182**
+- entries: **379** · resolved: **34** · keyless: **87** · keyed: **182**
 - 5.02 fifty-entry gate: **MET**
 - thirty-resolved noise floor: **cleared**
-- 1.04 keyed/keyless missing: **95/364**
-- 4.03 failure condition missing: **25/364**
+- 1.04 keyed/keyless missing: **110/379**
+- 4.03 failure condition missing: **25/379**
 
-- findings: **120 FAIL**, **251 WARN**
+- findings: **135 FAIL**, **257 WARN**
 
 ## Findings
 
@@ -137,6 +137,7 @@
 | KKR-20260726-15 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260726-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260726-18 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260726-19 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260727-01 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260727-02 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260727-03 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -203,6 +204,7 @@
 | KKR-20260730-19 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260730-20 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260730-24 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260730-26 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260730-27 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260730-28 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260730-29 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -384,3 +386,22 @@
 | KKR-20260807-02 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260807-03 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260807-04 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-05 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-06 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-07 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260807-07 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-08 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-09 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260807-09 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-10 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260807-11 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-12 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-13 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-14 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-15 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-16 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-17 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-18 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260807-18 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260807-19 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |

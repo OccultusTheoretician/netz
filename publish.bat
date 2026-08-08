@@ -14,6 +14,12 @@ if exist C:\netz\forecasts\KKR_latest.html copy /Y C:\netz\forecasts\KKR_latest.
 copy /Y C:\netz\ledger.json C:\netz\docs\ledger.json >nul
 cd /d C:\netz
 python health.py
+REM KK28-TOOLWORK: navgen in no batch file was the NAVDRIFT root cause — the
+REM daily-regenerated report face drifted from the manifest until a hand run.
+REM packet_commit --write is the standing BEHIND reflex made permanent (both
+REM are no-ops when current). Before add -A so their output rides this publish.
+python navgen.py
+python packet_commit.py --write
 git add -A
 
 REM KK24: the guard was never in the publish path - everything it caught

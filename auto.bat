@@ -19,6 +19,12 @@ REM  file and the chain continues. A missed stage prints as missed.
 REM ============================================================
 setlocal enabledelayedexpansion
 cd /d C:\netz
+REM KK28D-UTF8: under the scheduler there is no console and Python 3.14
+REM defaults redirected stdout to cp1252 — a Cyrillic phrase or em-dash
+REM mid-print killed ohrwurm_candidates live (2026-08-07). UTF-8 for every
+REM child Python; the stage logs and MORNING file become clean UTF-8 too.
+set PYTHONUTF8=1
+set PYTHONIOENCODING=utf-8
 for /f %%d in ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-dd"') do set TODAY=%%d
 if not exist state mkdir state
 if not exist state\log_%TODAY% mkdir state\log_%TODAY%
@@ -26,10 +32,12 @@ set MORNING=state\MORNING_%TODAY%.md
 echo # MORNING %TODAY% — unattended run>%MORNING%
 echo.>>%MORNING%
 
+REM KK28B-AUTOLATCH: the latch is daily.bat's, stage-scoped. The old
+REM whole-run exit here skipped the entire mechanical tail on every
+REM operator-first day (proven live 2026-08-07: MORNING file, one line,
+REM nothing ran). Stage 1 no-ops inside daily.bat; the chain continues.
 if exist state\desk_%TODAY%.ran (
-  echo desk already ran today ^(operator or prior auto^) — exiting clean.
-  echo latch: desk_%TODAY%.ran present — auto exited without running.>>%MORNING%
-  exit /b 0
+  echo latch: desk_%TODAY%.ran present — stage 1 will no-op inside daily.bat; chain continues.>>%MORNING%
 )
 
 call :run "war-desk + collation + forecast (daily.bat)" call daily.bat
@@ -72,11 +80,14 @@ set CMD=%CMD% %1
 goto build
 :exec
 %CMD% > "%STAGELOG%" 2>&1
+REM KK28C-RUNLABELS: parse-time %%LABEL%% inside these blocks broke on the
+REM three paren-bearing stage labels the first time the chain ever ran.
+REM Delayed expansion (!VAR!) expands after the block is parsed.
 if errorlevel 1 (
-  echo [FAIL] %LABEL%  — see %STAGELOG%>>%MORNING%
-  echo [FAIL] %LABEL%
+  echo [FAIL] !LABEL!  — see !STAGELOG!>>%MORNING%
+  echo [FAIL] !LABEL!
 ) else (
-  echo [OK]   %LABEL%>>%MORNING%
-  echo [OK]   %LABEL%
+  echo [OK]   !LABEL!>>%MORNING%
+  echo [OK]   !LABEL!
 )
 exit /b 0

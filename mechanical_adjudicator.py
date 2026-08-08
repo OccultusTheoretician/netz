@@ -115,14 +115,12 @@ def map_row(e: dict):
         # so this guard parks the whole resolver on operator adjudication.
         # REMOVE only when the matcher parses the alert-level FIELD and a
         # Green-vs-red smoke returns NO.
-        _tok = re.search(r"\b(green|orange|red)\b", tl)
-        if _tok:
-            return None, (f"gdacs ABSTAIN (KK23 guard): predicate contains "
-                          f"alert-level token '{_tok.group(1)}' and the "
-                          f"matcher has a documented false-positive on alert "
-                          f"levels (smoke 2026-08-04: YES on Green against a "
-                          f"red predicate) -- operator adjudication until the "
-                          f"matcher parses the alert-level field")
+        # KK28-TOOLWORK unpark: the KK23 guard's own removal condition is
+        # met — resolve_gdacs reads the alert level STRUCTURALLY since KK21k
+        # (namespaced element, then title-prefix, refusing body-text
+        # inference, which was the 2026-08-04 false positive's channel).
+        # First-run discipline still applies: smoke before trusting —
+        #     python mechanical_adjudicator.py --smoke --keep-raw
         lvl = re.search(r"alertlevel\s+(\w+)|(\bred\b|\borange\b)", tl)
         cty = re.search(r"country\s+(\w+)|\bin\s+([A-Z]\w+)", t)
         w = re.findall(DATE, t)

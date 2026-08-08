@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-07T21:56:02Z",
+  "as_of": "2026-08-08T01:21:52Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -1513,13 +1513,28 @@
       "date_issued": "2026-07-24",
       "model": "manual/fable",
       "source_report": "battle_report_2026-07-24_1503.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-08",
+      "notes": "[jury] The national-emergency declaration in the late-July coverage belongs to Spain, not France: Fox News (late July 2026) states explicitly that Spain has declared a national emergency while France has deployed the military, and France 24 (July 25) reports Sanchez declaring Spain's civil-protection emergency. France's national-level measures in the window were EU Civil Protection Mechanism activation, roughly 1,500 troops to Gironde, and prefect-level bans (Wikipedia, 2026 France wildfires; Al Jazeera, July 28) - no French nationwide state-of-emergency declaration is reported by major press through",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if the French national government formally declares a nationwide state of emergency for the wildfires, reported by major press between 2026-07-25 and 2026-08-07; else FALSE — is not met on or before 2026-08-07; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "The national-emergency declaration in the late-July coverage belongs to Spain, not France: Fox News (late July 2026) states explicitly that Spain has declared a national emergency while France has deployed the military, and France 24 (July 25) reports Sanchez declaring Spain's civil-protection emergency. France's national-level measures in the window were EU Civil Protection Mechanism activation, roughly 1,500 troops to Gironde, and prefect-level bans (Wikipedia, 2026 France wildfires; Al Jazeera, July 28) - no French nationwide state-of-emergency declaration is reported by major press through"
+      }
     },
     {
       "statement": "CISA adds the Certighost Active Directory vulnerability to its Known Exploited Vulnerabilities catalog between 2026-07-25 and 2026-09-15.",
@@ -1704,13 +1719,28 @@
       "date_issued": "2026-07-25",
       "model": "manual/fable",
       "source_report": "battle_report_2026-07-25_1714.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-08",
+      "notes": "[jury] The Scottish Government requested military aerial support around Aug 1 (UK Defence Journal); the UK Government answered with availability - Chinooks and standby battalions ready if requested (Press and Journal; UK Defence Journal, early Aug) - but the MoD could not supply the aerial firefighting capability sought and the offered support was declined, with Neil Gray saying ground crews had the resources needed (Wikipedia, 2026 Cairngorms wildfire; Press and Journal timeline). No MoD or Scottish Government confirmation of an actual military deployment to the fire appears in major press within th",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if the UK MoD or Scottish Government confirms deployment of military personnel or aircraft to the Cairngorms wildfire, reported by major press within the window; else FALSE — is not met on or before 2026-08-07; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "The Scottish Government requested military aerial support around Aug 1 (UK Defence Journal); the UK Government answered with availability - Chinooks and standby battalions ready if requested (Press and Journal; UK Defence Journal, early Aug) - but the MoD could not supply the aerial firefighting capability sought and the offered support was declined, with Neil Gray saying ground crews had the resources needed (Wikipedia, 2026 Cairngorms wildfire; Press and Journal timeline). No MoD or Scottish Government confirmation of an actual military deployment to the fire appears in major press within th"
+      }
     },
     {
       "statement": "CISA adds a Fastjson or GitLab remote-code-execution CVE to its Known Exploited Vulnerabilities catalog between 2026-07-27 and 2026-09-15.",
@@ -5053,16 +5083,31 @@
       "model": "manual/sonnet-5",
       "source_report": "battle_report_2026-07-31_1502.md",
       "source_packet": "kkr_packet_2026-07-31_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-08",
+      "notes": "[jury] S&P Global daily table via stockanalysis.com (read after the Aug 7 close): Jul 31, 2026 close 308.91 (the -7.35 percent, 131M-share plunge day); Aug 3 close 303.42 - below the reference - then Aug 4 through Aug 7 closes 309.38, 311.00, 312.41, 313.33, all above. The criterion is satisfied by the Aug 3 close alone.",
       "failure_condition": "Apple common stock records no daily close below its 2026-07-31 close on any trading day 2026-08-03 through 2026-08-07, per official exchange closing data as read on 2026-08-07; that reading scores this entry a MISS.",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "Official closing-price series against a fixed reference close; mechanical.",
       "sealed_at": "2026-07-31T16:28:25.368815+00:00",
       "seal_sha256": "fecfc8346caa5ce4e9d6fafa2ec353b184b86e9c04abebd8793e5722a7f62426",
       "keyed_keyless_dated": "2026-08-05",
-      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit"
+      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "S&P Global daily table via stockanalysis.com (read after the Aug 7 close): Jul 31, 2026 close 308.91 (the -7.35 percent, 131M-share plunge day); Aug 3 close 303.42 - below the reference - then Aug 4 through Aug 7 closes 309.38, 311.00, 312.41, 313.33, all above. The criterion is satisfied by the Aug 3 close alone."
+      }
     },
     {
       "statement": "Between 2026-07-31 and 2026-10-30, the Federal Reserve will announce an increase in the federal funds rate.",
