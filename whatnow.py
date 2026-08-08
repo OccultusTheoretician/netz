@@ -82,7 +82,8 @@ def main():
         ids = ", ".join(p["id"] for p in keysoon[:6])
         todo.append((f"{len(keysoon)} row(s) resolve within 30 days with NO keyed/keyless - "
                      "each becomes KEYED by rule (4.03) if left",
-                     f"decide and set: {ids}"))
+                     f"python kkr.py --keys-propose --keys-due 30 -> "
+                     f"review -> --keys-import  ({ids})"))
     if dirty or ahead:
         what = "uncommitted changes" if dirty else "local commits not pushed"
         todo.append((f"{what} - the site is behind your work",

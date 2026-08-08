@@ -1608,6 +1608,25 @@ def cmd_ingest(args):
     render_kkr(added, rejected, arm, src_name)
 
 
+def _keys_403_default(p, when):
+    """RPAS 4.03: a row resolving with no keyed/keyless determination is
+    KEYED by rule. The rule always applied; this makes each firing a dated,
+    printed record instead of an implicit state discovered later by
+    conformance. Scored statuses only - a void row is unscored. KK34-KEYS."""
+    if p.get("status") not in ("hit", "miss"):
+        return
+    v = str(p.get("keyed_keyless") or "").strip()
+    if v and not v.lower().startswith("unset"):
+        return
+    p["keyed_keyless"] = "keyed"
+    p["keyed_keyless_rationale"] = ("RPAS 4.03 default - no determination "
+                                    "before resolution")
+    p["keyed_keyless_dated"] = when
+    p["keyed_keyless_403_default"] = True
+    print(f"  4.03 DEFAULT PRINTED: {p['id']} -> KEYED by rule "
+          f"(undetermined at resolution)", file=sys.stderr)
+
+
 def cmd_resolve(args):
     data = load_ledger()
     today = datetime.now(timezone.utc).date()
@@ -1625,6 +1644,7 @@ def cmd_resolve(args):
         if ans in ("h", "m", "v"):
             p["status"] = {"h": "hit", "m": "miss", "v": "void"}[ans]
             p["resolved_date"] = today.strftime("%Y-%m-%d")
+            _keys_403_default(p, p["resolved_date"])
             note = input("  note (enter to skip) > ").strip()
             p["notes"] = note
     save_ledger(data)
@@ -1890,6 +1910,7 @@ def cmd_audit_ingest(args):
         if mapped:
             p["status"] = mapped
             p["resolved_date"] = today.strftime("%Y-%m-%d")
+            _keys_403_default(p, p["resolved_date"])
             p["audit"] = {"auditor": args.auditor, "verdict": v.get("verdict"),
                           "confidence": v.get("confidence"),
                           "evidence": v.get("evidence", "")[:600],
@@ -2017,6 +2038,7 @@ def cmd_jury_ingest(args):
         if mapped:
             p["status"] = mapped
             p["resolved_date"] = today.strftime("%Y-%m-%d")
+            _keys_403_default(p, p["resolved_date"])
             p["audit"] = {"mode": "blind-jury", "auditors": [a_name, b_name],
                           "prompt_sha256": ph, "concordant": conc,
                           "basis": basis,
@@ -2417,6 +2439,151 @@ def cmd_keys_import(args):
     render_ledger()
 
 
+def _propose_parse_report(src):
+    """All numbered items of one battle report: {n: [texts]}. Same regex as
+    _priors_for; the full item set is the rare-token universe. KK34-KEYS."""
+    path = HERE / "reports" / src
+    if not src or not path.exists():
+        return None
+    items = {}
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        m = re.match(r"\s*(\d+)\.\s+(.*)", line)
+        if not m:
+            continue
+        body = re.sub(r"\[link\]\(\S+\)", "", m.group(2))
+        body = re.sub(r"[*_`]", "", body)
+        items.setdefault(int(m.group(1)), []).append(
+            re.sub(r"  +", " ", body).strip())
+    return items or None
+
+
+def cmd_keys_propose(args):
+    """Mechanical pre-fill of the keys worksheet. RPAS 5.04 discipline: the
+    machine may CONCEDE a row (keyed) on printed evidence; only the operator
+    may CLAIM one (keyless). Nothing here writes the ledger - the write
+    remains --keys-import, validated, yours. KK34-KEYS.
+
+    Limit, printed where it matters: G1-strong evidences TOPICAL GROUNDING
+    (the prior names the claim's rare specifics), not outcome-deduction.
+    Flip any row where the prior grounds the subject but not the outcome.
+    """
+    data = load_ledger()
+    todo = _keys_pending(data, getattr(args, "keys_due", None))
+    if not todo:
+        print("KKR - nothing pending in scope", file=sys.stderr)
+        return
+    today = datetime.now(timezone.utc).date()
+    OUT.mkdir(exist_ok=True)
+    stamp = today.isoformat()
+
+    md = [f"# KEYS PROPOSAL - {len(todo)} row(s), machine pre-fill",
+          "",
+          f"Generated {stamp}. RPAS 4.02f/4.03. THE MACHINE MAY CONCEDE",
+          "(keyed, basis printed); ONLY YOU MAY CLAIM (keyless - those rows",
+          "are BLANK below). G1-strong = topical grounding, not",
+          "outcome-deduction: flip any row where the prior grounds the",
+          "subject but not the outcome.",
+          "",
+          "Review, edit the worksheet where you disagree, then:",
+          f"`python kkr.py --keys-import "
+          f"forecasts/keys_worksheet_{stamp}_proposed.json`",
+          ""]
+    sheet = {}
+    counts = {"strong": 0, "unreadable": 0, "control": 0, "candidate": 0}
+    cache = {}
+    for dl, p in todo:
+        arm = str(p.get("model", ""))
+        src = p.get("source_report") or ""
+        if src not in cache:
+            cache[src] = _propose_parse_report(src)
+        items = cache[src]
+        cites = [int(c) for c in (p.get("citations") or [])
+                 if str(c).strip().lstrip("-").isdigit() and int(c) > 0]
+        ruling, why, basis, klass = "", "", "", ""
+        if arm.startswith("control/"):
+            klass, ruling = "control", "keyed"
+            why = ("Control arm - projection derived from the ledger's own "
+                   "base rates; deducible by construction.")
+            basis = "control arm"
+        elif items is None or not cites or not any(c in items for c in cites):
+            klass, ruling = "unreadable", "keyed"
+            reason = ("source report not on disk" if items is None else
+                      "no cited item found in report" if cites else
+                      "no citations on the row")
+            why = (f"Priors unreadable ({reason}); keyless cannot be "
+                   f"evidenced - keyed per the unreadable-priors rule of "
+                   f"the 2026-08-01 pass.")
+            basis = reason
+        else:
+            rare, _ = _rare_tokens(items)
+            claim = _content_words(p.get("statement", "") + " " +
+                                   p.get("resolution", ""))
+            hit_terms, hit_cites, weak = set(), [], set()
+            for c in sorted(set(cites)):
+                for txt in items.get(c, []):
+                    shared = _tokens_overlap(claim, _content_words(txt))
+                    if not shared:
+                        continue
+                    strong = _tokens_overlap(shared, rare)
+                    if strong:
+                        hit_terms |= strong
+                        if c not in hit_cites:
+                            hit_cites.append(c)
+                    else:
+                        weak |= shared
+            if hit_terms:
+                klass, ruling = "strong", "keyed"
+                terms = ", ".join(sorted(hit_terms)[:6])
+                why = (f"Cited prior(s) "
+                       f"[{', '.join(str(c) for c in hit_cites)}] carry the "
+                       f"claim's operative terms ({terms}); a hit is "
+                       f"deducible from the cited record.")
+                basis = f"G1-strong: {terms}"
+            else:
+                klass = "candidate"
+                basis = (("shared vocabulary generic only: " +
+                          ", ".join(sorted(weak)[:6])) if weak else
+                         "no substantive vocabulary shared with any "
+                         "cited prior")
+        counts[klass] += 1
+        days = (dl - today).days
+        md.append("---")
+        md.append(f"\n## {p['id']} - {arm} - {p['deadline']} ({days}d) - "
+                  f"{p.get('probability')}%")
+        md.append(f"\n**Claim:** {p['statement']}")
+        md.append(f"\n**Resolves on:** {p['resolution']}")
+        md.append("\n**Priors cited:**\n")
+        for pr in (_priors_for(p) or ["*(none cited)*"]):
+            md.append(f"- {pr}")
+        if ruling:
+            md.append(f"\n**PROPOSED: {ruling.upper()}** - {basis}")
+            md.append(f"\n> {why}")
+        else:
+            md.append(f"\n**KEYLESS CANDIDATE - YOUR RULING** ({basis})")
+            md.append("\n> Blank in the worksheet. Fill ruling + why, or "
+                      "leave blank to skip.")
+        md.append("")
+        sheet[p["id"]] = {"ruling": ruling, "why": why,
+                          "_class": klass, "_basis": basis[:200],
+                          "_claim": p["statement"][:160],
+                          "_arm": arm, "_deadline": p["deadline"]}
+
+    pmd = OUT / f"keys_packet_{stamp}_proposed.md"
+    pjs = OUT / f"keys_worksheet_{stamp}_proposed.json"
+    pmd.write_text("\n".join(md), encoding="utf-8")
+    pjs.write_text(json.dumps(sheet, indent=1, ensure_ascii=False) + "\n",
+                   encoding="utf-8")
+    print(f"KKR - proposal: {counts['strong']} G1-strong keyed, "
+          f"{counts['unreadable']} unreadable keyed, "
+          f"{counts['control']} control keyed, "
+          f"{counts['candidate']} keyless-candidate (blank, yours)",
+          file=sys.stderr)
+    print(f"KKR - packet    -> {pmd}", file=sys.stderr)
+    print(f"KKR - worksheet -> {pjs}", file=sys.stderr)
+    print("KKR - review, edit where you disagree, then --keys-import",
+          file=sys.stderr)
+
+
 def cmd_keys(args):
     """The keyed/keyless pass. RPAS 4.02f, the one call no script can make.
 
@@ -2581,6 +2748,9 @@ def main():
                          "(RPAS 4.02f); deadline order, saves after each row")
     ap.add_argument("--keys-due", metavar="DAYS",
                     help="with --keys: only rows resolving within DAYS")
+    ap.add_argument("--keys-propose", action="store_true",
+                    help="machine pre-fill of the keys worksheet: keyed on "
+                         "printed evidence only; keyless left to you")
     ap.add_argument("--lane-run", action="store_true",
                     help="write the packet, run every manual lane over the API, "
                          "and ingest each under its own arm tag")
@@ -2608,6 +2778,8 @@ def main():
         cmd_keys_export(args)
     elif args.keys_import:
         cmd_keys_import(args)
+    elif args.keys_propose:
+        cmd_keys_propose(args)
     elif args.keys or args.keys_due:
         cmd_keys(args)
     elif args.lane_run:
