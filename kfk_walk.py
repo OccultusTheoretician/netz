@@ -67,7 +67,12 @@ SPARQL = "https://query.wikidata.org/sparql"
 TREE = """
 SELECT ?child ?childLabel ?typeLabel ?hqLabel ?countryLabel
 WHERE {
-  wd:%(qid)s wdt:P355 ?child .
+  # KK29-WALKRELATIONS: both tree directions. P355 is the parent's downward
+  # claim (US modeling); P361/P749 are the child's upward claims (RU/UA
+  # modeling). A walk reading one direction sees an empty tree that is full.
+  { wd:%(qid)s wdt:P355 ?child . }
+  UNION { ?child wdt:P361 wd:%(qid)s . }
+  UNION { ?child wdt:P749 wd:%(qid)s . }
   OPTIONAL { ?child wdt:P31 ?type . }
   OPTIONAL { ?child wdt:P159 ?hq . }
   OPTIONAL { ?child wdt:P17 ?country . }
@@ -80,12 +85,43 @@ LIMIT 200
 # P31 label substring -> the file's echelon vocabulary. Unmapped stays "unit"
 # rather than being guessed at.
 ECHELON = [
+    # KK29B-CLASSIFY: widened from the RU/UA harvest, where nearly every
+    # service branch and army fell through to "unit". Order matters -
+    # specific before general (corps before army, district before group).
     ("corps", "corps"), ("division", "division"), ("brigade", "brigade"),
     ("regiment", "regiment"), ("battalion", "battalion"),
-    ("sustainment command", "command"), ("command", "command"),
-    ("army", "army"), ("fleet", "fleet"), ("wing", "wing"),
+    ("military district", "district"), ("group of forces", "district"),
+    ("operational-strategic group", "district"), ("operational command", "district"),
+    ("sustainment command", "command"), ("forces command", "command"),
+    ("command", "command"),
+    ("combined arms army", "army"), ("tank army", "army"),
+    ("rocket army", "army"), ("guards army", "army"), ("army", "army"),
+    ("air force", "branch"), ("aerospace forces", "branch"),
+    ("air assault", "branch"), ("airborne", "branch"), ("navy", "branch"),
+    ("ground forces", "branch"), ("space forces", "branch"),
+    ("strategic rocket forces", "branch"), ("territorial defense", "branch"),
+    ("special operations", "branch"), ("unmanned systems forces", "branch"),
+    ("logistics forces", "branch"), ("fleet", "fleet"), ("wing", "wing"),
     ("armed forces", "national"), ("military branch", "branch"),
 ]
+
+# KK29B-CLASSIFY: unmistakable support/training nouns. A child whose type
+# OR label matches is dropped to a printed refusal sub-class, never the
+# board. Conservative: order-of-battle formations do not carry these words.
+SKIP_NOUNS = [
+    "archive", "academy", "school", "institute", "college",
+    "chaplaincy", "medical directorate", "topographical",
+    "reconciliation", "military shops", "construction",
+    "museum", "hospital", "university",
+]
+
+
+def skip_reason(label, type_label):
+    hay = (str(label or "") + " " + str(type_label or "")).lower()
+    for noun in SKIP_NOUNS:
+        if noun in hay:
+            return "support/training org (%s), not order of battle" % noun
+    return None
 
 
 def run(q):
@@ -195,6 +231,10 @@ def cmd_walk(a):
                     break
         if n in known:
             have.append((cq, label, known[n]))
+            continue
+        _skip = skip_reason(label, val(r, "typeLabel"))  # KK29B-CLASSIFY
+        if _skip:
+            refused.append((cq, _skip))
             continue
         fid = derive_id(label, taken, cq)
         taken.add(fid)
