@@ -203,7 +203,13 @@ def check_identity():
         r = subprocess.run([sys.executable, str(g), "scan"], cwd=str(ROOT),
                            capture_output=True, text=True, timeout=120)
     except Exception as e:
-        return "skip", f"guard did not run: {e}"
+        # KK30-GUARDPERF fail-closed: a safety guard that could not run is not
+        # a pass and not a skip. A name on a published surface cannot be
+        # recalled, so the uncertain case BLOCKS the publish (desk verify gates
+        # on "fail"). Two 2026-08-08 publishes shipped unscanned under the old
+        # "skip"; that path is closed.
+        return "fail", (f"guard did not run ({e}) - publish BLOCKED fail-closed; "
+                        f"run `python identity_guard.py scan` by hand to clear")
     if r.returncode == 0:
         return "pass", "no configured term in any tracked file"
     n = sum(1 for l in r.stdout.splitlines() if ":" in l and l.strip().startswith(("d", "b", "s", "k", "m", "i", "f", "a", "c", "p", "r", "t", "w", "n", "o", "l", "e", "g", "h", "j", "q", "u", "v", "x", "y", "z", ".")))

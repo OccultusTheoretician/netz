@@ -40,25 +40,39 @@ SKIP_DIR = {".git", "__pycache__", "node_modules"}
 _SALT_PATH = HERE / "identity_salt.local.txt"
 
 
+_SALT_CACHE = None  # KK30-GUARDPERF: read the salt file once, not per token
+
+
 def _salt() -> bytes:
     """Secret salt, kept off the repo. Generated on first use.
 
     KK18: unsalted single-word SHA-256 is invertible by wordlist, so the
     published store disclosed most of itself to anyone who knew the domain.
     The salt makes the digests real. It is gitignored under *.local.txt.
+    KK30: cached in module state - _salt() was being called ~4.4M times per
+    scan, each opening the file, which was the real cost, not the hashing.
     """
+    global _SALT_CACHE
+    if _SALT_CACHE is not None:
+        return _SALT_CACHE
     if _SALT_PATH.exists():
         s = _SALT_PATH.read_text(encoding="utf-8").strip()
         if s:
-            return s.encode("utf-8")
+            _SALT_CACHE = s.encode("utf-8")
+            return _SALT_CACHE
     import secrets
     s = secrets.token_hex(32)
     _SALT_PATH.write_text(s + "\n", encoding="utf-8")
     print("  identity_guard: new salt written to identity_salt.local.txt - "
           "back it up; losing it means re-adding every term.", file=sys.stderr)
-    return s.encode("utf-8")
+    _SALT_CACHE = s.encode("utf-8")
+    return _SALT_CACHE
 
 
+import functools
+
+
+@functools.lru_cache(maxsize=None)  # KK30-GUARDPERF: hash each unique string once
 def h(s):
     return hashlib.sha256(_salt() + s.strip().lower().encode("utf-8")).hexdigest()
 

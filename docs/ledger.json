@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-08T01:21:52Z",
+  "as_of": "2026-08-08T15:19:28Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -9708,6 +9708,144 @@
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:56:02.079867+00:00",
       "seal_sha256": "b5469cd700b58ad6c8ea3a4ae9c6986463cca51dd743dc520dfa9eeae0124368"
+    },
+    {
+      "statement": "Between 2026-08-21 and 2026-08-24, a drone attack using a Shahed-type UAV will be confirmed by at least two independently biased sources (one from RU, one from UA) targeting a civilian infrastructure site in Donetsk, Ukraine, resulting in at least one structural damage report.",
+      "domain": "military/conflict",
+      "probability": 30,
+      "resolution": "The CISA KEV catalog does not carry a date-added value between 2026-08-21 and 2026-08-24 for a vulnerability exploited in a drone attack on a civilian infrastructure site in Donetsk, Ukraine, and no two independently biased sources (one from RU, one from UA) corroborate a drone attack with structural damage during that window.",
+      "deadline": "2026-08-26",
+      "citations": [
+        66,
+        70
+      ],
+      "failure_condition": "A drone attack using a Shahed-type UAV targeting a civilian infrastructure site in Donetsk, Ukraine, is confirmed by at least two independently biased sources (one from RU, one from UA) and results in at least one structural damage report between 2026-08-21 and 2026-08-24.",
+      "id": "KKR-20260808-01",
+      "date_issued": "2026-08-08",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-08_1517.md",
+      "source_packet": "kkr_packet_2026-08-08_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-08T15:19:28.684804+00:00",
+      "seal_sha256": "1836bcb66304948ce1bdfbbc2dafe675ca7415c75315fabddc0f21f87a757c58"
+    },
+    {
+      "statement": "Between 2026-08-24 and 2026-08-31, a major earthquake of magnitude 6.0 or higher will occur in the United States, as recorded by the USGS Significant Quakes feed.",
+      "domain": "disaster",
+      "probability": 15,
+      "resolution": "The USGS Significant Quakes feed records a magnitude 6.0 or higher earthquake in the United States between 2026-08-24 and 2026-08-31.",
+      "deadline": "2026-09-04",
+      "citations": [
+        26,
+        41
+      ],
+      "failure_condition": "No magnitude 6.0 or higher earthquake is recorded in the United States between 2026-08-24 and 2026-08-31 by the USGS Significant Quakes feed.",
+      "id": "KKR-20260808-02",
+      "date_issued": "2026-08-08",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-08_1517.md",
+      "source_packet": "kkr_packet_2026-08-08_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-08T15:19:28.684826+00:00",
+      "seal_sha256": "5c711c4cbe4803b23b8e5b10a47d99a100a15a8bf99739f2bb9b5944b3190165"
+    },
+    {
+      "statement": "Between 2026-08-25 and 2026-08-31, the US Senate will pass a resolution to confirm Todd Blanche as Attorney General, as recorded in the official Congressional Record.",
+      "domain": "political",
+      "probability": 85,
+      "resolution": "The Congressional Record contains a formal vote confirming Todd Blanche as Attorney General of the United States between 2026-08-25 and 2026-08-31.",
+      "deadline": "2026-09-05",
+      "citations": [
+        92,
+        108
+      ],
+      "failure_condition": "The Congressional Record does not contain a formal vote confirming Todd Blanche as Attorney General of the United States between 2026-08-25 and 2026-08-31.",
+      "id": "KKR-20260808-03",
+      "date_issued": "2026-08-08",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-08_1517.md",
+      "source_packet": "kkr_packet_2026-08-08_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-08T15:19:28.684838+00:00",
+      "seal_sha256": "bdb13ab4ff9019402cb5cf27c840afaf6bcb3123eb24ca7526315b71d345b2bd"
+    },
+    {
+      "statement": "Between 2026-08-27 and 2026-09-03, a new wildfire will be reported in the United States by the GDACS Alerts feed, with a confirmed area burned exceeding 10,000 acres.",
+      "domain": "disaster",
+      "probability": 20,
+      "resolution": "The GDACS Alerts feed records a new wildfire in the United States between 2026-08-27 and 2026-09-03 with a confirmed area burned exceeding 10,000 acres.",
+      "deadline": "2026-09-07",
+      "citations": [
+        39,
+        41
+      ],
+      "failure_condition": "No new wildfire in the United States is recorded by the GDACS Alerts feed between 2026-08-27 and 2026-09-03 with a confirmed area burned exceeding 10,000 acres.",
+      "id": "KKR-20260808-04",
+      "date_issued": "2026-08-08",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-08_1517.md",
+      "source_packet": "kkr_packet_2026-08-08_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-08T15:19:28.684848+00:00",
+      "seal_sha256": "c2c42d82ed7cc5ba680a53bd418bb5c0381aa98d01f63b5b56c6ab90481188a1"
+    },
+    {
+      "statement": "Between 2026-08-28 and 2026-09-04, a coordinated cyberattack targeting at least three financial institutions in Europe will be confirmed by two independent cybersecurity sources, resulting in data exfiltration.",
+      "domain": "cyber",
+      "probability": 18,
+      "resolution": "Two independent cybersecurity sources confirm a coordinated cyberattack targeting at least three financial institutions in Europe between 2026-08-28 and 2026-09-04, resulting in data exfiltration.",
+      "deadline": "2026-09-08",
+      "citations": [
+        13,
+        17
+      ],
+      "failure_condition": "No coordinated cyberattack targeting at least three financial institutions in Europe is confirmed by two independent cybersecurity sources between 2026-08-28 and 2026-09-04, or no data exfiltration is confirmed.",
+      "id": "KKR-20260808-05",
+      "date_issued": "2026-08-08",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-08_1517.md",
+      "source_packet": "kkr_packet_2026-08-08_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-08T15:19:28.684857+00:00",
+      "seal_sha256": "1e46843aa7e98f59722492c81236303729dc0b4e6b8c67e35b829c9d0d77220c"
+    },
+    {
+      "statement": "Between 2026-08-29 and 2026-09-05, a new political scandal involving a US senator will be reported by two major wire services (e.g., Reuters, AP), with allegations of corruption or misuse of funds.",
+      "domain": "political",
+      "probability": 28,
+      "resolution": "Two major wire services (e.g., Reuters, AP) report a new political scandal involving a US senator between 2026-08-29 and 2026-09-05, with allegations of corruption or misuse of funds.",
+      "deadline": "2026-09-09",
+      "citations": [
+        92,
+        106
+      ],
+      "failure_condition": "No new political scandal involving a US senator is reported by two major wire services between 2026-08-29 and 2026-09-05 with allegations of corruption or misuse of funds.",
+      "id": "KKR-20260808-06",
+      "date_issued": "2026-08-08",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-08_1517.md",
+      "source_packet": "kkr_packet_2026-08-08_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-08T15:19:28.684865+00:00",
+      "seal_sha256": "c0aef8b006e3dcaf35f73db8ffe303fcbcd88bf0a2bc697377fa792042cfdf82"
     }
   ]
 }
