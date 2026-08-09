@@ -58,6 +58,12 @@ call :run "failure-condition drafts"   python fc_pass.py --draft
 call :run "adjudicator proposals"      python mechanical_adjudicator.py --due --keep-raw
 call :run "conformance"                call conformance.bat
 call :run "surface audit"              python site_audit.py --section all
+REM KK27F-WIRE: the two audit instruments run nightly, ahead of
+REM the health board so their outputs exist when health grades
+REM them. Urteil first - it reads jury files the adjudicator
+REM stages may have written earlier in this same chain.
+call :run "verdict grounding"          python urteil.py
+call :run "completeness audit"         python luecke.py
 call :run "health board"               python health.py
 
 echo.>>%MORNING%

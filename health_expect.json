@@ -162,6 +162,19 @@
    "cadence_hours": null,
    "lane": "event",
    "note": "dialektik_meter.py; EVENT not clock - fresh only when the statement track carried a registered figure, absence is not staleness"
+  },
+  {
+   "name": "Verdict grounding",
+   "path": "docs/urteil_latest.json",
+   "lane": "event",
+   "note": "urteil.py moves only when a jury sits; grading it on a daily clock would print a LATE every day nobody adjudicated - a false finding, which is worse than none"
+  },
+  {
+   "name": "Completeness audit",
+   "path": "docs/luecke_latest.json",
+   "lane": "daily task / operator",
+   "cadence_hours": 26,
+   "note": "luecke.py reads the daily WarDesk render; a stale Luecke means the chain broke, which is what the board should say"
   }
  ]
 }
