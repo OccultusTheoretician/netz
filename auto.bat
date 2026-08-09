@@ -62,6 +62,10 @@ REM KK27F-WIRE: the two audit instruments run nightly, ahead of
 REM the health board so their outputs exist when health grades
 REM them. Urteil first - it reads jury files the adjudicator
 REM stages may have written earlier in this same chain.
+REM KK27H-FOGLIVE: the Warte was the last instrument serving a
+REM live page by hand only. A page that freezes when someone
+REM forgets is not an instrument.
+call :run "calibration observatory"    python warte.py
 call :run "verdict grounding"          python urteil.py
 call :run "completeness audit"         python luecke.py
 call :run "health board"               python health.py
