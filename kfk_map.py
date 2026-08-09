@@ -60,6 +60,47 @@ def xy(lat, lon):
     return round(x, 1), round(y, 1)
 
 
+def _land_paths():
+    """docs/world.geojson as SVG path strings, projected through xy().
+    Natural Earth, already shipped for the Leaflet board; drawn here as
+    static land under the points so a coastline places them. Fail-open:
+    returns [] with a note if the asset is absent. KK27G-BASEMAP."""
+    gj = HERE / "docs" / "world.geojson"
+    if not gj.exists():
+        print("kfk_map - docs/world.geojson absent - bare grid, no "
+              "coastline (fail-open)", file=sys.stderr)
+        return []
+    try:
+        fc = json.loads(gj.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"kfk_map - world.geojson unreadable ({exc}) - bare grid",
+              file=sys.stderr)
+        return []
+
+    def ring(coords):
+        pts = []
+        for lon, lat in coords:
+            x, y = xy(lat, lon)
+            pts.append(f"{x},{y}")
+        return "M" + "L".join(pts) + "Z" if pts else ""
+
+    out = []
+    for feat in fc.get("features", []):
+        g = feat.get("geometry") or {}
+        t = g.get("type")
+        if t == "Polygon":
+            polys = [g["coordinates"]]
+        elif t == "MultiPolygon":
+            polys = g["coordinates"]
+        else:
+            continue
+        for poly in polys:
+            d = "".join(ring(r) for r in poly if len(r) >= 3)
+            if d:
+                out.append(f'<path d="{d}"/>')
+    return out
+
+
 def days_since(iso, today):
     try:
         y, m, d = map(int, str(iso)[:10].split("-"))
@@ -80,6 +121,7 @@ def main() -> int:
                   f"the recency layer (fail-open)", file=sys.stderr)
     today = datetime.now(timezone.utc).date()
     now = datetime.now(timezone.utc)
+    land = _land_paths()  # KK27G-BASEMAP
 
     factions = sorted({r.get("faction", "?") for r in recs})
     color = {f: FACTION_PALETTE[i % len(FACTION_PALETTE)]
@@ -187,6 +229,8 @@ h1{{font-weight:200;font-size:clamp(1.7rem,4vw,2.5rem);margin:.4rem 0 .8rem}}
 padding:.6rem;overflow-x:auto}}
 svg{{display:block;min-width:900px;width:100%;height:auto}}
 .grat line{{stroke:#161B22;stroke-width:1}}
+.land path{{fill:#141a21;stroke:#2c353f;stroke-width:.7;
+  vector-effect:non-scaling-stroke}}
 .lbl{{font-family:var(--mono);font-size:8.5px;fill:#AEB9C6}}
 .strip{{display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;align-items:baseline;
 font-family:var(--mono);font-size:.72rem;color:var(--dim);padding:.9rem .4rem 0}}
@@ -204,9 +248,10 @@ font-family:var(--mono);font-size:.68rem;color:var(--faint)}}
 <div class="kicker">(U//OS) - KriegForeKaster - order of battle</div>
 <h1>The Overlay</h1>
 <div class="stand">generated {now.strftime('%d%H%MZ %b %y').upper()} - record as_of {escape(str(d.get('as_of','?')))} - {len(recs)} formation(s)</div>
-<p class="doctrine">The board renders its own doctrine instead of hiding it in a comment. <strong>Solid points locate a command</strong> (headquarters or installation centroid); <strong>dashed hollow points locate a state</strong> - a capital centroid is an honest coordinate declaring that nobody has sourced where the formation sits. SPECULATIVE existence renders near-ghost and can never fuel a forecast; claims past their location half-life fade. A brass ring is a formation named in the graded WarDesk stream inside {SIGHT_RING_H} hours.</p>
+<p class="doctrine">The board renders its own doctrine instead of hiding it in a comment. <strong>Solid points locate a command</strong> (headquarters or installation centroid); <strong>dashed hollow points locate a state</strong> - a capital centroid is an honest coordinate declaring that nobody has sourced where the formation sits. SPECULATIVE existence renders near-ghost and can never fuel a forecast; claims past their location half-life fade. A brass ring is a formation named in the graded WarDesk stream inside {SIGHT_RING_H} hours. <strong>Of {len(recs)} formations on this board, {sum(1 for _r in recs if ((_r.get('existence') or {{}}).get('grade')) in ('DOCUMENTED','REPORTED'))} carry real sourcing; the remaining {sum(1 for _r in recs if ((_r.get('existence') or {{}}).get('grade')) == 'SPECULATIVE')} are the held-open skeleton - a country having an armed force, located at its capital - and render as faint ghosts that can never fuel a forecast.</strong></p>
 <div class="board">
 <svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="KriegForeKaster formations plotted on an equirectangular world grid">
+<g class="land">{''.join(land)}</g>
 <g class="grat">{''.join(grat)}</g>
 {''.join(pts)}
 {''.join(rings)}
