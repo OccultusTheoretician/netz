@@ -199,6 +199,53 @@ def main():
     (OUT / "LUECKE_latest.md").write_text("\n".join(md) + "\n",
                                           encoding="utf-8")
 
+    # ---- the trend, as-of-correct ------------------------------------
+    # Movement under a fixed collection is the measurement, so every run
+    # recomputes the full series (idempotent, self-healing). Each render
+    # is matched only against rows SEALED ON OR BEFORE its own date:
+    # sealed statements never change, so date_issued <= render date
+    # reconstructs the book as it stood. Matching the full current book
+    # instead would be anachronistic - later rows covering earlier events
+    # - and overstates historical coverage.
+    series = []
+    for f in sorted(OUT.glob("WARDESK_2026-*.md")):
+        m3 = re.match(r"WARDESK_(\d{4}-\d{2}-\d{2})", f.name)
+        if not m3:
+            continue
+        asof = m3.group(1)
+        evs = parse_wardesk(f)
+        if not evs:
+            continue
+        hh = [(rid, txt) for (rid, txt, st, arm), p2 in zip(hay, rows)
+              if str(p2.get("date_issued", "9999")) <= asof]
+        sn, sa = set(), {"A": [0, 0], "B": [0, 0]}
+        for e in evs:
+            k = (e["anchor"].lower(), e["zone"], e["grade"])
+            if k in sn or e["grade"] not in sa:
+                continue
+            sn.add(k)
+            toks = names(e["anchor"])
+            cov = any(any(tk in txt for tk in toks) for _, txt in hh)
+            sa[e["grade"]][0] += 1
+            if not cov:
+                sa[e["grade"]][1] += 1
+        series.append({"render": f.name, "as_of": asof,
+                       "a_confirmed": sa["A"][0], "a_gaps": sa["A"][1],
+                       "b_confirmed": sa["B"][0], "b_gaps": sa["B"][1]})
+    out["trend"] = {
+        "note": ("each render matched only against rows sealed on or "
+                 "before its own date (date_issued) - the book as it "
+                 "stood. An earlier in-session series compared renders "
+                 "against the full current book; that was anachronistic "
+                 "and overstated historical coverage. Corrected here."),
+        "series": series}
+    blob = json.dumps(out, indent=1, ensure_ascii=False) + "\n"
+    (OUT / "luecke_latest.json").write_text(blob, encoding="utf-8")
+    if DOCS.exists():
+        (DOCS / "luecke_latest.json").write_text(blob, encoding="utf-8")
+
+    print(f"LUECKE - trend: {len(series)} render(s), as-of-correct",
+          file=sys.stderr)
     print(f"LUECKE - {wd.name}: Grade A {len(gaps_a)}/{len(a_all)} uncalled"
           + (f" ({rate(gaps_a, a_all)}%)" if a_all else "")
           + f" - Grade B {len(gaps_b)}/{len(b_all)} uncalled", file=sys.stderr)

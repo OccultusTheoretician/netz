@@ -64,6 +64,12 @@ spoke to.</div>
 <div class="nums" id="nums"></div>
 <div class="floor" id="floor"></div>
 
+<h2>Movement - the gap over time</h2>
+<p class="lede">Each render matched only against rows sealed on or before
+its own date - the book as it stood, not the book as it is. Movement under
+a fixed collection is the measurement; the level is not a score.</p>
+<div id="trend"></div>
+
 <h2>Confirmed ground, no row</h2>
 <div id="gaps"></div>
 
@@ -99,6 +105,28 @@ fetch("luecke_latest.json",{cache:"no-store"}).then(function(r){
   N.appendChild(c);});
  document.getElementById("floor").innerHTML=
   "<b>These are floors.</b> "+esc(m.matching||"")+" "+esc(m.doctrine||"");
+ var T=document.getElementById("trend");
+ var ser=(d.trend&&d.trend.series)||[];
+ if(ser.length){
+  var tb=el("table");
+  var hr=el("tr");["as of","render","A gaps","B gaps",""].forEach(function(h){
+   hr.appendChild(el("th",null,h));});tb.appendChild(hr);
+  ser.slice(-14).forEach(function(r){
+   var tr=el("tr");
+   tr.appendChild(el("td",null,esc(r.as_of)));
+   tr.appendChild(el("td","dim",esc(String(r.render).replace(/^WARDESK_|\.md$/g,""))));
+   tr.appendChild(el("td",null,r.a_gaps+" / "+r.a_confirmed));
+   tr.appendChild(el("td",null,r.b_gaps+" / "+r.b_confirmed));
+   var tot=r.a_confirmed+r.b_confirmed,gp=r.a_gaps+r.b_gaps;
+   var pc=tot?Math.round(100*gp/tot):0;
+   var bar=el("td",null,"<div style='background:#1d2228;height:8px;width:120px'>"+
+    "<div style='background:#a8492f;height:8px;width:"+(pc*1.2)+"px'></div></div>");
+   tr.appendChild(bar);tb.appendChild(tr);});
+  T.appendChild(tb);
+  T.appendChild(el("div","meta dim",esc((d.trend.note||""))));
+ } else {
+  T.appendChild(el("div","empty","No history yet."));
+ }
  var G=document.getElementById("gaps"),C=document.getElementById("cov");
  var gaps=ev.filter(function(e){return !e.covered;});
  if(!gaps.length)G.appendChild(el("div","empty",
