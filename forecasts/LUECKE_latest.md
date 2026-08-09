@@ -1,4 +1,4 @@
-# DIE LUECKE - the completeness audit - 2026-08-09T20:49:48Z
+# DIE LUECKE - the completeness audit - 2026-08-09T20:54:15Z
 
 Every forecasting ledger tests whether the calls it made were right. That is an existence test. This is the other assertion: what the desk's own eyes confirmed and its forecasting arm never called.
 
