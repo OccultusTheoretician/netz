@@ -65,6 +65,11 @@ REM stages may have written earlier in this same chain.
 REM KK27H-FOGLIVE: the Warte was the last instrument serving a
 REM live page by hand only. A page that freezes when someone
 REM forgets is not an instrument.
+REM KK27J-STALE: the register recomputes from a live verifier run
+REM instead of being typed; the spine restates its real
+REM source-field age instead of its file date.
+call :run "conformance register"       python register_build.py
+call :run "spine freshness census"     python spine_stamp.py
 call :run "calibration observatory"    python warte.py
 call :run "verdict grounding"          python urteil.py
 call :run "completeness audit"         python luecke.py
