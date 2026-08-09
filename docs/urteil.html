@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Urteil  -  verdict-grounding audit  -  The Prescient Desk</title>
+<meta name="description" content="Every blind-jury verdict audited against its held evidence by the same mechanics that audit forecasts. The correct-but-ungrounded class, printed.">
+<style>
+:root{--bg:#07090c;--fg:#cfd3d8;--dim:#7d838c;--brass:#dcb65e;--bad:#a8492f;
+  --good:#7fb08a;--line:#1d2228;--plate:#10141a;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--mono);
+  font-size:14px;line-height:1.65}
+main{max-width:880px;margin:0 auto;padding:1.4rem 1.1rem 4rem}
+h1{color:#fff;font-size:1.15rem;letter-spacing:.06em;margin:1.2rem 0 .3rem}
+h1 .de{color:var(--brass)}
+h2{color:var(--brass);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
+  border-bottom:1px solid var(--line);padding-bottom:.35rem;margin:2rem 0 .8rem}
+p.lede{color:var(--dim);max-width:64ch}
+.doctrine{border-left:2px solid var(--brass);padding:.5rem .9rem;margin:1.2rem 0;
+  color:var(--fg);background:var(--plate)}
+table{border-collapse:collapse;width:100%;margin:.6rem 0}
+td,th{border:1px solid var(--line);padding:.35rem .7rem;text-align:left;
+  font-size:.86rem}
+th{color:var(--dim);font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  font-size:.7rem}
+td.n{text-align:right}
+.card{border:1px solid var(--line);border-left:3px solid var(--bad);
+  background:var(--plate);padding:.7rem .9rem;margin:.6rem 0}
+.card .row{color:#fff;font-weight:600}
+.card .meta{color:var(--dim);font-size:.8rem;margin:.15rem 0 .3rem}
+.tag{display:inline-block;border:1px solid var(--line);padding:0 .45rem;
+  font-size:.7rem;letter-spacing:.1em;color:var(--brass)}
+.tag.bad{color:var(--bad);border-color:var(--bad)}
+.tag.ok{color:var(--good);border-color:var(--good)}
+.dim{color:var(--dim)}
+.empty{color:var(--dim);border:1px dashed var(--line);padding:1rem;
+  text-align:center;margin:1rem 0}
+footer{color:var(--dim);font-size:.75rem;border-top:1px solid var(--line);
+  margin-top:3rem;padding-top:.8rem}
+a{color:var(--brass)}
+</style></head><body>
+<main>
+<h1><span class="de">URTEIL</span>  -  the verdict-grounding audit</h1>
+<p class="lede">The blind jury's standing structural limit: it cannot detect
+confabulation that lands on the correct verdict. A juror who invents
+evidence and happens to be right passes concordance, and the fabrication
+enters the record wearing a valid ruling. This instrument closes the
+mechanical half of that limit  -  every non-ABSTAIN verdict is audited
+against the held evidence its juror was shown, by the same mechanics that
+audit forecast citations. Grounding is checkable even when the verdict is
+right.</p>
+<div class="doctrine" id="doctrine">A verdict that agrees with the row's
+final ruling and still fails grounding prints below as
+<b>CORRECT-BUT-UNGROUNDED</b>  -  right for reasons the record does not
+contain. A wrong ungrounded verdict is an error; a right one is the
+invisible failure, and it is the one this desk puts on the page.</div>
+
+<h2>Classes</h2>
+<table id="counts"><tr><th>class</th><th>meaning</th><th>n</th></tr></table>
+
+<h2>Correct but ungrounded</h2>
+<div id="cbu"></div>
+
+<h2>Custody</h2>
+<div id="custody"></div>
+
+<h2>All non-grounded verdicts</h2>
+<div id="flagged"></div>
+
+<footer id="foot">urteil/1.0  -  read-only against the jury record  -  the
+desk's method pointed at the desk's own bench  -  <span id="gen"></span></footer>
+</main>
+<script>
+(function(){
+"use strict";
+var MEAN={
+ "GROUNDED":"figures and vocabulary inside the held record",
+ "THIN":"grounding not demonstrable, not disproven",
+ "UNGROUNDED-SPECIFIC":"cold juror asserted figures the held record does not contain",
+ "UNHELD-VERDICT":"cold juror ruled with no held evidence  -  8.07 coercion should have fired; protocol defect",
+ "UNHELD-SEARCHED":"searched juror ruled with no held evidence  -  legal under its arm identity, unauditable at the custody layer",
+ "OUT-OF-HELD":"searched juror grounded beyond the held block  -  disclosed, not defective",
+ "ABSTAIN":"no ruling given; nothing to audit"};
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;
+ if(h!=null)e.innerHTML=h;return e;}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){
+ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+fetch("urteil_latest.json",{cache:"no-store"}).then(function(r){
+ if(!r.ok)throw 0;return r.json();}).then(function(d){
+ var m=d._meta||{},counts=m.counts||{},audits=d.audits||[];
+ document.getElementById("gen").textContent=
+   "generated "+(m.generated||" - ")+"  -  sources: "+((m.sources||[]).join(", ")||" - ");
+ var tb=document.getElementById("counts");
+ Object.keys(counts).forEach(function(k){
+  var tr=el("tr");tr.appendChild(el("td",null,"<span class='tag"+
+   (k==="GROUNDED"?" ok":(k.indexOf("UNGROUNDED")===0||k==="UNHELD-VERDICT"?" bad":""))+
+   "'>"+esc(k)+"</span>"));
+  tr.appendChild(el("td","dim",esc(MEAN[k]||"")));
+  var n=el("td","n",String(counts[k]));tr.appendChild(n);tb.appendChild(tr);});
+ var cbu=audits.filter(function(a){return a.agreed_with_final&&
+   (a["class"]==="UNGROUNDED-SPECIFIC"||a["class"]==="UNHELD-VERDICT");});
+ var C=document.getElementById("cbu");
+ if(!cbu.length)C.appendChild(el("div","empty",
+  "None on the current record. When one appears it prints here at full size."));
+ cbu.forEach(function(a){var c=el("div","card");
+  c.appendChild(el("div","row",esc(a.row)+"  -  juror "+esc(a.juror)+
+   " ("+esc(a.juror_access)+") ruled "+esc(a.verdict)+
+   ", final "+esc(a.final_status)));
+  c.appendChild(el("div","meta","<span class='tag bad'>"+esc(a["class"])+
+   "</span>"));
+  c.appendChild(el("div",null,esc(a.detail)));C.appendChild(c);});
+ var cu=document.getElementById("custody");
+ var notes=m.custody_notes||[];
+ if(!notes.length)cu.appendChild(el("div","empty","No custody findings."));
+ notes.forEach(function(n){cu.appendChild(el("div","card",esc(n)));});
+ var F=document.getElementById("flagged");
+ var fl=audits.filter(function(a){return a["class"]!=="GROUNDED";});
+ if(!fl.length)F.appendChild(el("div","empty",
+  "Every audited verdict grounded in its held record."));
+ fl.forEach(function(a){var c=el("div","card");
+  c.style.borderLeftColor=(a["class"]==="OUT-OF-HELD"||
+   a["class"]==="UNHELD-SEARCHED"||a["class"]==="THIN")?"#3a4250":"var(--bad)";
+  c.appendChild(el("div","row",esc(a.row)+"  -  juror "+esc(a.juror)+
+   " ("+esc(a.juror_access)+")  -  "+esc(a.verdict)+
+   " (final "+esc(a.final_status)+")"));
+  c.appendChild(el("div","meta","<span class='tag'>"+esc(a["class"])+
+   "</span>"));
+  c.appendChild(el("div",null,esc(a.detail)));F.appendChild(c);});
+}).catch(function(){
+ document.getElementById("cbu").appendChild(el("div","empty",
+  "No audit on record yet  -  run <b>python urteil.py</b> after a jury "+
+  "session and publish."));
+});
+})();
+</script>
+</body></html>
