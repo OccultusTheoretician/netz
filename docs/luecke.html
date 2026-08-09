@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luecke - the completeness audit - The Prescient Desk</title>
+<link rel="canonical" href="https://retroprescientaudit.com/luecke.html">
+<meta name="description" content="Confirmed events the desk never called. Every forecasting ledger tests existence; this tests completeness.">
+<style>
+:root{--bg:#07090c;--fg:#cfd3d8;--dim:#7d838c;--brass:#dcb65e;--bad:#a8492f;
+  --good:#7fb08a;--line:#1d2228;--plate:#10141a;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--mono);
+  font-size:14px;line-height:1.65}
+main{max-width:880px;margin:0 auto;padding:1.4rem 1.1rem 4rem}
+h1{color:#fff;font-size:1.15rem;letter-spacing:.06em;margin:1.2rem 0 .3rem}
+h1 .de{color:var(--brass)}
+h2{color:var(--brass);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
+  border-bottom:1px solid var(--line);padding-bottom:.35rem;margin:2rem 0 .8rem}
+p.lede{color:var(--dim);max-width:66ch}
+.doctrine{border-left:2px solid var(--brass);padding:.5rem .9rem;margin:1.2rem 0;
+  background:var(--plate)}
+.floor{border-left:2px solid var(--bad);padding:.5rem .9rem;margin:1.2rem 0;
+  background:var(--plate);color:var(--dim)}
+.nums{display:flex;flex-wrap:wrap;gap:1.4rem;margin:1rem 0}
+.num{border:1px solid var(--line);background:var(--plate);padding:.7rem 1.1rem;
+  min-width:200px}
+.num .k{color:var(--dim);font-size:.68rem;letter-spacing:.13em;
+  text-transform:uppercase}
+.num .v{color:#fff;font-size:1.5rem;line-height:1.3}
+.num .v .bad{color:var(--bad)}
+.num .s{color:var(--dim);font-size:.75rem}
+.card{border:1px solid var(--line);border-left:3px solid var(--bad);
+  background:var(--plate);padding:.55rem .9rem;margin:.45rem 0}
+.card.ok{border-left-color:#3a4250}
+.card .row{color:#fff}
+.card .meta{color:var(--dim);font-size:.78rem}
+.tag{display:inline-block;border:1px solid var(--bad);color:var(--bad);
+  padding:0 .45rem;font-size:.68rem;letter-spacing:.1em}
+.tag.ok{color:var(--good);border-color:var(--good)}
+.empty{color:var(--dim);border:1px dashed var(--line);padding:1rem;
+  text-align:center;margin:1rem 0}
+footer{color:var(--dim);font-size:.75rem;border-top:1px solid var(--line);
+  margin-top:3rem;padding-top:.8rem}
+a{color:var(--brass)}
+</style></head><body>
+<style id="desknav-style">.desknav-unified{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;align-items:baseline;padding:.7rem 1.1rem;border-bottom:1px solid #26292f;background:rgba(7,9,12,.55);position:relative;z-index:20}.desknav-unified .ng-group{display:inline-flex;flex-wrap:wrap;gap:.15rem .85rem;align-items:baseline}.desknav-unified .ng-label{color:#565650;font:600 .58rem 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-right:.15rem;user-select:none}.desknav-unified a{color:#8b8b85;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}.desknav-unified a:hover{color:#c9c9c2}.desknav-unified a[aria-current="page"]{color:#dcb65e}</style><nav class="desknav-unified" data-navgen="2" aria-label="site" translate="no"><span class="ng-group"><span class="ng-label">DESK</span><a href="index.html">Desk</a><a href="report.html">Report</a><a href="spion.html">Spion</a><a href="health.html">Health</a></span><span class="ng-group"><span class="ng-label">FORECASTING</span><a href="kkr.html">Forecasts</a><a href="ledger.html">Ledger</a><a href="KriegForeKaster.html">ForeKaster</a><a href="KriegForeKaster_compendium.html">Compendium</a><a href="kfk_map.html">Overlay</a><a href="globalkaster.html">GlobalKaster</a><a href="fogsim.html">FogSim</a><a href="okk.html">OberKommando</a><a href="kalibrierwarte.html">Warte</a></span><span class="ng-group"><span class="ng-label">FEDERATION</span><a href="kraehes_kalls.html">Kalls</a><a href="nest.html">Nest</a></span><span class="ng-group"><span class="ng-label">STANDARDS</span><a href="standards.html">Standards</a><a href="conformance.html">Conformance</a><a href="register.html">Register</a><a href="verify.html">Verify</a><a href="decc.html">DECC-26</a><a href="urteil.html">Urteil</a><a aria-current="page" href="luecke.html">Luecke</a></span><span class="ng-group"><span class="ng-label">CABINET</span><a href="ohrwurm.html">Ohrwurm</a><a href="konsole.html">Konsole</a><a href="marks.html">Marks</a></span><span class="ng-group"><span class="ng-label">&nbsp;</span><a href="https://github.com/OccultusTheoretician/netz">GitHub</a></span></nav>
+<main>
+<h1><span class="de">DIE LUECKE</span> - the completeness audit</h1>
+<p class="lede">Every forecasting record in existence tests one assertion:
+were the calls that were made correct. That is an <b>existence</b> test.
+A Brier score is structurally incapable of seeing an event nobody called -
+a forecaster who calls only safe ground scores well and forecasts nothing,
+and no metric the ledger computes about itself can detect that.</p>
+<p class="lede">This is the other assertion, the one auditors have long
+held to be the harder of the two: <b>completeness</b>. The desk's own
+collection confirms events daily across hostile sides. Against them it
+sets every row on the book, open and resolved, and asks one question per
+event - did any row name this ground?</p>
+<div class="doctrine">An event confirmed by three hostile sides that no row
+names is a <b>Luecke</b>. Not a miss: a miss is a call that failed. A gap
+is ground the instrument's own eyes reported and the forecasting arm never
+spoke to.</div>
+
+<h2>The gap</h2>
+<div class="nums" id="nums"></div>
+<div class="floor" id="floor"></div>
+
+<h2>Confirmed ground, no row</h2>
+<div id="gaps"></div>
+
+<h2>Covered</h2>
+<div id="cov"></div>
+
+<footer id="foot">luecke/1.0 - read-only against the confirmed record - the
+gap is the measurement - <span id="gen"></span></footer>
+</main>
+<script>
+(function(){
+"use strict";
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;
+ if(h!=null)e.innerHTML=h;return e;}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){
+ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+fetch("luecke_latest.json",{cache:"no-store"}).then(function(r){
+ if(!r.ok)throw 0;return r.json();}).then(function(d){
+ var m=d._meta||{},ev=d.events||[];
+ document.getElementById("gen").textContent="generated "+(m.generated||"-")+
+  " - source "+(m.source_render||"-")+" - "+(m.ledger_rows||0)+" rows on the book";
+ var N=document.getElementById("nums");
+ [["Grade A confirmed",m.grade_a_confirmed,m.grade_a_gaps,m.grade_a_gap_rate_pct,
+   "three or more hostile sides"],
+  ["Grade B corroborated",m.grade_b_confirmed,m.grade_b_gaps,
+   m.grade_b_gap_rate_pct,"two hostile sides"]].forEach(function(r){
+  var c=el("div","num");
+  c.appendChild(el("div","k",esc(r[0])));
+  c.appendChild(el("div","v","<span class='bad'>"+(r[2]==null?"-":r[2])+
+   "</span> <span style='color:#7d838c'>/ "+(r[1]==null?"-":r[1])+"</span>"));
+  c.appendChild(el("div","s","never called"+
+   (r[3]!=null?" - "+r[3]+"%":"")+" - "+esc(r[4])));
+  N.appendChild(c);});
+ document.getElementById("floor").innerHTML=
+  "<b>These are floors.</b> "+esc(m.matching||"")+" "+esc(m.doctrine||"");
+ var G=document.getElementById("gaps"),C=document.getElementById("cov");
+ var gaps=ev.filter(function(e){return !e.covered;});
+ if(!gaps.length)G.appendChild(el("div","empty",
+  "Every confirmed anchor on this render is named by at least one row."));
+ gaps.forEach(function(e){var c=el("div","card");
+  c.appendChild(el("div","row","<b>"+esc(e.anchor)+"</b> - "+esc(e.zone)+
+   " &nbsp; <span class='tag'>GRADE "+esc(e.grade)+"</span>"));
+  c.appendChild(el("div","meta","no row on the book names this ground"));
+  G.appendChild(c);});
+ var cov=ev.filter(function(e){return e.covered;});
+ if(!cov.length)C.appendChild(el("div","empty","Nothing covered."));
+ cov.forEach(function(e){var c=el("div","card ok");
+  c.appendChild(el("div","row",esc(e.anchor)+" - "+esc(e.zone)+
+   " &nbsp; <span class='tag ok'>GRADE "+esc(e.grade)+"</span>"));
+  c.appendChild(el("div","meta",e.n_rows+" row(s), "+e.open_rows+
+   " open - "+esc((e.arms||[]).slice(0,4).join(", "))));
+  C.appendChild(c);});
+}).catch(function(){
+ document.getElementById("gaps").appendChild(el("div","empty",
+  "No completeness audit on record yet - run <b>python luecke.py</b> and publish."));
+});
+})();
+</script>
+</body></html>
