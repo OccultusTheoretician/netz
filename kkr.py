@@ -506,6 +506,51 @@ def _market_anchor(p: dict):
             "'Reference: NN.NN on the packet date'")
 
 
+# --- KK27-VENUE: venue is where, not what -------------------------------
+# Identifiers that name a REGISTER, SERIES, or OUTLET. A venue token names
+# where to look, never what is claimed. Series entries expand to the subject
+# they denote, so a resolution written against the register instruction 11
+# demands is read as being about the subject the series measures. Outlets
+# expand to nothing. Serves the KK21o subject check and the KK34 keys
+# proposer from the same table.
+_VENUE_LEXICON = {
+    # outlets / wires
+    "bbc": [], "reuters": [], "afp": [], "cnbc": [], "npr": [],
+    "guardian": [], "jazeera": [], "aljazeera": [], "presstv": [],
+    "bleepingcomputer": [], "thehackernews": [], "world": [],
+    # registers and catalogs
+    "cisa": [], "kev": [], "nvd": [], "fred": [], "usgs": [],
+    "gdac": [], "gdacs": [], "ukmto": [], "congress": [],
+    "jtwc": ["typhoon", "cyclone"], "jma": ["typhoon", "japan"],
+    "cma": ["typhoon", "china"], "bls": ["payroll", "employment"],
+    "nyse": [], "comex": ["gold", "futures"], "ice": ["brent", "futures"],
+    # series -> the subject the series measures
+    "dcoilwtico": ["wti", "cushing", "crude"],
+    "dfedtaru": ["fomc", "federal", "funds"],
+    "sp500": ["500"], "dgs10": ["treasury", "yield"],
+}
+
+
+def _venue_split(sid, rid):
+    """Split identifier sets into subject tokens and venue tokens.
+    Returns (statement_subjects, resolution_subjects, resolution_venues),
+    all lowercased. Series aliases contribute subject tokens; pure venues
+    contribute nothing but are reported. KK27-VENUE."""
+    def one(tokens):
+        subj, ven = set(), set()
+        for t in tokens:
+            k = t.lower()
+            if k in _VENUE_LEXICON:
+                ven.add(t)
+                subj |= set(_VENUE_LEXICON[k])
+            else:
+                subj.add(k)
+        return subj, ven
+    s_subj, _ = one(sid)
+    r_subj, r_ven = one(rid)
+    return s_subj, r_subj, r_ven
+
+
 def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list:
     """Return list of rejection reasons; empty list = accepted."""
     reasons = []
@@ -768,6 +813,31 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                     f"or later")
         except ValueError:
             pass
+    # --- KK27-VENUE: direction is part of the claim ------------------------
+    # KKR-20260808-01 sealed with an affirmative statement and a resolution
+    # satisfied by the event NOT occurring: a HIT records the complement of
+    # the forecast and the Brier lands backwards. Only the FIRST segment of
+    # each text is tested, so clarifier tails ("No such entry resolves
+    # false") stay legal. Fires on disagreement in either direction.
+    _NEGPAT = re.compile(
+        r"\b(?:does not|do not|is not|are not|will not|no such|no two|"
+        r"fails? to|never|neither|carries no|holds no|contains no|"
+        r"no [a-z-]+ (?:entry|value|statement|announcement|report|strike|"
+        r"attack|record|vote|confirmation))\b", re.I)
+    _seg = lambda t: re.split(r"[.;]", str(t or "").strip(),
+                             maxsplit=1)[0]  # KK27B-CAL
+    _s_neg = bool(_NEGPAT.search(_seg(p.get("statement", ""))))
+    _r_neg = bool(_NEGPAT.search(_seg(p.get("resolution", ""))))
+    if _s_neg != _r_neg and (_s_neg or _r_neg):
+        _dirn = ("the statement claims the event occurs and the resolution "
+                 "resolves TRUE on its absence" if _r_neg else
+                 "the statement claims an absence and the resolution "
+                 "resolves TRUE on the event occurring")
+        reasons.append(
+            "statement and resolution assert opposite directions - " + _dirn
+            + ". A row scored on its complement records the forecast "
+            "backwards; align the resolution's primary clause with the "
+            "claim and keep any inverse in the failure condition")
     # --- KK21o: the resolution must test the statement ---------------------
     # Rule 11 pushed rows toward named registers and the forecaster learned to
     # name one and attach it to a claim the register cannot test. Two rows
@@ -788,8 +858,18 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     UTC""".split())
     _sid = {w for w in _IDENT.findall(p.get("statement", "")) if w not in _GENERIC}
     _rid = {w for w in _IDENT.findall(p.get("resolution", "")) if w not in _GENERIC}
-    if _sid and _rid and not _tokens_overlap({s.lower() for s in _sid},
-                                             {r.lower() for r in _rid}):
+    # KK27-VENUE: a register or outlet in the resolution is where to look,
+    # not what is claimed. Series identifiers expand to their subject before
+    # the comparison; a resolution left with venues and NO subject is its
+    # own defect class, sharper than mismatch.
+    _s_subj, _r_subj, _r_ven = _venue_split(_sid, _rid)
+    if _s_subj and not _r_subj and _r_ven:
+        reasons.append(
+            "the resolution names only a venue or register ("
+            + ", ".join(sorted(_r_ven)[:4])
+            + ") and no subject - the register is where to look, not what "
+            "is claimed; name the subject inside it")
+    if _s_subj and _r_subj and not _tokens_overlap(_s_subj, _r_subj):
         reasons.append(
             "the resolution names a different subject than the statement — "
             "the claim is about " + ", ".join(sorted(_sid)[:4])
@@ -2537,6 +2617,11 @@ def cmd_keys_propose(args):
                     if not shared:
                         continue
                     strong = _tokens_overlap(shared, rare)
+                    # KK27-VENUE: a masthead shared between claim and prior
+                    # is rare inside a report and proves nothing about the
+                    # subject. Venue tokens never carry a concession.
+                    strong = {t for t in strong
+                              if t.lower() not in _VENUE_LEXICON}
                     if strong:
                         hit_terms |= strong
                         if c not in hit_cites:
