@@ -40,6 +40,19 @@ DOCS = HERE / "docs"
 REG = DOCS / "register.json"
 HASHLOG = DOCS / "kalls_hashlog.json"
 
+# The register is a claim about what is PUBLISHED, so it is verified
+# against the published bytes - the same URL a stranger would check.
+#
+# This is not fussiness. On Windows, git autocrlf gives the working tree
+# CRLF line endings while the committed blob GitHub Pages serves is LF, so
+# the two differ by digest: served dea862edddc6..., local 9b6154ed16ac....
+# Verifying the local copy made knp_verify correctly report that the local
+# file no longer matched its RFC 3161 token, and this script published that
+# as a should-departure of the HASHLOG. The hashlog was conformant; the
+# working tree was merely translated. A register that reports line-ending
+# translation as a conformance departure is worse than one that is stale.
+SERVED = "https://retroprescientaudit.com/kalls_hashlog.json"
+
 SELF_PARTY = "The Prescient Desk (NebelKraehe)"
 SELF_NOTE = ("Issuer of the standards. Self-assessed, which is the weakest "
              "class on this page and is marked as such rather than presented "
@@ -53,11 +66,29 @@ def main():
         print("REGISTER - docs/kalls_hashlog.json absent - INDETERMINATE, "
               "register NOT rewritten", file=sys.stderr)
         return 1
+
+    # Served first; local only as a declared fallback, never silently.
+    target, mode = SERVED, "served"
+    v = None
+    for target, mode in ((SERVED, "served"), (str(HASHLOG), "working-tree")):
+        try:
+            proc = subprocess.run(
+                [sys.executable, str(HERE / "knp_verify.py"), target,
+                 "--json"], capture_output=True, text=True, timeout=120)
+            v = json.loads(proc.stdout)
+            break
+        except Exception as exc:
+            if mode == "served":
+                print(f"REGISTER - served bytes unreachable ({exc}) - falling "
+                      f"back to the working tree. On Windows the working tree "
+                      f"may carry CRLF where the served blob carries LF, which "
+                      f"shows up as a false 4.03c token departure. The fallback "
+                      f"is declared in the register itself.", file=sys.stderr)
+                continue
+            v = None
     try:
-        proc = subprocess.run(
-            [sys.executable, str(HERE / "knp_verify.py"), str(HASHLOG),
-             "--json"], capture_output=True, text=True, timeout=120)
-        v = json.loads(proc.stdout)
+        if v is None:
+            raise RuntimeError("no verifier output from served or local")
     except Exception as exc:
         print(f"REGISTER - verifier did not return machine output ({exc}) - "
               f"INDETERMINATE, register NOT rewritten. An unverifiable "
@@ -85,8 +116,17 @@ def main():
         "verified_at": when,
         "verifier": str(v.get("verifier", "knp_verify")),
         "recomputed_by": "register_build.py",
-        "record": "https://retroprescientaudit.com/kalls_hashlog.json",
+        "verified_against": mode,
+        "verified_target": target,
+        "record": SERVED,
     }
+    if mode != "served":
+        entry["scope_caveat"] = (
+            "Verified against the working-tree copy because the served bytes "
+            "were unreachable at build time. A working tree may differ from "
+            "the served blob by line-ending translation alone; any 4.03c "
+            "token departure reported under this mode should be re-checked "
+            "against the served URL before it is believed.")
     if not conformant:
         entry["nonconformance"] = musts[:8]
     if shoulds:
@@ -117,6 +157,8 @@ def main():
     }
     REG.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n",
                    encoding="utf-8")
+    print(f"REGISTER - verified against {mode} bytes ({target})",
+          file=sys.stderr)
     print(f"REGISTER - self entry recomputed: {n} record(s), "
           f"{len(musts)} must, {len(shoulds)} should, "
           f"{'CONFORMANT' if conformant else 'NONCONFORMANT'}",
