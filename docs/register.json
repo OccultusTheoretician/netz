@@ -1,17 +1,24 @@
 {
-  "schema": "kfk-register/1.0",
-  "as_of": "2026-07-27",
-  "note": "Entries are listed with the verifier's own output, unedited. Listing is not endorsement.",
-  "entries": [
-    {
-      "party": "The Prescient Desk (NebelKr\u00e4he)",
-      "note": "Issuer of the standards. Self-assessed, which is the weakest class on this page and is marked as such rather than presented as validation. A register whose only entry is its own author is a house rule with a table.",
-      "standard": "KNP-26 \u00b7 first edition",
-      "statement": "unmodified",
-      "assessed_by": "self",
-      "scope": "Kr\u00e4he's Kalls clutch, 9 records sealed 2026-07-25T18:30:00Z",
-      "verified": "2026-07-27 \u00b7 0 must, 0 should",
-      "record": "https://retroprescientaudit.com/kalls_hashlog.json"
-    }
-  ]
+ "schema": "kfk-register/1.0",
+ "as_of": "2026-08-09",
+ "note": "Entries are listed with the verifier's own output, unedited. Listing is not endorsement.",
+ "build_note": "The self-assessed entry is recomputed from a live knp_verify run on every build; external entries are carried across untouched, because a third party's claim is theirs to state and is never rewritten by this desk.",
+ "entries": [
+  {
+   "party": "The Prescient Desk (NebelKraehe)",
+   "note": "Issuer of the standards. Self-assessed, which is the weakest class on this page and is marked as such rather than presented as validation. A register whose only entry is its own author is a house rule with a table. This entry is recomputed by register_build.py from a live verifier run, not typed.",
+   "standard": "KNP-26 - first edition",
+   "statement": "unmodified",
+   "assessed_by": "self",
+   "scope": "Kraehe's Kalls clutch, 10 record(s) on the live hashlog",
+   "verified": "2026-08-09 - 0 must, 1 should - CONFORMANT",
+   "verified_at": "2026-08-09T21:23:16Z",
+   "verifier": "knp_verify/1.1",
+   "recomputed_by": "register_build.py",
+   "record": "https://retroprescientaudit.com/kalls_hashlog.json",
+   "should_departures": [
+    "latest token covers a prior state of this hashlog (token dea862edddc6… vs served 9b6154ed16ac…) — stale until the next token run; the sequence anchor governs the gap"
+   ]
+  }
+ ]
 }
