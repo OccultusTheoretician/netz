@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""warte.py - KALIBRIERWARTE. The multi-model calibration observatory.
+
+KK17 frontier bank, completed KK36. Reads the sealed ledger and renders
+per-arm calibration: reliability bins, Brier, base rate, climatological
+floor, skill - one tile per forecaster arm, no pooled figure anywhere
+(a Brier belongs to one forecaster). VoidSection doctrine: trend under a
+FROZEN rubric is the measurement, so every tile prints its rubric-hash
+coverage - rows sealed before the commitment carry no hash and say so.
+
+Writes forecasts/kalibrierwarte_latest.json and docs/kalibrierwarte.html.
+Read-only against the ledger. n-floors are printed, never hidden.
+"""
+import json, sys, hashlib
+from datetime import datetime, timezone
+from pathlib import Path
+from collections import defaultdict
+
+HERE = Path(__file__).resolve().parent
+N_FLOOR_ARM = 10   # below this, the tile says so and shows no skill line
+N_FLOOR_BIN = 5    # below this, the bin prints n<5 instead of a frequency
+BINS = [(0,10),(10,20),(20,30),(30,40),(40,50),
+        (50,60),(60,70),(70,80),(80,90),(90,101)]
+
+
+def main():
+    led = json.loads((HERE/"ledger.json").read_text(encoding="utf-8"))
+    rows = led["projections"]
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    arms = defaultdict(list)
+    for p in rows:
+        if p.get("status") in ("hit","miss"):
+            arms[str(p.get("model","?"))].append(p)
+    open_hash = sum(1 for p in rows if p.get("status")=="open"
+                    and p.get("rubric_hash"))
+    open_all = sum(1 for p in rows if p.get("status")=="open")
+
+    tiles = {}
+    for arm in sorted(arms):
+        rs = arms[arm]
+        n = len(rs); hits = sum(1 for p in rs if p["status"]=="hit")
+        ps = [float(p.get("probability",0))/100.0 for p in rs]
+        ys = [1.0 if p["status"]=="hit" else 0.0 for p in rs]
+        brier = sum((a-b)**2 for a,b in zip(ps,ys))/n
+        base = hits/n
+        clim = base*(1-base)
+        skill = None if clim==0 else 1.0-(brier/clim)
+        hashed = sum(1 for p in rs if p.get("rubric_hash"))
+        bins = []
+        for lo,hi in BINS:
+            sub = [(a,b) for a,b in zip(ps,ys) if lo <= a*100 < hi]
+            if not sub:
+                continue
+            bn = len(sub)
+            bins.append({
+                "bin": f"{lo}-{hi-1 if hi==101 else hi}",
+                "n": bn,
+                "mean_p": round(sum(a for a,_ in sub)/bn, 3),
+                "obs": (round(sum(b for _,b in sub)/bn, 3)
+                        if bn >= N_FLOOR_BIN else None),
+                "note": None if bn >= N_FLOOR_BIN else f"n<{N_FLOOR_BIN}"})
+        tiles[arm] = {
+            "resolved": n, "hits": hits, "misses": n-hits,
+            "brier": round(brier,3), "base_rate": round(base,3),
+            "climatological": round(clim,3),
+            "skill": (round(skill,3) if skill is not None
+                      and n >= N_FLOOR_ARM else None),
+            "n_floor": (None if n >= N_FLOOR_ARM else
+                        f"insufficient n ({n}<{N_FLOOR_ARM}) - "
+                        f"printed, not hidden"),
+            "rubric_hashed": hashed,
+            "rubric_note": (None if hashed == n else
+                            f"{n-hashed} of {n} resolved rows predate the "
+                            f"rubric commitment - drift comparison anchors "
+                            f"at the first hashed row"),
+            "bins": bins}
+
+    out = {"_meta": {"generated": now, "instrument": "kalibrierwarte/1.0",
+                     "doctrine": "no pooled score exists; a Brier belongs "
+                                 "to one forecaster; trend under a frozen "
+                                 "rubric is the measurement",
+                     "n_floor_arm": N_FLOOR_ARM, "n_floor_bin": N_FLOOR_BIN,
+                     "open_rows_rubric_hashed": f"{open_hash}/{open_all}"},
+           "arms": tiles}
+    fj = HERE/"forecasts"/"kalibrierwarte_latest.json"
+    fj.parent.mkdir(exist_ok=True)
+    fj.write_text(json.dumps(out, indent=1)+"\n", encoding="utf-8")
+
+    h = ["<!doctype html><html><head><meta charset='utf-8'>",
+         "<title>KALIBRIERWARTE</title>",
+         "<meta name='viewport' content='width=device-width,initial-scale=1'>",
+         "<style>body{background:#0b0e11;color:#c9d1d9;font-family:monospace;"
+         "max-width:860px;margin:2em auto;padding:0 1em;font-size:14px}"
+         "h1{color:#e6edf3;font-size:18px}h2{color:#e6edf3;font-size:15px;"
+         "border-bottom:1px solid #30363d;padding-bottom:4px}"
+         "table{border-collapse:collapse;margin:8px 0}"
+         "td,th{border:1px solid #30363d;padding:3px 9px;text-align:right}"
+         "th{color:#8b949e}.note{color:#8b949e}.warn{color:#d29922}"
+         "</style></head><body>",
+         "<h1>KALIBRIERWARTE - per-arm calibration observatory</h1>",
+         f"<p class='note'>generated {now} - no pooled score exists; a "
+         f"Brier belongs to one forecaster. Reliability = mean stated "
+         f"probability vs observed frequency per decile. Rows sealed "
+         f"before the rubric commitment carry no hash and are marked. "
+         f"Open rows carrying a rubric hash: {open_hash}/{open_all}.</p>"]
+    for arm, t in tiles.items():
+        h.append(f"<h2>{arm}</h2>")
+        h.append(f"<p>resolved {t['resolved']} - {t['hits']} hit / "
+                 f"{t['misses']} miss - Brier {t['brier']} - base rate "
+                 f"{t['base_rate']} - climatological {t['climatological']}"
+                 + (f" - skill {t['skill']}" if t['skill'] is not None
+                    else "") + "</p>")
+        if t["n_floor"]:
+            h.append(f"<p class='warn'>{t['n_floor']}</p>")
+        if t["rubric_note"]:
+            h.append(f"<p class='note'>{t['rubric_note']}</p>")
+        h.append("<table><tr><th>bin</th><th>n</th><th>mean p</th>"
+                 "<th>observed</th></tr>")
+        for b in t["bins"]:
+            obs = b["note"] if b["obs"] is None else f"{b['obs']}"
+            h.append(f"<tr><td>{b['bin']}</td><td>{b['n']}</td>"
+                     f"<td>{b['mean_p']}</td><td>{obs}</td></tr>")
+        h.append("</table>")
+    h.append("<p class='note'>kalibrierwarte/1.0 - read-only against the "
+             "sealed ledger - misses printed at full size</p></body></html>")
+    fh = HERE/"docs"/"kalibrierwarte.html"
+    fh.write_text("\n".join(h), encoding="utf-8")
+    print(f"WARTE - {len(tiles)} arm tile(s) - {sum(t['resolved'] for t in tiles.values())} resolved rows read", file=sys.stderr)
+    print(f"WARTE - json -> {fj}", file=sys.stderr)
+    print(f"WARTE - face -> {fh}", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()

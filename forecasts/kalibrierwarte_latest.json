@@ -1,0 +1,131 @@
+{
+ "_meta": {
+  "generated": "2026-08-09T02:07:42Z",
+  "instrument": "kalibrierwarte/1.0",
+  "doctrine": "no pooled score exists; a Brier belongs to one forecaster; trend under a frozen rubric is the measurement",
+  "n_floor_arm": 10,
+  "n_floor_bin": 5,
+  "open_rows_rubric_hashed": "0/353"
+ },
+ "arms": {
+  "lmstudio/auto": {
+   "resolved": 32,
+   "hits": 9,
+   "misses": 23,
+   "brier": 0.221,
+   "base_rate": 0.281,
+   "climatological": 0.202,
+   "skill": -0.093,
+   "n_floor": null,
+   "rubric_hashed": 0,
+   "rubric_note": "32 of 32 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "bins": [
+    {
+     "bin": "10-20",
+     "n": 1,
+     "mean_p": 0.15,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "20-30",
+     "n": 6,
+     "mean_p": 0.242,
+     "obs": 0.167,
+     "note": null
+    },
+    {
+     "bin": "30-40",
+     "n": 12,
+     "mean_p": 0.321,
+     "obs": 0.25,
+     "note": null
+    },
+    {
+     "bin": "40-50",
+     "n": 7,
+     "mean_p": 0.414,
+     "obs": 0.571,
+     "note": null
+    },
+    {
+     "bin": "50-60",
+     "n": 2,
+     "mean_p": 0.525,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "60-70",
+     "n": 3,
+     "mean_p": 0.633,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "70-80",
+     "n": 1,
+     "mean_p": 0.7,
+     "obs": null,
+     "note": "n<5"
+    }
+   ]
+  },
+  "manual/fable": {
+   "resolved": 3,
+   "hits": 1,
+   "misses": 2,
+   "brier": 0.266,
+   "base_rate": 0.333,
+   "climatological": 0.222,
+   "skill": null,
+   "n_floor": "insufficient n (3<10) - printed, not hidden",
+   "rubric_hashed": 0,
+   "rubric_note": "3 of 3 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "bins": [
+    {
+     "bin": "20-30",
+     "n": 1,
+     "mean_p": 0.28,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "40-50",
+     "n": 1,
+     "mean_p": 0.4,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "60-70",
+     "n": 1,
+     "mean_p": 0.6,
+     "obs": null,
+     "note": "n<5"
+    }
+   ]
+  },
+  "manual/sonnet-5": {
+   "resolved": 2,
+   "hits": 1,
+   "misses": 1,
+   "brier": 0.265,
+   "base_rate": 0.5,
+   "climatological": 0.25,
+   "skill": null,
+   "n_floor": "insufficient n (2<10) - printed, not hidden",
+   "rubric_hashed": 0,
+   "rubric_note": "2 of 2 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "bins": [
+    {
+     "bin": "50-60",
+     "n": 2,
+     "mean_p": 0.57,
+     "obs": null,
+     "note": "n<5"
+    }
+   ]
+  }
+ }
+}

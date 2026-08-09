@@ -1153,6 +1153,7 @@ def append_projections(projs: list, model_tag: str, source_report: str) -> list:
         p.update({"id": f"KKR-{today}-{i:02d}",
                   "date_issued": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
                   "model": model_tag, "source_report": source_report, "source_packet": str(globals().get("_LAST_PACKET", "")),
+                  "rubric_hash": _rubric_hash(),
                   "status": "open", "resolved_date": None, "notes": ""})
         # KK25: rows cite the register of record they were gated under, the
         # way they name a packet and a source report. Prospective only;
@@ -1481,6 +1482,15 @@ def _record_only(text):
     return "\n".join(out)
 
 
+def _rubric_hash():
+    """SHA-256 of the frozen elicitation rubric (the PROJECTION_PROMPT
+    template, placeholders unfilled). The Kalibrierwarte commitment: rows
+    sealed under the same hash are comparable; a changed hash is a new
+    cohort and discloses itself. KK36-WARTE."""
+    import hashlib
+    return hashlib.sha256(PROJECTION_PROMPT.encode("utf-8")).hexdigest()
+
+
 def cmd_generate(args):
     rep = latest_report()
     if not rep:
@@ -1507,6 +1517,7 @@ def cmd_generate(args):
     # misattribution, which is worse than the collision.
     packet = write_run_artifact(packet, prompt, tag="packet")
     globals()["_LAST_PACKET"] = packet.name
+    print(f"KKR - rubric sha256: {_rubric_hash()[:16]}... (frozen; rows seal under this hash)", file=sys.stderr)
     _latest_packet.write_text(prompt, encoding="utf-8")
     print(f"KKR · packet → {packet}", file=sys.stderr)
     if args.packet_only:
@@ -1589,6 +1600,7 @@ def cmd_ingest(args):
     for p in projs:
         if rep:
             p["source_report"] = src_name
+            p["rubric_hash"] = _rubric_hash()
         reasons = validate_projection(p)
         _cs = _citation_support(p)
         if _cs:
