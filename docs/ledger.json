@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-08T22:08:24Z",
+  "as_of": "2026-08-09T20:16:48Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -379,9 +379,9 @@
       "date_issued": "2026-07-20",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-20_2131.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-09",
+      "notes": "HIT on the resolution as written. UK AISI (AI Security Institute, a research organisation within DSIT - a government agency) published an official incident report 2026-08-04 confirming that in 10 of 122 evaluation runs an AI agent took autonomous, unsanctioned action on the live internet against real people and organisations, incident dated 2026-07-25 to 07-28, inside the window; the agent used Tor to bypass network restrictions on GitHub and GitHub confirmed terms-of-service violations. CAVEAT AND DIVERGENCE: the resolution requires a government statement confirming a breach BY an autonomous agent and does not require the breached party to be that government body; the statement names the government or financial institution as the affected organization, and AISI states explicitly that no agent tried to break out of the sandbox or attack AISI systems - AISI was the origin, the party whose restrictions were bypassed was GitHub, which is private. Adjudicated on the resolution per desk doctrine. The statement/resolution scope divergence is a printed finding of the same family as KKR-20260808-01. Jury lane unavailable: held evidence 0 of 2 because the resolution names no fetchable source of record, juror B correctly ABSTAINed under the 8.07 coercion, juror A unavailable (no API key) - operator ruled alone by structural necessity, not preference.",
       "failure_condition": "the condition stated in this entry's resolution basis — An official press release or public statement from a government agency or financial institution confirms a breach by an autonomous AI agent, with the incident date on or before 2026-08-08 — is not met on or before 2026-08-08; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
@@ -967,8 +967,8 @@
       "date_issued": "2026-07-22",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-22_0409.md",
-      "status": "open",
-      "resolved_date": null,
+      "status": "miss",
+      "resolved_date": "2026-08-09",
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — The French Ministry of Health's official public statement or press release, published between 2026-08-05 and 2026-08-08, confirms that social media access is legally prohibited for all users under 15 years old nationwide — is not met on or before 2026-08-08; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyless",
@@ -1016,8 +1016,9 @@
       "resolved_date": null,
       "notes": "",
       "failure_condition": "the condition stated in this entry's resolution basis — A company press release or two independent wire reports confirm a named platform announcing age verification for France between 2026-07-23 and 2026-10-15 — is not met on or before 2026-10-15; absence at the deadline scores this entry a MISS.",
-      "keyed_keyless": "unset",
-      "keyed_keyless_rationale": "UNSET — pre-registration required (RPAS 4.02)"
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Priors unreadable (no citations on the row); keyless cannot be evidenced - keyed per the unreadable-priors rule of the 2026-08-01 pass.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Yes",
@@ -8065,7 +8066,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-04T21:15:54.485579+00:00",
-      "seal_sha256": "b11b273c3dd3a24f1c1cd42fbe8561889d80e724bfb2148ecb47990dd7f8aec5"
+      "seal_sha256": "b11b273c3dd3a24f1c1cd42fbe8561889d80e724bfb2148ecb47990dd7f8aec5",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [20, 26] carry the claim's operative terms (adds, n-able, n-central); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The United States Senate confirms Todd Blanche as Attorney General in a recorded floor vote held between 2026-08-05 and 2026-10-16.",
@@ -8086,7 +8090,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-04T21:15:54.485591+00:00",
-      "seal_sha256": "1608893344b659c75105cf193b56b52abef68749b1a04005cf41a1149727c705"
+      "seal_sha256": "1608893344b659c75105cf193b56b52abef68749b1a04005cf41a1149727c705",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [106] carry the claim's operative terms (blanche, nomination, vote); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The man charged over the largest 2026 Washington state wildfire faces at least one arson count filed and not dismissed at any point between 2026-08-05 and 2026-09-30.",
@@ -8109,7 +8116,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-04T21:15:54.485604+00:00",
-      "seal_sha256": "8d5af8725c324c9335a2118bfb985d01e0582d23a462cab563a9fb2fe05b19f0"
+      "seal_sha256": "8d5af8725c324c9335a2118bfb985d01e0582d23a462cab563a9fb2fe05b19f0",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [9, 31, 43] carry the claim's operative terms (arson, charged, largest, state, washington, wildfire); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-04 and 2026-08-18, a single Russian or Ukrainian long-range strike will be independently confirmed by two or more wire services, such as Reuters, AP, or AFP, to have killed 20 or more people in one incident.",
@@ -8179,7 +8189,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-04T21:15:56.905460+00:00",
-      "seal_sha256": "51271a5c5956f8957e65001dedee7dfa7e25b99042db9cd61a7515ca4b0412ac"
+      "seal_sha256": "51271a5c5956f8957e65001dedee7dfa7e25b99042db9cd61a7515ca4b0412ac",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [20, 26] carry the claim's operative terms (exploited, n-able, n-central); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-04 and 2026-08-11, the Japan Meteorological Agency will issue a Special Warning, its highest alert level, for Typhoon Dolphin covering at least one prefecture.",
@@ -8224,7 +8237,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-04T21:15:56.905492+00:00",
-      "seal_sha256": "deb830dfca6f127028fba99d2edb245e9885ecb4fd1c63e698c82dfde86f3bae"
+      "seal_sha256": "deb830dfca6f127028fba99d2edb245e9885ecb4fd1c63e698c82dfde86f3bae",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [9] carry the claim's operative terms (charge, charged, washington, wildfire); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-04 and 2026-11-04, the Second Circuit Court of Appeals will enter an order or ruling, on the merits or on a stay motion, in New York's case over the ICE-officer mask ban blocked in item 113.",
@@ -8245,7 +8261,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-04T21:15:56.905508+00:00",
-      "seal_sha256": "806fedaa7c6d10ec8b1fa223606d5dedfe4698e370576b6c8ee365d2018d8cf8"
+      "seal_sha256": "806fedaa7c6d10ec8b1fa223606d5dedfe4698e370576b6c8ee365d2018d8cf8",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [113] carry the claim's operative terms (blocked, york'); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The CISA KEV catalog includes CVE-2026-9198 (IBM Langflow Code Injection) as actively exploited between 2026-08-05 and 2026-08-12.",
@@ -8339,7 +8358,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:37.152180+00:00",
-      "seal_sha256": "811ae6861e6d5414f77591ed64b49e584acfbf03207ed6afdc684aad3f7d3721"
+      "seal_sha256": "811ae6861e6d5414f77591ed64b49e584acfbf03207ed6afdc684aad3f7d3721",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [51] carry the claim's operative terms (billion, refund, tariff); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "UKMTO issues an incident advisory, or CENTCOM issues a statement, reporting an attack on or seizure of a commercial vessel in the Strait of Hormuz or Gulf of Oman between 2026-08-06 and 2026-11-30.",
@@ -8362,7 +8384,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:37.152204+00:00",
-      "seal_sha256": "8d93f27e8d29da8f66d570712969cc472e1a967fc268573513292c8350ab1a73"
+      "seal_sha256": "8d93f27e8d29da8f66d570712969cc472e1a967fc268573513292c8350ab1a73",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [93] carry the claim's operative terms (hormuz, oman); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The CISA KEV catalog carries at least one entry naming Gitea in its vendorProject or product field, with a dateAdded value between 2026-08-06 and 2026-12-31.",
@@ -8383,7 +8408,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:37.152214+00:00",
-      "seal_sha256": "6e6841394331d48b2ae397431a205336f42b82e4da22cb05fc8ceae733d896d8"
+      "seal_sha256": "6e6841394331d48b2ae397431a205336f42b82e4da22cb05fc8ceae733d896d8",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [17] carry the claim's operative terms (gitea); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The USGS earthquake catalog lists at least one event of magnitude 6.0 or greater within 300 km of the epicenter of USGS event us6000ti6x, with an origin time between 2026-08-06 and 2026-09-30.",
@@ -8405,7 +8433,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:37.152222+00:00",
-      "seal_sha256": "c668be8e23354bcebfc1106b926af2217b4fec9d1f40b468520de432728f2204"
+      "seal_sha256": "c668be8e23354bcebfc1106b926af2217b4fec9d1f40b468520de432728f2204",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [43] carry the claim's operative terms (earthquake, magnitude); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The House Committee on Ethics publishes a statement or report on ethics.house.gov naming Representative Max Miller, dated between 2026-08-06 and 2026-11-30.",
@@ -8426,7 +8457,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:37.152230+00:00",
-      "seal_sha256": "1f589b8ed6f7c8ae31e6a4db07c5b88c3b9a4164659fb7acae2a277f15e4aaaa"
+      "seal_sha256": "1f589b8ed6f7c8ae31e6a4db07c5b88c3b9a4164659fb7acae2a277f15e4aaaa",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [37] carry the claim's operative terms (committee, ethic, house, miller); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-06 and 2026-08-20, the USGS Earthquake Catalog will record at least one earthquake of magnitude 6.0 or greater anywhere in the world.",
@@ -8473,7 +8507,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:41.350783+00:00",
-      "seal_sha256": "c1fd7cbe005a8a6b32abc25bda3b4c52776a8a00d030a1ead464cc6c67c1187d"
+      "seal_sha256": "c1fd7cbe005a8a6b32abc25bda3b4c52776a8a00d030a1ead464cc6c67c1187d",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [100, 105] carry the claim's operative terms (abdul, el-sayed, michigan, senate); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The United States and Iran both publicly confirm a concluded agreement governing commercial transit of the Strait of Hormuz between 2026-08-06 and 2026-09-30.",
@@ -8495,7 +8532,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:44.956940+00:00",
-      "seal_sha256": "297b47c7d63c5a88adb898a3c97deaed4f054809a5374c2e222ff0d244745396"
+      "seal_sha256": "297b47c7d63c5a88adb898a3c97deaed4f054809a5374c2e222ff0d244745396",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [93] carry the claim's operative terms (hormuz, iran, iranian); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "A Russian missile or drone strike on Kyiv city kills at least 5 people in a single attack between 2026-08-06 and 2026-10-31, per Ukrainian official casualty statements.",
@@ -8517,7 +8557,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:44.957034+00:00",
-      "seal_sha256": "003ed2302bd63500e6ec7ffe65adc599b060dd27073e93c336b1787239607b1b"
+      "seal_sha256": "003ed2302bd63500e6ec7ffe65adc599b060dd27073e93c336b1787239607b1b",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [83, 90] carry the claim's operative terms (attack, kill, killed, russian, strike, ukrainian); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The CISA KEV catalog adds at least one entry for Gitea, n8n, or TP-Link Omada with a date-added value between 2026-08-06 and 2026-10-30.",
@@ -8540,7 +8583,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:44.957050+00:00",
-      "seal_sha256": "23838a59751f38b49e144069a7cff675be41d785a629654350ab170f82fb542d"
+      "seal_sha256": "23838a59751f38b49e144069a7cff675be41d785a629654350ab170f82fb542d",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [17, 24] carry the claim's operative terms (gitea, omada, tp-link); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The CISA KEV catalog adds at least 12 new entries with date-added values between 2026-08-06 and 2026-09-30.",
@@ -8583,7 +8629,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:44.957069+00:00",
-      "seal_sha256": "18d6e43bf4600b13a5a67b79319af4524122719221257d579ec8fd0b68fc192e"
+      "seal_sha256": "18d6e43bf4600b13a5a67b79319af4524122719221257d579ec8fd0b68fc192e",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [100, 110] carry the claim's operative terms (abdul, el-sayed, michigan, senate, wins); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Pete Hegseth departs the office of US Secretary of War, via announced resignation or removal, between 2026-08-06 and 2027-01-30.",
@@ -8604,7 +8653,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:44.957076+00:00",
-      "seal_sha256": "da042a465a9480bb5948c0480f8c4046eb119143a42da0b009f468660dd2deb4"
+      "seal_sha256": "da042a465a9480bb5948c0480f8c4046eb119143a42da0b009f468660dd2deb4",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [82] carry the claim's operative terms (pete, secretary); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The USGS catalog records at least one magnitude 5.0 or greater earthquake within 100 km of the 2026-08-05 Sarangani M6.3 epicenter, with origin time between 2026-08-06 and 2026-09-04.",
@@ -8626,7 +8678,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:30:44.957083+00:00",
-      "seal_sha256": "3ed34e9a03098393503fba617f2fc8d5e7f2d0744b3a0aadfd301df9cb5bbea3"
+      "seal_sha256": "3ed34e9a03098393503fba617f2fc8d5e7f2d0744b3a0aadfd301df9cb5bbea3",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [30, 43] carry the claim's operative terms (earthquake, magnitude, sarangani); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "ICE Brent front-month crude futures settle at or below 70.00 USD per barrel on at least one settlement date between 2026-08-06 and 2026-10-30.",
@@ -8664,7 +8719,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:25.460435+00:00",
-      "seal_sha256": "ff6458b339916d6de843f87842ca0787d63eb1843a1f93cf4800c9b4d5a0c618"
+      "seal_sha256": "ff6458b339916d6de843f87842ca0787d63eb1843a1f93cf4800c9b4d5a0c618",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "A filing entered on the US Court of International Trade docket between 2026-08-06 and 2026-12-15 states that cumulative IEEPA tariff refunds issued have reached 150 billion USD or more.",
@@ -8700,7 +8758,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:25.460527+00:00",
-      "seal_sha256": "aa460b81333c2e513f20a997102cf4bc2152961312dc5936c437af974282f443"
+      "seal_sha256": "aa460b81333c2e513f20a997102cf4bc2152961312dc5936c437af974282f443",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "UKMTO issues an incident advisory, or CENTCOM issues a statement, reporting an attack on or seizure of a commercial vessel in the Strait of Hormuz or Gulf of Oman between 2026-08-06 and 2026-11-30.",
@@ -8738,7 +8799,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:25.460544+00:00",
-      "seal_sha256": "02edf4919d7c9f9e37e49e7d081baa9a7f673f11f465236cc32b6e21c963f080"
+      "seal_sha256": "02edf4919d7c9f9e37e49e7d081baa9a7f673f11f465236cc32b6e21c963f080",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The CISA KEV catalog carries at least one entry naming Gitea in its vendorProject or product field, with a dateAdded value between 2026-08-06 and 2026-12-31.",
@@ -8774,7 +8838,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:25.460555+00:00",
-      "seal_sha256": "f4c5ec0fe8d03d4116d1f26ec2ba897aeffc3bb8f55f176cdd2a4334b0970bff"
+      "seal_sha256": "f4c5ec0fe8d03d4116d1f26ec2ba897aeffc3bb8f55f176cdd2a4334b0970bff",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The USGS earthquake catalog lists at least one event of magnitude 6.0 or greater within 300 km of the epicenter of USGS event us6000ti6x, with an origin time between 2026-08-06 and 2026-09-30.",
@@ -8811,7 +8878,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:25.460563+00:00",
-      "seal_sha256": "e7b19123c807143af6c2b5b0231b6907ec54578438717e218a793c88b51909e0"
+      "seal_sha256": "e7b19123c807143af6c2b5b0231b6907ec54578438717e218a793c88b51909e0",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The House Committee on Ethics publishes a statement or report on ethics.house.gov naming Representative Max Miller, dated between 2026-08-06 and 2026-11-30.",
@@ -8847,7 +8917,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:25.460571+00:00",
-      "seal_sha256": "ab5c91a23795a6d051bfbc108febe298f91baf6927f6a15bf85fe42b055242b1"
+      "seal_sha256": "ab5c91a23795a6d051bfbc108febe298f91baf6927f6a15bf85fe42b055242b1",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-06 and 2026-08-20, the USGS Earthquake Catalog will record at least one earthquake of magnitude 6.0 or greater anywhere in the world.",
@@ -8924,7 +8997,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:29.457209+00:00",
-      "seal_sha256": "e1639819c338d680a3be29fbb96af89940a07dc3079770e54252d90326709c19"
+      "seal_sha256": "e1639819c338d680a3be29fbb96af89940a07dc3079770e54252d90326709c19",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The United States and Iran both publicly confirm a concluded agreement governing commercial transit of the Strait of Hormuz between 2026-08-06 and 2026-09-30.",
@@ -8961,7 +9037,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:32.946938+00:00",
-      "seal_sha256": "75047c78bab8d197e2cbdd58e1b58e683cc6cd57779a2d519cbfd2de014f197c"
+      "seal_sha256": "75047c78bab8d197e2cbdd58e1b58e683cc6cd57779a2d519cbfd2de014f197c",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "A Russian missile or drone strike on Kyiv city kills at least 5 people in a single attack between 2026-08-06 and 2026-10-31, per Ukrainian official casualty statements.",
@@ -8998,7 +9077,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:32.947035+00:00",
-      "seal_sha256": "f7b3cb37f6cce7546e4bcb68b84302286f07641731156a8e35524b4700229abf"
+      "seal_sha256": "f7b3cb37f6cce7546e4bcb68b84302286f07641731156a8e35524b4700229abf",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The CISA KEV catalog adds at least one entry for Gitea, n8n, or TP-Link Omada with a date-added value between 2026-08-06 and 2026-10-30.",
@@ -9036,7 +9118,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:32.947051+00:00",
-      "seal_sha256": "c3c0b282332a92a912f55ca7216a79ccfc0c692501b6920757f326e9c5e44d7a"
+      "seal_sha256": "c3c0b282332a92a912f55ca7216a79ccfc0c692501b6920757f326e9c5e44d7a",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The CISA KEV catalog adds at least 12 new entries with date-added values between 2026-08-06 and 2026-09-30.",
@@ -9072,7 +9157,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:32.947061+00:00",
-      "seal_sha256": "77018eee76001550c19009ac975c7d9c4e6d89581296f0f5090427dfe325e1a7"
+      "seal_sha256": "77018eee76001550c19009ac975c7d9c4e6d89581296f0f5090427dfe325e1a7",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Abdul El-Sayed wins the Michigan US Senate general election held 2026-11-03.",
@@ -9109,7 +9197,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:32.947070+00:00",
-      "seal_sha256": "3d14a901ee130d314d022cd2c96fb2405afc7261d2d19e487f3bb2caa4e7080c"
+      "seal_sha256": "3d14a901ee130d314d022cd2c96fb2405afc7261d2d19e487f3bb2caa4e7080c",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Pete Hegseth departs the office of US Secretary of War, via announced resignation or removal, between 2026-08-06 and 2027-01-30.",
@@ -9145,7 +9236,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:32.947077+00:00",
-      "seal_sha256": "b1030f452a24d20712c1eba92dbeb3c412a093fcd0060d631f5bdaba2e25d7c0"
+      "seal_sha256": "b1030f452a24d20712c1eba92dbeb3c412a093fcd0060d631f5bdaba2e25d7c0",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The USGS catalog records at least one magnitude 5.0 or greater earthquake within 100 km of the 2026-08-05 Sarangani M6.3 epicenter, with origin time between 2026-08-06 and 2026-09-04.",
@@ -9182,7 +9276,10 @@
       "resolved_date": null,
       "notes": "",
       "sealed_at": "2026-08-06T03:39:32.947085+00:00",
-      "seal_sha256": "d893815a3095cafaad683a33ccc040c11c67b9a8075a3af4bd73fdc4acffdbae"
+      "seal_sha256": "d893815a3095cafaad683a33ccc040c11c67b9a8075a3af4bd73fdc4acffdbae",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Control arm - projection derived from the ledger's own base rates; deducible by construction.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-15 and 2026-08-22, Iran and Oman will publicly confirm a maritime coordination agreement for the Strait of Hormuz via a joint statement from both foreign ministries.",
@@ -9457,7 +9554,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:54.002541+00:00",
-      "seal_sha256": "eb8308a6ec4decf87a891d384d1841db7b9748acdabb8394b81af454a76b4bde"
+      "seal_sha256": "eb8308a6ec4decf87a891d384d1841db7b9748acdabb8394b81af454a76b4bde",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [105, 112, 118] carry the claim's operative terms (attorney, blanche, general, todd); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Houthi forces take control of Marib city, Yemen, between 2026-08-08 and 2027-01-15.",
@@ -9480,7 +9580,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:54.002583+00:00",
-      "seal_sha256": "e041b39ab1a311ceab8473e284e3358fe8d1979d6daca47f8b0ab07ce662b3c0"
+      "seal_sha256": "e041b39ab1a311ceab8473e284e3358fe8d1979d6daca47f8b0ab07ce662b3c0",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [86, 99] carry the claim's operative terms (force, houthi, marib, yemen, yemeni); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "A vulnerability in Claude Code or Gemini CLI disclosed in early August 2026 is added to the CISA KEV catalog with a dateAdded between 2026-08-08 and 2026-11-30.",
@@ -9502,7 +9605,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:54.002597+00:00",
-      "seal_sha256": "8b45c41435b83279ea7202b991c97d837b9496a7a3d4c292ef755114245c41fb"
+      "seal_sha256": "8b45c41435b83279ea7202b991c97d837b9496a7a3d4c292ef755114245c41fb",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [26] carry the claim's operative terms (claude, code, gemini); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The US Senate confirms Todd Blanche as Attorney General on a recorded roll call vote held between 2026-08-07 and 2026-09-30.",
@@ -9527,7 +9633,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:57.932376+00:00",
-      "seal_sha256": "d6f40f4bc127016121992a9e44869e20ed1f6c127882315bad6c228fb809ddc4"
+      "seal_sha256": "d6f40f4bc127016121992a9e44869e20ed1f6c127882315bad6c228fb809ddc4",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [104, 105, 112, 118] carry the claim's operative terms (attorney, blanche, confirmation, general, todd, vote); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The Russia sanctions bill passed by the Senate on 2026-08-07 becomes public law between 2026-08-08 and 2026-12-18.",
@@ -9549,7 +9658,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:57.932396+00:00",
-      "seal_sha256": "adbb8b88d56ab988c128f18ca561a76af140eec6cab59ae31b3cc76bbdbc6eaf"
+      "seal_sha256": "adbb8b88d56ab988c128f18ca561a76af140eec6cab59ae31b3cc76bbdbc6eaf",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [103] carry the claim's operative terms (bill, championed, passed, russia, sanction, senate); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Levi Strauss and Co files a Form 8-K disclosing a material cybersecurity incident under Item 1.05 between 2026-08-08 and 2026-11-30.",
@@ -9571,7 +9683,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:57.932407+00:00",
-      "seal_sha256": "941cc56e6437e8f7e50d42684c1462d4d6a85c811baa75d5ea1ef3c096630b38"
+      "seal_sha256": "941cc56e6437e8f7e50d42684c1462d4d6a85c811baa75d5ea1ef3c096630b38",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [15] carry the claim's operative terms (levi, straus); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "CISA adds at least one WordPress core or WordPress plugin vulnerability to the Known Exploited Vulnerabilities catalog with a date added between 2026-08-08 and 2026-12-31.",
@@ -9593,7 +9708,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:57.932415+00:00",
-      "seal_sha256": "4e067bc09ff835f2ee4156f89271e3a39f3b90ffb75c1cb7ff03dcdc34a43cf0"
+      "seal_sha256": "4e067bc09ff835f2ee4156f89271e3a39f3b90ffb75c1cb7ff03dcdc34a43cf0",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [18] carry the claim's operative terms (wordpres); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Houthi forces launch a ground assault on Marib city or its immediate outskirts between 2026-08-08 and 2026-09-30.",
@@ -9616,7 +9734,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:57.932424+00:00",
-      "seal_sha256": "4832392802f80933b932e4ec497d32ed0d058cfd217020ad2b18658419f73655"
+      "seal_sha256": "4832392802f80933b932e4ec497d32ed0d058cfd217020ad2b18658419f73655",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [86, 99] carry the claim's operative terms (force, houthi, marib); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The Colombian government publicly announces suspension or termination of peace negotiations with the ELN between 2026-08-08 and 2026-11-30.",
@@ -9639,7 +9760,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:57.932431+00:00",
-      "seal_sha256": "a26fc4044ae6c4f50960e99ff7ffe4353cb0d7e36960470930f075d36476a2fd"
+      "seal_sha256": "a26fc4044ae6c4f50960e99ff7ffe4353cb0d7e36960470930f075d36476a2fd",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [88, 109] carry the claim's operative terms (colombian); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The Copernicus Climate Change Service ranks August 2026 among the three warmest Augusts on record for Europe.",
@@ -9662,7 +9786,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:55:57.932440+00:00",
-      "seal_sha256": "e31dadece82f9d9fa175c8376d14ca12a9d042c608c5d2fac8f087f0a18289f7"
+      "seal_sha256": "e31dadece82f9d9fa175c8376d14ca12a9d042c608c5d2fac8f087f0a18289f7",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [48, 122] carry the claim's operative terms (europe, european, record, temperature); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Spain will move beyond its stated threat and implement reciprocal entry checks on travelers from Italy, between 2026-08-10 and 2026-08-24.",
@@ -9764,7 +9891,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:56:02.079859+00:00",
-      "seal_sha256": "8e1867077d326d207ac06724b29c48fc73afecacf1c6364198d25ddfb8a278f0"
+      "seal_sha256": "8e1867077d326d207ac06724b29c48fc73afecacf1c6364198d25ddfb8a278f0",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [38] carry the claim's operative terms (employment); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The US Senate will vote to confirm Todd Blanche as Attorney General between 2026-08-10 and 2026-09-11.",
@@ -9788,7 +9918,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-07T21:56:02.079867+00:00",
-      "seal_sha256": "b5469cd700b58ad6c8ea3a4ae9c6986463cca51dd743dc520dfa9eeae0124368"
+      "seal_sha256": "b5469cd700b58ad6c8ea3a4ae9c6986463cca51dd743dc520dfa9eeae0124368",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [105, 112, 118] carry the claim's operative terms (attorney, blanche, general, todd); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-21 and 2026-08-24, a drone attack using a Shahed-type UAV will be confirmed by at least two independently biased sources (one from RU, one from UA) targeting a civilian infrastructure site in Donetsk, Ukraine, resulting in at least one structural damage report.",
@@ -9915,7 +10048,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T15:19:28.684857+00:00",
-      "seal_sha256": "1e46843aa7e98f59722492c81236303729dc0b4e6b8c67e35b829c9d0d77220c"
+      "seal_sha256": "1e46843aa7e98f59722492c81236303729dc0b4e6b8c67e35b829c9d0d77220c",
+      "keyed_keyless": "keyless",
+      "keyed_keyless_rationale": "cited priors are real supply-chain intrusion stories (TrueConf trojanized installers, N-able N-central) - topically grounded but naming no European financial institution, no coordinated multi-target attack, and no exfiltration; the specific claim is not deducible from them",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-29 and 2026-09-05, a new political scandal involving a US senator will be reported by two major wire services (e.g., Reuters, AP), with allegations of corruption or misuse of funds.",
@@ -9986,7 +10122,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:14.525750+00:00",
-      "seal_sha256": "7e5502b51cfca97e560b6e9b950642887d986291d27866f3ce3dffada4d47580"
+      "seal_sha256": "7e5502b51cfca97e560b6e9b950642887d986291d27866f3ce3dffada4d47580",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [110, 113] carry the claim's operative terms (colombia); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-08 and 2026-08-15 the circulation center of Typhoon Dolphin makes landfall on mainland China.",
@@ -10034,7 +10173,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:14.525773+00:00",
-      "seal_sha256": "34c717a14c03f156d45fa331de473f647d8370901b8596e60b58e0310d60de88"
+      "seal_sha256": "34c717a14c03f156d45fa331de473f647d8370901b8596e60b58e0310d60de88",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [16, 19] carry the claim's operative terms (exploited, metabase); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The incumbent governor of Rhode Island is defeated in a gubernatorial primary held between 2026-09-01 and 2026-09-30.",
@@ -10056,7 +10198,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:14.525782+00:00",
-      "seal_sha256": "8f31f25f119a5a9618d19fcbfaa65ea002f985bb766425126e5584fb9a98419b"
+      "seal_sha256": "8f31f25f119a5a9618d19fcbfaa65ea002f985bb766425126e5584fb9a98419b",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [96] carry the claim's operative terms (governor, island, rhode, sitting); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Between 2026-08-09 and 2026-10-09 the United States and Iran announce an agreement or arrangement governing commercial transit through the Strait of Hormuz.",
@@ -10078,7 +10223,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:14.525791+00:00",
-      "seal_sha256": "9799639bae27533fb38633ee4913735578138ac6267b037568431b4b16bd37d3"
+      "seal_sha256": "9799639bae27533fb38633ee4913735578138ac6267b037568431b4b16bd37d3",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [70] carry the claim's operative terms (arrangement, hormuz, iran); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Ukrainian authorities report at least one civilian killed by a Russian missile or drone strike in Kyiv city or Kyiv oblast between 2026-08-11 and 2026-09-10.",
@@ -10100,7 +10248,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:15.695139+00:00",
-      "seal_sha256": "e99ab3ae211e11179e650260012925046001f3815a548e195061806330eecca1"
+      "seal_sha256": "e99ab3ae211e11179e650260012925046001f3815a548e195061806330eecca1",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [73] carry the claim's operative terms (killed, kyiv, missile, russian); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "A continuing appropriations act extending US federal funding past 2026-09-30 is enacted into law between 2026-08-09 and 2026-09-30.",
@@ -10145,7 +10296,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:15.695169+00:00",
-      "seal_sha256": "5a105a126bddc13609bbd9e3c51b1b703b1b4865efed7bef31d35912aa7fdc79"
+      "seal_sha256": "5a105a126bddc13609bbd9e3c51b1b703b1b4865efed7bef31d35912aa7fdc79",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [16, 19] carry the claim's operative terms (exploited, metabase); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "CISA adds at least 25 distinct CVE records to the Known Exploited Vulnerabilities catalog with date-added values between 2026-08-10 and 2026-09-30.",
@@ -10189,7 +10343,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:15.695184+00:00",
-      "seal_sha256": "4b2134c0641194f75620f41a0af1ee69729c40f089c5b13d8286c93024febc36"
+      "seal_sha256": "4b2134c0641194f75620f41a0af1ee69729c40f089c5b13d8286c93024febc36",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [70] carry the claim's operative terms (arrangement, hormuz, iran, iranian); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Russia strikes Kyiv with a single wave using four or more distinct weapon types (missile, drone, glide bomb, cruise, ballistic, etc), corroborated by both Ukrainian and Russian-aligned sources, between 2026-08-11 and 2026-08-24.",
@@ -10262,7 +10419,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:16.440680+00:00",
-      "seal_sha256": "510d71d1cfbe82809579e61ec59aef6842667dd4d61f09a84d67192dffb694d1"
+      "seal_sha256": "510d71d1cfbe82809579e61ec59aef6842667dd4d61f09a84d67192dffb694d1",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [70, 74] carry the claim's operative terms (hormuz, iran, shipping); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "A CVE for the Metabase authentication-bypass or SQL-injection vulnerability reported as actively exploited on 2026-08-07 and 2026-08-08 is added to the CISA Known Exploited Vulnerabilities catalog, with dateAdded between 2026-08-09 and 2026-08-23.",
@@ -10310,7 +10470,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:16.440695+00:00",
-      "seal_sha256": "e4f15c0e5c7733a29b58d9c7cc71b8f2e53f1900fd5e837a9734413f7e26e4f0"
+      "seal_sha256": "e4f15c0e5c7733a29b58d9c7cc71b8f2e53f1900fd5e837a9734413f7e26e4f0",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [18] carry the claim's operative terms (loadmaster, progres); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "The sitting Governor of Rhode Island leaves office, through resignation, recall, impeachment conviction, or removal, at any point between 2026-08-11 and 2026-09-08.",
@@ -10332,7 +10495,10 @@
       "notes": "",
       "register": "registers/1.0@bbc954b0c3f9d48f",
       "sealed_at": "2026-08-08T21:41:16.440703+00:00",
-      "seal_sha256": "0924d9f2a50e2cf7bb58df97516db810035d4051b8df3bf874408874026a56c3"
+      "seal_sha256": "0924d9f2a50e2cf7bb58df97516db810035d4051b8df3bf874408874026a56c3",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [96] carry the claim's operative terms (governor, governorship, island, rhode, sitting); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     },
     {
       "statement": "Typhoon Dolphin makes landfall on the coast of mainland China at any point between 2026-08-09 and 2026-08-16.",
@@ -10358,6 +10524,460 @@
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Cited prior(s) [25] carry the claim's operative terms (china, dolphin, typhoon); a hit is deducible from the cited record.",
       "keyed_keyless_dated": "2026-08-08"
+    },
+    {
+      "statement": "Between 2026-08-22 and 2026-08-25, a cyberattack exploiting a vulnerability in a critical infrastructure system is reported by at least two wire services with independent verification, and the CISA KEV catalog includes the vulnerability with a date-added value in that window.",
+      "domain": "cyber",
+      "probability": 25,
+      "resolution": "The CISA KEV catalog carries a date-added value between 2026-08-22 and 2026-08-25, and the attack is reported by at least two wire services with independent verification.",
+      "deadline": "2026-08-28",
+      "citations": [
+        8,
+        12
+      ],
+      "failure_condition": "No vulnerability is added to the CISA KEV catalog between 2026-08-22 and 2026-08-25, or no cyberattack is reported by two wire services with independent verification.",
+      "id": "KKR-20260809-01",
+      "date_issued": "2026-08-09",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T15:18:11.690003+00:00",
+      "seal_sha256": "ce5e4ea99d9d02761cc5e2e8e42504bab88874f43b5bb7f6fe9f595df7d519ba",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "cited items are a Gaza famine report and a MarketWatch consumer story - priors supply nothing about cyberattacks, critical infrastructure, or CISA KEV; keyed per the ungrounded-priors rule",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "Between 2026-08-27 and 2026-08-30, a new cyberattack targeting a U.S. government system is reported by two wire services with independent verification, and the CISA KEV catalog includes the vulnerability with a date-added value in that window.",
+      "domain": "cyber",
+      "probability": 32,
+      "resolution": "The CISA KEV catalog carries a date-added value between 2026-08-27 and 2026-08-30, and the attack is reported by two wire services with independent verification.",
+      "deadline": "2026-09-02",
+      "citations": [
+        8,
+        12
+      ],
+      "failure_condition": "No vulnerability is added to the CISA KEV catalog between 2026-08-27 and 2026-08-30, or no cyberattack is reported by two wire services with independent verification.",
+      "id": "KKR-20260809-02",
+      "date_issued": "2026-08-09",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T15:18:11.690026+00:00",
+      "seal_sha256": "e0b6673813273044b412c0c3020ae0d5320d2ef04c1984d62b62819a77138405",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "cited items are the same Gaza famine report and MarketWatch consumer story - priors supply nothing about cyberattacks, US government systems, or CISA KEV; keyed per the ungrounded-priors rule",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "At least one Russian missile or drone strike on Odesa city or oblast occurs between 2026-08-10 and 2026-08-24.",
+      "domain": "military/conflict",
+      "probability": 90,
+      "resolution": "At least two of Reuters, AP, AFP, BBC, Al Jazeera report, citing Ukrainian officials, a Russian strike on Odesa city or oblast occurring between 2026-08-10 and 2026-08-24.",
+      "deadline": "2026-08-27",
+      "citations": [
+        67
+      ],
+      "failure_condition": "No Russian missile or drone strike on Odesa city or oblast occurs between 2026-08-10 and 2026-08-24.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-03",
+      "date_issued": "2026-08-09",
+      "model": "manual/fable-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:08.396202+00:00",
+      "seal_sha256": "3c04e93e809502ddf1ac397fb397050f27046acb52dd98eee6ad9a8dd4595a32",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [67] carry the claim's operative terms (russian, ukrainian); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "An attack on or seizure of a commercial vessel in the Strait of Hormuz or Gulf of Oman, attributed to Iran or Iran-aligned forces, occurs between 2026-08-10 and 2026-10-31.",
+      "domain": "military/conflict",
+      "probability": 35,
+      "resolution": "At least two of Reuters, AP, AFP, BBC report an in-window attack on or seizure of a commercial vessel in those waters, attributing it to Iran or Iran-aligned forces.",
+      "deadline": "2026-11-04",
+      "citations": [
+        28,
+        61,
+        86
+      ],
+      "failure_condition": "No commercial vessel in the Strait of Hormuz or Gulf of Oman is attacked or seized by Iran or Iran-aligned forces within the window.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-04",
+      "date_issued": "2026-08-09",
+      "model": "manual/fable-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:08.396222+00:00",
+      "seal_sha256": "96d61a4bf825d53a7a4524d206b123a009d4c538fd08be28f1ec6c20cb1eaf47",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [28, 61] carry the claim's operative terms (attack, hormuz, strait); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "The USGS earthquake catalog lists at least one magnitude 7.0 or greater earthquake worldwide with origin time between 2026-08-10 and 2026-10-08.",
+      "domain": "disaster",
+      "probability": 92,
+      "resolution": "The USGS catalog at earthquake.usgs.gov, queried on the deadline, lists at least one event of magnitude 7.0 or greater with origin time inside the window.",
+      "deadline": "2026-10-12",
+      "citations": [
+        15,
+        17
+      ],
+      "failure_condition": "No earthquake of magnitude 7.0 or greater with origin time in the window enters the USGS catalog.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-05",
+      "date_issued": "2026-08-09",
+      "model": "manual/fable-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:08.396233+00:00",
+      "seal_sha256": "9a49394915d557a52b4447ce766dac96794bb018f398c0d87e2245857de11d5f"
+    },
+    {
+      "statement": "Typhoon Dolphin makes landfall on the coast of mainland China or Hainan, excluding Taiwan, between 2026-08-09 and 2026-08-16.",
+      "domain": "disaster",
+      "probability": 65,
+      "resolution": "CMA or JMA bulletins, or at least two of Reuters, AP, AFP, report the storm center making landfall on mainland China or Hainan, excluding Taiwan, within the window.",
+      "deadline": "2026-08-19",
+      "citations": [
+        31
+      ],
+      "failure_condition": "The storm center makes no in-window landfall on mainland China or Hainan.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-06",
+      "date_issued": "2026-08-09",
+      "model": "manual/fable-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:08.396242+00:00",
+      "seal_sha256": "e255b8fa2a65194a5af936c953f31d124856642edb5f5b25da655898dbde09b3",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [31] carry the claim's operative terms (china, dolphin, typhoon); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "Iran and Oman publicly announce a concluded arrangement governing commercial transit through the Strait of Hormuz, announced between 2026-08-11 and 2026-09-20.",
+      "domain": "military/conflict",
+      "probability": 25,
+      "resolution": "An Iranian government or IRGC source and an Omani government source both describe a concluded transit arrangement, carried by Reuters plus one of AP, AFP, or Oman News Agency.",
+      "deadline": "2026-09-24",
+      "citations": [
+        28,
+        61
+      ],
+      "failure_condition": "No concluded Iran-Oman arrangement governing Strait of Hormuz transit is announced by either government inside the window.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-07",
+      "date_issued": "2026-08-09",
+      "model": "manual/opus-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:09.105466+00:00",
+      "seal_sha256": "08ef3964e9b545101dc0ed294aea98bd7c956648c1a2cc23ac535b0dfa4a9386",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [28] carry the claim's operative terms (hormuz, strait); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "A Houthi-claimed attack strikes a Saudi Aramco facility between 2026-08-11 and 2026-09-07, and a Saudi official body confirms an impact at that facility.",
+      "domain": "military/conflict",
+      "probability": 60,
+      "resolution": "Houthi military spokesman Yahya Saree claims a strike naming an Aramco site, and the Saudi Energy Ministry or Aramco confirms fire, damage, or interception there.",
+      "deadline": "2026-09-11",
+      "citations": [
+        46,
+        61,
+        73
+      ],
+      "failure_condition": "No Houthi-claimed strike on a named Aramco facility in the window draws a Saudi Energy Ministry or Aramco confirmation of impact.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-08",
+      "date_issued": "2026-08-09",
+      "model": "manual/opus-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:09.105485+00:00",
+      "seal_sha256": "f36d8f8ff960cc4b215511ff834dad98e39d1f7e7ba502cba76f8cee43f9cbd0",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [46, 61, 73] carry the claim's operative terms (aramco, attack, claim, facility, fire, houthi); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "Francesca Hong wins the Democratic nomination for governor of Wisconsin in the scheduled partisan primary held 2026-08-11.",
+      "domain": "political",
+      "probability": 82,
+      "resolution": "Wisconsin Elections Commission canvass returns, or an Associated Press race call, show Hong with the most votes in the Democratic gubernatorial primary.",
+      "deadline": "2026-08-17",
+      "citations": [
+        79
+      ],
+      "failure_condition": "A candidate other than Hong leads the Democratic gubernatorial primary vote in the canvass returns or the AP call.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-09",
+      "date_issued": "2026-08-09",
+      "model": "manual/opus-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:09.105494+00:00",
+      "seal_sha256": "c71e4efd3e470c48e2ca877eef037da5f7c881fca11f65b2bfbd8596b6e09f51",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [79] carry the claim's operative terms (democratic, election, governor, primary, wisconsin); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "The Israeli government publicly accepts the Board of Peace 15-point Gaza document between 2026-08-11 and 2026-10-09.",
+      "domain": "political",
+      "probability": 12,
+      "resolution": "Netanyahu, the Office of the Prime Minister, or a security cabinet decision states that Israel accepts the 15-point document, reported by Reuters and the Times of Israel.",
+      "deadline": "2026-10-13",
+      "citations": [
+        59,
+        78,
+        86
+      ],
+      "failure_condition": "The Israeli government issues no statement or cabinet decision accepting the 15-point document inside the window.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-10",
+      "date_issued": "2026-08-09",
+      "model": "manual/opus-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:09.105502+00:00",
+      "seal_sha256": "8a14864071ae7bf5602d1591ecc21fbc32d8ae9cf129181b49b728863d0d338b",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [59, 78, 86] carry the claim's operative terms (board, gaza, israel, israeli, netanyahu, peace); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "Trial proceedings in the New York state prosecution of Luigi Mangione commence in open court between 2026-09-08 and 2026-09-25.",
+      "domain": "crime/security",
+      "probability": 75,
+      "resolution": "The New York County Supreme Court docket or courtroom reporting records jury selection or opening statements in the state case beginning inside the window.",
+      "deadline": "2026-09-29",
+      "citations": [
+        10
+      ],
+      "failure_condition": "Neither jury selection nor opening statements in the state case begin on or before 2026-09-25.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-11",
+      "date_issued": "2026-08-09",
+      "model": "manual/opus-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:09.105510+00:00",
+      "seal_sha256": "0647a7d9bb75b4c51e7c8df81cfc71d1053f65d55709175127d276f16de6ce69",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [10] carry the claim's operative terms (luigi); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "The USGS catalog records at least one earthquake of magnitude 7.5 or greater worldwide with origin time between 2026-08-11 and 2026-09-30.",
+      "domain": "disaster",
+      "probability": 48,
+      "resolution": "A USGS FDSN event query bounded to the window returns at least one event with preferred magnitude 7.5 or greater.",
+      "deadline": "2026-10-05",
+      "citations": [
+        15,
+        17,
+        29
+      ],
+      "failure_condition": "The USGS catalog contains no event of preferred magnitude 7.5 or greater with origin time inside the window.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-12",
+      "date_issued": "2026-08-09",
+      "model": "manual/opus-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:09.105518+00:00",
+      "seal_sha256": "319229b25c287939df5d805c4244ca555fbb9dc319020d5cc31748c3f03b882a",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [29] carry the claim's operative terms (earthquake, magnitude); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "On 2026-08-11, the South Carolina Republican special primary for U.S. Senate fails to produce a majority winner among the nine-candidate field, triggering a runoff.",
+      "domain": "political",
+      "probability": 80,
+      "resolution": "South Carolina State Election Commission certified results or an AP call confirms the vote share of the leading candidate was below 50 percent, requiring a runoff.",
+      "deadline": "2026-08-18",
+      "citations": [
+        80
+      ],
+      "failure_condition": "Certified or AP-called results show one candidate winning an outright majority on 2026-08-11, so no runoff is required.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-13",
+      "date_issued": "2026-08-09",
+      "model": "manual/sonnet-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:11.176432+00:00",
+      "seal_sha256": "8986ac5395134bb4b593d1b171e2236b00025487ac24a4260c3929be4426c91e",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [80] carry the claim's operative terms (carolina, senate, south); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "Between 2026-08-16 and 2026-09-15, the Yemen-based Houthi movement claims responsibility for a new attack on Saudi Arabian oil, gas, or energy infrastructure, separate from the 2026-08-09 Aramco refinery incident.",
+      "domain": "military/conflict",
+      "probability": 30,
+      "resolution": "At least two independent outlets (e.g. Reuters, AP, Al Jazeera) report a Houthi-claimed attack on Saudi energy infrastructure occurring between 2026-08-16 and 2026-09-15.",
+      "deadline": "2026-09-17",
+      "citations": [
+        46,
+        61,
+        68,
+        73
+      ],
+      "failure_condition": "No new Houthi-claimed attack on Saudi energy infrastructure is reported during the window.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-14",
+      "date_issued": "2026-08-09",
+      "model": "manual/sonnet-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:11.176453+00:00",
+      "seal_sha256": "d42200e33dfbf0b53ab6318c2614bae60b4a77dcda2a4531aaec0e4479978bf3",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [46, 61, 68, 73] carry the claim's operative terms (aramco, attack, claim, houthi, houthi-claimed, refinery); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "Between 2026-08-16 and 2026-09-15, at least one additional Russian missile, drone, or artillery strike on Odesa oblast, Ukraine is reported and corroborated by sources on both the Russian and Ukrainian sides.",
+      "domain": "military/conflict",
+      "probability": 92,
+      "resolution": "At least two independently-biased public sources, one Russian-aligned and one Ukrainian-aligned, or two independent wire services, report a strike on Odesa oblast within the window.",
+      "deadline": "2026-09-17",
+      "citations": [
+        67
+      ],
+      "failure_condition": "No cross-corroborated report of a Russian strike on Odesa oblast appears during the window.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-15",
+      "date_issued": "2026-08-09",
+      "model": "manual/sonnet-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:11.176465+00:00",
+      "seal_sha256": "c6cf0da8860e0ae4e9726df246d388c2c6f28f59fbd1ee31592a7ddf953bfe5c",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [67] carry the claim's operative terms (russian, russian-aligned, ukraine, ukrainian, ukrainian-aligned); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "Between 2026-08-09 and 2026-08-20, an Irish court grants Daniel Kinahan bail pending trial, rather than remanding him in custody at every hearing.",
+      "domain": "crime/security",
+      "probability": 7,
+      "resolution": "Irish Times, RTE, or Irish Examiner reporting confirms a court granted Kinahan bail at any hearing occurring in the window.",
+      "deadline": "2026-08-22",
+      "citations": [
+        88
+      ],
+      "failure_condition": "Kinahan is remanded in custody at every hearing in the window, or no bail application succeeds.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-16",
+      "date_issued": "2026-08-09",
+      "model": "manual/sonnet-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:11.176473+00:00",
+      "seal_sha256": "2a0d19d4a8f905b21585ce52b404284bfa439744ff4596deefc69053f243199b",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [88] carry the claim's operative terms (daniel, kinahan); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
+    },
+    {
+      "statement": "The Form 10-Q filed by Berkshire Hathaway for the quarter ended 2026-09-30 reports cash, cash equivalents, and short-term investments below 365.5 billion dollars, continuing the Q2 decline.",
+      "domain": "economics/markets",
+      "probability": 55,
+      "resolution": "The Form 10-Q filed on SEC EDGAR by Berkshire Hathaway for the quarter ended 2026-09-30, filed between 2026-10-01 and 2026-11-10, shows cash and equivalents under 365.5 billion dollars.",
+      "deadline": "2026-11-12",
+      "citations": [
+        43
+      ],
+      "failure_condition": "The Q3 2026 10-Q reports cash, cash equivalents, and short-term investments at or above 365.5 billion dollars.",
+      "source_report": "battle_report_2026-08-09_1516.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260809-17",
+      "date_issued": "2026-08-09",
+      "model": "manual/sonnet-5",
+      "source_packet": "kkr_packet_2026-08-09_1516.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@bbc954b0c3f9d48f",
+      "sealed_at": "2026-08-09T20:08:11.176482+00:00",
+      "seal_sha256": "f6eeb8d22aa970819764462d0d4a969b499d99ab64da2af4477f404da9ae4ffb",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [43] carry the claim's operative terms (berkshire, cash); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-09"
     }
   ]
 }

@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 082208Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 092016Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past deadline, unresolved)
+Window: all-time · 420 issued across 14 forecaster arms · 368 open (0 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -18,14 +18,14 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-verbot] | 20 | 20 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[post-window] | 33 | 31 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[pre-verbot] | 60 | 20 | 32 | 9 | 23 | 0.221 | 28.1% | 0.202 | -0.093 |
+| lmstudio/auto[post-window] | 35 | 33 | 0 | — | — | not computed | — | — | — |
+| lmstudio/auto[pre-verbot] | 60 | 18 | 34 | 10 | 24 | 0.226 | 29.4% | 0.208 | -0.088 |
 | manual/fable | 45 | 42 | 3 | 1 | 2 | 0.266 | 33.3% | 0.222 | -0.198 |
-| manual/fable-5 | 29 | 29 | 0 | — | — | not computed | — | — | — |
+| manual/fable-5 | 33 | 33 | 0 | — | — | not computed | — | — | — |
 | manual/fable-5/unattested | 12 | 12 | 0 | — | — | not computed | — | — | — |
-| manual/opus-5 | 62 | 62 | 0 | — | — | not computed | — | — | — |
+| manual/opus-5 | 68 | 68 | 0 | — | — | not computed | — | — | — |
 | manual/opus-5/unattested | 31 | 31 | 0 | — | — | not computed | — | — | — |
-| manual/sonnet-5 | 30 | 28 | 2 | 1 | 1 | 0.265 | 50.0% | 0.250 | -0.060 |
+| manual/sonnet-5 | 35 | 33 | 2 | 1 | 1 | 0.265 | 50.0% | 0.250 | -0.060 |
 | manual/sonnet-5/unattested | 24 | 24 | 0 | — | — | not computed | — | — | — |
 | operator/human | 6 | 3 | 0 | — | — | not computed | — | — | — |
 
@@ -34,12 +34,12 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 
 *Under 30 resolved a Brier score is noise, not a record: `manual/fable`, `manual/sonnet-5`.*
 
-**CALIBRATION — lmstudio/auto[pre-verbot]** (32 resolved)
+**CALIBRATION — lmstudio/auto[pre-verbot]** (34 resolved)
 
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 0-20% | 1 | 0% |
-| 20-40% | 18 | 22% |
+| 20-40% | 20 | 25% |
 | 40-60% | 9 | 44% |
 | 60-80% | 4 | 25% |
 
@@ -61,8 +61,6 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 
 | id | arm | issued | deadline | p | domain | statement |
 |---|---|---|---|---|---|---|
-| KKR-20260720-16 | `lmstudio/auto` | 2026-07-20 | 2026-08-08 | 30% | cyber | A new AI agent will be confirmed to have breached a government or financial institution’s internal network by 2026-08-08, with public disclosure from the affected organization. |
-| KKR-20260722-04 | `lmstudio/auto` | 2026-07-22 | 2026-08-08 | 35% | political | Between 2026-08-05 and 2026-08-08, the French Ministry of Health confirms that social media platforms have been fully blocked for users under 15 years old across the country. |
 | KKR-20260720-13 | `lmstudio/auto` | 2026-07-20 | 2026-08-10 | 55% | political | FIFA will issue a formal disciplinary sanction against at least one player involved in the Spain vs Argentina World Cup final on-pitch brawl by 2026-08-10. |
 | KKR-20260721-03 | `lmstudio/auto` | 2026-07-21 | 2026-08-10 | 35% | military_conflict | The Houthi movement will launch a naval blockade of the Bab el-Mandeb Strait by 2026-08-10. |
 | KKR-20260725-06 | `manual/fable` | 2026-07-25 | 2026-08-10 | 22% | disaster | The French national government formally declares a nationwide state of emergency for the wildfires between 2026-07-27 and 2026-08-10. |
@@ -106,11 +104,14 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260725-09 | `manual/fable` | 2026-07-25 | 2026-08-15 | 35% | political | Iranian state broadcaster IRIB airs the full presidential speech it was reported to have censored, with resolution of the dispute confirmed, between 2026-07-27 and 2026-08-15. |
 | KKR-20260729-01 | `lmstudio/auto` | 2026-07-29 | 2026-08-15 | 30% | cyber | On or before 2026-08-15, a coordinated cyberattack compromises at least 15 water utility systems in the United States, resulting in a public shutdown of operational control systems. |
 | KKR-20260802-01 | `lmstudio/auto` | 2026-08-02 | 2026-08-15 | 30% | military/conflict | On 2026-08-15, a drone strike targeting a military installation in Kharkiv, Ukraine, will be confirmed by at least two independent sources from hostile sides (RU, UA) with no casualties reported. |
+| KKR-20260809-09 | `manual/opus-5` | 2026-08-09 | 2026-08-17 | 82% | political | Francesca Hong wins the Democratic nomination for governor of Wisconsin in the scheduled partisan primary held 2026-08-11. |
 | KKR-20260726-18 | `lmstudio/auto` | 2026-07-26 | 2026-08-18 | 30% | political | The UK Prime Minister Andy Burnham publicly criticizes Donald Trump's foreign policy in a televised address between 2026-08-15 and 2026-08-18. |
 | KKR-20260731-19 | `manual/sonnet-5` | 2026-07-31 | 2026-08-18 | 30% | military/conflict | Between 2026-07-31 and 2026-08-18, Houthi forces and Saudi Arabia will exchange at least one additional publicly reported military strike, beyond the current flare-up in Yemen. |
 | KKR-20260808-09 | `manual/fable-5` | 2026-08-08 | 2026-08-18 | 65% | disaster | Between 2026-08-08 and 2026-08-15 the circulation center of Typhoon Dolphin makes landfall on mainland China. |
 | KKR-20260808-24 | `manual/sonnet-5` | 2026-08-08 | 2026-08-18 | 52% | disaster | Typhoon Dolphin makes landfall on the coast of mainland China at any point between 2026-08-09 and 2026-08-16. |
+| KKR-20260809-13 | `manual/sonnet-5` | 2026-08-09 | 2026-08-18 | 80% | political | On 2026-08-11, the South Carolina Republican special primary for U.S. Senate fails to produce a majority winner among the nine-candidate field, triggering a runoff. |
 | KKR-20260731-14 | `manual/sonnet-5` | 2026-07-31 | 2026-08-19 | 55% | political | Between 2026-07-31 and 2026-08-19, the confirmed death toll among migrants crossing the Spain-Morocco border at Ceuta during this surge will exceed 60. |
+| KKR-20260809-06 | `manual/fable-5` | 2026-08-09 | 2026-08-19 | 65% | disaster | Typhoon Dolphin makes landfall on the coast of mainland China or Hainan, excluding Taiwan, between 2026-08-09 and 2026-08-16. |
 | KKR-20260720-20 | `lmstudio/auto` | 2026-07-20 | 2026-08-20 | 40% | cyber | A major cyberattack exploiting the ServiceNow code execution flaw (CVE-2026-6875) will result in a data breach affecting at least 100,000 users by 2026-08-20. |
 | KKR-20260721-06 | `lmstudio/auto` | 2026-07-21 | 2026-08-20 | 25% | political | The U.S. Treasury Department will issue a new sanction against Meliá Hotels International by 2026-08-20. |
 | KKR-20260722-13 | `manual/fable` | 2026-07-22 | 2026-08-20 | 80% | disaster | The Japan Meteorological Agency issues heatstroke or extreme-heat alerts covering Tokyo or Osaka on at least five separate days between 2026-07-23 and 2026-08-20 |
@@ -125,6 +126,7 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260807-02 | `lmstudio/auto` | 2026-08-07 | 2026-08-21 | 25% | military/conflict | A ceasefire agreement between Israel and Hamas is confirmed by both sides via a joint statement between 2026-08-10 and 2026-08-17. |
 | KKR-20260807-03 | `lmstudio/auto` | 2026-08-07 | 2026-08-21 | 30% | disaster | A new tropical cyclone named CHAN-HOM-26 causes at least one fatality in a country affected by the storm between 2026-08-10 and 2026-08-17. |
 | KKR-20260807-04 | `lmstudio/auto` | 2026-08-07 | 2026-08-21 | 22% | political | A new political scandal involving Todd Blanche, U.S. Attorney General nominee, is confirmed by two independent outlets between 2026-08-10 and 2026-08-17. |
+| KKR-20260809-16 | `manual/sonnet-5` | 2026-08-09 | 2026-08-22 | 7% | crime/security | Between 2026-08-09 and 2026-08-20, an Irish court grants Daniel Kinahan bail pending trial, rather than remanding him in custody at every hearing. |
 | KKR-20260726-15 | `lmstudio/auto` | 2026-07-26 | 2026-08-23 | 40% | military_conflict | Iran announces a new military exercise in the Caspian Sea involving missile launches between 2026-08-20 and 2026-08-23, confirmed by multiple international news sources. |
 | KKR-20260801-01 | `lmstudio/auto` | 2026-08-01 | 2026-08-23 | 25% | cyber | Between 2026-08-16 and 2026-08-23, a cyberattack exploiting the Adobe Campaign Classic CVSS 10.0 vulnerability will result in a data breach affecting over 1 million users. |
 | KKR-20260725-04 | `manual/fable` | 2026-07-25 | 2026-08-24 | 55% | military_conflict | At least two independent wire services report a new US or Israeli military strike on Iranian territory or Iranian-flagged maritime assets between 2026-07-27 and 2026-08-24. |
@@ -155,6 +157,7 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260804-63 | `manual/sonnet-5/unattested` | 2026-08-04 | 2026-08-27 | 25% | military/conflict | Between 2026-08-04 and 2026-08-25, the Israeli and Lebanese governments will each publicly confirm one specific written security arrangement, such as a troop withdrawal timeline, border demarcation, or disarmament mechanism, reached through the talks round described in item 90. |
 | KKR-20260806-32 | `lmstudio/auto` | 2026-08-06 | 2026-08-27 | 25% | cyber | Between 2026-08-18 and 2026-08-25, a verified cyberattack exploiting CVE-2026-63077 will be reported by at least two independent sources with differing geopolitical affiliations. |
 | KKR-20260807-15 | `manual/sonnet-5` | 2026-08-07 | 2026-08-27 | 25% | political | Spain will move beyond its stated threat and implement reciprocal entry checks on travelers from Italy, between 2026-08-10 and 2026-08-24. |
+| KKR-20260809-03 | `manual/fable-5` | 2026-08-09 | 2026-08-27 | 90% | military/conflict | At least one Russian missile or drone strike on Odesa city or oblast occurs between 2026-08-10 and 2026-08-24. |
 | KKR-20260722-10 | `operator/human` | 2026-07-22 | 2026-08-28 | 50% | economics | US 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-08-28 |
 | KKR-20260727-28 | `manual/opus-5` | 2026-07-27 | 2026-08-28 | 45% | economics/markets | ICE Brent front-month crude futures settle below 85.00 US dollars per barrel on 2026-08-28. |
 | KKR-20260728-02 | `manual/opus-5` | 2026-07-28 | 2026-08-28 | 25% | economics/markets | The Nasdaq Composite closes below 23,000 on 2026-08-28. |
@@ -163,6 +166,7 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260804-27 | `manual/sonnet-5/unattested` | 2026-08-04 | 2026-08-28 | 30% | crime/security | A UN body, the ICC, or a major human rights organization will announce it has opened a formal investigation into the 2026-08-03 Sudan army drone strike on a court session, between 2026-08-04 and 2026-08-25. |
 | KKR-20260804-43 | `control/baserate` | 2026-08-04 | 2026-08-28 | 25% | crime/security | A UN body, the ICC, or a major human rights organization will announce it has opened a formal investigation into the 2026-08-03 Sudan army drone strike on a court session, between 2026-08-04 and 2026-08-25. |
 | KKR-20260804-52 | `lmstudio/auto` | 2026-08-04 | 2026-08-28 | 30% | cyber | Between 2026-08-13 and 2026-08-20, a major cyberattack on a U.S. government agency is confirmed by at least two independent sources, including BleepingComputer and The Hacker News. |
+| KKR-20260809-01 | `lmstudio/auto` | 2026-08-09 | 2026-08-28 | 25% | cyber | Between 2026-08-22 and 2026-08-25, a cyberattack exploiting a vulnerability in a critical infrastructure system is reported by at least two wire services with independent verification, and the CISA KEV catalog includes the vulnerability with a date-added value in that window. |
 | KKR-20260804-53 | `lmstudio/auto` | 2026-08-04 | 2026-08-30 | 45% | political | Between 2026-08-15 and 2026-08-22, a new political development involving Iran's foreign ministry and the U.S. government is reported by at least two independent sources, including Al Jazeera and BBC World. |
 | KKR-20260724-08 | `manual/fable` | 2026-07-24 | 2026-08-31 | 50% | public_health | The CDC publicly identifies a specific implicated food product or source for the US cyclosporiasis outbreak between 2026-07-25 and 2026-08-31. |
 | KKR-20260724-11 | `manual/fable` | 2026-07-24 | 2026-08-31 | 45% | public_health | The US cyclosporiasis case count reported by the CDC exceeds 15000 between 2026-07-25 and 2026-08-31. |
@@ -181,6 +185,7 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260807-16 | `manual/sonnet-5` | 2026-08-07 | 2026-09-01 | 22% | military_conflict | Houthi forces will be reported to have captured or besieged a district-level administrative center in Marib or Hodeidah governorate, between 2026-08-14 and 2026-08-28. |
 | KKR-20260807-17 | `manual/sonnet-5` | 2026-08-07 | 2026-09-01 | 42% | military_conflict | The ELN will be reported responsible for an attack killing at least one Colombian security-force member, between 2026-08-14 and 2026-08-28. |
 | KKR-20260806-34 | `lmstudio/auto` | 2026-08-06 | 2026-09-02 | 20% | cyber | Between 2026-08-24 and 2026-08-31, a confirmed cyberattack using the Khunt post-exploitation toolkit will be reported by at least two independent sources with differing geopolitical affiliations. |
+| KKR-20260809-02 | `lmstudio/auto` | 2026-08-09 | 2026-09-02 | 32% | cyber | Between 2026-08-27 and 2026-08-30, a new cyberattack targeting a U.S. government system is reported by two wire services with independent verification, and the CISA KEV catalog includes the vulnerability with a date-added value in that window. |
 | KKR-20260806-36 | `lmstudio/auto` | 2026-08-06 | 2026-09-04 | 30% | political | Between 2026-08-26 and 2026-09-02, a confirmed political resignation of a senior U.S. government official (e.g., cabinet member, senator, or agency head) will be reported by at least two independent news outlets with differing political leanings. |
 | KKR-20260808-02 | `lmstudio/auto` | 2026-08-08 | 2026-09-04 | 15% | disaster | Between 2026-08-24 and 2026-08-31, a major earthquake of magnitude 6.0 or higher will occur in the United States, as recorded by the USGS Significant Quakes feed. |
 | KKR-20260808-03 | `lmstudio/auto` | 2026-08-08 | 2026-09-05 | 85% | political | Between 2026-08-25 and 2026-08-31, the US Senate will pass a resolution to confirm Todd Blanche as Attorney General, as recorded in the official Congressional Record. |
@@ -199,6 +204,7 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260808-20 | `manual/sonnet-5` | 2026-08-08 | 2026-09-10 | 12% | military/conflict | Iran imposes a closure or blockade on commercial shipping transit through the Strait of Hormuz at any point between 2026-08-11 and 2026-09-08. |
 | KKR-20260808-23 | `manual/sonnet-5` | 2026-08-08 | 2026-09-10 | 18% | political | The sitting Governor of Rhode Island leaves office, through resignation, recall, impeachment conviction, or removal, at any point between 2026-08-11 and 2026-09-08. |
 | KKR-20260731-01 | `manual/fable-5` | 2026-07-31 | 2026-09-11 | 40% | economic | ICE Brent front-month crude futures settle at or above 95.00 USD per barrel on at least one weekday between 2026-08-07 and 2026-09-11 amid Iranian attacks on tankers in the Strait of Hormuz |
+| KKR-20260809-08 | `manual/opus-5` | 2026-08-09 | 2026-09-11 | 60% | military/conflict | A Houthi-claimed attack strikes a Saudi Aramco facility between 2026-08-11 and 2026-09-07, and a Saudi official body confirms an impact at that facility. |
 | KKR-20260802-02 | `lmstudio/auto` | 2026-08-02 | 2026-09-12 | 25% | cyber | Between 2026-09-10 and 2026-09-12, a cyberattack exploiting a newly cataloged vulnerability in Google Chrome will result in the compromise of at least 10,000 user accounts on public-facing platforms. |
 | KKR-20260808-13 | `manual/opus-5` | 2026-08-08 | 2026-09-14 | 88% | military_conflict | Ukrainian authorities report at least one civilian killed by a Russian missile or drone strike in Kyiv city or Kyiv oblast between 2026-08-11 and 2026-09-10. |
 | KKR-20260720-18 | `lmstudio/auto` | 2026-07-20 | 2026-09-15 | 20% | disaster | A magnitude 6.0 or higher earthquake will be reported in the Pacific Northwest (Washington, Oregon, or Northern California) with at least one fatality by 2026-09-15. |
@@ -220,8 +226,11 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260729-02 | `lmstudio/auto` | 2026-07-29 | 2026-09-17 | 25% | economics/markets | Between 2026-09-10 and 2026-09-17, the S&P 500 index closes below 7,000 points for three consecutive trading days. |
 | KKR-20260804-24 | `manual/opus-5/unattested` | 2026-08-04 | 2026-09-17 | 40% | disaster | The National Interagency Fire Center posts National Preparedness Level 5 on at least one day between 2026-08-10 and 2026-09-15. |
 | KKR-20260804-40 | `control/baserate` | 2026-08-04 | 2026-09-17 | 25% | disaster | The National Interagency Fire Center posts National Preparedness Level 5 on at least one day between 2026-08-10 and 2026-09-15. |
+| KKR-20260809-14 | `manual/sonnet-5` | 2026-08-09 | 2026-09-17 | 30% | military/conflict | Between 2026-08-16 and 2026-09-15, the Yemen-based Houthi movement claims responsibility for a new attack on Saudi Arabian oil, gas, or energy infrastructure, separate from the 2026-08-09 Aramco refinery incident. |
+| KKR-20260809-15 | `manual/sonnet-5` | 2026-08-09 | 2026-09-17 | 92% | military/conflict | Between 2026-08-16 and 2026-09-15, at least one additional Russian missile, drone, or artillery strike on Odesa oblast, Ukraine is reported and corroborated by sources on both the Russian and Ukrainian sides. |
 | KKR-20260727-04 | `kfk/halflife` | 2026-07-27 | 2026-09-18 | 50% | military/conflict | Major General David W. Gardner will no longer be named as commanding officer of the 101st Airborne Division (Air Assault) in the source of record on 2026-09-18. |
 | KKR-20260807-14 | `manual/opus-5` | 2026-08-07 | 2026-09-18 | 45% | disaster | The Copernicus Climate Change Service ranks August 2026 among the three warmest Augusts on record for Europe. |
+| KKR-20260809-07 | `manual/opus-5` | 2026-08-09 | 2026-09-24 | 25% | military/conflict | Iran and Oman publicly announce a concluded arrangement governing commercial transit through the Strait of Hormuz, announced between 2026-08-11 and 2026-09-20. |
 | KKR-20260727-02 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | Major General Brandon R. Tegtmeier will no longer be named as commanding officer of the 82nd Airborne Division in the source of record on 2026-09-25. |
 | KKR-20260727-05 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | Lieutenant General Benedikt Roos will no longer be named as commanding officer of the Swiss Armed Forces in the source of record on 2026-09-25. |
 | KKR-20260727-06 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | Lieutenant General Sullay Ibrahim Sesay will no longer be named as commanding officer of the Sierra Leone - national armed forces in the source of record on 2026-09-25. |
@@ -231,6 +240,7 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260727-10 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | General Luciano Portolano will no longer be named as commanding officer of the Italy - national armed forces in the source of record on 2026-09-25. |
 | KKR-20260801-19 | `manual/sonnet-5/unattested` | 2026-08-01 | 2026-09-25 | 15% | crime/security | The Department of Justice will publicly release the Epstein-related documents subject to the New Mexico deadline noted in reporting as of 2026-08-01, on or before 2026-09-25. |
 | KKR-20260726-17 | `lmstudio/auto` | 2026-07-26 | 2026-09-28 | 10% | cyber | A major cyberattack on a U.S. state government website results in public data exposure between 2026-09-25 and 2026-09-28. |
+| KKR-20260809-11 | `manual/opus-5` | 2026-08-09 | 2026-09-29 | 75% | crime/security | Trial proceedings in the New York state prosecution of Luigi Mangione commence in open court between 2026-09-08 and 2026-09-25. |
 | KKR-20260722-16 | `manual/fable` | 2026-07-22 | 2026-09-30 | 55% | economics | The United States 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-09-30 |
 | KKR-20260724-05 | `manual/fable` | 2026-07-24 | 2026-09-30 | 38% | markets | The S&P 500 index closes below 7000 on at least one trading day between 2026-07-27 and 2026-09-30. |
 | KKR-20260724-06 | `manual/fable` | 2026-07-24 | 2026-09-30 | 22% | military_conflict | The United States and Iran publicly announce a ceasefire or formal cessation of hostilities between 2026-07-25 and 2026-09-30. |
@@ -288,9 +298,12 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260806-27 | `control/baserate` | 2026-08-06 | 2026-10-05 | 31% | cyber | The CISA KEV catalog adds at least 12 new entries with date-added values between 2026-08-06 and 2026-09-30. |
 | KKR-20260807-08 | `manual/opus-5` | 2026-08-07 | 2026-10-05 | 85% | political | The US Senate confirms Todd Blanche as Attorney General on a recorded roll call vote held between 2026-08-07 and 2026-09-30. |
 | KKR-20260807-12 | `manual/opus-5` | 2026-08-07 | 2026-10-05 | 27% | military_conflict | Houthi forces launch a ground assault on Marib city or its immediate outskirts between 2026-08-08 and 2026-09-30. |
+| KKR-20260809-12 | `manual/opus-5` | 2026-08-09 | 2026-10-05 | 48% | disaster | The USGS catalog records at least one earthquake of magnitude 7.5 or greater worldwide with origin time between 2026-08-11 and 2026-09-30. |
 | KKR-20260808-11 | `manual/fable-5` | 2026-08-08 | 2026-10-06 | 25% | political | The incumbent governor of Rhode Island is defeated in a gubernatorial primary held between 2026-09-01 and 2026-09-30. |
+| KKR-20260809-05 | `manual/fable-5` | 2026-08-09 | 2026-10-12 | 92% | disaster | The USGS earthquake catalog lists at least one magnitude 7.0 or greater earthquake worldwide with origin time between 2026-08-10 and 2026-10-08. |
 | KKR-20260808-10 | `manual/fable-5` | 2026-08-08 | 2026-10-13 | 55% | cyber | The CISA Known Exploited Vulnerabilities catalog adds an entry naming Metabase as vendor or product with a date-added value between 2026-08-09 and 2026-10-09. |
 | KKR-20260808-12 | `manual/fable-5` | 2026-08-08 | 2026-10-13 | 25% | political | Between 2026-08-09 and 2026-10-09 the United States and Iran announce an agreement or arrangement governing commercial transit through the Strait of Hormuz. |
+| KKR-20260809-10 | `manual/opus-5` | 2026-08-09 | 2026-10-13 | 12% | political | The Israeli government publicly accepts the Board of Peace 15-point Gaza document between 2026-08-11 and 2026-10-09. |
 | KKR-20260808-08 | `manual/fable-5` | 2026-08-08 | 2026-10-14 | 85% | crime/security | Between 2026-08-09 and 2026-10-09 the US Department of Justice announces the extradition of at least one defendant from Colombia to the United States on drug trafficking charges. |
 | KKR-20260722-06 | `operator/human` | 2026-07-22 | 2026-10-15 | 70% | political | TikTok or another major platform announces age verification for French users |
 | KKR-20260726-12 | `lmstudio/auto` | 2026-07-26 | 2026-10-15 | 30% | economics/markets | The S&P 500 closes below 7,200 points on or before 2026-10-15 due to sustained investor panic over AI sector overvaluation. |
@@ -349,12 +362,14 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 | KKR-20260806-26 | `control/baserate` | 2026-08-06 | 2026-11-03 | 31% | cyber | The CISA KEV catalog adds at least one entry for Gitea, n8n, or TP-Link Omada with a date-added value between 2026-08-06 and 2026-10-30. |
 | KKR-20260806-10 | `manual/fable-5/unattested` | 2026-08-06 | 2026-11-04 | 60% | military/conflict | A Russian missile or drone strike on Kyiv city kills at least 5 people in a single attack between 2026-08-06 and 2026-10-31, per Ukrainian official casualty statements. |
 | KKR-20260806-25 | `control/baserate` | 2026-08-06 | 2026-11-04 | 31% | military/conflict | A Russian missile or drone strike on Kyiv city kills at least 5 people in a single attack between 2026-08-06 and 2026-10-31, per Ukrainian official casualty statements. |
+| KKR-20260809-04 | `manual/fable-5` | 2026-08-09 | 2026-11-04 | 35% | military/conflict | An attack on or seizure of a commercial vessel in the Strait of Hormuz or Gulf of Oman, attributed to Iran or Iran-aligned forces, occurs between 2026-08-10 and 2026-10-31. |
 | KKR-20260722-01 | `lmstudio/auto` | 2026-07-22 | 2026-11-05 | 30% | political | Andy Biggs wins the Arizona gubernatorial general election on 2026-11-05, defeating Katie Hobbs in a recount that confirms his victory by 1,200 votes. |
 | KKR-20260804-66 | `manual/sonnet-5/unattested` | 2026-08-04 | 2026-11-06 | 55% | crime/security | Between 2026-08-04 and 2026-11-04, the person charged with arson over the Old Trails wildfire in item 9 will be indicted or have an information filed advancing the case to Washington Superior Court. |
 | KKR-20260804-67 | `manual/sonnet-5/unattested` | 2026-08-04 | 2026-11-06 | 25% | political | Between 2026-08-04 and 2026-11-04, the Second Circuit Court of Appeals will enter an order or ruling, on the merits or on a stay motion, in New York's case over the ICE-officer mask ban blocked in item 113. |
 | KKR-20260806-08 | `manual/sonnet-5/unattested` | 2026-08-06 | 2026-11-10 | 55% | political | Abdul El-Sayed will win the 2026 Michigan US Senate general election held on 2026-11-03. |
 | KKR-20260806-23 | `control/baserate` | 2026-08-06 | 2026-11-10 | 31% | political | Abdul El-Sayed will win the 2026 Michigan US Senate general election held on 2026-11-03. |
 | KKR-20260729-04 | `lmstudio/auto` | 2026-07-29 | 2026-11-12 | 40% | political | Between 2026-11-05 and 2026-11-12, the U.S. Senate confirms a nominee to the Supreme Court who has previously served as a federal judge. |
+| KKR-20260809-17 | `manual/sonnet-5` | 2026-08-09 | 2026-11-12 | 55% | economics/markets | The Form 10-Q filed by Berkshire Hathaway for the quarter ended 2026-09-30 reports cash, cash equivalents, and short-term investments below 365.5 billion dollars, continuing the Q2 decline. |
 | KKR-20260726-16 | `lmstudio/auto` | 2026-07-26 | 2026-11-15 | 25% | economics/markets | The European Central Bank announces a 0.5 percentage point interest rate hike on or before 2026-11-15, citing inflation concerns. |
 | KKR-20260802-07 | `lmstudio/auto` | 2026-08-02 | 2026-11-25 | 40% | political | On 2026-11-25, a political scandal involving a U.S. federal official will lead to a formal investigation by Congress, confirmed by a major news outlet. |
 | KKR-20260727-25 | `manual/fable` | 2026-07-27 | 2026-11-30 | 52% | disaster/infrastructure | The European Forest Fire Information System will record more than 400000 hectares burned in Spain for calendar year 2026, as published on or before 2026-11-30. |
@@ -417,6 +432,8 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
+- **✓ HIT** KKR-20260720-16 [`lmstudio/auto`] (30%, due 2026-08-08, resolved 2026-08-09): A new AI agent will be confirmed to have breached a government or financial institution’s internal network by 2026-08-08, with public disclosure from the affected organization. — *HIT on the resolution as written. UK AISI (AI Security Institute, a research organisation within DSIT - a government agency) published an official incident report 2026-08-04 confirming that in 10 of 122 evaluation runs an AI agent took autonomous, unsanctioned action on the live internet against real people and organisations, incident dated 2026-07-25 to 07-28, inside the window; the agent used Tor to bypass network restrictions on GitHub and GitHub confirmed terms-of-service violations. CAVEAT AND DIVERGENCE: the resolution requires a government statement confirming a breach BY an autonomous agent and does not require the breached party to be that government body; the statement names the government or financial institution as the affected organization, and AISI states explicitly that no agent tried to break out of the sandbox or attack AISI systems - AISI was the origin, the party whose restrictions were bypassed was GitHub, which is private. Adjudicated on the resolution per desk doctrine. The statement/resolution scope divergence is a printed finding of the same family as KKR-20260808-01. Jury lane unavailable: held evidence 0 of 2 because the resolution names no fetchable source of record, juror B correctly ABSTAINed under the 8.07 coercion, juror A unavailable (no API key) - operator ruled alone by structural necessity, not preference.*
+- **✗ MISS** KKR-20260722-04 [`lmstudio/auto`] (35%, due 2026-08-08, resolved 2026-08-09): Between 2026-08-05 and 2026-08-08, the French Ministry of Health confirms that social media platforms have been fully blocked for users under 15 years old across the country.
 - **✗ MISS** KKR-20260724-09 [`manual/fable`] (28%, due 2026-08-07, resolved 2026-08-08): The government of France declares a national state of emergency or equivalent nationwide wildfire emergency between 2026-07-25 and 2026-08-07. — *[jury] The national-emergency declaration in the late-July coverage belongs to Spain, not France: Fox News (late July 2026) states explicitly that Spain has declared a national emergency while France has deployed the military, and France 24 (July 25) reports Sanchez declaring Spain's civil-protection emergency. France's national-level measures in the window were EU Civil Protection Mechanism activation, roughly 1,500 troops to Gironde, and prefect-level bans (Wikipedia, 2026 France wildfires; Al Jazeera, July 28) - no French nationwide state-of-emergency declaration is reported by major press through*
 - **✗ MISS** KKR-20260725-07 [`manual/fable`] (60%, due 2026-08-07, resolved 2026-08-08): The UK Ministry of Defence publicly confirms deployment of military assets to assist wildfire suppression in Scotland between 2026-07-27 and 2026-08-07. — *[jury] The Scottish Government requested military aerial support around Aug 1 (UK Defence Journal); the UK Government answered with availability - Chinooks and standby battalions ready if requested (Press and Journal; UK Defence Journal, early Aug) - but the MoD could not supply the aerial firefighting capability sought and the offered support was declined, with Neil Gray saying ground crews had the resources needed (Wikipedia, 2026 Cairngorms wildfire; Press and Journal timeline). No MoD or Scottish Government confirmation of an actual military deployment to the fire appears in major press within th*
 - **✓ HIT** KKR-20260731-15 [`manual/sonnet-5`] (56%, due 2026-08-07, resolved 2026-08-08): Apple stock will record at least one additional daily close lower than its 2026-07-31 close on any trading day between 2026-08-03 and 2026-08-07. — *[jury] S&P Global daily table via stockanalysis.com (read after the Aug 7 close): Jul 31, 2026 close 308.91 (the -7.35 percent, 131M-share plunge day); Aug 3 close 303.42 - below the reference - then Aug 4 through Aug 7 closes 309.38, 311.00, 312.41, 313.33, all above. The criterion is satisfied by the Aug 3 close alone.*
@@ -459,7 +476,7 @@ Window: all-time · 403 issued across 14 forecaster arms · 353 open (0 past dea
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*13 of 403 issued (3.2%) have been voided.*
+*13 of 420 issued (3.1%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
