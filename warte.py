@@ -38,6 +38,23 @@ def main():
             (HERE / "arms.json").read_text(encoding="utf-8-sig"))["arms"]}
     except Exception:
         _reg = {}
+    # KK27D: keyless rows whose citations the integrity audit found
+    # defective. A keyless determination says the claim went beyond its
+    # declared priors; where those priors are unreadable the determination
+    # was made against nothing, and the number is stated with its defect
+    # rate attached rather than as a clean integer.
+    defective = set()
+    try:
+        _ci = json.loads((HERE / "cite_integrity_latest.json")
+                         .read_text(encoding="utf-8"))
+        # DEFECTIVE only: reproduces the audit's own keyless_defective
+        # figure exactly (10 of 86 at 2026-08-09). NO_CITES is a separate
+        # verdict the audit does not fold in, so neither does this.
+        defective = {r["id"] for r in _ci.get("rows", [])
+                     if str(r.get("verdict", "")).upper() == "DEFECTIVE"}
+    except Exception:
+        pass
+
     arms = defaultdict(list)
     for p in rows:
         if p.get("status") not in ("hit", "miss"):
@@ -82,8 +99,40 @@ def main():
                 "obs": (round(sum(b for _,b in sub)/bn, 3)
                         if bn >= N_FLOOR_BIN else None),
                 "note": None if bn >= N_FLOOR_BIN else f"n<{N_FLOOR_BIN}"})
+        # KK27D: the split. A Brier over KEYED rows scores arithmetic - the
+        # outcome was deducible from the forecaster's own declared priors.
+        # A Brier over KEYLESS rows scores foresight. The desk's whole claim
+        # lives in the second number and nowhere else, so it is computed
+        # separately, floored separately, and carries its own citation
+        # defect rate: a keyless call made against unreadable priors was
+        # made against nothing.
+        split = {}
+        for lab in ("keyed", "keyless"):
+            sub = [p for p in rs
+                   if str(p.get("keyed_keyless", "")).strip().lower() == lab]
+            if not sub:
+                split[lab] = {"resolved": 0, "note": "no resolved rows"}
+                continue
+            sn = len(sub); sh = sum(1 for p in sub if p["status"] == "hit")
+            sp = [float(p.get("probability", 0))/100.0 for p in sub]
+            sy = [1.0 if p["status"] == "hit" else 0.0 for p in sub]
+            sb = sum((a-b)**2 for a, b in zip(sp, sy))/sn
+            sbase = sh/sn
+            sclim = sbase*(1-sbase)
+            split[lab] = {
+                "resolved": sn, "hits": sh, "misses": sn-sh,
+                "brier": round(sb, 3), "base_rate": round(sbase, 3),
+                "climatological": round(sclim, 3),
+                "skill": (round(1.0-(sb/sclim), 3)
+                          if sclim and sn >= N_FLOOR_ARM else None),
+                "note": (None if sn >= N_FLOOR_ARM else
+                         f"n<{N_FLOOR_ARM} - printed, not hidden"),
+                "defect_ids": sorted(defective & {p["id"] for p in sub})}
+        undet = sum(1 for p in rs if str(p.get("keyed_keyless", "")).strip()
+                    .lower() not in ("keyed", "keyless"))
         tiles[arm] = {
             "resolved": n, "hits": hits, "misses": n-hits,
+            "split": split, "undetermined": undet,
             "brier": round(brier,3), "base_rate": round(base,3),
             "climatological": round(clim,3),
             "skill": (round(skill,3) if skill is not None
@@ -125,7 +174,13 @@ def main():
          f"Brier belongs to one forecaster. Reliability = mean stated "
          f"probability vs observed frequency per decile. Rows sealed "
          f"before the rubric commitment carry no hash and are marked. "
-         f"Open rows carrying a rubric hash: {open_hash}/{open_all}.</p>"]
+         f"Open rows carrying a rubric hash: {open_hash}/{open_all}.</p>",
+         "<p class='note'>A Brier over KEYED rows scores arithmetic - the "
+         "outcome was deducible from the forecaster's own declared priors. "
+         "A Brier over KEYLESS rows scores foresight. Only the second "
+         "number bears on any claim this desk makes, and it is stated with "
+         "its citation-defect count attached: a keyless call made against "
+         "unreadable priors was made against nothing.</p>"]
     for arm, t in tiles.items():
         h.append(f"<h2>{arm}</h2>")
         h.append(f"<p>resolved {t['resolved']} - {t['hits']} hit / "
@@ -137,6 +192,30 @@ def main():
             h.append(f"<p class='warn'>{t['n_floor']}</p>")
         if t["rubric_note"]:
             h.append(f"<p class='note'>{t['rubric_note']}</p>")
+        sp = t.get("split", {})
+        h.append("<table><tr><th>class</th><th>n</th><th>hits</th>"
+                 "<th>Brier</th><th>skill</th><th>note</th></tr>")
+        for lab in ("keyed", "keyless"):
+            d = sp.get(lab, {})
+            if not d.get("resolved"):
+                h.append(f"<tr><td>{lab}</td><td>0</td><td>-</td><td>-</td>"
+                         f"<td>-</td><td class='note'>no resolved rows</td>"
+                         f"</tr>")
+                continue
+            nt = d.get("note") or ""
+            if d.get("defect_ids"):
+                nt += (("; " if nt else "")
+                       + f"{len(d['defect_ids'])} row(s) with defective "
+                         f"citations")
+            h.append(f"<tr><td>{lab}</td><td>{d['resolved']}</td>"
+                     f"<td>{d['hits']}</td><td>{d['brier']}</td>"
+                     f"<td>{d['skill'] if d['skill'] is not None else '-'}"
+                     f"</td><td class='note'>{nt}</td></tr>")
+        if t.get("undetermined"):
+            h.append(f"<tr><td>undetermined</td><td>{t['undetermined']}</td>"
+                     f"<td colspan='4' class='warn'>resolved with no "
+                     f"determination - KEYED by rule (RPAS 4.03)</td></tr>")
+        h.append("</table>")
         h.append("<table><tr><th>bin</th><th>n</th><th>mean p</th>"
                  "<th>observed</th></tr>")
         for b in t["bins"]:
