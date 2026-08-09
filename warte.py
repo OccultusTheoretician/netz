@@ -27,10 +27,33 @@ def main():
     led = json.loads((HERE/"ledger.json").read_text(encoding="utf-8"))
     rows = led["projections"]
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    # KK27C-WARTE: era split. A Brier belongs to one forecaster, and an era
+    # boundary marks a different forecaster: the Rueckkopplungsverbot cut
+    # lmstudio/auto into three. Pooling them under one tile would violate
+    # the desk's own law inside the instrument built to enforce it. Reuses
+    # arms.json eras and kkr's own bucketing rule - same boundaries, same
+    # date_issued comparison, no second source of truth.
+    try:
+        _reg = {a["tag"]: a for a in json.loads(
+            (HERE / "arms.json").read_text(encoding="utf-8-sig"))["arms"]}
+    except Exception:
+        _reg = {}
     arms = defaultdict(list)
     for p in rows:
-        if p.get("status") in ("hit","miss"):
-            arms[str(p.get("model","?"))].append(p)
+        if p.get("status") not in ("hit", "miss"):
+            continue
+        tag = str(p.get("model", "?"))
+        eras = _reg.get(tag, {}).get("eras")
+        bucket = tag
+        if eras:
+            d = str(p.get("date_issued") or "")
+            for e in eras:
+                if e.get("until") and d and d < e["until"]:
+                    bucket = tag + "[" + e["id"] + "]"
+                    break
+                if e.get("from") and d and d >= e["from"]:
+                    bucket = tag + "[" + e["id"] + "]"
+        arms[bucket].append(p)
     open_hash = sum(1 for p in rows if p.get("status")=="open"
                     and p.get("rubric_hash"))
     open_all = sum(1 for p in rows if p.get("status")=="open")
