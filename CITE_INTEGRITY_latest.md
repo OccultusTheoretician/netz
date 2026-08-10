@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-08-09T08:05:44Z · ledger `ledger.json` · 403 rows in scope
+Generated 2026-08-10T10:05:23Z · ledger `ledger.json` · 420 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,20 +12,20 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **402**
+- rows audited: **419**
 - scope limitation (no resolvable source report): **1**
-- defective: **57** (14.2% of audited)
+- defective: **58** (13.8% of audited)
 - rows whose citation number does not identify a unique item: **288** (max candidates behind one number: 8)
   - AMBIGUOUS_REF: 288
-  - UNSUPPORTED: 40
+  - UNSUPPORTED: 41
   - NO_CITES: 16
   - DEADWEIGHT: 15
   - SHOTGUN: 7
 
 ## The number that matters
 
-Rows determined **KEYLESS**: 86
-Of those, citations defective: **10** (11.6%)
+Rows determined **KEYLESS**: 87
+Of those, citations defective: **11** (12.6%)
 
 A keyless determination says the claim went beyond its declared priors. Where the priors are unreadable, that determination was made against nothing. These rows are listed so the keyless count can be stated with its defect rate attached rather than as a clean integer.
 
@@ -39,6 +39,7 @@ A keyless determination says the claim went beyond its declared priors. Where th
 - `KKR-20260731-23` · manual/opus-5 · 2026-07-31 · DEADWEIGHT/AMBIGUOUS_REF · 3 cites (1 strong, 0 weak, 2 none)
 - `KKR-20260731-27` · manual/opus-5 · 2026-07-31 · UNSUPPORTED/AMBIGUOUS_REF · 3 cites (0 strong, 0 weak, 3 none)
 - `KKR-20260802-01` · lmstudio/auto · 2026-08-02 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
+- `KKR-20260808-05` · lmstudio/auto · 2026-08-08 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
 
 ## By arm
 
@@ -46,14 +47,14 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| lmstudio/auto | 113 | 24 | 21% |
-| manual/opus-5 | 62 | 11 | 18% |
+| lmstudio/auto | 115 | 25 | 22% |
+| manual/opus-5 | 68 | 11 | 16% |
 | manual/fable | 45 | 6 | 13% |
 | manual/opus-5/unattested | 31 | 5 | 16% |
 | control/baserate | 40 | 5 | 12% |
-| manual/fable-5 | 29 | 2 | 7% |
+| manual/fable-5 | 33 | 2 | 6% |
 | manual/sonnet-5/unattested | 24 | 2 | 8% |
-| manual/sonnet-5 | 30 | 1 | 3% |
+| manual/sonnet-5 | 35 | 1 | 3% |
 | manual/fable-5/unattested | 12 | 1 | 8% |
 | operator/human | 6 | 0 | 0% |
 | kfk/halflife | 10 | 0 | 0% |

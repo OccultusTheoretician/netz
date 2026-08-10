@@ -1,12 +1,12 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-08-09T08:05:44Z · 50 report(s)
+Generated 2026-08-10T10:05:23Z · 51 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **50**
+- reports audited: **51**
 - findings: **82**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
@@ -30,11 +30,11 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20260804-02` | `CVE-2026-18577` | UNSOURCED | lmstudio/auto | open | keyless |
 | `KKR-20260804-10` | `CVE-2026-18577` | UNSOURCED | control/baserate | open | keyed |
 | `KKR-20260804-49` | `CVE-2026-18577` | UNSOURCED | lmstudio/auto | void | — |
-| `KKR-20260804-59` | `CVE-2026-18577` | UNSOURCED | manual/opus-5/unattested | open | — |
-| `KKR-20260804-64` | `CVE-2026-18577` | UNSOURCED | manual/sonnet-5/unattested | open | — |
-| `KKR-20260804-59` | `CVE-2026-18556` | UNSOURCED | manual/opus-5/unattested | open | — |
+| `KKR-20260804-59` | `CVE-2026-18577` | UNSOURCED | manual/opus-5/unattested | open | keyed |
+| `KKR-20260804-64` | `CVE-2026-18577` | UNSOURCED | manual/sonnet-5/unattested | open | keyed |
+| `KKR-20260804-59` | `CVE-2026-18556` | UNSOURCED | manual/opus-5/unattested | open | keyed |
 | `KKR-20260805-01` | `CVE-2026-9198` | UNSOURCED | lmstudio/auto | open | keyed |
-| `KKR-20260808-22` | `CVE-2026-8037` | UNSOURCED | manual/sonnet-5 | open | — |
+| `KKR-20260808-22` | `CVE-2026-8037` | UNSOURCED | manual/sonnet-5 | open | keyed |
 
 ## Every finding
 
