@@ -1,0 +1,161 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry with vendorProject Progress Software carrying a dateAdded value between 2026-08-10 and 2026-09-30.",
+    "resolution": "TRUE if the CISA KEV catalog JSON contains at least one vulnerability record whose vendorProject field is Progress Software and whose dateAdded field falls between 2026-08-10 and 2026-09-30 inclusive.",
+    "failure_condition": "No KEV record carries vendorProject Progress Software with a dateAdded inside that window.",
+    "domain": "cyber",
+    "deadline": "2026-10-05",
+    "probability": 31,
+    "citations": [
+      21,
+      13
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3077,
+      "n": 39,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-10T16:50:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260810-15"
+    }
+  },
+  {
+    "statement": "LexisNexis Risk Solutions reports a data breach affecting 100000 or more individuals to the Maine Attorney General between 2026-08-11 and 2026-12-31.",
+    "resolution": "TRUE if the Maine AG data breach notification database lists a filing by LexisNexis Risk Solutions or a LexisNexis entity, dated 2026-08-11 through 2026-12-31, with total affected of 100000 or more.",
+    "failure_condition": "No such filing appears, or every LexisNexis filing in the window reports fewer than 100000 affected individuals.",
+    "domain": "cyber",
+    "deadline": "2027-01-08",
+    "probability": 31,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3077,
+      "n": 39,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-10T16:50:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260810-16"
+    }
+  },
+  {
+    "statement": "NYMEX front-month WTI crude settles at or below 72.00 dollars per barrel on at least one trading day between 2026-08-11 and 2026-11-30.",
+    "resolution": "TRUE if CME official settlement data for the front-month NYMEX WTI light sweet crude contract shows a settlement price of 72.00 or lower on any trading day from 2026-08-11 through 2026-11-30.",
+    "failure_condition": "Every front-month WTI settlement in that window prints above 72.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 18,
+    "citations": [
+      56,
+      64,
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1818,
+      "n": 11,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-10T16:50:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260810-17"
+    }
+  },
+  {
+    "statement": "NYMEX front-month WTI crude settles at or above 100.00 dollars per barrel on at least one trading day between 2026-08-11 and 2026-10-30.",
+    "resolution": "TRUE if CME official settlement data for the front-month NYMEX WTI light sweet crude contract shows a settlement price of 100.00 or higher on any trading day from 2026-08-11 through 2026-10-30.",
+    "failure_condition": "No front-month WTI settlement in that window reaches 100.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 18,
+    "citations": [
+      56,
+      78,
+      96
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1818,
+      "n": 11,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-10T16:50:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260810-18"
+    }
+  },
+  {
+    "statement": "Iranian forces seize or forcibly board at least one commercial merchant vessel in the Strait of Hormuz or Gulf of Oman between 2026-08-11 and 2026-09-30.",
+    "resolution": "TRUE if UKMTO issues an incident advisory describing an Iranian seizure or boarding of a merchant vessel in that area within the window and at least one of Reuters, AP, or AFP reports the same incident.",
+    "failure_condition": "No Iranian seizure or forcible boarding of a merchant vessel occurs in that area during the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-05",
+    "probability": 31,
+    "citations": [
+      78,
+      96,
+      64
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3077,
+      "n": 39,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-10T16:50:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260810-19"
+    }
+  },
+  {
+    "statement": "The Israeli cabinet or security cabinet formally approves the United States 15-point Gaza plan between 2026-08-11 and 2026-10-31.",
+    "resolution": "TRUE if the Israeli Prime Minister Office or Government Press Office announces cabinet approval of that plan within the window and both Reuters and AP report the approval.",
+    "failure_condition": "No Israeli cabinet vote approving the 15-point plan is announced during the window.",
+    "domain": "political",
+    "deadline": "2026-11-04",
+    "probability": 30,
+    "citations": [
+      101,
+      117,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-10T16:50:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260810-20"
+    }
+  }
+]

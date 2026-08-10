@@ -1,0 +1,122 @@
+[
+ {
+  "statement": "Between 2026-08-11 and 2026-08-31, Ukrainian forces strike at least one oil refinery or oil processing facility on Russian territory, corroborated by at least two international news organizations.",
+  "domain": "military/conflict",
+  "probability": 85,
+  "resolution": "At least two international news organizations (e.g. Reuters, AFP, BBC) report a Ukrainian strike hitting a named Russian oil refinery or oil processing facility occurring between 2026-08-11 and 2026-08-31.",
+  "deadline": "2026-09-04",
+  "citations": [
+   74,
+   92,
+   104
+  ],
+  "failure_condition": "No Ukrainian strike on any Russian oil refinery or oil processing facility between 2026-08-11 and 2026-08-31 is corroborated by two international news organizations."
+ },
+ {
+  "statement": "ICE Brent crude front-month futures settle above 110.00 USD per barrel on at least one trading day between 2026-08-11 and 2026-09-11.",
+  "domain": "economics/markets",
+  "probability": 15,
+  "resolution": "Official ICE Brent front-month daily settlement price exceeds 110.00 USD on any trading day between 2026-08-11 and 2026-09-11, per ICE settlement records.",
+  "deadline": "2026-09-15",
+  "citations": [
+   56,
+   64,
+   78
+  ],
+  "failure_condition": "Every ICE Brent front-month daily settlement between 2026-08-11 and 2026-09-11 is at or below 110.00 USD."
+ },
+ {
+  "statement": "The FOMC leaves the federal funds target range unchanged at its scheduled meeting concluding 2026-09-16.",
+  "domain": "economics/markets",
+  "probability": 80,
+  "resolution": "The Federal Reserve implementation note and FOMC statement of 2026-09-16 announce a target range identical to the range in effect on 2026-08-10.",
+  "deadline": "2026-09-18",
+  "citations": [
+   69
+  ],
+  "failure_condition": "The 2026-09-16 FOMC statement announces a target range different from the range in effect on 2026-08-10."
+ },
+ {
+  "statement": "Intel prices or completes a common stock offering of at least 10 billion USD between 2026-08-11 and 2026-10-30, per filings on SEC EDGAR.",
+  "domain": "economics/markets",
+  "probability": 85,
+  "resolution": "SEC EDGAR shows an Intel Corporation prospectus supplement, 424B, or 8-K filed between 2026-08-11 and 2026-10-30 pricing or completing a common stock offering with gross proceeds of at least 10 billion USD.",
+  "deadline": "2026-11-03",
+  "citations": [
+   57
+  ],
+  "failure_condition": "No Intel filing on SEC EDGAR in the window prices or completes a common stock offering of at least 10 billion USD."
+ },
+ {
+  "statement": "The CISA KEV catalog contains at least one CVE affecting Progress LoadMaster or SonicWall SMA1000 with a dateAdded value between 2026-08-01 and 2026-08-21.",
+  "domain": "cyber",
+  "probability": 75,
+  "resolution": "A fetch of the CISA KEV catalog JSON shows at least one entry whose product field matches LoadMaster or SMA1000 and whose dateAdded falls between 2026-08-01 and 2026-08-21 inclusive.",
+  "deadline": "2026-08-28",
+  "citations": [
+   13,
+   21
+  ],
+  "failure_condition": "No KEV entry for LoadMaster or SMA1000 carries a dateAdded value between 2026-08-01 and 2026-08-21."
+ },
+ {
+  "statement": "A US House committee or subcommittee holds a hearing between 2026-09-01 and 2026-12-18 at which an OpenAI or Anthropic executive testifies about the reported AI company security breach.",
+  "domain": "political",
+  "probability": 40,
+  "resolution": "Congress.gov or official House committee records list a hearing held between 2026-09-01 and 2026-12-18 with a witness from OpenAI or Anthropic addressing the breach.",
+  "deadline": "2026-12-22",
+  "citations": [
+   108
+  ],
+  "failure_condition": "No House hearing in the window features testimony from an OpenAI or Anthropic witness concerning the breach."
+ },
+ {
+  "statement": "The Israeli government formally announces acceptance of the US-backed 15-point Gaza plan or a publicly identified revision of it between 2026-08-11 and 2026-10-30.",
+  "domain": "political",
+  "probability": 20,
+  "resolution": "At least two international news organizations report an official Israeli government announcement, made between 2026-08-11 and 2026-10-30, accepting the US-backed Gaza plan or a named revision.",
+  "deadline": "2026-11-03",
+  "citations": [
+   80,
+   101,
+   117
+  ],
+  "failure_condition": "No official Israeli acceptance of the US-backed Gaza plan or a named revision is announced within the window."
+ },
+ {
+  "statement": "USGS catalogs at least one M6.0 or greater earthquake with epicenter within 200 km of event us6000tjl2 and origin time between 2026-08-11 and 2026-09-10 UTC.",
+  "domain": "disaster",
+  "probability": 30,
+  "resolution": "The USGS earthquake catalog lists an event of magnitude 6.0 or higher, epicenter within 200 km of USGS event us6000tjl2, origin time between 2026-08-11 and 2026-09-10 UTC.",
+  "deadline": "2026-09-14",
+  "citations": [
+   25,
+   33
+  ],
+  "failure_condition": "The USGS catalog shows no M6.0 or greater event within 200 km of us6000tjl2 with origin time in the window."
+ },
+ {
+  "statement": "The official cumulative death toll for the 2026 Assam floods reaches or exceeds 150 on or before 2026-09-10.",
+  "domain": "disaster",
+  "probability": 55,
+  "resolution": "Assam State Disaster Management Authority figures, or at least two international news organizations citing official figures, report a cumulative 2026 Assam flood death toll of 150 or more by 2026-09-10.",
+  "deadline": "2026-09-14",
+  "citations": [
+   34
+  ],
+  "failure_condition": "Official cumulative death toll figures for the 2026 Assam floods remain below 150 through 2026-09-10."
+ },
+ {
+  "statement": "Daniel Kinahan remains remanded in custody in Ireland, with no court ordering his release on bail, from 2026-08-10 through 2026-10-30.",
+  "domain": "crime/security",
+  "probability": 85,
+  "resolution": "MISS if any Irish court orders Kinahan released on bail on or before 2026-10-30 per court reporting by at least two news organizations; HIT if he remains in custody through that date.",
+  "deadline": "2026-11-03",
+  "citations": [
+   12,
+   111,
+   122
+  ],
+  "failure_condition": "An Irish court orders Kinahan released on bail on or before 2026-10-30."
+ }
+]

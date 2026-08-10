@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry with vendorProject Progress Software carrying a dateAdded value between 2026-08-10 and 2026-09-30.",
+    "domain": "cyber",
+    "probability": 75,
+    "resolution": "TRUE if the CISA KEV catalog JSON contains at least one vulnerability record whose vendorProject field is Progress Software and whose dateAdded field falls between 2026-08-10 and 2026-09-30 inclusive.",
+    "deadline": "2026-10-05",
+    "citations": [21, 13],
+    "failure_condition": "No KEV record carries vendorProject Progress Software with a dateAdded inside that window."
+  },
+  {
+    "statement": "LexisNexis Risk Solutions reports a data breach affecting 100000 or more individuals to the Maine Attorney General between 2026-08-11 and 2026-12-31.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if the Maine AG data breach notification database lists a filing by LexisNexis Risk Solutions or a LexisNexis entity, dated 2026-08-11 through 2026-12-31, with total affected of 100000 or more.",
+    "deadline": "2027-01-08",
+    "citations": [17],
+    "failure_condition": "No such filing appears, or every LexisNexis filing in the window reports fewer than 100000 affected individuals."
+  },
+  {
+    "statement": "NYMEX front-month WTI crude settles at or below 72.00 dollars per barrel on at least one trading day between 2026-08-11 and 2026-11-30.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "TRUE if CME official settlement data for the front-month NYMEX WTI light sweet crude contract shows a settlement price of 72.00 or lower on any trading day from 2026-08-11 through 2026-11-30.",
+    "deadline": "2026-12-02",
+    "citations": [56, 64, 78],
+    "failure_condition": "Every front-month WTI settlement in that window prints above 72.00 dollars per barrel."
+  },
+  {
+    "statement": "NYMEX front-month WTI crude settles at or above 100.00 dollars per barrel on at least one trading day between 2026-08-11 and 2026-10-30.",
+    "domain": "economics/markets",
+    "probability": 12,
+    "resolution": "TRUE if CME official settlement data for the front-month NYMEX WTI light sweet crude contract shows a settlement price of 100.00 or higher on any trading day from 2026-08-11 through 2026-10-30.",
+    "deadline": "2026-11-03",
+    "citations": [56, 78, 96],
+    "failure_condition": "No front-month WTI settlement in that window reaches 100.00 dollars per barrel."
+  },
+  {
+    "statement": "The 10-year Treasury constant maturity yield closes at or above 5.00 percent on at least one business day between 2026-08-11 and 2026-11-30.",
+    "domain": "economics/markets",
+    "probability": 28,
+    "resolution": "TRUE if FRED series DGS10 records a value of 5.00 or greater on any business day from 2026-08-11 through 2026-11-30.",
+    "deadline": "2026-12-03",
+    "citations": [69, 51],
+    "failure_condition": "Every DGS10 observation in that window is below 5.00 percent."
+  },
+  {
+    "statement": "A Ukrainian long-range strike on an oil refinery in Tatarstan, Bashkortostan, or Samara oblast occurs between 2026-08-11 and 2026-09-15.",
+    "domain": "military/conflict",
+    "probability": 72,
+    "resolution": "TRUE if at least two of Reuters, AP, AFP, or BBC report such a strike dated in that window and a Russian regional governor, the refinery operator, or Russian federal authorities acknowledge it.",
+    "deadline": "2026-09-21",
+    "citations": [104, 92, 74],
+    "failure_condition": "No refinery in those three regions is struck by Ukrainian long-range weapons during the window."
+  },
+  {
+    "statement": "Iranian forces seize or forcibly board at least one commercial merchant vessel in the Strait of Hormuz or Gulf of Oman between 2026-08-11 and 2026-09-30.",
+    "domain": "military/conflict",
+    "probability": 38,
+    "resolution": "TRUE if UKMTO issues an incident advisory describing an Iranian seizure or boarding of a merchant vessel in that area within the window and at least one of Reuters, AP, or AFP reports the same incident.",
+    "deadline": "2026-10-05",
+    "citations": [78, 96, 64],
+    "failure_condition": "No Iranian seizure or forcible boarding of a merchant vessel occurs in that area during the window."
+  },
+  {
+    "statement": "The Israeli cabinet or security cabinet formally approves the United States 15-point Gaza plan between 2026-08-11 and 2026-10-31.",
+    "domain": "political",
+    "probability": 18,
+    "resolution": "TRUE if the Israeli Prime Minister Office or Government Press Office announces cabinet approval of that plan within the window and both Reuters and AP report the approval.",
+    "deadline": "2026-11-04",
+    "citations": [101, 117, 80],
+    "failure_condition": "No Israeli cabinet vote approving the 15-point plan is announced during the window."
+  },
+  {
+    "statement": "USGS catalogs at least one magnitude 5.5 or greater earthquake within 200 kilometers of the 2026-08-10 western Colombia M7.4 epicenter between 2026-08-11 and 2026-09-07.",
+    "domain": "disaster",
+    "probability": 30,
+    "resolution": "TRUE if the USGS earthquake catalog lists an event of magnitude 5.5 or greater with origin time in that window and epicenter within 200 kilometers of event us6000tjl2.",
+    "deadline": "2026-09-11",
+    "citations": [25, 33, 28],
+    "failure_condition": "No M5.5 or greater event in the USGS catalog meets both the distance and origin-time conditions."
+  },
+  {
+    "statement": "Daniel Kinahan is surrendered or extradited from Irish custody into United States custody between 2026-08-11 and 2027-01-29.",
+    "domain": "crime/security",
+    "probability": 12,
+    "resolution": "TRUE if a United States Department of Justice statement or at least two of Reuters, AP, and BBC report that Kinahan has been transferred from Ireland into US custody within that window.",
+    "deadline": "2027-02-03",
+    "citations": [122, 111, 12],
+    "failure_condition": "Kinahan remains outside United States custody at the deadline."
+  }
+]
