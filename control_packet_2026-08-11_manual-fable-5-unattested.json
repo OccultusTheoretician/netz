@@ -1,0 +1,208 @@
+[
+  {
+    "statement": "At least one Russian missile or drone strike on Kyiv city between 2026-08-12 and 2026-09-11 is acknowledged by Ukrainian officials and reported by at least two international wire services.",
+    "resolution": "TRUE if Ukrainian officials acknowledge and two of Reuters, AP, AFP report at least one Russian air attack impacting Kyiv city with strike date between 2026-08-12 and 2026-09-11.",
+    "failure_condition": "No Russian air attack on Kyiv city occurring within the window receives both Ukrainian official acknowledgment and two-wire corroboration by the deadline.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-15",
+    "probability": 33,
+    "citations": [
+      92,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-11T22:07:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260811-10"
+    }
+  },
+  {
+    "statement": "The United States and Iran jointly announce a signed ceasefire or framework agreement between 2026-08-12 and 2026-11-30.",
+    "resolution": "TRUE if the US government and the government of Iran each officially confirm a signed ceasefire or framework agreement announced between 2026-08-12 and 2026-11-30, per two international wire services.",
+    "failure_condition": "No ceasefire or framework agreement is confirmed by both governments within the window.",
+    "domain": "political",
+    "deadline": "2026-12-03",
+    "probability": 33,
+    "citations": [
+      82
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-11T22:07:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260811-11"
+    }
+  },
+  {
+    "statement": "NYMEX WTI crude front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-08-12 and 2026-09-30.",
+    "resolution": "TRUE if CME official settlement data show the WTI front-month contract settling at or above 100.00 USD on any trading day between 2026-08-12 and 2026-09-30.",
+    "failure_condition": "Every WTI front-month official settlement in the window is below 100.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-02",
+    "probability": 18,
+    "citations": [
+      63,
+      82
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1818,
+      "n": 11,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-11T22:07:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260811-12"
+    }
+  },
+  {
+    "statement": "The New York Fed Quarterly Report on Household Debt and Credit covering Q3 2026, published between 2026-11-01 and 2026-12-15, states aggregate credit card balances at or above 1.26 trillion USD.",
+    "resolution": "TRUE if the NY Fed Q3 2026 Household Debt and Credit report, released between 2026-11-01 and 2026-12-15, states aggregate credit card balances at or above 1.26 trillion USD.",
+    "failure_condition": "The report is not released within the window, or it states aggregate credit card balances below 1.26 trillion USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-18",
+    "probability": 18,
+    "citations": [
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1818,
+      "n": 11,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-11T22:07:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260811-13"
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Microsoft SharePoint vulnerability with a dateAdded value between 2026-08-12 and 2026-10-31.",
+    "resolution": "TRUE if the CISA KEV catalog contains at least one entry whose product field references SharePoint and whose dateAdded falls between 2026-08-12 and 2026-10-31.",
+    "failure_condition": "No KEV entry referencing SharePoint carries a dateAdded value inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-04",
+    "probability": 33,
+    "citations": [
+      16,
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-11T22:07:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260811-14"
+    }
+  },
+  {
+    "statement": "CISA publishes a new cybersecurity advisory, distinct from any existing on 2026-08-11, that names Gunra ransomware, with publication date between 2026-08-12 and 2026-12-04.",
+    "resolution": "TRUE if the cisa.gov advisories index lists an advisory first published between 2026-08-12 and 2026-12-04 whose text names Gunra.",
+    "failure_condition": "No new CISA advisory naming Gunra is first published within the window.",
+    "domain": "cyber",
+    "deadline": "2026-12-08",
+    "probability": 33,
+    "citations": [
+      33,
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-11T22:07:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260811-15"
+    }
+  },
+  {
+    "statement": "The UK Met Office announces between 2026-09-01 and 2026-09-10 that summer 2026 was the warmest summer on record for the UK in its national temperature series.",
+    "resolution": "TRUE if a Met Office publication dated between 2026-09-01 and 2026-09-10 states summer 2026 set the UK record for warmest summer in its series.",
+    "failure_condition": "The Met Office seasonal statement does not appear within the window, or it does not declare summer 2026 the warmest on record.",
+    "domain": "disaster",
+    "deadline": "2026-09-14",
+    "probability": 33,
+    "citations": [
+      40
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-11T22:07:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260811-16"
+    }
+  },
+  {
+    "statement": "Russian authorities transfer Bashar al-Assad to Syrian government custody between 2026-08-12 and 2027-01-31.",
+    "resolution": "TRUE if two of Reuters, AP, AFP report that Assad was transferred from Russia into Syrian government custody with transfer date between 2026-08-12 and 2027-01-31.",
+    "failure_condition": "Assad remains outside Syrian government custody throughout the window.",
+    "domain": "crime/security",
+    "deadline": "2027-02-03",
+    "probability": 33,
+    "citations": [
+      53,
+      98,
+      135
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-11T22:07:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260811-17"
+    }
+  }
+]

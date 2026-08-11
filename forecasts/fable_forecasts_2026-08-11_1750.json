@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "At least one Russian missile or drone strike on Kyiv city between 2026-08-12 and 2026-09-11 is acknowledged by Ukrainian officials and reported by at least two international wire services.",
+    "domain": "military/conflict",
+    "probability": 92,
+    "resolution": "TRUE if Ukrainian officials acknowledge and two of Reuters, AP, AFP report at least one Russian air attack impacting Kyiv city with strike date between 2026-08-12 and 2026-09-11.",
+    "deadline": "2026-09-15",
+    "citations": [92, 109],
+    "failure_condition": "No Russian air attack on Kyiv city occurring within the window receives both Ukrainian official acknowledgment and two-wire corroboration by the deadline."
+  },
+  {
+    "statement": "A merchant vessel is struck by a Houthi-launched weapon in the Red Sea, Gulf of Aden, or Arabian Sea between 2026-08-12 and 2026-09-30.",
+    "domain": "military/conflict",
+    "probability": 70,
+    "resolution": "TRUE if UKMTO or CENTCOM confirms, and at least one international wire service reports, a Houthi weapon striking a merchant vessel in those waters with incident date between 2026-08-12 and 2026-09-30.",
+    "deadline": "2026-10-05",
+    "citations": [94, 102],
+    "failure_condition": "No merchant vessel strike attributed to Houthi weapons occurs within the window per UKMTO or CENTCOM confirmation."
+  },
+  {
+    "statement": "The United States and Iran jointly announce a signed ceasefire or framework agreement between 2026-08-12 and 2026-11-30.",
+    "domain": "political",
+    "probability": 25,
+    "resolution": "TRUE if the US government and the government of Iran each officially confirm a signed ceasefire or framework agreement announced between 2026-08-12 and 2026-11-30, per two international wire services.",
+    "deadline": "2026-12-03",
+    "citations": [82],
+    "failure_condition": "No ceasefire or framework agreement is confirmed by both governments within the window."
+  },
+  {
+    "statement": "NYMEX WTI crude front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-08-12 and 2026-09-30.",
+    "domain": "economics/markets",
+    "probability": 20,
+    "resolution": "TRUE if CME official settlement data show the WTI front-month contract settling at or above 100.00 USD on any trading day between 2026-08-12 and 2026-09-30.",
+    "deadline": "2026-10-02",
+    "citations": [63, 82],
+    "failure_condition": "Every WTI front-month official settlement in the window is below 100.00 USD."
+  },
+  {
+    "statement": "The New York Fed Quarterly Report on Household Debt and Credit covering Q3 2026, published between 2026-11-01 and 2026-12-15, states aggregate credit card balances at or above 1.26 trillion USD.",
+    "domain": "economics/markets",
+    "probability": 85,
+    "resolution": "TRUE if the NY Fed Q3 2026 Household Debt and Credit report, released between 2026-11-01 and 2026-12-15, states aggregate credit card balances at or above 1.26 trillion USD.",
+    "deadline": "2026-12-18",
+    "citations": [80],
+    "failure_condition": "The report is not released within the window, or it states aggregate credit card balances below 1.26 trillion USD."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Microsoft SharePoint vulnerability with a dateAdded value between 2026-08-12 and 2026-10-31.",
+    "domain": "cyber",
+    "probability": 35,
+    "resolution": "TRUE if the CISA KEV catalog contains at least one entry whose product field references SharePoint and whose dateAdded falls between 2026-08-12 and 2026-10-31.",
+    "deadline": "2026-11-04",
+    "citations": [16, 23],
+    "failure_condition": "No KEV entry referencing SharePoint carries a dateAdded value inside the window."
+  },
+  {
+    "statement": "CISA publishes a new cybersecurity advisory, distinct from any existing on 2026-08-11, that names Gunra ransomware, with publication date between 2026-08-12 and 2026-12-04.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if the cisa.gov advisories index lists an advisory first published between 2026-08-12 and 2026-12-04 whose text names Gunra.",
+    "deadline": "2026-12-08",
+    "citations": [33, 34],
+    "failure_condition": "No new CISA advisory naming Gunra is first published within the window."
+  },
+  {
+    "statement": "The USGS catalog records an earthquake of magnitude 6.0 or greater within 250 km of Colombia mainshock us6000tjl2 with origin time between 2026-08-12 and 2026-11-10.",
+    "domain": "disaster",
+    "probability": 50,
+    "resolution": "TRUE if the USGS earthquake catalog lists an event of M 6.0 or greater within 250 km of the us6000tjl2 epicenter with origin time between 2026-08-12 and 2026-11-10.",
+    "deadline": "2026-11-13",
+    "citations": [39, 51],
+    "failure_condition": "No USGS-catalogued event of M 6.0 or greater occurs within 250 km of the mainshock epicenter during the window."
+  },
+  {
+    "statement": "The UK Met Office announces between 2026-09-01 and 2026-09-10 that summer 2026 was the warmest summer on record for the UK in its national temperature series.",
+    "domain": "disaster",
+    "probability": 65,
+    "resolution": "TRUE if a Met Office publication dated between 2026-09-01 and 2026-09-10 states summer 2026 set the UK record for warmest summer in its series.",
+    "deadline": "2026-09-14",
+    "citations": [40],
+    "failure_condition": "The Met Office seasonal statement does not appear within the window, or it does not declare summer 2026 the warmest on record."
+  },
+  {
+    "statement": "Russian authorities transfer Bashar al-Assad to Syrian government custody between 2026-08-12 and 2027-01-31.",
+    "domain": "crime/security",
+    "probability": 5,
+    "resolution": "TRUE if two of Reuters, AP, AFP report that Assad was transferred from Russia into Syrian government custody with transfer date between 2026-08-12 and 2027-01-31.",
+    "deadline": "2027-02-03",
+    "citations": [53, 98, 135],
+    "failure_condition": "Assad remains outside Syrian government custody throughout the window."
+  }
+]
