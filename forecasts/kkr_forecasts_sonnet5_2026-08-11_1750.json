@@ -1,0 +1,118 @@
+[
+  {
+    "statement": "CISA will add a Microsoft SharePoint remote-code-execution entry to its Known Exploited Vulnerabilities catalog, with the event occurring between 2026-08-11 and 2026-08-25, per items 16 and 23.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "TRUE if the CISA KEV catalog lists a Microsoft SharePoint RCE entry with dateAdded between 2026-08-11 and 2026-08-25; FALSE if no such entry exists by the deadline.",
+    "deadline": "2026-08-27",
+    "citations": [
+      16,
+      23
+    ],
+    "failure_condition": "No Microsoft SharePoint RCE vulnerability appears in the CISA KEV catalog with a dateAdded value in the stated window by the deadline."
+  },
+  {
+    "statement": "A US water or energy utility beyond those in items 33, 34, and 37 will publicly disclose a new ransomware incident, occurring between 2026-08-11 and 2026-09-08.",
+    "domain": "cyber",
+    "probability": 68,
+    "resolution": "TRUE if BleepingComputer, The Hacker News, or a CISA advisory reports a new confirmed US water- or energy-utility ransomware incident dated 2026-08-11 to 2026-09-08, confirmed by 2026-09-10; else FALSE.",
+    "deadline": "2026-09-10",
+    "citations": [
+      33,
+      34,
+      37
+    ],
+    "failure_condition": "No new US water- or energy-utility ransomware incident beyond the cited items is confirmed within the window."
+  },
+  {
+    "statement": "USGS will record an aftershock of magnitude 6.0 or greater within 100 km of the M7.4 mainshock in item 39, occurring between 2026-08-11 and 2026-08-22.",
+    "domain": "disaster_infrastructure",
+    "probability": 28,
+    "resolution": "TRUE if USGS lists an M6.0+ event within 100 km of us6000tjl2 with an origin time between 2026-08-11 and 2026-08-22; else FALSE.",
+    "deadline": "2026-08-24",
+    "citations": [
+      39
+    ],
+    "failure_condition": "USGS records no M6.0 or greater event within 100 km of the epicenter of the mainshock during the stated window."
+  },
+  {
+    "statement": "CAL FIRE will report the Big Sur-area wildfire from item 41 at 50 percent containment or higher, with the milestone reached between 2026-08-11 and 2026-09-01.",
+    "domain": "disaster_infrastructure",
+    "probability": 58,
+    "resolution": "TRUE if the CAL FIRE incident page for the fire in item 41 shows containment at or above 50 percent at any point between 2026-08-11 and 2026-09-01; else FALSE.",
+    "deadline": "2026-09-03",
+    "citations": [
+      41
+    ],
+    "failure_condition": "The CAL FIRE incident report shows containment for this fire remains below 50 percent as of the deadline."
+  },
+  {
+    "statement": "WTI crude oil will settle at or above 90.00 USD per barrel on at least one trading day between 2026-08-11 and 2026-09-08, extending the move in item 63.",
+    "domain": "economic",
+    "probability": 33,
+    "resolution": "TRUE if the NYMEX WTI front-month settlement price is 90.00 USD per barrel or higher on any trading day between 2026-08-11 and 2026-09-08; else FALSE.",
+    "deadline": "2026-09-09",
+    "citations": [
+      63
+    ],
+    "failure_condition": "The NYMEX WTI front-month contract never settles at or above 90.00 USD per barrel during the window."
+  },
+  {
+    "statement": "Intel common stock will close at or above 100.00 USD on the Nasdaq on at least one trading day between 2026-08-11 and 2026-09-10, following the offering in item 84.",
+    "domain": "economic",
+    "probability": 38,
+    "resolution": "TRUE if Nasdaq closing price data show INTC at or above 100.00 USD on any session between 2026-08-11 and 2026-09-10; else FALSE.",
+    "deadline": "2026-09-11",
+    "citations": [
+      84
+    ],
+    "failure_condition": "The INTC Nasdaq closing price stays below 100.00 USD on every trading day in the window."
+  },
+  {
+    "statement": "A named wire service will report a new clash between Nigerian security forces and non-state armed groups in northwestern Nigeria with 10 or more combined fatalities, occurring between 2026-08-11 and 2026-09-01, per item 99.",
+    "domain": "military_conflict",
+    "probability": 75,
+    "resolution": "TRUE if Reuters, AP, AFP, or Al Jazeera reports a new northwestern-Nigeria clash with 10 or more combined fatalities dated 2026-08-11 to 2026-09-01; else FALSE.",
+    "deadline": "2026-09-03",
+    "citations": [
+      99
+    ],
+    "failure_condition": "No wire-reported northwestern Nigeria clash in the window reaches 10 combined fatalities."
+  },
+  {
+    "statement": "Independent trackers will corroborate a Russian strike using North Korean-supplied missiles against Ukraine, beyond the claim in items 92 and 109, occurring between 2026-08-11 and 2026-08-29.",
+    "domain": "military_conflict",
+    "probability": 40,
+    "resolution": "TRUE if two or more of ISW, Reuters, or AP attribute a Russian strike dated 2026-08-11 to 2026-08-29 to North Korean-supplied missiles; else FALSE.",
+    "deadline": "2026-08-31",
+    "citations": [
+      92,
+      109
+    ],
+    "failure_condition": "No two independent trackers attribute a Russian strike in the window to North Korean-supplied missiles."
+  },
+  {
+    "statement": "Hungarian President Baka, elected as an Orban critic per items 122, 124, and 125, will decline to sign or will refer to the Constitutional Court a government-backed bill, between 2026-08-18 and 2026-11-16.",
+    "domain": "political",
+    "probability": 20,
+    "resolution": "TRUE if Reuters, AP, or DW reports Baka refusing signature or referring a Fidesz-backed bill to the Constitutional Court between 2026-08-18 and 2026-11-16; else FALSE.",
+    "deadline": "2026-11-18",
+    "citations": [
+      122,
+      124,
+      125
+    ],
+    "failure_condition": "Baka signs every government-backed bill presented to him during the window without referral or refusal."
+  },
+  {
+    "statement": "A US federal agency will file new public criminal or civil charges against Gautam Adani or a named Adani Group executive, occurring between 2026-08-11 and 2026-11-09, despite the dismissal in item 9.",
+    "domain": "crime_security",
+    "probability": 12,
+    "resolution": "TRUE if DOJ, SEC, or another US federal agency announces new public charges against Adani or an Adani Group executive dated 2026-08-11 to 2026-11-09, confirmed by 2026-11-11; else FALSE.",
+    "deadline": "2026-11-11",
+    "citations": [
+      9
+    ],
+    "failure_condition": "No US federal agency files new public charges against Adani or a named Adani Group executive during the window."
+  }
+]

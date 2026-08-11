@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one CVE whose vendorProject is Fortinet or Schneider Electric, with dateAdded between 2026-08-12 and 2026-10-30.",
+    "domain": "cyber",
+    "probability": 50,
+    "resolution": "TRUE if the CISA KEV JSON feed holds at least one entry with vendorProject Fortinet or Schneider Electric and a dateAdded value between 2026-08-12 and 2026-10-30 inclusive.",
+    "deadline": "2026-11-03",
+    "citations": [33, 34],
+    "failure_condition": "No KEV entry from either vendor carries a dateAdded value inside the window."
+  },
+  {
+    "statement": "The CISA KEV catalog adds at least one new Microsoft SharePoint Server CVE, with dateAdded between 2026-08-12 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if a KEV entry whose product field names SharePoint carries a dateAdded between 2026-08-12 and 2026-10-16 inclusive and was absent from the catalog on 2026-08-11.",
+    "deadline": "2026-10-20",
+    "citations": [16, 23],
+    "failure_condition": "The KEV catalog gains no SharePoint entry with a dateAdded inside the window."
+  },
+  {
+    "statement": "The US Treasury designates at least one person or entity for facilitating North Korean arms or missile transfers to Russia, with the action dated between 2026-08-12 and 2026-11-30.",
+    "domain": "military_conflict",
+    "probability": 32,
+    "resolution": "TRUE if an OFAC press release or SDN list update dated inside the window names DPRK-to-Russia arms, missile, or munitions transfer as a basis for the designation.",
+    "deadline": "2026-12-03",
+    "citations": [92, 109],
+    "failure_condition": "No OFAC action inside the window cites DPRK-to-Russia arms or missile transfer as a designation basis."
+  },
+  {
+    "statement": "United States and Iranian officials hold a publicly acknowledged direct bilateral meeting between 2026-08-12 and 2026-09-30.",
+    "domain": "military_conflict",
+    "probability": 40,
+    "resolution": "TRUE if a US executive branch statement and an Iranian foreign ministry statement both confirm a direct bilateral meeting held inside the window, and two of Reuters, AP, AFP report it.",
+    "deadline": "2026-10-05",
+    "citations": [63, 82],
+    "failure_condition": "No direct US-Iran bilateral meeting held inside the window is confirmed by both governments."
+  },
+  {
+    "statement": "NYMEX front-month WTI crude futures settle at or above 95.00 US dollars per barrel on at least one trading day between 2026-08-12 and 2026-09-30.",
+    "domain": "economics",
+    "probability": 28,
+    "resolution": "TRUE if the CME published settlement price for the front-month WTI contract is 95.00 or higher on any trading day between 2026-08-12 and 2026-09-30 inclusive.",
+    "deadline": "2026-10-02",
+    "citations": [63, 82],
+    "failure_condition": "Every front-month WTI settlement inside the window prints below 95.00 dollars."
+  },
+  {
+    "statement": "The New York Fed Household Debt and Credit Report for Q3 2026 reports aggregate credit card balances above 1.26 trillion US dollars.",
+    "domain": "economics",
+    "probability": 80,
+    "resolution": "TRUE if the Q3 2026 report published on newyorkfed.org states an aggregate credit card balance greater than 1.26 trillion dollars, published on or before the deadline.",
+    "deadline": "2026-11-20",
+    "citations": [80],
+    "failure_condition": "The Q3 2026 report shows credit card balances at or below 1.26 trillion dollars, or no such report exists by the deadline."
+  },
+  {
+    "statement": "A US federal court enters an order blocking enforcement of the administration policy limiting birthright citizenship, with the order dated between 2026-08-12 and 2026-11-30.",
+    "domain": "political",
+    "probability": 58,
+    "resolution": "TRUE if a public federal court docket shows an injunction, temporary restraining order, class-wide relief, or vacatur against the birthright citizenship policy entered inside the window.",
+    "deadline": "2026-12-04",
+    "citations": [120],
+    "failure_condition": "No federal court order entered inside the window restrains or vacates the policy."
+  },
+  {
+    "statement": "Thailand adopts a cabinet resolution or statutory amendment permanently tightening civilian firearm permit rules, adopted between 2026-08-12 and 2026-11-30.",
+    "domain": "crime_security",
+    "probability": 35,
+    "resolution": "TRUE if a Thai government announcement plus reporting by two of Reuters, AP, AFP, Bangkok Post confirm a cabinet resolution or Firearms Act amendment adopted inside the window.",
+    "deadline": "2026-12-04",
+    "citations": [12],
+    "failure_condition": "No Thai cabinet resolution or statutory amendment tightening firearm permits is adopted inside the window."
+  },
+  {
+    "statement": "The USGS catalog lists at least one magnitude 6.0 or greater earthquake within 300 km of USGS event us6000tjl2, with origin time between 2026-08-12 and 2026-09-30.",
+    "domain": "disaster",
+    "probability": 22,
+    "resolution": "TRUE if the USGS FDSN event query returns at least one M6.0 or greater event within 300 km of the us6000tjl2 epicenter with origin time inside the window.",
+    "deadline": "2026-10-05",
+    "citations": [39, 51],
+    "failure_condition": "The USGS catalog holds no M6.0 or greater event meeting both the radius and the origin-time criteria."
+  },
+  {
+    "statement": "CAL FIRE reports the Timber Fire near Big Sur at 100 percent containment, with a containment date between 2026-08-12 and 2026-09-15.",
+    "domain": "disaster",
+    "probability": 75,
+    "resolution": "TRUE if the CAL FIRE incident page for the Timber Fire shows 100 percent containment with a containment date inside the window.",
+    "deadline": "2026-09-21",
+    "citations": [41],
+    "failure_condition": "The CAL FIRE incident record shows containment below 100 percent, or a containment date after 2026-09-15."
+  }
+]
