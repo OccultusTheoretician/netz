@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-10T16:55:19Z",
+  "as_of": "2026-08-11T18:56:11Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -315,13 +315,28 @@
       "date_issued": "2026-07-20",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-20_2131.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-11",
+      "notes": "[jury] FIFA's own site (inside.fifa.com, disciplinary update dated 2026-07-29) states the Disciplinary Committee OPENED proceedings against Molina, Paredes, Ayala, Almada and Gavi and that the respondents have now been given the opportunity to present their position, following which a decision will be issued in due course. ESPN and Al Jazeera 2026-07-29 report the same: charges opened, no sanction imposed. No FIFA decision imposing a suspension or fine dated on or before 2026-08-10 was found.",
       "failure_condition": "the condition stated in this entry's resolution basis — FIFA’s official website or press release confirms a disciplinary action (e.g., suspension, fine) against one or more players related to the on-pitch brawl, with the decision dated on or before 2026-08-10 — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "FIFA's own site (inside.fifa.com, disciplinary update dated 2026-07-29) states the Disciplinary Committee OPENED proceedings against Molina, Paredes, Ayala, Almada and Gavi and that the respondents have now been given the opportunity to present their position, following which a decision will be issued in due course. ESPN and Al Jazeera 2026-07-29 report the same: charges opened, no sanction imposed. No FIFA decision imposing a suspension or fine dated on or before 2026-08-10 was found."
+      }
     },
     {
       "statement": "The U.S. will launch a new cyber operation targeting a critical infrastructure system in a NATO ally within 72 hours of the report, resulting in a confirmed disruption.",
@@ -799,13 +814,28 @@
       "date_issued": "2026-07-21",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-21_1532.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-11",
+      "notes": "HIT on the criterion as written - Houthi spokesman Yahya Saree declared a maritime embargo effective immediately 2026-07-20 and NPR 2026-07-21 reported an announced naval blockade of Bab el-Mandeb with vessels rerouting. ALREADY-DECIDED: the declaration predates this row's issue date of 2026-07-21 by one day, so if the packet carried it the outcome existed at seal; ruled as written and the already-decided defect is printed rather than voided, because voiding would hide it.",
       "failure_condition": "the condition stated in this entry's resolution basis — A confirmed statement from the Houthi movement or a credible news source reporting the implementation of a naval blockade of the Bab el-Mandeb Strait is published by 2026-08-10 — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "operator",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Houthi military spokesman Yahya Saree announced a maritime embargo effective immediately on 2026-07-20, and deputy media office head Nasruddin Amer stated Bab el-Mandeb would be closed (Euronews, 2026-07-20). Al Jazeera 2026-07-20 headlines the declaration. NPR 2026-07-21 reports the Houthis have announced a naval blockade of the Bab el-Mandeb Strait and that commercial vessels have begun rerouting per ship trackers. Northeastern 2026-07-21 reports the same."
+      }
     },
     {
       "statement": "A confirmed exploit of CVE-2026-60137 in WordPress Core will be reported in a public security advisory by 2026-08-05.",
@@ -1699,13 +1729,28 @@
       "date_issued": "2026-07-25",
       "model": "manual/fable",
       "source_report": "battle_report_2026-07-25_1714.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-11",
+      "notes": "[jury] AP reporting carried by NPR 2026-07-28 states the crisis prompted the government to declare a national emergency for wildfires for the first time; PBS NewsHour carries the same AP line, the government declared a national emergency over the fires. Timing falls inside the 2026-07-27 to 2026-08-10 window.",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if the French national government formally declares a nationwide state of emergency covering the wildfires, reported by two independent wire services within the window; else FALSE — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "operator",
+        "verdicts": {
+          "claude": "AMBIGUOUS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "AP reporting carried by NPR 2026-07-28 states the crisis prompted the government to declare a national emergency for wildfires for the first time; PBS NewsHour carries the same AP line, the government declared a national emergency over the fires. Timing falls inside the 2026-07-27 to 2026-08-10 window."
+      }
     },
     {
       "statement": "The UK Ministry of Defence publicly confirms deployment of military assets to assist wildfire suppression in Scotland between 2026-07-27 and 2026-08-07.",
@@ -2702,13 +2747,28 @@
       "model": "manual/fable",
       "source_report": "battle_report_2026-07-27_1502.md",
       "source_packet": "kkr_packet_2026-07-27_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-11",
+      "notes": "[jury] ABC News 2026-07-28 reports Zelenskyy and Netanyahu met separately with Trump in the Oval Office that Tuesday, with White House press secretary Karoline Leavitt posting that Trump had concluded his meetings with both. Fortune 2026-07-28 reports Netanyahu calling the White House visit excellent and notes Zelenskyy met Trump earlier the same day. Photographs are captioned Oval Office, Washington, July 28, 2026.",
       "failure_condition": "the condition stated in this entry's resolution basis — White House schedules or pool reports, or by two wire services, showing both leaders in a face-to-face meeting with Trump in the window — is not met on or before 2026-08-10; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "ABC News 2026-07-28 reports Zelenskyy and Netanyahu met separately with Trump in the Oval Office that Tuesday, with White House press secretary Karoline Leavitt posting that Trump had concluded his meetings with both. Fortune 2026-07-28 reports Netanyahu calling the White House visit excellent and notes Zelenskyy met Trump earlier the same day. Photographs are captioned Oval Office, Washington, July 28, 2026."
+      }
     },
     {
       "statement": "The United States Senate will confirm Jay Clayton to the intelligence post for which he was nominated, on or before 2026-09-30.",
@@ -11991,6 +12051,241 @@
       "register": "registers/1.0@5414a43d6a49470b",
       "sealed_at": "2026-08-10T16:55:19.499634+00:00",
       "seal_sha256": "3d72817effdf7cf41d4acc13ff88ec062913e1c1b3708a1e8a46eb9e7903731d"
+    },
+    {
+      "statement": "Between 2026-08-22 and 2026-08-25, the CISA KEV catalog will add a new entry for a vulnerability in Microsoft SharePoint exploited in ransomware attacks, with a date-added value between 2026-08-22 and 2026-08-25.",
+      "domain": "cyber",
+      "probability": 25,
+      "resolution": "The CISA KEV catalog carries a date-added value between 2026-08-22 and 2026-08-25 for a vulnerability in Microsoft SharePoint exploited in ransomware attacks.",
+      "deadline": "2026-08-28",
+      "citations": [
+        23
+      ],
+      "failure_condition": "The CISA KEV catalog does not carry a date-added value between 2026-08-22 and 2026-08-25 for a vulnerability in Microsoft SharePoint exploited in ransomware attacks.",
+      "id": "KKR-20260811-01",
+      "date_issued": "2026-08-11",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-11_1750.md",
+      "source_packet": "kkr_packet_2026-08-11_1750.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-11T17:52:56.119178+00:00",
+      "seal_sha256": "552c1691cdf4f9eceeb7b4625016777c217a12e5fa84d995573c5eeb0f8d360d",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [23] carry the claim's operative terms (attack, exploited, microsoft, ransomware, sharepoint); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-11"
+    },
+    {
+      "statement": "Between 2026-08-23 and 2026-08-26, the S&P 500 will close above 7,800 points on at least one weekday within the window, based on the official market close data from the NYSE.",
+      "domain": "economics/markets",
+      "probability": 45,
+      "resolution": "The S&P 500 closes above 7,800 points on at least one weekday between 2026-08-23 and 2026-08-26, as reported by the NYSE.",
+      "deadline": "2026-08-28",
+      "citations": [
+        5
+      ],
+      "failure_condition": "The S&P 500 closes at or below 7,800 points on every weekday between 2026-08-23 and 2026-08-26.",
+      "id": "KKR-20260811-02",
+      "date_issued": "2026-08-11",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-11_1750.md",
+      "source_packet": "kkr_packet_2026-08-11_1750.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-11T17:52:56.119202+00:00",
+      "seal_sha256": "9ac94cf25e1627f21afcf4ecadfa36907a628b58152bdd61d807bb46862715eb",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [5] carry the claim's operative terms (window); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-11"
+    },
+    {
+      "statement": "Between 2026-08-24 and 2026-08-27, a wildfire in California's Big Sur region will result in at least one confirmed fatality, as reported by two independent outlets (Guardian World and BBC World).",
+      "domain": "disaster",
+      "probability": 35,
+      "resolution": "Two independent outlets (Guardian World and BBC World) report at least one confirmed fatality from a wildfire in California's Big Sur region between 2026-08-24 and 2026-08-27.",
+      "deadline": "2026-08-30",
+      "citations": [
+        41,
+        47
+      ],
+      "failure_condition": "No independent report from Guardian World or BBC World confirms a fatality from a wildfire in California's Big Sur region between 2026-08-24 and 2026-08-27.",
+      "id": "KKR-20260811-03",
+      "date_issued": "2026-08-11",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-11_1750.md",
+      "source_packet": "kkr_packet_2026-08-11_1750.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-11T17:52:56.119213+00:00",
+      "seal_sha256": "2e2c5858e530bf37f1024252072d0dd57e4a3c2ab9e48949d23dc160f6451d36",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [41, 47] carry the claim's operative terms (california', wildfire); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-11"
+    },
+    {
+      "statement": "Between 2026-08-25 and 2026-08-28, the U.S. Federal Reserve will announce a 0.25 percentage point increase in the federal funds rate, as confirmed by a press release from the Federal Reserve Board.",
+      "domain": "economics/markets",
+      "probability": 40,
+      "resolution": "A press release from the Federal Reserve Board confirms a 0.25 percentage point increase in the federal funds rate between 2026-08-25 and 2026-08-28.",
+      "deadline": "2026-08-30",
+      "citations": [
+        5
+      ],
+      "failure_condition": "The Federal Reserve Board does not issue a press release confirming a 0.25 percentage point increase in the federal funds rate between 2026-08-25 and 2026-08-28.",
+      "id": "KKR-20260811-04",
+      "date_issued": "2026-08-11",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-11_1750.md",
+      "source_packet": "kkr_packet_2026-08-11_1750.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-11T17:52:56.119224+00:00",
+      "seal_sha256": "5f53b1e58e84b0c996cfc86b870285fd195b427457a906f7efca236105902317",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [5] carry the claim's operative terms (release); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-11"
+    },
+    {
+      "statement": "Between 2026-08-26 and 2026-08-29, a cyberattack exploiting a zero-day vulnerability in OpenAI's GPT-5.6-Cyber model will be reported by at least two independent outlets (The Hacker News and BleepingComputer), with no public patch released by OpenAI.",
+      "domain": "cyber",
+      "probability": 20,
+      "resolution": "Two independent outlets (The Hacker News and BleepingComputer) report a cyberattack exploiting a zero-day vulnerability in OpenAI's GPT-5.6-Cyber model between 2026-08-26 and 2026-08-29, with no public patch released by OpenAI.",
+      "deadline": "2026-08-31",
+      "citations": [
+        21
+      ],
+      "failure_condition": "A cyberattack exploiting a zero-day vulnerability in OpenAI's GPT-5.6-Cyber model is not reported by both The Hacker News and BleepingComputer between 2026-08-26 and 2026-08-29, or a public patch is released by OpenAI.",
+      "id": "KKR-20260811-05",
+      "date_issued": "2026-08-11",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-11_1750.md",
+      "source_packet": "kkr_packet_2026-08-11_1750.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-11T17:52:56.119233+00:00",
+      "seal_sha256": "32a8d2d749ea020181592b2b522060275966f9c520988d802f831305b85c8132",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [21] carry the claim's operative terms (cyber, cyberattack, exploiting, hacker, openai, openai'); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-11"
+    },
+    {
+      "statement": "Between 2026-08-27 and 2026-08-30, the European Parliament will vote to abolish the death penalty for all crimes, as confirmed by a press release from the European Parliament.",
+      "domain": "political",
+      "probability": 15,
+      "resolution": "A press release from the European Parliament confirms the abolition of the death penalty for all crimes between 2026-08-27 and 2026-08-30.",
+      "deadline": "2026-09-01",
+      "citations": [
+        112
+      ],
+      "failure_condition": "The European Parliament does not issue a press release confirming the abolition of the death penalty for all crimes between 2026-08-27 and 2026-08-30.",
+      "id": "KKR-20260811-06",
+      "date_issued": "2026-08-11",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-11_1750.md",
+      "source_packet": "kkr_packet_2026-08-11_1750.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-11T17:52:56.119243+00:00",
+      "seal_sha256": "f15862bd8a502dcc2cf36a4fefdf7fbd6fe0ba41cccef0388330507e502f39f2",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [112] carry the claim's operative terms (abolish, abolition, death, parliament, penalty, vote); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-11"
+    },
+    {
+      "statement": "Between 2026-08-28 and 2026-08-31, a magnitude 6.0 or higher earthquake will be recorded by the USGS in the Philippines, with a depth of less than 70 km and a location within 100 km of the island of Mindanao.",
+      "domain": "disaster",
+      "probability": 30,
+      "resolution": "The USGS Significant Quakes database records a magnitude 6.0 or higher earthquake with a depth of less than 70 km and a location within 100 km of the island of Mindanao between 2026-08-28 and 2026-08-31.",
+      "deadline": "2026-09-02",
+      "citations": [
+        54
+      ],
+      "failure_condition": "The USGS Significant Quakes database does not record a magnitude 6.0 or higher earthquake with a depth of less than 70 km and a location within 100 km of the island of Mindanao between 2026-08-28 and 2026-08-31.",
+      "id": "KKR-20260811-07",
+      "date_issued": "2026-08-11",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-11_1750.md",
+      "source_packet": "kkr_packet_2026-08-11_1750.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-11T17:52:56.119250+00:00",
+      "seal_sha256": "9cc3aeefaadbe6cc050181609ef33ed3081b7abcdfe40a4055412540de95cfa8",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [54] carry the claim's operative terms (philippine, quake, significant); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-11"
+    },
+    {
+      "statement": "Between 2026-08-29 and 2026-09-01, the U.S. Department of Justice will announce the indictment of a former senior official from the Trump administration for obstruction of justice, as confirmed by a press release from the DOJ.",
+      "domain": "crime/security",
+      "probability": 25,
+      "resolution": "A press release from the U.S. Department of Justice confirms the indictment of a former senior official from the Trump administration for obstruction of justice between 2026-08-29 and 2026-09-01.",
+      "deadline": "2026-09-03",
+      "citations": [
+        120
+      ],
+      "failure_condition": "The U.S. Department of Justice does not issue a press release confirming the indictment of a former senior official from the Trump administration for obstruction of justice between 2026-08-29 and 2026-09-01.",
+      "id": "KKR-20260811-08",
+      "date_issued": "2026-08-11",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-11_1750.md",
+      "source_packet": "kkr_packet_2026-08-11_1750.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-11T17:52:56.119259+00:00",
+      "seal_sha256": "5119625e13c0a216e7df446a48ead1d7189d3d1bf9f306bff967e52c3202b553",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [120] carry the claim's operative terms (trump); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-11"
+    },
+    {
+      "statement": "Between 2026-08-30 and 2026-09-02, a new ransomware group called 'Gunra' will be confirmed by CISA to have exploited a vulnerability in Fortinet firewalls, with a public exploit available by 2026-09-02.",
+      "domain": "cyber",
+      "probability": 35,
+      "resolution": "CISA issues a public advisory confirming that the Gunra ransomware group exploited a vulnerability in Fortinet firewalls between 2026-08-30 and 2026-09-02, with a public exploit available by 2026-09-02.",
+      "deadline": "2026-09-04",
+      "citations": [
+        34
+      ],
+      "failure_condition": "CISA does not issue a public advisory confirming that the Gunra ransomware group exploited a vulnerability in Fortinet firewalls between 2026-08-30 and 2026-09-02, or no public exploit is available by 2026-09-02.",
+      "id": "KKR-20260811-09",
+      "date_issued": "2026-08-11",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-11_1750.md",
+      "source_packet": "kkr_packet_2026-08-11_1750.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-11T17:52:56.119267+00:00",
+      "seal_sha256": "7c39a85f49ec7dcf1f1f090f91b119b8f54a30187355669d3318b61238e31599",
+      "keyed_keyless": "keyed",
+      "keyed_keyless_rationale": "Cited prior(s) [34] carry the claim's operative terms (exploit, exploited, fortinet, gunra, ransomware); a hit is deducible from the cited record.",
+      "keyed_keyless_dated": "2026-08-11"
     }
   ]
 }
