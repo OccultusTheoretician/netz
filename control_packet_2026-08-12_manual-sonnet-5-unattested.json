@@ -1,0 +1,156 @@
+[
+  {
+    "statement": "A CVE tied to the Microsoft Defender ShieldBreak privilege-escalation flaw disclosed around 11 Aug 2026 will be added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded between 2026-08-13 and 2026-09-02.",
+    "resolution": "TRUE if the CISA KEV catalog lists a CVE matching the ShieldBreak Defender flaw with dateAdded between 2026-08-13 and 2026-09-02, checked 2026-09-04; otherwise FALSE.",
+    "failure_condition": "No CVE matching the ShieldBreak Defender flaw appears in the CISA KEV catalog with a dateAdded in the stated window as of the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-09-04",
+    "probability": 33,
+    "citations": [
+      21,
+      25
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-12T17:17:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260812-16"
+    }
+  },
+  {
+    "statement": "A Houthi or other Iran-aligned attack will kill at least one person in Red Sea, Gulf of Aden, or Strait of Hormuz shipping-lane activity between 2026-08-13 and 2026-09-02, beyond the fatalities already reported 12 Aug 2026.",
+    "resolution": "TRUE if two or more wire services report a fatal Houthi or Iran-aligned attack on shipping or shipping-adjacent targets in the Red Sea, Gulf of Aden, or Strait of Hormuz corridor between 2026-08-13 and 2026-09-02, checked 2026-09-04.",
+    "failure_condition": "No two-source wire report of a fatal Houthi or Iran-aligned attack on shipping-lane targets in that corridor is dated within the stated window.",
+    "domain": "military_conflict",
+    "deadline": "2026-09-04",
+    "probability": 33,
+    "citations": [
+      100,
+      95
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-12T17:17:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260812-17"
+    }
+  },
+  {
+    "statement": "Russia will board, detain, or seize a European Union-flagged or EU-owned commercial vessel between 2026-08-13 and 2026-09-02, consistent with the tit-for-tat seizure warning reported 12 Aug 2026.",
+    "resolution": "TRUE if two or more wire services or hostile-side channels confirm Russian authorities boarded, detained, or seized an EU-flagged or EU-owned vessel between 2026-08-13 and 2026-09-02, checked 2026-09-04.",
+    "failure_condition": "No two-source confirmation of a Russian boarding, detention, or seizure of an EU-flagged or EU-owned vessel dated within the stated window exists at the deadline.",
+    "domain": "military_conflict",
+    "deadline": "2026-09-04",
+    "probability": 33,
+    "citations": [
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-12T17:17:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260812-18"
+    }
+  },
+  {
+    "statement": "Hakainde Hichilema will be declared winner of Zambia's 13 August 2026 presidential election outright in the first round, with more than 50 percent of valid votes, by 2026-08-21.",
+    "resolution": "TRUE if the Electoral Commission of Zambia declares Hichilema the first-round winner with over 50 percent of valid votes by 2026-08-21; a runoff or another winner resolves FALSE.",
+    "failure_condition": "The ECZ calls a runoff, declares a different winner, or has issued no declared presidential result at all by 2026-08-21.",
+    "domain": "political",
+    "deadline": "2026-08-21",
+    "probability": 33,
+    "citations": [
+      130,
+      131
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-12T17:17:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260812-19"
+    }
+  },
+  {
+    "statement": "A magnitude 6.0 or greater aftershock will be recorded by USGS within the epicentral region of the 12 Aug 2026 M7.4 Colombia earthquake between 2026-08-13 and 2026-09-11.",
+    "resolution": "TRUE if USGS lists a magnitude 6.0-plus event within 200 km of the M7.4 Colombia mainshock, dated between 2026-08-13 and 2026-09-11, checked 2026-09-14; otherwise FALSE.",
+    "failure_condition": "No USGS-listed magnitude 6.0 or greater event within 200 km of the mainshock falls within the stated window as of the deadline.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-09-14",
+    "probability": 33,
+    "citations": [
+      38,
+      41
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-12T17:17:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260812-20"
+    }
+  },
+  {
+    "statement": "The Egyptian student whose kidnapping was livestreamed, per the report dated 12 Aug 2026, will be confirmed located, released, or recovered by two or more sources between 2026-08-13 and 2026-09-02.",
+    "resolution": "TRUE if two or more news sources confirm the student has been located, released, or recovered, dated between 2026-08-13 and 2026-09-02, checked 2026-09-04; otherwise FALSE.",
+    "failure_condition": "No two-source confirmation that the student was located, released, or recovered is dated within the stated window as of the deadline.",
+    "domain": "crime_security",
+    "deadline": "2026-09-04",
+    "probability": 33,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-12T17:17:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260812-21"
+    }
+  }
+]
