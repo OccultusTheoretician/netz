@@ -1,0 +1,181 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry whose affected product is Microsoft SharePoint, with a dateAdded value between 2026-08-14 and 2026-09-30.",
+    "resolution": "TRUE if a fetch of the CISA KEV JSON at the deadline shows any Microsoft SharePoint entry with dateAdded between 2026-08-14 and 2026-09-30 inclusive; otherwise FALSE.",
+    "failure_condition": "The KEV catalog fetched at the deadline contains no Microsoft SharePoint entry with a dateAdded value inside the 2026-08-14 to 2026-09-30 window.",
+    "domain": "cyber",
+    "deadline": "2026-10-02",
+    "probability": 33,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-08"
+    }
+  },
+  {
+    "statement": "The White House publicly names a specific individual as the next White House press secretary, acting or permanent, between 2026-08-14 and 2026-10-30.",
+    "resolution": "TRUE if AP or Reuters carries a White House announcement, dated between 2026-08-14 and 2026-10-30, naming a specific successor as press secretary; otherwise FALSE.",
+    "failure_condition": "As of the deadline, no White House announcement dated inside the window names any specific individual as the next press secretary.",
+    "domain": "political",
+    "deadline": "2026-11-03",
+    "probability": 33,
+    "citations": [
+      94,
+      98,
+      114
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-09"
+    }
+  },
+  {
+    "statement": "The Reform UK candidate is declared the winner of the Clacton by-election held on 2026-08-13.",
+    "resolution": "TRUE if the returning officer's declared result, as carried by BBC or PA Media, names the Reform UK candidate as the winner; otherwise FALSE.",
+    "failure_condition": "The officially declared Clacton result names a candidate of any other party, or an independent, as the winner.",
+    "domain": "political",
+    "deadline": "2026-08-21",
+    "probability": 33,
+    "citations": [
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-10"
+    }
+  },
+  {
+    "statement": "At least one reactor unit at Romania's Cernavoda nuclear plant records nonzero electricity output on the ENTSO-E transparency platform on at least one day between 2026-08-14 and 2026-09-30.",
+    "resolution": "TRUE if ENTSO-E actual generation per generation unit shows output above 0 MW for any Cernavoda unit on any date between 2026-08-14 and 2026-09-30; otherwise FALSE.",
+    "failure_condition": "ENTSO-E per-unit generation data show zero output from every Cernavoda unit on every day of the 2026-08-14 to 2026-09-30 window.",
+    "domain": "disaster",
+    "deadline": "2026-10-02",
+    "probability": 33,
+    "citations": [
+      79
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-11"
+    }
+  },
+  {
+    "statement": "The United States and Iran both publicly confirm a ceasefire or framework agreement between them, with confirmations dated between 2026-08-14 and 2026-10-30.",
+    "resolution": "TRUE if statements from both the US and Iranian governments confirming a ceasefire or framework agreement, each carried by AP, Reuters, or AFP, are dated between 2026-08-14 and 2026-10-30; otherwise FALSE.",
+    "failure_condition": "By the deadline, at least one of the two governments has issued no confirmation of any such agreement dated inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-03",
+    "probability": 33,
+    "citations": [
+      62,
+      68,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-12"
+    }
+  },
+  {
+    "statement": "The OHCHR human rights monitoring mission monthly update covering August 2026 reports a Ukraine civilian-killed total lower than the July 2026 total it states.",
+    "resolution": "TRUE if the published OHCHR HRMMU update covering August 2026 states an August civilian-killed total strictly below its stated July 2026 total; FALSE if equal, higher, or no update is published by the deadline.",
+    "failure_condition": "The August update states a civilian-killed total equal to or above its July figure, or no update covering August 2026 exists by the deadline.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-30",
+    "probability": 33,
+    "citations": [
+      86
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-13"
+    }
+  },
+  {
+    "statement": "Nick Reiner enters a plea in court to the indictment referenced in reporting dated 2026-08-13, with the plea entered between 2026-08-14 and 2026-10-15.",
+    "resolution": "TRUE if Los Angeles County court records, or reporting by AP, Reuters, or the Los Angeles Times, show a plea entered by Nick Reiner between 2026-08-14 and 2026-10-15; otherwise FALSE.",
+    "failure_condition": "No plea by Nick Reiner is entered in court at any point inside the 2026-08-14 to 2026-10-15 window.",
+    "domain": "crime/security",
+    "deadline": "2026-10-19",
+    "probability": 33,
+    "citations": [
+      37
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-14"
+    }
+  }
+]
