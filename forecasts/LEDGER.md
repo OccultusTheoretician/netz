@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 121720Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 131646Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past deadline, unresolved)
+Window: all-time · 594 issued across 14 forecaster arms · 538 open (7 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -14,19 +14,19 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
-| control/baserate | 89 | 89 | 0 | — | — | not computed | — | — | — |
+| control/baserate | 105 | 105 | 0 | — | — | not computed | — | — | — |
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-verbot] | 20 | 20 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[post-window] | 57 | 55 | 0 | — | — | not computed | — | — | — |
+| lmstudio/auto[post-window] | 64 | 62 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[pre-verbot] | 60 | 16 | 36 | 11 | 25 | 0.234 | 30.6% | 0.212 | -0.101 |
 | manual/fable | 45 | 40 | 5 | 2 | 3 | 0.198 | 40.0% | 0.240 | +0.174 |
 | manual/fable-5 | 38 | 38 | 0 | — | — | not computed | — | — | — |
-| manual/fable-5/unattested | 26 | 26 | 0 | — | — | not computed | — | — | — |
+| manual/fable-5/unattested | 33 | 33 | 0 | — | — | not computed | — | — | — |
 | manual/opus-5 | 74 | 74 | 0 | — | — | not computed | — | — | — |
-| manual/opus-5/unattested | 44 | 44 | 0 | — | — | not computed | — | — | — |
+| manual/opus-5/unattested | 49 | 49 | 0 | — | — | not computed | — | — | — |
 | manual/sonnet-5 | 45 | 43 | 2 | 1 | 1 | 0.265 | 50.0% | 0.250 | -0.060 |
-| manual/sonnet-5/unattested | 40 | 40 | 0 | — | — | not computed | — | — | — |
+| manual/sonnet-5/unattested | 44 | 44 | 0 | — | — | not computed | — | — | — |
 | operator/human | 6 | 3 | 0 | — | — | not computed | — | — | — |
 
 
@@ -56,6 +56,20 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | stated probability | n resolved | realized frequency |
 |---|---|---|
 | 40-60% | 2 | 50% |
+
+## PAST DEADLINE — RESOLVE THESE (`python kkr.py --resolve`)
+
+A projection appears here when its window has closed and it has not yet been adjudicated. That is not the same as neglect. Most criteria on this book ask whether an event *occurred* inside the window, not whether it was *reported* inside it — so an event confirmed on the 30th can satisfy a criterion that closed on the 28th, and resolving before the sources land would be guessing. Collation takes the time it takes, and the queue is printed rather than hidden while it does.
+
+The bound that keeps this from becoming a parking space: a row sitting here more than **fourteen days** past its deadline is a defect in this desk, not in the world. The count is published on this page so that it is visible when it happens.
+
+- **KKR-20260720-17** (50%, due 2026-08-12) The U.S. will announce a new round of sanctions against Iran’s Revolutionary Guard Corps by 2026-08-12, citing continued aggression in the region. — *resolves on:* A public statement from the U.S. Department of Treasury or State Department confirms the imposition of new sanctions on the IRGC, with the announcement date on or before 2026-08-12.
+- **KKR-20260722-02** (25%, due 2026-08-12) On 2026-08-12, the U.S. Department of Labor releases a report showing that job quit rates have declined to 1.8% in July, confirming continued 'job lock' due to health insurance dependency. — *resolves on:* The Bureau of Labor Statistics' monthly Job Openings and Labor Turnover Survey (JOLTS) report, published on or before 2026-08-12, shows a national job quit rate of 1.8% for July 2026.
+- **KKR-20260722-09** (65%, due 2026-08-12) Brent crude settles above 90 dollars on at least three trading days between 2026-07-23 and 2026-08-12 — *resolves on:* ICE Brent front-month official settlement price exceeds 90 dollars per barrel on three or more weekdays between 2026-07-23 and 2026-08-12, per exchange or EIA data
+- **KKR-20260804-01** (30%, due 2026-08-12) A drone attack on a Russian beach in Crimea kills at least seven people between 2026-08-03 and 2026-08-10. — *resolves on:* At least seven people are confirmed dead from a drone attack on a Russian beach in Crimea, as reported by at least two independently verified news outlets with distinct sources, including one from a hostile side.
+- **KKR-20260804-03** (40%, due 2026-08-12) At least one major wildfire in the U.S. Southwest results in over 1,000 evacuations between 2026-08-03 and 2026-08-10. — *resolves on:* At least one official public report from a U.S. state emergency management agency or a major news outlet confirms that over 1,000 people were evacuated due to a wildfire in the Southwest U.S. (Arizona, New Mexico, Nevada) during the event window.
+- **KKR-20260804-09** (25%, due 2026-08-12) A drone attack on a Russian beach in Crimea kills at least seven people between 2026-08-03 and 2026-08-10. — *resolves on:* At least seven people are confirmed dead from a drone attack on a Russian beach in Crimea, as reported by at least two independently verified news outlets with distinct sources, including one from a hostile side.
+- **KKR-20260804-11** (25%, due 2026-08-12) At least one major wildfire in the U.S. Southwest results in over 1,000 evacuations between 2026-08-03 and 2026-08-10. — *resolves on:* At least one official public report from a U.S. state emergency management agency or a major news outlet confirms that over 1,000 people were evacuated due to a wildfire in the Southwest U.S. (Arizona, New Mexico, Nevada) during the event window.
 
 ## OPEN PROJECTIONS
 
@@ -125,6 +139,8 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260807-04 | `lmstudio/auto` | 2026-08-07 | 2026-08-21 | 22% | political | A new political scandal involving Todd Blanche, U.S. Attorney General nominee, is confirmed by two independent outlets between 2026-08-10 and 2026-08-17. |
 | KKR-20260812-19 | `manual/sonnet-5/unattested` | 2026-08-12 | 2026-08-21 | 58% | political | Hakainde Hichilema will be declared winner of Zambia's 13 August 2026 presidential election outright in the first round, with more than 50 percent of valid votes, by 2026-08-21. |
 | KKR-20260812-36 | `control/baserate` | 2026-08-12 | 2026-08-21 | 33% | political | Hakainde Hichilema will be declared winner of Zambia's 13 August 2026 presidential election outright in the first round, with more than 50 percent of valid votes, by 2026-08-21. |
+| KKR-20260813-10 | `manual/fable-5/unattested` | 2026-08-13 | 2026-08-21 | 70% | political | The Reform UK candidate is declared the winner of the Clacton by-election held on 2026-08-13. |
+| KKR-20260813-17 | `control/baserate` | 2026-08-13 | 2026-08-21 | 33% | political | The Reform UK candidate is declared the winner of the Clacton by-election held on 2026-08-13. |
 | KKR-20260809-16 | `manual/sonnet-5` | 2026-08-09 | 2026-08-22 | 7% | crime/security | Between 2026-08-09 and 2026-08-20, an Irish court grants Daniel Kinahan bail pending trial, rather than remanding him in custody at every hearing. |
 | KKR-20260812-01 | `lmstudio/auto` | 2026-08-12 | 2026-08-22 | 32% | disaster | A major earthquake of magnitude 6.0 or higher occurs in the South Sandwich Islands region between 2026-08-13 and 2026-08-19, with a depth of less than 50km. |
 | KKR-20260812-02 | `lmstudio/auto` | 2026-08-12 | 2026-08-22 | 38% | cyber | A cyberattack exploiting the vulnerability CVE-2026-20349 in Cisco Secure Firewall ASA/FTD is confirmed by two independent sources (e.g., BleepingComputer, The Hacker News) between 2026-08-13 and 2026-08-19. |
@@ -168,6 +184,15 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260809-03 | `manual/fable-5` | 2026-08-09 | 2026-08-27 | 90% | military/conflict | At least one Russian missile or drone strike on Odesa city or oblast occurs between 2026-08-10 and 2026-08-24. |
 | KKR-20260811-26 | `manual/sonnet-5/unattested` | 2026-08-11 | 2026-08-27 | 55% | cyber | CISA will add a Microsoft SharePoint remote-code-execution entry to its Known Exploited Vulnerabilities catalog, with the event occurring between 2026-08-11 and 2026-08-25, per items 16 and 23. |
 | KKR-20260811-52 | `control/baserate` | 2026-08-11 | 2026-08-27 | 33% | cyber | CISA will add a Microsoft SharePoint remote-code-execution entry to its Known Exploited Vulnerabilities catalog, with the event occurring between 2026-08-11 and 2026-08-25, per items 16 and 23. |
+| KKR-20260813-01 | `lmstudio/auto` | 2026-08-13 | 2026-08-27 | 28% | military/conflict | A drone strike targeting a Russian military installation in Sevastopol occurs between 2026-08-21 and 2026-08-24, resulting in at least one confirmed casualty. |
+| KKR-20260813-02 | `lmstudio/auto` | 2026-08-13 | 2026-08-27 | 18% | disaster | A major earthquake of magnitude 6.0 or higher occurs in the Pacific Northwest between 2026-08-21 and 2026-08-24, as reported by USGS Significant Quakes. |
+| KKR-20260813-03 | `lmstudio/auto` | 2026-08-13 | 2026-08-27 | 22% | political | Iran announces a ceasefire with Israel in the Levant Theatre between 2026-08-21 and 2026-08-24, confirmed by at least two independent sources (BBC World and Al Jazeera). |
+| KKR-20260813-04 | `lmstudio/auto` | 2026-08-13 | 2026-08-27 | 30% | disaster | A wildfire in the Boise Mountains region, triggered by extreme heat, is confirmed by the NWS Flash Flood Warning system between 2026-08-21 and 2026-08-24. |
+| KKR-20260813-05 | `lmstudio/auto` | 2026-08-13 | 2026-08-27 | 38% | cyber | The White House confirms the launch of offensive hack-back operations against hostile state actors by a private cybersecurity firm between 2026-08-21 and 2026-08-24, as reported by BleepingComputer. |
+| KKR-20260813-06 | `lmstudio/auto` | 2026-08-13 | 2026-08-27 | 25% | disaster | A major oil spill from a tanker in the Strait of Hormuz is confirmed by Al Jazeera between 2026-08-21 and 2026-08-24, with damage to marine life reported. |
+| KKR-20260813-07 | `lmstudio/auto` | 2026-08-13 | 2026-08-27 | 35% | political | The European Parliament passes a resolution banning countries at war from hosting the Eurovision Song Contest between 2026-08-21 and 2026-08-24, as recorded in the European Parliament's official register. |
+| KKR-20260813-32 | `manual/sonnet-5/unattested` | 2026-08-13 | 2026-08-27 | 55% | cyber | CVE-2026-55040, the Microsoft SharePoint JWT authentication-bypass flaw under active exploitation via public proof-of-concept code as of 13 Aug 2026, will be added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-13 and 2026-08-25. |
+| KKR-20260813-36 | `control/baserate` | 2026-08-13 | 2026-08-27 | 33% | cyber | CVE-2026-55040, the Microsoft SharePoint JWT authentication-bypass flaw under active exploitation via public proof-of-concept code as of 13 Aug 2026, will be added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-13 and 2026-08-25. |
 | KKR-20260722-10 | `operator/human` | 2026-07-22 | 2026-08-28 | 50% | economics | US 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-08-28 |
 | KKR-20260727-28 | `manual/opus-5` | 2026-07-27 | 2026-08-28 | 45% | economics/markets | ICE Brent front-month crude futures settle below 85.00 US dollars per barrel on 2026-08-28. |
 | KKR-20260728-02 | `manual/opus-5` | 2026-07-28 | 2026-08-28 | 25% | economics/markets | The Nasdaq Composite closes below 23,000 on 2026-08-28. |
@@ -211,6 +236,8 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260807-16 | `manual/sonnet-5` | 2026-08-07 | 2026-09-01 | 22% | military_conflict | Houthi forces will be reported to have captured or besieged a district-level administrative center in Marib or Hodeidah governorate, between 2026-08-14 and 2026-08-28. |
 | KKR-20260807-17 | `manual/sonnet-5` | 2026-08-07 | 2026-09-01 | 42% | military_conflict | The ELN will be reported responsible for an attack killing at least one Colombian security-force member, between 2026-08-14 and 2026-08-28. |
 | KKR-20260811-06 | `lmstudio/auto` | 2026-08-11 | 2026-09-01 | 15% | political | Between 2026-08-27 and 2026-08-30, the European Parliament will vote to abolish the death penalty for all crimes, as confirmed by a press release from the European Parliament. |
+| KKR-20260813-34 | `manual/sonnet-5/unattested` | 2026-08-13 | 2026-09-01 | 85% | military/conflict | Between 2026-08-14 and 2026-08-28, Ukrainian forces will conduct a further confirmed drone or missile strike on Russian Black Sea export or naval infrastructure, at a port such as Novorossiysk, Tuapse, or another Black Sea facility. |
+| KKR-20260813-38 | `control/baserate` | 2026-08-13 | 2026-09-01 | 33% | military/conflict | Between 2026-08-14 and 2026-08-28, Ukrainian forces will conduct a further confirmed drone or missile strike on Russian Black Sea export or naval infrastructure, at a port such as Novorossiysk, Tuapse, or another Black Sea facility. |
 | KKR-20260806-34 | `lmstudio/auto` | 2026-08-06 | 2026-09-02 | 20% | cyber | Between 2026-08-24 and 2026-08-31, a confirmed cyberattack using the Khunt post-exploitation toolkit will be reported by at least two independent sources with differing geopolitical affiliations. |
 | KKR-20260809-02 | `lmstudio/auto` | 2026-08-09 | 2026-09-02 | 32% | cyber | Between 2026-08-27 and 2026-08-30, a new cyberattack targeting a U.S. government system is reported by two wire services with independent verification, and the CISA KEV catalog includes the vulnerability with a date-added value in that window. |
 | KKR-20260810-22 | `manual/sonnet-5` | 2026-08-10 | 2026-09-02 | 30% | military_conflict | Iran will seize, board, or fire upon a commercial vessel transiting the Strait of Hormuz between 2026-08-17 and 2026-08-31. |
@@ -285,6 +312,8 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260810-11 | `manual/fable-5` | 2026-08-10 | 2026-09-15 | 15% | economics/markets | ICE Brent crude front-month futures settle above 110.00 USD per barrel on at least one trading day between 2026-08-11 and 2026-09-11. |
 | KKR-20260811-10 | `manual/fable-5/unattested` | 2026-08-11 | 2026-09-15 | 92% | military/conflict | At least one Russian missile or drone strike on Kyiv city between 2026-08-12 and 2026-09-11 is acknowledged by Ukrainian officials and reported by at least two international wire services. |
 | KKR-20260811-36 | `control/baserate` | 2026-08-11 | 2026-09-15 | 33% | military/conflict | At least one Russian missile or drone strike on Kyiv city between 2026-08-12 and 2026-09-11 is acknowledged by Ukrainian officials and reported by at least two international wire services. |
+| KKR-20260813-35 | `manual/sonnet-5/unattested` | 2026-08-13 | 2026-09-15 | 32% | economics/markets | WTI crude oil, the NYMEX front-month futures contract, will settle at or above 85.00 USD per barrel at the close of trading on 2026-09-15. |
+| KKR-20260813-39 | `control/baserate` | 2026-08-13 | 2026-09-15 | 18% | economics/markets | WTI crude oil, the NYMEX front-month futures contract, will settle at or above 85.00 USD per barrel at the close of trading on 2026-09-15. |
 | KKR-20260801-02 | `lmstudio/auto` | 2026-08-01 | 2026-09-16 | 15% | military/conflict | Between 2026-09-09 and 2026-09-16, Iran will launch a missile strike on a U.S. military installation in the Persian Gulf region. |
 | KKR-20260801-15 | `manual/sonnet-5/unattested` | 2026-08-01 | 2026-09-16 | 28% | economics/markets | The Federal Reserve will cut the federal funds rate at the conclusion of its September 15-16, 2026 FOMC meeting. |
 | KKR-20260729-02 | `lmstudio/auto` | 2026-07-29 | 2026-09-17 | 25% | economics/markets | Between 2026-09-10 and 2026-09-17, the S&P 500 index closes below 7,000 points for three consecutive trading days. |
@@ -294,9 +323,17 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260809-15 | `manual/sonnet-5` | 2026-08-09 | 2026-09-17 | 92% | military/conflict | Between 2026-08-16 and 2026-09-15, at least one additional Russian missile, drone, or artillery strike on Odesa oblast, Ukraine is reported and corroborated by sources on both the Russian and Ukrainian sides. |
 | KKR-20260727-04 | `kfk/halflife` | 2026-07-27 | 2026-09-18 | 50% | military/conflict | Major General David W. Gardner will no longer be named as commanding officer of the 101st Airborne Division (Air Assault) in the source of record on 2026-09-18. |
 | KKR-20260807-14 | `manual/opus-5` | 2026-08-07 | 2026-09-18 | 45% | disaster | The Copernicus Climate Change Service ranks August 2026 among the three warmest Augusts on record for Europe. |
+| KKR-20260813-26 | `manual/opus-5/unattested` | 2026-08-13 | 2026-09-18 | 22% | disaster | USGS records at least one magnitude 6.0 or greater earthquake within 250 km of the epicenter of event us6000tjl2, with origin time between 2026-08-17 and 2026-09-14. |
+| KKR-20260813-31 | `control/baserate` | 2026-08-13 | 2026-09-18 | 33% | disaster | USGS records at least one magnitude 6.0 or greater earthquake within 250 km of the epicenter of event us6000tjl2, with origin time between 2026-08-17 and 2026-09-14. |
+| KKR-20260813-22 | `manual/opus-5/unattested` | 2026-08-13 | 2026-09-22 | 80% | cyber | Between 2026-08-14 and 2026-09-18, CISA adds at least one Microsoft SharePoint Server CVE to the Known Exploited Vulnerabilities catalog. |
+| KKR-20260813-27 | `control/baserate` | 2026-08-13 | 2026-09-22 | 33% | cyber | Between 2026-08-14 and 2026-09-18, CISA adds at least one Microsoft SharePoint Server CVE to the Known Exploited Vulnerabilities catalog. |
 | KKR-20260812-11 | `manual/opus-5/unattested` | 2026-08-12 | 2026-09-23 | 65% | military/conflict | North Korea conducts at least one further ballistic missile launch between 2026-08-13 and 2026-09-20. |
 | KKR-20260812-28 | `control/baserate` | 2026-08-12 | 2026-09-23 | 33% | military/conflict | North Korea conducts at least one further ballistic missile launch between 2026-08-13 and 2026-09-20. |
 | KKR-20260809-07 | `manual/opus-5` | 2026-08-09 | 2026-09-24 | 25% | military/conflict | Iran and Oman publicly announce a concluded arrangement governing commercial transit through the Strait of Hormuz, announced between 2026-08-11 and 2026-09-20. |
+| KKR-20260813-24 | `manual/opus-5/unattested` | 2026-08-13 | 2026-09-24 | 38% | military_conflict | Between 2026-08-17 and 2026-09-20, Iranian forces seize, board, or detain at least one commercial vessel in the Strait of Hormuz or the Gulf of Oman. |
+| KKR-20260813-29 | `control/baserate` | 2026-08-13 | 2026-09-24 | 33% | military_conflict | Between 2026-08-17 and 2026-09-20, Iranian forces seize, board, or detain at least one commercial vessel in the Strait of Hormuz or the Gulf of Oman. |
+| KKR-20260813-33 | `manual/sonnet-5/unattested` | 2026-08-13 | 2026-09-24 | 30% | cyber | A specific victim organization of the City-Forum data-theft campaign against Salesforce Experience Cloud and ServiceNow portals will be publicly named, by the victim, by Reco, or by another named security-research firm, between 2026-08-13 and 2026-09-22. |
+| KKR-20260813-37 | `control/baserate` | 2026-08-13 | 2026-09-24 | 33% | cyber | A specific victim organization of the City-Forum data-theft campaign against Salesforce Experience Cloud and ServiceNow portals will be publicly named, by the victim, by Reco, or by another named security-research firm, between 2026-08-13 and 2026-09-22. |
 | KKR-20260727-02 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | Major General Brandon R. Tegtmeier will no longer be named as commanding officer of the 82nd Airborne Division in the source of record on 2026-09-25. |
 | KKR-20260727-05 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | Lieutenant General Benedikt Roos will no longer be named as commanding officer of the Swiss Armed Forces in the source of record on 2026-09-25. |
 | KKR-20260727-06 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | Lieutenant General Sullay Ibrahim Sesay will no longer be named as commanding officer of the Sierra Leone - national armed forces in the source of record on 2026-09-25. |
@@ -340,6 +377,10 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260801-16 | `manual/sonnet-5/unattested` | 2026-08-01 | 2026-09-30 | 32% | economics/markets | WTI crude oil front-month futures will settle above 95.00 USD per barrel on at least one trading day between 2026-08-08 and 2026-09-30. |
 | KKR-20260801-21 | `manual/sonnet-5/unattested` | 2026-08-01 | 2026-09-30 | 55% | military/conflict | A commercial oil tanker will be attacked in the Strait of Hormuz or Gulf of Oman, reported by Reuters, AP, or a maritime security firm, between 2026-08-08 and 2026-09-30. |
 | KKR-20260801-23 | `manual/fable-5/unattested` | 2026-08-01 | 2026-09-30 | 55% | military/conflict | US or Israeli forces strike Iranian oil or gas export infrastructure at Kharg Island, Bandar Abbas, or Asaluyeh between 2026-08-02 and 2026-09-30. |
+| KKR-20260813-13 | `manual/fable-5/unattested` | 2026-08-13 | 2026-09-30 | 60% | military/conflict | The OHCHR human rights monitoring mission monthly update covering August 2026 reports a Ukraine civilian-killed total lower than the July 2026 total it states. |
+| KKR-20260813-20 | `control/baserate` | 2026-08-13 | 2026-09-30 | 33% | military/conflict | The OHCHR human rights monitoring mission monthly update covering August 2026 reports a Ukraine civilian-killed total lower than the July 2026 total it states. |
+| KKR-20260813-23 | `manual/opus-5/unattested` | 2026-08-13 | 2026-10-01 | 85% | military_conflict | Between 2026-08-17 and 2026-09-27, Ukrainian forces strike a Russian Black Sea port, oil terminal, or grain terminal, and both sides acknowledge the strike. |
+| KKR-20260813-28 | `control/baserate` | 2026-08-13 | 2026-10-01 | 33% | military_conflict | Between 2026-08-17 and 2026-09-27, Ukrainian forces strike a Russian Black Sea port, oil terminal, or grain terminal, and both sides acknowledge the strike. |
 | KKR-20260804-19 | `manual/opus-5/unattested` | 2026-08-04 | 2026-10-02 | 45% | economic | Front-month Brent crude settles at or below 75.00 US dollars per barrel on at least one trading day between 2026-08-10 and 2026-09-30. |
 | KKR-20260804-21 | `manual/opus-5/unattested` | 2026-08-04 | 2026-10-02 | 45% | cyber | CISA adds a CVE affecting N-able N-central to the Known Exploited Vulnerabilities catalog between 2026-08-10 and 2026-09-30. |
 | KKR-20260804-22 | `manual/opus-5/unattested` | 2026-08-04 | 2026-10-02 | 30% | cyber | The UK Information Commissioners Office confirms a formal investigation or enforcement action over the PNLD breach between 2026-08-10 and 2026-09-30. |
@@ -360,6 +401,10 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260812-07 | `manual/fable-5/unattested` | 2026-08-12 | 2026-10-02 | 30% | cyber | A Microsoft Defender vulnerability is added to the CISA KEV catalog with a date-added value between 2026-08-13 and 2026-09-30. |
 | KKR-20260812-22 | `control/baserate` | 2026-08-12 | 2026-10-02 | 33% | military/conflict | At least one attack on a commercial vessel occurs in the Red Sea, Bab el-Mandeb, or Gulf of Aden between 2026-08-13 and 2026-09-30. |
 | KKR-20260812-24 | `control/baserate` | 2026-08-12 | 2026-10-02 | 33% | cyber | A Microsoft Defender vulnerability is added to the CISA KEV catalog with a date-added value between 2026-08-13 and 2026-09-30. |
+| KKR-20260813-08 | `manual/fable-5/unattested` | 2026-08-13 | 2026-10-02 | 65% | cyber | The CISA Known Exploited Vulnerabilities catalog adds at least one entry whose affected product is Microsoft SharePoint, with a dateAdded value between 2026-08-14 and 2026-09-30. |
+| KKR-20260813-11 | `manual/fable-5/unattested` | 2026-08-13 | 2026-10-02 | 75% | disaster | At least one reactor unit at Romania's Cernavoda nuclear plant records nonzero electricity output on the ENTSO-E transparency platform on at least one day between 2026-08-14 and 2026-09-30. |
+| KKR-20260813-15 | `control/baserate` | 2026-08-13 | 2026-10-02 | 33% | cyber | The CISA Known Exploited Vulnerabilities catalog adds at least one entry whose affected product is Microsoft SharePoint, with a dateAdded value between 2026-08-14 and 2026-09-30. |
+| KKR-20260813-18 | `control/baserate` | 2026-08-13 | 2026-10-02 | 33% | disaster | At least one reactor unit at Romania's Cernavoda nuclear plant records nonzero electricity output on the ENTSO-E transparency platform on at least one day between 2026-08-14 and 2026-09-30. |
 | KKR-20260726-14 | `lmstudio/auto` | 2026-07-26 | 2026-10-04 | 35% | disaster | France experiences a new major wildfire in the Provence-Alpes-Côte d'Azur region between 2026-10-01 and 2026-10-04, forcing evacuations of at least 10,000 people. |
 | KKR-20260727-31 | `manual/opus-5` | 2026-07-27 | 2026-10-05 | 55% | political | Labour leads Reform UK in at least two nationally published Great Britain voting-intention polls fielded entirely within September 2026. |
 | KKR-20260802-03 | `lmstudio/auto` | 2026-08-02 | 2026-10-05 | 40% | disaster | On 2026-10-05, a wildfire in Spokane, Washington, will lead to the evacuation of at least 5,000 residents, confirmed by a state emergency management agency. |
@@ -381,6 +426,8 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260811-25 | `manual/opus-5/unattested` | 2026-08-11 | 2026-10-05 | 22% | disaster | The USGS catalog lists at least one magnitude 6.0 or greater earthquake within 300 km of USGS event us6000tjl2, with origin time between 2026-08-12 and 2026-09-30. |
 | KKR-20260811-47 | `control/baserate` | 2026-08-11 | 2026-10-05 | 33% | military_conflict | United States and Iranian officials hold a publicly acknowledged direct bilateral meeting between 2026-08-12 and 2026-09-30. |
 | KKR-20260811-51 | `control/baserate` | 2026-08-11 | 2026-10-05 | 33% | disaster | The USGS catalog lists at least one magnitude 6.0 or greater earthquake within 300 km of USGS event us6000tjl2, with origin time between 2026-08-12 and 2026-09-30. |
+| KKR-20260813-25 | `manual/opus-5/unattested` | 2026-08-13 | 2026-10-05 | 74% | political | A named successor to Karoline Leavitt as White House press secretary is publicly announced between 2026-08-14 and 2026-09-30. |
+| KKR-20260813-30 | `control/baserate` | 2026-08-13 | 2026-10-05 | 33% | political | A named successor to Karoline Leavitt as White House press secretary is publicly announced between 2026-08-14 and 2026-09-30. |
 | KKR-20260808-11 | `manual/fable-5` | 2026-08-08 | 2026-10-06 | 25% | political | The incumbent governor of Rhode Island is defeated in a gubernatorial primary held between 2026-09-01 and 2026-09-30. |
 | KKR-20260809-05 | `manual/fable-5` | 2026-08-09 | 2026-10-12 | 92% | disaster | The USGS earthquake catalog lists at least one magnitude 7.0 or greater earthquake worldwide with origin time between 2026-08-10 and 2026-10-08. |
 | KKR-20260808-10 | `manual/fable-5` | 2026-08-08 | 2026-10-13 | 55% | cyber | The CISA Known Exploited Vulnerabilities catalog adds an entry naming Metabase as vendor or product with a date-added value between 2026-08-09 and 2026-10-09. |
@@ -401,6 +448,8 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260812-15 | `manual/opus-5/unattested` | 2026-08-12 | 2026-10-19 | 28% | disaster | The USGS earthquake catalog records at least one magnitude 6.0 or greater earthquake located in Colombia with origin time between 2026-08-13 and 2026-10-15. |
 | KKR-20260812-29 | `control/baserate` | 2026-08-12 | 2026-10-19 | 33% | military/conflict | Russian forces seize or detain at least one commercial vessel flagged in or operated from an EU member state between 2026-08-13 and 2026-10-15. |
 | KKR-20260812-32 | `control/baserate` | 2026-08-12 | 2026-10-19 | 33% | disaster | The USGS earthquake catalog records at least one magnitude 6.0 or greater earthquake located in Colombia with origin time between 2026-08-13 and 2026-10-15. |
+| KKR-20260813-14 | `manual/fable-5/unattested` | 2026-08-13 | 2026-10-19 | 82% | crime/security | Nick Reiner enters a plea in court to the indictment referenced in reporting dated 2026-08-13, with the plea entered between 2026-08-14 and 2026-10-15. |
+| KKR-20260813-21 | `control/baserate` | 2026-08-13 | 2026-10-19 | 33% | crime/security | Nick Reiner enters a plea in court to the indictment referenced in reporting dated 2026-08-13, with the plea entered between 2026-08-14 and 2026-10-15. |
 | KKR-20260729-03 | `lmstudio/auto` | 2026-07-29 | 2026-10-20 | 15% | disaster | On or before 2026-10-20, a major earthquake of magnitude 7.0 or higher strikes Japan, resulting in over 1,000 fatalities. |
 | KKR-20260804-60 | `manual/opus-5/unattested` | 2026-08-04 | 2026-10-20 | 85% | political | The United States Senate confirms Todd Blanche as Attorney General in a recorded floor vote held between 2026-08-05 and 2026-10-16. |
 | KKR-20260811-19 | `manual/opus-5/unattested` | 2026-08-11 | 2026-10-20 | 30% | cyber | The CISA KEV catalog adds at least one new Microsoft SharePoint Server CVE, with dateAdded between 2026-08-12 and 2026-10-16. |
@@ -461,6 +510,10 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 | KKR-20260811-44 | `control/baserate` | 2026-08-11 | 2026-11-03 | 33% | cyber | The CISA Known Exploited Vulnerabilities catalog adds at least one CVE whose vendorProject is Fortinet or Schneider Electric, with dateAdded between 2026-08-12 and 2026-10-30. |
 | KKR-20260812-13 | `manual/opus-5/unattested` | 2026-08-12 | 2026-11-03 | 45% | cyber | The CISA Known Exploited Vulnerabilities catalog gains an entry naming Microsoft SharePoint Server or VMware vCenter Server with a date-added value between 2026-08-13 and 2026-10-30. |
 | KKR-20260812-30 | `control/baserate` | 2026-08-12 | 2026-11-03 | 33% | cyber | The CISA Known Exploited Vulnerabilities catalog gains an entry naming Microsoft SharePoint Server or VMware vCenter Server with a date-added value between 2026-08-13 and 2026-10-30. |
+| KKR-20260813-09 | `manual/fable-5/unattested` | 2026-08-13 | 2026-11-03 | 85% | political | The White House publicly names a specific individual as the next White House press secretary, acting or permanent, between 2026-08-14 and 2026-10-30. |
+| KKR-20260813-12 | `manual/fable-5/unattested` | 2026-08-13 | 2026-11-03 | 20% | military/conflict | The United States and Iran both publicly confirm a ceasefire or framework agreement between them, with confirmations dated between 2026-08-14 and 2026-10-30. |
+| KKR-20260813-16 | `control/baserate` | 2026-08-13 | 2026-11-03 | 33% | political | The White House publicly names a specific individual as the next White House press secretary, acting or permanent, between 2026-08-14 and 2026-10-30. |
+| KKR-20260813-19 | `control/baserate` | 2026-08-13 | 2026-11-03 | 33% | military/conflict | The United States and Iran both publicly confirm a ceasefire or framework agreement between them, with confirmations dated between 2026-08-14 and 2026-10-30. |
 | KKR-20260806-10 | `manual/fable-5/unattested` | 2026-08-06 | 2026-11-04 | 60% | military/conflict | A Russian missile or drone strike on Kyiv city kills at least 5 people in a single attack between 2026-08-06 and 2026-10-31, per Ukrainian official casualty statements. |
 | KKR-20260806-25 | `control/baserate` | 2026-08-06 | 2026-11-04 | 31% | military/conflict | A Russian missile or drone strike on Kyiv city kills at least 5 people in a single attack between 2026-08-06 and 2026-10-31, per Ukrainian official casualty statements. |
 | KKR-20260809-04 | `manual/fable-5` | 2026-08-09 | 2026-11-04 | 35% | military/conflict | An attack on or seizure of a commercial vessel in the Strait of Hormuz or Gulf of Oman, attributed to Iran or Iran-aligned forces, occurs between 2026-08-10 and 2026-10-31. |
@@ -611,7 +664,7 @@ Window: all-time · 555 issued across 14 forecaster arms · 499 open (0 past dea
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*13 of 555 issued (2.3%) have been voided.*
+*13 of 594 issued (2.2%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists

@@ -1,0 +1,129 @@
+[
+  {
+    "statement": "Between 2026-08-14 and 2026-09-18, CISA adds at least one Microsoft SharePoint Server CVE to the Known Exploited Vulnerabilities catalog.",
+    "resolution": "The CISA KEV catalog JSON contains an entry with vendorProject Microsoft and a product string naming SharePoint, carrying a dateAdded value between 2026-08-14 and 2026-09-18 inclusive.",
+    "failure_condition": "No KEV entry naming SharePoint carries a dateAdded value inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-09-22",
+    "probability": 33,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-22"
+    }
+  },
+  {
+    "statement": "Between 2026-08-17 and 2026-09-27, Ukrainian forces strike a Russian Black Sea port, oil terminal, or grain terminal, and both sides acknowledge the strike.",
+    "resolution": "A Russian regional governor or the Russian Defence Ministry and a Ukrainian military or intelligence source each describe a strike on a Russian Black Sea port facility occurring inside the window, carried by Reuters or AFP.",
+    "failure_condition": "No strike on a Russian Black Sea port facility inside the window draws acknowledgement from both a Russian and a Ukrainian official source.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-01",
+    "probability": 33,
+    "citations": [
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-23"
+    }
+  },
+  {
+    "statement": "Between 2026-08-17 and 2026-09-20, Iranian forces seize, board, or detain at least one commercial vessel in the Strait of Hormuz or the Gulf of Oman.",
+    "resolution": "UKMTO issues an incident advisory and Reuters or Lloyds List reports an Iranian seizure, boarding, or detention of a commercial vessel in those waters occurring inside the window.",
+    "failure_condition": "No Iranian seizure, boarding, or detention of a commercial vessel occurs in those waters inside the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-09-24",
+    "probability": 33,
+    "citations": [
+      67,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-24"
+    }
+  },
+  {
+    "statement": "A named successor to Karoline Leavitt as White House press secretary is publicly announced between 2026-08-14 and 2026-09-30.",
+    "resolution": "The White House or the President names a specific individual as press secretary or acting press secretary inside the window, reported by both the Associated Press and Reuters.",
+    "failure_condition": "No individual is named to the press secretary post inside the window.",
+    "domain": "political",
+    "deadline": "2026-10-05",
+    "probability": 33,
+    "citations": [
+      94,
+      114
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-25"
+    }
+  },
+  {
+    "statement": "USGS records at least one magnitude 6.0 or greater earthquake within 250 km of the epicenter of event us6000tjl2, with origin time between 2026-08-17 and 2026-09-14.",
+    "resolution": "A USGS ComCat query returns one or more events of magnitude 6.0 or above within 250 km of the us6000tjl2 epicenter with origin time inside the window.",
+    "failure_condition": "ComCat returns no magnitude 6.0 or greater event meeting both the distance and origin-time criteria.",
+    "domain": "disaster",
+    "deadline": "2026-09-18",
+    "probability": 33,
+    "citations": [
+      26
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-13T16:46:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260813-26"
+    }
+  }
+]
