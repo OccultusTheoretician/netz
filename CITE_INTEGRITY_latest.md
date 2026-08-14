@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-08-13T09:44:33Z · ledger `ledger.json` · 555 rows in scope
+Generated 2026-08-14T09:38:02Z · ledger `ledger.json` · 594 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,20 +12,20 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **554**
+- rows audited: **593**
 - scope limitation (no resolvable source report): **1**
-- defective: **63** (11.4% of audited)
-- rows whose citation number does not identify a unique item: **293** (max candidates behind one number: 8)
-  - AMBIGUOUS_REF: 293
+- defective: **65** (11.0% of audited)
+- rows whose citation number does not identify a unique item: **294** (max candidates behind one number: 8)
+  - AMBIGUOUS_REF: 294
   - UNSUPPORTED: 44
-  - DEADWEIGHT: 17
+  - DEADWEIGHT: 19
   - NO_CITES: 16
   - SHOTGUN: 7
 
 ## The number that matters
 
-Rows determined **KEYLESS**: 87
-Of those, citations defective: **11** (12.6%)
+Rows determined **KEYLESS**: 96
+Of those, citations defective: **11** (11.5%)
 
 A keyless determination says the claim went beyond its declared priors. Where the priors are unreadable, that determination was made against nothing. These rows are listed so the keyless count can be stated with its defect rate attached rather than as a clean integer.
 
@@ -47,15 +47,15 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| lmstudio/auto | 137 | 28 | 20% |
+| lmstudio/auto | 144 | 28 | 19% |
 | manual/opus-5 | 74 | 12 | 16% |
+| control/baserate | 105 | 7 | 7% |
 | manual/fable | 45 | 6 | 13% |
-| control/baserate | 89 | 6 | 7% |
-| manual/opus-5/unattested | 44 | 5 | 11% |
+| manual/opus-5/unattested | 49 | 5 | 10% |
 | manual/fable-5 | 38 | 2 | 5% |
-| manual/sonnet-5/unattested | 40 | 2 | 5% |
+| manual/sonnet-5/unattested | 44 | 2 | 5% |
+| manual/fable-5/unattested | 33 | 2 | 6% |
 | manual/sonnet-5 | 45 | 1 | 2% |
-| manual/fable-5/unattested | 26 | 1 | 4% |
 | operator/human | 6 | 0 | 0% |
 | kfk/halflife | 10 | 0 | 0% |
 
