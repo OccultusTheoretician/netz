@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-15T19:23:44Z",
+  "as_of": "2026-08-15T23:06:41Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -417,13 +417,28 @@
       "date_issued": "2026-07-20",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-20_2131.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] US Treasury OFAC press release sb0598 dated Aug 7 2026 announces sanctions on cryptocurrency exchanges and a network funding the Iranian IRGC under counterterrorism authorities, announced before the Aug 12 deadline.",
       "failure_condition": "the condition stated in this entry's resolution basis — A public statement from the U.S. Department of Treasury or State Department confirms the imposition of new sanctions on the IRGC, with the announcement date on or before 2026-08-12 — is not met on or before 2026-08-12; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "US Treasury OFAC press release sb0598 dated Aug 7 2026 announces sanctions on cryptocurrency exchanges and a network funding the Iranian IRGC under counterterrorism authorities, announced before the Aug 12 deadline."
+      }
     },
     {
       "statement": "A magnitude 6.0 or higher earthquake will be reported in the Pacific Northwest (Washington, Oregon, or Northern California) with at least one fatality by 2026-09-15.",
@@ -955,13 +970,28 @@
       "date_issued": "2026-07-22",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-22_0409.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] BLS JOLTS for June 2026, released Aug 4 2026, put the national quits rate at 2.0 percent; BLS scheduled the July 2026 JOLTS for Sept 1 2026, so no report covering July existed by the Aug 12 deadline.",
       "failure_condition": "the condition stated in this entry's resolution basis — The Bureau of Labor Statistics' monthly Job Openings and Labor Turnover Survey (JOLTS) report, published on or before 2026-08-12, shows a national job quit rate of 1.8% for July 2026 — is not met on or before 2026-08-12; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "BLS JOLTS for June 2026, released Aug 4 2026, put the national quits rate at 2.0 percent; BLS scheduled the July 2026 JOLTS for Sept 1 2026, so no report covering July existed by the Aug 12 deadline."
+      }
     },
     {
       "statement": "Between 2026-07-29 and 2026-08-02, the Japan Meteorological Agency issues a new heatwave alert for Tokyo and Osaka, with temperatures exceeding 40°C for three consecutive days.",
@@ -1109,13 +1139,28 @@
       "date_issued": "2026-07-22",
       "model": "operator/human",
       "source_report": "battle_report_2026-07-22_0416.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Bloomberg reported Brent settled near 97 dollars on Fri Jul 24 2026 after a roughly 4 percent drop, implying a Jul 23 settlement near 101 after Brent topped 100 that week; Fortune daily trackers show Brent at 90.43 on Jul 27, about 92.65 around Jul 30 and 92.27 on Jul 31 before easing through August.",
       "failure_condition": "the condition stated in this entry's resolution basis — ICE Brent front-month official settlement price exceeds 90 dollars per barrel on three or more weekdays between 2026-07-23 and 2026-08-12, per exchange or EIA data — is not met on or before 2026-08-12; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "no price level held at seal — did not check Brent and did not read model output into the call; the forecast rests on the stated causal chain (continued war lifts oil, serving Russian budget needs). Confound: the daily collation carries oil-direction headlines, so ambient direction was available; the specific 90-dollar threshold and three-settle count were not, and neither is deducible from directi",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Bloomberg reported Brent settled near 97 dollars on Fri Jul 24 2026 after a roughly 4 percent drop, implying a Jul 23 settlement near 101 after Brent topped 100 that week; Fortune daily trackers show Brent at 90.43 on Jul 27, about 92.65 around Jul 30 and 92.27 on Jul 31 before easing through August."
+      }
     },
     {
       "statement": "US 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-08-28",
@@ -1241,13 +1286,28 @@
       "date_issued": "2026-07-22",
       "model": "manual/fable",
       "source_report": "battle_report_2026-07-22_0416.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Same price path as KKR-20260722-09 over a window extended to Aug 14: Bloomberg-reported settlements near 101 and 97 on Jul 23-24 and Fortune tracker readings of 90.43 to 92.65 across Jul 27-31 give three or more weekdays above 90.",
       "failure_condition": "the condition stated in this entry's resolution basis — ICE Brent front-month official settlement prices exceed 90 dollars on three or more weekdays within the window per exchange or EIA data — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Same price path as KKR-20260722-09 over a window extended to Aug 14: Bloomberg-reported settlements near 101 and 97 on Jul 23-24 and Fortune tracker readings of 90.43 to 92.65 across Jul 27-31 give three or more weekdays above 90."
+      }
     },
     {
       "statement": "The United States 10-year Treasury yield closes above 4.80 percent on at least one trading day between 2026-07-23 and 2026-09-30",
@@ -1411,13 +1471,28 @@
       "date_issued": "2026-07-24",
       "model": "manual/fable",
       "source_report": "battle_report_2026-07-24_1503.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Market coverage shows WTI peaked near 92 to 93.45 dollars in late July 2026 before a Jul 27 selloff of more than seven percent, and traded in the 80s thereafter; no CME front-month settlement at or above 95 between Jul 27 and Aug 14 appears in any reviewed source.",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if any front-month WTI daily settlement reported by CME or major financial press between 2026-07-27 and 2026-08-14 is 95.00 USD or higher; else FALSE — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Market coverage shows WTI peaked near 92 to 93.45 dollars in late July 2026 before a Jul 27 selloff of more than seven percent, and traded in the 80s thereafter; no CME front-month settlement at or above 95 between Jul 27 and Aug 14 appears in any reviewed source."
+      }
     },
     {
       "statement": "The 30-year US Treasury yield closes at or above 6.00 percent on at least one trading day between 2026-07-27 and 2026-10-30.",
@@ -1623,13 +1698,28 @@
       "date_issued": "2026-07-25",
       "model": "manual/fable",
       "source_report": "battle_report_2026-07-25_1714.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Bloomberg reported Brent retreated from 100 dollars and settled near 97 on Jul 24 2026, before the window opened; within Jul 27 to Aug 14 the highest observed Brent levels were around 92 to 93 in late July per Fortune trackers, fading to 87-88 by mid August, with no settlement at or above 100.",
       "failure_condition": "the condition stated in this entry's resolution basis — TRUE if any ICE Brent front-month official daily settlement reported by ICE or major financial press between 2026-07-27 and 2026-08-14 is 100.00 USD or higher; else FALSE — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Bloomberg reported Brent retreated from 100 dollars and settled near 97 on Jul 24 2026, before the window opened; within Jul 27 to Aug 14 the highest observed Brent levels were around 92 to 93 in late July per Fortune trackers, fading to 87-88 by mid August, with no settlement at or above 100."
+      }
     },
     {
       "statement": "The S&P 500 closes at or below 7000 on at least one trading day between 2026-07-27 and 2026-09-30.",
@@ -2140,13 +2230,28 @@
       "date_issued": "2026-07-26",
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-07-26_1500.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Late July and early August 2026 reporting shows Romania responded to drone incursions bilaterally: ambassador summoned, protest note to Russia, a Russian diplomat expelled; the only Romanian UNSC protest letter located is S/2026/447 dated May 29 2026, and searches surface no new letter published in the UN document system between Aug 10 and Aug 13.",
       "failure_condition": "the condition stated in this entry's resolution basis — A formal protest letter from Romania to the UN Security Council, citing Russian drone incursions, is published in the UN official document system between 2026-08-10 and 2026-08-13 — is not met on or before 2026-08-13; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Late July and early August 2026 reporting shows Romania responded to drone incursions bilaterally: ambassador summoned, protest note to Russia, a Russian diplomat expelled; the only Romanian UNSC protest letter located is S/2026/447 dated May 29 2026, and searches surface no new letter published in the UN document system between Aug 10 and Aug 13."
+      }
     },
     {
       "statement": "France experiences a new major wildfire in the Provence-Alpes-Côte d'Azur region between 2026-10-01 and 2026-10-04, forcing evacuations of at least 10,000 people.",
@@ -2317,13 +2422,28 @@
       "model": "kfk/halflife",
       "source_report": "battle_report_2026-07-26_1500.md",
       "source_packet": "kkr_packet_2026-07-26_1623.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] The named army.mil article, retrieved via search cache and corroborated by DVIDS coverage from mid June 2026, names Lt. Gen. Gregory Anderson as commanding general of XVIII Airborne Corps in its text about the senior enlisted adviser change, and no reporting indicates a corps change of command before Aug 14 2026.",
       "failure_condition": "the same officer is named, as read from the resolution basis on 2026-08-14; that reading scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "The named army.mil article, retrieved via search cache and corroborated by DVIDS coverage from mid June 2026, names Lt. Gen. Gregory Anderson as commanding general of XVIII Airborne Corps in its text about the senior enlisted adviser change, and no reporting indicates a corps change of command before Aug 14 2026."
+      }
     },
     {
       "statement": "Major General Brandon R. Tegtmeier will no longer be named as commanding officer of the 82nd Airborne Division in the source of record on 2026-09-25.",
@@ -2680,13 +2800,28 @@
       "model": "manual/fable",
       "source_report": "battle_report_2026-07-27_1502.md",
       "source_packet": "kkr_packet_2026-07-27_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] A DPA wire dated Jul 26 2026, carried by Freie Presse, Onvista and others, reports Justice Minister Hubig announced the Generalbundesanwalt would take over the Berlin CSD vehicle attack investigation as a suspected Islamist terror attack; the German Wikipedia article on the attack documents federal terror proceedings and an Islamic State pledge video attributed to the attacker, all well before Aug 14.",
       "failure_condition": "the condition stated in this entry's resolution basis — a statement on the Generalbundesanwalt website, or reporting by two of Deutsche Presse-Agentur, Deutsche Welle and Reuters dated on or before 2026-08-14 — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "no cited item is sufficient to deduce the outcome",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "A DPA wire dated Jul 26 2026, carried by Freie Presse, Onvista and others, reports Justice Minister Hubig announced the Generalbundesanwalt would take over the Berlin CSD vehicle attack investigation as a suspected Islamist terror attack; the German Wikipedia article on the attack documents federal terror proceedings and an Islamic State pledge video attributed to the attacker, all well before Aug 14."
+      }
     },
     {
       "statement": "The German federal cabinet will approve a draft bill tightening extremism or weapons law that explicitly references the Berlin Pride attack, on or before 2026-10-31.",
@@ -2875,13 +3010,28 @@
       "model": "manual/opus-5",
       "source_report": "battle_report_2026-07-27_1502.md",
       "source_packet": "kkr_packet_2026-07-27_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] A CENTCOM public release dated Jul 29 2026, titled US Strikes IRGC Targets After Attempted Iranian Attacks, states CENTCOM forces completed a heavy wave of strikes against Iran at 10 pm ET on Jul 29 in response to attempted Iranian missile attacks on US forces; Jul 29 falls inside the Jul 28 to Aug 14 window and CENTCOM confirmation satisfies the first disjunct.",
       "failure_condition": "the condition stated in this entry's resolution basis — Resolved yes if US Central Command or the Department of Defense confirms a strike on Iranian territory in that window, or if two or more of AP, Reuters and AFP report one — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "A CENTCOM public release dated Jul 29 2026, titled US Strikes IRGC Targets After Attempted Iranian Attacks, states CENTCOM forces completed a heavy wave of strikes against Iran at 10 pm ET on Jul 29 in response to attempted Iranian missile attacks on US forces; Jul 29 falls inside the Jul 28 to Aug 14 window and CENTCOM confirmation satisfies the first disjunct."
+      }
     },
     {
       "statement": "The upper bound of the US federal funds target range is above 3.75 percent on 2026-10-30.",
@@ -3106,13 +3256,28 @@
       "model": "manual/opus-5",
       "source_report": "battle_report_2026-07-28_1502.md",
       "source_packet": "kkr_packet_2026-07-28_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Japan Times dated Aug 8 2026, citing the Kumamoto prefectural disaster headquarters, put the toll from the Jul 28 Kumamoto quake at 39; earlier prefectural figures were 38 on Aug 3, and no source reports a toll above 40, let alone above 50, by Aug 14.",
       "failure_condition": "the condition stated in this entry's resolution basis — Japan Fire and Disaster Management Agency or Cabinet Office figures — is not met on or before 2026-08-14; absence at the deadline scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "deducible from the cited report items",
-      "keyed_keyless_dated": "2026-08-01"
+      "keyed_keyless_dated": "2026-08-01",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Japan Times dated Aug 8 2026, citing the Kumamoto prefectural disaster headquarters, put the toll from the Jul 28 Kumamoto quake at 39; earlier prefectural figures were 38 on Aug 3, and no source reports a toll above 40, let alone above 50, by Aug 14."
+      }
     },
     {
       "statement": "The Nasdaq Composite closes below 23,000 on 2026-08-28.",
@@ -4530,16 +4695,31 @@
       "model": "manual/sonnet-5",
       "source_report": "battle_report_2026-07-30_1503.md",
       "source_packet": "kkr_packet_2026-07-30_1503.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] A GlobalSecurity daily log dated Aug 12 2026 states no US or Israeli strike inside Iran was confirmed by CENTCOM from the cancellation of a threatened campaign late Aug 1 through Aug 12, a thirteenth consecutive quiet night; the last CENTCOM-confirmed strike wave on Iran completed Jul 29, one day before this window opened.",
       "failure_condition": "No new U.S. strike on Iranian soil between 2026-07-30 and 2026-08-13 is reported by U.S. Central Command, the Pentagon, or a major wire service (Reuters, AP, BBC, Al Jazeera), as read on 2026-08-13; that reading scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Operator reads official and wire coverage for a qualifying new strike.",
       "sealed_at": "2026-07-31T05:36:21.905368+00:00",
       "seal_sha256": "6b7725f86376e682f6ed9aca6d5cc8ce25d00c3e8bddfb04c80b019cfad715ab",
       "keyed_keyless_dated": "2026-08-05",
-      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit"
+      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "A GlobalSecurity daily log dated Aug 12 2026 states no US or Israeli strike inside Iran was confirmed by CENTCOM from the cancellation of a threatened campaign late Aug 1 through Aug 12, a thirteenth consecutive quiet night; the last CENTCOM-confirmed strike wave on Iran completed Jul 29, one day before this window opened."
+      }
     },
     {
       "statement": "Between 2026-07-30 and 2026-08-20, NATO will hold or announce formal Article 4 consultations in response to the reported Russian missile breach of Polish airspace.",
@@ -4613,16 +4793,31 @@
       "model": "manual/sonnet-5",
       "source_report": "battle_report_2026-07-30_1503.md",
       "source_packet": "kkr_packet_2026-07-30_1503.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Japan Times dated Aug 8 2026 reports 39 dead in the M6.8 Uto-Kumamoto earthquake per prefectural authorities, including direct and disaster-related deaths; no Japanese government, NHK or wire report above 40 was found through Aug 14.",
       "failure_condition": "No report by Japanese government authorities, NHK, or a major wire service dated 2026-07-30 through 2026-08-14 states a confirmed death toll above 40 for the magnitude 6.8 Uto earthquake, as read on 2026-08-14; that reading scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Toll confirmation read from official and wire reporting.",
       "sealed_at": "2026-07-31T05:36:21.905550+00:00",
       "seal_sha256": "4a099d46a086bda30d600cf47bbecbe80be663dbcafbaa1fe4f265734d7456b8",
       "keyed_keyless_dated": "2026-08-05",
-      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit"
+      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Japan Times dated Aug 8 2026 reports 39 dead in the M6.8 Uto-Kumamoto earthquake per prefectural authorities, including direct and disaster-related deaths; no Japanese government, NHK or wire report above 40 was found through Aug 14."
+      }
     },
     {
       "statement": "Between 2026-07-30 and 2026-09-15, a U.S. federal agency or critical-infrastructure operator will be publicly confirmed as compromised via the Cisco Secure Firewall Management Center hard-coded credential flaw CVE-2026-20316.",
@@ -4730,16 +4925,31 @@
       "model": "manual/sonnet-5",
       "source_report": "battle_report_2026-07-30_1503.md",
       "source_packet": "kkr_packet_2026-07-30_1503.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Kurdistan24 and Bol News reported that Tehreek-i-Taliban Pakistan claimed responsibility for the Khazina Banda police post attack in Hangu via a video statement circulated on social media within days of the assault; Pakistani police attributed the attack to the banned group officials label Khawarij, the state term for TTP.",
       "failure_condition": "No public claim of responsibility for the northwest Pakistan police-post attack that killed 11 officers, issued by a militant group and reported by a major outlet dated 2026-07-30 through 2026-08-13, exists as read on 2026-08-13; that reading scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Claim authenticity and incident linkage are operator readings of coverage.",
       "sealed_at": "2026-07-31T05:36:21.905712+00:00",
       "seal_sha256": "68f40c160e226e1ad5c16b28522cb91b6031845822c1ed09854ed4275073b2ec",
       "keyed_keyless_dated": "2026-08-05",
-      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit"
+      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Kurdistan24 and Bol News reported that Tehreek-i-Taliban Pakistan claimed responsibility for the Khazina Banda police post attack in Hangu via a video statement circulated on social media within days of the assault; Pakistani police attributed the attack to the banned group officials label Khawarij, the state term for TTP."
+      }
     },
     {
       "statement": "Confirmed fatalities from the current Crete, Greece wildfire event will exceed 5 between 2026-07-30 and 2026-08-20.",
@@ -5066,16 +5276,31 @@
       "model": "manual/sonnet-5",
       "source_report": "battle_report_2026-07-31_1502.md",
       "source_packet": "kkr_packet_2026-07-31_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Al Jazeera dated Aug 8 2026, carrying Reuters and AP reporting, states the UAE accused Iran of striking an ADNOC tanker with a missile in the Strait of Hormuz early Aug 8, and ADNOC said three of its vessels were attacked that week; this is a new Iran-linked strike on a vessel reported by the named wires inside the Jul 31 to Aug 14 window.",
       "failure_condition": "No new Iran-linked strike on a vessel or a US-linked asset in the Gulf states or the Strait of Hormuz dated 2026-07-31 through 2026-08-14 is reported by U.S. Central Command, Reuters, AP or CNBC, as read on 2026-08-14; that reading scores this entry a MISS.",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Iran-linkage attribution and asset-class characterization are operator readings of official and wire coverage.",
       "sealed_at": "2026-07-31T16:28:25.368772+00:00",
       "seal_sha256": "ff407097c5a86e832ebb6b9ae4b2f1d226dacc6152a002c5dee32f0b49e80f67",
       "keyed_keyless_dated": "2026-08-05",
-      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit"
+      "keyed_keyless_date_note": "determination recorded undated at issue (2026-07-30/31 determination pass); dated at re-affirmation 2026-08-05 by operator via redate_determinations.py; the undated original is preserved in git history at the pre-apply commit",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Al Jazeera dated Aug 8 2026, carrying Reuters and AP reporting, states the UAE accused Iran of striking an ADNOC tanker with a missile in the Strait of Hormuz early Aug 8, and ADNOC said three of its vessels were attacked that week; this is a new Iran-linked strike on a vessel reported by the named wires inside the Jul 31 to Aug 14 window."
+      }
     },
     {
       "statement": "Between 2026-07-31 and 2026-08-21, Anthropic will publish a public postmortem or security advisory specifically addressing the reported Claude-related breach of three organizations and the PyPI malware upload.",
@@ -6444,14 +6669,29 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Reuters, Moscow Times, Meduza and Euronews dated Aug 3 2026 report the beach drone strike that killed six to seven people, including three children, occurred at Arkhipo-Osipovka near Gelendzhik in Krasnodar Krai on the Russian mainland; officials in Crimea reported four killed there that night, not at a beach.",
       "sealed_at": "2026-08-04T00:14:55.499092+00:00",
       "seal_sha256": "1f7f57eefc352550ebfdab76c0e6e1cd3a3baf91b64eda944a16c6f744a73409",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Prior [15] reports \"Drone slams into Russian beach, killing at least 7 people\" (Al Jazeera, 03 Aug) and [16] \"Russia says seven killed and 40 injured by Ukrainian drone\" (BBC World, 03 Aug). The outcome is stated in the priors and 03 Aug falls inside the claim window. Keyed by arithmetic, not by attribution. Ruled across all 5 candidate items behind this row’s citation numbers; charity runs toward",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Reuters, Moscow Times, Meduza and Euronews dated Aug 3 2026 report the beach drone strike that killed six to seven people, including three children, occurred at Arkhipo-Osipovka near Gelendzhik in Krasnodar Krai on the Russian mainland; officials in Crimea reported four killed there that night, not at a beach."
+      }
     },
     {
       "statement": "A cyberattack exploiting CVE-2026-18577 compromises at least one critical infrastructure system in the United States between 2026-08-04 and 2026-08-11.",
@@ -6469,14 +6709,29 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Rapid7, Arctic Wolf, Huntress and CISA KEV materials from early Aug 2026 confirm CVE-2026-18577 in N-able N-central was exploited in the wild against MSP and enterprise environments, but no federal agency, CISA advisory or major outlet identified a resulting breach of a US critical infrastructure system in the Aug 4-11 window.",
       "sealed_at": "2026-08-04T00:14:55.499296+00:00",
       "seal_sha256": "4f3eb4385844d7ca15ee79336603cd040acd9fbb5f6526d0193a38352773121e",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "No cited prior names this subject or this proceeding. The claim went beyond every candidate item behind its citation numbers. Ruled across all 5 candidate items behind this row’s citation numbers; charity runs toward keyed, so keyless here means no candidate reached the test.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Rapid7, Arctic Wolf, Huntress and CISA KEV materials from early Aug 2026 confirm CVE-2026-18577 in N-able N-central was exploited in the wild against MSP and enterprise environments, but no federal agency, CISA advisory or major outlet identified a resulting breach of a US critical infrastructure system in the Aug 4-11 window."
+      }
     },
     {
       "statement": "At least one major wildfire in the U.S. Southwest results in over 1,000 evacuations between 2026-08-03 and 2026-08-10.",
@@ -6494,14 +6749,29 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] The Bug Fire that ignited Aug 8 2026 on the California-Nevada line forced mass evacuations in Washoe County Nevada; the county emergency site reported roughly 3,800 households evacuated by Aug 9 and major outlets including Newsweek described thousands of people evacuated, inside the Aug 3-10 window.",
       "sealed_at": "2026-08-04T00:14:55.499342+00:00",
       "seal_sha256": "9b634ffbd728e6cbd32a963df53bb738f6457e62e23843491e90d46dabfa700b",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "Prior reports evacuations in Spokane, Washington; the claim is scoped to the U.S. Southwest (Arizona, New Mexico, Nevada). Wrong region. Ruled across all 6 candidate items behind this row’s citation numbers; charity runs toward keyed, so keyless here means no candidate reached the test.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "The Bug Fire that ignited Aug 8 2026 on the California-Nevada line forced mass evacuations in Washoe County Nevada; the county emergency site reported roughly 3,800 households evacuated by Aug 9 and major outlets including Newsweek described thousands of people evacuated, inside the Aug 3-10 window."
+      }
     },
     {
       "statement": "Iran and the United States announce a formal diplomatic dialogue on the Strait of Hormuz between 2026-08-04 and 2026-08-11.",
@@ -6520,14 +6790,29 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Axios and CNBC dated Aug 4-5 2026 reported the US, Iran and Oman were nearing an interim Hormuz arrangement, and ABC reported messages exchanged through intermediaries; Iranian state-carried remarks by FM Araghchi around Aug 8 said negotiations with the US could not resume, and no official launch of a bilateral dialogue was announced in the window.",
       "sealed_at": "2026-08-04T00:14:55.499373+00:00",
       "seal_sha256": "8b26f626026f45e9c74aff79fdf1e21f8189bf33a306663f375f8b8cb45d2056",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "No cited prior names this subject or this proceeding. The claim went beyond every candidate item behind its citation numbers. Ruled across all 5 candidate items behind this row’s citation numbers; charity runs toward keyed, so keyless here means no candidate reached the test.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Axios and CNBC dated Aug 4-5 2026 reported the US, Iran and Oman were nearing an interim Hormuz arrangement, and ABC reported messages exchanged through intermediaries; Iranian state-carried remarks by FM Araghchi around Aug 8 said negotiations with the US could not resume, and no official launch of a bilateral dialogue was announced in the window."
+      }
     },
     {
       "statement": "A new ransomware variant named INC Ransomware is linked to a data breach affecting over 50,000 U.S. government employees between 2026-08-04 and 2026-08-11.",
@@ -6545,14 +6830,29 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] The Hacker News, Resecurity and incident trackers show INC Ransomware highly active in late July and early Aug 2026 with government and private victims, but no CISA advisory or pair of outlets ties INC to a breach affecting more than 50,000 US government employees in the Aug 4-11 window.",
       "sealed_at": "2026-08-04T00:14:55.499399+00:00",
       "seal_sha256": "3899998f1af8fefc30374fad1e580bf3d8d7fa76aef41c42752f2f7d4739ac29",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "Prior reports the PNLD breach in the UK; the claim names INC Ransomware and US government employees. Different incident. Ruled across all 7 candidate items behind this row’s citation numbers; charity runs toward keyed, so keyless here means no candidate reached the test.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "The Hacker News, Resecurity and incident trackers show INC Ransomware highly active in late July and early Aug 2026 with government and private victims, but no CISA advisory or pair of outlets ties INC to a breach affecting more than 50,000 US government employees in the Aug 4-11 window."
+      }
     },
     {
       "statement": "The U.S. House Ethics Committee formally censures Representative Chuck Edwards between 2026-08-04 and 2026-08-11.",
@@ -6570,14 +6870,29 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] CBS, Axios, NPR and The Hill dated Aug 3 2026 report the House Ethics Committee recommended censure of Rep. Chuck Edwards and said it would offer a privileged resolution; the House stood in recess until Aug 31, so no censure was enacted in the Aug 4-11 window.",
       "sealed_at": "2026-08-04T00:14:55.499425+00:00",
       "seal_sha256": "4fb45e108dc94b7ec3360581769bc28377d7f02f0035176b94673651943be102",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Prior names the same representative and the same proceeding: \"US House ethics panel recommends censure for Republican Chuck Edwards\". The claim asserts completion of a censure process the priors report in motion. Ruled across all 6 candidate items behind this row’s citation numbers; charity runs toward keyed, so keyless here means no candidate reached the test.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "CBS, Axios, NPR and The Hill dated Aug 3 2026 report the House Ethics Committee recommended censure of Rep. Chuck Edwards and said it would offer a privileged resolution; the House stood in recess until Aug 31, so no censure was enacted in the Aug 4-11 window."
+      }
     },
     {
       "statement": "The U.S. Senate confirms Todd Blanche as Attorney General by a vote of at least 60 in favor between 2026-08-04 and 2026-08-11.",
@@ -6595,14 +6910,29 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Washington Post, CNN, NPR and NBC report the Senate confirmed Todd Blanche as Attorney General early Saturday Aug 8 2026 by a vote of 50-49.",
       "sealed_at": "2026-08-04T00:14:55.499455+00:00",
       "seal_sha256": "718ea9f4e340c08fa7b8a9823c314e6cda05dad519c66856c6f7086d45aca8b9",
       "keyed_keyless": "keyless",
       "keyed_keyless_rationale": "Confirmation is foreshadowed by the priors, but the claim adds a vote margin of at least 60 that no prior supplies. Conjunctive claims are ruled on the element the priors do not reach. The claim requires a numeric threshold no prior reports as reached. A prior that supplies the current level makes the gap measurable; it does not make the level deducible. Ruled across all 4 candidate items behind t",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Washington Post, CNN, NPR and NBC report the Senate confirmed Todd Blanche as Attorney General early Saturday Aug 8 2026 by a vote of 50-49."
+      }
     },
     {
       "statement": "A cyberattack on a major U.S. financial institution results in the theft of over $100 million in digital assets between 2026-08-04 and 2026-08-11.",
@@ -6620,9 +6950,9 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] The large digital-asset theft in the period was the Coldcard hardware wallet compromise, reported around early Aug 2026 at roughly 100 to 130 million dollars in bitcoin, but Coldcard maker Coinkite is a Canadian wallet vendor, not a US financial institution; Reuters-cited reporting on breaches at Blackstone, Moodys and CME described data theft and extortion, not a nine-figure digital-asset theft.",
       "sealed_at": "2026-08-04T00:14:55.499479+00:00",
       "seal_sha256": "1d20b879f8084ac3c94b85b5b3506a9374fd23a73db5683655dd67a882d9c9e2",
       "keyed_keyless": "keyed",
@@ -6631,7 +6961,22 @@
       "keyed_keyless_superseded": "keyless",
       "keyed_keyless_corrected": "2026-08-04",
       "keyed_keyless_correction": "CORRECTED from keyless. cite_integrity finds this entry UNSUPPORTED: none of its 2 cited item(s) shares discriminating vocabulary with the claim. A KEYLESS ruling asserts the entry went beyond its declared priors; where the priors ground nothing, there is no readable prior to have gone beyond and the assertion is unsupportable. The forecaster may have held the right item in view and cited badly - the record cannot say. 4.03 defaults KEYED where the determination cannot be made, and the determination doctrine's own rule requires taking the reading that does not inflate the faculty-bearing count. Keyed by rule, not by judgment.",
-      "keyed_keyless_authority": "Ruled by the assistant at the operator's explicit delegation, under the determination doctrine of 2026-08-04 rev. 2. Recorded as the assistant's ruling, not the operator's."
+      "keyed_keyless_authority": "Ruled by the assistant at the operator's explicit delegation, under the determination doctrine of 2026-08-04 rev. 2. Recorded as the assistant's ruling, not the operator's.",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "The large digital-asset theft in the period was the Coldcard hardware wallet compromise, reported around early Aug 2026 at roughly 100 to 130 million dollars in bitcoin, but Coldcard maker Coinkite is a Canadian wallet vendor, not a US financial institution; Reuters-cited reporting on breaches at Blackstone, Moodys and CME described data theft and extortion, not a nine-figure digital-asset theft."
+      }
     },
     {
       "statement": "A drone attack on a Russian beach in Crimea kills at least seven people between 2026-08-03 and 2026-08-10.",
@@ -6649,14 +6994,29 @@
       "model": "control/baserate",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Duplicate of KKR-20260804-01: the six to seven beach deaths of Aug 3 2026 were at Arkhipo-Osipovka in Krasnodar Krai on the mainland per Reuters, Moscow Times and Meduza; Crimea itself recorded four deaths, not at a beach.",
       "sealed_at": "2026-08-04T00:17:45.652359+00:00",
       "seal_sha256": "20ef4b004d97594fa16692f5fe06efa2f57c05914d14dd602db4ee335488e83c",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Mechanical arm. A climatological control emits the same probability for every row in a reference class, computed from this ledger’s own resolved history; it makes no claim to exceed its inputs and cannot, by construction. Keyed by construction, not by judgment.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Duplicate of KKR-20260804-01: the six to seven beach deaths of Aug 3 2026 were at Arkhipo-Osipovka in Krasnodar Krai on the mainland per Reuters, Moscow Times and Meduza; Crimea itself recorded four deaths, not at a beach."
+      }
     },
     {
       "statement": "A cyberattack exploiting CVE-2026-18577 compromises at least one critical infrastructure system in the United States between 2026-08-04 and 2026-08-11.",
@@ -6674,14 +7034,29 @@
       "model": "control/baserate",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Duplicate of KKR-20260804-02: CVE-2026-18577 exploitation in the wild is confirmed by Rapid7, Huntress and CISA KEV materials, but no source identifies a resulting breach of a US critical infrastructure system in the Aug 4-11 window.",
       "sealed_at": "2026-08-04T00:17:45.652492+00:00",
       "seal_sha256": "4f3eb4385844d7ca15ee79336603cd040acd9fbb5f6526d0193a38352773121e",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Mechanical arm. A climatological control emits the same probability for every row in a reference class, computed from this ledger’s own resolved history; it makes no claim to exceed its inputs and cannot, by construction. Keyed by construction, not by judgment.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Duplicate of KKR-20260804-02: CVE-2026-18577 exploitation in the wild is confirmed by Rapid7, Huntress and CISA KEV materials, but no source identifies a resulting breach of a US critical infrastructure system in the Aug 4-11 window."
+      }
     },
     {
       "statement": "At least one major wildfire in the U.S. Southwest results in over 1,000 evacuations between 2026-08-03 and 2026-08-10.",
@@ -6699,14 +7074,29 @@
       "model": "control/baserate",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Duplicate of KKR-20260804-03: Washoe County Nevada reported roughly 3,800 households evacuated for the Bug Fire by Aug 9 2026 and major outlets described thousands of people evacuated within the window.",
       "sealed_at": "2026-08-04T00:17:45.652517+00:00",
       "seal_sha256": "8a877fbbe47fecd816f422b9e8afb30bfc5d94f3be1ce1dd995d301881f49dde",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Mechanical arm. A climatological control emits the same probability for every row in a reference class, computed from this ledger’s own resolved history; it makes no claim to exceed its inputs and cannot, by construction. Keyed by construction, not by judgment.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Duplicate of KKR-20260804-03: Washoe County Nevada reported roughly 3,800 households evacuated for the Bug Fire by Aug 9 2026 and major outlets described thousands of people evacuated within the window."
+      }
     },
     {
       "statement": "Iran and the United States announce a formal diplomatic dialogue on the Strait of Hormuz between 2026-08-04 and 2026-08-11.",
@@ -6725,14 +7115,29 @@
       "model": "control/baserate",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Duplicate of KKR-20260804-04: Aug 4-5 reporting by Axios and CNBC describes a near-final trilateral Hormuz arrangement via Oman, while Iranian officials publicly ruled out resumed talks with the US; no official launch of a bilateral dialogue was announced in the window.",
       "sealed_at": "2026-08-04T00:17:45.652532+00:00",
       "seal_sha256": "84c2ee3fcd7c230af6686282e7e7c1f5756f0aa3433de1b5f4aba70cd464b1c1",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Mechanical arm. A climatological control emits the same probability for every row in a reference class, computed from this ledger’s own resolved history; it makes no claim to exceed its inputs and cannot, by construction. Keyed by construction, not by judgment.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Duplicate of KKR-20260804-04: Aug 4-5 reporting by Axios and CNBC describes a near-final trilateral Hormuz arrangement via Oman, while Iranian officials publicly ruled out resumed talks with the US; no official launch of a bilateral dialogue was announced in the window."
+      }
     },
     {
       "statement": "A new ransomware variant named INC Ransomware is linked to a data breach affecting over 50,000 U.S. government employees between 2026-08-04 and 2026-08-11.",
@@ -6750,14 +7155,29 @@
       "model": "control/baserate",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Duplicate of KKR-20260804-05: INC Ransomware activity in the window is documented, but no CISA advisory or two outlets confirm a breach affecting more than 50,000 US government employees.",
       "sealed_at": "2026-08-04T00:17:45.652544+00:00",
       "seal_sha256": "679dd9453edcd55d6447e4ba7f1450fb82daea1e6826ee8babea68189cddd1c2",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Mechanical arm. A climatological control emits the same probability for every row in a reference class, computed from this ledger’s own resolved history; it makes no claim to exceed its inputs and cannot, by construction. Keyed by construction, not by judgment.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Duplicate of KKR-20260804-05: INC Ransomware activity in the window is documented, but no CISA advisory or two outlets confirm a breach affecting more than 50,000 US government employees."
+      }
     },
     {
       "statement": "The U.S. House Ethics Committee formally censures Representative Chuck Edwards between 2026-08-04 and 2026-08-11.",
@@ -6775,14 +7195,29 @@
       "model": "control/baserate",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Duplicate of KKR-20260804-06: the Ethics Committee recommendation of censure came Aug 3 and the House remained in recess until Aug 31, so no formal censure occurred in the window.",
       "sealed_at": "2026-08-04T00:17:45.652557+00:00",
       "seal_sha256": "12553c2bd8ec97ca1fc9e8f8dcee94fe326ed6c4433a00788ea71d2b8119ff24",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Mechanical arm. A climatological control emits the same probability for every row in a reference class, computed from this ledger’s own resolved history; it makes no claim to exceed its inputs and cannot, by construction. Keyed by construction, not by judgment.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Duplicate of KKR-20260804-06: the Ethics Committee recommendation of censure came Aug 3 and the House remained in recess until Aug 31, so no formal censure occurred in the window."
+      }
     },
     {
       "statement": "The U.S. Senate confirms Todd Blanche as Attorney General by a vote of at least 60 in favor between 2026-08-04 and 2026-08-11.",
@@ -6800,14 +7235,29 @@
       "model": "control/baserate",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Duplicate of KKR-20260804-07: Blanche was confirmed Aug 8 2026 by 50-49, short of 60.",
       "sealed_at": "2026-08-04T00:17:45.652569+00:00",
       "seal_sha256": "0d6834169ae3b85bd2c874141d8eb32d5cfe5194c3134e9a4d338ea5fd7ecf4d",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Mechanical arm. A climatological control emits the same probability for every row in a reference class, computed from this ledger’s own resolved history; it makes no claim to exceed its inputs and cannot, by construction. Keyed by construction, not by judgment.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Duplicate of KKR-20260804-07: Blanche was confirmed Aug 8 2026 by 50-49, short of 60."
+      }
     },
     {
       "statement": "A cyberattack on a major U.S. financial institution results in the theft of over $100 million in digital assets between 2026-08-04 and 2026-08-11.",
@@ -6825,14 +7275,29 @@
       "model": "control/baserate",
       "source_report": "battle_report_2026-08-03_2351.md",
       "source_packet": "kkr_packet_2026-08-04_0013.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Duplicate of KKR-20260804-08: the qualifying-scale theft was the Coldcard wallet compromise of roughly 100 to 130 million dollars in bitcoin, and Coinkite is a Canadian wallet vendor rather than a US financial institution.",
       "sealed_at": "2026-08-04T00:17:45.652582+00:00",
       "seal_sha256": "1d20b879f8084ac3c94b85b5b3506a9374fd23a73db5683655dd67a882d9c9e2",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Mechanical arm. A climatological control emits the same probability for every row in a reference class, computed from this ledger’s own resolved history; it makes no claim to exceed its inputs and cannot, by construction. Keyed by construction, not by judgment.",
-      "keyed_keyless_dated": "2026-08-04"
+      "keyed_keyless_dated": "2026-08-04",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Duplicate of KKR-20260804-08: the qualifying-scale theft was the Coldcard wallet compromise of roughly 100 to 130 million dollars in bitcoin, and Coinkite is a Canadian wallet vendor rather than a US financial institution."
+      }
     },
     {
       "statement": "Israeli air, drone, or artillery strikes inside Gaza City occur between 2026-08-10 and 2026-08-24.",
@@ -8272,14 +8737,29 @@
       "date_issued": "2026-08-04",
       "model": "manual/sonnet-5/unattested",
       "source_packet": "kkr_packet_2026-08-04_1502.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] Weathernews and The Watchers coverage of Typhoon Dolphin, which passed near Okinawa around Aug 7 2026 at about 935 hPa, documents JMA typhoon warnings and advisories including violent wind and storm surge warnings, with no mention of a Special Warning, the highest JMA tier, in the Aug 4-11 window.",
       "sealed_at": "2026-08-04T21:15:56.905478+00:00",
       "seal_sha256": "a7dd73266ba77fbd594f4fca47a959f3fa2c439b989f9a2eb89f9b1492a42a79",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Cited prior(s) [36] carry the claim's operative terms (dolphin, japan, typhoon); a hit is deducible from the cited record.",
-      "keyed_keyless_dated": "2026-08-08"
+      "keyed_keyless_dated": "2026-08-08",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "Weathernews and The Watchers coverage of Typhoon Dolphin, which passed near Okinawa around Aug 7 2026 at about 935 hPa, documents JMA typhoon warnings and advisories including violent wind and storm surge warnings, with no mention of a Special Warning, the highest JMA tier, in the Aug 4-11 window."
+      }
     },
     {
       "statement": "Between 2026-08-04 and 2026-11-04, the person charged with arson over the Old Trails wildfire in item 9 will be indicted or have an information filed advancing the case to Washington Superior Court.",
@@ -8345,14 +8825,29 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-05_1501.md",
       "source_packet": "kkr_packet_2026-08-05_1501.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "miss",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] The CISA alert adding CVE-2026-9198 to the KEV catalog is dated Aug 4 2026 in the advisory URL and text, and NVD records per Windows Forum carry an Aug 4 addition date with an Aug 7 remediation deadline; the criterion requires a date-added between Aug 5 and Aug 12.",
       "sealed_at": "2026-08-05T15:03:45.288894+00:00",
       "seal_sha256": "b53b1bf706cfb5679c9c42e8b14bb7ca7ff42b5587ad728e51e75900431b7d98",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Cited prior(s) [21] carry the claim's operative terms (actively, cisa, langflow); a hit is deducible from the cited record.",
-      "keyed_keyless_dated": "2026-08-08"
+      "keyed_keyless_dated": "2026-08-08",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "MISS",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "The CISA alert adding CVE-2026-9198 to the KEV catalog is dated Aug 4 2026 in the advisory URL and text, and NVD records per Windows Forum carry an Aug 4 addition date with an Aug 7 remediation deadline; the criterion requires a date-added between Aug 5 and Aug 12."
+      }
     },
     {
       "statement": "A magnitude 6.0 or greater earthquake with a depth of less than 100km occurs in the Philippines between 2026-08-05 and 2026-08-12.",
@@ -8370,14 +8865,29 @@
       "model": "lmstudio/auto",
       "source_report": "battle_report_2026-08-05_1501.md",
       "source_packet": "kkr_packet_2026-08-05_1501.md",
-      "status": "open",
-      "resolved_date": null,
-      "notes": "",
+      "status": "hit",
+      "resolved_date": "2026-08-15",
+      "notes": "[jury] USGS event records and AFP-carried reporting show a magnitude 6.3 earthquake struck about 32 km southwest of Sarangani, Mindanao, Philippines on Aug 5 2026 at roughly 10 km depth, prompting a green PAGER alert; magnitude, depth, location and date all satisfy the criterion.",
       "sealed_at": "2026-08-05T15:03:45.288996+00:00",
       "seal_sha256": "235ccf70fb53e80a3adc411de871d12634a12747484ab50325c378a19dc8fa44",
       "keyed_keyless": "keyed",
       "keyed_keyless_rationale": "Cited prior(s) [30, 43] carry the claim's operative terms (depth, earthquake, magnitude, philippine, quake, significant); a hit is deducible from the cited record.",
-      "keyed_keyless_dated": "2026-08-08"
+      "keyed_keyless_dated": "2026-08-08",
+      "audit": {
+        "mode": "blind-jury",
+        "auditors": [
+          "claude",
+          "qwen"
+        ],
+        "prompt_sha256": "d5b4fff5dfc1e0dddded2267997363f0c11a462e55ccb7f70f1c6516a4cebfdd",
+        "concordant": false,
+        "basis": "claude",
+        "verdicts": {
+          "claude": "HIT",
+          "qwen": "ABSTAIN"
+        },
+        "evidence": "USGS event records and AFP-carried reporting show a magnitude 6.3 earthquake struck about 32 km southwest of Sarangani, Mindanao, Philippines on Aug 5 2026 at roughly 10 km depth, prompting a green PAGER alert; magnitude, depth, location and date all satisfy the criterion."
+      }
     },
     {
       "statement": "ICE Brent front-month crude futures settle at or below 70.00 USD per barrel on at least one settlement date between 2026-08-06 and 2026-10-30.",
