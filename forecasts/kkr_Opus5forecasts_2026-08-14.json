@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry with vendorProject SAP and a dateAdded value between 2026-08-17 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 50,
+    "resolution": "TRUE if the CISA KEV JSON feed contains an entry whose vendorProject field is SAP and whose dateAdded falls between 2026-08-17 and 2026-10-16 inclusive.",
+    "deadline": "2026-10-20",
+    "citations": [13],
+    "failure_condition": "No KEV entry with vendorProject SAP carries a dateAdded inside the window."
+  },
+  {
+    "statement": "The CISA KEV catalog adds at least one VMware vCenter Server entry, listed under vendorProject VMware or Broadcom, with a dateAdded value between 2026-08-17 and 2026-11-13.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "TRUE if a KEV entry naming VMware vCenter Server in its product field carries a dateAdded between 2026-08-17 and 2026-11-13 inclusive.",
+    "deadline": "2026-11-17",
+    "citations": [23],
+    "failure_condition": "No KEV entry naming VMware vCenter Server carries a dateAdded inside the window."
+  },
+  {
+    "statement": "The ICE Brent Crude front-month futures contract settles at or above 100.00 US dollars per barrel on at least one trading day between 2026-08-17 and 2026-11-30.",
+    "domain": "economics",
+    "probability": 25,
+    "resolution": "TRUE if ICE publishes a front-month Brent settlement price of 100.00 or higher for any trading day inside the window.",
+    "deadline": "2026-12-02",
+    "citations": [92],
+    "failure_condition": "Every ICE front-month Brent settlement inside the window prints below 100.00 dollars per barrel."
+  },
+  {
+    "statement": "The FRED series DGS10 records a daily value at or above 5.00 percent on at least one business day between 2026-08-17 and 2026-12-31.",
+    "domain": "economics",
+    "probability": 45,
+    "resolution": "TRUE if any non-missing DGS10 observation dated inside the window is 5.00 or greater as published in the FRED series.",
+    "deadline": "2027-01-05",
+    "citations": [29, 59],
+    "failure_condition": "Every non-missing DGS10 observation inside the window prints below 5.00 percent."
+  },
+  {
+    "statement": "A NATO member state formally requests Article 4 consultations between 2026-08-17 and 2026-10-15.",
+    "domain": "military_conflict",
+    "probability": 15,
+    "resolution": "TRUE if NATO publishes a statement confirming Article 4 consultations were invoked, and Reuters and the Associated Press both report the request, dated inside the window.",
+    "deadline": "2026-10-19",
+    "citations": [83],
+    "failure_condition": "No member state requests Article 4 consultations inside the window."
+  },
+  {
+    "statement": "Iranian or US forces board, seize, or fire on a commercial vessel in the Strait of Hormuz or Gulf of Oman between 2026-08-17 and 2026-10-15.",
+    "domain": "military_conflict",
+    "probability": 35,
+    "resolution": "TRUE if two of Reuters, AP, or AFP report the incident and either an Iranian state outlet or a US Central Command statement acknowledges it.",
+    "deadline": "2026-10-19",
+    "citations": [92, 81],
+    "failure_condition": "No boarding, seizure, or weapons fire against a commercial vessel occurs in those waters inside the window."
+  },
+  {
+    "statement": "A UK statutory instrument amending the zero emission vehicle mandate regime is published on legislation.gov.uk with a made date between 2026-08-17 and 2026-12-18.",
+    "domain": "political",
+    "probability": 45,
+    "resolution": "TRUE if legislation.gov.uk lists a UK statutory instrument amending the zero emission vehicle mandate regime with a made date inside the window.",
+    "deadline": "2026-12-22",
+    "citations": [107],
+    "failure_condition": "No such statutory instrument carries a made date inside the window on legislation.gov.uk."
+  },
+  {
+    "statement": "The UK Electoral Commission publishes a concluded investigation outcome naming Reform UK on its enforcement register between 2026-08-17 and 2026-12-31.",
+    "domain": "political",
+    "probability": 22,
+    "resolution": "TRUE if the Electoral Commission enforcement outcomes register carries an entry naming Reform UK with a published date inside the window.",
+    "deadline": "2027-01-05",
+    "citations": [96, 104],
+    "failure_condition": "The enforcement register carries no concluded outcome naming Reform UK dated inside the window."
+  },
+  {
+    "statement": "The World Health Organization declares the Democratic Republic of the Congo Ebola outbreak a Public Health Emergency of International Concern between 2026-08-17 and 2026-12-15.",
+    "domain": "disaster",
+    "probability": 12,
+    "resolution": "TRUE if WHO publishes an IHR Emergency Committee statement or Director-General declaration designating this outbreak a PHEIC, dated inside the window.",
+    "deadline": "2026-12-18",
+    "citations": [77],
+    "failure_condition": "WHO issues no PHEIC declaration covering this outbreak inside the window."
+  },
+  {
+    "statement": "Luigi Mangione enters a guilty plea to at least one count in the New York state prosecution between 2026-08-17 and 2026-11-30.",
+    "domain": "crime_security",
+    "probability": 30,
+    "resolution": "TRUE if the New York state court docket in that prosecution records a guilty plea entered by the defendant on a date inside the window.",
+    "deadline": "2026-12-04",
+    "citations": [106],
+    "failure_condition": "The state docket records no guilty plea entered inside the window."
+  }
+]
