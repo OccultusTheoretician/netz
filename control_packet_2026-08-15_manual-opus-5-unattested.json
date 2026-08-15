@@ -1,0 +1,154 @@
+[
+  {
+    "statement": "The CISA KEV catalog adds at least one VMware vCenter Server entry, listed under vendorProject VMware or Broadcom, with a dateAdded value between 2026-08-17 and 2026-11-13.",
+    "resolution": "TRUE if a KEV entry naming VMware vCenter Server in its product field carries a dateAdded between 2026-08-17 and 2026-11-13 inclusive.",
+    "failure_condition": "No KEV entry naming VMware vCenter Server carries a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 33,
+    "citations": [
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:12Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-05"
+    }
+  },
+  {
+    "statement": "The FRED series DGS10 records a daily value at or above 5.00 percent on at least one business day between 2026-08-17 and 2026-12-31.",
+    "resolution": "TRUE if any non-missing DGS10 observation dated inside the window is 5.00 or greater as published in the FRED series.",
+    "failure_condition": "Every non-missing DGS10 observation inside the window prints below 5.00 percent.",
+    "domain": "economics",
+    "deadline": "2027-01-05",
+    "probability": 18,
+    "citations": [
+      29,
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1818,
+      "n": 11,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:12Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-06"
+    }
+  },
+  {
+    "statement": "A NATO member state formally requests Article 4 consultations between 2026-08-17 and 2026-10-15.",
+    "resolution": "TRUE if NATO publishes a statement confirming Article 4 consultations were invoked, and Reuters and the Associated Press both report the request, dated inside the window.",
+    "failure_condition": "No member state requests Article 4 consultations inside the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-19",
+    "probability": 33,
+    "citations": [
+      83
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:12Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-07"
+    }
+  },
+  {
+    "statement": "The UK Electoral Commission publishes a concluded investigation outcome naming Reform UK on its enforcement register between 2026-08-17 and 2026-12-31.",
+    "resolution": "TRUE if the Electoral Commission enforcement outcomes register carries an entry naming Reform UK with a published date inside the window.",
+    "failure_condition": "The enforcement register carries no concluded outcome naming Reform UK dated inside the window.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 33,
+    "citations": [
+      96,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:12Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-08"
+    }
+  },
+  {
+    "statement": "The World Health Organization declares the Democratic Republic of the Congo Ebola outbreak a Public Health Emergency of International Concern between 2026-08-17 and 2026-12-15.",
+    "resolution": "TRUE if WHO publishes an IHR Emergency Committee statement or Director-General declaration designating this outbreak a PHEIC, dated inside the window.",
+    "failure_condition": "WHO issues no PHEIC declaration covering this outbreak inside the window.",
+    "domain": "disaster",
+    "deadline": "2026-12-18",
+    "probability": 33,
+    "citations": [
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:12Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-09"
+    }
+  },
+  {
+    "statement": "Luigi Mangione enters a guilty plea to at least one count in the New York state prosecution between 2026-08-17 and 2026-11-30.",
+    "resolution": "TRUE if the New York state court docket in that prosecution records a guilty plea entered by the defendant on a date inside the window.",
+    "failure_condition": "The state docket records no guilty plea entered inside the window.",
+    "domain": "crime_security",
+    "deadline": "2026-12-04",
+    "probability": 33,
+    "citations": [
+      106
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:12Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-10"
+    }
+  }
+]

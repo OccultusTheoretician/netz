@@ -1,0 +1,52 @@
+[
+  {
+    "statement": "The USGS ComCat catalog records at least one earthquake of magnitude 6.0 or greater with epicenter within 300 km of USGS event us6000tjl2 and origin time between 2026-08-15 and 2026-09-14.",
+    "resolution": "A ComCat query on the deadline returns at least one M 6.0 or greater event meeting the distance and origin-time criteria.",
+    "failure_condition": "ComCat contains no qualifying M 6.0 or greater event within 300 km for the stated origin window.",
+    "domain": "disaster",
+    "deadline": "2026-09-16",
+    "probability": 33,
+    "citations": [
+      26
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-01"
+    }
+  },
+  {
+    "statement": "The WHO Director-General declares the Democratic Republic of the Congo Ebola outbreak a Public Health Emergency of International Concern between 2026-08-15 and 2026-11-30.",
+    "resolution": "A WHO announcement of a PHEIC determination for the DRC Ebola outbreak, published on who.int within the window.",
+    "failure_condition": "WHO makes no PHEIC determination for this outbreak within the window, regardless of case counts or committee meetings.",
+    "domain": "disaster",
+    "deadline": "2026-12-02",
+    "probability": 33,
+    "citations": [
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-02"
+    }
+  }
+]

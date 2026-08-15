@@ -1,0 +1,78 @@
+[
+  {
+    "statement": "The 10-Year Treasury Constant Maturity Rate, FRED series DGS10, closes at or above 4.75 percent on at least one trading day between 2026-08-17 and 2026-09-25.",
+    "resolution": "The FRED DGS10 series shows a closing value of 4.75 or higher for at least one date between 2026-08-17 and 2026-09-25.",
+    "failure_condition": "DGS10 fails to close at or above 4.75 percent on every trading day between 2026-08-17 and 2026-09-25.",
+    "domain": "economic",
+    "deadline": "2026-09-29",
+    "probability": 18,
+    "citations": [
+      29,
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1818,
+      "n": 11,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-17"
+    }
+  },
+  {
+    "statement": "NATO or a Baltic national air force kinetically shoots down or intercepts a drone or unmanned aerial vehicle inside Estonian, Latvian, or Lithuanian airspace, distinct from the August 14, 2026 Balvi incident, between 2026-08-21 and 2026-10-15.",
+    "resolution": "NATO, a Baltic Ministry of Defence, or two of Reuters, AP, and Bloomberg confirm a kinetic drone shoot-down in Baltic airspace within the window, distinct from the Aug 14 Balvi incident.",
+    "failure_condition": "No kinetic shoot-down or destructive intercept of a drone occurs inside Estonian, Latvian, or Lithuanian airspace, distinct from the Aug 14 Balvi incident, between 2026-08-21 and 2026-10-15.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-19",
+    "probability": 33,
+    "citations": [
+      83
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-18"
+    }
+  },
+  {
+    "statement": "The government of Russia publishes a decree ordering a new mandatory, non-contract mobilization wave of reservists, distinct from routine conscription and from the September 2022 partial mobilization, between 2026-08-21 and 2026-11-30.",
+    "resolution": "The official Russian legal register, pravo.gov.ru, publishes a mobilization decree, corroborated by two of Reuters, AP, ISW, and Meduza, within the window.",
+    "failure_condition": "Russia issues no new mandatory mobilization decree in its official legal register between 2026-08-21 and 2026-11-30.",
+    "domain": "military_conflict",
+    "deadline": "2026-12-02",
+    "probability": 33,
+    "citations": [
+      79
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3256,
+      "n": 43,
+      "basis": "global",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-15T05:33:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260815-19"
+    }
+  }
+]

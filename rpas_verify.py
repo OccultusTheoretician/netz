@@ -28,6 +28,15 @@ THE SEAL CONSTRUCTION (RPAS 4.02g, as deployed by candidate_desk.py / kkr.py):
     Missing fields serialize as null. Key order is irrelevant by construction
     (sort_keys); two implementations agree byte-for-byte or one is wrong.
 
+SEALED-STATE RETRY (KK29-SEALCLASS, rpas_verify/1.1): rows are commonly
+sealed before their keyed/keyless determination exists (RPAS 1.04/4.03).
+On a recompute mismatch this verifier retries with keyed_keyless and
+keyed_keyless_rationale forced to null. A match there proves the sealed
+state - the determination was absent at seal and written later, which is
+the workflow the standard directs, not an edit to sealed material. Such
+rows are counted and disclosed as an INFO note under 4.03; only rows
+failing BOTH recomputations are 5.06 must-failures.
+
 Entries issued before 2026-07-30 are unsealed by history; the ledger's own
 disclosure prints that finding (RPAS 6.04) and this verifier reads it. Entries
 issued on or after that date without a seal are a MUST failure. Scores obey the
@@ -63,7 +72,7 @@ def rec(level, cite, msg):
 
 def load(src):
     if str(src).startswith(("http://", "https://")):
-        req = Request(str(src), headers={"User-Agent": "rpas_verify/1.0"})
+        req = Request(str(src), headers={"User-Agent": "rpas_verify/1.1"})
         with urlopen(req, timeout=30) as r:
             raw = r.read().decode("utf-8")
     else:
@@ -179,7 +188,7 @@ def check_keying(h, rows):
 
 
 def check_seals(h, rows):
-    ok = mismatch = 0
+    ok = mismatch = det_after = 0  # KK29-SEALCLASS
     unsealed_pre, unsealed_post = [], []
     for e in rows:
         s = e.get("seal_sha256")
@@ -192,6 +201,12 @@ def check_seals(h, rows):
                                       f"hex chars"); continue
         if seal_digest(e) == s:
             ok += 1
+            continue
+        sealed_state = dict(e)  # KK29-SEALCLASS: test the sealed state
+        sealed_state["keyed_keyless"] = None
+        sealed_state["keyed_keyless_rationale"] = None
+        if seal_digest(sealed_state) == s:
+            det_after += 1
         else:
             mismatch += 1
             rec("MUST", "RPAS 5.06",
@@ -218,9 +233,20 @@ def check_seals(h, rows):
                 f"{len(unsealed_pre)} entries are unsealed and the ledger does not "
                 f"say so on its face — an undisclosed unsealed span is a scope "
                 f"limitation the reader is left to discover")
-    if ok or mismatch:
+    if det_after:  # KK29-SEALCLASS
+        rec("INFO", "RPAS 4.03",
+            f"{det_after} seal(s) recompute to their sealed state with the "
+            f"keyed/keyless fields at their sealed nulls - the determination "
+            f"was written after sealing, as 1.04/4.03 direct. No sealed field "
+            f"was edited; the seal proves the determination was absent at "
+            f"seal, and the post-seal determination rests on the anchored "
+            f"history (4.04/4.05) and 5.07 supersession discipline, not on "
+            f"the row seal.")
+    if ok or mismatch or det_after:
         rec("INFO", "RPAS 4.02g", f"{ok} seal(s) recompute to their published "
-                                  f"digest; {mismatch} do not")
+                                  f"digest; {det_after} recompute to their "
+                                  f"sealed state (determined after seal); "
+                                  f"{mismatch} do not")
 
 
 def check_anchor(h):
@@ -372,7 +398,7 @@ def report(as_json, src, nrec):
             "should_departures": [{"cite": c, "message": m} for _, c, m in shoulds],
             "notes": [{"cite": c, "message": m} for l, c, m in findings if l == "INFO"],
             "verified_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "verifier": "rpas_verify/1.0"}, indent=2))
+            "verifier": "rpas_verify/1.1"}, indent=2))
         return 1 if musts else 0
     print(f"\nRPAS-26 CONFORMANCE — {src}")
     print("-" * 66)
