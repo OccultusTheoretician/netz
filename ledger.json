@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-15T05:33:15Z",
+  "as_of": "2026-08-15T19:23:44Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -17488,6 +17488,106 @@
       "register": "registers/1.0@5414a43d6a49470b",
       "sealed_at": "2026-08-15T05:33:15.961808+00:00",
       "seal_sha256": "735e724603db3dbb609185a5dc6f4ba00713ad2ff3b4b467b60717012284c722"
+    },
+    {
+      "statement": "A magnitude 7.0 or greater earthquake occurs in Indonesia between 2026-08-21 and 2026-08-28, with a depth between 10km and 150km and a confirmed death toll of at least 10.",
+      "domain": "disaster",
+      "probability": 30,
+      "resolution": "The USGS Significant Quakes catalog records an event with magnitude >= 7.0, depth between 10km and 150km, location within Indonesia, and a confirmed death toll of at least 10 as reported by two independent wire services (BBC World, Al Jazeera) by 2026-08-30.",
+      "deadline": "2026-08-30",
+      "citations": [
+        17,
+        18,
+        24,
+        31,
+        32
+      ],
+      "failure_condition": "No such event is confirmed by two independent wire services by the deadline.",
+      "id": "KKR-20260815-23",
+      "date_issued": "2026-08-15",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-15_1726.md",
+      "source_packet": "kkr_packet_2026-08-15_1726.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-15T17:27:42.314394+00:00",
+      "seal_sha256": "4bf2f1db1352069d29de613ca4c64a15ce30a5011d9eb7fd8d56ad3cbae5902c"
+    },
+    {
+      "statement": "At least 12 people are killed in Israeli airstrikes on southern Lebanon between 2026-08-21 and 2026-08-28, confirmed by two independent sources (BBC World, Al Jazeera).",
+      "domain": "military/conflict",
+      "probability": 45,
+      "resolution": "Two independent sources (BBC World, Al Jazeera) report a confirmed death toll of at least 12 in Israeli airstrikes on southern Lebanon between 2026-08-21 and 2026-08-28, with the event window ending no later than 2026-08-28.",
+      "deadline": "2026-09-02",
+      "citations": [
+        68,
+        71,
+        76
+      ],
+      "failure_condition": "The combined reports from BBC World and Al Jazeera do not confirm at least 12 deaths in the specified window.",
+      "id": "KKR-20260815-24",
+      "date_issued": "2026-08-15",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-15_1726.md",
+      "source_packet": "kkr_packet_2026-08-15_1726.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-15T17:27:42.314417+00:00",
+      "seal_sha256": "c95363fcc23197ed487cf080a1d62c87d515d1e6ab478d4023bc1dfd86ed9a98"
+    },
+    {
+      "statement": "At least one major wildfire in Europe causes over 100 evacuations between 2026-08-21 and 2026-08-28, confirmed by two independent sources (BBC World, Al Jazeera).",
+      "domain": "disaster",
+      "probability": 20,
+      "resolution": "Two independent sources (BBC World, Al Jazeera) report that a wildfire in Europe caused over 100 evacuations between 2026-08-21 and 2026-08-28.",
+      "deadline": "2026-09-02",
+      "citations": [
+        20,
+        25,
+        40
+      ],
+      "failure_condition": "No such wildfire is confirmed by two independent sources to have caused over 100 evacuations in Europe during the event window.",
+      "id": "KKR-20260815-25",
+      "date_issued": "2026-08-15",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-15_1726.md",
+      "source_packet": "kkr_packet_2026-08-15_1726.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-15T17:27:42.314430+00:00",
+      "seal_sha256": "3d0b7e1e893e4886959ab5d061031a4416f5f0e6b1106612bd4051996572f932"
+    },
+    {
+      "statement": "A new political alliance is formally announced between Turkey, Saudi Arabia, and Pakistan between 2026-08-21 and 2026-08-28, confirmed by two independent sources (Al Jazeera, BBC World).",
+      "domain": "political",
+      "probability": 25,
+      "resolution": "Two independent sources (Al Jazeera, BBC World) report the formal announcement of a new defense or political alliance between Turkey, Saudi Arabia, and Pakistan between 2026-08-21 and 2026-08-28.",
+      "deadline": "2026-09-02",
+      "citations": [
+        91
+      ],
+      "failure_condition": "No such alliance is formally announced and confirmed by two independent sources within the event window.",
+      "id": "KKR-20260815-26",
+      "date_issued": "2026-08-15",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-08-15_1726.md",
+      "source_packet": "kkr_packet_2026-08-15_1726.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-15T17:27:42.314439+00:00",
+      "seal_sha256": "306ef57a3a1a8d7001e81a8e23ee06fb4dbf245f9a2233c4ace04d0be8cb7a62"
     }
   ]
 }

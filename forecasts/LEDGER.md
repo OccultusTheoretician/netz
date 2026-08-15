@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 150533Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 151923Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 622 issued across 14 forecaster arms · 566 open (34 past deadline, unresolved)
+Window: all-time · 626 issued across 14 forecaster arms · 570 open (34 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -18,7 +18,7 @@ Window: all-time · 622 issued across 14 forecaster arms · 566 open (34 past de
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 10 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[post-verbot] | 20 | 20 | 0 | — | — | not computed | — | — | — |
-| lmstudio/auto[post-window] | 70 | 68 | 0 | — | — | not computed | — | — | — |
+| lmstudio/auto[post-window] | 74 | 72 | 0 | — | — | not computed | — | — | — |
 | lmstudio/auto[pre-verbot] | 60 | 16 | 36 | 11 | 25 | 0.234 | 30.6% | 0.212 | -0.101 |
 | manual/fable | 45 | 40 | 5 | 2 | 3 | 0.198 | 40.0% | 0.240 | +0.174 |
 | manual/fable-5 | 38 | 38 | 0 | — | — | not computed | — | — | — |
@@ -249,6 +249,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260804-53 | `lmstudio/auto` | 2026-08-04 | 2026-08-30 | 45% | political | Between 2026-08-15 and 2026-08-22, a new political development involving Iran's foreign ministry and the U.S. government is reported by at least two independent sources, including Al Jazeera and BBC World. |
 | KKR-20260811-03 | `lmstudio/auto` | 2026-08-11 | 2026-08-30 | 35% | disaster | Between 2026-08-24 and 2026-08-27, a wildfire in California's Big Sur region will result in at least one confirmed fatality, as reported by two independent outlets (Guardian World and BBC World). |
 | KKR-20260811-04 | `lmstudio/auto` | 2026-08-11 | 2026-08-30 | 40% | economics/markets | Between 2026-08-25 and 2026-08-28, the U.S. Federal Reserve will announce a 0.25 percentage point increase in the federal funds rate, as confirmed by a press release from the Federal Reserve Board. |
+| KKR-20260815-23 | `lmstudio/auto` | 2026-08-15 | 2026-08-30 | 30% | disaster | A magnitude 7.0 or greater earthquake occurs in Indonesia between 2026-08-21 and 2026-08-28, with a depth between 10km and 150km and a confirmed death toll of at least 10. |
 | KKR-20260724-08 | `manual/fable` | 2026-07-24 | 2026-08-31 | 50% | public_health | The CDC publicly identifies a specific implicated food product or source for the US cyclosporiasis outbreak between 2026-07-25 and 2026-08-31. |
 | KKR-20260724-11 | `manual/fable` | 2026-07-24 | 2026-08-31 | 45% | public_health | The US cyclosporiasis case count reported by the CDC exceeds 15000 between 2026-07-25 and 2026-08-31. |
 | KKR-20260727-17 | `manual/fable` | 2026-07-27 | 2026-08-31 | 22% | economics/markets | Brent crude front-month futures will trade above 100.00 dollars per barrel at some point between 2026-07-28 and 2026-08-31. |
@@ -281,6 +282,9 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260810-28 | `manual/sonnet-5` | 2026-08-10 | 2026-09-02 | 32% | cyber | LexisNexis will publicly confirm that consumer or customer personal data was accessed or exfiltrated in the server incident disclosed around 2026-08-10, via an SEC filing, a state attorney general breach-notification portal, or a company statement, between 2026-08-17 and 2026-08-31. |
 | KKR-20260810-29 | `manual/sonnet-5` | 2026-08-10 | 2026-09-02 | 58% | economic | Intel Corporation will price and close the 15 billion USD stock offering referenced in reporting on 2026-08-10, as confirmed by an SEC EDGAR filing, between 2026-08-17 and 2026-08-31. |
 | KKR-20260811-07 | `lmstudio/auto` | 2026-08-11 | 2026-09-02 | 30% | disaster | Between 2026-08-28 and 2026-08-31, a magnitude 6.0 or higher earthquake will be recorded by the USGS in the Philippines, with a depth of less than 70 km and a location within 100 km of the island of Mindanao. |
+| KKR-20260815-24 | `lmstudio/auto` | 2026-08-15 | 2026-09-02 | 45% | military/conflict | At least 12 people are killed in Israeli airstrikes on southern Lebanon between 2026-08-21 and 2026-08-28, confirmed by two independent sources (BBC World, Al Jazeera). |
+| KKR-20260815-25 | `lmstudio/auto` | 2026-08-15 | 2026-09-02 | 20% | disaster | At least one major wildfire in Europe causes over 100 evacuations between 2026-08-21 and 2026-08-28, confirmed by two independent sources (BBC World, Al Jazeera). |
+| KKR-20260815-26 | `lmstudio/auto` | 2026-08-15 | 2026-09-02 | 25% | political | A new political alliance is formally announced between Turkey, Saudi Arabia, and Pakistan between 2026-08-21 and 2026-08-28, confirmed by two independent sources (Al Jazeera, BBC World). |
 | KKR-20260811-08 | `lmstudio/auto` | 2026-08-11 | 2026-09-03 | 25% | crime/security | Between 2026-08-29 and 2026-09-01, the U.S. Department of Justice will announce the indictment of a former senior official from the Trump administration for obstruction of justice, as confirmed by a press release from the DOJ. |
 | KKR-20260811-29 | `manual/sonnet-5/unattested` | 2026-08-11 | 2026-09-03 | 58% | disaster_infrastructure | CAL FIRE will report the Big Sur-area wildfire from item 41 at 50 percent containment or higher, with the milestone reached between 2026-08-11 and 2026-09-01. |
 | KKR-20260811-32 | `manual/sonnet-5/unattested` | 2026-08-11 | 2026-09-03 | 75% | military_conflict | A named wire service will report a new clash between Nigerian security forces and non-state armed groups in northwestern Nigeria with 10 or more combined fatalities, occurring between 2026-08-11 and 2026-09-01, per item 99. |
@@ -719,7 +723,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*13 of 622 issued (2.1%) have been voided.*
+*13 of 626 issued (2.1%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
