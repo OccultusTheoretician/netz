@@ -1,6 +1,6 @@
 {
   "schema": "ots_anchors/v1",
-  "generated": "2026-08-14T08:48:00.085414+00:00",
+  "generated": "2026-08-15T05:46:57.399210+00:00",
   "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
   "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
   "pairing_note": "digest_at_stamp is read from the receipt and is fixed; digest_served is computed live from the bytes on this site. pairing=MATCH means the receipt covers what you can download. pairing=DRIFT means the file has changed since it was stamped and the receipt covers the older bytes only. DRIFT is disclosed, not corrected: a receipt is never re-issued to make a later file look anchored.",
@@ -11,7 +11,7 @@
       "state": "anchored",
       "digest": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
       "digest_at_stamp": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
-      "digest_served": "1e082a116ec4c56756a9f1a0d9c9d7cc1f1f86fd21acd3cfcbad2bf99690c6a7",
+      "digest_served": "aed1ba64a8b9aaa75ccf89a7d2760947dca45e3f72fa35ea291cffa00ec4e573",
       "pairing": "DRIFT",
       "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
