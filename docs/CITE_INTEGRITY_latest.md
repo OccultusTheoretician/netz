@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-08-15T07:17:30Z · ledger `ledger.json` · 622 rows in scope
+Generated 2026-08-16T07:19:19Z · ledger `ledger.json` · 626 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,7 +12,7 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **621**
+- rows audited: **625**
 - scope limitation (no resolvable source report): **1**
 - defective: **66** (10.6% of audited)
 - rows whose citation number does not identify a unique item: **295** (max candidates behind one number: 8)
@@ -47,7 +47,7 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| lmstudio/auto | 150 | 29 | 19% |
+| lmstudio/auto | 154 | 29 | 19% |
 | manual/opus-5 | 74 | 12 | 16% |
 | control/baserate | 116 | 7 | 6% |
 | manual/fable | 45 | 6 | 13% |
