@@ -1,0 +1,309 @@
+[
+  {
+    "statement": "At least one Russian air attack using missiles or drones causes an impact, explosion, or fire within Kyiv city between 2026-08-17 and 2026-08-31.",
+    "resolution": "True if strikes on Kyiv city between 2026-08-17 and 2026-08-31 are reported by Ukrainian officials and by at least one Russian or non-Ukrainian international outlet.",
+    "failure_condition": "No Russian missile or drone strike impacts Kyiv city between 2026-08-17 and 2026-08-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-03",
+    "probability": 50,
+    "citations": [
+      64,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-01"
+    }
+  },
+  {
+    "statement": "Ukrainian drones or missiles strike a target at least 100 km from the Ukraine-Russia border inside Russia, causing fire, damage, or casualties, between 2026-08-17 and 2026-09-15.",
+    "resolution": "True if Russian regional or federal officials acknowledge a Ukrainian drone or missile strike at least 100 km from the Ukraine border causing damage, fire, or casualties between 2026-08-17 and 2026-09-15.",
+    "failure_condition": "No Ukrainian strike at least 100 km inside Russia causing officially acknowledged damage, fire, or casualties occurs between 2026-08-17 and 2026-09-15.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-18",
+    "probability": 50,
+    "citations": [
+      69,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-02"
+    }
+  },
+  {
+    "statement": "Houthi (Ansar Allah) forces take control of central Marib city, Yemen, between 2026-08-17 and 2026-12-31.",
+    "resolution": "True if at least two major international news organizations report Houthi forces control central Marib city by 2026-12-31, with Yemeni government or coalition sources conceding withdrawal or loss.",
+    "failure_condition": "Central Marib city remains under Yemeni government control through 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 50,
+    "citations": [
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-03"
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-08-17 and 2026-10-30.",
+    "resolution": "True if the official ICE Brent front-month settlement price is at or above 100.00 USD on any trading day from 2026-08-17 through 2026-10-30, per ICE settlement data.",
+    "failure_condition": "Every ICE Brent front-month daily settlement from 2026-08-17 through 2026-10-30 is below 100.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 25,
+    "citations": [
+      43,
+      48,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 16,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-04"
+    }
+  },
+  {
+    "statement": "Authorities announce the arrest or charging of at least one suspect in the 2026-08-15 Virginia State shooting in which five people were shot, between 2026-08-17 and 2026-09-30.",
+    "resolution": "True if a law enforcement agency publicly announces an arrest or charges in the 2026-08-15 Virginia State five-victim shooting, reported by at least one national outlet, by 2026-09-30.",
+    "failure_condition": "No arrest or charges connected to the 2026-08-15 Virginia State shooting are announced by 2026-09-30.",
+    "domain": "crime/security",
+    "deadline": "2026-10-02",
+    "probability": 31,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3117,
+      "n": 77,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-05"
+    }
+  },
+  {
+    "statement": "Between 2026-08-18 and 2026-09-17 at least one drone attack on Moscow city or Moscow oblast is reported by the Moscow mayor or the Russian Ministry of Defense and by at least one Ukrainian or Western outlet.",
+    "resolution": "True if a drone attack on Moscow city or oblast occurring 2026-08-18 through 2026-09-17 is reported by Russian official channels and by at least one of Reuters, AP, BBC, or a Ukrainian outlet.",
+    "failure_condition": "No drone attack on Moscow city or Moscow oblast occurs within the window that is acknowledged on the Russian side and independently reported on the Ukrainian or Western side.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-21",
+    "probability": 50,
+    "citations": [
+      92
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-54"
+    }
+  },
+  {
+    "statement": "Between 2026-08-18 and 2026-09-30 the United States conducts a military strike on targets inside the territory of Oman.",
+    "resolution": "True if at least two of Reuters, AP, AFP, or BBC report a US military strike on targets inside Omani territory occurring between 2026-08-18 and 2026-09-30.",
+    "failure_condition": "No US military strike on Omani territory occurs within the event window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-02",
+    "probability": 50,
+    "citations": [
+      82,
+      102
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-55"
+    }
+  },
+  {
+    "statement": "Between 2026-08-18 and 2026-11-30 United States ground forces conduct combat operations inside the internationally recognized territory of Iran.",
+    "resolution": "True if at least two of Reuters, AP, AFP, or BBC report US ground forces engaged in combat operations inside Iran between 2026-08-18 and 2026-11-30.",
+    "failure_condition": "US military action against Iran within the window remains limited to air, missile, naval, or covert means, with no ground combat operations inside Iranian territory.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-02",
+    "probability": 50,
+    "citations": [
+      83,
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-56"
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield published in FRED series DGS10 is at or above 5.00 percent for at least one business day between 2026-08-18 and 2026-11-30.",
+    "resolution": "True if any DGS10 daily value published by FRED for dates 2026-08-18 through 2026-11-30 is at or above 5.00.",
+    "failure_condition": "Every DGS10 daily reading in the window is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 25,
+    "citations": [
+      59,
+      65
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 16,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-57"
+    }
+  },
+  {
+    "statement": "A CVE identifier for the Microsoft Defender vulnerability publicly tracked as ShieldBreak is added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-18 and 2026-10-16.",
+    "resolution": "True if the CISA KEV catalog gains an entry for a Microsoft Defender vulnerability, identified in vendor or CISA documentation as ShieldBreak, with dateAdded between 2026-08-18 and 2026-10-16.",
+    "failure_condition": "No KEV entry attributable to the ShieldBreak Defender vulnerability carries a dateAdded value within the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-19",
+    "probability": 23,
+    "citations": [
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-58"
+    }
+  },
+  {
+    "statement": "Between 2026-08-18 and 2026-11-30 the WHO Director-General declares the Democratic Republic of the Congo Ebola outbreak a Public Health Emergency of International Concern.",
+    "resolution": "True if WHO publishes a Director-General statement declaring the DRC Ebola outbreak a PHEIC, dated between 2026-08-18 and 2026-11-30.",
+    "failure_condition": "No WHO PHEIC declaration covering the DRC Ebola outbreak is issued within the window.",
+    "domain": "disaster",
+    "deadline": "2026-12-02",
+    "probability": 33,
+    "citations": [
+      116
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-59"
+    }
+  },
+  {
+    "statement": "No candidate wins a majority of valid votes in the first round of the Brazilian presidential election held on 2026-10-04, sending the contest to a second round per official TSE results.",
+    "resolution": "True if official TSE first-round results for the 2026-10-04 Brazilian presidential election show no candidate above 50 percent of valid votes, requiring a second round.",
+    "failure_condition": "A candidate wins more than 50 percent of valid first-round votes, deciding the presidency without a runoff.",
+    "domain": "political",
+    "deadline": "2026-10-09",
+    "probability": 29,
+    "citations": [
+      85
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T18:13:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-60"
+    }
+  }
+]

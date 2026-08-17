@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "Between 2026-08-18 and 2026-09-17 at least one drone attack on Moscow city or Moscow oblast is reported by the Moscow mayor or the Russian Ministry of Defense and by at least one Ukrainian or Western outlet.",
+    "domain": "military/conflict",
+    "probability": 85,
+    "resolution": "True if a drone attack on Moscow city or oblast occurring 2026-08-18 through 2026-09-17 is reported by Russian official channels and by at least one of Reuters, AP, BBC, or a Ukrainian outlet.",
+    "deadline": "2026-09-21",
+    "citations": [92],
+    "failure_condition": "No drone attack on Moscow city or Moscow oblast occurs within the window that is acknowledged on the Russian side and independently reported on the Ukrainian or Western side."
+  },
+  {
+    "statement": "Between 2026-08-18 and 2026-09-30 the United States conducts a military strike on targets inside the territory of Oman.",
+    "domain": "military/conflict",
+    "probability": 10,
+    "resolution": "True if at least two of Reuters, AP, AFP, or BBC report a US military strike on targets inside Omani territory occurring between 2026-08-18 and 2026-09-30.",
+    "deadline": "2026-10-02",
+    "citations": [82, 102],
+    "failure_condition": "No US military strike on Omani territory occurs within the event window."
+  },
+  {
+    "statement": "Between 2026-08-18 and 2026-11-30 United States ground forces conduct combat operations inside the internationally recognized territory of Iran.",
+    "domain": "military/conflict",
+    "probability": 18,
+    "resolution": "True if at least two of Reuters, AP, AFP, or BBC report US ground forces engaged in combat operations inside Iran between 2026-08-18 and 2026-11-30.",
+    "deadline": "2026-12-02",
+    "citations": [83, 99],
+    "failure_condition": "US military action against Iran within the window remains limited to air, missile, naval, or covert means, with no ground combat operations inside Iranian territory."
+  },
+  {
+    "statement": "The ICE Brent crude front-month futures contract settles at or above 100.00 US dollars per barrel on at least one trading day between 2026-08-18 and 2026-10-30.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "True if the ICE official daily settlement price for front-month Brent crude is at or above 100.00 USD on any trading day from 2026-08-18 through 2026-10-30.",
+    "deadline": "2026-11-02",
+    "citations": [54, 81],
+    "failure_condition": "Every front-month Brent daily settlement in the window is below 100.00 USD."
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield published in FRED series DGS10 is at or above 5.00 percent for at least one business day between 2026-08-18 and 2026-11-30.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "True if any DGS10 daily value published by FRED for dates 2026-08-18 through 2026-11-30 is at or above 5.00.",
+    "deadline": "2026-12-02",
+    "citations": [59, 65],
+    "failure_condition": "Every DGS10 daily reading in the window is below 5.00 percent."
+  },
+  {
+    "statement": "A CVE identifier for the Microsoft Defender vulnerability publicly tracked as ShieldBreak is added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-18 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 60,
+    "resolution": "True if the CISA KEV catalog gains an entry for a Microsoft Defender vulnerability, identified in vendor or CISA documentation as ShieldBreak, with dateAdded between 2026-08-18 and 2026-10-16.",
+    "deadline": "2026-10-19",
+    "citations": [22],
+    "failure_condition": "No KEV entry attributable to the ShieldBreak Defender vulnerability carries a dateAdded value within the window."
+  },
+  {
+    "statement": "Between 2026-08-18 and 2026-09-18 the USGS earthquake catalog records at least one earthquake of magnitude 6.0 or greater with an epicenter within 250 km of USGS event us6000tkt2 near Ende Indonesia.",
+    "domain": "disaster",
+    "probability": 50,
+    "resolution": "True if a USGS catalog earthquake of magnitude 6.0 or greater, with origin time from 2026-08-18 through 2026-09-18, lies within 250 km of USGS event us6000tkt2.",
+    "deadline": "2026-09-22",
+    "citations": [50, 39],
+    "failure_condition": "No M6.0 or greater event within 250 km of us6000tkt2 has an origin time inside the window in the reviewed USGS catalog."
+  },
+  {
+    "statement": "Between 2026-08-18 and 2026-11-30 the WHO Director-General declares the Democratic Republic of the Congo Ebola outbreak a Public Health Emergency of International Concern.",
+    "domain": "disaster",
+    "probability": 25,
+    "resolution": "True if WHO publishes a Director-General statement declaring the DRC Ebola outbreak a PHEIC, dated between 2026-08-18 and 2026-11-30.",
+    "deadline": "2026-12-02",
+    "citations": [116],
+    "failure_condition": "No WHO PHEIC declaration covering the DRC Ebola outbreak is issued within the window."
+  },
+  {
+    "statement": "No candidate wins a majority of valid votes in the first round of the Brazilian presidential election held on 2026-10-04, sending the contest to a second round per official TSE results.",
+    "domain": "political",
+    "probability": 75,
+    "resolution": "True if official TSE first-round results for the 2026-10-04 Brazilian presidential election show no candidate above 50 percent of valid votes, requiring a second round.",
+    "deadline": "2026-10-09",
+    "citations": [85],
+    "failure_condition": "A candidate wins more than 50 percent of valid first-round votes, deciding the presidency without a runoff."
+  },
+  {
+    "statement": "Between 2026-08-18 and 2027-01-29 the federal trial in California between Meta and state attorneys general over youth social media harms concludes with a jury verdict, judgment, or settlement entered on the court docket.",
+    "domain": "political",
+    "probability": 65,
+    "resolution": "True if the court docket in the Meta state attorneys general trial records a jury verdict, judgment, or settlement notice dated between 2026-08-18 and 2027-01-29.",
+    "deadline": "2027-02-02",
+    "citations": [46, 68],
+    "failure_condition": "No jury verdict, judgment, or docketed settlement in the case is entered within the window."
+  }
+]

@@ -2,7 +2,7 @@
 
 *Method: a claim is single-source until an independently-biased channel corroborates it. Grade A = three or more hostile SIDES agree on a specific sub-zone anchor. Grade B = two sides. Grade C = repeated inside one side, which is echo, not corroboration. Grade F = single source, counted and withheld. Sides are counted, not outlet labels: three Kremlin-aligned channels are one voice, not three.*
 
-Pull: tg_events_2026-08-16_1515.json · 87 clustered events (56 kinetic, 31 statement) · kinetic: **4A** 11B 13C 28 withheld · statements: **0A** 1B · rendered 161515Z AUG 26
+Pull: tg_events_2026-08-17_1535.json · 89 clustered events (56 kinetic, 33 statement) · kinetic: **4A** 11B 13C 28 withheld · statements: **0A** 1B · rendered 171535Z AUG 26
 
 **⬛ GRADE A — CONFIRMED**
 
@@ -59,25 +59,25 @@ Pull: tg_events_2026-08-16_1515.json · 87 clustered events (56 kinetic, 31 stat
 - Casualties: none stated in the corroborating reports.
 - Window: 7.8h · first seen 15 Aug 2334Z
 
-**Khan Younis · Israel-Gaza-Levant Theatre**
-
-- 9 reports, 2 distinct channels across **2 hostile sides** (IL, PS)
-- Report balance: PS 6 · IL 3
-- Reported under 2 spellings of the same place: Khan Younis, Khan Yunis — matched through the alias table. The sides do not use the same name for this ground.
-- Channels per side: IL 1, PS 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
-- Weapons reported: airstrike, drone
-- Casualties: none stated in the corroborating reports.
-- Window: 5.9h · first seen 16 Aug 0830Z
-
 **Kyiv · Russia-Ukraine Theatre**
 
-- 7 reports, 4 distinct channels across **2 hostile sides** (RU, UA)
-- Report balance: RU 5 · UA 2
+- 8 reports, 4 distinct channels across **2 hostile sides** (RU, UA)
+- Report balance: RU 6 · UA 2 — **one side carries most of the volume**; the others corroborate but do not independently substantiate
 - Camp labels behind those sides: pro-russia, pro-ukraine, russian — 3 labels, 2 sides. Labels do not grade.
 - Channels per side: RU 3, UA 1 — UA rests on one outlet each
 - Weapons reported: drone, missile
 - Casualties: none stated in the corroborating reports.
 - Window: 4.2h · first seen 15 Aug 1518Z
+
+**Khan Younis · Israel-Gaza-Levant Theatre**
+
+- 8 reports, 2 distinct channels across **2 hostile sides** (IL, PS)
+- Report balance: PS 6 · IL 2 — **one side carries most of the volume**; the others corroborate but do not independently substantiate
+- Reported under 2 spellings of the same place: Khan Younis, Khan Yunis — matched through the alias table. The sides do not use the same name for this ground.
+- Channels per side: IL 1, PS 1 — **every side here is a single outlet**; this is corroboration across bias, not across independent reporting
+- Weapons reported: airstrike, drone
+- Casualties: none stated in the corroborating reports.
+- Window: 5.9h · first seen 16 Aug 0830Z
 
 **Nablus · Israel-Gaza-Levant Theatre**
 
@@ -188,4 +188,4 @@ Pull: tg_events_2026-08-16_1515.json · 87 clustered events (56 kinetic, 31 stat
 
 *Single-side statement echo (not corroborated): Ceasefire · Israel-Gaza-Levant Theatre (3 rpt, IL); Strait Of Hormuz · Israel-Gaza-Levant Theatre (3 rpt, AXIS).*
 
-*28 single-source statement claims logged, not reported.*
+*30 single-source statement claims logged, not reported.*

@@ -1,0 +1,117 @@
+[
+  {
+    "statement": "The United States military strikes a target inside Oman between 2026-08-17 and 2026-09-14.",
+    "domain": "military/conflict",
+    "probability": 8,
+    "resolution": "TRUE if Reuters, AP, or BBC report a US military strike on Omani territory or territorial waters between 2026-08-17 and 2026-09-14; FALSE otherwise.",
+    "deadline": "2026-09-17",
+    "citations": [
+      82,
+      109,
+      119
+    ],
+    "failure_condition": "The United States does not strike any target inside Oman between 2026-08-17 and 2026-09-14."
+  },
+  {
+    "statement": "Commercial tanker transit through the Strait of Hormuz is closed for 24 continuous hours or more between 2026-08-17 and 2026-09-07.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "TRUE if Reuters, the US Navy, or Bloomberg report a Hormuz transit closure of 24 hours or more between 2026-08-17 and 2026-09-07; FALSE otherwise.",
+    "deadline": "2026-09-10",
+    "citations": [
+      54,
+      82
+    ],
+    "failure_condition": "Commercial transit through the Strait of Hormuz continues without a 24-hour-plus closure between 2026-08-17 and 2026-09-07."
+  },
+  {
+    "statement": "WTI crude oil settles at or above 90.00 USD per barrel on any trading day between 2026-08-17 and 2026-10-15.",
+    "domain": "economics/markets",
+    "probability": 34,
+    "resolution": "TRUE if the CME/NYMEX WTI front-month settlement price is at or above 90.00 USD per barrel on any trading day between 2026-08-17 and 2026-10-15; FALSE otherwise.",
+    "deadline": "2026-10-19",
+    "citations": [
+      54,
+      72
+    ],
+    "failure_condition": "WTI crude oil never settles at or above 90.00 USD per barrel between 2026-08-17 and 2026-10-15."
+  },
+  {
+    "statement": "The US 10-Year Treasury yield closes at or above 5.00 percent on any trading day between 2026-08-17 and 2026-10-30.",
+    "domain": "economics/markets",
+    "probability": 29,
+    "resolution": "TRUE if the FRED DGS10 series records a daily close at or above 5.00 percent between 2026-08-17 and 2026-10-30; FALSE otherwise.",
+    "deadline": "2026-11-03",
+    "citations": [
+      59,
+      65
+    ],
+    "failure_condition": "The 10-Year Treasury yield never closes at or above 5.00 percent between 2026-08-17 and 2026-10-30."
+  },
+  {
+    "statement": "CISA adds a VMware vCenter Server CVE to the Known Exploited Vulnerabilities catalog with a Date Added value between 2026-08-17 and 2026-09-14.",
+    "domain": "cyber",
+    "probability": 37,
+    "resolution": "TRUE if the CISA KEV catalog lists a VMware vCenter Server entry with Date Added between 2026-08-17 and 2026-09-14; FALSE otherwise.",
+    "deadline": "2026-09-17",
+    "citations": [
+      23
+    ],
+    "failure_condition": "No VMware vCenter Server CVE is added to the CISA KEV catalog between 2026-08-17 and 2026-09-14."
+  },
+  {
+    "statement": "Philips or GE publicly confirms data theft from the Clop-attributed breach between 2026-08-17 and 2026-09-30.",
+    "domain": "cyber",
+    "probability": 44,
+    "resolution": "TRUE if a company statement, SEC filing, or wire report quotes Philips or GE confirming data theft between 2026-08-17 and 2026-09-30; FALSE if both remain in investigating or denied status.",
+    "deadline": "2026-10-05",
+    "citations": [
+      18
+    ],
+    "failure_condition": "Neither Philips nor GE confirms data theft; both remain in investigating or denied status through 2026-09-30."
+  },
+  {
+    "statement": "Zambian prosecutors file formal criminal charges against at least one arrested opposition figure between 2026-08-17 and 2026-08-31.",
+    "domain": "political",
+    "probability": 47,
+    "resolution": "TRUE if Reuters, AP, or BBC report formal charges filed against an arrested Zambian opposition figure between 2026-08-17 and 2026-08-31; FALSE otherwise.",
+    "deadline": "2026-09-03",
+    "citations": [
+      115
+    ],
+    "failure_condition": "All arrested Zambian opposition figures are released without charge, or remain uncharged, through 2026-08-31."
+  },
+  {
+    "statement": "The World Health Organization declares the Democratic Republic of the Congo Ebola outbreak a Public Health Emergency of International Concern between 2026-08-17 and 2026-11-14.",
+    "domain": "disaster",
+    "probability": 17,
+    "resolution": "TRUE if the WHO Director-General publishes a PHEIC declaration naming the DRC Ebola outbreak between 2026-08-17 and 2026-11-14; FALSE otherwise.",
+    "deadline": "2026-11-17",
+    "citations": [
+      116
+    ],
+    "failure_condition": "The WHO does not declare a PHEIC for the DRC Ebola outbreak between 2026-08-17 and 2026-11-14."
+  },
+  {
+    "statement": "USGS records an earthquake of magnitude 6.0 or greater within 150 km of event us6000tkt2 near Ende, Indonesia between 2026-08-17 and 2026-09-07.",
+    "domain": "disaster",
+    "probability": 40,
+    "resolution": "TRUE if the USGS Earthquake Catalog lists an M6.0 or greater event within 150 km of us6000tkt2 with an origin time between 2026-08-17 and 2026-09-07; FALSE otherwise.",
+    "deadline": "2026-09-10",
+    "citations": [
+      50
+    ],
+    "failure_condition": "No M6.0 or greater USGS-catalogued event occurs within 150 km of us6000tkt2 between 2026-08-17 and 2026-09-07."
+  },
+  {
+    "statement": "Virginia prosecutors file adult criminal charges against the campus shooting suspect between 2026-08-17 and 2026-09-14.",
+    "domain": "crime/security",
+    "probability": 55,
+    "resolution": "TRUE if a Virginia court record, AP, or BBC report states the suspect faces adult criminal charges between 2026-08-17 and 2026-09-14; FALSE if the case remains exclusively juvenile.",
+    "deadline": "2026-09-17",
+    "citations": [
+      12
+    ],
+    "failure_condition": "The suspect is not charged as an adult, or remains uncharged, through 2026-09-14."
+  }
+]
