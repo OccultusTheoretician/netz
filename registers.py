@@ -194,6 +194,10 @@ def locational_entities(text: str) -> set:
     # ends the span at "U." and every entity after it is lost. This bug ate
     # the finding the check was built for, twice.
     t = re.sub(r"\b([A-Za-z])\.", r"\1", (text or ""))
+    # KK31-GATE (R1): a currency denomination is not a geography. "100.00 US
+    # dollars per barrel" made a Brent row a claim about the United States
+    # and turned its on-point Iran citations into a DISJOINT finding.
+    t = re.sub(r"\b(?:US|USD)\s+dollars?\b|\bUSD\b", " dollars ", t)
     t = re.sub(r"\s+", " ", t)
     out: set = set()
     for m in _LOCATIVE.finditer(t):
@@ -295,6 +299,18 @@ def venue_scope(resolution: str) -> dict:
     markers = [m.lower() for m in reg["exemplary_markers"]]
     res = resolution or ""
     masked = _MASK.sub(" ", res)
+    # KK31-GATE (R2): outcome disjunctions are event alternatives inside ONE
+    # venue, not venue alternatives ("lifted or suspended"; "a jury verdict,
+    # judgment, or settlement notice"). Masked before the venue-'or' scan,
+    # the same way _MASK already hides threshold and geography or's.
+    masked = re.sub(r"\b[a-z]+ed\s+or\s+[a-z]+ed\b", " ", masked, flags=re.I)
+    masked = re.sub(r"\b(?:jury\s+)?(?:verdict|judgment|judgement|acquittal|"
+                    r"conviction|dismissal|settlement|ruling)s?"
+                    r"(?:\s*,\s*(?:verdict|judgment|judgement|settlement|"
+                    r"ruling|order|decree|notice)s?)*\s*,?\s+or\s+"
+                    r"(?:an?\s+)?(?:verdict|judgment|judgement|settlement|"
+                    r"ruling|order|decree|notice|dismissal)s?\b",
+                    " ", masked, flags=re.I)
     low = masked.lower()
     found = named_venues(res)
 
