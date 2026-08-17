@@ -363,6 +363,16 @@ _CITE_SHOTGUN_FRAC = 0.50   # or >=50% of the record, whichever binds first
 _CITE_DF_RARE_FRAC = 0.25   # token in <=25% of items = discriminating
 
 
+def _cite_item_text(raw):
+    """KK31-GATE (E10): keep the link's slug vocabulary. Report headlines
+    truncate; the grounding tokens often live only in the URL path
+    (.../us-iran-war-trump-hormuz.html)."""
+    def _slug(mm):
+        path = re.sub(r"https?://[^/\s]+", " ", mm.group(1))
+        return " " + " ".join(re.findall(r"[A-Za-z]{4,}", path)) + " "
+    return re.sub(r"\[link\]\((\S+)\)", _slug, raw)
+
+
 def _report_items(path):
     """Numbered items -> {n: [text, ...]}. A number may carry several texts:
     that is the ambiguity, recorded rather than collapsed."""
@@ -375,7 +385,7 @@ def _report_items(path):
         m = re.match(r"\s*(\d+)\.\s+(.*)", line)
         if m:
             items.setdefault(int(m.group(1)), []).append(
-                re.sub(r"\[link\]\(\S+\)", "", m.group(2)))
+                _cite_item_text(m.group(2)))
     return items
 
 
@@ -421,7 +431,7 @@ def _citation_support(p: dict):
     for line in lines:
         m = re.match(r"\s*(\d+)\.\s+(.*)", line)
         if m and int(m.group(1)) in cites:
-            cited_text.append(re.sub(r"\[link\]\(\S+\)", "", m.group(2)))
+            cited_text.append(_cite_item_text(m.group(2)))
             found.add(int(m.group(1)))
     if not found:
         return None                       # cannot resolve; do not reject blind
@@ -459,6 +469,32 @@ def _citation_support(p: dict):
     claim = _content_words(p.get("statement", "") + " " + p.get("resolution", ""))
     if not claim:
         return None
+    # KK31-GATE (E12): short proper-noun channel. _content_words strips 2-3
+    # char tokens by design (a shared 'CVE' is not support), which blinds the
+    # check to subjects that ARE short caps - GE, AP, TSE, MOF. Exact match
+    # only, never prefix, gated on rarity inside this report, with a stop
+    # list for generic caps.
+    _CAPSTOP = {"US", "UK", "UN", "EU", "AI", "IT", "ID", "TV", "AM", "PM",
+                "THE", "NEW", "FOR", "AND", "UTC", "USD", "EUR", "GMT"}
+    def _caps(t):
+        return {w for w in re.findall(
+            r"(?<![A-Za-z0-9])[A-Z]{2,4}(?![A-Za-z0-9])", t or "")
+            if w not in _CAPSTOP}
+    _claim_caps = _caps(p.get("statement", "") + " " + p.get("resolution", ""))
+    if _claim_caps:
+        from collections import Counter
+        _cdf, _ctot = Counter(), 0
+        for _txts in items.values():
+            for _t in _txts:
+                _ctot += 1
+                for _w in _caps(_t):
+                    _cdf[_w] += 1
+        _ccut = max(1, int(max(1, _ctot) * _CITE_DF_RARE_FRAC))
+        for _c in sorted(cites):
+            for _txt in items.get(_c, []):
+                _hit = _claim_caps & _caps(_txt)
+                if any(_cdf.get(_w, 99) <= _ccut for _w in _hit):
+                    return None
     best, any_overlap = "NONE", False
     for c in sorted(cites):
         for txt in items.get(c, []):
@@ -528,6 +564,15 @@ _VENUE_LEXICON = {
     "dcoilwtico": ["wti", "cushing", "crude"],
     "dfedtaru": ["fomc", "federal", "funds"],
     "sp500": ["500"], "dgs10": ["treasury", "yield"],
+    # KK31-GATE (E3): board-7 gaps + the KK31 kill-grade faces. An alias row
+    # maps a register's short form to the subject it measures; [] = pure venue.
+    "comcat": ["usgs"], "anss": ["usgs"], "edgar": ["sec"],
+    "tse": ["brazil", "electoral"], "tgt": ["target"],
+    "dgs": ["treasury", "yield"], "nymex": ["wti"], "cme": [],
+    "ecdc": [], "who": [], "lloyds": [], "bloomberg": [],
+    "marketwatch": [], "ap": [], "eia": ["energy"],
+    "bnpb": ["indonesia"], "drc": ["congo"], "macos": ["apple"],
+    "pacer": [], "centcom": [],
 }
 
 
@@ -723,9 +768,10 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                               r"six\b|seven\b|eight\b|nine\b|ten\b)", both, re.I) \
             and not re.search(r"\d[\d.,]*\s*(?:percentage[ -]points?|pp\b|"
                               r"bps\b|basis[ -]points?|percent\b|%)", both, re.I) \
-            and not re.search(r"\b(?:lower|higher|less|greater|above|below)\s+than\s+"
+            and not re.search(r"\b(?:lower|higher|less|greater|above|below)\s+(?:than\s+)?"
                               r"the\s+\w+(?:\s+\w+){0,5}\s+(?:set|published|announced|"
-                              r"recorded|established|adopted)\b", both, re.I):
+                              r"recorded|established|adopted|in effect|prevailing)\b", both, re.I) \
+            and not re.search(r"\bdo(?:es)?\s+not\s+count\b", both, re.I):
         reasons.append("measurable claim without a numeric threshold \u2014 "
                        "a row about a quantity must state the number next to its comparator; identifier digits (H.15, S&P 500) do not count")
     if re.search(r"^\s*if\b|\bonly if\b|\bprovided that\b|\bin the event\b",
@@ -755,25 +801,32 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     _win = re.search(r"\bbetween\s+(20\d{2}-\d{2}-\d{2})\s+and\s+"
                      r"(20\d{2}-\d{2}-\d{2})\b", both, re.I)
     _governed = set()
-    for _m in re.finditer(r"\b(?:confirm\w*|verif\w*|report\w*|corroborat\w*)"
-                          r"\s+(?:by|on)\s+(20\d{2}-\d{2}-\d{2})\b", both, re.I):
+    for _m in re.finditer(r"\b(?:confirm\w*|verif\w*|report\w*|corroborat\w*|check\w*)"
+                          r"\s+(?:(?:by|on)\s+)?(20\d{2}-\d{2}-\d{2})\b", both, re.I):
         _governed.add(_m.group(1))
     for _m in re.finditer(r"\b(?:in\s+effect\s+on|as\s+of|described\s+in\s+the|"
                           r"dated|on\s+or\s+before|the)\s+(20\d{2}-\d{2}-\d{2})\b",
                           both, re.I):
         _governed.add(_m.group(1))
+    _fellback = False
     if _win:
         _dates = sorted({_win.group(1), _win.group(2)})
     else:
-        _dates = [d for d in _all_dates if d not in _governed] or _all_dates
-    _sched = re.search(r"\b(?:scheduled|calendar|election|referendum|summit|"
-                       r"fomc|meeting|hearing|verdict|sentencing|expir\w*|"
+        # KK31-GATE (E8): when EVERY date is governed (checked-by, on-or-
+        # before, anchor dates), the window is [elicitation, deadline] by
+        # construction. Reinstating a governed date as a bound is what
+        # parsed "on or before" as an exact day.
+        _ung = [d for d in _all_dates if d not in _governed]
+        _fellback = (not _ung) and bool(_all_dates)
+        _dates = _ung or _all_dates
+    _sched = re.search(r"\b(?:scheduled|calendar|elections?|referendums?|summits?|"
+                       r"fomc|meetings?|hearings?|verdicts?|midterms?|runoffs?|sentencing|expir\w*|"
                        r"settle\w*|auction|inaugurat\w*|swearing|"
                        r"regularly scheduled|already announced)\b", both, re.I)
     _confirm = re.search(r"\b(?:confirmed by|reported by|verified by|"
                          r"corroborat\w+|independent sources|hostile sides|"
                          r"wire services|news agencies)\b", both, re.I)
-    if _dates and _dates[0] == _dates[-1] and not _sched:
+    if _dates and _dates[0] == _dates[-1] and not _sched and not _fellback:
         reasons.append("single-day resolution window for an unscheduled event — "
                        f"the row requires this to occur on {_dates[0]} exactly. "
                        "Price a day, not a window: widen the window or state why "
@@ -855,14 +908,44 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     Not No Any All At Least More Than Over Under Above Below Within From Until
     January February March April May June July August September October November
     December Monday Tuesday Wednesday Thursday Friday Saturday Sunday US USD
-    UTC""".split())
+    UTC True False Official Catalog Catalogs Earthquake Feed Dataset Data
+    Series Index List Record Records Website Page""".split())
     _sid = {w for w in _IDENT.findall(p.get("statement", "")) if w not in _GENERIC}
     _rid = {w for w in _IDENT.findall(p.get("resolution", "")) if w not in _GENERIC}
+    # KK31-GATE (E2): identifier-shaped subjects the caps pattern cannot see.
+    # A USGS event id, a CVE, an 8-K item number CARRY the subject; a
+    # resolution restating the claim through its identifier is on-subject.
+    _IDLOW = re.compile(r"(?<![A-Za-z0-9])(?:[a-z]{2}\d{4,}[a-z0-9]*|"
+                        r"cve-\d{4}-\d{2,}|item\s+1\.05|8-k|10-k)"
+                        r"(?![A-Za-z0-9])", re.I)
+    _sid |= {m.group(0).lower() for m in _IDLOW.finditer(p.get("statement", ""))}
+    _rid |= {m.group(0).lower() for m in _IDLOW.finditer(p.get("resolution", ""))}
     # KK27-VENUE: a register or outlet in the resolution is where to look,
     # not what is claimed. Series identifiers expand to their subject before
     # the comparison; a resolution left with venues and NO subject is its
     # own defect class, sharper than mismatch.
     _s_subj, _r_subj, _r_ven = _venue_split(_sid, _rid)
+    # KK31-GATE (E4): a resolution token sitting in a source-of-record
+    # context is a venue by POSITION even when the lexicon has never met it
+    # (Federal Register, White House actions page, NYSE consolidated data).
+    # Demotion runs only on tokens with no statement overlap, so it can
+    # prevent a spurious mismatch but never manufacture an overlap.
+    _VCUE = re.compile(r"\b(?:per|according to|published|posted|listed|"
+                       r"announced|issued|via|checked|website|page|feed|"
+                       r"docket|catalog|register|gazette|bulletin|api|"
+                       r"dataset|series|index|official|press|data|"
+                       r"consolidated|actions)\b", re.I)
+    if _r_subj:
+        _res_low = (p.get("resolution", "") or "").lower()
+        for _t in sorted(_r_subj):
+            if _tokens_overlap({_t}, _s_subj):
+                continue
+            for _mm in re.finditer(re.escape(_t), _res_low):
+                _wnd = _res_low[max(0, _mm.start() - 60):_mm.end() + 60]
+                if _VCUE.search(_wnd):
+                    _r_subj.discard(_t)
+                    _r_ven.add(_t)
+                    break
     if _s_subj and not _r_subj and _r_ven:
         reasons.append(
             "the resolution names only a venue or register ("
@@ -882,6 +965,18 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     _sw = _content_words(p.get("statement", ""))
     _rw = _content_words(p.get("resolution", ""))
     _added = (_rw & _QUAL) - _sw
+    if _added:
+        # KK31-GATE (E5): a qualifier under NEGATION is an exclusion that
+        # restates the statement's own strictness ("proposed, interim, or
+        # delayed rules do not count"), not a narrowing.
+        _res_neg = (p.get("resolution", "") or "").lower()
+        _added = {q for q in _added if not (
+            re.search(r"(?:\bnot\b|\bno\b|\bnon-|\bneither\b|\bnor\b|"
+                      r"\bexcluding\b|other than|rather than)"
+                      r"[^.;]{0,40}\b" + re.escape(q) + r"\b", _res_neg)
+            or re.search(r"\b" + re.escape(q) + r"\b[^.;]{0,60}"
+                         r"\bdo(?:es)?\s+not\s+(?:count|qualify|satisfy)\b",
+                         _res_neg))}
     if _added:
         reasons.append(
             "the resolution narrows the claim with a qualifier the statement "
@@ -918,6 +1013,7 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                   file=sys.stderr)
         else:
             reasons.append(_anchor)
+    reasons = list(dict.fromkeys(reasons))  # KK31-GATE: one defect, one line
     return reasons
 
 
@@ -1682,9 +1778,8 @@ def cmd_ingest(args):
             p["source_report"] = src_name
             p["rubric_hash"] = _rubric_hash()
         reasons = validate_projection(p)
-        _cs = _citation_support(p)
-        if _cs:
-            reasons = list(reasons) + [_cs]
+        # KK31-GATE (E11): validate_projection already runs _citation_support;
+        # the second call here printed every citation and geo reason twice.
         if id(p) in _fc_rej:
             reasons = list(reasons) + [_fc_rej[id(p)]]
         (rejected.append((p, reasons)) if reasons else accepted_raw.append(p))
