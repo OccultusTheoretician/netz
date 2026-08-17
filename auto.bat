@@ -1,4 +1,20 @@
 @echo off
+:: KK30-LMS-PREFLIGHT - raise the inference engine before the chain assumes it
+call lms server start >nul 2>&1
+set LMSTRIES=0
+:lmswait
+curl -s -o NUL http://127.0.0.1:1234/v1/models && goto lmsready
+set /a LMSTRIES+=1
+if %LMSTRIES% GEQ 30 (
+  echo [preflight] LM Studio server not answering on 1234 after ~60s - elicitation will fail loud
+  goto lmsdone
+)
+ping -n 3 127.0.0.1 >nul
+goto lmswait
+:lmsready
+lms ps 2>nul | findstr /C:"qwen/qwen3-30b-a3b-2507" >nul || call lms load qwen/qwen3-30b-a3b-2507 -y
+:lmsdone
+:: end KK30-LMS-PREFLIGHT
 REM ============================================================
 REM  auto.bat - THE UNATTENDED MORNING (KK26).
 REM

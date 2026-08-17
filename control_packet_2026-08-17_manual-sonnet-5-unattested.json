@@ -1,0 +1,102 @@
+[
+  {
+    "statement": "Between 2026-08-17 and 2026-09-20, Qatar and Iran issue public statements that converge on a single account of the fate of the three Iranian pilots Qatar allegedly shot down in March 2026, either confirming them alive and held or confirming their deaths.",
+    "resolution": "TRUE if Qatar and Iran state the same outcome for the three named pilots, reported by Reuters, AP, or AFP, between 2026-08-17 and 2026-09-20; otherwise FALSE.",
+    "failure_condition": "MISS if Qatar's denial and Iran's captivity claim both remain unretracted and unreconciled through the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-22",
+    "probability": 50,
+    "citations": [
+      79
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T02:09:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-21"
+    }
+  },
+  {
+    "statement": "Between 2026-08-17 and 2026-09-15, the United States government takes a formal, documented action asserting a sovereignty or territorial claim over any part of the Strait of Hormuz, beyond rhetorical statements by the President.",
+    "resolution": "TRUE if the Federal Register, a State Department notice, or a wire service reports a formal US filing or action claiming sovereignty over Hormuz waters between 2026-08-17 and 2026-09-15; otherwise FALSE.",
+    "failure_condition": "MISS if no formal US filing, order, or notification asserting a Hormuz sovereignty claim occurs within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-17",
+    "probability": 50,
+    "citations": [
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T02:09:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-22"
+    }
+  },
+  {
+    "statement": "Between 2026-08-17 and 2026-08-31, a cybersecurity vendor or outlet other than BleepingComputer, such as Krebs on Security, The Hacker News, Malwarebytes, SentinelOne, or Objective-See, publishes independent research naming and attributing the AmnesiaStealer macOS malware campaign.",
+    "resolution": "TRUE if a named second security vendor or outlet publishes independent attribution of AmnesiaStealer between 2026-08-17 and 2026-08-31; otherwise FALSE.",
+    "failure_condition": "MISS if the AmnesiaStealer campaign receives no independent second-source attribution within the window.",
+    "domain": "cyber",
+    "deadline": "2026-09-02",
+    "probability": 23,
+    "citations": [
+      15
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T02:09:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-23"
+    }
+  },
+  {
+    "statement": "Between 2026-08-17 and 2026-09-20, the US Navy or Department of Defense publicly confirms that USS George Washington has relieved USS Abraham Lincoln on its Middle East deployment station.",
+    "resolution": "TRUE if DoD or Navy public affairs, or a wire service citing an on-record defense official, confirms the Lincoln to George Washington handover between 2026-08-17 and 2026-09-20; otherwise FALSE.",
+    "failure_condition": "MISS if the Lincoln to George Washington handover is not officially confirmed within the window.",
+    "domain": "political",
+    "deadline": "2026-09-22",
+    "probability": 29,
+    "citations": [
+      96
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T02:09:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-24"
+    }
+  }
+]

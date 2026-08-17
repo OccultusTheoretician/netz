@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "Ukrainian long-range strikes halt loadings at a named Russian crude export terminal - Novorossiysk, Tuapse, Primorsk, or Ust-Luga - with the strike occurring between 2026-08-24 and 2026-09-21.",
+    "domain": "military_conflict",
+    "probability": 30,
+    "resolution": "Reuters or Bloomberg reports suspended loadings at one of those four terminals attributed to a strike inside the window, and a Russian federal or regional official confirms the attack, by 2026-09-24.",
+    "deadline": "2026-09-24",
+    "citations": [69, 76],
+    "failure_condition": "No suspension of loadings at any of the four named terminals follows a strike occurring inside the window."
+  },
+  {
+    "statement": "A commercial vessel sinks or is abandoned by its crew following an attack in the Strait of Hormuz, Gulf of Oman, or Persian Gulf between 2026-08-24 and 2026-09-27.",
+    "domain": "military_conflict",
+    "probability": 55,
+    "resolution": "UKMTO issues an incident advisory for the attack and Reuters or Lloyds List reports the vessel sank or was abandoned, both by 2026-09-30.",
+    "deadline": "2026-09-30",
+    "citations": [48, 77],
+    "failure_condition": "Vessels attacked inside the window all remain crewed and afloat, with no sinking or crew abandonment."
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or above USD 100.00 per barrel on at least one trading session between 2026-08-24 and 2026-10-30.",
+    "domain": "economic",
+    "probability": 30,
+    "resolution": "The ICE Futures Europe published daily settlement for the front-month Brent contract reaches 100.00 or higher on any session in that range, checked 2026-11-02.",
+    "deadline": "2026-11-02",
+    "citations": [43, 48],
+    "failure_condition": "Every front-month Brent settlement inside the window prints below 100.00."
+  },
+  {
+    "statement": "Walmart reports Walmart US comparable sales excluding fuel of 4.5 percent or higher for fiscal Q2 2027 in its scheduled 2026-08-20 earnings release.",
+    "domain": "economic",
+    "probability": 25,
+    "resolution": "The Q2 FY27 earnings release furnished on Form 8-K to SEC EDGAR states Walmart US comparable sales excluding fuel at or above 4.5 percent, checked 2026-08-24.",
+    "deadline": "2026-08-24",
+    "citations": [46],
+    "failure_condition": "The reported Walmart US comparable sales figure excluding fuel lands below 4.5 percent."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog gains at least one entry naming Apple as the vendor, with a date added between 2026-08-24 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 50,
+    "resolution": "The CISA KEV JSON feed contains an entry whose vendorProject field is Apple and whose dateAdded value falls inside that range, checked 2026-10-19.",
+    "deadline": "2026-10-19",
+    "citations": [15],
+    "failure_condition": "The KEV catalog holds no Apple entry with a date added inside the window."
+  },
+  {
+    "statement": "The United States publishes a formal instrument asserting sovereignty, territorial claim, or protectorate status over the Strait of Hormuz between 2026-08-24 and 2026-11-20.",
+    "domain": "political",
+    "probability": 6,
+    "resolution": "An executive order, presidential proclamation, or Federal Register document making that assertion carries a date inside the window on federalregister.gov or the White House presidential actions page, checked 2026-11-23.",
+    "deadline": "2026-11-23",
+    "citations": [68],
+    "failure_condition": "No executive order, proclamation, or Federal Register document asserting such a claim carries a date inside the window."
+  },
+  {
+    "statement": "FDA publishes a Federal Register document on the FSMA Section 204 food traceability rule - proposed rule, final rule, or request for information - between 2026-08-24 and 2027-01-15.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "federalregister.gov lists an FDA document naming food traceability in its title or abstract with a publication date inside that range, checked 2027-01-20.",
+    "deadline": "2027-01-20",
+    "citations": [90],
+    "failure_condition": "No FDA food traceability document carries a Federal Register publication date inside the window."
+  },
+  {
+    "statement": "A second person is charged over the 2026-08-15 Virginia State University shooting, with the charges filed between 2026-08-17 and 2026-10-05.",
+    "domain": "crime_security",
+    "probability": 40,
+    "resolution": "Chesterfield County Police, the Commonwealth Attorney, or Virginia online court records show charges against a second defendant filed inside that range, checked 2026-10-08.",
+    "deadline": "2026-10-08",
+    "citations": [14],
+    "failure_condition": "Only the single person taken into custody on 2026-08-15 stands charged at the deadline."
+  },
+  {
+    "statement": "USGS catalogs at least one magnitude 6.0 or greater earthquake within 250 km of the 2026-08-15 Flores mainshock, event us6000tkt2, with origin time between 2026-08-24 and 2026-09-21.",
+    "domain": "disaster_infrastructure",
+    "probability": 40,
+    "resolution": "A USGS earthquake catalog query for that radius and time range returns at least one event of magnitude 6.0 or greater, checked 2026-09-24.",
+    "deadline": "2026-09-24",
+    "citations": [39, 24],
+    "failure_condition": "The largest catalogued event inside that radius and window falls below magnitude 6.0."
+  },
+  {
+    "statement": "The Indonesian disaster agency BNPB puts the confirmed death toll from the 2026-08-15 Flores earthquake at 100 or more, in a figure issued on or before 2026-09-04.",
+    "domain": "disaster_infrastructure",
+    "probability": 40,
+    "resolution": "A BNPB statement, or Reuters or AFP citing BNPB, gives a cumulative confirmed toll of at least 100 for that earthquake, checked 2026-09-08.",
+    "deadline": "2026-09-08",
+    "citations": [24, 38, 39],
+    "failure_condition": "The cumulative confirmed toll stands below 100 in BNPB figures at the deadline."
+  }
+]
