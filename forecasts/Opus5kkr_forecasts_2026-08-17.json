@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "The FOMC lowers its federal funds target range at its scheduled September 2026 meeting concluding 2026-09-16.",
+    "domain": "economics/markets",
+    "probability": 28,
+    "resolution": "The FOMC statement published on federalreserve.gov on 2026-09-16 sets a target range below the range in effect on 2026-09-15. A hold or an increase resolves this false.",
+    "deadline": "2026-09-18",
+    "citations": [
+      59,
+      65
+    ],
+    "failure_condition": "The target range in the September 2026 FOMC statement is unchanged from or higher than the range in effect on 2026-09-15."
+  },
+  {
+    "statement": "Brent crude records a daily spot price at or above 100.00 US dollars per barrel on at least one date between 2026-08-18 and 2026-10-30.",
+    "domain": "economics/markets",
+    "probability": 38,
+    "resolution": "The EIA daily Europe Brent Spot Price FOB series contains at least one value of 100.00 or higher dated between 2026-08-18 and 2026-10-30 inclusive.",
+    "deadline": "2026-11-06",
+    "citations": [
+      54,
+      72
+    ],
+    "failure_condition": "Every EIA daily Brent spot value dated inside that window is below 100.00 dollars per barrel."
+  },
+  {
+    "statement": "CISA adds the exploited VMware vCenter flaw CVE-2026-59310 to the Known Exploited Vulnerabilities catalog between 2026-08-18 and 2026-10-31.",
+    "domain": "cyber",
+    "probability": 70,
+    "resolution": "The CISA KEV JSON feed contains an entry with cveID CVE-2026-59310 whose dateAdded value falls between 2026-08-18 and 2026-10-31 inclusive.",
+    "deadline": "2026-11-03",
+    "citations": [
+      15,
+      23
+    ],
+    "failure_condition": "CVE-2026-59310 is absent from the KEV catalog, or present with a dateAdded value outside that window."
+  },
+  {
+    "statement": "GE HealthCare Technologies files an SEC Form 8-K reporting a material cybersecurity incident under Item 1.05 between 2026-08-18 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 14,
+    "resolution": "SEC EDGAR lists an 8-K filed by GE HealthCare Technologies Inc containing Item 1.05, with a filing date between 2026-08-18 and 2026-11-30 inclusive.",
+    "deadline": "2026-12-04",
+    "citations": [
+      18
+    ],
+    "failure_condition": "No 8-K containing Item 1.05 appears on the GE HealthCare EDGAR filing index with a filing date inside that window."
+  },
+  {
+    "statement": "No candidate exceeds 50 percent of valid votes in the Brazilian presidential first round held 2026-10-04, sending the race to the 2026-10-25 runoff.",
+    "domain": "political",
+    "probability": 74,
+    "resolution": "Official TSE results for the 2026-10-04 first round show the leading presidential candidate at or below 50 percent of valid votes, and TSE confirms a second round.",
+    "deadline": "2026-10-09",
+    "citations": [
+      85
+    ],
+    "failure_condition": "TSE first-round results credit a candidate with more than 50 percent of valid votes, so no runoff is held."
+  },
+  {
+    "statement": "The Democratic Party wins at least 218 seats in the US House of Representatives in the 2026-11-03 midterm elections.",
+    "domain": "political",
+    "probability": 70,
+    "resolution": "Associated Press race calls across all 435 districts contested on 2026-11-03 credit Democratic candidates with 218 or more seats.",
+    "deadline": "2026-12-18",
+    "citations": [
+      114
+    ],
+    "failure_condition": "The completed AP tally credits Democratic candidates with 217 or fewer House seats."
+  },
+  {
+    "statement": "The United States publicly announces the lifting or suspension of its naval blockade of Iranian ports between 2026-08-18 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 22,
+    "resolution": "A White House, State Department, Defense Department or CENTCOM statement issued in that window announces the blockade lifted or suspended, and both Reuters and the Associated Press report it.",
+    "deadline": "2026-11-04",
+    "citations": [
+      54,
+      82,
+      99
+    ],
+    "failure_condition": "The naval blockade of Iranian ports remains in force through 2026-10-31 with no US government announcement lifting or suspending it."
+  },
+  {
+    "statement": "US forces conduct a military strike on Omani territory or Omani territorial waters between 2026-08-18 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 6,
+    "resolution": "The US Defense Department or CENTCOM acknowledges a strike on Omani territory or territorial waters occurring in that window, and both Reuters and Agence France-Presse report it.",
+    "deadline": "2026-11-04",
+    "citations": [
+      82,
+      102,
+      119
+    ],
+    "failure_condition": "No US strike on Omani territory or Omani territorial waters occurs inside the window."
+  },
+  {
+    "statement": "USGS catalogs an earthquake of magnitude 6.0 or greater within 250 km of the epicenter of event us6000tkt2 between 2026-08-18 and 2026-09-30.",
+    "domain": "disaster",
+    "probability": 55,
+    "resolution": "A USGS ComCat query for magnitude 6.0 or greater events within 250 km of the us6000tkt2 epicenter, origin times between 2026-08-18 and 2026-09-30 UTC, returns at least one event.",
+    "deadline": "2026-10-05",
+    "citations": [
+      39,
+      50
+    ],
+    "failure_condition": "The USGS catalog holds no magnitude 6.0 or greater event within 250 km of that epicenter inside the window."
+  },
+  {
+    "statement": "Cumulative confirmed Ebola cases in the Democratic Republic of the Congo outbreak reach 15,000 or more on or before 2026-11-30.",
+    "domain": "disaster",
+    "probability": 45,
+    "resolution": "A WHO situation report or ECDC communicable disease threats report dated on or before 2026-11-30 states cumulative confirmed cases of 15,000 or more for the DRC Bundibugyo outbreak.",
+    "deadline": "2026-12-07",
+    "citations": [
+      116
+    ],
+    "failure_condition": "The highest cumulative confirmed case count published for the DRC outbreak by 2026-11-30 remains below 15,000."
+  }
+]
