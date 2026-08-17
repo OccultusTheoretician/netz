@@ -218,14 +218,36 @@ fetch('ledger.json',{cache:'no-store'}).then(function(r){return r.json();}).then
 <footer><div class="wrap">NEBELKRÄHE · THE PRESCIENT DESK — conformance is computed, not asserted.<br>© 2026 NebelKrähe · <a href="https://github.com/OccultusTheoretician/netz/blob/main/LICENSE">LICENSE</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></div></footer>
 <script>
 (function(){
-var LABEL={'lmstudio/auto':'Machine · local model','manual/fable':'Fable · second forecaster','manual/opus-5':'Opus 5 · third forecaster','kfk/halflife':'ForeKaster · half-life formula','operator/human':'Operator'};
-var ORDER=['lmstudio/auto','manual/fable','manual/opus-5','kfk/halflife','operator/human'];
+var LABEL={'lmstudio/auto[pre-verbot]':'Machine · local model · era 1 (pre-verbot)','lmstudio/auto[post-verbot]':'Machine · local model · era 2 (post-verbot)','lmstudio/auto[post-window]':'Machine · local model · era 3 (post-window)','lmstudio/auto':'Machine · local model','manual/fable':'Fable · second forecaster','manual/fable-5':'Fable 5','manual/fable-5/unattested':'Fable 5 · unattested','manual/opus-5':'Opus 5 · third forecaster','manual/opus-5/unattested':'Opus 5 · unattested','manual/sonnet-5':'Sonnet 5 · fourth forecaster','manual/sonnet-5/unattested':'Sonnet 5 · unattested','operator/human':'Operator','kfk/halflife':'ForeKaster · half-life formula','fogsim/scenario':'FogSim · scenario','control/baserate':'Control · base rate'};
+var ORDER=['lmstudio/auto[pre-verbot]','lmstudio/auto[post-verbot]','lmstudio/auto[post-window]','lmstudio/auto','manual/fable','manual/fable-5','manual/fable-5/unattested','manual/opus-5','manual/opus-5/unattested','manual/sonnet-5','manual/sonnet-5/unattested','operator/human','kfk/halflife','fogsim/scenario','control/baserate'];
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 fetch('ledger.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
   var p=d.projections||[],c={},arms={},i,k;
+  /* KK31-B14: era-aware bucketing. A Brier belongs to one forecaster and
+     an era boundary marks a different forecaster. Boundaries inlined from
+     arms.json (the source of truth); they are frozen historical facts of
+     the sealed record. Pooling lmstudio/auto across its eras on this page
+     is exactly what the page's own prose forbids. */
+  var ERAS={'lmstudio/auto':[
+    {id:'pre-verbot',until:'2026-07-28'},
+    {id:'post-verbot',from:'2026-07-28',until:'2026-08-03'},
+    {id:'post-window',from:'2026-08-03'}]};
+  function bucketOf(row){
+    var m0=row.model||'(untagged)',es=ERAS[m0];
+    if(!es)return m0;
+    var d0=String(row.date_issued||'');
+    if(!d0)return m0;
+    var b=m0,e2;
+    for(var e=0;e<es.length;e++){
+      e2=es[e];
+      if(e2.until&&d0<e2.until){b=m0+'['+e2.id+']';break;}
+      if(e2.from&&d0>=e2.from){b=m0+'['+e2.id+']';}
+    }
+    return b;
+  }
   for(i=0;i<p.length;i++){
     var s=p[i].status||'open';c[s]=(c[s]||0)+1;
-    var m=p[i].model||'(untagged)';
+    var m=bucketOf(p[i]);
     var a=arms[m];if(!a){a=arms[m]={n:0,open:0,hit:0,miss:0,vd:0,bs:0,bn:0,fc:0,kk:0};}
     a.n++;
     if(s==='hit')a.hit++;else if(s==='miss')a.miss++;else if(s==='void')a.vd++;else a.open++;
