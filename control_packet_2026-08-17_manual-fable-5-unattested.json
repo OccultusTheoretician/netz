@@ -1,0 +1,131 @@
+[
+  {
+    "statement": "At least one Russian air attack using missiles or drones causes an impact, explosion, or fire within Kyiv city between 2026-08-17 and 2026-08-31.",
+    "resolution": "True if strikes on Kyiv city between 2026-08-17 and 2026-08-31 are reported by Ukrainian officials and by at least one Russian or non-Ukrainian international outlet.",
+    "failure_condition": "No Russian missile or drone strike impacts Kyiv city between 2026-08-17 and 2026-08-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-03",
+    "probability": 50,
+    "citations": [
+      64,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T02:09:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-01"
+    }
+  },
+  {
+    "statement": "Ukrainian drones or missiles strike a target at least 100 km from the Ukraine-Russia border inside Russia, causing fire, damage, or casualties, between 2026-08-17 and 2026-09-15.",
+    "resolution": "True if Russian regional or federal officials acknowledge a Ukrainian drone or missile strike at least 100 km from the Ukraine border causing damage, fire, or casualties between 2026-08-17 and 2026-09-15.",
+    "failure_condition": "No Ukrainian strike at least 100 km inside Russia causing officially acknowledged damage, fire, or casualties occurs between 2026-08-17 and 2026-09-15.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-18",
+    "probability": 50,
+    "citations": [
+      69,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T02:09:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-02"
+    }
+  },
+  {
+    "statement": "Houthi (Ansar Allah) forces take control of central Marib city, Yemen, between 2026-08-17 and 2026-12-31.",
+    "resolution": "True if at least two major international news organizations report Houthi forces control central Marib city by 2026-12-31, with Yemeni government or coalition sources conceding withdrawal or loss.",
+    "failure_condition": "Central Marib city remains under Yemeni government control through 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 50,
+    "citations": [
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T02:09:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-03"
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-08-17 and 2026-10-30.",
+    "resolution": "True if the official ICE Brent front-month settlement price is at or above 100.00 USD on any trading day from 2026-08-17 through 2026-10-30, per ICE settlement data.",
+    "failure_condition": "Every ICE Brent front-month daily settlement from 2026-08-17 through 2026-10-30 is below 100.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 25,
+    "citations": [
+      43,
+      48,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 16,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T02:09:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-04"
+    }
+  },
+  {
+    "statement": "Authorities announce the arrest or charging of at least one suspect in the 2026-08-15 Virginia State shooting in which five people were shot, between 2026-08-17 and 2026-09-30.",
+    "resolution": "True if a law enforcement agency publicly announces an arrest or charges in the 2026-08-15 Virginia State five-victim shooting, reported by at least one national outlet, by 2026-09-30.",
+    "failure_condition": "No arrest or charges connected to the 2026-08-15 Virginia State shooting are announced by 2026-09-30.",
+    "domain": "crime/security",
+    "deadline": "2026-10-02",
+    "probability": 31,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3117,
+      "n": 77,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-17T02:09:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260817-05"
+    }
+  }
+]

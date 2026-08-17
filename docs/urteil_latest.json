@@ -1,32 +1,48 @@
 {
  "_meta": {
-  "generated": "2026-08-14T15:20:41Z",
+  "generated": "2026-08-16T15:19:50Z",
   "instrument": "urteil/1.0",
   "doctrine": "grounding is checkable even when the verdict is right; a correct ungrounded verdict is the failure the blind protocol cannot see, printed here",
   "sources": [
-   "jury_A_2026-08-11.json",
-   "jury_B_2026-08-11.json",
-   "held_evidence_2026-08-11.json",
-   "held_evidence_2026-08-11.json"
+   "jury_A_2026-08-15.json",
+   "jury_B_2026-08-15.json",
+   "held_evidence_2026-08-15.json",
+   "held_evidence_2026-08-15.json"
   ],
   "custody_notes": [
-   "held_evidence_2026-08-11.json holds 0 rows - held-evidence gathering returned nothing for a jury day; every verdict that day is unauditable at the custody layer",
-   "held_evidence_2026-08-11.json holds 0 rows - held-evidence gathering returned nothing for a jury day; every verdict that day is unauditable at the custody layer"
+   "held_evidence_2026-08-15.json holds 0 rows - held-evidence gathering returned nothing for a jury day; every verdict that day is unauditable at the custody layer",
+   "held_evidence_2026-08-15.json holds 0 rows - held-evidence gathering returned nothing for a jury day; every verdict that day is unauditable at the custody layer"
   ],
   "counts": {
    "GROUNDED": 0,
    "THIN": 0,
    "UNGROUNDED-SPECIFIC": 0,
    "UNHELD-VERDICT": 0,
-   "UNHELD-SEARCHED": 4,
+   "UNHELD-SEARCHED": 34,
    "OUT-OF-HELD": 0,
-   "ABSTAIN": 4
+   "ABSTAIN": 34
   },
   "correct_but_ungrounded": 0
  },
  "audits": [
   {
-   "row": "KKR-20260720-13",
+   "row": "KKR-20260720-17",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "HIT",
+   "final_status": "HIT",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "12",
+    "5",
+    "7"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260722-02",
    "juror": "A",
    "juror_access": "searched",
    "verdict": "MISS",
@@ -35,19 +51,91 @@
    "class": "UNHELD-SEARCHED",
    "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
    "figures_beyond_held": [
-    "07",
-    "08",
-    "10",
-    "2026-07-29",
-    "2026-07-30",
-    "2026-08-10",
-    "29",
-    "30"
+    "1",
+    "1.8",
+    "12",
+    "2.0",
+    "4"
    ],
    "held_sha256": ""
   },
   {
-   "row": "KKR-20260721-03",
+   "row": "KKR-20260722-09",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "HIT",
+   "final_status": "HIT",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "100",
+    "101",
+    "23",
+    "24",
+    "27",
+    "30",
+    "31",
+    "4",
+    "90",
+    "90.43",
+    "92.27",
+    "92.65",
+    "97"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-01",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "3"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-03",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "HIT",
+   "final_status": "HIT",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "10",
+    "1000",
+    "3",
+    "3800",
+    "8",
+    "9"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-09",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "01",
+    "20260804",
+    "3"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-11",
    "juror": "A",
    "juror_access": "searched",
    "verdict": "HIT",
@@ -57,41 +145,49 @@
    "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
    "figures_beyond_held": [
     "03",
-    "07",
-    "08",
-    "20",
-    "2026-07-20",
-    "2026-07-21",
-    "2026-08-03",
-    "21"
+    "20260804",
+    "3800",
+    "9"
    ],
    "held_sha256": ""
   },
   {
-   "row": "KKR-20260725-06",
+   "row": "KKR-20260726-13",
    "juror": "A",
    "juror_access": "searched",
-   "verdict": "AMBIGUOUS",
+   "verdict": "MISS",
    "final_status": "MISS",
-   "agreed_with_final": false,
+   "agreed_with_final": true,
    "class": "UNHELD-SEARCHED",
    "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
    "figures_beyond_held": [
-    "07",
-    "08",
     "10",
-    "2026-07-24",
-    "2026-07-27",
-    "2026-07-28",
-    "2026-08-10",
-    "24",
-    "27",
-    "28"
+    "13",
+    "29",
+    "447"
    ],
    "held_sha256": ""
   },
   {
-   "row": "KKR-20260727-21",
+   "row": "KKR-20260730-21",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "1",
+    "12",
+    "13",
+    "14",
+    "29"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260730-28",
    "juror": "A",
    "juror_access": "searched",
    "verdict": "HIT",
@@ -100,9 +196,441 @@
    "class": "UNHELD-SEARCHED",
    "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
    "figures_beyond_held": [
+    "30"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-02",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "11",
+    "18577",
+    "4"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-04",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "4",
+    "5",
+    "8"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-05",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "11",
+    "4",
+    "50000"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-06",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "11",
+    "3",
+    "31",
+    "4"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-07",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "49",
+    "50",
+    "60",
+    "8"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-08",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "100",
+    "130"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-10",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "02",
+    "11",
+    "18577",
+    "20260804",
+    "4"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-12",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "04",
+    "20260804",
+    "4",
+    "5"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-13",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "05",
+    "20260804",
+    "50000"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-14",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "06",
+    "20260804",
+    "3",
+    "31"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-15",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
     "07",
-    "2026-07-28",
-    "28"
+    "20260804",
+    "49",
+    "50",
+    "60",
+    "8"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-16",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "08",
+    "100",
+    "130",
+    "20260804"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260804-65",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "11",
+    "4",
+    "7",
+    "935"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260722-15",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "HIT",
+   "final_status": "HIT",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "09",
+    "1",
+    "101",
+    "14",
+    "20260722",
+    "23",
+    "24",
+    "27",
+    "29",
+    "30",
+    "31",
+    "87",
+    "88",
+    "90",
+    "90.43",
+    "92.65",
+    "97"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260724-03",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "14",
+    "24",
+    "27",
+    "92",
+    "93.45",
+    "95"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260725-01",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "100",
+    "14",
+    "24",
+    "27",
+    "87",
+    "88",
+    "92",
+    "93",
+    "97"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260727-01",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "14"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260727-18",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "HIT",
+   "final_status": "HIT",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "14",
+    "26"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260727-26",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "HIT",
+   "final_status": "HIT",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "1",
+    "10",
+    "12",
+    "14",
+    "20260730",
+    "21",
+    "28",
+    "29",
+    "30"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260728-01",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "14",
+    "20260730",
+    "24",
+    "28",
+    "3",
+    "38",
+    "39",
+    "40",
+    "50",
+    "8"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260730-24",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "14",
+    "39",
+    "40",
+    "41",
+    "8"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260731-12",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "HIT",
+   "final_status": "HIT",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "14",
+    "31",
+    "8"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260805-01",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "MISS",
+   "final_status": "MISS",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "12",
+    "4",
+    "5",
+    "7",
+    "9198"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20260805-02",
+   "juror": "A",
+   "juror_access": "searched",
+   "verdict": "HIT",
+   "final_status": "HIT",
+   "agreed_with_final": true,
+   "class": "UNHELD-SEARCHED",
+   "detail": "no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable",
+   "figures_beyond_held": [
+    "10",
+    "100",
+    "32",
+    "35",
+    "5",
+    "6.3"
    ],
    "held_sha256": ""
   }
