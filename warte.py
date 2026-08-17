@@ -56,9 +56,16 @@ def main():
         pass
 
     arms = defaultdict(list)
-    for p in rows:
-        if p.get("status") not in ("hit", "miss"):
-            continue
+    # KK31-B14: an era with rows issued and nothing resolved is a hole the
+    # observatory discloses, not a tile that silently does not exist. Every
+    # row buckets (not only resolved ones) so issued/open exist per era,
+    # and every registered era of a tag present in the ledger gets a
+    # bucket even at zero resolved.
+    issuedc = defaultdict(int)
+    openc = defaultdict(int)
+    seen_tags = set()
+
+    def _bucket_of(p):
         tag = str(p.get("model", "?"))
         eras = _reg.get(tag, {}).get("eras")
         bucket = tag
@@ -70,7 +77,20 @@ def main():
                     break
                 if e.get("from") and d and d >= e["from"]:
                     bucket = tag + "[" + e["id"] + "]"
+        return tag, bucket
+
+    for p in rows:
+        tag, bucket = _bucket_of(p)
+        seen_tags.add(tag)
+        issuedc[bucket] += 1
+        if p.get("status") == "open":
+            openc[bucket] += 1
+        if p.get("status") not in ("hit", "miss"):
+            continue
         arms[bucket].append(p)
+    for tag in sorted(seen_tags):
+        for e in (_reg.get(tag, {}).get("eras") or []):
+            arms.setdefault(tag + "[" + e["id"] + "]", [])
     open_hash = sum(1 for p in rows if p.get("status")=="open"
                     and p.get("rubric_hash"))
     open_all = sum(1 for p in rows if p.get("status")=="open")
@@ -78,7 +98,18 @@ def main():
     tiles = {}
     for arm in sorted(arms):
         rs = arms[arm]
-        n = len(rs); hits = sum(1 for p in rs if p["status"]=="hit")
+        n = len(rs)
+        if n == 0:
+            tiles[arm] = {
+                "resolved": 0, "issued": issuedc.get(arm, 0),
+                "open": openc.get(arm, 0), "hits": 0, "misses": 0,
+                "zero_state": (f"era registered - {issuedc.get(arm, 0)} "
+                               f"issued, {openc.get(arm, 0)} open, nothing "
+                               f"resolved yet. Printed rather than omitted; "
+                               f"a hole the register discloses."),
+                "bins": []}
+            continue
+        hits = sum(1 for p in rs if p["status"]=="hit")
         ps = [float(p.get("probability",0))/100.0 for p in rs]
         ys = [1.0 if p["status"]=="hit" else 0.0 for p in rs]
         brier = sum((a-b)**2 for a,b in zip(ps,ys))/n
@@ -131,7 +162,8 @@ def main():
         undet = sum(1 for p in rs if str(p.get("keyed_keyless", "")).strip()
                     .lower() not in ("keyed", "keyless"))
         tiles[arm] = {
-            "resolved": n, "hits": hits, "misses": n-hits,
+            "resolved": n, "issued": issuedc.get(arm, n),
+            "open": openc.get(arm, 0), "hits": hits, "misses": n-hits,
             "split": split, "undetermined": undet,
             "brier": round(brier,3), "base_rate": round(base,3),
             "climatological": round(clim,3),
@@ -183,7 +215,12 @@ def main():
          "unreadable priors was made against nothing.</p>"]
     for arm, t in tiles.items():
         h.append(f"<h2>{arm}</h2>")
-        h.append(f"<p>resolved {t['resolved']} - {t['hits']} hit / "
+        if t.get("zero_state"):
+            h.append(f"<p class='warn'>{t['zero_state']}</p>")
+            continue
+        h.append(f"<p>issued {t.get('issued', t['resolved'])} - open "
+                 f"{t.get('open', 0)} - "
+                 f"resolved {t['resolved']} - {t['hits']} hit / "
                  f"{t['misses']} miss - Brier {t['brier']} - base rate "
                  f"{t['base_rate']} - climatological {t['climatological']}"
                  + (f" - skill {t['skill']}" if t['skill'] is not None
