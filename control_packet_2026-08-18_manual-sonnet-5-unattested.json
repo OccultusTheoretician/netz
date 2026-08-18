@@ -1,0 +1,105 @@
+[
+  {
+    "statement": "The United States will carry out a military strike on a target inside Oman between 2026-08-19 and 2026-08-26.",
+    "resolution": "TRUE if the US government, the Omani government, or two independent wire services confirm a US military strike inside Oman during the window; adjudicated 2026-08-28.",
+    "failure_condition": "No US military strike inside Oman is confirmed by any government or independent wire service during the window, regardless of continued rhetorical threats.",
+    "domain": "military/conflict",
+    "deadline": "2026-08-28",
+    "probability": 50,
+    "citations": [
+      112,
+      125
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-18T18:15:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260818-21"
+    }
+  },
+  {
+    "statement": "CVE-2026-19478, the critical GitLab GraphQL flaw patched 2026-08-17, will be added to the CISA KEV catalog between 2026-08-19 and 2026-09-16.",
+    "resolution": "TRUE if CISA's Known Exploited Vulnerabilities catalog lists CVE-2026-19478 with a date-added value inside the window; adjudicated 2026-09-18.",
+    "failure_condition": "CISA's KEV catalog does not list CVE-2026-19478 at any point through the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-09-18",
+    "probability": 23,
+    "citations": [
+      26
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-18T18:15:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260818-22"
+    }
+  },
+  {
+    "statement": "A jury will return a verdict, guilty or not guilty, in the Duane Keffe D Davis murder trial in Clark County, Nevada, between 2026-09-07 and 2026-09-25.",
+    "resolution": "TRUE if Clark County District Court or at least two independent wire services report a jury verdict in the Davis trial inside the window; a hung jury counts as FALSE; adjudicated 2026-09-28.",
+    "failure_condition": "No jury verdict is delivered in the Davis trial during the window, whether from delay, extended deliberation, or a mistrial.",
+    "domain": "crime/security",
+    "deadline": "2026-09-28",
+    "probability": 31,
+    "citations": [
+      9,
+      11,
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3117,
+      "n": 77,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-18T18:15:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260818-23"
+    }
+  },
+  {
+    "statement": "USGS will record a magnitude 6.0 or greater earthquake within 150 km of the M7.7 Ende, Indonesia mainshock (2026-08-17, 22:29 UTC), between 2026-08-19 and 2026-08-26.",
+    "resolution": "TRUE if the USGS Earthquake Catalog lists any magnitude 6.0 or greater event within 150 km of the Ende mainshock epicenter, origin time inside the window; adjudicated 2026-08-28.",
+    "failure_condition": "The USGS Earthquake Catalog lists no magnitude 6.0 or greater event within 150 km of the Ende epicenter during the window.",
+    "domain": "disaster",
+    "deadline": "2026-08-28",
+    "probability": 33,
+    "citations": [
+      54
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-18T18:15:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260818-24"
+    }
+  }
+]
