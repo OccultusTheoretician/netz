@@ -682,14 +682,25 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
             r"\b(?:two|three|four|\d+)\s+(?:or more\s+)?(?:major\s+|independent\s+|"
             r"international\s+|credible\s+)*(?:news\s+)?"
             r"(?:sources|outlets|agencies|wire services)\b", _vmask, re.I)
+        # KK32-GATE (E1): a disjunction typed by a non-venue noun is an
+        # enumerated value or a party, not two places to look ("an Orange
+        # or Red alert"; "the ABC or Disney suit"). Venue nouns - data,
+        # report, page, feed, register, docket - are deliberately absent
+        # from this list, so CME-or-EIA and FRED-or-Treasury still die.
+        _VTYPE = re.compile(r"^\W*(?:\w+\s+){0,2}(?:alerts?|suits?|lawsuits?|"
+                            r"cases?|levels?|status|verdicts?|motions?|answers?|"
+                            r"ratings?|grades?|counts?|charges?|petitions?|"
+                            r"appeals?|mistrials?|continuances?|rulings?|"
+                            r"orders?|trials?|actions?|claims?)\b", re.I)
         _vhit = False
         if _vscopes:
             _vhit = any(re.search(r"\s+or\s+", _s) for _s in _vscopes)
         elif not _vclass:
-            _vhit = bool(
-                re.search(r"\b[A-Z][\w.&'-]+,?\s+or\s+(?:the\s+)?[A-Z]", _vmask) or
-                re.search(r"\b[A-Z][\w.&'-]+\s+or\s+an?\s+[\w-]+(?:\s+[\w-]+){0,3}\s+"
-                          r"(?:firm|source|outlet|agency|service|publication)\b", _vmask))
+            _m1 = re.search(r"\b[A-Z][\w.&'-]+,?\s+or\s+(?:the\s+)?[A-Z]", _vmask)
+            _m2 = re.search(r"\b[A-Z][\w.&'-]+\s+or\s+an?\s+[\w-]+(?:\s+[\w-]+){0,3}\s+"
+                            r"(?:firm|source|outlet|agency|service|publication)\b", _vmask)
+            _vhit = bool(_m2) or (
+                bool(_m1) and not _VTYPE.match(_vmask[_m1.end():]))
         if _vhit:
             reasons.append("resolution names alternative venues joined by 'or' \u2014 "
                            "name ONE source of record or define the venue class; "
@@ -759,7 +770,18 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
             print(f"KKR \u00b7 NOTE \u00b7 calendar register check errored "
                   f"({type(_e).__name__}) -- SKIPPED (fail-open, printed)",
                   file=sys.stderr)
-    if re.search(r"\b(?:price|yield|rate|level|magnitude|count|total|"
+    # KK32-GATE (E4): bare "count" and "level" are not quantity words when
+    # they mean a criminal count, an official tally, an alert grade, or a
+    # finishing place. Same shape as KK31's do-not-count carve-out.
+    _NOTQTY = re.compile(
+        r"\b(?:murder|felony|misdemeanou?r|criminal|indictment|charge)\s+counts?\b"
+        r"|\bcounts?\s+against\b"
+        r"|\bofficial\s+count\b"
+        r"|\balert\s+level\b"
+        r"|\b(?:place[sd]?|rank(?:s|ed)?|finish(?:es|ed)?)\s+"
+        r"(?:first|second|third|fourth|\d+(?:st|nd|rd|th))\b"
+        r"|\bthe\s+most\s+\w+\b", re.I)
+    if not _NOTQTY.search(both) and re.search(r"\b(?:price|yield|rate|level|magnitude|count|total|"
                  r"threshold|close[sd]?|above|below|exceed)\b", both, re.I) \
             and not re.search(r"(?:above|below|exceed\w*|at least|at or|over|"
                               r"under|reach\w*|close[sd]?|threshold|magnitude|"
@@ -946,12 +968,53 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                     _r_subj.discard(_t)
                     _r_ven.add(_t)
                     break
+    # KK32-GATE (E2): when the claim's subject IS the register, naming it
+    # in the resolution restates the subject. Exempt only when the
+    # resolution stands alone: the register is named in the statement too, the
+    # resolution carries its own threshold and its own explicit dates, and
+    # it contains no back-reference. The 08-16 USGS row ("for that radius
+    # and time range") fails the last test and stays dead.
+    _ANAPH = re.compile(r"\bthat\s+(?:radius|window|time\s+range|range|period|"
+                        r"date|threshold|level|event|figure|amount|criteri\w+|"
+                        r"epicenter|mainshock)\b|\bthe\s+(?:stated|same|above|"
+                        r"aforementioned)\b|\bas\s+(?:above|stated|described)\b",
+                        re.I)
+    _selfreg = False
     if _s_subj and not _r_subj and _r_ven:
+        _stmt_low = (p.get("statement", "") or "").lower()
+        _res_low2 = (p.get("resolution", "") or "").lower()
+        _selfreg = (
+            any(_v.lower() in _stmt_low for _v in _r_ven)
+            and re.search(
+                r"(?:(?:at least|at or|no fewer than|more than|fewer than|above|"
+                r"below|exceed\w*|or greater|or higher|or more)\s*[^.;]{0,24}"
+                r"(?:\d|\b(?:one|two|three|four|five|six|seven|eight|nine|ten|"
+                r"eleven|twelve)\b))|(?:(?:\d|\b(?:one|two|three|four|five|six|"
+                r"seven|eight|nine|ten|eleven|twelve)\b)\s*[^.;]{0,20}"
+                r"(?:at least|or greater|or higher|or more|or above|or fewer))",
+                _res_low2)
+            and len(re.findall(r"20\d{2}-\d{2}-\d{2}", _res_low2)) >= 2
+            and not _ANAPH.search(_res_low2))
+    if _s_subj and not _r_subj and _r_ven and not _selfreg:
         reasons.append(
             "the resolution names only a venue or register ("
             + ", ".join(sorted(_r_ven)[:4])
             + ") and no subject - the register is where to look, not what "
             "is claimed; name the subject inside it")
+    # KK32-GATE (E3): derive initialisms from capitalised runs so a
+    # spelled-out subject and its acronym read as the same subject
+    # (Federal Open Market Committee / FOMC). Overlap-only: this can clear
+    # a false mismatch, it can never manufacture one.
+    def _inits(t):
+        out = set()
+        for _run in re.findall(r"(?:\b[A-Z][a-z]+\s+){2,}(?:\b[A-Z][a-z]+)", t or ""):
+            _w = re.findall(r"\b([A-Z])[a-z]+", _run)
+            if len(_w) >= 3:
+                out.add("".join(_w).lower())
+                out.add("".join(_w[1:]).lower())
+        return out
+    _s_subj = set(_s_subj) | _inits(p.get("statement", ""))
+    _r_subj = set(_r_subj) | _inits(p.get("resolution", ""))
     if _s_subj and _r_subj and not _tokens_overlap(_s_subj, _r_subj):
         reasons.append(
             "the resolution names a different subject than the statement — "

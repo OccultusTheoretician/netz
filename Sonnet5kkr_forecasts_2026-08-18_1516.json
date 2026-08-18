@@ -1,0 +1,83 @@
+[
+  {
+    "statement": "Russia will conduct a missile or drone strike hitting within Kyiv city limits between 2026-08-19 and 2026-08-26.",
+    "domain": "military/conflict",
+    "probability": 90,
+    "resolution": "TRUE if Ukrainian officials or an independent wire service (Reuters, AP, or AFP) report a Russian missile or drone strike inside Kyiv city limits during the window; adjudicated 2026-08-28.",
+    "deadline": "2026-08-28",
+    "citations": [98, 103],
+    "failure_condition": "No Russian missile or drone strike within Kyiv city limits is reported by Ukrainian officials or an independent wire service during the window."
+  },
+  {
+    "statement": "The United States will carry out a military strike on a target inside Oman between 2026-08-19 and 2026-08-26.",
+    "domain": "military/conflict",
+    "probability": 6,
+    "resolution": "TRUE if the US government, the Omani government, or two independent wire services confirm a US military strike inside Oman during the window; adjudicated 2026-08-28.",
+    "deadline": "2026-08-28",
+    "citations": [112, 125],
+    "failure_condition": "No US military strike inside Oman is confirmed by any government or independent wire service during the window, regardless of continued rhetorical threats."
+  },
+  {
+    "statement": "The 30-year US Treasury par yield will close at or above 5.30 percent on 2026-09-15.",
+    "domain": "economics/markets",
+    "probability": 62,
+    "resolution": "TRUE if FRED series DGS30 or the US Treasury daily par yield curve reports a 30-year yield of 5.30 percent or higher for 2026-09-15.",
+    "deadline": "2026-09-16",
+    "citations": [62],
+    "failure_condition": "FRED's DGS30 series and the Treasury par yield curve both report a 30-year yield below 5.30 percent for 2026-09-15."
+  },
+  {
+    "statement": "WTI crude will settle at or above 90.00 USD per barrel on at least one day between 2026-08-19 and 2026-09-02.",
+    "domain": "economics/markets",
+    "probability": 33,
+    "resolution": "TRUE if the NYMEX WTI front-month settlement price, per CME Group or EIA data, closes at or above 90.00 USD on any day in the window; adjudicated 2026-09-04.",
+    "deadline": "2026-09-04",
+    "citations": [112, 125],
+    "failure_condition": "WTI settlement price stays below 90.00 USD per barrel on every trading day within the window."
+  },
+  {
+    "statement": "CVE-2026-19478, the critical GitLab GraphQL flaw patched 2026-08-17, will be added to the CISA KEV catalog between 2026-08-19 and 2026-09-16.",
+    "domain": "cyber",
+    "probability": 10,
+    "resolution": "TRUE if CISA's Known Exploited Vulnerabilities catalog lists CVE-2026-19478 with a date-added value inside the window; adjudicated 2026-09-18.",
+    "deadline": "2026-09-18",
+    "citations": [26],
+    "failure_condition": "CISA's KEV catalog does not list CVE-2026-19478 at any point through the deadline."
+  },
+  {
+    "statement": "All 16 typosquatted RubyGems packages named in the 2026-08-18 report on credential and wallet theft will be removed from RubyGems.org between 2026-08-19 and 2026-08-26.",
+    "domain": "cyber",
+    "probability": 82,
+    "resolution": "TRUE if none of the 16 named packages remain installable via the RubyGems.org index or API by the deadline; adjudicated 2026-08-28.",
+    "deadline": "2026-08-28",
+    "citations": [19],
+    "failure_condition": "At least one of the 16 named packages remains live and installable on RubyGems.org as of the deadline."
+  },
+  {
+    "statement": "Incumbent Senator Dan Sullivan will place first among candidates in Alaska's nonpartisan top-four primary for US Senate held on 2026-08-18.",
+    "domain": "political",
+    "probability": 87,
+    "resolution": "TRUE if the Alaska Division of Elections official count or an AP race call shows Sullivan receiving the most votes among Senate primary candidates; adjudicated 2026-08-25.",
+    "deadline": "2026-08-25",
+    "citations": [108, 113],
+    "failure_condition": "Sullivan does not receive the most votes among Senate primary candidates per official count or AP call by the deadline."
+  },
+  {
+    "statement": "A jury will return a verdict, guilty or not guilty, in the Duane Keffe D Davis murder trial in Clark County, Nevada, between 2026-09-07 and 2026-09-25.",
+    "domain": "crime/security",
+    "probability": 45,
+    "resolution": "TRUE if Clark County District Court or at least two independent wire services report a jury verdict in the Davis trial inside the window; a hung jury counts as FALSE; adjudicated 2026-09-28.",
+    "deadline": "2026-09-28",
+    "citations": [9, 11, 14],
+    "failure_condition": "No jury verdict is delivered in the Davis trial during the window, whether from delay, extended deliberation, or a mistrial."
+  },
+  {
+    "statement": "USGS will record a magnitude 6.0 or greater earthquake within 150 km of the M7.7 Ende, Indonesia mainshock (2026-08-17, 22:29 UTC), between 2026-08-19 and 2026-08-26.",
+    "domain": "disaster",
+    "probability": 55,
+    "resolution": "TRUE if the USGS Earthquake Catalog lists any magnitude 6.0 or greater event within 150 km of the Ende mainshock epicenter, origin time inside the window; adjudicated 2026-08-28.",
+    "deadline": "2026-08-28",
+    "citations": [54],
+    "failure_condition": "The USGS Earthquake Catalog lists no magnitude 6.0 or greater event within 150 km of the Ende epicenter during the window."
+  }
+]
