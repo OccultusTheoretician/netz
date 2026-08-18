@@ -82,6 +82,14 @@ TARGETS = [
     "KRAEHE_NEST_METHOD.md",
     "KRAEHE_NEST_PROTOCOL.md",
     "LIAS_FIRST_EDITION_2026_v1.md",
+    # 2026-08-18: the PCAOB 2026-005 docket as a committed population -
+    # 33 comment letters, count fixed with no gaps, each hashed as served,
+    # retrieved complete rather than sampled. This is the construction the
+    # desk's own letter 6 asked the Board to require, applied to the docket
+    # that contains it. Unlike ledger.json the file is immutable by design,
+    # so its pairing should read MATCH permanently; a DRIFT here would mean
+    # the population commitment itself was altered and must be investigated.
+    "PCAOB_2026-005_DOCKET_MANIFEST.txt",
 ]
 
 STATE = DOCS / "ots_anchors.json"
