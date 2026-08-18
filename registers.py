@@ -311,6 +311,28 @@ def venue_scope(resolution: str) -> dict:
                     r"(?:an?\s+)?(?:verdict|judgment|judgement|settlement|"
                     r"ruling|order|decree|notice|dismissal)s?\b",
                     " ", masked, flags=re.I)
+    # KK33-REG (R3): a disjunction immediately typed by a non-venue noun is an
+    # enumerated value or a party, not two places to look ("an Orange or Red
+    # alert"; "the ABC or Disney suit"). Masked before the scan so the 'or'
+    # itself disappears. Venue nouns are deliberately absent from the type
+    # list - "curve data, or FRED DGS30" must keep dying.
+    masked = re.sub(
+        r"\b[\w.\-]+(?:\s+[\w.\-]+){0,2}\s+or\s+(?:an?\s+|the\s+)?"
+        r"[\w.\-]+(?:\s+[\w.\-]+){0,2}\s+"
+        r"(?=(?:alerts?|levels?|suits?|lawsuits?|cases?|verdicts?|motions?|"
+        r"answers?|ratings?|grades?|status(?:es)?|counts?|charges?|"
+        r"petitions?|appeals?|mistrials?|rulings?|decrees?|trials?|"
+        r"actions?|claims?)\b)",
+        " ", masked, flags=re.I)
+    # KK33-REG (R5): two access modes into ONE register are not two registers
+    # ("installable via the RubyGems.org index or API"). Both sides must be
+    # bare access-mode nouns for this to fire.
+    masked = re.sub(
+        r"\b(?:index|api|feed|endpoint|portal|website|site|ui|json|xml|rss|"
+        r"catalogue|catalog|search)\s+or\s+(?:the\s+|its\s+)?"
+        r"(?:index|api|feed|endpoint|portal|website|site|ui|json|xml|rss|"
+        r"catalogue|catalog|search)\b",
+        " ", masked, flags=re.I)
     low = masked.lower()
     found = named_venues(res)
 
