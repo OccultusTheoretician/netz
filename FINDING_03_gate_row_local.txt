@@ -1,0 +1,90 @@
+FINDING 03 - THE GATE VALIDATES ROWS IN ISOLATION
+Class: gate gap, structural. Dated 2026-08-18. Instrument: coherence.py.
+
+WHAT THE DEFECT IS
+
+Every check in validate_projection examines one row against the standard.
+Nothing examines a row against the rows already sealed. So the gate cannot
+see the one defect that needs no outcome to detect: two claims by the same
+forecaster that no single world satisfies.
+
+This is not a forecaster's error being reported. It is the desk's gate
+accepting a pair it had no machinery to refuse.
+
+THE RULE THAT WAS MISSING
+
+The weakest defensible coherence rule is monotonicity:
+
+    if claim A's success set is a subset of claim B's success set,
+    then P(A) must be <= P(B).
+
+Two forms of subset arise in this ledger. Nested thresholds over one
+window: settling above 100 is a subset of settling above 90. And one
+threshold over nested windows: reaching a level at least once in 105 days
+is a subset of reaching it at least once in a 150-day span containing
+those 105 days. Neither form was checked at any point before today.
+
+THE FIRST INSTANCE, PRINTED IN FULL
+
+Arm: manual/fable-5/unattested. Both rows sealed, both open, neither
+resolved. Detected 2026-08-18 on the instrument's first run.
+
+  KKR-20260817-57  p = 40   window 2026-08-18 .. 2026-11-30
+    "The US 10-year Treasury constant maturity yield published in FRED
+     series DGS10 is at or above 5.00 percent for at least one business
+     day between 2026-08-18 and 2026-11-30."
+
+  KKR-20260801-24  p = 30   window 2026-08-03 .. 2026-12-31
+    "The 10-year US Treasury constant maturity yield closes at or above
+     5.00 percent on at least one trading day between 2026-08-03 and
+     2026-12-31."
+
+Same instrument, same threshold, same direction, same "at least once"
+predicate. The second window strictly contains the first: 2026-08-03 is
+earlier than 2026-08-18, and 2026-12-31 is later than 2026-11-30. Every
+world in which the first row succeeds is a world in which the second row
+succeeds. The forecaster therefore asserted that a strictly weaker claim
+is ten points less likely than the claim that implies it. No world
+satisfies both numbers.
+
+WHAT IS AND IS NOT BEING CLAIMED
+
+Neither row is wrong. Both may resolve hit and score well, and their Brier
+contributions will be unremarkable. That is precisely why this class of
+defect survives an accuracy record: scoring measures the relation between
+a claim and the world, and coherence measures the relation between claims.
+A forecaster can be well calibrated and incoherent at the same time, and
+only one of those is visible in a Brier.
+
+Nothing here is scored. Incoherence is reported as its own class and never
+folded into accuracy. The rows are not withdrawn, not amended, and not
+void: they were sealed as issued and they stand as issued, per 5.07.
+
+WHAT IS NOT CHECKED, STATED PLAINLY
+
+Coherence is checked only where the comparison is mechanical. Of 748 sealed
+rows, 55 carry an instrument, a direction, a numeric threshold and a window
+the instrument can parse; the remaining 693 are structurally uncomparable
+and are dropped rather than guessed at. A row this instrument cannot parse
+is not a row it has cleared. Cross-arm disagreement is printed as
+measurement and carries no verdict, because a Brier belongs to one
+forecaster and two forecasters differing is not an error by either. The
+control arm is excluded: its probabilities are assigned from a rate table,
+so testing it for reasoning coherence would measure the table.
+
+The guards in the instrument were each added because the unguarded version
+produced a false positive against this ledger on 2026-08-18: direction (a
+higher bar is easier for a below-claim, and the first version called a
+correct pair a violation), instrument (Brent is not WTI; a 10-year yield is
+not a 30-year), and window (the same threshold over four days and over
+three months are different claims). Those three false positives are the
+reason the check is narrow, and the narrowness is disclosed rather than
+described as rigour.
+
+REMEDY
+
+coherence.py runs against the sealed ledger, exits non-zero on any
+violation, and is wireable into the daily chain. The gate itself remains
+row-local; closing that would require validate_projection to read the
+ledger at seal time, which is a larger change and is not claimed as done.
+Until it is, coherence is caught after sealing and printed, not prevented.
