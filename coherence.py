@@ -314,8 +314,8 @@ def main():
                 tag = arm_of(r)
                 ref = "   <- reference, assigned not reasoned" if tag.startswith("control/") else ""
                 W(f"      p={float(r['probability']):>5}  {tag:<34} {r.get('id')}{ref}")
-            for a, vals in sorted(split.items()):
-                W(f"      within-arm split: {a} priced this "
+            for _sa, vals in sorted(split.items()):
+                W(f"      within-arm split: {_sa} priced this "
                   f"{' and '.join('%g' % v for v in vals)} on one day")
             W("")
         W("  A wide spread is not a defect. It is the measurement this desk")
