@@ -232,9 +232,100 @@ def main():
         else:
             W("  none.")
 
+    # cross-arm DISPERSION: same elicitation day, same subject, every arm
+    # that priced it. This is the banked surface - not contradiction
+    # detection but agreement measurement, and it needs no threshold parsing,
+    # which is why it sees claims the sections above cannot.
+    W("")
+    W("CROSS-ARM DISPERSION - same day, same subject, measurement only")
+    W("-" * 72)
+    W("  Two forecasters disagreeing is not an error by either. A Brier belongs")
+    W("  to one forecaster; nothing below is scored or attributed as a fault.")
+    W("  control/baserate is printed as a reference line, never in the spread.")
+    STOP = set("""between and the a an of at least on or for with will
+        that which within from before after during any one two three
+        least most more than 2026 2027 utc""".split())
+
+    def cwords(s):
+        return {w for w in re.findall(r"[a-z]{4,}", (s or "").lower())
+                if w not in STOP}
+
+    byday = {}
+    for r in rows:
+        if r.get("probability") is None:
+            continue
+        byday.setdefault(str(r.get("date_issued"))[:10], []).append(r)
+    clusters = []
+    for d0, g in byday.items():
+        used = set()
+        for i, x in enumerate(g):
+            if i in used:
+                continue
+            wx = cwords(x.get("statement"))
+            if len(wx) < 4:
+                continue
+            grp = [x]
+            used.add(i)
+            for j in range(i + 1, len(g)):
+                if j in used:
+                    continue
+                wy = cwords(g[j].get("statement"))
+                if len(wy) < 4:
+                    continue
+                if len(wx & wy) / max(1, len(wx | wy)) >= 0.50:
+                    grp.append(g[j])
+                    used.add(j)
+            real = [r for r in grp if not str(r.get("model", "")).startswith("control/")]
+            byarm = {}
+            for r in real:
+                byarm.setdefault(arm_of(r), []).append(float(r["probability"]))
+            # A cluster can hold two rows from ONE arm. Folding those into the
+            # cross-arm spread reports a forecaster's disagreement with itself
+            # as disagreement between forecasters. Spread is computed across
+            # arm medians; a within-arm split is flagged in its own right.
+            split = {a: sorted(set(v)) for a, v in byarm.items() if len(set(v)) > 1}
+            if len(byarm) >= 2:
+                meds = []
+                for v in byarm.values():
+                    v = sorted(v)
+                    meds.append(v[len(v) // 2] if len(v) % 2 else
+                                (v[len(v) // 2 - 1] + v[len(v) // 2]) / 2)
+                clusters.append((max(meds) - min(meds), d0, grp, real, split))
+    clusters.sort(reverse=True, key=lambda c: (c[0], c[1]))
+    if not clusters:
+        W("  no subject was priced by two or more arms on one day.")
+    else:
+        W(f"  {len(clusters)} subject(s) priced by two or more arms on one day.")
+        W("")
+        nsplit = sum(1 for c in clusters if c[4])
+        if nsplit:
+            W(f"  {nsplit} of them also carry a WITHIN-ARM split - one arm pricing")
+            W("  the same subject two ways on one day. Marked below; not scored.")
+        W("")
+        for spread, d0, grp, real, split in clusters[:10]:
+            narms = len({arm_of(r) for r in real})
+            ps = sorted(float(r["probability"]) for r in real)
+            mid = (ps[len(ps) // 2] if len(ps) % 2 else
+                   (ps[len(ps) // 2 - 1] + ps[len(ps) // 2]) / 2)
+            W(f"  {d0}  spread {spread:g} pts across {narms} arm(s)  median {mid:g}"
+              + ("   [WITHIN-ARM SPLIT]" if split else ""))
+            W(f"    {real[0]['statement'][:100]}")
+            for r in sorted(grp, key=lambda z: -float(z["probability"])):
+                tag = arm_of(r)
+                ref = "   <- reference, assigned not reasoned" if tag.startswith("control/") else ""
+                W(f"      p={float(r['probability']):>5}  {tag:<34} {r.get('id')}{ref}")
+            for a, vals in sorted(split.items()):
+                W(f"      within-arm split: {a} priced this "
+                  f"{' and '.join('%g' % v for v in vals)} on one day")
+            W("")
+        W("  A wide spread is not a defect. It is the measurement this desk")
+        W("  exists to take: identical packet, identical gate, different")
+        W("  forecasters, and the disagreement priced and sealed before any")
+        W("  outcome exists. Nobody else is positioned to publish it.")
+
     # cross-arm: measurement, never a verdict
     W("")
-    W("CROSS-ARM SPREAD - measurement, not a finding")
+    W("IDENTICAL-CLAIM SPREAD - same threshold, same window")
     W("-" * 72)
     W("  Two forecasters disagreeing is not an error by either. A Brier")
     W("  belongs to one forecaster; nothing below is scored or attributed.")
