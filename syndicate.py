@@ -16,6 +16,7 @@ Usage:
 import hashlib
 import json
 import os
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -60,14 +61,36 @@ def kalls_line() -> str:
     recs = json.loads(raw).get("records", [])
     c = Counter(r.get("status", "SEALED") for r in recs)
     resolved = c.get("RESOLVED_HIT", 0) + c.get("RESOLVED_MISS", 0)
-    return (f"KALLS · {c.get('SEALED',0)} sealed · {c.get('REVEALED',0)} revealed · "
-            f"{resolved} resolved\nkalls_hashlog sha256: {ksha}\n")
+    # KK31-BEACON300: zero-count fields print nothing until nonzero.
+    parts = [f"{c.get('SEALED', 0)} sealed"]
+    if c.get("REVEALED"):
+        parts.append(f"{c.get('REVEALED')} revealed")
+    if resolved:
+        parts.append(f"{resolved} resolved")
+    return ("KALLS · " + " · ".join(parts)
+            + f"\nkalls sha256 {ksha}\n")
 
 
 def main() -> None:
     line, sha = build_post()
-    body = f"{line}\nledger.json sha256: {sha}\n"
+    body = f"{line}\nledger sha256 {sha}\n"
     body += kalls_line()
+    # KK31-BEACON300: Bluesky caps a post at 300 graphemes; the ledger
+    # outgrew it (306 on 2026-08-17). Hashes are the commitment: the
+    # ledger hash NEVER drops. Decorations yield first, loudly.
+    _LINK = len("ledger")
+    if len(body) + _LINK > 300:
+        _t = re.sub(r"KALLS[^\n]*\n", "", body, count=1)
+        if _t != body:
+            print("[trim] kalls stat words dropped to fit 300; hashes kept")
+            body = _t
+    if len(body) + _LINK > 300:
+        _t = re.sub(r"kalls sha256 [0-9a-f]{64}\n", "", body, count=1)
+        if _t != body:
+            print("[trim] kalls hash dropped to fit 300 - it stays anchored "
+                  "in-repo and in the hashlog")
+            body = _t
+    print(f"[{len(body) + _LINK}/300]")
     print(body + LEDGER_URL)
 
     if "--dry-run" in sys.argv:

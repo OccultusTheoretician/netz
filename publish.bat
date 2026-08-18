@@ -13,6 +13,20 @@ if exist C:\netz\forecasts\ledger.html copy /Y C:\netz\forecasts\ledger.html C:\
 if exist C:\netz\forecasts\KKR_latest.html copy /Y C:\netz\forecasts\KKR_latest.html C:\netz\docs\kkr.html >nul
 copy /Y C:\netz\ledger.json C:\netz\docs\ledger.json >nul
 cd /d C:\netz
+REM KK31-HEALTHPULL: integrate the remote's cron commits (spion, audits,
+REM OTS anchors) BEFORE health.py measures surface ages. Four LATE/STALE
+REM rows on 2026-08-17 were one defect: health ran against a tree that
+REM had not pulled since the prior day, so every remote-dated surface
+REM aged at the operator's last pull. The pre-push rebase below still
+REM guards the review-pause race; this one guards the measurement.
+git pull --rebase --autostash origin main
+if errorlevel 1 (
+  echo.
+  echo  EARLY PULL FAILED - resolve the conflict, then rerun publish.bat.
+  echo  Nothing rendered, nothing committed.
+  pause
+  exit /b 1
+)
 python health.py
 REM KK28-TOOLWORK: navgen in no batch file was the NAVDRIFT root cause — the
 REM daily-regenerated report face drifted from the manifest until a hand run.
@@ -59,6 +73,13 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
+
+REM KK31-BEACON: external clock (RPAS 4.05) fires on every publish, after the
+REM push, so the posted sha256 and the public ledger.json agree the moment a
+REM verifier checks. Non-fatal by design - a beacon outage never gates a
+REM publish. Needs BSKY_HANDLE / BSKY_APP_PASSWORD set user-scope (setx).
+python syndicate.py
+if errorlevel 1 echo  BEACON: syndicate did not post - see the line above. Publish unaffected.
 
 REM Confirm from the remote, not the console.
 for /f "tokens=1" %%R in ('git ls-remote origin main') do set REMOTE=%%R
