@@ -378,6 +378,12 @@ def venue_scope(resolution: str) -> dict:
     marker = None
     for mk in markers:
         for mm in re.finditer(re.escape(mk), low):
+            # KK35-REG (R6): "up to and including <date>" is a window-end
+            # idiom, not an example-introducer. Every other softener and
+            # every other position of "including" is untouched.
+            if mk == "including" and low[max(0, mm.start() - 10):
+                                         mm.start()].endswith("up to and "):
+                continue
             pre_at = mm.start()
             popen = low.rfind("(", max(0, mm.start() - 4), mm.start())
             if popen != -1:
