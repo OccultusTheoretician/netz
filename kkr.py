@@ -823,11 +823,16 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     _win = re.search(r"\bbetween\s+(20\d{2}-\d{2}-\d{2})\s+and\s+"
                      r"(20\d{2}-\d{2}-\d{2})\b", both, re.I)
     _governed = set()
-    for _m in re.finditer(r"\b(?:confirm\w*|verif\w*|report\w*|corroborat\w*|check\w*)"
-                          r"\s+(?:(?:by|on)\s+)?(20\d{2}-\d{2}-\d{2})\b", both, re.I):
+    for _m in re.finditer(r"\b(?:confirm\w*|verif\w*|report\w*|corroborat\w*|check\w*"
+                          r"|fetch\w*|quer\w*)"
+                          r"\s+(?:(?:by|on|on\s+or\s+after)\s+)?(20\d{2}-\d{2}-\d{2})\b", both, re.I):
         _governed.add(_m.group(1))
+    # KK35-GATE (E1): "on or after", "up to and including" and "no later
+    # than" define half-open or closed window bounds, never an exact day.
     for _m in re.finditer(r"\b(?:in\s+effect\s+on|as\s+of|described\s+in\s+the|"
-                          r"dated|on\s+or\s+before|the)\s+(20\d{2}-\d{2}-\d{2})\b",
+                          r"dated|on\s+or\s+before|on\s+or\s+after|"
+                          r"up\s+to\s+and\s+including|no\s+later\s+than|"
+                          r"the)\s+(20\d{2}-\d{2}-\d{2})\b",
                           both, re.I):
         _governed.add(_m.group(1))
     _fellback = False
@@ -993,7 +998,21 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                 r"seven|eight|nine|ten|eleven|twelve)\b)\s*[^.;]{0,20}"
                 r"(?:at least|or greater|or higher|or more|or above|or fewer))",
                 _res_low2)
-            and len(re.findall(r"20\d{2}-\d{2}-\d{2}", _res_low2)) >= 2
+            and (len(re.findall(r"20\d{2}-\d{2}-\d{2}", _res_low2)) >= 2
+                 # KK35-GATE (E3): a common-noun subject is invisible to the
+                 # capitalised-token extractor, so accept restatement in
+                 # lowercase: three or more substantive words shared with the
+                 # statement, venue furniture excluded. The threshold and
+                 # anaphora conditions above and below still bind.
+                 or len({_w for _w in re.findall(r"[a-z]{5,}", _res_low2)
+                         if _w not in {
+                             "situation", "report", "reports", "external",
+                             "covering", "records", "record", "through",
+                             "including", "inclusive", "catalog", "catalogue",
+                             "published", "publishes", "dateadded", "between",
+                             "before", "after", "their", "which", "would",
+                             "whose", "under", "within", "during", "against"}}
+                        & set(re.findall(r"[a-z]{5,}", _stmt_low))) >= 3)
             and not _ANAPH.search(_res_low2))
     if _s_subj and not _r_subj and _r_ven and not _selfreg:
         reasons.append(
