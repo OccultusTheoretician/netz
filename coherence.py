@@ -170,13 +170,14 @@ def main():
         ins, bd, win = instrument(st), bound(st), window(r)
         if ins and bd and win:
             parsed.append(dict(id=r.get("id"), arm=arm, ins=ins, dirn=bd[0],
-                               thr=bd[1], win=win, p=float(p), st=st))
+                               thr=bd[1], win=win, p=float(p), st=st,
+                               day=str(r.get("date_issued", ""))[:10]))
     W(f"  {len(rows)} sealed rows | {len(parsed)} carry a comparable "
       f"instrument, direction, threshold and window")
     W(f"  control/baserate {'INCLUDED' if a.include_control else 'excluded'} "
       f"- its probabilities are assigned, not reasoned")
 
-    strict, weak = [], []
+    strict, weak, revision = [], [], []
     for x, y in itertools.combinations(parsed, 2):
         if x["arm"] != y["arm"] or x["ins"] != y["ins"] or x["dirn"] != y["dirn"]:
             continue
@@ -187,7 +188,8 @@ def main():
                           ((x["thr"] > y["thr"]) == (x["dirn"] == "above"))
                           else (y, x))
             if hard["p"] > easy["p"]:
-                strict.append((hard, easy))
+                (strict if hard["day"] == easy["day"] else revision).append(
+                    (hard, easy, "threshold"))
         # WEAK: same threshold and direction, one window nested in the
         # other. More time cannot make a threshold less likely to be hit.
         elif x["thr"] == y["thr"] and x["win"] != y["win"]:
@@ -198,10 +200,11 @@ def main():
             else:
                 continue
             if inner["p"] > outer["p"]:
-                weak.append((inner, outer))
+                (weak if inner["day"] == outer["day"] else revision).append(
+                    (inner, outer, "window"))
 
     def show(pair, lab_a, lab_b):
-        h, e = pair
+        h, e = pair[0], pair[1]
         W(f"  [{h['arm']}] {h['ins']} {h['dirn']}")
         W(f"    {lab_a:<22} p={h['p']:>5}  {h['id']}  {h['win'][0]}..{h['win'][1]}")
         W(f"      {h['st'][:96]}")
@@ -210,7 +213,7 @@ def main():
         W("")
 
     W("")
-    W("STRICT - same arm, same instrument, same window, nested thresholds")
+    W("STRICT - SAME ELICITATION, same arm, same instrument, same window")
     W("-" * 72)
     if strict:
         for pr in strict:
@@ -222,7 +225,7 @@ def main():
 
     if not a.strict_only:
         W("")
-        W("WEAK - same threshold, one window inside the other")
+        W("WEAK - SAME ELICITATION, same threshold, one window inside the other")
         W("-" * 72)
         if weak:
             for pr in weak:
@@ -231,6 +234,32 @@ def main():
             W("  less likely to be reached at least once.")
         else:
             W("  none.")
+
+    W("")
+    W("REVISION - the same arm, different elicitations, nested claims")
+    W("-" * 72)
+    W("  NOT a violation, and the distinction is the whole point. Monotonicity")
+    W("  binds one belief state at one moment. These pairs were sealed on")
+    W("  different days from different packets, so the later row reflects")
+    W("  information the earlier one did not have. Revising a subset event")
+    W("  upward on new evidence is correct forecasting, not contradiction.")
+    W("  The arms are also elicited cold and never see their own sealed rows,")
+    W("  so cross-day consistency is not something they can maintain.")
+    W("  What is measured here is belief volatility, and nothing is scored.")
+    if not revision:
+        W("  none.")
+    else:
+        for pair in revision:
+            h, e, kind = pair
+            later, earlier = (h, e) if h["day"] >= e["day"] else (e, h)
+            W(f"  [{h['arm']}] {h['ins']} {h['dirn']} - {kind}, "
+              f"{abs(h['p'] - e['p']):g} pt move")
+            W(f"    {earlier['day']}  p={earlier['p']:>5}  {earlier['id']}  "
+              f"{earlier['win'][0]}..{earlier['win'][1]}")
+            W(f"    {later['day']}  p={later['p']:>5}  {later['id']}  "
+              f"{later['win'][0]}..{later['win'][1]}")
+            W("")
+        W(f"  {len(revision)} revision(s) recorded.")
 
     # cross-arm DISPERSION: same elicitation day, same subject, every arm
     # that priced it. This is the banked surface - not contradiction
