@@ -134,7 +134,11 @@ def main() -> int:
     exp = json.loads(EXPECT.read_text(encoding="utf-8"))
     t0 = now()
     rows, worst = [], "OK"
-    order = {"OK": 0, "EVENT": 0, "LATE": 1, "NO-DATE": 2, "STALE": 3}
+    # KK34-PENDING ranks above OK and below LATE: a regenerated surface
+    # awaiting publish is a real state worth seeing on the board, but it
+    # must never outrank or mask a genuinely late one.
+    order = {"OK": 0, "EVENT": 0, "PENDING": 1, "LATE": 2, "NO-DATE": 3,
+             "STALE": 4}
 
     for s in exp["surfaces"]:
         p = HERE / s["path"]
@@ -149,6 +153,18 @@ def main() -> int:
                 moved = dt.datetime.fromtimestamp(p.stat().st_mtime,
                                                   dt.timezone.utc)
                 provenance = "mtime (untrusted)"
+        # KK34-PENDING: git is the authority and stays the authority. But
+        # health runs BEFORE publish commits, so a surface regenerated
+        # today still carries yesterday's commit timestamp and reads stale
+        # when it is hours old. Disclose both rather than repair either:
+        # if the disk is ahead of the repository, say so and say by how
+        # much. mtime remains untrusted and is labelled untrusted.
+        disk_dt = None
+        if p.exists():
+            disk_dt = dt.datetime.fromtimestamp(p.stat().st_mtime,
+                                                dt.timezone.utc)
+        uncommitted = bool(moved and disk_dt and disk_dt > moved
+                           and provenance == "git")
         age_h = (t0 - moved).total_seconds() / 3600 if moved else None
         cad = s.get("cadence_hours")
 
@@ -160,6 +176,9 @@ def main() -> int:
             state = "EVENT"
         elif age_h <= cad:
             state = "OK"
+        elif uncommitted and (t0 - disk_dt).total_seconds() / 3600 <= cad:
+            # regenerated and awaiting publish - not stale, not yet attested
+            state = "PENDING"
         elif age_h <= 2 * cad:
             state = "LATE"
         else:
@@ -173,6 +192,10 @@ def main() -> int:
             "last_moved_utc": moved.strftime("%Y-%m-%dT%H:%MZ")
             if moved else None,
             "age_hours": round(age_h, 1) if age_h is not None else None,
+            "disk_utc": disk_dt.strftime("%Y-%m-%dT%H:%MZ") if disk_dt else None,
+            "disk_age_hours": (round((t0 - disk_dt).total_seconds() / 3600, 1)
+                               if disk_dt else None),
+            "uncommitted": uncommitted,
             "provenance": provenance, "state": state,
             "note": s.get("note", "")})
 
