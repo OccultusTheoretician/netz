@@ -1,90 +1,88 @@
 FINDING 03 - THE GATE VALIDATES ROWS IN ISOLATION
 Class: gate gap, structural. Dated 2026-08-18. Instrument: coherence.py.
 
-WHAT THE DEFECT IS
+CORRECTION, 2026-08-19, REV 1. Rev 0 of this finding is wrong in its
+central instance and is superseded here rather than rewritten. The rev 0
+claim is retained at the foot of this file, marked, per 5.07. The
+correction is stated first because a reader who takes only the headline
+should take the corrected one.
 
-Every check in validate_projection examines one row against the standard.
-Nothing examines a row against the rows already sealed. So the gate cannot
-see the one defect that needs no outcome to detect: two claims by the same
-forecaster that no single world satisfies.
+WHAT REV 0 GOT WRONG
 
-This is not a forecaster's error being reported. It is the desk's gate
-accepting a pair it had no machinery to refuse.
+Rev 0 cited two rows sealed 2026-08-01 and 2026-08-17 and asserted: "No
+world satisfies both numbers." That is false. Monotonicity binds a single
+belief state at a single moment. Those rows were sealed sixteen days
+apart, from different packets, under different information. A forecaster
+that prices a subset event higher after new evidence has arrived has
+revised, not contradicted itself, and revision is correct forecasting.
 
-THE RULE THAT WAS MISSING
+The error compounds because of how this desk elicits. The arms run COLD:
+each is handed a packet and never sees its own previously sealed rows.
+Cross-day consistency is therefore not a standard they are failing to
+meet, it is a standard the elicitation design makes structurally
+impossible for them to meet. Rev 0 measured a property of the desk's own
+elicitation and reported it as a defect in the forecaster.
 
-The weakest defensible coherence rule is monotonicity:
+The instrument carried the same error. Its STRICT and WEAK checks did not
+compare date_issued, so every pair it could flag was cross-elicitation. On
+2026-08-19 it reported three violations. Under the corrected rule the
+count of genuine violations is ZERO, and those three are recorded as
+revisions with their point moves printed.
 
-    if claim A's success set is a subset of claim B's success set,
-    then P(A) must be <= P(B).
+WHAT SURVIVES, AND IT IS THE PART THAT MATTERED
 
-Two forms of subset arise in this ledger. Nested thresholds over one
-window: settling above 100 is a subset of settling above 90. And one
-threshold over nested windows: reaching a level at least once in 105 days
-is a subset of reaching it at least once in a 150-day span containing
-those 105 days. Neither form was checked at any point before today.
+The structural claim stands unchanged. Every check in validate_projection
+examines one row against the standard, and nothing examines a row against
+the rows already sealed. A same-elicitation incoherence - two claims in
+one silo, one belief state, one information set, where a subset event
+carries the higher probability - would pass the gate undetected today. The
+instrument now checks exactly that, and nothing wider.
 
-THE FIRST INSTANCE, PRINTED IN FULL
+It has found none. That is a result rather than an absence of work: across
+795 sealed rows, 59 of which carry a comparable instrument, direction,
+threshold and window, no arm has contradicted itself inside a single
+elicitation. The check stays wired and exits non-zero if one appears.
 
-Arm: manual/fable-5/unattested. Both rows sealed, both open, neither
-resolved. Detected 2026-08-18 on the instrument's first run.
+WHAT IS MEASURED INSTEAD
 
-  KKR-20260817-57  p = 40   window 2026-08-18 .. 2026-11-30
-    "The US 10-year Treasury constant maturity yield published in FRED
-     series DGS10 is at or above 5.00 percent for at least one business
-     day between 2026-08-18 and 2026-11-30."
-
-  KKR-20260801-24  p = 30   window 2026-08-03 .. 2026-12-31
-    "The 10-year US Treasury constant maturity yield closes at or above
-     5.00 percent on at least one trading day between 2026-08-03 and
-     2026-12-31."
-
-Same instrument, same threshold, same direction, same "at least once"
-predicate. The second window strictly contains the first: 2026-08-03 is
-earlier than 2026-08-18, and 2026-12-31 is later than 2026-11-30. Every
-world in which the first row succeeds is a world in which the second row
-succeeds. The forecaster therefore asserted that a strictly weaker claim
-is ten points less likely than the claim that implies it. No world
-satisfies both numbers.
-
-WHAT IS AND IS NOT BEING CLAIMED
-
-Neither row is wrong. Both may resolve hit and score well, and their Brier
-contributions will be unremarkable. That is precisely why this class of
-defect survives an accuracy record: scoring measures the relation between
-a claim and the world, and coherence measures the relation between claims.
-A forecaster can be well calibrated and incoherent at the same time, and
-only one of those is visible in a Brier.
-
-Nothing here is scored. Incoherence is reported as its own class and never
-folded into accuracy. The rows are not withdrawn, not amended, and not
-void: they were sealed as issued and they stand as issued, per 5.07.
+Cross-elicitation nested pairs are now reported as REVISION with the size
+of the move. As of 2026-08-19: manual/fable-5/unattested moved the
+10-year 5.00 percent claim 10 points across two later elicitations, and
+the Brent 100.00 claim 15 points in two days. Nothing is scored and no
+fault is attributed. It is belief volatility, and it is visible only
+because every intermediate state was sealed and dated when it was formed.
 
 WHAT IS NOT CHECKED, STATED PLAINLY
 
-Coherence is checked only where the comparison is mechanical. Of 748 sealed
-rows, 55 carry an instrument, a direction, a numeric threshold and a window
-the instrument can parse; the remaining 693 are structurally uncomparable
-and are dropped rather than guessed at. A row this instrument cannot parse
-is not a row it has cleared. Cross-arm disagreement is printed as
-measurement and carries no verdict, because a Brier belongs to one
-forecaster and two forecasters differing is not an error by either. The
-control arm is excluded: its probabilities are assigned from a rate table,
-so testing it for reasoning coherence would measure the table.
+Of 795 sealed rows, 59 are structurally comparable; the remaining 736 are
+dropped rather than guessed at. A row this instrument cannot parse is not
+a row it has cleared. Statement-level nesting with no numeric threshold is
+invisible to it: one arm priced "the Senate confirms X" at 65 and "the
+Senate confirms X in a recorded floor vote" at 85 on a single day, which
+IS a same-elicitation subset relation and IS a genuine violation, and the
+instrument cannot see it because neither claim carries a number. That gap
+is named, not closed. Cross-arm disagreement is measurement and carries no
+verdict, because a Brier belongs to one forecaster. The control arm is
+excluded: its probabilities come from a rate table.
 
-The guards in the instrument were each added because the unguarded version
-produced a false positive against this ledger on 2026-08-18: direction (a
-higher bar is easier for a below-claim, and the first version called a
-correct pair a violation), instrument (Brent is not WTI; a 10-year yield is
-not a 30-year), and window (the same threshold over four days and over
-three months are different claims). Those three false positives are the
-reason the check is narrow, and the narrowness is disclosed rather than
-described as rigour.
+Each guard was added because the unguarded check produced a false positive
+against this ledger: direction, then instrument, then window, then
+elicitation. Four corrections to one check in two days, all printed.
 
-REMEDY
+REMEDY, UNCHANGED IN SUBSTANCE
 
-coherence.py runs against the sealed ledger, exits non-zero on any
-violation, and is wireable into the daily chain. The gate itself remains
-row-local; closing that would require validate_projection to read the
-ledger at seal time, which is a larger change and is not claimed as done.
-Until it is, coherence is caught after sealing and printed, not prevented.
+coherence.py runs against the sealed ledger and exits non-zero on a
+same-elicitation violation. The gate itself remains row-local; making
+validate_projection read the ledger at seal time is a larger change and is
+not claimed as done.
+
+================================================================
+REV 0, 2026-08-18, SUPERSEDED - RETAINED PER 5.07
+
+Rev 0 claimed KKR-20260817-57 (p=40, window 2026-08-18..2026-11-30) and
+KKR-20260801-24 (p=30, window 2026-08-03..2026-12-31) were mutually
+unsatisfiable because the second window strictly contains the first. The
+window containment is a fact and is not withdrawn. The inference of
+incoherence drawn from it is withdrawn: the rows were sealed on different
+days under different information, and rev 0 did not check that.
+================================================================
