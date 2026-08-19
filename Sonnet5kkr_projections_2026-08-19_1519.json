@@ -1,0 +1,110 @@
+[
+  {
+    "statement": "Between 2026-08-19 and 2026-09-16, Iran announces closure of the Strait of Hormuz to commercial shipping, or the US Navy Fifth Fleet or EIA confirms a stoppage of tanker transits through the strait.",
+    "domain": "military_conflict",
+    "probability": 10,
+    "resolution": "TRUE if, between 2026-08-19 and 2026-09-16, Iranian state media or an Iranian ministry announces a Hormuz closure, or US Fifth Fleet/EIA confirms a transit stoppage, per two of Reuters, AP, or Bloomberg.",
+    "deadline": "2026-09-18",
+    "citations": [
+      87,
+      92,
+      98
+    ],
+    "failure_condition": "The Strait of Hormuz remains open to commercial shipping throughout the window, with no closure, blockade, or transit stoppage announced by Iran or confirmed by the US Fifth Fleet or EIA."
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-09-09, Saudi Arabia, Bahrain, Qatar, Kuwait, or Oman formally announces new trade restrictions or a trade suspension against Iran, distinct from the UAE action already reported.",
+    "domain": "political",
+    "probability": 18,
+    "resolution": "TRUE if, between 2026-08-19 and 2026-09-09, the government of Saudi Arabia, Bahrain, Qatar, Kuwait, or Oman issues an official trade-restriction announcement against Iran, per two of Reuters, AP, or Bloomberg.",
+    "deadline": "2026-09-11",
+    "citations": [
+      92,
+      98
+    ],
+    "failure_condition": "No GCC member state besides the UAE imposes new trade restrictions on Iran during the window; existing trade relationships continue unchanged."
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-09-02, the CISA Known Exploited Vulnerabilities catalog lists 10 or more entries with a dateAdded value in that range, following the 4 entries added 2026-08-18.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "TRUE if the public CISA KEV JSON feed shows 10 or more entries with dateAdded between 2026-08-19 and 2026-09-02 inclusive, queried on or after 2026-09-04.",
+    "deadline": "2026-09-04",
+    "citations": [
+      18,
+      19
+    ],
+    "failure_condition": "The CISA KEV catalog shows fewer than 10 entries with dateAdded in the window when the feed is queried."
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-09-18, the 10-Year Treasury constant maturity yield (FRED series DGS10) closes at or above 4.85 percent on at least one trading day, up from 4.65 percent on 2026-08-19.",
+    "domain": "economic",
+    "probability": 38,
+    "resolution": "TRUE if FRED series DGS10 records a daily close of 4.85 or higher on any trading day between 2026-08-19 and 2026-09-18, per data available by 2026-09-21.",
+    "deadline": "2026-09-21",
+    "citations": [
+      52,
+      68,
+      74
+    ],
+    "failure_condition": "DGS10 does not close at or above 4.85 percent on any trading day within the window."
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-11-15, German federal prosecutors file a formal indictment against the Ukrainian national arrested in Croatia over the 2022 Nord Stream pipeline bombings.",
+    "domain": "crime_security",
+    "probability": 15,
+    "resolution": "TRUE if the Generalbundesanwalt files a formal indictment against the Croatia-arrested individual, reported by two of Reuters, AP, or DPA, before 2026-11-17.",
+    "deadline": "2026-11-17",
+    "citations": [
+      77,
+      113
+    ],
+    "failure_condition": "German federal prosecutors do not file a formal indictment against the Croatia-arrested individual before the deadline."
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-09-16, USGS catalogs at least one aftershock of magnitude 6.0 or greater within 150 km of the M7.7 Ende, Indonesia epicenter recorded 2026-08-19.",
+    "domain": "disaster",
+    "probability": 50,
+    "resolution": "TRUE if the USGS earthquake catalog lists an event of magnitude 6.0 or greater within 150 km of the Ende epicenter with origin time between 2026-08-19 and 2026-09-16.",
+    "deadline": "2026-09-18",
+    "citations": [
+      46
+    ],
+    "failure_condition": "No earthquake of magnitude 6.0 or greater is catalogued by USGS within 150 km of the Ende epicenter during the window."
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-10-17, Ukraine's Verkhovna Rada or Central Election Commission formally schedules a date for a presidential election, following the sacked defence minister's public call for one.",
+    "domain": "political",
+    "probability": 7,
+    "resolution": "TRUE if the Verkhovna Rada or Ukraine's Central Election Commission issues an official act setting a presidential election date, reported by two of Reuters, AP, or Ukrainska Pravda, by 2026-10-19.",
+    "deadline": "2026-10-19",
+    "citations": [
+      103,
+      126
+    ],
+    "failure_condition": "Ukraine's Verkhovna Rada and Central Election Commission do not schedule a presidential election date during the window; the wartime suspension of elections remains in effect."
+  },
+  {
+    "statement": "At the 2026-09-18 market close, Marvell (MRVL) cumulative return since the 2026-08-18 close exceeds Broadcom (AVGO) cumulative return since 2026-08-18 by 15 percentage points or more.",
+    "domain": "economic",
+    "probability": 30,
+    "resolution": "TRUE if MRVL percent change from 2026-08-18 close to 2026-09-18 close, minus AVGO percent change over the same span, is 15 percentage points or greater, per NASDAQ closing prices.",
+    "deadline": "2026-09-18",
+    "citations": [
+      53,
+      54
+    ],
+    "failure_condition": "MRVL's cumulative return relative to AVGO since 2026-08-18 is below 15 percentage points at the 2026-09-18 close, or MRVL underperforms AVGO outright."
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-10-17, the WHO Director-General declares the Democratic Republic of Congo Ebola outbreak, which reached 5,000 cases this window, a Public Health Emergency of International Concern.",
+    "domain": "disaster",
+    "probability": 20,
+    "resolution": "TRUE if WHO's Director-General issues a formal PHEIC declaration covering the DRC Ebola outbreak between 2026-08-19 and 2026-10-17, per WHO statement and two wire services, by 2026-10-19.",
+    "deadline": "2026-10-19",
+    "citations": [
+      39
+    ],
+    "failure_condition": "WHO's Director-General does not declare a PHEIC covering the DRC Ebola outbreak during the window."
+  }
+]

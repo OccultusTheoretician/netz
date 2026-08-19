@@ -1,0 +1,121 @@
+[
+  {
+    "statement": "CISA adds at least one new Microsoft-product vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-08-20 and 2026-09-30.",
+    "domain": "cyber",
+    "probability": 85,
+    "resolution": "The CISA KEV JSON feed contains at least one entry with vendorProject Microsoft and dateAdded between 2026-08-20 and 2026-09-30 inclusive; zero such entries grades MISS.",
+    "deadline": "2026-10-02",
+    "citations": [
+      18,
+      19
+    ],
+    "failure_condition": "No Microsoft entry with dateAdded in the 2026-08-20 to 2026-09-30 range exists in the KEV catalog at the deadline."
+  },
+  {
+    "statement": "The CISA KEV entry for CVE-2026-33824 carries a known ransomware campaign use value of Known as of 2026-11-30.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "The CISA KEV JSON entry for CVE-2026-33824 shows knownRansomwareCampaignUse equal to Known when fetched on or after 2026-12-01; a value of Unknown grades MISS.",
+    "deadline": "2026-12-02",
+    "citations": [
+      19,
+      21
+    ],
+    "failure_condition": "The knownRansomwareCampaignUse field for CVE-2026-33824 still reads Unknown at the deadline."
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-08-20 and 2026-10-30.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "The official ICE Brent front-month settlement price is at or above 100.00 USD on any trading day from 2026-08-20 through 2026-10-30; otherwise MISS.",
+    "deadline": "2026-11-03",
+    "citations": [
+      92,
+      98
+    ],
+    "failure_condition": "Every ICE Brent front-month settlement in the event window is below 100.00 USD."
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield closes at or above 5.00 percent on at least one day between 2026-08-20 and 2026-12-31.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "FRED series DGS10 records a value at or above 5.00 for at least one date between 2026-08-20 and 2026-12-31; otherwise MISS.",
+    "deadline": "2027-01-05",
+    "citations": [
+      52,
+      68,
+      74
+    ],
+    "failure_condition": "Every DGS10 daily value in the event window is below 5.00."
+  },
+  {
+    "statement": "At least one missile or drone strike on United Arab Emirates territory attributed to Iran or Iran-aligned forces occurs between 2026-08-20 and 2026-09-20.",
+    "domain": "military/conflict",
+    "probability": 40,
+    "resolution": "At least two of Reuters, AP, AFP, or BBC report a strike on UAE territory within the window attributed to Iran or Iran-aligned forces; no machine-readable register exists for this class.",
+    "deadline": "2026-09-23",
+    "citations": [
+      87,
+      92,
+      98
+    ],
+    "failure_condition": "No strike on UAE territory attributable to Iran or Iran-aligned forces occurs within the event window."
+  },
+  {
+    "statement": "Commercial tanker transit through the Strait of Hormuz is suspended for 48 consecutive hours or longer at any point between 2026-08-20 and 2026-11-20.",
+    "domain": "military/conflict",
+    "probability": 12,
+    "resolution": "At least two of Reuters, AP, Lloyds List, or the US EIA report a suspension of commercial tanker transit through Hormuz lasting 48 or more consecutive hours within the window.",
+    "deadline": "2026-11-24",
+    "citations": [
+      92,
+      98
+    ],
+    "failure_condition": "Commercial tanker transit through Hormuz continues without any 48-hour suspension during the event window."
+  },
+  {
+    "statement": "Voting in Palestinian national legislative or presidential elections takes place on at least one day between 2026-11-01 and 2026-11-30.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "At least two of Reuters, AP, AFP, or Al Jazeera report ballots cast in Palestinian national elections within the window; postponement or cancellation grades MISS.",
+    "deadline": "2026-12-02",
+    "citations": [
+      119
+    ],
+    "failure_condition": "No voting in Palestinian national elections occurs during November 2026."
+  },
+  {
+    "statement": "A Federal Register document published between 2026-08-20 and 2026-12-31 imposes a 50 percent tariff on a broad class of Canadian imports.",
+    "domain": "political",
+    "probability": 35,
+    "resolution": "Federalregister.gov contains a presidential proclamation or agency notice published within the window that imposes a 50 percent tariff rate on Canadian imports broadly; otherwise MISS.",
+    "deadline": "2027-01-05",
+    "citations": [
+      124
+    ],
+    "failure_condition": "No Federal Register document imposing the 50 percent Canada tariff is published within the event window."
+  },
+  {
+    "statement": "At least one of the two Ukrainian nationals arrested in August 2026 over the Nord Stream sabotage enters German custody between 2026-08-20 and 2027-01-31.",
+    "domain": "crime/security",
+    "probability": 50,
+    "resolution": "At least two of Reuters, AP, AFP, or DW report the transfer of either suspect to German custody within the window; a German federal court docket entry also suffices.",
+    "deadline": "2027-02-03",
+    "citations": [
+      77,
+      113
+    ],
+    "failure_condition": "Neither suspect is in German custody by the end of the event window."
+  },
+  {
+    "statement": "The USGS catalog records at least one magnitude 6.0 or greater earthquake within 250 km of event us6000tkt2 with origin time between 2026-08-20 and 2026-10-31 UTC.",
+    "domain": "disaster",
+    "probability": 70,
+    "resolution": "A USGS FDSN event query centered on the us6000tkt2 epicenter with 250 km radius, minimum magnitude 6.0, and the window dates returns at least one event; zero events grades MISS.",
+    "deadline": "2026-11-02",
+    "citations": [
+      46
+    ],
+    "failure_condition": "The USGS query for M6.0 or greater within 250 km of the epicenter during the event window returns zero events."
+  }
+]

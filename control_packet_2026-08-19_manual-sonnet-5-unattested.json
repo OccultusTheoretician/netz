@@ -1,0 +1,183 @@
+[
+  {
+    "statement": "Between 2026-08-19 and 2026-09-09, Saudi Arabia, Bahrain, Qatar, Kuwait, or Oman formally announces new trade restrictions or a trade suspension against Iran, distinct from the UAE action already reported.",
+    "resolution": "TRUE if, between 2026-08-19 and 2026-09-09, the government of Saudi Arabia, Bahrain, Qatar, Kuwait, or Oman issues an official trade-restriction announcement against Iran, per two of Reuters, AP, or Bloomberg.",
+    "failure_condition": "No GCC member state besides the UAE imposes new trade restrictions on Iran during the window; existing trade relationships continue unchanged.",
+    "domain": "political",
+    "deadline": "2026-09-11",
+    "probability": 29,
+    "citations": [
+      92,
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-20"
+    }
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-09-02, the CISA Known Exploited Vulnerabilities catalog lists 10 or more entries with a dateAdded value in that range, following the 4 entries added 2026-08-18.",
+    "resolution": "TRUE if the public CISA KEV JSON feed shows 10 or more entries with dateAdded between 2026-08-19 and 2026-09-02 inclusive, queried on or after 2026-09-04.",
+    "failure_condition": "The CISA KEV catalog shows fewer than 10 entries with dateAdded in the window when the feed is queried.",
+    "domain": "cyber",
+    "deadline": "2026-09-04",
+    "probability": 23,
+    "citations": [
+      18,
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-21"
+    }
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-09-18, the 10-Year Treasury constant maturity yield (FRED series DGS10) closes at or above 4.85 percent on at least one trading day, up from 4.65 percent on 2026-08-19.",
+    "resolution": "TRUE if FRED series DGS10 records a daily close of 4.85 or higher on any trading day between 2026-08-19 and 2026-09-18, per data available by 2026-09-21.",
+    "failure_condition": "DGS10 does not close at or above 4.85 percent on any trading day within the window.",
+    "domain": "economic",
+    "deadline": "2026-09-21",
+    "probability": 25,
+    "citations": [
+      52,
+      68,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 16,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-22"
+    }
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-11-15, German federal prosecutors file a formal indictment against the Ukrainian national arrested in Croatia over the 2022 Nord Stream pipeline bombings.",
+    "resolution": "TRUE if the Generalbundesanwalt files a formal indictment against the Croatia-arrested individual, reported by two of Reuters, AP, or DPA, before 2026-11-17.",
+    "failure_condition": "German federal prosecutors do not file a formal indictment against the Croatia-arrested individual before the deadline.",
+    "domain": "crime_security",
+    "deadline": "2026-11-17",
+    "probability": 31,
+    "citations": [
+      77,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3117,
+      "n": 77,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-23"
+    }
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-09-16, USGS catalogs at least one aftershock of magnitude 6.0 or greater within 150 km of the M7.7 Ende, Indonesia epicenter recorded 2026-08-19.",
+    "resolution": "TRUE if the USGS earthquake catalog lists an event of magnitude 6.0 or greater within 150 km of the Ende epicenter with origin time between 2026-08-19 and 2026-09-16.",
+    "failure_condition": "No earthquake of magnitude 6.0 or greater is catalogued by USGS within 150 km of the Ende epicenter during the window.",
+    "domain": "disaster",
+    "deadline": "2026-09-18",
+    "probability": 33,
+    "citations": [
+      46
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-24"
+    }
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-10-17, Ukraine's Verkhovna Rada or Central Election Commission formally schedules a date for a presidential election, following the sacked defence minister's public call for one.",
+    "resolution": "TRUE if the Verkhovna Rada or Ukraine's Central Election Commission issues an official act setting a presidential election date, reported by two of Reuters, AP, or Ukrainska Pravda, by 2026-10-19.",
+    "failure_condition": "Ukraine's Verkhovna Rada and Central Election Commission do not schedule a presidential election date during the window; the wartime suspension of elections remains in effect.",
+    "domain": "political",
+    "deadline": "2026-10-19",
+    "probability": 29,
+    "citations": [
+      103,
+      126
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-25"
+    }
+  },
+  {
+    "statement": "Between 2026-08-19 and 2026-10-17, the WHO Director-General declares the Democratic Republic of Congo Ebola outbreak, which reached 5,000 cases this window, a Public Health Emergency of International Concern.",
+    "resolution": "TRUE if WHO's Director-General issues a formal PHEIC declaration covering the DRC Ebola outbreak between 2026-08-19 and 2026-10-17, per WHO statement and two wire services, by 2026-10-19.",
+    "failure_condition": "WHO's Director-General does not declare a PHEIC covering the DRC Ebola outbreak during the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-19",
+    "probability": 33,
+    "citations": [
+      39
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-26"
+    }
+  }
+]
