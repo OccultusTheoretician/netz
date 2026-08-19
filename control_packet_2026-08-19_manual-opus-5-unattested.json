@@ -1,0 +1,158 @@
+[
+  {
+    "statement": "CISA adds at least one Microsoft vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value in the window 2026-08-26 to 2026-11-30.",
+    "resolution": "The CISA KEV catalog contains at least one entry with vendorProject Microsoft and a dateAdded value between 2026-08-26 and 2026-11-30 inclusive.",
+    "failure_condition": "No KEV entry carries vendorProject Microsoft with a dateAdded value inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-12-02",
+    "probability": 23,
+    "citations": [
+      18,
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-14"
+    }
+  },
+  {
+    "statement": "At least one earthquake of magnitude 7.0 or greater occurs worldwide with origin time in the window 2026-08-26 to 2026-10-31 UTC.",
+    "resolution": "The USGS ComCat catalog lists at least one event of magnitude 7.0 or greater with origin time between 2026-08-26T00:00Z and 2026-10-31T23:59Z.",
+    "failure_condition": "The USGS catalog holds no event of magnitude 7.0 or greater with origin time inside the window.",
+    "domain": "disaster",
+    "deadline": "2026-11-04",
+    "probability": 33,
+    "citations": [
+      46,
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-15"
+    }
+  },
+  {
+    "statement": "The UAE government publicly attributes a missile or drone impact on UAE territory or territorial waters to Iran, for an impact in the window 2026-08-26 to 2026-10-15.",
+    "resolution": "Reuters and Agence France-Presse both report a UAE government statement attributing a missile or drone impact on UAE territory or territorial waters to Iran within the window.",
+    "failure_condition": "No UAE government statement in the window attributes a missile or drone impact on its territory or waters to Iran.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-19",
+    "probability": 50,
+    "citations": [
+      87,
+      92,
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-16"
+    }
+  },
+  {
+    "statement": "Iran publicly agrees to permit unrestricted commercial transit of the Strait of Hormuz under an agreement announced in the window 2026-08-26 to 2026-11-30.",
+    "resolution": "Reuters and the Associated Press both report an agreement, announced within the window, under which Iran permits unrestricted commercial transit of the Strait of Hormuz.",
+    "failure_condition": "Transit of the Strait remains conditioned on Iranian permission or restriction at the close of the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-04",
+    "probability": 50,
+    "citations": [
+      92,
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-17"
+    }
+  },
+  {
+    "statement": "Croatia surrenders to German custody the Ukrainian diver arrested in Pula on 2026-08-19 over the Nord Stream blasts, in the window 2026-08-26 to 2026-12-11.",
+    "resolution": "The German Federal Public Prosecutor confirms the suspect has been surrendered by Croatia and brought before a judge of the Federal Court of Justice within the window.",
+    "failure_condition": "The suspect is not in German custody at the close of the window, whether through Croatian refusal, pending appeal, or release.",
+    "domain": "crime/security",
+    "deadline": "2026-12-15",
+    "probability": 31,
+    "citations": [
+      77,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3117,
+      "n": 77,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-18"
+    }
+  },
+  {
+    "statement": "NABU or SAPO issues a formal notice of suspicion to a serving or former official of the Ukrainian Office of the President in the window 2026-08-26 to 2026-11-30.",
+    "resolution": "NABU or SAPO publicly announces a notice of suspicion naming a serving or former Office of the President official, reported by Reuters and Ukrainska Pravda.",
+    "failure_condition": "No notice of suspicion against a serving or former Office of the President official is announced inside the window.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 29,
+    "citations": [
+      103
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-19"
+    }
+  }
+]

@@ -1,0 +1,209 @@
+[
+  {
+    "statement": "CISA adds at least one new Microsoft-product vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-08-20 and 2026-09-30.",
+    "resolution": "The CISA KEV JSON feed contains at least one entry with vendorProject Microsoft and dateAdded between 2026-08-20 and 2026-09-30 inclusive; zero such entries grades MISS.",
+    "failure_condition": "No Microsoft entry with dateAdded in the 2026-08-20 to 2026-09-30 range exists in the KEV catalog at the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-10-02",
+    "probability": 23,
+    "citations": [
+      18,
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-06"
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-08-20 and 2026-10-30.",
+    "resolution": "The official ICE Brent front-month settlement price is at or above 100.00 USD on any trading day from 2026-08-20 through 2026-10-30; otherwise MISS.",
+    "failure_condition": "Every ICE Brent front-month settlement in the event window is below 100.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 25,
+    "citations": [
+      92,
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 16,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-07"
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield closes at or above 5.00 percent on at least one day between 2026-08-20 and 2026-12-31.",
+    "resolution": "FRED series DGS10 records a value at or above 5.00 for at least one date between 2026-08-20 and 2026-12-31; otherwise MISS.",
+    "failure_condition": "Every DGS10 daily value in the event window is below 5.00.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 25,
+    "citations": [
+      52,
+      68,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 16,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-08"
+    }
+  },
+  {
+    "statement": "At least one missile or drone strike on United Arab Emirates territory attributed to Iran or Iran-aligned forces occurs between 2026-08-20 and 2026-09-20.",
+    "resolution": "At least two of Reuters, AP, AFP, or BBC report a strike on UAE territory within the window attributed to Iran or Iran-aligned forces; no machine-readable register exists for this class.",
+    "failure_condition": "No strike on UAE territory attributable to Iran or Iran-aligned forces occurs within the event window.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-23",
+    "probability": 50,
+    "citations": [
+      87,
+      92,
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-09"
+    }
+  },
+  {
+    "statement": "Voting in Palestinian national legislative or presidential elections takes place on at least one day between 2026-11-01 and 2026-11-30.",
+    "resolution": "At least two of Reuters, AP, AFP, or Al Jazeera report ballots cast in Palestinian national elections within the window; postponement or cancellation grades MISS.",
+    "failure_condition": "No voting in Palestinian national elections occurs during November 2026.",
+    "domain": "political",
+    "deadline": "2026-12-02",
+    "probability": 29,
+    "citations": [
+      119
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-10"
+    }
+  },
+  {
+    "statement": "A Federal Register document published between 2026-08-20 and 2026-12-31 imposes a 50 percent tariff on a broad class of Canadian imports.",
+    "resolution": "Federalregister.gov contains a presidential proclamation or agency notice published within the window that imposes a 50 percent tariff rate on Canadian imports broadly; otherwise MISS.",
+    "failure_condition": "No Federal Register document imposing the 50 percent Canada tariff is published within the event window.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 29,
+    "citations": [
+      124
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-11"
+    }
+  },
+  {
+    "statement": "At least one of the two Ukrainian nationals arrested in August 2026 over the Nord Stream sabotage enters German custody between 2026-08-20 and 2027-01-31.",
+    "resolution": "At least two of Reuters, AP, AFP, or DW report the transfer of either suspect to German custody within the window; a German federal court docket entry also suffices.",
+    "failure_condition": "Neither suspect is in German custody by the end of the event window.",
+    "domain": "crime/security",
+    "deadline": "2027-02-03",
+    "probability": 31,
+    "citations": [
+      77,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3117,
+      "n": 77,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-12"
+    }
+  },
+  {
+    "statement": "The USGS catalog records at least one magnitude 6.0 or greater earthquake within 250 km of event us6000tkt2 with origin time between 2026-08-20 and 2026-10-31 UTC.",
+    "resolution": "A USGS FDSN event query centered on the us6000tkt2 epicenter with 250 km radius, minimum magnitude 6.0, and the window dates returns at least one event; zero events grades MISS.",
+    "failure_condition": "The USGS query for M6.0 or greater within 250 km of the epicenter during the event window returns zero events.",
+    "domain": "disaster",
+    "deadline": "2026-11-02",
+    "probability": 33,
+    "citations": [
+      46
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-19T22:50:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260819-13"
+    }
+  }
+]
