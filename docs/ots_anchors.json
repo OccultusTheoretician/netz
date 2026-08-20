@@ -1,6 +1,6 @@
 {
   "schema": "ots_anchors/v1",
-  "generated": "2026-08-19T05:05:47.659301+00:00",
+  "generated": "2026-08-20T05:07:18.340036+00:00",
   "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
   "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
   "pairing_note": "digest_at_stamp is read from the receipt and is fixed; digest_served is computed live from the bytes on this site. pairing=MATCH means the receipt covers what you can download. pairing=DRIFT means the file has changed since it was stamped and the receipt covers the older bytes only. DRIFT is disclosed, not corrected: a receipt is never re-issued to make a later file look anchored.",
@@ -11,7 +11,7 @@
       "state": "anchored",
       "digest": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
       "digest_at_stamp": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
-      "digest_served": "80f720a6efa3f67d66c5ee3a6918a68967580293cb82d9b681c2c637e9bafe10",
+      "digest_served": "42d555bc5c9589363a065e5c7e1197c01ae7f4dbe7f639ced42f63bffe930732",
       "pairing": "DRIFT",
       "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
@@ -75,7 +75,7 @@
     },
     "PCAOB_2026-005_DOCKET_MANIFEST.txt": {
       "receipt": "PCAOB_2026-005_DOCKET_MANIFEST.txt.ots",
-      "state": "pending",
+      "state": "anchored",
       "digest": "601bc9c5718b64fad505f225b41d2757a93a5c40ba4f326362ea191f51c11eeb",
       "digest_at_stamp": "601bc9c5718b64fad505f225b41d2757a93a5c40ba4f326362ea191f51c11eeb",
       "digest_served": "601bc9c5718b64fad505f225b41d2757a93a5c40ba4f326362ea191f51c11eeb",
