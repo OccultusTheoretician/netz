@@ -1,22 +1,22 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-08-21T06:02:50Z · 62 report(s)
+Generated 2026-08-22T05:59:17Z · 63 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **62**
-- findings: **101**
+- reports audited: **63**
+- findings: **104**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 3
-  - UNSOURCED: 98
-- distinct tokens: **41**
+  - UNSOURCED: 101
+- distinct tokens: **44**
 
 ## Reached a sealed row
 
-**24** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
+**25** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
 
 | row | token | finding | arm | status | k/kl |
 |---|---|---|---|---|---|
@@ -44,6 +44,7 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20260817-31` | `CVE-2025-62593` | UNSOURCED | lmstudio/auto | open | keyed |
 | `KKR-20260818-04` | `CVE-2025-62593` | UNSOURCED | lmstudio/auto | open | — |
 | `KKR-20260820-18` | `CVE-2026-73570` | UNSOURCED | manual/sonnet-5/unattested | open | — |
+| `KKR-20260822-10` | `CVE-2026-69836` | UNSOURCED | manual/fable-5/unattested | open | — |
 
 ## Every finding
 
@@ -150,4 +151,7 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-08-20_1537.md | `CVE-2026-64849` | UNSOURCED |
 | battle_report_2026-08-20_1537.md | `CVE-2026-32475` | UNSOURCED |
 | battle_report_2026-08-20_1537.md | `CVE-2026-73570` | UNSOURCED |
+| battle_report_2026-08-21_1524.md | `CVE-2026-72530` | UNSOURCED |
+| battle_report_2026-08-21_1524.md | `CVE-2026-72529` | UNSOURCED |
+| battle_report_2026-08-21_1524.md | `CVE-2026-69836` | UNSOURCED |
 
