@@ -619,7 +619,11 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
             break
     try:
         dl = datetime.strptime(p["deadline"], "%Y-%m-%d").date()
-        today = datetime.now(timezone.utc).date()
+        # KK30: gate governors run on the desk operating day (box-local
+        # clock, America/Denver on this desk). UTC here criminalized
+        # evening seals of same-day windows that morning seals passed.
+        # Record timestamps elsewhere remain UTC.
+        today = datetime.now().date()
         if dl < today + timedelta(days=min_days):
             reasons.append(f"deadline inside {min_days}-day floor")
         if dl > today + timedelta(days=max_days):
@@ -883,11 +887,11 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     if _dates:
         try:
             _open = datetime.strptime(_dates[0], "%Y-%m-%d").date()
-            _now = datetime.now(timezone.utc).date()
+            _now = datetime.now().date()  # KK30: desk operating day, see deadline governor note
             if _open < _now:
                 reasons.append(
                     f"event window opens {_open}, before this row is sealed "
-                    f"({_now}) — part of the window has already elapsed and the "
+                    f"({_now}, desk-local) — part of the window has already elapsed and the "
                     f"outcome may already exist. A commitment made after the "
                     f"fact is retrodiction, not forecast; open the window today "
                     f"or later")
