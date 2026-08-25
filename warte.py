@@ -195,15 +195,22 @@ def main():
          "<meta name='description' content='The multi-model calibration observatory: per-arm reliability against its own base rates.'>",
          "<meta property='og:image' content='https://retroprescientaudit.com/og_nebelkraehe.png'>",
          "<meta name='viewport' content='width=device-width,initial-scale=1'>",
-         "<style>body{background:#0b0e11;color:#c9d1d9;font-family:monospace;"
-         "max-width:860px;margin:2em auto;padding:0 1em;font-size:14px}"
-         "h1{color:#e6edf3;font-size:18px}h2{color:#e6edf3;font-size:15px;"
-         "border-bottom:1px solid #30363d;padding-bottom:4px}"
-         "table{border-collapse:collapse;margin:8px 0}"
-         "td,th{border:1px solid #30363d;padding:3px 9px;text-align:right}"
-         "th{color:#8b949e}.note{color:#8b949e}.warn{color:#d29922}"
+         "<link rel='stylesheet' href='fonts/fonts.css'>",
+         "<style>body{background:#0c0e11;color:#d6d3cb;"
+         "font-family:'IBM Plex Sans',sans-serif;max-width:900px;"
+         "margin:0 auto;padding:0 1.25rem 3rem;font-size:15px;line-height:1.6}"
+         ".kicker{font:500 .8rem 'IBM Plex Mono',monospace;"
+         "letter-spacing:.06em;text-transform:uppercase;color:#8b8b85;"
+         "margin-top:2.4rem}"
+         "h1{color:#f2f0ea}"
+         "table{border-collapse:collapse;margin:10px 0;"
+         "font-family:'IBM Plex Mono',monospace;font-size:12.5px}"
+         "td,th{border:1px solid #26292f;padding:4px 10px;text-align:right}"
+         "th{color:#8b8b85;font-weight:600}.note{color:#8b8b85;max-width:46rem}"
+         ".warn{color:#c9a227}"
          "</style></head><body>",
-         "<h1>KALIBRIERWARTE - per-arm calibration observatory</h1>",
+         "<div class='kicker'>Calibration &middot; per arm</div>",
+         "<h1>Kalibrierwarte</h1>",
          f"<p class='note'>generated {now} - no pooled score exists; a "
          f"Brier belongs to one forecaster. Reliability = mean stated "
          f"probability vs observed frequency per decile. Rows sealed "

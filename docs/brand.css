@@ -192,17 +192,20 @@ h2{color:var(--brand-brass-lit)}
 .masthead-crow img{filter:none}
 .warn{color:#c9a227}
 
-/* ===== KK30 TYPE - scale and rhythm: engineered headings, mono eyebrows,
-   verdict color untouched. One layer, every page. ===== */
-h1{font-family:'IBM Plex Sans',sans-serif;font-weight:650;
-  font-size:clamp(1.9rem,4.2vw,3.2rem);line-height:1.05;
-  letter-spacing:-.015em;color:#f2f0ea;margin:.2rem 0 .9rem}
-h2{font:600 .78rem/1.4 'IBM Plex Mono',monospace;letter-spacing:.2em;
+/* ===== KK30 TYPE v2 - measured against anduril.com 2026-08-25 rendered:
+   display 44.5px / weight 400 / -0.02em / lh 1.25; labels 13.4px / 500 /
+   +0.04em / uppercase / lh 1.05; body 18.7px / 400. Same grammar, our
+   faces, verdict colors untouched. ===== */
+h1{font-family:'IBM Plex Sans',sans-serif;font-weight:400;
+  font-size:clamp(2.3rem,4.6vw,3.4rem);line-height:1.22;
+  letter-spacing:-.02em;color:#f2f0ea;margin:.2rem 0 1rem}
+h2{font:500 .84rem/1.15 'IBM Plex Sans',sans-serif;letter-spacing:.05em;
   text-transform:uppercase;color:var(--brand-brass-lit);
-  border-bottom:1px solid #26292f;padding-bottom:.45rem;margin:2.2rem 0 1rem}
-.kicker{font:600 .68rem 'IBM Plex Mono',monospace;letter-spacing:.26em;
+  border-bottom:1px solid #26292f;padding-bottom:.5rem;margin:2.4rem 0 1.1rem}
+.kicker{font:500 .8rem 'IBM Plex Sans',sans-serif;letter-spacing:.06em;
   text-transform:uppercase;color:#8b8b85}
-.dek{font-size:1.05rem;line-height:1.7;color:#9a978f;max-width:44rem}
-header .wrap{padding-top:1.6rem}
-section{padding:2.6rem 0}
-@media (max-width:640px){h1{font-size:1.9rem}}
+.dek{font-size:1.15rem;line-height:1.55;color:#b0ada5;max-width:42rem}
+section p{font-size:1.02rem;line-height:1.62}
+header .wrap{padding-top:1.8rem}
+section{padding:3rem 0}
+@media (max-width:640px){h1{font-size:2.1rem}}
