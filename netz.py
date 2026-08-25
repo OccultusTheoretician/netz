@@ -583,10 +583,10 @@ def fetch_kev(config: dict, hours: int) -> list:
 HTML_CSS = """
 @import url('fonts/fonts.css');
 :root{
-  --field:#080B0F; --panel:#10141A; --panel2:#151A22; --panel3:#1A2029;
-  --line:#222A34; --line2:#2E3844; --fg:#C2CAD3; --fg2:#EDF2F7; --dim:#6A7580;
-  --brass:#C29B45; --brass2:#DCB55F; --green:#4E9E71; --red:#C05149;
-  --blue:#7195B5; --crow:#9AA4B0; --ink:#8D97A2;
+  --field:#0c0e11; --panel:#10141A; --panel2:#151A22; --panel3:#1A2029;
+  --line:#26292f; --line2:#2e343c; --fg:#d6d3cb; --fg2:#f2f0ea; --dim:#8b8b85;
+  --brass:#b9b6ae; --brass2:#e9e7e2; --green:#4E9E71; --red:#C05149;
+  --blue:#98a0a8; --crow:#9AA4B0; --ink:#8b9199;
   --bg:var(--field); --amber:var(--brass); --amber2:var(--brass2); --redglow:var(--red);
   --brass3:#8A6E30; --steel:#7A97B4;
 }
@@ -644,7 +644,7 @@ main{max-width:900px; margin:0 auto; padding:0 1.25rem 4rem}
 .crest-text{display:flex; flex-direction:column; gap:.2rem; flex:1}
 .crest-org{font-family:'IBM Plex Mono',monospace; font-size:.7rem; font-weight:600;
   letter-spacing:.32em; color:var(--crow); text-transform:uppercase}
-.crest-title{margin:0; font-family:'Spectral',Georgia,serif; font-size:1.65rem; font-weight:600;
+.crest-title{margin:0; font-family:'IBM Plex Sans',sans-serif; font-size:1.65rem; font-weight:600;
   color:var(--fg2); letter-spacing:.01em; line-height:1.15; margin:.15rem 0}
 .crest-line{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--brass2);
   letter-spacing:.06em; font-weight:500}
