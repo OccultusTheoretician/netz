@@ -46,7 +46,7 @@
   --nacht:#080B0F; --nacht2:#0C1015; --rauch:#12171E; --rauch2:#161C24;
   --line:#1B222C; --line2:#28313D; --hair:#1E2630;
   --fg:#AEB9C6; --fg2:#ECF1F7; --dim:#5A6675; --nebel:#8E9DAC;
-  --messing:#B8933F; --messing2:#DCB65E; --messing3:#8A6E30;
+  --messing:#9a978f; --messing2:#e9e7e2; --messing3:#6a6a64;
   --hit:#6FA36F; --miss:#B0605A;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'IBM Plex Sans',system-ui,sans-serif;
@@ -113,7 +113,7 @@ header.hero-wrap{position:relative;z-index:2;border-bottom:1px solid var(--line)
   text-transform:uppercase;color:var(--messing2);margin-bottom:1.4rem}
 .kicker::before{content:"";display:inline-block;width:2.2rem;height:1px;
   background:var(--messing3);vertical-align:middle;margin-right:.8rem}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,5.4vw,4.4rem);
+h1{font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:clamp(2.6rem,5.4vw,4.4rem);
   line-height:1.04;color:var(--fg2);letter-spacing:.01em}
 h1 .tm{font-size:.32em;vertical-align:super;color:var(--dim);font-family:var(--sans)}
 .dek{margin-top:1.5rem;max-width:34rem;font-size:1.06rem;line-height:1.8;color:var(--fg)}
@@ -123,8 +123,8 @@ h1 .tm{font-size:.32em;vertical-align:super;color:var(--dim);font-family:var(--s
 .btn{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.16em;
   text-transform:uppercase;padding:.85rem 1.5rem;border:1px solid var(--line2);
   transition:all .22s}
-.btn.primary{background:var(--messing);border-color:var(--messing);color:#0B0D08}
-.btn.primary:hover{background:var(--messing2);border-color:var(--messing2);color:#0B0D08}
+.btn.primary{background:transparent;border-color:#e9e7e2;color:#f2f0ea}
+.btn.primary:hover{background:#f2f0ea;border-color:#f2f0ea;color:#0c0e11}
 .btn.ghost{color:var(--fg)}
 .btn.ghost:hover{border-color:var(--messing);color:var(--messing2)}
 
@@ -141,7 +141,7 @@ h1 .tm{font-size:.32em;vertical-align:super;color:var(--dim);font-family:var(--s
 .rings circle{fill:none;stroke:var(--line2);stroke-width:1;opacity:.55}
 .rings circle.mark{stroke:var(--messing3);stroke-dasharray:2 10;opacity:.8}
 .rings text{fill:var(--dim);font-family:var(--mono);font-size:7.5px;letter-spacing:.28em}
-.rings .ticker{fill:#e0483a;font-size:20px;font-weight:700;letter-spacing:.18em;
+.rings .ticker{fill:#b9b6ae;font-size:20px;font-weight:600;letter-spacing:.18em;
   text-transform:uppercase;transition:opacity .3s;
   filter:drop-shadow(0 0 9px rgba(224,72,58,.5)) drop-shadow(0 0 26px rgba(224,72,58,.22))}
 .rings .ticker.hot{animation:tflash .38s steps(1,end) 5}
@@ -351,7 +351,7 @@ footer li a{font-size:.85rem;color:var(--fg)}
   <img src="crow_mark.svg" alt="">
   <div><div class="mc-word">NebelKr&auml;he</div><div class="mc-sub">The Prescient Desk</div></div>
 </div>
-    <div class="kicker">The Prescient Desk™ · Instrument under public test</div>
+    <div class="kicker">The Prescient Desk™ · Under public test</div>
     <h1>Retro-Prescient Audit<span class="tm">™</span></h1>
     <p class="dek">A method for telling foresight from arithmetic. Forecasts sealed before
     their outcomes, adjudicated blind, and scored on a record that keeps its own misses —
@@ -402,7 +402,7 @@ footer li a{font-size:.85rem;color:var(--fg)}
 .ii-group a{display:block;text-decoration:none;padding:.16rem 0;
   font:600 .74rem 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.06em;
   color:#9BA7B5}
-.ii-group a:hover{color:#DCB65E}
+.ii-group a:hover{color:#e9e7e2}
 .ii-group a .ii-desc{color:#5A6675;font-weight:400;letter-spacing:0;
   text-transform:none;font-size:.66rem;margin-left:.5rem}
 </style><div class="instr-index" id="instrument-index" aria-label="instruments"><div class="instr-index-in"><div class="ii-group"><div class="ii-label">DESK</div><a href="index.html">Desk<span class="ii-desc">the face</span></a><a href="report.html">Report<span class="ii-desc">daily brief</span></a><a href="spion.html">Spion<span class="ii-desc">quiet channel</span></a></div><div class="ii-group"><div class="ii-label">FORECASTING</div><a href="kkr.html">Forecasts<span class="ii-desc">scored calls</span></a><a href="ledger.html">Ledger<span class="ii-desc">the record</span></a><a href="KriegForeKaster.html">ForeKaster<span class="ii-desc">order of battle</span></a><a href="globalkaster.html">GlobalKaster<span class="ii-desc">world board</span></a><a href="fogsim.html">FogSim<span class="ii-desc">scenarios</span></a><a href="okk.html">OberKommando<span class="ii-desc">command</span></a></div><div class="ii-group"><div class="ii-label">FEDERATION</div><a href="kraehes_kalls.html">Kalls<span class="ii-desc">abduction log</span></a><a href="nest.html">Nest<span class="ii-desc">forecasters</span></a></div><div class="ii-group"><div class="ii-label">STANDARDS</div><a href="standards.html">Standards<span class="ii-desc">the method</span></a><a href="conformance.html">Conformance<span class="ii-desc">RPAS-26</span></a><a href="register.html">Register<span class="ii-desc">conformance</span></a><a href="verify.html">Verify<span class="ii-desc">run the check</span></a></div><div class="ii-group"><div class="ii-label">CABINET</div><a href="ohrwurm.html">Ohrwurm<span class="ii-desc">phrase spread</span></a><a href="konsole.html">Konsole<span class="ii-desc">cipher</span></a><a href="marks.html">Marks<span class="ii-desc">heraldry</span></a></div></div></div>
@@ -782,8 +782,8 @@ function spawn(){
   rot:(CAT[idx][1]==='air'?0:-90), sub:(CAT[idx][1]==='sub'),
   phase:Math.random()*6.28,
   life:SWEEP_MS*(2+Math.random()*2), dying:0, el:document.createElementNS(svgNS,'g')};
- c.el.setAttribute('fill','var(--messing3,#dcb65e)');
- c.el.setAttribute('stroke','var(--messing3,#dcb65e)');
+ c.el.setAttribute('fill','var(--messing3,#6a6a64)');
+ c.el.setAttribute('stroke','var(--messing3,#6a6a64)');
  c.el.setAttribute('stroke-width','1.15');
  c.el.setAttribute('opacity','0');
  c.el.innerHTML=c.cls[3]+'<title>'+c.cls[0]+' \u00b7 fate unknown</title>';
