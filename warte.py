@@ -190,8 +190,10 @@ def main():
     fj.parent.mkdir(exist_ok=True)
     fj.write_text(json.dumps(out, indent=1)+"\n", encoding="utf-8")
 
-    h = ["<!doctype html><html><head><meta charset='utf-8'>",
+    h = ["<!doctype html><html lang='en'><head><meta charset='utf-8'>",
          "<title>KALIBRIERWARTE</title>",
+         "<meta name='description' content='The multi-model calibration observatory: per-arm reliability against its own base rates.'>",
+         "<meta property='og:image' content='https://retroprescientaudit.com/og_nebelkraehe.png'>",
          "<meta name='viewport' content='width=device-width,initial-scale=1'>",
          "<style>body{background:#0b0e11;color:#c9d1d9;font-family:monospace;"
          "max-width:860px;margin:2em auto;padding:0 1em;font-size:14px}"

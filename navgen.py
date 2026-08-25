@@ -10,7 +10,7 @@ tool makes nav_manifest.json the single source of truth and stamps the same
 grouped nav onto every served page: replacing the bar where one exists,
 inserting after <body> where none does.
 
-KK30: the nav is the brand bar - crow monogram + NEBELKRAEHE in Cinzel
+KK30b: flyout panels carry each instrument's one-line definition\n(from instruments_map.json: blurb, else module docstring). KK30: the nav is the brand bar - crow monogram + NEBELKRAEHE in Cinzel
 as the home link - and groups render as hover flyouts (CSS-only). Chrome
 is monochrome; verdict colors stay on the pages. Desktop opens on :hover;
 touch and keyboard open via :focus-within (the group container is
@@ -85,14 +85,19 @@ STYLE = (
     '.desknav-unified .ng-drop:focus-within .ng-label{color:#e9e7e2}'
     '.desknav-unified .ng-here .ng-label{color:#f2f0ea}'
     '.desknav-unified .ng-panel{display:none;position:absolute;left:0;'
-    'top:100%;min-width:11rem;background:#0c0e11;border:1px solid #26292f;'
-    'padding:.5rem .8rem;z-index:41;flex-direction:column;gap:.35rem}'
+    'top:100%;min-width:19rem;max-width:23rem;background:#0c0e11;'
+    'border:1px solid #26292f;padding:.6rem .85rem;z-index:41;'
+    'flex-direction:column;gap:.42rem}'
     '.desknav-unified .ng-drop:hover>.ng-panel,'
     '.desknav-unified .ng-drop:focus-within>.ng-panel{display:flex}'
-    '.desknav-unified .ng-panel a{color:#8b8b85;text-decoration:none;'
+    '.desknav-unified .ng-item{display:block}'
+    '.desknav-unified .ng-panel a{color:#c9c7c1;text-decoration:none;'
     "font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;"
     'text-transform:uppercase;white-space:nowrap;padding:.05rem 0}'
-    '.desknav-unified .ng-panel a:hover{color:#e9e7e2}'
+    '.desknav-unified .ng-panel a:hover{color:#ffffff}'
+    ".desknav-unified .ng-def{display:block;font:400 .58rem "
+    "'IBM Plex Mono',monospace;color:#6a6a64;letter-spacing:.02em;"
+    'text-transform:none;line-height:1.5;max-width:20rem;margin-top:.1rem}'
     '.desknav-unified a[aria-current="page"]{color:#f2f0ea}'
     '.desknav-unified .ng-ext{color:#565650;text-decoration:none;'
     "font:600 .62rem 'IBM Plex Mono',monospace;letter-spacing:.14em;"
@@ -161,7 +166,9 @@ def render_nav(manifest, active):
             cur = ' aria-current="page"' if ln["href"] == active else ""
             tip = titles.get(ln["href"])
             t = f' title="{_esc(tip)}"' if tip else ""
-            parts.append(f'<a{cur}{t} href="{ln["href"]}">{ln["text"]}</a>')
+            d = f'<span class="ng-def">{_esc(tip)}</span>' if tip else ""
+            parts.append(f'<div class="ng-item"><a{cur}{t} '
+                         f'href="{ln["href"]}">{ln["text"]}</a>{d}</div>')
         parts.append("</div></div>")
     for ln in manifest.get("external", []):
         parts.append(f'<a class="ng-ext" href="{ln["href"]}">{ln["text"]}</a>')
