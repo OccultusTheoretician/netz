@@ -1,4 +1,4 @@
-# URTEIL - verdict-grounding audit - 2026-08-22T15:19:30Z
+# URTEIL - verdict-grounding audit - 2026-08-25T15:21:11Z
 
 Every non-ABSTAIN jury verdict audited against the held evidence for its row, by the same mechanics that audit forecast citations. Grounding is checkable even when the verdict is right; the CORRECT-BUT-UNGROUNDED class is the one the blind protocol cannot see on its own.
 
