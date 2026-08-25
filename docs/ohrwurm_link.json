@@ -1,22 +1,22 @@
 {
-  "generated": "2026-08-22T15:18:02.970414+00:00",
+  "generated": "2026-08-25T15:19:35.214689+00:00",
   "schema": "ohrwurm_link/v1",
-  "events_source": "tg_events_2026-08-22_1514.json",
-  "pull_source": "tg_translated_2026-08-22_1514.json",
+  "events_source": "tg_events_2026-08-25_1515.json",
+  "pull_source": "tg_translated_2026-08-25_1515.json",
   "min_grade": "B",
-  "events_linked": 32,
-  "events_considered": 32,
-  "sources_matched": 150,
+  "events_linked": 35,
+  "events_considered": 35,
+  "sources_matched": 149,
   "sources_unmatched": 0,
-  "median_convergence": 0.0617,
+  "median_convergence": 0.078,
   "convergence_range": [
-    0.0085,
-    0.3704
+    0.0,
+    0.4222
   ],
-  "anchor_only_events": 1,
+  "anchor_only_events": 4,
   "anchor_only_note": "events whose sides share no word beyond the anchor: a defect signal for tg_cluster, printed rather than smoothed",
-  "median_import_ratio": 0.0308,
-  "comparison_basis": "translated (text_en) — translation-mediated, 576 of 702 messages carry a translation",
+  "median_import_ratio": 0.0293,
+  "comparison_basis": "translated (text_en) — translation-mediated, 536 of 685 messages carry a translation",
   "gram_width": [
     2,
     3
@@ -25,78 +25,478 @@
   "events": [
     {
       "anchor": [
-        "tehran"
+        "sanctions"
       ],
-      "zone": "iran",
+      "zone": "israel_gaza",
+      "track": "statement",
+      "grade": "A — confirmed across 3+ hostile sides",
+      "sides": [
+        "AXIS",
+        "IL",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "IL",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T17:47:00+00:00",
+        "last_seen": "2026-08-25T01:01:42+00:00",
+        "hours": 7.2
+      },
+      "sources_matched": 4,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "IL",
+        "WEST"
+      ],
+      "convergence": 0.4222,
+      "shared_words": [
+        "against",
+        "aggression",
+        "bessent",
+        "donald",
+        "enablers",
+        "iran",
+        "iranian",
+        "latest",
+        "minister",
+        "netanyahu",
+        "president",
+        "prime",
+        "regime",
+        "rightly",
+        "sanctions",
+        "scott",
+        "secretary",
+        "treasury",
+        "trump"
+      ],
+      "anchor_only": false,
+      "phrases_total": 166,
+      "phrases_shared": 11,
+      "phrases_exclusive": 155,
+      "import_ratio": 0.0301,
+      "shared": [
+        {
+          "phrase": "sanctions against iranian",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T19:13:52+00:00",
+          "template": false,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "latest sanctions against",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T19:13:52+00:00",
+          "template": false,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "treasury secretary scott",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T17:15:43+00:00",
+          "template": true,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "trump treasury secretary",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T19:13:52+00:00",
+          "template": false,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "bessent latest sanctions",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T19:13:52+00:00",
+          "template": false,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "secretary scott bessent",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T17:15:43+00:00",
+          "template": true,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "sanctions against iran",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T19:13:52+00:00",
+          "template": false,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "against iranian regime",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T19:13:52+00:00",
+          "template": false,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "president donald trump",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T16:28:02+00:00",
+          "template": true,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "donald trump treasury",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T19:13:52+00:00",
+          "template": false,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "scott bessent latest",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T19:13:52+00:00",
+          "template": false,
+          "adoption_lag_hours": 5.8,
+          "led_by": "IL"
+        }
+      ],
+      "exclusive_by_side": {
+        "AXIS": [
+          "essentially media-driven psychological",
+          "media-driven psychological operation",
+          "political-security source mayadeen",
+          "tightening financial restrictions",
+          "iranian political-security source",
+          "senior iranian political-security",
+          "iran-linked entities individuals",
+          "financial restrictions addition"
+        ],
+        "IL": [
+          "dictatorship enablers accountable",
+          "netanyahu congratulates president",
+          "congratulations president donald",
+          "minister netanyahu congratulates",
+          "iran congratulations president",
+          "congratulates president trump",
+          "against iran congratulations",
+          "accountable their aggression"
+        ],
+        "WEST": [
+          "netanyahu congratulated president",
+          "benjamin netanyahu congratulated",
+          "congratulated president donald",
+          "enablers continued aggression",
+          "congratulated trump expanding",
+          "congratulate president donald",
+          "netanyahu congratulated trump",
+          "wrote congratulate president"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "deir al-balah"
+      ],
+      "zone": "israel_gaza",
       "track": "kinetic",
       "grade": "A — confirmed across 3+ hostile sides",
       "sides": [
         "AXIS",
-        "RU",
-        "WEST"
+        "IL",
+        "PS"
       ],
       "single_outlet_sides": [
-        "RU",
-        "WEST"
+        "AXIS",
+        "IL",
+        "PS"
       ],
       "window": {
-        "first_seen": "2026-08-21T16:11:36+00:00",
-        "last_seen": "2026-08-21T21:25:22+00:00",
-        "hours": 5.2
+        "first_seen": "2026-08-24T15:48:29+00:00",
+        "last_seen": "2026-08-24T16:28:51+00:00",
+        "hours": 0.7
       },
-      "sources_matched": 5,
+      "sources_matched": 6,
       "sources_unmatched": 0,
       "closest_pair": [
-        "RU",
+        "PS",
         "AXIS"
       ],
-      "convergence": 0.0808,
+      "convergence": 0.3,
       "shared_words": [
-        "against",
-        "economic",
-        "iran",
-        "operation",
-        "tehran",
-        "trump",
-        "warfare",
-        "washington"
+        "al-balah",
+        "central",
+        "deir",
+        "gaza",
+        "injured",
+        "israeli"
       ],
       "anchor_only": false,
-      "phrases_total": 198,
-      "phrases_shared": 0,
-      "phrases_exclusive": 198,
-      "import_ratio": 0.0152,
-      "shared": [],
+      "phrases_total": 116,
+      "phrases_shared": 4,
+      "phrases_exclusive": 112,
+      "import_ratio": 0.0776,
+      "shared": [
+        {
+          "phrase": "building deir al-balah",
+          "sides": [
+            "IL",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-24T15:48:29+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.12,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "al-balah central gaza",
+          "sides": [
+            "AXIS",
+            "IL",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-24T15:48:29+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.12,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "deir al-balah central",
+          "sides": [
+            "AXIS",
+            "IL",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-24T15:48:29+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.12,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "central gaza strip",
+          "sides": [
+            "IL",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-24T15:11:11+00:00",
+          "template": true,
+          "adoption_lag_hours": 0.12,
+          "led_by": "IL"
+        }
+      ],
       "exclusive_by_side": {
         "AXIS": [
-          "questioned long-term viability",
-          "consequences regional regimes",
-          "possesses endurance strategic",
-          "washington pressure campaigns",
-          "emphasizes western sanctions",
-          "direct consequences regional",
-          "withstand prolonged pressure",
-          "further questioned long-term"
+          "airstrikes deir al-balah",
+          "israeli airstrikes deir",
+          "injured several people",
+          "gaza injured several",
+          "central gaza injured"
         ],
-        "RU": [
-          "possibility military operation",
-          "admitted possibility military",
-          "abandoning military options",
-          "trump admitted possibility",
-          "military operation against",
-          "washington shift economic",
-          "economic warfare strategy",
-          "warfare strategy against"
+        "IL": [
+          "airstrike yesterday additionally",
+          "evacuation warnings additionally",
+          "warnings additionally al-arabiya",
+          "additionally al-arabiya fourth",
+          "occurred skilled photographer",
+          "al-arabiya casualties missing",
+          "yesterday additionally hamas",
+          "photographer comment article"
         ],
-        "WEST": [
-          "afghan-american woman successful",
-          "economic pressures considering",
-          "discuss afghan-american woman",
-          "washington launched campaign",
-          "time discuss afghan-american",
-          "economic pressure effective",
-          "considers economic pressure",
-          "pressures considering time"
+        "PS": [
+          "palestinians injured israeli",
+          "aircraft bombard residential",
+          "bombard residential building",
+          "breaking israeli occupation",
+          "israeli occupation aircraft",
+          "occupation aircraft bombard",
+          "least palestinians injured",
+          "update least palestinians"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "nablus"
+      ],
+      "zone": "israel_gaza",
+      "track": "kinetic",
+      "grade": "A — confirmed across 3+ hostile sides",
+      "sides": [
+        "AXIS",
+        "IL",
+        "PS"
+      ],
+      "single_outlet_sides": [
+        "IL",
+        "PS"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T05:04:02+00:00",
+        "last_seen": "2026-08-25T09:45:10+00:00",
+        "hours": 4.7
+      },
+      "sources_matched": 9,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "PS"
+      ],
+      "convergence": 0.2958,
+      "shared_words": [
+        "bank",
+        "footage",
+        "forces",
+        "israeli",
+        "knesset",
+        "madama",
+        "martyrs",
+        "member",
+        "memorial",
+        "nablus",
+        "occupation",
+        "occupied",
+        "palestinian",
+        "settlers",
+        "shows",
+        "sukkot",
+        "they",
+        "under",
+        "village",
+        "watch",
+        "west"
+      ],
+      "anchor_only": false,
+      "phrases_total": 194,
+      "phrases_shared": 5,
+      "phrases_exclusive": 189,
+      "import_ratio": 0.0155,
+      "shared": [
+        {
+          "phrase": "israeli knesset member",
+          "sides": [
+            "AXIS",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-25T06:08:14+00:00",
+          "template": false,
+          "adoption_lag_hours": 1.97,
+          "led_by": "PS"
+        },
+        {
+          "phrase": "knesset member zvi",
+          "sides": [
+            "AXIS",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-25T06:08:14+00:00",
+          "template": false,
+          "adoption_lag_hours": 1.97,
+          "led_by": "PS"
+        },
+        {
+          "phrase": "member zvi sukkot",
+          "sides": [
+            "AXIS",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-25T06:08:14+00:00",
+          "template": false,
+          "adoption_lag_hours": 1.97,
+          "led_by": "PS"
+        },
+        {
+          "phrase": "nablus occupied west",
+          "sides": [
+            "AXIS",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-24T18:03:46+00:00",
+          "template": true,
+          "adoption_lag_hours": 3.04,
+          "led_by": "PS"
+        },
+        {
+          "phrase": "occupied west bank",
+          "sides": [
+            "AXIS",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-24T17:45:00+00:00",
+          "template": true,
+          "adoption_lag_hours": 3.04,
+          "led_by": "PS"
+        }
+      ],
+      "exclusive_by_side": {
+        "AXIS": [
+          "participated destruction memorial",
+          "sukkot participated destruction",
+          "memorial dedicated palestinian",
+          "vandalizing memorial dedicated",
+          "protection israeli occupation",
+          "dedicated palestinian martyrs",
+          "destruction memorial monument",
+          "monument honoring palestinian"
+        ],
+        "IL": [
+          "residents village commemorated",
+          "terrorists engraved monument",
+          "detonating martyrs monument",
+          "palestinian israeli footage",
+          "engraved monument including",
+          "killing distributed sweets",
+          "village commemorated years",
+          "including close associates"
+        ],
+        "PS": [
+          "partially damaged vandalized",
+          "soldiers abusing palestinian",
+          "vandalizes martyrs memorial",
+          "israeli occupation soldiers",
+          "soldiers abduct palestinian",
+          "vandalized martyrs memorial",
+          "occupation soldiers abusing",
+          "electricity poles supplying"
         ]
       }
     },
@@ -109,1555 +509,123 @@
       "grade": "A — confirmed across 3+ hostile sides",
       "sides": [
         "AXIS",
-        "PS",
-        "WEST"
+        "IL",
+        "PS"
       ],
       "single_outlet_sides": [
         "AXIS",
-        "PS",
-        "WEST"
+        "IL",
+        "PS"
       ],
       "window": {
-        "first_seen": "2026-08-21T18:40:58+00:00",
-        "last_seen": "2026-08-21T23:45:17+00:00",
+        "first_seen": "2026-08-25T07:42:05+00:00",
+        "last_seen": "2026-08-25T12:47:40+00:00",
         "hours": 5.1
-      },
-      "sources_matched": 3,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "PS"
-      ],
-      "convergence": 0.0357,
-      "shared_words": [
-        "israeli",
-        "occupied"
-      ],
-      "anchor_only": false,
-      "phrases_total": 134,
-      "phrases_shared": 0,
-      "phrases_exclusive": 134,
-      "import_ratio": 0.0075,
-      "shared": [],
-      "exclusive_by_side": {
-        "AXIS": [
-          "rhetoric describing palestinians",
-          "denying palestinians existence",
-          "palestinians existence people",
-          "expansion israeli occupation",
-          "describing palestinians mob",
-          "advocated expansion israeli",
-          "openly advocated expansion",
-          "existence people rejecting"
-        ],
-        "PS": [
-          "settlers attack palestinian",
-          "palestinian vehicles stones",
-          "attack palestinian vehicles",
-          "biddu occupied jerusalem",
-          "israeli settlers attack",
-          "connecting al-jib biddu",
-          "road connecting al-jib",
-          "tunnel road connecting"
-        ],
-        "WEST": [
-          "muslim-majority countries jointly",
-          "involves constructing thousands",
-          "eight muslim-majority countries",
-          "constructing thousands housing",
-          "project involves constructing",
-          "ministers countries including",
-          "dangerous escalation tensions",
-          "companies participate tenders"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "negotiation"
-      ],
-      "zone": "iran",
-      "track": "statement",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-21T20:13:08+00:00",
-        "last_seen": "2026-08-21T20:49:51+00:00",
-        "hours": 0.6
-      },
-      "sources_matched": 2,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "WEST"
-      ],
-      "convergence": 0.3704,
-      "shared_words": [
-        "al-busaidi",
-        "araghchi",
-        "conditions",
-        "create",
-        "dialogue",
-        "discussed",
-        "foreign",
-        "hormuz",
-        "iran",
-        "iranian",
-        "ministers",
-        "navigation",
-        "negotiations",
-        "oman",
-        "omani",
-        "phone",
-        "resuming",
-        "strait",
-        "talks",
-        "ways"
-      ],
-      "anchor_only": false,
-      "phrases_total": 94,
-      "phrases_shared": 0,
-      "phrases_exclusive": 94,
-      "import_ratio": 0.0532,
-      "shared": [],
-      "exclusive_by_side": {
-        "AXIS": [
-          "discussed developments navigation",
-          "developments conditions conducive",
-          "ministers discussed developments",
-          "regional developments conditions",
-          "developments navigation through",
-          "latest developments navigation",
-          "dialogue negotiations ministry",
-          "resuming dialogue negotiations"
-        ],
-        "WEST": [
-          "emphasized importance continuing",
-          "necessary resuming negotiations",
-          "resuming negotiations regarding",
-          "importance continuing dialogue",
-          "conditions necessary resuming",
-          "negotiations regarding strait",
-          "continuing dialogue support",
-          "create conditions necessary"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "strait of hormuz"
-      ],
-      "zone": "iran",
-      "track": "statement",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-21T17:18:47+00:00",
-        "last_seen": "2026-08-22T00:45:16+00:00",
-        "hours": 7.4
-      },
-      "sources_matched": 4,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "WEST"
-      ],
-      "convergence": 0.266,
-      "shared_words": [
-        "abbas",
-        "al-busaidi",
-        "araghchi",
-        "badr",
-        "conditions",
-        "create",
-        "developments",
-        "dialogue",
-        "discussed",
-        "foreign",
-        "friday",
-        "hormuz",
-        "iran",
-        "iranian",
-        "minister",
-        "ministers",
-        "navigation",
-        "negotiations",
-        "oman",
-        "omani",
-        "phone",
-        "resuming",
-        "strait",
-        "talks",
-        "ways"
-      ],
-      "anchor_only": false,
-      "phrases_total": 171,
-      "phrases_shared": 1,
-      "phrases_exclusive": 170,
-      "import_ratio": 0.0526,
-      "shared": [
-        {
-          "phrase": "foreign minister badr",
-          "sides": [
-            "AXIS",
-            "WEST"
-          ],
-          "corpus_origin": "2026-08-21T17:18:47+00:00",
-          "template": false,
-          "adoption_lag_hours": 3.52,
-          "led_by": "AXIS"
-        }
-      ],
-      "exclusive_by_side": {
-        "AXIS": [
-          "discussed developments navigation",
-          "developments conditions conducive",
-          "ministers discussed developments",
-          "regional developments conditions",
-          "developments navigation through",
-          "latest developments navigation",
-          "dialogue negotiations ministry",
-          "resuming dialogue negotiations"
-        ],
-        "WEST": [
-          "washington assessing developments",
-          "emphasized importance continuing",
-          "necessary resuming negotiations",
-          "resuming negotiations regarding",
-          "president reiterated washington",
-          "importance continuing dialogue",
-          "conditions necessary resuming",
-          "negotiations regarding strait"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "talks"
-      ],
-      "zone": "iran",
-      "track": "statement",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-21T17:18:47+00:00",
-        "last_seen": "2026-08-21T20:49:51+00:00",
-        "hours": 3.5
-      },
-      "sources_matched": 4,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "WEST"
-      ],
-      "convergence": 0.2212,
-      "shared_words": [
-        "abbas",
-        "al-busaidi",
-        "araghchi",
-        "badr",
-        "conditions",
-        "create",
-        "dialogue",
-        "discussed",
-        "foreign",
-        "hormuz",
-        "iran",
-        "iranian",
-        "minister",
-        "ministers",
-        "navigation",
-        "negotiations",
-        "oman",
-        "omani",
-        "phone",
-        "resuming",
-        "strait",
-        "talks",
-        "ways"
-      ],
-      "anchor_only": false,
-      "phrases_total": 177,
-      "phrases_shared": 1,
-      "phrases_exclusive": 176,
-      "import_ratio": 0.0395,
-      "shared": [
-        {
-          "phrase": "foreign minister badr",
-          "sides": [
-            "AXIS",
-            "WEST"
-          ],
-          "corpus_origin": "2026-08-21T17:18:47+00:00",
-          "template": false,
-          "adoption_lag_hours": 3.52,
-          "led_by": "AXIS"
-        }
-      ],
-      "exclusive_by_side": {
-        "AXIS": [
-          "discussed developments navigation",
-          "developments conditions conducive",
-          "ministers discussed developments",
-          "regional developments conditions",
-          "developments navigation through",
-          "latest developments navigation",
-          "dialogue negotiations ministry",
-          "resuming dialogue negotiations"
-        ],
-        "WEST": [
-          "intention military confrontation",
-          "emphasized importance continuing",
-          "previous government experienced",
-          "necessary resuming negotiations",
-          "resuming negotiations regarding",
-          "importance continuing dialogue",
-          "government experienced groups",
-          "emphasized constructive talks"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "negotiation"
-      ],
-      "zone": "iran",
-      "track": "statement",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T08:34:51+00:00",
-        "last_seen": "2026-08-22T11:31:12+00:00",
-        "hours": 2.9
-      },
-      "sources_matched": 3,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "WEST"
-      ],
-      "convergence": 0.2182,
-      "shared_words": [
-        "between",
-        "canada",
-        "canadian",
-        "collapse",
-        "dollar-for-dollar",
-        "goods",
-        "last-minute",
-        "negotiations",
-        "talks",
-        "tariff",
-        "tariffs",
-        "trade"
-      ],
-      "anchor_only": false,
-      "phrases_total": 78,
-      "phrases_shared": 0,
-      "phrases_exclusive": 78,
-      "import_ratio": 0.0641,
-      "shared": [],
-      "exclusive_by_side": {
-        "AXIS": [
-          "dollar-for-dollar tariff retaliation",
-          "tariff retaliation ottawa-washington",
-          "retaliation ottawa-washington trade",
-          "washington proposes last-minute",
-          "negotiations washington imposed",
-          "vows dollar-for-dollar tariff",
-          "canada vows dollar-for-dollar",
-          "trade negotiations washington"
-        ],
-        "WEST": [
-          "implement dollar-for-dollar retaliatory",
-          "dollar-for-dollar retaliatory tariff",
-          "canada implement dollar-for-dollar",
-          "against following last-minute",
-          "implement retaliatory tariffs",
-          "following last-minute failure",
-          "carney announcing suspension",
-          "canada implement retaliatory"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "sanctions"
-      ],
-      "zone": "iran",
-      "track": "statement",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-21T16:41:19+00:00",
-        "last_seen": "2026-08-21T23:47:22+00:00",
-        "hours": 7.1
-      },
-      "sources_matched": 4,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "WEST"
-      ],
-      "convergence": 0.1954,
-      "shared_words": [
-        "abbas",
-        "araghchi",
-        "crippling",
-        "fail",
-        "failed",
-        "foreign",
-        "history",
-        "iran",
-        "iranian",
-        "just",
-        "minister",
-        "movie",
-        "post",
-        "same",
-        "sanctions",
-        "seen",
-        "years"
-      ],
-      "anchor_only": false,
-      "phrases_total": 139,
-      "phrases_shared": 4,
-      "phrases_exclusive": 135,
-      "import_ratio": 0.036,
-      "shared": [
-        {
-          "phrase": "crippling sanctions history",
-          "sides": [
-            "AXIS",
-            "WEST"
-          ],
-          "corpus_origin": "2026-08-21T16:41:19+00:00",
-          "template": false,
-          "adoption_lag_hours": 1.97,
-          "led_by": "AXIS"
-        },
-        {
-          "phrase": "iranian foreign minister",
-          "sides": [
-            "AXIS",
-            "WEST"
-          ],
-          "corpus_origin": "2026-08-21T16:41:19+00:00",
-          "template": false,
-          "adoption_lag_hours": 1.97,
-          "led_by": "AXIS"
-        },
-        {
-          "phrase": "minister abbas araghchi",
-          "sides": [
-            "AXIS",
-            "WEST"
-          ],
-          "corpus_origin": "2026-08-21T16:41:19+00:00",
-          "template": false,
-          "adoption_lag_hours": 1.97,
-          "led_by": "AXIS"
-        },
-        {
-          "phrase": "foreign minister abbas",
-          "sides": [
-            "AXIS",
-            "WEST"
-          ],
-          "corpus_origin": "2026-08-21T16:41:19+00:00",
-          "template": false,
-          "adoption_lag_hours": 1.97,
-          "led_by": "AXIS"
-        }
-      ],
-      "exclusive_by_side": {
-        "AXIS": [
-          "long-standing policy sanctions",
-          "unconditional surrender failed",
-          "criticized west long-standing",
-          "crushing economic operation",
-          "sanctions economic pressure",
-          "ago unconditional surrender",
-          "pointed previous campaigns",
-          "previous campaigns against"
-        ],
-        "WEST": [
-          "platform araghchi referenced",
-          "described sanctions expected",
-          "araghchi described sanctions",
-          "imposing crippling sanctions",
-          "sanctions crippling history",
-          "declared imposing crippling",
-          "sanctions expected imposed",
-          "continued saying officials"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "talks"
-      ],
-      "zone": "iran",
-      "track": "statement",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T08:34:51+00:00",
-        "last_seen": "2026-08-22T11:31:12+00:00",
-        "hours": 2.9
-      },
-      "sources_matched": 2,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "WEST"
-      ],
-      "convergence": 0.1522,
-      "shared_words": [
-        "between",
-        "canada",
-        "collapse",
-        "last-minute",
-        "negotiations",
-        "talks",
-        "trade"
-      ],
-      "anchor_only": false,
-      "phrases_total": 59,
-      "phrases_shared": 0,
-      "phrases_exclusive": 59,
-      "import_ratio": 0.0508,
-      "shared": [],
-      "exclusive_by_side": {
-        "AXIS": [
-          "washington proposes last-minute",
-          "collapse washington proposes",
-          "proposes last-minute changes",
-          "uneconomic prompting canada",
-          "canada suspend negotiations",
-          "unfair uneconomic prompting",
-          "considers unfair uneconomic",
-          "canada collapse washington"
-        ],
-        "WEST": [
-          "implement dollar-for-dollar retaliatory",
-          "dollar-for-dollar retaliatory tariff",
-          "canada implement dollar-for-dollar",
-          "against following last-minute",
-          "implement retaliatory tariffs",
-          "following last-minute failure",
-          "carney announcing suspension",
-          "canada implement retaliatory"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "kryvyi rih"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "UA",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "UA",
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T06:12:02+00:00",
-        "last_seen": "2026-08-22T07:18:50+00:00",
-        "hours": 1.1
-      },
-      "sources_matched": 2,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "UA",
-        "WEST"
-      ],
-      "convergence": 0.1489,
-      "shared_words": [
-        "center",
-        "injured",
-        "kryvyi",
-        "missing",
-        "nine",
-        "russia",
-        "shopping"
-      ],
-      "anchor_only": false,
-      "phrases_total": 62,
-      "phrases_shared": 0,
-      "phrases_exclusive": 62,
-      "import_ratio": 0.0161,
-      "shared": [],
-      "exclusive_by_side": {
-        "UA": [
-          "missing including children",
-          "still missing including",
-          "biggest shopping center",
-          "shopping center dead",
-          "russia strike kryvyi",
-          "rih biggest shopping",
-          "kryvyi rih biggest",
-          "nine still missing"
-        ],
-        "WEST": [
-          "zaporizhzhia southeastern ukraine",
-          "capital zaporizhzhia southeastern",
-          "operations continued overnight",
-          "president volodymyr zelenskyy",
-          "ukrainian president volodymyr",
-          "continued overnight shopping",
-          "volodymyr zelenskyy ukraine",
-          "rescue operations continued"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "kryvyi rih"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "RU",
-        "UA"
-      ],
-      "single_outlet_sides": [],
-      "window": {
-        "first_seen": "2026-08-21T15:10:23+00:00",
-        "last_seen": "2026-08-21T22:00:26+00:00",
-        "hours": 6.8
-      },
-      "sources_matched": 11,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "RU",
-        "UA"
-      ],
-      "convergence": 0.144,
-      "shared_words": [
-        "august",
-        "center",
-        "complex",
-        "drone",
-        "drones",
-        "forces",
-        "kryvyi",
-        "launched",
-        "military",
-        "oblast",
-        "operation",
-        "people",
-        "russian",
-        "serious",
-        "shopping",
-        "strike",
-        "strikes",
-        "where"
-      ],
-      "anchor_only": false,
-      "phrases_total": 196,
-      "phrases_shared": 2,
-      "phrases_exclusive": 194,
-      "import_ratio": 0.0,
-      "shared": [
-        {
-          "phrase": "shopping center kryvyi",
-          "sides": [
-            "RU",
-            "UA"
-          ],
-          "corpus_origin": "2026-08-21T15:35:06+00:00",
-          "template": false,
-          "adoption_lag_hours": 0.0,
-          "led_by": "RU"
-        },
-        {
-          "phrase": "center kryvyi rih",
-          "sides": [
-            "RU",
-            "UA"
-          ],
-          "corpus_origin": "2026-08-21T15:35:06+00:00",
-          "template": false,
-          "adoption_lag_hours": 0.0,
-          "led_by": "RU"
-        }
-      ],
-      "exclusive_by_side": {
-        "RU": [
-          "infrastructure liberated areas",
-          "fuel infrastructure liberated",
-          "strikes facilities frontline",
-          "included industrial facility",
-          "attacked warehouse buildings",
-          "structures tabaki checkpoint",
-          "facilities frontline regions",
-          "frontline regions so-called"
-        ],
-        "UA": [
-          "military administration telegram",
-          "responding scene dnipropetrovsk",
-          "oblast military administration",
-          "dnipropetrovsk oblast military",
-          "regional administration killed",
-          "administration killed wounded",
-          "children president volodymyr",
-          "president volodymyr zelensky"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "damascus"
-      ],
-      "zone": "syria",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "PS",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "PS",
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T09:56:20+00:00",
-        "last_seen": "2026-08-22T14:50:48+00:00",
-        "hours": 4.9
-      },
-      "sources_matched": 4,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "PS",
-        "WEST"
-      ],
-      "convergence": 0.1373,
-      "shared_words": [
-        "about",
-        "attack",
-        "beit",
-        "damascus",
-        "drone",
-        "forces",
-        "injured",
-        "israel",
-        "israeli",
-        "jinn",
-        "near",
-        "saturday",
-        "syria",
-        "vehicle"
-      ],
-      "anchor_only": false,
-      "phrases_total": 162,
-      "phrases_shared": 0,
-      "phrases_exclusive": 162,
-      "import_ratio": 0.0123,
-      "shared": [],
-      "exclusive_by_side": {
-        "PS": [
-          "escalating strikes assassinations",
-          "assassinations syria killing",
-          "justification routinely uses",
-          "strikes assassinations syria",
-          "same justification routinely",
-          "breaking palestinian injured",
-          "airstrike targeting vehicle",
-          "palestinian injured israeli"
-        ],
-        "WEST": [
-          "violation sovereignty territorial",
-          "sovereignty territorial integrity",
-          "individual identity affiliation",
-          "identity affiliation specific",
-          "terrorist preparing terrorist",
-          "blatant breach international",
-          "territorial integrity syrian",
-          "targeted terrorist preparing"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "jenin"
-      ],
-      "zone": "israel_gaza",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "PS"
-      ],
-      "single_outlet_sides": [
-        "AXIS",
-        "PS"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T02:11:47+00:00",
-        "last_seen": "2026-08-22T09:03:59+00:00",
-        "hours": 6.9
-      },
-      "sources_matched": 2,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "PS",
-        "AXIS"
-      ],
-      "convergence": 0.1351,
-      "shared_words": [
-        "bank",
-        "israeli",
-        "jenin",
-        "occupied",
-        "west"
-      ],
-      "anchor_only": false,
-      "phrases_total": 47,
-      "phrases_shared": 0,
-      "phrases_exclusive": 47,
-      "import_ratio": 0.1064,
-      "shared": [],
-      "exclusive_by_side": {
-        "AXIS": [
-          "assassinations raids abductions",
-          "stressing assassinations raids",
-          "jenin stressing assassinations",
-          "undermine their steadfastness",
-          "resistance movement strongly",
-          "palestinian resistance hamas",
-          "fatally shooting palestinian",
-          "break palestinian resistance"
-        ],
-        "PS": [
-          "palestinians temporary checkpoint",
-          "several palestinians temporary",
-          "abduct several palestinians",
-          "israeli occupation forces",
-          "temporary checkpoint east",
-          "watch israeli occupation",
-          "occupation forces abuse",
-          "checkpoint east jenin"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "jenin"
-      ],
-      "zone": "israel_gaza",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "PS"
-      ],
-      "single_outlet_sides": [
-        "PS"
-      ],
-      "window": {
-        "first_seen": "2026-08-21T16:45:26+00:00",
-        "last_seen": "2026-08-21T21:40:36+00:00",
-        "hours": 4.9
-      },
-      "sources_matched": 3,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "PS"
-      ],
-      "convergence": 0.1273,
-      "shared_words": [
-        "bank",
-        "city",
-        "israeli",
-        "jenin",
-        "occupation",
-        "occupied",
-        "west"
-      ],
-      "anchor_only": false,
-      "phrases_total": 78,
-      "phrases_shared": 1,
-      "phrases_exclusive": 77,
-      "import_ratio": 0.0385,
-      "shared": [
-        {
-          "phrase": "occupied west bank",
-          "sides": [
-            "AXIS",
-            "PS"
-          ],
-          "corpus_origin": "2026-08-21T16:16:39+00:00",
-          "template": true,
-          "adoption_lag_hours": 0.66,
-          "led_by": "AXIS"
-        }
-      ],
-      "exclusive_by_side": {
-        "AXIS": [
-          "rhetoric describing palestinians",
-          "denying palestinians existence",
-          "palestinians existence people",
-          "expansion israeli occupation",
-          "describing palestinians mob",
-          "advocated expansion israeli",
-          "openly advocated expansion",
-          "existence people rejecting"
-        ],
-        "PS": [
-          "storm kharouba neighborhood",
-          "breaking israeli occupation",
-          "kharouba neighborhood north",
-          "israeli occupation forces",
-          "neighborhood north jenin",
-          "occupation forces storm",
-          "forces storm kharouba",
-          "jenin city occupied"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "golan"
-      ],
-      "zone": "syria",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T10:53:46+00:00",
-        "last_seen": "2026-08-22T14:15:10+00:00",
-        "hours": 3.4
-      },
-      "sources_matched": 2,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "WEST"
-      ],
-      "convergence": 0.127,
-      "shared_words": [
-        "forces",
-        "golan",
-        "heights",
-        "israeli",
-        "military",
-        "near",
-        "syria",
-        "village"
-      ],
-      "anchor_only": false,
-      "phrases_total": 89,
-      "phrases_shared": 0,
-      "phrases_exclusive": 89,
-      "import_ratio": 0.0,
-      "shared": [],
-      "exclusive_by_side": {
-        "AXIS": [
-          "activity near israeli-occupied",
-          "israeli-occupied golan heights",
-          "southwestern province quneitra",
-          "heightened military activity",
-          "syria southwestern province",
-          "near israeli-occupied golan",
-          "village syria southwestern",
-          "conducts ground incursion"
-        ],
-        "WEST": [
-          "preparing terrorist attacks",
-          "targeted terrorist southern",
-          "located southwest damascus",
-          "stages preparing terrorist",
-          "injured israeli occupation",
-          "meanwhile israeli military",
-          "occupation drone targeted",
-          "following attack southern"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "kyiv"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "RU",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "RU",
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T00:03:01+00:00",
-        "last_seen": "2026-08-22T07:18:50+00:00",
-        "hours": 7.3
-      },
-      "sources_matched": 3,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "RU",
-        "WEST"
-      ],
-      "convergence": 0.0811,
-      "shared_words": [
-        "center",
-        "city",
-        "drone",
-        "killed",
-        "kyiv",
-        "people",
-        "russian",
-        "ukraine",
-        "ukrainian"
-      ],
-      "anchor_only": false,
-      "phrases_total": 152,
-      "phrases_shared": 0,
-      "phrases_exclusive": 152,
-      "import_ratio": 0.0132,
-      "shared": [],
-      "exclusive_by_side": {
-        "RU": [
-          "transportation infrastructure logistics",
-          "precision-guided ground-based weapons",
-          "against transportation infrastructure",
-          "using precision-guided ground-based",
-          "grigoryev composed representatives",
-          "federation conducted coordinated",
-          "continues collecting testimonies",
-          "infrastructure logistics center"
-        ],
-        "WEST": [
-          "zaporizhzhia southeastern ukraine",
-          "capital zaporizhzhia southeastern",
-          "operations continued overnight",
-          "president volodymyr zelenskyy",
-          "ukrainian president volodymyr",
-          "continued overnight shopping",
-          "volodymyr zelenskyy ukraine",
-          "rescue operations continued"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "sanctions"
-      ],
-      "zone": "iran",
-      "track": "statement",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "AXIS",
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T01:09:46+00:00",
-        "last_seen": "2026-08-22T08:15:08+00:00",
-        "hours": 7.1
-      },
-      "sources_matched": 10,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "WEST",
-        "AXIS"
-      ],
-      "convergence": 0.0806,
-      "shared_words": [
-        "against",
-        "attempt",
-        "beyond",
-        "china",
-        "donald",
-        "economic",
-        "foreign",
-        "impose",
-        "independent",
-        "international",
-        "iran",
-        "ministry",
-        "president",
-        "pressure",
-        "sanctions",
-        "threat",
-        "trump"
-      ],
-      "anchor_only": false,
-      "phrases_total": 325,
-      "phrases_shared": 3,
-      "phrases_exclusive": 322,
-      "import_ratio": 0.0308,
-      "shared": [
-        {
-          "phrase": "donald trump threat",
-          "sides": [
-            "AXIS",
-            "WEST"
-          ],
-          "corpus_origin": "2026-08-22T02:45:01+00:00",
-          "template": false,
-          "adoption_lag_hours": 0.47,
-          "led_by": "AXIS"
-        },
-        {
-          "phrase": "sanctions against iran",
-          "sides": [
-            "AXIS",
-            "WEST"
-          ],
-          "corpus_origin": "2026-08-21T17:00:01+00:00",
-          "template": true,
-          "adoption_lag_hours": 1.01,
-          "led_by": "WEST"
-        },
-        {
-          "phrase": "president donald trump",
-          "sides": [
-            "AXIS",
-            "WEST"
-          ],
-          "corpus_origin": "2026-08-21T17:30:53+00:00",
-          "template": true,
-          "adoption_lag_hours": 1.59,
-          "led_by": "WEST"
-        }
-      ],
-      "exclusive_by_side": {
-        "AXIS": [
-          "extra-territorial sovereignty independent",
-          "impose extra-territorial sovereignty",
-          "attempt impose extra-territorial",
-          "announcement economic sanctions",
-          "sovereignty independent member",
-          "asserting authority sovereign",
-          "against demise international",
-          "international criminal court"
-        ],
-        "WEST": [
-          "washington extraterritorial dominance",
-          "extraterritorial dominance nations",
-          "impose washington extraterritorial",
-          "emphasized defiant uncompromising",
-          "policies violation international",
-          "cooperation effectively sanction",
-          "intensifying economic pressure",
-          "mercenaries coerce independent"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "zaporizhzhia"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "RU",
-        "WEST"
-      ],
-      "single_outlet_sides": [
-        "WEST"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T03:52:37+00:00",
-        "last_seen": "2026-08-22T11:04:19+00:00",
-        "hours": 7.2
       },
       "sources_matched": 7,
       "sources_unmatched": 0,
       "closest_pair": [
-        "RU",
-        "WEST"
+        "AXIS",
+        "PS"
       ],
-      "convergence": 0.0617,
+      "convergence": 0.2059,
       "shared_words": [
-        "attacks",
-        "drone",
-        "front",
-        "kyiv",
-        "line",
-        "near",
-        "russia",
-        "russian",
-        "ukrainian",
-        "zaporizhzhia"
-      ],
-      "anchor_only": false,
-      "phrases_total": 226,
-      "phrases_shared": 0,
-      "phrases_exclusive": 226,
-      "import_ratio": 0.0531,
-      "shared": [],
-      "exclusive_by_side": {
-        "RU": [
-          "areas podhavrylivka velikomikhaylovka",
-          "precision-guided krasnopol munitions",
-          "strongpoints near velikomikhaylovka",
-          "velikomikhaylovka west alexandrovka",
-          "explosions zaporizhzhia followed",
-          "using precision-guided krasnopol",
-          "positions captured strongpoints",
-          "counterattack attempts assembly"
-        ],
-        "WEST": [
-          "zaporizhzhia southeastern ukraine",
-          "capital zaporizhzhia southeastern",
-          "operations continued overnight",
-          "president volodymyr zelenskyy",
-          "ukrainian president volodymyr",
-          "continued overnight shopping",
-          "volodymyr zelenskyy ukraine",
-          "rescue operations continued"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "nablus"
-      ],
-      "zone": "israel_gaza",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "AXIS",
-        "PS"
-      ],
-      "single_outlet_sides": [
-        "AXIS",
-        "PS"
-      ],
-      "window": {
-        "first_seen": "2026-08-21T16:24:37+00:00",
-        "last_seen": "2026-08-21T21:01:03+00:00",
-        "hours": 4.6
-      },
-      "sources_matched": 2,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "AXIS",
-        "PS"
-      ],
-      "convergence": 0.06,
-      "shared_words": [
+        "aqab",
+        "ben-gvir",
+        "forces",
         "israeli",
-        "nablus",
-        "occupation"
+        "itamar",
+        "kafr",
+        "kalandia",
+        "minister",
+        "north",
+        "occupation",
+        "occupied",
+        "they",
+        "training",
+        "unrwa"
       ],
       "anchor_only": false,
-      "phrases_total": 67,
-      "phrases_shared": 0,
-      "phrases_exclusive": 67,
-      "import_ratio": 0.0299,
-      "shared": [],
-      "exclusive_by_side": {
-        "AXIS": [
-          "rhetoric describing palestinians",
-          "denying palestinians existence",
-          "palestinians existence people",
-          "expansion israeli occupation",
-          "describing palestinians mob",
-          "advocated expansion israeli",
-          "openly advocated expansion",
-          "existence people rejecting"
-        ],
-        "PS": [
-          "occupation forces stormed",
-          "israeli occupation forces",
-          "forces stormed town",
-          "stormed town beit",
-          "furik east nablus",
-          "beit furik east",
-          "town beit furik"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "kyiv"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "RU",
-        "UA"
-      ],
-      "single_outlet_sides": [
-        "UA"
-      ],
-      "window": {
-        "first_seen": "2026-08-21T15:15:03+00:00",
-        "last_seen": "2026-08-21T22:12:31+00:00",
-        "hours": 7.0
-      },
-      "sources_matched": 9,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "RU",
-        "UA"
-      ],
-      "convergence": 0.058,
-      "shared_words": [
-        "alert",
-        "doing",
-        "explosions",
-        "foreign",
-        "heard",
-        "kyiv",
-        "local",
-        "news",
-        "power",
-        "raid",
-        "still",
-        "ukraine",
-        "ukrainian"
-      ],
-      "anchor_only": false,
-      "phrases_total": 296,
-      "phrases_shared": 2,
-      "phrases_exclusive": 294,
-      "import_ratio": 0.0,
+      "phrases_total": 222,
+      "phrases_shared": 4,
+      "phrases_exclusive": 218,
+      "import_ratio": 0.009,
       "shared": [
         {
-          "phrase": "explosions heard kyiv",
+          "phrase": "minister itamar ben-gvir",
           "sides": [
-            "RU",
-            "UA"
+            "AXIS",
+            "PS"
           ],
-          "corpus_origin": "2026-08-21T22:06:38+00:00",
+          "corpus_origin": "2026-08-25T08:13:50+00:00",
           "template": false,
-          "adoption_lag_hours": 0.1,
-          "led_by": "UA"
+          "adoption_lag_hours": 0.04,
+          "led_by": "PS"
         },
         {
-          "phrase": "air raid alert",
+          "phrase": "aqab north occupied",
           "sides": [
-            "RU",
-            "UA"
+            "AXIS",
+            "PS"
           ],
-          "corpus_origin": "2026-08-21T19:41:31+00:00",
+          "corpus_origin": "2026-08-25T08:13:50+00:00",
           "template": false,
-          "adoption_lag_hours": 0.1,
-          "led_by": "UA"
+          "adoption_lag_hours": 0.04,
+          "led_by": "PS"
+        },
+        {
+          "phrase": "kafr aqab north",
+          "sides": [
+            "AXIS",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-25T08:13:50+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.04,
+          "led_by": "PS"
+        },
+        {
+          "phrase": "israeli occupation forces",
+          "sides": [
+            "AXIS",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-24T17:07:31+00:00",
+          "template": true,
+          "adoption_lag_hours": 0.56,
+          "led_by": "PS"
         }
       ],
       "exclusive_by_side": {
-        "RU": [
-          "acrobatics studio self-proclaimed",
-          "dark-skinned individuals claiming",
-          "serving dark-skinned individuals",
-          "ukrainians incident accompanied",
-          "studio self-proclaimed guardian",
-          "resident attacked dark-skinned",
-          "self-proclaimed guardian rural",
-          "considers herself dark-skinned"
+        "AXIS": [
+          "accompanied israeli occupation",
+          "ben-gvir accompanied israeli",
+          "itamar ben-gvir accompanied",
+          "evacuate unrwa headquarters",
+          "begun operations evacuate",
+          "occupied al-quds ben-gvir",
+          "operations evacuate unrwa",
+          "occupation forces raided"
         ],
-        "UA": [
-          "ukraine anti-corruption institutions",
-          "anti-corruption institutions media",
-          "ukrainian democracy conversation",
-          "verzilov co-founder publication",
-          "democracy conversation explores",
-          "delaying elections indefinitely",
-          "several consecutive explosions",
-          "independent journalists ground"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "kyiv"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "RU",
-        "UA"
-      ],
-      "single_outlet_sides": [],
-      "window": {
-        "first_seen": "2026-08-22T08:15:06+00:00",
-        "last_seen": "2026-08-22T14:53:22+00:00",
-        "hours": 6.6
-      },
-      "sources_matched": 18,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "RU",
-        "UA"
-      ],
-      "convergence": 0.0453,
-      "shared_words": [
-        "civilians",
-        "country",
-        "defense",
-        "drones",
-        "explosions",
-        "goal",
-        "infrastructure",
-        "kyiv",
-        "latest",
-        "massive",
-        "nuclear",
-        "people",
-        "president",
-        "russia",
-        "russian",
-        "strikes",
-        "through",
-        "ukraine",
-        "using"
-      ],
-      "anchor_only": false,
-      "phrases_total": 643,
-      "phrases_shared": 0,
-      "phrases_exclusive": 643,
-      "import_ratio": 0.0218,
-      "shared": [],
-      "exclusive_by_side": {
-        "RU": [
-          "representatives difficult situation",
-          "ukrainian infrastructure effective",
-          "reminded unshakable constitutional",
-          "infrastructure response ukrainian",
-          "ukrainian infrastructure response",
-          "infrastructure russia intensified",
-          "strikes ukrainian infrastructure",
-          "providing high-quality objective"
+        "IL": [
+          "equivalent declaration sovereignty",
+          "jerusalem municipality investment",
+          "municipality investment million",
+          "neighborhood northern jerusalem",
+          "compound equivalent declaration",
+          "article jerusalem municipality",
+          "ministry community educational",
+          "educational center established"
         ],
-        "UA": [
-          "infrastructure civilians anti-ballistic",
-          "ukraine anti-corruption authorities",
-          "anti-corruption authorities accused",
-          "million national anti-corruption",
-          "civilians anti-ballistic defense",
-          "strikes infrastructure civilians",
-          "oversight board nationalization",
-          "national anti-corruption bureau"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "dnipro"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "RU",
-        "UA"
-      ],
-      "single_outlet_sides": [
-        "UA"
-      ],
-      "window": {
-        "first_seen": "2026-08-21T16:03:01+00:00",
-        "last_seen": "2026-08-21T21:08:20+00:00",
-        "hours": 5.1
-      },
-      "sources_matched": 5,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "RU",
-        "UA"
-      ],
-      "convergence": 0.0417,
-      "shared_words": [
-        "attack",
-        "dnipropetrovsk",
-        "drones",
-        "military",
-        "oblast",
-        "taking"
-      ],
-      "anchor_only": false,
-      "phrases_total": 161,
-      "phrases_shared": 0,
-      "phrases_exclusive": 161,
-      "import_ratio": 0.0,
-      "shared": [],
-      "exclusive_by_side": {
-        "RU": [
-          "approaching zelyonyy east-zaporozhye",
-          "attack petropavlivka dnipropetrovsk",
-          "petropavlivka dnipropetrovsk oblast",
-          "important interesting materials",
-          "interesting materials chronicle",
-          "distracted information campaign",
-          "resource important interesting",
-          "monitoring military facilities"
-        ],
-        "UA": [
-          "military administration telegram",
-          "responding scene dnipropetrovsk",
-          "oblast military administration",
-          "dnipropetrovsk oblast military",
-          "children president volodymyr",
-          "president volodymyr zelensky",
-          "including children president",
-          "scene dnipropetrovsk oblast"
+        "PS": [
+          "palestinian-run jerusalem governorate",
+          "returning palestinian-run jerusalem",
+          "barred returning palestinian-run",
+          "essential assistance palestinian",
+          "assistance palestinian refugees",
+          "providing essential assistance",
+          "jerusalem israeli authorities",
+          "palestinian refugees efforts"
         ]
       }
     },
@@ -1667,66 +635,1296 @@
       ],
       "zone": "iran",
       "track": "kinetic",
+      "grade": "A — confirmed across 3+ hostile sides",
+      "sides": [
+        "AXIS",
+        "IL",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "IL",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T16:28:02+00:00",
+        "last_seen": "2026-08-24T23:50:07+00:00",
+        "hours": 7.4
+      },
+      "sources_matched": 15,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "WEST"
+      ],
+      "convergence": 0.1564,
+      "shared_words": [
+        "against",
+        "army",
+        "asim",
+        "campaign",
+        "change",
+        "chief",
+        "commitments",
+        "economic",
+        "general",
+        "implementation",
+        "iran",
+        "iranian",
+        "islamic",
+        "major",
+        "meeting",
+        "munir",
+        "must",
+        "pakistan",
+        "pezeshkian",
+        "president",
+        "pressure",
+        "secretary",
+        "states",
+        "tehran",
+        "toward",
+        "treasury",
+        "united",
+        "washington"
+      ],
+      "anchor_only": false,
+      "phrases_total": 375,
+      "phrases_shared": 7,
+      "phrases_exclusive": 368,
+      "import_ratio": 0.0293,
+      "shared": [
+        {
+          "phrase": "economic pressure campaign",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T16:28:02+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.95,
+          "led_by": "WEST"
+        },
+        {
+          "phrase": "pressure campaign against",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T16:28:02+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.95,
+          "led_by": "WEST"
+        },
+        {
+          "phrase": "economic campaign against",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T16:28:02+00:00",
+          "template": false,
+          "adoption_lag_hours": 1.51,
+          "led_by": "WEST"
+        },
+        {
+          "phrase": "army staff pakistan",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T18:31:17+00:00",
+          "template": false,
+          "adoption_lag_hours": 2.31,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "chief army staff",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T18:31:17+00:00",
+          "template": false,
+          "adoption_lag_hours": 2.31,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "munir chief army",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T18:31:17+00:00",
+          "template": false,
+          "adoption_lag_hours": 2.31,
+          "led_by": "IL"
+        },
+        {
+          "phrase": "islamic republic iran",
+          "sides": [
+            "IL",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T17:15:43+00:00",
+          "template": false,
+          "adoption_lag_hours": 3.57,
+          "led_by": "IL"
+        }
+      ],
+      "exclusive_by_side": {
+        "AXIS": [
+          "battlefield confrontation enemies",
+          "current confrontation adversaries",
+          "battlefield current confrontation",
+          "implementation recent memorandum",
+          "commitments ongoing instability",
+          "recent memorandum understanding",
+          "main battlefield confrontation",
+          "confrontation adversaries amid"
+        ],
+        "IL": [
+          "launching comprehensive economic",
+          "outcast unprecedented campaign",
+          "comprehensive economic assault",
+          "unprecedented campaign against",
+          "economic outcast unprecedented",
+          "iran launching comprehensive",
+          "economic lifeline sustaining",
+          "launches operation economic"
+        ],
+        "WEST": [
+          "intimidation complicate implementation",
+          "implementation processes pezeshkian",
+          "complicate implementation processes",
+          "beginning liberation northwestern",
+          "constructive mediation expressed",
+          "bullying intimidation complicate",
+          "pakistan constructive mediation",
+          "obligations islamabad agreement"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "tehran"
+      ],
+      "zone": "iran",
+      "track": "kinetic",
+      "grade": "A — confirmed across 3+ hostile sides",
+      "sides": [
+        "AXIS",
+        "IL",
+        "RU"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "IL",
+        "RU"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T01:21:32+00:00",
+        "last_seen": "2026-08-25T08:01:10+00:00",
+        "hours": 6.7
+      },
+      "sources_matched": 6,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "IL",
+        "AXIS"
+      ],
+      "convergence": 0.1145,
+      "shared_words": [
+        "army",
+        "chief",
+        "conflict",
+        "held",
+        "iran",
+        "islamabad",
+        "memorandum",
+        "munir",
+        "pakistan",
+        "peace",
+        "progress",
+        "significant",
+        "talks",
+        "tehran",
+        "tensions"
+      ],
+      "anchor_only": false,
+      "phrases_total": 212,
+      "phrases_shared": 1,
+      "phrases_exclusive": 211,
+      "import_ratio": 0.0991,
+      "shared": [
+        {
+          "phrase": "operation economic outcast",
+          "sides": [
+            "AXIS",
+            "RU"
+          ],
+          "corpus_origin": "2026-08-24T17:15:43+00:00",
+          "template": true,
+          "adoption_lag_hours": 1.89,
+          "led_by": "RU"
+        }
+      ],
+      "exclusive_by_side": {
+        "AXIS": [
+          "pakistan-brokered islamabad memorandum",
+          "salvaging fragile pakistan-brokered",
+          "fragile pakistan-brokered islamabad",
+          "islamabad memorandum understanding",
+          "gholamhossein mohseni-ejei tehran",
+          "chief gholamhossein mohseni-ejei",
+          "significant progress high-level",
+          "threatening secondary penalties"
+        ],
+        "IL": [
+          "comprehensive resolution conflict",
+          "resolution conflict substantial",
+          "toward comprehensive resolution",
+          "conflict substantial progress",
+          "substantial progress achieved",
+          "productive meeting president",
+          "revive islamabad memorandum",
+          "interior minister following"
+        ],
+        "RU": [
+          "directive department treasury",
+          "department treasury launched",
+          "supporting tyrannical regime",
+          "launched operation economic",
+          "treasury launched operation",
+          "trump directive department",
+          "marking beginning economic",
+          "ties supporting tyrannical"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "moscow"
+      ],
+      "zone": "russia_ukraine",
+      "track": "kinetic",
+      "grade": "A — confirmed across 3+ hostile sides",
+      "sides": [
+        "IL",
+        "RU",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "IL",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T12:45:25+00:00",
+        "last_seen": "2026-08-25T14:31:28+00:00",
+        "hours": 1.8
+      },
+      "sources_matched": 4,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "RU",
+        "IL"
+      ],
+      "convergence": 0.0889,
+      "shared_words": [
+        "arrived",
+        "moscow",
+        "today",
+        "visit"
+      ],
+      "anchor_only": false,
+      "phrases_total": 113,
+      "phrases_shared": 0,
+      "phrases_exclusive": 113,
+      "import_ratio": 0.0796,
+      "shared": [],
+      "exclusive_by_side": {
+        "IL": [
+          "american military transport",
+          "military transport aircraft",
+          "transport aircraft landed",
+          "years american military",
+          "aircraft landed today",
+          "today moscow american",
+          "russia visit response",
+          "arrived russia visit"
+        ],
+        "RU": [
+          "moscow yekaterinburg organizers",
+          "information suggesting concert",
+          "correspondent jennifer jacobs",
+          "arena information suggesting",
+          "yekaterinburg organizers ria",
+          "concert relocated petersburg",
+          "suggesting concert relocated",
+          "news correspondent jennifer"
+        ],
+        "WEST": [
+          "cryptocurrency cooperate friendly",
+          "geopolitical tool over-reliance",
+          "seek alternative instruments",
+          "sanctions alexander trofimov",
+          "use cryptocurrency cooperate",
+          "cooperate friendly countries",
+          "western sanctions alexander",
+          "seen vulnerability prompted"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "gaza city"
+      ],
+      "zone": "israel_gaza",
+      "track": "kinetic",
+      "grade": "A — confirmed across 3+ hostile sides",
+      "sides": [
+        "AXIS",
+        "IL",
+        "PS"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "IL",
+        "PS"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T15:08:09+00:00",
+        "last_seen": "2026-08-24T19:08:44+00:00",
+        "hours": 4.0
+      },
+      "sources_matched": 5,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "PS",
+        "AXIS"
+      ],
+      "convergence": 0.0833,
+      "shared_words": [
+        "city",
+        "gaza",
+        "israeli",
+        "mosque"
+      ],
+      "anchor_only": false,
+      "phrases_total": 115,
+      "phrases_shared": 0,
+      "phrases_exclusive": 115,
+      "import_ratio": 0.0,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "bombed asqalan mosque",
+          "israeli forces bombed",
+          "moment israeli forces",
+          "forces bombed asqalan",
+          "mosque shati refugee",
+          "asqalan mosque shati",
+          "shati refugee camp",
+          "refugee camp west"
+        ],
+        "IL": [
+          "evacuation warnings additionally",
+          "warnings additionally al-arabiya",
+          "additionally al-arabiya fourth",
+          "al-arabiya casualties missing",
+          "rajaan neighborhood northern",
+          "al-arabiya fourth evacuation",
+          "attacks evacuation warnings",
+          "neighborhood northern gaza"
+        ],
+        "PS": [
+          "palestinians including children",
+          "al-tuwam neighborhood northwest",
+          "several palestinians including",
+          "bombard al-tuwam neighborhood",
+          "killing several palestinians",
+          "striking homes displacement",
+          "breaking israeli occupation",
+          "neighborhood northwest gaza"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "sanctions"
+      ],
+      "zone": "iran",
+      "track": "statement",
+      "grade": "A — confirmed across 3+ hostile sides",
+      "sides": [
+        "AXIS",
+        "RU",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "RU",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T15:01:29+00:00",
+        "last_seen": "2026-08-24T20:23:01+00:00",
+        "hours": 5.4
+      },
+      "sources_matched": 6,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "WEST",
+        "RU"
+      ],
+      "convergence": 0.078,
+      "shared_words": [
+        "against",
+        "bessent",
+        "dollar",
+        "economic",
+        "imposing",
+        "iran",
+        "operation",
+        "sanctions",
+        "treasury",
+        "trump",
+        "world"
+      ],
+      "anchor_only": false,
+      "phrases_total": 287,
+      "phrases_shared": 1,
+      "phrases_exclusive": 286,
+      "import_ratio": 0.0,
+      "shared": [
+        {
+          "phrase": "operation against iran",
+          "sides": [
+            "RU",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T17:14:02+00:00",
+          "template": false,
+          "adoption_lag_hours": 3.15,
+          "led_by": "RU"
+        }
+      ],
+      "exclusive_by_side": {
+        "AXIS": [
+          "continuing your miscalculations",
+          "islamic revolution forty-seven",
+          "miscalculations iran response",
+          "imposing continuous sanctions",
+          "revolution forty-seven years",
+          "policies including sanctions",
+          "continuous sanctions country",
+          "islamic revolution ayatollah"
+        ],
+        "RU": [
+          "organizations continuing operations",
+          "sanctions organizations individuals",
+          "countries organizations continuing",
+          "organizations individuals vessels",
+          "imposing sanctions organizations",
+          "expects countries organizations",
+          "individuals vessels worldwide",
+          "interaction islamic republic"
+        ],
+        "WEST": [
+          "sanctions madani-zadeh conversation",
+          "president previously devastating",
+          "previously devastating economic",
+          "collapsing president previously",
+          "completely collapsing president",
+          "military capabilities severely",
+          "completely collapsing treasury",
+          "secondary sanctions previously"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "red sea"
+      ],
+      "zone": "iran",
+      "track": "statement",
       "grade": "B — corroborated across the bias divide",
       "sides": [
         "AXIS",
         "WEST"
       ],
       "single_outlet_sides": [
+        "AXIS",
         "WEST"
       ],
       "window": {
-        "first_seen": "2026-08-22T02:32:17+00:00",
-        "last_seen": "2026-08-22T07:55:59+00:00",
-        "hours": 5.4
+        "first_seen": "2026-08-24T15:46:51+00:00",
+        "last_seen": "2026-08-24T16:28:54+00:00",
+        "hours": 0.7
       },
-      "sources_matched": 4,
+      "sources_matched": 2,
       "sources_unmatched": 0,
       "closest_pair": [
         "AXIS",
         "WEST"
       ],
-      "convergence": 0.0405,
+      "convergence": 0.1639,
       "shared_words": [
-        "continue",
-        "held",
-        "islamic",
-        "republic",
-        "tehran",
-        "these"
+        "ballistic",
+        "forces",
+        "maritime",
+        "missile",
+        "port",
+        "saudi",
+        "tanker",
+        "targeted",
+        "yanbu",
+        "yemeni"
       ],
       "anchor_only": false,
-      "phrases_total": 183,
-      "phrases_shared": 0,
-      "phrases_exclusive": 183,
+      "phrases_total": 90,
+      "phrases_shared": 4,
+      "phrases_exclusive": 86,
       "import_ratio": 0.0,
-      "shared": [],
+      "shared": [
+        {
+          "phrase": "targeted saudi oil",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T15:46:51+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.7,
+          "led_by": "AXIS"
+        },
+        {
+          "phrase": "saudi oil tanker",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T15:46:51+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.7,
+          "led_by": "AXIS"
+        },
+        {
+          "phrase": "tanker red sea",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T15:46:51+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.7,
+          "led_by": "AXIS"
+        },
+        {
+          "phrase": "oil tanker red",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T15:46:51+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.7,
+          "led_by": "AXIS"
+        }
+      ],
       "exclusive_by_side": {
         "AXIS": [
-          "parliament speaker mohammad",
-          "iranian parliament speaker",
-          "nationwide nightly rallies",
-          "multiple channels iranian",
-          "iranian patriots continue",
-          "visit iranian parliament",
-          "saturday agency securing",
-          "tehran authorized number"
+          "aggression full-scale blockade",
+          "maritime campaign retaliation",
+          "regime aggression full-scale",
+          "campaign retaliation riyadh",
+          "full-scale blockade against",
+          "retaliation riyadh regime",
+          "riyadh regime aggression",
+          "ballistic missile yemeni"
         ],
         "WEST": [
-          "government spokespeople continued",
-          "justification offered government",
-          "offered government spokespeople",
-          "guardianship jurist compulsory",
-          "spokespeople continued absence",
-          "ranging doctrine guardianship",
-          "central justification offered",
-          "particular public expectation"
+          "operations organization stated",
+          "ballistic missile iran-aligned",
+          "trade operations organization",
+          "iran-aligned houthis precise",
+          "missile iran-aligned houthis",
+          "unknown projectile causing",
+          "tanker belonged following",
+          "maritime trade operations"
         ]
       }
     },
     {
       "anchor": [
-        "bryansk"
+        "tanker"
+      ],
+      "zone": "iran",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T15:46:51+00:00",
+        "last_seen": "2026-08-24T16:28:54+00:00",
+        "hours": 0.7
+      },
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "WEST"
+      ],
+      "convergence": 0.1639,
+      "shared_words": [
+        "ballistic",
+        "forces",
+        "maritime",
+        "missile",
+        "port",
+        "saudi",
+        "tanker",
+        "targeted",
+        "yanbu",
+        "yemeni"
+      ],
+      "anchor_only": false,
+      "phrases_total": 90,
+      "phrases_shared": 4,
+      "phrases_exclusive": 86,
+      "import_ratio": 0.0,
+      "shared": [
+        {
+          "phrase": "targeted saudi oil",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T15:46:51+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.7,
+          "led_by": "AXIS"
+        },
+        {
+          "phrase": "saudi oil tanker",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T15:46:51+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.7,
+          "led_by": "AXIS"
+        },
+        {
+          "phrase": "tanker red sea",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T15:46:51+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.7,
+          "led_by": "AXIS"
+        },
+        {
+          "phrase": "oil tanker red",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T15:46:51+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.7,
+          "led_by": "AXIS"
+        }
+      ],
+      "exclusive_by_side": {
+        "AXIS": [
+          "aggression full-scale blockade",
+          "maritime campaign retaliation",
+          "regime aggression full-scale",
+          "campaign retaliation riyadh",
+          "full-scale blockade against",
+          "retaliation riyadh regime",
+          "riyadh regime aggression",
+          "ballistic missile yemeni"
+        ],
+        "WEST": [
+          "operations organization stated",
+          "ballistic missile iran-aligned",
+          "trade operations organization",
+          "iran-aligned houthis precise",
+          "missile iran-aligned houthis",
+          "unknown projectile causing",
+          "tanker belonged following",
+          "maritime trade operations"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "strait of hormuz"
+      ],
+      "zone": "israel_gaza",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "IL"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "IL"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T23:37:32+00:00",
+        "last_seen": "2026-08-25T05:32:01+00:00",
+        "hours": 5.9
+      },
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "IL"
+      ],
+      "convergence": 0.1562,
+      "shared_words": [
+        "attacks",
+        "engine",
+        "hormuz",
+        "iran",
+        "oman",
+        "room",
+        "strait",
+        "struck",
+        "tanker",
+        "vessel"
+      ],
+      "anchor_only": false,
+      "phrases_total": 83,
+      "phrases_shared": 0,
+      "phrases_exclusive": 83,
+      "import_ratio": 0.0241,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "roughly kilometers al-shisha",
+          "attacks trespassing vessels",
+          "trespassing vessels strait",
+          "series attacks trespassing",
+          "kilometers al-shisha area",
+          "effectively closed strait",
+          "february iran effectively",
+          "waters roughly kilometers"
+        ],
+        "IL": [
+          "missile iranian struck",
+          "night missile iranian",
+          "without attacks ships",
+          "iranian struck engine",
+          "tanker strait hormuz",
+          "hormuz night missile",
+          "days without attacks",
+          "attacks ships strait"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "tanker"
+      ],
+      "zone": "israel_gaza",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "IL"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "IL"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T23:37:32+00:00",
+        "last_seen": "2026-08-25T05:32:01+00:00",
+        "hours": 5.9
+      },
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "IL"
+      ],
+      "convergence": 0.1562,
+      "shared_words": [
+        "attacks",
+        "engine",
+        "hormuz",
+        "iran",
+        "oman",
+        "room",
+        "strait",
+        "struck",
+        "tanker",
+        "vessel"
+      ],
+      "anchor_only": false,
+      "phrases_total": 83,
+      "phrases_shared": 0,
+      "phrases_exclusive": 83,
+      "import_ratio": 0.0241,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "roughly kilometers al-shisha",
+          "attacks trespassing vessels",
+          "trespassing vessels strait",
+          "series attacks trespassing",
+          "kilometers al-shisha area",
+          "effectively closed strait",
+          "february iran effectively",
+          "waters roughly kilometers"
+        ],
+        "IL": [
+          "missile iranian struck",
+          "night missile iranian",
+          "without attacks ships",
+          "iranian struck engine",
+          "tanker strait hormuz",
+          "hormuz night missile",
+          "days without attacks",
+          "attacks ships strait"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "talks"
+      ],
+      "zone": "iran",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T01:21:32+00:00",
+        "last_seen": "2026-08-25T05:21:32+00:00",
+        "hours": 4.0
+      },
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "WEST"
+      ],
+      "convergence": 0.1515,
+      "shared_words": [
+        "army",
+        "asim",
+        "chief",
+        "constructive",
+        "iranian",
+        "munir",
+        "officials",
+        "pakistan",
+        "senior",
+        "talks"
+      ],
+      "anchor_only": false,
+      "phrases_total": 87,
+      "phrases_shared": 2,
+      "phrases_exclusive": 85,
+      "import_ratio": 0.092,
+      "shared": [
+        {
+          "phrase": "senior iranian officials",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-25T01:21:32+00:00",
+          "template": false,
+          "adoption_lag_hours": 4.0,
+          "led_by": "AXIS"
+        },
+        {
+          "phrase": "talks senior iranian",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-25T01:21:32+00:00",
+          "template": false,
+          "adoption_lag_hours": 4.0,
+          "led_by": "AXIS"
+        }
+      ],
+      "exclusive_by_side": {
+        "AXIS": [
+          "disputes through negotiations",
+          "escalation resolve disputes",
+          "negotiations part islamabad",
+          "prevent escalation resolve",
+          "officials tehran regional",
+          "constructive talks senior",
+          "through negotiations part",
+          "aiming prevent escalation"
+        ],
+        "WEST": [
+          "positive constructive expressing",
+          "pakistan significant progress",
+          "meetings discussions centered",
+          "discussions centered actions",
+          "constructive expressing hope",
+          "discussions masoud pishdadi",
+          "media meetings discussions",
+          "pakistan interior minister"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "ramallah"
+      ],
+      "zone": "israel_gaza",
+      "track": "kinetic",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "PS"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "PS"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T19:44:57+00:00",
+        "last_seen": "2026-08-25T01:57:42+00:00",
+        "hours": 6.2
+      },
+      "sources_matched": 5,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "PS"
+      ],
+      "convergence": 0.1486,
+      "shared_words": [
+        "bank",
+        "forces",
+        "israeli",
+        "occupation",
+        "occupied",
+        "raid",
+        "ramallah",
+        "road",
+        "settler",
+        "settlers",
+        "west"
+      ],
+      "anchor_only": false,
+      "phrases_total": 101,
+      "phrases_shared": 2,
+      "phrases_exclusive": 99,
+      "import_ratio": 0.0396,
+      "shared": [
+        {
+          "phrase": "israeli occupation forces",
+          "sides": [
+            "AXIS",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-24T17:07:31+00:00",
+          "template": true,
+          "adoption_lag_hours": 3.33,
+          "led_by": "PS"
+        },
+        {
+          "phrase": "occupied west bank",
+          "sides": [
+            "AXIS",
+            "PS"
+          ],
+          "corpus_origin": "2026-08-24T17:45:00+00:00",
+          "template": true,
+          "adoption_lag_hours": 6.21,
+          "led_by": "PS"
+        }
+      ],
+      "exclusive_by_side": {
+        "AXIS": [
+          "infrastructure expansion systematically",
+          "simultaneously intensified incursions",
+          "expansion systematically advancing",
+          "al-quds settler-operated machinery",
+          "forces simultaneously intensified",
+          "al-kaykaba developments highlight",
+          "occupied al-quds settler-operated",
+          "attacks infrastructure expansion"
+        ],
+        "PS": [
+          "settlers surround palestinian",
+          "surround palestinian vehicle",
+          "attack palestinian vehicles",
+          "northeast ramallah occupied",
+          "palestinian vehicle harass",
+          "breaking extremist israeli",
+          "extremist israeli settlers",
+          "palestinian vehicles near"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "khan younis"
+      ],
+      "zone": "israel_gaza",
+      "track": "kinetic",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "IL",
+        "PS"
+      ],
+      "single_outlet_sides": [
+        "IL",
+        "PS"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T16:28:51+00:00",
+        "last_seen": "2026-08-24T21:53:26+00:00",
+        "hours": 5.4
+      },
+      "sources_matched": 4,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "IL",
+        "PS"
+      ],
+      "convergence": 0.12,
+      "shared_words": [
+        "area",
+        "gaza",
+        "israeli",
+        "khan",
+        "strip",
+        "younis"
+      ],
+      "anchor_only": false,
+      "phrases_total": 64,
+      "phrases_shared": 0,
+      "phrases_exclusive": 64,
+      "import_ratio": 0.0312,
+      "shared": [],
+      "exclusive_by_side": {
+        "IL": [
+          "airstrike yesterday additionally",
+          "yesterday additionally hamas",
+          "israeli airstrike military",
+          "airstrike military target",
+          "evacuation warning today",
+          "site airstrike yesterday",
+          "fifth evacuation warning",
+          "recent israeli airstrike"
+        ],
+        "PS": [
+          "housing displaced palestinians",
+          "breaking palestinian injured",
+          "displaced palestinians east",
+          "palestinian injured israeli",
+          "breaking israeli occupation",
+          "injured israeli occupation",
+          "israeli occupation forces",
+          "israeli occupation tanks"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "sanctions"
+      ],
+      "zone": "iran",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T08:13:42+00:00",
+        "last_seen": "2026-08-25T13:44:19+00:00",
+        "hours": 5.5
+      },
+      "sources_matched": 5,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "WEST",
+        "AXIS"
+      ],
+      "convergence": 0.1185,
+      "shared_words": [
+        "against",
+        "china",
+        "efforts",
+        "foreign",
+        "interests",
+        "iran",
+        "measures",
+        "mediation",
+        "ministry",
+        "necessary",
+        "protect",
+        "qatar",
+        "sanctions",
+        "supports",
+        "take",
+        "unilateral"
+      ],
+      "anchor_only": false,
+      "phrases_total": 210,
+      "phrases_shared": 3,
+      "phrases_exclusive": 207,
+      "import_ratio": 0.0667,
+      "shared": [
+        {
+          "phrase": "take necessary measures",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-25T08:13:42+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.19,
+          "led_by": "WEST"
+        },
+        {
+          "phrase": "china foreign ministry",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-25T08:13:42+00:00",
+          "template": false,
+          "adoption_lag_hours": 0.19,
+          "led_by": "WEST"
+        },
+        {
+          "phrase": "sanctions against iran",
+          "sides": [
+            "AXIS",
+            "WEST"
+          ],
+          "corpus_origin": "2026-08-24T19:13:52+00:00",
+          "template": true,
+          "adoption_lag_hours": 5.32,
+          "led_by": "AXIS"
+        }
+      ],
+      "exclusive_by_side": {
+        "AXIS": [
+          "closely monitoring developments",
+          "tehran complies international",
+          "monitoring developments take",
+          "ministry beijing cooperation",
+          "protect legitimate interests",
+          "threats intensify sanctions",
+          "intensify sanctions against",
+          "cooperation tehran complies"
+        ],
+        "WEST": [
+          "participate negotiations mediation",
+          "activities identified washington",
+          "fully participate negotiations",
+          "negotiations mediation efforts",
+          "ministry spokesperson speaking",
+          "opposition unilateral illegal",
+          "washington plans economically",
+          "government yesterday measures"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "mobilization"
+      ],
+      "zone": "russia_ukraine",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "RU",
+        "UA"
+      ],
+      "single_outlet_sides": [
+        "RU",
+        "UA"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T07:15:25+00:00",
+        "last_seen": "2026-08-25T10:45:40+00:00",
+        "hours": 3.5
+      },
+      "sources_matched": 3,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "RU",
+        "UA"
+      ],
+      "convergence": 0.0909,
+      "shared_words": [
+        "about",
+        "false",
+        "kremlin",
+        "mobilization",
+        "ukraine"
+      ],
+      "anchor_only": false,
+      "phrases_total": 63,
+      "phrases_shared": 0,
+      "phrases_exclusive": 63,
+      "import_ratio": 0.0,
+      "shared": [],
+      "exclusive_by_side": {
+        "RU": [
+          "propaganda tactic mirror-imaging",
+          "meanwhile mobilization pressures",
+          "mobilization pressures ukraine",
+          "mirror-imaging where ukraine",
+          "mobilization part propaganda",
+          "targeted conscription draft",
+          "tactic mirror-imaging where",
+          "being targeted conscription"
+        ],
+        "UA": [
+          "mobilization intensified recent",
+          "false mobilization speculation",
+          "mobilization speculation about",
+          "speculation about mobilization",
+          "about mobilization intensified",
+          "struggles compensate mounting",
+          "voluntary recruitment system",
+          "recruitment system struggles"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "kyiv"
       ],
       "zone": "russia_ukraine",
       "track": "kinetic",
@@ -1735,52 +1933,72 @@
         "RU",
         "UA"
       ],
-      "single_outlet_sides": [
-        "RU",
-        "UA"
-      ],
+      "single_outlet_sides": [],
       "window": {
-        "first_seen": "2026-08-22T06:47:01+00:00",
-        "last_seen": "2026-08-22T09:49:44+00:00",
-        "hours": 3.0
+        "first_seen": "2026-08-24T15:03:32+00:00",
+        "last_seen": "2026-08-24T20:16:15+00:00",
+        "hours": 5.2
       },
-      "sources_matched": 2,
+      "sources_matched": 10,
       "sources_unmatched": 0,
       "closest_pair": [
         "RU",
         "UA"
       ],
-      "convergence": 0.0339,
+      "convergence": 0.0687,
       "shared_words": [
-        "bryansk",
-        "destroyed"
+        "about",
+        "being",
+        "drones",
+        "independence",
+        "infrastructure",
+        "into",
+        "kyiv",
+        "missiles",
+        "parade",
+        "peace",
+        "russia",
+        "russian",
+        "situation",
+        "special",
+        "stated",
+        "systems",
+        "they",
+        "today",
+        "turned",
+        "ukraine",
+        "ukrainian",
+        "unmanned",
+        "visit",
+        "world",
+        "zelensky"
       ],
       "anchor_only": false,
-      "phrases_total": 62,
+      "phrases_total": 524,
       "phrases_shared": 0,
-      "phrases_exclusive": 62,
-      "import_ratio": 0.0484,
+      "phrases_exclusive": 524,
+      "import_ratio": 0.0,
       "shared": [],
       "exclusive_by_side": {
         "RU": [
-          "damages industrial enterprises",
-          "intercepted destroyed belgorod",
-          "industrial enterprises moment",
-          "drones intercepted destroyed",
-          "governor damages industrial",
-          "bryansk volgograd voronezh",
-          "destroyed belgorod bryansk",
-          "belgorod bryansk volgograd"
+          "obstacles establishing franco-ukrainian",
+          "establishing franco-ukrainian assembly",
+          "production technology implementation",
+          "fortifications encircling drobypolje",
+          "khreshchatyk street simultaneously",
+          "confrontation celebrated birthday",
+          "ukraine independence anticipation",
+          "independence anticipation western"
         ],
         "UA": [
-          "airfield equipment destroyed",
-          "control relays eliminated",
-          "relays eliminated bryansk",
-          "eliminated bryansk region",
-          "pieces airfield equipment",
-          "equipment destroyed saky",
-          "destroyed saky airbase",
-          "airbase drone control"
+          "infrastructure e-commerce giants",
+          "mini-parade ground-based robotic",
+          "ukraine economic infrastructure",
+          "hosted mini-parade ground-based",
+          "intensification russian attacks",
+          "canceled reason intensification",
+          "unleashed devastating campaign",
+          "reason intensification russian"
         ]
       }
     },
@@ -1800,55 +2018,116 @@
         "UA"
       ],
       "window": {
-        "first_seen": "2026-08-22T08:55:11+00:00",
-        "last_seen": "2026-08-22T09:37:01+00:00",
-        "hours": 0.7
+        "first_seen": "2026-08-25T11:01:01+00:00",
+        "last_seen": "2026-08-25T12:59:09+00:00",
+        "hours": 2.0
       },
-      "sources_matched": 4,
+      "sources_matched": 2,
       "sources_unmatched": 0,
       "closest_pair": [
         "RU",
         "UA"
       ],
-      "convergence": 0.029,
+      "convergence": 0.0656,
       "shared_words": [
-        "black",
         "chernihiv",
-        "forces",
-        "ukraine"
+        "missile",
+        "oblast",
+        "strikes"
       ],
       "anchor_only": false,
-      "phrases_total": 212,
+      "phrases_total": 88,
       "phrases_shared": 0,
-      "phrases_exclusive": 212,
-      "import_ratio": 0.033,
+      "phrases_exclusive": 88,
+      "import_ratio": 0.0341,
       "shared": [],
       "exclusive_by_side": {
         "RU": [
-          "rocket-powered drones banderole",
-          "banderoli chernihiv explosions",
-          "explosions banderoli chernihiv",
-          "explosions iskander-m brovary",
-          "explosion banderol voznesensk",
-          "massive attack rocket-powered",
-          "kozelchitsa ivanivka zhytomyr",
-          "explosions umpk prikolotnoye"
+          "chronology strikes ukrainian",
+          "strikes ukrainian territory",
+          "kharkiv zaporizhzhia dnipro",
+          "zaporizhzhia dnipro kherson",
+          "ukrainian territory august",
+          "chernihiv chernihiv oblast",
+          "yesterday afternoon night",
+          "afternoon night aerospace"
         ],
         "UA": [
-          "experience injuries rehabilitation",
-          "tarkhankut crimea reconnaissance",
-          "participated operations zmiinyi",
-          "heroes reconnaissance operator",
-          "injuries rehabilitation return",
-          "crimea reconnaissance operator",
-          "reconnaissance operator rocket",
-          "reconnaissance operator artem"
+          "launched iskander-m ballistic",
+          "iskander-m ballistic missile",
+          "defenses downed suppressed",
+          "russia launched iskander-m",
+          "strikes recorded locations",
+          "ballistic missile kh-31p",
+          "while strikes recorded",
+          "russian attacks killed"
         ]
       }
     },
     {
       "anchor": [
-        "lviv"
+        "blockade"
+      ],
+      "zone": "iran",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T15:46:51+00:00",
+        "last_seen": "2026-08-24T20:23:01+00:00",
+        "hours": 4.6
+      },
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "WEST"
+      ],
+      "convergence": 0.0526,
+      "shared_words": [
+        "against",
+        "blockade",
+        "campaign"
+      ],
+      "anchor_only": false,
+      "phrases_total": 100,
+      "phrases_shared": 0,
+      "phrases_exclusive": 100,
+      "import_ratio": 0.0,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "aggression full-scale blockade",
+          "maritime campaign retaliation",
+          "regime aggression full-scale",
+          "campaign retaliation riyadh",
+          "full-scale blockade against",
+          "retaliation riyadh regime",
+          "riyadh regime aggression",
+          "ballistic missile yemeni"
+        ],
+        "WEST": [
+          "sanctions madani-zadeh conversation",
+          "madani-zadeh conversation irib",
+          "financial arteries emphasized",
+          "economic isolation operation",
+          "arteries emphasized blockade",
+          "these sanctions madani-zadeh",
+          "dismissed economic pressure",
+          "financial economic arteries"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "moscow"
       ],
       "zone": "russia_ukraine",
       "track": "kinetic",
@@ -1857,58 +2136,86 @@
         "RU",
         "UA"
       ],
-      "single_outlet_sides": [
-        "RU",
-        "UA"
-      ],
+      "single_outlet_sides": [],
       "window": {
-        "first_seen": "2026-08-22T00:33:01+00:00",
-        "last_seen": "2026-08-22T01:23:28+00:00",
-        "hours": 0.8
+        "first_seen": "2026-08-25T03:45:38+00:00",
+        "last_seen": "2026-08-25T11:37:12+00:00",
+        "hours": 7.9
       },
-      "sources_matched": 2,
+      "sources_matched": 6,
       "sources_unmatched": 0,
       "closest_pair": [
         "RU",
         "UA"
       ],
-      "convergence": 0.0286,
+      "convergence": 0.0524,
       "shared_words": [
-        "being",
-        "lviv"
+        "aircraft",
+        "arrived",
+        "august",
+        "between",
+        "boeing",
+        "c-17",
+        "globemaster",
+        "moscow",
+        "previously",
+        "riga"
       ],
       "anchor_only": false,
-      "phrases_total": 86,
-      "phrases_shared": 0,
-      "phrases_exclusive": 86,
-      "import_ratio": 0.0,
-      "shared": [],
+      "phrases_total": 241,
+      "phrases_shared": 2,
+      "phrases_exclusive": 239,
+      "import_ratio": 0.0083,
+      "shared": [
+        {
+          "phrase": "boeing c-17 globemaster",
+          "sides": [
+            "RU",
+            "UA"
+          ],
+          "corpus_origin": "2026-08-25T09:12:08+00:00",
+          "template": false,
+          "adoption_lag_hours": 2.42,
+          "led_by": "RU"
+        },
+        {
+          "phrase": "c-17 globemaster iii",
+          "sides": [
+            "RU",
+            "UA"
+          ],
+          "corpus_origin": "2026-08-25T09:12:08+00:00",
+          "template": false,
+          "adoption_lag_hours": 2.42,
+          "led_by": "RU"
+        }
+      ],
       "exclusive_by_side": {
         "RU": [
-          "subsequently mobilized however",
-          "where subsequently mobilized",
-          "raise questions particularly",
-          "vladimir nikolaevich bebykh",
-          "military service experience",
-          "questions particularly fact",
-          "particularly fact mobilized",
-          "man intentionally returned"
+          "therefore installation rescheduled",
+          "spacewalk install communication",
+          "intelligence services separate",
+          "installation rescheduled today",
+          "previously conducted spacewalk",
+          "install therefore installation",
+          "alexander pichushkin committed",
+          "differences separate colonies"
         ],
         "UA": [
-          "stabbed 25-year-old suspect",
-          "being stabbed 25-year-old",
-          "enlistment officer killed",
-          "25-year-old suspect lviv",
-          "on-duty lviv enlistment",
-          "lviv enlistment officer",
-          "officer fatally stabbed",
-          "allegedly being stabbed"
+          "moscow-friendly ex-president anti-corruption",
+          "detains moscow-friendly ex-president",
+          "ex-president anti-corruption probe",
+          "moscow-friendly political forces",
+          "armenia detains moscow-friendly",
+          "main moscow-friendly political",
+          "alliance main moscow-friendly",
+          "anti-corruption probe robert"
         ]
       }
     },
     {
       "anchor": [
-        "blockade"
+        "strait of hormuz"
       ],
       "zone": "israel_gaza",
       "track": "statement",
@@ -1922,54 +2229,360 @@
         "IL"
       ],
       "window": {
-        "first_seen": "2026-08-22T07:25:01+00:00",
-        "last_seen": "2026-08-22T14:11:58+00:00",
-        "hours": 6.8
+        "first_seen": "2026-08-25T13:58:45+00:00",
+        "last_seen": "2026-08-25T14:37:07+00:00",
+        "hours": 0.6
       },
-      "sources_matched": 3,
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "IL"
+      ],
+      "convergence": 0.05,
+      "shared_words": [
+        "hormuz",
+        "informed",
+        "iran",
+        "strait"
+      ],
+      "anchor_only": false,
+      "phrases_total": 94,
+      "phrases_shared": 0,
+      "phrases_exclusive": 94,
+      "import_ratio": 0.0638,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "memorandum understanding implementation",
+          "understanding implementation provisions",
+          "implementation provisions including",
+          "islamabad memorandum understanding",
+          "transparency meetings pakistani",
+          "complete transparency meetings",
+          "pakistan complete transparency",
+          "positions conditions regarding"
+        ],
+        "IL": [
+          "immediately informed intelligence",
+          "immediately decisively destroyed",
+          "informed intelligence community",
+          "community mines international",
+          "mines immediately decisively",
+          "intelligence community mines",
+          "decisively destroyed through",
+          "tolerance toward mine-laying"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "kyiv"
+      ],
+      "zone": "russia_ukraine",
+      "track": "kinetic",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "UA"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "UA"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T23:49:39+00:00",
+        "last_seen": "2026-08-25T03:55:44+00:00",
+        "hours": 4.1
+      },
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "UA",
+        "AXIS"
+      ],
+      "convergence": 0.0465,
+      "shared_words": [
+        "meet",
+        "ukraine"
+      ],
+      "anchor_only": false,
+      "phrases_total": 42,
+      "phrases_shared": 0,
+      "phrases_exclusive": 42,
+      "import_ratio": 0.0,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "additional patriot interceptors",
+          "expanding military assistance",
+          "zelensky presses additional",
+          "presses additional patriot",
+          "discuss expanding military",
+          "president zelensky presses",
+          "assistance while president",
+          "military assistance while"
+        ],
+        "UA": [
+          "emotional intellectual understanding",
+          "translating emotional intellectual",
+          "sophiynist philosophy resilience",
+          "intellectual understanding into",
+          "resilience involves translating",
+          "involves translating emotional",
+          "philosophy resilience involves",
+          "ukraine sophiynist philosophy"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "moscow"
+      ],
+      "zone": "russia_ukraine",
+      "track": "kinetic",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "RU",
+        "UA"
+      ],
+      "single_outlet_sides": [],
+      "window": {
+        "first_seen": "2026-08-24T15:03:32+00:00",
+        "last_seen": "2026-08-24T19:54:56+00:00",
+        "hours": 4.9
+      },
+      "sources_matched": 4,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "RU",
+        "UA"
+      ],
+      "convergence": 0.0464,
+      "shared_words": [
+        "about",
+        "moscow",
+        "russian",
+        "sources",
+        "stated",
+        "ukraine",
+        "visit"
+      ],
+      "anchor_only": false,
+      "phrases_total": 187,
+      "phrases_shared": 0,
+      "phrases_exclusive": 187,
+      "import_ratio": 0.0,
+      "shared": [],
+      "exclusive_by_side": {
+        "RU": [
+          "infrastructure project implementation",
+          "preservationists attempted challenge",
+          "controversy demolition elektrozavod",
+          "individual russian representatives",
+          "implementation remains uncertain",
+          "necessary infrastructure project",
+          "representatives british embassy",
+          "russian representatives british"
+        ],
+        "UA": [
+          "intensification russian attacks",
+          "canceled reason intensification",
+          "reason intensification russian",
+          "opportunity achieve results",
+          "finnish president alexander",
+          "president revealed ukraine",
+          "ukraine slightly postponed",
+          "revealed ukraine produces"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "talks"
+      ],
+      "zone": "iran",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T09:58:45+00:00",
+        "last_seen": "2026-08-25T11:43:22+00:00",
+        "hours": 1.7
+      },
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "WEST",
+        "AXIS"
+      ],
+      "convergence": 0.0462,
+      "shared_words": [
+        "iran",
+        "minister",
+        "talks"
+      ],
+      "anchor_only": false,
+      "phrases_total": 92,
+      "phrases_shared": 0,
+      "phrases_exclusive": 92,
+      "import_ratio": 0.087,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "omani counterpart tehran",
+          "minister abbas araghchi",
+          "foreign minister abbas",
+          "his omani counterpart",
+          "iran foreign minister",
+          "abbas araghchi met",
+          "araghchi met held",
+          "talks his omani"
+        ],
+        "WEST": [
+          "diplomatic achievements pakistan",
+          "valuable diplomatic achievements",
+          "communications public relations",
+          "presidential office described",
+          "interior minister accompanied",
+          "achievements pakistan played",
+          "relations iran presidential",
+          "pakistani officials yielded"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "rostov-on-don"
+      ],
+      "zone": "russia_ukraine",
+      "track": "kinetic",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "RU",
+        "UA"
+      ],
+      "single_outlet_sides": [
+        "UA"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T06:39:56+00:00",
+        "last_seen": "2026-08-25T12:51:02+00:00",
+        "hours": 6.2
+      },
+      "sources_matched": 4,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "RU",
+        "UA"
+      ],
+      "convergence": 0.0354,
+      "shared_words": [
+        "oblast",
+        "rostov",
+        "russia",
+        "ukrainian"
+      ],
+      "anchor_only": false,
+      "phrases_total": 142,
+      "phrases_shared": 0,
+      "phrases_exclusive": 142,
+      "import_ratio": 0.0352,
+      "shared": [],
+      "exclusive_by_side": {
+        "RU": [
+          "one-bedroom apartments million-plus",
+          "down rostov-on-don yekaterinburg",
+          "rostov-on-don yekaterinburg perm",
+          "apartments million-plus cities",
+          "million-plus cities decreased",
+          "apartment russia million-plus",
+          "transport procuracy clarified",
+          "kondratyev southern transport"
+        ],
+        "UA": [
+          "including fourth generation",
+          "fourth generation fighter",
+          "several targets including",
+          "targets including fourth",
+          "ukrainian strike damages",
+          "ukrainian forces struck",
+          "generation fighter jet",
+          "damages mig-29 fighter"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "negotiation"
+      ],
+      "zone": "israel_gaza",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "IL"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "IL"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T05:49:13+00:00",
+        "last_seen": "2026-08-25T12:18:04+00:00",
+        "hours": 6.5
+      },
+      "sources_matched": 2,
       "sources_unmatched": 0,
       "closest_pair": [
         "IL",
         "AXIS"
       ],
-      "convergence": 0.0246,
+      "convergence": 0.0286,
       "shared_words": [
-        "economic",
-        "iran",
-        "while"
+        "foreign",
+        "negotiations",
+        "trump"
       ],
       "anchor_only": false,
-      "phrases_total": 146,
+      "phrases_total": 134,
       "phrases_shared": 0,
-      "phrases_exclusive": 146,
-      "import_ratio": 0.0616,
+      "phrases_exclusive": 134,
+      "import_ratio": 0.0299,
       "shared": [],
       "exclusive_by_side": {
         "AXIS": [
-          "characterizing economic blockades",
-          "sanctions regimes characterizing",
-          "regimes characterizing economic",
-          "collective punishment designed",
-          "ruthless geopolitical coercion",
-          "explicit parallels historical",
-          "masking ruthless geopolitical",
-          "geopolitical coercion however"
+          "tehran future administration",
+          "acknowledges needs sanctions",
+          "severely weakened washington",
+          "traditional playbook swanson",
+          "stop-start negotiations try",
+          "revert traditional playbook",
+          "his stop-start negotiations",
+          "weakened washington ability"
         ],
         "IL": [
-          "unprecedented challenges unique",
-          "declaration face unprecedented",
-          "president mahmoud ahmadinejad",
-          "face unprecedented challenges",
-          "blockade trump administration",
-          "administration time response",
-          "agreement without precedent",
-          "president masoud pezeshkian"
+          "achieving significant international",
+          "significant international progress",
+          "reintegration into international",
+          "terrorism yesterday announcement",
+          "security agreement negotiations",
+          "international progress blessing",
+          "importance syria reintegration",
+          "al-sharaa congratulated syrian"
         ]
       }
     },
     {
       "anchor": [
-        "odesa"
+        "kharkiv"
       ],
       "zone": "russia_ukraine",
       "track": "kinetic",
@@ -1979,108 +2592,52 @@
         "UA"
       ],
       "single_outlet_sides": [
-        "RU",
         "UA"
       ],
       "window": {
-        "first_seen": "2026-08-22T06:27:04+00:00",
-        "last_seen": "2026-08-22T13:20:50+00:00",
-        "hours": 6.9
+        "first_seen": "2026-08-24T15:09:10+00:00",
+        "last_seen": "2026-08-24T21:01:01+00:00",
+        "hours": 5.9
       },
-      "sources_matched": 5,
+      "sources_matched": 3,
       "sources_unmatched": 0,
       "closest_pair": [
         "RU",
         "UA"
       ],
-      "convergence": 0.0217,
+      "convergence": 0.0276,
       "shared_words": [
-        "odesa",
-        "russian"
+        "kharkiv",
+        "once",
+        "russian",
+        "turned"
       ],
       "anchor_only": false,
-      "phrases_total": 120,
+      "phrases_total": 196,
       "phrases_shared": 0,
-      "phrases_exclusive": 120,
-      "import_ratio": 0.0583,
+      "phrases_exclusive": 196,
+      "import_ratio": 0.0,
       "shared": [],
       "exclusive_by_side": {
         "RU": [
-          "explosions villages karolino-bugaz",
-          "infrastructure odesa chernomorsk",
-          "karolino-bugaz tuzly akkerman",
-          "villages karolino-bugaz tuzly",
-          "chronology attacks ukrainian",
-          "zaporizhzhia dnipro kherson",
-          "oblast iskander-m banderoli",
-          "kharkiv zaporizhzhia dnipro"
+          "russian-controlled territory approximately",
+          "removed russian-controlled territory",
+          "target removed russian-controlled",
+          "successfully destroyed concealed",
+          "territory approximately footage",
+          "ammunition detonation occurred",
+          "military operation repeatedly",
+          "aircraft ukrainian withdrawal"
         ],
         "UA": [
-          "paddleboard pulled russian",
-          "man paddleboard pulled",
-          "pulled russian drone",
-          "russian drone water",
-          "drone water odesa"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "crimea"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "RU",
-        "UA"
-      ],
-      "single_outlet_sides": [
-        "RU",
-        "UA"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T06:47:01+00:00",
-        "last_seen": "2026-08-22T09:37:01+00:00",
-        "hours": 2.8
-      },
-      "sources_matched": 2,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "RU",
-        "UA"
-      ],
-      "convergence": 0.0204,
-      "shared_words": [
-        "black",
-        "crimea"
-      ],
-      "anchor_only": false,
-      "phrases_total": 112,
-      "phrases_shared": 0,
-      "phrases_exclusive": 112,
-      "import_ratio": 0.0268,
-      "shared": [],
-      "exclusive_by_side": {
-        "RU": [
-          "damages industrial enterprises",
-          "intercepted destroyed belgorod",
-          "industrial enterprises moment",
-          "drones intercepted destroyed",
-          "governor damages industrial",
-          "bryansk volgograd voronezh",
-          "destroyed belgorod bryansk",
-          "belgorod bryansk volgograd"
-        ],
-        "UA": [
-          "experience injuries rehabilitation",
-          "tarkhankut crimea reconnaissance",
-          "participated operations zmiinyi",
-          "heroes reconnaissance operator",
-          "injuries rehabilitation return",
-          "crimea reconnaissance operator",
-          "reconnaissance operator rocket",
-          "reconnaissance operator artem"
+          "infrastructure e-commerce giants",
+          "ukraine economic infrastructure",
+          "unleashed devastating campaign",
+          "e-commerce giants wildberries",
+          "oil infrastructure e-commerce",
+          "wildberries russia unleashes",
+          "russia unleashed devastating",
+          "infrastructure dan bashakov"
         ]
       }
     },
@@ -2099,9 +2656,189 @@
         "WEST"
       ],
       "window": {
-        "first_seen": "2026-08-22T10:54:19+00:00",
-        "last_seen": "2026-08-22T13:05:09+00:00",
-        "hours": 2.2
+        "first_seen": "2026-08-25T10:01:40+00:00",
+        "last_seen": "2026-08-25T13:58:45+00:00",
+        "hours": 4.0
+      },
+      "sources_matched": 7,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "WEST"
+      ],
+      "convergence": 0.0169,
+      "shared_words": [
+        "head",
+        "national",
+        "tehran"
+      ],
+      "anchor_only": false,
+      "phrases_total": 230,
+      "phrases_shared": 0,
+      "phrases_exclusive": 230,
+      "import_ratio": 0.1,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "memorandum understanding implementation",
+          "understanding implementation provisions",
+          "international economic confrontation",
+          "implementation provisions including",
+          "islamabad memorandum understanding",
+          "confrontation retaliatory measures",
+          "economic confrontation retaliatory",
+          "conducted accordance international"
+        ],
+        "WEST": [
+          "traffic congestion transportation",
+          "congestion transportation routes",
+          "circulating media anticipation",
+          "products distribution company",
+          "distribution tehran increased",
+          "media anticipation upcoming",
+          "yassami rumors circulating",
+          "distributed capital tehran"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "sanctions"
+      ],
+      "zone": "iran",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T23:23:57+00:00",
+        "last_seen": "2026-08-25T00:30:01+00:00",
+        "hours": 1.1
+      },
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "WEST",
+        "AXIS"
+      ],
+      "convergence": 0.0169,
+      "shared_words": [
+        "sanctions"
+      ],
+      "anchor_only": true,
+      "phrases_total": 67,
+      "phrases_shared": 0,
+      "phrases_exclusive": 67,
+      "import_ratio": 0.0448,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "procurement intelligence gathering",
+          "weapons procurement intelligence",
+          "department announces imposing",
+          "announces imposing sanctions",
+          "involved weapons procurement",
+          "officials networks involved",
+          "military officials networks",
+          "iranian military officials"
+        ],
+        "WEST": [
+          "intermediaries continuing cooperate",
+          "foreign intermediaries continuing",
+          "administration launched campaign",
+          "companies foreign intermediaries",
+          "numerous individuals companies",
+          "certain activities washington",
+          "trump administration launched",
+          "described treasury secretary"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "sanctions"
+      ],
+      "zone": "israel_gaza",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "PS"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "PS"
+      ],
+      "window": {
+        "first_seen": "2026-08-25T10:02:47+00:00",
+        "last_seen": "2026-08-25T14:23:02+00:00",
+        "hours": 4.3
+      },
+      "sources_matched": 3,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "AXIS",
+        "PS"
+      ],
+      "convergence": 0.0153,
+      "shared_words": [
+        "against",
+        "sanctions"
+      ],
+      "anchor_only": false,
+      "phrases_total": 156,
+      "phrases_shared": 0,
+      "phrases_exclusive": 156,
+      "import_ratio": 0.0577,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "whether washington realistically",
+          "washington realistically expect",
+          "realistically expect different",
+          "tehran future administration",
+          "acknowledges needs sanctions",
+          "severely weakened washington",
+          "traditional playbook swanson",
+          "stop-start negotiations try"
+        ],
+        "PS": [
+          "settlements expected introduce",
+          "introduce sanctions targeting",
+          "response settlement expansion",
+          "expected introduce sanctions",
+          "israelis historical biblical",
+          "israeli settlements occupied",
+          "interview israel ambassador",
+          "israel settlements expected"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "strait of hormuz"
+      ],
+      "zone": "iran",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "WEST"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T15:03:57+00:00",
+        "last_seen": "2026-08-24T17:21:08+00:00",
+        "hours": 2.3
       },
       "sources_matched": 5,
       "sources_unmatched": 0,
@@ -2109,215 +2846,153 @@
         "AXIS",
         "WEST"
       ],
-      "convergence": 0.0172,
+      "convergence": 0.0123,
       "shared_words": [
-        "costs",
-        "facing",
-        "tehran"
+        "hormuz",
+        "strait"
       ],
-      "anchor_only": false,
-      "phrases_total": 220,
+      "anchor_only": true,
+      "phrases_total": 210,
       "phrases_shared": 0,
-      "phrases_exclusive": 220,
-      "import_ratio": 0.0364,
-      "shared": [],
-      "exclusive_by_side": {
-        "AXIS": [
-          "communications neighboring countries",
-          "numerous communications neighboring",
-          "cooperation independence external",
-          "respect cooperation independence",
-          "received numerous communications",
-          "independence external domination",
-          "washington severely compromised",
-          "establish security arrangements"
-        ],
-        "WEST": [
-          "currency fluctuations outbound",
-          "professions suffered greatest",
-          "association travel agencies",
-          "travel agencies association",
-          "agencies association travel",
-          "costs currency fluctuations",
-          "widespread closure offices",
-          "agencies perhaps one-sixth"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "moscow"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "RU",
-        "UA"
-      ],
-      "single_outlet_sides": [
-        "UA"
-      ],
-      "window": {
-        "first_seen": "2026-08-22T04:16:35+00:00",
-        "last_seen": "2026-08-22T10:10:30+00:00",
-        "hours": 5.9
-      },
-      "sources_matched": 6,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "RU",
-        "UA"
-      ],
-      "convergence": 0.0156,
-      "shared_words": [
-        "moscow",
-        "region"
-      ],
-      "anchor_only": false,
-      "phrases_total": 162,
-      "phrases_shared": 0,
-      "phrases_exclusive": 162,
-      "import_ratio": 0.0309,
-      "shared": [],
-      "exclusive_by_side": {
-        "RU": [
-          "pre-registration required participate",
-          "minimal precipitation temperatures",
-          "precipitation temperatures degrees",
-          "tennis pre-registration required",
-          "media specialized organizations",
-          "specialized organizations zoos",
-          "professionals beach activities",
-          "beginners professionals beach"
-        ],
-        "UA": [
-          "samara_rfc warehouse chapaevsk",
-          "warehouse chapaevsk samara",
-          "ozon samara_rfc warehouse",
-          "runs fulfilment centers",
-          "chapaevsk samara region",
-          "fulfilment centers 150",
-          "moscow region cluster",
-          "ozon runs fulfilment"
-        ]
-      }
-    },
-    {
-      "anchor": [
-        "moscow"
-      ],
-      "zone": "russia_ukraine",
-      "track": "kinetic",
-      "grade": "B — corroborated across the bias divide",
-      "sides": [
-        "RU",
-        "UA"
-      ],
-      "single_outlet_sides": [
-        "UA"
-      ],
-      "window": {
-        "first_seen": "2026-08-21T15:50:05+00:00",
-        "last_seen": "2026-08-21T20:05:52+00:00",
-        "hours": 4.3
-      },
-      "sources_matched": 8,
-      "sources_unmatched": 0,
-      "closest_pair": [
-        "RU",
-        "UA"
-      ],
-      "convergence": 0.0151,
-      "shared_words": [
-        "drones",
-        "moscow",
-        "ukrainian"
-      ],
-      "anchor_only": false,
-      "phrases_total": 266,
-      "phrases_shared": 0,
-      "phrases_exclusive": 266,
+      "phrases_exclusive": 210,
       "import_ratio": 0.0,
       "shared": [],
       "exclusive_by_side": {
-        "RU": [
-          "aircraft-type drones territories",
-          "construction proposed benchmarks",
-          "specialist moscow meteorological",
-          "meteorologists currently unsure",
-          "ukrainian aircraft-type drones",
-          "ministry construction proposed",
-          "ministry construction proposes",
-          "north-western federal district"
+        "AXIS": [
+          "critical infrastructure strategic",
+          "infrastructure strategic assets",
+          "continuing your miscalculations",
+          "significant outcome us-israeli",
+          "islamic revolution forty-seven",
+          "enemy critical infrastructure",
+          "miscalculations iran response",
+          "expressed distrust emphasized"
         ],
-        "UA": [
-          "ukrainian drones between",
-          "drones between moscow",
-          "211 ukrainian drones",
-          "between moscow time",
-          "defenses shot down",
-          "down 211 ukrainian",
-          "air defenses shot",
-          "mod air defenses"
+        "WEST": [
+          "secretary-general warns consequences",
+          "disruptions vulnerable populations",
+          "antónio guterres secretary-general",
+          "secretary-general called immediate",
+          "consequences shipping disruptions",
+          "guterres secretary-general warned",
+          "vulnerable populations worldwide",
+          "secretary-general warned attacks"
         ]
       }
     },
     {
       "anchor": [
-        "zaporizhzhia"
+        "blockade"
       ],
-      "zone": "russia_ukraine",
+      "zone": "israel_gaza",
+      "track": "statement",
+      "grade": "B — corroborated across the bias divide",
+      "sides": [
+        "AXIS",
+        "PS"
+      ],
+      "single_outlet_sides": [
+        "AXIS",
+        "PS"
+      ],
+      "window": {
+        "first_seen": "2026-08-24T17:40:04+00:00",
+        "last_seen": "2026-08-24T17:51:15+00:00",
+        "hours": 0.2
+      },
+      "sources_matched": 2,
+      "sources_unmatched": 0,
+      "closest_pair": [
+        "PS",
+        "AXIS"
+      ],
+      "convergence": 0.0115,
+      "shared_words": [
+        "blockade"
+      ],
+      "anchor_only": true,
+      "phrases_total": 100,
+      "phrases_shared": 0,
+      "phrases_exclusive": 100,
+      "import_ratio": 0.0,
+      "shared": [],
+      "exclusive_by_side": {
+        "AXIS": [
+          "essentially media-driven psychological",
+          "media-driven psychological operation",
+          "political-security source mayadeen",
+          "iranian political-security source",
+          "senior iranian political-security",
+          "unveil essentially media-driven",
+          "increase psychological pressure",
+          "psychological operation rather"
+        ],
+        "PS": [
+          "israel systematically targeted",
+          "distribution point completely",
+          "al-radwan water distribution",
+          "systematically targeted gaza",
+          "pipelines starve population",
+          "warrant alongside netanyahu",
+          "point completely destroyed",
+          "completely destroyed since"
+        ]
+      }
+    },
+    {
+      "anchor": [
+        "jerusalem"
+      ],
+      "zone": "israel_gaza",
       "track": "kinetic",
       "grade": "B — corroborated across the bias divide",
       "sides": [
-        "RU",
-        "UA"
+        "AXIS",
+        "PS"
       ],
       "single_outlet_sides": [
-        "UA"
+        "AXIS",
+        "PS"
       ],
       "window": {
-        "first_seen": "2026-08-21T17:35:41+00:00",
-        "last_seen": "2026-08-21T20:29:20+00:00",
-        "hours": 2.9
+        "first_seen": "2026-08-24T19:59:39+00:00",
+        "last_seen": "2026-08-25T01:57:42+00:00",
+        "hours": 6.0
       },
-      "sources_matched": 4,
+      "sources_matched": 2,
       "sources_unmatched": 0,
       "closest_pair": [
-        "RU",
-        "UA"
+        "AXIS",
+        "PS"
       ],
-      "convergence": 0.0085,
-      "shared_words": [
-        "zaporizhzhia"
-      ],
+      "convergence": 0.0,
+      "shared_words": [],
       "anchor_only": true,
-      "phrases_total": 140,
+      "phrases_total": 78,
       "phrases_shared": 0,
-      "phrases_exclusive": 140,
-      "import_ratio": 0.0071,
+      "phrases_exclusive": 78,
+      "import_ratio": 0.0385,
       "shared": [],
       "exclusive_by_side": {
-        "RU": [
-          "approaching zelyonyy east-zaporozhye",
-          "distracted information campaign",
-          "meanwhile arrivals zaporizhzhia",
-          "zelyonyy east-zaporozhye front",
-          "reasonable proposals resolving",
-          "forces distracted information",
-          "zelyonyy fighting intensified",
-          "between zelyonyy blagodatnoye"
+        "AXIS": [
+          "infrastructure expansion systematically",
+          "simultaneously intensified incursions",
+          "expansion systematically advancing",
+          "al-quds settler-operated machinery",
+          "forces simultaneously intensified",
+          "al-kaykaba developments highlight",
+          "occupied al-quds settler-operated",
+          "attacks infrastructure expansion"
         ],
-        "UA": [
-          "zaporizhzhia drone preliminary",
-          "russians attacked minibus",
-          "crowded stop zaporizhzhia",
-          "attacked minibus crowded",
-          "preliminary least person",
-          "drone preliminary least",
-          "stop zaporizhzhia drone",
-          "minibus crowded stop"
+        "PS": [
+          "land jerusalem steadfastness",
+          "palestinian identity visual",
+          "jerusalem steadfastness his",
+          "palestine mourning sliman",
+          "gave palestinian identity",
+          "identity visual language",
+          "steadfastness his people",
+          "visual language painting"
         ]
       }
     }
