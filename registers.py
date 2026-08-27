@@ -343,6 +343,22 @@ def venue_scope(resolution: str) -> dict:
         return any(f" {n} " in f or f.rstrip().endswith(" " + n)
                    for n in nouns)
 
+    # KK38-REG (R7): two DOCUMENT TYPES on one named host are one venue
+    # ("a system card or preparedness report ... on openai.com"). True only
+    # when the right side runs to exactly one host inside its clause and
+    # neither side names a host or a registered venue alias of its own.
+    _HOSTRX = r"\b[\w-]+(?:\.[\w-]+)*\.(?:com|org|gov|net|io|eu|int|uk|de|mil)\b"
+    def _onehost(left_side: str, right_side: str) -> bool:
+        _r = re.split(r";|\.(?=\s|$)|\bbetween\b|\bwith\b", right_side)[0]
+        _hosts = set(re.findall(_HOSTRX, _r))
+        if len(_hosts) != 1 or re.search(_HOSTRX, left_side):
+            return False
+        _l = " " + re.sub(r"\s+", " ", left_side.lower().strip()) + " "
+        _rr = " " + re.sub(r"\s+", " ", re.sub(_HOSTRX, " ", _r).lower().strip()) + " "
+        if any(f" {a} " in _l or f" {a} " in _rr for a in _venue_alias_index()):
+            return False
+        return True
+
     disj = []
     # modifier disjunction over a shared venue head: "a U.S. government or
     # international disaster alert system". Two adjectives pick out two
@@ -352,7 +368,8 @@ def venue_scope(resolution: str) -> dict:
         r"\b(?:a|an|the)\s+([\w.\-]+(?:\s+[\w.\-]+){0,3})\s+or\s+"
         r"([\w.\-]+(?:\s+[\w.\-]+){0,3}?)\s+(?:" + _nounalt + r")\b",
         low)
-    if _mod and not _MASK.search(_mod.group(0)):
+    if _mod and not _MASK.search(_mod.group(0)) and not _onehost(
+            _mod.group(1), _mod.group(2) + low[_mod.end():_mod.end() + 140]):  # KK38-REG (R7)
         disj.append((_mod.group(1)[-45:], _mod.group(2)[:45]))
     for m in re.finditer(r"\bor\b", low):
         left = low[max(0, m.start() - 90):m.start()]
@@ -360,7 +377,13 @@ def venue_scope(resolution: str) -> dict:
         # clause boundaries: an 'or' does not reach across them
         left = re.split(r"[;.]|\bif\b|\bwhen\b", left)[-1]
         right = re.split(r"[;.]|\bwith\b|\bbetween\b", right)[0]
-        if _venueish(left) and _venueish(right):
+        # KK38-REG (R8): an or whose right side runs to "as a/an <role>" names
+        # who fills a role ("agency or independent organization as an
+        # evaluator"), not where to look.
+        _role = re.match(r"\s*(?:[\w-]+\s+){0,7}as\s+(?:an?|the)\s+[\w-]+",
+                         low[m.end():m.end() + 140])
+        if _venueish(left) and _venueish(right) and not _role and not _onehost(
+                left, low[m.end():m.end() + 140]):  # KK38-REG (R7): raw window, host dot intact
             disj.append((left.strip()[-45:], right.strip()[:45]))
 
     # EXEMPLARY only when the softener attaches to the VENUE. "(e.g., cabinet

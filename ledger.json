@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-27T17:15:46Z",
+  "as_of": "2026-08-27T18:37:18Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -32772,6 +32772,115 @@
       "register": "registers/1.0@5414a43d6a49470b",
       "sealed_at": "2026-08-27T17:15:46.837084+00:00",
       "seal_sha256": "783657ad20394896d942cbe5a373ec1cdc7fef40593da96b558ab526f22ea683"
+    },
+    {
+      "statement": "The reported 12.9 billion dollar Nvidia acquisition of Hugging Face is confirmed closed, meaning the transaction has legally completed, between 2026-09-03 and 2026-11-30.",
+      "domain": "economics_markets",
+      "probability": 13,
+      "resolution": "A joint Nvidia and Hugging Face press release, or an Nvidia SEC filing, states the acquisition has closed within the window, checked by 2026-12-03.",
+      "deadline": "2026-12-03",
+      "citations": [
+        62,
+        81
+      ],
+      "failure_condition": "No joint announcement or SEC filing confirms the deal has closed within the window; a signed definitive agreement without closing, continued regulatory review, or deal abandonment all count as a MISS.",
+      "source_report": "battle_report_2026-08-27_1517.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260827-119",
+      "date_issued": "2026-08-27",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-27_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-27T18:37:15.869096+00:00",
+      "seal_sha256": "1cfe3e19b7393b0e3de78c439d95e94cc51b412be7ed1031ca13c566b6465127"
+    },
+    {
+      "statement": "The official confirmed death toll from the late-August 2026 Nepal-Tibet flash floods will stand at 750 or more at some point between 2026-09-01 and 2026-10-15.",
+      "domain": "disaster",
+      "probability": 60,
+      "resolution": "Between 2026-09-01 and 2026-10-15, figures from the National Disaster Risk Reduction and Management Authority of Nepal plus official Chinese tallies for Tibet total 750 or more confirmed dead.",
+      "deadline": "2026-10-19",
+      "citations": [
+        35,
+        39,
+        48
+      ],
+      "failure_condition": "The combined official confirmed death toll stands below 750 at the deadline.",
+      "source_report": "battle_report_2026-08-27_1517.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260827-120",
+      "date_issued": "2026-08-27",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-27_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-27T18:37:16.642669+00:00",
+      "seal_sha256": "c93d74f5d59c36affb18480abc9d2e87f74df9631f31f5b360c2f7ec2e814afb"
+    },
+    {
+      "statement": "OpenAI publishes a system card or preparedness report for the Astra model on openai.com between 2026-08-28 and 2026-12-31 that names at least one external organization, a government agency or an independent AI safety organization, as having evaluated the Astra model.",
+      "domain": "ai-claims",
+      "probability": 25,
+      "resolution": "A system card or preparedness report for the Astra model published on openai.com between 2026-08-28 and 2026-12-31 names at least one government agency or independent AI safety organization as an evaluator of the Astra model, checked by 2027-01-07; a document naming no external evaluator resolves false.",
+      "deadline": "2027-01-07",
+      "citations": [
+        0
+      ],
+      "failure_condition": "No system card or preparedness report for the Astra model naming an external evaluator is published on openai.com between 2026-08-28 and 2026-12-31 by 2027-01-07.",
+      "source_report": "battle_report_2026-08-27_1517.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260827-121",
+      "date_issued": "2026-08-27",
+      "model": "operator/human",
+      "source_packet": "kkr_packet_2026-08-27_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-27T18:37:17.394152+00:00",
+      "seal_sha256": "655dc40b613a41159ec85b72ce323beab85b44ae99803824f78bfef4a287cbfb"
+    },
+    {
+      "statement": "OpenAI publishes a system card or preparedness report for the Astra model on openai.com between 2026-08-28 and 2026-12-31 that names at least one external organization, a government agency or an independent AI safety organization, as having evaluated the Astra model.",
+      "domain": "ai-claims",
+      "probability": 43,
+      "resolution": "A system card or preparedness report for the Astra model published on openai.com between 2026-08-28 and 2026-12-31 names at least one government agency or independent AI safety organization as an evaluator of the Astra model, checked by 2027-01-07; a document naming no external evaluator resolves false.",
+      "deadline": "2027-01-07",
+      "citations": [
+        0
+      ],
+      "failure_condition": "No system card or preparedness report for the Astra model naming an external evaluator is published on openai.com between 2026-08-28 and 2026-12-31 by 2027-01-07.",
+      "control_basis": {
+        "arm": "control/baserate",
+        "rule": "climatological - same probability for every row drawn from the same reference class",
+        "rate": 0.4257,
+        "n": 148,
+        "basis": "global",
+        "domain_canonical": "ai-claims",
+        "min_domain_n": 10,
+        "ledger_as_of": "2026-08-27T17:15:46Z",
+        "history_cutoff": "none - all resolved rows",
+        "clamped_to_gate_band": false,
+        "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+      },
+      "is_control": true,
+      "source_report": "battle_report_2026-08-27_1517.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260827-122",
+      "date_issued": "2026-08-27",
+      "model": "control/baserate",
+      "source_packet": "kkr_packet_2026-08-27_1517.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@5414a43d6a49470b",
+      "sealed_at": "2026-08-27T18:37:18.244440+00:00",
+      "seal_sha256": "74364e585b768e8316ddd08cef9bc38bf1aa6c80fbf78f531af782c7cd7c1c13"
     }
   ]
 }

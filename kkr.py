@@ -785,10 +785,16 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
         r"|\balert\s+level\b"
         r"|\b(?:place[sd]?|rank(?:s|ed)?|finish(?:es|ed)?)\s+"
         r"(?:first|second|third|fourth|\d+(?:st|nd|rd|th))\b"
-        r"|\bthe\s+most\s+\w+\b", re.I)
+        r"|\bthe\s+most\s+\w+\b"
+        # KK38-GATE (E2): a deal or transaction closing is not a market close
+        r"|\b(?:acquisition|deal|transaction|merger|takeover|sale|round|financing)\b"
+        r"[^.;]{0,40}\bclos(?:e[sd]?|ing)\b"
+        r"|\bconfirmed\s+closed\b|\blegally\s+(?:completed|closed)\b", re.I)
     if not _NOTQTY.search(both) and re.search(r"\b(?:price|yield|rate|level|magnitude|count|total|"
                  r"threshold|close[sd]?|above|below|exceed)\b", both, re.I) \
-            and not re.search(r"(?:above|below|exceed\w*|at least|at or|over|"
+            and not re.search(r"(?:\d[\d.,]*\s*(?:or\s+(?:more|higher|greater|above|fewer|"
+                              r"less|lower|below)|and\s+(?:above|over|up)|-plus)\b)|"  # KK38-GATE (E1)
+                              r"(?:above|below|exceed\w*|at least|at or|over|"
                               r"under|reach\w*|close[sd]?|threshold|magnitude|"
                               r"least)\D{0,12}[\$\u20ac]?"
                               r"(?:\d|one\b|two\b|three\b|four\b|five\b|"
