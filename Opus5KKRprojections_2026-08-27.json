@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog will add at least 20 CVE entries carrying a dateAdded value between 2026-09-01 and 2026-09-30.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "Fetch the CISA KEV JSON feed and count entries whose dateAdded field falls between 2026-09-01 and 2026-09-30 inclusive. A count of 20 or more resolves TRUE.",
+    "deadline": "2026-10-05",
+    "citations": [
+      26,
+      28
+    ],
+    "failure_condition": "Fewer than 20 KEV entries carry a dateAdded value inside the September 2026 window when the catalog is counted at the deadline."
+  },
+  {
+    "statement": "The FOMC will raise the federal funds target range above 3.50-3.75 percent at its scheduled decision on 2026-09-16.",
+    "domain": "economics/markets",
+    "probability": 27,
+    "resolution": "The FOMC statement of 2026-09-16 and FRED series DFEDTARU show an upper bound above 3.75 percent effective after that meeting. A hold or a cut resolves FALSE.",
+    "deadline": "2026-09-18",
+    "citations": [
+      61
+    ],
+    "failure_condition": "The target range upper bound stands at 3.75 percent or lower after the 2026-09-16 decision."
+  },
+  {
+    "statement": "ICE Brent front-month crude futures will settle at or above 100.00 USD per barrel on at least one trading day between 2026-09-01 and 2026-10-30.",
+    "domain": "economics/markets",
+    "probability": 22,
+    "resolution": "An ICE Futures Europe published settlement price for the front-month Brent contract on any trading day between 2026-09-01 and 2026-10-30 is 100.00 USD per barrel or higher.",
+    "deadline": "2026-11-03",
+    "citations": [
+      104,
+      131
+    ],
+    "failure_condition": "Every front-month Brent settlement inside the window prints below 100.00 USD per barrel."
+  },
+  {
+    "statement": "The Federal Register will publish at least one presidential proclamation or executive order imposing new or increased US tariff rates, dated between 2026-09-01 and 2026-10-31.",
+    "domain": "economics/markets",
+    "probability": 62,
+    "resolution": "A Federal Register presidential document published between 2026-09-01 and 2026-10-31 newly imposes or raises US duty rates on imported goods. Pure extensions of existing rates resolve FALSE.",
+    "deadline": "2026-11-04",
+    "citations": [
+      60
+    ],
+    "failure_condition": "No presidential document dated inside the window newly imposes or raises a US tariff rate."
+  },
+  {
+    "statement": "The United States and Iran will hold publicly acknowledged direct bilateral talks between 2026-09-01 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 33,
+    "resolution": "A US executive branch spokesperson and the Iranian foreign ministry each acknowledge that officials of the two states met directly between 2026-09-01 and 2026-10-31. Mediated contact alone resolves FALSE.",
+    "deadline": "2026-11-04",
+    "citations": [
+      104,
+      109,
+      111
+    ],
+    "failure_condition": "US and Iranian officials do not meet face to face inside the window, or all contact runs through third-party mediators."
+  },
+  {
+    "statement": "At least one commercial vessel will sustain weapon-caused damage in the Strait of Hormuz, Gulf of Oman, or Persian Gulf between 2026-09-01 and 2026-10-15.",
+    "domain": "military/conflict",
+    "probability": 48,
+    "resolution": "UKMTO publishes an incident advisory, or the vessel operator states, that a commercial ship was damaged by mine, missile, drone, or explosive charge in those waters between 2026-09-01 and 2026-10-15.",
+    "deadline": "2026-10-19",
+    "citations": [
+      131,
+      104
+    ],
+    "failure_condition": "No commercial vessel sustains weapon-caused damage in those waters inside the window."
+  },
+  {
+    "statement": "The UK government will attribute to Russia an attack causing physical damage or casualties to UK territory, UK-flagged shipping, or UK armed forces, occurring between 2026-08-28 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 10,
+    "resolution": "A UK minister or the Ministry of Defence states that Russia carried out such an attack occurring between 2026-08-28 and 2026-12-31 and names the damaged asset or casualties. Cyber intrusion alone resolves FALSE.",
+    "deadline": "2027-01-06",
+    "citations": [
+      87,
+      94
+    ],
+    "failure_condition": "No Russian attack causing physical damage or casualties to a named UK asset occurs inside the window and is so attributed by a UK minister."
+  },
+  {
+    "statement": "King Harald V of Norway will die between 2026-08-28 and 2026-10-31 and Crown Prince Haakon will succeed him as king.",
+    "domain": "political",
+    "probability": 75,
+    "resolution": "The Royal House of Norway announces the death of King Harald V on a date between 2026-08-28 and 2026-10-31, and Haakon is proclaimed king or takes the oath before the Storting.",
+    "deadline": "2026-11-04",
+    "citations": [
+      102,
+      105
+    ],
+    "failure_condition": "King Harald V is alive at the close of 2026-10-31, or the crown passes to someone other than Haakon."
+  },
+  {
+    "statement": "The official confirmed death toll from the late-August 2026 Nepal-Tibet flash floods will stand at 750 or more at some point between 2026-09-01 and 2026-10-15.",
+    "domain": "disaster",
+    "probability": 60,
+    "resolution": "Between 2026-09-01 and 2026-10-15, figures from the National Disaster Risk Reduction and Management Authority of Nepal plus official Chinese tallies for Tibet total 750 or more confirmed dead.",
+    "deadline": "2026-10-19",
+    "citations": [
+      35,
+      39,
+      48
+    ],
+    "failure_condition": "The combined official confirmed death toll stands below 750 at the deadline."
+  },
+  {
+    "statement": "Spanish authorities will detain at least one person in connection with the theft of the Treasure of Villena, with the detention occurring between 2026-08-27 and 2026-11-30.",
+    "domain": "crime/security",
+    "probability": 40,
+    "resolution": "The Guardia Civil, the Policia Nacional, or the Spanish Interior Ministry states that a person was detained in connection with this theft between 2026-08-27 and 2026-11-30, carried by two independent outlets.",
+    "deadline": "2026-12-04",
+    "citations": [
+      10,
+      11,
+      97
+    ],
+    "failure_condition": "No person is detained by Spanish authorities in connection with this theft inside the window."
+  }
+]

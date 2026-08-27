@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "The United States and Iran, directly or through the mediating states of Qatar, Oman, or Pakistan named in current shuttle diplomacy, announce a ceasefire, truce, or negotiated framework ending active hostilities in the ongoing Iran war, with that announcement first reported between 2026-09-10 and 2026-10-10.",
+    "resolution": "At least two independently owned wire services, or the US State Department and the Iranian foreign ministry both, confirm a ceasefire, truce, or framework agreement ending active US-Iran hostilities was announced within the stated window, checked by 2026-10-13.",
+    "failure_condition": "No ceasefire, truce, or negotiated framework ending active US-Iran hostilities is announced and confirmed by two independent sources within the window; continued strikes, continued talks without agreement, or a unilateral pause not confirmed by both sides all count as a MISS.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-13",
+    "probability": 53,
+    "citations": [
+      104,
+      109,
+      111
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russian military forces conduct a strike, using missile, drone, or other kinetic means, that lands on the sovereign territory of a NATO member state, including the UK, between 2026-09-03 and 2026-10-03.",
+    "resolution": "At least two independently owned news organizations, or a NATO member government and NATO itself, confirm a Russian-origin strike landed on NATO member territory within the window, checked by 2026-10-06.",
+    "failure_condition": "No confirmed Russian-origin strike lands on NATO member territory within the window; verbal warnings, sabotage allegations short of a kinetic strike, or strikes confined to Ukrainian territory all count as a MISS.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-06",
+    "probability": 53,
+    "citations": [
+      87,
+      94,
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog entry for CVE-2026-8452, the Citrix NetScaler ADC and Gateway flaw added 2026-08-26, has its knownRansomwareCampaignUse field changed to Yes between 2026-09-03 and 2026-10-15.",
+    "resolution": "The public CISA KEV catalog feed at cisa.gov shows knownRansomwareCampaignUse equal to Yes for CVE-2026-8452, with the change falling inside the window, checked by 2026-10-19.",
+    "failure_condition": "The CISA KEV catalog entry for CVE-2026-8452 still reads Unknown, or never changes to Yes within the window, at the time of the deadline check.",
+    "domain": "cyber",
+    "deadline": "2026-10-19",
+    "probability": 33,
+    "citations": [
+      26,
+      28
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Boston Scientific files a Form 8-K Item 1.05 material cybersecurity incident disclosure with the SEC regarding the cyberattack disclosed 2026-08-26, between 2026-09-03 and 2026-10-17.",
+    "resolution": "SEC EDGAR shows a Boston Scientific Form 8-K containing Item 1.05 filed within the window, checked by 2026-10-21.",
+    "failure_condition": "No Boston Scientific Form 8-K containing Item 1.05 appears on EDGAR within the window; disclosure only through press release, a different 8-K item number, or routine risk-factor language in a periodic report all count as a MISS.",
+    "domain": "cyber",
+    "deadline": "2026-10-21",
+    "probability": 33,
+    "citations": [
+      32
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The reported 12.9 billion dollar Nvidia acquisition of Hugging Face is confirmed closed, meaning the transaction has legally completed, between 2026-09-03 and 2026-11-30.",
+    "resolution": "A joint Nvidia and Hugging Face press release, or an Nvidia SEC filing, states the acquisition has closed within the window, checked by 2026-12-03.",
+    "failure_condition": "No joint announcement or SEC filing confirms the deal has closed within the window; a signed definitive agreement without closing, continued regulatory review, or deal abandonment all count as a MISS.",
+    "domain": "economics_markets",
+    "deadline": "2026-12-03",
+    "probability": 25,
+    "citations": [
+      62,
+      81
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Open Market Committee raises the target federal funds rate range at the conclusion of its September 15-16, 2026 meeting.",
+    "resolution": "The Federal Reserve post-meeting statement released 2026-09-16 shows a target federal funds rate range higher than the range in effect entering the meeting.",
+    "failure_condition": "The FOMC holds the target range unchanged or cuts it at the September 16 meeting; anything other than an announced increase counts as a MISS.",
+    "domain": "economics_markets",
+    "deadline": "2026-09-16",
+    "probability": 25,
+    "citations": [
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The military commission trial date for Khalid Sheikh Mohammed and co-defendants, currently set for June, is reported as vacated, postponed, or otherwise materially altered by a commission ruling, DOD announcement, or appellate court order, between 2026-09-03 and 2027-01-31.",
+    "resolution": "A DOD, Office of Military Commissions, or major wire service report confirms the June trial date no longer stands as scheduled, with that report dated within the window, checked by 2027-02-04.",
+    "failure_condition": "The June trial date remains formally in place with no reported postponement, vacatur, or material alteration through the window; routine pretrial motion activity that does not change the trial date does not count as a hit.",
+    "domain": "crime_security",
+    "deadline": "2027-02-04",
+    "probability": 43,
+    "citations": [
+      103
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Alternative for Germany wins an outright majority of at least 42 of the 83 seats in the Landtag of Saxony-Anhalt in the state election held 2026-09-06.",
+    "resolution": "The official or projected seat allocation reported by the Saxony-Anhalt state returning officer or a major wire service shows AfD holding 42 or more of 83 seats, checked by 2026-09-09.",
+    "failure_condition": "AfD wins 41 or fewer seats, meaning no single party holds an outright majority on its own, as reported by the returning officer or wire services.",
+    "domain": "political",
+    "deadline": "2026-09-09",
+    "probability": 44,
+    "citations": [
+      120
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The confirmed death toll from the August 2026 Nepal-Tibet flash flood and glacial lake outburst event reaches at least 800, as reported by the government of Nepal, Chinese authorities, or UN OCHA, between 2026-09-03 and 2026-09-30.",
+    "resolution": "A government of Nepal, Chinese government, or UN OCHA situation report states a confirmed fatality count of 800 or more tied to this event, dated within the window, checked by 2026-10-03.",
+    "failure_condition": "Confirmed fatality figures from Nepal, Chinese, or UN OCHA sources remain below 800 through the window; a large missing-persons count that is not converted into confirmed deaths does not count as a hit.",
+    "domain": "disaster",
+    "deadline": "2026-10-03",
+    "probability": 52,
+    "citations": [
+      35,
+      39,
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one individual arrested in the TeamPCP supply-chain hacking case is formally charged by an Australian prosecutorial authority or a foreign partner agency, between 2026-09-03 and 2026-10-31.",
+    "resolution": "An AFP, CDPP, DOJ, or equivalent prosecutorial press release, or a court filing, confirms formal charges were laid against at least one TeamPCP suspect within the window, checked by 2026-11-04.",
+    "failure_condition": "No formal charges are confirmed laid against any TeamPCP suspect within the window; continued investigation, bail conditions without charges, or release without charge all count as a MISS.",
+    "domain": "crime_security",
+    "deadline": "2026-11-04",
+    "probability": 43,
+    "citations": [
+      9,
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

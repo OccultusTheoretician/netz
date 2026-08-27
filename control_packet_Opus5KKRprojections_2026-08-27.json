@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog will add at least 20 CVE entries carrying a dateAdded value between 2026-09-01 and 2026-09-30.",
+    "resolution": "Fetch the CISA KEV JSON feed and count entries whose dateAdded field falls between 2026-09-01 and 2026-09-30 inclusive. A count of 20 or more resolves TRUE.",
+    "failure_condition": "Fewer than 20 KEV entries carry a dateAdded value inside the September 2026 window when the catalog is counted at the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-10-05",
+    "probability": 33,
+    "citations": [
+      26,
+      28
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC will raise the federal funds target range above 3.50-3.75 percent at its scheduled decision on 2026-09-16.",
+    "resolution": "The FOMC statement of 2026-09-16 and FRED series DFEDTARU show an upper bound above 3.75 percent effective after that meeting. A hold or a cut resolves FALSE.",
+    "failure_condition": "The target range upper bound stands at 3.75 percent or lower after the 2026-09-16 decision.",
+    "domain": "economics/markets",
+    "deadline": "2026-09-18",
+    "probability": 25,
+    "citations": [
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month crude futures will settle at or above 100.00 USD per barrel on at least one trading day between 2026-09-01 and 2026-10-30.",
+    "resolution": "An ICE Futures Europe published settlement price for the front-month Brent contract on any trading day between 2026-09-01 and 2026-10-30 is 100.00 USD per barrel or higher.",
+    "failure_condition": "Every front-month Brent settlement inside the window prints below 100.00 USD per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 25,
+    "citations": [
+      104,
+      131
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Register will publish at least one presidential proclamation or executive order imposing new or increased US tariff rates, dated between 2026-09-01 and 2026-10-31.",
+    "resolution": "A Federal Register presidential document published between 2026-09-01 and 2026-10-31 newly imposes or raises US duty rates on imported goods. Pure extensions of existing rates resolve FALSE.",
+    "failure_condition": "No presidential document dated inside the window newly imposes or raises a US tariff rate.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 25,
+    "citations": [
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran will hold publicly acknowledged direct bilateral talks between 2026-09-01 and 2026-10-31.",
+    "resolution": "A US executive branch spokesperson and the Iranian foreign ministry each acknowledge that officials of the two states met directly between 2026-09-01 and 2026-10-31. Mediated contact alone resolves FALSE.",
+    "failure_condition": "US and Iranian officials do not meet face to face inside the window, or all contact runs through third-party mediators.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 53,
+    "citations": [
+      104,
+      109,
+      111
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one commercial vessel will sustain weapon-caused damage in the Strait of Hormuz, Gulf of Oman, or Persian Gulf between 2026-09-01 and 2026-10-15.",
+    "resolution": "UKMTO publishes an incident advisory, or the vessel operator states, that a commercial ship was damaged by mine, missile, drone, or explosive charge in those waters between 2026-09-01 and 2026-10-15.",
+    "failure_condition": "No commercial vessel sustains weapon-caused damage in those waters inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-19",
+    "probability": 53,
+    "citations": [
+      131,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The UK government will attribute to Russia an attack causing physical damage or casualties to UK territory, UK-flagged shipping, or UK armed forces, occurring between 2026-08-28 and 2026-12-31.",
+    "resolution": "A UK minister or the Ministry of Defence states that Russia carried out such an attack occurring between 2026-08-28 and 2026-12-31 and names the damaged asset or casualties. Cyber intrusion alone resolves FALSE.",
+    "failure_condition": "No Russian attack causing physical damage or casualties to a named UK asset occurs inside the window and is so attributed by a UK minister.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-06",
+    "probability": 53,
+    "citations": [
+      87,
+      94
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "King Harald V of Norway will die between 2026-08-28 and 2026-10-31 and Crown Prince Haakon will succeed him as king.",
+    "resolution": "The Royal House of Norway announces the death of King Harald V on a date between 2026-08-28 and 2026-10-31, and Haakon is proclaimed king or takes the oath before the Storting.",
+    "failure_condition": "King Harald V is alive at the close of 2026-10-31, or the crown passes to someone other than Haakon.",
+    "domain": "political",
+    "deadline": "2026-11-04",
+    "probability": 44,
+    "citations": [
+      102,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The official confirmed death toll from the late-August 2026 Nepal-Tibet flash floods will stand at 750 or more at some point between 2026-09-01 and 2026-10-15.",
+    "resolution": "Between 2026-09-01 and 2026-10-15, figures from the National Disaster Risk Reduction and Management Authority of Nepal plus official Chinese tallies for Tibet total 750 or more confirmed dead.",
+    "failure_condition": "The combined official confirmed death toll stands below 750 at the deadline.",
+    "domain": "disaster",
+    "deadline": "2026-10-19",
+    "probability": 52,
+    "citations": [
+      35,
+      39,
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Spanish authorities will detain at least one person in connection with the theft of the Treasure of Villena, with the detention occurring between 2026-08-27 and 2026-11-30.",
+    "resolution": "The Guardia Civil, the Policia Nacional, or the Spanish Interior Ministry states that a person was detained in connection with this theft between 2026-08-27 and 2026-11-30, carried by two independent outlets.",
+    "failure_condition": "No person is detained by Spanish authorities in connection with this theft inside the window.",
+    "domain": "crime/security",
+    "deadline": "2026-12-04",
+    "probability": 43,
+    "citations": [
+      10,
+      11,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
