@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 271658Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 271715Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 1035 issued across 14 forecaster arms · 874 open (4 past deadline, unresolved)
+Window: all-time · 1041 issued across 14 forecaster arms · 880 open (4 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -14,7 +14,7 @@ Window: all-time · 1035 issued across 14 forecaster arms · 874 open (4 past de
 
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
-| control/baserate | 245 | 228 | 17 | 8 | 9 | 0.275 | 47.1% | 0.249 | -0.105 |
+| control/baserate | 248 | 231 | 17 | 8 | 9 | 0.275 | 47.1% | 0.249 | -0.105 |
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 9 | 1 | 0 | 1 | 0.250 | 0.0% | 0.000 | — |
 | lmstudio/auto[post-verbot] | 20 | 17 | 3 | 1 | 2 | 0.214 | 33.3% | 0.222 | +0.036 |
@@ -27,7 +27,7 @@ Window: all-time · 1035 issued across 14 forecaster arms · 874 open (4 past de
 | manual/opus-5/unattested | 120 | 117 | 3 | 1 | 2 | 0.141 | 33.3% | 0.222 | +0.366 |
 | manual/sonnet-5 | 45 | 25 | 20 | 12 | 8 | 0.231 | 60.0% | 0.240 | +0.037 |
 | manual/sonnet-5/unattested | 110 | 102 | 8 | 5 | 3 | 0.174 | 62.5% | 0.234 | +0.257 |
-| operator/human | 6 | 2 | 1 | 1 | 0 | 0.122 | 100.0% | 0.000 | — |
+| operator/human | 9 | 5 | 1 | 1 | 0 | 0.122 | 100.0% | 0.000 | — |
 
 
 > **Disclosure — what the elicited arms are.** Arms tagged `manual/*` are frontier language models elicited by the operator against the same packet the machine arm receives. They are **not informationally independent of this desk**: the model is given the desk's own corpus and standing instructions as context. Their independence is procedural — a separate instrument answering the same questions — not informational. Rows are segregated by model, and no pooled score is published, because a Brier belongs to one forecaster.
@@ -667,6 +667,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260812-09 | `manual/fable-5/unattested` | 2026-08-12 | 2026-10-14 | 25% | military/conflict | Russian authorities seize or detain a commercial vessel flagged in or owned by an EU or UK entity between 2026-08-13 and 2026-10-12. |
 | KKR-20260812-25 | `control/baserate` | 2026-08-12 | 2026-10-14 | 33% | disaster | USGS records an earthquake of magnitude 6.0 or greater within 300 km of USGS event us6000tjl2 with origin time between 2026-08-13 and 2026-10-12 UTC. |
 | KKR-20260812-26 | `control/baserate` | 2026-08-12 | 2026-10-14 | 33% | military/conflict | Russian authorities seize or detain a commercial vessel flagged in or owned by an EU or UK entity between 2026-08-13 and 2026-10-12. |
+| KKR-20260827-113 | `operator/human` | 2026-08-27 | 2026-10-14 | 70% | ai-claims | Anthropic records the provable inference prototype goal of its Frontier Safety Roadmap, stated as a prototype to be developed by 2026-09-30, as completed with a completion date on or before 2026-09-30, on the Frontier Safety Roadmap updates page at anthropic.com. |
+| KKR-20260827-116 | `control/baserate` | 2026-08-27 | 2026-10-14 | 43% | ai-claims | Anthropic records the provable inference prototype goal of its Frontier Safety Roadmap, stated as a prototype to be developed by 2026-09-30, as completed with a completion date on or before 2026-09-30, on the Frontier Safety Roadmap updates page at anthropic.com. |
 | KKR-20260722-06 | `operator/human` | 2026-07-22 | 2026-10-15 | 70% | political | TikTok or another major platform announces age verification for French users |
 | KKR-20260726-12 | `lmstudio/auto` | 2026-07-26 | 2026-10-15 | 30% | economics/markets | The S&P 500 closes below 7,200 points on or before 2026-10-15 due to sustained investor panic over AI sector overvaluation. |
 | KKR-20260731-05 | `manual/fable-5` | 2026-07-31 | 2026-10-15 | 70% | cyber | A major security vendor publicly attributes at least one new npm package compromise, distinct from the Debug and Chalk incidents, to North Korean actors between 2026-08-07 and 2026-10-15 |
@@ -990,6 +992,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260827-87 | `manual/opus-5/unattested` | 2026-08-27 | 2027-01-06 | 10% | military/conflict | The UK government will attribute to Russia an attack causing physical damage or casualties to UK territory, UK-flagged shipping, or UK armed forces, occurring between 2026-08-28 and 2026-12-31. |
 | KKR-20260827-110 | `control/baserate` | 2026-08-27 | 2027-01-06 | 53% | military/conflict | The UK government will attribute to Russia an attack causing physical damage or casualties to UK territory, UK-flagged shipping, or UK armed forces, occurring between 2026-08-28 and 2026-12-31. |
 | KKR-20260807-11 | `manual/opus-5` | 2026-08-07 | 2027-01-07 | 32% | cyber | CISA adds at least one WordPress core or WordPress plugin vulnerability to the Known Exploited Vulnerabilities catalog with a date added between 2026-08-08 and 2026-12-31. |
+| KKR-20260827-115 | `operator/human` | 2026-08-27 | 2027-01-07 | 35% | ai-claims | OpenAI publishes a revised Preparedness Framework, described by OpenAI as a revision or new version of the framework that dates largely to December 2023, on openai.com between 2026-08-28 and 2026-12-31. |
+| KKR-20260827-118 | `control/baserate` | 2026-08-27 | 2027-01-07 | 43% | ai-claims | OpenAI publishes a revised Preparedness Framework, described by OpenAI as a revision or new version of the framework that dates largely to December 2023, on openai.com between 2026-08-28 and 2026-12-31. |
 | KKR-20260810-16 | `manual/opus-5` | 2026-08-10 | 2027-01-08 | 30% | cyber | LexisNexis Risk Solutions reports a data breach affecting 100000 or more individuals to the Maine Attorney General between 2026-08-11 and 2026-12-31. |
 | KKR-20260810-32 | `control/baserate` | 2026-08-10 | 2027-01-08 | 31% | cyber | LexisNexis Risk Solutions reports a data breach affecting 100000 or more individuals to the Maine Attorney General between 2026-08-11 and 2026-12-31. |
 | KKR-20260729-06 | `lmstudio/auto` | 2026-07-29 | 2027-01-10 | 35% | cyber | On or before 2027-01-10, a major cyberattack on a U.S. state government results in the public exposure of more than 1 million personal records. |
@@ -1022,6 +1026,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260827-81 | `manual/sonnet-5/unattested` | 2026-08-27 | 2027-02-04 | 60% | crime_security | The military commission trial date for Khalid Sheikh Mohammed and co-defendants, currently set for June, is reported as vacated, postponed, or otherwise materially altered by a commission ruling, DOD announcement, or appellate court order, between 2026-09-03 and 2027-01-31. |
 | KKR-20260827-104 | `control/baserate` | 2026-08-27 | 2027-02-04 | 43% | crime_security | The military commission trial date for Khalid Sheikh Mohammed and co-defendants, currently set for June, is reported as vacated, postponed, or otherwise materially altered by a commission ruling, DOD announcement, or appellate court order, between 2026-09-03 and 2027-01-31. |
 | KKR-20260822-42 | `manual/opus-5/unattested` | 2026-08-22 | 2027-02-05 | 12% | military_conflict | A general ceasefire in the Russia-Ukraine war takes effect between 2026-08-24 and 2027-01-31. |
+| KKR-20260827-114 | `operator/human` | 2026-08-27 | 2027-07-15 | 50% | ai-claims | Anthropic records the Leveling up across the board security goal of its Frontier Safety Roadmap, stated with a target of 2027-07-01, as completed with a completion date on or before 2027-07-01, on the Frontier Safety Roadmap updates page at anthropic.com. |
+| KKR-20260827-117 | `control/baserate` | 2026-08-27 | 2027-07-15 | 43% | ai-claims | Anthropic records the Leveling up across the board security goal of its Frontier Safety Roadmap, stated with a target of 2027-07-01, as completed with a completion date on or before 2027-07-01, on the Frontier Safety Roadmap updates page at anthropic.com. |
 
 ## RESOLVED — HITS AND MISSES, PERMANENTLY
 
@@ -1178,7 +1184,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*13 of 1035 issued (1.3%) have been voided.*
+*13 of 1041 issued (1.2%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists

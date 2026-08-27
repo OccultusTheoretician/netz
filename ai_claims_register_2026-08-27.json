@@ -1,0 +1,109 @@
+{
+ "schema": "ai-claims-register/0.1",
+ "book": "AI-claims book (KK17 #4), reopened by operator ruling 2026-08-27 (desk-local 2026-08-26)",
+ "design_rulings": [
+  "Rows are forecast-shaped and gated like every other row; domain ai-claims; priced by operator/human and paired with control/baserate. Frontier arms do not price rows about their own developer; cross-lab pricing by frontier arms is deferred to v2 (assistant ruling at delegation, disclosed).",
+  "Every row's statement quotes the promise as the lab stated it and names the page; this register carries the source URL and a web.archive.org snapshot taken at seal, so the promise text cannot drift.",
+  "Two layers per promise where both exist: STATED (the lab's own status page records the goal met by its target) and OPERATIONAL (an external artifact exists). v1 seeds the STATED layer; OPERATIONAL rows follow when a named venue exists.",
+  "Promises that resolve before the desk can seal them are logged here as OBSERVED (kept / late / broken, with days), never sealed as forecasts; they feed the control arm's base rate for 'lab keeps a dated promise'.",
+  "Drafting disclosure: the seed rows were drafted by an Anthropic model (Claude) from the labs' public pages, verbatim; pricing is the operator's alone."
+ ],
+ "sources": [
+  {
+   "key": "ANTH-ROADMAP",
+   "url": "https://www.anthropic.com/responsible-scaling-policy/roadmap",
+   "snapshot": "https://web.archive.org/web/20260827170437/https://www.anthropic.com/responsible-scaling-policy/roadmap",
+   "frozen": "2026-08-27 17:04Z"
+  },
+  {
+   "key": "ANTH-ROADMAP-UPDATES",
+   "url": "https://www.anthropic.com/responsible-scaling-policy/updates",
+   "snapshot": "https://web.archive.org/web/20260827170457/https://www.anthropic.com/responsible-scaling-policy/updates",
+   "frozen": "2026-08-27 17:04Z"
+  },
+  {
+   "key": "OAI-JUL21-DISCLOSURE",
+   "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+   "snapshot": "https://web.archive.org/web/20260827170732/https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+   "frozen": "2026-08-27 17:07Z",
+   "caveat": "archive.org availability API reports the capture as status 204; the capture may be a Cloudflare challenge page rather than content. Context page only; not the primary for the Aug 18 statements."
+  },
+  {
+   "key": "OAI-AUG18-AS-REPORTED",
+   "url": "OpenAI primary URL for the 2026-08-18 safety-practice announcement not identified at seal",
+   "secondary": [
+    "https://www.axios.com/2026/08/18/openai-pause-astra-preparedness-framework",
+    "https://betanews.com/article/openai-security-overhaul-hugging-face-astra/",
+    "https://time.com/article/2026/08/18/openai-slowing-training/"
+   ],
+   "snapshot": "not attempted (archive.org rate-limited during the seal session); to be taken at the first resolution check",
+   "frozen": "as reported 2026-08-18"
+  },
+  {
+   "key": "OAI-AUG26-TECHNICAL-REPORT",
+   "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+   "snapshot": "save returned HTTP 429 at seal; local copy held outside the repository (Documents/netz_patches/sources/OAI-AUG26.pdf)",
+   "sha256": "dd635cf6e5f39f0e1f646f08c36549090d77156ed89cbd3d733ed496648cae9c",
+   "frozen": "2026-08-27 local hash"
+  }
+ ],
+ "seed_rows": [
+  {
+   "key": "ANTH-ROADMAP-PROVABLE-INFERENCE",
+   "promise_verbatim": "We will develop a prototype by September 30, 2026 of provable inference, a technique for reliably, provably \"signing\" AI model outputs in a way that makes them attributable to a specific set of model weights.",
+   "promised_on": "2026-04-02 roadmap revision",
+   "source": "ANTH-ROADMAP",
+   "layer": "STATED",
+   "operator_probability": 70,
+   "priced_on": "2026-08-27"
+  },
+  {
+   "key": "ANTH-ROADMAP-LEVELING-UP",
+   "promise_verbatim": "Leveling up across the board ... we will aim to achieve a strong majority of them ... Target: July 1, 2027",
+   "promised_on": "2026-04-02 roadmap revision",
+   "source": "ANTH-ROADMAP",
+   "layer": "STATED",
+   "operator_probability": 50,
+   "priced_on": "2026-08-27"
+  },
+  {
+   "key": "OAI-PREPAREDNESS-REVISION",
+   "promise_verbatim": "OpenAI said it will revise its Preparedness Framework, which dates largely to December 2023 ... intends to involve outside organizations in that process (as reported Aug 18, 2026)",
+   "promised_on": "2026-08-18",
+   "source": "OAI-AUG18-AS-REPORTED",
+   "layer": "OPERATIONAL",
+   "operator_probability": 35,
+   "priced_on": "2026-08-27"
+  },
+  {
+   "key": "OAI-ASTRA-EXTERNAL-EVALUATORS",
+   "promise_verbatim": "working with government agencies and outside AI safety organizations to test the model further (Astra, as reported Aug 18, 2026)",
+   "promised_on": "2026-08-18",
+   "source": "OAI-AUG18-AS-REPORTED",
+   "layer": "OPERATIONAL",
+   "operator_probability": 25,
+   "priced_on": "2026-08-27"
+  }
+ ],
+ "observed_not_sealed": [
+  {
+   "key": "OAI-HF-TECHNICAL-REPORT",
+   "promise": "publish a technical report on its Hugging Face investigation 'in the coming days' (Aug 18, 2026)",
+   "outcome": "KEPT - 37-page technical report and blog published 2026-08-26 (TechCrunch, CNBC, Axios, Fortune); 8 days",
+   "why_not_sealed": "resolved before the book opened; already-decided at seal"
+  },
+  {
+   "key": "METR-REDWOOD-HF-REPORTS",
+   "promise": "METR and Redwood Research 'planning to publish their own reports on the incident' (TechCrunch, Aug 26)",
+   "outcome": "KEPT - 91-page independent analysis published 2026-08-26 (Fortune); same day",
+   "why_not_sealed": "resolved same day"
+  },
+  {
+   "key": "ANTH-TRANSCRIPT-WITHIN-A-WEEK",
+   "promise": "lightly redacted transcript 'within the next week' (Anthropic, 2026-07-30)",
+   "outcome": "NOT KEPT BY DATE - none by 2026-08-05 (The Hacker News); later status TO OBSERVE",
+   "why_not_sealed": "promise window lapsed before the book opened"
+  }
+ ],
+ "freeze_note": "Freeze discipline at book opening: web.archive.org snapshot where the host permits; local SHA-256 held outside the repo where it does not (packet pattern: local by design, hash in the register); secondary reporting named where the primary URL was not identified. Gaps printed, not filled."
+}
