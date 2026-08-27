@@ -1,0 +1,26 @@
+[
+  {
+    "statement": "OpenAI publishes a system card or preparedness report for the Astra model on openai.com between 2026-08-28 and 2026-12-31 that names at least one external organization, a government agency or an independent AI safety organization, as having evaluated the Astra model.",
+    "resolution": "A system card or preparedness report for the Astra model published on openai.com between 2026-08-28 and 2026-12-31 names at least one government agency or independent AI safety organization as an evaluator of the Astra model, checked by 2027-01-07; a document naming no external evaluator resolves false.",
+    "failure_condition": "No system card or preparedness report for the Astra model naming an external evaluator is published on openai.com between 2026-08-28 and 2026-12-31 by 2027-01-07.",
+    "domain": "ai-claims",
+    "deadline": "2027-01-07",
+    "probability": 43,
+    "citations": [
+      0
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "ai-claims",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T18:37:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

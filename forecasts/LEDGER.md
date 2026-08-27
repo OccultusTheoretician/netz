@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 271833Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 271837Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 1041 issued across 14 forecaster arms · 880 open (4 past deadline, unresolved)
+Window: all-time · 1045 issued across 14 forecaster arms · 884 open (4 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -14,7 +14,7 @@ Window: all-time · 1041 issued across 14 forecaster arms · 880 open (4 past de
 
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
-| control/baserate | 248 | 231 | 17 | 8 | 9 | 0.275 | 47.1% | 0.249 | -0.105 |
+| control/baserate | 249 | 232 | 17 | 8 | 9 | 0.275 | 47.1% | 0.249 | -0.105 |
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 9 | 1 | 0 | 1 | 0.250 | 0.0% | 0.000 | — |
 | lmstudio/auto[post-verbot] | 20 | 17 | 3 | 1 | 2 | 0.214 | 33.3% | 0.222 | +0.036 |
@@ -24,10 +24,10 @@ Window: all-time · 1041 issued across 14 forecaster arms · 880 open (4 past de
 | manual/fable-5 | 38 | 34 | 4 | 3 | 1 | 0.086 | 75.0% | 0.188 | +0.540 |
 | manual/fable-5/unattested | 101 | 100 | 1 | 1 | 0 | 0.090 | 100.0% | 0.000 | — |
 | manual/opus-5 | 74 | 71 | 3 | 1 | 2 | 0.386 | 33.3% | 0.222 | -0.736 |
-| manual/opus-5/unattested | 120 | 117 | 3 | 1 | 2 | 0.141 | 33.3% | 0.222 | +0.366 |
+| manual/opus-5/unattested | 121 | 118 | 3 | 1 | 2 | 0.141 | 33.3% | 0.222 | +0.366 |
 | manual/sonnet-5 | 45 | 25 | 20 | 12 | 8 | 0.231 | 60.0% | 0.240 | +0.037 |
-| manual/sonnet-5/unattested | 110 | 102 | 8 | 5 | 3 | 0.174 | 62.5% | 0.234 | +0.257 |
-| operator/human | 9 | 5 | 1 | 1 | 0 | 0.122 | 100.0% | 0.000 | — |
+| manual/sonnet-5/unattested | 111 | 103 | 8 | 5 | 3 | 0.174 | 62.5% | 0.234 | +0.257 |
+| operator/human | 10 | 6 | 1 | 1 | 0 | 0.122 | 100.0% | 0.000 | — |
 
 
 > **Disclosure — what the elicited arms are.** Arms tagged `manual/*` are frontier language models elicited by the operator against the same packet the machine arm receives. They are **not informationally independent of this desk**: the model is given the desk's own corpus and standing instructions as context. Their independence is procedural — a separate instrument answering the same questions — not informational. Rows are segregated by model, and no pooled score is published, because a Brier belongs to one forecaster.
@@ -703,6 +703,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260827-48 | `control/baserate` | 2026-08-27 | 2026-10-19 | 33% | disaster | On at least one day between 2026-08-26 and 2026-10-15, the Singapore National Environment Agency 24-hour PSI for at least one of the five reporting regions reaches 101 or higher. |
 | KKR-20260827-78 | `manual/sonnet-5/unattested` | 2026-08-27 | 2026-10-19 | 27% | cyber | The CISA Known Exploited Vulnerabilities catalog entry for CVE-2026-8452, the Citrix NetScaler ADC and Gateway flaw added 2026-08-26, has its knownRansomwareCampaignUse field changed to Yes between 2026-09-03 and 2026-10-15. |
 | KKR-20260827-101 | `control/baserate` | 2026-08-27 | 2026-10-19 | 33% | cyber | The CISA Known Exploited Vulnerabilities catalog entry for CVE-2026-8452, the Citrix NetScaler ADC and Gateway flaw added 2026-08-26, has its knownRansomwareCampaignUse field changed to Yes between 2026-09-03 and 2026-10-15. |
+| KKR-20260827-120 | `manual/opus-5/unattested` | 2026-08-27 | 2026-10-19 | 60% | disaster | The official confirmed death toll from the late-August 2026 Nepal-Tibet flash floods will stand at 750 or more at some point between 2026-09-01 and 2026-10-15. |
 | KKR-20260729-03 | `lmstudio/auto` | 2026-07-29 | 2026-10-20 | 15% | disaster | On or before 2026-10-20, a major earthquake of magnitude 7.0 or higher strikes Japan, resulting in over 1,000 fatalities. |
 | KKR-20260804-60 | `manual/opus-5/unattested` | 2026-08-04 | 2026-10-20 | 85% | political | The United States Senate confirms Todd Blanche as Attorney General in a recorded floor vote held between 2026-08-05 and 2026-10-16. |
 | KKR-20260811-19 | `manual/opus-5/unattested` | 2026-08-11 | 2026-10-20 | 30% | cyber | The CISA KEV catalog adds at least one new Microsoft SharePoint Server CVE, with dateAdded between 2026-08-12 and 2026-10-16. |
@@ -910,6 +911,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260825-20 | `manual/opus-5/unattested` | 2026-08-25 | 2026-12-03 | 65% | political | OFAC adds at least one entity with a listed address in mainland China or Hong Kong to the SDN list under an Iran-related program between 2026-09-01 and 2026-11-30. |
 | KKR-20260827-50 | `control/baserate` | 2026-08-27 | 2026-12-03 | 25% | economic | The US Federal Register publishes a presidential document imposing or raising tariffs on Canadian-origin goods, with a publication date between 2026-08-26 and 2026-11-30. |
 | KKR-20260827-51 | `control/baserate` | 2026-08-27 | 2026-12-03 | 29% | political | OFAC adds at least one entity with a listed address in mainland China or Hong Kong to the SDN list under an Iran-related program between 2026-09-01 and 2026-11-30. |
+| KKR-20260827-119 | `manual/sonnet-5/unattested` | 2026-08-27 | 2026-12-03 | 13% | economics_markets | The reported 12.9 billion dollar Nvidia acquisition of Hugging Face is confirmed closed, meaning the transaction has legally completed, between 2026-09-03 and 2026-11-30. |
 | KKR-20260806-03 | `manual/opus-5/unattested` | 2026-08-06 | 2026-12-04 | 35% | military_conflict | UKMTO issues an incident advisory, or CENTCOM issues a statement, reporting an attack on or seizure of a commercial vessel in the Strait of Hormuz or Gulf of Oman between 2026-08-06 and 2026-11-30. |
 | KKR-20260806-06 | `manual/opus-5/unattested` | 2026-08-06 | 2026-12-04 | 55% | political | The House Committee on Ethics publishes a statement or report on ethics.house.gov naming Representative Max Miller, dated between 2026-08-06 and 2026-11-30. |
 | KKR-20260806-18 | `control/baserate` | 2026-08-06 | 2026-12-04 | 31% | military_conflict | UKMTO issues an incident advisory, or CENTCOM issues a statement, reporting an attack on or seizure of a commercial vessel in the Strait of Hormuz or Gulf of Oman between 2026-08-06 and 2026-11-30. |
@@ -994,6 +996,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260807-11 | `manual/opus-5` | 2026-08-07 | 2027-01-07 | 32% | cyber | CISA adds at least one WordPress core or WordPress plugin vulnerability to the Known Exploited Vulnerabilities catalog with a date added between 2026-08-08 and 2026-12-31. |
 | KKR-20260827-115 | `operator/human` | 2026-08-27 | 2027-01-07 | 35% | ai-claims | OpenAI publishes a revised Preparedness Framework, described by OpenAI as a revision or new version of the framework that dates largely to December 2023, on openai.com between 2026-08-28 and 2026-12-31. |
 | KKR-20260827-118 | `control/baserate` | 2026-08-27 | 2027-01-07 | 43% | ai-claims | OpenAI publishes a revised Preparedness Framework, described by OpenAI as a revision or new version of the framework that dates largely to December 2023, on openai.com between 2026-08-28 and 2026-12-31. |
+| KKR-20260827-121 | `operator/human` | 2026-08-27 | 2027-01-07 | 25% | ai-claims | OpenAI publishes a system card or preparedness report for the Astra model on openai.com between 2026-08-28 and 2026-12-31 that names at least one external organization, a government agency or an independent AI safety organization, as having evaluated the Astra model. |
+| KKR-20260827-122 | `control/baserate` | 2026-08-27 | 2027-01-07 | 43% | ai-claims | OpenAI publishes a system card or preparedness report for the Astra model on openai.com between 2026-08-28 and 2026-12-31 that names at least one external organization, a government agency or an independent AI safety organization, as having evaluated the Astra model. |
 | KKR-20260810-16 | `manual/opus-5` | 2026-08-10 | 2027-01-08 | 30% | cyber | LexisNexis Risk Solutions reports a data breach affecting 100000 or more individuals to the Maine Attorney General between 2026-08-11 and 2026-12-31. |
 | KKR-20260810-32 | `control/baserate` | 2026-08-10 | 2027-01-08 | 31% | cyber | LexisNexis Risk Solutions reports a data breach affecting 100000 or more individuals to the Maine Attorney General between 2026-08-11 and 2026-12-31. |
 | KKR-20260729-06 | `lmstudio/auto` | 2026-07-29 | 2027-01-10 | 35% | cyber | On or before 2027-01-10, a major cyberattack on a U.S. state government results in the public exposure of more than 1 million personal records. |
@@ -1184,7 +1188,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*13 of 1041 issued (1.2%) have been voided.*
+*13 of 1045 issued (1.2%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
