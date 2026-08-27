@@ -562,6 +562,7 @@ _VENUE_LEXICON = {
     "nyse": [], "comex": ["gold", "futures"], "ice": ["brent", "futures"],
     # series -> the subject the series measures
     "dcoilwtico": ["wti", "cushing", "crude"],
+    "dcoilbrenteu": ["brent", "crude"],  # KK37-GATE (E2)
     "dfedtaru": ["fomc", "federal", "funds"],
     "sp500": ["500"], "dgs10": ["treasury", "yield"],
     # KK31-GATE (E3): board-7 gaps + the KK31 kill-grade faces. An alias row
@@ -836,6 +837,7 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     for _m in re.finditer(r"\b(?:in\s+effect\s+on|as\s+of|described\s+in\s+the|"
                           r"dated|on\s+or\s+before|on\s+or\s+after|"
                           r"up\s+to\s+and\s+including|no\s+later\s+than|"
+                          r"by|since|"  # KK37-GATE (E1)
                           r"the)\s+(20\d{2}-\d{2}-\d{2})\b",
                           both, re.I):
         _governed.add(_m.group(1))
@@ -884,7 +886,10 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                        "war desk prints it to describe its own reports; it "
                        "cannot be adjudicated as a property of the world")
     # --- KK20: window may not open before the seal ---
-    if _dates:
+    # KK37-GATE (E1): when every date is governed the window is
+    # [seal, deadline] by construction (E8); a governed reference date
+    # is not an opening bound and must not read as retrodiction.
+    if _dates and not _fellback:
         try:
             _open = datetime.strptime(_dates[0], "%Y-%m-%d").date()
             _now = datetime.now().date()  # KK30: desk operating day, see deadline governor note
@@ -1000,7 +1005,10 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                 r"(?:\d|\b(?:one|two|three|four|five|six|seven|eight|nine|ten|"
                 r"eleven|twelve)\b))|(?:(?:\d|\b(?:one|two|three|four|five|six|"
                 r"seven|eight|nine|ten|eleven|twelve)\b)\s*[^.;]{0,20}"
-                r"(?:at least|or greater|or higher|or more|or above|or fewer))",
+                r"(?:at least|or greater|or higher|or more|or above|or fewer))"
+                # KK37-GATE (E3): a geographic radius is a standalone criterion
+                r"|(?:within\s+\d+(?:\.\d+)?\s*(?:nm|nautical\s+miles?|km|"
+                r"kilomet(?:er|re)s?|miles?|mi)\s+of)",
                 _res_low2)
             and (len(re.findall(r"20\d{2}-\d{2}-\d{2}", _res_low2)) >= 2
                  # KK35-GATE (E3): a common-noun subject is invisible to the

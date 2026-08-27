@@ -1,0 +1,128 @@
+[
+  {
+    "statement": "Between 2026-08-26 and 2026-11-30, a Russian presidential decree ordering a new general or partial mobilization of citizens into the armed forces is published on the official legal portal publication.pravo.gov.ru.",
+    "resolution": "TRUE if publication.pravo.gov.ru carries a presidential decree dated 2026-08-26 through 2026-11-30 ordering general or partial mobilization of citizens; routine conscription-campaign and reservist training-assembly decrees do not count.",
+    "failure_condition": "No presidential decree ordering general or partial mobilization of citizens, with a date inside the window, appears on the official legal portal.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-02",
+    "probability": 50,
+    "citations": [
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-08"
+    }
+  },
+  {
+    "statement": "Nvidia (NVDA) official Nasdaq closing price on 2026-08-27, the session after its scheduled 2026-08-26 after-close earnings release, is more than 5.0 percent above or below its 2026-08-26 official close.",
+    "resolution": "TRUE if the Nasdaq official closing price of NVDA on 2026-08-27 differs from the 2026-08-26 official close by more than 5.0 percent in either direction; a move of exactly 5.0 percent or less is FALSE.",
+    "failure_condition": "The NVDA official close on 2026-08-27 is within 5.0 percent of the official close on 2026-08-26.",
+    "domain": "economics/markets",
+    "deadline": "2026-09-01",
+    "probability": 25,
+    "citations": [
+      59,
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 16,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-09"
+    }
+  },
+  {
+    "statement": "Between 2026-08-25 and 2026-10-31, the HHS Office for Civil Rights breach portal posts an entry naming Nutex Health or a Nutex-affiliated hospital with 500 or more individuals affected.",
+    "resolution": "TRUE if the HHS OCR breach portal lists an entry whose covered-entity name contains Nutex or names a hospital Nutex Health publicly identifies as its facility, with submission date 2026-08-25 through 2026-10-31 and 500 or more individuals affected.",
+    "failure_condition": "No qualifying Nutex-linked entry with 500 or more individuals affected and a submission date inside the window appears on the HHS OCR breach portal.",
+    "domain": "cyber",
+    "deadline": "2026-11-04",
+    "probability": 23,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-10"
+    }
+  },
+  {
+    "statement": "Between 2026-08-26 and 2026-10-31, CISA adds to the Known Exploited Vulnerabilities catalog at least one Zimbra Collaboration vulnerability other than CVE-2026-73570.",
+    "resolution": "TRUE if the CISA KEV catalog JSON contains an entry whose vendorProject or product field includes Zimbra, with a dateAdded value 2026-08-26 through 2026-10-31, and a cveID other than CVE-2026-73570.",
+    "failure_condition": "The KEV catalog contains no Zimbra entry other than CVE-2026-73570 with a dateAdded value inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 23,
+    "citations": [
+      21
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-11"
+    }
+  },
+  {
+    "statement": "On at least one day between 2026-08-26 and 2026-10-15, the Singapore National Environment Agency 24-hour PSI for at least one of the five reporting regions reaches 101 or higher.",
+    "resolution": "TRUE if NEA published 24-hour PSI data (data.gov.sg historical PSI or NEA haze page) shows a value of 101 or higher for any region on any day 2026-08-26 through 2026-10-15.",
+    "failure_condition": "Every NEA 24-hour regional PSI reading for every day in the window is 100 or below.",
+    "domain": "disaster",
+    "deadline": "2026-10-19",
+    "probability": 33,
+    "citations": [
+      41
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-12"
+    }
+  }
+]

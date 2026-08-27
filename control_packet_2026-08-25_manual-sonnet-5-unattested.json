@@ -1,0 +1,104 @@
+[
+  {
+    "statement": "The government of Iran submits or publicly announces formal withdrawal from the Nuclear Non-Proliferation Treaty between 2026-08-26 and 2026-09-30.",
+    "resolution": "TRUE if Iran files a withdrawal notice under NPT Article X or a wire service (Reuters, AP, AFP) reports such an announcement, dated between 2026-08-26 and 2026-09-30; else FALSE.",
+    "failure_condition": "No NPT withdrawal notice or wire-service-confirmed withdrawal announcement from Iran appears inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-05",
+    "probability": 50,
+    "citations": [
+      115,
+      126,
+      130
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-13"
+    }
+  },
+  {
+    "statement": "A New York state court issues any order or ruling, including on a preliminary motion, in the business-group lawsuit against the city-owned grocery store initiative, between 2026-08-26 and 2026-09-30.",
+    "resolution": "TRUE if the case docket in the New York court e-filing system shows a judicial order or ruling entered between 2026-08-26 and 2026-09-30 in this case; FALSE if no order is entered.",
+    "failure_condition": "The court docket shows no order or ruling entered in the case inside the window.",
+    "domain": "political",
+    "deadline": "2026-10-02",
+    "probability": 29,
+    "citations": [
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-14"
+    }
+  },
+  {
+    "statement": "A named law-enforcement agency (Europol, FBI, or a national police force) announces additional arrests connected to the global cybercrime crackdown, between 2026-08-26 and 2026-09-08.",
+    "resolution": "TRUE if Europol, the FBI, or a national police agency issues a press release naming additional arrests tied to this operation, dated 2026-08-26 through 2026-09-08; FALSE if no such release appears.",
+    "failure_condition": "No named law-enforcement agency issues a release announcing further arrests tied to this operation inside the window.",
+    "domain": "crime/security",
+    "deadline": "2026-09-11",
+    "probability": 31,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3117,
+      "n": 77,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-15"
+    }
+  },
+  {
+    "statement": "GDACS raises tropical cyclone JULIO-26 from Green to Orange or Red alert level before the system is marked dissipated, between 2026-08-26 and 2026-09-08.",
+    "resolution": "TRUE if the GDACS event page for JULIO-26 shows an Orange or Red alert level at any point between 2026-08-26 and 2026-09-08; FALSE if it stays Green or is closed without upgrade.",
+    "failure_condition": "The GDACS alert level for JULIO-26 never exceeds Green before the window closes or the system dissipates.",
+    "domain": "disaster",
+    "deadline": "2026-09-10",
+    "probability": 33,
+    "citations": [
+      55
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-16"
+    }
+  }
+]

@@ -1,0 +1,125 @@
+[
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled meeting on 2026-09-16, moving it above the 3.50 to 3.75 percent range held since 2026-07-29.",
+    "domain": "economics",
+    "probability": 30,
+    "resolution": "FRED series DFEDTARU shows an upper limit above 3.75 percent effective 2026-09-17, matching the FOMC policy statement released 2026-09-16.",
+    "deadline": "2026-09-18",
+    "citations": [
+      76,
+      77,
+      82
+    ],
+    "failure_condition": "The upper limit of the target range stands at 3.75 percent or lower after the 2026-09-16 decision."
+  },
+  {
+    "statement": "Europe Brent spot crude prints at or below 75.00 US dollars per barrel on at least one business day between 2026-09-01 and 2026-10-30.",
+    "domain": "economics",
+    "probability": 30,
+    "resolution": "FRED series DCOILBRENTEU carries at least one observation at or below 75.00 with an observation date between 2026-09-01 and 2026-10-30.",
+    "deadline": "2026-11-13",
+    "citations": [
+      73,
+      86,
+      101
+    ],
+    "failure_condition": "Every Brent spot observation dated inside the window is above 75.00 US dollars per barrel."
+  },
+  {
+    "statement": "A temporary joint Iran-Oman maritime corridor through the Strait of Hormuz becomes operational, carrying at least one vessel transit between 2026-09-01 and 2026-10-31.",
+    "domain": "military_conflict",
+    "probability": 32,
+    "resolution": "The Oman News Agency or the Omani foreign ministry, and the Iranian foreign ministry, both state the corridor is in operation with at least one transit completed before 2026-11-01.",
+    "deadline": "2026-11-06",
+    "citations": [
+      101,
+      73,
+      86
+    ],
+    "failure_condition": "No vessel transits a jointly administered Iran-Oman corridor under an operative agreement on or before 2026-10-31."
+  },
+  {
+    "statement": "United States and Iranian officials hold a direct negotiating session, in person or by video link, between 2026-09-01 and 2026-11-30.",
+    "domain": "military_conflict",
+    "probability": 35,
+    "resolution": "The State Department or White House and the Iranian foreign ministry each confirm a direct session inside the window. Relay through Omani or Qatari mediators alone does not count.",
+    "deadline": "2026-12-04",
+    "citations": [
+      86,
+      73
+    ],
+    "failure_condition": "All US-Iran contact in the window runs through third-party mediators, with no direct session between the two governments."
+  },
+  {
+    "statement": "OFAC designates at least one foreign-registered company or non-Iranian-flagged vessel for facilitating Iranian oil sales, in an action dated between 2026-09-01 and 2026-10-31.",
+    "domain": "political",
+    "probability": 82,
+    "resolution": "The OFAC Recent Actions page or an SDN list update dated inside the window adds at least one foreign-registered entity or non-Iranian-flagged vessel under an Iran-related program tag.",
+    "deadline": "2026-11-06",
+    "citations": [
+      73,
+      86
+    ],
+    "failure_condition": "Every Iran-related OFAC designation dated inside the window names only Iran-based persons, entities, or Iranian-flagged vessels."
+  },
+  {
+    "statement": "CISA catalogues a Microsoft SharePoint vulnerability as actively exploited, with a KEV date-added value between 2026-08-27 and 2026-10-31.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "The CISA KEV catalog JSON holds an entry with vendorProject Microsoft, a product string naming SharePoint, and a dateAdded value between 2026-08-27 and 2026-10-31.",
+    "deadline": "2026-11-04",
+    "citations": [
+      18,
+      26
+    ],
+    "failure_condition": "No SharePoint entry in the KEV catalog carries a dateAdded value inside that range."
+  },
+  {
+    "statement": "A named extortion group publicly claims the Boston Scientific intrusion by listing the company on a leak site between 2026-08-27 and 2026-10-15.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "At least two of BleepingComputer, Cybersecurity Dive, Reuters, and The Record report a named group listing Boston Scientific on an extortion leak site inside the window.",
+    "deadline": "2026-10-20",
+    "citations": [
+      17,
+      61
+    ],
+    "failure_condition": "No named extortion group lists Boston Scientific on a leak site on or before 2026-10-15."
+  },
+  {
+    "statement": "The Bureau of Industry and Security adds a party to the Entity List over diversion of advanced computing items or AI servers to China, published in the Federal Register between 2026-09-01 and 2026-11-30.",
+    "domain": "crime_security",
+    "probability": 38,
+    "resolution": "A Federal Register rule published inside the window adds at least one party to the Entity List with a justification resting on diversion of advanced computing items or AI servers to China.",
+    "deadline": "2026-12-04",
+    "citations": [
+      15
+    ],
+    "failure_condition": "No Entity List addition published inside the window rests on diversion of advanced computing or AI server items to China."
+  },
+  {
+    "statement": "The confirmed death toll in Nepal from the 2026-08-26 Bhotekoshi and Trishuli flooding reaches 300 or more, stated by a Nepali government body between 2026-08-27 and 2026-10-12.",
+    "domain": "disaster",
+    "probability": 45,
+    "resolution": "The National Disaster Risk Reduction and Management Authority, the Home Ministry, or the Office of the Prime Minister of Nepal states a confirmed dead count of 300 or more for this event inside the window.",
+    "deadline": "2026-10-15",
+    "citations": [
+      24,
+      98,
+      120
+    ],
+    "failure_condition": "The Nepali confirmed dead count for this event stays below 300 through 2026-10-12, with the balance still carried as missing."
+  },
+  {
+    "statement": "Donald Trump and Vladimir Putin meet face to face between 2026-09-07 and 2026-12-18.",
+    "domain": "political",
+    "probability": 15,
+    "resolution": "The Kremlin press service and the White House both confirm the two met in person on a date inside the window. Phone calls and meetings by delegates do not count.",
+    "deadline": "2026-12-22",
+    "citations": [
+      110,
+      119
+    ],
+    "failure_condition": "Trump and Putin do not meet in person on any date inside the window."
+  }
+]
