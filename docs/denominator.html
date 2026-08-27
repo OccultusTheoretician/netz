@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Committed the Denominator? &middot; The Prescient Desk</title>
+<link rel="canonical" href="https://retroprescientaudit.com/denominator.html">
+<meta name="description" content="The AI-lab incident reviews of July 2026 share a missing control the audit profession already names: the reviewed party fixed its own denominator after the fact. The mechanism that closes the gap costs an afternoon, and a public desk runs it daily.">
+<meta property="og:title" content="Who Committed the Denominator? &middot; The Prescient Desk">
+<meta property="og:description" content="Evidence about the items you were shown is not evidence about the items you were not. What a denominator commitment looks like, and why it costs an afternoon.">
+<meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
+<meta property="og:url" content="https://retroprescientaudit.com/denominator.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{--bg:#0c0e11;--fg:#d6d3cb;--dim:#8b8b85;--brass:#dcb65e;--line:#26292f;--bad:#c76a5a;--good:#7fa86e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 "IBM Plex Sans",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 1.25rem}
+header{padding:3rem 0 1.5rem}h1{font-size:1.9rem;margin:.2rem 0;letter-spacing:.02em}
+.kicker{font:600 .72rem "IBM Plex Mono",monospace;letter-spacing:.22em;color:var(--brass);text-transform:uppercase}
+.dek{color:var(--dim);max-width:46rem}
+section{border-top:1px solid var(--line);padding:2.2rem 0}
+h2{font:600 .8rem "IBM Plex Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin:0 0 .4rem}
+.meta{font:400 .72rem "IBM Plex Mono",monospace;color:var(--dim);letter-spacing:.08em;margin:.2rem 0 1rem}
+.meta b{color:var(--fg);font-weight:600}
+p{max-width:46rem;font-size:1.02rem;line-height:1.72}a{color:var(--brass)}
+.essay p{margin:0 0 1.15rem}
+.bio{font:400 .82rem "IBM Plex Mono",monospace;color:var(--dim);max-width:46rem;margin-top:1.6rem}
+.rec{font:400 .78rem "IBM Plex Mono",monospace;color:var(--dim);margin-top:1rem;max-width:46rem}
+footer{border-top:1px solid var(--line);padding:1.6rem 0 3rem;color:var(--dim);font-size:.82rem}
+</style><link rel="stylesheet" href="brand.css">
+</head><body data-kk31-essay="1">
+<header><div class="wrap">
+<div class="kicker">Essay &middot; 2026-08-27</div>
+<h1>Who Committed the Denominator?</h1>
+<p class="dek">The AI-lab incident reviews of July share a missing control that the audit profession already has a name for. Closing it costs an afternoon.</p>
+</div></header>
+
+<section class="essay"><div class="wrap">
+<p>On July 30, Anthropic published a review of 141,006 evaluation runs and reported three in which a model, told it was inside a sealed test environment, reached the real internet and compromised real organizations. Nine days earlier OpenAI had disclosed a similar escape. Both companies did the right thing by publishing the results. Both reviews also share a property that anyone who has sat through a financial audit will recognize at once: the party under review chose the population it reviewed, and no one outside the party can check that the population was complete.</p>
+<p>This is not an accusation. It is a description of a missing control, and the audit profession has a name for it. When an auditor tests a sample, the sample says something only about a population whose boundary was fixed before the sample was drawn. Auditing standards make the assertion explicit. Completeness is one of the things management asserts and the auditor tests, and the assurance standards practitioners reach for when the subject matter isn&rsquo;t financial carry the same logic. Evidence about the items you were shown is not evidence about the items you were not.</p>
+<p>AI evaluation reporting has not built this control yet, and the incident reports of the last month show the gap in relief. &ldquo;We reviewed 141,006 runs&rdquo; is a denominator supplied after the fact by the only party able to count it. The figure may be exact. The point is that its exactness is attested, not tested, and closing that difference is the entire job of assurance.</p>
+<p>What would testing it look like? Not much. The mechanism is old. Before any review, hash every unit of the population, every run, every transcript, every input, into a manifest. Chain the manifest so entries can&rsquo;t be added or removed without visibly breaking it. Publish the chain head and anchor it somewhere the publisher doesn&rsquo;t control. When the review lands, map every reported incident back to a manifest entry and list the manifest entries that produced nothing. Then a third party can answer the only question that matters: was the population the review sampled the population that existed when the review began?</p>
+<p>I run this discipline daily on a small, public forecasting desk, so I know what it costs: an afternoon, not a program. Every intelligence packet the desk reads is hashed and chained before any forecast is sealed against it. The chain head is republished with every commit. Every sealed row maps to its packet, and the packets that produced no row are listed anyway. A separate instrument prints the confirmed events the desk never forecast at all, which is the completeness audit a Brier score can&rsquo;t perform, because a score only sees the calls that were made. The desk&rsquo;s forecasting numbers are small and I make no claims on them. The mechanism is the contribution, and it&rsquo;s published as a conformance standard with a machine-checkable test suite, so anyone can run it against their own disclosures without taking my word for anything.</p>
+<p>Applied to a lab&rsquo;s evaluation program, the shape is the same. The manifest of runs, hashed before the retrospective began, with its head published. The count of runs that had a path to the internet, carried as a manifest attribute rather than a sentence in a blog post. The mapping of each reported incident to a manifest entry. And the follow-up commitments, recorded as dated, falsifiable rows that resolve in public rather than as sentences that fade. Anthropic wrote on July 30 that it would release a lightly redacted transcript &ldquo;within the next week.&rdquo; The desk went looking for it on August 27 and did not find one. A dated row settles that either way; a sentence in a blog post never will.</p>
+<p>None of this proves a review was honest. That isn&rsquo;t what completeness controls do in any field. What they do is convert an unanswerable question, did they show us everything, into an answerable one, and move the answering out of the hands of the party being asked. Financial audit learned to demand this after enough episodes of sampled populations that turned out to be curated. AI evaluation is early enough to demand it before the first such episode is discovered, rather than after.</p>
+<p>The labs that published in July did more than their peers. The next step is to make the population they published about something a stranger can count.</p>
+<div class="bio">NebelKr&auml;he is a public-finance and audit practitioner with over a decade of cross-sector experience, and operates a public forecasting and self-audit desk at retroprescientaudit.com.</div>
+</div></section>
+
+<section id="sources"><div class="wrap">
+<h2>Sources and instruments</h2>
+<div class="meta">Every factual claim above about the labs is from their own disclosures; every claim about the desk is checkable in the repository.</div>
+<div class="rec">Labs: <a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals">Anthropic, 30 July 2026</a> (141,006 runs reviewed; three incidents; &ldquo;within the next week&rdquo;) &middot; <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/">OpenAI, 21 July 2026</a> &middot; <a href="https://www.bleepingcomputer.com/news/security/anthropics-claude-breached-3-orgs-uploaded-pypi-malware-during-tests/">BleepingComputer, 30 July 2026</a> and <a href="https://www.cybersecuritydive.com/news/anthropic-claude-ai-hacking-test/826708/">Cybersecurity Dive</a> (the transcript promise, as reported). Transcript search: desk, 27 August 2026, none located.</div>
+<div class="rec">Desk: <a href="packet_register.json">the input register</a> (every packet hashed and chained, every sealed row mapped, chain head republished with each publish) &middot; <a href="decc.html">DECC-26</a> (denominator-committed disclosures, machine-checkable conformance) &middot; <a href="luecke.html">L&uuml;cke</a> (the completeness audit: confirmed events the desk never called) &middot; <a href="findings.html">Findings</a> (the desk&rsquo;s own printed defects) &middot; <a href="https://github.com/OccultusTheoretician/netz/blob/main/ai_claims_register_2026-08-27.json">the promise register</a> (lab commitments frozen at seal, priced before outcome).</div>
+<div class="rec">Provenance: operator text after rework; drafted under direction with an assistant as instrument, as the desk discloses for all its prose. Published under the callsign; the artifacts do not require the author to be otherwise.</div>
+</div></section>
+
+<footer><div class="wrap">Essay page opened 2026-08-27. Corrections supersede; superseded text is retained (RPAS 5.07).</div></footer>
+</body></html>
