@@ -1,0 +1,180 @@
+[
+  {
+    "statement": "The HHS Office for Civil Rights breach portal posts a hacking or IT incident breach filed by an entity whose name contains Nutex, with a submission date between 2026-08-25 and 2026-12-15.",
+    "resolution": "TRUE if the OCR breach portal lists an entity containing Nutex, breach type hacking or IT incident, submission date between 2026-08-25 and 2026-12-15 inclusive.",
+    "failure_condition": "The OCR portal carries no Nutex-named entity with a submission date inside that window.",
+    "domain": "cyber",
+    "deadline": "2026-12-18",
+    "probability": 23,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-17"
+    }
+  },
+  {
+    "statement": "The LBMA Gold Price PM auction fixes at or above 5000.00 dollars per troy ounce on at least one business day between 2026-09-01 and 2026-11-30.",
+    "resolution": "TRUE if any LBMA Gold Price PM fix dated between 2026-09-01 and 2026-11-30 is 5000.00 dollars or higher in the published LBMA price record.",
+    "failure_condition": "Every LBMA PM gold fix inside that window settles below 5000.00 dollars.",
+    "domain": "economic",
+    "deadline": "2026-12-02",
+    "probability": 25,
+    "citations": [
+      69,
+      71
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 16,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-18"
+    }
+  },
+  {
+    "statement": "The US Federal Register publishes a presidential document imposing or raising tariffs on Canadian-origin goods, with a publication date between 2026-08-26 and 2026-11-30.",
+    "resolution": "TRUE if federalregister.gov returns a presidential document published inside that window whose operative text imposes or increases duties on goods of Canada.",
+    "failure_condition": "No presidential document published inside that window imposes or raises duties on Canadian goods.",
+    "domain": "economic",
+    "deadline": "2026-12-03",
+    "probability": 25,
+    "citations": [
+      57
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 16,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-19"
+    }
+  },
+  {
+    "statement": "OFAC adds at least one entity with a listed address in mainland China or Hong Kong to the SDN list under an Iran-related program between 2026-09-01 and 2026-11-30.",
+    "resolution": "TRUE if an OFAC action inside that window designates an entity addressed in China or Hong Kong carrying an Iran-related program tag such as IRAN, IFSR, or IRGC.",
+    "failure_condition": "No OFAC Iran-program designation inside that window lists a China or Hong Kong address.",
+    "domain": "political",
+    "deadline": "2026-12-03",
+    "probability": 29,
+    "citations": [
+      115,
+      127,
+      128
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-20"
+    }
+  },
+  {
+    "statement": "A Russian presidential decree ordering a new partial or general mobilization is published on pravo.gov.ru with a signature date between 2026-09-01 and 2026-12-31.",
+    "resolution": "TRUE if the official Russian legal portal pravo.gov.ru carries a presidential ukaz signed inside that window ordering mobilization of reservists beyond the standing conscription cycle.",
+    "failure_condition": "No mobilization ukaz signed inside that window appears on the official legal portal.",
+    "domain": "military_conflict",
+    "deadline": "2027-01-05",
+    "probability": 50,
+    "citations": [
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-21"
+    }
+  },
+  {
+    "statement": "At least four distinct Russian oil refineries are struck in drone attacks between 2026-09-01 and 2026-09-30, each acknowledged by a Russian regional governor, ministry, or federal agency.",
+    "resolution": "TRUE if four or more separately named Russian refineries are reported hit inside that window with acknowledgment from a Russian governor, ministry, or Rosaviatsia statement.",
+    "failure_condition": "Fewer than four distinct Russian refineries are acknowledged as struck inside that window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-05",
+    "probability": 50,
+    "citations": [
+      40
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5,
+      "n": 12,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-22"
+    }
+  },
+  {
+    "statement": "The US District Court for the District of Columbia docket in the Lockerbie bombing prosecution carries an order setting a new trial date, entered between 2026-08-26 and 2026-12-31.",
+    "resolution": "TRUE if a docket entry in that case, dated inside the window, fixes a specific new trial date, as shown on PACER or CourtListener.",
+    "failure_condition": "No docket entry inside that window fixes a specific new trial date.",
+    "domain": "crime_security",
+    "deadline": "2027-01-06",
+    "probability": 31,
+    "citations": [
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3117,
+      "n": 77,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T04:27:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right.",
+      "control_for": "KKR-20260825-23"
+    }
+  }
+]

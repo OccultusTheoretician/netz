@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled 2026-09-16 decision, moving from 3.50-3.75 percent to a range whose upper bound is at least 4.00 percent.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "The Federal Reserve press release dated 2026-09-16 at federalreserve.gov states a target range with an upper bound of 4.00 percent or higher; a hold or a cut resolves false.",
+    "deadline": "2026-09-18",
+    "citations": [
+      76,
+      77,
+      82
+    ],
+    "failure_condition": "The 2026-09-16 FOMC statement leaves the target range at 3.50-3.75 percent or lowers it."
+  },
+  {
+    "statement": "Brent crude spot, as recorded in the FRED series DCOILBRENTEU, is at or above 100.00 dollars per barrel on at least one day between 2026-08-27 and 2026-09-30.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "At least one DCOILBRENTEU observation dated 2026-08-27 through 2026-09-30 on fred.stlouisfed.org has a value of 100.00 or higher; otherwise false.",
+    "deadline": "2026-10-09",
+    "citations": [
+      73,
+      101
+    ],
+    "failure_condition": "Every DCOILBRENTEU observation dated 2026-08-27 through 2026-09-30 is below 100.00."
+  },
+  {
+    "statement": "CISA adds CVE-2026-63520, the Microsoft SharePoint Business Connectivity Services remote code execution flaw that completes the chain with CVE-2026-55040, to the Known Exploited Vulnerabilities catalog between 2026-08-27 and 2026-09-30.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "The CISA KEV JSON feed contains an entry for CVE-2026-63520 whose dateAdded value falls between 2026-08-27 and 2026-09-30 inclusive; otherwise false.",
+    "deadline": "2026-10-02",
+    "citations": [
+      18
+    ],
+    "failure_condition": "The KEV catalog carries no entry for CVE-2026-63520, or the entry has a dateAdded outside 2026-08-27 through 2026-09-30."
+  },
+  {
+    "statement": "Boston Scientific files a Form 8-K or 8-K/A with the SEC that includes Item 1.05, Material Cybersecurity Incidents, for the August 2026 cyberattack between 2026-08-27 and 2026-10-30, following its initial Item 8.01 disclosure.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "EDGAR filings for CIK 885725 show a Form 8-K or 8-K/A with filing date 2026-08-27 through 2026-10-30 whose listed items include 1.05; otherwise false.",
+    "deadline": "2026-11-03",
+    "citations": [
+      17,
+      61
+    ],
+    "failure_condition": "No Boston Scientific 8-K or 8-K/A filed 2026-08-27 through 2026-10-30 lists Item 1.05."
+  },
+  {
+    "statement": "Xi Jinping holds an in-person meeting with Egyptian President Abdel Fattah El-Sisi on Egyptian territory between 2026-08-30 and 2026-09-04, as part of the state visit announced by the Chinese Foreign Ministry.",
+    "domain": "political",
+    "probability": 90,
+    "resolution": "Both Xinhua or the Chinese Foreign Ministry and the Egyptian Presidency report an in-person Xi-Sisi meeting held on Egyptian territory between 2026-08-30 and 2026-09-04; otherwise false.",
+    "deadline": "2026-09-08",
+    "citations": [
+      131
+    ],
+    "failure_condition": "Xi does not meet Sisi in person on Egyptian territory between 2026-08-30 and 2026-09-04, whether the trip is cancelled, postponed, or the Egypt leg is dropped."
+  },
+  {
+    "statement": "Judge Yvonne Gonzalez Rogers enters an order, consent judgment, or final judgment approving or entering the multistate settlement with Meta in N.D. Cal. case 4:23-cv-05448 between 2026-08-27 and 2026-11-30.",
+    "domain": "political",
+    "probability": 65,
+    "resolution": "The docket of 4:23-cv-05448-YGR on PACER or CourtListener shows a court-entered order, consent judgment, or final judgment approving or entering the settlement, dated 2026-08-27 through 2026-11-30.",
+    "deadline": "2026-12-02",
+    "citations": [
+      48,
+      59,
+      75
+    ],
+    "failure_condition": "No order, consent judgment, or final judgment approving or entering the settlement is entered on the 4:23-cv-05448 docket between 2026-08-27 and 2026-11-30."
+  },
+  {
+    "statement": "UKMTO publishes at least one incident advisory reporting a merchant vessel struck or damaged by a projectile, mine, or uncrewed system within 100 nautical miles of the Strait of Hormuz, anchor 26.5N 56.3E, between 2026-08-27 and 2026-09-25.",
+    "domain": "military/conflict",
+    "probability": 75,
+    "resolution": "A UKMTO advisory at ukmto.org dated 2026-08-27 through 2026-09-25 reports a vessel struck or damaged by a projectile, mine, or uncrewed system at a position within 100 nm of 26.5N 56.3E; otherwise false.",
+    "deadline": "2026-09-29",
+    "citations": [
+      101,
+      73
+    ],
+    "failure_condition": "No merchant vessel is struck or damaged by a projectile, mine, or uncrewed system within 100 nm of 26.5N 56.3E between 2026-08-27 and 2026-09-25."
+  },
+  {
+    "statement": "United States and Iranian officials at the level of secretary of state, foreign minister, or presidential special envoy meet face to face for a negotiating session between 2026-08-27 and 2026-09-30, and both governments acknowledge the meeting.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "Both the US State Department or White House and the Iranian Foreign Ministry publicly confirm a face to face US-Iran session at that level held between 2026-08-27 and 2026-09-30; mediated exchanges through third parties do not count.",
+    "deadline": "2026-10-02",
+    "citations": [
+      86,
+      73,
+      101
+    ],
+    "failure_condition": "No face to face US-Iran session at secretary of state, foreign minister, or special envoy level takes place between 2026-08-27 and 2026-09-30, or only one government acknowledges it."
+  },
+  {
+    "statement": "The confirmed death toll in Nepal from the 26 August 2026 Bhotekoshi-Trishuli avalanche flash flood reaches at least 250 by 2026-09-16, as published by Nepal Police, the Office of the Prime Minister of Nepal, or the NDRRMA.",
+    "domain": "disaster",
+    "probability": 55,
+    "resolution": "By 2026-09-16 a figure of at least 250 confirmed dead in Nepal, excluding missing persons and excluding deaths in China, is published by Nepal Police, the Office of the Prime Minister, or the NDRRMA BIPAD portal.",
+    "deadline": "2026-09-18",
+    "citations": [
+      24,
+      98,
+      120
+    ],
+    "failure_condition": "The highest confirmed Nepal death count published by those Nepali authorities by 2026-09-16 is below 250."
+  },
+  {
+    "statement": "The jury in the Maltese trial of Yorgen Fenech for complicity in the murder of Daphne Caruana Galizia returns a verdict between 2026-08-27 and 2026-09-30.",
+    "domain": "crime/security",
+    "probability": 55,
+    "resolution": "The Criminal Court of Malta jury delivers a guilty or not guilty verdict on the complicity in wilful homicide charge between 2026-08-27 and 2026-09-30, reported by Times of Malta and Malta Independent; mistrial or jury discharge resolves false.",
+    "deadline": "2026-10-02",
+    "citations": [
+      14
+    ],
+    "failure_condition": "No jury verdict on the homicide complicity charge is delivered between 2026-08-27 and 2026-09-30, whether because proceedings continue, are dissolved, or are suspended."
+  }
+]
