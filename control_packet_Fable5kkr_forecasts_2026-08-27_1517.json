@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "The FOMC raises the target range for the federal funds rate above 3.50-3.75 percent at its scheduled 2026-09-16 meeting.",
+    "resolution": "The FOMC statement dated 2026-09-16 on federalreserve.gov announces an increase in the target range; equivalently FRED series DFEDTARU shows a value above 3.75 on 2026-09-17.",
+    "failure_condition": "The 2026-09-16 FOMC statement leaves the target range at 3.50-3.75 percent or lowers it.",
+    "domain": "economics/markets",
+    "deadline": "2026-09-18",
+    "probability": 25,
+    "citations": [
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Nvidia or Hugging Face officially confirms a definitive agreement for Nvidia to acquire Hugging Face between 2026-08-27 and 2026-09-30.",
+    "resolution": "A press release, SEC filing by NVIDIA Corp, or official company blog post dated between 2026-08-27 and 2026-09-30 states that Nvidia has entered a definitive agreement to acquire Hugging Face.",
+    "failure_condition": "Neither company has issued an official confirmation of a definitive acquisition agreement dated inside the window, or either company states the talks ended without agreement.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-02",
+    "probability": 25,
+    "citations": [
+      81,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one civil complaint naming Carhartt Inc as defendant over the 2026 customer data breach is filed in a US federal district court between 2026-08-27 and 2026-10-02.",
+    "resolution": "PACER or CourtListener shows a complaint filed between 2026-08-27 and 2026-10-02 in any US federal district court that names Carhartt Inc as defendant and alleges harm from the 2026 data breach of about 12.9 million accounts.",
+    "failure_condition": "No complaint against Carhartt Inc arising from the breach appears on any federal docket with a filing date inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-06",
+    "probability": 33,
+    "citations": [
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds a vulnerability in the Avada WordPress theme to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-08-28 and 2026-10-30.",
+    "resolution": "The CISA KEV catalog JSON contains an entry whose vendorProject, product, or vulnerabilityName field includes Avada, with dateAdded between 2026-08-28 and 2026-10-30 inclusive.",
+    "failure_condition": "No KEV entry referencing Avada carries a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 33,
+    "citations": [
+      29
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Official confirmed deaths from the 2026-08-26 Bhotekoshi-Trishuli flash flood, Nepal and Tibet combined, reach at least 1,000 by 2026-09-30.",
+    "resolution": "Reuters, AP, or AFP reports that official confirmed deaths from the 2026-08-26 flood, Nepal police or NDRRMA figures plus Chinese official figures for Gyirong county, total at least 1,000 as of a date no later than 2026-09-30.",
+    "failure_condition": "Combined official confirmed deaths remain below 1,000 in every wire-service report dated on or before 2026-09-30; missing or presumed-dead counts do not count.",
+    "domain": "disaster",
+    "deadline": "2026-10-02",
+    "probability": 52,
+    "citations": [
+      35,
+      39,
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The AfD receives at least 40.0 percent of Zweitstimmen in the Saxony-Anhalt Landtag election held on 2026-09-06.",
+    "resolution": "The preliminary official result published by the Landeswahlleiterin Sachsen-Anhalt shows the AfD Zweitstimmen share at 40.0 percent or higher in the 2026-09-06 Landtag election.",
+    "failure_condition": "The preliminary official AfD Zweitstimmen share is 39.9 percent or lower.",
+    "domain": "political",
+    "deadline": "2026-09-08",
+    "probability": 44,
+    "citations": [
+      120
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Norwegian Royal House announces the death of King Harald V occurring between 2026-08-27 and 2026-09-10.",
+    "resolution": "An official statement from the Royal House of Norway (kongehuset.no) or NTB reports the death of King Harald V on a date between 2026-08-27 and 2026-09-10 inclusive.",
+    "failure_condition": "King Harald V is alive on 2026-09-10, or his death is dated after 2026-09-10.",
+    "domain": "political",
+    "deadline": "2026-09-14",
+    "probability": 44,
+    "citations": [
+      102,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran both publicly confirm signing a final agreement ending the war that began on 2026-02-28, with the signing occurring between 2026-08-28 and 2026-10-30.",
+    "resolution": "The White House or State Department and the Iranian Foreign Ministry or IRNA each confirm a signed final agreement ending the war, distinct from a ceasefire, memorandum, or framework, signed between 2026-08-28 and 2026-10-30.",
+    "failure_condition": "No accord described by both governments as a final or comprehensive war-ending agreement is signed inside the window; a ceasefire extension, interim MOU, or one-sided claim does not count.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-03",
+    "probability": 53,
+    "citations": [
+      104,
+      109,
+      111
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "UKMTO publishes at least three separate incident reports of merchant vessels struck by a projectile, mine, or other weapon in the Strait of Hormuz, Gulf of Oman, or Persian Gulf between 2026-08-28 and 2026-09-30.",
+    "resolution": "The UKMTO incidents page (ukmto.org) lists at least three distinct incident references dated 2026-08-28 to 2026-09-30, each stating a vessel was struck, hit, or impacted in the Strait of Hormuz, Gulf of Oman, or Persian Gulf.",
+    "failure_condition": "Fewer than three distinct UKMTO incident reports dated inside the window describe a vessel actually struck; approaches, warnings, and boardings do not count.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-02",
+    "probability": 53,
+    "citations": [
+      131,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Spanish authorities (Guardia Civil or Policia Nacional) announce at least one arrest in the 2026-08-27 Villena Treasure theft between 2026-08-27 and 2026-10-30.",
+    "resolution": "An official Guardia Civil or Policia Nacional communication, or Reuters, AP, AFP, or EFE citing such officials, reports at least one person arrested (detenido) for the Villena Museum theft, with the arrest dated between 2026-08-27 and 2026-10-30.",
+    "failure_condition": "No arrest attributed to the Villena Museum theft is announced by Spanish authorities with an arrest date inside the window.",
+    "domain": "crime/security",
+    "deadline": "2026-11-03",
+    "probability": 43,
+    "citations": [
+      10,
+      11,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-27T16:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

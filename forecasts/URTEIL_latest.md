@@ -1,4 +1,4 @@
-# URTEIL - verdict-grounding audit - 2026-08-27T06:00:50Z
+# URTEIL - verdict-grounding audit - 2026-08-27T15:21:23Z
 
 Every non-ABSTAIN jury verdict audited against the held evidence for its row, by the same mechanics that audit forecast citations. Grounding is checkable even when the verdict is right; the CORRECT-BUT-UNGROUNDED class is the one the blind protocol cannot see on its own.
 
@@ -10,7 +10,7 @@ Every non-ABSTAIN jury verdict audited against the held evidence for its row, by
 | UNHELD-VERDICT | 0 |
 | UNHELD-SEARCHED | 75 |
 | OUT-OF-HELD | 0 |
-| ABSTAIN | 45 |
+| ABSTAIN | 0 |
 
 ## CUSTODY
 - held_evidence_2026-08-27.json holds 0 rows - held-evidence gathering returned nothing for a jury day; every verdict that day is unauditable at the custody layer
