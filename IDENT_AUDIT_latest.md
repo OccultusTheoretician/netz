@@ -1,22 +1,22 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-08-27T16:48:07Z · 68 report(s)
+Generated 2026-08-28T17:41:58Z · 70 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **68**
-- findings: **107**
+- reports audited: **70**
+- findings: **116**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 3
-  - UNSOURCED: 104
-- distinct tokens: **46**
+  - UNSOURCED: 113
+- distinct tokens: **55**
 
 ## Reached a sealed row
 
-**29** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
+**32** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
 
 | row | token | finding | arm | status | k/kl |
 |---|---|---|---|---|---|
@@ -49,6 +49,9 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20260825-11` | `CVE-2026-73570` | UNSOURCED | manual/fable-5/unattested | open | — |
 | `KKR-20260827-47` | `CVE-2026-73570` | UNSOURCED | control/baserate | open | — |
 | `KKR-20260822-10` | `CVE-2026-69836` | UNSOURCED | manual/fable-5/unattested | open | keyed |
+| `KKR-20260827-63` | `CVE-2021-23758` | UNSOURCED | lmstudio/auto | open | — |
+| `KKR-20260827-78` | `CVE-2026-8452` | UNSOURCED | manual/sonnet-5/unattested | open | — |
+| `KKR-20260827-101` | `CVE-2026-8452` | UNSOURCED | control/baserate | open | — |
 
 ## Every finding
 
@@ -161,4 +164,13 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-08-22_1516.md | `CVE-2026-73570` | UNSOURCED |
 | battle_report_2026-08-25_1517.md | `CVE-2026-21962` | UNSOURCED |
 | battle_report_2026-08-26_1538.md | `CVE-2026-60004` | UNSOURCED |
+| battle_report_2026-08-27_1517.md | `CVE-2021-23758` | UNSOURCED |
+| battle_report_2026-08-27_1517.md | `CVE-2015-3246` | UNSOURCED |
+| battle_report_2026-08-27_1517.md | `CVE-2015-5287` | UNSOURCED |
+| battle_report_2026-08-27_1517.md | `CVE-2022-0995` | UNSOURCED |
+| battle_report_2026-08-27_1517.md | `CVE-2026-8452` | UNSOURCED |
+| battle_report_2026-08-27_1517.md | `CVE-2019-1068` | UNSOURCED |
+| battle_report_2026-08-28_1518.md | `CVE-2023-49105` | UNSOURCED |
+| battle_report_2026-08-28_1518.md | `CVE-2026-53362` | UNSOURCED |
+| battle_report_2026-08-28_1518.md | `CVE-2026-66384` | UNSOURCED |
 
