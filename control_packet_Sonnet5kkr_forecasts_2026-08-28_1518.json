@@ -1,0 +1,248 @@
+[
+  {
+    "statement": "A CVE tied to the actively exploited PaperCut zero-day in item 12 will be added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-28 and 2026-09-25.",
+    "resolution": "True if the CISA KEV catalog lists a PaperCut CVE with dateAdded in the 2026-08-28 to 2026-09-25 window, checked at the deadline via cisa.gov/known-exploited-vulnerabilities-catalog.",
+    "failure_condition": "No PaperCut CVE appears in the CISA KEV catalog with a dateAdded value in that window as of the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-09-28",
+    "probability": 33,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one of the three CVSS 10.0 ServiceNow vulnerabilities in items 18 and 20 will be added to the CISA KEV catalog with a dateAdded value between 2026-08-28 and 2026-10-12.",
+    "resolution": "True if the CISA KEV catalog lists a ServiceNow CVE matching these flaws with dateAdded in the 2026-08-28 to 2026-10-12 window, checked at the deadline.",
+    "failure_condition": "No matching ServiceNow CVE appears in the CISA KEV catalog with dateAdded in that window as of the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-10-15",
+    "probability": 33,
+    "citations": [
+      18,
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC will leave the federal funds target range unchanged at its scheduled meeting concluding 2026-09-16, despite the hawkish Jackson Hole remarks in items 53, 55, and 56.",
+    "resolution": "True if the FOMC statement released 2026-09-16 at 2pm ET sets the same target range in effect entering the meeting, per federalreserve.gov or a wire report.",
+    "failure_condition": "The 2026-09-16 FOMC statement shows any change, cut or hike, to the federal funds target range.",
+    "domain": "economic",
+    "deadline": "2026-09-18",
+    "probability": 25,
+    "citations": [
+      53,
+      55,
+      56
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A new, specifically named acquirer will submit or confirm a takeover offer for PayPal Holdings after the prior bid in item 59 reportedly collapsed, first reported between 2026-08-28 and 2026-11-30.",
+    "resolution": "True if Reuters, Bloomberg, the Wall Street Journal, or a PayPal SEC filing names a new acquirer offer with a first-report date in that window, checked at the deadline.",
+    "failure_condition": "No wire report or SEC filing names a new acquirer offer for PayPal Holdings within the window.",
+    "domain": "economic",
+    "deadline": "2026-12-03",
+    "probability": 25,
+    "citations": [
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USDA or FSIS will publish a Federal Register entry or formal notice implementing the ranch and farm self-processing policy in item 60, dated between 2026-08-28 and 2026-12-15.",
+    "resolution": "True if federalregister.gov lists a matching USDA/FSIS entry with a publication date in that window, or USDA issues a press release confirming the rule, checked at the deadline.",
+    "failure_condition": "No matching Federal Register entry or USDA/FSIS rule announcement appears within the window as of the deadline.",
+    "domain": "economic",
+    "deadline": "2026-12-18",
+    "probability": 25,
+    "citations": [
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran, or Israel and Iran, will announce a mutually acknowledged ceasefire or armistice in the war referenced in items 92, 97, and 100, first reported between 2026-08-28 and 2026-10-15.",
+    "resolution": "True if two or more of Reuters, AP, AFP, or an official US, Israeli, or Iranian statement report a mutual ceasefire with an effective date in that window, checked at the deadline.",
+    "failure_condition": "No mutually acknowledged ceasefire or armistice is reported by two or more of the listed sources with an effective date in the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-18",
+    "probability": 53,
+    "citations": [
+      92,
+      97,
+      100
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "US naval forces enforcing the Iran oil-export blockade in item 97 will exchange direct fire with Iranian military or IRGC naval units, first reported between 2026-08-28 and 2026-09-30.",
+    "resolution": "True if two or more of Reuters, AP, AFP, CENTCOM, or IRGC statements report a direct armed exchange tied to the blockade with a first-report date in that window, checked at the deadline.",
+    "failure_condition": "No direct armed exchange between US and Iranian or IRGC naval forces is reported by two or more listed sources within the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-03",
+    "probability": 53,
+    "citations": [
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Austrian police will publicly name at least one arrested suspect in the 673-diamond necklace theft in item 9, reported between 2026-08-28 and 2026-10-27.",
+    "resolution": "True if the Landespolizeidirektion Wien or a wire service (APA, Reuters, AP) names an arrested suspect connected to the theft with a first-report date in that window, checked at the deadline.",
+    "failure_condition": "No named arrested suspect connected to the theft is reported within the window as of the deadline.",
+    "domain": "crime_security",
+    "deadline": "2026-10-30",
+    "probability": 43,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A second, distinct flash-flood or lake-outburst event from the barrier lake in items 43 and 46 will hit Nepal or Tibet, separate from the flooding already reported as of 2026-08-28, between 2026-09-04 and 2026-10-15.",
+    "resolution": "True if Nepal disaster authorities, Chinese state media, or two wire services report a new flood or outburst event from this barrier lake, distinct from the ongoing flooding, in that window, checked at the deadline.",
+    "failure_condition": "No new, distinct flood or outburst event from this barrier lake is reported within the window as of the deadline.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-10-18",
+    "probability": 52,
+    "citations": [
+      43,
+      46
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Incumbent Edward Markey will win the Massachusetts Democratic US Senate primary held 2026-09-01, referenced in item 127.",
+    "resolution": "True if the AP declares Markey the winner, or the Massachusetts Secretary of the Commonwealth official results show Markey with the most votes, checked at the deadline.",
+    "failure_condition": "The AP or official state results show a different candidate received the most votes.",
+    "domain": "political",
+    "deadline": "2026-09-04",
+    "probability": 44,
+    "citations": [
+      127
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

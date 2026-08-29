@@ -1,0 +1,224 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog will add an entry for CVE-2026-81578 or CVE-2026-82078, the actively exploited PaperCut NG/MF flaws, with a dateAdded value between 2026-09-05 and 2026-10-24.",
+    "resolution": "TRUE if the CISA KEV catalog lists CVE-2026-81578 or CVE-2026-82078 with dateAdded inside the window, checked on 2026-10-26; FALSE if neither entry appears by then.",
+    "failure_condition": "Neither CVE-2026-81578 nor CVE-2026-82078 has a dateAdded entry in the CISA KEV catalog on or before 2026-10-24.",
+    "domain": "cyber",
+    "deadline": "2026-10-26",
+    "probability": 33,
+    "citations": [
+      15,
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "McKesson will file a document on SEC EDGAR, such as a Form 8-K/A or 10-Q, between 2026-09-05 and 2026-11-30 that states a specific number or bounded range of individuals affected by its August 2026 data theft incident.",
+    "resolution": "TRUE if a McKesson SEC EDGAR filing dated in the window states a specific number or bounded range of affected individuals; FALSE if no such filing exists as of 2026-12-02.",
+    "failure_condition": "No McKesson filing on SEC EDGAR dated on or before 2026-11-30 states a specific number or bounded range of affected individuals.",
+    "domain": "cyber",
+    "deadline": "2026-12-02",
+    "probability": 33,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Open Market Committee will announce a lower federal funds target range at the conclusion of its September 15-16, 2026 meeting than the range set in July 2026.",
+    "resolution": "TRUE if the Federal Reserve statement released 2026-09-16 sets a federal funds target range below the range set after the July 2026 meeting; FALSE if held or raised.",
+    "failure_condition": "The federal funds target range announced 2026-09-16 is equal to or higher than the range set after the July 2026 meeting.",
+    "domain": "economics/markets",
+    "deadline": "2026-09-16",
+    "probability": 25,
+    "citations": [
+      67
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The most-active CBOT corn futures contract will settle at or above 6.00 USD per bushel on 2026-11-30.",
+    "resolution": "TRUE if CME Group settlement data shows the most-active corn contract settling at or above 6.00 USD per bushel on 2026-11-30; FALSE otherwise.",
+    "failure_condition": "The most-active CBOT corn contract settles below 6.00 USD per bushel on 2026-11-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-30",
+    "probability": 25,
+    "citations": [
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Serbia will hold its snap parliamentary election on 2026-10-25 rather than on 2026-10-18, the two dates floated by President Aleksandar Vucic.",
+    "resolution": "TRUE if Serbian election authorities or two of Reuters, AP, and AFP confirm voting occurred on 2026-10-25; FALSE if the vote is held 2026-10-18 or not confirmed by 2026-10-28.",
+    "failure_condition": "Voting for this election takes place on a date other than 2026-10-25, or remains unconfirmed as of 2026-10-28.",
+    "domain": "political",
+    "deadline": "2026-10-28",
+    "probability": 44,
+    "citations": [
+      112
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Venezuela will sign a written agreement granting oil exploration or production rights to a named US company under the deal Trump announced on 2026-08-28, signed between 2026-09-01 and 2026-09-30.",
+    "resolution": "TRUE if Reuters, AP, or Bloomberg reports a signed agreement naming at least one US company took effect in the window; FALSE if no such report appears by 2026-10-02.",
+    "failure_condition": "No Reuters, AP, or Bloomberg report describes a signed agreement naming a US company under this deal between 2026-09-01 and 2026-09-30.",
+    "domain": "political",
+    "deadline": "2026-10-02",
+    "probability": 44,
+    "citations": [
+      64,
+      94,
+      118
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A single Russian missile or drone strike will kill 10 or more people in Kyiv, Ukraine, between 2026-09-05 and 2026-10-05.",
+    "resolution": "TRUE if Ukrainian officials and at least one of Reuters, AP, or AFP report 10 or more deaths from one strike on Kyiv in the window; checked 2026-10-07; FALSE otherwise.",
+    "failure_condition": "No single strike on Kyiv in this window is confirmed by Ukrainian officials and a wire service to have killed 10 or more people.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-07",
+    "probability": 53,
+    "citations": [
+      71,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Mojtaba Khamenei will still publicly hold the title of Supreme Leader of Iran throughout the window from 2026-09-05 to 2027-01-31.",
+    "resolution": "TRUE if Iranian state media and at least one of Reuters or AP confirm Mojtaba Khamenei still holds this title on 2027-01-31; FALSE if replaced, resigned, or killed before then.",
+    "failure_condition": "Iranian state media or a wire service confirms Mojtaba Khamenei died, resigned, or was formally replaced as Supreme Leader before 2027-01-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-03",
+    "probability": 53,
+    "citations": [
+      40,
+      103
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The confirmed death toll from the 26 August 2026 Nepal-Tibet glacial flood disaster will exceed 1,000 people at some point between 2026-09-05 and 2026-09-19.",
+    "resolution": "TRUE if the National Disaster Risk Reduction and Management Authority of Nepal or two of Reuters, AP, and AFP report a confirmed toll above 1,000 in the window; checked 2026-09-22; FALSE otherwise.",
+    "failure_condition": "No NDRRMA update or two-wire-service report states a confirmed death toll above 1,000 for this disaster by 2026-09-19.",
+    "domain": "disaster",
+    "deadline": "2026-09-22",
+    "probability": 52,
+    "citations": [
+      25,
+      38
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
