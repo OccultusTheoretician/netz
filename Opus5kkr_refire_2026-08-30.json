@@ -1,0 +1,24 @@
+[
+ {
+  "statement": "At the scheduled 2026-09-16 FOMC decision the Committee raises the federal funds target range to 3.75 to 4.00 percent.",
+  "domain": "economics",
+  "probability": 52,
+  "resolution": "TRUE if the FRED series DFEDTARU shows 4.00 for 2026-09-17, matching a 25 basis point increase announced in the 2026-09-16 FOMC statement.",
+  "deadline": "2026-09-18",
+  "citations": [
+   67
+  ],
+  "failure_condition": "The upper bound of the target range holds at 3.75 percent or moves to any value other than 4.00 percent after the 2026-09-16 decision."
+ },
+ {
+  "statement": "The UK government announces activation of Operation Safeguard or a new prison early release measure between 2026-09-01 and 2026-11-20.",
+  "domain": "political",
+  "probability": 58,
+  "resolution": "TRUE if a gov.uk press release or written ministerial statement dated in that window announces Operation Safeguard activation, Operation Early Dawn, or a new early release scheme.",
+  "deadline": "2026-11-24",
+  "citations": [
+   100
+  ],
+  "failure_condition": "No gov.uk publication dated in the window announces any of those prison capacity measures."
+ }
+]

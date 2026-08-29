@@ -351,7 +351,10 @@ def venue_scope(resolution: str) -> dict:
     def _onehost(left_side: str, right_side: str) -> bool:
         _r = re.split(r";|\.(?=\s|$)|\bbetween\b|\bwith\b", right_side)[0]
         _hosts = set(re.findall(_HOSTRX, _r))
-        if len(_hosts) != 1 or re.search(_HOSTRX, left_side):
+        _lh = set(re.findall(_HOSTRX, left_side))
+        # GATE-2026-08-30 (R3): the one shared host may sit on either side
+        # ("gov.uk press release or written ministerial statement").
+        if len(_hosts | _lh) != 1:
             return False
         _l = " " + re.sub(r"\s+", " ", left_side.lower().strip()) + " "
         _rr = " " + re.sub(r"\s+", " ", re.sub(_HOSTRX, " ", _r).lower().strip()) + " "
@@ -383,7 +386,8 @@ def venue_scope(resolution: str) -> dict:
         _role = re.match(r"\s*(?:[\w-]+\s+){0,7}as\s+(?:an?|the)\s+[\w-]+",
                          low[m.end():m.end() + 140])
         if _venueish(left) and _venueish(right) and not _role and not _onehost(
-                left, low[m.end():m.end() + 140]):  # KK38-REG (R7): raw window, host dot intact
+                low[max(0, m.start() - 90):m.start()],  # GATE-2026-08-30 (R3b): raw left, host dot intact
+                low[m.end():m.end() + 140]):  # KK38-REG (R7): raw window, host dot intact
             disj.append((left.strip()[-45:], right.strip()[:45]))
 
     # EXEMPLARY only when the softener attaches to the VENUE. "(e.g., cabinet

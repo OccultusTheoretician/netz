@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 292146Z AUG 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 292243Z AUG 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 1118 issued across 14 forecaster arms · 957 open (79 past deadline, unresolved)
+Window: all-time · 1123 issued across 14 forecaster arms · 962 open (79 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -22,11 +22,11 @@ Window: all-time · 1118 issued across 14 forecaster arms · 957 open (79 past d
 | lmstudio/auto[pre-verbot] | 60 | 7 | 45 | 13 | 32 | 0.222 | 28.9% | 0.205 | -0.081 |
 | manual/fable | 45 | 32 | 13 | 7 | 6 | 0.183 | 53.8% | 0.249 | +0.265 |
 | manual/fable-5 | 38 | 34 | 4 | 3 | 1 | 0.086 | 75.0% | 0.188 | +0.540 |
-| manual/fable-5/unattested | 113 | 112 | 1 | 1 | 0 | 0.090 | 100.0% | 0.000 | — |
+| manual/fable-5/unattested | 114 | 113 | 1 | 1 | 0 | 0.090 | 100.0% | 0.000 | — |
 | manual/opus-5 | 74 | 71 | 3 | 1 | 2 | 0.386 | 33.3% | 0.222 | -0.736 |
-| manual/opus-5/unattested | 133 | 130 | 3 | 1 | 2 | 0.141 | 33.3% | 0.222 | +0.366 |
+| manual/opus-5/unattested | 135 | 132 | 3 | 1 | 2 | 0.141 | 33.3% | 0.222 | +0.366 |
 | manual/sonnet-5 | 45 | 25 | 20 | 12 | 8 | 0.231 | 60.0% | 0.240 | +0.037 |
-| manual/sonnet-5/unattested | 119 | 111 | 8 | 5 | 3 | 0.174 | 62.5% | 0.234 | +0.257 |
+| manual/sonnet-5/unattested | 121 | 113 | 8 | 5 | 3 | 0.174 | 62.5% | 0.234 | +0.257 |
 | operator/human | 10 | 6 | 1 | 1 | 0 | 0.122 | 100.0% | 0.000 | — |
 
 
@@ -413,6 +413,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260826-06 | `lmstudio/auto` | 2026-08-26 | 2026-09-04 | 45% | cyber | Between 2026-08-27 and 2026-09-02, the U.S. Treasury will release a public statement sanctioning a new group of Iranian hackers linked to critical infrastructure breaches. |
 | KKR-20260826-07 | `lmstudio/auto` | 2026-08-26 | 2026-09-04 | 20% | political | Between 2026-08-27 and 2026-09-02, the European Union will impose new sanctions on Russia related to military actions in Ukraine. |
 | KKR-20260826-08 | `lmstudio/auto` | 2026-08-26 | 2026-09-04 | 30% | crime/security | Between 2026-08-27 and 2026-09-02, the U.S. Department of Justice will publicly confirm a cyberattack on a major U.S. healthcare provider resulting in data exposure. |
+| KKR-20260829-74 | `manual/sonnet-5/unattested` | 2026-08-29 | 2026-09-04 | 58% | political | Incumbent Edward Markey will win the Massachusetts Democratic US Senate primary held 2026-09-01, referenced in item 127. |
 | KKR-20260808-03 | `lmstudio/auto` | 2026-08-08 | 2026-09-05 | 85% | political | Between 2026-08-25 and 2026-08-31, the US Senate will pass a resolution to confirm Todd Blanche as Attorney General, as recorded in the official Congressional Record. |
 | KKR-20260823-03 | `lmstudio/auto` | 2026-08-23 | 2026-09-05 | 22% | disaster | A magnitude 6.0 or greater earthquake strikes Japan between 2026-08-26 and 2026-09-02, with at least 10 fatalities reported. |
 | KKR-20260823-04 | `lmstudio/auto` | 2026-08-23 | 2026-09-06 | 35% | economics/markets | A new US economic sanction against Iran is formally announced by the Treasury Department between 2026-08-27 and 2026-09-03, with a public press release issued. |
@@ -502,6 +503,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260822-32 | `manual/fable-5/unattested` | 2026-08-22 | 2026-09-16 | 50% | military/conflict | A single Russian strike on one Ukrainian locality, occurring between 2026-08-24 and 2026-09-13, produces an official Ukrainian death toll of 15 or more. |
 | KKR-20260827-80 | `manual/sonnet-5/unattested` | 2026-08-27 | 2026-09-16 | 12% | economics_markets | The Federal Open Market Committee raises the target federal funds rate range at the conclusion of its September 15-16, 2026 meeting. |
 | KKR-20260827-103 | `control/baserate` | 2026-08-27 | 2026-09-16 | 25% | economics_markets | The Federal Open Market Committee raises the target federal funds rate range at the conclusion of its September 15-16, 2026 meeting. |
+| KKR-20260829-76 | `manual/sonnet-5/unattested` | 2026-08-29 | 2026-09-16 | 20% | economics/markets | The Federal Open Market Committee will announce a lower federal funds target range at the conclusion of its September 15-16, 2026 meeting than the range set in July 2026. |
 | KKR-20260729-02 | `lmstudio/auto` | 2026-07-29 | 2026-09-17 | 25% | economics/markets | Between 2026-09-10 and 2026-09-17, the S&P 500 index closes below 7,000 points for three consecutive trading days. |
 | KKR-20260804-24 | `manual/opus-5/unattested` | 2026-08-04 | 2026-09-17 | 40% | disaster | The National Interagency Fire Center posts National Preparedness Level 5 on at least one day between 2026-08-10 and 2026-09-15. |
 | KKR-20260804-40 | `control/baserate` | 2026-08-04 | 2026-09-17 | 25% | disaster | The National Interagency Fire Center posts National Preparedness Level 5 on at least one day between 2026-08-10 and 2026-09-15. |
@@ -539,6 +541,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260829-17 | `manual/opus-5/unattested` | 2026-08-29 | 2026-09-18 | 65% | economics_markets | The FOMC raises the federal funds target range by 25 basis points at its scheduled 2026-09-15 to 2026-09-16 meeting, lifting the range to 3.75-4.00 percent. |
 | KKR-20260829-28 | `control/baserate` | 2026-08-29 | 2026-09-18 | 25% | economic | The FOMC will leave the federal funds target range unchanged at its scheduled meeting concluding 2026-09-16, despite the hawkish Jackson Hole remarks in items 53, 55, and 56. |
 | KKR-20260829-30 | `control/baserate` | 2026-08-29 | 2026-09-18 | 25% | economics_markets | The FOMC raises the federal funds target range by 25 basis points at its scheduled 2026-09-15 to 2026-09-16 meeting, lifting the range to 3.75-4.00 percent. |
+| KKR-20260829-75 | `manual/fable-5/unattested` | 2026-08-29 | 2026-09-18 | 80% | economics/markets | The FOMC statement of 2026-09-16 leaves the federal funds target range at or above the pre-meeting range of 3.50 to 3.75 percent. |
+| KKR-20260829-77 | `manual/opus-5/unattested` | 2026-08-29 | 2026-09-18 | 52% | economics | At the scheduled 2026-09-16 FOMC decision the Committee raises the federal funds target range to 3.75 to 4.00 percent. |
 | KKR-20260827-05 | `manual/sonnet-5/unattested` | 2026-08-27 | 2026-09-19 | 40% | cyber | A CVE tied to the Microsoft SharePoint remote code execution exploit chain reported under active targeting on 2026-08-26 will be added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-27 and 2026-09-17. |
 | KKR-20260827-37 | `control/baserate` | 2026-08-27 | 2026-09-19 | 23% | cyber | A CVE tied to the Microsoft SharePoint remote code execution exploit chain reported under active targeting on 2026-08-26 will be added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-27 and 2026-09-17. |
 | KKR-20260817-54 | `manual/fable-5/unattested` | 2026-08-17 | 2026-09-21 | 85% | military/conflict | Between 2026-08-18 and 2026-09-17 at least one drone attack on Moscow city or Moscow oblast is reported by the Moscow mayor or the Russian Ministry of Defense and by at least one Ukrainian or Western outlet. |
@@ -985,6 +989,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260811-23 | `manual/opus-5/unattested` | 2026-08-11 | 2026-11-20 | 80% | economics | The New York Fed Household Debt and Credit Report for Q3 2026 reports aggregate credit card balances above 1.26 trillion US dollars. |
 | KKR-20260811-49 | `control/baserate` | 2026-08-11 | 2026-11-20 | 18% | economics | The New York Fed Household Debt and Credit Report for Q3 2026 reports aggregate credit card balances above 1.26 trillion US dollars. |
 | KKR-20260820-24 | `manual/opus-5/unattested` | 2026-08-20 | 2026-11-24 | 45% | cyber | CISA adds at least one Citrix NetScaler ADC or NetScaler Gateway CVE to the Known Exploited Vulnerabilities catalog, with a date-added value between 2026-08-21 and 2026-11-20. |
+| KKR-20260829-78 | `manual/opus-5/unattested` | 2026-08-29 | 2026-11-24 | 58% | political | The UK government announces activation of Operation Safeguard or a new prison early release measure between 2026-09-01 and 2026-11-20. |
 | KKR-20260802-07 | `lmstudio/auto` | 2026-08-02 | 2026-11-25 | 40% | political | On 2026-11-25, a political scandal involving a U.S. federal official will lead to a formal investigation by Congress, confirmed by a major news outlet. |
 | KKR-20260727-25 | `manual/fable` | 2026-07-27 | 2026-11-30 | 52% | disaster/infrastructure | The European Forest Fire Information System will record more than 400000 hectares burned in Spain for calendar year 2026, as published on or before 2026-11-30. |
 | KKR-20260727-32 | `manual/opus-5` | 2026-07-27 | 2026-11-30 | 30% | political | The German federal government formally introduces draft legislation tightening extremism or hate-crime law in the Bundestag between 2026-07-28 and 2026-11-30. |
@@ -1336,7 +1341,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*13 of 1118 issued (1.2%) have been voided.*
+*13 of 1123 issued (1.2%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists

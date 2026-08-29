@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-08-29T21:46:19Z",
+  "as_of": "2026-08-29T22:43:38Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -35081,6 +35081,122 @@
       "register": "registers/1.0@5414a43d6a49470b",
       "sealed_at": "2026-08-29T21:46:19.074899+00:00",
       "seal_sha256": "d904579834f05e87b651553e332a1c3bfbfcecc4fe846ce02ed0d9ad88a01291"
+    },
+    {
+      "statement": "Incumbent Edward Markey will win the Massachusetts Democratic US Senate primary held 2026-09-01, referenced in item 127.",
+      "domain": "political",
+      "probability": 58,
+      "resolution": "True if the AP declares Markey the winner, or the Massachusetts Secretary of the Commonwealth official results show Markey with the most votes, checked at the deadline.",
+      "deadline": "2026-09-04",
+      "citations": [
+        127
+      ],
+      "failure_condition": "The AP or official state results show a different candidate received the most votes.",
+      "source_report": "battle_report_2026-08-28_1518.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260829-74",
+      "date_issued": "2026-08-29",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-28_1518.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@83248bca2ddb1c36",
+      "sealed_at": "2026-08-29T22:43:35.833461+00:00",
+      "seal_sha256": "9163b237d32bff8123cd0751fd320ad128db5391861c37e7ef1446d42d1eb4c4"
+    },
+    {
+      "statement": "The FOMC statement of 2026-09-16 leaves the federal funds target range at or above the pre-meeting range of 3.50 to 3.75 percent.",
+      "domain": "economics/markets",
+      "probability": 80,
+      "resolution": "The Federal Reserve statement and implementation note dated 2026-09-16 show a target range equal to or higher than 3.50 to 3.75 percent.",
+      "deadline": "2026-09-18",
+      "citations": [
+        52,
+        67
+      ],
+      "failure_condition": "The 2026-09-16 statement sets a target range below 3.50 to 3.75 percent.",
+      "source_report": "battle_report_2026-08-29_1537.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260829-75",
+      "date_issued": "2026-08-29",
+      "model": "manual/fable-5/unattested",
+      "source_packet": "kkr_packet_2026-08-29_1537.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@83248bca2ddb1c36",
+      "sealed_at": "2026-08-29T22:43:36.641209+00:00",
+      "seal_sha256": "fc68b42df0f1b359bd2b48b42690de7155d3941ccf4c98c620a5a7a870f3125f"
+    },
+    {
+      "statement": "The Federal Open Market Committee will announce a lower federal funds target range at the conclusion of its September 15-16, 2026 meeting than the range set in July 2026.",
+      "domain": "economics/markets",
+      "probability": 20,
+      "resolution": "TRUE if the Federal Reserve statement released 2026-09-16 sets a federal funds target range below the range set after the July 2026 meeting; FALSE if held or raised.",
+      "deadline": "2026-09-16",
+      "citations": [
+        67
+      ],
+      "failure_condition": "The federal funds target range announced 2026-09-16 is equal to or higher than the range set after the July 2026 meeting.",
+      "source_report": "battle_report_2026-08-29_1537.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260829-76",
+      "date_issued": "2026-08-29",
+      "model": "manual/sonnet-5/unattested",
+      "source_packet": "kkr_packet_2026-08-29_1537.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@83248bca2ddb1c36",
+      "sealed_at": "2026-08-29T22:43:37.423182+00:00",
+      "seal_sha256": "17928e4ba6fe0e95e9d615683abf45d910cec77b7393c31649e1d7730f62b9e1"
+    },
+    {
+      "statement": "At the scheduled 2026-09-16 FOMC decision the Committee raises the federal funds target range to 3.75 to 4.00 percent.",
+      "domain": "economics",
+      "probability": 52,
+      "resolution": "TRUE if the FRED series DFEDTARU shows 4.00 for 2026-09-17, matching a 25 basis point increase announced in the 2026-09-16 FOMC statement.",
+      "deadline": "2026-09-18",
+      "citations": [
+        67
+      ],
+      "failure_condition": "The upper bound of the target range holds at 3.75 percent or moves to any value other than 4.00 percent after the 2026-09-16 decision.",
+      "source_report": "battle_report_2026-08-29_1537.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260829-77",
+      "date_issued": "2026-08-29",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-29_1537.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@83248bca2ddb1c36",
+      "sealed_at": "2026-08-29T22:43:38.215062+00:00",
+      "seal_sha256": "6b99e963ed6a4856a2d909106d24cb192fe184418090707cdf706ed23c0aec95"
+    },
+    {
+      "statement": "The UK government announces activation of Operation Safeguard or a new prison early release measure between 2026-09-01 and 2026-11-20.",
+      "domain": "political",
+      "probability": 58,
+      "resolution": "TRUE if a gov.uk press release or written ministerial statement dated in that window announces Operation Safeguard activation, Operation Early Dawn, or a new early release scheme.",
+      "deadline": "2026-11-24",
+      "citations": [
+        100
+      ],
+      "failure_condition": "No gov.uk publication dated in the window announces any of those prison capacity measures.",
+      "source_report": "battle_report_2026-08-29_1537.md",
+      "rubric_hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+      "id": "KKR-20260829-78",
+      "date_issued": "2026-08-29",
+      "model": "manual/opus-5/unattested",
+      "source_packet": "kkr_packet_2026-08-29_1537.md",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@83248bca2ddb1c36",
+      "sealed_at": "2026-08-29T22:43:38.215082+00:00",
+      "seal_sha256": "ec814060f7ec580f29c3ecea8b6f87346af3c8ce579dfb930e4a405810d54d25"
     }
   ]
 }
