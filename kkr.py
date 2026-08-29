@@ -469,6 +469,14 @@ def _citation_support(p: dict):
     claim = _content_words(p.get("statement", "") + " " + p.get("resolution", ""))
     if not claim:
         return None
+    # GATE-2026-08-30 (E2v): 'Fed' is three letters and mixed case -
+    # invisible to the content-word channel (>=4 lowercase) and the caps
+    # channel (all-caps only). When the claim itself is about the
+    # FOMC/Federal Reserve, a cited item naming the Fed or FOMC grounds it.
+    if {"fomc", "federal"} & claim:
+        for _c in sorted(cites):
+            if any(re.search(r"\bFed\b|\bFOMC\b", _t) for _t in items.get(_c, [])):
+                return None
     # KK31-GATE (E12): short proper-noun channel. _content_words strips 2-3
     # char tokens by design (a shared 'CVE' is not support), which blinds the
     # check to subjects that ARE short caps - GE, AP, TSE, MOF. Exact match
@@ -859,7 +867,8 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
         _fellback = (not _ung) and bool(_all_dates)
         _dates = _ung or _all_dates
     _sched = re.search(r"\b(?:scheduled|calendar|elections?|referendums?|summits?|"
-                       r"fomc|meetings?|hearings?|verdicts?|midterms?|runoffs?|sentencing|expir\w*|"
+                       r"fomc|primar\w*|caucus\w*|by-elections?|special elections?|"  # GATE-2026-08-30 (E1)
+                       r"meetings?|hearings?|verdicts?|midterms?|runoffs?|sentencing|expir\w*|"
                        r"settle\w*|auction|inaugurat\w*|swearing|"
                        r"regularly scheduled|already announced)\b", both, re.I)
     _confirm = re.search(r"\b(?:confirmed by|reported by|verified by|"
@@ -1052,6 +1061,13 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
         return out
     _s_subj = set(_s_subj) | _inits(p.get("statement", ""))
     _r_subj = set(_r_subj) | _inits(p.get("resolution", ""))
+    # GATE-2026-08-30 (E2s): curated acronym-institution pairs. Cleared
+    # only when the FULL pair sits on the other side, so 'reserve' alone
+    # (Reserve Bank of India) can never ride the acronym.
+    for _a, _need in (("fomc", {"federal", "reserve"}),):
+        if ((_a in _s_subj and _need <= set(_r_subj))
+                or (_a in _r_subj and _need <= set(_s_subj))):
+            _s_subj.add("_acropair"); _r_subj.add("_acropair")
     if _s_subj and _r_subj and not _tokens_overlap(_s_subj, _r_subj):
         reasons.append(
             "the resolution names a different subject than the statement — "
