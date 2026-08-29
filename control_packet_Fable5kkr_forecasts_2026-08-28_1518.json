@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "Russian forces conduct at least one drone or missile strike on Kyiv between 2026-09-01 and 2026-09-30.",
+    "resolution": "At least two of Reuters, AP, AFP, or BBC report a Russian drone or missile strike on Kyiv occurring between 2026-09-01 and 2026-09-30.",
+    "failure_condition": "No Russian drone or missile strike on Kyiv occurs at any point between 2026-09-01 and 2026-09-30.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-02",
+    "probability": 53,
+    "citations": [
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran convene at least one publicly acknowledged round of direct or mediated negotiations between 2026-08-29 and 2026-11-30.",
+    "resolution": "Both the US and Iranian governments publicly acknowledge that direct or mediated negotiations between their officials convened on at least one date between 2026-08-29 and 2026-11-30.",
+    "failure_condition": "No round of direct or mediated US-Iran negotiations convenes with public acknowledgment from both governments during the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-02",
+    "probability": 53,
+    "citations": [
+      76,
+      92,
+      100
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month Brent crude settles above 100 US dollars on at least one trading day between 2026-09-01 and 2026-11-30.",
+    "resolution": "The ICE Brent crude front-month futures contract records at least one official daily settlement price above 100.00 US dollars between 2026-09-01 and 2026-11-30.",
+    "failure_condition": "Every ICE Brent front-month daily settlement between 2026-09-01 and 2026-11-30 is at or below 100.00 US dollars.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 25,
+    "citations": [
+      97,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The S&P 500 closes below 7000 on at least one trading day between 2026-09-01 and 2026-11-30.",
+    "resolution": "The S&P 500 index records at least one official daily closing value below 7000.00 between 2026-09-01 and 2026-11-30, per S&P Dow Jones Indices data.",
+    "failure_condition": "Every S&P 500 official daily close between 2026-09-01 and 2026-11-30 is at or above 7000.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 25,
+    "citations": [
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds a PaperCut vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-28 and 2026-10-30.",
+    "resolution": "The CISA Known Exploited Vulnerabilities catalog contains at least one entry with vendorProject PaperCut and a dateAdded value between 2026-08-28 and 2026-10-30.",
+    "failure_condition": "No PaperCut entry with a dateAdded value inside the window exists in the CISA KEV catalog when checked at the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-11-02",
+    "probability": 33,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds a ServiceNow vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-29 and 2026-12-31.",
+    "resolution": "The CISA Known Exploited Vulnerabilities catalog contains at least one entry with vendorProject ServiceNow and a dateAdded value between 2026-08-29 and 2026-12-31.",
+    "failure_condition": "No ServiceNow entry with a dateAdded value inside the window exists in the CISA KEV catalog when checked at the deadline.",
+    "domain": "cyber",
+    "deadline": "2027-01-04",
+    "probability": 33,
+    "citations": [
+      18,
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The combined confirmed death toll from the Nepal-Tibet flash floods reaches at least 1000 between 2026-08-29 and 2026-10-15.",
+    "resolution": "Official Nepali government figures or OCHA reporting state a combined Nepal and Tibet confirmed death toll of at least 1000 from the August 2026 flash floods, on or before 2026-10-15.",
+    "failure_condition": "Combined confirmed deaths acknowledged by Nepali authorities or OCHA remain below 1000 through 2026-10-15.",
+    "domain": "disaster",
+    "deadline": "2026-10-19",
+    "probability": 52,
+    "citations": [
+      42,
+      31,
+      35
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The barrier lake at the Nepal-China border produces a further outburst or overflow causing new evacuations, damage, or deaths between 2026-08-29 and 2026-09-30.",
+    "resolution": "At least two of BBC, Guardian, Al Jazeera, Reuters, or AP report a new outburst or overflow from the Nepal-China barrier lake between 2026-08-29 and 2026-09-30 causing fresh evacuations, damage, or deaths.",
+    "failure_condition": "The barrier lake produces no further outburst or overflow causing evacuations, damage, or deaths during the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-02",
+    "probability": 52,
+    "citations": [
+      43,
+      46,
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A presidential document renaming Lake Ontario as Lake America is published in the Federal Register with a publication date between 2026-08-27 and 2026-09-30.",
+    "resolution": "The Federal Register at federalregister.gov contains a presidential document directing that Lake Ontario be renamed Lake America, with a publication date between 2026-08-27 and 2026-09-30.",
+    "failure_condition": "No presidential document renaming Lake Ontario appears in the Federal Register with a publication date inside the window.",
+    "domain": "political",
+    "deadline": "2026-10-02",
+    "probability": 44,
+    "citations": [
+      126,
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Austrian authorities announce at least one arrest connected to the Vienna museum diamond necklace theft between 2026-08-29 and 2026-12-31.",
+    "resolution": "At least two of AP, Reuters, AFP, BBC, or Guardian report Austrian authorities announcing an arrest connected to the Vienna museum necklace theft, with the announcement dated between 2026-08-29 and 2026-12-31.",
+    "failure_condition": "Austrian authorities make no arrest connected to the theft during the window.",
+    "domain": "crime/security",
+    "deadline": "2027-01-04",
+    "probability": 43,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

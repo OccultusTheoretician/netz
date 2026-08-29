@@ -1,0 +1,107 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog will add an entry for CVE-2026-81578 or CVE-2026-82078, the actively exploited PaperCut NG/MF flaws, with a dateAdded value between 2026-09-05 and 2026-10-24.",
+    "domain": "cyber",
+    "probability": 65,
+    "resolution": "TRUE if the CISA KEV catalog lists CVE-2026-81578 or CVE-2026-82078 with dateAdded inside the window, checked on 2026-10-26; FALSE if neither entry appears by then.",
+    "deadline": "2026-10-26",
+    "citations": [
+      15,
+      17
+    ],
+    "failure_condition": "Neither CVE-2026-81578 nor CVE-2026-82078 has a dateAdded entry in the CISA KEV catalog on or before 2026-10-24."
+  },
+  {
+    "statement": "McKesson will file a document on SEC EDGAR, such as a Form 8-K/A or 10-Q, between 2026-09-05 and 2026-11-30 that states a specific number or bounded range of individuals affected by its August 2026 data theft incident.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "TRUE if a McKesson SEC EDGAR filing dated in the window states a specific number or bounded range of affected individuals; FALSE if no such filing exists as of 2026-12-02.",
+    "deadline": "2026-12-02",
+    "citations": [
+      12
+    ],
+    "failure_condition": "No McKesson filing on SEC EDGAR dated on or before 2026-11-30 states a specific number or bounded range of affected individuals."
+  },
+  {
+    "statement": "The Federal Open Market Committee will announce a lower federal funds target range at the conclusion of its September 15-16, 2026 meeting than the range set in July 2026.",
+    "domain": "economics/markets",
+    "probability": 20,
+    "resolution": "TRUE if the Federal Reserve statement released 2026-09-16 sets a federal funds target range below the range set after the July 2026 meeting; FALSE if held or raised.",
+    "deadline": "2026-09-16",
+    "citations": [
+      67
+    ],
+    "failure_condition": "The federal funds target range announced 2026-09-16 is equal to or higher than the range set after the July 2026 meeting."
+  },
+  {
+    "statement": "The most-active CBOT corn futures contract will settle at or above 6.00 USD per bushel on 2026-11-30.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "TRUE if CME Group settlement data shows the most-active corn contract settling at or above 6.00 USD per bushel on 2026-11-30; FALSE otherwise.",
+    "deadline": "2026-11-30",
+    "citations": [
+      68
+    ],
+    "failure_condition": "The most-active CBOT corn contract settles below 6.00 USD per bushel on 2026-11-30."
+  },
+  {
+    "statement": "Serbia will hold its snap parliamentary election on 2026-10-25 rather than on 2026-10-18, the two dates floated by President Aleksandar Vucic.",
+    "domain": "political",
+    "probability": 52,
+    "resolution": "TRUE if Serbian election authorities or two of Reuters, AP, and AFP confirm voting occurred on 2026-10-25; FALSE if the vote is held 2026-10-18 or not confirmed by 2026-10-28.",
+    "deadline": "2026-10-28",
+    "citations": [
+      112
+    ],
+    "failure_condition": "Voting for this election takes place on a date other than 2026-10-25, or remains unconfirmed as of 2026-10-28."
+  },
+  {
+    "statement": "Venezuela will sign a written agreement granting oil exploration or production rights to a named US company under the deal Trump announced on 2026-08-28, signed between 2026-09-01 and 2026-09-30.",
+    "domain": "political",
+    "probability": 55,
+    "resolution": "TRUE if Reuters, AP, or Bloomberg reports a signed agreement naming at least one US company took effect in the window; FALSE if no such report appears by 2026-10-02.",
+    "deadline": "2026-10-02",
+    "citations": [
+      64,
+      94,
+      118
+    ],
+    "failure_condition": "No Reuters, AP, or Bloomberg report describes a signed agreement naming a US company under this deal between 2026-09-01 and 2026-09-30."
+  },
+  {
+    "statement": "A single Russian missile or drone strike will kill 10 or more people in Kyiv, Ukraine, between 2026-09-05 and 2026-10-05.",
+    "domain": "military/conflict",
+    "probability": 78,
+    "resolution": "TRUE if Ukrainian officials and at least one of Reuters, AP, or AFP report 10 or more deaths from one strike on Kyiv in the window; checked 2026-10-07; FALSE otherwise.",
+    "deadline": "2026-10-07",
+    "citations": [
+      71,
+      76
+    ],
+    "failure_condition": "No single strike on Kyiv in this window is confirmed by Ukrainian officials and a wire service to have killed 10 or more people."
+  },
+  {
+    "statement": "Mojtaba Khamenei will still publicly hold the title of Supreme Leader of Iran throughout the window from 2026-09-05 to 2027-01-31.",
+    "domain": "military/conflict",
+    "probability": 75,
+    "resolution": "TRUE if Iranian state media and at least one of Reuters or AP confirm Mojtaba Khamenei still holds this title on 2027-01-31; FALSE if replaced, resigned, or killed before then.",
+    "deadline": "2027-02-03",
+    "citations": [
+      40,
+      103
+    ],
+    "failure_condition": "Iranian state media or a wire service confirms Mojtaba Khamenei died, resigned, or was formally replaced as Supreme Leader before 2027-01-31."
+  },
+  {
+    "statement": "The confirmed death toll from the 26 August 2026 Nepal-Tibet glacial flood disaster will exceed 1,000 people at some point between 2026-09-05 and 2026-09-19.",
+    "domain": "disaster",
+    "probability": 52,
+    "resolution": "TRUE if the National Disaster Risk Reduction and Management Authority of Nepal or two of Reuters, AP, and AFP report a confirmed toll above 1,000 in the window; checked 2026-09-22; FALSE otherwise.",
+    "deadline": "2026-09-22",
+    "citations": [
+      25,
+      38
+    ],
+    "failure_condition": "No NDRRMA update or two-wire-service report states a confirmed death toll above 1,000 for this disaster by 2026-09-19."
+  }
+]

@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds CVE-2026-82078 or CVE-2026-81578 with a date_added value between 2026-08-29 and 2026-10-16.",
+    "resolution": "TRUE if the CISA KEV catalog contains an entry for CVE-2026-82078 or CVE-2026-81578 carrying a dateAdded value between 2026-08-29 and 2026-10-16 inclusive.",
+    "failure_condition": "Neither PaperCut CVE carries a KEV dateAdded value inside that window when the catalog is fetched on 2026-10-20.",
+    "domain": "cyber",
+    "deadline": "2026-10-20",
+    "probability": 33,
+    "citations": [
+      15,
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Stolen City of Berlin administrative data is published on an extortion leak site between 2026-08-29 and 2026-10-31.",
+    "resolution": "TRUE if at least two of BBC, Reuters, dpa, Tagesspiegel or Heise report that data taken from Berlin city systems was published by the extortion group in that window.",
+    "failure_condition": "No publication of Berlin municipal data by the extortionists is reported by two of the named outlets by 2026-11-04.",
+    "domain": "cyber",
+    "deadline": "2026-11-04",
+    "probability": 33,
+    "citations": [
+      13
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At the scheduled 2026-09-16 FOMC decision the Committee raises the federal funds target range to 3.75 to 4.00 percent.",
+    "resolution": "TRUE if the FRED series DFEDTARU shows 4.00 for 2026-09-17, matching a 25 basis point increase announced in the 2026-09-16 FOMC statement.",
+    "failure_condition": "The upper bound of the target range holds at 3.75 percent or moves to any value other than 4.00 percent after the 2026-09-16 decision.",
+    "domain": "economics",
+    "deadline": "2026-09-18",
+    "probability": 25,
+    "citations": [
+      67
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month ICE Brent crude settles at or above 100.00 USD per barrel on at least one trading day between 2026-09-01 and 2026-11-30.",
+    "resolution": "TRUE if ICE publishes a front-month Brent futures settlement price of 100.00 USD or higher for any trading day inside that window.",
+    "failure_condition": "Every front-month Brent settlement in the window prints below 100.00 USD per barrel.",
+    "domain": "economics",
+    "deadline": "2026-12-03",
+    "probability": 25,
+    "citations": [
+      64,
+      87
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A petition for a writ of certiorari arising from the 2026-08-28 Ninth Circuit prediction-market ruling is docketed at the US Supreme Court between 2026-08-29 and 2027-02-13.",
+    "resolution": "TRUE if the Supreme Court electronic docket lists a certiorari petition naming Kalshi and Nevada gaming regulators, docketed on or before 2027-02-13.",
+    "failure_condition": "No such certiorari petition appears on the Supreme Court docket on or before 2027-02-13.",
+    "domain": "political",
+    "deadline": "2027-02-17",
+    "probability": 44,
+    "citations": [
+      117
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The UK government announces activation of Operation Safeguard or a new prison early release measure between 2026-09-01 and 2026-11-20.",
+    "resolution": "TRUE if a gov.uk press release or written ministerial statement dated in that window announces Operation Safeguard activation, Operation Early Dawn, or a new early release scheme.",
+    "failure_condition": "No gov.uk publication dated in the window announces any of those prison capacity measures.",
+    "domain": "political",
+    "deadline": "2026-11-24",
+    "probability": 44,
+    "citations": [
+      100
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A single Russian strike on Kyiv city or Kyiv oblast kills at least 15 people between 2026-09-01 and 2026-10-10.",
+    "resolution": "TRUE if Ukrainian officials state at least 15 killed in one strike inside that window and two of Reuters, AP, AFP or BBC carry that figure.",
+    "failure_condition": "The deadliest single Kyiv-area strike in the window is credited with fewer than 15 deaths.",
+    "domain": "military",
+    "deadline": "2026-10-14",
+    "probability": 53,
+    "citations": [
+      71,
+      76,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Ukrainian Air Force reports at least 500 Russian drones and missiles launched in one overnight attack between 2026-09-01 and 2026-10-15.",
+    "resolution": "TRUE if a Ukrainian Air Force overnight air-situation report covering a night inside that window states a combined launch total of 500 or more munitions.",
+    "failure_condition": "Every Ukrainian Air Force overnight tally in the window stays below 500 combined drones and missiles.",
+    "domain": "military",
+    "deadline": "2026-10-19",
+    "probability": 53,
+    "citations": [
+      76,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The confirmed death toll in Nepal from the 2026-08-26 Rasuwa flood reaches at least 1000 between 2026-08-30 and 2026-10-31.",
+    "resolution": "TRUE if Nepal Police or the NDRRMA give a confirmed Nepal death toll of 1000 or more inside that window, carried by two of Reuters, AP, AFP or BBC.",
+    "failure_condition": "The official Nepal death toll stays below 1000 through 2026-10-31.",
+    "domain": "disaster",
+    "deadline": "2026-11-04",
+    "probability": 52,
+    "citations": [
+      25,
+      38,
+      42
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CFTC announces a new enforcement action over misuse of nonpublic information in event contracts between 2026-09-01 and 2026-12-31.",
+    "resolution": "TRUE if a CFTC press release dated inside that window announces a case alleging trading of event contracts on material nonpublic information.",
+    "failure_condition": "No CFTC press release dated in the window announces such an event-contract insider trading case.",
+    "domain": "crime_security",
+    "deadline": "2027-01-08",
+    "probability": 43,
+    "citations": [
+      99,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-29T21:42:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
