@@ -1,18 +1,18 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-08-29T11:46:58Z · 70 report(s)
+Generated 2026-08-30T10:40:23Z · 71 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **70**
-- findings: **116**
+- reports audited: **71**
+- findings: **117**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 3
-  - UNSOURCED: 113
-- distinct tokens: **55**
+  - UNSOURCED: 114
+- distinct tokens: **56**
 
 ## Reached a sealed row
 
@@ -173,4 +173,5 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-08-28_1518.md | `CVE-2023-49105` | UNSOURCED |
 | battle_report_2026-08-28_1518.md | `CVE-2026-53362` | UNSOURCED |
 | battle_report_2026-08-28_1518.md | `CVE-2026-66384` | UNSOURCED |
+| battle_report_2026-08-29_1537.md | `GHSA-7g4w-cg88-2cq2` | UNSOURCED |
 
