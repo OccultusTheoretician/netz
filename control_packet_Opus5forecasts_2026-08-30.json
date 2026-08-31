@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "A single Russian strike on Kyiv occurring between 2026-09-07 and 2026-09-27 produces an official Ukrainian death toll of 10 or more for that one attack.",
+    "resolution": "TRUE if, for one attack occurring between 2026-09-07 and 2026-09-27, the State Emergency Service of Ukraine or the Kyiv City Military Administration states a death toll of 10 or more for that attack, and Reuters or AFP carries that figure by 2026-09-30. Cumulative multi-day totals do not count.",
+    "failure_condition": "No individual Kyiv strike in the window reaches an officially stated toll of 10 or more dead.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-30",
+    "probability": 53,
+    "citations": [
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The individual serving as head of state of Niger on 2026-09-07 ceases to hold that office at some point between 2026-09-07 and 2026-12-06.",
+    "resolution": "TRUE if Reuters and AFP both report, by 2026-12-09, that the person serving as head of state of Niger on 2026-09-07 no longer holds that office as of any date on or before 2026-12-06, whether by removal, resignation, death, or transfer of power.",
+    "failure_condition": "The same individual is still serving as head of state of Niger on 2026-12-06.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-09",
+    "probability": 53,
+    "citations": [
+      70,
+      71
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry naming WordPress or a WordPress plugin or theme, with a dateAdded value between 2026-09-07 and 2026-11-06.",
+    "resolution": "TRUE if the CISA KEV catalog JSON, fetched on 2026-11-09, contains at least one record whose vendorProject or product field references WordPress or a WordPress plugin or theme, and whose dateAdded falls between 2026-09-07 and 2026-11-06 inclusive.",
+    "failure_condition": "No KEV record carrying a dateAdded in that range references WordPress or a WordPress plugin or theme.",
+    "domain": "cyber",
+    "deadline": "2026-11-09",
+    "probability": 33,
+    "citations": [
+      16
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Manchester Airports Group confirms unauthorized access to its systems in an attributable statement issued between 2026-08-31 and 2026-10-16.",
+    "resolution": "TRUE if a named Manchester Airports Group spokesperson or an official company statement acknowledging unauthorized access to its systems or theft of its data is carried by at least two of BBC News, Reuters, and BleepingComputer, dated between 2026-08-31 and 2026-10-16, and verifiable by 2026-10-19.",
+    "failure_condition": "Manchester Airports Group does not confirm unauthorized access in the window; a denial, or a statement that only notes a third-party claim without confirming access, is a MISS.",
+    "domain": "cyber",
+    "deadline": "2026-10-19",
+    "probability": 33,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month NYMEX WTI crude settles at or above 95.00 US dollars per barrel on at least one trading day between 2026-09-08 and 2026-11-06.",
+    "resolution": "TRUE if the CME Group settlement record for the front-month Light Sweet Crude Oil (CL) contract shows a settlement of 95.00 or higher on any trading day from 2026-09-08 through 2026-11-06, checked on 2026-11-09. Intraday highs do not count.",
+    "failure_condition": "Every front-month CL settlement in the window is below 95.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-09",
+    "probability": 25,
+    "citations": [
+      84,
+      53
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US Treasury daily par yield curve records a 10-year constant maturity yield of 5.00 percent or higher on at least one business day between 2026-09-08 and 2026-12-04.",
+    "resolution": "TRUE if the Treasury daily par yield curve published at home.treasury.gov, or FRED series DGS10, shows a 10-year value of 5.00 or above on any business day from 2026-09-08 through 2026-12-04, checked on 2026-12-07.",
+    "failure_condition": "Every published 10-year par yield in the window is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-07",
+    "probability": 25,
+    "citations": [
+      42,
+      50
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The confirmed cumulative death toll for the August 2026 Nepal-Tibet flood event reaches 1,000 or more in official figures issued between 2026-09-07 and 2026-10-16.",
+    "resolution": "TRUE if a cumulative confirmed toll of 1,000 or more for this event, attributed to the National Disaster Risk Reduction and Management Authority of Nepal, the Nepali Ministry of Home Affairs, or Chinese state authorities, is carried by at least two of Reuters, AFP, Al Jazeera, and the Guardian, dated on or before 2026-10-16 and verifiable by 2026-10-19. Missing-persons counts do not count toward the total.",
+    "failure_condition": "The highest official cumulative confirmed death toll for this event as of 2026-10-16 remains below 1,000.",
+    "domain": "disaster",
+    "deadline": "2026-10-19",
+    "probability": 52,
+    "citations": [
+      19,
+      31,
+      37
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A wildfire with an ignition date between 2026-08-31 and 2026-09-27 in Siskiyou County, California reaches a reported size of 10,000 acres or more.",
+    "resolution": "TRUE if an incident on InciWeb or in the NIFC incident record, located in Siskiyou County, California, with an ignition date between 2026-08-31 and 2026-09-27, reports a size of 10,000 acres or more in any official update issued on or before 2026-10-09, checked on 2026-10-12.",
+    "failure_condition": "No Siskiyou County incident with an ignition date in the window is recorded at 10,000 acres or more.",
+    "domain": "disaster",
+    "deadline": "2026-10-12",
+    "probability": 52,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Crown Prosecution Service announces a decision to bring criminal charges against at least one former undercover police officer in the undercover policing matter, between 2026-09-07 and 2027-01-29.",
+    "resolution": "TRUE if the Crown Prosecution Service publishes a charging decision, or is reported by both the Guardian and BBC News to have made one, bringing criminal charges against at least one former undercover officer in connection with the undercover policing scandal, dated between 2026-09-07 and 2027-01-29 and verifiable by 2027-02-02.",
+    "failure_condition": "No charging decision to prosecute a former undercover officer is made in the window, including a decision not to charge.",
+    "domain": "crime/security",
+    "deadline": "2027-02-02",
+    "probability": 43,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Register publishes at least one Presidential Document adjusting duties on steel or aluminum imports into the United States, with a publication date between 2026-09-08 and 2026-11-06.",
+    "resolution": "TRUE if federalregister.gov lists at least one document of type Presidential Document, published between 2026-09-08 and 2026-11-06 inclusive, whose title or subject references adjusting imports of steel or aluminum into the United States, checked on 2026-11-10.",
+    "failure_condition": "No Presidential Document adjusting steel or aluminum import duties carries a Federal Register publication date inside the window.",
+    "domain": "political",
+    "deadline": "2026-11-10",
+    "probability": 44,
+    "citations": [
+      49,
+      54,
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

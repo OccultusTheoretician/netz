@@ -1,0 +1,252 @@
+[
+  {
+    "statement": "The FOMC decision announced 2026-09-16 raises the federal funds target range above the range in effect on 2026-09-15.",
+    "resolution": "True if the Federal Reserve implementation note or FRED series DFEDTARU shows a target range effective after the 2026-09-16 decision higher than the range in effect on 2026-09-15; false if unchanged or lower.",
+    "failure_condition": "The federal funds target range effective after the 2026-09-16 decision is unchanged from or lower than the range in effect on 2026-09-15.",
+    "domain": "economics/markets",
+    "deadline": "2026-09-18",
+    "probability": 25,
+    "citations": [
+      71
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one commercial tanker in the Persian Gulf or Gulf of Oman sustains physical damage from an attack between 2026-09-01 and 2026-09-30.",
+    "resolution": "True if the vessel operator or flag state confirms attack damage to a named tanker in those waters between 2026-09-01 and 2026-09-30 and at least one wire service carries the confirmation.",
+    "failure_condition": "No commercial tanker in the Persian Gulf or Gulf of Oman sustains operator- or flag-state-confirmed attack damage between 2026-09-01 and 2026-09-30.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-05",
+    "probability": 53,
+    "citations": [
+      61,
+      88,
+      95
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A lapse in United States federal appropriations begins on 2026-10-01, with agency shutdown procedures taking effect that day.",
+    "resolution": "True if no enacted appropriations act or continuing resolution covers 2026-10-01 and OMB directs agencies to execute shutdown plans that day; Congress.gov enacted-legislation records govern.",
+    "failure_condition": "Enacted appropriations or a continuing resolution covers 2026-10-01 and no agency executes OMB-directed shutdown procedures that day.",
+    "domain": "political",
+    "deadline": "2026-10-05",
+    "probability": 44,
+    "citations": [
+      34,
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries at least 8 entries with a dateAdded value between 2026-09-01 and 2026-09-30.",
+    "resolution": "True if a fetch of the CISA KEV catalog on or after the deadline shows 8 or more entries whose dateAdded falls between 2026-09-01 and 2026-09-30 inclusive.",
+    "failure_condition": "Fewer than 8 KEV entries carry a dateAdded value between 2026-09-01 and 2026-09-30 inclusive.",
+    "domain": "cyber",
+    "deadline": "2026-10-05",
+    "probability": 33,
+    "citations": [
+      18
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 95.00 USD per barrel on at least one trading day between 2026-09-01 and 2026-10-30.",
+    "resolution": "True if any official ICE Brent front-month daily settlement price between 2026-09-01 and 2026-10-30 is at or above 95.00 USD; exchange settlement records govern.",
+    "failure_condition": "Every ICE Brent front-month daily settlement between 2026-09-01 and 2026-10-30 is below 95.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 25,
+    "citations": [
+      53,
+      61,
+      88
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Nepal government confirmed death toll from the August 2026 flood disaster reaches at least 300 at any point between 2026-08-31 and 2026-10-30.",
+    "resolution": "True if Nepali government statements carried by at least two international news agencies place the confirmed dead at 300 or more on any date between 2026-08-31 and 2026-10-30.",
+    "failure_condition": "The cumulative Nepal government confirmed death toll remains below 300 through 2026-10-30.",
+    "domain": "disaster",
+    "deadline": "2026-11-03",
+    "probability": 52,
+    "citations": [
+      37,
+      106
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Massachusetts murder trial of Lindsay Clancy concludes with a jury verdict or a declared mistrial between 2026-08-31 and 2026-10-30.",
+    "resolution": "True if the Plymouth County Superior Court docket or at least two national outlets record a jury verdict returned or mistrial declared between 2026-08-31 and 2026-10-30.",
+    "failure_condition": "As of the deadline the trial has produced neither a jury verdict nor a declared mistrial between 2026-08-31 and 2026-10-30.",
+    "domain": "crime/security",
+    "deadline": "2026-11-03",
+    "probability": 43,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Commercial shipping transit through the Strait of Hormuz is suspended for at least 48 consecutive hours at any point between 2026-09-01 and 2026-10-31.",
+    "resolution": "True if at least two international wire services, citing shipping authorities or maritime insurers, report a suspension of commercial Strait of Hormuz transits lasting 48 or more consecutive hours between 2026-09-01 and 2026-10-31.",
+    "failure_condition": "Commercial Strait of Hormuz transits continue between 2026-09-01 and 2026-10-31 without any suspension reaching 48 consecutive hours.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 53,
+    "citations": [
+      61,
+      88
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 seats in the United States House of Representatives in the general election held 2026-11-03.",
+    "resolution": "True if Associated Press race calls as of the deadline show Democratic candidates winning 218 or more House seats from the 2026-11-03 general election.",
+    "failure_condition": "Democratic candidates win fewer than 218 House seats in the 2026-11-03 election as called by the deadline.",
+    "domain": "political",
+    "deadline": "2026-12-01",
+    "probability": 44,
+    "citations": [
+      99,
+      121
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry with vendorProject Cisco and a dateAdded value between 2026-09-01 and 2026-11-30.",
+    "resolution": "True if the KEV catalog contains an entry whose vendorProject value is Cisco and whose dateAdded falls between 2026-09-01 and 2026-11-30 inclusive.",
+    "failure_condition": "No KEV entry with vendorProject Cisco carries a dateAdded between 2026-09-01 and 2026-11-30.",
+    "domain": "cyber",
+    "deadline": "2026-12-02",
+    "probability": 33,
+    "citations": [
+      13,
+      18,
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

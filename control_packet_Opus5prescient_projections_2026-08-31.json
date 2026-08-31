@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "US Central Command announces at least one new strike on Iranian forces, vessels, or territory occurring between 2026-09-01 and 2026-09-30.",
+    "resolution": "A CENTCOM release or two of Reuters, AP, BBC, Al Jazeera report a US strike on Iranian forces or territory dated between 2026-09-01 and 2026-09-30.",
+    "failure_condition": "No US strike on Iranian forces, vessels, or territory occurs inside the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-05",
+    "probability": 53,
+    "citations": [
+      61,
+      76,
+      82
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A US or Gulf state authority publicly reports a naval mine detected, struck, or cleared in the Strait of Hormuz or its approaches between 2026-09-01 and 2026-10-15.",
+    "resolution": "CENTCOM, the US Navy, or a Gulf state navy states that a mine was found, struck, or cleared in the strait or its approaches within the window.",
+    "failure_condition": "No mine is found, struck, or cleared in the strait or its approaches during the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-20",
+    "probability": 53,
+    "citations": [
+      88,
+      76,
+      95
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled 2026-09-16 decision, above the current 3.50 to 3.75 percent.",
+    "resolution": "The FOMC statement released 2026-09-16 sets a target range whose upper bound exceeds 3.75 percent.",
+    "failure_condition": "The 2026-09-16 statement holds the range at 3.50 to 3.75 percent or cuts it.",
+    "domain": "economic",
+    "deadline": "2026-09-18",
+    "probability": 25,
+    "citations": [
+      71
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month ICE Brent futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-09-08 and 2026-10-09.",
+    "resolution": "ICE settlement data for the front-month Brent contract shows a settlement of 100.00 USD or higher on any trading day inside the window.",
+    "failure_condition": "Every front-month Brent settlement inside the window prints below 100.00 USD per barrel.",
+    "domain": "economic",
+    "deadline": "2026-10-13",
+    "probability": 25,
+    "citations": [
+      53,
+      61,
+      88
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog carries at least 30 entries with a dateAdded value between 2026-09-01 and 2026-10-30.",
+    "resolution": "The CISA KEV JSON feed counts 30 or more entries whose dateAdded value falls between 2026-09-01 and 2026-10-30 inclusive.",
+    "failure_condition": "The KEV feed carries fewer than 30 entries with dateAdded inside that range.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 33,
+    "citations": [
+      18
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog carries at least one entry naming Cisco as vendorProject with a dateAdded value between 2026-09-01 and 2026-10-30.",
+    "resolution": "The CISA KEV JSON feed contains an entry whose vendorProject is Cisco and whose dateAdded value falls inside that range.",
+    "failure_condition": "No KEV entry with vendorProject Cisco carries a dateAdded value inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 33,
+    "citations": [
+      13,
+      22,
+      18
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A lapse in federal appropriations begins 2026-10-01 because no measure funding agencies past 2026-09-30 is enacted.",
+    "resolution": "Congress.gov shows no continuing resolution or appropriations act funding federal agencies past 2026-09-30 signed into law on or before 2026-09-30.",
+    "failure_condition": "A continuing resolution or appropriations act covering federal agencies past 2026-09-30 becomes public law on or before that date.",
+    "domain": "political",
+    "deadline": "2026-10-05",
+    "probability": 44,
+    "citations": [
+      99,
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Nepal disaster authority puts the confirmed death toll from the August 2026 Nepal-Tibet floods at 1500 or more, at some point between 2026-09-01 and 2026-10-15.",
+    "resolution": "An NDRRMA situation report or Nepal government figure dated inside the window states 1500 or more confirmed flood deaths in Nepal.",
+    "failure_condition": "The official Nepal confirmed toll stays below 1500 through 2026-10-15.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-10-20",
+    "probability": 52,
+    "citations": [
+      106,
+      37,
+      32
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "German authorities name a suspect, announce an arrest, or announce a warrant in the Leipzig drone attack between 2026-09-01 and 2026-10-15.",
+    "resolution": "The Generalbundesanwalt, the BKA, or Saxony police state that a suspect is named, arrested, or subject to a warrant in the Leipzig drone case within the window.",
+    "failure_condition": "No suspect is named, arrested, or made subject to an announced warrant in the case during the window.",
+    "domain": "crime_security",
+    "deadline": "2026-10-20",
+    "probability": 43,
+    "citations": [
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Ukrenergo or DTEK announces emergency or rolling power cuts affecting Kyiv city on at least one day between 2026-09-15 and 2026-10-31.",
+    "resolution": "An Ukrenergo or DTEK notice dated inside the window states that emergency or rolling outage schedules apply to consumers in Kyiv city.",
+    "failure_condition": "Kyiv city consumers face no announced emergency or rolling outage schedule on any day inside the window.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-11-04",
+    "probability": 52,
+    "citations": [
+      36
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

@@ -1,0 +1,121 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry for a WordPress plugin or theme vulnerability with a dateAdded value between 2026-08-31 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if a fetch of the CISA KEV JSON feed on the deadline shows any entry whose product or name field identifies a WordPress plugin or theme and whose dateAdded falls between 2026-08-31 and 2026-11-30.",
+    "deadline": "2026-12-04",
+    "citations": [
+      16
+    ],
+    "failure_condition": "The KEV feed fetched on 2026-12-04 contains no WordPress plugin or theme entry with dateAdded inside the window."
+  },
+  {
+    "statement": "Between 2026-08-31 and 2026-10-16, Manchester Airports Group or a UK government body publicly confirms unauthorized access to MAG systems in connection with the FulcrumSec claim.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "TRUE if at least two of BBC, Reuters, BleepingComputer, or The Record report an official MAG, NCSC, or ICO statement confirming unauthorized access to MAG systems, dated between 2026-08-31 and 2026-10-16.",
+    "deadline": "2026-10-23",
+    "citations": [
+      11
+    ],
+    "failure_condition": "The confirmation condition is not met: no official statement confirming unauthorized access, dated inside the window, exists under the stated corroboration standard at the deadline."
+  },
+  {
+    "statement": "The NYMEX WTI crude front-month contract records an official daily settlement price above 95.00 USD on at least one trading day between 2026-09-01 and 2026-11-30.",
+    "domain": "economics/markets",
+    "probability": 20,
+    "resolution": "TRUE if CME Group official settlement data show any front-month WTI daily settlement strictly above 95.00 USD for a trading date between 2026-09-01 and 2026-11-30.",
+    "deadline": "2026-12-02",
+    "citations": [
+      84,
+      53,
+      60
+    ],
+    "failure_condition": "Every front-month WTI daily settlement in the window is at or below 95.00 USD."
+  },
+  {
+    "statement": "The S&P 500 index records an official daily close below 7000.00 on at least one trading day between 2026-09-01 and 2026-12-31.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "TRUE if official S&P Dow Jones Indices closing values show any daily close strictly below 7000.00 for a trading date between 2026-09-01 and 2026-12-31.",
+    "deadline": "2027-01-06",
+    "citations": [
+      50,
+      56,
+      115
+    ],
+    "failure_condition": "Every official S&P 500 daily close in the window is at or above 7000.00."
+  },
+  {
+    "statement": "The Federal Register publishes at least one presidential proclamation or executive order modifying United States tariff treatment of Canadian-origin goods with a publication date between 2026-09-01 and 2026-12-31.",
+    "domain": "economics/markets",
+    "probability": 65,
+    "resolution": "TRUE if a federalregister.gov search returns a presidential document published between 2026-09-01 and 2026-12-31 that modifies tariff rates, coverage, or refunds applying to goods of Canadian origin.",
+    "deadline": "2027-01-08",
+    "citations": [
+      49,
+      54,
+      59
+    ],
+    "failure_condition": "No presidential document meeting the tariff-modification and Canadian-origin criteria carries a Federal Register publication date inside the window."
+  },
+  {
+    "statement": "Between 2026-08-31 and 2026-11-30, the head of state of Niger is removed, replaced, or announces resignation, or a new military takeover of the government is completed.",
+    "domain": "political",
+    "probability": 15,
+    "resolution": "TRUE if at least two of Reuters, AFP, BBC, Al Jazeera, or RFI report a completed change of head of state or completed military takeover in Niger occurring between 2026-08-31 and 2026-11-30.",
+    "deadline": "2026-12-04",
+    "citations": [
+      70,
+      71
+    ],
+    "failure_condition": "The incumbent head of state remains in office through 2026-11-30 and no completed takeover meeting the corroboration standard occurred in the window."
+  },
+  {
+    "statement": "Between 2026-08-31 and 2027-01-29, the Crown Prosecution Service publicly announces a charging decision, to charge or not to charge, concerning officers in the undercover policing spycops matter.",
+    "domain": "crime/security",
+    "probability": 30,
+    "resolution": "TRUE if a CPS statement or at least two of BBC, Guardian, Reuters, or PA Media report a CPS charging decision in the spycops matter announced between 2026-08-31 and 2027-01-29.",
+    "deadline": "2027-02-05",
+    "citations": [
+      10
+    ],
+    "failure_condition": "No CPS charging decision in the matter is announced within the window."
+  },
+  {
+    "statement": "Between 2026-08-31 and 2026-10-30, the reported confirmed combined death toll for the August 2026 Nepal and Tibet floods reaches or exceeds 1000.",
+    "domain": "disaster",
+    "probability": 60,
+    "resolution": "TRUE if at least two of Reuters, AFP, Al Jazeera, or Guardian report an official combined confirmed death toll of 1000 or more for the flood event, dated within the window.",
+    "deadline": "2026-11-06",
+    "citations": [
+      31,
+      37,
+      19
+    ],
+    "failure_condition": "Official confirmed combined tolls reported within the window remain below 1000."
+  },
+  {
+    "statement": "Between 2026-08-31 and 2026-11-30, a commercial vessel transiting or anchored in the Strait of Hormuz or its approaches is struck by weapons fire or seized.",
+    "domain": "military/conflict",
+    "probability": 35,
+    "resolution": "TRUE if UKMTO issues an incident advisory, or at least two of Reuters, AP, or AFP report a strike on or seizure of a commercial vessel in the Strait of Hormuz area between 2026-08-31 and 2026-11-30.",
+    "deadline": "2026-12-04",
+    "citations": [
+      84
+    ],
+    "failure_condition": "No qualifying strike or seizure in the Hormuz area occurs within the window under the stated adjudication standard."
+  },
+  {
+    "statement": "Between 2026-09-01 and 2026-09-30, at least one Russian missile or drone strike inside Ukraine kills 10 or more people in a single attack, per official Ukrainian figures.",
+    "domain": "military/conflict",
+    "probability": 80,
+    "resolution": "TRUE if at least two of Reuters, AP, AFP, or BBC report an official Ukrainian death toll of 10 or more from a single Russian strike occurring between 2026-09-01 and 2026-09-30.",
+    "deadline": "2026-10-05",
+    "citations": [
+      77
+    ],
+    "failure_condition": "No single strike in the September window carries an official reported toll of 10 or more."
+  }
+]

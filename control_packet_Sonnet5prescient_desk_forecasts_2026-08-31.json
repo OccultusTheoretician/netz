@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "A commercial or military vessel is struck, mined, or seized in or near the Strait of Hormuz between 2026-09-01 and 2026-09-14.",
+    "resolution": "Resolves true if UKMTO, JMIC, Reuters, or AP report a vessel struck, mined, boarded, or seized in the Strait of Hormuz within the window; false if no such report appears by the deadline.",
+    "failure_condition": "No UKMTO, JMIC, or wire-service report confirms a vessel attack, mining, or seizure in the Strait of Hormuz between 2026-09-01 and 2026-09-14.",
+    "domain": "military_conflict",
+    "deadline": "2026-09-16",
+    "probability": 53,
+    "citations": [
+      61,
+      82,
+      88,
+      95
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above USD 95.00 per barrel on any session between 2026-09-01 and 2026-09-21.",
+    "resolution": "Resolves true if ICE, Reuters, or Bloomberg data show a Brent front-month settlement at or above USD 95.00 on any trading day in the window; false if no such settlement occurs.",
+    "failure_condition": "Brent front-month crude does not settle at or above USD 95.00 per barrel on any trading day between 2026-09-01 and 2026-09-21.",
+    "domain": "economic",
+    "deadline": "2026-09-23",
+    "probability": 25,
+    "citations": [
+      53,
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog records 3 or more entries with dateAdded between 2026-09-01 and 2026-09-14.",
+    "resolution": "Resolves true if the published CISA KEV catalog feed shows 3 or more entries with dateAdded in the window when checked at the deadline; false if it shows fewer than 3.",
+    "failure_condition": "The CISA KEV catalog shows fewer than 3 entries with a dateAdded value between 2026-09-01 and 2026-09-14 when checked against the published feed.",
+    "domain": "cyber",
+    "deadline": "2026-09-16",
+    "probability": 33,
+    "citations": [
+      18
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA or the FBI publishes an advisory formally attributing the Fire Ant intrusion campaign against Cisco network devices to a China-linked actor, between 2026-09-01 and 2026-10-15.",
+    "resolution": "Resolves true if CISA.gov or FBI.gov publishes an advisory naming a China-linked actor as responsible for the Fire Ant Cisco-targeting campaign within the window; false if no such advisory appears.",
+    "failure_condition": "Neither CISA nor the FBI publishes an advisory formally attributing the Fire Ant Cisco-router campaign to a China-linked actor between 2026-09-01 and 2026-10-15.",
+    "domain": "cyber",
+    "deadline": "2026-10-19",
+    "probability": 33,
+    "citations": [
+      13,
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Nepal's government or GDACS reports a cumulative confirmed death toll of 100 or more from the late-August 2026 flood, landslide, and hydropower-site disaster, as of 2026-09-14.",
+    "resolution": "Resolves true if Nepal's government or GDACS reports a confirmed cumulative death toll of 100 or more from the event as of 2026-09-14; false if the reported toll remains below 100.",
+    "failure_condition": "The confirmed cumulative death toll reported by Nepal's government or GDACS for this flood and landslide disaster remains below 100 as of 2026-09-14.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-09-16",
+    "probability": 52,
+    "citations": [
+      26,
+      37,
+      106
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Cypriot or Turkish-Cypriot authorities declare the search for the missing passengers of the northern Cyprus ferry capsize concluded, between 2026-09-01 and 2026-09-10.",
+    "resolution": "Resolves true if Cypriot, Turkish-Cypriot, or wire-service reporting confirms the ferry capsize search ended, by rescue, recovery, or stand-down, within the window; false if the search remains active past 2026-09-10.",
+    "failure_condition": "Cypriot, Turkish-Cypriot, or wire-service reporting shows the ferry capsize search still formally active, with outcomes unconfirmed, past 2026-09-10.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-09-14",
+    "probability": 52,
+    "citations": [
+      93,
+      119
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The jury in the Lindsay Clancy murder trial in Plymouth County Superior Court returns a verdict between 2026-09-01 and 2026-09-14.",
+    "resolution": "Resolves true if a Plymouth County Superior Court docket entry or wire-service report confirms the jury returned a verdict on any count within the window; false if deliberations continue or end in mistrial.",
+    "failure_condition": "The jury has not returned a verdict on any count, or deliberations end in a declared mistrial, by 2026-09-14.",
+    "domain": "crime_security",
+    "deadline": "2026-09-16",
+    "probability": 43,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "German federal or state authorities publicly name a suspect or announce charges in the Leipzig drone attack on a Ukrainian-linked aircraft, between 2026-09-01 and 2026-09-21.",
+    "resolution": "Resolves true if German federal or state prosecutors or police publicly name a suspect or announce charges in the Leipzig drone-attack case within the window; false if no naming occurs.",
+    "failure_condition": "No German federal or state authority publicly names a suspect or announces charges in the Leipzig drone-attack case between 2026-09-01 and 2026-09-21.",
+    "domain": "political",
+    "deadline": "2026-09-23",
+    "probability": 44,
+    "citations": [
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A further attempt to seize power from Niger's sitting government by military or paramilitary action occurs between 2026-09-01 and 2026-09-30.",
+    "resolution": "Resolves true if AP, Reuters, AFP, or Niger state media report a further attempted seizure of power against the sitting government within the window; false if no such attempt is reported.",
+    "failure_condition": "No wire-service or Niger state-media report of a further coup attempt against the sitting government appears between 2026-09-01 and 2026-09-30.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-02",
+    "probability": 53,
+    "citations": [
+      94
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Open Market Committee raises the federal funds target range at its September 15-16, 2026 meeting.",
+    "resolution": "Resolves true if the FOMC statement released 2026-09-16 sets the federal funds target range above the range in effect the day before the meeting; false if held or cut.",
+    "failure_condition": "The FOMC holds or lowers the federal funds target range at its September 15-16, 2026 meeting rather than raising it.",
+    "domain": "economic",
+    "deadline": "2026-09-18",
+    "probability": 25,
+    "citations": [
+      71
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:32Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
