@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "US Central Command announces at least one new strike on Iranian forces, vessels, or territory occurring between 2026-09-01 and 2026-09-30.",
+    "domain": "military_conflict",
+    "probability": 80,
+    "resolution": "A CENTCOM release or two of Reuters, AP, BBC, Al Jazeera report a US strike on Iranian forces or territory dated between 2026-09-01 and 2026-09-30.",
+    "deadline": "2026-10-05",
+    "citations": [
+      61,
+      76,
+      82
+    ],
+    "failure_condition": "No US strike on Iranian forces, vessels, or territory occurs inside the window."
+  },
+  {
+    "statement": "A US or Gulf state authority publicly reports a naval mine detected, struck, or cleared in the Strait of Hormuz or its approaches between 2026-09-01 and 2026-10-15.",
+    "domain": "military_conflict",
+    "probability": 35,
+    "resolution": "CENTCOM, the US Navy, or a Gulf state navy states that a mine was found, struck, or cleared in the strait or its approaches within the window.",
+    "deadline": "2026-10-20",
+    "citations": [
+      88,
+      76,
+      95
+    ],
+    "failure_condition": "No mine is found, struck, or cleared in the strait or its approaches during the window."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled 2026-09-16 decision, above the current 3.50 to 3.75 percent.",
+    "domain": "economic",
+    "probability": 25,
+    "resolution": "The FOMC statement released 2026-09-16 sets a target range whose upper bound exceeds 3.75 percent.",
+    "deadline": "2026-09-18",
+    "citations": [
+      71
+    ],
+    "failure_condition": "The 2026-09-16 statement holds the range at 3.50 to 3.75 percent or cuts it."
+  },
+  {
+    "statement": "Front-month ICE Brent futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-09-08 and 2026-10-09.",
+    "domain": "economic",
+    "probability": 30,
+    "resolution": "ICE settlement data for the front-month Brent contract shows a settlement of 100.00 USD or higher on any trading day inside the window.",
+    "deadline": "2026-10-13",
+    "citations": [
+      53,
+      61,
+      88
+    ],
+    "failure_condition": "Every front-month Brent settlement inside the window prints below 100.00 USD per barrel."
+  },
+  {
+    "statement": "The CISA KEV catalog carries at least 30 entries with a dateAdded value between 2026-09-01 and 2026-10-30.",
+    "domain": "cyber",
+    "probability": 70,
+    "resolution": "The CISA KEV JSON feed counts 30 or more entries whose dateAdded value falls between 2026-09-01 and 2026-10-30 inclusive.",
+    "deadline": "2026-11-03",
+    "citations": [
+      18
+    ],
+    "failure_condition": "The KEV feed carries fewer than 30 entries with dateAdded inside that range."
+  },
+  {
+    "statement": "The CISA KEV catalog carries at least one entry naming Cisco as vendorProject with a dateAdded value between 2026-09-01 and 2026-10-30.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "The CISA KEV JSON feed contains an entry whose vendorProject is Cisco and whose dateAdded value falls inside that range.",
+    "deadline": "2026-11-03",
+    "citations": [
+      13,
+      22,
+      18
+    ],
+    "failure_condition": "No KEV entry with vendorProject Cisco carries a dateAdded value inside the window."
+  },
+  {
+    "statement": "A lapse in federal appropriations begins 2026-10-01 because no measure funding agencies past 2026-09-30 is enacted.",
+    "domain": "political",
+    "probability": 22,
+    "resolution": "Congress.gov shows no continuing resolution or appropriations act funding federal agencies past 2026-09-30 signed into law on or before 2026-09-30.",
+    "deadline": "2026-10-05",
+    "citations": [
+      99,
+      34
+    ],
+    "failure_condition": "A continuing resolution or appropriations act covering federal agencies past 2026-09-30 becomes public law on or before that date."
+  },
+  {
+    "statement": "The Nepal disaster authority puts the confirmed death toll from the August 2026 Nepal-Tibet floods at 1500 or more, at some point between 2026-09-01 and 2026-10-15.",
+    "domain": "disaster_infrastructure",
+    "probability": 45,
+    "resolution": "An NDRRMA situation report or Nepal government figure dated inside the window states 1500 or more confirmed flood deaths in Nepal.",
+    "deadline": "2026-10-20",
+    "citations": [
+      106,
+      37,
+      32
+    ],
+    "failure_condition": "The official Nepal confirmed toll stays below 1500 through 2026-10-15."
+  },
+  {
+    "statement": "German authorities name a suspect, announce an arrest, or announce a warrant in the Leipzig drone attack between 2026-09-01 and 2026-10-15.",
+    "domain": "crime_security",
+    "probability": 50,
+    "resolution": "The Generalbundesanwalt, the BKA, or Saxony police state that a suspect is named, arrested, or subject to a warrant in the Leipzig drone case within the window.",
+    "deadline": "2026-10-20",
+    "citations": [
+      101
+    ],
+    "failure_condition": "No suspect is named, arrested, or made subject to an announced warrant in the case during the window."
+  },
+  {
+    "statement": "Ukrenergo or DTEK announces emergency or rolling power cuts affecting Kyiv city on at least one day between 2026-09-15 and 2026-10-31.",
+    "domain": "disaster_infrastructure",
+    "probability": 65,
+    "resolution": "An Ukrenergo or DTEK notice dated inside the window states that emergency or rolling outage schedules apply to consumers in Kyiv city.",
+    "deadline": "2026-11-04",
+    "citations": [
+      36
+    ],
+    "failure_condition": "Kyiv city consumers face no announced emergency or rolling outage schedule on any day inside the window."
+  }
+]

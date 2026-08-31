@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry for a WordPress plugin or theme vulnerability with a dateAdded value between 2026-08-31 and 2026-11-30.",
+    "resolution": "TRUE if a fetch of the CISA KEV JSON feed on the deadline shows any entry whose product or name field identifies a WordPress plugin or theme and whose dateAdded falls between 2026-08-31 and 2026-11-30.",
+    "failure_condition": "The KEV feed fetched on 2026-12-04 contains no WordPress plugin or theme entry with dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-12-04",
+    "probability": 33,
+    "citations": [
+      16
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-08-31 and 2026-10-16, Manchester Airports Group or a UK government body publicly confirms unauthorized access to MAG systems in connection with the FulcrumSec claim.",
+    "resolution": "TRUE if at least two of BBC, Reuters, BleepingComputer, or The Record report an official MAG, NCSC, or ICO statement confirming unauthorized access to MAG systems, dated between 2026-08-31 and 2026-10-16.",
+    "failure_condition": "The confirmation condition is not met: no official statement confirming unauthorized access, dated inside the window, exists under the stated corroboration standard at the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-10-23",
+    "probability": 33,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The NYMEX WTI crude front-month contract records an official daily settlement price above 95.00 USD on at least one trading day between 2026-09-01 and 2026-11-30.",
+    "resolution": "TRUE if CME Group official settlement data show any front-month WTI daily settlement strictly above 95.00 USD for a trading date between 2026-09-01 and 2026-11-30.",
+    "failure_condition": "Every front-month WTI daily settlement in the window is at or below 95.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 25,
+    "citations": [
+      84,
+      53,
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The S&P 500 index records an official daily close below 7000.00 on at least one trading day between 2026-09-01 and 2026-12-31.",
+    "resolution": "TRUE if official S&P Dow Jones Indices closing values show any daily close strictly below 7000.00 for a trading date between 2026-09-01 and 2026-12-31.",
+    "failure_condition": "Every official S&P 500 daily close in the window is at or above 7000.00.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-06",
+    "probability": 25,
+    "citations": [
+      50,
+      56,
+      115
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Register publishes at least one presidential proclamation or executive order modifying United States tariff treatment of Canadian-origin goods with a publication date between 2026-09-01 and 2026-12-31.",
+    "resolution": "TRUE if a federalregister.gov search returns a presidential document published between 2026-09-01 and 2026-12-31 that modifies tariff rates, coverage, or refunds applying to goods of Canadian origin.",
+    "failure_condition": "No presidential document meeting the tariff-modification and Canadian-origin criteria carries a Federal Register publication date inside the window.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-08",
+    "probability": 25,
+    "citations": [
+      49,
+      54,
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-08-31 and 2026-11-30, the head of state of Niger is removed, replaced, or announces resignation, or a new military takeover of the government is completed.",
+    "resolution": "TRUE if at least two of Reuters, AFP, BBC, Al Jazeera, or RFI report a completed change of head of state or completed military takeover in Niger occurring between 2026-08-31 and 2026-11-30.",
+    "failure_condition": "The incumbent head of state remains in office through 2026-11-30 and no completed takeover meeting the corroboration standard occurred in the window.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 44,
+    "citations": [
+      70,
+      71
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-08-31 and 2027-01-29, the Crown Prosecution Service publicly announces a charging decision, to charge or not to charge, concerning officers in the undercover policing spycops matter.",
+    "resolution": "TRUE if a CPS statement or at least two of BBC, Guardian, Reuters, or PA Media report a CPS charging decision in the spycops matter announced between 2026-08-31 and 2027-01-29.",
+    "failure_condition": "No CPS charging decision in the matter is announced within the window.",
+    "domain": "crime/security",
+    "deadline": "2027-02-05",
+    "probability": 43,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-08-31 and 2026-10-30, the reported confirmed combined death toll for the August 2026 Nepal and Tibet floods reaches or exceeds 1000.",
+    "resolution": "TRUE if at least two of Reuters, AFP, Al Jazeera, or Guardian report an official combined confirmed death toll of 1000 or more for the flood event, dated within the window.",
+    "failure_condition": "Official confirmed combined tolls reported within the window remain below 1000.",
+    "domain": "disaster",
+    "deadline": "2026-11-06",
+    "probability": 52,
+    "citations": [
+      31,
+      37,
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-08-31 and 2026-11-30, a commercial vessel transiting or anchored in the Strait of Hormuz or its approaches is struck by weapons fire or seized.",
+    "resolution": "TRUE if UKMTO issues an incident advisory, or at least two of Reuters, AP, or AFP report a strike on or seizure of a commercial vessel in the Strait of Hormuz area between 2026-08-31 and 2026-11-30.",
+    "failure_condition": "No qualifying strike or seizure in the Hormuz area occurs within the window under the stated adjudication standard.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-04",
+    "probability": 53,
+    "citations": [
+      84
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-01 and 2026-09-30, at least one Russian missile or drone strike inside Ukraine kills 10 or more people in a single attack, per official Ukrainian figures.",
+    "resolution": "TRUE if at least two of Reuters, AP, AFP, or BBC report an official Ukrainian death toll of 10 or more from a single Russian strike occurring between 2026-09-01 and 2026-09-30.",
+    "failure_condition": "No single strike in the September window carries an official reported toll of 10 or more.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-05",
+    "probability": 53,
+    "citations": [
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-08-31T23:01:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
