@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 011520Z SEP 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 012303Z SEP 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 1232 issued across 14 forecaster arms · 1071 open (99 past deadline, unresolved)
+Window: all-time · 1239 issued across 14 forecaster arms · 1078 open (99 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -26,7 +26,7 @@ Window: all-time · 1232 issued across 14 forecaster arms · 1071 open (99 past 
 | manual/opus-5 | 74 | 71 | 3 | 1 | 2 | 0.386 | 33.3% | 0.222 | -0.736 |
 | manual/opus-5/unattested | 153 | 150 | 3 | 1 | 2 | 0.141 | 33.3% | 0.222 | +0.366 |
 | manual/sonnet-5 | 45 | 25 | 20 | 12 | 8 | 0.231 | 60.0% | 0.240 | +0.037 |
-| manual/sonnet-5/unattested | 139 | 131 | 8 | 5 | 3 | 0.174 | 62.5% | 0.234 | +0.257 |
+| manual/sonnet-5/unattested | 146 | 138 | 8 | 5 | 3 | 0.174 | 62.5% | 0.234 | +0.257 |
 | operator/human | 10 | 6 | 1 | 1 | 0 | 0.122 | 100.0% | 0.000 | — |
 
 
@@ -461,6 +461,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260822-05 | `manual/sonnet-5/unattested` | 2026-08-22 | 2026-09-08 | 40% | crime_security | At the sentencing hearing scheduled for 2026-09-04 at Preston Crown Court, at least one of the five Barclays-branch Palestine Action defendants (Atiqnisar, Kelly, Malik, O'Hagan, or Yaniv) receives an immediate custodial sentence. |
 | KKR-20260827-03 | `manual/fable-5/unattested` | 2026-08-27 | 2026-09-08 | 90% | political | Xi Jinping holds an in-person meeting with Egyptian President Abdel Fattah El-Sisi on Egyptian territory between 2026-08-30 and 2026-09-04, as part of the state visit announced by the Chinese Foreign Ministry. |
 | KKR-20260827-25 | `control/baserate` | 2026-08-27 | 2026-09-08 | 29% | political | Xi Jinping holds an in-person meeting with Egyptian President Abdel Fattah El-Sisi on Egyptian territory between 2026-08-30 and 2026-09-04, as part of the state visit announced by the Chinese Foreign Ministry. |
+| KKR-20260901-18 | `manual/sonnet-5/unattested` | 2026-09-01 | 2026-09-08 | 90% | political | Ed Markey defeats Seth Moulton in the Massachusetts Democratic primary for United States Senate held September 1, 2026. |
+| KKR-20260901-19 | `manual/sonnet-5/unattested` | 2026-09-01 | 2026-09-08 | 78% | crime/security | District Judge Tony Graf rules that Tyler Robinson is bound over for trial specifically on the aggravated murder count in the killing of Charlie Kirk, following the September 1, 2026 preliminary hearing ruling in Provo, [withheld]. |
 | KKR-20260808-06 | `lmstudio/auto` | 2026-08-08 | 2026-09-09 | 28% | political | Between 2026-08-29 and 2026-09-05, a new political scandal involving a US senator will be reported by two major wire services (e.g., Reuters, AP), with allegations of corruption or misuse of funds. |
 | KKR-20260811-30 | `manual/sonnet-5/unattested` | 2026-08-11 | 2026-09-09 | 33% | economic | WTI crude oil will settle at or above 90.00 USD per barrel on at least one trading day between 2026-08-11 and 2026-09-08, extending the move in item 63. |
 | KKR-20260811-56 | `control/baserate` | 2026-08-11 | 2026-09-09 | 18% | economic | WTI crude oil will settle at or above 90.00 USD per barrel on at least one trading day between 2026-08-11 and 2026-09-08, extending the move in item 63. |
@@ -554,6 +556,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260829-05 | `lmstudio/auto` | 2026-08-29 | 2026-09-17 | 35% | cyber | A cyberattack exploiting a flaw in PaperCut software will be confirmed by BleepingComputer between 2026-09-01 and 2026-09-15. |
 | KKR-20260829-07 | `lmstudio/auto` | 2026-08-29 | 2026-09-17 | 30% | military/conflict | A drone strike on Gaza City will be confirmed by Al Jazeera and BBC World between 2026-09-01 and 2026-09-15. |
 | KKR-20260829-09 | `lmstudio/auto` | 2026-08-29 | 2026-09-17 | 25% | cyber | A major cyberattack exploiting a flaw in the Cosmos EVM will be confirmed by The Hacker News between 2026-09-01 and 2026-09-15. |
+| KKR-20260901-24 | `manual/sonnet-5/unattested` | 2026-09-01 | 2026-09-17 | 30% | disaster | The confirmed or officially reported Nepal flood death toll reaches 1300 or more at any point between 2026-09-02 and 2026-09-15. |
 | KKR-20260727-04 | `kfk/halflife` | 2026-07-27 | 2026-09-18 | 50% | military/conflict | Major General David W. Gardner will no longer be named as commanding officer of the 101st Airborne Division (Air Assault) in the source of record on 2026-09-18. |
 | KKR-20260807-14 | `manual/opus-5` | 2026-08-07 | 2026-09-18 | 45% | disaster | The Copernicus Climate Change Service ranks August 2026 among the three warmest Augusts on record for Europe. |
 | KKR-20260813-26 | `manual/opus-5/unattested` | 2026-08-13 | 2026-09-18 | 22% | disaster | USGS records at least one magnitude 6.0 or greater earthquake within 250 km of the epicenter of event us6000tjl2, with origin time between 2026-08-17 and 2026-09-14. |
@@ -579,6 +582,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260901-03 | `manual/opus-5/unattested` | 2026-09-01 | 2026-09-18 | 25% | economic | The FOMC raises the federal funds target range at its scheduled 2026-09-16 decision, above the current 3.50 to 3.75 percent. |
 | KKR-20260901-05 | `manual/sonnet-5/unattested` | 2026-09-01 | 2026-09-18 | 12% | economic | The Federal Open Market Committee raises the federal funds target range at its September 15-16, 2026 meeting. |
 | KKR-20260901-06 | `manual/fable-5/unattested` | 2026-09-01 | 2026-09-18 | 30% | economics/markets | The FOMC decision announced 2026-09-16 raises the federal funds target range above the range in effect on 2026-09-15. |
+| KKR-20260901-20 | `manual/sonnet-5/unattested` | 2026-09-01 | 2026-09-18 | 35% | military/conflict | At least one additional commercial vessel is struck, attacked, boarded, or seized in the Strait of Hormuz or Gulf of Oman between 2026-09-02 and 2026-09-16. |
 | KKR-20260827-05 | `manual/sonnet-5/unattested` | 2026-08-27 | 2026-09-19 | 40% | cyber | A CVE tied to the Microsoft SharePoint remote code execution exploit chain reported under active targeting on 2026-08-26 will be added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-27 and 2026-09-17. |
 | KKR-20260827-37 | `control/baserate` | 2026-08-27 | 2026-09-19 | 23% | cyber | A CVE tied to the Microsoft SharePoint remote code execution exploit chain reported under active targeting on 2026-08-26 will be added to the CISA Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-08-27 and 2026-09-17. |
 | KKR-20260831-04 | `lmstudio/auto` | 2026-08-31 | 2026-09-20 | 22% | military/conflict | Iran launches a missile attack on a U.S. military installation in the Persian Gulf region between 2026-09-10 and 2026-09-17. |
@@ -636,6 +640,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260727-10 | `kfk/halflife` | 2026-07-27 | 2026-09-25 | 50% | military/conflict | General Luciano Portolano will no longer be named as commanding officer of the Italy - national armed forces in the source of record on 2026-09-25. |
 | KKR-20260801-19 | `manual/sonnet-5/unattested` | 2026-08-01 | 2026-09-25 | 15% | crime/security | The Department of Justice will publicly release the Epstein-related documents subject to the New Mexico deadline noted in reporting as of 2026-08-01, on or before 2026-09-25. |
 | KKR-20260822-26 | `manual/fable-5/unattested` | 2026-08-22 | 2026-09-25 | 10% | disaster | USGS records an earthquake of magnitude 5.5 or greater within 100 km of the 2026-08-20 M6.7 Aniso, Peru epicenter (14.641 S, 73.524 W) with origin time between 2026-08-24 and 2026-09-23. |
+| KKR-20260901-23 | `manual/sonnet-5/unattested` | 2026-09-01 | 2026-09-25 | 20% | cyber | CISA adds at least one new Microsoft Exchange Server vulnerability to the Known Exploited Vulnerabilities catalog between 2026-09-02 and 2026-09-23. |
 | KKR-20260827-06 | `manual/sonnet-5/unattested` | 2026-08-27 | 2026-09-26 | 18% | cyber | Norway's National Security Authority or Police Security Service will publicly name a specific threat actor, group, or state as responsible for the 2026-08-25 DDoS attack on Norwegian government digital services, in a statement dated between 2026-08-27 and 2026-09-24. |
 | KKR-20260827-38 | `control/baserate` | 2026-08-27 | 2026-09-26 | 23% | cyber | Norway's National Security Authority or Police Security Service will publicly name a specific threat actor, group, or state as responsible for the 2026-08-25 DDoS attack on Norwegian government digital services, in a statement dated between 2026-08-27 and 2026-09-24. |
 | KKR-20260831-06 | `lmstudio/auto` | 2026-08-31 | 2026-09-27 | 35% | cyber | A cyberattack exploiting a known vulnerability in Cisco routers, confirmed by CISA, occurs between 2026-09-18 and 2026-09-25. |
@@ -754,6 +759,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260829-58 | `control/baserate` | 2026-08-29 | 2026-10-02 | 33% | cyber | A PaperCut vulnerability is added to the CISA KEV catalog with a dateAdded value between 2026-08-29 and 2026-09-30. |
 | KKR-20260831-75 | `manual/sonnet-5/unattested` | 2026-08-31 | 2026-10-02 | 15% | military_conflict | A further attempt to seize power from Niger's sitting government by military or paramilitary action occurs between 2026-09-01 and 2026-09-30. |
 | KKR-20260831-82 | `control/baserate` | 2026-08-31 | 2026-10-02 | 53% | military_conflict | A further attempt to seize power from Niger's sitting government by military or paramilitary action occurs between 2026-09-01 and 2026-09-30. |
+| KKR-20260901-21 | `manual/sonnet-5/unattested` | 2026-09-01 | 2026-10-02 | 28% | economics/markets | WTI crude oil front-month futures settle at or above 95.00 USD per barrel on any trading day between 2026-09-02 and 2026-09-30. Reference: 88.02 USD per barrel on the packet date, 2026-09-01. |
 | KKR-20260827-82 | `manual/sonnet-5/unattested` | 2026-08-27 | 2026-10-03 | 30% | disaster | The confirmed death toll from the August 2026 Nepal-Tibet flash flood and glacial lake outburst event reaches at least 800, as reported by the government of Nepal, Chinese authorities, or UN OCHA, between 2026-09-03 and 2026-09-30. |
 | KKR-20260827-105 | `control/baserate` | 2026-08-27 | 2026-10-03 | 52% | disaster | The confirmed death toll from the August 2026 Nepal-Tibet flash flood and glacial lake outburst event reaches at least 800, as reported by the government of Nepal, Chinese authorities, or UN OCHA, between 2026-09-03 and 2026-09-30. |
 | KKR-20260726-14 | `lmstudio/auto` | 2026-07-26 | 2026-10-04 | 35% | disaster | France experiences a new major wildfire in the Provence-Alpes-Côte d'Azur region between 2026-10-01 and 2026-10-04, forcing evacuations of at least 10,000 people. |
@@ -898,6 +904,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260831-39 | `control/baserate` | 2026-08-31 | 2026-10-19 | 52% | disaster | The confirmed cumulative death toll for the August 2026 Nepal-Tibet flood event reaches 1,000 or more in official figures issued between 2026-09-07 and 2026-10-16. |
 | KKR-20260831-71 | `manual/sonnet-5/unattested` | 2026-08-31 | 2026-10-19 | 25% | cyber | CISA or the FBI publishes an advisory formally attributing the Fire Ant intrusion campaign against Cisco network devices to a China-linked actor, between 2026-09-01 and 2026-10-15. |
 | KKR-20260831-78 | `control/baserate` | 2026-08-31 | 2026-10-19 | 33% | cyber | CISA or the FBI publishes an advisory formally attributing the Fire Ant intrusion campaign against Cisco network devices to a China-linked actor, between 2026-09-01 and 2026-10-15. |
+| KKR-20260901-22 | `manual/sonnet-5/unattested` | 2026-09-01 | 2026-10-19 | 25% | economics/markets | The US 10-year Treasury yield closes at or above 5.00 percent on any trading day between 2026-09-02 and 2026-10-15. Reference: 4.77 percent on the packet date, 2026-09-01. |
 | KKR-20260729-03 | `lmstudio/auto` | 2026-07-29 | 2026-10-20 | 15% | disaster | On or before 2026-10-20, a major earthquake of magnitude 7.0 or higher strikes Japan, resulting in over 1,000 fatalities. |
 | KKR-20260804-60 | `manual/opus-5/unattested` | 2026-08-04 | 2026-10-20 | 85% | political | The United States Senate confirms Todd Blanche as Attorney General in a recorded floor vote held between 2026-08-05 and 2026-10-16. |
 | KKR-20260811-19 | `manual/opus-5/unattested` | 2026-08-11 | 2026-10-20 | 30% | cyber | The CISA KEV catalog adds at least one new Microsoft SharePoint Server CVE, with dateAdded between 2026-08-12 and 2026-10-16. |
@@ -1470,7 +1477,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*13 of 1232 issued (1.1%) have been voided.*
+*13 of 1239 issued (1.0%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
