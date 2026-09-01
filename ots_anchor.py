@@ -183,11 +183,12 @@ def run(args, timeout=90):
 
 
 def sha256_file(p: Path):
-    h = hashlib.sha256()
-    with p.open("rb") as f:
-        for chunk in iter(lambda: f.read(65536), b""):
-            h.update(chunk)
-    return h.hexdigest()
+    """OTSNORM-2026-09-02: the digest of the SERVED bytes. Git serves LF;
+    a Windows working copy is CRLF; hashing the working file made every
+    comparison in this instrument box-relative (Finding 09). CRLF is
+    normalised to LF before hashing, which is the desk-wide convention
+    already used by every patch and every published hash."""
+    return hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
 _OTS_MAGIC = bytes.fromhex("004f70656e54696d657374616d7073000050726f6f66"
@@ -212,6 +213,28 @@ def receipt_digest(receipt: Path):
     if len(b) < off + 33 or b[off] != 0x08:
         return None
     return b[off + 1:off + 33].hex()
+
+
+def _stamp_lf(f: Path):
+    """OTSNORM-2026-09-02: the receipt must commit the SERVED bytes. Git
+    serves LF; a Windows working copy is CRLF; stamping the working file made
+    receipts that verify against nothing anyone can download (Finding 09).
+    A CRLF file is stamped through a temporary LF-normalised copy and the
+    receipt takes the file's name; a pure-LF file stamps directly."""
+    raw = f.read_bytes()
+    if b"\r\n" not in raw:
+        return run(["stamp", str(f)])
+    tmp = f.with_name(f.name + ".lfnorm")
+    tmp.write_bytes(raw.replace(b"\r\n", b"\n"))
+    try:
+        code, out = run(["stamp", str(tmp)])
+        trec = Path(str(tmp) + ".ots")
+        rec = f.with_suffix(f.suffix + ".ots")
+        if trec.exists():
+            trec.replace(rec)
+        return code, out
+    finally:
+        tmp.unlink(missing_ok=True)
 
 
 def supersede_receipt(src: Path, rec: Path):
@@ -402,7 +425,7 @@ def do_stamp(dry):
         if _aside is not None:
             print(f"  receipt covered superseded bytes; kept as {_aside.name}; "
                   f"stamping the current bytes")
-        code, out = run(["stamp", str(f)])
+        code, out = _stamp_lf(f)  # OTSNORM-2026-09-02
         rec = f.with_suffix(f.suffix + ".ots")
         if rec.exists():
             st, h, _ = receipt_state(rec)

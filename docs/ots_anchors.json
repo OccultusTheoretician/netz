@@ -1,6 +1,6 @@
 {
   "schema": "ots_anchors/v1",
-  "generated": "2026-09-01T19:35:05.862103+00:00",
+  "generated": "2026-09-01T23:28:28.337027+00:00",
   "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
   "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
   "pairing_note": "digest_at_stamp is read from the receipt and is fixed; digest_served is computed live from the bytes on this site. pairing=MATCH means the receipt covers what you can download. pairing=DRIFT means the file has changed since it was stamped and the receipt covers the older bytes only. DRIFT is disclosed, not corrected: a receipt is never re-issued to make a later file look anchored.",
@@ -9,33 +9,36 @@
     "ledger.json": {
       "receipt": "ledger.json.ots",
       "state": "pending",
-      "digest": "3bb1ca60c90a982b6337f1de2a35ac8c0754109961e203e810a1333cd5e0376c",
-      "digest_at_stamp": "3bb1ca60c90a982b6337f1de2a35ac8c0754109961e203e810a1333cd5e0376c",
-      "digest_served": "3bb1ca60c90a982b6337f1de2a35ac8c0754109961e203e810a1333cd5e0376c",
+      "digest": "1389abd8a9756fc5e68b907112ae14fc068556222b7d8b41febba54ab6b70d31",
+      "digest_at_stamp": "1389abd8a9756fc5e68b907112ae14fc068556222b7d8b41febba54ab6b70d31",
+      "digest_served": "1389abd8a9756fc5e68b907112ae14fc068556222b7d8b41febba54ab6b70d31",
       "pairing": "MATCH",
       "superseded_receipts": [
+        "ledger.json.3bb1ca60.ots",
         "ledger.json.a3a70e5e.ots"
       ]
     },
     "kalls_hashlog.json": {
       "receipt": "kalls_hashlog.json.ots",
       "state": "pending",
-      "digest": "9b6154ed16ac70bcb16ca0e92a6aecba12b50e58cdb8418bd760f3295bdb6d13",
-      "digest_at_stamp": "9b6154ed16ac70bcb16ca0e92a6aecba12b50e58cdb8418bd760f3295bdb6d13",
-      "digest_served": "9b6154ed16ac70bcb16ca0e92a6aecba12b50e58cdb8418bd760f3295bdb6d13",
+      "digest": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3",
+      "digest_at_stamp": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3",
+      "digest_served": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3",
       "pairing": "MATCH",
       "superseded_receipts": [
+        "kalls_hashlog.json.9b6154ed.ots",
         "kalls_hashlog.json.dea862ed.ots"
       ]
     },
     "plate.json": {
       "receipt": "plate.json.ots",
       "state": "pending",
-      "digest": "6336f3f532b2d3fb493d699a36573172cc16482c4df17c42ab423205c88efd2d",
-      "digest_at_stamp": "6336f3f532b2d3fb493d699a36573172cc16482c4df17c42ab423205c88efd2d",
-      "digest_served": "6336f3f532b2d3fb493d699a36573172cc16482c4df17c42ab423205c88efd2d",
+      "digest": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f",
+      "digest_at_stamp": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f",
+      "digest_served": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f",
       "pairing": "MATCH",
       "superseded_receipts": [
+        "plate.json.6336f3f5.ots",
         "plate.json.f8d2e837.ots"
       ]
     },
@@ -50,11 +53,12 @@
     "RPAS_FIRST_EDITION_2026_v1.md": {
       "receipt": "RPAS_FIRST_EDITION_2026_v1.md.ots",
       "state": "pending",
-      "digest": "36a523b8b0ca5606dac2b7d395f7cea476ce90dc17eae3a3ee6c595c8c9baf96",
-      "digest_at_stamp": "36a523b8b0ca5606dac2b7d395f7cea476ce90dc17eae3a3ee6c595c8c9baf96",
-      "digest_served": "36a523b8b0ca5606dac2b7d395f7cea476ce90dc17eae3a3ee6c595c8c9baf96",
+      "digest": "090bd5ab4c4844b69f1b8e69326aa7f103b6389ef8bb8e81883548d7cf308cc8",
+      "digest_at_stamp": "090bd5ab4c4844b69f1b8e69326aa7f103b6389ef8bb8e81883548d7cf308cc8",
+      "digest_served": "090bd5ab4c4844b69f1b8e69326aa7f103b6389ef8bb8e81883548d7cf308cc8",
       "pairing": "MATCH",
       "superseded_receipts": [
+        "RPAS_FIRST_EDITION_2026_v1.md.36a523b8.ots",
         "RPAS_FIRST_EDITION_2026_v1.md.9d04c1c7.ots"
       ]
     },
@@ -77,22 +81,24 @@
     "LIAS_FIRST_EDITION_2026_v1.md": {
       "receipt": "LIAS_FIRST_EDITION_2026_v1.md.ots",
       "state": "pending",
-      "digest": "27feb26a45179b8d6756c90c70fb7922fbb7ee014584e73b555dc5c3d19b79a4",
-      "digest_at_stamp": "27feb26a45179b8d6756c90c70fb7922fbb7ee014584e73b555dc5c3d19b79a4",
-      "digest_served": "27feb26a45179b8d6756c90c70fb7922fbb7ee014584e73b555dc5c3d19b79a4",
+      "digest": "3cbd0acea6ebf2b535e71d5e98a4e3069ff247ed470c1aae36dfe363e373b6d3",
+      "digest_at_stamp": "3cbd0acea6ebf2b535e71d5e98a4e3069ff247ed470c1aae36dfe363e373b6d3",
+      "digest_served": "3cbd0acea6ebf2b535e71d5e98a4e3069ff247ed470c1aae36dfe363e373b6d3",
       "pairing": "MATCH",
       "superseded_receipts": [
+        "LIAS_FIRST_EDITION_2026_v1.md.27feb26a.ots",
         "LIAS_FIRST_EDITION_2026_v1.md.fb6a428f.ots"
       ]
     },
     "PCAOB_2026-005_DOCKET_MANIFEST.txt": {
       "receipt": "PCAOB_2026-005_DOCKET_MANIFEST.txt.ots",
       "state": "pending",
-      "digest": "4c43ecfc67e519ba220df97a5cbb5cba0fe867942b5b5fb8d01a3eb5e1b052b4",
-      "digest_at_stamp": "4c43ecfc67e519ba220df97a5cbb5cba0fe867942b5b5fb8d01a3eb5e1b052b4",
-      "digest_served": "4c43ecfc67e519ba220df97a5cbb5cba0fe867942b5b5fb8d01a3eb5e1b052b4",
+      "digest": "601bc9c5718b64fad505f225b41d2757a93a5c40ba4f326362ea191f51c11eeb",
+      "digest_at_stamp": "601bc9c5718b64fad505f225b41d2757a93a5c40ba4f326362ea191f51c11eeb",
+      "digest_served": "601bc9c5718b64fad505f225b41d2757a93a5c40ba4f326362ea191f51c11eeb",
       "pairing": "MATCH",
       "superseded_receipts": [
+        "PCAOB_2026-005_DOCKET_MANIFEST.txt.4c43ecfc.ots",
         "PCAOB_2026-005_DOCKET_MANIFEST.txt.601bc9c5.ots"
       ]
     },
