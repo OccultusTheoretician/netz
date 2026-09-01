@@ -214,6 +214,35 @@ def receipt_digest(receipt: Path):
     return b[off + 1:off + 33].hex()
 
 
+def supersede_receipt(src: Path, rec: Path):
+    """RESTAMP-2026-09-01. If `rec` exists and commits a digest other than
+    the current bytes of `src`, move it aside as <src>.<digest8>.ots and
+    return that path; otherwise None. Nothing is deleted: the old receipt
+    still proves its own bytes and stays on the record under their digest."""
+    if not rec.exists():
+        return None
+    old = receipt_digest(rec)
+    cur = sha256_file(src) if src.exists() else None
+    if not old or not cur or old == cur:
+        return None
+    aside = rec.with_name(f"{src.name}.{old[:8]}.ots")
+    rec.replace(aside)
+    return aside
+
+
+def _is_snapshot(name: str) -> bool:
+    """RESTAMP-2026-09-01. <file>.<digest8>.ots is a kept snapshot receipt."""
+    parts = name.rsplit(".", 2)
+    return (len(parts) == 3 and parts[2] == "ots" and len(parts[1]) == 8
+            and all(c in "0123456789abcdef" for c in parts[1]))
+
+
+def superseded_receipts(src: Path):
+    """RESTAMP-2026-09-01. The kept snapshot receipts for `src`, oldest first."""
+    return sorted(p.name for p in src.parent.glob(f"{src.name}.*.ots")
+                  if p.name != src.name + ".ots")
+
+
 def _entry(src: Path, rec: Path, state, height=None):
     """One row of the published state file.
 
@@ -235,6 +264,9 @@ def _entry(src: Path, rec: Path, state, height=None):
          "pairing": pairing}
     if height:
         e["bitcoin_block"] = height
+    _hist = superseded_receipts(src)  # RESTAMP-2026-09-01
+    if _hist:
+        e["superseded_receipts"] = _hist
     if pairing == "DRIFT":
         e["pairing_note"] = ("the served file has changed since this receipt "
                              "was created. The receipt still proves the "
@@ -361,6 +393,15 @@ def do_stamp(dry):
     results = {}
     for f in files:
         print(f"\nstamping {f.name} …")
+        # RESTAMP-2026-09-01: a mutable target whose bytes changed since its
+        # receipt was issued gets a NEW receipt; the old one is kept under the
+        # digest it covers. `ots stamp` refuses to overwrite an existing
+        # receipt, so without this the ledger was anchored once (2026-08-01,
+        # 246 rows) and never again while the state file said DRIFT.
+        _aside = supersede_receipt(f, f.with_suffix(f.suffix + ".ots"))
+        if _aside is not None:
+            print(f"  receipt covered superseded bytes; kept as {_aside.name}; "
+                  f"stamping the current bytes")
         code, out = run(["stamp", str(f)])
         rec = f.with_suffix(f.suffix + ".ots")
         if rec.exists():
@@ -462,6 +503,9 @@ def do_status():
         st, height, _ = receipt_state(rec)
         src = rec.with_suffix("")
         match = "—"
+        if _is_snapshot(rec.name):  # RESTAMP-2026-09-01: kept snapshot
+            print(f"{rec.name:30} {st.upper():10} {str(height or '—'):>9}  snapshot of superseded bytes")
+            continue
         if src.exists():
             saved = load_state().get(src.name, {}).get("digest")
             cur = sha256_file(src)
