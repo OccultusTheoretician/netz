@@ -1,0 +1,24 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog records 3 or more entries with dateAdded between 2026-09-01 and 2026-09-14.",
+    "domain": "cyber",
+    "probability": 78,
+    "resolution": "Resolves true if the published CISA KEV catalog feed shows 3 or more entries with dateAdded in the window when checked at the deadline; false if it shows fewer than 3.",
+    "deadline": "2026-09-16",
+    "citations": [
+      18
+    ],
+    "failure_condition": "The CISA KEV catalog shows fewer than 3 entries with a dateAdded value between 2026-09-01 and 2026-09-14 when checked against the published feed."
+  },
+  {
+    "statement": "The Federal Open Market Committee raises the federal funds target range at its September 15-16, 2026 meeting.",
+    "domain": "economic",
+    "probability": 12,
+    "resolution": "Resolves true if the FOMC statement released 2026-09-16 sets the federal funds target range above the range in effect the day before the meeting; false if held or cut.",
+    "deadline": "2026-09-18",
+    "citations": [
+      71
+    ],
+    "failure_condition": "The FOMC holds or lowers the federal funds target range at its September 15-16, 2026 meeting rather than raising it."
+  }
+]

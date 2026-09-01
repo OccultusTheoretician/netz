@@ -1,0 +1,37 @@
+[
+  {
+    "statement": "The FOMC decision announced 2026-09-16 raises the federal funds target range above the range in effect on 2026-09-15.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "True if the Federal Reserve implementation note or FRED series DFEDTARU shows a target range effective after the 2026-09-16 decision higher than the range in effect on 2026-09-15; false if unchanged or lower.",
+    "deadline": "2026-09-18",
+    "citations": [
+      71
+    ],
+    "failure_condition": "The federal funds target range effective after the 2026-09-16 decision is unchanged from or lower than the range in effect on 2026-09-15."
+  },
+  {
+    "statement": "A lapse in United States federal appropriations begins on 2026-10-01, with agency shutdown procedures taking effect that day.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "True if no enacted appropriations act or continuing resolution covers 2026-10-01 and OMB directs agencies to execute shutdown plans that day; Congress.gov enacted-legislation records govern.",
+    "deadline": "2026-10-05",
+    "citations": [
+      34,
+      99
+    ],
+    "failure_condition": "Enacted appropriations or a continuing resolution covers 2026-10-01 and no agency executes OMB-directed shutdown procedures that day."
+  },
+  {
+    "statement": "Commercial shipping transit through the Strait of Hormuz is suspended for at least 48 consecutive hours at any point between 2026-09-01 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 12,
+    "resolution": "True if at least two international wire services, citing shipping authorities or maritime insurers, report a suspension of commercial Strait of Hormuz transits lasting 48 or more consecutive hours between 2026-09-01 and 2026-10-31.",
+    "deadline": "2026-11-04",
+    "citations": [
+      61,
+      88
+    ],
+    "failure_condition": "Commercial Strait of Hormuz transits continue between 2026-09-01 and 2026-10-31 without any suspension reaching 48 consecutive hours."
+  }
+]

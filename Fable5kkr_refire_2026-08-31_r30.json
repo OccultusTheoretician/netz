@@ -1,0 +1,26 @@
+[
+  {
+    "statement": "Between 2026-08-31 and 2026-10-16, Manchester Airports Group or a UK government body publicly confirms unauthorized access to MAG systems in connection with the FulcrumSec claim.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "TRUE if at least two of BBC, Reuters, BleepingComputer, or The Record report an official MAG, NCSC, or ICO statement confirming unauthorized access to MAG systems, dated between 2026-08-31 and 2026-10-16.",
+    "deadline": "2026-10-23",
+    "citations": [
+      11
+    ],
+    "failure_condition": "The confirmation condition is not met: no official statement confirming unauthorized access, dated inside the window, exists under the stated corroboration standard at the deadline."
+  },
+  {
+    "statement": "Between 2026-08-31 and 2026-10-30, the reported confirmed combined death toll for the August 2026 Nepal and Tibet floods reaches or exceeds 1000.",
+    "domain": "disaster",
+    "probability": 60,
+    "resolution": "TRUE if at least two of Reuters, AFP, Al Jazeera, or Guardian report an official combined confirmed death toll of 1000 or more for the flood event, dated within the window.",
+    "deadline": "2026-11-06",
+    "citations": [
+      31,
+      37,
+      19
+    ],
+    "failure_condition": "Official confirmed combined tolls reported within the window remain below 1000."
+  }
+]

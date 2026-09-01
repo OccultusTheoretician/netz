@@ -142,6 +142,10 @@ def entities(text: str, expand_regions: bool = True) -> set:
     asserted members, and the region name is kept alongside so a reader can
     see which assertion did the work.
     """
+    # GATE-2026-08-31 (C6): "U.S." is the United States, and "U.S.-Canada"
+    # names two geographies, not one hyphenated unknown.
+    text = re.sub(r"\bU\.S\.A?\.?(?![A-Za-z])", " United States ", text or "")
+    text = re.sub(r"(?<=\s)-(?=[A-Za-z])", " ", text)
     t = " " + re.sub(r"[^\w\s'.\-]+", " ", (text or "").lower()) + " "
     t = re.sub(r"\s+", " ", t)
     found: set[str] = set()
@@ -333,6 +337,20 @@ def venue_scope(resolution: str) -> dict:
         r"(?:index|api|feed|endpoint|portal|website|site|ui|json|xml|rss|"
         r"catalogue|catalog|search)\b",
         " ", masked, flags=re.I)
+    # GATE-2026-08-31 (C4): an or over WHO ISSUES the one document a venue
+    # reports ("report an official MAG, NCSC, or ICO statement") or over
+    # WHOM the venue cites ("citing shipping authorities or maritime
+    # insurers") is not two places to look. Masked before the scan.
+    masked = re.sub(
+        r"\b(report|reports|carry|carries|carrying|publish|publishes|cite|cites|quote|quotes|"
+        r"confirm|confirms|relay|relays)\s+((?:an?|the)\s+)?((?:official|formal|public|written)\s+)?"
+        r"([\w.&\-]+(?:\s+[\w.&\-]+){0,3}(?:\s*,\s*[\w.&\-]+(?:\s+[\w.&\-]+){0,3})*\s*,?\s+)or"
+        r"(\s+(?:an?\s+|the\s+)?[\w.&\-]+(?:\s+[\w.&\-]+){0,3}\s+(?:statement|release|announcement|notice|"
+        r"confirmation|advisory|advisories|bulletin|filing|decision|figure|toll|report)s?\b)",
+        lambda m: " ".join(x for x in (m.group(1), m.group(2), m.group(3), m.group(4), m.group(5)) if x),
+        masked, flags=re.I)
+    masked = re.sub(r"\b(citing|quoting|attributed\s+to|according\s+to|sourced\s+to)\s+"
+                    r"((?:[\w.&\-]+\s+){0,6})or\b", r"\1 \2", masked, flags=re.I)
     low = masked.lower()
     found = named_venues(res)
 
@@ -424,6 +442,26 @@ def venue_scope(resolution: str) -> dict:
         if marker:
             break
 
+    # GATE-2026-08-31 (M1): a disjunction between a venue and its registered
+    # mirror (registers.json venues.mirrors: [{"mirror": id, "of": id}]) is
+    # one datum at two addresses; it collapses to the primary, disclosed.
+    _mirrors = {(m.get("mirror"), m.get("of")) for m in reg.get("mirrors", [])
+                if m.get("mirror") and m.get("of")}
+    _mnote = ""
+    if disj and _mirrors:
+        _kept = []
+        for _l, _r in disj:
+            _lv, _rv = named_venues(_l), named_venues(_r)
+            _hit = [(a, b) for a in _lv for b in _rv if (a, b) in _mirrors] + \
+                   [(b, a) for a in _lv for b in _rv if (b, a) in _mirrors]
+            if _hit:
+                _mnote = (f"{_hit[0][0]} is the registered mirror of {_hit[0][1]}; "
+                          f"source of record: {_hit[0][1]}")
+            else:
+                _kept.append((_l, _r))
+        disj = _kept
+    if not disj and _mnote:
+        return {"verdict": "OK", "named": sorted(found), "reason": "", "note": _mnote}
     if disj:
         l, r = disj[0]
         return {"verdict": "DISJUNCT", "named": sorted(found),
