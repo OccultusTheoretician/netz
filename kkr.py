@@ -921,12 +921,34 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
             _open = datetime.strptime(_dates[0], "%Y-%m-%d").date()
             _now = datetime.now().date()  # KK30: desk operating day, see deadline governor note
             if _open < _now:
-                reasons.append(
-                    f"event window opens {_open}, before this row is sealed "
-                    f"({_now}, desk-local) — part of the window has already elapsed and the "
-                    f"outcome may already exist. A commitment made after the "
-                    f"fact is retrodiction, not forecast; open the window today "
-                    f"or later")
+                # ANCHOR-2026-09-01 (A1): late-seal, generation-anchored. If the
+                # arriving file was hashed and stamped when it landed (arrive.py)
+                # and its arrival, desk-local, is on or before the window's opening
+                # day, the forecast provably existed before any part of the window
+                # elapsed: it seals under a disclosed class instead of dying. An
+                # arrival after the window opened is no defence and still dies.
+                _arr = globals().get("_ARRIVE")
+                _arr_d = None
+                if _arr and _arr.get("arrived_utc"):
+                    try:
+                        _arr_d = datetime.fromisoformat(
+                            str(_arr["arrived_utc"]).replace("Z", "+00:00")).astimezone().date()
+                    except Exception:
+                        _arr_d = None
+                if _arr_d is not None and _arr_d <= _open:
+                    _cls = (f"late-seal, generation-anchored: file sha {str(_arr.get('sha256', ''))[:16]} "
+                            f"arrived {_arr['arrived_utc']} (desk-local {_arr_d}), window opens {_open}, "
+                            f"sealed {_now} desk-local; receipt {_arr.get('receipt') or 'none'}, "
+                            f"state at arrival {_arr.get('stamp_state', 'unknown')}")
+                    print("KKR \u00b7 NOTE \u00b7 (A1) " + _cls, file=sys.stderr)
+                    p["notes"] = ((p.get("notes") or "") + " | " + _cls).strip(" |")
+                else:
+                    reasons.append(
+                        f"event window opens {_open}, before this row is sealed "
+                        f"({_now}, desk-local) \u2014 part of the window has already elapsed and the "
+                        f"outcome may already exist. A commitment made after the "
+                        f"fact is retrodiction, not forecast; open the window today "
+                        f"or later")
         except ValueError:
             pass
     # --- KK27-VENUE: direction is part of the claim ------------------------
@@ -1486,7 +1508,7 @@ def append_projections(projs: list, model_tag: str, source_report: str) -> list:
                   "date_issued": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
                   "model": model_tag, "source_report": source_report, "source_packet": str(globals().get("_LAST_PACKET", "")),
                   "rubric_hash": _rubric_hash(),
-                  "status": "open", "resolved_date": None, "notes": ""})
+                  "status": "open", "resolved_date": None, "notes": (p.get("notes") or "")})  # ANCHOR-2026-09-01 (A2): gate disclosures survive the seal
         # KK25: rows cite the register of record they were gated under, the
         # way they name a packet and a source report. Prospective only;
         # sealed rows are never touched. schema@digest, recomputable by
@@ -1889,6 +1911,27 @@ def cmd_generate(args):
     render_kkr(added, rejected, tag, rep.name)
 
 
+def _arrive_lookup(path, log_path=None):
+    """ANCHOR-2026-09-01 (A1): the arriving file's own digest, looked up in
+    anchor_log.json (written by arrive.py). Returns the entry or None. Fail-open:
+    no log, unreadable log, or no match all mean no anchor, never a rejection."""
+    import hashlib as _hl
+    try:
+        _lp = Path(log_path) if log_path else HERE / "anchor_log.json"
+        if not _lp.exists():
+            return None
+        _sha = _hl.sha256(Path(path).read_bytes()).hexdigest()
+        _log = json.loads(_lp.read_text(encoding="utf-8"))
+        _hit = next((e for e in _log if isinstance(e, dict) and e.get("sha256") == _sha), None)
+        if _hit:
+            print(f"KKR \u00b7 NOTE \u00b7 (A1): {Path(path).name} anchored at arrival "
+                  f"{_hit.get('arrived_utc')} sha {_sha[:16]} ({_hit.get('stamp_state', 'unknown')})",
+                  file=sys.stderr)
+        return _hit
+    except Exception:
+        return None
+
+
 def cmd_ingest(args):
     # Which packet was this arm forecasting against? cmd_generate records it;
     # this path never did, so every manual/fable row carried a blank
@@ -1903,6 +1946,7 @@ def cmd_ingest(args):
                   f"(newest on disk; pass --packet to override)", file=sys.stderr)
     globals()["_LAST_PACKET"] = pk
     raw = Path(args.ingest).read_text(encoding="utf-8")
+    globals()["_ARRIVE"] = _arrive_lookup(Path(args.ingest))  # ANCHOR-2026-09-01 (A1)
     projs = parse_projections(raw)
     if not projs:
         print("KKR · file unparseable — need the JSON array format", file=sys.stderr)
