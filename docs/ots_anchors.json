@@ -1,6 +1,10 @@
 {
   "schema": "ots_anchors/v1",
+<<<<<<< Updated upstream
   "generated": "2026-09-01T09:34:27.555338+00:00",
+=======
+  "generated": "2026-09-01T15:02:12.786649+00:00",
+>>>>>>> Stashed changes
   "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
   "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
   "pairing_note": "digest_at_stamp is read from the receipt and is fixed; digest_served is computed live from the bytes on this site. pairing=MATCH means the receipt covers what you can download. pairing=DRIFT means the file has changed since it was stamped and the receipt covers the older bytes only. DRIFT is disclosed, not corrected: a receipt is never re-issued to make a later file look anchored.",
@@ -8,32 +12,38 @@
   "files": {
     "ledger.json": {
       "receipt": "ledger.json.ots",
-      "state": "anchored",
+      "state": "unreadable",
       "digest": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
       "digest_at_stamp": "a3a70e5e3c3f46bf35325897e13789b2b1fb14a5510baa03b5e930476db28304",
+<<<<<<< Updated upstream
       "digest_served": "96de6f83dcfe9bc5adb25f31af5125a872f24161cc2924777cb625a6d7f15b8a",
+=======
+      "digest_served": "a8d18994c6102352195f1c2359388dcf83d072e104e9852133d24dd10480febf",
+>>>>>>> Stashed changes
       "pairing": "DRIFT",
       "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
     "kalls_hashlog.json": {
       "receipt": "kalls_hashlog.json.ots",
-      "state": "anchored",
+      "state": "unreadable",
       "digest": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3",
       "digest_at_stamp": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3",
-      "digest_served": "dea862edddc685f548b70e0ae31f5b887743d5003e08e9179ce69ba38393d3f3",
-      "pairing": "MATCH"
+      "digest_served": "9b6154ed16ac70bcb16ca0e92a6aecba12b50e58cdb8418bd760f3295bdb6d13",
+      "pairing": "DRIFT",
+      "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
     "plate.json": {
       "receipt": "plate.json.ots",
-      "state": "anchored",
+      "state": "unreadable",
       "digest": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f",
       "digest_at_stamp": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f",
-      "digest_served": "f8d2e8374d3455c274b407fcc6ef4b5f5203d8d7047a5419fbd0a28ec559214f",
-      "pairing": "MATCH"
+      "digest_served": "6336f3f532b2d3fb493d699a36573172cc16482c4df17c42ab423205c88efd2d",
+      "pairing": "DRIFT",
+      "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
     "ABYSS_DOCTRINE_DRAFT_v1.md": {
       "receipt": "ABYSS_DOCTRINE_DRAFT_v1.md.ots",
-      "state": "anchored",
+      "state": "unreadable",
       "digest": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d",
       "digest_at_stamp": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d",
       "digest_served": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d",
@@ -41,16 +51,16 @@
     },
     "RPAS_FIRST_EDITION_2026_v1.md": {
       "receipt": "RPAS_FIRST_EDITION_2026_v1.md.ots",
-      "state": "anchored",
+      "state": "unreadable",
       "digest": "9d04c1c7db9bfcbecd4ebe85456251711eadeb0d114c9d6dbfd6b10ee7db805d",
       "digest_at_stamp": "9d04c1c7db9bfcbecd4ebe85456251711eadeb0d114c9d6dbfd6b10ee7db805d",
-      "digest_served": "090bd5ab4c4844b69f1b8e69326aa7f103b6389ef8bb8e81883548d7cf308cc8",
+      "digest_served": "36a523b8b0ca5606dac2b7d395f7cea476ce90dc17eae3a3ee6c595c8c9baf96",
       "pairing": "DRIFT",
       "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
     "KRAEHE_NEST_METHOD.md": {
       "receipt": "KRAEHE_NEST_METHOD.md.ots",
-      "state": "anchored",
+      "state": "unreadable",
       "digest": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3",
       "digest_at_stamp": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3",
       "digest_served": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3",
@@ -58,7 +68,7 @@
     },
     "KRAEHE_NEST_PROTOCOL.md": {
       "receipt": "KRAEHE_NEST_PROTOCOL.md.ots",
-      "state": "anchored",
+      "state": "unreadable",
       "digest": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d",
       "digest_at_stamp": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d",
       "digest_served": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d",
@@ -66,20 +76,27 @@
     },
     "LIAS_FIRST_EDITION_2026_v1.md": {
       "receipt": "LIAS_FIRST_EDITION_2026_v1.md.ots",
-      "state": "anchored",
+      "state": "unreadable",
       "digest": "fb6a428f2a4edf58b4c6854f4564128a6f09a8717408c8e321a546af34837f3b",
       "digest_at_stamp": "fb6a428f2a4edf58b4c6854f4564128a6f09a8717408c8e321a546af34837f3b",
-      "digest_served": "3cbd0acea6ebf2b535e71d5e98a4e3069ff247ed470c1aae36dfe363e373b6d3",
+      "digest_served": "27feb26a45179b8d6756c90c70fb7922fbb7ee014584e73b555dc5c3d19b79a4",
       "pairing": "DRIFT",
       "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
     },
     "PCAOB_2026-005_DOCKET_MANIFEST.txt": {
       "receipt": "PCAOB_2026-005_DOCKET_MANIFEST.txt.ots",
-      "state": "anchored",
+      "state": "unreadable",
       "digest": "601bc9c5718b64fad505f225b41d2757a93a5c40ba4f326362ea191f51c11eeb",
       "digest_at_stamp": "601bc9c5718b64fad505f225b41d2757a93a5c40ba4f326362ea191f51c11eeb",
-      "digest_served": "601bc9c5718b64fad505f225b41d2757a93a5c40ba4f326362ea191f51c11eeb",
-      "pairing": "MATCH"
+      "digest_served": "4c43ecfc67e519ba220df97a5cbb5cba0fe867942b5b5fb8d01a3eb5e1b052b4",
+      "pairing": "DRIFT",
+      "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now."
+    },
+    "KALIBRIERWARTE_REGISTERED_REPORT_v3.md": {
+      "receipt": null,
+      "state": "failed",
+      "reason": "the ots client itself failed to start \u2014 NOT a network problem; read the traceback below\n  Known cause: python-bitcoinlib cannot locate an OpenSSL DLL on this interpreter. Run ots under Python 3.12/3.13, or put libcrypto/libssl on PATH.",
+      "digest": "05fd04797228d34c16bfc77d0d78895052d7b5db508036aabd51f8d81a3c2eee"
     }
   }
 }
