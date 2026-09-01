@@ -347,6 +347,17 @@ def do_stamp(dry):
               "fine — this tool falls back to the module.)", file=sys.stderr)
         return 2
 
+    # PUBGUARD-2026-09-01: preflight. On 2026-09-01 the client on the box
+    # could not start (python-bitcoinlib found no OpenSSL DLL), every
+    # receipt read as UNREADABLE, and that state was written over nine
+    # ANCHORED entries. A client that cannot start has read nothing.
+    _ok, _why = client_ok()
+    if not _ok:
+        print("\nCLIENT UNAVAILABLE - the ots client does not start on this interpreter; "
+              "no stamps attempted, state file untouched.", file=sys.stderr)
+        for line in _why.strip().splitlines()[-8:]:
+            print("  | " + line, file=sys.stderr)
+        return 2
     results = {}
     for f in files:
         print(f"\nstamping {f.name} …")
@@ -474,6 +485,38 @@ def load_state():
     return {}
 
 
+def client_ok():
+    """PUBGUARD-2026-09-01: can the ots client start at all? Returns (bool, output).
+    A Traceback or a LoadLibrary line means the interpreter, not the network."""
+    if not have_ots():
+        return False, "ots client not found"
+    code, out = run(["--help"], timeout=60)
+    if "Traceback" in out or "LoadLibrary" in out or "Error:" in out:
+        return False, out
+    if code != 0 and "usage" not in out.lower():
+        return False, out
+    return True, out
+
+
+def merge_states(prior, results):
+    """PUBGUARD-2026-09-01: a read failure is not a state. 'unreadable' or
+    'failed' never overwrites a recorded 'anchored' or 'pending'; the prior
+    entry is kept and the failure is noted on it with its time."""
+    merged = dict(prior)
+    for name, new in results.items():
+        old = merged.get(name)
+        if (isinstance(old, dict) and str(old.get("state", "")).lower() in ("anchored", "pending")
+                and str(new.get("state", "")).lower() in ("unreadable", "failed")):
+            kept = dict(old)
+            kept["last_read_failure"] = {"at": datetime.now(timezone.utc).isoformat(),
+                                         "state_reported": new.get("state"),
+                                         "reason": (new.get("reason") or "")[:200]}
+            merged[name] = kept
+        else:
+            merged[name] = new
+    return merged
+
+
 def write_state(results):
     payload = {
         "schema": "ots_anchors/v1",
@@ -496,7 +539,7 @@ def write_state(results):
                          "receipt is never re-issued to make a later file "
                          "look anchored."),
         "verify_command": "ots verify docs/<file>.ots",
-        "files": {**load_state(), **results},
+        "files": merge_states(load_state(), results),  # PUBGUARD-2026-09-01
     }
     STATE.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(f"\nstate → {STATE}")
