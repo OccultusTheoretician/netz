@@ -130,6 +130,7 @@ Every projection MUST:
 6. Carry "failure_condition": one sentence naming what, observed at the deadline, makes this entry a MISS. State the CONDITION that must fail, not the source that reports it. Pre-register it now; it is not editable later.
 7. Base-rate discipline: most discrete events do not happen; do not cluster probabilities at 60-80%. At least two projections must be rated BELOW 35%.
 8. WINDOW, NOT DATE: an unscheduled event (strike, attack, wildfire, earthquake, outbreak, cyberattack, resignation, indictment) MUST be given a window of at least 7 days. Never require an unscheduled event to occur on one named calendar day. The probability of a stochastic event on a specific date is a small fraction of its probability across a window, and pricing a single date at window rates is the most common scoring error in this record. Only events with a published schedule (elections, central bank meetings, hearings, contract expiries, scheduled releases) may name one date.
+9. MARKET THRESHOLD ROWS: if the claim compares a price, yield, rate, or index level to a number, state the reference level held at seal, e.g. "Reference: 4.62 percent on the packet date", in the statement or resolution. Without it the keyed/keyless gap cannot be measured and the row defaults to keyed (4.03/5.05).
 9. NEVER write a condition about the ABSENCE of reporting. Phrases like "with no casualties reported" describe the source record, not the world. The report line "Casualties: none stated in the corroborating reports" is a statement about the reports themselves. Do not lift it into a projection; it cannot be adjudicated as a property of the event.
 11. PREFER A MACHINE-READABLE SOURCE OF RECORD. Where the claim admits one, resolve against a named public register a script can fetch - CISA KEV or NVD for vulnerabilities, the Federal Register or a Congress.gov roll call for US government action, Treasury/FRED/ECB or a named exchange settlement for rates and prices, USGS/GDACS/NIFC/NWS for natural events, a court docket for legal outcomes. Write "the CISA KEV catalog carries a date-added value between A and B", not "two wire services report the vulnerability is exploited". Both are falsifiable; only one can be checked by anyone, in one fetch, years later. Where no such register exists - most military and conflict claims - name the outlets and the corroboration standard as before, and do not invent a register that does not exist.
 10. CITE THE ITEM, NOT THE RECORD. "citations" names the specific numbered items that ground THIS claim - normally one to three, never more than seven. Citing the whole record is the same as citing nothing: a prior that excludes nothing predicts nothing, and a projection cited against every item cannot be graded for whether it went beyond its inputs. If no item grounds the claim, do not invent a citation - drop the projection.
@@ -369,7 +370,12 @@ def _cite_item_text(raw):
     (.../us-iran-war-trump-hormuz.html)."""
     def _slug(mm):
         path = re.sub(r"https?://[^/\s]+", " ", mm.group(1))
-        return " " + " ".join(re.findall(r"[A-Za-z]{4,}", path)) + " "
+        _keep3 = {"fed", "ecb", "boe", "boj", "imf", "sec", "doj", "fbi", "cia", "nsa", "dhs", "fda",
+                 "cdc", "epa", "fcc", "ftc", "irs", "gdp", "cpi", "pmi", "cbo", "omb", "opec", "nato",
+                 "who", "gop", "ice", "atf", "dea", "nih", "faa", "fema", "hhs", "usda", "oil", "gas",
+                 "war", "ban", "tax", "aid", "law", "cve", "kev"}  # GATE-2026-08-31 (C2)
+        _toks = [w for w in re.findall(r"[A-Za-z]{3,}", path) if len(w) >= 4 or w.lower() in _keep3]
+        return " " + " ".join(_toks) + " "
     return re.sub(r"\[link\]\((\S+)\)", _slug, raw)
 
 
@@ -475,7 +481,8 @@ def _citation_support(p: dict):
     # FOMC/Federal Reserve, a cited item naming the Fed or FOMC grounds it.
     if {"fomc", "federal"} & claim:
         for _c in sorted(cites):
-            if any(re.search(r"\bFed\b|\bFOMC\b", _t) for _t in items.get(_c, [])):
+            if any(re.search(r"\bfed\b|\bfomc\b|\brate\s+(?:hikes?|cuts?)\b|\bhawkish\b|\bdovish\b|"
+                             r"\bjackson\s+hole\b", _t, re.I) for _t in items.get(_c, [])):  # GATE-2026-08-31 (C2)
                 return None
     # KK31-GATE (E12): short proper-noun channel. _content_words strips 2-3
     # char tokens by design (a shared 'CVE' is not support), which blinds the
@@ -681,6 +688,9 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     if _v25 is not None:
         if _v25.get("verdict") in ("DISJUNCT", "EXEMPLARY"):
             reasons.append(_v25["reason"])
+        elif _v25.get("note"):  # GATE-2026-08-31 (M1): primary-or-mirror collapsed, disclosed
+            print("KKR \u00b7 NOTE \u00b7 (M1): " + _v25["note"], file=sys.stderr)
+            p["notes"] = ((p.get("notes") or "") + " | " + _v25["note"]).strip(" |")
     else:
         # KK18 patch: context-anchored venue-'or'. Old caps-or-caps proxy missed
         # lowercase alternatives and false-fired on actor disjunctions.
@@ -789,6 +799,7 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     _NOTQTY = re.compile(
         r"\b(?:murder|felony|misdemeanou?r|criminal|indictment|charge)\s+counts?\b"
         r"|\bcounts?\s+against\b"
+        r"|\b(?:on|of)\s+(?:any|each|every|all|one|a|the\s+first)\s+(?:of\s+the\s+)?counts?\b"  # GATE-2026-08-31 (C7)
         r"|\bofficial\s+count\b"
         r"|\balert\s+level\b"
         r"|\b(?:place[sd]?|rank(?:s|ed)?|finish(?:es|ed)?)\s+"
@@ -868,6 +879,7 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
         _dates = _ung or _all_dates
     _sched = re.search(r"\b(?:scheduled|calendar|elections?|referendums?|summits?|"
                        r"fomc|primar\w*|caucus\w*|by-elections?|special elections?|"  # GATE-2026-08-30 (E1)
+                       r"appropriations?|continuing\s+resolution|fiscal\s+year|debt\s+(?:limit|ceiling)|"  # GATE-2026-08-31 (C1)
                        r"meetings?|hearings?|verdicts?|midterms?|runoffs?|sentencing|expir\w*|"
                        r"settle\w*|auction|inaugurat\w*|swearing|"
                        r"regularly scheduled|already announced)\b", both, re.I)
@@ -1026,6 +1038,9 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                 r"kilomet(?:er|re)s?|miles?|mi)\s+of)",
                 _res_low2)
             and (len(re.findall(r"20\d{2}-\d{2}-\d{2}", _res_low2)) >= 2
+                 # GATE-2026-08-31 (C3): "in the window" restates the statement's own dates
+                 or (re.search(r"\b(?:in|within|inside|during)\s+the\s+window\b", _res_low2) is not None
+                     and len(re.findall(r"20\d{2}-\d{2}-\d{2}", _stmt_low)) >= 2)
                  # KK35-GATE (E3): a common-noun subject is invisible to the
                  # capitalised-token extractor, so accept restatement in
                  # lowercase: three or more substantive words shared with the
@@ -1041,7 +1056,22 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                              "whose", "under", "within", "during", "against"}}
                         & set(re.findall(r"[a-z]{5,}", _stmt_low))) >= 3)
             and not _ANAPH.search(_res_low2))
+    # GATE-2026-08-31 (C3): a common-noun subject restated in the resolution
+    # (three or more substantive words shared with the statement, venue
+    # furniture excluded, no back-reference) is a subject, not a venue.
+    _lowshare = False
     if _s_subj and not _r_subj and _r_ven and not _selfreg:
+        _sl = (p.get("statement", "") or "").lower()
+        _rl = (p.get("resolution", "") or "").lower()
+        _furn = {"situation", "report", "reports", "reported", "external", "covering",
+                 "records", "record", "through", "including", "inclusive", "catalog",
+                 "catalogue", "published", "publishes", "dateadded", "between", "before",
+                 "after", "their", "which", "would", "whose", "under", "within", "during",
+                 "against", "otherwise", "false", "resolves", "deadline", "official"}
+        _shared = ({_w for _w in re.findall(r"[a-z]{5,}", _rl) if _w not in _furn}
+                   & set(re.findall(r"[a-z]{5,}", _sl)))
+        _lowshare = len(_shared) >= 3 and not _ANAPH.search(_rl)
+    if _s_subj and not _r_subj and _r_ven and not _selfreg and not _lowshare:
         reasons.append(
             "the resolution names only a venue or register ("
             + ", ".join(sorted(_r_ven)[:4])
@@ -1064,7 +1094,17 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     # GATE-2026-08-30 (E2s): curated acronym-institution pairs. Cleared
     # only when the FULL pair sits on the other side, so 'reserve' alone
     # (Reserve Bank of India) can never ride the acronym.
-    for _a, _need in (("fomc", {"federal", "reserve"}),):
+    # GATE-2026-08-31 (C5): a resolution token E4 demoted as a venue that
+    # equals a statement subject or initialism is the subject restated.
+    for _t in list(_r_ven):
+        if _t.lower() in _s_subj:
+            _r_subj.add(_t.lower()); _r_ven.discard(_t)
+    for _a, _need in (("fomc", {"federal", "reserve"}),
+                      ("cps", {"crown", "prosecution", "service"}),  # GATE-2026-08-31 (C5)
+                      ("omb", {"united", "states"}), ("congress", {"united", "states"}),
+                      ("wti", {"light", "sweet", "crude"}), ("cl", {"wti"}),
+                      ("nymex", {"cme", "group"}),
+                      ("mag", {"manchester", "airports", "group"})):
         if ((_a in _s_subj and _need <= set(_r_subj))
                 or (_a in _r_subj and _need <= set(_s_subj))):
             _s_subj.add("_acropair"); _r_subj.add("_acropair")
