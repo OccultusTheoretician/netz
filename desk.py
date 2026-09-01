@@ -217,9 +217,42 @@ def check_identity():
                     f"`python identity_guard.py scan` for locations")
 
 
+def check_unmerged():
+    """PUBGUARD-2026-09-01: publish.bat pulls with --autostash. A conflicted
+    pop leaves conflict markers inside tracked files, and on 2026-09-01 one
+    such file (docs/ots_anchors.json) was committed and pushed as invalid
+    JSON because nothing looked. An unmerged path, or a tracked text file
+    carrying both a <<<<<<< line and a >>>>>>> line, is a FAIL, and verify
+    gates the ship on fail. The scan runs after add -A on purpose: add
+    clears the unmerged state and leaves the markers, which is exactly the
+    case that shipped."""
+    rc, out, _ = git("diff", "--name-only", "--diff-filter=U")
+    if rc:
+        return "skip", "git not available"
+    unmerged = [l for l in out.splitlines() if l.strip()]
+    if unmerged:
+        return "fail", (f"{len(unmerged)} unmerged path(s): {', '.join(unmerged[:4])} "
+                        f"- resolve, then rerun")
+    rc, files, _ = git("ls-files", "--", "*.json", "*.py", "*.md", "*.html", "*.txt", "*.bat", "*.csv", "*.yml")
+    if rc:
+        return "skip", "git not available"
+    hits = []
+    for f in files.splitlines():
+        try:
+            data = (ROOT / f).read_bytes()
+        except Exception:
+            continue
+        if b"\n<<<<<<< " in b"\n" + data and b"\n>>>>>>> " in data:
+            hits.append(f)
+    if hits:
+        return "fail", f"conflict markers in {len(hits)} tracked file(s): {', '.join(hits[:4])}"
+    return "pass", "no unmerged paths, no conflict markers"
+
+
 CHECKS = [("identity guard", check_identity),
           ("ledger envelope", check_envelope),
           ("vault leak", check_vault_leak),
+          ("merge state", check_unmerged),  # PUBGUARD-2026-09-01
           ("working tree", check_dirty),
           ("remote", check_remote)]
 
