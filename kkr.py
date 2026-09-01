@@ -260,6 +260,31 @@ def parse_projections(raw: str) -> list:
             out.append(entry)
         except (KeyError, ValueError, TypeError):
             continue
+    # GUARDGATE-2026-09-01: identity policy at intake, every lane. Rows are
+    # redacted BEFORE the gate so trails, reports and seals carry redacted
+    # text; the disclosure and the original row sha go to notes (operator
+    # ruling 2026-09-01: omission with disclosure, GAGAS-grounded; the
+    # unredacted original stays in local custody under its arrival anchor).
+    try:
+        from redact_guard import redact_text as _rg
+        import hashlib as _h2
+        for _p in out:
+            _orig = json.dumps(_p, sort_keys=True, ensure_ascii=False)
+            _n = 0
+            for _f in ("statement", "resolution", "failure_condition", "notes"):
+                if _p.get(_f):
+                    _red, _k = _rg(str(_p[_f]))
+                    if _k:
+                        _p[_f] = _red; _n += _k
+            if _n:
+                _sha = _h2.sha256(_orig.encode("utf-8")).hexdigest()
+                _p["notes"] = ((_p.get("notes") or "") +
+                               f" | identity policy: {_n} token(s) withheld at intake; "
+                               f"original row sha {_sha}").strip(" |")
+                print(f"KKR \u00b7 identity policy: {_n} token(s) withheld from a row; "
+                      f"original row sha {_sha[:16]}", file=sys.stderr)
+    except ImportError:
+        pass
     return out
 
 
@@ -940,6 +965,10 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                             f"arrived {_arr['arrived_utc']} (desk-local {_arr_d}), window opens {_open}, "
                             f"sealed {_now} desk-local; receipt {_arr.get('receipt') or 'none'}, "
                             f"state at arrival {_arr.get('stamp_state', 'unknown')}")
+                    if _arr.get("_derivative_of"):  # GUARDGATE-2026-09-01
+                        _cls += (f"; derivative of anchored original sha "
+                                 f"{_arr['_derivative_of'][:16]}; the receipt covers the "
+                                 f"original bytes (identity-policy redaction)")
                     print("KKR \u00b7 NOTE \u00b7 (A1) " + _cls, file=sys.stderr)
                     p["notes"] = ((p.get("notes") or "") + " | " + _cls).strip(" |")
                 else:
@@ -1855,7 +1884,7 @@ def cmd_generate(args):
     prompt = PROJECTION_PROMPT.format(
         min_date=(now + timedelta(days=7)).strftime("%Y-%m-%d"),
         max_date=(now + timedelta(days=180)).strftime("%Y-%m-%d"),
-        report=_record_only(report_text)[:60000])
+        report=_ident_redact_packet(_record_only(report_text))[:60000])  # GUARDGATE-2026-09-01
 
     # the packet is always written — the manual Fable path costs nothing
     OUT.mkdir(exist_ok=True)
@@ -1911,6 +1940,19 @@ def cmd_generate(args):
     render_kkr(added, rejected, tag, rep.name)
 
 
+def _ident_redact_packet(text):
+    """GUARDGATE-2026-09-01: no configured identity term enters the packet.
+    Fail-open; identity_guard at verify remains the hard gate."""
+    try:
+        from redact_guard import redact_text as _rg
+        _t, _n = _rg(text)
+        if _n:
+            print(f"KKR \u00b7 identity policy: {_n} token(s) withheld from the packet", file=sys.stderr)
+        return _t
+    except Exception:
+        return text
+
+
 def _arrive_lookup(path, log_path=None):
     """ANCHOR-2026-09-01 (A1): the arriving file's own digest, looked up in
     anchor_log.json (written by arrive.py). Returns the entry or None. Fail-open:
@@ -1927,6 +1969,18 @@ def _arrive_lookup(path, log_path=None):
             print(f"KKR \u00b7 NOTE \u00b7 (A1): {Path(path).name} anchored at arrival "
                   f"{_hit.get('arrived_utc')} sha {_sha[:16]} ({_hit.get('stamp_state', 'unknown')})",
                   file=sys.stderr)
+        if _hit and _hit.get("derived_from"):
+            # GUARDGATE-2026-09-01: a derivative (identity-policy redaction)
+            # inherits the ORIGINAL arrival and receipt; the receipt covers
+            # the original bytes and the A1 disclosure says so.
+            _orig2 = next((e for e in _log if isinstance(e, dict)
+                           and e.get("sha256") == _hit.get("derived_from")), None)
+            if _orig2:
+                _hit = dict(_hit)
+                _hit["arrived_utc"] = _orig2.get("arrived_utc") or _hit.get("arrived_utc")
+                _hit["receipt"] = _orig2.get("receipt")
+                _hit["stamp_state"] = _orig2.get("stamp_state", "unknown")
+                _hit["_derivative_of"] = _orig2.get("sha256")
         return _hit
     except Exception:
         return None
