@@ -1106,6 +1106,18 @@ def age_hours(dt) -> str:
 
 
 
+def _ident_redact(text):
+    """GUARDGATE-2026-09-01: strip configured identity terms at write time.
+    Fail-open by design: if redact_guard or the store is unavailable the text
+    passes through, because identity_guard at verify remains the hard gate
+    and a broken convenience layer must not kill the daily chain."""
+    try:
+        from redact_guard import redact_text
+        return redact_text(text)
+    except Exception:
+        return text, 0
+
+
 WARDESK_FILE = HERE / "forecasts" / "WARDESK_latest.md"
 
 
@@ -1389,9 +1401,16 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H%M")
     out_path = out_dir / f"battle_report_{stamp}.md"
+    report, _idn = _ident_redact(report)  # GUARDGATE-2026-09-01
+    if _idn:
+        report += f"\n\n*identity policy: {_idn} token(s) withheld at write time.*\n"
+        print(f"NETZ \u00b7 identity policy: {_idn} token(s) withheld from the report", file=sys.stderr)
     out_path.write_text(report, encoding="utf-8")
     html_doc = render_html(report, f"The Prescient Desk \u2014 Report {stamp}")
     html_path = out_dir / f"battle_report_{stamp}.html"
+    html_doc, _idh = _ident_redact(html_doc)  # GUARDGATE-2026-09-01
+    if _idh and "</body>" in html_doc:
+        html_doc = html_doc.replace("</body>", f"<!-- identity policy: {_idh} token(s) withheld at write time -->\n</body>", 1)
     html_path.write_text(html_doc, encoding="utf-8")
     (out_dir / "latest.html").write_text(html_doc, encoding="utf-8")
     print(f"NETZ · report → {out_path}", file=sys.stderr)
