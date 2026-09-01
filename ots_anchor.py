@@ -82,6 +82,9 @@ TARGETS = [
     "KRAEHE_NEST_METHOD.md",
     "KRAEHE_NEST_PROTOCOL.md",
     "LIAS_FIRST_EDITION_2026_v1.md",
+    # OTSTARGETS-2026-09-01: the pre-registration is the paper; its text gets a clock
+    # the operator does not hold, same as the standards.
+    "KALIBRIERWARTE_REGISTERED_REPORT_v3.md",
     # 2026-08-18: the PCAOB 2026-005 docket as a committed population -
     # 33 comment letters, count fixed with no gaps, each hashed as served,
     # retrieved complete rather than sampled. This is the construction the
