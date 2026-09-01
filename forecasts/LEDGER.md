@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 010213Z SEP 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 011520Z SEP 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 1225 issued across 14 forecaster arms · 1064 open (99 past deadline, unresolved)
+Window: all-time · 1232 issued across 14 forecaster arms · 1071 open (99 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -18,7 +18,7 @@ Window: all-time · 1225 issued across 14 forecaster arms · 1064 open (99 past 
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 9 | 1 | 0 | 1 | 0.250 | 0.0% | 0.000 | — |
 | lmstudio/auto[post-verbot] | 20 | 17 | 3 | 1 | 2 | 0.214 | 33.3% | 0.222 | +0.036 |
-| lmstudio/auto[post-window] | 177 | 146 | 29 | 10 | 19 | 0.250 | 34.5% | 0.226 | -0.109 |
+| lmstudio/auto[post-window] | 184 | 153 | 29 | 10 | 19 | 0.250 | 34.5% | 0.226 | -0.109 |
 | lmstudio/auto[pre-verbot] | 60 | 7 | 45 | 13 | 32 | 0.222 | 28.9% | 0.205 | -0.081 |
 | manual/fable | 45 | 32 | 13 | 7 | 6 | 0.183 | 53.8% | 0.249 | +0.265 |
 | manual/fable-5 | 38 | 34 | 4 | 3 | 1 | 0.086 | 75.0% | 0.188 | +0.540 |
@@ -812,10 +812,17 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260827-77 | `manual/sonnet-5/unattested` | 2026-08-27 | 2026-10-06 | 8% | military_conflict | Russian military forces conduct a strike, using missile, drone, or other kinetic means, that lands on the sovereign territory of a NATO member state, including the UK, between 2026-09-03 and 2026-10-03. |
 | KKR-20260827-92 | `control/baserate` | 2026-08-27 | 2026-10-06 | 33% | cyber | At least one civil complaint naming Carhartt Inc as defendant over the 2026 customer data breach is filed in a US federal district court between 2026-08-27 and 2026-10-02. |
 | KKR-20260827-100 | `control/baserate` | 2026-08-27 | 2026-10-06 | 53% | military_conflict | Russian military forces conduct a strike, using missile, drone, or other kinetic means, that lands on the sovereign territory of a NATO member state, including the UK, between 2026-09-03 and 2026-10-03. |
+| KKR-20260901-12 | `lmstudio/auto` | 2026-09-01 | 2026-10-06 | 40% | disaster | Between 2026-09-21 and 2026-09-24, a tropical storm makes landfall in Texas with a storm surge warning issued by the National Weather Service. |
 | KKR-20260829-46 | `manual/sonnet-5/unattested` | 2026-08-29 | 2026-10-07 | 78% | military/conflict | A single Russian missile or drone strike will kill 10 or more people in Kyiv, Ukraine, between 2026-09-05 and 2026-10-05. |
 | KKR-20260829-65 | `control/baserate` | 2026-08-29 | 2026-10-07 | 53% | military/conflict | A single Russian missile or drone strike will kill 10 or more people in Kyiv, Ukraine, between 2026-09-05 and 2026-10-05. |
+| KKR-20260901-11 | `lmstudio/auto` | 2026-09-01 | 2026-10-07 | 30% | military/conflict | Between 2026-09-21 and 2026-09-24, at least one report from a hostile side confirms a drone strike on Kyiv with casualties claimed by Ukrainian sources. |
+| KKR-20260901-13 | `lmstudio/auto` | 2026-09-01 | 2026-10-07 | 20% | cyber | Between 2026-09-21 and 2026-09-24, a cyberattack exploiting CVE-2026-81578 results in unauthorized access to a critical infrastructure system. |
+| KKR-20260901-15 | `lmstudio/auto` | 2026-09-01 | 2026-10-07 | 30% | disaster | Between 2026-09-21 and 2026-09-24, a major wildfire in France causes damage to a wine-producing region as confirmed by Al Jazeera. |
 | KKR-20260817-15 | `manual/opus-5/unattested` | 2026-08-17 | 2026-10-08 | 40% | crime_security | A second person is charged over the 2026-08-15 Virginia State University shooting, with the charges filed between 2026-08-17 and 2026-10-05. |
 | KKR-20260817-20 | `control/baserate` | 2026-08-17 | 2026-10-08 | 31% | crime_security | A second person is charged over the 2026-08-15 Virginia State University shooting, with the charges filed between 2026-08-17 and 2026-10-05. |
+| KKR-20260901-14 | `lmstudio/auto` | 2026-09-01 | 2026-10-08 | 35% | economics/markets | Between 2026-09-21 and 2026-09-24, the 10-year U.S. Treasury yield exceeds 4.85 percent on a weekday. |
+| KKR-20260901-16 | `lmstudio/auto` | 2026-09-01 | 2026-10-08 | 25% | cyber | Between 2026-09-21 and 2026-09-24, a cyberattack attributed to Russia-aligned actors targets a U.S. government agency using a previously unreported exploit. |
+| KKR-20260901-17 | `lmstudio/auto` | 2026-09-01 | 2026-10-08 | 10% | political | Between 2026-09-21 and 2026-09-24, a new political summit involving Russia, Iran, and the U.S. is confirmed by at least two hostile sides. |
 | KKR-20260817-60 | `manual/fable-5/unattested` | 2026-08-17 | 2026-10-09 | 75% | political | No candidate wins a majority of valid votes in the first round of the Brazilian presidential election held on 2026-10-04, sending the contest to a second round per official TSE results. |
 | KKR-20260817-68 | `control/baserate` | 2026-08-17 | 2026-10-09 | 29% | political | No candidate wins a majority of valid votes in the first round of the Brazilian presidential election held on 2026-10-04, sending the contest to a second round per official TSE results. |
 | KKR-20260827-07 | `manual/sonnet-5/unattested` | 2026-08-27 | 2026-10-10 | 38% | economics/markets | The United States will announce a new or expanded tariff action targeting Canadian goods, explicitly framed as a response to Canada's 2026-08-25 announcement of retaliatory tariffs on about 20 billion dollars of US goods, between 2026-08-27 and 2026-10-08. |
@@ -1463,7 +1470,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*13 of 1225 issued (1.1%) have been voided.*
+*13 of 1232 issued (1.1%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists

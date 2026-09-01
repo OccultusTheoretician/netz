@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-09-01T02:13:14Z",
+  "as_of": "2026-09-01T15:20:41Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -38287,6 +38287,169 @@
       "register": "registers/1.0@ce14b50ce884bbb4",
       "sealed_at": "2026-09-01T02:13:14.354091+00:00",
       "seal_sha256": "c4f8587efbf05132e04bb08910aa6902652082b08a1cd492eeb52a4f25a7a966"
+    },
+    {
+      "statement": "Between 2026-09-21 and 2026-09-24, at least one report from a hostile side confirms a drone strike on Kyiv with casualties claimed by Ukrainian sources.",
+      "domain": "military/conflict",
+      "probability": 30,
+      "resolution": "At least one report from a hostile side (RU or UA) confirms a drone strike on Kyiv during the window, with casualties claimed in at least one corroborating report.",
+      "deadline": "2026-10-07",
+      "citations": [
+        3,
+        5
+      ],
+      "failure_condition": "No report from a hostile side confirms a drone strike on Kyiv during the window with casualties claimed in any corroborating report.",
+      "id": "KKR-20260901-11",
+      "date_issued": "2026-09-01",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-09-01_1518.md",
+      "source_packet": "kkr_packet_2026-09-01_1518.md",
+      "rubric_hash": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@ce14b50ce884bbb4",
+      "sealed_at": "2026-09-01T15:20:41.070057+00:00",
+      "seal_sha256": "0ca905cb653e9847265ef2b79b92ffd35f2f7469c03b741a2760f60119d1819d"
+    },
+    {
+      "statement": "Between 2026-09-21 and 2026-09-24, a tropical storm makes landfall in Texas with a storm surge warning issued by the National Weather Service.",
+      "domain": "disaster",
+      "probability": 40,
+      "resolution": "The National Weather Service issues a storm surge warning for a tropical storm making landfall in Texas between 2026-09-21 and 2026-09-24.",
+      "deadline": "2026-10-06",
+      "citations": [
+        7
+      ],
+      "failure_condition": "No storm surge warning is issued by the National Weather Service for a tropical storm making landfall in Texas between 2026-09-21 and 2026-09-24.",
+      "id": "KKR-20260901-12",
+      "date_issued": "2026-09-01",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-09-01_1518.md",
+      "source_packet": "kkr_packet_2026-09-01_1518.md",
+      "rubric_hash": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@ce14b50ce884bbb4",
+      "sealed_at": "2026-09-01T15:20:41.070080+00:00",
+      "seal_sha256": "7af32e8fe015e5cebd6a210cf9ded6c9f9d4415e90e1f7d4a75c0fca8adee10a"
+    },
+    {
+      "statement": "Between 2026-09-21 and 2026-09-24, a cyberattack exploiting CVE-2026-81578 results in unauthorized access to a critical infrastructure system.",
+      "domain": "cyber",
+      "probability": 20,
+      "resolution": "A confirmed cyberattack exploiting CVE-2026-81578 results in unauthorized access to a critical infrastructure system, as reported by a public source.",
+      "deadline": "2026-10-07",
+      "citations": [
+        8
+      ],
+      "failure_condition": "No confirmed cyberattack exploiting CVE-2026-81578 results in unauthorized access to a critical infrastructure system during the window.",
+      "id": "KKR-20260901-13",
+      "date_issued": "2026-09-01",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-09-01_1518.md",
+      "source_packet": "kkr_packet_2026-09-01_1518.md",
+      "rubric_hash": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@ce14b50ce884bbb4",
+      "sealed_at": "2026-09-01T15:20:41.070094+00:00",
+      "seal_sha256": "7581f90c2b21741c73ee5f2beb4cce127a176b7228108162d6d959684870a32d"
+    },
+    {
+      "statement": "Between 2026-09-21 and 2026-09-24, the 10-year U.S. Treasury yield exceeds 4.85 percent on a weekday.",
+      "domain": "economics/markets",
+      "probability": 35,
+      "resolution": "The 10-year U.S. Treasury yield exceeds 4.85 percent on a weekday between 2026-09-21 and 2026-09-24.",
+      "deadline": "2026-10-08",
+      "citations": [
+        55
+      ],
+      "failure_condition": "The 10-year U.S. Treasury yield is at or below 4.85 percent on every weekday between 2026-09-21 and 2026-09-24.",
+      "id": "KKR-20260901-14",
+      "date_issued": "2026-09-01",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-09-01_1518.md",
+      "source_packet": "kkr_packet_2026-09-01_1518.md",
+      "rubric_hash": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@ce14b50ce884bbb4",
+      "sealed_at": "2026-09-01T15:20:41.070103+00:00",
+      "seal_sha256": "a73371a255b4779db8892dd934e6f45e34a8d9ea42677ba84bff4171da2cd075"
+    },
+    {
+      "statement": "Between 2026-09-21 and 2026-09-24, a major wildfire in France causes damage to a wine-producing region as confirmed by Al Jazeera.",
+      "domain": "disaster",
+      "probability": 30,
+      "resolution": "Al Jazeera publishes a report confirming a major wildfire in France that causes damage to a wine-producing region between 2026-09-21 and 2026-09-24.",
+      "deadline": "2026-10-07",
+      "citations": [
+        34
+      ],
+      "failure_condition": "Al Jazeera does not publish a report confirming a major wildfire in France causing damage to a wine-producing region during the window.",
+      "id": "KKR-20260901-15",
+      "date_issued": "2026-09-01",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-09-01_1518.md",
+      "source_packet": "kkr_packet_2026-09-01_1518.md",
+      "rubric_hash": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@ce14b50ce884bbb4",
+      "sealed_at": "2026-09-01T15:20:41.070112+00:00",
+      "seal_sha256": "28fa0761d888b3045c5b4d47f1a197e85ecd8778ab17681b9901d0a3094afcec"
+    },
+    {
+      "statement": "Between 2026-09-21 and 2026-09-24, a cyberattack attributed to Russia-aligned actors targets a U.S. government agency using a previously unreported exploit.",
+      "domain": "cyber",
+      "probability": 25,
+      "resolution": "A cyberattack attributed to Russia-aligned actors targets a U.S. government agency using a previously unreported exploit, confirmed by at least two independent sources.",
+      "deadline": "2026-10-08",
+      "citations": [
+        26
+      ],
+      "failure_condition": "No cyberattack attributed to Russia-aligned actors targets a U.S. government agency using a previously unreported exploit during the window.",
+      "id": "KKR-20260901-16",
+      "date_issued": "2026-09-01",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-09-01_1518.md",
+      "source_packet": "kkr_packet_2026-09-01_1518.md",
+      "rubric_hash": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@ce14b50ce884bbb4",
+      "sealed_at": "2026-09-01T15:20:41.070119+00:00",
+      "seal_sha256": "37b730dee105a237c69e1e3de571f9350e5b637399731280199b8042968173dc"
+    },
+    {
+      "statement": "Between 2026-09-21 and 2026-09-24, a new political summit involving Russia, Iran, and the U.S. is confirmed by at least two hostile sides.",
+      "domain": "political",
+      "probability": 10,
+      "resolution": "At least two hostile sides (e.g., RU, WEST, AXIS) confirm the existence of a new political summit involving Russia, Iran, and the U.S. between 2026-09-21 and 2026-09-24.",
+      "deadline": "2026-10-08",
+      "citations": [
+        1,
+        57
+      ],
+      "failure_condition": "No two hostile sides confirm the existence of a new political summit involving Russia, Iran, and the U.S. during the window.",
+      "id": "KKR-20260901-17",
+      "date_issued": "2026-09-01",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-09-01_1518.md",
+      "source_packet": "kkr_packet_2026-09-01_1518.md",
+      "rubric_hash": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+      "status": "open",
+      "resolved_date": null,
+      "notes": "",
+      "register": "registers/1.0@ce14b50ce884bbb4",
+      "sealed_at": "2026-09-01T15:20:41.070128+00:00",
+      "seal_sha256": "b5332b4b5b2c6b75d3065da51f5c124e7ff3d6d60c1e4a83651aef787a5881a9"
     }
   ]
 }
