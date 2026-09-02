@@ -1,0 +1,256 @@
+[
+  {
+    "statement": "Between 2026-09-02 and 2026-09-15, at least one additional commercial merchant vessel is attacked, struck by a weapon, or seized in the Strait of Hormuz, the Gulf of Oman, or the Persian Gulf.",
+    "resolution": "True if a UKMTO incident report dated in the window describes a merchant vessel attacked, struck, or seized in that area, or Reuters and AP both report such an event there occurring between 2026-09-02 and 2026-09-15.",
+    "failure_condition": "No commercial merchant vessel is attacked, struck, or seized in the Strait of Hormuz, Gulf of Oman, or Persian Gulf between 2026-09-02 and 2026-09-15.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-18",
+    "probability": 53,
+    "citations": [
+      57,
+      70
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-02 and 2026-12-31, a general ceasefire covering the entire front line in Ukraine takes effect, announced by both the Ukrainian and Russian governments.",
+    "resolution": "True if president.gov.ua and kremlin.ru both publish statements confirming a general front-wide ceasefire in effect on a date between 2026-09-02 and 2026-12-31; localized, energy-only, or humanitarian pauses do not count.",
+    "failure_condition": "No general front-wide ceasefire confirmed by both Kyiv and Moscow is in effect on any date between 2026-09-02 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 53,
+    "citations": [
+      63,
+      64,
+      81,
+      102
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5312,
+      "n": 32,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-02 and 2026-10-31, Donald Trump and Vladimir Putin meet in person, with the meeting confirmed by both the White House and the Kremlin.",
+    "resolution": "True if whitehouse.gov and kremlin.ru both carry official confirmation or readouts of an in-person Trump-Putin meeting held between 2026-09-02 and 2026-10-31; phone or video calls do not count.",
+    "failure_condition": "Trump and Putin do not meet in person on any date between 2026-09-02 and 2026-10-31.",
+    "domain": "political",
+    "deadline": "2026-11-04",
+    "probability": 44,
+    "citations": [
+      63,
+      81
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A lapse in US federal appropriations (government shutdown) begins on 2026-10-01 because no full-year or continuing appropriations covering that date is enacted beforehand.",
+    "resolution": "True if OMB or OPM publishes lapse-in-appropriations (shutdown) guidance effective 2026-10-01, or Congress.gov shows no enacted full-year or continuing appropriations covering 2026-10-01 for any federal agency.",
+    "failure_condition": "Appropriations covering all federal agencies for 2026-10-01 are enacted on or before 2026-09-30 and no shutdown begins on 2026-10-01.",
+    "domain": "political",
+    "deadline": "2026-10-05",
+    "probability": 44,
+    "citations": [
+      111,
+      112
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4444,
+      "n": 36,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield closes at or above 5.00 percent on at least one trading day between 2026-09-02 and 2026-10-30. Reference: 4.77 percent on 2026-09-01.",
+    "resolution": "True if FRED series DGS10 shows a daily value of 5.00 or higher for any date from 2026-09-02 through 2026-10-30; the Treasury daily par yield curve is the tiebreaker if FRED is unavailable.",
+    "failure_condition": "Every daily DGS10 value from 2026-09-02 through 2026-10-30 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 25,
+    "citations": [
+      61,
+      65,
+      68,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The WTI crude oil spot price at Cushing settles at or above 100.00 dollars per barrel on at least one trading day between 2026-09-02 and 2026-10-30. Reference: 88.02 dollars on 2026-09-01.",
+    "resolution": "True if FRED series DCOILWTICO (EIA Cushing WTI spot) shows a daily value of 100.00 or higher for any date from 2026-09-02 through 2026-10-30; the EIA daily spot price table is the tiebreaker.",
+    "failure_condition": "Every daily DCOILWTICO value from 2026-09-02 through 2026-10-30 is below 100.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 25,
+    "citations": [
+      57,
+      70,
+      83
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.25,
+      "n": 20,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-02 and 2026-09-30, CISA adds at least one Microsoft Exchange Server vulnerability to the Known Exploited Vulnerabilities catalog.",
+    "resolution": "True if the CISA KEV catalog JSON contains at least one entry with vendorProject Microsoft, product containing Exchange, and dateAdded between 2026-09-02 and 2026-09-30 inclusive.",
+    "failure_condition": "No KEV entry for a Microsoft Exchange Server product carries a dateAdded value between 2026-09-02 and 2026-09-30.",
+    "domain": "cyber",
+    "deadline": "2026-10-02",
+    "probability": 33,
+    "citations": [
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 27,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-01 and 2026-09-30, the [withheld] Fourth District Court orders Tyler Robinson bound over for trial on the aggravated murder charge in the killing of Charlie Kirk.",
+    "resolution": "True if the [withheld] Fourth District Court docket, or the [withheld] County Attorney office, records a bindover order on the aggravated murder count dated 2026-09-01 through 2026-09-30; dismissal of that count or no ruling by 2026-09-30 resolves false.",
+    "failure_condition": "No bindover order on the aggravated murder count against Tyler Robinson is entered between 2026-09-01 and 2026-09-30, whether because the count is dismissed or the ruling is delayed.",
+    "domain": "crime/security",
+    "deadline": "2026-10-02",
+    "probability": 43,
+    "citations": [
+      13,
+      120
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The jury in the Lindsay Clancy murder trial in Plymouth County, Massachusetts returns a verdict on at least one count between 2026-09-01 and 2026-09-11, rather than the judge declaring a mistrial for deadlock.",
+    "resolution": "True if a verdict on any count (including not guilty by reason of insanity) is entered by Plymouth Superior Court, or reported by AP and the Boston Globe, dated 2026-09-01 through 2026-09-11; mistrial or no verdict resolves false.",
+    "failure_condition": "The Clancy jury returns no verdict on any count between 2026-09-01 and 2026-09-11, including a mistrial declared for deadlock or deliberations still ongoing on 2026-09-11.",
+    "domain": "crime/security",
+    "deadline": "2026-09-15",
+    "probability": 43,
+    "citations": [
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4257,
+      "n": 148,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Nepal government official death toll for the floods that began in late August 2026 reaches at least 1400 by 2026-09-15. Reference: reports of more than 1000 deaths on 2026-09-01.",
+    "resolution": "True if the Nepal Ministry of Home Affairs or NDRRMA (including the BIPAD portal) reports a cumulative confirmed death toll of 1400 or more for this flood disaster on or before 2026-09-15; missing persons do not count.",
+    "failure_condition": "The Nepal government confirmed death toll for this flood disaster remains below 1400 through 2026-09-15.",
+    "domain": "disaster",
+    "deadline": "2026-09-17",
+    "probability": 52,
+    "citations": [
+      36,
+      45,
+      47
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5172,
+      "n": 29,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T00:09:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
