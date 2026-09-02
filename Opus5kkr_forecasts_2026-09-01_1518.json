@@ -1,0 +1,126 @@
+[
+  {
+    "statement": "The front-month ICE Brent crude futures contract settles at or above 100.00 US dollars per barrel on at least one trading day between 2026-09-08 and 2026-10-09. Reference: Brent 92.47 at seal on 2026-09-01.",
+    "domain": "economics_markets",
+    "probability": 35,
+    "resolution": "ICE published front-month Brent settlement data shows a settlement at or above 100.00 USD per barrel on at least one trading day from 2026-09-08 through 2026-10-09; reference 92.47 at seal.",
+    "deadline": "2026-10-13",
+    "citations": [
+      57,
+      65,
+      70
+    ],
+    "failure_condition": "Every ICE front-month Brent settlement inside the window prints below 100.00 US dollars per barrel."
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield reaches 5.00 percent or higher on at least one business day between 2026-09-08 and 2026-10-30. Reference: 4.77 percent at seal on 2026-09-01.",
+    "domain": "economics_markets",
+    "probability": 40,
+    "resolution": "FRED series DGS10 carries a daily observation at or above 5.00 for at least one business day from 2026-09-08 through 2026-10-30; reference 4.77 at seal.",
+    "deadline": "2026-11-03",
+    "citations": [
+      61,
+      65,
+      76
+    ],
+    "failure_condition": "Every DGS10 daily observation inside the window prints below 5.00 percent."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at the meeting concluding 2026-09-16 or the meeting concluding 2026-10-28. Reference: target range 3.50 to 3.75 percent in effect at seal on 2026-09-01.",
+    "domain": "economics_markets",
+    "probability": 22,
+    "resolution": "The FOMC implementation note for 2026-09-16 or for 2026-10-28 sets a target range whose upper bound exceeds 3.75 percent; reference 3.50 to 3.75 at seal.",
+    "deadline": "2026-10-30",
+    "citations": [
+      61,
+      65,
+      68
+    ],
+    "failure_condition": "Both implementation notes leave the target range upper bound at or below 3.75 percent."
+  },
+  {
+    "statement": "CISA adds at least one CVE naming Microsoft Exchange Server to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-09-08 and 2026-11-13.",
+    "domain": "cyber",
+    "probability": 22,
+    "resolution": "The CISA KEV JSON feed contains an entry whose vendorProject or product field names Microsoft Exchange Server and whose dateAdded falls from 2026-09-08 through 2026-11-13.",
+    "deadline": "2026-11-17",
+    "citations": [
+      22,
+      27
+    ],
+    "failure_condition": "No KEV entry naming Microsoft Exchange Server carries a dateAdded value inside the window."
+  },
+  {
+    "statement": "A single cryptocurrency protocol or exchange exploit causes losses of at least 100 million US dollars, occurring between 2026-09-08 and 2026-10-31. Reference: the 74 million dollar Tectonic exploit at seal.",
+    "domain": "cyber",
+    "probability": 42,
+    "resolution": "The DefiLlama Hacks dataset, plus Chainalysis or Elliptic, list one incident dated inside the window with losses at or above 100 million USD.",
+    "deadline": "2026-11-06",
+    "citations": [
+      29
+    ],
+    "failure_condition": "The largest single incident dated inside the window carries a listed loss below 100 million US dollars."
+  },
+  {
+    "statement": "A lapse in US federal appropriations affecting at least one Cabinet department is in effect on at least one calendar day between 2026-10-01 and 2026-10-16.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "OMB or agency shutdown guidance, plus both AP and Reuters, place a funding lapse in effect on a date from 2026-10-01 through 2026-10-16.",
+    "deadline": "2026-10-20",
+    "citations": [
+      111,
+      112
+    ],
+    "failure_condition": "Enacted appropriations or a continuing resolution keep every Cabinet department funded across the entire window."
+  },
+  {
+    "statement": "Donald Trump and Vladimir Putin hold an in-person meeting on a date between 2026-09-08 and 2026-11-30.",
+    "domain": "political",
+    "probability": 25,
+    "resolution": "The White House and the Kremlin each confirm an in-person Trump-Putin meeting held inside the window, and AP or Reuters reports from the venue.",
+    "deadline": "2026-12-04",
+    "citations": [
+      63,
+      81,
+      102
+    ],
+    "failure_condition": "The two principals do not meet face to face at any point inside the window."
+  },
+  {
+    "statement": "A commercial vessel is struck by weapons fire in the Strait of Hormuz or the Gulf of Oman between 2026-09-08 and 2026-10-08.",
+    "domain": "military_conflict",
+    "probability": 50,
+    "resolution": "UKMTO issues an incident advisory for a commercial vessel struck in the Strait of Hormuz or Gulf of Oman inside the window, and Reuters reports the same incident.",
+    "deadline": "2026-10-13",
+    "citations": [
+      57,
+      70,
+      105
+    ],
+    "failure_condition": "No commercial vessel takes weapons-fire damage in those waters during the window."
+  },
+  {
+    "statement": "Duane Davis is sentenced in the Eighth Judicial District Court of Clark County, Nevada on a date between 2026-09-08 and 2026-12-18.",
+    "domain": "crime_security",
+    "probability": 60,
+    "resolution": "The Eighth Judicial District Court docket records a judgment of conviction with a sentence imposed on Duane Davis on a date inside the window.",
+    "deadline": "2026-12-22",
+    "citations": [
+      14,
+      15
+    ],
+    "failure_condition": "The court imposes no sentence on Duane Davis on any date inside the window."
+  },
+  {
+    "statement": "The official confirmed death toll for the 2026 Nepal monsoon flood event reaches 1,400 or more between 2026-09-08 and 2026-10-16. Reference: toll above 1,000 at seal on 2026-09-01.",
+    "domain": "disaster",
+    "probability": 33,
+    "resolution": "A Nepal NDRRMA or UN OCHA situation report published inside the window puts confirmed deaths at or above 1,400 for the 2026 flood event; reference 1,000 at seal.",
+    "deadline": "2026-10-20",
+    "citations": [
+      45,
+      47
+    ],
+    "failure_condition": "The highest official confirmed toll published inside the window stays below 1,400."
+  }
+]
