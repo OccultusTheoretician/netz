@@ -1,6 +1,6 @@
 {
   "schema": "ots_anchors/v1",
-  "generated": "2026-09-02T08:59:53.734519+00:00",
+  "generated": "2026-09-03T09:09:18.376457+00:00",
   "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
   "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
   "pairing_note": "digest_at_stamp is read from the receipt and is fixed; digest_served is computed live from the bytes on this site. pairing=MATCH means the receipt covers what you can download. pairing=DRIFT means the file has changed since it was stamped and the receipt covers the older bytes only. DRIFT is disclosed, not corrected: a receipt is never re-issued to make a later file look anchored.",
@@ -9,13 +9,14 @@
     "ledger.json": {
       "receipt": "ledger.json.ots",
       "state": "pending",
-      "digest": "9c1081a00f7590e17ae96e05743124eab8e52ab862c86beaa8f93ec5b93e3ef3",
-      "digest_at_stamp": "9c1081a00f7590e17ae96e05743124eab8e52ab862c86beaa8f93ec5b93e3ef3",
-      "digest_served": "9c1081a00f7590e17ae96e05743124eab8e52ab862c86beaa8f93ec5b93e3ef3",
+      "digest": "594abc07b1ee57e30ab50a80d3f4ca47596f9b0119212aa8ae63f35e781ca440",
+      "digest_at_stamp": "594abc07b1ee57e30ab50a80d3f4ca47596f9b0119212aa8ae63f35e781ca440",
+      "digest_served": "594abc07b1ee57e30ab50a80d3f4ca47596f9b0119212aa8ae63f35e781ca440",
       "pairing": "MATCH",
       "superseded_receipts": [
         "ledger.json.1389abd8.ots",
         "ledger.json.3bb1ca60.ots",
+        "ledger.json.9c1081a0.ots",
         "ledger.json.a3a70e5e.ots"
       ]
     },
@@ -105,11 +106,14 @@
     },
     "KALIBRIERWARTE_REGISTERED_REPORT_v3.md": {
       "receipt": "KALIBRIERWARTE_REGISTERED_REPORT_v3.md.ots",
-      "state": "anchored",
-      "digest": "05fd04797228d34c16bfc77d0d78895052d7b5db508036aabd51f8d81a3c2eee",
-      "digest_at_stamp": "05fd04797228d34c16bfc77d0d78895052d7b5db508036aabd51f8d81a3c2eee",
-      "digest_served": "05fd04797228d34c16bfc77d0d78895052d7b5db508036aabd51f8d81a3c2eee",
-      "pairing": "MATCH"
+      "state": "pending",
+      "digest": "c668da715fcf0334d0d380c2b2f51a05cf2647f09ddfa6d90c915bc073dbb550",
+      "digest_at_stamp": "c668da715fcf0334d0d380c2b2f51a05cf2647f09ddfa6d90c915bc073dbb550",
+      "digest_served": "c668da715fcf0334d0d380c2b2f51a05cf2647f09ddfa6d90c915bc073dbb550",
+      "pairing": "MATCH",
+      "superseded_receipts": [
+        "KALIBRIERWARTE_REGISTERED_REPORT_v3.md.05fd0479.ots"
+      ]
     }
   }
 }
