@@ -67,6 +67,14 @@ REM KK33-PIPELINE: the three formerly-manual instruments, now nightly. All
 REM fail-open per stage, print INDETERMINATE on a bad read, touch no sealed row.
 call :run "kfk sightings"              python kfk_sightings.py
 call :run "kfk overlay"                python kfk_map.py
+REM KFKSWEEP-2026-09-02: the claim-decay face is a function of the board and
+REM today's date; it regenerates here nightly so it can never again be the
+REM stalest tile on its own site. validate is the structural and provenance
+REM audit, printed, fail-open. Neither line moves the board's own as_of: that
+REM moves only on applied observations (add, link, enrich --apply, promote),
+REM and the weekly "KFK data" row keeps grading that commitment honestly.
+call :run "kfk validate"               python KriegForeKaster.py validate
+call :run "kfk freshness face"         python KriegForeKaster.py freshness
 call :run "dialektik meter"            python dialektik_meter.py --run
 call :run "kfk enrich (batch 15)"      python kfk_enrich.py --batch --limit 15
 call :run "archiv fetch (resume)"      python archiv.py fetch --vault D:\vault

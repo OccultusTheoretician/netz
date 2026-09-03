@@ -192,7 +192,9 @@
       var cv = el("div", "fsChartWrap");
       host.appendChild(cv);
       chart(runs, sc, cv);
-      host.appendChild(tb);
+      var tw = el("div", "fsTableWrap");   /* FOGPHONE-2026-09-02: 7 columns scroll in their own box */
+      tw.appendChild(tb);
+      host.appendChild(tw);
       host.appendChild(el("div", "fsNote",
         "Compare these against the published table above. They are computed " +
         "in your browser from public files - nothing here is read from a " +
@@ -223,7 +225,7 @@
       "max='0.9' value='" + sc.parameters.shock + "'></label> " +
       "<label>seed <input id='fsSeed' type='text' value='42'></label> " +
       "<button id='fsGo' type='button'>run unsealed</button>" +
-      "<div id='fsOut'></div><div id='fsSbChart'></div>";
+      "<div id='fsOut'></div><div id='fsSbChart' class='fsChartWrap'></div>";
     host.appendChild(f);
     f.querySelector("#fsGo").addEventListener("click", function () {
       var s2 = JSON.parse(JSON.stringify(sc));

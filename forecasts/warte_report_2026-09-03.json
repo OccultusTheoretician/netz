@@ -1,0 +1,1063 @@
+{
+ "_meta": {
+  "generated": "2026-09-03T04:34:23Z",
+  "instrument": "warte_report/1.0",
+  "registration": "docs/KALIBRIERWARTE_REGISTERED_REPORT_v3.md",
+  "registration_sha16_lf": "c668da715fcf0334",
+  "self_sha256_lf": "fa560fe3a58570bb2b4e8b888bf524732691f15b2141502fc75e171532909723",
+  "self_sha256_raw": "fa560fe3a58570bb2b4e8b888bf524732691f15b2141502fc75e171532909723",
+  "ledger_as_of": "2026-09-03T00:31:49Z",
+  "ledger_rows": 1334,
+  "cohort": {
+   "prefix": "4ea5ab8f",
+   "hash": "4ea5ab8f6a401aed91530b7eb3d4fc0ae5bb9fdf18ea8ebf6bbd1efb3052299c",
+   "label": "cohort 4ea5ab8f6a401aed",
+   "rows": 812,
+   "confirmatory": true
+  },
+  "bootstrap": {
+   "reps": 2000,
+   "seed": 26,
+   "unit": "row",
+   "interval": "percentile 2.5-97.5, linear interpolation"
+  },
+  "floors": {
+   "checkpoint": 50,
+   "interim": 30,
+   "arm": 10,
+   "bin": 5,
+   "h3_split": 20,
+   "h5_market": 30
+  },
+  "doctrine": "no pooled score exists; a Brier belongs to one forecaster; nothing is claimed below the floors; misses printed at full size"
+ },
+ "arms": {
+  "lmstudio/auto[post-window]": {
+   "arm": "lmstudio/auto[post-window]",
+   "tag": "lmstudio/auto",
+   "issued": 144,
+   "open": 79,
+   "resolved": 62,
+   "hits": 11,
+   "misses": 51,
+   "voids": 3,
+   "stage": "checkpoint",
+   "capability_claim": true,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "metrics": {
+    "resolved": 62,
+    "hits": 11,
+    "misses": 51,
+    "brier": 0.178,
+    "base_rate": 0.177,
+    "climatological": 0.146,
+    "skill": -0.222,
+    "skill_unfloored": -0.222,
+    "n_floor": null,
+    "bins": [
+     {
+      "bin": "10-20",
+      "n": 6,
+      "mean_p": 0.152,
+      "obs": 0.0,
+      "note": null
+     },
+     {
+      "bin": "20-30",
+      "n": 18,
+      "mean_p": 0.236,
+      "obs": 0.111,
+      "note": null
+     },
+     {
+      "bin": "30-40",
+      "n": 19,
+      "mean_p": 0.328,
+      "obs": 0.158,
+      "note": null
+     },
+     {
+      "bin": "40-50",
+      "n": 8,
+      "mean_p": 0.431,
+      "obs": 0.25,
+      "note": null
+     },
+     {
+      "bin": "50-60",
+      "n": 1,
+      "mean_p": 0.55,
+      "obs": null,
+      "note": "n<5"
+     },
+     {
+      "bin": "60-70",
+      "n": 5,
+      "mean_p": 0.62,
+      "obs": 0.6,
+      "note": null
+     },
+     {
+      "bin": "70-80",
+      "n": 3,
+      "mean_p": 0.7,
+      "obs": null,
+      "note": "n<5"
+     },
+     {
+      "bin": "80-90",
+      "n": 1,
+      "mean_p": 0.85,
+      "obs": null,
+      "note": "n<5"
+     },
+     {
+      "bin": "90-100",
+      "n": 1,
+      "mean_p": 0.9,
+      "obs": null,
+      "note": "n<5"
+     }
+    ]
+   },
+   "bootstrap": {
+    "reps": 2000,
+    "seed": 26,
+    "unit": "row",
+    "brier_ci95": [
+     0.1347,
+     0.2288
+    ],
+    "skill_ci95": [
+     -1.0627,
+     0.1216
+    ],
+    "skill_resamples": 2000,
+    "bins": {
+     "70-80": {
+      "ci95": [
+       0.0,
+       1.0
+      ],
+      "resamples_nonempty": 1918
+     },
+     "20-30": {
+      "ci95": [
+       0.0,
+       0.2917
+      ],
+      "resamples_nonempty": 2000
+     },
+     "30-40": {
+      "ci95": [
+       0.0,
+       0.3333
+      ],
+      "resamples_nonempty": 2000
+     },
+     "40-50": {
+      "ci95": [
+       0.0,
+       0.6
+      ],
+      "resamples_nonempty": 2000
+     },
+     "60-70": {
+      "ci95": [
+       0.0,
+       1.0
+      ],
+      "resamples_nonempty": 1983
+     },
+     "80-90": {
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "resamples_nonempty": 1235
+     },
+     "90-100": {
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "resamples_nonempty": 1259
+     },
+     "50-60": {
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "resamples_nonempty": 1277
+     },
+     "10-20": {
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "resamples_nonempty": 1997
+     }
+    },
+    "keyless_minus_keyed_brier_ci95": null,
+    "diff_resamples": 0
+   },
+   "split": {
+    "keyed": {
+     "resolved": 62,
+     "hits": 11,
+     "misses": 51,
+     "brier": 0.178,
+     "base_rate": 0.177,
+     "climatological": 0.146,
+     "skill": -0.222,
+     "skill_unfloored": -0.222,
+     "n_floor": null,
+     "bins": [
+      {
+       "bin": "10-20",
+       "n": 6,
+       "mean_p": 0.152,
+       "obs": 0.0,
+       "note": null
+      },
+      {
+       "bin": "20-30",
+       "n": 18,
+       "mean_p": 0.236,
+       "obs": 0.111,
+       "note": null
+      },
+      {
+       "bin": "30-40",
+       "n": 19,
+       "mean_p": 0.328,
+       "obs": 0.158,
+       "note": null
+      },
+      {
+       "bin": "40-50",
+       "n": 8,
+       "mean_p": 0.431,
+       "obs": 0.25,
+       "note": null
+      },
+      {
+       "bin": "50-60",
+       "n": 1,
+       "mean_p": 0.55,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "60-70",
+       "n": 5,
+       "mean_p": 0.62,
+       "obs": 0.6,
+       "note": null
+      },
+      {
+       "bin": "70-80",
+       "n": 3,
+       "mean_p": 0.7,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "80-90",
+       "n": 1,
+       "mean_p": 0.85,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "90-100",
+       "n": 1,
+       "mean_p": 0.9,
+       "obs": null,
+       "note": "n<5"
+      }
+     ],
+     "defect_ids": [
+      "KKR-20260810-06",
+      "KKR-20260812-02",
+      "KKR-20260812-04",
+      "KKR-20260814-02",
+      "KKR-20260816-01",
+      "KKR-20260816-07",
+      "KKR-20260816-08",
+      "KKR-20260817-29",
+      "KKR-20260817-30",
+      "KKR-20260817-31",
+      "KKR-20260817-32",
+      "KKR-20260817-33",
+      "KKR-20260817-35",
+      "KKR-20260817-37",
+      "KKR-20260817-38",
+      "KKR-20260818-01",
+      "KKR-20260818-07",
+      "KKR-20260819-04",
+      "KKR-20260819-05",
+      "KKR-20260820-08"
+     ]
+    },
+    "keyless": {
+     "resolved": 0,
+     "defect_ids": []
+    },
+    "keyed_by_rule": 0
+   },
+   "seats": {
+    "operator": {
+     "resolved": 0
+    },
+    "jury-searched-adopted": {
+     "resolved": 50,
+     "hits": 9,
+     "misses": 41,
+     "brier": 0.171,
+     "base_rate": 0.18,
+     "climatological": 0.148,
+     "skill": -0.156,
+     "skill_unfloored": -0.156,
+     "n_floor": null,
+     "bins": [
+      {
+       "bin": "10-20",
+       "n": 4,
+       "mean_p": 0.165,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "20-30",
+       "n": 15,
+       "mean_p": 0.236,
+       "obs": 0.067,
+       "note": null
+      },
+      {
+       "bin": "30-40",
+       "n": 16,
+       "mean_p": 0.33,
+       "obs": 0.125,
+       "note": null
+      },
+      {
+       "bin": "40-50",
+       "n": 6,
+       "mean_p": 0.425,
+       "obs": 0.333,
+       "note": null
+      },
+      {
+       "bin": "50-60",
+       "n": 1,
+       "mean_p": 0.55,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "60-70",
+       "n": 3,
+       "mean_p": 0.633,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "70-80",
+       "n": 3,
+       "mean_p": 0.7,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "80-90",
+       "n": 1,
+       "mean_p": 0.85,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "90-100",
+       "n": 1,
+       "mean_p": 0.9,
+       "obs": null,
+       "note": "n<5"
+      }
+     ],
+     "brier_ci95": [
+      0.1256,
+      0.2214
+     ],
+     "skill_ci95": [
+      -1.2396,
+      0.2195
+     ]
+    },
+    "jury-divergence": {
+     "resolved": 12,
+     "hits": 2,
+     "misses": 10,
+     "brier": 0.21,
+     "base_rate": 0.167,
+     "climatological": 0.139,
+     "skill": -0.515,
+     "skill_unfloored": -0.515,
+     "n_floor": null,
+     "bins": [
+      {
+       "bin": "10-20",
+       "n": 2,
+       "mean_p": 0.125,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "20-30",
+       "n": 3,
+       "mean_p": 0.233,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "30-40",
+       "n": 3,
+       "mean_p": 0.317,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "40-50",
+       "n": 2,
+       "mean_p": 0.45,
+       "obs": null,
+       "note": "n<5"
+      },
+      {
+       "bin": "60-70",
+       "n": 2,
+       "mean_p": 0.6,
+       "obs": null,
+       "note": "n<5"
+      }
+     ],
+     "brier_ci95": [
+      0.1137,
+      0.32
+     ],
+     "skill_ci95": [
+      -2.0374,
+      -0.0245
+     ]
+    },
+    "auditor-single": {
+     "resolved": 0
+    },
+    "unclassified": 0
+   },
+   "quality": {
+    "a_mirror_completeness": {
+     "binding": false,
+     "rows_checked": 62,
+     "same_run": 0,
+     "late_mirror": 0,
+     "no_mirror": 62,
+     "gap_unknown": 0,
+     "same_run_minutes": 360,
+     "listed": [
+      {
+       "id": "KKR-20260809-01",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260810-01",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260810-02",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260810-03",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260810-04",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260810-05",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260810-06",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260810-07",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260810-08",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260810-09",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260811-01",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260811-02",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260811-03",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260811-04",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260811-05",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260812-01",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260812-02",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260812-03",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260812-04",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260813-01",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260813-02",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260813-03",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260813-05",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260813-06",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260813-07",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260814-01",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260814-02",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260814-03",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260814-04",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260814-05",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260814-06",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260815-23",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260816-01",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260816-02",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260816-03",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260816-04",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260816-05",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260816-06",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260816-07",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260816-08",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260817-29",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260817-30",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260817-31",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260817-32",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260817-33",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260817-34",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260817-35",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260817-37",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260817-38",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260818-01",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260818-02",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260818-03",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260818-04",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260818-05",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260818-06",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260818-07",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260818-08",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260819-03",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260819-04",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260819-05",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260820-03",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      },
+      {
+       "id": "KKR-20260820-08",
+       "mirror": null,
+       "gap_min": null,
+       "class": "no-mirror"
+      }
+     ],
+     "result": "PASS",
+     "note": "binds frontier rows (Section 7a); the local arm's coverage is printed, not gated"
+    },
+    "b_rubric_coverage": {
+     "rows": 144,
+     "carrying_cohort_hash": 144,
+     "off_hash": [],
+     "result": "PASS"
+    },
+    "c_seat_recorded": {
+     "resolved": 62,
+     "seats": {
+      "jury-searched-adopted": 50,
+      "jury-divergence": 12
+     },
+     "outside_registration": 0,
+     "result": "PASS"
+    },
+    "d_determination_coverage": {
+     "resolved": 62,
+     "keyed": 62,
+     "keyless": 0,
+     "keyed_by_rule": 0,
+     "result": "PASS"
+    },
+    "e_control_skill_zero": {
+     "within_cohort": {
+      "resolved": 12,
+      "hits": 7,
+      "brier": 0.325,
+      "base_rate": 0.583,
+      "climatological": 0.243,
+      "skill": -0.335,
+      "skill_ci95": [
+       -2.0286,
+       -0.0251
+      ],
+      "under_arm_floor": false,
+      "result": "FAIL"
+     },
+     "all_time_exploratory": {
+      "resolved": 28,
+      "hits": 14,
+      "brier": 0.297,
+      "base_rate": 0.5,
+      "climatological": 0.25,
+      "skill": -0.187,
+      "skill_ci95": [
+       -0.7622,
+       0.0095
+      ],
+      "under_arm_floor": false,
+      "result": "PASS",
+      "label": "exploratory - all cohorts pooled, the face's figure"
+     },
+     "result": "FAIL",
+     "note": "departure - the control's reference class is not the control's own base rate; prints as a defect"
+    },
+    "f_void_rate": {
+     "resolved": 62,
+     "voids": 3,
+     "void_rate": 0.046,
+     "result": "PASS"
+    },
+    "all_pass": false
+   },
+   "hypotheses": null,
+   "note": "READ HALTED - a quality check failed; no hypothesis read for this arm (Section 7)"
+  },
+  "control/baserate": {
+   "arm": "control/baserate",
+   "tag": "control/baserate",
+   "issued": 283,
+   "open": 271,
+   "resolved": 12,
+   "hits": 7,
+   "misses": 5,
+   "voids": 0,
+   "stage": "counts-only",
+   "capability_claim": true,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "note": "under 30 resolved within the cohort - counts only"
+  },
+  "manual/sonnet-5/unattested": {
+   "arm": "manual/sonnet-5/unattested",
+   "tag": "manual/sonnet-5/unattested",
+   "issued": 113,
+   "open": 102,
+   "resolved": 11,
+   "hits": 6,
+   "misses": 5,
+   "voids": 0,
+   "stage": "counts-only",
+   "capability_claim": true,
+   "corrections": {
+    "count": 2,
+    "rows": [
+     {
+      "id": "KKR-20260819-22",
+      "superseded": "keyed",
+      "current": "keyless",
+      "dated": "2026-08-27"
+     },
+     {
+      "id": "KKR-20260820-20",
+      "superseded": "keyed",
+      "current": "keyless",
+      "dated": "2026-08-27"
+     }
+    ]
+   },
+   "note": "under 30 resolved within the cohort - counts only"
+  },
+  "manual/sonnet-5": {
+   "arm": "manual/sonnet-5",
+   "tag": "manual/sonnet-5",
+   "issued": 15,
+   "open": 11,
+   "resolved": 4,
+   "hits": 2,
+   "misses": 2,
+   "voids": 0,
+   "stage": "counts-only",
+   "capability_claim": true,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "note": "under 30 resolved within the cohort - counts only"
+  },
+  "manual/fable-5": {
+   "arm": "manual/fable-5",
+   "tag": "manual/fable-5",
+   "issued": 9,
+   "open": 7,
+   "resolved": 2,
+   "hits": 2,
+   "misses": 0,
+   "voids": 0,
+   "stage": "counts-only",
+   "capability_claim": true,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "note": "under 30 resolved within the cohort - counts only"
+  },
+  "manual/fable-5/unattested": {
+   "arm": "manual/fable-5/unattested",
+   "tag": "manual/fable-5/unattested",
+   "issued": 113,
+   "open": 111,
+   "resolved": 2,
+   "hits": 2,
+   "misses": 0,
+   "voids": 0,
+   "stage": "counts-only",
+   "capability_claim": true,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "note": "under 30 resolved within the cohort - counts only"
+  },
+  "manual/opus-5/unattested": {
+   "arm": "manual/opus-5/unattested",
+   "tag": "manual/opus-5/unattested",
+   "issued": 119,
+   "open": 117,
+   "resolved": 2,
+   "hits": 1,
+   "misses": 1,
+   "voids": 0,
+   "stage": "counts-only",
+   "capability_claim": true,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "note": "under 30 resolved within the cohort - counts only"
+  },
+  "manual/opus-5": {
+   "arm": "manual/opus-5",
+   "tag": "manual/opus-5",
+   "issued": 12,
+   "open": 11,
+   "resolved": 1,
+   "hits": 0,
+   "misses": 1,
+   "voids": 0,
+   "stage": "counts-only",
+   "capability_claim": true,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "note": "under 30 resolved within the cohort - counts only"
+  },
+  "operator/human": {
+   "arm": "operator/human",
+   "tag": "operator/human",
+   "issued": 4,
+   "open": 4,
+   "resolved": 0,
+   "hits": 0,
+   "misses": 0,
+   "voids": 0,
+   "stage": "counts-only",
+   "capability_claim": false,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "note": "out of scope for any capability claim"
+  }
+ }
+}
