@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "At least one commercial vessel is struck by a mine, missile, or drone in the Strait of Hormuz or Gulf of Oman between 2026-09-03 and 2026-09-30.",
+    "resolution": "TRUE if a UKMTO incident advisory plus two of Reuters, AP, or Lloyds List Intelligence record a commercial vessel damaged by mine, missile, or drone in that area, incident dated 2026-09-03 through 2026-09-30.",
+    "failure_condition": "No commercial vessel in the Strait of Hormuz or Gulf of Oman sustains mine, missile, or drone damage during 2026-09-03 through 2026-09-30.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-05",
+    "probability": 49,
+    "citations": [
+      79,
+      82,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or above 110.00 USD per barrel on at least one trading day between 2026-09-03 and 2026-10-30. Reference: 95.33 on the packet date 2026-09-02.",
+    "resolution": "TRUE if the ICE Brent front-month official settlement price equals or exceeds 110.00 on any trading day from 2026-09-03 through 2026-10-30. Reference level 95.33 at seal.",
+    "failure_condition": "Every ICE Brent front-month settlement from 2026-09-03 through 2026-10-30 prints below 110.00 USD per barrel.",
+    "domain": "economic",
+    "deadline": "2026-11-02",
+    "probability": 21,
+    "citations": [
+      79,
+      82
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US Treasury 10-year constant maturity par yield closes at or above 5.15 percent on at least one business day between 2026-09-03 and 2026-11-30. Reference: 4.80 percent on 2026-09-02.",
+    "resolution": "TRUE if FRED series DGS10 or the Treasury daily par yield curve records a 10-year value of 5.15 or higher on any date from 2026-09-03 through 2026-11-30. Reference 4.80 at seal.",
+    "failure_condition": "The DGS10 series maximum across 2026-09-03 through 2026-11-30 stays below 5.15 percent.",
+    "domain": "economic",
+    "deadline": "2026-12-02",
+    "probability": 21,
+    "citations": [
+      67,
+      74,
+      79
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one SonicWall vulnerability with a dateAdded value between 2026-09-03 and 2026-10-15.",
+    "resolution": "TRUE if the CISA KEV catalog JSON contains at least one entry with vendorProject SonicWall and dateAdded from 2026-09-03 through 2026-10-15 inclusive.",
+    "failure_condition": "The KEV catalog holds no SonicWall entry with a dateAdded inside that range when fetched at the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-10-19",
+    "probability": 30,
+    "citations": [
+      22,
+      31
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The HHS Office for Civil Rights breach portal lists an Aesto Health breach affecting 9,500,000 or more individuals, posted between 2026-09-03 and 2026-12-15.",
+    "resolution": "TRUE if the HHS OCR breach portal shows a single entry naming Aesto Health with individuals affected of 9,500,000 or more and a submission date in that window.",
+    "failure_condition": "No single OCR portal entry naming Aesto Health reaches 9,500,000 individuals affected within that posting window.",
+    "domain": "cyber",
+    "deadline": "2026-12-18",
+    "probability": 30,
+    "citations": [
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US Department of Justice unseals a federal criminal charge over bulk sale of US drivers license data, filed between 2026-09-03 and 2026-12-31.",
+    "resolution": "TRUE if a justice.gov release plus a PACER docket show a federal indictment, information, or complaint charging bulk drivers license data sale, filed within that window.",
+    "failure_condition": "No federal charging document alleging bulk US drivers license data sale carries a filing date inside that window.",
+    "domain": "crime_security",
+    "deadline": "2027-01-06",
+    "probability": 36,
+    "citations": [
+      32
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A lapse in federal appropriations begins between 2026-10-01 and 2026-11-30, triggering furloughs of non-excepted US federal employees.",
+    "resolution": "TRUE if OMB or OPM published guidance, plus two of Reuters, AP, or Politico, record furloughs from an appropriations lapse commencing 2026-10-01 through 2026-11-30.",
+    "failure_condition": "Federal appropriations remain continuously enacted through 2026-11-30 with no furlough-triggering lapse.",
+    "domain": "political",
+    "deadline": "2026-12-03",
+    "probability": 35,
+    "citations": [
+      131
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Donald Trump and Vladimir Putin meet in person between 2026-09-03 and 2026-11-30.",
+    "resolution": "TRUE if two of Reuters, AP, or AFP report that the two principals met face to face at a named venue on a date from 2026-09-03 through 2026-11-30.",
+    "failure_condition": "No face-to-face Trump-Putin meeting occurs on any date in that window.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 35,
+    "citations": [
+      94,
+      116
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russian official sources confirm UAV interception or debris over Moscow city or Moscow oblast on at least three separate calendar days between 2026-09-03 and 2026-09-30.",
+    "resolution": "TRUE if Russian Ministry of Defence or Moscow mayoral statements, echoed by Reuters or AFP, name three or more distinct dates in that window with UAV interception over Moscow.",
+    "failure_condition": "Fewer than three distinct calendar days in that window carry an official Russian UAV interception claim over Moscow.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-05",
+    "probability": 49,
+    "citations": [
+      93,
+      94,
+      114
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A UN OCHA or Nepal NDRRMA report published between 2026-09-03 and 2026-10-15 states a confirmed death toll of 1,500 or more from the 2026 Nepal-Tibet floods.",
+    "resolution": "TRUE if an OCHA situation report on ReliefWeb or an NDRRMA bulletin, published in that window, states 1,500 or more confirmed deaths from the 2026 Nepal flood event.",
+    "failure_condition": "Every OCHA or NDRRMA report published in that window states a confirmed toll below 1,500.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-10-19",
+    "probability": 36,
+    "citations": [
+      43,
+      45,
+      55
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-02T23:06:53Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

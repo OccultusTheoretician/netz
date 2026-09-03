@@ -1,28 +1,28 @@
 {
  "_meta": {
-  "generated": "2026-09-01T15:22:12Z",
+  "generated": "2026-09-03T00:31:50Z",
   "instrument": "kalibrierwarte/1.0",
   "doctrine": "no pooled score exists; a Brier belongs to one forecaster; trend under a frozen rubric is the measurement",
   "n_floor_arm": 10,
   "n_floor_bin": 5,
-  "open_rows_rubric_hashed": "799/1071"
+  "open_rows_rubric_hashed": "832/1069"
  },
  "arms": {
   "control/baserate": {
-   "resolved": 17,
-   "issued": 323,
-   "open": 306,
-   "hits": 8,
-   "misses": 9,
+   "resolved": 28,
+   "issued": 370,
+   "open": 342,
+   "hits": 14,
+   "misses": 14,
    "split": {
     "keyed": {
-     "resolved": 17,
-     "hits": 8,
-     "misses": 9,
-     "brier": 0.275,
-     "base_rate": 0.471,
-     "climatological": 0.249,
-     "skill": -0.105,
+     "resolved": 28,
+     "hits": 14,
+     "misses": 14,
+     "brier": 0.297,
+     "base_rate": 0.5,
+     "climatological": 0.25,
+     "skill": -0.187,
      "note": null,
      "defect_ids": [
       "KKR-20260804-16"
@@ -34,27 +34,34 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.275,
-   "base_rate": 0.471,
-   "climatological": 0.249,
-   "skill": -0.105,
+   "brier": 0.297,
+   "base_rate": 0.5,
+   "climatological": 0.25,
+   "skill": -0.187,
    "n_floor": null,
-   "rubric_hashed": 5,
-   "rubric_note": "12 of 17 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_hashed": 12,
+   "rubric_note": "16 of 28 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
     {
      "bin": "20-30",
-     "n": 12,
+     "n": 17,
      "mean_p": 0.25,
-     "obs": 0.333,
+     "obs": 0.412,
      "note": null
     },
     {
      "bin": "30-40",
-     "n": 5,
-     "mean_p": 0.326,
-     "obs": 0.8,
+     "n": 10,
+     "mean_p": 0.328,
+     "obs": 0.7,
      "note": null
+    },
+    {
+     "bin": "50-60",
+     "n": 1,
+     "mean_p": 0.5,
+     "obs": null,
+     "note": "n<5"
     }
    ]
   },
@@ -100,23 +107,24 @@
    ]
   },
   "lmstudio/auto[post-verbot]": {
-   "resolved": 3,
+   "resolved": 4,
    "issued": 20,
-   "open": 17,
+   "open": 16,
    "hits": 1,
-   "misses": 2,
+   "misses": 3,
    "split": {
     "keyed": {
-     "resolved": 2,
+     "resolved": 3,
      "hits": 1,
-     "misses": 1,
-     "brier": 0.276,
-     "base_rate": 0.5,
-     "climatological": 0.25,
+     "misses": 2,
+     "brier": 0.214,
+     "base_rate": 0.333,
+     "climatological": 0.222,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": [
-      "KKR-20260729-01"
+      "KKR-20260729-01",
+      "KKR-20260729-07"
      ]
     },
     "keyless": {
@@ -134,13 +142,13 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.214,
-   "base_rate": 0.333,
-   "climatological": 0.222,
+   "brier": 0.183,
+   "base_rate": 0.25,
+   "climatological": 0.188,
    "skill": null,
-   "n_floor": "insufficient n (3<10) - printed, not hidden",
+   "n_floor": "insufficient n (4<10) - printed, not hidden",
    "rubric_hashed": 0,
-   "rubric_note": "3 of 3 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "4 of 4 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
     {
      "bin": "20-30",
@@ -151,7 +159,7 @@
     },
     {
      "bin": "30-40",
-     "n": 2,
+     "n": 3,
      "mean_p": 0.3,
      "obs": null,
      "note": "n<5"
@@ -159,28 +167,33 @@
    ]
   },
   "lmstudio/auto[post-window]": {
-   "resolved": 29,
-   "issued": 184,
-   "open": 153,
-   "hits": 10,
-   "misses": 19,
+   "resolved": 83,
+   "issued": 192,
+   "open": 104,
+   "hits": 15,
+   "misses": 68,
    "split": {
     "keyed": {
-     "resolved": 24,
-     "hits": 9,
-     "misses": 15,
-     "brier": 0.27,
-     "base_rate": 0.375,
-     "climatological": 0.234,
-     "skill": -0.151,
+     "resolved": 78,
+     "hits": 14,
+     "misses": 64,
+     "brier": 0.184,
+     "base_rate": 0.179,
+     "climatological": 0.147,
+     "skill": -0.251,
      "note": null,
      "defect_ids": [
       "KKR-20260804-08",
+      "KKR-20260807-01",
       "KKR-20260807-02",
       "KKR-20260808-01",
+      "KKR-20260810-06",
+      "KKR-20260812-02",
       "KKR-20260812-04",
       "KKR-20260814-02",
       "KKR-20260816-01",
+      "KKR-20260816-07",
+      "KKR-20260816-08",
       "KKR-20260817-29",
       "KKR-20260817-30",
       "KKR-20260817-31",
@@ -188,7 +201,12 @@
       "KKR-20260817-33",
       "KKR-20260817-35",
       "KKR-20260817-37",
-      "KKR-20260817-38"
+      "KKR-20260817-38",
+      "KKR-20260818-01",
+      "KKR-20260818-07",
+      "KKR-20260819-04",
+      "KKR-20260819-05",
+      "KKR-20260820-08"
      ]
     },
     "keyless": {
@@ -204,34 +222,41 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.25,
-   "base_rate": 0.345,
-   "climatological": 0.226,
-   "skill": -0.109,
+   "brier": 0.183,
+   "base_rate": 0.181,
+   "climatological": 0.148,
+   "skill": -0.234,
    "n_floor": null,
-   "rubric_hashed": 14,
-   "rubric_note": "15 of 29 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_hashed": 62,
+   "rubric_note": "21 of 83 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
     {
-     "bin": "20-30",
+     "bin": "10-20",
      "n": 6,
-     "mean_p": 0.238,
-     "obs": 0.167,
+     "mean_p": 0.152,
+     "obs": 0.0,
+     "note": null
+    },
+    {
+     "bin": "20-30",
+     "n": 25,
+     "mean_p": 0.236,
+     "obs": 0.08,
      "note": null
     },
     {
      "bin": "30-40",
-     "n": 10,
-     "mean_p": 0.307,
-     "obs": 0.3,
+     "n": 29,
+     "mean_p": 0.324,
+     "obs": 0.207,
      "note": null
     },
     {
      "bin": "40-50",
-     "n": 3,
-     "mean_p": 0.433,
-     "obs": null,
-     "note": "n<5"
+     "n": 10,
+     "mean_p": 0.43,
+     "obs": 0.3,
+     "note": null
     },
     {
      "bin": "50-60",
@@ -242,21 +267,21 @@
     },
     {
      "bin": "60-70",
-     "n": 4,
-     "mean_p": 0.625,
-     "obs": null,
-     "note": "n<5"
+     "n": 5,
+     "mean_p": 0.62,
+     "obs": 0.6,
+     "note": null
     },
     {
      "bin": "70-80",
-     "n": 2,
+     "n": 3,
      "mean_p": 0.7,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "80-90",
-     "n": 1,
+     "n": 2,
      "mean_p": 0.85,
      "obs": null,
      "note": "n<5"
@@ -271,20 +296,20 @@
    ]
   },
   "lmstudio/auto[pre-verbot]": {
-   "resolved": 45,
+   "resolved": 46,
    "issued": 60,
-   "open": 7,
+   "open": 6,
    "hits": 13,
-   "misses": 32,
+   "misses": 33,
    "split": {
     "keyed": {
-     "resolved": 12,
+     "resolved": 13,
      "hits": 5,
-     "misses": 7,
-     "brier": 0.236,
-     "base_rate": 0.417,
-     "climatological": 0.243,
-     "skill": 0.031,
+     "misses": 8,
+     "brier": 0.227,
+     "base_rate": 0.385,
+     "climatological": 0.237,
+     "skill": 0.041,
      "note": null,
      "defect_ids": []
     },
@@ -301,13 +326,13 @@
     }
    },
    "undetermined": 23,
-   "brier": 0.222,
-   "base_rate": 0.289,
-   "climatological": 0.205,
-   "skill": -0.081,
+   "brier": 0.22,
+   "base_rate": 0.283,
+   "climatological": 0.203,
+   "skill": -0.085,
    "n_floor": null,
    "rubric_hashed": 0,
-   "rubric_note": "45 of 45 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "46 of 46 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
     {
      "bin": "10-20",
@@ -325,9 +350,9 @@
     },
     {
      "bin": "30-40",
-     "n": 16,
-     "mean_p": 0.322,
-     "obs": 0.312,
+     "n": 17,
+     "mean_p": 0.324,
+     "obs": 0.294,
      "note": null
     },
     {
@@ -361,50 +386,51 @@
    ]
   },
   "manual/fable": {
-   "resolved": 13,
+   "resolved": 16,
    "issued": 45,
-   "open": 32,
-   "hits": 7,
-   "misses": 6,
+   "open": 29,
+   "hits": 9,
+   "misses": 7,
    "split": {
     "keyed": {
-     "resolved": 8,
-     "hits": 6,
+     "resolved": 9,
+     "hits": 7,
      "misses": 2,
-     "brier": 0.209,
-     "base_rate": 0.75,
-     "climatological": 0.188,
+     "brier": 0.22,
+     "base_rate": 0.778,
+     "climatological": 0.173,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": []
     },
     "keyless": {
-     "resolved": 5,
-     "hits": 1,
-     "misses": 4,
-     "brier": 0.14,
-     "base_rate": 0.2,
-     "climatological": 0.16,
+     "resolved": 7,
+     "hits": 2,
+     "misses": 5,
+     "brier": 0.143,
+     "base_rate": 0.286,
+     "climatological": 0.204,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": [
-      "KKR-20260725-01"
+      "KKR-20260725-01",
+      "KKR-20260727-17"
      ]
     }
    },
    "undetermined": 0,
-   "brier": 0.183,
-   "base_rate": 0.538,
-   "climatological": 0.249,
-   "skill": 0.265,
+   "brier": 0.186,
+   "base_rate": 0.562,
+   "climatological": 0.246,
+   "skill": 0.244,
    "n_floor": null,
    "rubric_hashed": 0,
-   "rubric_note": "13 of 13 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "16 of 16 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
     {
      "bin": "20-30",
-     "n": 2,
-     "mean_p": 0.25,
+     "n": 3,
+     "mean_p": 0.24,
      "obs": null,
      "note": "n<5"
     },
@@ -417,15 +443,15 @@
     },
     {
      "bin": "40-50",
-     "n": 4,
-     "mean_p": 0.417,
-     "obs": null,
-     "note": "n<5"
+     "n": 5,
+     "mean_p": 0.424,
+     "obs": 0.8,
+     "note": null
     },
     {
      "bin": "50-60",
-     "n": 1,
-     "mean_p": 0.55,
+     "n": 2,
+     "mean_p": 0.525,
      "obs": null,
      "note": "n<5"
     },
@@ -453,19 +479,19 @@
    ]
   },
   "manual/fable-5": {
-   "resolved": 4,
+   "resolved": 6,
    "issued": 38,
-   "open": 34,
-   "hits": 3,
-   "misses": 1,
+   "open": 32,
+   "hits": 4,
+   "misses": 2,
    "split": {
     "keyed": {
-     "resolved": 3,
-     "hits": 3,
-     "misses": 0,
-     "brier": 0.085,
-     "base_rate": 1.0,
-     "climatological": 0.0,
+     "resolved": 5,
+     "hits": 4,
+     "misses": 1,
+     "brier": 0.065,
+     "base_rate": 0.8,
+     "climatological": 0.16,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": []
@@ -483,14 +509,21 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.086,
-   "base_rate": 0.75,
-   "climatological": 0.188,
+   "brier": 0.07,
+   "base_rate": 0.667,
+   "climatological": 0.222,
    "skill": null,
-   "n_floor": "insufficient n (4<10) - printed, not hidden",
-   "rubric_hashed": 1,
-   "rubric_note": "3 of 4 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "n_floor": "insufficient n (6<10) - printed, not hidden",
+   "rubric_hashed": 2,
+   "rubric_note": "4 of 6 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
+    {
+     "bin": "20-30",
+     "n": 1,
+     "mean_p": 0.25,
+     "obs": null,
+     "note": "n<5"
+    },
     {
      "bin": "30-40",
      "n": 1,
@@ -507,7 +540,7 @@
     },
     {
      "bin": "90-100",
-     "n": 1,
+     "n": 2,
      "mean_p": 0.9,
      "obs": null,
      "note": "n<5"
@@ -515,17 +548,17 @@
    ]
   },
   "manual/fable-5/unattested": {
-   "resolved": 1,
-   "issued": 130,
-   "open": 129,
-   "hits": 1,
+   "resolved": 2,
+   "issued": 145,
+   "open": 143,
+   "hits": 2,
    "misses": 0,
    "split": {
     "keyed": {
-     "resolved": 1,
-     "hits": 1,
+     "resolved": 2,
+     "hits": 2,
      "misses": 0,
-     "brier": 0.09,
+     "brier": 0.225,
      "base_rate": 1.0,
      "climatological": 0.0,
      "skill": null,
@@ -538,14 +571,21 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.09,
+   "brier": 0.225,
    "base_rate": 1.0,
    "climatological": 0.0,
    "skill": null,
-   "n_floor": "insufficient n (1<10) - printed, not hidden",
-   "rubric_hashed": 1,
+   "n_floor": "insufficient n (2<10) - printed, not hidden",
+   "rubric_hashed": 2,
    "rubric_note": null,
    "bins": [
+    {
+     "bin": "40-50",
+     "n": 1,
+     "mean_p": 0.4,
+     "obs": null,
+     "note": "n<5"
+    },
     {
      "bin": "70-80",
      "n": 1,
@@ -556,41 +596,58 @@
    ]
   },
   "manual/opus-5": {
-   "resolved": 3,
+   "resolved": 9,
    "issued": 74,
-   "open": 71,
-   "hits": 1,
-   "misses": 2,
+   "open": 65,
+   "hits": 2,
+   "misses": 7,
    "split": {
     "keyed": {
-     "resolved": 3,
-     "hits": 1,
-     "misses": 2,
-     "brier": 0.386,
-     "base_rate": 0.333,
-     "climatological": 0.222,
+     "resolved": 8,
+     "hits": 2,
+     "misses": 6,
+     "brier": 0.235,
+     "base_rate": 0.25,
+     "climatological": 0.188,
+     "skill": null,
+     "note": "n<10 - printed, not hidden",
+     "defect_ids": [
+      "KKR-20260728-02",
+      "KKR-20260728-03"
+     ]
+    },
+    "keyless": {
+     "resolved": 1,
+     "hits": 0,
+     "misses": 1,
+     "brier": 0.032,
+     "base_rate": 0.0,
+     "climatological": 0.0,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": []
-    },
-    "keyless": {
-     "resolved": 0,
-     "note": "no resolved rows"
     }
    },
    "undetermined": 0,
-   "brier": 0.386,
-   "base_rate": 0.333,
-   "climatological": 0.222,
+   "brier": 0.213,
+   "base_rate": 0.222,
+   "climatological": 0.173,
    "skill": null,
-   "n_floor": "insufficient n (3<10) - printed, not hidden",
+   "n_floor": "insufficient n (9<10) - printed, not hidden",
    "rubric_hashed": 1,
-   "rubric_note": "2 of 3 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "8 of 9 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
     {
-     "bin": "20-30",
+     "bin": "10-20",
      "n": 1,
-     "mean_p": 0.25,
+     "mean_p": 0.18,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "20-30",
+     "n": 3,
+     "mean_p": 0.24,
      "obs": null,
      "note": "n<5"
     },
@@ -598,6 +655,20 @@
      "bin": "30-40",
      "n": 1,
      "mean_p": 0.35,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "40-50",
+     "n": 2,
+     "mean_p": 0.425,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "50-60",
+     "n": 1,
+     "mean_p": 0.5,
      "obs": null,
      "note": "n<5"
     },
@@ -611,36 +682,43 @@
    ]
   },
   "manual/opus-5/unattested": {
-   "resolved": 3,
-   "issued": 153,
-   "open": 150,
-   "hits": 1,
+   "resolved": 6,
+   "issued": 165,
+   "open": 159,
+   "hits": 4,
    "misses": 2,
    "split": {
     "keyed": {
-     "resolved": 3,
-     "hits": 1,
+     "resolved": 5,
+     "hits": 3,
      "misses": 2,
-     "brier": 0.141,
-     "base_rate": 0.333,
-     "climatological": 0.222,
+     "brier": 0.148,
+     "base_rate": 0.6,
+     "climatological": 0.24,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": []
     },
     "keyless": {
-     "resolved": 0,
-     "note": "no resolved rows"
+     "resolved": 1,
+     "hits": 1,
+     "misses": 0,
+     "brier": 0.202,
+     "base_rate": 1.0,
+     "climatological": 0.0,
+     "skill": null,
+     "note": "n<10 - printed, not hidden",
+     "defect_ids": []
     }
    },
    "undetermined": 0,
-   "brier": 0.141,
-   "base_rate": 0.333,
+   "brier": 0.157,
+   "base_rate": 0.667,
    "climatological": 0.222,
    "skill": null,
-   "n_floor": "insufficient n (3<10) - printed, not hidden",
+   "n_floor": "insufficient n (6<10) - printed, not hidden",
    "rubric_hashed": 2,
-   "rubric_note": "1 of 3 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "4 of 6 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
     {
      "bin": "20-30",
@@ -650,9 +728,16 @@
      "note": "n<5"
     },
     {
-     "bin": "50-60",
+     "bin": "40-50",
      "n": 1,
-     "mean_p": 0.52,
+     "mean_p": 0.45,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "50-60",
+     "n": 2,
+     "mean_p": 0.535,
      "obs": null,
      "note": "n<5"
     },
@@ -662,24 +747,31 @@
      "mean_p": 0.7,
      "obs": null,
      "note": "n<5"
+    },
+    {
+     "bin": "80-90",
+     "n": 1,
+     "mean_p": 0.88,
+     "obs": null,
+     "note": "n<5"
     }
    ]
   },
   "manual/sonnet-5": {
-   "resolved": 20,
+   "resolved": 25,
    "issued": 45,
-   "open": 25,
-   "hits": 12,
-   "misses": 8,
+   "open": 20,
+   "hits": 14,
+   "misses": 11,
    "split": {
     "keyed": {
-     "resolved": 18,
-     "hits": 11,
-     "misses": 7,
-     "brier": 0.227,
-     "base_rate": 0.611,
-     "climatological": 0.238,
-     "skill": 0.044,
+     "resolved": 23,
+     "hits": 13,
+     "misses": 10,
+     "brier": 0.228,
+     "base_rate": 0.565,
+     "climatological": 0.246,
+     "skill": 0.074,
      "note": null,
      "defect_ids": []
     },
@@ -697,12 +789,12 @@
    },
    "undetermined": 0,
    "brier": 0.231,
-   "base_rate": 0.6,
-   "climatological": 0.24,
-   "skill": 0.037,
+   "base_rate": 0.56,
+   "climatological": 0.246,
+   "skill": 0.064,
    "n_floor": null,
    "rubric_hashed": 4,
-   "rubric_note": "16 of 20 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "21 of 25 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
     {
      "bin": "0-10",
@@ -713,31 +805,31 @@
     },
     {
      "bin": "20-30",
-     "n": 2,
-     "mean_p": 0.25,
+     "n": 4,
+     "mean_p": 0.242,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "30-40",
-     "n": 3,
-     "mean_p": 0.337,
+     "n": 4,
+     "mean_p": 0.333,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "40-50",
-     "n": 3,
-     "mean_p": 0.417,
+     "n": 4,
+     "mean_p": 0.432,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "50-60",
-     "n": 4,
+     "n": 5,
      "mean_p": 0.552,
-     "obs": null,
-     "note": "n<5"
+     "obs": 0.8,
+     "note": null
     },
     {
      "bin": "60-70",
@@ -763,76 +855,90 @@
    ]
   },
   "manual/sonnet-5/unattested": {
-   "resolved": 8,
-   "issued": 139,
+   "resolved": 21,
+   "issued": 152,
    "open": 131,
-   "hits": 5,
-   "misses": 3,
+   "hits": 10,
+   "misses": 11,
    "split": {
     "keyed": {
-     "resolved": 6,
-     "hits": 4,
-     "misses": 2,
-     "brier": 0.195,
-     "base_rate": 0.667,
-     "climatological": 0.222,
-     "skill": null,
-     "note": "n<10 - printed, not hidden",
+     "resolved": 17,
+     "hits": 9,
+     "misses": 8,
+     "brier": 0.232,
+     "base_rate": 0.529,
+     "climatological": 0.249,
+     "skill": 0.071,
+     "note": null,
      "defect_ids": []
     },
     "keyless": {
-     "resolved": 2,
+     "resolved": 4,
      "hits": 1,
-     "misses": 1,
-     "brier": 0.111,
-     "base_rate": 0.5,
-     "climatological": 0.25,
+     "misses": 3,
+     "brier": 0.141,
+     "base_rate": 0.25,
+     "climatological": 0.188,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": []
     }
    },
    "undetermined": 0,
-   "brier": 0.174,
-   "base_rate": 0.625,
-   "climatological": 0.234,
-   "skill": null,
-   "n_floor": "insufficient n (8<10) - printed, not hidden",
-   "rubric_hashed": 2,
-   "rubric_note": "6 of 8 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "brier": 0.214,
+   "base_rate": 0.476,
+   "climatological": 0.249,
+   "skill": 0.141,
+   "n_floor": null,
+   "rubric_hashed": 11,
+   "rubric_note": "10 of 21 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
     {
-     "bin": "20-30",
-     "n": 3,
-     "mean_p": 0.253,
+     "bin": "0-10",
+     "n": 1,
+     "mean_p": 0.06,
      "obs": null,
      "note": "n<5"
     },
     {
+     "bin": "20-30",
+     "n": 6,
+     "mean_p": 0.238,
+     "obs": 0.167,
+     "note": null
+    },
+    {
      "bin": "30-40",
-     "n": 1,
+     "n": 2,
      "mean_p": 0.3,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "40-50",
-     "n": 1,
-     "mean_p": 0.42,
+     "n": 3,
+     "mean_p": 0.407,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "50-60",
-     "n": 1,
-     "mean_p": 0.58,
+     "n": 5,
+     "mean_p": 0.546,
+     "obs": 0.8,
+     "note": null
+    },
+    {
+     "bin": "60-70",
+     "n": 2,
+     "mean_p": 0.65,
      "obs": null,
      "note": "n<5"
     },
     {
-     "bin": "60-70",
+     "bin": "80-90",
      "n": 1,
-     "mean_p": 0.62,
+     "mean_p": 0.85,
      "obs": null,
      "note": "n<5"
     },
@@ -846,37 +952,44 @@
    ]
   },
   "operator/human": {
-   "resolved": 1,
+   "resolved": 2,
    "issued": 10,
-   "open": 6,
+   "open": 5,
    "hits": 1,
-   "misses": 0,
+   "misses": 1,
    "split": {
     "keyed": {
      "resolved": 0,
      "note": "no resolved rows"
     },
     "keyless": {
-     "resolved": 1,
+     "resolved": 2,
      "hits": 1,
-     "misses": 0,
-     "brier": 0.122,
-     "base_rate": 1.0,
-     "climatological": 0.0,
+     "misses": 1,
+     "brier": 0.186,
+     "base_rate": 0.5,
+     "climatological": 0.25,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": []
     }
    },
    "undetermined": 0,
-   "brier": 0.122,
-   "base_rate": 1.0,
-   "climatological": 0.0,
+   "brier": 0.186,
+   "base_rate": 0.5,
+   "climatological": 0.25,
    "skill": null,
-   "n_floor": "insufficient n (1<10) - printed, not hidden",
+   "n_floor": "insufficient n (2<10) - printed, not hidden",
    "rubric_hashed": 0,
-   "rubric_note": "1 of 1 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "2 of 2 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "bins": [
+    {
+     "bin": "50-60",
+     "n": 1,
+     "mean_p": 0.5,
+     "obs": null,
+     "note": "n<5"
+    },
     {
      "bin": "60-70",
      "n": 1,

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="The Prescient Desk's predictive ledger: every sealed projection, open and resolved, segregated by forecaster arm. Paged viewer over ledger_index.json; the complete static table is ledger_full.html; the record is ledger.json.">
+<link rel="icon" type="image/svg+xml" href="crow_mark.svg">
+<link rel="stylesheet" href="brand.css">
+<script defer src="brand.js"></script>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>KKR Ledger &middot; NebelKr&auml;he</title>
+<style>
+@import url('fonts/fonts.css');
+:root{--field:#0c0e11;--panel:#10141A;--panel2:#151A22;--panel3:#1A2029;--line:#26292f;--line2:#2e343c;--fg:#d6d3cb;--fg2:#f2f0ea;--dim:#8b8b85;--brass:#b9b6ae;--brass2:#e9e7e2;--green:#4E9E71;--red:#C05149;--blue:#98a0a8;--steel:#7A97B4}
+*{box-sizing:border-box}
+html{background:var(--field)}
+body{background:var(--field);color:var(--fg);margin:0;padding:0;font:15px/1.55 'IBM Plex Sans','Segoe UI',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:900px;margin:0 auto;padding:0 .9rem 4rem}
+.mono{font-family:'IBM Plex Mono',monospace}
+.classbar{font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:600;letter-spacing:.3em;color:var(--brass);text-transform:uppercase;display:flex;justify-content:space-between;gap:1rem;padding:.55rem .2rem;margin:1.2rem 0 1rem;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.classbar .dtg{color:var(--fg2);letter-spacing:.16em}
+h1{font-family:'IBM Plex Mono',monospace;font-size:1.05rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg2);margin:.2rem 0 .3rem;font-weight:600}
+.dek{color:var(--dim);font-size:.92rem;margin:0 0 1rem}
+.dek a{color:var(--brass2)}
+.counts{display:flex;flex-wrap:wrap;gap:.4rem .9rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.06em;color:var(--dim);margin:0 0 1rem}
+.counts b{color:var(--fg2);font-weight:600}
+.counts .k-hit b{color:var(--green)}.counts .k-miss b{color:var(--red)}.counts .k-late b{color:var(--brass2)}
+.ctl{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:0 0 .8rem}
+.ctl .wide{grid-column:1 / -1}
+.ctl input,.ctl select{width:100%;background:var(--panel);color:var(--fg2);border:1px solid var(--line2);padding:.55rem .6rem;font:inherit;font-size:.9rem;border-radius:2px;min-height:44px}
+.ctl input:focus,.ctl select:focus{outline:1px solid var(--brass);border-color:var(--brass)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .9rem}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:var(--panel);border:1px solid var(--line2);padding:.5rem .7rem;border-radius:2px;cursor:pointer;min-height:40px}
+.chip.on{color:var(--brass2);border-color:var(--brass);background:var(--panel2)}
+.pager{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin:.6rem 0;font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--dim);letter-spacing:.05em}
+.pager button{background:var(--panel);color:var(--fg2);border:1px solid var(--line2);padding:.6rem 1rem;font:inherit;font-size:.78rem;border-radius:2px;min-height:44px;min-width:88px;cursor:pointer}
+.pager button[disabled]{opacity:.4;cursor:default}
+.rows{list-style:none;margin:0;padding:0}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:3px;margin:0 0 .55rem;padding:.7rem .8rem}
+.row:hover{border-color:var(--line2)}
+.top{display:flex;flex-wrap:wrap;gap:.35rem .7rem;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.04em;color:var(--dim)}
+.top .id{color:var(--fg2);font-weight:600}
+.top .p{color:var(--brass2);font-weight:600}
+.badge{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:.12rem .45rem;border:1px solid var(--line2);border-radius:2px;color:var(--fg)}
+.badge.hit{color:var(--green);border-color:var(--green)}.badge.miss{color:var(--red);border-color:var(--red)}
+.badge.void{color:var(--dim)}.badge.open{color:var(--blue)}.badge.late{color:var(--brass2);border-color:var(--brass)}
+.badge.arm{color:var(--steel)}
+.stmt{margin:.45rem 0 .35rem;color:var(--fg2);font-size:.95rem;line-height:1.5}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.04em;color:var(--dim);display:flex;flex-wrap:wrap;gap:.3rem .8rem}
+.meta .kk{color:var(--brass)}
+.more{margin:.5rem 0 0;display:none;border-top:1px dashed var(--line2);padding-top:.5rem;font-size:.88rem}
+.row.open-detail .more{display:block}
+.more dt{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:.5rem 0 .1rem}
+.more dd{margin:0;color:var(--fg)}
+.more .lazy{color:var(--dim);font-style:italic}
+.tap{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);background:none;border:0;padding:.45rem 0 0;cursor:pointer;min-height:36px}
+.note{color:var(--dim);font-size:.84rem;margin:1.2rem 0;border-left:2px solid var(--line2);padding-left:.8rem}
+.note a{color:var(--brass2)}
+.err{color:var(--red)}
+@media (min-width:640px){.ctl{grid-template-columns:2fr 1fr 1fr 1fr}.ctl .wide{grid-column:auto}}
+</style>
+</head>
+<body>
+<main>
+<div class="classbar"><span>NOTHING CLASSIFIED OR PRIVILEGED</span><span class="dtg" id="asof">&nbsp;</span></div>
+<h1>Predictive Ledger</h1>
+<p class="dek">Every projection the KKR stage has sealed, open and resolved, hits and misses alike, segregated by the arm that issued it. This page shows rows, not scores &mdash; a Brier belongs to one forecaster and lives on <a href="kalibrierwarte.html">the Warte</a>. The complete static table is <a href="ledger_full.html">ledger_full.html</a>; the record of record is <a href="ledger.json">ledger.json</a>.</p>
+<div class="counts" id="counts"></div>
+<div class="ctl">
+  <input class="wide" id="q" type="search" placeholder="search id, statement, resolution" aria-label="search">
+  <select id="arm" aria-label="arm"><option value="">all arms</option></select>
+  <select id="dom" aria-label="domain"><option value="">all domains</option></select>
+  <select id="coh" aria-label="rubric cohort"><option value="">all cohorts</option></select>
+  <select id="sort" aria-label="sort" class="wide">
+    <option value="dl">deadline, soonest first</option>
+    <option value="dn">issued, newest first</option>
+    <option value="rd">resolved, newest first</option>
+    <option value="pd">probability, highest first</option>
+    <option value="id">id, newest first</option>
+  </select>
+</div>
+<div class="chips" id="chips" role="group" aria-label="status">
+  <button class="chip on" data-s="">all</button>
+  <button class="chip" data-s="open">open</button>
+  <button class="chip" data-s="late">past deadline</button>
+  <button class="chip" data-s="hit">hit</button>
+  <button class="chip" data-s="miss">miss</button>
+  <button class="chip" data-s="void">void</button>
+</div>
+<div class="pager"><button id="prev">&larr; prev</button><span id="range">loading&hellip;</span><button id="next">next &rarr;</button></div>
+<ol class="rows" id="rows"></ol>
+<div class="pager"><button id="prev2">&larr; prev</button><span id="range2"></span><button id="next2">next &rarr;</button></div>
+<p class="note" id="foot">Rows render from <span class="mono">ledger_index.json</span>, a compact index the generator cuts from the ledger at every render; opening a row loads the remaining fields from <span class="mono">ledger.json</span> once. Sealed rows are never edited; corrections are dated on the row. Kill reasons for rejected rows live in each day's KKR report, not here.</p>
+</main>
+<script>
+(function(){
+"use strict";
+var S={q:"",arm:"",dom:"",coh:"",st:"",sort:"dl",page:0,size:50};
+var IDX=null, ROWS=[], FULL=null, FULLP=null;
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function today(){return new Date().toISOString().slice(0,10);}
+function isLate(r){return r.s==="open"&&r.dl&&r.dl<today();}
+function armShort(t){return String(t||"").replace(/^manual\//,"").replace(/\/unattested$/,"");}
+function readHash(){
+  var h=location.hash.replace(/^#/,""); if(!h)return;
+  h.split("&").forEach(function(kv){var p=kv.split("="),k=decodeURIComponent(p[0]||""),v=decodeURIComponent(p[1]||"");
+    if(k in S){S[k]=(k==="page"||k==="size")?(parseInt(v,10)||0):v;}});
+}
+function writeHash(){
+  var parts=[];["q","arm","dom","coh","st","sort","page"].forEach(function(k){if(S[k]!==""&&S[k]!==0&&!(k==="sort"&&S[k]==="dl"))parts.push(encodeURIComponent(k)+"="+encodeURIComponent(S[k]));});
+  var nh=parts.length?"#"+parts.join("&"):"";
+  if(nh!==location.hash){if(history.replaceState)history.replaceState(null,"",location.pathname+location.search+nh);else location.hash=nh;}
+}
+function fill(sel,items,fmt){items.forEach(function(it){var o=document.createElement("option");o.value=it.v;o.textContent=fmt(it);sel.appendChild(o);});}
+function filtered(){
+  var q=S.q.trim().toLowerCase();
+  return ROWS.filter(function(r){
+    if(S.arm&&r.a!==S.arm)return false;
+    if(S.dom&&r.dom!==S.dom)return false;
+    if(S.coh&&(r.c||"none")!==S.coh)return false;
+    if(S.st==="late"){if(!isLate(r))return false;}else if(S.st&&r.s!==S.st)return false;
+    if(q){var hay=(r.i+" "+(r.st||"")+" "+(r.rs||"")+" "+(r.a||"")).toLowerCase();if(hay.indexOf(q)<0)return false;}
+    return true;
+  });
+}
+function sorted(list){
+  var k=S.sort;
+  return list.slice().sort(function(x,y){
+    if(k==="dl")return (x.dl||"9999")<(y.dl||"9999")?-1:(x.dl||"9999")>(y.dl||"9999")?1:cmpId(y,x);
+    if(k==="dn")return (x.d||"")<(y.d||"")?1:(x.d||"")>(y.d||"")?-1:cmpId(y,x);
+    if(k==="rd")return (x.rd||"")<(y.rd||"")?1:(x.rd||"")>(y.rd||"")?-1:cmpId(y,x);
+    if(k==="pd")return (y.p||0)-(x.p||0)||cmpId(y,x);
+    return cmpId(y,x);
+  });
+}
+function cmpId(x,y){return x.i<y.i?-1:x.i>y.i?1:0;}
+function badge(r){
+  if(isLate(r))return '<span class="badge late">open &middot; past deadline</span>';
+  return '<span class="badge '+esc(r.s)+'">'+esc(r.s)+'</span>';
+}
+function card(r){
+  var kk=r.kk?'<span class="kk">'+esc(r.kk)+'</span>':'<span class="kk">undetermined</span>';
+  return '<li class="row" data-id="'+esc(r.i)+'">'
+    +'<div class="top"><span class="id">'+esc(r.i)+'</span><span class="badge arm">'+esc(armShort(r.a))+'</span><span class="p">'+esc(r.p)+'%</span>'+badge(r)+'</div>'
+    +'<div class="stmt">'+esc(r.st)+'</div>'
+    +'<div class="meta"><span>deadline '+esc(r.dl)+'</span><span>issued '+esc(r.d)+'</span>'+(r.rd?'<span>resolved '+esc(r.rd)+'</span>':'')+'<span>'+esc(r.dom||"-")+'</span>'+kk+'<span>cohort '+esc((r.c||"none").slice(0,8))+'</span></div>'
+    +'<button class="tap" data-more="'+esc(r.i)+'">resolution &amp; detail</button>'
+    +'<dl class="more" id="more-'+esc(r.i)+'"><dt>resolution</dt><dd>'+esc(r.rs)+'</dd>'
+    +(r.sp?'<dt>packet</dt><dd class="mono">'+esc(r.sp)+'</dd>':'')+(r.sr?'<dt>report</dt><dd class="mono">'+esc(r.sr)+'</dd>':'')
+    +'<div class="lazy" id="lazy-'+esc(r.i)+'">loading the remaining fields from ledger.json&hellip;</div></dl></li>';
+}
+function render(){
+  var list=sorted(filtered()), n=list.length, pages=Math.max(1,Math.ceil(n/S.size));
+  if(S.page>=pages)S.page=pages-1; if(S.page<0)S.page=0;
+  var a=S.page*S.size, b=Math.min(n,a+S.size);
+  $("rows").innerHTML=list.slice(a,b).map(card).join("")||'<li class="row"><div class="stmt">No rows match.</div></li>';
+  var txt=n?("rows "+(a+1)+"&ndash;"+b+" of "+n+" &middot; page "+(S.page+1)+"/"+pages):"0 rows";
+  $("range").innerHTML=txt;$("range2").innerHTML=txt;
+  ["prev","prev2"].forEach(function(id){$(id).disabled=S.page<=0;});
+  ["next","next2"].forEach(function(id){$(id).disabled=S.page>=pages-1;});
+  writeHash();
+}
+function loadFull(){
+  if(FULLP)return FULLP;
+  function get(u){return fetch(u,{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();});}
+  FULLP=get("ledger.json").catch(function(){return get("../ledger.json");}).then(function(j){
+    FULL={};(j.projections||[]).forEach(function(p){FULL[p.id]=p;});return FULL;});
+  return FULLP;
+}
+function detail(id){
+  var el=$("lazy-"+id); if(!el)return;
+  loadFull().then(function(F){
+    var p=F[id]; if(!p){el.textContent="row not in ledger.json";return;}
+    var out=[];
+    function dt(k,v){if(v==null||v==="")return;out.push("<dt>"+esc(k)+"</dt><dd>"+v+"</dd>");}
+    dt("failure condition",esc(p.failure_condition));
+    if(p.status!=="open")dt("outcome",esc(p.status)+(p.resolved_date?" &middot; "+esc(p.resolved_date):""));
+    if(p.audit){var a=p.audit;var seat=!a.mode?(a.auditor?"single auditor (pre-jury)":"operator"):(a.mode==="blind-jury"?(a.basis==="claude"?"jury, searched seat adopted":"jury, divergence (operator ruled)"):a.mode);dt("adjudication seat",esc(seat));}
+    else if(p.status==="hit"||p.status==="miss"||p.status==="void")dt("adjudication seat","operator");
+    if(p.keyed_keyless_rationale)dt("determination rationale",esc(p.keyed_keyless_rationale));
+    if(p.keyed_keyless_superseded)dt("superseded determination",esc(p.keyed_keyless_superseded)+(p.keyed_keyless_corrected?" (corrected "+esc(p.keyed_keyless_corrected)+")":""));
+    if(p.citations&&p.citations.length)dt("citations (report items)",esc(p.citations.join(", ")));
+    if(p.control_basis){var cb=p.control_basis;dt("control basis",esc((cb.basis||"")+" rate "+(cb.rate!=null?cb.rate:"?")+" n "+(cb.n!=null?cb.n:"?")+(cb.control_for?" mirrors "+cb.control_for:"")));}
+    if(p.notes)dt("notes",esc(typeof p.notes==="string"?p.notes:JSON.stringify(p.notes)));
+    if(p.sealed_at)dt("sealed",'<span class="mono">'+esc(p.sealed_at)+'</span>');
+    if(p.rubric_hash)dt("rubric hash",'<span class="mono">'+esc(p.rubric_hash)+'</span>');
+    if(p.register)dt("register",'<span class="mono">'+esc(p.register)+'</span>');
+    el.outerHTML=out.join("")||'<div class="lazy">no further fields</div>';
+  }).catch(function(e){el.textContent="ledger.json unavailable: "+e.message;});
+}
+function counts(){
+  var c=IDX.counts||{}, late=ROWS.filter(isLate).length;
+  $("counts").innerHTML='<span>issued <b>'+esc(c.issued)+'</b></span><span>open <b>'+esc(c.open)+'</b></span><span class="k-late">past deadline <b>'+late+'</b></span><span class="k-hit">hit <b>'+esc(c.hit)+'</b></span><span class="k-miss">miss <b>'+esc(c.miss)+'</b></span><span>void <b>'+esc(c.void)+'</b></span><span>arms <b>'+esc((IDX.arms||[]).length)+'</b></span>';
+  $("asof").textContent="LEDGER AS OF "+String(IDX.as_of||IDX.generated||"").slice(0,16).replace("T"," ")+"Z";
+}
+function wire(){
+  $("q").value=S.q;$("arm").value=S.arm;$("dom").value=S.dom;$("coh").value=S.coh;$("sort").value=S.sort;
+  Array.prototype.forEach.call(document.querySelectorAll(".chip"),function(b){b.classList.toggle("on",b.getAttribute("data-s")===S.st);});
+  var t; $("q").addEventListener("input",function(){clearTimeout(t);t=setTimeout(function(){S.q=$("q").value;S.page=0;render();},180);});
+  ["arm","dom","coh","sort"].forEach(function(k){$(k).addEventListener("change",function(){S[k]=$(k).value;S.page=0;render();});});
+  $("chips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;S.st=b.getAttribute("data-s");S.page=0;
+    Array.prototype.forEach.call(document.querySelectorAll(".chip"),function(x){x.classList.toggle("on",x===b);});render();});
+  function pg(d){S.page+=d;render();window.scrollTo({top:0,behavior:"smooth"});}
+  $("prev").onclick=function(){pg(-1);};$("prev2").onclick=function(){pg(-1);};$("next").onclick=function(){pg(1);};$("next2").onclick=function(){pg(1);};
+  $("rows").addEventListener("click",function(e){var b=e.target.closest("[data-more]");if(!b)return;var li=b.closest(".row");var on=li.classList.toggle("open-detail");if(on&&!li.getAttribute("data-loaded")){li.setAttribute("data-loaded","1");detail(b.getAttribute("data-more"));}});
+}
+readHash();
+fetch("ledger_index.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();}).then(function(j){
+  IDX=j;ROWS=j.rows||[];
+  var arms=(j.arms||[]).slice().sort(function(x,y){return (y.issued||0)-(x.issued||0);});
+  fill($("arm"),arms.map(function(a){return {v:a.tag,n:a.issued};}),function(it){return armShort(it.v)+" ("+it.n+")";});
+  fill($("dom"),(j.domains||[]).map(function(d){return {v:d};}),function(it){return it.v;});
+  fill($("coh"),(j.cohorts||[]).map(function(c){return {v:c.c,n:c.n,f:c.from,t:c.to};}),function(it){return it.v.slice(0,8)+" ("+it.n+", "+(it.f||"")+" to "+(it.t||"")+")";});
+  counts();wire();render();
+}).catch(function(e){
+  $("range").innerHTML='<span class="err">index unavailable ('+esc(e.message)+')</span> &middot; <a href="ledger_full.html">open the full table</a>';
+  $("range2").innerHTML="";
+});
+})();
+</script>
+</body>
+</html>
