@@ -143,6 +143,36 @@ REPORT:
 {report}"""
 
 
+# FRAMEARM-2026-09-03: frame preambles. A frame is part of the ARM, not of the
+# rubric: rows seal under the shared rubric_hash (same cohort as every arm)
+# and carry frame + frame_hash. The text below is public and hashed; it adds
+# no model output to any input (Rueckkopplungsverbot untouched).
+FRAMES = {
+    "realist": (
+        "FRAME (realist, balance of power). You reason as a classical realist of the Bismarckian school. "
+        "Operating assumptions, applied both when you choose which claims to make and when you price them"
+        ": states are the units and act on interest as their governments define it, within the limits of "
+        "relative capability and geography; institutions, law and declared values bind only where a stron"
+        "ger party finds them useful; alliances are instruments and follow the balance; public statements"
+        " are moves, not commitments; escalation is bounded by what each side can deliver and absorb; dom"
+        "estic politics matters through its effect on a government's freedom of action; economic pressure"
+        " works only when the target cannot substitute. The frame changes your priors, not the discipline"
+        ": every gate and rule below still binds, and a claim that fails a gate is discarded whatever the"
+        " frame says about it."
+    ),
+}
+_FRAME = None   # name of the frame in force for this run, or None
+
+
+def _frame_text(name):
+    return FRAMES[name]
+
+
+def _frame_hash(name):
+    import hashlib as _hl   # kkr.py imports hashlib per function; keep the style
+    return _hl.sha256(FRAMES[name].encode("utf-8")).hexdigest()
+
+
 # ----------------------------------------------------------------------
 # providers
 # ----------------------------------------------------------------------
@@ -1544,6 +1574,9 @@ def append_projections(projs: list, model_tag: str, source_report: str) -> list:
                   "model": model_tag, "source_report": source_report, "source_packet": str(globals().get("_LAST_PACKET", "")),
                   "rubric_hash": _rubric_hash(),
                   "status": "open", "resolved_date": None, "notes": (p.get("notes") or "")})  # ANCHOR-2026-09-01 (A2): gate disclosures survive the seal
+        if globals().get("_FRAME"):  # FRAMEARM-2026-09-03: the stance behind the row, auditable
+            p["frame"] = _FRAME
+            p["frame_hash"] = _frame_hash(_FRAME)
         # KK25: rows cite the register of record they were gated under, the
         # way they name a packet and a source report. Prospective only;
         # sealed rows are never touched. schema@digest, recomputable by
@@ -1974,20 +2007,38 @@ def _rubric_hash():
 
 
 def cmd_generate(args):
+    # FRAMEARM-2026-09-03: a frame run is local by construction (cold access is
+    # what makes the arm what it is) and seals only under a registered active tag.
+    frame = getattr(args, "frame", None)
+    if frame:
+        if args.provider != "lmstudio":
+            print("KKR \u00b7 --frame requires --provider lmstudio; nothing run", file=sys.stderr)
+            sys.exit(2)
+        try:
+            _arms = json.loads((HERE / "arms.json").read_text(encoding="utf-8-sig"))["arms"]
+            _ok = any(a.get("tag") == f"lmstudio/{frame}" and a.get("status") == "active" for a in _arms)
+        except Exception:
+            _ok = False
+        if not _ok:
+            print(f"KKR \u00b7 frame arm lmstudio/{frame} is not registered active in arms.json; nothing run", file=sys.stderr)
+            sys.exit(2)
+        globals()["_FRAME"] = frame
     rep = latest_report()
     if not rep:
         print("KKR · no battle report found — run netz.py first", file=sys.stderr)
         sys.exit(1)
     report_text = rep.read_text(encoding="utf-8")
     now = datetime.now(timezone.utc)
-    prompt = PROJECTION_PROMPT.format(
+    _template = ((_frame_text(frame) + "\n\n") if frame else "") + PROJECTION_PROMPT  # FRAMEARM-2026-09-03
+    prompt = _template.format(
         min_date=(now + timedelta(days=7)).strftime("%Y-%m-%d"),
         max_date=(now + timedelta(days=180)).strftime("%Y-%m-%d"),
         report=_ident_redact_packet(_record_only(report_text))[:60000])  # GUARDGATE-2026-09-01
 
     # the packet is always written — the manual Fable path costs nothing
     OUT.mkdir(exist_ok=True)
-    packet = OUT / f"kkr_packet_{now.strftime('%Y-%m-%d_%H%M')}.md"
+    packet = OUT / (f"kkr_packet_frame_{frame}_{now.strftime('%Y-%m-%d_%H%M')}.md" if frame
+                    else f"kkr_packet_{now.strftime('%Y-%m-%d_%H%M')}.md")  # FRAMEARM-2026-09-03
     _latest_packet = OUT / "kkr_packet_latest.md"
     # KK21l: through the guard, and _LAST_PACKET set from the path ACTUALLY
     # written. This writer destroyed 19 elicitation inputs between 07-20 and
@@ -2000,7 +2051,8 @@ def cmd_generate(args):
     packet = write_run_artifact(packet, prompt, tag="packet")
     globals()["_LAST_PACKET"] = packet.name
     print(f"KKR - rubric sha256: {_rubric_hash()[:16]}... (frozen; rows seal under this hash)", file=sys.stderr)
-    _latest_packet.write_text(prompt, encoding="utf-8")
+    if not frame:  # FRAMEARM-2026-09-03: a frame run never touches the frontier arms' packet
+        _latest_packet.write_text(prompt, encoding="utf-8")
     print(f"KKR · packet → {packet}", file=sys.stderr)
     if args.packet_only:
         return
@@ -2016,6 +2068,8 @@ def cmd_generate(args):
         raw = call_lmstudio(args.lmstudio_url, None if args.provider == "auto" else args.model,
                             prompt)
         tag = "lmstudio/auto" if args.provider == "auto" else f"lmstudio/{args.model or 'auto'}"
+        if frame:
+            tag = f"lmstudio/{frame}"  # FRAMEARM-2026-09-03
     if not raw:
         print("KKR · no model output — packet written, ledger unchanged", file=sys.stderr)
         return
@@ -3264,6 +3318,9 @@ def main():
     ap.add_argument("--model", default=None)
     ap.add_argument("--lmstudio-url", default="http://localhost:1234/v1")
     ap.add_argument("--packet-only", action="store_true")
+    ap.add_argument("--frame", default=None, choices=sorted(FRAMES),
+                    help="FRAMEARM-2026-09-03: fire a local frame arm (lmstudio/<frame>); "
+                         "requires --provider lmstudio; writes its own packet")
     ap.add_argument("--ingest", metavar="FILE")
     ap.add_argument("--packet", metavar="NAME",
                     help="with --ingest: the packet filename this arm forecast against")
