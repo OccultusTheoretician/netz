@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "Between 2026-09-04 and 2026-10-02, Ukrainian forces strike at least one target inside internationally recognized Russian territory 200 km or more from the Russia-Ukraine border, acknowledged by both a Russian official source and a Ukrainian official or military-intelligence source.",
+    "resolution": "Resolves TRUE if a strike meeting the statement, occurring in the window, is acknowledged by at least one Russian official source (MoD or regional governor) and one Ukrainian official source; otherwise FALSE.",
+    "failure_condition": "No strike 200 km or deeper inside Russia occurring within the window is acknowledged by both a Russian official source and a Ukrainian official source by the deadline.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-06",
+    "probability": 49,
+    "citations": [
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-04 and 2026-10-04, the government or state news agency of Qatar (QNA) or Bahrain (BNA) confirms an Iranian missile or drone striking, or being intercepted over, its national territory.",
+    "resolution": "Resolves TRUE on official Qatari or Bahraini government or state-agency confirmation of an Iranian projectile striking or intercepted over its territory within the window, corroborated by at least one international wire service; otherwise FALSE.",
+    "failure_condition": "Neither Qatar nor Bahrain officially confirms any Iranian strike on or interception over its territory occurring within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-07",
+    "probability": 49,
+    "citations": [
+      83,
+      84,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-04 and 2026-10-31, a decree published on the official website of the President of Ukraine removes the serving head of the SBU or the serving head of the GUR from that post.",
+    "resolution": "Resolves TRUE if a presidential decree dated within the window and published at president.gov.ua removes the incumbent SBU chief or GUR chief; reassignment to another post counts as removal; otherwise FALSE.",
+    "failure_condition": "No presidential decree dated within the window removes the incumbent head of the SBU or the GUR.",
+    "domain": "political",
+    "deadline": "2026-11-04",
+    "probability": 35,
+    "citations": [
+      86,
+      115
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the United States midterm elections held 2026-11-03, Democrats win a majority of US House seats, with the Associated Press calling at least 218 House races for Democratic candidates.",
+    "resolution": "Resolves TRUE if Associated Press race calls, as of the deadline, credit Democrats with 218 or more House seats won in the 2026 general election; otherwise FALSE.",
+    "failure_condition": "Associated Press race calls credit Democrats with 217 or fewer House seats as of the deadline.",
+    "domain": "political",
+    "deadline": "2026-12-11",
+    "probability": 35,
+    "citations": [
+      116,
+      128
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures record a daily settlement at or above 100.00 USD per barrel on at least one trading day between 2026-09-04 and 2026-10-30. Reference: Brent 96.70 at packet seal on 2026-09-03.",
+    "resolution": "Resolves TRUE if any official ICE Brent front-month daily settlement between 2026-09-04 and 2026-10-30 is at or above 100.00 USD; otherwise FALSE.",
+    "failure_condition": "Every ICE Brent front-month daily settlement in the window is below 100.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 21,
+    "citations": [
+      71,
+      84
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Open Market Committee leaves the federal funds target range unchanged at its scheduled September 2026 meeting, per the FOMC statement posted at federalreserve.gov.",
+    "resolution": "Resolves TRUE if the September 2026 FOMC statement maintains the pre-meeting federal funds target range with no change; any increase or cut resolves FALSE.",
+    "failure_condition": "The September 2026 FOMC statement announces a change to the federal funds target range.",
+    "domain": "economics/markets",
+    "deadline": "2026-09-21",
+    "probability": 21,
+    "citations": [
+      66,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry whose vendor, product, or vulnerability name field contains Elementor, with a dateAdded value between 2026-09-03 and 2026-10-02 inclusive.",
+    "resolution": "Resolves TRUE if the public CISA KEV JSON feed contains an entry naming Elementor with a dateAdded value between 2026-09-03 and 2026-10-02 inclusive; otherwise FALSE.",
+    "failure_condition": "No KEV entry naming Elementor carries a dateAdded value within the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-06",
+    "probability": 30,
+    "citations": [
+      14,
+      25
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry whose vendor or product field names CrowdStrike, with a dateAdded value between 2026-09-04 and 2026-11-30 inclusive.",
+    "resolution": "Resolves TRUE if the public CISA KEV JSON feed contains an entry with vendor or product naming CrowdStrike and a dateAdded value between 2026-09-04 and 2026-11-30 inclusive; otherwise FALSE.",
+    "failure_condition": "No KEV entry naming CrowdStrike as vendor or product carries a dateAdded value within the window.",
+    "domain": "cyber",
+    "deadline": "2026-12-03",
+    "probability": 30,
+    "citations": [
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The UK Home Office daily dataset of migrants detected crossing the English Channel in small boats records at least one calendar day between 2026-09-04 and 2026-10-31 with 1,000 or more arrivals.",
+    "resolution": "Resolves TRUE if the gov.uk small boat arrivals daily figures show any single day in the window at or above 1,000 migrants detected; otherwise FALSE.",
+    "failure_condition": "Every daily small-boat arrivals figure in the window published by the Home Office is below 1,000.",
+    "domain": "crime/security",
+    "deadline": "2026-11-04",
+    "probability": 36,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-04 and 2026-12-04, the USGS earthquake catalog records at least one earthquake of magnitude 6.0 or greater with an epicenter within 300 km of USGS event us7000tdvt, the 2026-09-03 M6.3 near Nikolski, Alaska.",
+    "resolution": "Resolves TRUE if a USGS ComCat query returns any event of magnitude 6.0 or greater within 300 km of the us7000tdvt epicenter with origin time inside the window; catalog values as of the deadline govern.",
+    "failure_condition": "No event of magnitude 6.0 or greater within 300 km of the us7000tdvt epicenter, per catalog values at the deadline, has an origin time inside the window.",
+    "domain": "disaster",
+    "deadline": "2026-12-08",
+    "probability": 36,
+    "citations": [
+      31,
+      44
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-03T20:10:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
