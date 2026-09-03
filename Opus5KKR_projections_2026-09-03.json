@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "Between 2026-09-04 and 2026-10-04, at least one additional munition impact on the sovereign territory of Kuwait, Bahrain, Qatar, Saudi Arabia, or the United Arab Emirates is publicly attributed to Iran or Iran-aligned forces by the host government.",
+    "domain": "military_conflict",
+    "probability": 58,
+    "resolution": "MET if two of Reuters, AP, AFP report a munition impact on one of those five states dated inside the window, and that host government publicly attributes the impact to Iran or Iran-aligned forces.",
+    "deadline": "2026-10-08",
+    "citations": [
+      83,
+      84,
+      113
+    ],
+    "failure_condition": "No munition impact inside the five named states during the window carries a host-government attribution to Iran or Iran-aligned forces."
+  },
+  {
+    "statement": "Between 2026-09-04 and 2026-12-04, commercial transit of the Strait of Hormuz halts for at least 72 consecutive hours.",
+    "domain": "military_conflict",
+    "probability": 12,
+    "resolution": "MET if Reuters and either Bloomberg or Lloyds List report a continuous period of at least 72 hours inside the window in which no laden commercial tanker transited the Strait of Hormuz.",
+    "deadline": "2026-12-09",
+    "citations": [
+      71,
+      84
+    ],
+    "failure_condition": "Commercial tanker traffic through the Strait continues through the window with no continuous stoppage reaching 72 hours."
+  },
+  {
+    "statement": "The FOMC statement issued on 2026-09-16 leaves the federal funds target range unchanged from the range in effect on the packet date. Reference: target range 3.50 to 3.75 percent on 2026-09-03.",
+    "domain": "economics_markets",
+    "probability": 85,
+    "resolution": "MET if the FOMC statement published on federalreserve.gov on 2026-09-16 maintains the federal funds target range at the level in effect on 2026-09-03.",
+    "deadline": "2026-09-18",
+    "citations": [
+      66,
+      71,
+      74
+    ],
+    "failure_condition": "The 2026-09-16 FOMC statement sets a target range different from the one in effect on the packet date."
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or below 88.00 dollars per barrel on at least one trading day between 2026-09-08 and 2026-11-06. Reference: 96.70 on the packet date.",
+    "domain": "economics_markets",
+    "probability": 55,
+    "resolution": "MET if the ICE published settlement price for the Brent front-month contract is 88.00 dollars or lower on any trading day between 2026-09-08 and 2026-11-06 inclusive.",
+    "deadline": "2026-11-10",
+    "citations": [
+      71,
+      84
+    ],
+    "failure_condition": "Every ICE Brent front-month settlement inside the window prints above 88.00 dollars per barrel."
+  },
+  {
+    "statement": "Between 2026-09-04 and 2027-02-19, Nvidia announces that its acquisition of Hugging Face has closed.",
+    "domain": "economics_markets",
+    "probability": 25,
+    "resolution": "MET if an Nvidia press release or an Nvidia SEC filing dated on or before 2027-02-19 states that the Hugging Face acquisition has been completed.",
+    "deadline": "2027-02-23",
+    "citations": [
+      62
+    ],
+    "failure_condition": "No Nvidia release or SEC filing dated on or before 2027-02-19 reports the Hugging Face transaction as completed."
+  },
+  {
+    "statement": "The CISA KEV catalog carries an entry naming CrowdStrike as the vendor with a date-added value between 2026-09-04 and 2027-01-29.",
+    "domain": "cyber",
+    "probability": 10,
+    "resolution": "MET if the CISA KEV catalog JSON contains a record whose vendorProject field is CrowdStrike and whose dateAdded value falls between 2026-09-04 and 2027-01-29 inclusive.",
+    "deadline": "2027-02-02",
+    "citations": [
+      24
+    ],
+    "failure_condition": "The KEV catalog holds no CrowdStrike record with a date-added value inside that range."
+  },
+  {
+    "statement": "The CISA KEV catalog gains at least 50 new entries with date-added values between 2026-09-08 and 2026-11-02 inclusive.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "MET if a count of CISA KEV catalog records whose dateAdded value falls between 2026-09-08 and 2026-11-02 inclusive reaches 50 or more.",
+    "deadline": "2026-11-06",
+    "citations": [
+      25
+    ],
+    "failure_condition": "Fewer than 50 KEV records carry a date-added value inside that range."
+  },
+  {
+    "statement": "Between 2026-09-04 and 2026-11-04, Ukraine issues a notice of suspicion against at least one serving SBU or HUR officer over the Kyiv inter-agency shootout.",
+    "domain": "crime_security",
+    "probability": 45,
+    "resolution": "MET if the Prosecutor General office, the SBU, or the State Bureau of Investigation publicly announces a notice of suspicion naming a serving SBU or HUR officer in connection with the Kyiv shootout.",
+    "deadline": "2026-11-09",
+    "citations": [
+      86,
+      115
+    ],
+    "failure_condition": "No Ukrainian prosecuting body announces a notice of suspicion against a serving SBU or HUR officer over that incident inside the window."
+  },
+  {
+    "statement": "Between 2026-09-08 and 2026-12-11, the House Committee on Oversight approves a resolution recommending that Leon Black be held in contempt of Congress.",
+    "domain": "political",
+    "probability": 20,
+    "resolution": "MET if a markup record or roll call published on oversight.house.gov shows committee approval of a contempt resolution naming Leon Black, dated between 2026-09-08 and 2026-12-11.",
+    "deadline": "2026-12-16",
+    "citations": [
+      57,
+      106,
+      114
+    ],
+    "failure_condition": "The committee record shows no approved contempt resolution naming Leon Black inside the window."
+  },
+  {
+    "statement": "The NOAA CPC Oceanic Nino Index value for the September-October-November 2026 season is at or above plus 2.0 degrees Celsius. Reference: UN and BoM record El Nino forecasts on the packet date.",
+    "domain": "disaster",
+    "probability": 50,
+    "resolution": "MET if the CPC Oceanic Nino Index table on the CPC site lists a SON 2026 value of 2.0 or greater when read on the deadline.",
+    "deadline": "2026-12-18",
+    "citations": [
+      78,
+      100,
+      107
+    ],
+    "failure_condition": "The CPC ONI table lists a SON 2026 value below plus 2.0, or lists no value for that season."
+  }
+]

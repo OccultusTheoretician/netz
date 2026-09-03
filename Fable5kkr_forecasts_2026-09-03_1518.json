@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "Between 2026-09-04 and 2026-10-02, Ukrainian forces strike at least one target inside internationally recognized Russian territory 200 km or more from the Russia-Ukraine border, acknowledged by both a Russian official source and a Ukrainian official or military-intelligence source.",
+    "domain": "military/conflict",
+    "probability": 92,
+    "resolution": "Resolves TRUE if a strike meeting the statement, occurring in the window, is acknowledged by at least one Russian official source (MoD or regional governor) and one Ukrainian official source; otherwise FALSE.",
+    "deadline": "2026-10-06",
+    "citations": [
+      89
+    ],
+    "failure_condition": "No strike 200 km or deeper inside Russia occurring within the window is acknowledged by both a Russian official source and a Ukrainian official source by the deadline."
+  },
+  {
+    "statement": "Between 2026-09-04 and 2026-10-04, the government or state news agency of Qatar (QNA) or Bahrain (BNA) confirms an Iranian missile or drone striking, or being intercepted over, its national territory.",
+    "domain": "military/conflict",
+    "probability": 65,
+    "resolution": "Resolves TRUE on official Qatari or Bahraini government or state-agency confirmation of an Iranian projectile striking or intercepted over its territory within the window, corroborated by at least one international wire service; otherwise FALSE.",
+    "deadline": "2026-10-07",
+    "citations": [
+      83,
+      84,
+      113
+    ],
+    "failure_condition": "Neither Qatar nor Bahrain officially confirms any Iranian strike on or interception over its territory occurring within the window."
+  },
+  {
+    "statement": "Between 2026-09-04 and 2026-10-31, a decree published on the official website of the President of Ukraine removes the serving head of the SBU or the serving head of the GUR from that post.",
+    "domain": "political",
+    "probability": 55,
+    "resolution": "Resolves TRUE if a presidential decree dated within the window and published at president.gov.ua removes the incumbent SBU chief or GUR chief; reassignment to another post counts as removal; otherwise FALSE.",
+    "deadline": "2026-11-04",
+    "citations": [
+      86,
+      115
+    ],
+    "failure_condition": "No presidential decree dated within the window removes the incumbent head of the SBU or the GUR."
+  },
+  {
+    "statement": "In the United States midterm elections held 2026-11-03, Democrats win a majority of US House seats, with the Associated Press calling at least 218 House races for Democratic candidates.",
+    "domain": "political",
+    "probability": 70,
+    "resolution": "Resolves TRUE if Associated Press race calls, as of the deadline, credit Democrats with 218 or more House seats won in the 2026 general election; otherwise FALSE.",
+    "deadline": "2026-12-11",
+    "citations": [
+      116,
+      128
+    ],
+    "failure_condition": "Associated Press race calls credit Democrats with 217 or fewer House seats as of the deadline."
+  },
+  {
+    "statement": "ICE Brent crude front-month futures record a daily settlement at or above 100.00 USD per barrel on at least one trading day between 2026-09-04 and 2026-10-30. Reference: Brent 96.70 at packet seal on 2026-09-03.",
+    "domain": "economics/markets",
+    "probability": 72,
+    "resolution": "Resolves TRUE if any official ICE Brent front-month daily settlement between 2026-09-04 and 2026-10-30 is at or above 100.00 USD; otherwise FALSE.",
+    "deadline": "2026-11-03",
+    "citations": [
+      71,
+      84
+    ],
+    "failure_condition": "Every ICE Brent front-month daily settlement in the window is below 100.00 USD."
+  },
+  {
+    "statement": "The Federal Open Market Committee leaves the federal funds target range unchanged at its scheduled September 2026 meeting, per the FOMC statement posted at federalreserve.gov.",
+    "domain": "economics/markets",
+    "probability": 85,
+    "resolution": "Resolves TRUE if the September 2026 FOMC statement maintains the pre-meeting federal funds target range with no change; any increase or cut resolves FALSE.",
+    "deadline": "2026-09-21",
+    "citations": [
+      66,
+      74
+    ],
+    "failure_condition": "The September 2026 FOMC statement announces a change to the federal funds target range."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry whose vendor, product, or vulnerability name field contains Elementor, with a dateAdded value between 2026-09-03 and 2026-10-02 inclusive.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "Resolves TRUE if the public CISA KEV JSON feed contains an entry naming Elementor with a dateAdded value between 2026-09-03 and 2026-10-02 inclusive; otherwise FALSE.",
+    "deadline": "2026-10-06",
+    "citations": [
+      14,
+      25
+    ],
+    "failure_condition": "No KEV entry naming Elementor carries a dateAdded value within the window."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry whose vendor or product field names CrowdStrike, with a dateAdded value between 2026-09-04 and 2026-11-30 inclusive.",
+    "domain": "cyber",
+    "probability": 18,
+    "resolution": "Resolves TRUE if the public CISA KEV JSON feed contains an entry with vendor or product naming CrowdStrike and a dateAdded value between 2026-09-04 and 2026-11-30 inclusive; otherwise FALSE.",
+    "deadline": "2026-12-03",
+    "citations": [
+      24
+    ],
+    "failure_condition": "No KEV entry naming CrowdStrike as vendor or product carries a dateAdded value within the window."
+  },
+  {
+    "statement": "The UK Home Office daily dataset of migrants detected crossing the English Channel in small boats records at least one calendar day between 2026-09-04 and 2026-10-31 with 1,000 or more arrivals.",
+    "domain": "crime/security",
+    "probability": 40,
+    "resolution": "Resolves TRUE if the gov.uk small boat arrivals daily figures show any single day in the window at or above 1,000 migrants detected; otherwise FALSE.",
+    "deadline": "2026-11-04",
+    "citations": [
+      10
+    ],
+    "failure_condition": "Every daily small-boat arrivals figure in the window published by the Home Office is below 1,000."
+  },
+  {
+    "statement": "Between 2026-09-04 and 2026-12-04, the USGS earthquake catalog records at least one earthquake of magnitude 6.0 or greater with an epicenter within 300 km of USGS event us7000tdvt, the 2026-09-03 M6.3 near Nikolski, Alaska.",
+    "domain": "disaster",
+    "probability": 30,
+    "resolution": "Resolves TRUE if a USGS ComCat query returns any event of magnitude 6.0 or greater within 300 km of the us7000tdvt epicenter with origin time inside the window; catalog values as of the deadline govern.",
+    "deadline": "2026-12-08",
+    "citations": [
+      31,
+      44
+    ],
+    "failure_condition": "No event of magnitude 6.0 or greater within 300 km of the us7000tdvt epicenter, per catalog values at the deadline, has an origin time inside the window."
+  }
+]
