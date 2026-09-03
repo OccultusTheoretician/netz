@@ -107,6 +107,17 @@ STYLE = (
     "font:600 .62rem 'IBM Plex Mono',monospace;letter-spacing:.14em;"
     'text-transform:uppercase;margin-left:auto}'
     '.desknav-unified .ng-ext:hover{color:#e9e7e2}'
+    # FRESHLINE-2026-09-02: one freshness line per page, from docs/health.json
+    '.desknav-unified .ng-fresh{flex-basis:100%;display:flex;flex-wrap:wrap;'
+    'gap:.2rem .7rem;align-items:baseline;margin-top:.15rem;'
+    "font:500 .56rem 'IBM Plex Mono',monospace;letter-spacing:.12em;"
+    'text-transform:uppercase;color:#6a6a64}'
+    '.desknav-unified .ng-fresh b{font-weight:600;color:#8b8b85}'
+    '.desknav-unified .ng-fresh.ok b{color:#4E9E71}'
+    '.desknav-unified .ng-fresh.late b{color:#c9a04a}'
+    '.desknav-unified .ng-fresh.stale b{color:#C05149}'
+    '.desknav-unified .ng-fresh a{color:#8b8b85;text-decoration:none}'
+    '.desknav-unified .ng-fresh a:hover{color:#e9e7e2}'
     '</style>')
 
 
@@ -176,11 +187,57 @@ def render_nav(manifest, active):
         parts.append("</div></div>")
     for ln in manifest.get("external", []):
         parts.append(f'<a class="ng-ext" href="{ln["href"]}">{ln["text"]}</a>')
+    fresh = render_fresh(render_nav.health)   # FRESHLINE-2026-09-02
+    if fresh:
+        parts.append(fresh)
     parts.append("</nav>")
     return "".join(parts)
 
 
 render_nav.titles = {}
+render_nav.health = None   # FRESHLINE-2026-09-02
+
+
+def load_health():
+    """FRESHLINE-2026-09-02: the health face, read at stamp time. Missing or
+    unreadable -> None, and the line is omitted rather than guessed."""
+    p = DOCS / "health.json"
+    if not p.exists():
+        print("  NOTE: docs/health.json absent - freshness line omitted",
+              file=sys.stderr)
+        return None
+    try:
+        h = json.loads(p.read_text(encoding="utf-8-sig"))
+        if not h.get("as_of") or not isinstance(h.get("summary"), dict):
+            raise ValueError("as_of or summary missing")
+        return h
+    except Exception as ex:
+        print(f"  NOTE: docs/health.json unreadable ({type(ex).__name__}) - "
+              "freshness line omitted", file=sys.stderr)
+        return None
+
+
+def render_fresh(h):
+    """FRESHLINE-2026-09-02: the line itself. Worst state names the colour;
+    the counts ride in the text and the tooltip; the link opens the face."""
+    if not h:
+        return ""
+    s = h.get("summary") or {}
+    worst = str(h.get("worst") or "").upper()
+    cls = {"OK": "ok", "LATE": "late", "STALE": "stale"}.get(worst, "")
+    asof = str(h.get("as_of"))[:16].replace("T", " ") + "Z"
+    counts = " ".join(f"{int(s.get(k, 0) or 0)} {k}"
+                      for k in ("OK", "LATE", "STALE", "EVENT") if k in s)
+    nodate = int(s.get("NO-DATE", 0) or 0)
+    tip = _esc(f"desk health as of {asof}: {counts}"
+               + (f" {nodate} NO-DATE" if nodate else "")
+               + f"; worst {worst or '-'}. health.py grades every served surface "
+               "against the cadence the desk committed to in health_expect.json.")
+    return (f'<span class="ng-fresh {cls}" title="{tip}">'
+            f'<span>desk as of <b>{_esc(asof)}</b></span>'
+            f'<span>{_esc(counts)}</span>'
+            f'<span>worst <b>{_esc(worst or "-")}</b></span>'
+            '<a href="health.html">health</a></span>')
 
 
 def tracked_docs_pages():
@@ -265,6 +322,7 @@ def main():
 
     manifest = load_manifest()
     render_nav.titles = load_titles()
+    render_nav.health = load_health()   # FRESHLINE-2026-09-02
     skip = set(manifest.get("skip", []))
 
     # sanity: every manifest link must point at a real served page

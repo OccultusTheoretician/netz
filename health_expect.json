@@ -68,16 +68,16 @@
   {
    "name": "KFK data",
    "path": "docs/KriegForeKaster.json",
-   "lane": "manual chain",
-   "cadence_hours": 170,
-   "note": "weekly commitment; went 7 days dark before 2026-08-06 and this row exists because of it"
+   "lane": "operator / applied observations",
+   "cadence_hours": null,
+   "note": "KFKCHARTER-2026-09-02: re-chartered from weekly to EVENT. The board is a frozen proving set for the decay model and its as_of moves only when observations are applied (add, link, enrich --apply, promote); a weekly re-confirmation was stated 2026-08-06 and not operated after 2026-08-08, so grading it graded a promise nobody kept. Per-claim decay is measured nightly on the freshness face; a dark KFK chain shows on the sightings, overlay and freshness rows within a day. History kept: went 7 days dark before 2026-08-06 and this row exists because of it."
   },
   {
    "name": "KFK freshness",
    "path": "docs/freshness.json",
-   "lane": "manual chain",
-   "cadence_hours": 170,
-   "note": "the claim-decay layer; was the stalest tile on its own site on 2026-08-06"
+   "lane": "daily task (auto.bat, KFKSWEEP-2026-09-02)",
+   "cadence_hours": 26,
+   "note": "the claim-decay layer; was the stalest tile on its own site on 2026-08-06; nightly since 2026-09-02 (KFKSWEEP), so a dead stage shows here within a day (KFKCHARTER-2026-09-02)"
   },
   {
    "name": "Packet register",
