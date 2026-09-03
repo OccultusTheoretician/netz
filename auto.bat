@@ -57,6 +57,10 @@ if exist state\desk_%TODAY%.ran (
 )
 
 call :run "war-desk + collation + forecast (daily.bat)" call daily.bat
+REM FRAMEARM-2026-09-03: second local arm - same model, same rubric, a hashed
+REM realist frame preamble; own packet; rows carry frame/frame_hash. LM Studio
+REM down = packet written, ledger unchanged, printed. Fail-open under :run.
+call :run "frame arm realist (local)"  python kkr.py --provider lmstudio --frame realist
 call :run "ohrwurm propagation"        python ohrwurm.py --latest
 call :run "ohrwurm velocity"           python ohrwurm_velocity.py --latest
 call :run "ohrwurm event-phrase join"  python ohrwurm_link.py --latest

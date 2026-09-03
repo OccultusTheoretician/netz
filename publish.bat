@@ -34,6 +34,10 @@ REM packet_commit --write is the standing BEHIND reflex made permanent (both
 REM are no-ops when current). Before add -A so their output rides this publish.
 python navgen.py
 python packet_commit.py --write
+REM OTSFACE-2026-09-03: the receipt face describes the bytes this publish
+REM serves - a target changed above is labelled DRIFT here, not at the next
+REM anchor pass. No calendar, no receipt change, no state change.
+python ots_anchor.py --refresh-face
 git add -A
 
 REM KK24: the guard was never in the publish path - everything it caught

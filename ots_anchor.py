@@ -543,6 +543,56 @@ def do_status():
     return 0
 
 
+def do_refresh_face():
+    """OTSFACE-2026-09-03: the face describes the bytes being served NOW.
+
+    For every recorded target: digest_served is recomputed from the file on
+    disk (LF-normalised, OTSNORM) and pairing is set MATCH or DRIFT against
+    the receipt's digest_at_stamp. Nothing else moves: no calendar is
+    contacted, no receipt is issued, upgraded or re-read, and the recorded
+    state (anchored / pending) is carried unchanged. publish.bat runs this
+    before add -A, so a target changed by a publish is labelled DRIFT in
+    that same publish instead of wearing a stale MATCH until the next anchor
+    pass supersedes and restamps it (Finding 08's neighbourhood)."""
+    try:  # the shared write_state prints a non-ASCII arrow; a pipe on Windows is cp1252
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+    prior = load_state()
+    if not prior:
+        print("no state file; nothing to refresh (run --stamp first)")
+        return 0
+    now = datetime.now(timezone.utc).isoformat()
+    results, drift = {}, []
+    for name, e in prior.items():
+        if not isinstance(e, dict):
+            continue
+        n = dict(e)
+        src = DOCS / name
+        at_stamp = n.get("digest_at_stamp") or n.get("digest")
+        served = sha256_file(src) if src.exists() else None
+        n["digest_served"] = served
+        if at_stamp and served:
+            n["pairing"] = "MATCH" if at_stamp == served else "DRIFT"
+        else:
+            n["pairing"] = "UNKNOWN"
+        if n["pairing"] == "DRIFT":
+            n["pairing_note"] = ("the served file has changed since this receipt "
+                                 "was created. The receipt still proves the "
+                                 "ORIGINAL bytes existed before its block and "
+                                 "proves nothing whatever about the file served "
+                                 "now.")
+            drift.append(name)
+        else:
+            n.pop("pairing_note", None)
+        n["face_refreshed"] = now
+        results[name] = n
+    write_state(results)
+    print("face refreshed: %d target(s); DRIFT: %s" % (
+        len(results), ", ".join(drift) if drift else "none"))
+    return 0
+
+
 def load_state():
     if STATE.exists():
         try:
@@ -597,8 +647,11 @@ def write_state(results):
                            "ANCHORED receipt does. Pending must never be "
                            "described as anchored."),
         "pairing_note": ("digest_at_stamp is read from the receipt and is "
-                         "fixed; digest_served is computed live from the "
-                         "bytes on this site. pairing=MATCH means the "
+                         "fixed; digest_served is computed from the bytes "
+                         "served at the moment this face was generated (see "
+                         "generated) - publish.bat refreshes it before every "
+                         "publish, and the anchor pass when it stamps or "
+                         "upgrades (OTSFACE-2026-09-03). pairing=MATCH means the "
                          "receipt covers what you can download. "
                          "pairing=DRIFT means the file has changed since "
                          "it was stamped and the receipt covers the older "
@@ -617,19 +670,24 @@ def main():
     ap.add_argument("--stamp", action="store_true")
     ap.add_argument("--upgrade", action="store_true")
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--refresh-face", action="store_true",
+                    help="OTSFACE-2026-09-03: recompute digest_served/pairing from served bytes; "
+                         "no calendar, no receipt change, no state change")
     ap.add_argument("--probe", action="store_true",
                     help="test calendar reachability and name which fail")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     if a.probe:
         return do_probe()
-    if not (a.stamp or a.upgrade or a.status or a.probe):
+    if not (a.stamp or a.upgrade or a.status or a.probe or a.refresh_face):
         ap.print_help()
         return 1
     if a.stamp:
         return do_stamp(a.dry_run)
     if a.upgrade:
         return do_upgrade()
+    if a.refresh_face:
+        return do_refresh_face()
     return do_status()
 
 
