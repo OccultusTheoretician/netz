@@ -1,0 +1,83 @@
+[
+  {
+    "statement": "Commercial oil tanker transits through the Strait of Hormuz fall to a publicly reported near-total halt for at least 72 continuous hours at any point between 2026-09-03 and 2026-09-16, following the renewed mine strikes on the Sidr and Senegal Prosperity tankers.",
+    "domain": "military_conflict",
+    "probability": 22,
+    "resolution": "TRUE if EIA, Kpler, Lloyds List, or two independent wire services report a continuous 72-hour or longer halt in Hormuz tanker transits within the window; FALSE if transits continue throughout without such a gap.",
+    "deadline": "2026-09-21",
+    "citations": [82, 109],
+    "failure_condition": "No wire service or shipping-data provider reports a continuous 72-hour or longer halt in Hormuz commercial transits during the window."
+  },
+  {
+    "statement": "The United States and Iran publicly announce a ceasefire, truce, or formal cessation of hostilities covering the ongoing conflict, announced between 2026-09-03 and 2026-09-30.",
+    "domain": "military_conflict",
+    "probability": 8,
+    "resolution": "TRUE if the White House, State Department, or Iranian Foreign Ministry issues a statement using ceasefire, truce, or cessation-of-hostilities language, confirmed by at least two independent wire services; FALSE otherwise.",
+    "deadline": "2026-10-05",
+    "citations": [82, 95, 102],
+    "failure_condition": "No joint or unilateral ceasefire, truce, or cessation-of-hostilities announcement is confirmed by wire reporting within the window."
+  },
+  {
+    "statement": "WTI crude oil, NYMEX front-month contract, settles at or above 100.00 USD per barrel on any trading day between 2026-09-03 and 2026-09-30. Reference: 90.59 USD per barrel on the packet date, 2026-09-02.",
+    "domain": "economic",
+    "probability": 35,
+    "resolution": "TRUE if CME/NYMEX settlement data or EIA daily spot price shows WTI at or above 100.00 USD per barrel on any date in the window; FALSE if no such settlement occurs.",
+    "deadline": "2026-10-02",
+    "citations": [79, 82],
+    "failure_condition": "WTI settlement data shows no daily close at or above 100.00 USD per barrel at any point in the window."
+  },
+  {
+    "statement": "The 10-year US Treasury note yield closes at or above 5.00 percent on any trading day between 2026-09-03 and 2026-09-25. Reference: 4.80 percent on the packet date, 2026-09-02.",
+    "domain": "economic",
+    "probability": 28,
+    "resolution": "TRUE if the Treasury.gov daily par yield curve or FRED series DGS10 records a 10-year close at or above 5.00 percent on any date in the window; FALSE otherwise.",
+    "deadline": "2026-09-28",
+    "citations": [74, 75],
+    "failure_condition": "FRED or Treasury daily yield data shows no 10-year close at or above 5.00 percent within the window."
+  },
+  {
+    "statement": "CISA adds a SonicWall SMA1000 vulnerability tied to the zero-days reported as actively exploited on 2026-09-02 to the Known Exploited Vulnerabilities catalog, with dateAdded between 2026-09-03 and 2026-09-23.",
+    "domain": "cyber",
+    "probability": 60,
+    "resolution": "TRUE if the CISA KEV catalog lists a SonicWall SMA1000 CVE with dateAdded inside the window; FALSE if no such entry appears by the deadline.",
+    "deadline": "2026-09-28",
+    "citations": [22, 31],
+    "failure_condition": "The CISA KEV catalog carries no SonicWall SMA1000 entry with a dateAdded value inside the window by the deadline."
+  },
+  {
+    "statement": "CISA adds a GeoNetwork remote-code-execution vulnerability, the unauthenticated RCE chain reported affecting government geoportal backends on 2026-09-02, to the KEV catalog, with dateAdded between 2026-09-03 and 2026-09-23.",
+    "domain": "cyber",
+    "probability": 20,
+    "resolution": "TRUE if the CISA KEV catalog lists a GeoNetwork-related CVE with dateAdded inside the window; FALSE if no such entry appears by the deadline.",
+    "deadline": "2026-09-28",
+    "citations": [24],
+    "failure_condition": "The CISA KEV catalog carries no GeoNetwork-related entry with a dateAdded value inside the window by the deadline."
+  },
+  {
+    "statement": "The International Criminal Court Office of the Prosecutor publicly confirms opening a preliminary examination or investigation connected to the September 2026 Sirik, Iran wedding strike, between 2026-09-03 and 2026-09-30.",
+    "domain": "political",
+    "probability": 7,
+    "resolution": "TRUE if the ICC Office of the Prosecutor issues a public statement confirming a preliminary examination or investigation naming the Sirik strike, reported by at least one major wire service; FALSE otherwise.",
+    "deadline": "2026-10-05",
+    "citations": [102, 105],
+    "failure_condition": "No public ICC OTP statement naming a Sirik-strike preliminary examination or investigation is reported within the window."
+  },
+  {
+    "statement": "[withheld] Fourth District Court sets a specific trial start date for Tyler Robinson, the man charged with murdering Charlie Kirk, at the scheduled October 23, 2026 hearing.",
+    "domain": "crime_security",
+    "probability": 65,
+    "resolution": "TRUE if [withheld] Fourth District Court records or a wire service confirm a trial start date was set at the October 23, 2026 hearing; FALSE if the hearing is postponed or no date is set.",
+    "deadline": "2026-10-26",
+    "citations": [9],
+    "failure_condition": "No trial start date is confirmed as set from the October 23, 2026 hearing by the deadline, including if the hearing is postponed."
+  },
+  {
+    "statement": "Nepal's National Disaster Risk Reduction and Management Authority reports a confirmed death toll of at least 1,500 from the August-September 2026 Nepal-Tibet floods, reported between 2026-09-03 and 2026-09-23.",
+    "domain": "disaster_infrastructure",
+    "probability": 55,
+    "resolution": "TRUE if NDRRMA, Nepal's Home Ministry, or two independent wire services report a confirmed death toll of 1,500 or more within the window; FALSE if the reported toll stays below 1,500 throughout.",
+    "deadline": "2026-09-28",
+    "citations": [43, 55],
+    "failure_condition": "NDRRMA or wire reporting shows the confirmed Nepal-Tibet flood death toll remains below 1,500 through the end of the window."
+  }
+]

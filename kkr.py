@@ -1351,7 +1351,8 @@ def render_kkr(accepted: list, rejected: list, model_tag: str, source_report: st
     out.append("**STANDING BY ARM** — segregated per RPAS 5.04; no pooled figure exists.\n")
     out.extend(_arm_table(arms))
     out.append("")
-    out.append("\nFull ledger: ledger.html\n")
+    out.append("\nFull ledger: ledger.html (paged viewer) · ledger_full.html "
+               "(complete static table) · ledger.json (the record)\n")
     out.append("---\n**NOTHING CLASSIFIED OR PRIVILEGED** · *the gate is mechanical; the ledger "
                "is permanent; the system gets scored, not the operator.*")
 
@@ -1501,6 +1502,11 @@ def publish_served():
     if src_html.exists():
         (DOCS / "ledger.html").write_text(src_html.read_text(encoding="utf-8"),
                                           encoding="utf-8")
+    # LEDGERVIEW-2026-09-02: the viewer's two companions are served copies too
+    for _nm in ("ledger_full.html", "ledger_index.json"):
+        _sp = OUT / _nm
+        if _sp.exists():
+            (DOCS / _nm).write_text(_sp.read_text(encoding="utf-8"), encoding="utf-8")
     if LEDGER.exists():
         (DOCS / "ledger.json").write_text(LEDGER.read_text(encoding="utf-8"),
                                           encoding="utf-8")
@@ -1687,6 +1693,85 @@ def _arm_table(arms: dict) -> list:
     return rows
 
 
+def _ledger_domain_canon(d):
+    """LEDGERVIEW-2026-09-02: the ledger's domain strings vary by arm
+    (military/conflict, military_conflict, economics/markets, economic ...).
+    One canonical bucket per row for the viewer's filter; the row keeps its
+    own string."""
+    s = str(d or "").strip().lower().replace("_", "/").replace("-", "/")
+    head = s.split("/")[0]
+    if head == "military":
+        return "military"
+    if head in ("economic", "economics", "markets", "market"):
+        return "economics"
+    if head == "public":
+        return "public_health"
+    if head == "ai":
+        return "ai-claims"
+    return head or "other"
+
+
+def _write_ledger_index(projs, data):
+    """LEDGERVIEW-2026-09-02: compact index for the phone-first viewer.
+
+    One object per row with the fields a reader needs to find and read a
+    row; the remaining fields load from ledger.json on demand. Written
+    beside LEDGER.md and mirrored by publish_served. Never raises: a viewer
+    problem must not stop the ledger render."""
+    try:
+        now = datetime.now(timezone.utc)
+        rows, arms, cohorts, domains = [], {}, {}, set()
+        counts = {"issued": len(projs), "open": 0, "hit": 0, "miss": 0, "void": 0, "late": 0}
+        today = now.date().isoformat()
+        for p in projs:
+            st = str(p.get("status") or "")
+            if st in counts:
+                counts[st] += 1
+            dl = str(p.get("deadline") or "")
+            if st == "open" and dl and dl < today:
+                counts["late"] += 1
+            kk = str(p.get("keyed_keyless") or "").strip().lower()
+            dom = _ledger_domain_canon(p.get("domain"))
+            domains.add(dom)
+            c8 = (p.get("rubric_hash") or "")[:8] or "none"
+            a = arms.setdefault(str(p.get("model") or "?"),
+                                {"tag": str(p.get("model") or "?"), "issued": 0, "open": 0,
+                                 "hit": 0, "miss": 0, "void": 0})
+            a["issued"] += 1
+            if st in a:
+                a[st] += 1
+            d = str(p.get("date_issued") or "")
+            co = cohorts.setdefault(c8, {"c": c8, "n": 0, "from": d, "to": d})
+            co["n"] += 1
+            if d:
+                co["from"] = min(co["from"] or d, d)
+                co["to"] = max(co["to"] or d, d)
+            rows.append({"i": p.get("id"), "a": p.get("model"), "d": p.get("date_issued"),
+                         "dl": p.get("deadline"), "s": st, "p": p.get("probability"),
+                         "dom": dom, "kk": kk if kk in ("keyed", "keyless") else None,
+                         "c": c8 if c8 != "none" else None,
+                         "st": p.get("statement"), "rs": p.get("resolution"),
+                         "rd": p.get("resolved_date") or None,
+                         "sp": p.get("source_packet") or None,
+                         "sr": p.get("source_report") or None})
+        try:
+            led16 = hashlib.sha256(LEDGER.read_bytes().replace(b"\r\n", b"\n")).hexdigest()[:16]
+        except Exception:
+            led16 = None
+        idx = {"schema": "ledger_index/1", "generator": "kkr.py render_ledger",
+               "generated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "as_of": data.get("as_of"),
+               "ledger_sha16_lf": led16, "counts": counts,
+               "arms": sorted(arms.values(), key=lambda x: -x["issued"]),
+               "cohorts": sorted(cohorts.values(), key=lambda x: x["from"] or ""),
+               "domains": sorted(domains), "rows": rows,
+               "note": "index for the viewer; ledger.json is the record; no score here"}
+        (OUT / "ledger_index.json").write_text(
+            json.dumps(idx, ensure_ascii=True, separators=(",", ":")) + "\n", encoding="utf-8")
+    except Exception as ex:
+        print(f"KKR \u00b7 NOTE \u00b7 ledger_index.json not written ({type(ex).__name__}: {ex}); "
+              f"the viewer will report the index unavailable", file=sys.stderr)
+
+
 def render_ledger():
     data = load_ledger()
     projs = data["projections"]
@@ -1817,9 +1902,23 @@ def render_ledger():
     md = "\n".join(out)
     OUT.mkdir(exist_ok=True)
     (OUT / "LEDGER.md").write_text(md, encoding="utf-8")
-    (OUT / "ledger.html").write_text(render_html(md, "KKR Ledger"), encoding="utf-8")
+    _full = render_html(md, "KKR Ledger")
+    (OUT / "ledger_full.html").write_text(_full, encoding="utf-8")
+    # LEDGERVIEW-2026-09-02: ledger.html is the paged phone-first viewer over
+    # ledger_index.json; the complete static table is ledger_full.html, the
+    # durable record. Template absent -> the full table serves as ledger.html
+    # so the page is never missing, printed.
+    _tpl = HERE / "ledger_viewer_template.html"
+    if _tpl.exists():
+        (OUT / "ledger.html").write_text(_tpl.read_text(encoding="utf-8"), encoding="utf-8")
+    else:
+        (OUT / "ledger.html").write_text(_full, encoding="utf-8")
+        print("KKR \u00b7 NOTE \u00b7 ledger_viewer_template.html missing beside kkr.py -- "
+              "ledger.html is the full table this run", file=sys.stderr)
+    _write_ledger_index(projs, data)
     publish_served()
-    print(f"KKR · ledger → {OUT / 'LEDGER.md'} + ledger.html", file=sys.stderr)
+    print(f"KKR · ledger → {OUT / 'LEDGER.md'} + ledger.html (viewer) + "
+          f"ledger_full.html + ledger_index.json", file=sys.stderr)
 
 
 # ----------------------------------------------------------------------

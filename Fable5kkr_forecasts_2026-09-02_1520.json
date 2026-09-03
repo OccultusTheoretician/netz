@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry whose vendor or product fields reference SonicWall SMA1000, with a dateAdded value between 2026-09-03 and 2026-09-30.",
+    "domain": "cyber",
+    "probability": 85,
+    "resolution": "A fetch of the CISA KEV catalog on the deadline shows at least one SMA1000 entry with dateAdded between 2026-09-03 and 2026-09-30 inclusive.",
+    "deadline": "2026-10-02",
+    "citations": [
+      22,
+      31
+    ],
+    "failure_condition": "No KEV entry referencing SonicWall SMA1000 carries a dateAdded value inside the 2026-09-03 to 2026-09-30 window."
+  },
+  {
+    "statement": "The HHS Office for Civil Rights breach portal lists Aesto Health as covered entity or business associate with at least 9000000 individuals affected and a submission date between 2026-08-01 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 70,
+    "resolution": "A fetch of the HHS OCR breach portal shows a qualifying Aesto Health entry with individuals affected at or above 9000000 and a submission date inside the window.",
+    "deadline": "2026-12-04",
+    "citations": [
+      34
+    ],
+    "failure_condition": "The portal shows no Aesto Health entry meeting the 9000000 threshold with a submission date inside the window."
+  },
+  {
+    "statement": "Front-month NYMEX WTI crude settles at or above 100.00 dollars per barrel on at least one trading day between 2026-09-03 and 2026-10-30. Reference: 90.59 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "CME official settlement data show any front-month CL settlement at or above 100.00 inside the window. Reference level at seal: 90.59.",
+    "deadline": "2026-11-03",
+    "citations": [
+      79,
+      82,
+      109
+    ],
+    "failure_condition": "Every front-month WTI settlement in the window is below 100.00 dollars."
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield, FRED series DGS10, records a value at or above 5.00 percent on at least one business day between 2026-09-03 and 2026-12-31. Reference: 4.80 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "FRED series DGS10 shows at least one daily value at or above 5.00 inside the window. Reference level at seal: 4.80 percent.",
+    "deadline": "2027-01-05",
+    "citations": [
+      74,
+      81
+    ],
+    "failure_condition": "No DGS10 daily value in the window reaches 5.00 percent."
+  },
+  {
+    "statement": "A lapse in US federal appropriations begins on 2026-10-01 because no full-year appropriations act or continuing resolution covering all agencies is enacted on or before 2026-09-30.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "Congress.gov shows no enacted government-wide funding measure signed by 2026-09-30 and OPM publicly issues shutdown furlough guidance effective 2026-10-01.",
+    "deadline": "2026-10-05",
+    "citations": [
+      112,
+      131
+    ],
+    "failure_condition": "A funding measure covering all agencies is enacted by 2026-09-30, so no lapse begins on 2026-10-01."
+  },
+  {
+    "statement": "US Treasury OFAC publishes at least one new Iran-program designation action, adding or updating SDN entries under an Iran-related authority, dated between 2026-09-03 and 2026-10-16.",
+    "domain": "political",
+    "probability": 93,
+    "resolution": "The OFAC recent actions page or the Federal Register lists at least one Iran-program SDN designation action dated inside the window.",
+    "deadline": "2026-10-20",
+    "citations": [
+      113
+    ],
+    "failure_condition": "No OFAC designation action citing an Iran-related authority is dated inside the window."
+  },
+  {
+    "statement": "A continuous suspension of laden tanker transits through the Strait of Hormuz lasting at least 72 hours begins between 2026-09-03 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 12,
+    "resolution": "At least two of Reuters, AP, Bloomberg, AFP report, citing AIS or tracking data, a continuous 72-hour halt of laden tanker transits beginning inside the window.",
+    "deadline": "2026-11-04",
+    "citations": [
+      82,
+      109
+    ],
+    "failure_condition": "Laden tanker transits of the strait continue throughout the window without any continuous 72-hour suspension beginning in it."
+  },
+  {
+    "statement": "At least one US military strike on a target inside Iranian territory occurring between 2026-09-03 and 2026-09-16 is acknowledged by US official channels and reported by Iranian state media.",
+    "domain": "military/conflict",
+    "probability": 78,
+    "resolution": "CENTCOM or DoD publicly acknowledges a strike inside Iran occurring in the window, and at least one of IRNA, Tasnim, Press TV reports a strike on Iranian territory in the same window.",
+    "deadline": "2026-09-21",
+    "citations": [
+      95,
+      102,
+      105
+    ],
+    "failure_condition": "No strike on Iranian territory occurring inside the window is confirmed by both US official channels and Iranian state media."
+  },
+  {
+    "statement": "A major US grid operator among PJM, MISO, ERCOT, SPP, NYISO, ISO-NE, CAISO declares an Energy Emergency Alert Level 2 or higher effective on a date between 2026-09-03 and 2026-09-16.",
+    "domain": "disaster",
+    "probability": 55,
+    "resolution": "The public notices archive of at least one named operator shows an EEA Level 2 or Level 3 declaration, or equivalent maximum generation emergency, effective inside the window.",
+    "deadline": "2026-09-18",
+    "citations": [
+      127
+    ],
+    "failure_condition": "No named operator declares an EEA Level 2 or higher, or equivalent emergency, effective inside the window."
+  },
+  {
+    "statement": "Opening statements in the criminal trial of the defendant in the Charlie Kirk homicide case commence on or before 2027-02-26.",
+    "domain": "crime/security",
+    "probability": 8,
+    "resolution": "The court docket records trial opening by 2027-02-26 and at least two of AP, Reuters, BBC report that opening statements began by that date.",
+    "deadline": "2027-03-01",
+    "citations": [
+      9
+    ],
+    "failure_condition": "Opening statements have not commenced by 2027-02-26 due to continuance, plea, dismissal, or any other cause."
+  }
+]

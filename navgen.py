@@ -52,7 +52,11 @@ INSTRUMENTS = HERE / "instruments_map.json"
 MIRROR_TWINS = {
     "KKR_latest.html": "kkr.html",
     "ledger.html": "ledger.html",
+    "ledger_full.html": "ledger_full.html",   # LEDGERVIEW-2026-09-02
 }
+# LEDGERVIEW-2026-09-02: a served page that is a companion of a manifest page
+# lights that page's nav item rather than none.
+ACTIVE_ALIAS = {"ledger_full.html": "ledger.html"}
 
 NAV_RE = re.compile(
     r'(?:<style id="desknav-style">.*?</style>\s*)?'
@@ -275,11 +279,18 @@ def main():
     for p in sorted(tracked_docs_pages()):
         if p.name in skip:
             continue
-        targets.append((p, p.name))
+        targets.append((p, ACTIVE_ALIAS.get(p.name, p.name)))
     for twin, active_as in MIRROR_TWINS.items():
         tp = FC / twin
+        _act = ACTIVE_ALIAS.get(active_as, active_as)
         if tp.exists() and active_as not in skip:
-            targets.append((tp, active_as))
+            targets.append((tp, _act))
+        # LEDGERVIEW-2026-09-02: the served side of a twin is stamped here too,
+        # tracked or not, so the pair cannot drift between add -A and verify on
+        # the first publish that carries a new served page.
+        dp = DOCS / active_as
+        if dp.exists() and active_as not in skip and all(_p != dp for _p, _ in targets):
+            targets.append((dp, _act))
 
     drift, wrote = 0, 0
     for path, active in targets:

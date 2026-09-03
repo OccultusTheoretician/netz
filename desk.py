@@ -122,6 +122,8 @@ def due_rows(projs, horizon=7):
 # ----------------------------------------------------------------------
 MIRRORS = [("ledger.json", ROOT/"ledger.json", DOCS/"ledger.json"),
            ("ledger.html", FC/"ledger.html", DOCS/"ledger.html"),
+           ("ledger_full.html", FC/"ledger_full.html", DOCS/"ledger_full.html"),   # LEDGERVIEW-2026-09-02
+           ("ledger_index.json", FC/"ledger_index.json", DOCS/"ledger_index.json"),
            ("kkr.html", FC/"KKR_latest.html", DOCS/"kkr.html"),
            ("KriegForeKaster.json", ROOT/"KriegForeKaster.json",
             DOCS/"KriegForeKaster.json")]
