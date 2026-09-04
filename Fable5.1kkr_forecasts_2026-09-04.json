@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "CISA adds CVE-2026-85046, the Chrome V8 type confusion zero-day patched by Google on 2026-09-03, to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-09-04 and 2026-09-25.",
+    "domain": "cyber",
+    "probability": 90,
+    "resolution": "The CISA KEV JSON feed at the deadline contains an entry with cveID CVE-2026-85046 and a dateAdded value from 2026-09-04 through 2026-09-25 inclusive.",
+    "deadline": "2026-09-29",
+    "citations": [16, 19],
+    "failure_condition": "At the deadline the KEV feed has no entry for CVE-2026-85046, or its dateAdded falls outside 2026-09-04 through 2026-09-25."
+  },
+  {
+    "statement": "CISA adds CVE-2026-20212, the Cisco Nexus 9000 Silicon One unauthenticated root RCE disclosed 2026-09-02 with no known exploitation at seal, to the KEV catalog with a dateAdded between 2026-09-04 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 18,
+    "resolution": "The CISA KEV JSON feed at the deadline contains an entry with cveID CVE-2026-20212 and a dateAdded value from 2026-09-04 through 2026-11-30 inclusive.",
+    "deadline": "2026-12-02",
+    "citations": [25],
+    "failure_condition": "At the deadline the KEV feed has no entry for CVE-2026-20212, or its dateAdded falls outside 2026-09-04 through 2026-11-30."
+  },
+  {
+    "statement": "In the Saxony-Anhalt Landtag election held 2026-09-06, the AfD wins an absolute majority of all seats (strictly more than half, counting overhang and leveling seats) in the official preliminary result.",
+    "domain": "political",
+    "probability": 10,
+    "resolution": "The Landeswahlleiter Sachsen-Anhalt official preliminary result (vorlaeufiges amtliches Endergebnis) for 2026-09-06 shows AfD seats strictly greater than half of all Landtag seats allocated.",
+    "deadline": "2026-09-14",
+    "citations": [115, 122],
+    "failure_condition": "The official preliminary result allocates the AfD half or fewer of the total Landtag seats."
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater occurs within 200 km of the 2026-09-03 M6.3 Nikolski, Alaska epicenter (52.258N, 169.409W) with origin time between 2026-09-05 00:00 UTC and 2026-10-04 23:59 UTC.",
+    "domain": "disaster",
+    "probability": 15,
+    "resolution": "USGS ComCat (earthquake.usgs.gov fdsnws query: maxradiuskm 200 around latitude 52.258, longitude -169.409; minmagnitude 6.0; starttime 2026-09-05; endtime 2026-10-05) returns at least one event at the deadline.",
+    "deadline": "2026-10-07",
+    "citations": [37, 48],
+    "failure_condition": "The USGS catalog contains no magnitude 6.0 or greater event within 200 km of 52.258N 169.409W with origin time inside the window."
+  },
+  {
+    "statement": "At its scheduled 2026-09-15 to 2026-09-16 meeting the FOMC raises the federal funds target range above the range held at seal (reference: 3.50 to 3.75 percent on the packet date).",
+    "domain": "economics/markets",
+    "probability": 52,
+    "resolution": "The FOMC statement dated 2026-09-16 on federalreserve.gov, or FRED series DFEDTARL observed for 2026-09-17, shows a target range lower bound above 3.50 percent.",
+    "deadline": "2026-09-18",
+    "citations": [50, 54, 58],
+    "failure_condition": "The 2026-09-16 FOMC statement leaves the target range at 3.50 to 3.75 percent or sets a lower range."
+  },
+  {
+    "statement": "CME NYMEX WTI crude (CL) front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-09-08 and 2026-10-09 (reference: 90.35 on the packet date).",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "CME Group published daily settlement for the front-month CL contract is at or above 100.00 on at least one trading day from 2026-09-08 through 2026-10-09 inclusive.",
+    "deadline": "2026-10-13",
+    "citations": [72, 87, 92],
+    "failure_condition": "Every front-month CL daily settlement from 2026-09-08 through 2026-10-09 is below 100.00."
+  },
+  {
+    "statement": "US envoys Steve Witkoff and/or Jared Kushner are physically present in Kyiv and meet President Zelensky in person between 2026-09-05 and 2026-09-13.",
+    "domain": "military/conflict",
+    "probability": 70,
+    "resolution": "The Office of the President of Ukraine (president.gov.ua) publishes a readout or photographs of the Kyiv meeting, and at least one of Reuters, AP or AFP independently reports the envoys in Kyiv within the window.",
+    "deadline": "2026-09-16",
+    "citations": [83, 99, 102],
+    "failure_condition": "Neither Witkoff nor Kushner meets Zelensky in person in Kyiv on any day from 2026-09-05 through 2026-09-13."
+  },
+  {
+    "statement": "Houthi forces take control of the Yemeni port city of Mokha (al-Mukha), Taiz governorate, between 2026-09-04 and 2026-10-02.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "Either the internationally recognized Yemeni government acknowledges loss of Mokha, or at least two of Reuters, AP and AFP report Houthi forces control the city center and port, for an event dated within the window.",
+    "deadline": "2026-10-06",
+    "citations": [80],
+    "failure_condition": "Government-aligned forces retain control of Mokha city and port on every day from 2026-09-04 through 2026-10-02."
+  },
+  {
+    "statement": "The Philippine Court of Appeals or Supreme Court issues a temporary restraining order, status quo ante order, or injunction halting the Quezon City RTC Branch 98 grave threats proceedings against Vice President Sara Duterte between 2026-09-04 and 2026-10-30.",
+    "domain": "political",
+    "probability": 22,
+    "resolution": "An order of the Court of Appeals or Supreme Court dated within the window suspends or enjoins the Branch 98 grave threats proceedings against Duterte, confirmed by the issuing court or by two of Rappler, Inquirer, Philstar, Reuters.",
+    "deadline": "2026-11-03",
+    "citations": [106, 107],
+    "failure_condition": "No Court of Appeals or Supreme Court order suspending or enjoining the Branch 98 grave threats proceedings against Duterte is issued from 2026-09-04 through 2026-10-30."
+  },
+  {
+    "statement": "Between 2026-09-11 and 2026-09-25 the NSW Supreme Court sentences Daniel Billings for the murder of Molly Ticehurst to life imprisonment or to a non-parole period of 30 years or more.",
+    "domain": "crime/security",
+    "probability": 28,
+    "resolution": "The sentencing judgment (NSW Caselaw, R v Billings) or reporting by ABC and AAP shows a sentence handed down within the window that is life imprisonment or carries a non-parole period of at least 30 years.",
+    "deadline": "2026-09-29",
+    "citations": [10],
+    "failure_condition": "The sentence handed down carries a non-parole period under 30 years and is not life imprisonment, or no sentence is delivered from 2026-09-11 through 2026-09-25."
+  }
+]
