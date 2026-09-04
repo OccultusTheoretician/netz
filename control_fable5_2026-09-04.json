@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Google Chrome or Chromium V8 entry with a dateAdded value between 2026-09-04 and 2026-09-18.",
+    "resolution": "Fetch the CISA KEV JSON at the deadline; TRUE if any entry lists vendorProject Google, a product containing Chrome or Chromium V8, and dateAdded between 2026-09-04 and 2026-09-18.",
+    "failure_condition": "The KEV JSON fetched at the deadline contains no Google Chrome or Chromium V8 entry with dateAdded between 2026-09-04 and 2026-09-18.",
+    "domain": "cyber",
+    "deadline": "2026-09-22",
+    "probability": 30,
+    "citations": [
+      16,
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds at least one entry with vendorProject CrowdStrike and a dateAdded value between 2026-09-04 and 2026-09-25, following the reported FalconFlank SYSTEM privilege zero-day.",
+    "resolution": "Fetch the CISA KEV JSON at the deadline; TRUE if any entry lists vendorProject CrowdStrike with dateAdded between 2026-09-04 and 2026-09-25; the entry need not be named FalconFlank.",
+    "failure_condition": "The KEV JSON fetched at the deadline contains no entry with vendorProject CrowdStrike and dateAdded between 2026-09-04 and 2026-09-25.",
+    "domain": "cyber",
+    "deadline": "2026-09-29",
+    "probability": 30,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month NYMEX WTI crude settles at or above 95.00 dollars per barrel on at least one trading day between 2026-09-08 and 2026-10-02. Reference: 90.35 on the packet date.",
+    "resolution": "TRUE if the official CME daily settlement or the EIA daily spot series for WTI shows 95.00 or higher on any trading day in the window. Reference: 90.35 at seal.",
+    "failure_condition": "Every front-month WTI daily settlement from 2026-09-08 through 2026-10-02 is below 95.00 dollars.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-06",
+    "probability": 21,
+    "citations": [
+      72,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield prints at or above 5.00 percent on at least one business day between 2026-09-08 and 2026-10-30. Reference: 4.78 percent on the packet date.",
+    "resolution": "TRUE if FRED series DGS10 records a value of 5.00 or higher for any date between 2026-09-08 and 2026-10-30. Reference: 4.78 at seal.",
+    "failure_condition": "All DGS10 values for dates between 2026-09-08 and 2026-10-30 remain below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 21,
+    "citations": [
+      50,
+      71,
+      49
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The governments of Russia and Ukraine both announce a ceasefire or a mutual halt of long-range strikes with an effective date between 2026-09-05 and 2026-10-16.",
+    "resolution": "TRUE if Reuters and AP each carry statements from both the Kremlin and the Ukrainian presidential office confirming the same ceasefire or strike-halt agreement effective within the window.",
+    "failure_condition": "No agreement confirmed by both governments and carried by both wire services has an effective date between 2026-09-05 and 2026-10-16.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-20",
+    "probability": 49,
+    "citations": [
+      83,
+      102
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "UKMTO publishes at least one incident notice of a vessel attacked, struck by a weapon, or subjected to attempted boarding in the Red Sea, Bab el-Mandeb, or Gulf of Aden with an incident date between 2026-09-05 and 2026-10-02.",
+    "resolution": "TRUE if any UKMTO advisory or incident notice describes a weapon impact, an explosion near a vessel, or an attempted boarding in those waters with an incident date inside the window.",
+    "failure_condition": "UKMTO incident notices for the window describe only non-hostile or navigational events, with no attack, weapon strike, or attempted boarding on a vessel in those waters.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-06",
+    "probability": 49,
+    "citations": [
+      80,
+      72
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS ComCat catalog records at least one earthquake of magnitude 5.0 or greater within 150 km of the 2026-09-04 M6.3 epicenter near Nikolski, Alaska, with origin time between 2026-09-05 and 2026-10-02.",
+    "resolution": "TRUE if a ComCat query centered on the M6.3 event coordinates, radius 150 km, minimum magnitude 5.0, returns at least one event with origin time inside the window.",
+    "failure_condition": "The specified ComCat query returns zero events of magnitude 5.0 or greater with origin time between 2026-09-05 and 2026-10-02.",
+    "domain": "disaster",
+    "deadline": "2026-10-06",
+    "probability": 36,
+    "citations": [
+      37
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Alternative fuer Deutschland receives the largest party-list vote share in the Saxony-Anhalt state election held on 2026-09-06.",
+    "resolution": "TRUE if the official preliminary result published by the Saxony-Anhalt state returning officer at wahlen.sachsen-anhalt.de shows AfD with the highest Zweitstimmen share among all parties.",
+    "failure_condition": "The official preliminary result shows a party other than AfD with the largest second-vote share, or the election is not held on 2026-09-06.",
+    "domain": "political",
+    "deadline": "2026-09-11",
+    "probability": 35,
+    "citations": [
+      115,
+      122
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Argentina publishes in the Boletin Oficial a decree or resolution imposing sanctions or restrictive economic measures aimed at the Falkland Islands, companies operating there, or UK entities over the islands, dated between 2026-09-05 and 2026-10-16.",
+    "resolution": "TRUE if the Boletin Oficial de la Republica Argentina carries such an instrument with publication date inside the window; verbal threats without a published instrument do not count.",
+    "failure_condition": "No qualifying decree or resolution appears in the Boletin Oficial with a publication date between 2026-09-05 and 2026-10-16.",
+    "domain": "political",
+    "deadline": "2026-10-20",
+    "probability": 35,
+    "citations": [
+      121,
+      116
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Philippine Vice President Sara Duterte is taken into custody, surrenders to a court, or posts bail on the arrest order over threats against President Marcos between 2026-09-05 and 2026-10-02.",
+    "resolution": "TRUE if at least two of Reuters, AP, AFP, or Rappler report a custody, surrender, or bail event on that order with an event date inside the window.",
+    "failure_condition": "No custody, surrender, or bail event on the arrest order is reported by two qualifying outlets with an event date between 2026-09-05 and 2026-10-02.",
+    "domain": "crime/security",
+    "deadline": "2026-10-06",
+    "probability": 36,
+    "citations": [
+      106,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-04T18:07:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

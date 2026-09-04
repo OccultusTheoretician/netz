@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled 2026-09-16 decision. Reference: target range 3.50 to 3.75 percent on the packet date 2026-09-04.",
+    "domain": "economics/markets",
+    "probability": 78,
+    "resolution": "TRUE if the FOMC policy statement on federalreserve.gov for the 2026-09-15 to 2026-09-16 meeting sets a target range with upper bound above 3.75 percent. Adjudicated 2026-09-18.",
+    "deadline": "2026-09-18",
+    "citations": [
+      50,
+      54,
+      58
+    ],
+    "failure_condition": "The FOMC statement issued 2026-09-16 leaves the upper bound of the target range at or below 3.75 percent."
+  },
+  {
+    "statement": "FRED series DGS10 prints at or above 5.00 percent on at least one business day between 2026-09-08 and 2026-11-30. Reference: 4.78 percent on the packet date 2026-09-04.",
+    "domain": "economics/markets",
+    "probability": 48,
+    "resolution": "TRUE if any daily observation of FRED series DGS10 dated between 2026-09-08 and 2026-11-30 equals or exceeds 5.00. Adjudicated 2026-12-03.",
+    "deadline": "2026-12-03",
+    "citations": [
+      49,
+      50,
+      71
+    ],
+    "failure_condition": "Every DGS10 daily observation dated 2026-09-08 through 2026-11-30 is below 5.00."
+  },
+  {
+    "statement": "Front-month NYMEX WTI settles at or above 100.00 dollars on at least one trading day between 2026-09-08 and 2026-11-30. Reference: 90.35 on the packet date 2026-09-04.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "TRUE if CME publishes a front-month WTI crude settlement of 100.00 or higher for any trade date between 2026-09-08 and 2026-11-30. Adjudicated 2026-12-03.",
+    "deadline": "2026-12-03",
+    "citations": [
+      72,
+      80,
+      87
+    ],
+    "failure_condition": "No front-month WTI settlement dated 2026-09-08 through 2026-11-30 reaches 100.00."
+  },
+  {
+    "statement": "The South Korean government announces a naval or military deployment to Strait of Hormuz escort or security operations between 2026-09-07 and 2026-12-15.",
+    "domain": "military/conflict",
+    "probability": 40,
+    "resolution": "TRUE if the defence ministry or presidential office of South Korea announces such a deployment in that window and both Yonhap and Reuters report it. Adjudicated 2026-12-18.",
+    "deadline": "2026-12-18",
+    "citations": [
+      87
+    ],
+    "failure_condition": "No South Korean government announcement of a Hormuz naval or military deployment falls inside the window."
+  },
+  {
+    "statement": "Russia and Ukraine sign a written ceasefire or cessation-of-hostilities agreement covering the main front line between 2026-09-05 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 10,
+    "resolution": "TRUE if authorized representatives of both states sign such a document in that window and Reuters and TASS both report the signing. Adjudicated 2027-01-05.",
+    "deadline": "2027-01-05",
+    "citations": [
+      83,
+      102
+    ],
+    "failure_condition": "No bilateral Russia-Ukraine ceasefire or cessation-of-hostilities document is signed on or before 2026-12-31."
+  },
+  {
+    "statement": "The CISA KEV catalog gains an entry for a Google Chromium V8 vulnerability with a dateAdded value between 2026-09-04 and 2026-10-09.",
+    "domain": "cyber",
+    "probability": 72,
+    "resolution": "TRUE if the CISA Known Exploited Vulnerabilities JSON contains a Google Chromium V8 record whose dateAdded falls between 2026-09-04 and 2026-10-09. Adjudicated 2026-10-13.",
+    "deadline": "2026-10-13",
+    "citations": [
+      16,
+      19
+    ],
+    "failure_condition": "The KEV catalog holds no Chromium V8 record with a dateAdded between 2026-09-04 and 2026-10-09."
+  },
+  {
+    "statement": "A CVE for the Cisco Nexus 9000 unauthenticated remote code execution flaw enters the CISA KEV catalog with dateAdded between 2026-09-04 and 2027-02-15.",
+    "domain": "cyber",
+    "probability": 28,
+    "resolution": "TRUE if the CISA KEV JSON lists a Cisco NX-OS or Nexus 9000 record matching that flaw with dateAdded between 2026-09-04 and 2027-02-15. Adjudicated 2027-02-18.",
+    "deadline": "2027-02-18",
+    "citations": [
+      25
+    ],
+    "failure_condition": "No Cisco Nexus 9000 or NX-OS record matching this flaw carries a KEV dateAdded inside the window."
+  },
+  {
+    "statement": "The AfD is allocated more than half of all Landtag seats in the Saxony-Anhalt state election held 2026-09-06.",
+    "domain": "political",
+    "probability": 25,
+    "resolution": "TRUE if the preliminary official result from the Landeswahlleiter of Saxony-Anhalt assigns the AfD more than half the seats in the new Landtag. Adjudicated 2026-09-11.",
+    "deadline": "2026-09-11",
+    "citations": [
+      115,
+      122
+    ],
+    "failure_condition": "The preliminary official seat allocation gives the AfD half or fewer of the Landtag seats."
+  },
+  {
+    "statement": "Philippine Vice President Sara Duterte is taken into physical custody or surrenders to a Philippine court between 2026-09-04 and 2026-10-30.",
+    "domain": "political",
+    "probability": 50,
+    "resolution": "TRUE if Philippine authorities book or process her in custody, or she surrenders in court, in that window, per Reuters and the Philippine Daily Inquirer. Adjudicated 2026-11-03.",
+    "deadline": "2026-11-03",
+    "citations": [
+      106,
+      107
+    ],
+    "failure_condition": "She is neither booked into custody nor surrendered to a court on or before 2026-10-30."
+  },
+  {
+    "statement": "USGS catalogs an earthquake of magnitude 6.0 or greater within 300 km of event us7000tdvt with origin time between 2026-09-05 and 2026-10-15.",
+    "domain": "disaster",
+    "probability": 18,
+    "resolution": "TRUE if a USGS ComCat query returns an M6.0 or greater event within 300 km of the us7000tdvt epicenter with origin time in that window. Adjudicated 2026-10-19.",
+    "deadline": "2026-10-19",
+    "citations": [
+      37
+    ],
+    "failure_condition": "No USGS-catalogued M6.0 or greater event occurs within 300 km of us7000tdvt inside the window."
+  }
+]
