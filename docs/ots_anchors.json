@@ -1,6 +1,6 @@
 {
   "schema": "ots_anchors/v1",
-  "generated": "2026-09-06T03:55:24.824399+00:00",
+  "generated": "2026-09-06T08:51:37.866959+00:00",
   "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
   "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
   "pairing_note": "digest_at_stamp is read from the receipt and is fixed; digest_served is computed from the bytes served at the moment this face was generated (see generated) - publish.bat refreshes it before every publish, and the anchor pass when it stamps or upgrades (OTSFACE-2026-09-03). pairing=MATCH means the receipt covers what you can download. pairing=DRIFT means the file has changed since it was stamped and the receipt covers the older bytes only. DRIFT is disclosed, not corrected: a receipt is never re-issued to make a later file look anchored.",
@@ -9,20 +9,19 @@
     "ledger.json": {
       "receipt": "ledger.json.ots",
       "state": "pending",
-      "digest": "b9fb056b6e79b9d997ecc5125e9c4251f740592628eb57415938ed31b41099f1",
-      "digest_at_stamp": "b9fb056b6e79b9d997ecc5125e9c4251f740592628eb57415938ed31b41099f1",
+      "digest": "4c4349f4302f0148a1fac4a5dda5e8e2aec785e46793eb0a1a2c154322f48a75",
+      "digest_at_stamp": "4c4349f4302f0148a1fac4a5dda5e8e2aec785e46793eb0a1a2c154322f48a75",
       "digest_served": "4c4349f4302f0148a1fac4a5dda5e8e2aec785e46793eb0a1a2c154322f48a75",
-      "pairing": "DRIFT",
+      "pairing": "MATCH",
       "superseded_receipts": [
         "ledger.json.1389abd8.ots",
         "ledger.json.3bb1ca60.ots",
         "ledger.json.594abc07.ots",
         "ledger.json.6e693fea.ots",
         "ledger.json.9c1081a0.ots",
-        "ledger.json.a3a70e5e.ots"
-      ],
-      "pairing_note": "the served file has changed since this receipt was created. The receipt still proves the ORIGINAL bytes existed before its block and proves nothing whatever about the file served now.",
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+        "ledger.json.a3a70e5e.ots",
+        "ledger.json.b9fb056b.ots"
+      ]
     },
     "kalls_hashlog.json": {
       "receipt": "kalls_hashlog.json.ots",
@@ -34,8 +33,7 @@
       "superseded_receipts": [
         "kalls_hashlog.json.9b6154ed.ots",
         "kalls_hashlog.json.dea862ed.ots"
-      ],
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+      ]
     },
     "plate.json": {
       "receipt": "plate.json.ots",
@@ -47,8 +45,7 @@
       "superseded_receipts": [
         "plate.json.6336f3f5.ots",
         "plate.json.f8d2e837.ots"
-      ],
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+      ]
     },
     "ABYSS_DOCTRINE_DRAFT_v1.md": {
       "receipt": "ABYSS_DOCTRINE_DRAFT_v1.md.ots",
@@ -56,8 +53,7 @@
       "digest": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d",
       "digest_at_stamp": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d",
       "digest_served": "cd3d5f64d49239e0eba9fad4024e465276d122a3240867bd363a08ee5e7a199d",
-      "pairing": "MATCH",
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+      "pairing": "MATCH"
     },
     "RPAS_FIRST_EDITION_2026_v1.md": {
       "receipt": "RPAS_FIRST_EDITION_2026_v1.md.ots",
@@ -69,8 +65,7 @@
       "superseded_receipts": [
         "RPAS_FIRST_EDITION_2026_v1.md.36a523b8.ots",
         "RPAS_FIRST_EDITION_2026_v1.md.9d04c1c7.ots"
-      ],
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+      ]
     },
     "KRAEHE_NEST_METHOD.md": {
       "receipt": "KRAEHE_NEST_METHOD.md.ots",
@@ -78,8 +73,7 @@
       "digest": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3",
       "digest_at_stamp": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3",
       "digest_served": "9256c87ebac4b26a42c95f815ab766b49e86571683e357e5129cc19337d64ee3",
-      "pairing": "MATCH",
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+      "pairing": "MATCH"
     },
     "KRAEHE_NEST_PROTOCOL.md": {
       "receipt": "KRAEHE_NEST_PROTOCOL.md.ots",
@@ -87,8 +81,7 @@
       "digest": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d",
       "digest_at_stamp": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d",
       "digest_served": "9ab2d84848ec88133857d6ff1e5672298748f847b30bad1f86542a846d76601d",
-      "pairing": "MATCH",
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+      "pairing": "MATCH"
     },
     "LIAS_FIRST_EDITION_2026_v1.md": {
       "receipt": "LIAS_FIRST_EDITION_2026_v1.md.ots",
@@ -100,8 +93,7 @@
       "superseded_receipts": [
         "LIAS_FIRST_EDITION_2026_v1.md.27feb26a.ots",
         "LIAS_FIRST_EDITION_2026_v1.md.fb6a428f.ots"
-      ],
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+      ]
     },
     "PCAOB_2026-005_DOCKET_MANIFEST.txt": {
       "receipt": "PCAOB_2026-005_DOCKET_MANIFEST.txt.ots",
@@ -113,8 +105,7 @@
       "superseded_receipts": [
         "PCAOB_2026-005_DOCKET_MANIFEST.txt.4c43ecfc.ots",
         "PCAOB_2026-005_DOCKET_MANIFEST.txt.601bc9c5.ots"
-      ],
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+      ]
     },
     "KALIBRIERWARTE_REGISTERED_REPORT_v3.md": {
       "receipt": "KALIBRIERWARTE_REGISTERED_REPORT_v3.md.ots",
@@ -126,8 +117,7 @@
       "superseded_receipts": [
         "KALIBRIERWARTE_REGISTERED_REPORT_v3.md.05fd0479.ots",
         "KALIBRIERWARTE_REGISTERED_REPORT_v3.md.c668da71.ots"
-      ],
-      "face_refreshed": "2026-09-06T03:55:24.819748+00:00"
+      ]
     }
   }
 }
