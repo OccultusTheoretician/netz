@@ -60,6 +60,11 @@ def md5(p: Path):
     return hashlib.md5(p.read_bytes()).hexdigest() if p.exists() else None
 
 
+def md5lf(p: Path):
+    """MIRROREOL-2026-09-06: md5 over LF-normalised bytes."""
+    return hashlib.md5(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest() if p.exists() else None
+
+
 def load_json(p: Path):
     try:
         return json.loads(p.read_text(encoding="utf-8"))
@@ -124,6 +129,8 @@ MIRRORS = [("ledger.json", ROOT/"ledger.json", DOCS/"ledger.json"),
            ("ledger.html", FC/"ledger.html", DOCS/"ledger.html"),
            ("ledger_full.html", FC/"ledger_full.html", DOCS/"ledger_full.html"),   # LEDGERVIEW-2026-09-02
            ("ledger_index.json", FC/"ledger_index.json", DOCS/"ledger_index.json"),
+           ("fogwar_core.js", ROOT/"fogwar_core.js", DOCS/"fogwar_core.js"),   # FOGWARBOARD-2026-09-04
+           ("fogwar_scenario_two_capitals.json", ROOT/"fogwar_scenario_two_capitals.json", DOCS/"fogwar_scenario_two_capitals.json"),
            ("kkr.html", FC/"KKR_latest.html", DOCS/"kkr.html"),
            ("KriegForeKaster.json", ROOT/"KriegForeKaster.json",
             DOCS/"KriegForeKaster.json")]
@@ -140,8 +147,12 @@ def check_mirrors():
             out.append((name, "skip", f"canonical missing: {src.name}")); continue
         if not dst.exists():
             out.append((name, "fail", "served copy missing")); continue
-        out.append((name, "pass" if md5(src) == md5(dst) else "fail",
-                    "identical" if md5(src) == md5(dst) else
+        # MIRROREOL-2026-09-06: content judged LF-normalised, as every digest on the
+        # desk is (OTSNORM); the --autostash pull re-checks out staged copies through
+        # autocrlf and a byte compare read one byte per line as drift.
+        same = md5lf(src) == md5lf(dst)
+        out.append((name, "pass" if same else "fail",
+                    "identical" if same else
                     f"DRIFT — canonical {src.stat().st_size:,}B vs served {dst.stat().st_size:,}B"))
     return out
 

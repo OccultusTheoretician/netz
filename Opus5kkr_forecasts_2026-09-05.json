@@ -1,0 +1,125 @@
+[
+  {
+    "statement": "US Central Command announces at least one new strike that disables, destroys, or seizes an Iranian or Iran-linked vessel, occurring between 2026-09-08 and 2026-10-06.",
+    "domain": "military_conflict",
+    "probability": 80,
+    "resolution": "TRUE if a CENTCOM or Defense Department statement dated between 2026-09-08 and 2026-10-06 claims a strike on an Iranian or Iran-linked vessel, carried by at least two of AP, Reuters, AFP.",
+    "deadline": "2026-10-09",
+    "citations": [
+      64,
+      67,
+      69
+    ],
+    "failure_condition": "No US strike on an Iranian or Iran-linked vessel occurs inside the window."
+  },
+  {
+    "statement": "A Russian missile or drone strike inside Kyiv city limits occurs between 2026-09-09 and 2026-09-30, after the three-day pause on strikes on the capital lapses.",
+    "domain": "military_conflict",
+    "probability": 88,
+    "resolution": "TRUE if Ukrainian officials report a Russian strike inside Kyiv city between 2026-09-09 and 2026-09-30 and a Russian-side or Western wire source corroborates the same event.",
+    "deadline": "2026-10-02",
+    "citations": [
+      65,
+      72,
+      97
+    ],
+    "failure_condition": "Kyiv city passes the entire window without a corroborated Russian strike inside its limits."
+  },
+  {
+    "statement": "Russia and Ukraine jointly announce a ceasefire covering the entire line of contact, taking effect between 2026-09-06 and 2026-11-30.",
+    "domain": "military_conflict",
+    "probability": 14,
+    "resolution": "TRUE only if both the Kremlin and the Ukrainian presidency announce a front-wide ceasefire taking effect in the window. Partial, capital-specific, or energy-infrastructure-only pauses do not count.",
+    "deadline": "2026-12-04",
+    "citations": [
+      65,
+      72,
+      97
+    ],
+    "failure_condition": "No front-wide ceasefire is announced by both governments with effect inside the window."
+  },
+  {
+    "statement": "Yemeni government or Saudi-led coalition forces announce the capture of a named district in Houthi-held Hodeidah, al-Jawf, or Saada governorate, between 2026-09-08 and 2026-10-19.",
+    "domain": "military_conflict",
+    "probability": 30,
+    "resolution": "TRUE if a government or coalition claim of capturing a named district in those three governorates in the window is corroborated by Houthi-aligned media or by Reuters, AFP, or AP.",
+    "deadline": "2026-10-22",
+    "citations": [
+      75,
+      81
+    ],
+    "failure_condition": "No named district in those three governorates changes hands by announced capture during the window."
+  },
+  {
+    "statement": "Front-month Brent crude settles at or above 110.00 US dollars per barrel on at least one trading day between 2026-09-08 and 2026-10-30. Reference: 96.28 on the packet date.",
+    "domain": "economic",
+    "probability": 25,
+    "resolution": "TRUE if the ICE Brent front-month official settlement is 110.00 or higher on any trading day in the window. Reference level 96.28 at the 2026-09-04 close.",
+    "deadline": "2026-11-03",
+    "citations": [
+      64,
+      67,
+      69
+    ],
+    "failure_condition": "Every ICE Brent front-month settlement in the window prints below 110.00."
+  },
+  {
+    "statement": "Front-month NYMEX WTI settles at or below 85.00 US dollars per barrel on at least one trading day between 2026-09-08 and 2026-11-13. Reference: 91.48 on the packet date.",
+    "domain": "economic",
+    "probability": 55,
+    "resolution": "TRUE if the NYMEX WTI front-month official settlement is 85.00 or lower on any trading day in the window. Reference level 91.48 at the 2026-09-04 close.",
+    "deadline": "2026-11-17",
+    "citations": [
+      39,
+      67,
+      104
+    ],
+    "failure_condition": "Every NYMEX WTI front-month settlement in the window prints above 85.00."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries an entry for CVE-2026-19490, the Citrix NetScaler authentication bypass, added between 2026-09-06 and 2026-11-20.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "TRUE if the CISA KEV JSON feed contains CVE-2026-19490 with a dateAdded value between 2026-09-06 and 2026-11-20 inclusive.",
+    "deadline": "2026-11-24",
+    "citations": [
+      20
+    ],
+    "failure_condition": "CVE-2026-19490 is absent from the KEV catalog, or carries a dateAdded outside that range."
+  },
+  {
+    "statement": "The AfD wins an absolute majority of seats in the Saxony-Anhalt Landtag in the state election held on 2026-09-06.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "TRUE if the official result published by the Landeswahlleiter of Saxony-Anhalt allocates the AfD more than half of all Landtag seats.",
+    "deadline": "2026-09-14",
+    "citations": [
+      113
+    ],
+    "failure_condition": "The certified seat allocation gives the AfD half or fewer of the Landtag seats."
+  },
+  {
+    "statement": "The Plymouth County District Attorney publicly announces that Massachusetts will retry Lindsay Clancy, between 2026-09-08 and 2026-12-11.",
+    "domain": "crime_security",
+    "probability": 45,
+    "resolution": "TRUE if that office states in the window that it intends to retry Clancy, reported by at least two of AP, Reuters, Boston Globe, WCVB, WBZ.",
+    "deadline": "2026-12-15",
+    "citations": [
+      9,
+      12
+    ],
+    "failure_condition": "No retrial decision is announced in the window, or the case instead ends by dismissal or plea."
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least two events of magnitude 7.0 or greater worldwide between 2026-09-08 and 2026-10-19.",
+    "domain": "disaster_infrastructure",
+    "probability": 50,
+    "resolution": "TRUE if a USGS ComCat query bounded by 2026-09-08 and 2026-10-19 returns two or more events of magnitude 7.0 or greater.",
+    "deadline": "2026-10-23",
+    "citations": [
+      23,
+      30
+    ],
+    "failure_condition": "The USGS catalog shows fewer than two magnitude 7.0 or greater events in the window."
+  }
+]

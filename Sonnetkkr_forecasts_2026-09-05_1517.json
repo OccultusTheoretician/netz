@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "Iran or an Iran-aligned proxy force conducts an attack against a US military vessel, base, or personnel in the Middle East (Persian Gulf, Strait of Hormuz, Iraq, Syria, or Red Sea) at any point between 2026-09-06 and 2026-09-20, following the 2026-09-05 US strike on three Iranian oil tankers.",
+    "domain": "military_conflict",
+    "probability": 50,
+    "resolution": "TRUE if at least two of AP, Reuters, BBC, or a CENTCOM statement report such an attack occurring between 2026-09-06 and 2026-09-20, confirmed as of 2026-09-22; FALSE otherwise.",
+    "deadline": "2026-09-22",
+    "citations": [64, 69, 59],
+    "failure_condition": "MISS if no such attack against US forces is confirmed by two of the named sources between 2026-09-06 and 2026-09-20, as checked on 2026-09-22."
+  },
+  {
+    "statement": "Cumulative fatalities from the Yemen government-Houthi fighting referenced in the 2026-09-05 packet (ground combat, missile strikes) exceed 100 people, tallied at any point between 2026-09-06 and 2026-09-20.",
+    "domain": "military_conflict",
+    "probability": 38,
+    "resolution": "TRUE if at least two of Reuters, AP, Al Jazeera, or BBC report a cumulative Yemen fatality count above 100 for this conflict phase between 2026-09-06 and 2026-09-20, confirmed as of 2026-09-22; FALSE otherwise.",
+    "deadline": "2026-09-22",
+    "citations": [75, 79, 81],
+    "failure_condition": "MISS if no two named outlets report a cumulative fatality count above 100 for this conflict phase by 2026-09-22."
+  },
+  {
+    "statement": "Russia and Ukraine, or their authorized representatives, publicly announce a signed ceasefire or peace agreement covering the active front line, following the 2026-09-05 arrival of US envoys Witkoff and Kushner in Moscow, at any point between 2026-09-06 and 2026-10-15.",
+    "domain": "military_conflict",
+    "probability": 9,
+    "resolution": "TRUE if at least two of Reuters, AP, BBC, or a joint Russian-Ukrainian government statement confirm a signed ceasefire between 2026-09-06 and 2026-10-15, confirmed as of 2026-10-19; FALSE otherwise.",
+    "deadline": "2026-10-19",
+    "citations": [65, 72],
+    "failure_condition": "MISS if no signed ceasefire or peace agreement is confirmed by two of the named sources between 2026-09-06 and 2026-10-15, as checked on 2026-10-19."
+  },
+  {
+    "statement": "WTI crude oil (Nymex front-month futures) settles at or above 100.00 USD per barrel at close on 2026-09-25, a Friday. Reference: 91.48 USD close on 2026-09-04 (plus 6.67 percent day-over-day per packet), following the 2026-09-05 US strike on three Iranian oil tankers.",
+    "domain": "economic",
+    "probability": 18,
+    "resolution": "TRUE if the WTI settlement price at NYMEX close on 2026-09-25 is at or above 100.00 USD per barrel per CME Group, Bloomberg, or Reuters data; FALSE otherwise.",
+    "deadline": "2026-09-25",
+    "citations": [64, 69],
+    "failure_condition": "MISS if the WTI close on 2026-09-25 is below 100.00 USD per barrel."
+  },
+  {
+    "statement": "The S&P 500 index closes below 7500.00 at settlement on 2026-09-30, a Wednesday. Reference: 7718.60 close on 2026-09-04 (plus 0.09 percent day-over-day per packet), amid Middle East escalation risk following the 2026-09-05 Iran tanker strike.",
+    "domain": "economic",
+    "probability": 14,
+    "resolution": "TRUE if the S&P 500 closing value on 2026-09-30 is below 7500.00 per a standard financial data source such as Bloomberg or Reuters; FALSE otherwise.",
+    "deadline": "2026-09-30",
+    "citations": [64, 59],
+    "failure_condition": "MISS if the S&P 500 closes at or above 7500.00 on 2026-09-30."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds a new entry for a Citrix NetScaler authentication-bypass vulnerability, with a Date Added value between 2026-09-06 and 2026-09-19, following the 2026-09-04 BleepingComputer report of active exploitation.",
+    "domain": "cyber",
+    "probability": 52,
+    "resolution": "TRUE if the CISA KEV catalog at cisa.gov lists a Citrix NetScaler authentication-bypass CVE with a Date Added value in that window, checked as of 2026-09-21; FALSE otherwise.",
+    "deadline": "2026-09-21",
+    "citations": [20],
+    "failure_condition": "MISS if no Citrix NetScaler authentication-bypass CVE carries a Date Added value between 2026-09-06 and 2026-09-19 in the CISA KEV catalog as of 2026-09-21."
+  },
+  {
+    "statement": "A cybersecurity outlet reports the number of ClickFix-payload-hosting compromised websites in the blockchain-hosted campaign has grown to exceed 8000, at any point between 2026-09-06 and 2026-09-27. Reference: over 5400 sites reported on 2026-09-05.",
+    "domain": "cyber",
+    "probability": 28,
+    "resolution": "TRUE if BleepingComputer, The Hacker News, or a comparable outlet publishes a figure above 8000 compromised sites tied to this campaign, dated between 2026-09-06 and 2026-09-27, confirmed as of 2026-09-29; FALSE otherwise.",
+    "deadline": "2026-09-29",
+    "citations": [14],
+    "failure_condition": "MISS if no cybersecurity outlet reports a figure above 8000 compromised sites for this campaign by 2026-09-29."
+  },
+  {
+    "statement": "Pete Hegseth leaves his Pentagon leadership role (resignation, removal, or reassignment), following the criticism referenced in the 2026-09-05 Guardian report, at any point between 2026-09-06 and 2026-10-31.",
+    "domain": "political",
+    "probability": 8,
+    "resolution": "TRUE if at least two of AP, Reuters, or BBC report that Hegseth has left his Pentagon leadership post between 2026-09-06 and 2026-10-31, confirmed as of 2026-11-02; FALSE otherwise.",
+    "deadline": "2026-11-02",
+    "citations": [99],
+    "failure_condition": "MISS if Hegseth remains in his Pentagon leadership post through 2026-10-31 with no departure confirmed by two named outlets as of 2026-11-02."
+  },
+  {
+    "statement": "Prosecutors formally move to retry Lindsay Clancy, or a court schedules a retrial date, following the mistrial declared per the 2026-09-04 and 2026-09-05 reporting, at any point between 2026-09-06 and 2026-12-05.",
+    "domain": "crime_security",
+    "probability": 68,
+    "resolution": "TRUE if at least one of Guardian or BBC reports that prosecutors have moved to retry Lindsay Clancy or that a retrial date is set, dated between 2026-09-06 and 2026-12-05, confirmed as of 2026-12-07; FALSE otherwise.",
+    "deadline": "2026-12-07",
+    "citations": [9, 12],
+    "failure_condition": "MISS if no retrial motion or scheduling for Lindsay Clancy is reported by Guardian or BBC between 2026-09-06 and 2026-12-05, as checked on 2026-12-07."
+  },
+  {
+    "statement": "GDACS raises its alert level for Tropical Cyclone TWENTYTHREE-26 (event ID 1001319) from Green to Orange or Red before the system dissipates, at any point between 2026-09-06 and 2026-09-19. Reference: Green alert as of 2026-09-04.",
+    "domain": "disaster_infrastructure",
+    "probability": 13,
+    "resolution": "TRUE if the GDACS event page for event ID 1001319 shows an Orange or Red alert level at any point between 2026-09-06 and 2026-09-19, checked as of 2026-09-21; FALSE otherwise.",
+    "deadline": "2026-09-21",
+    "citations": [38],
+    "failure_condition": "MISS if the GDACS alert level for event 1001319 never reaches Orange or Red between 2026-09-06 and 2026-09-19, as checked on 2026-09-21."
+  }
+]

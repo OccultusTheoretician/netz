@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FOGWAR: a wargame you can audit. Red's dispositions are committed before your first move and opened in the receipt; every game re-executes byte for byte from its receipt. Rules fogwar/1.0.">
+<link rel="icon" type="image/svg+xml" href="crow_mark.svg">
+<link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="instrument.css">
+<script defer src="brand.js"></script>
+<script defer src="instrument.js"></script>
+<script src="fogwar_core.js"></script>
+<title>FOGWAR &middot; NebelKr&auml;he</title>
+<link rel="canonical" href="https://retroprescientaudit.com/fogwar.html">
+<style>
+@import url('fonts/fonts.css');
+:root{--field:#0c0e11;--panel:#10141A;--panel2:#151A22;--line:#26292f;--line2:#2e343c;--fg:#d6d3cb;--fg2:#f2f0ea;--dim:#8b8b85;--brass:#dcb65e;--green:#4E9E71;--red:#C05149;--steel:#7A97B4}
+*{box-sizing:border-box}
+html,body{background:var(--field);color:var(--fg);margin:0;padding:0;font:15px/1.55 'IBM Plex Sans','Segoe UI',system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:0 .9rem 4rem}
+h1{font-weight:400;font-size:1.6rem;letter-spacing:-.02em;line-height:1.25;color:var(--fg2);margin:1.2rem 0 .2rem}
+.mono{font-family:'IBM Plex Mono',monospace}
+.setup{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:0 0 .8rem}
+.setup label{font-size:.9rem;color:var(--fg)}
+.setup input{width:8rem;background:var(--panel);color:var(--fg2);border:1px solid var(--line2);padding:.5rem .6rem;font:inherit;font-size:16px;border-radius:2px;min-height:44px}
+button.b{background:var(--panel);color:var(--fg2);border:1px solid var(--line2);border-radius:2px;padding:.55rem 1rem;font:inherit;font-size:.92rem;min-height:44px;cursor:pointer}
+button.b:hover{border-color:var(--brass)}
+button.b[disabled]{opacity:.45;cursor:default}
+button.b.primary{border-color:var(--brass);color:var(--brass)}
+button.b:focus-visible,input:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.status{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.9rem;color:var(--fg);margin:.4rem 0 .6rem}
+.status b{color:var(--fg2);font-weight:600}
+.commit{font-size:.82rem;color:var(--dim);margin:0 0 .8rem;overflow-wrap:anywhere}
+.commit code{font-family:'IBM Plex Mono',monospace;color:var(--fg2)}
+.board{display:grid;grid-template-columns:minmax(0,1fr);gap:.9rem}
+@media (min-width:900px){.board{grid-template-columns:minmax(0,1fr) 20rem}}
+.mapwrap{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:.4rem}
+svg.map{width:100%;height:auto;display:block;touch-action:manipulation}
+.edge{stroke:var(--line2);stroke-width:.6}
+.node{cursor:pointer}
+.node circle.core{stroke-width:.9}
+.node.own circle.core{fill:#22364a;stroke:var(--steel)}
+.node.enemy circle.core{fill:#3a1f1f;stroke:var(--red)}
+.node.empty circle.core{fill:#12161c;stroke:var(--line2)}
+.node.fog circle.core{fill:#0e1013;stroke:#2a2d33;stroke-dasharray:1.2 1.2}
+.node.sel circle.core{stroke:var(--brass);stroke-width:1.6}
+.node.tgt circle.core{stroke:var(--brass);stroke-width:1.2;stroke-dasharray:1.5 1}
+.node text{font-family:'IBM Plex Mono',monospace;fill:var(--fg2);text-anchor:middle;pointer-events:none}
+.node text.id{font-size:3.1px;font-weight:600}
+.node text.str{font-size:3.4px;fill:var(--fg)}
+.node.fog text.str,.node.enemy text.str.unknown{fill:var(--dim)}
+.node text.name{font-size:2.3px;fill:var(--dim)}
+.node text.cap{font-size:2.4px;fill:var(--brass)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:.7rem .8rem}
+.panel h2{font-size:.95rem;font-weight:400;color:var(--fg2);margin:0 0 .5rem;letter-spacing:-.01em}
+.sel-line{font-size:.9rem;color:var(--fg);margin:.2rem 0 .5rem;min-height:1.4em}
+.actions{display:flex;flex-wrap:wrap;gap:.45rem;margin:.4rem 0}
+.amount{display:flex;align-items:center;gap:.6rem;margin:.3rem 0}
+.amount input[type=range]{flex:1;min-height:44px}
+.amount output{font-family:'IBM Plex Mono',monospace;min-width:3ch;color:var(--fg2)}
+ul.orders{list-style:none;margin:.4rem 0;padding:0}
+ul.orders li{display:flex;justify-content:space-between;gap:.5rem;align-items:center;font-size:.88rem;padding:.35rem 0;border-top:1px dashed var(--line2)}
+ul.orders li:first-child{border-top:0}
+ul.orders button{background:none;border:1px solid var(--line2);color:var(--dim);border-radius:2px;padding:.25rem .55rem;min-height:36px;cursor:pointer;font:inherit;font-size:.8rem}
+.report{margin:.9rem 0 0}
+.report h2{font-size:.95rem;font-weight:400;color:var(--fg2);margin:0 0 .4rem}
+.report ul{list-style:none;margin:0;padding:0;font-size:.88rem}
+.report li{padding:.3rem 0;border-top:1px dashed var(--line2);color:var(--fg)}
+.report li b{color:var(--fg2);font-weight:600}
+.report li.win{color:var(--green)}.report li.lose{color:var(--red)}
+.outcome{margin:.9rem 0 .4rem;padding:.7rem .9rem;border:1px solid var(--line2);border-radius:3px;font-size:1rem;color:var(--fg2)}
+.outcome.blue{border-color:var(--steel)}.outcome.red{border-color:var(--red)}.outcome.draw{border-color:var(--brass)}
+.verify{margin-top:.8rem;font-size:.9rem}
+.verify input[type=file]{font:inherit;font-size:.9rem;color:var(--fg);min-height:44px}
+.ok{color:var(--green)}.bad{color:var(--red)}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem .9rem;font-size:.8rem;color:var(--dim);margin:.4rem 0 0}
+.legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:50%;vertical-align:-2px;margin-right:.3rem;border:1px solid}
+.legend .l-own{background:#22364a;border-color:var(--steel)}.legend .l-enemy{background:#3a1f1f;border-color:var(--red)}.legend .l-empty{background:#12161c;border-color:var(--line2)}.legend .l-fog{background:#0e1013;border-color:#2a2d33;border-style:dashed}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<style id="desknav-style">.desknav-unified{display:flex;flex-wrap:wrap;gap:.2rem 1.05rem;align-items:center;padding:.5rem 1.1rem;border-bottom:1px solid #26292f;background:rgba(7,9,12,.55);position:relative;z-index:40}.desknav-unified .ng-brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;margin-right:.9rem}.desknav-unified .ng-brand img{height:26px;width:auto;opacity:.95}.desknav-unified .ng-word{font:500 .8rem 'Cinzel',serif;letter-spacing:.28em;color:#e9e7e2}.desknav-unified .ng-brand:hover .ng-word{color:#ffffff}.desknav-unified .ng-drop{position:relative;display:inline-block;outline:none}.desknav-unified .ng-label{display:inline-block;color:#8b8b85;font:600 .62rem 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;user-select:none;padding:.25rem .1rem}.desknav-unified .ng-label::after{content:' \25BE';color:#565650}.desknav-unified .ng-drop:hover .ng-label,.desknav-unified .ng-drop:focus-within .ng-label{color:#e9e7e2}.desknav-unified .ng-here .ng-label{color:#f2f0ea}.desknav-unified .ng-panel{display:none;position:absolute;left:0;top:100%;min-width:19rem;max-width:23rem;background:#0c0e11;border:1px solid #26292f;padding:.6rem .85rem;z-index:41;flex-direction:column;gap:.42rem}.desknav-unified .ng-drop:hover>.ng-panel,.desknav-unified .ng-drop:focus-within>.ng-panel{display:flex}.desknav-unified .ng-item{display:block}.desknav-unified .ng-panel a{color:#c9c7c1;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding:.05rem 0}.desknav-unified .ng-panel a:hover{color:#ffffff}.desknav-unified .ng-def{display:block;font:400 .58rem 'IBM Plex Mono',monospace;color:#6a6a64;letter-spacing:.02em;text-transform:none;line-height:1.5;max-width:20rem;margin-top:.1rem}.desknav-unified a[aria-current="page"]{color:#f2f0ea}.desknav-unified .ng-ext{color:#565650;text-decoration:none;font:600 .62rem 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-left:auto}.desknav-unified .ng-ext:hover{color:#e9e7e2}.desknav-unified .ng-fresh{flex-basis:100%;display:flex;flex-wrap:wrap;gap:.2rem .7rem;align-items:baseline;margin-top:.15rem;font:500 .56rem 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6a6a64}.desknav-unified .ng-fresh b{font-weight:600;color:#8b8b85}.desknav-unified .ng-fresh.ok b{color:#4E9E71}.desknav-unified .ng-fresh.late b{color:#c9a04a}.desknav-unified .ng-fresh.stale b{color:#C05149}.desknav-unified .ng-fresh a{color:#8b8b85;text-decoration:none}.desknav-unified .ng-fresh a:hover{color:#e9e7e2}</style><nav class="desknav-unified" data-navgen="2" aria-label="site" translate="no"><a class="ng-brand" href="index.html"><img src="brand/crow_mark_small_reverse.svg" alt=""><span class="ng-word">NEBELKR&Auml;HE</span></a><div class="ng-drop" tabindex="0"><span class="ng-label">DESK</span><div class="ng-panel"><div class="ng-item"><a title="Forecasts sealed before their outcomes, adjudicated in public." href="index.html">Desk</a><span class="ng-def">Forecasts sealed before their outcomes, adjudicated in public.</span></div><div class="ng-item"><a title="Machine-collated open-source intelligence; every claim graded and cited." href="report.html">Report</a><span class="ng-def">Machine-collated open-source intelligence; every claim graded and cited.</span></div><div class="ng-item"><a title="Hosted page-watch over standard-setting bodies." href="spion.html">Spion</a><span class="ng-def">Hosted page-watch over standard-setting bodies.</span></div><div class="ng-item"><a title="Every served surface, graded against its own cadence." href="health.html">Health</a><span class="ng-def">Every served surface, graded against its own cadence.</span></div><div class="ng-item"><a title="The desk's printed defects; corrections supersede, never replace." href="findings.html">Findings</a><span class="ng-def">The desk's printed defects; corrections supersede, never replace.</span></div><div class="ng-item"><a href="instruments.html">Instruments</a></div></div></div><div class="ng-drop ng-here" tabindex="0"><span class="ng-label">FORECASTING</span><div class="ng-panel"><div class="ng-item"><a title="Falsifiable projections sealed at issue - the forecasting stage." href="kkr.html">Forecasts</a><span class="ng-def">Falsifiable projections sealed at issue - the forecasting stage.</span></div><div class="ng-item"><a title="The permanent record: every projection ever sealed, hit or miss." href="ledger.html">Ledger</a><span class="ng-def">The permanent record: every projection ever sealed, hit or miss.</span></div><div class="ng-item"><a title="A scored order of battle - graded existence and location claims." href="KriegForeKaster.html">ForeKaster</a><span class="ng-def">A scored order of battle - graded existence and location claims.</span></div><div class="ng-item"><a title="Every formation claim, its grade, and its full citation trail." href="KriegForeKaster_compendium.html">Compendium</a><span class="ng-def">Every formation claim, its grade, and its full citation trail.</span></div><div class="ng-item"><a title="The KriegForeKaster board plotted on its own data." href="kfk_map.html">Overlay</a><span class="ng-def">The KriegForeKaster board plotted on its own data.</span></div><div class="ng-item"><a title="The graded order of battle, played forward." href="globalkaster.html">GlobalKaster</a><span class="ng-def">The graded order of battle, played forward.</span></div><div class="ng-item"><a title="Deterministic scenario runs, sealed as a set." href="fogsim.html">FogSim</a><span class="ng-def">Deterministic scenario runs, sealed as a set.</span></div><div class="ng-item"><a aria-current="page" href="fogwar.html">Fogwar</a></div><div class="ng-item"><a title="OberKommando der Kraehe: the command view of KriegForeKaster." href="okk.html">OberKommando</a><span class="ng-def">OberKommando der Kraehe: the command view of KriegForeKaster.</span></div><div class="ng-item"><a title="The multi-model calibration observatory." href="kalibrierwarte.html">Warte</a><span class="ng-def">The multi-model calibration observatory.</span></div><div class="ng-item"><a title="The promise book: labs' stated commitments sealed before their outcomes." href="versprechen.html">Versprechen</a><span class="ng-def">The promise book: labs' stated commitments sealed before their outcomes.</span></div></div></div><div class="ng-drop" tabindex="0"><span class="ng-label">FEDERATION</span><div class="ng-panel"><div class="ng-item"><a title="Abductions sealed at the moment they fire." href="kraehes_kalls.html">Kalls</a><span class="ng-def">Abductions sealed at the moment they fire.</span></div><div class="ng-item"><a title="The Prophet Board: a federation reader over public claims." href="nest.html">Nest</a><span class="ng-def">The Prophet Board: a federation reader over public claims.</span></div></div></div><div class="ng-drop" tabindex="0"><span class="ng-label">STANDARDS</span><div class="ng-panel"><div class="ng-item"><a title="The standards register: RPAS-26, KNM-26, KNP-26, DECC-26." href="standards.html">Standards</a><span class="ng-def">The standards register: RPAS-26, KNM-26, KNP-26, DECC-26.</span></div><div class="ng-item"><a title="Machine-checkable conformance, computed from the ledger." href="conformance.html">Conformance</a><span class="ng-def">Machine-checkable conformance, computed from the ledger.</span></div><div class="ng-item"><a title="Parties on the record with a conformance statement." href="register.html">Register</a><span class="ng-def">Parties on the record with a conformance statement.</span></div><div class="ng-item"><a title="Two reference verifiers, paragraph-cited against RPAS." href="verify.html">Verify</a><span class="ng-def">Two reference verifiers, paragraph-cited against RPAS.</span></div><div class="ng-item"><a title="DECC-26 conformance testing for denominator-committed disclosures." href="decc.html">DECC-26</a><span class="ng-def">DECC-26 conformance testing for denominator-committed disclosures.</span></div><div class="ng-item"><a title="Every blind-jury verdict audited against its held evidence." href="urteil.html">Urteil</a><span class="ng-def">Every blind-jury verdict audited against its held evidence.</span></div><div class="ng-item"><a title="Confirmed events the desk never called - the completeness audit." href="luecke.html">Luecke</a><span class="ng-def">Confirmed events the desk never called - the completeness audit.</span></div></div></div><div class="ng-drop" tabindex="0"><span class="ng-label">CABINET</span><div class="ng-panel"><div class="ng-item"><a title="Phrase propagation and variance across the open-source feed." href="ohrwurm.html">Ohrwurm</a><span class="ng-def">Phrase propagation and variance across the open-source feed.</span></div><div class="ng-item"><a title="Operator console face for the desk's live boards." href="konsole.html">Konsole</a><span class="ng-def">Operator console face for the desk's live boards.</span></div><div class="ng-item"><a title="Original sigils in a heraldic abatement grammar." href="marks.html">Marks</a><span class="ng-def">Original sigils in a heraldic abatement grammar.</span></div></div></div><a class="ng-ext" href="https://github.com/OccultusTheoretician/netz">GitHub</a><span class="ng-fresh " title="desk health as of 2026-09-06 03:55Z: 13 OK 0 LATE 0 STALE 5 EVENT; worst PENDING. health.py grades every served surface against the cadence the desk committed to in health_expect.json."><span>desk as of <b>2026-09-06 03:55Z</b></span><span>13 OK 0 LATE 0 STALE 5 EVENT</span><span>worst <b>PENDING</b></span><a href="health.html">health</a></span></nav>
+<main>
+<h1>FOGWAR</h1>
+<section class="wp">
+<aside class="wp-index">
+  <p class="wp-ref">W/P FOGWAR<small>rules fogwar/1.0, board 0.1 &middot; scenario TWO CAPITALS</small></p>
+  <p class="wp-purpose">A wargame you can audit. Red's dispositions are committed before your first move and opened in the receipt at the end; every game is a pure function of the scenario, the rules, the seed and your orders, so anyone can re-execute it byte for byte. The combat model is a toy and says so; the machinery is the point.</p>
+</aside>
+<aside class="wp-prov">
+  <dl class="wp-meta">
+    <dt>Source of record</dt><dd>your game's receipt (download it when the game ends); the rules, <a href="https://github.com/OccultusTheoretician/netz/blob/main/FOGWAR_RULES_1.0.md"><code>FOGWAR_RULES_1.0.md</code></a>; the scenario file, sha256 <code id="sc-hash">&hellip;</code></dd>
+    <dt>This page reads</dt><dd><code>fogwar_scenario_two_capitals.json</code> and a layout file for the map; nothing else, and nothing is sent anywhere</dd>
+    <dt>Prepared by</dt><dd>the desk; the engine here is the JavaScript twin of <code>fogwar.py</code>, held identical by a differential test over random games</dd>
+    <dt>Committed</dt><dd>red's starting strengths, hashed with the scenario, the rules version, the seed and a derived salt; the hash prints before you move and the receipt opens it</dd>
+  </dl>
+  <details class="wp-howto"><summary>How to play, and what the fog is</summary>
+    <p>You are blue. Each turn you give up to three orders: tap a region you hold, then tap a neighbour to move part of your force there (into empty ground to occupy, into red to attack), or scout a neighbour to learn its strength this turn. End the turn and red, a fixed rule player, answers; fights resolve where both sides stand.</p>
+    <p>You see the strength of your own regions; the owner of any region next to one you hold; a neighbour's strength only if you scouted it this turn or fought there. Everything else is fog. Red sees under the same rule.</p>
+    <p>Whoever falls to forty percent of their force in a fight breaks. After ten turns the side holding more value wins; losing every region loses at once.</p>
+    <p>The commitment does not hide anything from a player who reads their own browser. It binds the record: with the receipt, a third party can check that the fog held exactly what this page says it held.</p>
+  </details>
+</aside>
+<div class="wp-body">
+  <div class="setup">
+    <label for="seed">Seed</label><input id="seed" type="number" min="1" max="999999999" value="42" inputmode="numeric">
+    <button class="b" id="rand" type="button">random seed</button>
+    <button class="b primary" id="new" type="button">New game</button>
+  </div>
+  <p class="commit" id="commit">Start a game: the fog is committed before your first order.</p>
+  <div class="status" id="status"></div>
+  <div class="board">
+    <div class="mapwrap"><svg class="map" id="map" viewBox="0 0 100 100" role="img" aria-label="the map"></svg>
+      <div class="legend"><span><i class="l-own"></i>yours</span><span><i class="l-enemy"></i>red, owner known</span><span><i class="l-empty"></i>empty</span><span><i class="l-fog"></i>fog</span><span class="mono">? strength unknown</span></div>
+    </div>
+    <div class="panel">
+      <h2>Orders this turn</h2>
+      <div class="sel-line" id="selline">Tap a region you hold.</div>
+      <div class="amount hidden" id="amountrow"><label for="amt" style="font-size:.85rem">move</label><input id="amt" type="range" min="1" max="1" value="1"><output id="amtv">1</output></div>
+      <div class="actions">
+        <button class="b" id="doMove" type="button" disabled>Move</button>
+        <button class="b" id="doScout" type="button" disabled>Scout</button>
+        <button class="b" id="doHold" type="button" disabled>Hold</button>
+        <button class="b" id="clearSel" type="button">Clear</button>
+      </div>
+      <ul class="orders" id="orders"></ul>
+      <div class="actions"><button class="b primary" id="endTurn" type="button" disabled>End turn</button></div>
+      <div class="report" id="report"></div>
+    </div>
+  </div>
+  <div id="outcome"></div>
+  <div class="verify">
+    <div class="actions"><button class="b" id="dl" type="button" disabled>Download receipt</button><label class="b" for="vf" style="display:inline-flex;align-items:center">Verify a receipt <input id="vf" type="file" accept=".json,application/json" style="margin-left:.6rem"></label></div>
+    <div id="vout"></div>
+  </div>
+</div>
+<footer class="wp-reperform">
+  <h2>Re-performance</h2>
+  <p>A receipt is the whole game. From it, anyone reproduces the final state and checks the fog.</p>
+  <ol>
+    <li>Download the receipt when a game ends, or drop any receipt into "Verify a receipt" above: this page re-executes the recorded orders against the same seed and compares the final state hash, then recomputes the commitment from the opened fog.</li>
+    <li>Do the same outside the browser from a clone of the repository: <code>python fogwar.py verify --scenario fogwar_scenario_two_capitals.json --receipt game.json</code>.</li>
+    <li>Check that the two engines agree on games neither has seen: <code>python test_fogwar_parity.py --games 60</code> (needs node).</li>
+    <li>Read the rules that both engines implement; any change to them is a new rules version.</li>
+  </ol>
+  <div class="wp-receipt">game id: <code id="wp-receipt" data-value="">no game yet</code><button class="wp-copy" type="button" data-copy="#wp-receipt">copy</button></div>
+  <p class="wp-signoff">Prepared by the desk. The rules are fogwar/1.0; the scenario and the layout are files whose hashes are printed here; red is a fixed policy with no randomness of its own; the only randomness is the combat shock stream, seeded once per game.</p>
+</footer>
+</section>
+</main>
+<script>
+(function(){
+"use strict";
+var F=window.FOGWAR; var SC=null, SCTEXT="", LAYOUT=null;
+var G=null; // live game: {seed, rng, state, moves, orders, turnEvents, over, receipt}
+var sel=null, tgt=null;
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function get(u){return fetch(u,{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error(u+" HTTP "+r.status);return r.text();});}
+
+function status(){
+  if(!G){$("status").innerHTML="";return;}
+  var p=SC.parameters, v=F.view(SC,G.state,"blue"), M={}; SC.regions.forEach(function(r){M[r.id]=r;});
+  var val=0, n=0; Object.keys(v).forEach(function(k){if(v[k].owner==="blue"){val+=M[k].value;n++;}});
+  $("status").innerHTML='<span>turn <b>'+Math.min(G.state.turn,p.turns)+'</b> of '+p.turns+'</span><span>you hold <b>'+n+'</b> region'+(n===1?"":"s")+', value <b>'+val+'</b></span><span>orders left <b>'+(p.max_orders-G.orders.length)+'</b></span>';
+}
+function drawMap(){
+  var svg=$("map"); if(!SC){svg.innerHTML="";return;}
+  var pos=LAYOUT.positions, A={}; SC.regions.forEach(function(r){A[r.id]=r;});
+  var v=G?F.view(SC,G.state,"blue"):null;
+  var parts=[], seen={};
+  SC.regions.forEach(function(r){r.adj.forEach(function(t){var k=[r.id,t].sort().join("|"); if(seen[k])return; seen[k]=1; var a=pos[r.id],b=pos[t]; if(a&&b)parts.push('<line class="edge" x1="'+a[0]+'" y1="'+a[1]+'" x2="'+b[0]+'" y2="'+b[1]+'"/>');});});
+  SC.regions.forEach(function(r){
+    var p=pos[r.id]; if(!p)return;
+    var cls="node", strTxt="", unknown=false, cap="";
+    if(!v){cls+=" empty"; strTxt="";}
+    else{var x=v[r.id];
+      if(x.vis==="own"){cls+=" own"; strTxt=String(x.strength);}
+      else if(x.vis==="fog"){cls+=" fog"; strTxt="?"; unknown=true;}
+      else if(x.owner===null){cls+=" empty"; strTxt="0";}
+      else{cls+=" enemy"; strTxt=x.strength===null?"?":String(x.strength); unknown=x.strength===null;}
+    }
+    if(SC.blue.capital===r.id||SC.red.capital===r.id)cap="capital";
+    if(sel===r.id)cls+=" sel"; if(tgt===r.id)cls+=" tgt";
+    parts.push('<g class="'+cls+'" data-id="'+esc(r.id)+'" tabindex="0" role="button" aria-label="'+esc(r.name)+'"><circle class="core" cx="'+p[0]+'" cy="'+p[1]+'" r="7.6"/>'
+      +'<text class="id" x="'+p[0]+'" y="'+(p[1]-1.6)+'">'+esc(r.id)+'</text>'
+      +'<text class="str'+(unknown?" unknown":"")+'" x="'+p[0]+'" y="'+(p[1]+2.6)+'">'+esc(strTxt)+'</text>'
+      +'<text class="name" x="'+p[0]+'" y="'+(p[1]+10.6)+'">'+esc(r.name)+'</text>'
+      +(cap?'<text class="cap" x="'+p[0]+'" y="'+(p[1]+13.4)+'">'+cap+'</text>':'')+'</g>');
+  });
+  svg.innerHTML=parts.join("");
+}
+function selLine(){
+  var el=$("selline"), amt=$("amountrow");
+  $("doMove").disabled=true;$("doScout").disabled=true;$("doHold").disabled=!G||G.over||G.orders.length>=SC.parameters.max_orders;
+  amt.classList.add("hidden");
+  if(!G||G.over){el.textContent=G&&G.over?"The game is over.":"Start a game.";return;}
+  if(G.orders.length>=SC.parameters.max_orders){el.textContent="Three orders given. End the turn.";return;}
+  var v=F.view(SC,G.state,"blue");
+  if(!sel){el.textContent="Tap a region you hold.";return;}
+  var s=v[sel]; var M={}; SC.regions.forEach(function(r){M[r.id]=r;});
+  if(!tgt){el.textContent=M[sel].name+": "+s.strength+" points. Tap a neighbour to move or scout, or hold.";return;}
+  var t=v[tgt], adj=M[sel].adj.indexOf(tgt)>=0;
+  if(!adj){el.textContent=M[tgt].name+" is not adjacent to "+M[sel].name+".";return;}
+  var committed=0; G.orders.forEach(function(o){if(o.type==="move"&&o.from===sel)committed+=o.n;});
+  var avail=s.strength-1-committed;
+  var what=t.owner==="blue"?"reinforce":(t.owner===null&&t.vis!=="fog"?"occupy":"attack");
+  el.textContent=M[sel].name+" \u2192 "+M[tgt].name+": "+what+(t.strength!==null?" (holds "+t.strength+")":(t.vis==="fog"?" (fog)":" (strength unknown)"))+".";
+  if(avail>=1){amt.classList.remove("hidden");var a=$("amt");a.max=avail;a.value=Math.min(Math.max(1,Math.floor(avail/2)),avail);$("amtv").value=a.value;$("doMove").disabled=false;}
+  if(t.owner!=="blue")$("doScout").disabled=false;
+}
+function addOrder(o){
+  var r=F.validateOrders(SC,G.state,"blue",G.orders.concat([o]));
+  if(r[1].length){$("report").innerHTML='<h2>Order refused</h2><ul><li>'+esc(r[1][0].why)+'</li></ul>';return;}
+  G.orders=r[0]; sel=null; tgt=null; renderOrders(); drawMap(); selLine(); status();
+  $("endTurn").disabled=false;
+}
+function renderOrders(){
+  var M={}; SC.regions.forEach(function(r){M[r.id]=r;});
+  $("orders").innerHTML=G.orders.map(function(o,i){
+    var t=o.type==="hold"?"Hold":o.type==="scout"?"Scout "+esc(M[o.target].name):"Move "+o.n+" from "+esc(M[o.from].name)+" to "+esc(M[o.to].name);
+    return '<li><span>'+t+'</span><button type="button" data-rm="'+i+'">remove</button></li>';}).join("")||'<li><span style="color:var(--dim)">no orders yet; ending the turn with none holds everywhere</span></li>';
+}
+function newGame(){
+  var seed=parseInt($("seed").value,10); if(!(seed>=1)){seed=42;$("seed").value=42;}
+  var sh=F.scenarioHashBytes(SCTEXT);
+  var hidden={red_strengths:{}}; Object.keys(SC.red.strengths).sort().forEach(function(k){hidden.red_strengths[k]=SC.red.strengths[k]|0;});
+  var com=F.commitment(sh,seed,hidden);
+  G={seed:seed,rng:new F.Rng(seed),state:F.newState(SC),moves:[],orders:[],over:false,receipt:null};
+  sel=null;tgt=null;
+  $("commit").innerHTML='Fog committed before your first order: <code>'+com+'</code>';
+  $("report").innerHTML="";$("outcome").innerHTML="";$("vout").innerHTML="";
+  $("dl").disabled=true;$("endTurn").disabled=false;
+  var wr=$("wp-receipt");wr.textContent="game in progress";wr.setAttribute("data-value","");
+  renderOrders();drawMap();selLine();status();
+}
+function endTurn(){
+  if(!G||G.over)return;
+  var b=F.validateOrders(SC,G.state,"blue",G.orders), r=F.validateOrders(SC,G.state,"red",F.aiOrders(SC,G.state,"red"));
+  G.moves.push(b[0]);
+  var turn=G.state.turn;
+  var ev=F.resolveTurn(SC,G.state,G.rng,b[0],r[0]);
+  G.orders=[];sel=null;tgt=null;
+  var M={}; SC.regions.forEach(function(x){M[x.id]=x;});
+  var lines=ev.filter(function(e){return e.kind==="combat"||e.kind==="occupy"||(e.kind==="reinforce"&&e.side==="blue");}).map(function(e){
+    if(e.kind==="combat"){var youAtt=e.attacker==="blue"; var won=(e.winner==="attacker")===youAtt; var res=e.winner==="attacker"?"the attack carried":e.winner==="defender"?"the defence held":e.winner==="mutual"?"both sides broke":"undecided; the attacker withdrew";
+      return '<li class="'+(e.winner==="undecided"||e.winner==="mutual"?"":(won?"win":"lose"))+'"><b>'+esc(M[e.region].name)+'</b>: '+(youAtt?"you":"red")+' attacked with '+e.a0+' against '+e.d0+'; after '+e.ticks+' tick'+(e.ticks===1?"":"s")+' '+res+' ('+e.a_left+' vs '+e.d_left+' left).</li>';}
+    if(e.kind==="occupy")return '<li><b>'+esc(M[e.region].name)+'</b>: '+(e.side==="blue"?"you":"red")+' occupied empty ground with '+e.n+'.</li>';
+    return '<li><b>'+esc(M[e.region].name)+'</b>: you reinforced by '+e.n+'.</li>';});
+  var inc=ev.filter(function(e){return e.kind==="reinforce_income"&&e.side==="blue";})[0];
+  if(inc)lines.push('<li>Income: +'+inc.n+' at '+esc(M[inc.region].name)+'.</li>');
+  $("report").innerHTML='<h2>Turn '+turn+'</h2><ul>'+(lines.join("")||'<li>Nothing happened where you could see it.</li>')+'</ul>';
+  if(G.state.outcome!==null){finish();}
+  renderOrders();drawMap();selLine();status();
+}
+function finish(){
+  G.over=true;$("endTurn").disabled=true;
+  var res=F.play(SC,SCTEXT,G.seed,G.moves); G.receipt=res.receipt;
+  var live=F.stateHash(G.state), same=live===G.receipt.final_state_hash;
+  var o=G.state.outcome, cls=o==="blue_wins"?"blue":o==="red_wins"?"red":"draw";
+  $("outcome").innerHTML='<div class="outcome '+cls+'">'+(o==="blue_wins"?"You win":o==="red_wins"?"Red wins":"Draw")+' after '+G.receipt.turns_played+' turns. Re-execution of your orders from the seed '+(same?'<span class="ok">reproduces this game exactly</span>':'<span class="bad">DOES NOT reproduce this game - a determinism defect, and the receipt says so</span>')+'. The fog opened: red started with <code>'+esc(JSON.stringify(G.receipt.hidden.red_strengths))+'</code>; its commitment recomputes to <code>'+G.receipt.commitment.slice(0,16)+'&hellip;</code>.</div>';
+  if(!same)G.receipt.determinism_defect={live_final_state_hash:live};
+  $("dl").disabled=false;
+  var wr=$("wp-receipt");wr.textContent=G.receipt.game_id;wr.setAttribute("data-value",G.receipt.game_id);
+}
+function download(){
+  if(!G||!G.receipt)return;
+  var blob=new Blob([JSON.stringify(G.receipt,null,1)+"\n"],{type:"application/json"});
+  var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="fogwar_"+G.receipt.game_id.slice(0,16)+".json";document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
+}
+function verifyFile(file){
+  var rd=new FileReader();
+  rd.onload=function(){
+    var out=[];
+    try{
+      var rec=JSON.parse(rd.result);
+      var sh=F.scenarioHashBytes(SCTEXT);
+      out.push((rec.scenario_hash===sh?'<span class="ok">ok</span>':'<span class="bad">FAIL</span>')+' scenario hash matches the scenario this page loaded');
+      var com=F.commitment(sh,rec.seed,rec.hidden);
+      out.push((com===rec.commitment?'<span class="ok">ok</span>':'<span class="bad">FAIL</span>')+' commitment recomputes from the opened fog');
+      var rr=F.play(SC,SCTEXT,rec.seed,rec.moves).receipt;
+      out.push((rr.final_state_hash===rec.final_state_hash?'<span class="ok">ok</span>':'<span class="bad">FAIL</span>')+' re-execution reproduces the final state hash '+esc(String(rec.final_state_hash).slice(0,16))+'&hellip;');
+      var copy={}; Object.keys(rec).forEach(function(k){if(k!=="game_id"&&k!=="rejected_orders"&&k!=="determinism_defect")copy[k]=rec[k];});
+      var gid=F.sha256(F.canon(copy));
+      out.push((gid===rec.game_id?'<span class="ok">ok</span>':'<span class="bad">FAIL</span>')+' game id '+esc(String(rec.game_id).slice(0,16))+'&hellip;');
+      var all=out.every(function(s){return s.indexOf('class="ok"')>=0;});
+      out.push('<b>'+(all?'<span class="ok">VERIFIED</span>':'<span class="bad">VERIFICATION FAILED</span>')+'</b> - outcome recorded: '+esc(rec.outcome)+' after '+esc(rec.turns_played)+' turns');
+    }catch(e){out.push('<span class="bad">not a receipt this page can read: '+esc(e.message)+'</span>');}
+    $("vout").innerHTML='<ul class="report" style="list-style:none;padding:0">'+out.map(function(s){return '<li>'+s+'</li>';}).join("")+'</ul>';
+  };
+  rd.readAsText(file);
+}
+function wire(){
+  $("map").addEventListener("click",function(e){var g=e.target.closest(".node");if(!g||!G||G.over)return;tap(g.getAttribute("data-id"));});
+  $("map").addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var g=e.target.closest(".node");if(!g||!G||G.over)return;e.preventDefault();tap(g.getAttribute("data-id"));});
+  $("new").addEventListener("click",newGame);
+  $("rand").addEventListener("click",function(){$("seed").value=1+Math.floor(Math.random()*999999);});
+  $("endTurn").addEventListener("click",endTurn);
+  $("doHold").addEventListener("click",function(){addOrder({type:"hold"});});
+  $("doScout").addEventListener("click",function(){if(tgt)addOrder({type:"scout",target:tgt});});
+  $("doMove").addEventListener("click",function(){if(sel&&tgt)addOrder({type:"move",from:sel,to:tgt,n:parseInt($("amt").value,10)});});
+  $("clearSel").addEventListener("click",function(){sel=null;tgt=null;drawMap();selLine();});
+  $("amt").addEventListener("input",function(){$("amtv").value=$("amt").value;});
+  $("orders").addEventListener("click",function(e){var b=e.target.closest("[data-rm]");if(!b)return;G.orders.splice(parseInt(b.getAttribute("data-rm"),10),1);renderOrders();selLine();status();});
+  $("dl").addEventListener("click",download);
+  $("vf").addEventListener("change",function(){if(this.files&&this.files[0])verifyFile(this.files[0]);});
+}
+function tap(id){
+  var v=F.view(SC,G.state,"blue");
+  if(!sel){if(v[id].vis==="own"){sel=id;tgt=null;}}
+  else if(id===sel){sel=null;tgt=null;}
+  else if(v[id].vis==="own"&&!tgt){ /* second own region: allow reinforce if adjacent, else reselect */
+    var M={}; SC.regions.forEach(function(r){M[r.id]=r;});
+    if(M[sel].adj.indexOf(id)>=0)tgt=id; else {sel=id;tgt=null;}
+  }
+  else tgt=id;
+  drawMap();selLine();
+}
+Promise.all([get("fogwar_scenario_two_capitals.json"),get("fogwar_layout_two_capitals.json")]).then(function(t){
+  SCTEXT=t[0]; SC=JSON.parse(SCTEXT.replace(/^\uFEFF/,"")); LAYOUT=JSON.parse(t[1]);
+  $("sc-hash").textContent=F.scenarioHashBytes(SCTEXT);
+  wire(); drawMap(); selLine();
+}).catch(function(e){$("status").innerHTML='<span class="bad">the scenario or layout did not load ('+esc(e.message)+')</span>';});
+})();
+</script>
+</body>
+</html>
