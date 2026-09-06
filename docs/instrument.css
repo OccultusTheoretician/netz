@@ -1,0 +1,44 @@
+/* instrument.css - the desk's instrument shell: every tool page is a workpaper.
+   SHELL-2026-09-04. Inherits the site's tokens (brand.css); adds no palette of its
+   own. Structure encodes provenance, not decoration: the reference block names
+   the instrument and its revision; the meta list names purpose, source of record,
+   who prepared it and whether it is anchored; the re-performance block tells a
+   stranger exactly how to reproduce what the page shows and what receipt to
+   compare. One bold element - the reference - and everything else quiet. */
+.wp{display:grid;grid-template-columns:minmax(0,1fr);gap:1.1rem 1.6rem;margin:1.1rem 0 0;align-items:start}
+/* phone: reference and purpose, then the instrument, then provenance, then re-performance;
+   wide: provenance sits under the reference in the left column beside the instrument */
+.wp-index{order:1;min-width:0}.wp-body{order:2}.wp-prov{order:3;min-width:0}.wp-reperform{order:4}
+@media (min-width:760px){.wp{grid-template-columns:14rem minmax(0,1fr)}
+  .wp-index{grid-column:1;grid-row:1}.wp-prov{grid-column:1;grid-row:2}
+  .wp-body{grid-column:2;grid-row:1 / span 2}.wp-reperform{grid-column:1 / -1;grid-row:3}}
+.wp-ref{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:1.25rem;line-height:1.15;color:var(--brass,#dcb65e);letter-spacing:.01em;margin:0 0 .35rem}
+.wp-ref small{display:block;font-weight:400;font-size:.72rem;color:var(--dim,#8b8b85);margin-top:.25rem;letter-spacing:.02em}
+.wp-purpose{margin:0 0 .9rem;color:var(--fg2,#f2f0ea);font-size:.98rem;line-height:1.5}
+.wp-meta{margin:0;padding:0;border-top:1px solid var(--line,#26292f)}
+.wp-meta dt{font-size:.78rem;color:var(--dim,#8b8b85);padding-top:.55rem}
+.wp-meta dd{margin:.1rem 0 .5rem;font-size:.9rem;color:var(--fg,#d6d3cb);line-height:1.45;overflow-wrap:anywhere}
+.wp-meta dd code,.wp-reperform code,.wp-receipt code{font-family:'IBM Plex Mono',monospace;font-size:.82em;color:var(--fg2,#f2f0ea);background:var(--panel,#10141A);border:1px solid var(--line,#26292f);border-radius:2px;padding:.05rem .3rem;overflow-wrap:anywhere}
+.wp-meta .wp-state-ok{color:var(--green,#4E9E71)}
+.wp-meta .wp-state-pending{color:var(--brass,#dcb65e)}
+.wp-meta .wp-state-drift{color:var(--red,#C05149)}
+.wp-howto{margin:.9rem 0 0;border-top:1px solid var(--line,#26292f);padding-top:.5rem}
+.wp-howto summary{cursor:pointer;color:var(--brass,#dcb65e);font-size:.9rem;padding:.35rem 0;list-style:none;min-height:36px;display:flex;align-items:center;gap:.5rem}
+.wp-howto summary::-webkit-details-marker{display:none}
+.wp-howto summary::before{content:"+";font-family:'IBM Plex Mono',monospace;width:1rem;display:inline-block;color:var(--dim,#8b8b85)}
+.wp-howto[open] summary::before{content:"-"}
+.wp-howto summary:focus-visible,.wp-copy:focus-visible{outline:2px solid var(--brass,#dcb65e);outline-offset:2px}
+.wp-howto p{margin:.35rem 0;font-size:.9rem;color:var(--fg,#d6d3cb);line-height:1.5}
+.wp-body{min-width:0}
+.wp-reperform{grid-column:1 / -1;border-top:1px solid var(--line2,#2e343c);margin-top:1.4rem;padding-top:1rem}
+.wp-reperform h2{font-size:1rem;font-weight:400;letter-spacing:-.01em;color:var(--fg2,#f2f0ea);margin:0 0 .5rem}
+.wp-reperform p{font-size:.92rem;color:var(--fg,#d6d3cb);line-height:1.55;margin:.35rem 0;max-width:72ch}
+.wp-reperform ol{margin:.5rem 0 .8rem 1.2rem;padding:0;font-size:.92rem;color:var(--fg,#d6d3cb);line-height:1.55;max-width:72ch}
+.wp-reperform li{margin:.25rem 0}
+.wp-receipt{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .7rem;margin-top:.7rem;font-size:.9rem;color:var(--fg,#d6d3cb)}
+.wp-receipt code{font-size:.85rem}
+.wp-copy{background:var(--panel,#10141A);color:var(--fg2,#f2f0ea);border:1px solid var(--line2,#2e343c);border-radius:2px;padding:.45rem .8rem;font:inherit;font-size:.82rem;cursor:pointer;min-height:40px}
+.wp-copy:hover{border-color:var(--brass,#dcb65e)}
+.wp-copy[data-done="1"]{color:var(--green,#4E9E71);border-color:var(--green,#4E9E71)}
+.wp-signoff{font-size:.82rem;color:var(--dim,#8b8b85);margin-top:.9rem;line-height:1.5;max-width:72ch}
+@media (prefers-reduced-motion: no-preference){.wp-copy{transition:border-color .15s ease,color .15s ease}}

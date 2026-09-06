@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "Iran or an Iran-aligned proxy force conducts an attack against a US military vessel, base, or personnel in the Middle East (Persian Gulf, Strait of Hormuz, Iraq, Syria, or Red Sea) at any point between 2026-09-06 and 2026-09-20, following the 2026-09-05 US strike on three Iranian oil tankers.",
+    "resolution": "TRUE if at least two of AP, Reuters, BBC, or a CENTCOM statement report such an attack occurring between 2026-09-06 and 2026-09-20, confirmed as of 2026-09-22; FALSE otherwise.",
+    "failure_condition": "MISS if no such attack against US forces is confirmed by two of the named sources between 2026-09-06 and 2026-09-20, as checked on 2026-09-22.",
+    "domain": "military_conflict",
+    "deadline": "2026-09-22",
+    "probability": 49,
+    "citations": [
+      64,
+      69,
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Cumulative fatalities from the Yemen government-Houthi fighting referenced in the 2026-09-05 packet (ground combat, missile strikes) exceed 100 people, tallied at any point between 2026-09-06 and 2026-09-20.",
+    "resolution": "TRUE if at least two of Reuters, AP, Al Jazeera, or BBC report a cumulative Yemen fatality count above 100 for this conflict phase between 2026-09-06 and 2026-09-20, confirmed as of 2026-09-22; FALSE otherwise.",
+    "failure_condition": "MISS if no two named outlets report a cumulative fatality count above 100 for this conflict phase by 2026-09-22.",
+    "domain": "military_conflict",
+    "deadline": "2026-09-22",
+    "probability": 49,
+    "citations": [
+      75,
+      79,
+      81
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia and Ukraine, or their authorized representatives, publicly announce a signed ceasefire or peace agreement covering the active front line, following the 2026-09-05 arrival of US envoys Witkoff and Kushner in Moscow, at any point between 2026-09-06 and 2026-10-15.",
+    "resolution": "TRUE if at least two of Reuters, AP, BBC, or a joint Russian-Ukrainian government statement confirm a signed ceasefire between 2026-09-06 and 2026-10-15, confirmed as of 2026-10-19; FALSE otherwise.",
+    "failure_condition": "MISS if no signed ceasefire or peace agreement is confirmed by two of the named sources between 2026-09-06 and 2026-10-15, as checked on 2026-10-19.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-19",
+    "probability": 49,
+    "citations": [
+      65,
+      72
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude oil (Nymex front-month futures) settles at or above 100.00 USD per barrel at close on 2026-09-25, a Friday. Reference: 91.48 USD close on 2026-09-04 (plus 6.67 percent day-over-day per packet), following the 2026-09-05 US strike on three Iranian oil tankers.",
+    "resolution": "TRUE if the WTI settlement price at NYMEX close on 2026-09-25 is at or above 100.00 USD per barrel per CME Group, Bloomberg, or Reuters data; FALSE otherwise.",
+    "failure_condition": "MISS if the WTI close on 2026-09-25 is below 100.00 USD per barrel.",
+    "domain": "economic",
+    "deadline": "2026-09-25",
+    "probability": 21,
+    "citations": [
+      64,
+      69
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The S&P 500 index closes below 7500.00 at settlement on 2026-09-30, a Wednesday. Reference: 7718.60 close on 2026-09-04 (plus 0.09 percent day-over-day per packet), amid Middle East escalation risk following the 2026-09-05 Iran tanker strike.",
+    "resolution": "TRUE if the S&P 500 closing value on 2026-09-30 is below 7500.00 per a standard financial data source such as Bloomberg or Reuters; FALSE otherwise.",
+    "failure_condition": "MISS if the S&P 500 closes at or above 7500.00 on 2026-09-30.",
+    "domain": "economic",
+    "deadline": "2026-09-30",
+    "probability": 21,
+    "citations": [
+      64,
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds a new entry for a Citrix NetScaler authentication-bypass vulnerability, with a Date Added value between 2026-09-06 and 2026-09-19, following the 2026-09-04 BleepingComputer report of active exploitation.",
+    "resolution": "TRUE if the CISA KEV catalog at cisa.gov lists a Citrix NetScaler authentication-bypass CVE with a Date Added value in that window, checked as of 2026-09-21; FALSE otherwise.",
+    "failure_condition": "MISS if no Citrix NetScaler authentication-bypass CVE carries a Date Added value between 2026-09-06 and 2026-09-19 in the CISA KEV catalog as of 2026-09-21.",
+    "domain": "cyber",
+    "deadline": "2026-09-21",
+    "probability": 30,
+    "citations": [
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A cybersecurity outlet reports the number of ClickFix-payload-hosting compromised websites in the blockchain-hosted campaign has grown to exceed 8000, at any point between 2026-09-06 and 2026-09-27. Reference: over 5400 sites reported on 2026-09-05.",
+    "resolution": "TRUE if BleepingComputer, The Hacker News, or a comparable outlet publishes a figure above 8000 compromised sites tied to this campaign, dated between 2026-09-06 and 2026-09-27, confirmed as of 2026-09-29; FALSE otherwise.",
+    "failure_condition": "MISS if no cybersecurity outlet reports a figure above 8000 compromised sites for this campaign by 2026-09-29.",
+    "domain": "cyber",
+    "deadline": "2026-09-29",
+    "probability": 30,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Pete Hegseth leaves his Pentagon leadership role (resignation, removal, or reassignment), following the criticism referenced in the 2026-09-05 Guardian report, at any point between 2026-09-06 and 2026-10-31.",
+    "resolution": "TRUE if at least two of AP, Reuters, or BBC report that Hegseth has left his Pentagon leadership post between 2026-09-06 and 2026-10-31, confirmed as of 2026-11-02; FALSE otherwise.",
+    "failure_condition": "MISS if Hegseth remains in his Pentagon leadership post through 2026-10-31 with no departure confirmed by two named outlets as of 2026-11-02.",
+    "domain": "political",
+    "deadline": "2026-11-02",
+    "probability": 35,
+    "citations": [
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Prosecutors formally move to retry Lindsay Clancy, or a court schedules a retrial date, following the mistrial declared per the 2026-09-04 and 2026-09-05 reporting, at any point between 2026-09-06 and 2026-12-05.",
+    "resolution": "TRUE if at least one of Guardian or BBC reports that prosecutors have moved to retry Lindsay Clancy or that a retrial date is set, dated between 2026-09-06 and 2026-12-05, confirmed as of 2026-12-07; FALSE otherwise.",
+    "failure_condition": "MISS if no retrial motion or scheduling for Lindsay Clancy is reported by Guardian or BBC between 2026-09-06 and 2026-12-05, as checked on 2026-12-07.",
+    "domain": "crime_security",
+    "deadline": "2026-12-07",
+    "probability": 36,
+    "citations": [
+      9,
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "GDACS raises its alert level for Tropical Cyclone TWENTYTHREE-26 (event ID 1001319) from Green to Orange or Red before the system dissipates, at any point between 2026-09-06 and 2026-09-19. Reference: Green alert as of 2026-09-04.",
+    "resolution": "TRUE if the GDACS event page for event ID 1001319 shows an Orange or Red alert level at any point between 2026-09-06 and 2026-09-19, checked as of 2026-09-21; FALSE otherwise.",
+    "failure_condition": "MISS if the GDACS alert level for event 1001319 never reaches Orange or Red between 2026-09-06 and 2026-09-19, as checked on 2026-09-21.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-09-21",
+    "probability": 36,
+    "citations": [
+      38
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

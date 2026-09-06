@@ -55,6 +55,7 @@ USE
 import argparse
 import hashlib
 import json
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -81,6 +82,13 @@ def chain(prev_hex: str, core: dict) -> str:
     return hashlib.sha256(TAG + bytes.fromhex(prev_hex) + blob).hexdigest()
 
 
+def _packet_stamp(name):
+    """PACKETREG-2026-09-04: the YYYY-MM-DD[_HHMM] stamp inside a packet name, for
+    chain order; a name without one sorts last."""
+    m = re.search(r"(\d{4}-\d{2}-\d{2}(?:_\d{4})?)", name)
+    return m.group(1) if m else "9999"
+
+
 def build():
     led = HERE / "ledger.json"
     rows = json.loads(led.read_text(encoding="utf-8"))["projections"] \
@@ -91,7 +99,13 @@ def build():
         if k:
             by_packet.setdefault(k, []).append(p.get("id"))
 
-    files = sorted(PACKETS.glob("kkr_packet_2*.md"), key=lambda f: f.name)
+    # PACKETREG-2026-09-04: frame arms write kkr_packet_frame_<name>_<stamp>.md so
+    # the frontier arms' packet is never touched; the register must see those too,
+    # and order every packet by its stamp so the chain stays append-only.
+    files = sorted([f for f in list(PACKETS.glob("kkr_packet_2*.md"))
+                    + list(PACKETS.glob("kkr_packet_frame_*_2*.md"))
+                    if f.name != "kkr_packet_latest.md"],
+                   key=lambda f: (_packet_stamp(f.name), f.name))
     entries, prev = [], GENESIS
     for f in files:
         core = {

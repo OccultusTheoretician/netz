@@ -1,0 +1,255 @@
+[
+  {
+    "statement": "US Central Command announces at least one new strike that disables, destroys, or seizes an Iranian or Iran-linked vessel, occurring between 2026-09-08 and 2026-10-06.",
+    "resolution": "TRUE if a CENTCOM or Defense Department statement dated between 2026-09-08 and 2026-10-06 claims a strike on an Iranian or Iran-linked vessel, carried by at least two of AP, Reuters, AFP.",
+    "failure_condition": "No US strike on an Iranian or Iran-linked vessel occurs inside the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-09",
+    "probability": 49,
+    "citations": [
+      64,
+      67,
+      69
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A Russian missile or drone strike inside Kyiv city limits occurs between 2026-09-09 and 2026-09-30, after the three-day pause on strikes on the capital lapses.",
+    "resolution": "TRUE if Ukrainian officials report a Russian strike inside Kyiv city between 2026-09-09 and 2026-09-30 and a Russian-side or Western wire source corroborates the same event.",
+    "failure_condition": "Kyiv city passes the entire window without a corroborated Russian strike inside its limits.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-02",
+    "probability": 49,
+    "citations": [
+      65,
+      72,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia and Ukraine jointly announce a ceasefire covering the entire line of contact, taking effect between 2026-09-06 and 2026-11-30.",
+    "resolution": "TRUE only if both the Kremlin and the Ukrainian presidency announce a front-wide ceasefire taking effect in the window. Partial, capital-specific, or energy-infrastructure-only pauses do not count.",
+    "failure_condition": "No front-wide ceasefire is announced by both governments with effect inside the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-12-04",
+    "probability": 49,
+    "citations": [
+      65,
+      72,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Yemeni government or Saudi-led coalition forces announce the capture of a named district in Houthi-held Hodeidah, al-Jawf, or Saada governorate, between 2026-09-08 and 2026-10-19.",
+    "resolution": "TRUE if a government or coalition claim of capturing a named district in those three governorates in the window is corroborated by Houthi-aligned media or by Reuters, AFP, or AP.",
+    "failure_condition": "No named district in those three governorates changes hands by announced capture during the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-22",
+    "probability": 49,
+    "citations": [
+      75,
+      81
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month Brent crude settles at or above 110.00 US dollars per barrel on at least one trading day between 2026-09-08 and 2026-10-30. Reference: 96.28 on the packet date.",
+    "resolution": "TRUE if the ICE Brent front-month official settlement is 110.00 or higher on any trading day in the window. Reference level 96.28 at the 2026-09-04 close.",
+    "failure_condition": "Every ICE Brent front-month settlement in the window prints below 110.00.",
+    "domain": "economic",
+    "deadline": "2026-11-03",
+    "probability": 21,
+    "citations": [
+      64,
+      67,
+      69
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month NYMEX WTI settles at or below 85.00 US dollars per barrel on at least one trading day between 2026-09-08 and 2026-11-13. Reference: 91.48 on the packet date.",
+    "resolution": "TRUE if the NYMEX WTI front-month official settlement is 85.00 or lower on any trading day in the window. Reference level 91.48 at the 2026-09-04 close.",
+    "failure_condition": "Every NYMEX WTI front-month settlement in the window prints above 85.00.",
+    "domain": "economic",
+    "deadline": "2026-11-17",
+    "probability": 21,
+    "citations": [
+      39,
+      67,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries an entry for CVE-2026-19490, the Citrix NetScaler authentication bypass, added between 2026-09-06 and 2026-11-20.",
+    "resolution": "TRUE if the CISA KEV JSON feed contains CVE-2026-19490 with a dateAdded value between 2026-09-06 and 2026-11-20 inclusive.",
+    "failure_condition": "CVE-2026-19490 is absent from the KEV catalog, or carries a dateAdded outside that range.",
+    "domain": "cyber",
+    "deadline": "2026-11-24",
+    "probability": 30,
+    "citations": [
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The AfD wins an absolute majority of seats in the Saxony-Anhalt Landtag in the state election held on 2026-09-06.",
+    "resolution": "TRUE if the official result published by the Landeswahlleiter of Saxony-Anhalt allocates the AfD more than half of all Landtag seats.",
+    "failure_condition": "The certified seat allocation gives the AfD half or fewer of the Landtag seats.",
+    "domain": "political",
+    "deadline": "2026-09-14",
+    "probability": 35,
+    "citations": [
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Plymouth County District Attorney publicly announces that Massachusetts will retry Lindsay Clancy, between 2026-09-08 and 2026-12-11.",
+    "resolution": "TRUE if that office states in the window that it intends to retry Clancy, reported by at least two of AP, Reuters, Boston Globe, WCVB, WBZ.",
+    "failure_condition": "No retrial decision is announced in the window, or the case instead ends by dismissal or plea.",
+    "domain": "crime_security",
+    "deadline": "2026-12-15",
+    "probability": 36,
+    "citations": [
+      9,
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least two events of magnitude 7.0 or greater worldwide between 2026-09-08 and 2026-10-19.",
+    "resolution": "TRUE if a USGS ComCat query bounded by 2026-09-08 and 2026-10-19 returns two or more events of magnitude 7.0 or greater.",
+    "failure_condition": "The USGS catalog shows fewer than two magnitude 7.0 or greater events in the window.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-10-23",
+    "probability": 36,
+    "citations": [
+      23,
+      30
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T03:23:52Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

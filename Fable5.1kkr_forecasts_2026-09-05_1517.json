@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "Between 2026-09-06 and 2026-09-26, US forces strike, disable, or destroy at least one additional Iranian oil tanker or crude carrier, as announced by US Central Command.",
+    "domain": "military/conflict",
+    "probability": 50,
+    "resolution": "TRUE if a US Central Command statement dated 2026-09-06 to 2026-09-26, carried by Reuters, AP, or AFP, reports a US strike on at least one Iranian oil tanker or crude carrier in that window, excluding the three struck 2026-09-05.",
+    "deadline": "2026-09-29",
+    "citations": [
+      64,
+      67,
+      69
+    ],
+    "failure_condition": "No US strike on any Iranian oil tanker or crude carrier other than the three struck on 2026-09-05 occurs between 2026-09-06 and 2026-09-26."
+  },
+  {
+    "statement": "Between 2026-09-05 and 2026-10-03, the governments of Russia and Ukraine both publicly confirm a general ceasefire or cessation-of-hostilities agreement covering the entire front line.",
+    "domain": "military/conflict",
+    "probability": 8,
+    "resolution": "TRUE if, between 2026-09-05 and 2026-10-03, official statements from both the Kremlin and the Ukrainian presidency confirm a front-wide ceasefire agreement, reported by Reuters or AP. Partial truces (energy, Black Sea, humanitarian pauses) do not count.",
+    "deadline": "2026-10-07",
+    "citations": [
+      65,
+      72,
+      97
+    ],
+    "failure_condition": "No front-wide ceasefire agreement is confirmed by both the Russian and Ukrainian governments between 2026-09-05 and 2026-10-03."
+  },
+  {
+    "statement": "The AfD wins an absolute majority of seats in the Saxony-Anhalt Landtag election held on 2026-09-06, per the official preliminary result.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "TRUE if the official preliminary result published by the Landeswahlleiterin Sachsen-Anhalt (wahlen.sachsen-anhalt.de) for the 2026-09-06 Landtag election shows the AfD holding more than half of all seats, including any overhang and leveling seats.",
+    "deadline": "2026-09-14",
+    "citations": [
+      113
+    ],
+    "failure_condition": "The official preliminary result shows the AfD with half or fewer of all Landtag seats."
+  },
+  {
+    "statement": "Between 2026-09-05 and 2027-03-01, the US Fish and Wildlife Service publishes in the Federal Register a proposed rule to delist or downlist the gray wolf or Mexican wolf under the Endangered Species Act.",
+    "domain": "political",
+    "probability": 40,
+    "resolution": "TRUE if federalregister.gov shows a document of type Proposed Rule from the Fish and Wildlife Service, publication date 2026-09-05 through 2027-03-01, proposing removal or reclassification of the gray wolf or Mexican wolf under the ESA.",
+    "deadline": "2027-03-03",
+    "citations": [
+      103
+    ],
+    "failure_condition": "No Fish and Wildlife Service proposed rule to delist or downlist the gray wolf or Mexican wolf appears in the Federal Register with a publication date between 2026-09-05 and 2027-03-01."
+  },
+  {
+    "statement": "The ICE Brent crude front-month futures contract settles at or above 100.00 USD per barrel on 2026-09-25. Reference: Brent 96.28 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "TRUE if the official ICE Brent front-month futures settlement price for the trading session of 2026-09-25, as published by ICE or reported by Reuters, is at or above 100.00 USD per barrel. Reference: 96.28 on 2026-09-05.",
+    "deadline": "2026-09-29",
+    "citations": [
+      64,
+      67,
+      69
+    ],
+    "failure_condition": "The ICE Brent front-month settlement for 2026-09-25 is below 100.00 USD per barrel."
+  },
+  {
+    "statement": "Between 2026-09-08 and 2026-09-25, the US Treasury Office of Foreign Assets Control publishes at least one Iran-related designation action.",
+    "domain": "economics/markets",
+    "probability": 90,
+    "resolution": "TRUE if the OFAC Recent Actions page (ofac.treasury.gov/recent-actions) lists at least one action dated 2026-09-08 through 2026-09-25 whose title contains Iran-related Designations or Iran-related Designation Updates.",
+    "deadline": "2026-09-29",
+    "citations": [
+      93,
+      67
+    ],
+    "failure_condition": "No OFAC Recent Actions entry dated between 2026-09-08 and 2026-09-25 carries an Iran-related Designations or Iran-related Designation Updates title."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds CVE-2026-19490 (Citrix NetScaler ADC and Gateway authentication bypass) with a dateAdded value between 2026-09-05 and 2026-09-25.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "TRUE if the CISA KEV JSON feed contains an entry for CVE-2026-19490 whose dateAdded field is between 2026-09-05 and 2026-09-25 inclusive.",
+    "deadline": "2026-09-29",
+    "citations": [
+      20
+    ],
+    "failure_condition": "CVE-2026-19490 is absent from the KEV catalog at the deadline, or its dateAdded value falls outside 2026-09-05 through 2026-09-25."
+  },
+  {
+    "statement": "By 2026-10-30, the CISA Known Exploited Vulnerabilities catalog marks CVE-2026-81578 or CVE-2026-82078 (PaperCut NG/MF) as knownRansomwareCampaignUse Known; the field read Unknown when both were added on 2026-08-31.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if the CISA KEV JSON feed fetched on 2026-11-02 shows knownRansomwareCampaignUse equal to Known for CVE-2026-81578 or CVE-2026-82078. Window for the change: 2026-09-05 through 2026-10-30.",
+    "deadline": "2026-11-02",
+    "citations": [
+      17
+    ],
+    "failure_condition": "Both PaperCut entries still read knownRansomwareCampaignUse Unknown when the KEV feed is fetched on 2026-11-02."
+  },
+  {
+    "statement": "Between 2026-09-05 and 2026-10-30, the Plymouth County District Attorney announces that the Commonwealth will retry Lindsay Clancy on the murder charges, or the Plymouth Superior Court schedules a retrial date.",
+    "domain": "crime/security",
+    "probability": 65,
+    "resolution": "TRUE if, between 2026-09-05 and 2026-10-30, the Plymouth County DA states that Clancy will be retried on the murder charges, or the court docket sets a retrial date, per AP or the Boston Globe.",
+    "deadline": "2026-11-02",
+    "citations": [
+      9,
+      12
+    ],
+    "failure_condition": "By 2026-10-30 the DA has not announced a retrial and no retrial date is on the docket, including if the charges are resolved by plea or dismissed."
+  },
+  {
+    "statement": "Between 2026-09-06 and 2026-09-26, the USGS catalog records at least one earthquake of magnitude 6.0 or greater with epicenter within 300 km of USGS event us7000tdvt (M6.3, 84 km SSW of Nikolski, Alaska).",
+    "domain": "disaster",
+    "probability": 12,
+    "resolution": "TRUE if the USGS earthquake catalog (earthquake.usgs.gov) lists at least one event of magnitude 6.0 or greater, origin time 2026-09-06 through 2026-09-26 UTC, with epicenter within 300 km of event us7000tdvt.",
+    "deadline": "2026-09-29",
+    "citations": [
+      30
+    ],
+    "failure_condition": "No magnitude 6.0 or greater earthquake with epicenter within 300 km of us7000tdvt has origin time between 2026-09-06 and 2026-09-26 UTC in the USGS catalog."
+  }
+]

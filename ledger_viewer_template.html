@@ -6,7 +6,9 @@
 <meta name="description" content="The Prescient Desk's predictive ledger: every sealed projection, open and resolved, segregated by forecaster arm. Paged viewer over ledger_index.json; the complete static table is ledger_full.html; the record is ledger.json.">
 <link rel="icon" type="image/svg+xml" href="crow_mark.svg">
 <link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="instrument.css">
 <script defer src="brand.js"></script>
+<script defer src="instrument.js"></script>
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>KKR Ledger &middot; NebelKr&auml;he</title>
 <style>
@@ -64,7 +66,25 @@ h1{font-family:'IBM Plex Mono',monospace;font-size:1.05rem;letter-spacing:.18em;
 <main>
 <div class="classbar"><span>NOTHING CLASSIFIED OR PRIVILEGED</span><span class="dtg" id="asof">&nbsp;</span></div>
 <h1>Predictive Ledger</h1>
-<p class="dek">Every projection the KKR stage has sealed, open and resolved, hits and misses alike, segregated by the arm that issued it. This page shows rows, not scores &mdash; a Brier belongs to one forecaster and lives on <a href="kalibrierwarte.html">the Warte</a>. The complete static table is <a href="ledger_full.html">ledger_full.html</a>; the record of record is <a href="ledger.json">ledger.json</a>.</p>
+<section class="wp">
+<aside class="wp-index">
+  <p class="wp-ref">W/P LEDGER<small>kkr-ledger/1.1 &middot; rendered at every seal</small></p>
+  <p class="wp-purpose">Every projection the KKR stage has sealed, open and resolved, hits and misses alike, segregated by the arm that issued it. Rows, not scores &mdash; a Brier belongs to one forecaster and lives on <a href="kalibrierwarte.html">the Warte</a>.</p>
+</aside>
+<aside class="wp-prov">
+  <dl class="wp-meta">
+    <dt>Source of record</dt><dd><a href="ledger.json"><code>ledger.json</code></a>, sha256 (LF) <code id="wp-sha">&hellip;</code></dd>
+    <dt>This page reads</dt><dd><code>ledger_index.json</code>, cut from the record by <code>kkr.py</code> at every render; the complete static table is <a href="ledger_full.html">ledger_full.html</a></dd>
+    <dt>Prepared by</dt><dd>the desk's generator, unattended, on every seal and every publish</dd>
+    <dt>Anchored</dt><dd>OpenTimestamps receipt on <code>ledger.json</code>; state on <a href="verify.html">receipts</a></dd>
+  </dl>
+  <details class="wp-howto"><summary>How to read this</summary>
+    <p>Each row is one sealed projection: its id, the arm that issued it, the stated probability, and its status. Open rows have not reached their deadline; past-deadline rows await the weekly sitting; hit, miss and void are the sitting's verdicts, never edited after the fact.</p>
+    <p>Filter by arm, domain, rubric cohort or status; search the statement and resolution text; tap a row for its resolution, packet and report, then the remaining fields from the record itself.</p>
+    <p>Corrections are dated on the row and the superseded value is kept. Rejected rows are not here: their reasons live in each day's KKR report.</p>
+  </details>
+</aside>
+<div class="wp-body">
 <div class="counts" id="counts"></div>
 <div class="ctl">
   <input class="wide" id="q" type="search" placeholder="search id, statement, resolution" aria-label="search">
@@ -90,7 +110,20 @@ h1{font-family:'IBM Plex Mono',monospace;font-size:1.05rem;letter-spacing:.18em;
 <div class="pager"><button id="prev">&larr; prev</button><span id="range">loading&hellip;</span><button id="next">next &rarr;</button></div>
 <ol class="rows" id="rows"></ol>
 <div class="pager"><button id="prev2">&larr; prev</button><span id="range2"></span><button id="next2">next &rarr;</button></div>
-<p class="note" id="foot">Rows render from <span class="mono">ledger_index.json</span>, a compact index the generator cuts from the ledger at every render; opening a row loads the remaining fields from <span class="mono">ledger.json</span> once. Sealed rows are never edited; corrections are dated on the row. Kill reasons for rejected rows live in each day's KKR report, not here.</p>
+</div>
+<footer class="wp-reperform">
+  <h2>Re-performance</h2>
+  <p>Nothing on this page is asserted that you cannot reproduce. The record is <code>ledger.json</code>; this viewer is a derived view of it.</p>
+  <ol>
+    <li>Clone the repository: <code>git clone https://github.com/OccultusTheoretician/netz.git</code></li>
+    <li>Hash the record with line endings normalised to LF and compare the first sixteen characters with the receipt below.</li>
+    <li>Verify the OpenTimestamps receipt <code>docs/ledger.json.ots</code> against that digest with the <code>ots</code> client, or run <code>python ots_anchor.py --status</code> from the clone.</li>
+    <li>Regenerate this page's index: <code>python -c "import kkr; kkr.render_ledger()"</code> writes <code>forecasts/ledger_index.json</code>; its row count must equal the record's.</li>
+  </ol>
+  <div class="wp-receipt">ledger.json sha256 (LF), first 16: <code id="wp-receipt" data-value="">&hellip;</code><button class="wp-copy" type="button" data-copy="#wp-receipt">copy</button></div>
+  <p class="wp-signoff">Prepared by the generator; the operator adjudicates at the weekly sitting and does not edit sealed rows. The rules that govern this record are RPAS-26 (the register), DECC-26 (the commitments) and the Kalibrierwarte registration (the scores that are not shown here).</p>
+</footer>
+</section>
 </main>
 <script>
 (function(){
@@ -213,6 +246,8 @@ fetch("ledger_index.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw ne
   fill($("dom"),(j.domains||[]).map(function(d){return {v:d};}),function(it){return it.v;});
   fill($("coh"),(j.cohorts||[]).map(function(c){return {v:c.c,n:c.n,f:c.from,t:c.to};}),function(it){return it.v.slice(0,8)+" ("+it.n+", "+(it.f||"")+" to "+(it.t||"")+")";});
   counts();wire();render();
+  var sha=j.ledger_sha16_lf||"";
+  ["wp-sha","wp-receipt"].forEach(function(id){var el=$(id);if(el){el.textContent=sha?sha:"unavailable";el.setAttribute("data-value",sha);}});
 }).catch(function(e){
   $("range").innerHTML='<span class="err">index unavailable ('+esc(e.message)+')</span> &middot; <a href="ledger_full.html">open the full table</a>';
   $("range2").innerHTML="";
