@@ -27,6 +27,7 @@ def main():
     led = json.loads((HERE/"ledger.json").read_text(encoding="utf-8"))
     rows = led["projections"]
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    _ledger_sha16 = hashlib.sha256((HERE/"ledger.json").read_bytes().replace(b"\r\n", b"\n")).hexdigest()[:16]  # SHELL-WARTE-2026-09-06
     # KK27C-WARTE: era split. A Brier belongs to one forecaster, and an era
     # boundary marks a different forecaster: the Rueckkopplungsverbot cut
     # lmstudio/auto into three. Pooling them under one tile would violate
@@ -196,6 +197,9 @@ def main():
          "<meta property='og:image' content='https://retroprescientaudit.com/og_nebelkraehe.png'>",
          "<meta name='viewport' content='width=device-width,initial-scale=1'>",
          "<link rel='stylesheet' href='fonts/fonts.css'>",
+         "<link rel='stylesheet' href='brand.css'>",
+         "<link rel='stylesheet' href='instrument.css'>",  # SHELL-WARTE-2026-09-06
+         "<script defer src='instrument.js'></script>",
          "<style>body{background:#0c0e11;color:#d6d3cb;"
          "font-family:'IBM Plex Sans',sans-serif;max-width:900px;"
          "margin:0 auto;padding:0 1.25rem 3rem;font-size:15px;line-height:1.6}"
@@ -209,19 +213,40 @@ def main():
          "th{color:#8b8b85;font-weight:600}.note{color:#8b8b85;max-width:46rem}"
          ".warn{color:#c9a227}"
          "</style></head><body>",
-         "<div class='kicker'>Calibration &middot; per arm</div>",
+         # SHELL-WARTE-2026-09-06: the face is a workpaper (INSTRUMENT_SHELL.md)
          "<h1>Kalibrierwarte</h1>",
-         f"<p class='note'>generated {now} - no pooled score exists; a "
-         f"Brier belongs to one forecaster. Reliability = mean stated "
-         f"probability vs observed frequency per decile. Rows sealed "
-         f"before the rubric commitment carry no hash and are marked. "
-         f"Open rows carrying a rubric hash: {open_hash}/{open_all}.</p>",
-         "<p class='note'>A Brier over KEYED rows scores arithmetic - the "
-         "outcome was deducible from the forecaster's own declared priors. "
-         "A Brier over KEYLESS rows scores foresight. Only the second "
-         "number bears on any claim this desk makes, and it is stated with "
-         "its citation-defect count attached: a keyless call made against "
-         "unreadable priors was made against nothing.</p>"]
+         "<section class='wp'>",
+         "<aside class='wp-index'>",
+         f"<p class='wp-ref'>W/P WARTE<small>kalibrierwarte/1.0 &middot; generated {now}</small></p>",
+         "<p class='wp-purpose'>Calibration per arm, read from the sealed ledger. No pooled "
+         "score exists; a Brier belongs to one forecaster. These tiles are descriptive and "
+         "print the noise line under the floors; the only scores this desk claims come from "
+         "the registered estimators at an arm's first checkpoint.</p>",
+         "</aside>",
+         "<aside class='wp-prov'>",
+         "<dl class='wp-meta'>",
+         f"<dt>Source of record</dt><dd><a href='ledger.json'><code>ledger.json</code></a>, "
+         f"sha256 (LF) <code>{_ledger_sha16}</code> at render</dd>",
+         "<dt>This page reads</dt><dd>the sealed ledger only; it writes "
+         "<code>forecasts/kalibrierwarte_latest.json</code> beside this face</dd>",
+         "<dt>Prepared by</dt><dd><code>warte.py</code>, unattended, at every seal and every chain run</dd>",
+         "<dt>Governed by</dt><dd><a href='KALIBRIERWARTE_REGISTERED_REPORT_v3.md'>the registration</a>, "
+         "Sections 13 and 14: hypotheses, floors and quality checks are fixed there, and any "
+         "confirmatory figure comes from <code>warte_report.py</code> at 50 resolved within one cohort</dd>",
+         "</dl>",
+         "<details class='wp-howto'><summary>How to read this</summary>",
+         "<p>Reliability is mean stated probability against observed frequency per decile; a "
+         "decile with fewer than five resolved rows prints its count and no frequency. Under ten "
+         "resolved an arm's skill is not printed; under thirty the tile is noise and says so.</p>",
+         "<p>A Brier over KEYED rows scores arithmetic - the outcome was deducible from the "
+         "forecaster's own declared priors. A Brier over KEYLESS rows scores foresight. Only the "
+         "second bears on any claim this desk makes, and it carries its citation-defect count: a "
+         "keyless call made against unreadable priors was made against nothing.</p>",
+         f"<p>Rows sealed before the rubric commitment carry no hash and are marked. Open rows "
+         f"carrying a rubric hash: {open_hash}/{open_all}.</p>",
+         "</details>",
+         "</aside>",
+         "<div class='wp-body'>"]
     for arm, t in tiles.items():
         h.append(f"<h2>{arm}</h2>")
         if t.get("zero_state"):
@@ -269,8 +294,24 @@ def main():
             h.append(f"<tr><td>{b['bin']}</td><td>{b['n']}</td>"
                      f"<td>{b['mean_p']}</td><td>{obs}</td></tr>")
         h.append("</table>")
-    h.append("<p class='note'>kalibrierwarte/1.0 - read-only against the "
-             "sealed ledger - misses printed at full size</p></body></html>")
+    # SHELL-WARTE-2026-09-06: re-performance footer and receipt
+    h.append("</div>")
+    h.append("<footer class='wp-reperform'><h2>Re-performance</h2>"
+             "<p>Every tile above recomputes from the record; nothing here is asserted that you cannot reproduce.</p>"
+             "<ol>"
+             "<li>Clone the repository: <code>git clone https://github.com/OccultusTheoretician/netz.git</code></li>"
+             "<li><code>python warte.py</code> regenerates this face and <code>forecasts/kalibrierwarte_latest.json</code> "
+             "from <code>ledger.json</code>; hash the record with line endings normalised to LF and compare with the receipt below.</li>"
+             "<li><code>python warte_report.py</code> runs the registered estimators report-only: bootstrap intervals, "
+             "the seat re-cut and the quality checks, reading hypotheses only for an arm at 50 resolved within one cohort. "
+             "The registration pins that script's hash in Section 13.</li>"
+             "<li>The rules governing every read are in the registration; a failed quality check halts the read, and the halt stands.</li>"
+             "</ol>"
+             f"<div class='wp-receipt'>ledger.json sha256 (LF), first 16: <code id='wp-receipt' data-value='{_ledger_sha16}'>{_ledger_sha16}</code>"
+             "<button class='wp-copy' type='button' data-copy='#wp-receipt'>copy</button></div>"
+             "<p class='wp-signoff'>kalibrierwarte/1.0 - read-only against the sealed ledger - misses printed at full size. "
+             "Prepared by the generator; the operator adjudicates at the weekly sitting and does not edit sealed rows.</p>"
+             "</footer></section></body></html>")
     fh = HERE/"docs"/"kalibrierwarte.html"
     fh.write_text("\n".join(h), encoding="utf-8")
     print(f"WARTE - {len(tiles)} arm tile(s) - {sum(t['resolved'] for t in tiles.values())} resolved rows read", file=sys.stderr)
