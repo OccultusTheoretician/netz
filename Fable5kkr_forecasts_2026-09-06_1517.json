@@ -1,0 +1,118 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry for the Adobe Commerce or Magento vulnerability disclosed 2026-09-05, with a dateAdded value between 2026-09-07 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 60,
+    "resolution": "The public CISA KEV JSON feed contains an entry naming Adobe Commerce or Magento with dateAdded between 2026-09-07 and 2026-10-16 inclusive.",
+    "deadline": "2026-10-20",
+    "citations": [
+      15
+    ],
+    "failure_condition": "No KEV entry naming Adobe Commerce or Magento carries a dateAdded value inside the 2026-09-07 to 2026-10-16 window."
+  },
+  {
+    "statement": "The FOMC statement issued 2026-09-16 announces an increase in the federal funds target range. Reference: range of 3.50 to 3.75 percent in effect on the packet date.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "The Federal Reserve policy statement dated 2026-09-16 states the Committee decided to raise the target range for the federal funds rate.",
+    "deadline": "2026-09-18",
+    "citations": [
+      47
+    ],
+    "failure_condition": "The 2026-09-16 statement maintains or lowers the target range, or no scheduled decision raising it is issued that day."
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-09-08 and 2026-10-30. Reference: 96.28 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 55,
+    "resolution": "The official ICE daily settlement price for the front-month Brent contract is at or above 100.00 USD on any trading day between 2026-09-08 and 2026-10-30 inclusive.",
+    "deadline": "2026-11-03",
+    "citations": [
+      42,
+      75
+    ],
+    "failure_condition": "Every ICE front-month Brent settlement inside the window is below 100.00 USD."
+  },
+  {
+    "statement": "The LBMA Gold Price PM prints at or above 5000.00 USD per troy ounce on at least one business day between 2026-09-08 and 2026-12-31. Reference: 4476.60 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "The published LBMA Gold Price PM benchmark is at or above 5000.00 USD per troy ounce on any business day between 2026-09-08 and 2026-12-31 inclusive.",
+    "deadline": "2027-01-05",
+    "citations": [
+      37
+    ],
+    "failure_condition": "No LBMA Gold Price PM benchmark inside the window reaches 5000.00 USD."
+  },
+  {
+    "statement": "Between 2026-09-07 and 2026-12-31 the governments of Russia and Ukraine each publicly confirm agreement to a general ceasefire or a signed framework agreement providing for cessation of hostilities.",
+    "domain": "military/conflict",
+    "probability": 20,
+    "resolution": "Official statements from both governments, carried by at least two of Reuters, AP, AFP, confirm the same ceasefire or framework agreement, with both confirmations dated inside the window.",
+    "deadline": "2027-01-05",
+    "citations": [
+      64,
+      83,
+      92
+    ],
+    "failure_condition": "By 2026-12-31 the two governments have not both publicly confirmed the same ceasefire or framework agreement."
+  },
+  {
+    "statement": "Between 2026-09-07 and 2026-10-07 at least one commercial vessel in the Persian Gulf, Strait of Hormuz, or Gulf of Oman is attacked, struck, or seized in an incident attributed to US or Iranian forces.",
+    "domain": "military/conflict",
+    "probability": 80,
+    "resolution": "A CENTCOM release, or reports from at least two of Reuters, AP, AFP, identify a specific vessel attacked or seized in the named waters within the window, attributed to US or Iranian forces.",
+    "deadline": "2026-10-09",
+    "citations": [
+      42,
+      75
+    ],
+    "failure_condition": "No incident meeting the vessel, location, attribution, and window criteria occurs during the window."
+  },
+  {
+    "statement": "Between 2026-09-07 and 2026-12-31 the Iranian government or IRGC issues a formal announcement declaring the Strait of Hormuz closed to commercial shipping.",
+    "domain": "military/conflict",
+    "probability": 10,
+    "resolution": "Reuters and AP both report an official Iranian government or IRGC declaration of closure of the Strait of Hormuz to commercial shipping, issued within the window.",
+    "deadline": "2027-01-05",
+    "citations": [
+      42,
+      75
+    ],
+    "failure_condition": "No formal Iranian closure declaration covering commercial shipping is issued during the window; threats or partial restrictions do not qualify."
+  },
+  {
+    "statement": "Alternative fuer Deutschland records the largest party share of second votes in the official result of the Saxony-Anhalt Landtag election held 2026-09-06.",
+    "domain": "political",
+    "probability": 85,
+    "resolution": "The preliminary or final official result published by the Landeswahlleiterin Sachsen-Anhalt shows AfD with the largest second-vote share of any party.",
+    "deadline": "2026-09-18",
+    "citations": [
+      90
+    ],
+    "failure_condition": "The official result shows any other party with a second-vote share equal to or larger than the AfD share."
+  },
+  {
+    "statement": "Between 2026-09-07 and 2026-12-31 the UK Electoral Commission publicly announces it has opened a formal investigation into donations to Reform UK.",
+    "domain": "political",
+    "probability": 40,
+    "resolution": "An Electoral Commission publication or press statement dated within the window announces or confirms that a formal investigation into Reform UK donations has been opened.",
+    "deadline": "2027-01-05",
+    "citations": [
+      86,
+      89
+    ],
+    "failure_condition": "By window close the Commission has announced assessments or inquiries only, or nothing, without opening a formal investigation."
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one magnitude 6.0 or greater event within 300 km of the 2026-09-06 M6.3 Nikolski, Alaska epicenter between 2026-09-07 and 2026-12-31.",
+    "domain": "disaster",
+    "probability": 35,
+    "resolution": "A USGS catalog query returns at least one M 6.0 or greater event with origin time in the window and epicenter within 300 km of the referenced M6.3 event.",
+    "deadline": "2027-01-05",
+    "citations": [
+      23
+    ],
+    "failure_condition": "The USGS catalog contains no M 6.0 or greater event meeting the distance and window criteria."
+  }
+]

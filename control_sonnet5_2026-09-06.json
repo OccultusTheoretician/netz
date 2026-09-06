@@ -1,0 +1,200 @@
+[
+  {
+    "statement": "Between 2026-09-13 and 2026-10-13, CENTCOM, the U.S. Department of Defense, or the Israeli Defense Forces will confirm at least one coalition service member killed or wounded in action from Iranian or IRGC-aligned action in the Strait of Hormuz, Gulf of Oman, or wider Persian Gulf theater.",
+    "resolution": "TRUE if CENTCOM, DoD, or IDF confirms, with wire-service corroboration (Reuters, AP, or AFP), a coalition KIA or WIA from Iranian or IRGC-aligned action in the Hormuz theater between 2026-09-13 and 2026-10-13. FALSE otherwise by 2026-10-15.",
+    "failure_condition": "No coalition killed-in-action or wounded-in-action casualty from Iranian or IRGC-aligned action in the Hormuz theater is confirmed and wire-corroborated before the deadline.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-15",
+    "probability": 49,
+    "citations": [
+      42,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-13 and 2026-11-13, the governments of Ukraine and Russia will both publicly confirm a mutual ceasefire or comprehensive halt to hostilities in the Russia-Ukraine war, following the Witkoff-Kushner shuttle diplomacy in Kyiv.",
+    "resolution": "TRUE if both Ukraine's government and Russia's government confirm, with independent wire corroboration, a mutual ceasefire or halt to hostilities between 2026-09-13 and 2026-11-13. FALSE otherwise by 2026-11-15.",
+    "failure_condition": "Neither government issues, or only one issues without matching confirmation from the other, a statement confirming a mutual ceasefire before the deadline.",
+    "domain": "political",
+    "deadline": "2026-11-15",
+    "probability": 35,
+    "citations": [
+      64,
+      84,
+      92
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-13 and 2026-11-13, the UK Electoral Commission will confirm it has opened a formal investigation into Reform UK over the overseas donations reporting Nigel Farage acknowledged looked damaging on 2026-09-06.",
+    "resolution": "TRUE if the Electoral Commission confirms, corroborated by a UK national outlet, an open formal investigation into Reform UK's donation reporting between 2026-09-13 and 2026-11-13. FALSE otherwise by 2026-11-15.",
+    "failure_condition": "The Electoral Commission does not confirm an open formal investigation into Reform UK's donation reporting before the deadline.",
+    "domain": "political",
+    "deadline": "2026-11-15",
+    "probability": 35,
+    "citations": [
+      86,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "On 2026-09-16, the Federal Open Market Committee will raise its federal funds target range above the current 3.50 to 3.75 percent range. Reference: 3.50-3.75 percent target range in effect on the packet date, 2026-09-06.",
+    "resolution": "TRUE if the FOMC statement released 2026-09-16 sets a new target range with a lower bound above 3.50 percent, i.e. any hike. FALSE if the range is held at 3.50-3.75 percent or cut.",
+    "failure_condition": "The FOMC statement released 2026-09-16 holds the target range at 3.50-3.75 percent or lowers it, rather than raising it.",
+    "domain": "economic",
+    "deadline": "2026-09-16",
+    "probability": 21,
+    "citations": [
+      47
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-13 and 2026-11-01, Freddie Mac's Primary Mortgage Market Survey will report a weekly average 30-year fixed mortgage rate of 7.25 percent or higher on at least one release. Reference: approximately 7.00 percent as reported 2026-09-05.",
+    "resolution": "TRUE if any Freddie Mac PMMS release between 2026-09-13 and 2026-11-01 reports the 30-year fixed average at or above 7.25 percent. FALSE if every release in the window is below 7.25 percent.",
+    "failure_condition": "No Freddie Mac PMMS release between 2026-09-13 and 2026-11-01 reports a 30-year fixed average of 7.25 percent or higher.",
+    "domain": "economic",
+    "deadline": "2026-11-02",
+    "probability": 21,
+    "citations": [
+      51,
+      47
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-13 and 2026-10-27, the CISA Known Exploited Vulnerabilities catalog will add an entry for Adobe Commerce or Magento Open Source tied to the zero-day exploitation reported on 2026-09-05.",
+    "resolution": "TRUE if the CISA KEV catalog lists an Adobe Commerce or Magento Open Source entry with dateAdded between 2026-09-13 and 2026-10-27. FALSE if no such entry appears by then.",
+    "failure_condition": "The CISA KEV catalog contains no Adobe Commerce or Magento Open Source entry with a dateAdded in the stated window.",
+    "domain": "cyber",
+    "deadline": "2026-10-27",
+    "probability": 30,
+    "citations": [
+      15
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-13 and 2026-10-04, Victoria Police will confirm the arrest of the suspect sought over the 2026-09-06 alleged axe attack that left three people with life-threatening injuries.",
+    "resolution": "TRUE if Victoria Police confirms, corroborated by a wire or national outlet, the arrest of the sought suspect between 2026-09-13 and 2026-10-04. FALSE otherwise by 2026-10-06.",
+    "failure_condition": "Victoria Police has not confirmed, and no corroborating outlet has reported, the arrest of the sought suspect before the deadline.",
+    "domain": "crime_security",
+    "deadline": "2026-10-06",
+    "probability": 36,
+    "citations": [
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-13 and 2026-10-13, a further eruption of Mount Anak Krakatau will trigger a new suspension of flight operations at Soekarno-Hatta International Airport near Jakarta, following the multi-airport disruption on 2026-09-06.",
+    "resolution": "TRUE if Angkasa Pura, Indonesia's transport ministry, or a NOTAM confirms a new Anak Krakatau ash suspension at Soekarno-Hatta, corroborated by a wire service, between 2026-09-13 and 2026-10-13. FALSE otherwise by 2026-10-15.",
+    "failure_condition": "No further Anak Krakatau-triggered suspension of flight operations at Soekarno-Hatta is confirmed and wire-corroborated before the deadline.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-10-15",
+    "probability": 36,
+    "citations": [
+      20,
+      26
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

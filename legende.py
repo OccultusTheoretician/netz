@@ -57,8 +57,20 @@ def main():
             o.append('<tr><td class="n"><a href="' + ln["href"] + '">' + esc(ln["text"]) + '</a></td>'
                      '<td>' + esc(blurb) + src + '</td></tr>')
         o.append('</table></div></section>')
+    # LEGENDETRACKED-2026-09-06: a served document is a file git tracks under docs/;
+    # untracked or ignored files cannot be served by Pages and are not listed.
+    import subprocess as _sp
+    try:
+        _tracked = set(Path(x).name for x in _sp.run(
+            ["git", "ls-files", "--", "docs"], capture_output=True, text=True, timeout=30, cwd=str(HERE)
+        ).stdout.split("\n") if x.strip() and Path(x).parent.name == "docs")
+    except Exception:
+        _tracked = None   # no git: fall back to the disk walk, printed
+    if _tracked is None:
+        print("legende: git unavailable - listing served documents from disk")
     arts = sorted(p.name for p in DOCS.iterdir() if p.is_file()
-                  and p.name not in _SKIP and not p.name.lower().endswith(PAGE_EXT))
+                  and p.name not in _SKIP and not p.name.lower().endswith(PAGE_EXT)
+                  and (_tracked is None or p.name in _tracked))
     o.append('<section><div class="wrap"><h2>Served records</h2>')
     o.append('<p class="dek">Machine and document records served beside the pages. Indexed here so no published artifact is reachable from nowhere.</p><ul>')
     for a in arts:
