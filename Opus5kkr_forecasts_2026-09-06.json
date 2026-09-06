@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The official final result certified by the Landeswahlleiter of Saxony-Anhalt for the 2026-09-06 state election, certified between 2026-09-07 and 2026-09-30, allocates AfD at least 42 of the 83 Landtag seats.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "TRUE if the amtliches Endergebnis published by the Landeswahlleiter Sachsen-Anhalt between 2026-09-07 and 2026-09-30 shows AfD holding 42 or more of 83 seats. Reference: 41 of 83 in the election-night projection.",
+    "deadline": "2026-10-05",
+    "citations": [90],
+    "failure_condition": "The certified final seat allocation gives AfD 41 or fewer of the 83 seats, leaving it short of an absolute majority."
+  },
+  {
+    "statement": "The FOMC raises the upper bound of the federal funds target range above 3.75 percent at its scheduled meeting concluding 2026-09-16.",
+    "domain": "economic",
+    "probability": 42,
+    "resolution": "TRUE if the FOMC statement released 2026-09-16 sets a target range with an upper bound above 3.75 percent. Reference: 3.50 to 3.75 percent, held 9-3 on 2026-07-29 with three dissents favouring a hike.",
+    "deadline": "2026-09-18",
+    "citations": [47, 50],
+    "failure_condition": "The 2026-09-16 statement leaves the target range at 3.50 to 3.75 percent or lowers it."
+  },
+  {
+    "statement": "Front-month ICE Brent crude settles at or above USD 105.00 on at least one trading day between 2026-09-08 and 2026-10-30.",
+    "domain": "economic",
+    "probability": 28,
+    "resolution": "TRUE if the ICE Futures Europe published settlement price for the front-month Brent contract is 105.00 or higher on any trading day in that window. Reference: 96.28 at the packet snapshot on 2026-09-06.",
+    "deadline": "2026-11-03",
+    "citations": [42, 75],
+    "failure_condition": "Every front-month Brent settlement in the window is below USD 105.00."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry naming Adobe Commerce or Magento, with a dateAdded value between 2026-09-07 and 2026-10-23.",
+    "domain": "cyber",
+    "probability": 52,
+    "resolution": "TRUE if the CISA KEV JSON feed contains a vulnerability whose vendorProject is Adobe and whose product string contains Commerce or Magento, with dateAdded falling between 2026-09-07 and 2026-10-23 inclusive.",
+    "deadline": "2026-10-27",
+    "citations": [15],
+    "failure_condition": "No KEV entry for an Adobe Commerce or Magento product carries a dateAdded inside the window."
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry naming VMware Workstation or VMware Fusion with a dateAdded value between 2026-09-07 and 2026-11-20.",
+    "domain": "cyber",
+    "probability": 18,
+    "resolution": "TRUE if the CISA KEV JSON feed contains a vulnerability whose product string contains Workstation or Fusion under a vendorProject of Broadcom or VMware, with dateAdded between 2026-09-07 and 2026-11-20 inclusive.",
+    "deadline": "2026-11-24",
+    "citations": [17],
+    "failure_condition": "No KEV entry for VMware Workstation or Fusion carries a dateAdded inside the window."
+  },
+  {
+    "statement": "Russia and Ukraine jointly announce a signed general ceasefire or armistice covering the entire line of contact, agreed between 2026-09-07 and 2026-12-11.",
+    "domain": "military_conflict",
+    "probability": 12,
+    "resolution": "TRUE if the Kremlin and the Ukrainian presidential office each confirm a signed general ceasefire covering the whole front, agreed in the window, and Reuters and AP both report the signing.",
+    "deadline": "2026-12-16",
+    "citations": [83, 92, 64],
+    "failure_condition": "No general ceasefire covering the entire line of contact is signed and confirmed by both governments within the window."
+  },
+  {
+    "statement": "US and Iranian forces exchange at least one further direct kinetic strike on a vessel or maritime target in the Persian Gulf, Gulf of Oman, or Strait of Hormuz, occurring between 2026-09-07 and 2026-10-16.",
+    "domain": "military_conflict",
+    "probability": 60,
+    "resolution": "TRUE if a strike in that window is reported by at least two of Reuters, AP, AFP, and BBC, and is acknowledged by either US Central Command or Iranian state media.",
+    "deadline": "2026-10-21",
+    "citations": [42, 75],
+    "failure_condition": "No US or Iranian strike on a maritime target in those waters occurs inside the window."
+  },
+  {
+    "statement": "The USGS earthquake catalog lists at least one worldwide event of magnitude 7.0 or greater with an origin time between 2026-09-07 and 2026-10-11.",
+    "domain": "disaster_infrastructure",
+    "probability": 72,
+    "resolution": "TRUE if a query of the USGS FDSN event service for magnitude 7.0 and above, origin time between 2026-09-07T00:00Z and 2026-10-11T23:59Z, returns one or more events.",
+    "deadline": "2026-10-16",
+    "citations": [19, 23, 31],
+    "failure_condition": "The USGS catalog returns zero events of magnitude 7.0 or greater for that origin-time range."
+  },
+  {
+    "statement": "Victoria Police announce the arrest, charging, or confirmed death of the man sought over the alleged axe attack in Victoria, occurring between 2026-09-07 and 2026-09-27.",
+    "domain": "crime_security",
+    "probability": 80,
+    "resolution": "TRUE if a Victoria Police media release or court listing, reported by two of ABC News, The Age, and Guardian Australia, records the suspect arrested, charged, or confirmed deceased within the window.",
+    "deadline": "2026-10-01",
+    "citations": [93],
+    "failure_condition": "The suspect remains at large and uncharged at the close of 2026-09-27."
+  },
+  {
+    "statement": "The UK Electoral Commission publicly announces a formal investigation into Reform UK donations, opened between 2026-09-07 and 2026-11-06.",
+    "domain": "political",
+    "probability": 38,
+    "resolution": "TRUE if the Electoral Commission register of investigations or an official Commission statement records a formal investigation into Reform UK or its donations opened within that window.",
+    "deadline": "2026-11-13",
+    "citations": [86, 89],
+    "failure_condition": "The Commission opens no formal investigation into Reform UK donations inside the window."
+  }
+]

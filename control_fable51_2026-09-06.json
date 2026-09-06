@@ -1,0 +1,248 @@
+[
+  {
+    "statement": "The ICE Brent crude front-month futures contract settles at or above 100.00 dollars per barrel on 2026-10-02. Reference: 96.28 dollars per barrel at packet seal on 2026-09-06 (prior-session close).",
+    "resolution": "True if the official ICE Brent front-month settlement price for 2026-10-02 is at or above 100.00 dollars per barrel; false if it is below 100.00.",
+    "failure_condition": "The ICE Brent front-month settlement price for 2026-10-02 is below 100.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-06",
+    "probability": 21,
+    "citations": [
+      42,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year Treasury constant maturity yield published by the Federal Reserve (FRED series DGS10) for 2026-10-30 is at or above 5.00 percent. Reference: 4.78 percent at packet seal on 2026-09-06 (prior-session close).",
+    "resolution": "True if the FRED DGS10 observation dated 2026-10-30 is 5.00 or greater; false if it is less than 5.00.",
+    "failure_condition": "The FRED DGS10 observation dated 2026-10-30 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 21,
+    "citations": [
+      47,
+      50,
+      51
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At the scheduled FOMC meeting concluding 2026-09-16, the Committee raises the federal funds target range above the range in effect at packet seal. Reference: target range 3.50 to 3.75 percent on 2026-09-06 (FRED series DFEDTARU upper limit 3.75).",
+    "resolution": "True if the FOMC statement dated 2026-09-16 announces a target range whose upper limit exceeds 3.75 percent, reflected in FRED DFEDTARU for 2026-09-17; false if the range is held or lowered.",
+    "failure_condition": "The 2026-09-16 FOMC statement leaves the federal funds target range at 3.50 to 3.75 percent or lowers it.",
+    "domain": "economics/markets",
+    "deadline": "2026-09-18",
+    "probability": 21,
+    "citations": [
+      47
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-07 and 2026-09-30 inclusive, UKMTO publishes at least one advisory reporting an attack on, boarding of, or seizure of a merchant vessel in the Strait of Hormuz, Gulf of Oman, or Persian Gulf.",
+    "resolution": "True if the UKMTO advisories archive contains at least one advisory dated 2026-09-07 through 2026-09-30 describing an attack, boarding, or seizure of a merchant vessel in the Strait of Hormuz, Gulf of Oman, or Persian Gulf.",
+    "failure_condition": "No attack, boarding, or seizure of a merchant vessel occurs in the Strait of Hormuz, Gulf of Oman, or Persian Gulf between 2026-09-07 and 2026-09-30, as adjudicated by the UKMTO advisories archive.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-05",
+    "probability": 49,
+    "citations": [
+      42,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-07 and 2026-10-31 inclusive, Donald Trump and Vladimir Putin hold an in-person meeting, confirmed by both the White House and the Kremlin.",
+    "resolution": "True if both whitehouse.gov and kremlin.ru publish confirmation that Trump and Putin met in person on a date between 2026-09-07 and 2026-10-31 inclusive; video or telephone contact does not count.",
+    "failure_condition": "No in-person meeting between Trump and Putin takes place between 2026-09-07 and 2026-10-31, or any claimed meeting lacks confirmation from either the White House or the Kremlin.",
+    "domain": "political",
+    "deadline": "2026-11-04",
+    "probability": 35,
+    "citations": [
+      27,
+      64,
+      92
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the Saxony-Anhalt Landtag election held on 2026-09-06, the AfD receives the largest share of the statewide party-list vote of any party, per the official result published by the Landeswahlleiter Sachsen-Anhalt.",
+    "resolution": "True if the Landeswahlleiter Sachsen-Anhalt preliminary or final result shows the AfD with the highest statewide party-list vote percentage of any party in the 2026-09-06 Landtag election; false if any other party is higher.",
+    "failure_condition": "A party other than the AfD records the highest statewide party-list vote share in the official result of the 2026-09-06 Saxony-Anhalt Landtag election.",
+    "domain": "political",
+    "deadline": "2026-09-14",
+    "probability": 35,
+    "citations": [
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-06 and 2026-09-20 inclusive, Victoria Police announce that a person has been arrested and charged over the alleged axe attack in Victoria, Australia, reported by the Guardian on 2026-09-06, that left three people with life-threatening injuries.",
+    "resolution": "True if a Victoria Police media release, or two of ABC News, The Age, and Guardian Australia, report a person arrested and charged over that attack, with the charge laid between 2026-09-06 and 2026-09-20 inclusive.",
+    "failure_condition": "No person is charged over the attack by the end of 2026-09-20, including if the suspect is located dead or remains at large.",
+    "domain": "crime/security",
+    "deadline": "2026-09-22",
+    "probability": 36,
+    "citations": [
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-07 and 2026-10-02 inclusive, CISA adds to its Known Exploited Vulnerabilities catalog at least one CVE whose product is Adobe Commerce or Magento Open Source, with a dateAdded value in that range.",
+    "resolution": "True if the CISA KEV JSON feed contains an entry with vendorProject Adobe or Magento, product Commerce, Adobe Commerce, or Magento, and dateAdded between 2026-09-07 and 2026-10-02 inclusive.",
+    "failure_condition": "No CISA KEV entry for an Adobe Commerce or Magento vulnerability carries a dateAdded between 2026-09-07 and 2026-10-02.",
+    "domain": "cyber",
+    "deadline": "2026-10-06",
+    "probability": 30,
+    "citations": [
+      15
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-07 and 2026-10-30 inclusive, CISA adds to its Known Exploited Vulnerabilities catalog at least one CVE whose product is VMware Workstation or VMware Fusion (vendor VMware or Broadcom), with a dateAdded value in that range.",
+    "resolution": "True if the CISA KEV JSON feed contains an entry whose product field names Workstation or Fusion under vendorProject VMware or Broadcom, with dateAdded between 2026-09-07 and 2026-10-30 inclusive.",
+    "failure_condition": "No CISA KEV entry naming VMware Workstation or Fusion carries a dateAdded between 2026-09-07 and 2026-10-30.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 30,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-07 and 2026-10-04 inclusive, the USGS earthquake catalog records at least one earthquake of magnitude 6.5 or greater with epicenter within 300 km of the 2026 M6.3 event 84 km SSW of Nikolski, Alaska (USGS event id us7000tdvt).",
+    "resolution": "True if a USGS ComCat search returns at least one event of magnitude 6.5 or greater with origin time between 2026-09-07 00:00 UTC and 2026-10-04 23:59 UTC located within 300 km of USGS event us7000tdvt.",
+    "failure_condition": "No earthquake of magnitude 6.5 or greater occurs within 300 km of USGS event us7000tdvt between 2026-09-07 and 2026-10-04, as adjudicated by the USGS catalog.",
+    "domain": "disaster",
+    "deadline": "2026-10-07",
+    "probability": 36,
+    "citations": [
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:47Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

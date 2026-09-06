@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "The official final result certified by the Landeswahlleiter of Saxony-Anhalt for the 2026-09-06 state election, certified between 2026-09-07 and 2026-09-30, allocates AfD at least 42 of the 83 Landtag seats.",
+    "resolution": "TRUE if the amtliches Endergebnis published by the Landeswahlleiter Sachsen-Anhalt between 2026-09-07 and 2026-09-30 shows AfD holding 42 or more of 83 seats. Reference: 41 of 83 in the election-night projection.",
+    "failure_condition": "The certified final seat allocation gives AfD 41 or fewer of the 83 seats, leaving it short of an absolute majority.",
+    "domain": "political",
+    "deadline": "2026-10-05",
+    "probability": 35,
+    "citations": [
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC raises the upper bound of the federal funds target range above 3.75 percent at its scheduled meeting concluding 2026-09-16.",
+    "resolution": "TRUE if the FOMC statement released 2026-09-16 sets a target range with an upper bound above 3.75 percent. Reference: 3.50 to 3.75 percent, held 9-3 on 2026-07-29 with three dissents favouring a hike.",
+    "failure_condition": "The 2026-09-16 statement leaves the target range at 3.50 to 3.75 percent or lowers it.",
+    "domain": "economic",
+    "deadline": "2026-09-18",
+    "probability": 21,
+    "citations": [
+      47,
+      50
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month ICE Brent crude settles at or above USD 105.00 on at least one trading day between 2026-09-08 and 2026-10-30.",
+    "resolution": "TRUE if the ICE Futures Europe published settlement price for the front-month Brent contract is 105.00 or higher on any trading day in that window. Reference: 96.28 at the packet snapshot on 2026-09-06.",
+    "failure_condition": "Every front-month Brent settlement in the window is below USD 105.00.",
+    "domain": "economic",
+    "deadline": "2026-11-03",
+    "probability": 21,
+    "citations": [
+      42,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry naming Adobe Commerce or Magento, with a dateAdded value between 2026-09-07 and 2026-10-23.",
+    "resolution": "TRUE if the CISA KEV JSON feed contains a vulnerability whose vendorProject is Adobe and whose product string contains Commerce or Magento, with dateAdded falling between 2026-09-07 and 2026-10-23 inclusive.",
+    "failure_condition": "No KEV entry for an Adobe Commerce or Magento product carries a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-27",
+    "probability": 30,
+    "citations": [
+      15
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry naming VMware Workstation or VMware Fusion with a dateAdded value between 2026-09-07 and 2026-11-20.",
+    "resolution": "TRUE if the CISA KEV JSON feed contains a vulnerability whose product string contains Workstation or Fusion under a vendorProject of Broadcom or VMware, with dateAdded between 2026-09-07 and 2026-11-20 inclusive.",
+    "failure_condition": "No KEV entry for VMware Workstation or Fusion carries a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-24",
+    "probability": 30,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia and Ukraine jointly announce a signed general ceasefire or armistice covering the entire line of contact, agreed between 2026-09-07 and 2026-12-11.",
+    "resolution": "TRUE if the Kremlin and the Ukrainian presidential office each confirm a signed general ceasefire covering the whole front, agreed in the window, and Reuters and AP both report the signing.",
+    "failure_condition": "No general ceasefire covering the entire line of contact is signed and confirmed by both governments within the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-12-16",
+    "probability": 49,
+    "citations": [
+      83,
+      92,
+      64
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "US and Iranian forces exchange at least one further direct kinetic strike on a vessel or maritime target in the Persian Gulf, Gulf of Oman, or Strait of Hormuz, occurring between 2026-09-07 and 2026-10-16.",
+    "resolution": "TRUE if a strike in that window is reported by at least two of Reuters, AP, AFP, and BBC, and is acknowledged by either US Central Command or Iranian state media.",
+    "failure_condition": "No US or Iranian strike on a maritime target in those waters occurs inside the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-21",
+    "probability": 49,
+    "citations": [
+      42,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog lists at least one worldwide event of magnitude 7.0 or greater with an origin time between 2026-09-07 and 2026-10-11.",
+    "resolution": "TRUE if a query of the USGS FDSN event service for magnitude 7.0 and above, origin time between 2026-09-07T00:00Z and 2026-10-11T23:59Z, returns one or more events.",
+    "failure_condition": "The USGS catalog returns zero events of magnitude 7.0 or greater for that origin-time range.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-10-16",
+    "probability": 36,
+    "citations": [
+      19,
+      23,
+      31
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Victoria Police announce the arrest, charging, or confirmed death of the man sought over the alleged axe attack in Victoria, occurring between 2026-09-07 and 2026-09-27.",
+    "resolution": "TRUE if a Victoria Police media release or court listing, reported by two of ABC News, The Age, and Guardian Australia, records the suspect arrested, charged, or confirmed deceased within the window.",
+    "failure_condition": "The suspect remains at large and uncharged at the close of 2026-09-27.",
+    "domain": "crime_security",
+    "deadline": "2026-10-01",
+    "probability": 36,
+    "citations": [
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The UK Electoral Commission publicly announces a formal investigation into Reform UK donations, opened between 2026-09-07 and 2026-11-06.",
+    "resolution": "TRUE if the Electoral Commission register of investigations or an official Commission statement records a formal investigation into Reform UK or its donations opened within that window.",
+    "failure_condition": "The Commission opens no formal investigation into Reform UK donations inside the window.",
+    "domain": "political",
+    "deadline": "2026-11-13",
+    "probability": 35,
+    "citations": [
+      86,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-06T22:47:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
