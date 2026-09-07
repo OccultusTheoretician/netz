@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "The FRED series DGS10 records a daily value at or above 5.00 percent on at least one business day between 2026-09-14 and 2026-12-18. Reference: 4.78 percent on the packet date, 2026-09-07.",
+    "domain": "economics/markets",
+    "probability": 52,
+    "resolution": "TRUE if the FRED series DGS10 carries any observation greater than or equal to 5.00 for a date between 2026-09-14 and 2026-12-18 inclusive, read at the deadline. FALSE otherwise. Reference level at seal: 4.78 percent.",
+    "deadline": "2026-12-22",
+    "citations": [
+      64
+    ],
+    "failure_condition": "The maximum DGS10 daily value across 2026-09-14 to 2026-12-18 remains below 5.00 percent."
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or above 110.00 US dollars per barrel on at least one trading day between 2026-09-14 and 2026-11-27. Reference: 96.28 on the packet date, 2026-09-07.",
+    "domain": "economics/markets",
+    "probability": 32,
+    "resolution": "TRUE if ICE publishes a front-month Brent settlement price greater than or equal to 110.00 for any trading day between 2026-09-14 and 2026-11-27 inclusive. Intraday highs do not count; settlement prices only. Reference level at seal: 96.28.",
+    "deadline": "2026-12-02",
+    "citations": [
+      42,
+      50,
+      80
+    ],
+    "failure_condition": "Every ICE Brent front-month settlement inside the window prints below 110.00 dollars."
+  },
+  {
+    "statement": "The CISA KEV catalog adds at least one vulnerability with vendorProject N-able, carrying a dateAdded value between 2026-09-08 and 2026-10-30.",
+    "domain": "cyber",
+    "probability": 70,
+    "resolution": "TRUE if the CISA Known Exploited Vulnerabilities JSON feed contains an entry whose vendorProject field reads N-able and whose dateAdded falls between 2026-09-08 and 2026-10-30 inclusive. Entries carrying an earlier dateAdded do not count.",
+    "deadline": "2026-11-03",
+    "citations": [
+      21,
+      23
+    ],
+    "failure_condition": "No N-able entry in the KEV catalog carries a dateAdded inside the window."
+  },
+  {
+    "statement": "The CISA KEV catalog adds at least one vulnerability with vendorProject MikroTik, carrying a dateAdded value between 2026-09-08 and 2026-12-04.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "TRUE if the CISA Known Exploited Vulnerabilities JSON feed contains an entry whose vendorProject field reads MikroTik and whose dateAdded falls between 2026-09-08 and 2026-12-04 inclusive. Pre-existing MikroTik entries do not count.",
+    "deadline": "2026-12-08",
+    "citations": [
+      19
+    ],
+    "failure_condition": "No MikroTik entry in the KEV catalog carries a dateAdded inside the window."
+  },
+  {
+    "statement": "A commercial vessel is struck by weapons fire, forcibly boarded, or seized in the Strait of Hormuz or the Gulf of Oman between 2026-09-14 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 55,
+    "resolution": "TRUE if two or more of Reuters, AP, and Bloomberg report a commercial vessel hit by weapons fire, forcibly boarded, or seized in the Strait of Hormuz or Gulf of Oman, dated inside the window.",
+    "deadline": "2026-11-04",
+    "citations": [
+      50,
+      80
+    ],
+    "failure_condition": "No commercial vessel is struck, forcibly boarded, or seized in those waters inside the window."
+  },
+  {
+    "statement": "Israeli strikes in Lebanon kill at least 25 people within a single 24-hour period between 2026-09-14 and 2026-10-12.",
+    "domain": "military/conflict",
+    "probability": 45,
+    "resolution": "TRUE if two or more of Reuters, AFP, and AP carry a Lebanese Health Ministry figure of 25 or more killed by Israeli strikes in Lebanon over one 24-hour period inside the window.",
+    "deadline": "2026-10-16",
+    "citations": [
+      72,
+      87,
+      90
+    ],
+    "failure_condition": "No single 24-hour period inside the window produces a Lebanese Health Ministry toll of 25 or more killed by Israeli strikes."
+  },
+  {
+    "statement": "Russian and Ukrainian government delegations hold an in-person bilateral meeting between 2026-09-14 and 2026-12-15.",
+    "domain": "military/conflict",
+    "probability": 22,
+    "resolution": "TRUE if both governments confirm and two or more of Reuters, AP, and AFP report an in-person session of official delegations from both states inside the window. Third-country proximity talks without a direct session resolve FALSE.",
+    "deadline": "2026-12-18",
+    "citations": [
+      68
+    ],
+    "failure_condition": "No in-person session between official Russian and Ukrainian delegations takes place inside the window."
+  },
+  {
+    "statement": "The Landtag of Saxony-Anhalt elects an AfD member as Minister-President between 2026-09-14 and 2026-12-18.",
+    "domain": "political",
+    "probability": 15,
+    "resolution": "TRUE if the official plenary record of the Landtag of Sachsen-Anhalt shows a Minister-President elected inside the window who holds AfD membership at the vote. A caretaker incumbent continuing in office resolves FALSE.",
+    "deadline": "2026-12-23",
+    "citations": [
+      93,
+      100,
+      102
+    ],
+    "failure_condition": "No AfD member is elected Minister-President of Saxony-Anhalt by the Landtag inside the window."
+  },
+  {
+    "statement": "Nepal's official confirmed flood death toll reaches 1,500 or higher between 2026-09-14 and 2026-10-23.",
+    "domain": "disaster",
+    "probability": 38,
+    "resolution": "TRUE if Nepal's National Disaster Risk Reduction and Management Authority publishes a confirmed cumulative 2026 flood death toll of 1,500 or more, dated inside the window. Missing-persons counts are excluded.",
+    "deadline": "2026-10-27",
+    "citations": [
+      26,
+      31,
+      91
+    ],
+    "failure_condition": "The authority's confirmed cumulative death toll stays below 1,500 through the close of the window."
+  },
+  {
+    "statement": "At least one defendant is convicted at the Paris assize trial over the killing of Federico Aramburu between 2026-09-08 and 2026-11-30.",
+    "domain": "crime/security",
+    "probability": 78,
+    "resolution": "TRUE if two or more of AFP, Reuters, and Le Monde report a guilty verdict against at least one defendant on a murder or complicity charge, returned inside the window. Acquittal of all, mistrial, or adjournment resolves FALSE.",
+    "deadline": "2026-12-04",
+    "citations": [
+      11
+    ],
+    "failure_condition": "No defendant is convicted on a murder or complicity charge in that trial inside the window."
+  }
+]

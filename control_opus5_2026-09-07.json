@@ -1,0 +1,252 @@
+[
+  {
+    "statement": "The FRED series DGS10 records a daily value at or above 5.00 percent on at least one business day between 2026-09-14 and 2026-12-18. Reference: 4.78 percent on the packet date, 2026-09-07.",
+    "resolution": "TRUE if the FRED series DGS10 carries any observation greater than or equal to 5.00 for a date between 2026-09-14 and 2026-12-18 inclusive, read at the deadline. FALSE otherwise. Reference level at seal: 4.78 percent.",
+    "failure_condition": "The maximum DGS10 daily value across 2026-09-14 to 2026-12-18 remains below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-22",
+    "probability": 21,
+    "citations": [
+      64
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or above 110.00 US dollars per barrel on at least one trading day between 2026-09-14 and 2026-11-27. Reference: 96.28 on the packet date, 2026-09-07.",
+    "resolution": "TRUE if ICE publishes a front-month Brent settlement price greater than or equal to 110.00 for any trading day between 2026-09-14 and 2026-11-27 inclusive. Intraday highs do not count; settlement prices only. Reference level at seal: 96.28.",
+    "failure_condition": "Every ICE Brent front-month settlement inside the window prints below 110.00 dollars.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 21,
+    "citations": [
+      42,
+      50,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds at least one vulnerability with vendorProject N-able, carrying a dateAdded value between 2026-09-08 and 2026-10-30.",
+    "resolution": "TRUE if the CISA Known Exploited Vulnerabilities JSON feed contains an entry whose vendorProject field reads N-able and whose dateAdded falls between 2026-09-08 and 2026-10-30 inclusive. Entries carrying an earlier dateAdded do not count.",
+    "failure_condition": "No N-able entry in the KEV catalog carries a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 30,
+    "citations": [
+      21,
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds at least one vulnerability with vendorProject MikroTik, carrying a dateAdded value between 2026-09-08 and 2026-12-04.",
+    "resolution": "TRUE if the CISA Known Exploited Vulnerabilities JSON feed contains an entry whose vendorProject field reads MikroTik and whose dateAdded falls between 2026-09-08 and 2026-12-04 inclusive. Pre-existing MikroTik entries do not count.",
+    "failure_condition": "No MikroTik entry in the KEV catalog carries a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-12-08",
+    "probability": 30,
+    "citations": [
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A commercial vessel is struck by weapons fire, forcibly boarded, or seized in the Strait of Hormuz or the Gulf of Oman between 2026-09-14 and 2026-10-31.",
+    "resolution": "TRUE if two or more of Reuters, AP, and Bloomberg report a commercial vessel hit by weapons fire, forcibly boarded, or seized in the Strait of Hormuz or Gulf of Oman, dated inside the window.",
+    "failure_condition": "No commercial vessel is struck, forcibly boarded, or seized in those waters inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 49,
+    "citations": [
+      50,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Israeli strikes in Lebanon kill at least 25 people within a single 24-hour period between 2026-09-14 and 2026-10-12.",
+    "resolution": "TRUE if two or more of Reuters, AFP, and AP carry a Lebanese Health Ministry figure of 25 or more killed by Israeli strikes in Lebanon over one 24-hour period inside the window.",
+    "failure_condition": "No single 24-hour period inside the window produces a Lebanese Health Ministry toll of 25 or more killed by Israeli strikes.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-16",
+    "probability": 49,
+    "citations": [
+      72,
+      87,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russian and Ukrainian government delegations hold an in-person bilateral meeting between 2026-09-14 and 2026-12-15.",
+    "resolution": "TRUE if both governments confirm and two or more of Reuters, AP, and AFP report an in-person session of official delegations from both states inside the window. Third-country proximity talks without a direct session resolve FALSE.",
+    "failure_condition": "No in-person session between official Russian and Ukrainian delegations takes place inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-18",
+    "probability": 49,
+    "citations": [
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Landtag of Saxony-Anhalt elects an AfD member as Minister-President between 2026-09-14 and 2026-12-18.",
+    "resolution": "TRUE if the official plenary record of the Landtag of Sachsen-Anhalt shows a Minister-President elected inside the window who holds AfD membership at the vote. A caretaker incumbent continuing in office resolves FALSE.",
+    "failure_condition": "No AfD member is elected Minister-President of Saxony-Anhalt by the Landtag inside the window.",
+    "domain": "political",
+    "deadline": "2026-12-23",
+    "probability": 35,
+    "citations": [
+      93,
+      100,
+      102
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Nepal's official confirmed flood death toll reaches 1,500 or higher between 2026-09-14 and 2026-10-23.",
+    "resolution": "TRUE if Nepal's National Disaster Risk Reduction and Management Authority publishes a confirmed cumulative 2026 flood death toll of 1,500 or more, dated inside the window. Missing-persons counts are excluded.",
+    "failure_condition": "The authority's confirmed cumulative death toll stays below 1,500 through the close of the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-27",
+    "probability": 36,
+    "citations": [
+      26,
+      31,
+      91
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one defendant is convicted at the Paris assize trial over the killing of Federico Aramburu between 2026-09-08 and 2026-11-30.",
+    "resolution": "TRUE if two or more of AFP, Reuters, and Le Monde report a guilty verdict against at least one defendant on a murder or complicity charge, returned inside the window. Acquittal of all, mistrial, or adjournment resolves FALSE.",
+    "failure_condition": "No defendant is convicted on a murder or complicity charge in that trial inside the window.",
+    "domain": "crime/security",
+    "deadline": "2026-12-04",
+    "probability": 36,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "statement": "Following the AfD first-place finish in the 6 September 2026 Saxony-Anhalt Landtag election reported in the packet, the Saxony-Anhalt Landtag will elect an AfD-nominated Minister-President in a floor vote between 2026-09-14 and 2026-12-01.",
+    "domain": "political",
+    "probability": 12,
+    "resolution": "TRUE if the Saxony-Anhalt Landtag confirms an AfD-nominated Minister-President by floor vote in the window, per official Landtag records and at least one of dpa, Reuters, or AP; else FALSE.",
+    "deadline": "2026-12-04",
+    "citations": [
+      93,
+      99,
+      100
+    ],
+    "failure_condition": "The Saxony-Anhalt Landtag does not elect an AfD-nominated Minister-President within the window, whether because the seat stays vacant, a non-AfD candidate wins, or no vote is held by the deadline."
+  },
+  {
+    "statement": "Following the resignation of the senior AI policy adviser to the UK government over an Anthropic conflict of interest, reported 2026-09-07, the UK government will publicly name a permanent successor to that role between 2026-09-14 and 2026-11-13.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "TRUE if the UK government publicly names, via a GOV.UK release or a wire service report, PA Media or Reuters, a permanent successor to the role within the window; else FALSE.",
+    "deadline": "2026-11-16",
+    "citations": [
+      94
+    ],
+    "failure_condition": "The UK government has not publicly named a permanent successor to the vacated AI policy adviser role by the deadline, whether the post remains vacant or is filled only on an interim basis."
+  },
+  {
+    "statement": "Reference: Brent crude settled at 96.28 USD per barrel per the market snapshot in the packet dated 2026-09-07. Brent front-month futures will settle at or above 100.00 USD per barrel on at least one trading day between 2026-09-14 and 2026-10-09.",
+    "domain": "economics/markets",
+    "probability": 38,
+    "resolution": "TRUE if the ICE Brent 1st-month futures settlement price, or the EIA Brent spot price series if unavailable, closes at or above 100.00 USD on any trading day in the window; else FALSE.",
+    "deadline": "2026-10-13",
+    "citations": [
+      42,
+      50
+    ],
+    "failure_condition": "Brent front-month settlement never reaches 100.00 USD on any trading day within the window."
+  },
+  {
+    "statement": "Reference: the 10-year Treasury yield was 4.78 percent per the market snapshot in the packet dated 2026-09-07. The FRED DGS10 series will show a daily 10-year Treasury yield at or above 4.95 percent on at least one day between 2026-09-14 and 2026-10-09.",
+    "domain": "economics/markets",
+    "probability": 22,
+    "resolution": "TRUE if the FRED DGS10 daily series records a value at or above 4.95 percent on any date in the window; else FALSE.",
+    "deadline": "2026-10-13",
+    "citations": [
+      64
+    ],
+    "failure_condition": "The FRED DGS10 series never records a daily value at or above 4.95 percent on any date within the window."
+  },
+  {
+    "statement": "Following reports that N-able patched a maximum-severity N-central flaw amid ongoing attacks and issued a fourth N-central hotfix in five weeks, the CISA Known Exploited Vulnerabilities catalog will add an N-central entry between 2026-09-14 and 2026-10-19.",
+    "domain": "cyber",
+    "probability": 52,
+    "resolution": "TRUE if the CISA KEV catalog carries a dateAdded value for an N-able N-central CVE falling within the window; else FALSE.",
+    "deadline": "2026-10-22",
+    "citations": [
+      21,
+      23
+    ],
+    "failure_condition": "No N-able N-central CVE is added to the CISA KEV catalog with a dateAdded value inside the window."
+  },
+  {
+    "statement": "Following the report of a Telerik UI padding-oracle bug chained to unauthenticated remote code execution, the CISA Known Exploited Vulnerabilities catalog will add a Telerik UI entry between 2026-09-14 and 2026-10-19.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "TRUE if the CISA KEV catalog carries a dateAdded value for a Telerik UI CVE falling within the window; else FALSE.",
+    "deadline": "2026-10-22",
+    "citations": [
+      17
+    ],
+    "failure_condition": "No Telerik UI CVE is added to the CISA KEV catalog with a dateAdded value inside the window."
+  },
+  {
+    "statement": "Amid reports questioning whether Iran can enforce a restricted zone in the Strait of Hormuz, the government of Iran or the IRGC Navy will formally declare a named restricted or exclusion zone in the Strait of Hormuz between 2026-09-14 and 2026-10-12.",
+    "domain": "military/conflict",
+    "probability": 40,
+    "resolution": "TRUE if Iranian state media, meaning IRNA, Tasnim, or Mehr, and at least one of Reuters, AP, or AFP both report a formally declared, named Hormuz restricted zone within the window; else FALSE.",
+    "deadline": "2026-10-15",
+    "citations": [
+      80,
+      42
+    ],
+    "failure_condition": "The government of Iran and the IRGC Navy do not formally declare a named restricted or exclusion zone in the Strait of Hormuz within the window."
+  },
+  {
+    "statement": "Following reports of Israel-Hezbollah clashes killing 11 and Israeli strikes on a southern Lebanese village killing 12, a formally announced ceasefire or truce covering Israel-Hezbollah hostilities in southern Lebanon will take effect between 2026-09-14 and 2026-11-13.",
+    "domain": "military/conflict",
+    "probability": 18,
+    "resolution": "TRUE if the government of Israel, the government of Lebanon, or Hezbollah announces a ceasefire or truce that takes effect in the window, corroborated by a Western wire service and a regional outlet; else FALSE.",
+    "deadline": "2026-11-16",
+    "citations": [
+      72,
+      90
+    ],
+    "failure_condition": "Hostilities between Israel and Hezbollah in southern Lebanon continue without a ceasefire or truce taking effect within the window."
+  },
+  {
+    "statement": "Following the opening of the Paris trial over the killing of former Argentina rugby international Federico Aramburu, reported 2026-09-07, a verdict will be delivered between 2026-09-08 and 2026-10-06.",
+    "domain": "crime/security",
+    "probability": 65,
+    "resolution": "TRUE if a court docket or a wire service, AFP or Reuters, reports a verdict, guilty or acquittal, delivered in the window; else FALSE.",
+    "deadline": "2026-10-09",
+    "citations": [
+      11
+    ],
+    "failure_condition": "No verdict, guilty or acquittal, is delivered in the Aramburu trial within the window."
+  },
+  {
+    "statement": "Reference: the packet dated 2026-09-07 reports more than 1,300 confirmed dead in the Nepal flooding. The cumulative confirmed death toll reported by disaster authorities in Nepal will reach or exceed 1,500 between 2026-09-14 and 2026-10-12.",
+    "domain": "disaster",
+    "probability": 30,
+    "resolution": "TRUE if the NDRRMA of Nepal, a Nepal government source, or a wire service, AP, Reuters, or AFP, reports a cumulative confirmed death toll at or above 1,500 within the window; else FALSE.",
+    "deadline": "2026-10-15",
+    "citations": [
+      91,
+      26
+    ],
+    "failure_condition": "The cumulative confirmed flood death toll in Nepal does not reach 1,500 within the window."
+  }
+]
