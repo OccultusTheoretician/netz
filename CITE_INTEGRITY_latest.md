@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-09-06T09:38:52Z · ledger `ledger.json` · 1545 rows in scope
+Generated 2026-09-07T10:43:10Z · ledger `ledger.json` · 1610 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,15 +12,15 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **1544**
+- rows audited: **1609**
 - scope limitation (no resolvable source report): **1**
-- defective: **204** (13.2% of audited)
-- rows whose citation number does not identify a unique item: **329** (max candidates behind one number: 8)
-  - AMBIGUOUS_REF: 329
-  - UNSUPPORTED: 121
-  - DEADWEIGHT: 79
+- defective: **219** (13.6% of audited)
+- rows whose citation number does not identify a unique item: **330** (max candidates behind one number: 8)
+  - AMBIGUOUS_REF: 330
+  - UNSUPPORTED: 129
+  - DEADWEIGHT: 86
+  - SHOTGUN: 29
   - NO_CITES: 24
-  - SHOTGUN: 24
   - THIN: 1
 
 ## The number that matters
@@ -48,15 +48,15 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| lmstudio/auto | 296 | 84 | 28% |
-| control/baserate | 458 | 40 | 9% |
-| manual/opus-5/unattested | 185 | 24 | 13% |
-| manual/fable-5/unattested | 168 | 13 | 8% |
+| lmstudio/auto | 304 | 84 | 28% |
+| control/baserate | 484 | 45 | 9% |
+| manual/opus-5/unattested | 192 | 26 | 14% |
+| manual/fable-5/unattested | 173 | 14 | 8% |
 | manual/opus-5 | 74 | 12 | 16% |
-| manual/sonnet-5/unattested | 173 | 11 | 6% |
-| manual/fable-5.1/unattested | 31 | 7 | 23% |
+| manual/sonnet-5/unattested | 180 | 12 | 7% |
+| lmstudio/realist | 16 | 9 | 56% |
+| manual/fable-5.1/unattested | 38 | 8 | 21% |
 | manual/fable | 45 | 6 | 13% |
-| lmstudio/realist | 11 | 4 | 36% |
 | manual/fable-5 | 38 | 2 | 5% |
 | manual/sonnet-5 | 45 | 1 | 2% |
 | operator/human | 10 | 0 | 0% |
