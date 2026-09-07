@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "Jakarta Soekarno-Hatta International Airport operates scheduled commercial passenger departures on at least one day between 2026-09-08 and 2026-09-14, following the Anak Krakatau eruption closure.",
+    "resolution": "TRUE if the airport operator or two international news outlets report scheduled commercial passenger departures operating from Soekarno-Hatta on any day between 2026-09-08 and 2026-09-14.",
+    "failure_condition": "No scheduled commercial passenger departures operate from Soekarno-Hatta on any day between 2026-09-08 and 2026-09-14.",
+    "domain": "disaster",
+    "deadline": "2026-09-16",
+    "probability": 36,
+    "citations": [
+      28,
+      39
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Iranian forces board, seize, or fire upon a commercial merchant vessel in or near the Strait of Hormuz between 2026-09-08 and 2026-10-09.",
+    "resolution": "TRUE if a UKMTO or JMIC advisory, or two international news agencies, report an Iranian boarding, seizure, or weapons employment against a commercial vessel in or near the Strait of Hormuz between 2026-09-08 and 2026-10-09.",
+    "failure_condition": "No Iranian boarding, seizure, or weapons employment against a commercial merchant vessel occurs in or near the Strait of Hormuz between 2026-09-08 and 2026-10-09.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-13",
+    "probability": 49,
+    "citations": [
+      50,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-09-08 and 2026-10-09. Reference: Brent 96.28 on the packet date.",
+    "resolution": "TRUE if the official ICE Brent front-month daily settlement price is at or above 100.00 USD on any trading day between 2026-09-08 and 2026-10-09. Reference: 96.28 at seal.",
+    "failure_condition": "Every ICE Brent front-month daily settlement between 2026-09-08 and 2026-10-09 is below 100.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-13",
+    "probability": 21,
+    "citations": [
+      42,
+      50
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one ConnectWise ScreenConnect entry with a date-added value between 2026-09-08 and 2026-10-09.",
+    "resolution": "TRUE if the CISA KEV catalog contains an entry naming ConnectWise or ScreenConnect in its vendor or product fields with dateAdded between 2026-09-08 and 2026-10-09.",
+    "failure_condition": "The CISA KEV catalog contains no ConnectWise or ScreenConnect entry with dateAdded between 2026-09-08 and 2026-10-09.",
+    "domain": "cyber",
+    "deadline": "2026-10-13",
+    "probability": 30,
+    "citations": [
+      16,
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The NTSB publishes a preliminary report on the 2026-09-06 cargo aircraft accident at Miami International Airport between 2026-09-08 and 2026-10-30.",
+    "resolution": "TRUE if an NTSB preliminary report for the 2026-09-06 Miami cargo aircraft accident appears in the NTSB public investigation database dated between 2026-09-08 and 2026-10-30.",
+    "failure_condition": "No NTSB preliminary report for the 2026-09-06 Miami cargo aircraft accident is publicly available dated on or before 2026-10-30.",
+    "domain": "disaster",
+    "deadline": "2026-11-04",
+    "probability": 36,
+    "citations": [
+      86,
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russian and Ukrainian government delegations hold a direct meeting at a publicly announced venue between 2026-09-08 and 2026-11-06.",
+    "resolution": "TRUE if both the Russian and Ukrainian governments confirm a direct delegation-level meeting held between 2026-09-08 and 2026-11-06, reported by two international news agencies.",
+    "failure_condition": "No direct Russia-Ukraine delegation-level meeting confirmed by both governments takes place between 2026-09-08 and 2026-11-06.",
+    "domain": "political",
+    "deadline": "2026-11-10",
+    "probability": 35,
+    "citations": [
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win a majority of seats in the United States House of Representatives in the elections held 2026-11-03.",
+    "resolution": "TRUE if Associated Press race calls credit Democratic candidates with at least 218 US House seats from the 2026-11-03 elections, as of 2026-12-04.",
+    "failure_condition": "As of 2026-12-04 Associated Press race calls credit Democratic candidates with fewer than 218 US House seats from the 2026-11-03 elections.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 35,
+    "citations": [
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Paris court trying the murder of Federico Aramburu delivers a verdict between 2026-09-08 and 2026-12-18.",
+    "resolution": "TRUE if two international news outlets report a verdict delivered in the Paris trial over the murder of Federico Aramburu between 2026-09-08 and 2026-12-18.",
+    "failure_condition": "No verdict is delivered in the Paris Aramburu murder trial between 2026-09-08 and 2026-12-18.",
+    "domain": "crime/security",
+    "deadline": "2026-12-22",
+    "probability": 36,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iraqi governments both publicly announce completion of the US-led coalition military mission in Iraq between 2026-09-08 and 2026-12-31.",
+    "resolution": "TRUE if both the US and Iraqi governments announce the coalition military mission in Iraq has ended between 2026-09-08 and 2026-12-31, reported by two international news agencies.",
+    "failure_condition": "By 2026-12-31 the US and Iraqi governments have not both announced completion of the coalition military mission in Iraq.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 49,
+    "citations": [
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Landtag of Saxony-Anhalt elects a member of the AfD as Minister-President between 2026-09-08 and 2027-02-26.",
+    "resolution": "TRUE if the Landtag of Saxony-Anhalt elects an AfD member as Minister-President between 2026-09-08 and 2027-02-26, per the Landtag official record or two international news outlets.",
+    "failure_condition": "By 2027-02-26 the Landtag of Saxony-Anhalt has not elected an AfD member as Minister-President.",
+    "domain": "political",
+    "deadline": "2027-03-02",
+    "probability": 35,
+    "citations": [
+      93,
+      100,
+      114
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-07T18:17:30Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
