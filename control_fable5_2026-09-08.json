@@ -1,0 +1,255 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry whose vendor or product field identifies Adobe Commerce or Magento, with a dateAdded value between 2026-09-08 and 2026-10-09.",
+    "resolution": "True if the CISA KEV JSON feed, fetched on the deadline, contains at least one entry with vendorProject or product matching Adobe Commerce or Magento and dateAdded between 2026-09-08 and 2026-10-09 inclusive; else false.",
+    "failure_condition": "As of the deadline the KEV catalog contains no Adobe Commerce or Magento entry with dateAdded on or after 2026-09-08 and on or before 2026-10-09.",
+    "domain": "cyber",
+    "deadline": "2026-10-13",
+    "probability": 30,
+    "citations": [
+      12,
+      15
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry for the SAP kernel vulnerability publicly designated OVERPASS, with a dateAdded value between 2026-09-08 and 2026-12-08.",
+    "resolution": "True if the CISA KEV feed on the deadline lists an SAP entry whose CVE is identified in SAP or CISA advisories under the OVERPASS designation, with dateAdded between 2026-09-08 and 2026-12-08 inclusive; else false.",
+    "failure_condition": "No KEV entry tied to the OVERPASS SAP vulnerability carries a dateAdded inside the 2026-09-08 to 2026-12-08 window as of the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-12-11",
+    "probability": 30,
+    "citations": [
+      13
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2979,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 100.00 USD per barrel on at least one trading day between 2026-09-09 and 2026-10-09. Reference: Brent 97.68 at packet seal on 2026-09-08.",
+    "resolution": "True if any official ICE Brent front-month daily settlement price between 2026-09-09 and 2026-10-09 inclusive is 100.00 USD or higher; else false. Reference level at seal: 97.68.",
+    "failure_condition": "Every ICE Brent front-month settlement from 2026-09-09 through 2026-10-09 prints below 100.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-13",
+    "probability": 21,
+    "citations": [
+      50,
+      87,
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "NYMEX WTI front-month futures settle at or above 110.00 USD per barrel on at least one trading day between 2026-09-09 and 2026-12-31. Reference: WTI 92.66 at packet seal on 2026-09-08.",
+    "resolution": "True if any official NYMEX WTI front-month daily settlement between 2026-09-09 and 2026-12-31 inclusive is 110.00 USD or higher; else false. Reference level at seal: 92.66.",
+    "failure_condition": "Every NYMEX WTI front-month settlement from 2026-09-09 through 2026-12-31 prints below 110.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-04",
+    "probability": 21,
+    "citations": [
+      50,
+      64
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2105,
+      "n": 38,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-09 and 2026-10-09, Saudi authorities publicly acknowledge at least one Houthi missile or drone attack impacting or intercepted over Riyadh province.",
+    "resolution": "True if, for an attack occurring 2026-09-09 to 2026-10-09, Saudi official statements or state media acknowledge a Houthi projectile impacting or intercepted in Riyadh province, or two of Reuters, AP, AFP, BBC so report; else false.",
+    "failure_condition": "No Houthi projectile impacting or intercepted over Riyadh province between 2026-09-09 and 2026-10-09 is acknowledged by Saudi authorities or reported by two of the named wires.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-13",
+    "probability": 49,
+    "citations": [
+      77,
+      87,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A ceasefire or cessation of hostilities covering the current United States and Iran conflict is publicly announced between 2026-09-09 and 2026-12-08 and confirmed by named officials of both governments.",
+    "resolution": "True if, between 2026-09-09 and 2026-12-08, named US and Iranian officials each publicly confirm a ceasefire or halt to hostilities between the two states, reported by two of Reuters, AP, AFP, BBC; else false.",
+    "failure_condition": "By the end of 2026-12-08 no ceasefire or halt covering US-Iran hostilities has been confirmed by named officials of both governments.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-11",
+    "probability": 49,
+    "citations": [
+      64,
+      85,
+      88
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4918,
+      "n": 61,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Council of the European Union adopts a legal act suspending or prohibiting import into the EU of goods produced in Israeli settlements, published in the Official Journal between 2026-09-09 and 2027-01-08.",
+    "resolution": "True if an EU Council regulation or decision suspending or banning settlement-goods imports appears in the Official Journal of the European Union with publication date between 2026-09-09 and 2027-01-08 inclusive; else false.",
+    "failure_condition": "No such Council act appears in the Official Journal with a publication date inside the 2026-09-09 to 2027-01-08 window.",
+    "domain": "political",
+    "deadline": "2027-01-12",
+    "probability": 35,
+    "citations": [
+      29,
+      105,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A presidential document directing federal recognition or renaming of the state of New Mexico as New America is published in the Federal Register between 2026-09-09 and 2027-01-08.",
+    "resolution": "True if the Federal Register publishes an executive order, proclamation, or memorandum directing federal use or recognition of the name New America for New Mexico, with publication date between 2026-09-09 and 2027-01-08; else false.",
+    "failure_condition": "No qualifying presidential document naming New America for New Mexico appears in the Federal Register within the window.",
+    "domain": "political",
+    "deadline": "2027-01-12",
+    "probability": 35,
+    "citations": [
+      96,
+      100
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3542,
+      "n": 48,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "French police or prosecutors publicly announce an arrest, or the recovery of at least one stolen painting, in the Renoir Museum theft of early September 2026, between 2026-09-09 and 2027-02-26.",
+    "resolution": "True if, between 2026-09-09 and 2027-02-26, French authorities announce at least one arrest or one recovered painting in the Renoir Museum case, reported by two of Reuters, AP, AFP, BBC, Le Monde; else false.",
+    "failure_condition": "As of the deadline neither an arrest nor a recovery in the Renoir Museum theft has been announced by French authorities within the window.",
+    "domain": "crime/security",
+    "deadline": "2027-03-01",
+    "probability": 36,
+    "citations": [
+      80,
+      94,
+      102
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3574,
+      "n": 249,
+      "basis": "global",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one magnitude 5.0 or greater event within 150 km of USGS event us7000tdvt (the 2026-09-08 M6.3 near Nikolski, Alaska) with origin time between 2026-09-09 and 2026-10-09.",
+    "resolution": "True if a USGS ComCat query on the deadline returns one or more events of magnitude 5.0 or greater within 150 km of event us7000tdvt with origin times between 2026-09-09 and 2026-10-09 inclusive; else false.",
+    "failure_condition": "The ComCat query returns zero events of magnitude 5.0 or greater in the stated radius and window.",
+    "domain": "disaster",
+    "deadline": "2026-10-13",
+    "probability": 36,
+    "citations": [
+      36
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3617,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-08T20:51:51Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
