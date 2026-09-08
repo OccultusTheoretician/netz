@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "ICE Brent front-month crude settles above 100.00 USD per barrel on at least one trading day between 2026-09-09 and 2026-10-09. Reference: 97.68 on the packet date, 2026-09-08.",
+    "domain": "economic",
+    "probability": 80,
+    "resolution": "TRUE if any ICE Brent front-month official settlement between 2026-09-09 and 2026-10-09 exceeds 100.00 USD per barrel. Reference level 97.68 on 2026-09-08.",
+    "deadline": "2026-10-13",
+    "citations": [50, 87, 98],
+    "failure_condition": "Every ICE Brent front-month settlement inside the window is 100.00 USD per barrel or lower."
+  },
+  {
+    "statement": "The United States and Canada announce removal or suspension of at least one tranche of the reciprocal tariffs now in force, announced between 2026-09-09 and 2026-11-13.",
+    "domain": "economic",
+    "probability": 22,
+    "resolution": "TRUE if a US or Canadian government announcement dated between 2026-09-09 and 2026-11-13 removes or suspends any tariff tranche applied to the other country.",
+    "deadline": "2026-11-17",
+    "citations": [67, 69, 70],
+    "failure_condition": "No US or Canadian tariff tranche against the other country is removed or suspended by an announcement dated inside the window."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries at least one Adobe Commerce or Magento CVE with a dateAdded value between 2026-09-09 and 2026-10-09.",
+    "domain": "cyber",
+    "probability": 72,
+    "resolution": "TRUE if the CISA KEV JSON feed contains an Adobe Commerce or Magento entry whose dateAdded field falls between 2026-09-09 and 2026-10-09 inclusive.",
+    "deadline": "2026-10-13",
+    "citations": [12, 15],
+    "failure_condition": "No Adobe Commerce or Magento entry in the KEV catalog carries a dateAdded inside the window."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries at least one SAP vendor CVE with a dateAdded value between 2026-09-09 and 2026-11-06.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "TRUE if the CISA KEV JSON feed contains an entry with vendorProject SAP whose dateAdded field falls between 2026-09-09 and 2026-11-06 inclusive.",
+    "deadline": "2026-11-10",
+    "citations": [13],
+    "failure_condition": "No SAP entry in the KEV catalog carries a dateAdded inside the window."
+  },
+  {
+    "statement": "In the Swedish Riksdag election held 2026-09-13, the combined seat total of V, S, MP and C exceeds the combined seat total of M, KD, L and SD.",
+    "domain": "political",
+    "probability": 82,
+    "resolution": "TRUE if the Valmyndigheten seat allocation gives V, S, MP and C more of the 349 Riksdag seats than M, KD, L and SD combined.",
+    "deadline": "2026-09-25",
+    "citations": [114],
+    "failure_condition": "The M, KD, L and SD seat total equals or exceeds the V, S, MP and C total in the certified allocation."
+  },
+  {
+    "statement": "The AfD receives the largest share of Zweitstimmen in the Mecklenburg-Vorpommern Landtag election held 2026-09-20.",
+    "domain": "political",
+    "probability": 68,
+    "resolution": "TRUE if the preliminary result published by the Landeswahlleiter Mecklenburg-Vorpommern gives AfD a higher Zweitstimmen percentage than any other party.",
+    "deadline": "2026-09-25",
+    "citations": [112],
+    "failure_condition": "Another party, most plausibly the SPD, records a higher Zweitstimmen share than AfD in the preliminary result."
+  },
+  {
+    "statement": "Saudi Arabia conducts acknowledged military strikes on Houthi-controlled territory in Yemen between 2026-09-09 and 2026-09-30.",
+    "domain": "military_conflict",
+    "probability": 55,
+    "resolution": "TRUE if two of Reuters, AP, AFP, BBC and Al Jazeera report Saudi strikes inside Houthi-held Yemen occurring in the window, with Saudi or Houthi attribution.",
+    "deadline": "2026-10-05",
+    "citations": [77, 89, 92],
+    "failure_condition": "No Saudi strike inside Houthi-held Yemen occurs within the window."
+  },
+  {
+    "statement": "A ceasefire or cessation of hostilities involving Iran and the United States or Israel is publicly announced between 2026-09-09 and 2026-11-13.",
+    "domain": "military_conflict",
+    "probability": 30,
+    "resolution": "TRUE if a government or the United Nations announces a ceasefire, truce or cessation of hostilities covering Iranian and US or Israeli forces, dated inside the window.",
+    "deadline": "2026-11-17",
+    "citations": [85, 88],
+    "failure_condition": "No such ceasefire, truce or cessation of hostilities is announced inside the window."
+  },
+  {
+    "statement": "Russia expels or declares persona non grata at least one Hungarian diplomat between 2026-09-09 and 2026-10-09.",
+    "domain": "political",
+    "probability": 45,
+    "resolution": "TRUE if the Russian Foreign Ministry announces expulsion or persona non grata designation of one or more Hungarian diplomats, with the announcement dated inside the window.",
+    "deadline": "2026-10-13",
+    "citations": [72],
+    "failure_condition": "Russia takes no expulsion or persona non grata action against Hungarian diplomats inside the window."
+  },
+  {
+    "statement": "At least one painting taken in the Renoir museum theft in southern France is physically recovered by authorities between 2026-09-09 and 2026-12-11.",
+    "domain": "crime_security",
+    "probability": 18,
+    "resolution": "TRUE if French police, prosecutors or the museum confirm physical recovery of one or more of the stolen paintings, with recovery occurring inside the window.",
+    "deadline": "2026-12-15",
+    "citations": [80, 94, 102],
+    "failure_condition": "None of the stolen paintings is physically recovered inside the window."
+  }
+]
