@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- SITEDEBT-2026-09-08 -->
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="The Prescient Desk's predictive ledger: every sealed projection, open and resolved, segregated by forecaster arm. Paged viewer over ledger_index.json; the complete static table is ledger_full.html; the record is ledger.json.">
 <link rel="icon" type="image/svg+xml" href="crow_mark.svg">
@@ -10,6 +11,7 @@
 <script defer src="brand.js"></script>
 <script defer src="instrument.js"></script>
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
 <title>KKR Ledger &middot; NebelKr&auml;he</title>
 <style>
 @import url('fonts/fonts.css');
@@ -117,7 +119,7 @@ h1{font-family:'IBM Plex Mono',monospace;font-size:1.05rem;letter-spacing:.18em;
   <ol>
     <li>Clone the repository: <code>git clone https://github.com/OccultusTheoretician/netz.git</code></li>
     <li>Hash the record with line endings normalised to LF and compare the first sixteen characters with the receipt below.</li>
-    <li>Verify the OpenTimestamps receipt <code>docs/ledger.json.ots</code> against that digest with the <code>ots</code> client, or run <code>python ots_anchor.py --status</code> from the clone.</li>
+    <li>Verify the OpenTimestamps receipt <code>docs/ledger.json.ots</code> against that digest with the <code>ots</code> client, or run <code translate="no">python ots_anchor.py --status</code> from the clone.</li>
     <li>Regenerate this page's index: <code>python -c "import kkr; kkr.render_ledger()"</code> writes <code>forecasts/ledger_index.json</code>; its row count must equal the record's.</li>
   </ol>
   <div class="wp-receipt">ledger.json sha256 (LF), first 16: <code id="wp-receipt" data-value="">&hellip;</code><button class="wp-copy" type="button" data-copy="#wp-receipt">copy</button></div>
