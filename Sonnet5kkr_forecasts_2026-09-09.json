@@ -1,0 +1,111 @@
+[
+  {
+    "statement": "US or Iranian forces will conduct at least one additional confirmed kinetic engagement (missile, drone, naval gunfire, or boarding/seizure action) against the other sides vessels or forces in the Strait of Hormuz, Persian Gulf, or Gulf of Oman theater, in the window between 2026-09-10 and 2026-10-09.",
+    "domain": "military/conflict",
+    "probability": 85,
+    "resolution": "At least two independent outlets (from the packets AXIS, IL, RU, or WEST corroboration sides, or a CENTCOM/DoD or Iranian government statement) report a new US-Iran kinetic engagement beyond the tanker-destruction and submarine-dispute incidents already logged as of 2026-09-09, occurring inside the window; checked 2026-10-13.",
+    "deadline": "2026-10-13",
+    "citations": [
+      70,
+      104,
+      106
+    ],
+    "failure_condition": "MISS if no new US-Iran kinetic engagement in this theater is reported by two independent sources or an official statement during the window."
+  },
+  {
+    "statement": "A US-Iran ceasefire or truce covering the Strait of Hormuz theater will be publicly announced by a government on either side AND hold with zero further reported US-Iran kinetic incidents for at least 14 consecutive days, within the window between 2026-09-10 and 2026-11-08.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "A wire-service or official (White House, CENTCOM, or Iranian foreign ministry) ceasefire or truce announcement is on record AND no US-Iran kinetic incident in this theater is reported by any tracked outlet for the 14 days following that announcement, with the 14-day window closing inside 2026-09-10 to 2026-11-08; checked 2026-11-11.",
+    "deadline": "2026-11-11",
+    "citations": [
+      70,
+      104,
+      99
+    ],
+    "failure_condition": "MISS if no ceasefire or truce is announced within the window, or if one is announced but a further kinetic incident is reported within 14 days of it."
+  },
+  {
+    "statement": "ICE Brent crude will settle at or above 110.00 USD per barrel on at least one trading day between 2026-09-10 and 2026-11-06. Reference: 101.13 USD per barrel on the packet date of 2026-09-09.",
+    "domain": "economics/markets",
+    "probability": 38,
+    "resolution": "ICE Brent front-month futures settlement price, as reported by ICE, the EIA, or a Reuters/Bloomberg market-close report, reaches or exceeds 110.00 USD per barrel on any trading day in the window; checked against the settlement record on 2026-11-10.",
+    "deadline": "2026-11-10",
+    "citations": [
+      60,
+      62,
+      77
+    ],
+    "failure_condition": "MISS if the ICE Brent settlement price never reaches 110.00 USD per barrel on any trading day in the window."
+  },
+  {
+    "statement": "The S&P 500 will close at or above 8,000.00 on at least one trading day between 2026-09-10 and 2027-02-26. Reference: 7,627.27 on the packet date of 2026-09-09.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "The official S&P 500 closing value, as reported by S&P Dow Jones Indices or a Reuters/Bloomberg/WSJ market-close report, reaches or exceeds 8,000.00 on any trading day in the window; checked 2027-03-02.",
+    "deadline": "2027-03-02",
+    "citations": [
+      81
+    ],
+    "failure_condition": "MISS if the S&P 500 closing value never reaches 8,000.00 on any trading day in the window."
+  },
+  {
+    "statement": "The Chrome V8 zero-day reported on 2026-09-09 as exploited in the wild and enabling code execution will be added to the CISA Known Exploited Vulnerabilities catalog with a date-added value between 2026-09-10 and 2026-09-30.",
+    "domain": "cyber",
+    "probability": 70,
+    "resolution": "The CISA KEV catalog at cisa.gov/known-exploited-vulnerabilities-catalog carries an entry for a Google Chrome or Chromium V8 vulnerability with a date-added value between 2026-09-10 and 2026-09-30 inclusive; checked 2026-10-02.",
+    "deadline": "2026-10-02",
+    "citations": [
+      21
+    ],
+    "failure_condition": "MISS if no Chrome or Chromium V8 entry appears in the CISA KEV catalog with a date-added value inside the window by the check date."
+  },
+  {
+    "statement": "The Microsoft Defender zero-day covered in 2026-09-08 to 09 reporting under the names ShieldCrash and ShieldBreak, granting SYSTEM access, will be added to the CISA Known Exploited Vulnerabilities catalog with a date-added value between 2026-09-10 and 2026-10-08.",
+    "domain": "cyber",
+    "probability": 32,
+    "resolution": "The CISA KEV catalog carries an entry for a Microsoft Defender vulnerability matching the ShieldCrash/ShieldBreak coverage, with a date-added value between 2026-09-10 and 2026-10-08 inclusive; checked 2026-10-13.",
+    "deadline": "2026-10-13",
+    "citations": [
+      25,
+      26
+    ],
+    "failure_condition": "MISS if no Defender entry matching this coverage appears in the CISA KEV catalog with a date-added value inside the window by the check date."
+  },
+  {
+    "statement": "Chris Pappas, the Democratic nominee, will win the New Hampshire US Senate general election held 2026-11-03 against Republican nominee John E. Sununu for the seat being vacated by retiring Senator Jeanne Shaheen.",
+    "domain": "political",
+    "probability": 65,
+    "resolution": "The Associated Press or the New Hampshire Secretary of State declares Chris Pappas the winner of the 2026-11-03 US Senate general election in New Hampshire; checked 2026-11-06.",
+    "deadline": "2026-11-06",
+    "citations": [
+      122
+    ],
+    "failure_condition": "MISS if Sununu is declared the winner, or if the race remains uncalled by the check date."
+  },
+  {
+    "statement": "The Metropolitan Police inquiry into alleged overseas donations to Reform UK, opened in the week of 2026-09-09, will reach a publicly announced conclusion, either referral for charge or prosecution, or formal closure without action, within the window between 2026-09-16 and 2026-12-16.",
+    "domain": "crime/security",
+    "probability": 18,
+    "resolution": "The Metropolitan Police issues a statement, or one is reported by at least two of Reuters, PA Media, the BBC, or the Guardian, that the Reform UK overseas-donations inquiry has concluded, either by referral for charge/prosecution or formal closure without action, within the window; checked 2026-12-18.",
+    "deadline": "2026-12-18",
+    "citations": [
+      117
+    ],
+    "failure_condition": "MISS if the inquiry remains open and unconcluded, or no public statement of conclusion is reported, by the check date."
+  },
+  {
+    "statement": "At least one of the four Green-rated GDACS forest fire alerts logged on 2026-09-09 in Angola (event 1031789), the Democratic Republic of Congo (event 1031734), Zambia (event 1031830), or Tanzania (event 1031715) will be upgraded by GDACS to Orange or Red alert level, within the window between 2026-09-10 and 2026-10-15.",
+    "domain": "disaster",
+    "probability": 12,
+    "resolution": "The GDACS platform at gdacs.org shows an Orange or Red alert level for the Angola, DRC, Zambia, or Tanzania forest fire event, or a successor event GDACS links to one of them, upgraded from Green within the window; checked 2026-10-19.",
+    "deadline": "2026-10-19",
+    "citations": [
+      39,
+      40,
+      41,
+      52
+    ],
+    "failure_condition": "MISS if all four tracked GDACS forest fire events remain at Green, or close/expire, without an Orange or Red upgrade by the check date."
+  }
+]

@@ -1,0 +1,125 @@
+[
+  {
+    "statement": "CISA adds the Chrome V8 zero-day CVE-2026-87491, disclosed by Google on 2026-09-08 as exploited in the wild, to its Known Exploited Vulnerabilities catalog between 2026-09-09 and 2026-09-23.",
+    "domain": "cyber",
+    "probability": 88,
+    "resolution": "The CISA KEV catalog JSON feed contains an entry for CVE-2026-87491 with a dateAdded value between 2026-09-09 and 2026-09-23 inclusive.",
+    "deadline": "2026-09-25",
+    "citations": [
+      21,
+      27
+    ],
+    "failure_condition": "CVE-2026-87491 is absent from the KEV catalog at the deadline, or its dateAdded value falls outside 2026-09-09 to 2026-09-23."
+  },
+  {
+    "statement": "Following the public ShieldCrash proof-of-concept, CISA adds at least one Microsoft Defender or Malware Protection Engine vulnerability to the Known Exploited Vulnerabilities catalog with a date-added between 2026-09-09 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 20,
+    "resolution": "The CISA KEV catalog JSON feed contains an entry with vendorProject Microsoft whose product or vulnerabilityName names Defender or Malware Protection Engine, with dateAdded between 2026-09-09 and 2026-10-16 inclusive.",
+    "deadline": "2026-10-20",
+    "citations": [
+      25,
+      26
+    ],
+    "failure_condition": "No KEV entry naming Microsoft Defender or Malware Protection Engine carries a dateAdded value between 2026-09-09 and 2026-10-16."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled 2026-09-16 meeting. Reference: target range 3.50 to 3.75 percent at seal.",
+    "domain": "economics/markets",
+    "probability": 55,
+    "resolution": "The FOMC statement dated 2026-09-16 on federalreserve.gov announces a target range whose upper bound is 4.00 percent or higher; equivalently, FRED series DFEDTARU reads at or above 4.00 for 2026-09-17.",
+    "deadline": "2026-09-21",
+    "citations": [
+      62,
+      64,
+      66
+    ],
+    "failure_condition": "The 2026-09-16 FOMC statement leaves the target range at 3.50 to 3.75 percent or lowers it."
+  },
+  {
+    "statement": "Brent crude spot reaches 110.00 dollars per barrel or higher on at least one trading day between 2026-09-10 and 2026-10-09. Reference: Brent 101.13 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "FRED series DCOILBRENTEU (EIA Europe Brent spot price FOB) records a daily value at or above 110.00 for at least one date between 2026-09-10 and 2026-10-09 inclusive.",
+    "deadline": "2026-10-21",
+    "citations": [
+      60,
+      62,
+      77
+    ],
+    "failure_condition": "Every DCOILBRENTEU daily value dated 2026-09-10 through 2026-10-09 is below 110.00."
+  },
+  {
+    "statement": "Between 2026-09-10 and 2026-10-09, the US Department of Defense or US Central Command publicly confirms that a US Navy or US Coast Guard vessel was struck by an Iranian missile, drone, mine, or gunfire.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "An official DoD or CENTCOM release, statement, or on-record briefing confirms an Iranian weapon struck a US Navy or Coast Guard vessel, the strike occurring between 2026-09-10 and 2026-10-09. Interceptions and near misses do not count.",
+    "deadline": "2026-10-13",
+    "citations": [
+      70,
+      104,
+      106
+    ],
+    "failure_condition": "No US Navy or Coast Guard vessel is officially confirmed by DoD or CENTCOM as struck by Iranian fire during 2026-09-10 to 2026-10-09."
+  },
+  {
+    "statement": "Between 2026-09-10 and 2026-10-30, the United States and Iran announce a ceasefire or cessation of hostilities, confirmed by both the US executive branch and the Iranian Foreign Ministry or Supreme National Security Council.",
+    "domain": "military/conflict",
+    "probability": 18,
+    "resolution": "Both a US executive-branch statement (White House, State Department, or DoD) and an Iranian Foreign Ministry or Supreme National Security Council statement confirm a bilateral ceasefire taking effect between 2026-09-10 and 2026-10-30.",
+    "deadline": "2026-11-04",
+    "citations": [
+      70,
+      77,
+      104
+    ],
+    "failure_condition": "No US-Iran ceasefire or cessation of hostilities takes effect between 2026-09-10 and 2026-10-30 with confirmation from both governments."
+  },
+  {
+    "statement": "Between 2026-09-10 and 2026-10-02, German Chancellor Friedrich Merz and US President Donald Trump hold a phone call or in-person bilateral meeting, as confirmed by an official German or US government readout.",
+    "domain": "political",
+    "probability": 40,
+    "resolution": "The German federal government (bundesregierung.de or the government spokesperson) or the White House publishes a readout or statement confirming a Merz-Trump call or bilateral meeting held between 2026-09-10 and 2026-10-02.",
+    "deadline": "2026-10-06",
+    "citations": [
+      110,
+      119
+    ],
+    "failure_condition": "No Merz-Trump call or bilateral meeting held between 2026-09-10 and 2026-10-02 is confirmed by either government."
+  },
+  {
+    "statement": "Chris Pappas wins the 2026-11-03 US Senate general election in New Hampshire, defeating John Sununu.",
+    "domain": "political",
+    "probability": 60,
+    "resolution": "Official results published by the New Hampshire Secretary of State (sos.nh.gov) for the 2026-11-03 US Senate general election show Pappas receiving more votes than any other candidate.",
+    "deadline": "2026-11-24",
+    "citations": [
+      122
+    ],
+    "failure_condition": "Any candidate other than Chris Pappas receives the most votes in the 2026-11-03 New Hampshire US Senate general election."
+  },
+  {
+    "statement": "Between 2026-09-10 and 2026-12-31, the Metropolitan Police arrest at least one person in connection with their inquiry into alleged overseas donations to Reform UK.",
+    "domain": "crime/security",
+    "probability": 12,
+    "resolution": "A Metropolitan Police statement, or reports from at least two of BBC, Guardian, Reuters, PA, confirm an arrest made between 2026-09-10 and 2026-12-31 in connection with the Reform UK donations inquiry.",
+    "deadline": "2027-01-05",
+    "citations": [
+      113,
+      117
+    ],
+    "failure_condition": "No arrest connected to the Metropolitan Police inquiry into Reform UK donations occurs between 2026-09-10 and 2026-12-31."
+  },
+  {
+    "statement": "A federal Major Disaster Declaration for the State of Hawaii covering Hurricane Lowell is issued between 2026-09-09 and 2026-10-30.",
+    "domain": "disaster",
+    "probability": 70,
+    "resolution": "The OpenFEMA DisasterDeclarationsSummaries dataset or fema.gov/disaster/declarations lists a declarationType DR entry for Hawaii with incidentType Hurricane or Tropical Storm and declarationDate between 2026-09-09 and 2026-10-30 inclusive.",
+    "deadline": "2026-11-04",
+    "citations": [
+      43,
+      48
+    ],
+    "failure_condition": "No DR-type major disaster declaration for Hawaii with a hurricane or tropical storm incident type carries a declaration date between 2026-09-09 and 2026-10-30."
+  }
+]

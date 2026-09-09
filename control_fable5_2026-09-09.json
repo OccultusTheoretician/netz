@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "The US EIA daily Europe Brent spot price records at least one value at or above 110.00 USD per barrel on a day between 2026-09-10 and 2026-10-09. Reference: Brent 101.13 on the packet date.",
+    "resolution": "TRUE if FRED series DCOILBRENTEU shows any daily observation at or above 110.00 dated 2026-09-10 through 2026-10-09 inclusive; otherwise FALSE.",
+    "failure_condition": "No daily Brent spot observation in the window reaches 110.00; the series stays below that level through 2026-10-09.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-14",
+    "probability": 26,
+    "citations": [
+      60,
+      66,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US EIA daily Europe Brent spot price records at least one value at or below 85.00 USD per barrel on a day between 2026-09-10 and 2026-11-30. Reference: Brent 101.13 on the packet date.",
+    "resolution": "TRUE if FRED series DCOILBRENTEU shows any daily observation at or below 85.00 dated 2026-09-10 through 2026-11-30 inclusive; otherwise FALSE.",
+    "failure_condition": "No daily Brent spot observation in the window falls to 85.00; the series stays above that level through 2026-11-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-03",
+    "probability": 26,
+    "citations": [
+      60,
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-10 and 2026-10-09, the Government of Canada announces new retaliatory trade measures responding to the US import ban on Canadian goods disclosed 2026-09-09.",
+    "resolution": "TRUE if an official Government of Canada announcement of retaliatory trade measures made in the window is reported by at least two of Reuters, AP, Bloomberg, or CBC; otherwise FALSE.",
+    "failure_condition": "Canada makes no official announcement of new retaliatory trade measures tied to the September import ban within the window.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-13",
+    "probability": 26,
+    "citations": [
+      80,
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-10 and 2026-10-09, US forces conduct at least one new strike on Iranian territory, Iranian military assets, or Iranian-flagged vessels, publicly acknowledged by CENTCOM or the Pentagon.",
+    "resolution": "TRUE if a CENTCOM or Pentagon statement acknowledges such a strike occurring in the window and at least two international wire or broadcast outlets report that statement; otherwise FALSE.",
+    "failure_condition": "No US strike on Iranian territory, military assets, or Iranian-flagged vessels occurring in the window is acknowledged by CENTCOM or the Pentagon.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-13",
+    "probability": 56,
+    "citations": [
+      70,
+      87,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Commercial tanker transit through the Strait of Hormuz is halted or suspended for at least 48 consecutive hours at some point between 2026-09-10 and 2026-11-09.",
+    "resolution": "TRUE if Reuters plus at least one of Bloomberg or Lloyds List report a suspension of commercial tanker transits through the strait lasting 48 or more consecutive hours within the window; otherwise FALSE.",
+    "failure_condition": "Commercial tanker traffic continues through the strait with no suspension reaching 48 consecutive hours at any point in the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-12",
+    "probability": 56,
+    "citations": [
+      60,
+      99,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one CVE with vendor Google and product Chrome or Chromium V8 carrying a dateAdded value between 2026-09-10 and 2026-12-08.",
+    "resolution": "TRUE if the public CISA KEV JSON contains an entry with vendorProject Google, product containing Chrome or Chromium, and dateAdded between 2026-09-10 and 2026-12-08 inclusive; otherwise FALSE.",
+    "failure_condition": "No Google Chrome or Chromium entry with a dateAdded value inside the window appears in the KEV catalog.",
+    "domain": "cyber",
+    "deadline": "2026-12-11",
+    "probability": 28,
+    "citations": [
+      21,
+      27
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one Microsoft CVE from the scheduled October 2026 Patch Tuesday release of 2026-10-13 is added to the CISA KEV catalog with a dateAdded value between 2026-10-13 and 2026-10-16.",
+    "resolution": "TRUE if the public CISA KEV JSON shows a Microsoft-vendor CVE published 2026-10-13 with dateAdded between 2026-10-13 and 2026-10-16 inclusive; otherwise FALSE.",
+    "failure_condition": "The October release contains no CVE that CISA catalogs as exploited with a dateAdded value inside the stated span.",
+    "domain": "cyber",
+    "deadline": "2026-10-20",
+    "probability": 28,
+    "citations": [
+      29,
+      37
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Associated Press declares Chris Pappas the winner of the 2026 US Senate general election in New Hampshire held on the scheduled date of 2026-11-03.",
+    "resolution": "TRUE if the AP race call names Pappas the winner of the New Hampshire US Senate general election; FALSE if it names any other candidate or no AP call exists by the deadline.",
+    "failure_condition": "The AP calls the race for a candidate other than Pappas, or has made no call by 2026-11-13.",
+    "domain": "political",
+    "deadline": "2026-11-13",
+    "probability": 35,
+    "citations": [
+      122
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-10 and 2027-03-01, UK authorities announce criminal charges against at least one named individual or corporate entity in the Metropolitan Police investigation into alleged overseas donations to Reform UK.",
+    "resolution": "TRUE if the Metropolitan Police or Crown Prosecution Service announce such charges within the window and at least two UK national news organisations report the announcement; otherwise FALSE.",
+    "failure_condition": "The investigation produces no announced criminal charges against a named individual or corporate entity within the window.",
+    "domain": "political",
+    "deadline": "2027-03-04",
+    "probability": 35,
+    "citations": [
+      113,
+      117
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one earthquake of magnitude 6.0 or greater with epicenter between latitude 50 and 56 north and longitude 160 and 180 west, with origin time between 2026-09-10 and 2026-11-30.",
+    "resolution": "TRUE if a USGS ComCat query returns at least one event of magnitude 6.0 or greater inside the stated coordinate box with origin time in the window; otherwise FALSE.",
+    "failure_condition": "No event of magnitude 6.0 or greater inside the stated coordinate box occurs during the window per the USGS catalog.",
+    "domain": "disaster",
+    "deadline": "2026-12-04",
+    "probability": 31,
+    "citations": [
+      53
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-09T18:06:31Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
