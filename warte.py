@@ -300,9 +300,9 @@ def main():
              "<p>Every tile above recomputes from the record; nothing here is asserted that you cannot reproduce.</p>"
              "<ol>"
              "<li>Clone the repository: <code>git clone https://github.com/OccultusTheoretician/netz.git</code></li>"
-             "<li><code>python warte.py</code> regenerates this face and <code>forecasts/kalibrierwarte_latest.json</code> "
+             "<li><code translate=\"no\">python warte.py</code> regenerates this face and <code>forecasts/kalibrierwarte_latest.json</code> "  # SITEDEBT-2026-09-08
              "from <code>ledger.json</code>; hash the record with line endings normalised to LF and compare with the receipt below.</li>"
-             "<li><code>python warte_report.py</code> runs the registered estimators report-only: bootstrap intervals, "
+             "<li><code translate=\"no\">python warte_report.py</code> runs the registered estimators report-only: bootstrap intervals, "  # SITEDEBT-2026-09-08
              "the seat re-cut and the quality checks, reading hypotheses only for an arm at 50 resolved within one cohort. "
              "The registration pins that script's hash in Section 13.</li>"
              "<li>The rules governing every read are in the registration; a failed quality check halts the read, and the halt stands.</li>"
