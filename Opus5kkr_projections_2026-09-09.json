@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "Between 2026-09-10 and 2026-09-24, US Central Command or the Iranian IRGC publicly announces at least one new attack on a vessel in the Strait of Hormuz or Gulf of Oman.",
+    "domain": "military_conflict",
+    "probability": 88,
+    "resolution": "TRUE if a CENTCOM release or IRGC statement dated inside the window describes striking or attacking a vessel in that waterway, carried by two of Al Jazeera, BBC, Reuters, AP.",
+    "deadline": "2026-09-28",
+    "citations": [
+      70,
+      99,
+      104,
+      106
+    ],
+    "failure_condition": "No CENTCOM or IRGC announcement of a vessel attack in that waterway bears a date inside the window."
+  },
+  {
+    "statement": "The FOMC leaves the federal funds target range unchanged at 3.50 to 3.75 percent at its scheduled September 15-16, 2026 meeting. Reference: target range 3.50 to 3.75 percent at seal.",
+    "domain": "economic",
+    "probability": 60,
+    "resolution": "TRUE if the FOMC policy statement published 2026-09-16 on federalreserve.gov keeps the target range at 3.50 to 3.75 percent.",
+    "deadline": "2026-09-18",
+    "citations": [
+      62,
+      64
+    ],
+    "failure_condition": "The September 16 statement sets any target range other than 3.50 to 3.75 percent."
+  },
+  {
+    "statement": "ICE Brent front-month futures post a settlement at or above 110.00 USD per barrel on at least one trading day between 2026-09-10 and 2026-10-09. Reference: Brent 101.13 on the packet date.",
+    "domain": "economic",
+    "probability": 45,
+    "resolution": "TRUE if the ICE published settlement price for the front-month Brent contract reaches 110.00 or higher on any trading day inside the window.",
+    "deadline": "2026-10-13",
+    "citations": [
+      60,
+      66,
+      71
+    ],
+    "failure_condition": "Every front-month Brent settlement inside the window prints below 110.00 USD per barrel."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Google Chrome or Chromium CVE with a date-added value between 2026-09-09 and 2026-10-09.",
+    "domain": "cyber",
+    "probability": 70,
+    "resolution": "TRUE if the KEV JSON feed on cisa.gov carries an entry with vendorProject Google and a dateAdded value inside that range.",
+    "deadline": "2026-10-13",
+    "citations": [
+      21,
+      27
+    ],
+    "failure_condition": "No Google or Chromium entry in the KEV catalog carries a dateAdded value inside the window."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one SAP CVE with a date-added value between 2026-09-09 and 2026-12-31.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "TRUE if the KEV JSON feed on cisa.gov carries an entry with vendorProject SAP and a dateAdded value inside that range.",
+    "deadline": "2027-01-05",
+    "citations": [
+      28
+    ],
+    "failure_condition": "No SAP entry in the KEV catalog carries a dateAdded value inside the window."
+  },
+  {
+    "statement": "Between 2026-09-09 and 2026-10-16, the UK government announces the closure or suspension of operations at its Consulate General in Jerusalem.",
+    "domain": "political",
+    "probability": 15,
+    "resolution": "TRUE if an FCDO statement, a gov.uk notice, or a ministerial statement in Hansard dated inside the window announces closure or suspension of that post.",
+    "deadline": "2026-10-20",
+    "citations": [
+      124,
+      127
+    ],
+    "failure_condition": "The UK Consulate General in Jerusalem remains in operation with no announced closure or suspension."
+  },
+  {
+    "statement": "A Federal Register document from the Census Bureau or the Department of Commerce proposing 2030 Census content on citizenship or on race and ethnicity categories publishes between 2026-09-10 and 2027-01-31.",
+    "domain": "political",
+    "probability": 55,
+    "resolution": "TRUE if federalregister.gov returns at least one document from that agency, on that subject, with a publication date inside the window.",
+    "deadline": "2027-02-04",
+    "citations": [
+      50
+    ],
+    "failure_condition": "No such Federal Register document carries a publication date inside the window."
+  },
+  {
+    "statement": "USGS records at least one earthquake of magnitude 7.0 or greater anywhere on Earth with an origin time between 2026-09-10 and 2026-10-09.",
+    "domain": "disaster_infrastructure",
+    "probability": 70,
+    "resolution": "TRUE if a USGS ComCat query for minmagnitude 7.0 over that origin-time range returns at least one event.",
+    "deadline": "2026-10-13",
+    "citations": [
+      53,
+      58
+    ],
+    "failure_condition": "The USGS catalog returns zero events at magnitude 7.0 or above for that origin-time range."
+  },
+  {
+    "statement": "Between 2026-09-10 and 2026-11-30, the Nigerian federal government or its armed forces publicly confirm a ceasefire arrangement with Boko Haram.",
+    "domain": "military_conflict",
+    "probability": 20,
+    "resolution": "TRUE if a named Nigerian government or military spokesperson confirms such an arrangement on the record, reported by two of Reuters, AP, AFP, BBC, Al Jazeera.",
+    "deadline": "2026-12-04",
+    "citations": [
+      91
+    ],
+    "failure_condition": "No on-the-record Nigerian government or military confirmation of a Boko Haram ceasefire occurs inside the window."
+  },
+  {
+    "statement": "The 10-year Treasury constant maturity rate closes at or above 5.00 percent on at least one business day between 2026-09-10 and 2026-10-30. Reference: 4.85 percent on the packet date.",
+    "domain": "economic",
+    "probability": 55,
+    "resolution": "TRUE if FRED series DGS10 records a value of 5.00 or higher on any business day inside the window.",
+    "deadline": "2026-11-03",
+    "citations": [
+      59,
+      61,
+      62
+    ],
+    "failure_condition": "Every DGS10 observation inside the window prints below 5.00 percent."
+  }
+]
