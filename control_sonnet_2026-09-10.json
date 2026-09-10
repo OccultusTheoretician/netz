@@ -1,0 +1,247 @@
+[
+  {
+    "statement": "The United States conducts a military strike on Iran's Pickaxe Mountain facility, the underground site near Natanz also called Kuh-e Kolang Gaz La, between 2026-09-17 and 2026-10-08.",
+    "resolution": "TRUE if confirmed by a US DoD or CENTCOM statement, an Iranian government acknowledgement, or two wire services among Reuters, AP, and AFP. Threats or satellite-activity reporting alone do not satisfy this.",
+    "failure_condition": "No strike on the Pickaxe Mountain site occurs, or none is confirmed by the stated standard, within the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-12",
+    "probability": 56,
+    "citations": [
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Saudi-led coalition conducts an airstrike on Houthi forces in or near Mocha, Yemen, between 2026-09-17 and 2026-09-24.",
+    "resolution": "TRUE if confirmed by one Saudi or coalition-aligned source and one Houthi-aligned source, or by two wire services among Reuters, AP, and AFP, reporting a strike near Mocha.",
+    "failure_condition": "No coalition or Saudi airstrike on Houthi positions at or near Mocha is confirmed within the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-09-28",
+    "probability": 56,
+    "citations": [
+      83,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Open Market Committee raises the federal funds rate target range above 3.50 to 3.75 percent at its meeting concluding 2026-09-16 (Reference: range held at 3.50 to 3.75 percent since the 2026-07-29 meeting).",
+    "resolution": "TRUE per the Federal Reserve Board's official post-meeting statement at federalreserve.gov, released 2:00 PM ET on 2026-09-16, showing a target range with lower bound above 3.50 percent.",
+    "failure_condition": "The 2026-09-16 FOMC statement holds the range at 3.50 to 3.75 percent or cuts it, rather than raising it.",
+    "domain": "economic",
+    "deadline": "2026-09-17",
+    "probability": 26,
+    "citations": [
+      57,
+      58,
+      63
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude oil settles at or above 108.00 US dollars per barrel on at least one trading day between 2026-09-17 and 2026-10-01 (Reference: 100.05 US dollars per barrel, prior-session close as of 2026-09-10).",
+    "resolution": "TRUE if CME Group or US EIA daily price data show a NYMEX WTI front-month settlement at or above 108.00 US dollars per barrel on any trading day in the window.",
+    "failure_condition": "WTI front-month settlement never reaches 108.00 US dollars per barrel on any trading day within the window.",
+    "domain": "economic",
+    "deadline": "2026-10-05",
+    "probability": 26,
+    "citations": [
+      56
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least 4 new entries to its Known Exploited Vulnerabilities catalog, each with a dateAdded value between 2026-09-17 and 2026-09-24 (Reference: 4 entries added on 2026-09-09).",
+    "resolution": "TRUE per a direct count of the public CISA KEV JSON feed at cisa.gov, counting entries whose dateAdded field falls within the window.",
+    "failure_condition": "Fewer than 4 KEV catalog entries carry a dateAdded value inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-09-28",
+    "probability": 28,
+    "citations": [
+      20,
+      21
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Anthropic or another frontier AI developer discloses a new AI-orchestrated hacking incident, distinct from the Claude Opus 4.6 incident reported 2026-09-10, between 2026-09-17 and 2026-10-17.",
+    "resolution": "TRUE if a frontier AI developer's official disclosure, or two outlets among Reuters, Bloomberg, The Hacker News, and BleepingComputer, report a new incident in the window distinct from the 2026-09-10 one.",
+    "failure_condition": "No materially distinct new AI-orchestrated hacking incident is disclosed by a frontier AI developer within the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-19",
+    "probability": 28,
+    "citations": [
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Congress enacts legislation, or the federal government begins disbursing, a direct per-adult payment of approximately 5000 US dollars described as a dividend, between 2026-09-17 and 2026-11-17.",
+    "resolution": "TRUE if the Federal Register, a signed law at congress.gov, or a Treasury or IRS notice confirms enactment or disbursement in the window. A proposal or promise alone does not satisfy this.",
+    "failure_condition": "No enacted law or confirmed federal disbursement of the payment exists as of the deadline.",
+    "domain": "political",
+    "deadline": "2026-11-19",
+    "probability": 35,
+    "citations": [
+      60,
+      106
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A court order or legislative action reinstates the 2025 Republican-redrawn congressional map for Missouri's November 2026 election, occurring between 2026-09-17 and 2026-10-15 (Reference: the US Supreme Court twice declined to reinstate that map, on 2026-09-08 and 2026-09-10).",
+    "resolution": "TRUE if the Missouri Secretary of State, or two wire services among AP and Reuters, confirm a reinstatement of the 2025 map for the November election within the window.",
+    "failure_condition": "No court order or legislative action reinstates the 2025 map within the window; the pre-2025 map remains in effect.",
+    "domain": "political",
+    "deadline": "2026-10-19",
+    "probability": 35,
+    "citations": [
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Crown Prosecution Service or Metropolitan Police confirm that either person arrested 2026-09-09 in London on suspicion of assisting Iran's foreign intelligence service has been formally charged, between 2026-10-15 and 2026-11-15.",
+    "resolution": "TRUE if the Metropolitan Police or CPS confirm a charge against either individual in the window, or two outlets among Reuters, PA Media, and BBC report it citing official confirmation.",
+    "failure_condition": "Neither individual is charged within the window; a bail extension or release with no further action counts as a miss.",
+    "domain": "crime_security",
+    "deadline": "2026-11-17",
+    "probability": 10,
+    "citations": [
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The National Weather Service issues at least one new Extreme Heat Warning for a continental US location between 2026-09-17 and 2026-09-24 (Reference: 15 Extreme Heat Warnings active nationwide as of 2026-09-10).",
+    "resolution": "TRUE per the NWS/NOAA public alerts feed at api.weather.gov, showing at least one Extreme Heat Warning alert with onset inside the window.",
+    "failure_condition": "No Extreme Heat Warning is issued for any continental US location with onset inside the window.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-09-28",
+    "probability": 31,
+    "citations": [
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:35Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
