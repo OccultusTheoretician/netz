@@ -1,0 +1,252 @@
+[
+  {
+    "statement": "The Federal Open Market Committee raises the federal funds target range at its scheduled meeting concluding 2026-09-16, putting the target upper limit above the level in effect on 2026-09-10.",
+    "resolution": "FRED series DFEDTARU records a value for any date from 2026-09-17 through the deadline strictly greater than the value the series records for 2026-09-10. Reference: the recorded 2026-09-10 series value at seal.",
+    "failure_condition": "The federal funds target upper limit in effect after the 2026-09-16 meeting is not higher than the level in effect on 2026-09-10.",
+    "domain": "economics/markets",
+    "deadline": "2026-09-21",
+    "probability": 26,
+    "citations": [
+      57,
+      74,
+      63
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The spot price of West Texas Intermediate crude reaches 110.00 USD per barrel or higher on at least one day between 2026-09-11 and 2026-11-13. Reference: 100.05 USD on the packet date.",
+    "resolution": "FRED series DCOILWTICO records a daily value at or above 110.00 for any date from 2026-09-11 through 2026-11-13 inclusive, read on the deadline date. Reference: 100.05 on 2026-09-10.",
+    "failure_condition": "No daily WTI spot value at or above 110.00 USD occurs on any date inside the window.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-18",
+    "probability": 26,
+    "citations": [
+      56,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least 20 new entries with dateAdded values between 2026-09-11 and 2026-10-31 inclusive.",
+    "resolution": "The public CISA KEV JSON feed, fetched on the deadline date, contains 20 or more entries whose dateAdded field falls between 2026-09-11 and 2026-10-31 inclusive.",
+    "failure_condition": "Fewer than 20 KEV entries carry dateAdded values inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-04",
+    "probability": 28,
+    "citations": [
+      20,
+      21,
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one putative class action complaint naming IDScan.net or its corporate parent as defendant over the driver license data breach is filed in a US federal district court between 2026-09-10 and 2026-11-30.",
+    "resolution": "A complaint meeting that description appears on PACER or CourtListener with a filing date between 2026-09-10 and 2026-11-30 inclusive.",
+    "failure_condition": "No putative class action naming IDScan.net or its parent over this breach is filed in US federal court inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-12-03",
+    "probability": 28,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Houthi forces take control of at least one additional named town or port on the Red Sea coast of Yemen beyond Mocha between 2026-09-11 and 2026-10-31.",
+    "resolution": "At least two of Reuters, AP, AFP, or BBC report Houthi control of a named Red Sea coastal town or port other than Mocha, with the change of control occurring inside the window.",
+    "failure_condition": "Houthi forces gain control of no additional named Red Sea coastal town or port beyond Mocha inside the window under the stated corroboration standard.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 56,
+    "citations": [
+      83,
+      87,
+      96
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Saudi Arabia conducts and officially acknowledges at least one airstrike on a target inside Yemen between 2026-09-11 and 2026-12-10.",
+    "resolution": "An official Saudi government or Saudi-led coalition statement acknowledging the strike is issued and carried by at least two of Reuters, AP, AFP, with the strike dated inside the window.",
+    "failure_condition": "No Saudi-acknowledged airstrike on a target inside Yemen occurs inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-14",
+    "probability": 56,
+    "citations": [
+      97,
+      83
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The governments of the United States and Iran both announce a ceasefire or mutual suspension of military operations between 2026-09-11 and 2026-11-03.",
+    "resolution": "Official statements from both governments announcing a ceasefire or suspension, each dated inside the window, are carried by at least two of Reuters, AP, AFP.",
+    "failure_condition": "No ceasefire or suspension of hostilities is announced by both the US and Iranian governments inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-06",
+    "probability": 56,
+    "citations": [
+      126,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United Nations Security Council holds a recorded vote on a draft resolution concerning Iran, its nuclear program, or the current conflict between 2026-09-11 and 2026-11-15.",
+    "resolution": "Official UN Security Council meeting records show a recorded vote on such a draft, with the meeting dated inside the window; adoption is not required, and a vetoed or failed vote counts.",
+    "failure_condition": "The Security Council takes no recorded vote on any Iran draft resolution inside the window.",
+    "domain": "political",
+    "deadline": "2026-11-18",
+    "probability": 35,
+    "citations": [
+      98,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one of the two people arrested in London on 2026-09-10 on suspicion of assisting the Iranian foreign intelligence service is formally charged between 2026-09-10 and 2026-12-31.",
+    "resolution": "A Crown Prosecution Service or Metropolitan Police charging announcement naming at least one of the two arrestees, dated inside the window, is published or carried by two major UK outlets.",
+    "failure_condition": "Neither arrestee from the 2026-09-10 London case is formally charged inside the window.",
+    "domain": "crime/security",
+    "deadline": "2027-01-05",
+    "probability": 10,
+    "citations": [
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "GDACS issues at least one Red alert for a tropical cyclone with an alert date between 2026-09-11 and 2026-11-30.",
+    "resolution": "The public GDACS feed or site, read on the deadline date, lists a tropical cyclone event at Red alert level with alert issuance dated inside the window.",
+    "failure_condition": "GDACS issues no Red tropical cyclone alert dated inside the window.",
+    "domain": "disaster",
+    "deadline": "2026-12-03",
+    "probability": 31,
+    "citations": [
+      50
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-10T23:24:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

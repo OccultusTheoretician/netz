@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "The Federal Open Market Committee raises the federal funds target range at its scheduled meeting concluding 2026-09-16, putting the target upper limit above the level in effect on 2026-09-10.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "FRED series DFEDTARU records a value for any date from 2026-09-17 through the deadline strictly greater than the value the series records for 2026-09-10. Reference: the recorded 2026-09-10 series value at seal.",
+    "deadline": "2026-09-21",
+    "citations": [
+      57,
+      74,
+      63
+    ],
+    "failure_condition": "The federal funds target upper limit in effect after the 2026-09-16 meeting is not higher than the level in effect on 2026-09-10."
+  },
+  {
+    "statement": "The spot price of West Texas Intermediate crude reaches 110.00 USD per barrel or higher on at least one day between 2026-09-11 and 2026-11-13. Reference: 100.05 USD on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "FRED series DCOILWTICO records a daily value at or above 110.00 for any date from 2026-09-11 through 2026-11-13 inclusive, read on the deadline date. Reference: 100.05 on 2026-09-10.",
+    "deadline": "2026-11-18",
+    "citations": [
+      56,
+      109
+    ],
+    "failure_condition": "No daily WTI spot value at or above 110.00 USD occurs on any date inside the window."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least 20 new entries with dateAdded values between 2026-09-11 and 2026-10-31 inclusive.",
+    "domain": "cyber",
+    "probability": 75,
+    "resolution": "The public CISA KEV JSON feed, fetched on the deadline date, contains 20 or more entries whose dateAdded field falls between 2026-09-11 and 2026-10-31 inclusive.",
+    "deadline": "2026-11-04",
+    "citations": [
+      20,
+      21,
+      14
+    ],
+    "failure_condition": "Fewer than 20 KEV entries carry dateAdded values inside the window."
+  },
+  {
+    "statement": "At least one putative class action complaint naming IDScan.net or its corporate parent as defendant over the driver license data breach is filed in a US federal district court between 2026-09-10 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 85,
+    "resolution": "A complaint meeting that description appears on PACER or CourtListener with a filing date between 2026-09-10 and 2026-11-30 inclusive.",
+    "deadline": "2026-12-03",
+    "citations": [
+      12
+    ],
+    "failure_condition": "No putative class action naming IDScan.net or its parent over this breach is filed in US federal court inside the window."
+  },
+  {
+    "statement": "Houthi forces take control of at least one additional named town or port on the Red Sea coast of Yemen beyond Mocha between 2026-09-11 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 55,
+    "resolution": "At least two of Reuters, AP, AFP, or BBC report Houthi control of a named Red Sea coastal town or port other than Mocha, with the change of control occurring inside the window.",
+    "deadline": "2026-11-04",
+    "citations": [
+      83,
+      87,
+      96
+    ],
+    "failure_condition": "Houthi forces gain control of no additional named Red Sea coastal town or port beyond Mocha inside the window under the stated corroboration standard."
+  },
+  {
+    "statement": "Saudi Arabia conducts and officially acknowledges at least one airstrike on a target inside Yemen between 2026-09-11 and 2026-12-10.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "An official Saudi government or Saudi-led coalition statement acknowledging the strike is issued and carried by at least two of Reuters, AP, AFP, with the strike dated inside the window.",
+    "deadline": "2026-12-14",
+    "citations": [
+      97,
+      83
+    ],
+    "failure_condition": "No Saudi-acknowledged airstrike on a target inside Yemen occurs inside the window."
+  },
+  {
+    "statement": "The governments of the United States and Iran both announce a ceasefire or mutual suspension of military operations between 2026-09-11 and 2026-11-03.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "Official statements from both governments announcing a ceasefire or suspension, each dated inside the window, are carried by at least two of Reuters, AP, AFP.",
+    "deadline": "2026-11-06",
+    "citations": [
+      126,
+      109
+    ],
+    "failure_condition": "No ceasefire or suspension of hostilities is announced by both the US and Iranian governments inside the window."
+  },
+  {
+    "statement": "The United Nations Security Council holds a recorded vote on a draft resolution concerning Iran, its nuclear program, or the current conflict between 2026-09-11 and 2026-11-15.",
+    "domain": "political",
+    "probability": 60,
+    "resolution": "Official UN Security Council meeting records show a recorded vote on such a draft, with the meeting dated inside the window; adoption is not required, and a vetoed or failed vote counts.",
+    "deadline": "2026-11-18",
+    "citations": [
+      98,
+      109
+    ],
+    "failure_condition": "The Security Council takes no recorded vote on any Iran draft resolution inside the window."
+  },
+  {
+    "statement": "At least one of the two people arrested in London on 2026-09-10 on suspicion of assisting the Iranian foreign intelligence service is formally charged between 2026-09-10 and 2026-12-31.",
+    "domain": "crime/security",
+    "probability": 45,
+    "resolution": "A Crown Prosecution Service or Metropolitan Police charging announcement naming at least one of the two arrestees, dated inside the window, is published or carried by two major UK outlets.",
+    "deadline": "2027-01-05",
+    "citations": [
+      113
+    ],
+    "failure_condition": "Neither arrestee from the 2026-09-10 London case is formally charged inside the window."
+  },
+  {
+    "statement": "GDACS issues at least one Red alert for a tropical cyclone with an alert date between 2026-09-11 and 2026-11-30.",
+    "domain": "disaster",
+    "probability": 85,
+    "resolution": "The public GDACS feed or site, read on the deadline date, lists a tropical cyclone event at Red alert level with alert issuance dated inside the window.",
+    "deadline": "2026-12-03",
+    "citations": [
+      50
+    ],
+    "failure_condition": "GDACS issues no Red tropical cyclone alert dated inside the window."
+  }
+]

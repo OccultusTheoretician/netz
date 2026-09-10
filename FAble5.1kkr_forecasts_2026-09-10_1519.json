@@ -1,0 +1,125 @@
+[
+  {
+    "statement": "The FOMC raises the target range for the federal funds rate at its scheduled 2026-09-16 decision. Reference: 3.50 to 3.75 percent in effect on the packet date.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "The FOMC statement dated 2026-09-16 on federalreserve.gov announces a target range whose upper bound exceeds 3.75 percent. Reference: 3.50 to 3.75 percent on 2026-09-10.",
+    "deadline": "2026-09-18",
+    "citations": [
+      57,
+      58,
+      74
+    ],
+    "failure_condition": "The 2026-09-16 FOMC statement leaves the target range upper bound at or below 3.75 percent."
+  },
+  {
+    "statement": "The front-month NYMEX WTI crude futures contract settles at or above 100.00 dollars per barrel on 2026-10-09. Reference: 100.05 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "The CME Group published settlement price for the nearest-expiry NYMEX Light Sweet Crude Oil (CL) futures contract on 2026-10-09 is greater than or equal to 100.00. Reference: 100.05 on 2026-09-10.",
+    "deadline": "2026-10-13",
+    "citations": [
+      56,
+      109,
+      126
+    ],
+    "failure_condition": "The CME front-month WTI settlement for 2026-10-09 is below 100.00."
+  },
+  {
+    "statement": "The ECB Governing Council raises the deposit facility rate above 2.50 percent at its scheduled 2026-10-29 monetary policy meeting. Reference: 2.50 percent after the 2026-09-10 decision.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "The ECB monetary policy decisions press release dated 2026-10-29 on ecb.europa.eu states a deposit facility rate greater than 2.50 percent. Reference: 2.50 percent on 2026-09-10.",
+    "deadline": "2026-11-02",
+    "citations": [
+      70,
+      75,
+      76
+    ],
+    "failure_condition": "The 2026-10-29 ECB decision leaves the deposit facility rate at or below 2.50 percent."
+  },
+  {
+    "statement": "CISA adds at least one Check Point vulnerability to the Known Exploited Vulnerabilities catalog between 2026-09-11 and 2026-10-09.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "The CISA KEV catalog JSON contains at least one entry with vendorProject value Check Point (any product) and a dateAdded value between 2026-09-11 and 2026-10-09 inclusive.",
+    "deadline": "2026-10-13",
+    "citations": [
+      16,
+      20
+    ],
+    "failure_condition": "No KEV entry with vendorProject Check Point carries a dateAdded between 2026-09-11 and 2026-10-09."
+  },
+  {
+    "statement": "A putative class action over the IDScan driver license breach is filed against IDScan.net in a US federal district court between 2026-09-10 and 2026-10-09.",
+    "domain": "cyber",
+    "probability": 75,
+    "resolution": "A complaint pleaded as a class action, naming IDScan.net or its parent or affiliate as defendant and referencing the driver license data breach, appears on CourtListener or PACER with a filing date between 2026-09-10 and 2026-10-09.",
+    "deadline": "2026-10-13",
+    "citations": [
+      12
+    ],
+    "failure_condition": "No class action complaint naming IDScan.net or its parent or affiliate over the breach is filed in any US federal district court between 2026-09-10 and 2026-10-09."
+  },
+  {
+    "statement": "Saudi forces conduct at least one airstrike inside Yemen between 2026-09-11 and 2026-10-09, ending the Saudi restraint that has held since the 2022 truce.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "At least two of Reuters, AP and AFP report an airstrike on a target inside Yemen with a strike date between 2026-09-11 and 2026-10-09, attributed to Saudi forces by Saudi officials or the Saudi-led coalition.",
+    "deadline": "2026-10-13",
+    "citations": [
+      83,
+      96,
+      97
+    ],
+    "failure_condition": "Saudi forces conduct no airstrike inside Yemen between 2026-09-11 and 2026-10-09."
+  },
+  {
+    "statement": "The UN Security Council adopts a resolution addressing Iran between 2026-09-11 and 2026-10-30.",
+    "domain": "military/conflict",
+    "probability": 12,
+    "resolution": "The UN Security Council 2026 resolutions list on un.org shows a resolution adopted between 2026-09-11 and 2026-10-30 with Iran in its title or with operative paragraphs on the Iranian nuclear programme or the US-Iran conflict.",
+    "deadline": "2026-11-04",
+    "citations": [
+      98,
+      109
+    ],
+    "failure_condition": "No Security Council resolution addressing Iran, its nuclear programme or the US-Iran conflict is adopted between 2026-09-11 and 2026-10-30."
+  },
+  {
+    "statement": "Republicans retain control of the US House of Representatives in the 2026-11-03 midterm election.",
+    "domain": "political",
+    "probability": 20,
+    "resolution": "By 2026-12-04 the Associated Press has called at least 218 of the 435 House races in the 2026-11-03 general election for Republican candidates.",
+    "deadline": "2026-12-04",
+    "citations": [
+      60,
+      84,
+      120,
+      127
+    ],
+    "failure_condition": "Fewer than 218 House races are called for Republicans by the Associated Press as of 2026-12-04."
+  },
+  {
+    "statement": "Daniel Owen Conahan Jr., the inmate convicted in the Hog Trail murders case, is executed by the State of Florida between 2026-09-10 and 2026-09-17.",
+    "domain": "crime/security",
+    "probability": 90,
+    "resolution": "The Florida Department of Corrections execution list records Daniel Owen Conahan Jr. as executed on a date between 2026-09-10 and 2026-09-17 inclusive.",
+    "deadline": "2026-09-21",
+    "citations": [
+      9
+    ],
+    "failure_condition": "Conahan is not executed between 2026-09-10 and 2026-09-17 because of a stay, reprieve, commutation or rescheduling outside the window."
+  },
+  {
+    "statement": "GDACS raises tropical cyclone NORBERT-26 (eventid 1001320) to Orange or Red alert level at some point between 2026-09-10 and 2026-09-20.",
+    "domain": "disaster",
+    "probability": 15,
+    "resolution": "The GDACS event page for tropical cyclone NORBERT-26 (eventtype TC, eventid 1001320) lists at least one episode dated between 2026-09-10 and 2026-09-20 with alert level Orange or Red.",
+    "deadline": "2026-09-23",
+    "citations": [
+      50
+    ],
+    "failure_condition": "Every GDACS episode for NORBERT-26 dated 2026-09-10 to 2026-09-20 carries a Green alert level."
+  }
+]

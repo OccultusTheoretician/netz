@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "The FOMC raises the federal funds target range above 3.50-3.75 percent at its meeting concluding 2026-09-16. Reference: 3.50-3.75 percent target range on the packet date, 2026-09-10.",
+    "domain": "economics/markets",
+    "probability": 65,
+    "resolution": "TRUE if the FOMC statement dated 2026-09-16 announces a higher target range, confirmed by FRED series DFEDTARU above 3.75 on 2026-09-17. FALSE if the range is unchanged or lowered.",
+    "deadline": "2026-09-18",
+    "citations": [
+      57,
+      74,
+      56
+    ],
+    "failure_condition": "The FOMC left the federal funds target range at 3.50-3.75 percent, or lowered it, at the meeting concluding 2026-09-16."
+  },
+  {
+    "statement": "The ECB Governing Council raises the deposit facility rate above 2.50 percent at its monetary policy meeting concluding 2026-10-29. Reference: deposit facility rate 2.50 percent on the packet date, 2026-09-10.",
+    "domain": "economics/markets",
+    "probability": 38,
+    "resolution": "TRUE if the ECB monetary policy decision published 2026-10-29 sets the deposit facility rate above 2.50 percent, per the ECB key interest rates page or ECB Data Portal. FALSE otherwise.",
+    "deadline": "2026-11-02",
+    "citations": [
+      70,
+      75,
+      76
+    ],
+    "failure_condition": "The ECB kept the deposit facility rate at 2.50 percent, or cut it, at the meeting concluding 2026-10-29."
+  },
+  {
+    "statement": "CISA adds at least one Microsoft vulnerability to the Known Exploited Vulnerabilities catalog between 2026-10-13, October Patch Tuesday, and 2026-10-20.",
+    "domain": "cyber",
+    "probability": 75,
+    "resolution": "TRUE if the CISA KEV JSON feed lists at least one entry with vendorProject Microsoft and a dateAdded value between 2026-10-13 and 2026-10-20 inclusive. FALSE otherwise.",
+    "deadline": "2026-10-22",
+    "citations": [
+      14,
+      31,
+      20
+    ],
+    "failure_condition": "No KEV entry with vendorProject Microsoft carries a dateAdded value between 2026-10-13 and 2026-10-20."
+  },
+  {
+    "statement": "CISA adds CVE-2026-85102 or CVE-2026-85103, the Check Point VPN certificate flaws disclosed 2026-09-09, to the Known Exploited Vulnerabilities catalog between 2026-09-11 and 2026-10-30.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "TRUE if the CISA KEV JSON feed lists CVE-2026-85102 or CVE-2026-85103 with a dateAdded value between 2026-09-11 and 2026-10-30 inclusive. FALSE otherwise.",
+    "deadline": "2026-11-02",
+    "citations": [
+      16,
+      20
+    ],
+    "failure_condition": "Neither CVE-2026-85102 nor CVE-2026-85103 carries a KEV dateAdded value between 2026-09-11 and 2026-10-30."
+  },
+  {
+    "statement": "US or Israeli forces strike the Pickaxe Mountain (Kuh-e Kolang Gaz La) tunnel complex near Natanz, Iran, between 2026-09-11 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 20,
+    "resolution": "TRUE if a strike on the site between 2026-09-11 and 2026-10-31 is confirmed by Pentagon, CENTCOM, White House or IDF, or by two of Reuters, AP, AFP citing US or Israeli officials. Iranian claims alone do not count.",
+    "deadline": "2026-11-03",
+    "citations": [
+      109,
+      126
+    ],
+    "failure_condition": "No US or Israeli strike hit the Pickaxe Mountain site between 2026-09-11 and 2026-10-31."
+  },
+  {
+    "statement": "A ceasefire, truce, or cessation of hostilities between the United States and Iran is announced by the US government and publicly accepted by the Iranian government between 2026-09-11 and 2026-11-30.",
+    "domain": "military/conflict",
+    "probability": 20,
+    "resolution": "TRUE if between 2026-09-11 and 2026-11-30 the US government announces a US-Iran ceasefire or truce and the Iranian government publicly confirms it, as reported by at least two of Reuters, AP, AFP, BBC.",
+    "deadline": "2026-12-02",
+    "citations": [
+      126,
+      109
+    ],
+    "failure_condition": "The United States and Iran did not both publicly agree to a ceasefire, truce, or cessation of hostilities between 2026-09-11 and 2026-11-30."
+  },
+  {
+    "statement": "Houthi forces take control of the town of Dhubab, Taiz governorate, on the southern Red Sea coast approach to the Bab al-Mandab strait, between 2026-09-11 and 2026-10-30.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "TRUE if Houthi forces take control of Dhubab town between 2026-09-11 and 2026-10-30, as reported by at least two of Reuters, AP, AFP citing Yemeni government or government-aligned military sources. Houthi claims alone do not count.",
+    "deadline": "2026-11-02",
+    "citations": [
+      87,
+      96,
+      83
+    ],
+    "failure_condition": "Houthi forces did not take control of Dhubab town at any point between 2026-09-11 and 2026-10-30."
+  },
+  {
+    "statement": "The Liberals win at least 4.00 percent of valid national votes in the Swedish Riksdag election held 2026-09-13, clearing the parliamentary threshold.",
+    "domain": "political",
+    "probability": 70,
+    "resolution": "TRUE if the Valmyndigheten final result (slutligt valresultat) for the 2026-09-13 Riksdag election shows the Liberals at 4.00 percent or more of valid national votes. FALSE if below 4.00 percent.",
+    "deadline": "2026-09-22",
+    "citations": [
+      118
+    ],
+    "failure_condition": "The Liberals received less than 4.00 percent of valid national votes in the final result of the 2026-09-13 Riksdag election."
+  },
+  {
+    "statement": "UK authorities charge at least one of the two people, a 42-year-old woman and a 60-year-old man, arrested in London on 2026-09-09 on suspicion of assisting Iranian intelligence, between 2026-09-11 and 2026-11-06.",
+    "domain": "crime/security",
+    "probability": 15,
+    "resolution": "TRUE if the Metropolitan Police or CPS announces that either suspect arrested 2026-09-09 in this National Security Act investigation was charged with any offence between 2026-09-11 and 2026-11-06. FALSE otherwise.",
+    "deadline": "2026-11-10",
+    "citations": [
+      113
+    ],
+    "failure_condition": "Neither the 42-year-old woman nor the 60-year-old man arrested on 2026-09-09 was charged between 2026-09-11 and 2026-11-06."
+  },
+  {
+    "statement": "September 2026, between 2026-09-01 and 2026-09-30, is the warmest September in the Copernicus ERA5 global surface air temperature record, exceeding September 2023.",
+    "domain": "disaster",
+    "probability": 45,
+    "resolution": "TRUE if C3S ERA5 data published for September 2026, between 2026-09-01 and 2026-09-30, show a global-mean surface air temperature strictly above September 2023, the current record holder. Ties are FALSE.",
+    "deadline": "2026-10-14",
+    "citations": [
+      43
+    ],
+    "failure_condition": "The published ERA5 global-mean surface air temperature for September 2026 was equal to or below the September 2023 value."
+  }
+]
