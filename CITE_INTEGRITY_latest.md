@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-09-09T10:05:57Z · ledger `ledger.json` · 1743 rows in scope
+Generated 2026-09-10T10:01:40Z · ledger `ledger.json` · 1808 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,21 +12,21 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **1742**
+- rows audited: **1807**
 - scope limitation (no resolvable source report): **1**
-- defective: **243** (13.9% of audited)
-- rows whose citation number does not identify a unique item: **331** (max candidates behind one number: 8)
-  - AMBIGUOUS_REF: 331
-  - UNSUPPORTED: 138
-  - DEADWEIGHT: 100
+- defective: **251** (13.9% of audited)
+- rows whose citation number does not identify a unique item: **332** (max candidates behind one number: 8)
+  - AMBIGUOUS_REF: 332
+  - UNSUPPORTED: 145
+  - DEADWEIGHT: 101
   - SHOTGUN: 34
   - NO_CITES: 24
   - THIN: 1
 
 ## The number that matters
 
-Rows determined **KEYLESS**: 108
-Of those, citations defective: **11** (10.2%)
+Rows determined **KEYLESS**: 114
+Of those, citations defective: **11** (9.6%)
 
 A keyless determination says the claim went beyond its declared priors. Where the priors are unreadable, that determination was made against nothing. These rows are listed so the keyless count can be stated with its defect rate attached rather than as a clean integer.
 
@@ -48,14 +48,14 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| lmstudio/auto | 315 | 88 | 28% |
-| control/baserate | 537 | 52 | 10% |
-| manual/opus-5/unattested | 206 | 28 | 14% |
-| manual/fable-5/unattested | 188 | 16 | 9% |
+| lmstudio/auto | 320 | 90 | 28% |
+| control/baserate | 567 | 55 | 10% |
+| manual/opus-5/unattested | 213 | 30 | 14% |
+| manual/fable-5/unattested | 196 | 16 | 8% |
 | lmstudio/realist | 32 | 15 | 47% |
-| manual/sonnet-5/unattested | 192 | 13 | 7% |
+| manual/sonnet-5/unattested | 199 | 13 | 7% |
 | manual/opus-5 | 74 | 12 | 16% |
-| manual/fable-5.1/unattested | 50 | 10 | 20% |
+| manual/fable-5.1/unattested | 58 | 11 | 19% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
 | manual/sonnet-5 | 45 | 1 | 2% |
