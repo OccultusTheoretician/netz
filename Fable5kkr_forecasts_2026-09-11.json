@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "Russian strikes damage fuel or electric power infrastructure in Kyiv city or Kyiv oblast on at least three separate calendar days between 2026-09-12 and 2026-10-11.",
+    "domain": "military/conflict",
+    "probability": 85,
+    "resolution": "At least two of Reuters, AP, AFP, or the Guardian, citing Ukrainian officials, report such infrastructure damage in Kyiv city or oblast on three or more distinct dates between 2026-09-12 and 2026-10-11; otherwise MISS.",
+    "deadline": "2026-10-14",
+    "citations": [77, 82],
+    "failure_condition": "Qualifying infrastructure damage in Kyiv city or oblast occurs on fewer than three distinct calendar days inside the window."
+  },
+  {
+    "statement": "At least one commercial merchant vessel is struck by a missile, drone, or uncrewed surface vessel in the Red Sea, Bab al-Mandab, or Gulf of Aden between 2026-09-12 and 2026-10-11.",
+    "domain": "military/conflict",
+    "probability": 75,
+    "resolution": "A UKMTO advisory, or Reuters or AP reporting citing UKMTO or the vessel operator, records a munition strike on a commercial vessel in those waters between 2026-09-12 and 2026-10-11; otherwise MISS.",
+    "deadline": "2026-10-14",
+    "citations": [46, 83, 93],
+    "failure_condition": "No commercial merchant vessel in the named waters is struck by a munition during the window."
+  },
+  {
+    "statement": "WTI crude front-month futures record at least one daily settlement price at or above 110.00 USD per barrel on NYMEX between 2026-09-14 and 2026-10-16. Reference: 99.63 USD on the packet date.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "CME Group official daily settlement data for front-month WTI crude shows any settlement at or above 110.00 USD between 2026-09-14 and 2026-10-16 inclusive; otherwise MISS.",
+    "deadline": "2026-10-20",
+    "citations": [47, 51, 83],
+    "failure_condition": "Every front-month WTI daily settlement inside the window is below 110.00 USD."
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield prints at or above 5.25 percent on at least one business day between 2026-09-14 and 2026-11-13. Reference: 4.94 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "FRED series DGS10 shows any daily value at or above 5.25 between 2026-09-14 and 2026-11-13 inclusive; otherwise MISS.",
+    "deadline": "2026-11-17",
+    "citations": [63, 66],
+    "failure_condition": "Every DGS10 daily print inside the window is below 5.25 percent."
+  },
+  {
+    "statement": "Anthropic shares begin public trading on the NYSE or Nasdaq between 2026-09-14 and 2027-03-05.",
+    "domain": "economics/markets",
+    "probability": 60,
+    "resolution": "Official records of the listing exchange show a first day of public trading for Anthropic common stock between 2026-09-14 and 2027-03-05 inclusive; otherwise MISS.",
+    "deadline": "2027-03-09",
+    "citations": [60],
+    "failure_condition": "No first day of public trading for Anthropic stock occurs on either exchange during the window."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one CVE whose vendor or product field contains PaperCut with a dateAdded value between 2026-09-12 and 2026-10-09.",
+    "domain": "cyber",
+    "probability": 60,
+    "resolution": "The public CISA KEV JSON feed contains an entry matching PaperCut in vendorProject or product with dateAdded between 2026-09-12 and 2026-10-09 inclusive; otherwise MISS.",
+    "deadline": "2026-10-13",
+    "citations": [19, 26],
+    "failure_condition": "No KEV entry matching PaperCut carries a dateAdded value inside the 2026-09-12 to 2026-10-09 window."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one CVE whose vendor or product field contains GitLab with a dateAdded value between 2026-09-12 and 2026-10-30.",
+    "domain": "cyber",
+    "probability": 20,
+    "resolution": "The public CISA KEV JSON feed contains an entry matching GitLab in vendorProject or product with dateAdded between 2026-09-12 and 2026-10-30 inclusive; otherwise MISS.",
+    "deadline": "2026-11-03",
+    "citations": [13],
+    "failure_condition": "No KEV entry matching GitLab carries a dateAdded value inside the 2026-09-12 to 2026-10-30 window."
+  },
+  {
+    "statement": "Zack Polanski is elected Member of Parliament for Holborn and St Pancras at a byelection held between 2026-09-12 and 2027-01-29.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "The official declaration recorded by parliament.uk, or reported by BBC or the Guardian, names Polanski winner of a Holborn and St Pancras byelection held between 2026-09-12 and 2027-01-29; otherwise MISS.",
+    "deadline": "2027-02-02",
+    "citations": [109],
+    "failure_condition": "No byelection for the seat concludes inside the window, or one concludes with a candidate other than Polanski declared the winner."
+  },
+  {
+    "statement": "At least one of the six Nigerian nationals in the romance-scam extradition case reported on 2026-09-11 is physically surrendered to the requesting state between 2026-09-12 and 2027-01-15.",
+    "domain": "crime/security",
+    "probability": 50,
+    "resolution": "Reuters, AP, or BBC follow-up reporting identifies the physical surrender of at least one of the six defendants to the requesting state between 2026-09-12 and 2027-01-15; otherwise MISS.",
+    "deadline": "2027-01-19",
+    "citations": [9],
+    "failure_condition": "All six defendants remain outside the custody of the requesting state through the end of the window."
+  },
+  {
+    "statement": "The DRC Ebola outbreak reported in a seventh province on 2026-09-11 records at least one laboratory-confirmed case in an eighth DRC province between 2026-09-12 and 2026-11-11.",
+    "domain": "disaster",
+    "probability": 45,
+    "resolution": "A WHO Disease Outbreak News item, WHO AFRO bulletin, or DRC health ministry statement carried by Reuters or AP confirms a case in an eighth province between 2026-09-12 and 2026-11-11; otherwise MISS.",
+    "deadline": "2026-11-13",
+    "citations": [70],
+    "failure_condition": "Laboratory-confirmed cases remain confined to seven or fewer DRC provinces through the end of the window."
+  }
+]

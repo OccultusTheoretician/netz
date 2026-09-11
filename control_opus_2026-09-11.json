@@ -1,0 +1,254 @@
+[
+  {
+    "statement": "The FOMC raises the federal funds target range by 25 basis points to 3.75-4.00 percent at its meeting concluding 2026-09-16. Reference: 3.50-3.75 percent on the packet date.",
+    "resolution": "True if the FOMC statement dated 2026-09-16 on federalreserve.gov sets the federal funds target range at 3.75 to 4.00 percent. Any other range, including a larger hike or a hold, is false.",
+    "failure_condition": "The federal funds target range set at the 2026-09-16 FOMC decision is anything other than 3.75 to 4.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-09-18",
+    "probability": 26,
+    "citations": [
+      63,
+      45,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield for the observation date 2026-10-30 is at or above 5.00 percent. Reference: 4.94 percent on the packet date.",
+    "resolution": "True if FRED series DGS10 shows a value of 5.00 or higher for the observation date 2026-10-30; false if the value is below 5.00.",
+    "failure_condition": "The 10-year Treasury constant-maturity yield for 2026-10-30 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 26,
+    "citations": [
+      66,
+      63,
+      56
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The EIA weekly U.S. No. 2 on-highway diesel retail price for the week of 2026-10-26 is at or above 6.000 dollars per gallon. Reference: 5.967 for the week of 2026-09-07, the latest EIA print at seal.",
+    "resolution": "True if EIA series EMD_EPD2D_PTE_NUS_DPG reports 6.000 dollars per gallon or higher for the week of 2026-10-26; false if lower.",
+    "failure_condition": "The EIA US average diesel retail price for the week of 2026-10-26 is below 6.000 dollars per gallon.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-29",
+    "probability": 26,
+    "citations": [
+      37,
+      52
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A merchant vessel is struck by a missile, drone, projectile, or explosive boat in the Red Sea, Bab al-Mandab, or Gulf of Aden between 2026-09-12 and 2026-10-11.",
+    "resolution": "True if UKMTO or JMIC publishes an incident report of a merchant vessel struck by a missile, drone, projectile, or explosive boat in those waters, occurring between 2026-09-12 and 2026-10-11.",
+    "failure_condition": "No merchant vessel is struck by a missile, drone, projectile, or explosive boat in the Red Sea, Bab al-Mandab, or Gulf of Aden between 2026-09-12 and 2026-10-11.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-14",
+    "probability": 56,
+    "citations": [
+      83,
+      93,
+      69
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran each publicly accept a mutual ceasefire or cessation of hostilities announced between 2026-09-12 and 2026-10-31.",
+    "resolution": "True if, between 2026-09-12 and 2026-10-31, both the US government and the Iranian government publicly confirm a mutual ceasefire, as reported by at least two of Reuters, AP, and AFP.",
+    "failure_condition": "No mutual ceasefire or cessation of hostilities is agreed and publicly confirmed by both the US and Iranian governments between 2026-09-12 and 2026-10-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-03",
+    "probability": 56,
+    "citations": [
+      51,
+      100,
+      72
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds GitLab CVE-2026-85706 to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-09-11 and 2026-11-13. Not listed in KEV catalog version 2026.09.10 at seal.",
+    "resolution": "True if the CISA KEV catalog JSON lists CVE-2026-85706 with a dateAdded value from 2026-09-11 through 2026-11-13; false otherwise.",
+    "failure_condition": "CISA does not add CVE-2026-85706 to the KEV catalog with a dateAdded between 2026-09-11 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 28,
+    "citations": [
+      13
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA sets knownRansomwareCampaignUse to Known for PaperCut CVE-2026-82078 or CVE-2026-81578 between 2026-09-11 and 2026-12-11. Reference: both Unknown in KEV catalog version 2026.09.10 at seal.",
+    "resolution": "True if the latest CISA KEV catalog version released between 2026-09-11 and 2026-12-11 shows knownRansomwareCampaignUse Known for CVE-2026-82078 or CVE-2026-81578; false if both remain Unknown.",
+    "failure_condition": "Both CVE-2026-82078 and CVE-2026-81578 carry knownRansomwareCampaignUse Unknown in the latest KEV catalog version released on or before 2026-12-11.",
+    "domain": "cyber",
+    "deadline": "2026-12-14",
+    "probability": 28,
+    "citations": [
+      19,
+      26
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Zack Polanski of the Green Party wins the Holborn and St Pancras parliamentary by-election polled on 2026-10-08.",
+    "resolution": "True if the returning officer declaration for the Holborn and St Pancras by-election polled on 2026-10-08 names Zack Polanski as elected; false if another candidate is declared or no result is declared by 2026-10-10.",
+    "failure_condition": "A candidate other than Zack Polanski is declared elected in the Holborn and St Pancras by-election polled on 2026-10-08.",
+    "domain": "political",
+    "deadline": "2026-10-12",
+    "probability": 35,
+    "citations": [
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of 435 US House seats in the 2026-11-03 general election.",
+    "resolution": "True if Associated Press race calls made by 2026-11-23 credit Democrats with 218 or more House seats from the 2026-11-03 election; false otherwise.",
+    "failure_condition": "Democrats win fewer than 218 House seats in the 2026-11-03 election, or their 218th seat remains undecided on 2026-11-23.",
+    "domain": "political",
+    "deadline": "2026-11-25",
+    "probability": 35,
+    "citations": [
+      87,
+      111,
+      115
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A laboratory-confirmed Bundibugyo virus disease case is diagnosed in a country other than the DRC between 2026-09-12 and 2026-11-13, excluding planned medical evacuations.",
+    "resolution": "True if a WHO Disease Outbreak News item or a national health ministry reports a laboratory-confirmed Bundibugyo case diagnosed outside the DRC, not a planned medical evacuation, between 2026-09-12 and 2026-11-13.",
+    "failure_condition": "No laboratory-confirmed Bundibugyo virus case, other than a planned medical evacuation, is diagnosed in any country outside the DRC between 2026-09-12 and 2026-11-13.",
+    "domain": "disaster",
+    "deadline": "2026-11-17",
+    "probability": 31,
+    "citations": [
+      70
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:39:05Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
