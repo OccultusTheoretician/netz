@@ -1,0 +1,124 @@
+[
+  {
+    "statement": "The FOMC raises the federal funds target range by 25 basis points to 3.75-4.00 percent at its meeting concluding 2026-09-16. Reference: 3.50-3.75 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 85,
+    "resolution": "True if the FOMC statement dated 2026-09-16 on federalreserve.gov sets the federal funds target range at 3.75 to 4.00 percent. Any other range, including a larger hike or a hold, is false.",
+    "deadline": "2026-09-18",
+    "citations": [
+      63,
+      45,
+      68
+    ],
+    "failure_condition": "The federal funds target range set at the 2026-09-16 FOMC decision is anything other than 3.75 to 4.00 percent."
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield for the observation date 2026-10-30 is at or above 5.00 percent. Reference: 4.94 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "True if FRED series DGS10 shows a value of 5.00 or higher for the observation date 2026-10-30; false if the value is below 5.00.",
+    "deadline": "2026-11-04",
+    "citations": [
+      66,
+      63,
+      56
+    ],
+    "failure_condition": "The 10-year Treasury constant-maturity yield for 2026-10-30 is below 5.00 percent."
+  },
+  {
+    "statement": "The EIA weekly U.S. No. 2 on-highway diesel retail price for the week of 2026-10-26 is at or above 6.000 dollars per gallon. Reference: 5.967 for the week of 2026-09-07, the latest EIA print at seal.",
+    "domain": "economics/markets",
+    "probability": 56,
+    "resolution": "True if EIA series EMD_EPD2D_PTE_NUS_DPG reports 6.000 dollars per gallon or higher for the week of 2026-10-26; false if lower.",
+    "deadline": "2026-10-29",
+    "citations": [
+      37,
+      52
+    ],
+    "failure_condition": "The EIA US average diesel retail price for the week of 2026-10-26 is below 6.000 dollars per gallon."
+  },
+  {
+    "statement": "A merchant vessel is struck by a missile, drone, projectile, or explosive boat in the Red Sea, Bab al-Mandab, or Gulf of Aden between 2026-09-12 and 2026-10-11.",
+    "domain": "military/conflict",
+    "probability": 76,
+    "resolution": "True if UKMTO or JMIC publishes an incident report of a merchant vessel struck by a missile, drone, projectile, or explosive boat in those waters, occurring between 2026-09-12 and 2026-10-11.",
+    "deadline": "2026-10-14",
+    "citations": [
+      83,
+      93,
+      69
+    ],
+    "failure_condition": "No merchant vessel is struck by a missile, drone, projectile, or explosive boat in the Red Sea, Bab al-Mandab, or Gulf of Aden between 2026-09-12 and 2026-10-11."
+  },
+  {
+    "statement": "The United States and Iran each publicly accept a mutual ceasefire or cessation of hostilities announced between 2026-09-12 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "True if, between 2026-09-12 and 2026-10-31, both the US government and the Iranian government publicly confirm a mutual ceasefire, as reported by at least two of Reuters, AP, and AFP.",
+    "deadline": "2026-11-03",
+    "citations": [
+      51,
+      100,
+      72
+    ],
+    "failure_condition": "No mutual ceasefire or cessation of hostilities is agreed and publicly confirmed by both the US and Iranian governments between 2026-09-12 and 2026-10-31."
+  },
+  {
+    "statement": "CISA adds GitLab CVE-2026-85706 to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-09-11 and 2026-11-13. Not listed in KEV catalog version 2026.09.10 at seal.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "True if the CISA KEV catalog JSON lists CVE-2026-85706 with a dateAdded value from 2026-09-11 through 2026-11-13; false otherwise.",
+    "deadline": "2026-11-17",
+    "citations": [
+      13
+    ],
+    "failure_condition": "CISA does not add CVE-2026-85706 to the KEV catalog with a dateAdded between 2026-09-11 and 2026-11-13."
+  },
+  {
+    "statement": "CISA sets knownRansomwareCampaignUse to Known for PaperCut CVE-2026-82078 or CVE-2026-81578 between 2026-09-11 and 2026-12-11. Reference: both Unknown in KEV catalog version 2026.09.10 at seal.",
+    "domain": "cyber",
+    "probability": 20,
+    "resolution": "True if the latest CISA KEV catalog version released between 2026-09-11 and 2026-12-11 shows knownRansomwareCampaignUse Known for CVE-2026-82078 or CVE-2026-81578; false if both remain Unknown.",
+    "deadline": "2026-12-14",
+    "citations": [
+      19,
+      26
+    ],
+    "failure_condition": "Both CVE-2026-82078 and CVE-2026-81578 carry knownRansomwareCampaignUse Unknown in the latest KEV catalog version released on or before 2026-12-11."
+  },
+  {
+    "statement": "Zack Polanski of the Green Party wins the Holborn and St Pancras parliamentary by-election polled on 2026-10-08.",
+    "domain": "political",
+    "probability": 32,
+    "resolution": "True if the returning officer declaration for the Holborn and St Pancras by-election polled on 2026-10-08 names Zack Polanski as elected; false if another candidate is declared or no result is declared by 2026-10-10.",
+    "deadline": "2026-10-12",
+    "citations": [
+      109
+    ],
+    "failure_condition": "A candidate other than Zack Polanski is declared elected in the Holborn and St Pancras by-election polled on 2026-10-08."
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of 435 US House seats in the 2026-11-03 general election.",
+    "domain": "political",
+    "probability": 82,
+    "resolution": "True if Associated Press race calls made by 2026-11-23 credit Democrats with 218 or more House seats from the 2026-11-03 election; false otherwise.",
+    "deadline": "2026-11-25",
+    "citations": [
+      87,
+      111,
+      115
+    ],
+    "failure_condition": "Democrats win fewer than 218 House seats in the 2026-11-03 election, or their 218th seat remains undecided on 2026-11-23."
+  },
+  {
+    "statement": "A laboratory-confirmed Bundibugyo virus disease case is diagnosed in a country other than the DRC between 2026-09-12 and 2026-11-13, excluding planned medical evacuations.",
+    "domain": "disaster",
+    "probability": 30,
+    "resolution": "True if a WHO Disease Outbreak News item or a national health ministry reports a laboratory-confirmed Bundibugyo case diagnosed outside the DRC, not a planned medical evacuation, between 2026-09-12 and 2026-11-13.",
+    "deadline": "2026-11-17",
+    "citations": [
+      70
+    ],
+    "failure_condition": "No laboratory-confirmed Bundibugyo virus case, other than a planned medical evacuation, is diagnosed in any country outside the DRC between 2026-09-12 and 2026-11-13."
+  }
+]

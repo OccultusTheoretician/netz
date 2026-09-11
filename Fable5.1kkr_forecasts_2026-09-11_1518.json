@@ -1,0 +1,126 @@
+[
+  {
+    "statement": "United States forces conduct at least one kinetic strike on Houthi targets inside Yemen between 2026-09-12 and 2026-10-09, publicly confirmed by US Central Command or the Department of Defense.",
+    "domain": "military/conflict",
+    "probability": 38,
+    "resolution": "TRUE if a CENTCOM or Department of Defense statement, press release, or official post confirms a US strike on Houthi targets in Yemen that occurred between 2026-09-12 and 2026-10-09; otherwise FALSE.",
+    "deadline": "2026-10-13",
+    "citations": [
+      46,
+      83,
+      84
+    ],
+    "failure_condition": "US forces conduct no strike on Houthi targets in Yemen on any date from 2026-09-12 through 2026-10-09."
+  },
+  {
+    "statement": "Forces of the internationally recognised Yemen government or the Saudi-led coalition regain control of the Red Sea port city of Mocha (al-Makha) between 2026-09-12 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 12,
+    "resolution": "TRUE if, for a date from 2026-09-12 to 2026-10-31, a Yemen government or Saudi coalition statement and Reuters, AP, or AFP report government or coalition forces controlling Mocha city; otherwise FALSE.",
+    "deadline": "2026-11-04",
+    "citations": [
+      83,
+      84,
+      93
+    ],
+    "failure_condition": "Mocha city remains outside Yemen government and Saudi coalition control on every date from 2026-09-12 through 2026-10-31."
+  },
+  {
+    "statement": "The Green Party candidate Zack Polanski wins the Holborn and St Pancras parliamentary by-election held on 2026-10-08.",
+    "domain": "political",
+    "probability": 42,
+    "resolution": "TRUE if the declared result of the 2026-10-08 Holborn and St Pancras by-election, per BBC or the UK Parliament website, shows the Green Party candidate elected; otherwise FALSE.",
+    "deadline": "2026-10-13",
+    "citations": [
+      109
+    ],
+    "failure_condition": "A candidate other than the Green Party candidate is declared elected in the 2026-10-08 Holborn and St Pancras by-election, or the poll is not held that day."
+  },
+  {
+    "statement": "The UN Security Council adopts a resolution addressing the Iran nuclear programme or the 2026 Iran war between 2026-09-12 and 2026-10-16.",
+    "domain": "political",
+    "probability": 12,
+    "resolution": "TRUE if the UN Security Council resolutions register or a UN press release records adoption between 2026-09-12 and 2026-10-16 of a resolution addressing the Iran nuclear programme or the Iran conflict; otherwise FALSE.",
+    "deadline": "2026-10-20",
+    "citations": [
+      51,
+      90,
+      94
+    ],
+    "failure_condition": "The Security Council adopts no resolution addressing the Iran nuclear programme or the Iran conflict on any date from 2026-09-12 through 2026-10-16."
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of the 435 seats in the US House of Representatives in the general election held on 2026-11-03.",
+    "domain": "political",
+    "probability": 70,
+    "resolution": "TRUE if Associated Press race calls or Clerk of the House official results show Democratic candidates won 218 or more House seats in the 2026-11-03 general election; otherwise FALSE.",
+    "deadline": "2026-12-18",
+    "citations": [
+      87,
+      111,
+      115
+    ],
+    "failure_condition": "Democratic candidates win 217 or fewer House seats in the 2026-11-03 election."
+  },
+  {
+    "statement": "The FOMC statement released on 2026-09-16 raises the federal funds target range above the range in effect on the packet date. Reference: 3.50 to 3.75 percent on 2026-09-11.",
+    "domain": "economics/markets",
+    "probability": 65,
+    "resolution": "TRUE if the FOMC statement released by the Federal Reserve on 2026-09-16 sets a federal funds target range whose upper bound exceeds 3.75 percent; otherwise FALSE.",
+    "deadline": "2026-09-18",
+    "citations": [
+      45,
+      63,
+      66
+    ],
+    "failure_condition": "The FOMC leaves the target range at 3.50 to 3.75 percent, lowers it, or issues no rate decision on 2026-09-16."
+  },
+  {
+    "statement": "The EIA daily WTI Cushing spot price (FRED series DCOILWTICO) records at least one value at or above 110.00 dollars for a date between 2026-09-14 and 2026-10-09. Reference: WTI 99.63 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "TRUE if FRED series DCOILWTICO contains any observation dated 2026-09-14 through 2026-10-09 with a value of 110.00 or higher; otherwise FALSE. Reference: 99.63 on the packet date.",
+    "deadline": "2026-10-14",
+    "citations": [
+      47,
+      52,
+      83
+    ],
+    "failure_condition": "The WTI Cushing spot price stays below 110.00 dollars on every trading day from 2026-09-14 through 2026-10-09."
+  },
+  {
+    "statement": "The BLS September 2026 CPI release, scheduled for 2026-10-14, reports a 12-month all-items CPI-U increase (not seasonally adjusted) of 3.6 percent or higher. Reference: 3.4 percent for August 2026 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "TRUE if the BLS September 2026 CPI news release, scheduled for 2026-10-14, states the all-items CPI-U rose 3.6 percent or more over the 12 months ending September 2026, not seasonally adjusted; otherwise FALSE.",
+    "deadline": "2026-10-16",
+    "citations": [
+      45,
+      68,
+      37
+    ],
+    "failure_condition": "The September 2026 12-month all-items CPI-U change is 3.5 percent or lower, or the release is not published by the deadline."
+  },
+  {
+    "statement": "CISA adds CVE-2026-85706 (GitLab repository commits API path traversal) to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-09-12 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "TRUE if the CISA KEV catalog JSON contains an entry for CVE-2026-85706 whose dateAdded is between 2026-09-12 and 2026-10-16 inclusive; otherwise FALSE.",
+    "deadline": "2026-10-20",
+    "citations": [
+      13
+    ],
+    "failure_condition": "CVE-2026-85706 is absent from the CISA KEV catalog at the deadline, or carries a dateAdded outside 2026-09-12 to 2026-10-16."
+  },
+  {
+    "statement": "The DRC Ministry of Health, WHO, or ECDC reports a cumulative total of at least 10,000 confirmed Bundibugyo Ebola cases in the DRC for a data date on or before 2026-10-16. Reference: 6,942 confirmed cases as of 2026-09-09 on the packet date.",
+    "domain": "disaster",
+    "probability": 55,
+    "resolution": "TRUE if a DRC Ministry of Health, WHO, or ECDC report states DRC cumulative confirmed Bundibugyo Ebola cases of 10,000 or more with data through a date no later than 2026-10-16; otherwise FALSE.",
+    "deadline": "2026-10-21",
+    "citations": [
+      70
+    ],
+    "failure_condition": "DRC cumulative confirmed Bundibugyo Ebola cases remain below 10,000 for every data date on or before 2026-10-16."
+  }
+]

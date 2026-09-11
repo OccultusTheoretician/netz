@@ -1,0 +1,227 @@
+[
+  {
+    "statement": "A ceasefire or truce between the United States or Israel and Iran, formally announced by a government of a combatant state with a stated effective date, takes effect between 2026-09-18 and 2026-12-03.",
+    "resolution": "Reuters, AP, or AFP report a formal ceasefire or truce between the US/Israel and Iran with a stated effective date inside the 2026-09-18 to 2026-12-03 window, confirmed by two of the three outlets.",
+    "failure_condition": "No ceasefire or truce with a stated effective date in the window is confirmed by two of Reuters, AP, or AFP; continued exchanges of fire after 2026-12-03 is a MISS.",
+    "domain": "military_conflict",
+    "deadline": "2026-12-08",
+    "probability": 56,
+    "citations": [
+      51,
+      100
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:38:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Royal Saudi Air Force conducts a direct airstrike on Houthi-held positions at Mocha, Dhubab, or Perim Island on the Red Sea coast of Yemen between 2026-09-18 and 2026-10-16.",
+    "resolution": "Two of Reuters, AP, AFP, or Al Jazeera report a Saudi strike specifically on Mocha, Dhubab, or Perim Island between 2026-09-18 and 2026-10-16; strikes elsewhere in Yemen do not qualify.",
+    "failure_condition": "No two of the named outlets report a Saudi strike specifically on Mocha, Dhubab, or Perim Island within the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-20",
+    "probability": 56,
+    "citations": [
+      69,
+      83,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:38:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude oil settles at or above 110.00 USD per barrel on at least one trading day between 2026-09-18 and 2026-10-16. Reference: 99.63 on the packet date, 2026-09-11.",
+    "resolution": "CME/NYMEX WTI front-month settlement data show a close at or above 110.00 USD per barrel on any trading day between 2026-09-18 and 2026-10-16.",
+    "failure_condition": "WTI settlement price stays below 110.00 USD per barrel on every trading day in the window.",
+    "domain": "economic",
+    "deadline": "2026-10-20",
+    "probability": 26,
+    "citations": [
+      47,
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:38:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Reserve raises the federal funds target range above its current 3.50-3.75 percent level at the October 27-28, 2026 FOMC meeting. Reference: 3.50-3.75 percent, held since the July 2026 meeting.",
+    "resolution": "The FOMC post-meeting statement released 2026-10-28 sets the federal funds target range above 3.50-3.75 percent, per the Federal Reserve press release.",
+    "failure_condition": "The FOMC statement of 2026-10-28 holds the target range at 3.50-3.75 percent or cuts it.",
+    "domain": "economic",
+    "deadline": "2026-10-30",
+    "probability": 26,
+    "citations": [
+      63,
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:38:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds a PaperCut NG or MF vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-09-18 and 2026-10-23.",
+    "resolution": "The CISA KEV catalog JSON feed lists a PaperCut NG/MF CVE with dateAdded between 2026-09-18 and 2026-10-23.",
+    "failure_condition": "No PaperCut NG/MF CVE appears in the CISA KEV catalog with dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-27",
+    "probability": 28,
+    "citations": [
+      19,
+      26
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:38:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds a Cisco Secure Firewall Management Center vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-09-18 and 2026-10-16.",
+    "resolution": "The CISA KEV catalog JSON feed lists a Cisco Secure Firewall Management Center CVE with dateAdded between 2026-09-18 and 2026-10-16.",
+    "failure_condition": "No Cisco Secure Firewall Management Center CVE appears in the CISA KEV catalog with dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-20",
+    "probability": 28,
+    "citations": [
+      20,
+      27
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:38:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The DRC Ministry of Health or WHO confirms an Ebola virus disease case in an eighth distinct DRC province, beyond the seven already affected, between 2026-09-18 and 2026-11-12.",
+    "resolution": "A WHO Disease Outbreak News bulletin or DRC Ministry of Health situation report confirms a case in an eighth province between 2026-09-18 and 2026-11-12.",
+    "failure_condition": "No WHO bulletin or DRC Ministry of Health report confirms a case outside the seven already-affected provinces within the window.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-11-16",
+    "probability": 31,
+    "citations": [
+      70
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:38:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Republicans retain a majority of seats in the US House of Representatives as elected on November 3, 2026.",
+    "resolution": "AP or a majority of major US television networks call the 2026 House majority for the Republican Party, 218 or more seats, by the deadline.",
+    "failure_condition": "AP or a majority of major US networks call the 2026 House majority for the Democratic Party, 218 or more seats.",
+    "domain": "political",
+    "deadline": "2026-11-13",
+    "probability": 35,
+    "citations": [
+      87,
+      111,
+      115
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:38:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one of the six Nigerian nationals extradited to the United States on September 11, 2026 in the Black Axe romance-scam case pleads guilty or is convicted at trial between 2026-09-18 and 2026-12-11.",
+    "resolution": "The US District Court docket (PACER) for the case shows a guilty plea or trial conviction entered for at least one defendant between 2026-09-18 and 2026-12-11.",
+    "failure_condition": "No guilty plea or trial conviction is entered on the docket for any of the six defendants within the window; an arraignment or not-guilty plea alone does not satisfy this.",
+    "domain": "crime_security",
+    "deadline": "2026-12-15",
+    "probability": 10,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-11T22:38:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "statement": "A ceasefire or truce between the United States or Israel and Iran, formally announced by a government of a combatant state with a stated effective date, takes effect between 2026-09-18 and 2026-12-03.",
+    "domain": "military_conflict",
+    "probability": 15,
+    "resolution": "Reuters, AP, or AFP report a formal ceasefire or truce between the US/Israel and Iran with a stated effective date inside the 2026-09-18 to 2026-12-03 window, confirmed by two of the three outlets.",
+    "deadline": "2026-12-08",
+    "citations": [
+      51,
+      100
+    ],
+    "failure_condition": "No ceasefire or truce with a stated effective date in the window is confirmed by two of Reuters, AP, or AFP; continued exchanges of fire after 2026-12-03 is a MISS."
+  },
+  {
+    "statement": "The Royal Saudi Air Force conducts a direct airstrike on Houthi-held positions at Mocha, Dhubab, or Perim Island on the Red Sea coast of Yemen between 2026-09-18 and 2026-10-16.",
+    "domain": "military_conflict",
+    "probability": 22,
+    "resolution": "Two of Reuters, AP, AFP, or Al Jazeera report a Saudi strike specifically on Mocha, Dhubab, or Perim Island between 2026-09-18 and 2026-10-16; strikes elsewhere in Yemen do not qualify.",
+    "deadline": "2026-10-20",
+    "citations": [
+      69,
+      83,
+      93
+    ],
+    "failure_condition": "No two of the named outlets report a Saudi strike specifically on Mocha, Dhubab, or Perim Island within the window."
+  },
+  {
+    "statement": "WTI crude oil settles at or above 110.00 USD per barrel on at least one trading day between 2026-09-18 and 2026-10-16. Reference: 99.63 on the packet date, 2026-09-11.",
+    "domain": "economic",
+    "probability": 30,
+    "resolution": "CME/NYMEX WTI front-month settlement data show a close at or above 110.00 USD per barrel on any trading day between 2026-09-18 and 2026-10-16.",
+    "deadline": "2026-10-20",
+    "citations": [
+      47,
+      48
+    ],
+    "failure_condition": "WTI settlement price stays below 110.00 USD per barrel on every trading day in the window."
+  },
+  {
+    "statement": "The Federal Reserve raises the federal funds target range above its current 3.50-3.75 percent level at the October 27-28, 2026 FOMC meeting. Reference: 3.50-3.75 percent, held since the July 2026 meeting.",
+    "domain": "economic",
+    "probability": 38,
+    "resolution": "The FOMC post-meeting statement released 2026-10-28 sets the federal funds target range above 3.50-3.75 percent, per the Federal Reserve press release.",
+    "deadline": "2026-10-30",
+    "citations": [
+      63,
+      66
+    ],
+    "failure_condition": "The FOMC statement of 2026-10-28 holds the target range at 3.50-3.75 percent or cuts it."
+  },
+  {
+    "statement": "CISA adds a PaperCut NG or MF vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-09-18 and 2026-10-23.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "The CISA KEV catalog JSON feed lists a PaperCut NG/MF CVE with dateAdded between 2026-09-18 and 2026-10-23.",
+    "deadline": "2026-10-27",
+    "citations": [
+      19,
+      26
+    ],
+    "failure_condition": "No PaperCut NG/MF CVE appears in the CISA KEV catalog with dateAdded inside the window."
+  },
+  {
+    "statement": "CISA adds a Cisco Secure Firewall Management Center vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-09-18 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "The CISA KEV catalog JSON feed lists a Cisco Secure Firewall Management Center CVE with dateAdded between 2026-09-18 and 2026-10-16.",
+    "deadline": "2026-10-20",
+    "citations": [
+      20,
+      27
+    ],
+    "failure_condition": "No Cisco Secure Firewall Management Center CVE appears in the CISA KEV catalog with dateAdded inside the window."
+  },
+  {
+    "statement": "The DRC Ministry of Health or WHO confirms an Ebola virus disease case in an eighth distinct DRC province, beyond the seven already affected, between 2026-09-18 and 2026-11-12.",
+    "domain": "disaster_infrastructure",
+    "probability": 28,
+    "resolution": "A WHO Disease Outbreak News bulletin or DRC Ministry of Health situation report confirms a case in an eighth province between 2026-09-18 and 2026-11-12.",
+    "deadline": "2026-11-16",
+    "citations": [
+      70
+    ],
+    "failure_condition": "No WHO bulletin or DRC Ministry of Health report confirms a case outside the seven already-affected provinces within the window."
+  },
+  {
+    "statement": "Republicans retain a majority of seats in the US House of Representatives as elected on November 3, 2026.",
+    "domain": "political",
+    "probability": 20,
+    "resolution": "AP or a majority of major US television networks call the 2026 House majority for the Republican Party, 218 or more seats, by the deadline.",
+    "deadline": "2026-11-13",
+    "citations": [
+      87,
+      111,
+      115
+    ],
+    "failure_condition": "AP or a majority of major US networks call the 2026 House majority for the Democratic Party, 218 or more seats."
+  },
+  {
+    "statement": "At least one of the six Nigerian nationals extradited to the United States on September 11, 2026 in the Black Axe romance-scam case pleads guilty or is convicted at trial between 2026-09-18 and 2026-12-11.",
+    "domain": "crime_security",
+    "probability": 18,
+    "resolution": "The US District Court docket (PACER) for the case shows a guilty plea or trial conviction entered for at least one defendant between 2026-09-18 and 2026-12-11.",
+    "deadline": "2026-12-15",
+    "citations": [
+      9
+    ],
+    "failure_condition": "No guilty plea or trial conviction is entered on the docket for any of the six defendants within the window; an arraignment or not-guilty plea alone does not satisfy this."
+  }
+]
