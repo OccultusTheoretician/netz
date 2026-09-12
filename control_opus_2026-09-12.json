@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one CVE whose vendor or product field names Check Point, with a date-added value between 2026-09-14 and 2026-10-31.",
+    "resolution": "TRUE if the CISA KEV catalog contains an entry whose vendorProject or product names Check Point with dateAdded between 2026-09-14 and 2026-10-31 inclusive.",
+    "failure_condition": "No KEV entry naming Check Point carries a dateAdded inside 2026-09-14 to 2026-10-31.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 28,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month NYMEX WTI crude settles at or above 110.00 dollars per barrel on at least one trading day between 2026-09-14 and 2026-10-16. Reference: 100.05 on the packet date 2026-09-12.",
+    "resolution": "TRUE if any CME front-month WTI settlement between 2026-09-14 and 2026-10-16 is 110.00 or higher. Reference 100.05 at seal.",
+    "failure_condition": "Every front-month WTI settlement in the window prints below 110.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-20",
+    "probability": 26,
+    "citations": [
+      48,
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FRED series DGS10 records a value at or above 5.25 percent on at least one business day between 2026-09-14 and 2026-11-13. Reference: 4.97 percent on the packet date 2026-09-12.",
+    "resolution": "TRUE if any DGS10 observation dated 2026-09-14 through 2026-11-13 is 5.25 or higher. Reference 4.97 percent at seal.",
+    "failure_condition": "No DGS10 observation in the window reaches 5.25 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-17",
+    "probability": 26,
+    "citations": [
+      39,
+      54
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The S&P 500 closes below 7,200.00 on at least one trading day between 2026-09-14 and 2026-11-13. Reference: 7,656.98 on the packet date 2026-09-12.",
+    "resolution": "TRUE if any S&P 500 daily close between 2026-09-14 and 2026-11-13 prints below 7,200.00 per S&P Dow Jones Indices. Reference 7,656.98 at seal.",
+    "failure_condition": "Every S&P 500 daily close in the window holds at or above 7,200.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-17",
+    "probability": 26,
+    "citations": [
+      39,
+      55
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Saudi Aramco or the Saudi energy ministry announces resumption of flows on the pipeline shut after the 2026-09-12 drone attack, with the announcement falling between 2026-09-14 and 2026-10-16.",
+    "resolution": "TRUE if Reuters and at least one of BBC or Al Jazeera report an official Saudi announcement of resumed flows on that pipeline dated 2026-09-14 through 2026-10-16.",
+    "failure_condition": "Flows on that pipeline are not officially announced as resumed at any point inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-20",
+    "probability": 56,
+    "citations": [
+      60,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Non-Houthi forces hold Mayun Island in the Bab al-Mandab strait at some point between 2026-09-14 and 2026-10-31.",
+    "resolution": "TRUE if two of Reuters, AP, BBC and Al Jazeera report that Yemeni government, coalition or other non-Houthi forces control Mayun Island during the window.",
+    "failure_condition": "Houthi forces retain control of Mayun Island for the entire window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 56,
+    "citations": [
+      52,
+      71
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The UN Security Council adopts a resolution whose subject is Iran at a meeting held between 2026-09-14 and 2026-11-20.",
+    "resolution": "TRUE if the UN Security Council resolutions register lists a resolution adopted 2026-09-14 through 2026-11-20 whose subject is Iran or the Iran nuclear file.",
+    "failure_condition": "No Iran-subject Security Council resolution is adopted inside the window.",
+    "domain": "political",
+    "deadline": "2026-11-24",
+    "probability": 35,
+    "citations": [
+      69,
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Either chamber of the US Congress records a roll call vote on a joint resolution invoking the War Powers Resolution with respect to Iran, held between 2026-09-14 and 2026-12-11.",
+    "resolution": "TRUE if Congress.gov shows a recorded House or Senate roll call between 2026-09-14 and 2026-12-11 on a War Powers joint resolution concerning hostilities involving Iran.",
+    "failure_condition": "Neither chamber records such a roll call vote inside the window.",
+    "domain": "political",
+    "deadline": "2026-12-15",
+    "probability": 35,
+    "citations": [
+      45,
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one of the six Nigerian nationals extradited to the United States over a 6 million dollar online romance scam enters a guilty plea between 2026-09-14 and 2026-11-13.",
+    "resolution": "TRUE if the US district court docket in that prosecution records a guilty plea by any of the six defendants entered between 2026-09-14 and 2026-11-13.",
+    "failure_condition": "None of the six defendants has a guilty plea docketed inside the window.",
+    "domain": "crime/security",
+    "deadline": "2026-11-17",
+    "probability": 10,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one magnitude 7.0 or greater earthquake worldwide with origin time between 2026-09-14 and 2026-10-24.",
+    "resolution": "TRUE if a USGS ComCat query returns at least one event of magnitude 7.0 or greater with origin time between 2026-09-14 and 2026-10-24 inclusive.",
+    "failure_condition": "The USGS catalog holds no event of magnitude 7.0 or greater for the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-27",
+    "probability": 31,
+    "citations": [
+      24,
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:28Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

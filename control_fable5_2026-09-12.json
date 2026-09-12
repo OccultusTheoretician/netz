@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "NYMEX front-month WTI crude oil settles at or above 85.00 USD on Friday 2026-12-18. Reference: 100.05 USD at prior-session close on the packet date 2026-09-12.",
+    "resolution": "The CME Group published front-month WTI settlement price for trade date 2026-12-18 is at or above 85.00 USD. A settlement below 85.00 resolves false.",
+    "failure_condition": "Front-month WTI settles below 85.00 USD on trade date 2026-12-18.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-22",
+    "probability": 26,
+    "citations": [
+      48,
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Saudi authorities or Saudi Aramco announce resumption of operations on the oil pipeline shut on 2026-09-12 after the drone attack, between 2026-09-13 and 2026-10-16.",
+    "resolution": "An official Saudi government or Aramco statement dated inside the window, carried by two of Reuters, AP, Bloomberg, Al Jazeera, BBC, announces the pipeline has resumed operation.",
+    "failure_condition": "The pipeline remains out of service through 2026-10-16, or resumption is announced only after the window closes.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-20",
+    "probability": 56,
+    "citations": [
+      60,
+      75,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Yemeni government or Saudi-led coalition forces take control of Mayun Island between 2026-09-13 and 2026-12-11.",
+    "resolution": "At least two of Reuters, AP, BBC, Al Jazeera independently report Yemeni government or coalition forces in control of Mayun Island, with the reported capture dated inside the window.",
+    "failure_condition": "Houthi forces retain control of Mayun Island through the end of the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-15",
+    "probability": 56,
+    "citations": [
+      52,
+      71,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Iran and the United States or Israel announce a ceasefire or cessation of hostilities between 2026-09-13 and 2026-11-03.",
+    "resolution": "Official statements from the Iranian government and from the US or Israeli government, each carried by two of Reuters, AP, BBC, Al Jazeera, announce a ceasefire taking effect on or before 2026-11-03.",
+    "failure_condition": "No ceasefire or cessation of hostilities is announced by the governments involved on or before 2026-11-03.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-06",
+    "probability": 56,
+    "citations": [
+      45,
+      99,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one Check Point vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-09-13 and 2026-11-13.",
+    "resolution": "The public CISA KEV catalog JSON contains at least one entry whose vendorProject names Check Point and whose dateAdded falls between 2026-09-13 and 2026-11-13 inclusive.",
+    "failure_condition": "The KEV catalog contains no Check Point entry with a dateAdded value inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 28,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A complaint concerning the Florida DMV database breach confirmed on 2026-09-11 is filed in a US federal district court between 2026-09-13 and 2026-11-13.",
+    "resolution": "A federal district court docket, via PACER or CourtListener, shows a complaint referencing the Florida DMV or FLHSMV breach with a filing date inside the window.",
+    "failure_condition": "No federal district court docket shows a complaint referencing the breach with a filing date inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 28,
+    "citations": [
+      18
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win control of the US House of Representatives in the scheduled 2026-11-03 midterm elections.",
+    "resolution": "By 2026-11-20, at least two of AP, NBC News, CNN, Fox News project Democrats holding at least 218 US House seats from the 2026-11-03 elections.",
+    "failure_condition": "Two or more of the named organizations project Republican control, or no Democratic majority projection exists by 2026-11-20.",
+    "domain": "political",
+    "deadline": "2026-11-20",
+    "probability": 35,
+    "citations": [
+      95,
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A US congressional committee holds a hearing with a witness affiliated with Anthropic between 2026-09-13 and 2026-12-31.",
+    "resolution": "Congress.gov or an official committee page lists a hearing held inside the window whose published witness list includes a person identified as an Anthropic executive or employee.",
+    "failure_condition": "No congressional hearing held inside the window lists an Anthropic-affiliated witness.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 35,
+    "citations": [
+      35,
+      89,
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A WHO or DRC health ministry publication dated between 2026-09-13 and 2026-12-31 reports cumulative cases in the DRC Ebola epidemic at or above 10,000.",
+    "resolution": "A WHO Disease Outbreak News item, WHO AFRO bulletin, or DRC health ministry situation report dated inside the window states cumulative confirmed plus probable cases of at least 10,000.",
+    "failure_condition": "Every qualifying publication dated inside the window reports cumulative cases below 10,000.",
+    "domain": "disaster",
+    "deadline": "2027-01-08",
+    "probability": 31,
+    "citations": [
+      63
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS catalogs at least one magnitude 6.0 or greater earthquake within 300 km of USGS event us7000tgrk with origin time between 2026-09-13 and 2026-12-12.",
+    "resolution": "A USGS ComCat query returns at least one event of magnitude 6.0 or greater within 300 km of the us7000tgrk epicenter with origin time inside the window.",
+    "failure_condition": "The USGS catalog contains no event of magnitude 6.0 or greater inside the window and radius.",
+    "domain": "disaster",
+    "deadline": "2026-12-15",
+    "probability": 31,
+    "citations": [
+      24,
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:26Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
