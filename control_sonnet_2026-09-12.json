@@ -1,0 +1,200 @@
+[
+  {
+    "statement": "Yemeni government or Saudi-led coalition forces regain physical control of Mayun Island in the Bab al-Mandeb Strait at any point between 2026-09-19 and 2026-10-24",
+    "resolution": "TRUE if AP, Reuters, AFP, or a Yemeni or Saudi government statement reports coalition or government-aligned forces retook Mayun Island in the window; FALSE otherwise",
+    "failure_condition": "Mayun Island remains under Houthi control as of the deadline",
+    "domain": "military_conflict",
+    "deadline": "2026-10-27",
+    "probability": 56,
+    "citations": [
+      52,
+      71,
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude front-month futures settle at or above 110.00 USD per barrel on any trading day between 2026-09-19 and 2026-10-17. Reference: 100.05 USD per barrel on 2026-09-12, the packet date",
+    "resolution": "TRUE if any NYMEX WTI front-month settlement or EIA daily spot price in the window is 110.00 USD per barrel or higher; FALSE otherwise",
+    "failure_condition": "No WTI settlement or EIA spot print in the window reaches 110.00 USD per barrel",
+    "domain": "economic",
+    "deadline": "2026-10-20",
+    "probability": 26,
+    "citations": [
+      45,
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one Check Point-vendor CVE to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-09-19 and 2026-10-17",
+    "resolution": "TRUE if the CISA KEV catalog lists a Check Point-vendor CVE with dateAdded in the window; FALSE otherwise",
+    "failure_condition": "The CISA KEV catalog contains no Check Point-vendor entry dated in the window",
+    "domain": "cyber",
+    "deadline": "2026-10-20",
+    "probability": 28,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "OpenAI, Google DeepMind, or Meta issues an official statement or a named spokesperson is quoted by a major outlet addressing Dario Amodei's proposal to slow AI development, between 2026-09-19 and 2026-10-17",
+    "resolution": "TRUE if Reuters, AP, Bloomberg, CNBC, Guardian, or BBC quotes an official OpenAI, Google DeepMind, or Meta statement addressing the proposal in the window; FALSE otherwise",
+    "failure_condition": "None of OpenAI, Google DeepMind, or Meta formally addresses the proposal within the window",
+    "domain": "political",
+    "deadline": "2026-10-20",
+    "probability": 35,
+    "citations": [
+      35,
+      61,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Ireland's Taoiseach or the Department of Foreign Affairs issues an on-record statement addressing Donald Trump's 12 September 2026 unified-Ireland remarks, between 2026-09-19 and 2026-10-17",
+    "resolution": "TRUE if RTE, Irish Times, or a wire service reports an on-record statement from the Taoiseach's office or Department of Foreign Affairs addressing the remarks in the window; FALSE otherwise",
+    "failure_condition": "Irish officials issue no on-record statement addressing the remarks within the window",
+    "domain": "political",
+    "deadline": "2026-10-20",
+    "probability": 35,
+    "citations": [
+      87,
+      94
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Spanish or Catalan authorities confirm 5 or more arrests connected to the 12 September 2026 Barcelona Catalan national day clashes, in a statement or report between 2026-09-19 and 2026-10-17",
+    "resolution": "TRUE if a Spanish government, Catalan regional police, or wire-service report in the window states 5 or more arrests tied to the incident; FALSE otherwise",
+    "failure_condition": "Fewer than 5 arrests tied to the incident are confirmed within the window",
+    "domain": "crime_security",
+    "deadline": "2026-10-20",
+    "probability": 10,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Indonesia's BNPB or BMKG attributes at least 1 fatality to the 12 September 2026 M6.5 earthquake near Teluknaga (USGS event us7000tgrk), in a report published by 2026-09-26",
+    "resolution": "TRUE if BNPB, BMKG, or a wire service attributes at least one fatality to this earthquake by the deadline; FALSE otherwise",
+    "failure_condition": "No fatality is attributed to this earthquake by the deadline",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-09-26",
+    "probability": 31,
+    "citations": [
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Israel and Lebanon confirm at least one resumed negotiating session on the track reported postponed on 12 September 2026, between 2026-09-19 and 2026-10-24",
+    "resolution": "TRUE if Reuters, AP, AFP, or an Israeli or Lebanese government statement confirms a negotiating session occurred in the window; FALSE otherwise",
+    "failure_condition": "No Israel-Lebanon negotiating session is confirmed within the window",
+    "domain": "military_conflict",
+    "deadline": "2026-10-27",
+    "probability": 56,
+    "citations": [
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-12T19:33:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

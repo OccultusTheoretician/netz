@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one CVE whose vendor or product field names Check Point, with a date-added value between 2026-09-14 and 2026-10-31.",
+    "domain": "cyber",
+    "probability": 42,
+    "resolution": "TRUE if the CISA KEV catalog contains an entry whose vendorProject or product names Check Point with dateAdded between 2026-09-14 and 2026-10-31 inclusive.",
+    "deadline": "2026-11-03",
+    "citations": [
+      14
+    ],
+    "failure_condition": "No KEV entry naming Check Point carries a dateAdded inside 2026-09-14 to 2026-10-31."
+  },
+  {
+    "statement": "Front-month NYMEX WTI crude settles at or above 110.00 dollars per barrel on at least one trading day between 2026-09-14 and 2026-10-16. Reference: 100.05 on the packet date 2026-09-12.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "TRUE if any CME front-month WTI settlement between 2026-09-14 and 2026-10-16 is 110.00 or higher. Reference 100.05 at seal.",
+    "deadline": "2026-10-20",
+    "citations": [
+      48,
+      60
+    ],
+    "failure_condition": "Every front-month WTI settlement in the window prints below 110.00 dollars per barrel."
+  },
+  {
+    "statement": "The FRED series DGS10 records a value at or above 5.25 percent on at least one business day between 2026-09-14 and 2026-11-13. Reference: 4.97 percent on the packet date 2026-09-12.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "TRUE if any DGS10 observation dated 2026-09-14 through 2026-11-13 is 5.25 or higher. Reference 4.97 percent at seal.",
+    "deadline": "2026-11-17",
+    "citations": [
+      39,
+      54
+    ],
+    "failure_condition": "No DGS10 observation in the window reaches 5.25 percent."
+  },
+  {
+    "statement": "The S&P 500 closes below 7,200.00 on at least one trading day between 2026-09-14 and 2026-11-13. Reference: 7,656.98 on the packet date 2026-09-12.",
+    "domain": "economics/markets",
+    "probability": 32,
+    "resolution": "TRUE if any S&P 500 daily close between 2026-09-14 and 2026-11-13 prints below 7,200.00 per S&P Dow Jones Indices. Reference 7,656.98 at seal.",
+    "deadline": "2026-11-17",
+    "citations": [
+      39,
+      55
+    ],
+    "failure_condition": "Every S&P 500 daily close in the window holds at or above 7,200.00."
+  },
+  {
+    "statement": "Saudi Aramco or the Saudi energy ministry announces resumption of flows on the pipeline shut after the 2026-09-12 drone attack, with the announcement falling between 2026-09-14 and 2026-10-16.",
+    "domain": "military/conflict",
+    "probability": 65,
+    "resolution": "TRUE if Reuters and at least one of BBC or Al Jazeera report an official Saudi announcement of resumed flows on that pipeline dated 2026-09-14 through 2026-10-16.",
+    "deadline": "2026-10-20",
+    "citations": [
+      60,
+      90
+    ],
+    "failure_condition": "Flows on that pipeline are not officially announced as resumed at any point inside the window."
+  },
+  {
+    "statement": "Non-Houthi forces hold Mayun Island in the Bab al-Mandab strait at some point between 2026-09-14 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "TRUE if two of Reuters, AP, BBC and Al Jazeera report that Yemeni government, coalition or other non-Houthi forces control Mayun Island during the window.",
+    "deadline": "2026-11-04",
+    "citations": [
+      52,
+      71
+    ],
+    "failure_condition": "Houthi forces retain control of Mayun Island for the entire window."
+  },
+  {
+    "statement": "The UN Security Council adopts a resolution whose subject is Iran at a meeting held between 2026-09-14 and 2026-11-20.",
+    "domain": "political",
+    "probability": 20,
+    "resolution": "TRUE if the UN Security Council resolutions register lists a resolution adopted 2026-09-14 through 2026-11-20 whose subject is Iran or the Iran nuclear file.",
+    "deadline": "2026-11-24",
+    "citations": [
+      69,
+      99
+    ],
+    "failure_condition": "No Iran-subject Security Council resolution is adopted inside the window."
+  },
+  {
+    "statement": "Either chamber of the US Congress records a roll call vote on a joint resolution invoking the War Powers Resolution with respect to Iran, held between 2026-09-14 and 2026-12-11.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "TRUE if Congress.gov shows a recorded House or Senate roll call between 2026-09-14 and 2026-12-11 on a War Powers joint resolution concerning hostilities involving Iran.",
+    "deadline": "2026-12-15",
+    "citations": [
+      45,
+      99
+    ],
+    "failure_condition": "Neither chamber records such a roll call vote inside the window."
+  },
+  {
+    "statement": "At least one of the six Nigerian nationals extradited to the United States over a 6 million dollar online romance scam enters a guilty plea between 2026-09-14 and 2026-11-13.",
+    "domain": "crime/security",
+    "probability": 18,
+    "resolution": "TRUE if the US district court docket in that prosecution records a guilty plea by any of the six defendants entered between 2026-09-14 and 2026-11-13.",
+    "deadline": "2026-11-17",
+    "citations": [
+      10
+    ],
+    "failure_condition": "None of the six defendants has a guilty plea docketed inside the window."
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one magnitude 7.0 or greater earthquake worldwide with origin time between 2026-09-14 and 2026-10-24.",
+    "domain": "disaster",
+    "probability": 80,
+    "resolution": "TRUE if a USGS ComCat query returns at least one event of magnitude 7.0 or greater with origin time between 2026-09-14 and 2026-10-24 inclusive.",
+    "deadline": "2026-10-27",
+    "citations": [
+      24,
+      34
+    ],
+    "failure_condition": "The USGS catalog holds no event of magnitude 7.0 or greater for the window."
+  }
+]

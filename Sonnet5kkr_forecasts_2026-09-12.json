@@ -1,0 +1,96 @@
+[
+  {
+    "statement": "Yemeni government or Saudi-led coalition forces regain physical control of Mayun Island in the Bab al-Mandeb Strait at any point between 2026-09-19 and 2026-10-24",
+    "domain": "military_conflict",
+    "probability": 15,
+    "resolution": "TRUE if AP, Reuters, AFP, or a Yemeni or Saudi government statement reports coalition or government-aligned forces retook Mayun Island in the window; FALSE otherwise",
+    "deadline": "2026-10-27",
+    "citations": [
+      52,
+      71,
+      78
+    ],
+    "failure_condition": "Mayun Island remains under Houthi control as of the deadline"
+  },
+  {
+    "statement": "WTI crude front-month futures settle at or above 110.00 USD per barrel on any trading day between 2026-09-19 and 2026-10-17. Reference: 100.05 USD per barrel on 2026-09-12, the packet date",
+    "domain": "economic",
+    "probability": 30,
+    "resolution": "TRUE if any NYMEX WTI front-month settlement or EIA daily spot price in the window is 110.00 USD per barrel or higher; FALSE otherwise",
+    "deadline": "2026-10-20",
+    "citations": [
+      45,
+      48
+    ],
+    "failure_condition": "No WTI settlement or EIA spot print in the window reaches 110.00 USD per barrel"
+  },
+  {
+    "statement": "CISA adds at least one Check Point-vendor CVE to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-09-19 and 2026-10-17",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "TRUE if the CISA KEV catalog lists a Check Point-vendor CVE with dateAdded in the window; FALSE otherwise",
+    "deadline": "2026-10-20",
+    "citations": [
+      14
+    ],
+    "failure_condition": "The CISA KEV catalog contains no Check Point-vendor entry dated in the window"
+  },
+  {
+    "statement": "OpenAI, Google DeepMind, or Meta issues an official statement or a named spokesperson is quoted by a major outlet addressing Dario Amodei's proposal to slow AI development, between 2026-09-19 and 2026-10-17",
+    "domain": "political",
+    "probability": 35,
+    "resolution": "TRUE if Reuters, AP, Bloomberg, CNBC, Guardian, or BBC quotes an official OpenAI, Google DeepMind, or Meta statement addressing the proposal in the window; FALSE otherwise",
+    "deadline": "2026-10-20",
+    "citations": [
+      35,
+      61,
+      89
+    ],
+    "failure_condition": "None of OpenAI, Google DeepMind, or Meta formally addresses the proposal within the window"
+  },
+  {
+    "statement": "Ireland's Taoiseach or the Department of Foreign Affairs issues an on-record statement addressing Donald Trump's 12 September 2026 unified-Ireland remarks, between 2026-09-19 and 2026-10-17",
+    "domain": "political",
+    "probability": 22,
+    "resolution": "TRUE if RTE, Irish Times, or a wire service reports an on-record statement from the Taoiseach's office or Department of Foreign Affairs addressing the remarks in the window; FALSE otherwise",
+    "deadline": "2026-10-20",
+    "citations": [
+      87,
+      94
+    ],
+    "failure_condition": "Irish officials issue no on-record statement addressing the remarks within the window"
+  },
+  {
+    "statement": "Spanish or Catalan authorities confirm 5 or more arrests connected to the 12 September 2026 Barcelona Catalan national day clashes, in a statement or report between 2026-09-19 and 2026-10-17",
+    "domain": "crime_security",
+    "probability": 15,
+    "resolution": "TRUE if a Spanish government, Catalan regional police, or wire-service report in the window states 5 or more arrests tied to the incident; FALSE otherwise",
+    "deadline": "2026-10-20",
+    "citations": [
+      9
+    ],
+    "failure_condition": "Fewer than 5 arrests tied to the incident are confirmed within the window"
+  },
+  {
+    "statement": "Indonesia's BNPB or BMKG attributes at least 1 fatality to the 12 September 2026 M6.5 earthquake near Teluknaga (USGS event us7000tgrk), in a report published by 2026-09-26",
+    "domain": "disaster_infrastructure",
+    "probability": 18,
+    "resolution": "TRUE if BNPB, BMKG, or a wire service attributes at least one fatality to this earthquake by the deadline; FALSE otherwise",
+    "deadline": "2026-09-26",
+    "citations": [
+      24
+    ],
+    "failure_condition": "No fatality is attributed to this earthquake by the deadline"
+  },
+  {
+    "statement": "Israel and Lebanon confirm at least one resumed negotiating session on the track reported postponed on 12 September 2026, between 2026-09-19 and 2026-10-24",
+    "domain": "military_conflict",
+    "probability": 28,
+    "resolution": "TRUE if Reuters, AP, AFP, or an Israeli or Lebanese government statement confirms a negotiating session occurred in the window; FALSE otherwise",
+    "deadline": "2026-10-27",
+    "citations": [
+      105
+    ],
+    "failure_condition": "No Israel-Lebanon negotiating session is confirmed within the window"
+  }
+]
