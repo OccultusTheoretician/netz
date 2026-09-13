@@ -1,22 +1,22 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-09-12T09:34:10Z · 84 report(s)
+Generated 2026-09-13T10:36:31Z · 85 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **84**
-- findings: **147**
+- reports audited: **85**
+- findings: **153**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 3
-  - UNSOURCED: 144
-- distinct tokens: **80**
+  - UNSOURCED: 150
+- distinct tokens: **85**
 
 ## Reached a sealed row
 
-**71** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
+**79** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
 
 | row | token | finding | arm | status | k/kl |
 |---|---|---|---|---|---|
@@ -91,6 +91,14 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20260911-40` | `CVE-2026-85706` | UNSOURCED | control/baserate | open | — |
 | `KKR-20260911-60` | `CVE-2026-85706` | UNSOURCED | manual/opus-5/unattested | open | — |
 | `KKR-20260911-67` | `CVE-2026-85706` | UNSOURCED | control/baserate | open | — |
+| `KKR-20260910-62` | `CVE-2026-85102` | UNSOURCED | manual/opus-5/unattested | open | — |
+| `KKR-20260910-68` | `CVE-2026-85102` | UNSOURCED | control/baserate | open | — |
+| `KKR-20260912-28` | `CVE-2026-85102` | UNSOURCED | manual/fable-5.1/unattested | open | — |
+| `KKR-20260912-35` | `CVE-2026-85102` | UNSOURCED | control/baserate | open | — |
+| `KKR-20260910-62` | `CVE-2026-85103` | UNSOURCED | manual/opus-5/unattested | open | — |
+| `KKR-20260910-68` | `CVE-2026-85103` | UNSOURCED | control/baserate | open | — |
+| `KKR-20260912-28` | `CVE-2026-85103` | UNSOURCED | manual/fable-5.1/unattested | open | — |
+| `KKR-20260912-35` | `CVE-2026-85103` | UNSOURCED | control/baserate | open | — |
 
 ## Every finding
 
@@ -243,4 +251,10 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-09-11_1518.md | `CVE-2026-67277` | UNSOURCED |
 | battle_report_2026-09-11_1518.md | `CVE-2026-20079` | UNSOURCED |
 | battle_report_2026-09-11_1518.md | `CVE-2026-85706` | UNSOURCED |
+| battle_report_2026-09-12_1654.md | `CVE-2026-84869` | UNSOURCED |
+| battle_report_2026-09-12_1654.md | `CVE-2026-42016` | UNSOURCED |
+| battle_report_2026-09-12_1654.md | `CVE-2026-42018` | UNSOURCED |
+| battle_report_2026-09-12_1654.md | `CVE-2026-85706` | UNSOURCED |
+| battle_report_2026-09-12_1654.md | `CVE-2026-85102` | UNSOURCED |
+| battle_report_2026-09-12_1654.md | `CVE-2026-85103` | UNSOURCED |
 
