@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "Between 2026-09-14 and 2026-10-12, UKMTO publishes at least one incident advisory reporting a merchant vessel struck, attacked, or boarded in the Strait of Hormuz or Gulf of Oman.",
+    "domain": "military_conflict",
+    "probability": 72,
+    "resolution": "TRUE if the UKMTO incident advisory list carries at least one entry with an incident date between 2026-09-14 and 2026-10-12 placing a vessel attack in the Strait of Hormuz or Gulf of Oman.",
+    "deadline": "2026-10-16",
+    "citations": [35, 64],
+    "failure_condition": "No merchant vessel is struck, attacked, or boarded in the Strait of Hormuz or Gulf of Oman during the window."
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-11-15, NATO announces Article 4 consultations convened at the request of Poland following a Russian strike, drone incursion, or airspace violation affecting Polish territory.",
+    "domain": "military_conflict",
+    "probability": 22,
+    "resolution": "TRUE if a NATO press release or official statement confirms Article 4 consultations requested by Poland over an incident occurring between 2026-09-14 and 2026-11-15.",
+    "deadline": "2026-11-20",
+    "citations": [45, 46, 63],
+    "failure_condition": "Poland does not request Article 4 consultations over an incident falling inside the window."
+  },
+  {
+    "statement": "ICE Brent front-month crude futures settle at or above 120.00 USD per barrel on at least one trading day between 2026-09-14 and 2026-11-30. Reference: 104.61 on the packet date.",
+    "domain": "economics",
+    "probability": 30,
+    "resolution": "TRUE if the ICE published settlement for the front-month Brent contract equals or exceeds 120.00 USD on any trading day in the window. Reference level 104.61 on 2026-09-13.",
+    "deadline": "2026-12-03",
+    "citations": [34, 35],
+    "failure_condition": "Every front-month Brent settlement inside the window stays below 120.00 USD per barrel."
+  },
+  {
+    "statement": "FRED series DGS10 records a value of 5.25 percent or higher on at least one business day between 2026-09-14 and 2026-12-15. Reference: 4.97 percent on the packet date.",
+    "domain": "economics",
+    "probability": 42,
+    "resolution": "TRUE if any DGS10 observation dated between 2026-09-14 and 2026-12-15 is greater than or equal to 5.25. Reference level 4.97 percent on 2026-09-13.",
+    "deadline": "2026-12-18",
+    "citations": [34, 38],
+    "failure_condition": "The 10-year constant maturity yield stays below 5.25 percent on every business day in the window."
+  },
+  {
+    "statement": "The S&P 500 closes at or below 7000.00 on at least one trading day between 2026-09-14 and 2026-12-18. Reference: 7656.98 at the packet-date close.",
+    "domain": "economics",
+    "probability": 33,
+    "resolution": "TRUE if any official S&P 500 daily close inside the window is less than or equal to 7000.00. Reference level 7656.98 at the 2026-09-13 close.",
+    "deadline": "2026-12-23",
+    "citations": [33, 34],
+    "failure_condition": "Every S&P 500 daily close inside the window stays above 7000.00."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries at least 20 entries with a dateAdded value between 2026-09-14 and 2026-11-13 inclusive.",
+    "domain": "cyber",
+    "probability": 68,
+    "resolution": "TRUE if a fetch of the CISA KEV catalog JSON counts 20 or more entries whose dateAdded field falls between 2026-09-14 and 2026-11-13 inclusive.",
+    "deadline": "2026-11-17",
+    "citations": [10, 11],
+    "failure_condition": "Fewer than 20 KEV entries carry a dateAdded value inside the window."
+  },
+  {
+    "statement": "The Swedish Riksdag holds a prime ministerial vote after the 2026-09-13 general election and installs a prime minister, with the vote occurring between 2026-09-14 and 2026-12-04.",
+    "domain": "political",
+    "probability": 58,
+    "resolution": "TRUE if the Riksdag voting record shows a statsministeromrostning held between 2026-09-14 and 2026-12-04 in which the candidate is not rejected by an absolute majority.",
+    "deadline": "2026-12-08",
+    "citations": [70, 93],
+    "failure_condition": "No prime ministerial candidate survives a Riksdag vote before 2026-12-05."
+  },
+  {
+    "statement": "Legislation authorizing a payment of at least 5000 USD per eligible person, characterized as a dividend or rebate, is signed into United States law between 2026-09-14 and 2027-03-05.",
+    "domain": "political",
+    "probability": 10,
+    "resolution": "TRUE if Congress.gov lists a public law enacted inside the window authorizing per-person payments of 5000 USD or more characterized as a dividend or rebate.",
+    "deadline": "2027-03-11",
+    "citations": [84, 90],
+    "failure_condition": "No such per-person payment is enacted into public law before 2027-03-06."
+  },
+  {
+    "statement": "A Spanish court or the Spanish Council of Ministers issues a decision granting the United States extradition request for James Fergie Chambers, with the decision taken between 2026-09-14 and 2027-02-19.",
+    "domain": "crime_security",
+    "probability": 25,
+    "resolution": "TRUE if a Spanish judicial or government decision granting the US extradition request is issued inside the window and reported by two independent outlets.",
+    "deadline": "2027-02-26",
+    "citations": [91],
+    "failure_condition": "No Spanish decision granting the extradition is issued before 2027-02-20."
+  },
+  {
+    "statement": "Indonesian authorities state a death toll of 50 or more from the Java Sea passenger ship that capsized on 2026-09-13, with the statement issued between 2026-09-14 and 2026-10-14.",
+    "domain": "disaster",
+    "probability": 45,
+    "resolution": "TRUE if Basarnas or another Indonesian government body states a confirmed or recovered toll of at least 50 dead for this vessel, corroborated by two independent wire services.",
+    "deadline": "2026-10-20",
+    "citations": [20, 50, 89],
+    "failure_condition": "The official death toll for this vessel stands below 50 throughout the window."
+  }
+]

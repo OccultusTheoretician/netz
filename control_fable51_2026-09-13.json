@@ -1,0 +1,254 @@
+[
+  {
+    "statement": "Between 2026-09-14 and 2026-09-27, at least one merchant vessel is struck, attacked, boarded, or seized in the Strait of Hormuz, Gulf of Oman, or Persian Gulf, as logged by UKMTO.",
+    "resolution": "TRUE if the UKMTO website or official X account publishes an incident or warning dated 2026-09-14 to 2026-09-27 reporting a merchant vessel struck, attacked, boarded, or seized in those waters; FALSE otherwise.",
+    "failure_condition": "No merchant vessel is struck, attacked, boarded, or seized in the Strait of Hormuz, Gulf of Oman, or Persian Gulf between 2026-09-14 and 2026-09-27.",
+    "domain": "military/conflict",
+    "deadline": "2026-09-30",
+    "probability": 56,
+    "citations": [
+      35,
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-10-04, a merchant vessel is struck by a projectile, hit by an uncrewed surface craft, boarded, or seized in the Red Sea, Bab al-Mandeb, or Gulf of Aden.",
+    "resolution": "TRUE if UKMTO publishes an incident dated 2026-09-14 to 2026-10-04 reporting a merchant vessel struck by a projectile, hit by an uncrewed craft, boarded, or seized in the Red Sea, Bab al-Mandeb, or Gulf of Aden; FALSE otherwise.",
+    "failure_condition": "No merchant vessel is struck, hit by an uncrewed craft, boarded, or seized in the Red Sea, Bab al-Mandeb, or Gulf of Aden between 2026-09-14 and 2026-10-04.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-07",
+    "probability": 56,
+    "citations": [
+      55,
+      56,
+      65
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-10-11, at least one Russian-launched military drone or missile enters Polish airspace, as confirmed by the Operational Command of the Polish Armed Forces or the Polish Ministry of National Defence.",
+    "resolution": "TRUE if the Operational Command of the Polish Armed Forces or the Polish Ministry of National Defence publicly confirms a Russian-launched drone or missile entered Polish airspace on a date between 2026-09-14 and 2026-10-11; FALSE otherwise.",
+    "failure_condition": "No Russian-launched drone or missile enters Polish airspace between 2026-09-14 and 2026-10-11.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-14",
+    "probability": 56,
+    "citations": [
+      45,
+      46,
+      63
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-09-27, Iran and Oman (or Iran and any other GCC member state) sign an agreement or memorandum on shipping through the Strait of Hormuz, confirmed by both signatory governments.",
+    "resolution": "TRUE if the Foreign Ministry of Iran and the government of the GCC signatory (Oman expected) both confirm a signed Hormuz shipping agreement or memorandum dated 2026-09-14 to 2026-09-27; a meeting or joint statement without signature does not count.",
+    "failure_condition": "No agreement or memorandum on Strait of Hormuz shipping is signed between Iran and a GCC member state between 2026-09-14 and 2026-09-27.",
+    "domain": "political",
+    "deadline": "2026-09-30",
+    "probability": 35,
+    "citations": [
+      88,
+      35
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-10-11, US and Iranian officials at cabinet, foreign-minister, or presidential special-envoy level hold a direct in-person meeting confirmed by both governments.",
+    "resolution": "TRUE if the US State Department or White House and the Foreign Ministry of Iran both confirm a direct in-person meeting at that level held between 2026-09-14 and 2026-10-11; indirect or mediated exchanges do not count.",
+    "failure_condition": "No direct in-person US-Iran meeting at cabinet, foreign-minister, or special-envoy level takes place between 2026-09-14 and 2026-10-11.",
+    "domain": "political",
+    "deadline": "2026-10-14",
+    "probability": 35,
+    "citations": [
+      35,
+      88
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-14 and 2027-01-29, a member of the Sweden Democrats is appointed as a minister in the Swedish government.",
+    "resolution": "TRUE if the Government Offices of Sweden (regeringen.se) list of ministers as of 2027-01-29 includes a Sweden Democrats member appointed between 2026-09-14 and 2027-01-29; FALSE otherwise.",
+    "failure_condition": "No member of the Sweden Democrats holds a ministerial post in the Swedish government on 2027-01-29.",
+    "domain": "political",
+    "deadline": "2027-02-02",
+    "probability": 35,
+    "citations": [
+      70,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CME NYMEX WTI crude oil November 2026 futures contract (CLX26) settles at or above 110.00 USD per barrel on 2026-10-02. Reference: 100.05 front-month WTI on the packet date.",
+    "resolution": "TRUE if the official CME Group settlement price for CLX26 on 2026-10-02 is 110.00 or higher; FALSE if below 110.00. Reference: 100.05 front-month WTI on the packet date.",
+    "failure_condition": "CLX26 settles below 110.00 USD per barrel on 2026-10-02.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-05",
+    "probability": 26,
+    "citations": [
+      34,
+      35
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-10-16, CISA adds a Tencent vulnerability (including Sogou Input Method, CVE-2026-51990) to the Known Exploited Vulnerabilities catalog.",
+    "resolution": "TRUE if the CISA KEV JSON feed carries an entry whose vendorProject is Tencent or whose product includes Sogou, with dateAdded between 2026-09-14 and 2026-10-16; FALSE otherwise.",
+    "failure_condition": "The CISA KEV catalog carries no Tencent or Sogou entry with dateAdded between 2026-09-14 and 2026-10-16.",
+    "domain": "cyber",
+    "deadline": "2026-10-20",
+    "probability": 28,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-11-27, a Terrebonne Parish grand jury returns an indictment charging Kaegan Jude Solet with at least one count of first-degree or second-degree murder for the Houma, Louisiana stabbings.",
+    "resolution": "TRUE if the 32nd Judicial District Court docket or the Terrebonne Parish District Attorney confirms a grand jury indictment on first- or second-degree murder returned between 2026-09-14 and 2026-11-27; FALSE otherwise.",
+    "failure_condition": "No grand jury indictment for first- or second-degree murder is returned against Kaegan Jude Solet between 2026-09-14 and 2026-11-27.",
+    "domain": "crime/security",
+    "deadline": "2026-12-01",
+    "probability": 10,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The confirmed death toll from the Virgo Transport 8 ferry capsizing in the Java Sea reaches at least 50 by 2026-09-27, per Basarnas or the Indonesian Ministry of Transportation.",
+    "resolution": "TRUE if Basarnas or the Indonesian Ministry of Transportation reports cumulative confirmed deaths of 50 or more on or before 2026-09-27; persons listed as missing do not count as confirmed deaths.",
+    "failure_condition": "Confirmed deaths reported by Basarnas or the Ministry of Transportation total fewer than 50 as of 2026-09-27.",
+    "domain": "disaster",
+    "deadline": "2026-09-30",
+    "probability": 31,
+    "citations": [
+      89,
+      50,
+      61,
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-13T23:38:17Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
