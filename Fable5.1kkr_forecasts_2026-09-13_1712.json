@@ -1,0 +1,124 @@
+[
+  {
+    "statement": "Between 2026-09-14 and 2026-09-27, at least one merchant vessel is struck, attacked, boarded, or seized in the Strait of Hormuz, Gulf of Oman, or Persian Gulf, as logged by UKMTO.",
+    "domain": "military/conflict",
+    "probability": 75,
+    "resolution": "TRUE if the UKMTO website or official X account publishes an incident or warning dated 2026-09-14 to 2026-09-27 reporting a merchant vessel struck, attacked, boarded, or seized in those waters; FALSE otherwise.",
+    "deadline": "2026-09-30",
+    "citations": [
+      35,
+      34
+    ],
+    "failure_condition": "No merchant vessel is struck, attacked, boarded, or seized in the Strait of Hormuz, Gulf of Oman, or Persian Gulf between 2026-09-14 and 2026-09-27."
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-10-04, a merchant vessel is struck by a projectile, hit by an uncrewed surface craft, boarded, or seized in the Red Sea, Bab al-Mandeb, or Gulf of Aden.",
+    "domain": "military/conflict",
+    "probability": 40,
+    "resolution": "TRUE if UKMTO publishes an incident dated 2026-09-14 to 2026-10-04 reporting a merchant vessel struck by a projectile, hit by an uncrewed craft, boarded, or seized in the Red Sea, Bab al-Mandeb, or Gulf of Aden; FALSE otherwise.",
+    "deadline": "2026-10-07",
+    "citations": [
+      55,
+      56,
+      65
+    ],
+    "failure_condition": "No merchant vessel is struck, hit by an uncrewed craft, boarded, or seized in the Red Sea, Bab al-Mandeb, or Gulf of Aden between 2026-09-14 and 2026-10-04."
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-10-11, at least one Russian-launched military drone or missile enters Polish airspace, as confirmed by the Operational Command of the Polish Armed Forces or the Polish Ministry of National Defence.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "TRUE if the Operational Command of the Polish Armed Forces or the Polish Ministry of National Defence publicly confirms a Russian-launched drone or missile entered Polish airspace on a date between 2026-09-14 and 2026-10-11; FALSE otherwise.",
+    "deadline": "2026-10-14",
+    "citations": [
+      45,
+      46,
+      63
+    ],
+    "failure_condition": "No Russian-launched drone or missile enters Polish airspace between 2026-09-14 and 2026-10-11."
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-09-27, Iran and Oman (or Iran and any other GCC member state) sign an agreement or memorandum on shipping through the Strait of Hormuz, confirmed by both signatory governments.",
+    "domain": "political",
+    "probability": 45,
+    "resolution": "TRUE if the Foreign Ministry of Iran and the government of the GCC signatory (Oman expected) both confirm a signed Hormuz shipping agreement or memorandum dated 2026-09-14 to 2026-09-27; a meeting or joint statement without signature does not count.",
+    "deadline": "2026-09-30",
+    "citations": [
+      88,
+      35
+    ],
+    "failure_condition": "No agreement or memorandum on Strait of Hormuz shipping is signed between Iran and a GCC member state between 2026-09-14 and 2026-09-27."
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-10-11, US and Iranian officials at cabinet, foreign-minister, or presidential special-envoy level hold a direct in-person meeting confirmed by both governments.",
+    "domain": "political",
+    "probability": 15,
+    "resolution": "TRUE if the US State Department or White House and the Foreign Ministry of Iran both confirm a direct in-person meeting at that level held between 2026-09-14 and 2026-10-11; indirect or mediated exchanges do not count.",
+    "deadline": "2026-10-14",
+    "citations": [
+      35,
+      88
+    ],
+    "failure_condition": "No direct in-person US-Iran meeting at cabinet, foreign-minister, or special-envoy level takes place between 2026-09-14 and 2026-10-11."
+  },
+  {
+    "statement": "Between 2026-09-14 and 2027-01-29, a member of the Sweden Democrats is appointed as a minister in the Swedish government.",
+    "domain": "political",
+    "probability": 25,
+    "resolution": "TRUE if the Government Offices of Sweden (regeringen.se) list of ministers as of 2027-01-29 includes a Sweden Democrats member appointed between 2026-09-14 and 2027-01-29; FALSE otherwise.",
+    "deadline": "2027-02-02",
+    "citations": [
+      70,
+      93
+    ],
+    "failure_condition": "No member of the Sweden Democrats holds a ministerial post in the Swedish government on 2027-01-29."
+  },
+  {
+    "statement": "The CME NYMEX WTI crude oil November 2026 futures contract (CLX26) settles at or above 110.00 USD per barrel on 2026-10-02. Reference: 100.05 front-month WTI on the packet date.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "TRUE if the official CME Group settlement price for CLX26 on 2026-10-02 is 110.00 or higher; FALSE if below 110.00. Reference: 100.05 front-month WTI on the packet date.",
+    "deadline": "2026-10-05",
+    "citations": [
+      34,
+      35
+    ],
+    "failure_condition": "CLX26 settles below 110.00 USD per barrel on 2026-10-02."
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-10-16, CISA adds a Tencent vulnerability (including Sogou Input Method, CVE-2026-51990) to the Known Exploited Vulnerabilities catalog.",
+    "domain": "cyber",
+    "probability": 15,
+    "resolution": "TRUE if the CISA KEV JSON feed carries an entry whose vendorProject is Tencent or whose product includes Sogou, with dateAdded between 2026-09-14 and 2026-10-16; FALSE otherwise.",
+    "deadline": "2026-10-20",
+    "citations": [
+      10
+    ],
+    "failure_condition": "The CISA KEV catalog carries no Tencent or Sogou entry with dateAdded between 2026-09-14 and 2026-10-16."
+  },
+  {
+    "statement": "Between 2026-09-14 and 2026-11-27, a Terrebonne Parish grand jury returns an indictment charging Kaegan Jude Solet with at least one count of first-degree or second-degree murder for the Houma, Louisiana stabbings.",
+    "domain": "crime/security",
+    "probability": 50,
+    "resolution": "TRUE if the 32nd Judicial District Court docket or the Terrebonne Parish District Attorney confirms a grand jury indictment on first- or second-degree murder returned between 2026-09-14 and 2026-11-27; FALSE otherwise.",
+    "deadline": "2026-12-01",
+    "citations": [
+      9
+    ],
+    "failure_condition": "No grand jury indictment for first- or second-degree murder is returned against Kaegan Jude Solet between 2026-09-14 and 2026-11-27."
+  },
+  {
+    "statement": "The confirmed death toll from the Virgo Transport 8 ferry capsizing in the Java Sea reaches at least 50 by 2026-09-27, per Basarnas or the Indonesian Ministry of Transportation.",
+    "domain": "disaster",
+    "probability": 40,
+    "resolution": "TRUE if Basarnas or the Indonesian Ministry of Transportation reports cumulative confirmed deaths of 50 or more on or before 2026-09-27; persons listed as missing do not count as confirmed deaths.",
+    "deadline": "2026-09-30",
+    "citations": [
+      89,
+      50,
+      61,
+      20
+    ],
+    "failure_condition": "Confirmed deaths reported by Basarnas or the Ministry of Transportation total fewer than 50 as of 2026-09-27."
+  }
+]

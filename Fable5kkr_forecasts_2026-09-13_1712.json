@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "US Central Command publicly announces at least one US military strike on Houthi targets in Yemen conducted between 2026-09-14 and 2026-10-14.",
+    "domain": "military/conflict",
+    "probability": 80,
+    "resolution": "A CENTCOM press release or official CENTCOM statement confirms US strikes on Houthi targets in Yemen conducted within the window.",
+    "deadline": "2026-10-16",
+    "citations": [55, 56, 62],
+    "failure_condition": "No official CENTCOM announcement confirming a US strike on Houthi targets conducted within the window exists at the deadline."
+  },
+  {
+    "statement": "NATO confirms that one or more member states requested consultations under Article 4 of the North Atlantic Treaty between 2026-09-14 and 2026-10-14.",
+    "domain": "military/conflict",
+    "probability": 12,
+    "resolution": "An official NATO statement or press release confirms an Article 4 consultation request made within the window.",
+    "deadline": "2026-10-16",
+    "citations": [45, 46, 63],
+    "failure_condition": "No official NATO confirmation of an Article 4 consultation request made within the window exists at the deadline."
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 125.00 USD per barrel on at least one trading day between 2026-09-14 and 2026-12-31. Reference: 104.61 at packet seal.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "Official ICE daily settlement prices show at least one front-month Brent settlement at or above 125.00 USD within the window.",
+    "deadline": "2027-01-05",
+    "citations": [34, 35, 55],
+    "failure_condition": "Every front-month Brent daily settlement within the window is below 125.00 USD."
+  },
+  {
+    "statement": "The US 10-year Treasury constant-maturity yield, FRED series DGS10, prints at or above 5.25 percent on at least one business day between 2026-09-14 and 2027-03-05. Reference: 4.97 at packet seal.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "The FRED DGS10 series shows at least one daily value at or above 5.25 within the window.",
+    "deadline": "2027-03-10",
+    "citations": [34, 38],
+    "failure_condition": "All DGS10 daily values within the window are below 5.25 percent."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry for a vulnerability in any Tencent product with dateAdded between 2026-09-14 and 2026-11-13.",
+    "domain": "cyber",
+    "probability": 15,
+    "resolution": "The public CISA KEV JSON feed contains an entry whose vendorProject or product field names Tencent with a dateAdded value inside the window.",
+    "deadline": "2026-11-17",
+    "citations": [10],
+    "failure_condition": "The KEV feed contains no Tencent entry with a dateAdded value inside the window."
+  },
+  {
+    "statement": "Democratic candidates win a majority of seats, at least 218, in the US House of Representatives in the midterm elections held 2026-11-03.",
+    "domain": "political",
+    "probability": 70,
+    "resolution": "AP race calls or certified results available by the deadline show Democratic candidates winning 218 or more House seats in the 2026 general election.",
+    "deadline": "2026-12-04",
+    "citations": [84, 90, 92],
+    "failure_condition": "AP calls or certified results show Democratic candidates winning fewer than 218 House seats."
+  },
+  {
+    "statement": "A new Swedish government wins its Riksdag confirmation vote with the Sweden Democrats holding at least one cabinet ministry, formation occurring between 2026-09-14 and 2026-12-31.",
+    "domain": "political",
+    "probability": 35,
+    "resolution": "Riksdag or regeringen.se records show a government approved within the window whose cabinet list includes at least one Sweden Democrat minister; support-party status without a ministry resolves false.",
+    "deadline": "2027-01-04",
+    "citations": [70, 93],
+    "failure_condition": "No government including a Sweden Democrat cabinet minister is approved by the Riksdag within the window."
+  },
+  {
+    "statement": "A federal statute authorizing one-time direct payments of at least 5000 dollars per eligible individual is signed into law between 2026-09-14 and 2027-03-05.",
+    "domain": "political",
+    "probability": 5,
+    "resolution": "Congress.gov shows a bill containing such a direct-payment provision with status Became Law, signed within the window.",
+    "deadline": "2027-03-10",
+    "citations": [84, 90],
+    "failure_condition": "Congress.gov shows no enacted statute containing such a direct-payment provision signed within the window."
+  },
+  {
+    "statement": "USGS catalogs at least one earthquake of magnitude 5.0 or greater with epicenter within 200 km of the 2026-09-12 M6.5 event near Teluknaga, Indonesia, occurring between 2026-09-14 and 2026-10-12.",
+    "domain": "disaster",
+    "probability": 45,
+    "resolution": "A USGS ComCat query centered on the mainshock epicenter, radius 200 km, minimum magnitude 5.0, returns at least one event within the window.",
+    "deadline": "2026-10-14",
+    "citations": [23],
+    "failure_condition": "The ComCat query returns zero events of M5.0 or greater in that radius and window."
+  },
+  {
+    "statement": "The person arrested for the 2026-09-13 Louisiana stabbing spree is indicted by a grand jury on at least one count of first- or second-degree murder between 2026-09-14 and 2026-12-15.",
+    "domain": "crime/security",
+    "probability": 85,
+    "resolution": "Louisiana court records or at least two wire-service reports confirm a grand jury indictment on a murder count returned within the window.",
+    "deadline": "2026-12-17",
+    "citations": [9],
+    "failure_condition": "No grand jury indictment on a murder count is returned within the window, whether due to release, competency proceedings, death of the suspect, or charging by bill of information only."
+  }
+]
