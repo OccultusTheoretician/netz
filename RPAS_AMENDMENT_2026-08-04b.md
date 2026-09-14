@@ -1,5 +1,7 @@
 # RPAS-26 — AMENDMENT 2026-08-04b
 
+**AUTHORSHIP.** Drafted by the desk's assistant under the operator's direction on 2026-08-04 and served without a provenance banner, the desk's banner law of 2026-09-14 postdating it; read in full and adopted by the operator on 2026-09-14.
+
 **Corrects Amendment 2026-08-04, Part I·E. Adds one limitation the first amendment did not report. Records two findings under 6.04.**
 
 Issued the same day as the text it corrects, four hours later, as a second dated amendment rather than an edit. **7.05** governs: revisions never alter the sealed record, and the first amendment is now part of that record. It stands as issued, with this correction attached.
@@ -82,3 +84,5 @@ It records that the desk's own account of its defects was itself defective, four
 ---
 
 *Issued under RPAS-26 §7.05. Corrects Amendment 2026-08-04 Part I·E. The first edition and the first amendment remain as issued.*
+
+**Adoption note, 2026-09-14.** The AUTHORSHIP line above is added on the operator's adoption of this amendment; the earlier bytes stand in the commit history. No entry changes.

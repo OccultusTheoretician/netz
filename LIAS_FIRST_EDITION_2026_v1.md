@@ -3,7 +3,7 @@
 **LIAS-26 · Issued by the Retro-Prescient Audit™ Desk**
 *Third standard of the family: RPAS-26 governs forecast verification; the Inversion Quotient and DTSP govern institutional inversion; LIAS-26 governs the wielding of the instrument itself.*
 
-**PROVENANCE: DRAFT (Claude-drafted under direction, 2026-07-24, codifying the desk's running practice — the NETZ citation-audit doctrine, the provenance-tier rules, RPAS 3.02/6.02, and the operator's standing verification discipline. His only after rework.)**
+**AUTHORSHIP.** Drafted by the desk's assistant under the operator's direction on 2026-07-24, codifying the desk's running practice - the NETZ citation-audit doctrine, the provenance-tier rules, RPAS 3.02/6.02, and the operator's standing verification discipline; read in full and adopted by the operator on 2026-09-14.
 **MARK: a coined mark is pending; on naming, first use seals by the standing three-clock mechanics and this header carries it. "LIAS" is the citation prefix, not the mark.**
 
 ---
@@ -124,3 +124,5 @@ All four from the single session that produced this document, workpapered in the
 **D4.** A rate-limited API returned an empty payload that a naive read reported as "clean — no dangerous files"; the instrument identified the output as a non-finding, disclaimed its own prior line, and re-verified through an independent channel — 3.04 operating, and the reason 3.04 exists.
 
 None of the four establishes that the instrument is good. They establish that the discipline is runnable, which is all a demonstration can say.
+
+**Adoption note, 2026-09-14.** The provenance banner carried since 2026-07-24 is replaced by the AUTHORSHIP line above on the operator's adoption of this text; the earlier bytes stand in the commit history. No clause changes.
