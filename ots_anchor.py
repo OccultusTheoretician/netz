@@ -85,6 +85,10 @@ TARGETS = [
     # OTSTARGETS-2026-09-01: the pre-registration is the paper; its text gets a clock
     # the operator does not hold, same as the standards.
     "KALIBRIERWARTE_REGISTERED_REPORT_v3.md",
+    # PAPERS-2026-09-14: the desk's technical notes and the prior-art sweep get a clock
+    # the operator does not hold, same as the standards.
+    "NOTES_2026-09-14.md",
+    "FRONTIER_SWEEP_2026-09-14.md",
     # 2026-08-18: the PCAOB 2026-005 docket as a committed population -
     # 33 comment letters, count fixed with no gaps, each hashed as served,
     # retrieved complete rather than sampled. This is the construction the
