@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "Commercial traffic through the Strait of Hormuz is halted for more than 24 consecutive hours at some point between 2026-09-15 and 2026-10-15.",
+    "domain": "military_conflict",
+    "probability": 14,
+    "resolution": "TRUE if Reuters or Lloyds List Intelligence and Iranian state media both report a halt of commercial Hormuz transits exceeding 24 consecutive hours occurring between 2026-09-15 and 2026-10-15.",
+    "deadline": "2026-10-20",
+    "citations": [62, 83, 84],
+    "failure_condition": "MISS if no continuous halt of commercial Hormuz transits exceeding 24 hours occurs inside the event window."
+  },
+  {
+    "statement": "A Ukrainian strike damages a named Russian oil refinery between 2026-09-15 and 2026-10-06, notwithstanding US pressure to stop refinery strikes.",
+    "domain": "military_conflict",
+    "probability": 85,
+    "resolution": "TRUE if a Russian federal or regional official confirms a strike on a named refinery dated between 2026-09-15 and 2026-10-06, and Reuters or AFP reports the same strike.",
+    "deadline": "2026-10-09",
+    "citations": [49, 74],
+    "failure_condition": "MISS if no strike on a named Russian refinery inside the window is confirmed by both a Russian official and a major wire service."
+  },
+  {
+    "statement": "ICE front-month Brent settles at or above 120.00 USD per barrel on at least one trading day between 2026-09-15 and 2026-10-30. Reference: 108.29 on the packet date.",
+    "domain": "economics",
+    "probability": 33,
+    "resolution": "TRUE if the official ICE Brent front-month settlement price is 120.00 USD or higher on any trading day from 2026-09-15 through 2026-10-30. Reference level 108.29 at seal.",
+    "deadline": "2026-11-03",
+    "citations": [45, 58, 28],
+    "failure_condition": "MISS if every ICE Brent front-month settlement inside the window prints below 120.00 USD."
+  },
+  {
+    "statement": "The FRED series DGS10 records a value of 5.50 percent or higher on at least one business day between 2026-09-15 and 2026-12-31. Reference: 4.99 percent on the packet date.",
+    "domain": "economics",
+    "probability": 24,
+    "resolution": "TRUE if any FRED DGS10 observation dated 2026-09-15 through 2026-12-31 is 5.50 or greater. Reference level 4.99 percent at seal.",
+    "deadline": "2027-01-05",
+    "citations": [48, 107],
+    "failure_condition": "MISS if the highest DGS10 observation inside the window is below 5.50."
+  },
+  {
+    "statement": "Anthropic publicly files a Form S-1 registration statement with the SEC, visible on EDGAR, with a filing date between 2026-09-15 and 2026-12-31.",
+    "domain": "economics",
+    "probability": 32,
+    "resolution": "TRUE if EDGAR full-text search returns a Form S-1 or S-1/A filed by Anthropic with a filing date between 2026-09-15 and 2026-12-31. Confidential submissions not yet public do not count.",
+    "deadline": "2027-01-06",
+    "citations": [46, 47],
+    "failure_condition": "MISS if no public Anthropic S-1 exists on EDGAR with a filing date inside the window."
+  },
+  {
+    "statement": "The CISA KEV catalog carries at least one entry with vendorProject GitLab and a dateAdded value between 2026-09-08 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 85,
+    "resolution": "TRUE if the CISA Known Exploited Vulnerabilities JSON contains a GitLab entry whose dateAdded falls between 2026-09-08 and 2026-10-16 inclusive.",
+    "deadline": "2026-10-20",
+    "citations": [22],
+    "failure_condition": "MISS if no GitLab entry in the KEV catalog carries a dateAdded inside that range."
+  },
+  {
+    "statement": "Microsoft resolves the September 2026 Windows Server RDS connection failure with a shipped update between 2026-09-15 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 78,
+    "resolution": "TRUE if the Windows release health entry for the September 2026 RDS failure shows status Resolved by an out-of-band update, Known Issue Rollback, or cumulative update dated between 2026-09-15 and 2026-10-16.",
+    "deadline": "2026-10-20",
+    "citations": [18],
+    "failure_condition": "MISS if the RDS regression is not fixed by a shipped Microsoft update inside the window."
+  },
+  {
+    "statement": "A US Senate roll call on the CLARITY Act or a motion directly on it is held between 2026-09-15 and 2026-09-18 and records fewer than 60 yea votes.",
+    "domain": "political",
+    "probability": 42,
+    "resolution": "TRUE if Senate.gov roll call records show a vote on the CLARITY Act or a related cloture or passage motion between 2026-09-15 and 2026-09-18 with fewer than 60 yeas.",
+    "deadline": "2026-09-22",
+    "citations": [105],
+    "failure_condition": "MISS if no such roll call occurs inside the window, or if the yea count reaches 60 or more."
+  },
+  {
+    "statement": "The Riksdag elects Magdalena Andersson Prime Minister in a vote held between 2026-09-21 and 2026-12-11.",
+    "domain": "political",
+    "probability": 58,
+    "resolution": "TRUE if the Riksdag voting record at riksdagen.se shows a prime minister vote held between 2026-09-21 and 2026-12-11 in which Magdalena Andersson is elected.",
+    "deadline": "2026-12-15",
+    "citations": [103, 113],
+    "failure_condition": "MISS if no Riksdag vote inside the window elects Andersson Prime Minister, including a vote that elects anyone else."
+  },
+  {
+    "statement": "GDACS raises the alert level for tropical cyclone FIFTEEN-E-26 to orange or red at some point between 2026-09-15 and 2026-09-25.",
+    "domain": "disaster",
+    "probability": 12,
+    "resolution": "TRUE if the GDACS event page for tropical cyclone FIFTEEN-E-26 shows an orange or red alert level assigned between 2026-09-15 and 2026-09-25.",
+    "deadline": "2026-09-29",
+    "citations": [43],
+    "failure_condition": "MISS if the GDACS alert level for that cyclone never exceeds green inside the window."
+  }
+]

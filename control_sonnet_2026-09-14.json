@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "The US Senate passes the Clarity Act (digital asset market structure legislation) via a floor vote held between 2026-09-15 and 2026-09-17, the scheduled window for the make-or-break vote reported on 14 September 2026.",
+    "resolution": "TRUE if the Congress.gov or Senate.gov roll call record shows the Clarity Act passed the Senate on any day between 2026-09-15 and 2026-09-17. FALSE if it fails, is not brought to a vote in that window, or is postponed beyond 2026-09-17.",
+    "failure_condition": "The Congress.gov roll call record shows the Clarity Act did not pass the Senate between 2026-09-15 and 2026-09-17, whether by a failed vote, no vote held, or postponement beyond that window.",
+    "domain": "political",
+    "deadline": "2026-09-23",
+    "probability": 35,
+    "citations": [
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia conducts another missile or drone strike hitting rail infrastructure within 50 kilometers of the Ukraine-Poland border between 2026-09-15 and 2026-10-05, following the strike near that border reported on 14 September 2026.",
+    "resolution": "TRUE if at least two of Reuters, AP, Ukrzaliznytsia (Ukrainian state railways), or a Polish government statement confirm a Russian missile or drone strike hit rail infrastructure (track, station, or rolling stock) within 50 km of the Ukraine-Poland border at any point between 2026-09-15 and 2026-10-05. FALSE otherwise.",
+    "failure_condition": "No confirmed Russian strike on rail infrastructure within 50 km of the Ukraine-Poland border occurs between 2026-09-15 and 2026-10-05.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-08",
+    "probability": 56,
+    "citations": [
+      42,
+      75,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry for the GitLab vulnerability reported as under active exploitation on 14 September 2026, with a dateAdded value between 2026-09-15 and 2026-10-06.",
+    "resolution": "TRUE if the CISA KEV catalog (cisa.gov known_exploited_vulnerabilities JSON feed) contains an entry for a GitLab product vulnerability with a dateAdded value between 2026-09-15 and 2026-10-06. FALSE otherwise.",
+    "failure_condition": "The CISA KEV catalog shows no GitLab entry with a dateAdded value between 2026-09-15 and 2026-10-06.",
+    "domain": "cyber",
+    "deadline": "2026-10-08",
+    "probability": 28,
+    "citations": [
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A Houthi or other Iran-aligned force conducts another attack on Saudi Arabia's oil infrastructure, such as a pipeline, refinery, storage site, or export terminal, between 2026-09-15 and 2026-10-06, following the East-West pipeline attack reported on 13 and 14 September 2026.",
+    "resolution": "TRUE if at least two of Reuters, AP, Al Jazeera, or a Saudi government or Saudi Aramco statement confirm a drone, missile, or other attack struck Saudi oil infrastructure at any point between 2026-09-15 and 2026-10-06. FALSE otherwise.",
+    "failure_condition": "No confirmed attack on Saudi oil infrastructure is reported between 2026-09-15 and 2026-10-06.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-09",
+    "probability": 56,
+    "citations": [
+      28,
+      45,
+      58
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-Year US Treasury yield closes at or above 5.00 percent on at least one business day between 2026-09-15 and 2026-10-09. Reference: 4.99 percent on the packet date, 2026-09-14.",
+    "resolution": "TRUE if the FRED DGS10 series or the US Treasury daily par yield curve rate for the 10-year tenor shows a value of 5.00 percent or higher for any business day between 2026-09-15 and 2026-10-09. FALSE otherwise.",
+    "failure_condition": "The FRED DGS10 series shows no business day between 2026-09-15 and 2026-10-09 with a value at or above 5.00 percent.",
+    "domain": "economic",
+    "deadline": "2026-10-12",
+    "probability": 26,
+    "citations": [
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude oil (NYMEX front-month contract) settles at or above 110.00 USD per barrel on at least one trading day between 2026-09-15 and 2026-10-09. Reference: 103.36 USD per barrel on the packet date, 2026-09-14.",
+    "resolution": "TRUE if the NYMEX WTI front-month futures settlement price is 110.00 USD per barrel or higher on any trading day between 2026-09-15 and 2026-10-09, as reported by CME Group settlement data or two of Reuters, Bloomberg, or CNBC. FALSE otherwise.",
+    "failure_condition": "No trading-day WTI settlement of 110.00 USD per barrel or higher occurs between 2026-09-15 and 2026-10-09.",
+    "domain": "economic",
+    "deadline": "2026-10-12",
+    "probability": 26,
+    "citations": [
+      45,
+      58
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Gulf states and Iran hold and conclude a meeting on Strait of Hormuz safe passage or de-confliction, producing a joint statement or announced agreement, between 2026-09-15 and 2026-10-13, after three postponements reported through 14 September 2026.",
+    "resolution": "TRUE if at least two of Reuters, AP, Al Jazeera, Iranian state media, or a Gulf state government statement confirm a Gulf states-Iran meeting on Hormuz concluded with a joint statement or announced agreement between 2026-09-15 and 2026-10-13. FALSE otherwise.",
+    "failure_condition": "No Gulf states-Iran meeting on Hormuz concludes with a joint statement or agreement between 2026-09-15 and 2026-10-13, whether because talks remain postponed, collapse, or no meeting occurs.",
+    "domain": "political",
+    "deadline": "2026-10-15",
+    "probability": 35,
+    "citations": [
+      79,
+      84,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "GDACS raises its alert level for the Angola forest fire event, GDACS event ID 1031945, green as of 14 September 2026, to Orange or Red, between 2026-09-15 and 2026-10-13.",
+    "resolution": "TRUE if the GDACS report page for event ID 1031945 (eventtype WF) shows an Orange or Red alert level at any point between 2026-09-15 and 2026-10-13. FALSE if it remains Green or is closed or archived without upgrade.",
+    "failure_condition": "The GDACS event 1031945 record shows no Orange or Red alert level between 2026-09-15 and 2026-10-13.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-10-15",
+    "probability": 31,
+    "citations": [
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The EPA publishes a proposed or final rule in the Federal Register repealing or replacing the current federal carbon dioxide emission standards for power plants, between 2026-09-21 and 2026-11-16, following the reporting on 14 September 2026 that the agency is poised to act.",
+    "resolution": "TRUE if a Federal Register document from the EPA proposing or finalizing repeal or replacement of the power-plant CO2 emission standards is published at any point between 2026-09-21 and 2026-11-16. FALSE otherwise.",
+    "failure_condition": "No EPA rule proposing or finalizing repeal or replacement of the power-plant carbon standards is published in the Federal Register between 2026-09-21 and 2026-11-16.",
+    "domain": "political",
+    "deadline": "2026-11-18",
+    "probability": 35,
+    "citations": [
+      104,
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Criminal Cases Review Commission announces a decision on whether to refer Lucy Letby's convictions to the Court of Appeal, between 2026-09-21 and 2026-11-16.",
+    "resolution": "TRUE if the CCRC or at least two of BBC, Guardian, or Reuters report that the CCRC has announced a decision, either referral or non-referral, on the Letby case between 2026-09-21 and 2026-11-16. FALSE otherwise.",
+    "failure_condition": "No CCRC decision on the Letby case referral is announced or reported between 2026-09-21 and 2026-11-16.",
+    "domain": "crime_security",
+    "deadline": "2026-11-18",
+    "probability": 10,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:41Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

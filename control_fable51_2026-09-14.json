@@ -1,0 +1,254 @@
+[
+  {
+    "statement": "On 2026-09-15 the US Senate holds a recorded roll-call vote on the CLARITY Act digital asset market structure bill (H.R. 3633 or its Senate vehicle) and the motion, whether cloture, motion to proceed, or passage, is agreed to.",
+    "resolution": "True if senate.gov roll-call records show a vote dated 2026-09-15 on cloture, the motion to proceed, or passage of the CLARITY Act or its Senate market-structure vehicle, with a result of Agreed to or Passed. Otherwise false.",
+    "failure_condition": "No Senate roll-call vote on the CLARITY Act or its Senate vehicle occurs on 2026-09-15, or the vote that occurs is rejected.",
+    "domain": "political",
+    "deadline": "2026-09-21",
+    "probability": 35,
+    "citations": [
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-15 and 2026-09-30 a Ukrainian drone or missile strike causes fire or damage at an oil refinery inside internationally recognized Russian territory, acknowledged by a Russian governor, regional authority, or the operator, and claimed by the Ukrainian General Staff, SBU, or HUR.",
+    "resolution": "True if, for a strike dated 2026-09-15 to 2026-09-30, a Russian governor, regional authority, or the operator acknowledges fire or damage at a named refinery in Russia and a Ukrainian military or intelligence body claims it. Otherwise false.",
+    "failure_condition": "No Ukrainian strike between 2026-09-15 and 2026-09-30 produces Russian-acknowledged fire or damage at a refinery inside Russia.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-02",
+    "probability": 56,
+    "citations": [
+      49,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog contains at least 20 entries with a dateAdded value between 2026-09-15 and 2026-10-14 inclusive.",
+    "resolution": "True if the CISA KEV JSON feed contains 20 or more entries whose dateAdded falls between 2026-09-15 and 2026-10-14 inclusive. False if 19 or fewer.",
+    "failure_condition": "Fewer than 20 KEV entries carry a dateAdded between 2026-09-15 and 2026-10-14.",
+    "domain": "cyber",
+    "deadline": "2026-10-16",
+    "probability": 28,
+    "citations": [
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-15 and 2026-10-15 foreign ministers or higher-ranking officials of Iran and at least three Gulf Cooperation Council member states attend the same in-person meeting with Strait of Hormuz transit on its stated agenda, as reported by two of Reuters, AP, AFP, Al Jazeera.",
+    "resolution": "True if two of Reuters, AP, AFP, or Al Jazeera report an in-person meeting dated 2026-09-15 to 2026-10-15 of foreign ministers or above from Iran and three or more GCC states with Hormuz on the stated agenda. Otherwise false.",
+    "failure_condition": "Through 2026-10-15 no in-person meeting with Hormuz on its agenda brings together foreign ministers or higher from Iran and at least three GCC states.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-19",
+    "probability": 56,
+    "citations": [
+      79,
+      84,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Nasdaq Composite closing level for 2026-10-30, as published in FRED series NASDAQCOM, is below 24000.00, more than 8 percent under the reference. Reference: 26098.23 on the packet date, 2026-09-14.",
+    "resolution": "True if the NASDAQCOM observation dated 2026-10-30, as published by FRED or Nasdaq, is strictly below 24000.00. False if the close is 24000.00 or higher.",
+    "failure_condition": "The Nasdaq Composite closes at 24000.00 or higher on 2026-10-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 26,
+    "citations": [
+      47,
+      48,
+      56,
+      102
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury par yield for 2026-10-30, as published in the Treasury daily par yield curve and FRED series DGS10, is at or above 5.00 percent. Reference: 4.99 percent on the packet date, 2026-09-14.",
+    "resolution": "True if the Treasury par yield curve entry for the 10-year maturity dated 2026-10-30 (FRED DGS10 observation for that date) is 5.00 or greater. False if it is 4.99 or lower.",
+    "failure_condition": "The 10-year par yield published for 2026-10-30 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 26,
+    "citations": [
+      48,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FRED series DCOILWTICO (EIA Cushing WTI spot price) observation dated 2026-10-30 is below 90.00 dollars per barrel. Reference: WTI 103.36 on the packet date, 2026-09-14.",
+    "resolution": "True if the DCOILWTICO observation dated 2026-10-30, as published by FRED or EIA, is strictly below 90.00. False if it is 90.00 or higher or if no observation is published for that date.",
+    "failure_condition": "The Cushing WTI spot price observation for 2026-10-30 is 90.00 dollars or higher.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-09",
+    "probability": 26,
+    "citations": [
+      28,
+      45,
+      58,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-15 and 2026-11-13 the Riksdag approves Magdalena Andersson as Prime Minister of Sweden on the proposal of the Speaker, with fewer than 175 of 349 members voting against.",
+    "resolution": "True if riksdagen.se records a prime-ministerial vote dated between 2026-09-15 and 2026-11-13 inclusive in which the Speaker proposed Magdalena Andersson and fewer than 175 members voted no, so the proposal was approved. Otherwise false.",
+    "failure_condition": "No Riksdag vote approving Andersson as Prime Minister takes place on or before 2026-11-13, or the vote held rejects her.",
+    "domain": "political",
+    "deadline": "2026-11-17",
+    "probability": 35,
+    "citations": [
+      103,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-15 and 2026-11-13 Houthi (Ansar Allah) forces take control of Marib city, capital of Marib governorate in Yemen, as reported by at least two of Reuters, AP, AFP, and Al Jazeera.",
+    "resolution": "True if at least two of Reuters, AP, AFP, or Al Jazeera report, citing the event as occurring between 2026-09-15 and 2026-11-13, that Houthi forces control the center of Marib city. Otherwise false.",
+    "failure_condition": "Yemeni government-aligned forces still hold the center of Marib city at the end of 2026-11-13.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-18",
+    "probability": 56,
+    "citations": [
+      58,
+      82
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-15 and 2027-03-01 the Criminal Cases Review Commission announces that it has referred one or more convictions of Lucy Letby to the Court of Appeal.",
+    "resolution": "True if a CCRC press release or statement on ccrc.gov.uk, dated between 2026-09-15 and 2027-03-01, states the Commission has referred at least one conviction of Lucy Letby to the Court of Appeal. Otherwise false.",
+    "failure_condition": "By 2027-03-01 the CCRC has made no referral of any Letby conviction to the Court of Appeal, whether because its review is still open or because it decided not to refer.",
+    "domain": "crime/security",
+    "deadline": "2027-03-03",
+    "probability": 10,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
