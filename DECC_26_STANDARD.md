@@ -6,12 +6,12 @@
 *Companion to the reference implementation `denom.py`. This document defines the
 METHOD; the implementation is one conformant build of it.*
 
-**PROVENANCE: DRAFT** (Claude-drafted under direction, 2026-07-30. His only
-after rework pass. Every regulatory citation is named at article level and
-requires paragraph-level verification against the current authoritative text
-before it is printed as a citation. The prior-art boundary in Chapter 9 is
-stated conservatively and is his to verify before any ownership assertion is
-made in public.)
+**AUTHORSHIP.** Drafted by the desk's assistant under the operator's direction
+(Revision 1, 2026-07-30; Revision 2, 2026-09-14); read in full and adopted by the
+operator on 2026-09-14. The thinking and the controlling judgment are the
+operator's. Regulatory citations are named at article level and carry their own
+verification caveat (10.01, 10.02); the prior-art boundary is stated
+conservatively (9.03, 9.04).
 
 ---
 
@@ -249,7 +249,7 @@ surviving discretions be printed on the record's face (Chapter 8).
 **9.03** That claim is stated conservatively and requires independent
 verification before any ownership assertion is made in public.
 
-**9.04** *(Revision 2, 2026-09-14; provenance draft, see Revision History.)* Completeness
+**9.04** *(Revision 2, 2026-09-14.)* Completeness
 proofs over committed populations are established in the authenticated-data-structure
 literature for outsourced databases (Devanbu et al. 2002; Pang and Tan 2004; Pang et
 al. 2005; Mykletun, Narasimha and Tsudik 2006; Li et al. 2006), where a verifier checks
@@ -264,7 +264,7 @@ states population completeness as unsolved by it: "Completeness requires populat
 controls." This standard's 9.02 claim is accordingly read in its narrowest form: the
 committed cardinality as a completeness control for partial disclosure of audit
 evidence, printed with the verdict, under a conformance suite that can fail an
-implementation. Nothing here binds committed-over-real: a false record commits as
+implementation. Nothing in this standard binds committed-over-real: a false record commits as
 easily as a true one (Chapter 8). First issuance of this standard: 2026-07-30 (commits
 80e0fbd, af53344, 6c6d31f). The prior art above was located by the desk's own sweep of
 2026-09-07, read at the artifact, and printed here upon discovery (RPAS-26 7.04).
@@ -308,6 +308,8 @@ narrowest form. No normative clause changes; `denom.py` 0.1.0 and the 38 known-a
 vectors are unchanged and remain the conformance suite. Revision 1 bytes stand in the
 commit history at 80e0fbd, af53344 and 6c6d31f. From this revision the text is also
 served at `docs/DECC_26_STANDARD.md`, byte-identical to this file, and joins the
-OpenTimestamps anchor set. PROVENANCE: DRAFT for 9.04 and this entry - assistant-drafted
-2026-09-14 under the operator's direction; the operator's only after his rework pass,
-which replaces the text without moving the date.
+OpenTimestamps anchor set. Drafted by the desk's assistant under the operator's
+direction; read in full and adopted by the operator on 2026-09-14. The adoption
+replaces the draft banners carried since 2026-07-30 (Revision 1) and 2026-09-14
+(this entry as first served) with the AUTHORSHIP line, without moving the date;
+the earlier text stands in the commit history.
