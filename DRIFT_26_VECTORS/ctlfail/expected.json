@@ -1,0 +1,716 @@
+{
+ "_meta": {
+  "bootstrap": {
+   "interval": "percentile 2.5-97.5, linear interpolation",
+   "reps": 2000,
+   "seed": 26,
+   "unit": "row"
+  },
+  "cohort": {
+   "confirmatory": true,
+   "hash": "48eb5aef514552c5cae52f811839ca745b5e4d2149cf0f84e27e3e839cc4c2d0",
+   "label": "cohort 48eb5aef514552c5",
+   "prefix": "48eb5aef",
+   "rows": 240
+  },
+  "doctrine": "no pooled score exists; a Brier belongs to one forecaster; nothing is claimed below the floors; misses printed at full size",
+  "floors": {
+   "arm": 10,
+   "bin": 5,
+   "checkpoint": 50,
+   "h3_split": 20,
+   "h5_market": 30,
+   "interim": 30
+  },
+  "instrument": "warte_report/1.0",
+  "ledger_rows": 240,
+  "registration": "docs/KALIBRIERWARTE_REGISTERED_REPORT_v3.md",
+  "registration_sha16_lf": "964b31a6d84e724d",
+  "self_sha256_lf": "fa560fe3a58570bb2b4e8b888bf524732691f15b2141502fc75e171532909723"
+ },
+ "arms": {
+  "control/baserate": {
+   "arm": "control/baserate",
+   "bootstrap": {
+    "bins": {
+     "10-20": {
+      "ci95": [
+       0.4667,
+       0.6333
+      ],
+      "resamples_nonempty": 2000
+     }
+    },
+    "brier_ci95": [
+     0.3691,
+     0.4957
+    ],
+    "diff_resamples": 0,
+    "keyless_minus_keyed_brier_ci95": null,
+    "reps": 2000,
+    "seed": 26,
+    "skill_ci95": [
+     -1.1347,
+     -0.4829
+    ],
+    "skill_resamples": 2000,
+    "unit": "row"
+   },
+   "capability_claim": true,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "hits": 66,
+   "hypotheses": null,
+   "issued": 120,
+   "metrics": {
+    "base_rate": 0.55,
+    "bins": [
+     {
+      "bin": "10-20",
+      "mean_p": 0.12,
+      "n": 120,
+      "note": null,
+      "obs": 0.55
+     }
+    ],
+    "brier": 0.432,
+    "climatological": 0.247,
+    "hits": 66,
+    "misses": 54,
+    "n_floor": null,
+    "resolved": 120,
+    "skill": -0.747,
+    "skill_unfloored": -0.747
+   },
+   "misses": 54,
+   "note": "READ HALTED - a quality check failed; no hypothesis read for this arm (Section 7)",
+   "open": 0,
+   "quality": {
+    "a_mirror_completeness": {
+     "binding": false,
+     "gap_unknown": 0,
+     "late_mirror": 0,
+     "listed": [],
+     "no_mirror": 0,
+     "note": "binds frontier rows (Section 7a); the local arm's coverage is printed, not gated",
+     "result": "PASS",
+     "rows_checked": 120,
+     "same_run": 120,
+     "same_run_minutes": 360
+    },
+    "all_pass": false,
+    "b_rubric_coverage": {
+     "carrying_cohort_hash": 120,
+     "off_hash": [],
+     "result": "PASS",
+     "rows": 120
+    },
+    "c_seat_recorded": {
+     "outside_registration": 0,
+     "resolved": 120,
+     "result": "PASS",
+     "seats": {
+      "operator": 120
+     }
+    },
+    "d_determination_coverage": {
+     "keyed": 0,
+     "keyed_by_rule": 120,
+     "keyless": 0,
+     "resolved": 120,
+     "result": "PASS"
+    },
+    "e_control_skill_zero": {
+     "all_time_exploratory": {
+      "base_rate": 0.55,
+      "brier": 0.432,
+      "climatological": 0.247,
+      "hits": 66,
+      "label": "exploratory - all cohorts pooled, the face's figure",
+      "resolved": 120,
+      "result": "FAIL",
+      "skill": -0.747,
+      "skill_ci95": [
+       -1.1347,
+       -0.4829
+      ],
+      "under_arm_floor": false
+     },
+     "note": "departure - the control's reference class is not the control's own base rate; prints as a defect",
+     "result": "FAIL",
+     "within_cohort": {
+      "base_rate": 0.55,
+      "brier": 0.432,
+      "climatological": 0.247,
+      "hits": 66,
+      "resolved": 120,
+      "result": "FAIL",
+      "skill": -0.747,
+      "skill_ci95": [
+       -1.1347,
+       -0.4829
+      ],
+      "under_arm_floor": false
+     }
+    },
+    "f_void_rate": {
+     "resolved": 120,
+     "result": "PASS",
+     "void_rate": 0.0,
+     "voids": 0
+    }
+   },
+   "resolved": 120,
+   "seats": {
+    "auditor-single": {
+     "resolved": 0
+    },
+    "jury-divergence": {
+     "resolved": 0
+    },
+    "jury-searched-adopted": {
+     "resolved": 0
+    },
+    "operator": {
+     "base_rate": 0.55,
+     "bins": [
+      {
+       "bin": "10-20",
+       "mean_p": 0.12,
+       "n": 120,
+       "note": null,
+       "obs": 0.55
+      }
+     ],
+     "brier": 0.432,
+     "brier_ci95": [
+      0.3691,
+      0.4957
+     ],
+     "climatological": 0.247,
+     "hits": 66,
+     "misses": 54,
+     "n_floor": null,
+     "resolved": 120,
+     "skill": -0.747,
+     "skill_ci95": [
+      -1.1347,
+      -0.4829
+     ],
+     "skill_unfloored": -0.747
+    },
+    "unclassified": 0
+   },
+   "split": {
+    "keyed": {
+     "defect_ids": [],
+     "resolved": 0
+    },
+    "keyed_by_rule": 120,
+    "keyless": {
+     "defect_ids": [],
+     "resolved": 0
+    }
+   },
+   "stage": "checkpoint",
+   "tag": "control/baserate",
+   "voids": 0
+  },
+  "manual/fable-5/unattested": {
+   "arm": "manual/fable-5/unattested",
+   "bootstrap": {
+    "bins": {
+     "20-30": {
+      "ci95": [
+       0.0714,
+       0.4583
+      ],
+      "resamples_nonempty": 2000
+     },
+     "30-40": {
+      "ci95": [
+       0.1429,
+       0.5714
+      ],
+      "resamples_nonempty": 2000
+     },
+     "40-50": {
+      "ci95": [
+       0.2381,
+       0.6842
+      ],
+      "resamples_nonempty": 2000
+     },
+     "60-70": {
+      "ci95": [
+       0.4284,
+       0.8571
+      ],
+      "resamples_nonempty": 2000
+     },
+     "70-80": {
+      "ci95": [
+       0.5499,
+       0.9334
+      ],
+      "resamples_nonempty": 2000
+     },
+     "80-90": {
+      "ci95": [
+       0.6667,
+       1.0
+      ],
+      "resamples_nonempty": 2000
+     }
+    },
+    "brier_ci95": [
+     0.1701,
+     0.2398
+    ],
+    "diff_resamples": 2000,
+    "keyless_minus_keyed_brier_ci95": [
+     -0.0241,
+     0.1154
+    ],
+    "reps": 2000,
+    "seed": 26,
+    "skill_ci95": [
+     0.0228,
+     0.3074
+    ],
+    "skill_resamples": 2000,
+    "unit": "row"
+   },
+   "capability_claim": true,
+   "corrections": {
+    "count": 0,
+    "rows": []
+   },
+   "hits": 66,
+   "hypotheses": null,
+   "issued": 120,
+   "metrics": {
+    "base_rate": 0.55,
+    "bins": [
+     {
+      "bin": "20-30",
+      "mean_p": 0.239,
+      "n": 20,
+      "note": null,
+      "obs": 0.25
+     },
+     {
+      "bin": "30-40",
+      "mean_p": 0.343,
+      "n": 20,
+      "note": null,
+      "obs": 0.35
+     },
+     {
+      "bin": "40-50",
+      "mean_p": 0.436,
+      "n": 20,
+      "note": null,
+      "obs": 0.45
+     },
+     {
+      "bin": "60-70",
+      "mean_p": 0.64,
+      "n": 20,
+      "note": null,
+      "obs": 0.65
+     },
+     {
+      "bin": "70-80",
+      "mean_p": 0.739,
+      "n": 20,
+      "note": null,
+      "obs": 0.75
+     },
+     {
+      "bin": "80-90",
+      "mean_p": 0.849,
+      "n": 20,
+      "note": null,
+      "obs": 0.85
+     }
+    ],
+    "brier": 0.204,
+    "climatological": 0.247,
+    "hits": 66,
+    "misses": 54,
+    "n_floor": null,
+    "resolved": 120,
+    "skill": 0.176,
+    "skill_unfloored": 0.176
+   },
+   "misses": 54,
+   "note": "READ HALTED - a quality check failed; no hypothesis read for this arm (Section 7)",
+   "open": 0,
+   "quality": {
+    "a_mirror_completeness": {
+     "binding": true,
+     "gap_unknown": 0,
+     "late_mirror": 0,
+     "listed": [],
+     "no_mirror": 0,
+     "note": "every frontier row in scope needs a same-run mirror; gaps listed",
+     "result": "PASS",
+     "rows_checked": 120,
+     "same_run": 120,
+     "same_run_minutes": 360
+    },
+    "all_pass": false,
+    "b_rubric_coverage": {
+     "carrying_cohort_hash": 120,
+     "off_hash": [],
+     "result": "PASS",
+     "rows": 120
+    },
+    "c_seat_recorded": {
+     "outside_registration": 0,
+     "resolved": 120,
+     "result": "PASS",
+     "seats": {
+      "jury-divergence": 9,
+      "jury-searched-adopted": 102,
+      "operator": 9
+     }
+    },
+    "d_determination_coverage": {
+     "keyed": 70,
+     "keyed_by_rule": 0,
+     "keyless": 50,
+     "resolved": 120,
+     "result": "PASS"
+    },
+    "e_control_skill_zero": {
+     "all_time_exploratory": {
+      "base_rate": 0.55,
+      "brier": 0.432,
+      "climatological": 0.247,
+      "hits": 66,
+      "label": "exploratory - all cohorts pooled, the face's figure",
+      "resolved": 120,
+      "result": "FAIL",
+      "skill": -0.747,
+      "skill_ci95": [
+       -1.1347,
+       -0.4829
+      ],
+      "under_arm_floor": false
+     },
+     "note": "departure - the control's reference class is not the control's own base rate; prints as a defect",
+     "result": "FAIL",
+     "within_cohort": {
+      "base_rate": 0.55,
+      "brier": 0.432,
+      "climatological": 0.247,
+      "hits": 66,
+      "resolved": 120,
+      "result": "FAIL",
+      "skill": -0.747,
+      "skill_ci95": [
+       -1.1347,
+       -0.4829
+      ],
+      "under_arm_floor": false
+     }
+    },
+    "f_void_rate": {
+     "resolved": 120,
+     "result": "PASS",
+     "void_rate": 0.0,
+     "voids": 0
+    }
+   },
+   "resolved": 120,
+   "seats": {
+    "auditor-single": {
+     "resolved": 0
+    },
+    "jury-divergence": {
+     "base_rate": 0.444,
+     "bins": [
+      {
+       "bin": "20-30",
+       "mean_p": 0.2,
+       "n": 1,
+       "note": "n<5",
+       "obs": null
+      },
+      {
+       "bin": "30-40",
+       "mean_p": 0.35,
+       "n": 2,
+       "note": "n<5",
+       "obs": null
+      },
+      {
+       "bin": "60-70",
+       "mean_p": 0.65,
+       "n": 2,
+       "note": "n<5",
+       "obs": null
+      },
+      {
+       "bin": "70-80",
+       "mean_p": 0.76,
+       "n": 3,
+       "note": "n<5",
+       "obs": null
+      },
+      {
+       "bin": "80-90",
+       "mean_p": 0.89,
+       "n": 1,
+       "note": "n<5",
+       "obs": null
+      }
+     ],
+     "brier": 0.387,
+     "climatological": 0.247,
+     "hits": 4,
+     "misses": 5,
+     "n_floor": "insufficient n (9<10) - printed, not hidden",
+     "resolved": 9,
+     "skill": null,
+     "skill_unfloored": -0.567
+    },
+    "jury-searched-adopted": {
+     "base_rate": 0.559,
+     "bins": [
+      {
+       "bin": "20-30",
+       "mean_p": 0.244,
+       "n": 17,
+       "note": null,
+       "obs": 0.294
+      },
+      {
+       "bin": "30-40",
+       "mean_p": 0.338,
+       "n": 16,
+       "note": null,
+       "obs": 0.25
+      },
+      {
+       "bin": "40-50",
+       "mean_p": 0.438,
+       "n": 18,
+       "note": null,
+       "obs": 0.389
+      },
+      {
+       "bin": "60-70",
+       "mean_p": 0.641,
+       "n": 16,
+       "note": null,
+       "obs": 0.688
+      },
+      {
+       "bin": "70-80",
+       "mean_p": 0.736,
+       "n": 16,
+       "note": null,
+       "obs": 0.812
+      },
+      {
+       "bin": "80-90",
+       "mean_p": 0.847,
+       "n": 19,
+       "note": null,
+       "obs": 0.895
+      }
+     ],
+     "brier": 0.187,
+     "brier_ci95": [
+      0.153,
+      0.2221
+     ],
+     "climatological": 0.247,
+     "hits": 57,
+     "misses": 45,
+     "n_floor": null,
+     "resolved": 102,
+     "skill": 0.242,
+     "skill_ci95": [
+      0.0873,
+      0.3737
+     ],
+     "skill_unfloored": 0.242
+    },
+    "operator": {
+     "base_rate": 0.556,
+     "bins": [
+      {
+       "bin": "20-30",
+       "mean_p": 0.215,
+       "n": 2,
+       "note": "n<5",
+       "obs": null
+      },
+      {
+       "bin": "30-40",
+       "mean_p": 0.38,
+       "n": 2,
+       "note": "n<5",
+       "obs": null
+      },
+      {
+       "bin": "40-50",
+       "mean_p": 0.415,
+       "n": 2,
+       "note": "n<5",
+       "obs": null
+      },
+      {
+       "bin": "60-70",
+       "mean_p": 0.62,
+       "n": 2,
+       "note": "n<5",
+       "obs": null
+      },
+      {
+       "bin": "70-80",
+       "mean_p": 0.72,
+       "n": 1,
+       "note": "n<5",
+       "obs": null
+      }
+     ],
+     "brier": 0.213,
+     "climatological": 0.247,
+     "hits": 5,
+     "misses": 4,
+     "n_floor": "insufficient n (9<10) - printed, not hidden",
+     "resolved": 9,
+     "skill": null,
+     "skill_unfloored": 0.139
+    },
+    "unclassified": 0
+   },
+   "split": {
+    "keyed": {
+     "base_rate": 0.514,
+     "bins": [
+      {
+       "bin": "20-30",
+       "mean_p": 0.229,
+       "n": 11,
+       "note": null,
+       "obs": 0.273
+      },
+      {
+       "bin": "30-40",
+       "mean_p": 0.341,
+       "n": 15,
+       "note": null,
+       "obs": 0.267
+      },
+      {
+       "bin": "40-50",
+       "mean_p": 0.439,
+       "n": 9,
+       "note": null,
+       "obs": 0.222
+      },
+      {
+       "bin": "60-70",
+       "mean_p": 0.64,
+       "n": 11,
+       "note": null,
+       "obs": 0.636
+      },
+      {
+       "bin": "70-80",
+       "mean_p": 0.737,
+       "n": 13,
+       "note": null,
+       "obs": 0.769
+      },
+      {
+       "bin": "80-90",
+       "mean_p": 0.844,
+       "n": 11,
+       "note": null,
+       "obs": 0.909
+      }
+     ],
+     "brier": 0.185,
+     "climatological": 0.25,
+     "defect_ids": [],
+     "hits": 36,
+     "misses": 34,
+     "n_floor": null,
+     "resolved": 70,
+     "skill": 0.259,
+     "skill_unfloored": 0.259
+    },
+    "keyed_by_rule": 0,
+    "keyless": {
+     "base_rate": 0.6,
+     "bins": [
+      {
+       "bin": "20-30",
+       "mean_p": 0.251,
+       "n": 9,
+       "note": null,
+       "obs": 0.222
+      },
+      {
+       "bin": "30-40",
+       "mean_p": 0.348,
+       "n": 5,
+       "note": null,
+       "obs": 0.6
+      },
+      {
+       "bin": "40-50",
+       "mean_p": 0.434,
+       "n": 11,
+       "note": null,
+       "obs": 0.636
+      },
+      {
+       "bin": "60-70",
+       "mean_p": 0.64,
+       "n": 9,
+       "note": null,
+       "obs": 0.667
+      },
+      {
+       "bin": "70-80",
+       "mean_p": 0.743,
+       "n": 7,
+       "note": null,
+       "obs": 0.714
+      },
+      {
+       "bin": "80-90",
+       "mean_p": 0.856,
+       "n": 9,
+       "note": null,
+       "obs": 0.778
+      }
+     ],
+     "brier": 0.23,
+     "climatological": 0.24,
+     "defect_ids": [],
+     "hits": 30,
+     "misses": 20,
+     "n_floor": null,
+     "resolved": 50,
+     "skill": 0.041,
+     "skill_unfloored": 0.041
+    },
+    "keyless_minus_keyed_brier": 0.045
+   },
+   "stage": "checkpoint",
+   "tag": "manual/fable-5/unattested",
+   "voids": 0
+  }
+ }
+}

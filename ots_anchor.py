@@ -93,6 +93,8 @@ TARGETS = [
     # Revision 2) and the RPAS-26 amendment of 2026-09-14 get a clock the operator does not hold.
     "DECC_26_STANDARD.md",
     "RPAS_AMENDMENT_2026-09-14.md",
+    # DRIFT-2026-09-14: DRIFT-26 Revision 1 (draft, served) gets a clock the operator does not hold.
+    "DRIFT_26_STANDARD.md",
     # 2026-08-18: the PCAOB 2026-005 docket as a committed population -
     # 33 comment letters, count fixed with no gaps, each hashed as served,
     # retrieved complete rather than sampled. This is the construction the
