@@ -89,6 +89,10 @@ TARGETS = [
     # the operator does not hold, same as the standards.
     "NOTES_2026-09-14.md",
     "FRONTIER_SWEEP_2026-09-14.md",
+    # FRONTIER-2026-09-14: the DECC-26 standard text (served copy of the repo-root file,
+    # Revision 2) and the RPAS-26 amendment of 2026-09-14 get a clock the operator does not hold.
+    "DECC_26_STANDARD.md",
+    "RPAS_AMENDMENT_2026-09-14.md",
     # 2026-08-18: the PCAOB 2026-005 docket as a committed population -
     # 33 comment letters, count fixed with no gaps, each hashed as served,
     # retrieved complete rather than sampled. This is the construction the
