@@ -1,6 +1,6 @@
 # STANDARDS MAPPING — The Retro-Prescient Audit™ Desk
 ### Mapped to Government Auditing Standards (2024 Revision) and AICPA Professional Standards
-**PROVENANCE: DRAFT (Claude-authored under direction, 2026-07-24). His only after rework. Cites verified against GAO-24-106786 as fetched 2026-07-24; verification queue printed at end.**
+**AUTHORSHIP.** Drafted by the desk's assistant under the operator's direction on 2026-07-24; read in full and adopted by the operator on 2026-09-14. Citations were verified against GAO-24-106786 as fetched 2026-07-24; the verification register at the end states what is pinned, what is anchored and what is still queued, and stands as this document's own caveat.
 
 ---
 
@@ -74,3 +74,5 @@ No GAGAS engagement. No unmodified or modified GAGAS compliance statement (2.17)
 **QUEUED — pin before web publication (one mechanical pass, PDF in hand):** paragraph numbers for the Ch. 8 evidence requirement, findings elements, and documentation requirement (2018 numbering 8.90 / 8.116 / 8.132 is expected to carry, since the 2024 Revision replaced only Chapter 5 and added guidance to Chapter 6, but expected is not pinned); the EQR paragraph range within Ch. 5; AU-C paragraph-level pins for AU-C 200, 230, 500 (section-level cites are asserted now; paragraph-level quotes are not, and AU-C text is AICPA-copyrighted — paraphrase stands regardless).
 
 **MISSES / LIMITS:** the GAO PDF's first fetch was bot-blocked and the successful fetch truncated at ~Chapter 3 — Chapters 5, 8, 9 body text was not read verbatim this session, which is exactly why the queue above exists. Printed per house rule: the miss stays visible.
+
+**Adoption note, 2026-09-14.** The provenance banner carried since 2026-07-24 is replaced by the AUTHORSHIP line above on the operator's adoption of this text; the earlier bytes stand in the commit history. Nothing in the mapping or the register changes.

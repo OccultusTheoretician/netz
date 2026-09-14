@@ -1,7 +1,7 @@
 # ABYSS-26 — THE ABYSSAL SEQUENCE
 ## Contingent-Commitment Doctrine · DRAFT rev 1 · 2026-08-01
 
-**PROVENANCE: DRAFT tier.** Claude-drafted under the operator's direction. Rev 1 replaces rev 0's model on evidence (§2) and reports a prior-art finding that narrows the novelty claim (§3). Becomes doctrine only on the operator's rework and ruling.
+**AUTHORSHIP.** Drafted by the desk's assistant under the operator's direction (rev 1, 2026-08-01); read in full and adopted by the operator on 2026-09-14. Rev 1 replaced rev 0's model on evidence (section 2) and reports a prior-art finding that narrows the novelty claim (section 3). Status unchanged: draft doctrine, rev 1; it becomes doctrine only on the operator's ruling, which the adoption of the text is not.
 
 ---
 
@@ -100,3 +100,5 @@ This is the one open design question in the doctrine. Everything else above is e
 > Conditional forecasting is established practice — Metaculus conditional pairs annul the branch the world removed, and have since 2023. This desk claims no originality on the semantic. What it adds is the machinery a self-published ledger needs and a platform does not: a condition is honoured only if it was sealed while its parent was still open, violations are printed by id, foreclosure propagates through depth, and the number of sealed questions each resolution collapsed is published as a figure. Void is our defect. Foreclosed is the world's path. Neither is scored, and they never share a bucket.
 
 That paragraph concedes the mechanic, names the addition, and states the discipline — which is the desk's standing form, and it is stronger than a novelty claim that would not survive its own prior-art sweep.
+
+**Adoption note, 2026-09-14.** The provenance banner carried since 2026-08-01 is replaced by the AUTHORSHIP line above on the operator's adoption of this text; the earlier bytes stand in the commit history. The doctrine's status is unchanged.
