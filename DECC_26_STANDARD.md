@@ -1,6 +1,6 @@
 # DECC-26™ — DENOMINATOR-COMMITTED EVIDENCE STANDARD
 ## Evidentiary completeness for machine-generated records
-### First Edition · 2026 · Revision 1
+### First Edition · 2026 · Revision 2
 
 **Issued by the Retro-Prescient Audit™ Desk**
 *Companion to the reference implementation `denom.py`. This document defines the
@@ -249,6 +249,26 @@ surviving discretions be printed on the record's face (Chapter 8).
 **9.03** That claim is stated conservatively and requires independent
 verification before any ownership assertion is made in public.
 
+**9.04** *(Revision 2, 2026-09-14; provenance draft, see Revision History.)* Completeness
+proofs over committed populations are established in the authenticated-data-structure
+literature for outsourced databases (Devanbu et al. 2002; Pang and Tan 2004; Pang et
+al. 2005; Mykletun, Narasimha and Tsudik 2006; Li et al. 2006), where a verifier checks
+that a query result omits no qualifying record. Those constructions are stronger than
+this standard's control, which binds only the cardinality. Certificate Transparency
+(RFC 6962, 2013) binds a log's size into its signed tree head. A July 2026 design-science
+proposal for field-level audit-evidence commitments (Wright, "The Audit Evidence Problem
+Public Ledgers Were Supposed to Solve", 2026-07-09) reaches the same architecture for
+selective disclosure of accounting fields - per-field salted commitments under one
+Merkle root anchored on a public medium, an inclusion proof into the workpaper - and
+states population completeness as unsolved by it: "Completeness requires population
+controls." This standard's 9.02 claim is accordingly read in its narrowest form: the
+committed cardinality as a completeness control for partial disclosure of audit
+evidence, printed with the verdict, under a conformance suite that can fail an
+implementation. Nothing here binds committed-over-real: a false record commits as
+easily as a true one (Chapter 8). First issuance of this standard: 2026-07-30 (commits
+80e0fbd, af53344, 6c6d31f). The prior art above was located by the desk's own sweep of
+2026-09-07, read at the artifact, and printed here upon discovery (RPAS-26 7.04).
+
 ---
 
 ## CHAPTER 10 — REGULATORY MAPPING (informative)
@@ -281,3 +301,13 @@ any regulator, agency, or standards body.
 **Revision 1 (2026-07-30).** First issuance. Reference implementation
 `denom.py` 0.1.0 published concurrently, adversarially tested against eight
 forgery classes and property-tested over tree sizes 1–24.
+
+**Revision 2 (2026-09-14).** Chapter 9 gains 9.04 (informative): the prior-art boundary
+re-read after the desk's sweep of 2026-09-07, and the 9.02 claim restated in its
+narrowest form. No normative clause changes; `denom.py` 0.1.0 and the 38 known-answer
+vectors are unchanged and remain the conformance suite. Revision 1 bytes stand in the
+commit history at 80e0fbd, af53344 and 6c6d31f. From this revision the text is also
+served at `docs/DECC_26_STANDARD.md`, byte-identical to this file, and joins the
+OpenTimestamps anchor set. PROVENANCE: DRAFT for 9.04 and this entry - assistant-drafted
+2026-09-14 under the operator's direction; the operator's only after his rework pass,
+which replaces the text without moving the date.
