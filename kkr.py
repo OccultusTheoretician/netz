@@ -159,6 +159,7 @@ FRAMES = {
         " works only when the target cannot substitute. The frame changes your priors, not the discipline"
         ": every gate and rule below still binds, and a claim that fails a gate is discarded whatever the"
         " frame says about it."
+        " The packet date is {packet_date}. Every event window you write opens on or after that date; the dates inside rule 1 below are illustrations of the form, not today's dates."  # FRAME2-2026-09-14: packet date named; frame hash is of this constant, placeholder unfilled
     ),
 }
 _FRAME = None   # name of the frame in force for this run, or None
@@ -2031,6 +2032,7 @@ def cmd_generate(args):
     now = datetime.now(timezone.utc)
     _template = ((_frame_text(frame) + "\n\n") if frame else "") + PROJECTION_PROMPT  # FRAMEARM-2026-09-03
     prompt = _template.format(
+        packet_date=now.strftime("%Y-%m-%d"),  # FRAME2-2026-09-14
         min_date=(now + timedelta(days=7)).strftime("%Y-%m-%d"),
         max_date=(now + timedelta(days=180)).strftime("%Y-%m-%d"),
         report=_ident_redact_packet(_record_only(report_text))[:60000])  # GUARDGATE-2026-09-01
