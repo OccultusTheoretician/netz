@@ -199,7 +199,20 @@
       "status": "active",
       "note": "FRAMEARM-2026-09-03: second local arm. Same model, access and rubric as lmstudio/auto; fired by the chain on the same packet day with a realist balance-of-power FRAME preamble (part of the arm, not the rubric; rows carry frame and frame_hash). No control mirrors (local arm). Registration Section 14 (H6 frame drift vs lmstudio/auto[post-window]).",
       "frame": "realist",
-      "frame_sha256": "7b96df749db5034b43dd8539a201f65361038d3da37cb956c8f70c69e5c666ff",
+      "frame_sha256": "442300f131b11b7ca106096532293924c3a9c4d20b4adcbde63bd932757efc77",
+      "frame_revisions": [
+        {
+          "sha256": "7b96df749db5034b43dd8539a201f65361038d3da37cb956c8f70c69e5c666ff",
+          "in_force": "2026-09-03 to 2026-09-14",
+          "rows": 60,
+          "class": "pre-revision, printed on the tile, outside the H6 population (registration Section 15.4, 15.6)"
+        },
+        {
+          "sha256": "442300f131b11b7ca106096532293924c3a9c4d20b4adcbde63bd932757efc77",
+          "in_force": "from 2026-09-15",
+          "note": "FRAME2-2026-09-14: one sentence naming the packet date through a {packet_date} placeholder the chain fills; the constant is hashed unfilled, as the rubric is. Tag unchanged (ruling 2026-09-14)."
+        }
+      ],
       "cadence": "daily - local model, no marginal cost per run."
     }
   ],

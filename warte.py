@@ -92,6 +92,40 @@ def main():
     for tag in sorted(seen_tags):
         for e in (_reg.get(tag, {}).get("eras") or []):
             arms.setdefault(tag + "[" + e["id"] + "]", [])
+        # WARTETILE-2026-09-14: KK31-B14's law for arms without eras - a registered arm
+        # with rows issued and nothing resolved is a hole the observatory discloses,
+        # not a tile that silently does not exist (the H4 pair's second member and the
+        # frame arm were absent from this face until 2026-09-14).
+        if tag in _reg and not (_reg.get(tag, {}).get("eras") or []):
+            arms.setdefault(tag, [])
+    # WARTETILE-2026-09-14: frame classes. A frame is part of the arm and rows
+    # carry frame_hash; a frame revision keeps the tag (FRAME2-2026-09-14), so
+    # rows under an earlier frame text are a pre-revision class the tile prints
+    # and the H6 read excludes (registration Section 15.4, 15.6). The frame in
+    # force is arms.json's frame_sha256; every other hash on the tag's rows is a
+    # pre-revision class. Descriptive only: nothing here enters a read.
+    frame_rows = defaultdict(lambda: defaultdict(int))
+    for p in rows:
+        _fh = str(p.get("frame_hash") or "")
+        if _fh:
+            frame_rows[_bucket_of(p)[1]][_fh] += 1
+
+    def _frame_note(bucket):
+        fr = frame_rows.get(bucket)
+        if not fr:
+            return None
+        inforce = str(_reg.get(bucket.split("[")[0], {}).get("frame_sha256") or "")
+        parts = []
+        for fh, c in sorted(fr.items(), key=lambda kv: (kv[0] != inforce, kv[0])):
+            if fh == inforce:
+                parts.append(f"{c} rows under the frame in force {fh[:16]}")
+            else:
+                parts.append(f"{c} rows under an earlier frame text {fh[:16]} - "
+                             f"pre-revision class, printed here, outside the H6 "
+                             f"population (registration Section 15)")
+        if inforce and inforce not in fr:
+            parts.append(f"0 rows yet under the frame in force {inforce[:16]}")
+        return "frame: " + "; ".join(parts)
     open_hash = sum(1 for p in rows if p.get("status")=="open"
                     and p.get("rubric_hash"))
     open_all = sum(1 for p in rows if p.get("status")=="open")
@@ -108,6 +142,7 @@ def main():
                                f"issued, {openc.get(arm, 0)} open, nothing "
                                f"resolved yet. Printed rather than omitted; "
                                f"a hole the register discloses."),
+                "frame_note": _frame_note(arm),  # WARTETILE-2026-09-14
                 "bins": []}
             continue
         hits = sum(1 for p in rs if p["status"]=="hit")
@@ -178,6 +213,7 @@ def main():
                             f"{n-hashed} of {n} resolved rows predate the "
                             f"rubric commitment - drift comparison anchors "
                             f"at the first hashed row"),
+            "frame_note": _frame_note(arm),  # WARTETILE-2026-09-14
             "bins": bins}
 
     out = {"_meta": {"generated": now, "instrument": "kalibrierwarte/1.0",
@@ -251,6 +287,8 @@ def main():
         h.append(f"<h2>{arm}</h2>")
         if t.get("zero_state"):
             h.append(f"<p class='warn'>{t['zero_state']}</p>")
+            if t.get("frame_note"):  # WARTETILE-2026-09-14
+                h.append(f"<p class='note'>{t['frame_note']}</p>")
             continue
         h.append(f"<p>issued {t.get('issued', t['resolved'])} - open "
                  f"{t.get('open', 0)} - "
@@ -263,6 +301,8 @@ def main():
             h.append(f"<p class='warn'>{t['n_floor']}</p>")
         if t["rubric_note"]:
             h.append(f"<p class='note'>{t['rubric_note']}</p>")
+        if t.get("frame_note"):  # WARTETILE-2026-09-14
+            h.append(f"<p class='note'>{t['frame_note']}</p>")
         sp = t.get("split", {})
         h.append("<table><tr><th>class</th><th>n</th><th>hits</th>"
                  "<th>Brier</th><th>skill</th><th>note</th></tr>")
