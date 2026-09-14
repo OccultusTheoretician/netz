@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The FRED DGS10 10-year US Treasury constant maturity yield prints 5.00 percent or higher on at least one business day between 2026-09-15 and 2026-10-16. Reference: 4.99 percent at packet seal.",
+    "domain": "economics/markets",
+    "probability": 88,
+    "resolution": "FRED series DGS10 shows a daily value of 5.00 or higher for at least one business day between 2026-09-15 and 2026-10-16 inclusive. Reference: 4.99 at packet seal.",
+    "deadline": "2026-10-20",
+    "citations": [48, 107],
+    "failure_condition": "Every DGS10 daily value from 2026-09-15 through 2026-10-16 is below 5.00 percent."
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 125.00 USD per barrel on at least one trading day between 2026-09-15 and 2026-10-30. Reference: 108.29 at packet seal.",
+    "domain": "economics/markets",
+    "probability": 20,
+    "resolution": "ICE settlement data show a Brent front-month daily settlement at or above 125.00 on any trading day between 2026-09-15 and 2026-10-30. Reference: 108.29 at packet seal.",
+    "deadline": "2026-11-03",
+    "citations": [45, 58, 83],
+    "failure_condition": "No Brent front-month settlement between 2026-09-15 and 2026-10-30 reaches 125.00."
+  },
+  {
+    "statement": "The Swedish Election Authority certifies the 2026 Riksdag result between 2026-09-15 and 2026-10-02 with the Social Democrats, Left Party, Greens, and Centre Party holding a combined 175 or more of 349 seats.",
+    "domain": "political",
+    "probability": 78,
+    "resolution": "Valmyndigheten final certified seat allocation, published between 2026-09-15 and 2026-10-02, gives the Social Democrats, Left, Greens, and Centre combined at least 175 of 349 seats.",
+    "deadline": "2026-10-06",
+    "citations": [103, 113],
+    "failure_condition": "The certified allocation gives the four listed parties 174 or fewer combined seats, or no certified result is published by 2026-10-02."
+  },
+  {
+    "statement": "The US Senate records a cloture or passage roll call vote on the Clarity Act digital asset bill between 2026-09-15 and 2026-09-25 and the motion receives at least 60 yea votes.",
+    "domain": "political",
+    "probability": 40,
+    "resolution": "Senate.gov roll call records show a cloture or passage vote on the Clarity Act between 2026-09-15 and 2026-09-25 receiving 60 or more yeas.",
+    "deadline": "2026-09-28",
+    "citations": [105],
+    "failure_condition": "No cloture or passage vote on the bill reaches 60 yeas within the window, whether because no vote occurs or the motion falls short."
+  },
+  {
+    "statement": "Microsoft ships a fix dated between 2026-09-15 and 2026-10-15 for the September 2026 update issue causing Remote Desktop Services failures on Windows Server, reflected as resolved on Windows release health.",
+    "domain": "cyber",
+    "probability": 85,
+    "resolution": "Microsoft Windows release health documentation lists the September Windows Server RDS failure issue as resolved by an update released between 2026-09-15 and 2026-10-15.",
+    "deadline": "2026-10-19",
+    "citations": [18, 20],
+    "failure_condition": "The RDS issue lacks a resolved status tied to a fix released within the window."
+  },
+  {
+    "statement": "The government of Iran issues an official announcement closing the Strait of Hormuz to commercial shipping, dated between 2026-09-15 and 2026-11-13 and corroborated by at least two of Reuters, AP, and AFP.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "At least two of Reuters, AP, or AFP report an official Iranian government announcement closing the Strait of Hormuz to commercial shipping, announcement dated between 2026-09-15 and 2026-11-13.",
+    "deadline": "2026-11-17",
+    "citations": [79, 83, 90],
+    "failure_condition": "Iran makes no official closure declaration dated within the window, or a claimed declaration fails two-wire corroboration by the deadline."
+  },
+  {
+    "statement": "A drone strike causing fire or damage at a named oil refinery inside Russia occurs between 2026-09-15 and 2026-10-15, acknowledged by at least one of Reuters, AP, or AFP and by a Russian official or state outlet.",
+    "domain": "military/conflict",
+    "probability": 78,
+    "resolution": "Both a major Western wire service and a Russian official or state outlet acknowledge drone damage or fire at a named Russian oil refinery occurring between 2026-09-15 and 2026-10-15.",
+    "deadline": "2026-10-19",
+    "citations": [49, 74],
+    "failure_condition": "No refinery strike within the window carries both Western wire and Russian official acknowledgment by the deadline."
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one earthquake of magnitude 6.5 or greater anywhere on Earth with origin time between 2026-09-15 and 2026-10-14 UTC.",
+    "domain": "disaster",
+    "probability": 92,
+    "resolution": "The USGS event catalog, queried at the deadline, lists at least one magnitude 6.5 or greater earthquake with origin time between 2026-09-15 and 2026-10-14 UTC.",
+    "deadline": "2026-10-16",
+    "citations": [32],
+    "failure_condition": "The catalog at the deadline contains no magnitude 6.5 or greater event with origin time in the window."
+  },
+  {
+    "statement": "Shares of Anthropic record a first day of trading on the Nasdaq exchange between 2026-09-15 and 2027-02-26.",
+    "domain": "economics/markets",
+    "probability": 55,
+    "resolution": "Nasdaq listing records and at least one major wire report confirm Anthropic shares traded with a first trade date between 2026-09-15 and 2027-02-26.",
+    "deadline": "2027-03-02",
+    "citations": [46, 47, 56],
+    "failure_condition": "Anthropic shares have no Nasdaq first trade date on or before 2027-02-26."
+  },
+  {
+    "statement": "The Federal Register publishes an EPA proposed or final rule rescinding or replacing carbon dioxide emission standards for existing fossil fuel power plants, with a publication date between 2026-09-15 and 2026-12-31.",
+    "domain": "political",
+    "probability": 70,
+    "resolution": "The Federal Register carries an EPA proposed or final rule rescinding or replacing power plant carbon dioxide standards with publication date between 2026-09-15 and 2026-12-31.",
+    "deadline": "2027-01-05",
+    "citations": [104, 108],
+    "failure_condition": "No qualifying EPA rule appears in the Federal Register with a publication date in the window."
+  }
+]

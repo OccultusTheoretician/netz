@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "The FRED DGS10 10-year US Treasury constant maturity yield prints 5.00 percent or higher on at least one business day between 2026-09-15 and 2026-10-16. Reference: 4.99 percent at packet seal.",
+    "resolution": "FRED series DGS10 shows a daily value of 5.00 or higher for at least one business day between 2026-09-15 and 2026-10-16 inclusive. Reference: 4.99 at packet seal.",
+    "failure_condition": "Every DGS10 daily value from 2026-09-15 through 2026-10-16 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-20",
+    "probability": 26,
+    "citations": [
+      48,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 125.00 USD per barrel on at least one trading day between 2026-09-15 and 2026-10-30. Reference: 108.29 at packet seal.",
+    "resolution": "ICE settlement data show a Brent front-month daily settlement at or above 125.00 on any trading day between 2026-09-15 and 2026-10-30. Reference: 108.29 at packet seal.",
+    "failure_condition": "No Brent front-month settlement between 2026-09-15 and 2026-10-30 reaches 125.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 26,
+    "citations": [
+      45,
+      58,
+      83
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Swedish Election Authority certifies the 2026 Riksdag result between 2026-09-15 and 2026-10-02 with the Social Democrats, Left Party, Greens, and Centre Party holding a combined 175 or more of 349 seats.",
+    "resolution": "Valmyndigheten final certified seat allocation, published between 2026-09-15 and 2026-10-02, gives the Social Democrats, Left, Greens, and Centre combined at least 175 of 349 seats.",
+    "failure_condition": "The certified allocation gives the four listed parties 174 or fewer combined seats, or no certified result is published by 2026-10-02.",
+    "domain": "political",
+    "deadline": "2026-10-06",
+    "probability": 35,
+    "citations": [
+      103,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US Senate records a cloture or passage roll call vote on the Clarity Act digital asset bill between 2026-09-15 and 2026-09-25 and the motion receives at least 60 yea votes.",
+    "resolution": "Senate.gov roll call records show a cloture or passage vote on the Clarity Act between 2026-09-15 and 2026-09-25 receiving 60 or more yeas.",
+    "failure_condition": "No cloture or passage vote on the bill reaches 60 yeas within the window, whether because no vote occurs or the motion falls short.",
+    "domain": "political",
+    "deadline": "2026-09-28",
+    "probability": 35,
+    "citations": [
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Microsoft ships a fix dated between 2026-09-15 and 2026-10-15 for the September 2026 update issue causing Remote Desktop Services failures on Windows Server, reflected as resolved on Windows release health.",
+    "resolution": "Microsoft Windows release health documentation lists the September Windows Server RDS failure issue as resolved by an update released between 2026-09-15 and 2026-10-15.",
+    "failure_condition": "The RDS issue lacks a resolved status tied to a fix released within the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-19",
+    "probability": 28,
+    "citations": [
+      18,
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The government of Iran issues an official announcement closing the Strait of Hormuz to commercial shipping, dated between 2026-09-15 and 2026-11-13 and corroborated by at least two of Reuters, AP, and AFP.",
+    "resolution": "At least two of Reuters, AP, or AFP report an official Iranian government announcement closing the Strait of Hormuz to commercial shipping, announcement dated between 2026-09-15 and 2026-11-13.",
+    "failure_condition": "Iran makes no official closure declaration dated within the window, or a claimed declaration fails two-wire corroboration by the deadline.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-17",
+    "probability": 56,
+    "citations": [
+      79,
+      83,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A drone strike causing fire or damage at a named oil refinery inside Russia occurs between 2026-09-15 and 2026-10-15, acknowledged by at least one of Reuters, AP, or AFP and by a Russian official or state outlet.",
+    "resolution": "Both a major Western wire service and a Russian official or state outlet acknowledge drone damage or fire at a named Russian oil refinery occurring between 2026-09-15 and 2026-10-15.",
+    "failure_condition": "No refinery strike within the window carries both Western wire and Russian official acknowledgment by the deadline.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-19",
+    "probability": 56,
+    "citations": [
+      49,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one earthquake of magnitude 6.5 or greater anywhere on Earth with origin time between 2026-09-15 and 2026-10-14 UTC.",
+    "resolution": "The USGS event catalog, queried at the deadline, lists at least one magnitude 6.5 or greater earthquake with origin time between 2026-09-15 and 2026-10-14 UTC.",
+    "failure_condition": "The catalog at the deadline contains no magnitude 6.5 or greater event with origin time in the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-16",
+    "probability": 31,
+    "citations": [
+      32
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Shares of Anthropic record a first day of trading on the Nasdaq exchange between 2026-09-15 and 2027-02-26.",
+    "resolution": "Nasdaq listing records and at least one major wire report confirm Anthropic shares traded with a first trade date between 2026-09-15 and 2027-02-26.",
+    "failure_condition": "Anthropic shares have no Nasdaq first trade date on or before 2027-02-26.",
+    "domain": "economics/markets",
+    "deadline": "2027-03-02",
+    "probability": 26,
+    "citations": [
+      46,
+      47,
+      56
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Register publishes an EPA proposed or final rule rescinding or replacing carbon dioxide emission standards for existing fossil fuel power plants, with a publication date between 2026-09-15 and 2026-12-31.",
+    "resolution": "The Federal Register carries an EPA proposed or final rule rescinding or replacing power plant carbon dioxide standards with publication date between 2026-09-15 and 2026-12-31.",
+    "failure_condition": "No qualifying EPA rule appears in the Federal Register with a publication date in the window.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 35,
+    "citations": [
+      104,
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-14T16:44:46Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
