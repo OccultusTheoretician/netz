@@ -3,7 +3,7 @@
 **KNM-26 · Issued by the Retro-Prescient Audit™ Desk**
 *Companion to the protocol specification KNP-26. This document formalizes the method; KNP-26 specifies the wire format an implementer builds to.*
 
-**PROVENANCE: DRAFT** (Claude-drafted under direction, revision 2 of 2026-07-25. His only after rework pass. The novel-combination claim at 3.03 and the prior-art boundary at Chapter 7 are stated conservatively and are his to verify before any ownership assertion is made in public. Every professional-standards citation in this document is named at concept level and requires paragraph-level verification against the current authoritative text before it is printed as a citation.)
+**AUTHORSHIP.** Drafted by the desk's assistant under the operator's direction (revision 2 of 2026-07-25); read in full and adopted by the operator on 2026-09-14. The novel-combination claim at 3.03 and the prior-art boundary at Chapter 7 are stated conservatively; every professional-standards citation in this document is named at concept level and carries its own verification caveat before it is printed as a citation.
 
 **MARK:** *Krähe's Nest™* and *Krähe's Kalls™* are coined marks pending; first use seals by the desk's standing three-clock mechanics and this header carries it. "KNM" is the citation prefix, not the mark.
 
@@ -207,6 +207,8 @@ On-chain forecasting benchmarks are established: Foresight Arena (arXiv 2605.004
 **Rev. 2 · 2026-07-25.** Added Chapters 4 (custody), 5 (reveal regimes and levels), and 6 (independence and residual discretion). Reframed the method's central property as a completeness assertion (1.06). Corrected the revision-1 contradiction between KNM 3.01 and KNP 2.01 over which fields enter the preimage: the two documents specified different constructions, and the demonstration clutch could not have satisfied both. The construction used by the clutch governs; 3.01 no longer restates the field set, which is normative in KNP alone, and adds the requirement that unbound published metadata be disclosed as unbound. Added to the prior-art boundary the primitives revision 2 relies on and does not claim: Shamir threshold sharing, timelock encryption and randomness beacons, and commitment-with-published-ciphertext (7.02). Stated the chain-is-not-an-anchor finding at 3.02.
 
 **Rev. 1 · 2026-07-25.** First formalization, drafted the day the demonstration clutch was sealed.
+
+**Adoption note, 2026-09-14.** The provenance banner carried since 2026-07-25 is replaced by the AUTHORSHIP line above on the operator's adoption of this text; the earlier bytes stand in the commit history. No clause changes.
 
 ---
 

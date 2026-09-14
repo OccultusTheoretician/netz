@@ -2,7 +2,7 @@
 ## First Edition · 2026
 **RPAS-26 · Issued by the Retro-Prescient Audit™ Desk**
 
-**PROVENANCE: DRAFT (Claude-drafted under direction, 2026-07-24, codifying the desk's existing instruments — the Battery, the Prediction Protocol, the war-desk grading rules, the Wohlstetter protocol. His only after rework pass. Definitional language carried from the standing instruments.)**
+**AUTHORSHIP.** Drafted by the desk's assistant under the operator's direction on 2026-07-24, codifying the desk's standing instruments - the Battery, the Prediction Protocol, the war-desk grading rules, the Wohlstetter protocol - whose definitional language it carries and which are the operator's; read in full and adopted by the operator on 2026-09-14. The thinking and the controlling judgment are the operator's.
 
 ---
 
@@ -163,3 +163,5 @@ This claim is held falsifiably: documented prior art implementing the same manda
 **D4.** A sealed prediction ledger: hash-committed entries, external-clock publication, the veil implemented in the entry instrument, dual-forecaster independence enforced by workflow.
 
 Each demonstration is dated and publicly inspectable at the desk's repositories. None of them, singly or together, establishes foresight. That is the point of the standard they demonstrated.
+
+**Adoption note, 2026-09-14.** The provenance banner carried since 2026-07-24 is replaced by the AUTHORSHIP line above on the operator's adoption of this text; the earlier bytes stand in the commit history. No clause changes.

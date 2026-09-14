@@ -1,5 +1,7 @@
 # RPAS-26 — AMENDMENT, 2026-08-04
 
+**AUTHORSHIP.** Drafted by the desk's assistant under the operator's direction on 2026-08-04 and served without a provenance banner, the desk's banner law of 2026-09-14 postdating it; read in full and adopted by the operator on 2026-09-14.
+
 **Amends the Retro-Prescient Audit Standards, First Edition 2026 v1, at 5.07, 6.04, 7.03, 7.04 and 7.06.**
 
 Issued as a dated amendment, not an edit. The first edition is externally anchored (`RPAS_FIRST_EDITION_2026_v1.md.ots`); altering its bytes would drift the published digest from its receipt, which is the defect this desk found in its own anchoring on 2026-08-02 and fixed on 2026-08-03. **7.05** already governs: *these standards revise by dated edition, and revisions never alter the sealed record.* Entries remain scored under the edition in force at their sealing.
@@ -112,3 +114,5 @@ It records them where a stranger will find them without being told where to look
 ---
 
 *Issued under RPAS-26 §7.05. Supersedes no prior text. The first edition remains as anchored.*
+
+**Adoption note, 2026-09-14.** The AUTHORSHIP line above is added on the operator's adoption of this amendment; the earlier bytes stand in the commit history. No entry changes.
