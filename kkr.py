@@ -531,6 +531,41 @@ def _citation_support(p: dict):
     claim = _content_words(p.get("statement", "") + " " + p.get("resolution", ""))
     if not claim:
         return None
+    # CITEGROUND-2026-09-15 (N1): a shared specific number is a readable prior.
+    # Digits normalised, three or more, not a year and not a date fragment.
+    _claim_raw = p.get("statement", "") + " " + p.get("resolution", "")
+    def _figures(t):
+        out = set()
+        for mm in re.finditer(r"(?<![\w.-])(\d{1,3}(?:,\d{3})+|\d{3,})(?:\.\d+)?(?![\w-])", t or ""):
+            n = mm.group(1).replace(",", "")
+            if len(n) >= 3 and not re.fullmatch(r"(?:19|20)\d\d", n):
+                out.add(n)
+        return out
+    _cf = _figures(re.sub(r"\d{4}-\d{2}-\d{2}", " ", _claim_raw))
+    if _cf:
+        for _c in sorted(cites):
+            for _txt in items.get(_c, []):
+                _hit = _cf & _figures(_txt)
+                if _hit:
+                    print("KKR \u00b7 NOTE \u00b7 citation grounded on a shared figure (%s) in item %d" % (sorted(_hit)[0], _c), file=sys.stderr)
+                    return None
+    # CITEGROUND-2026-09-15 (N3): domain grounding for market and shipping claims.
+    _CLASSES = {
+        "oil": r"\b(?:brent|wti|crude|opec|tankers?|pipelines?|refiner(?:y|ies)|hormuz|oil)\b",
+        "rates": r"\b(?:treasur(?:y|ies)|yields?|fed|fomc|rate\s+(?:hikes?|cuts?)|inflation|cpi|bonds?)\b",
+        "equities": r"\b(?:s&p|nasdaq|dow|wall\s+street|stocks?|equit(?:y|ies))\b",
+        "shipping": r"\b(?:ukmto|jmic|red\s+sea|bab\s+(?:el|al)-mandeb|hormuz|houthis?|vessels?|tankers?|shipping|suez)\b",
+    }
+    _is_market = bool(re.search(r"\b(settle[sd]?|close[sd]?|yield|per barrel|index|exchange rate|front-month)\b", _claim_raw, re.I))
+    _is_shipping = bool(re.search(r"\b(?:ukmto|jmic|vessels?|red\s+sea|bab\s+(?:el|al)-mandeb|hormuz|suez)\b", _claim_raw, re.I))
+    _claim_classes = [k for k, rx in _CLASSES.items() if re.search(rx, _claim_raw, re.I)]
+    if (_is_market or _is_shipping) and _claim_classes:
+        for _c in sorted(cites):
+            for _txt in items.get(_c, []):
+                for _k in _claim_classes:
+                    if re.search(_CLASSES[_k], _txt, re.I):
+                        print("KKR \u00b7 NOTE \u00b7 citation grounded on the claim's class (%s) in item %d" % (_k, _c), file=sys.stderr)
+                        return None
     # GATE-2026-08-30 (E2v): 'Fed' is three letters and mixed case -
     # invisible to the content-word channel (>=4 lowercase) and the caps
     # channel (all-caps only). When the claim itself is about the
@@ -548,9 +583,12 @@ def _citation_support(p: dict):
     _CAPSTOP = {"US", "UK", "UN", "EU", "AI", "IT", "ID", "TV", "AM", "PM",
                 "THE", "NEW", "FOR", "AND", "UTC", "USD", "EUR", "GMT"}
     def _caps(t):
+        # CITEGROUND-2026-09-15 (N2): mixed-case short names with at least two
+        # capitals (AfD, GmbH, PwC) join the all-caps tokens; same exact match,
+        # same rarity gate inside the report.
         return {w for w in re.findall(
-            r"(?<![A-Za-z0-9])[A-Z]{2,4}(?![A-Za-z0-9])", t or "")
-            if w not in _CAPSTOP}
+            r"(?<![A-Za-z0-9])(?:[A-Z]{2,4}|[A-Za-z]{2,5})(?![A-Za-z0-9])", t or "")
+            if w not in _CAPSTOP and (w.isupper() or sum(1 for ch in w if ch.isupper()) >= 2)}
     _claim_caps = _caps(p.get("statement", "") + " " + p.get("resolution", ""))
     if _claim_caps:
         from collections import Counter
