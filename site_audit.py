@@ -79,6 +79,11 @@ JS_MARKERS = ("'+", "+'", '"+', '+"', "${", "{{")
 
 META_DESC = re.compile(r"""<meta\s+name=["']description["']""", re.I)
 META_OG = re.compile(r"""<meta\s+property=["']og:image["']""", re.I)
+# AUDITPREVIEW-2026-09-15: og:title and twitter:card, the two tags a shared link
+# needs beside description and og:image; eight pages lacked the first and ten the
+# second for weeks and this file said "ok".
+META_OGTITLE = re.compile(r"""<meta\s+property=["']og:title["']""", re.I)
+META_TW = re.compile(r"""<meta\s+name=["']twitter:card["']""", re.I)
 ROBOTS_NOINDEX = re.compile(
     r"""<meta\s+name=["']robots["']\s+content=["']([^"']*)""", re.I)
 
@@ -225,21 +230,23 @@ def audit_site(r, verbose):
     nometa = []
     for name, s in texts.items():
         d, o = bool(META_DESC.search(s)), bool(META_OG.search(s))
+        t, w = bool(META_OGTITLE.search(s)), bool(META_TW.search(s))
         ni = ROBOTS_NOINDEX.search(s)
         noindex = bool(ni and "noindex" in ni.group(1).lower())
-        if not (d and o) and not noindex:
-            nometa.append((name, d, o))
+        if not (d and o and t and w) and not noindex:
+            nometa.append((name, d, o, t, w))
         elif verbose:
             print("    ok     %-34s desc=%s og=%s%s"
                   % (name, d, o, "  [noindex]" if noindex else ""))
     if nometa:
-        for name, d, o in nometa:
+        for name, d, o, t, w in nometa:
             r.bad("META", "%s missing %s"
                   % (name, ", ".join(x for x, has in
-                                     (("description", d), ("og:image", o))
+                                     (("description", d), ("og:image", o),
+                                      ("og:title", t), ("twitter:card", w))
                                      if not has)))
     else:
-        r.ok("every indexed page carries description and og:image")
+        r.ok("every indexed page carries description, og:image, og:title and twitter:card")
 
     # --- orphans ----------------------------------------------------------
     seen, stack = set(), ["index.html"]
