@@ -89,6 +89,11 @@ def main() -> int:
     B.append("<meta name='description' content='The promise book: frontier AI labs' stated commitments, "
              "sealed as forecast rows before their outcomes and adjudicated in public.'>\n")
     B.append("<meta property='og:image' content='https://retroprescientaudit.com/og_nebelkraehe.png'>\n")
+    B.append("<meta property='og:title' content='Versprechen &middot; The Prescient Desk'>\n")
+    B.append("<meta property='og:description' content='The promise book: frontier AI labs' stated commitments, sealed as forecast rows before their outcomes and adjudicated in public.'>\n")
+    B.append("<meta property='og:url' content='https://retroprescientaudit.com/versprechen.html'>\n")
+    B.append("<meta property='og:type' content='website'>\n")
+    B.append("<meta name='twitter:card' content='summary_large_image'>\n")
     B.append("<meta name='viewport' content='width=device-width,initial-scale=1'>\n")
     B.append("<link rel='stylesheet' href='fonts/fonts.css'>\n")
     B.append(f"<style>{STYLE}</style><link rel=\"stylesheet\" href=\"brand.css\">\n")
