@@ -1,0 +1,123 @@
+[
+ {
+  "statement": "The US 10-year Treasury constant maturity yield closes at or above 5.00 percent on at least one business day between 2026-09-16 and 2026-10-30. Reference: 4.99 percent at packet seal on 2026-09-15.",
+  "domain": "economics/markets",
+  "probability": 90,
+  "resolution": "True if the Treasury par yield curve or FRED series DGS10 records a value of 5.00 or higher for any business day from 2026-09-16 through 2026-10-30 inclusive.",
+  "deadline": "2026-11-03",
+  "citations": [
+   59,
+   67
+  ],
+  "failure_condition": "Every DGS10 daily value in the window is below 5.00 percent."
+ },
+ {
+  "statement": "NYMEX WTI crude front-month settles above 130.00 dollars per barrel on at least one trading day between 2026-09-16 and 2026-12-31. Reference: WTI 104.64 at packet seal on 2026-09-15.",
+  "domain": "economics/markets",
+  "probability": 25,
+  "resolution": "True if the official CME NYMEX daily settlement for the front-month WTI contract exceeds 130.00 on any trading day from 2026-09-16 through 2026-12-31 inclusive.",
+  "deadline": "2027-01-05",
+  "citations": [
+   54,
+   68,
+   94
+  ],
+  "failure_condition": "No front-month WTI settlement in the window exceeds 130.00 dollars."
+ },
+ {
+  "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Google Chrome or Chromium CVE with dateAdded between 2026-09-16 and 2026-10-16.",
+  "domain": "cyber",
+  "probability": 70,
+  "resolution": "True if the public CISA KEV JSON contains an entry whose vendor or product field names Google Chrome or Chromium with dateAdded between 2026-09-16 and 2026-10-16 inclusive.",
+  "deadline": "2026-10-20",
+  "citations": [
+   25
+  ],
+  "failure_condition": "No Chrome or Chromium entry in the KEV catalog carries a dateAdded within the window."
+ },
+ {
+  "statement": "The CISA KEV record for CVE-2026-76461, the Cisco Secure Email Gateway SQL injection added 2026-09-14, shows knownRansomwareCampaignUse equal to Known at any point between 2026-09-16 and 2026-12-16.",
+  "domain": "cyber",
+  "probability": 30,
+  "resolution": "True if the public CISA KEV JSON entry for CVE-2026-76461 shows knownRansomwareCampaignUse equal to Known when retrieved on the deadline date.",
+  "deadline": "2026-12-18",
+  "citations": [
+   22,
+   24
+  ],
+  "failure_condition": "The KEV entry for CVE-2026-76461 still shows knownRansomwareCampaignUse equal to Unknown at the deadline."
+ },
+ {
+  "statement": "Between 2026-09-16 and 2026-12-15, at least one NATO member state formally requests consultations under Article 4 of the North Atlantic Treaty.",
+  "domain": "military/conflict",
+  "probability": 30,
+  "resolution": "True if NATO or the requesting member government publicly confirms an Article 4 consultation request made within the window, corroborated by at least two international news outlets.",
+  "deadline": "2026-12-18",
+  "citations": [
+   105,
+   110,
+   123
+  ],
+  "failure_condition": "No NATO member government or NATO itself confirms an Article 4 request made within the window."
+ },
+ {
+  "statement": "Between 2026-09-16 and 2026-12-31, anti-Houthi forces take control of Hodeidah city or its port on the Yemeni Red Sea coast.",
+  "domain": "military/conflict",
+  "probability": 25,
+  "resolution": "True if at least two international outlets on different sides of the conflict report anti-Houthi forces holding Hodeidah city center or port facilities before 2027-01-01.",
+  "deadline": "2027-01-05",
+  "citations": [
+   77,
+   85,
+   93
+  ],
+  "failure_condition": "Houthi forces retain control of both Hodeidah city center and port through 2026-12-31."
+ },
+ {
+  "statement": "In the US House elections held 2026-11-03, Democratic candidates win at least 218 seats.",
+  "domain": "political",
+  "probability": 65,
+  "resolution": "True if Associated Press race calls, as of the deadline date, show Democratic candidates winning 218 or more of the 435 House seats contested on 2026-11-03.",
+  "deadline": "2026-12-10",
+  "citations": [
+   102,
+   124,
+   52
+  ],
+  "failure_condition": "AP race calls at the deadline show Democrats winning fewer than 218 House seats."
+ },
+ {
+  "statement": "Between 2026-09-16 and 2026-12-31, the Panama Canal Authority publishes an advisory reducing maximum authorized daily transits below the level in effect on 2026-09-15.",
+  "domain": "disaster",
+  "probability": 80,
+  "resolution": "True if an ACP advisory to shipping dated within the window sets a maximum daily transit count lower than the count stated in ACP advisories in effect on 2026-09-15.",
+  "deadline": "2027-01-05",
+  "citations": [
+   51,
+   44
+  ],
+  "failure_condition": "No ACP advisory dated in the window lowers maximum daily transits below the 2026-09-15 level."
+ },
+ {
+  "statement": "Between 2026-09-16 and 2026-12-31, the governments of Russia and Ukraine each publicly announce the same mutual halt to strikes, either a general ceasefire or a mutual energy infrastructure moratorium.",
+  "domain": "military/conflict",
+  "probability": 15,
+  "resolution": "True if official statements from both governments, reported by outlets on both sides, announce the same mutual halt taking effect within the window.",
+  "deadline": "2027-01-05",
+  "citations": [
+   99
+  ],
+  "failure_condition": "No mutual halt is announced by both governments with effect inside the window."
+ },
+ {
+  "statement": "Between 2026-09-16 and 2027-02-26, at least one Black Axe defendant extradited to the United States enters a guilty plea or is convicted in US federal court.",
+  "domain": "crime/security",
+  "probability": 35,
+  "resolution": "True if a US federal court docket records a guilty plea or a conviction for at least one extradited Black Axe cybercrime defendant within the window.",
+  "deadline": "2027-03-02",
+  "citations": [
+   12
+  ],
+  "failure_condition": "Federal dockets for the extradited Black Axe defendants show no guilty plea or conviction entered within the window."
+ }
+]
