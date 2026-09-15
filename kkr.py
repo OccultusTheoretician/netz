@@ -957,6 +957,7 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                           r"dated|on\s+or\s+before|on\s+or\s+after|"
                           r"up\s+to\s+and\s+including|no\s+later\s+than|"
                           r"by|since|"  # KK37-GATE (E1)
+                          r"through|data\s+through|"  # GATE3-2026-09-15: a through-date is a bound
                           r"the)\s+(20\d{2}-\d{2}-\d{2})\b",
                           both, re.I):
         _governed.add(_m.group(1))
@@ -972,6 +973,10 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
         _fellback = (not _ung) and bool(_all_dates)
         _dates = _ung or _all_dates
     _sched = re.search(r"\b(?:scheduled|calendar|elections?|referendums?|summits?|"
+                       # GATE3-2026-09-15: a daily series observation on a date is scheduled by the
+                       # series' own calendar (FRED DGS10, DCOILWTICO, NASDAQCOM, the Treasury par curve).
+                       r"observations?\s+(?:dated|for|on)|fred|series\s+[a-z0-9]{3,}|par\s+yield|"
+                       r"closing\s+(?:level|value|price|yield)|"
                        r"fomc|primar\w*|caucus\w*|by-elections?|special elections?|"  # GATE-2026-08-30 (E1)
                        r"appropriations?|continuing\s+resolution|fiscal\s+year|debt\s+(?:limit|ceiling)|"  # GATE-2026-08-31 (C1)
                        r"meetings?|hearings?|verdicts?|midterms?|runoffs?|sentencing|expir\w*|"
@@ -1238,9 +1243,19 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
     _QUAL = {"green", "orange", "amber", "yellow", "minor", "provisional",
              "preliminary", "unconfirmed", "partial", "draft", "proposed",
              "interim"}
-    _sw = _content_words(p.get("statement", ""))
+    # GATE3-2026-09-15: the statement's own words with hyphens split ("Green-rated"
+    # carries "green"); a qualifier paired with its complement ("preliminary or
+    # final", "provisional or final") narrows nothing; a qualifier used as a verb
+    # ("the Speaker proposed X") is not a qualifier.
+    _sw = _content_words((p.get("statement", "") or "").replace("-", " "))
     _rw = _content_words(p.get("resolution", ""))
     _added = (_rw & _QUAL) - _sw
+    _res_low_q = (p.get("resolution", "") or "").lower()
+    _added = {q for q in _added if not (
+        re.search(r"\b" + re.escape(q) + r"\b\s*(?:,\s*\w+\s*)*(?:,\s*)?(?:or|and)\s+(?:the\s+)?(?:final|official|confirmed|definitive|full)\b", _res_low_q)
+        or re.search(r"\b(?:final|official|confirmed|definitive|full)\s+or\s+(?:the\s+)?" + re.escape(q) + r"\b", _res_low_q)
+        or re.search(r"\b(?:the|a|an)\s+\w+\s+" + re.escape(q) + r"\s+[A-Z]", p.get("resolution", "") or "")
+        or re.search(r"\b(?:who|which|that|speaker|minister|president|court|judge|board|committee|council)\s+(?:has\s+|had\s+)?" + re.escape(q) + r"\b", _res_low_q))}
     if _added:
         # KK31-GATE (E5): a qualifier under NEGATION is an exclusion that
         # restates the statement's own strictness ("proposed, interim, or
@@ -1253,7 +1268,7 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
             or re.search(r"\b" + re.escape(q) + r"\b[^.;]{0,60}"
                          r"\bdo(?:es)?\s+not\s+(?:count|qualify|satisfy)\b",
                          _res_neg))}
-    if _added:
+    if _added:  # GATE3-2026-09-15: the lone status qualifier still dies
         reasons.append(
             "the resolution narrows the claim with a qualifier the statement "
             "never makes — " + ", ".join(sorted(_added))
