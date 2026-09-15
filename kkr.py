@@ -2276,6 +2276,30 @@ def _keys_403_default(p, when):
           f"(undetermined at resolution)", file=sys.stderr)
 
 
+# RESOLVEPROP-2026-09-15: the mechanical adjudicator's latest record for a row,
+# read from evidence/ (resolvers.py writes <row>_<stamp>[_probe].meta.json).
+# A probe - fetched before the deadline - is not a proposal and says so.
+def _mech_proposal(row_id):
+    try:
+        ev = HERE / "evidence"
+        if not ev.exists():
+            return None
+        metas = sorted(ev.glob(f"{row_id}_*.meta.json"))
+        if not metas:
+            return None
+        proposals = [m for m in metas if not m.name.endswith("_probe.meta.json")]
+        latest = (proposals or metas)[-1]
+        d = json.loads(latest.read_text(encoding="utf-8"))
+        probe = bool(d.get("probe")) or latest.name.endswith("_probe.meta.json")
+        return {"file": latest.name, "probe": probe,
+                "verdict": d.get("verdict_proposed") if not probe else None,
+                "resolver": d.get("resolver", "?"), "detail": d.get("detail", ""),
+                "url": d.get("url", ""), "sha16": str(d.get("sha256_raw", ""))[:16],
+                "fetched_at": d.get("fetched_at", "")}
+    except Exception:
+        return None
+
+
 def cmd_resolve(args):
     data = load_ledger()
     today = datetime.now(timezone.utc).date()
@@ -2289,12 +2313,28 @@ def cmd_resolve(args):
         print(f"\n{p['id']} · stated {p['probability']}% · deadline {p['deadline']}")
         print(f"  {p['statement']}")
         print(f"  resolves on: {p['resolution']}")
+        # RESOLVEPROP-2026-09-15: the mechanical proposal, if the adjudicator has one.
+        _mp = _mech_proposal(p["id"])
+        if _mp and _mp["probe"]:
+            print(f"  MECHANICAL: probe only ({_mp['file']}) - fetched before the deadline, no proposal")
+        elif _mp:
+            print(f"  MECHANICAL: {_mp['verdict']} via {_mp['resolver']} - {_mp['detail']}")
+            print(f"              {_mp['url']}")
+            print(f"              raw sha256 {_mp['sha16']} fetched {_mp['fetched_at']} - a proposal; you rule")
         ans = input("  [h]it / [m]iss / [v]oid / [s]kip > ").strip().lower()
         if ans in ("h", "m", "v"):
             p["status"] = {"h": "hit", "m": "miss", "v": "void"}[ans]
             p["resolved_date"] = today.strftime("%Y-%m-%d")
             _keys_403_default(p, p["resolved_date"])
             note = input("  note (enter to skip) > ").strip()
+            if _mp and not _mp["probe"] and ans in ("h", "m"):
+                _agree = (ans == "h" and _mp["verdict"] == "YES") or (ans == "m" and _mp["verdict"] == "NO")
+                _cite = (f"mechanical {_mp['verdict']} via {_mp['resolver']}; evidence {_mp['file']} "
+                         f"sha256_raw {_mp['sha16']}")
+                if not _agree:
+                    print(f"  NOTE: your ruling differs from the mechanical proposal ({_mp['verdict']}); recorded", file=sys.stderr)
+                    _cite = "operator ruled against the " + _cite
+                note = (note + " | " if note else "") + _cite
             p["notes"] = note
     save_ledger(data)
     render_ledger()
