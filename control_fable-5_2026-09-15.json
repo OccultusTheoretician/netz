@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "The US 10-year Treasury constant maturity yield closes at or above 5.00 percent on at least one business day between 2026-09-16 and 2026-10-30. Reference: 4.99 percent at packet seal on 2026-09-15.",
+    "resolution": "True if the Treasury par yield curve or FRED series DGS10 records a value of 5.00 or higher for any business day from 2026-09-16 through 2026-10-30 inclusive.",
+    "failure_condition": "Every DGS10 daily value in the window is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 26,
+    "citations": [
+      59,
+      67
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "NYMEX WTI crude front-month settles above 130.00 dollars per barrel on at least one trading day between 2026-09-16 and 2026-12-31. Reference: WTI 104.64 at packet seal on 2026-09-15.",
+    "resolution": "True if the official CME NYMEX daily settlement for the front-month WTI contract exceeds 130.00 on any trading day from 2026-09-16 through 2026-12-31 inclusive.",
+    "failure_condition": "No front-month WTI settlement in the window exceeds 130.00 dollars.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 26,
+    "citations": [
+      54,
+      68,
+      94
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Google Chrome or Chromium CVE with dateAdded between 2026-09-16 and 2026-10-16.",
+    "resolution": "True if the public CISA KEV JSON contains an entry whose vendor or product field names Google Chrome or Chromium with dateAdded between 2026-09-16 and 2026-10-16 inclusive.",
+    "failure_condition": "No Chrome or Chromium entry in the KEV catalog carries a dateAdded within the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-20",
+    "probability": 28,
+    "citations": [
+      25
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV record for CVE-2026-76461, the Cisco Secure Email Gateway SQL injection added 2026-09-14, shows knownRansomwareCampaignUse equal to Known at any point between 2026-09-16 and 2026-12-16.",
+    "resolution": "True if the public CISA KEV JSON entry for CVE-2026-76461 shows knownRansomwareCampaignUse equal to Known when retrieved on the deadline date.",
+    "failure_condition": "The KEV entry for CVE-2026-76461 still shows knownRansomwareCampaignUse equal to Unknown at the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-12-18",
+    "probability": 28,
+    "citations": [
+      22,
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-16 and 2026-12-15, at least one NATO member state formally requests consultations under Article 4 of the North Atlantic Treaty.",
+    "resolution": "True if NATO or the requesting member government publicly confirms an Article 4 consultation request made within the window, corroborated by at least two international news outlets.",
+    "failure_condition": "No NATO member government or NATO itself confirms an Article 4 request made within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-18",
+    "probability": 56,
+    "citations": [
+      105,
+      110,
+      123
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-16 and 2026-12-31, anti-Houthi forces take control of Hodeidah city or its port on the Yemeni Red Sea coast.",
+    "resolution": "True if at least two international outlets on different sides of the conflict report anti-Houthi forces holding Hodeidah city center or port facilities before 2027-01-01.",
+    "failure_condition": "Houthi forces retain control of both Hodeidah city center and port through 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 56,
+    "citations": [
+      77,
+      85,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the US House elections held 2026-11-03, Democratic candidates win at least 218 seats.",
+    "resolution": "True if Associated Press race calls, as of the deadline date, show Democratic candidates winning 218 or more of the 435 House seats contested on 2026-11-03.",
+    "failure_condition": "AP race calls at the deadline show Democrats winning fewer than 218 House seats.",
+    "domain": "political",
+    "deadline": "2026-12-10",
+    "probability": 35,
+    "citations": [
+      102,
+      124,
+      52
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-16 and 2026-12-31, the Panama Canal Authority publishes an advisory reducing maximum authorized daily transits below the level in effect on 2026-09-15.",
+    "resolution": "True if an ACP advisory to shipping dated within the window sets a maximum daily transit count lower than the count stated in ACP advisories in effect on 2026-09-15.",
+    "failure_condition": "No ACP advisory dated in the window lowers maximum daily transits below the 2026-09-15 level.",
+    "domain": "disaster",
+    "deadline": "2027-01-05",
+    "probability": 31,
+    "citations": [
+      51,
+      44
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-16 and 2026-12-31, the governments of Russia and Ukraine each publicly announce the same mutual halt to strikes, either a general ceasefire or a mutual energy infrastructure moratorium.",
+    "resolution": "True if official statements from both governments, reported by outlets on both sides, announce the same mutual halt taking effect within the window.",
+    "failure_condition": "No mutual halt is announced by both governments with effect inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 56,
+    "citations": [
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-16 and 2027-02-26, at least one Black Axe defendant extradited to the United States enters a guilty plea or is convicted in US federal court.",
+    "resolution": "True if a US federal court docket records a guilty plea or a conviction for at least one extradited Black Axe cybercrime defendant within the window.",
+    "failure_condition": "Federal dockets for the extradited Black Axe defendants show no guilty plea or conviction entered within the window.",
+    "domain": "crime/security",
+    "deadline": "2027-03-02",
+    "probability": 10,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

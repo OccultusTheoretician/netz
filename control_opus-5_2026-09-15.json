@@ -1,0 +1,252 @@
+[
+  {
+    "statement": "Between 2026-09-16 and 2026-10-31, the governments of the United States and Iran both publicly commit to a ceasefire or cessation of hostilities between the two countries.",
+    "resolution": "TRUE if, between 2026-09-16 and 2026-10-31, the US President or White House and the Iranian government each publicly confirm a US-Iran ceasefire or cessation of hostilities, as reported by Reuters or AP.",
+    "failure_condition": "The United States and Iran do not both publicly commit to a ceasefire or cessation of hostilities at any point between 2026-09-16 and 2026-10-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 56,
+    "citations": [
+      10,
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-16 and 2026-09-29, at least one merchant vessel is attacked or seized by armed forces or armed attackers in the Persian Gulf, Strait of Hormuz, or Gulf of Oman.",
+    "resolution": "TRUE if UKMTO reports a merchant vessel struck by projectile, drone, mine, or explosive, fired upon, or seized in the Persian Gulf, Strait of Hormuz, or Gulf of Oman, with an incident date between 2026-09-16 and 2026-09-29.",
+    "failure_condition": "No merchant vessel is attacked or seized in the Persian Gulf, Strait of Hormuz, or Gulf of Oman on any date between 2026-09-16 and 2026-09-29.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-02",
+    "probability": 56,
+    "citations": [
+      94,
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-16 and 2026-10-15, at least one NATO member state formally requests consultations under Article 4 of the North Atlantic Treaty.",
+    "resolution": "TRUE if NATO or the requesting government publicly confirms a formal Article 4 consultation request made between 2026-09-16 and 2026-10-15; otherwise FALSE.",
+    "failure_condition": "No NATO member state makes a formal Article 4 consultation request between 2026-09-16 and 2026-10-15.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-19",
+    "probability": 56,
+    "citations": [
+      105,
+      110,
+      123
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The EIA Cushing WTI crude spot price (FRED series DCOILWTICO) is at or below 90.00 dollars per barrel on at least one observation date between 2026-09-16 and 2026-10-30. Reference: WTI 104.64 dollars per barrel in the 2026-09-15 packet market snapshot.",
+    "resolution": "TRUE if FRED series DCOILWTICO shows a daily value at or below 90.00 for any observation date between 2026-09-16 and 2026-10-30; otherwise FALSE. Reference: 104.64 on 2026-09-15.",
+    "failure_condition": "The WTI Cushing spot price stays above 90.00 dollars per barrel on every observation date from 2026-09-16 through 2026-10-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-12",
+    "probability": 26,
+    "citations": [
+      54,
+      68,
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield (FRED series DGS10) is 5.50 percent or higher on at least one observation date between 2026-09-16 and 2026-10-30. Reference: 10-year yield 4.99 percent in the 2026-09-15 packet market snapshot.",
+    "resolution": "TRUE if FRED series DGS10 shows a daily value of 5.50 or higher for any observation date between 2026-09-16 and 2026-10-30; otherwise FALSE. Reference: 4.99 percent on 2026-09-15.",
+    "failure_condition": "The 10-year Treasury constant-maturity yield stays below 5.50 percent on every observation date from 2026-09-16 through 2026-10-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 26,
+    "citations": [
+      59,
+      67,
+      58
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Microsoft Windows vulnerability with a dateAdded value between 2026-10-13 and 2026-10-19, the week of the October 2026 Patch Tuesday.",
+    "resolution": "TRUE if the CISA KEV JSON feed lists at least one entry with vendorProject Microsoft, a product field containing Windows or Win32k, and dateAdded between 2026-10-13 and 2026-10-19; otherwise FALSE.",
+    "failure_condition": "CISA adds no Microsoft Windows or Win32k vulnerability to the KEV catalog with a dateAdded value between 2026-10-13 and 2026-10-19.",
+    "domain": "cyber",
+    "deadline": "2026-10-22",
+    "probability": 28,
+    "citations": [
+      25,
+      15
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA issues at least one new Emergency Directive between 2026-09-16 and 2026-10-30.",
+    "resolution": "TRUE if the Cybersecurity Directives listing on cisa.gov shows an Emergency Directive with an issue date between 2026-09-16 and 2026-10-30; otherwise FALSE.",
+    "failure_condition": "CISA issues no new Emergency Directive between 2026-09-16 and 2026-10-30.",
+    "domain": "cyber",
+    "deadline": "2026-11-04",
+    "probability": 28,
+    "citations": [
+      16,
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-16 and 2026-10-30, the US government files a notice of appeal or a motion for a stay pending appeal against the federal court ruling, reported on 2026-09-15, that blocked Trump administration limits on how long foreign students and journalists may stay in the US.",
+    "resolution": "TRUE if the district or appellate docket (PACER or CourtListener) shows a US government notice of appeal or stay-pending-appeal motion, filed between 2026-09-16 and 2026-10-30, against the ruling blocking limits on foreign student and journalist stays.",
+    "failure_condition": "The federal government files neither a notice of appeal nor a motion for a stay pending appeal against that ruling between 2026-09-16 and 2026-10-30.",
+    "domain": "political",
+    "deadline": "2026-11-04",
+    "probability": 35,
+    "citations": [
+      114
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-22 and 2026-10-21, Catania Fontanarossa airport suspends or restricts flight operations because of volcanic ash from Mount Etna on at least one day.",
+    "resolution": "TRUE if airport operator SAC or aviation authority ENAC announces, or ANSA reports, an Etna-ash suspension or restriction of Catania airport operations on any day between 2026-09-22 and 2026-10-21; otherwise FALSE.",
+    "failure_condition": "Etna ash causes no suspension or restriction of Catania airport flight operations on any day between 2026-09-22 and 2026-10-21.",
+    "domain": "disaster",
+    "deadline": "2026-10-26",
+    "probability": 31,
+    "citations": [
+      84
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-16 and 2026-10-16, Dutch police or prosecutors announce at least one arrest in connection with the suspected sabotage that disrupted Netherlands rail services, reported on 2026-09-15.",
+    "resolution": "TRUE if Dutch police (politie.nl) or the Public Prosecution Service (om.nl) announce an arrest, made between 2026-09-16 and 2026-10-16, linked to the rail sabotage reported on 2026-09-15; otherwise FALSE.",
+    "failure_condition": "No person is arrested in connection with the Netherlands rail sabotage reported on 2026-09-15 between 2026-09-16 and 2026-10-16.",
+    "domain": "crime/security",
+    "deadline": "2026-10-20",
+    "probability": 10,
+    "citations": [
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:09:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

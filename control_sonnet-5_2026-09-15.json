@@ -1,0 +1,226 @@
+[
+  {
+    "statement": "A Houthi-attributed strike hits Saudi Arabian oil or port infrastructure, or a vessel in the Red Sea or Gulf of Aden, between 2026-09-16 and 2026-09-30.",
+    "resolution": "TRUE if Reuters, AP, or Al Jazeera report and two of those outlets corroborate a Houthi-attributed strike on Saudi oil, port, or Red Sea shipping targets between 2026-09-16 and 2026-09-30, checked by 2026-10-02.",
+    "failure_condition": "No wire-corroborated Houthi-attributed strike on Saudi oil, port, or Red Sea/Gulf of Aden shipping occurs in the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-02",
+    "probability": 56,
+    "citations": [
+      54,
+      68,
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:10:01Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A NATO member state government attributes an intercepted, engaged, or shot-down aircraft or drone violating its airspace to Russia or a Russia-aligned actor, between 2026-09-16 and 2026-10-06.",
+    "resolution": "TRUE if a NATO member government or Reuters/AP/BBC reports the state intercepted or engaged an aircraft or drone violating its airspace and attributed it to Russia between 2026-09-16 and 2026-10-06, checked by 2026-10-08.",
+    "failure_condition": "No NATO member government attributes an intercepted airspace violation to Russia or a Russia-aligned actor within the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-08",
+    "probability": 56,
+    "citations": [
+      105,
+      110
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5625,
+      "n": 80,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:10:01Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one Black Axe-affiliated defendant extradited to the US per the charges in item 12 enters a guilty plea or is convicted, between 2026-09-16 and 2026-11-13.",
+    "resolution": "TRUE if a DOJ press release or federal court docket shows a guilty plea or conviction for a Black Axe-affiliated defendant from item 12 dated between 2026-09-16 and 2026-11-13, checked by 2026-11-16.",
+    "failure_condition": "No guilty plea or conviction for any Black Axe-affiliated defendant from item 12 is entered in DOJ or court records within the window.",
+    "domain": "crime_security",
+    "deadline": "2026-11-16",
+    "probability": 10,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.1,
+      "n": 10,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:10:01Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The National Vulnerability Database lists a CVE entry for the Chrome zero-day used in the GRIMWEDGE deployment chain from item 25, published between 2026-09-16 and 2026-09-30.",
+    "resolution": "TRUE if nvd.nist.gov publishes a CVE entry referencing the Chrome zero-day exploited in the GRIMWEDGE chain from item 25, with a publication date between 2026-09-16 and 2026-09-30, checked 2026-10-02.",
+    "failure_condition": "No NVD CVE entry referencing this Chrome zero-day or the GRIMWEDGE chain carries a publication date in the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-02",
+    "probability": 28,
+    "citations": [
+      25
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2833,
+      "n": 60,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:10:01Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "GDACS upgrades its alert level for Tropical Cyclone TWENTYFOUR-26 from Green to Orange or Red, between 2026-09-16 and 2026-09-25.",
+    "resolution": "TRUE if gdacs.org shows an alert-level upgrade to Orange or Red for Tropical Cyclone TWENTYFOUR-26 dated between 2026-09-16 and 2026-09-25, checked 2026-09-29.",
+    "failure_condition": "GDACS's alert level for Tropical Cyclone TWENTYFOUR-26 stays Green, or the system is archived, without reaching Orange or Red in the window.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-09-29",
+    "probability": 31,
+    "citations": [
+      42
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3051,
+      "n": 59,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:10:01Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury yield closes at or above 5.25 percent on any trading day between 2026-09-16 and 2026-10-15. Reference: 4.99 percent on 2026-09-15.",
+    "resolution": "TRUE if the 10-year Treasury yield (FRED series DGS10) closes at or above 5.25 percent on any trading day between 2026-09-16 and 2026-10-15.",
+    "failure_condition": "The 10-year Treasury yield's daily close never reaches 5.25 percent on any trading day in the window.",
+    "domain": "economic",
+    "deadline": "2026-10-15",
+    "probability": 26,
+    "citations": [
+      59,
+      67,
+      69
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:10:01Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude oil closes below 98.00 dollars per barrel on any trading day between 2026-09-16 and 2026-10-15. Reference: 104.64 dollars on 2026-09-15.",
+    "resolution": "TRUE if WTI crude (EIA daily spot price) closes below 98.00 dollars per barrel on any trading day between 2026-09-16 and 2026-10-15.",
+    "failure_condition": "WTI's daily close never falls below 98.00 dollars per barrel on any trading day in the window.",
+    "domain": "economic",
+    "deadline": "2026-10-15",
+    "probability": 26,
+    "citations": [
+      54,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2553,
+      "n": 47,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:10:01Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Trump administration or DOJ files a petition for rehearing or a new emergency application with the Supreme Court on the mail ballot ruling from items 102, 103, and 124, between 2026-09-16 and 2026-10-15.",
+    "resolution": "TRUE if the Supreme Court docket shows a rehearing petition or new emergency application from the Trump administration or DOJ on this specific ruling, filed between 2026-09-16 and 2026-10-15, checked 2026-10-19.",
+    "failure_condition": "No rehearing petition or new emergency application on this ruling appears on the Supreme Court docket within the window.",
+    "domain": "political",
+    "deadline": "2026-10-19",
+    "probability": 35,
+    "citations": [
+      102,
+      103,
+      124
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:10:01Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The UK government publishes a new or expanded sanctions measure targeting Israeli individuals, entities, or settlement-linked goods, between 2026-09-16 and 2026-10-15.",
+    "resolution": "TRUE if gov.uk publishes a new Statutory Instrument or Foreign Office notice expanding sanctions on Israeli individuals, entities, or settlement goods, dated between 2026-09-16 and 2026-10-15, checked 2026-10-19.",
+    "failure_condition": "No new UK sanctions measure targeting Israel is published within the window.",
+    "domain": "political",
+    "deadline": "2026-10-19",
+    "probability": 35,
+    "citations": [
+      122
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3509,
+      "n": 57,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-15T22:10:01Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
