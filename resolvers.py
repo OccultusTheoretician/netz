@@ -100,16 +100,24 @@ def resolve_kev(row_id, params, keep_raw=False):
     except Exception as e:
         return _evidence(row_id, "kev", KEV_URL, raw, params, "INDETERMINATE",
                          f"feed parse failed: {e}", keep_raw)
-    v = params["vendor"].lower()
+    # MAPWIDE-2026-09-15: any of several names, matched against vendorProject, product and vulnerabilityName.
     s, e_ = params["window"]
+    if params.get("min_count"):
+        inwin = [x for x in vulns if s <= str(x.get("dateAdded", "")) <= e_]
+        verdict = "YES" if len(inwin) >= int(params["min_count"]) else "NO"
+        detail = (f"{len(inwin)} entries with dateAdded in [{s}..{e_}] against a floor of "
+                  f"{params['min_count']} across {len(vulns)} catalog rows")
+        return _evidence(row_id, "kev", KEV_URL, raw, params, verdict, detail, keep_raw)
+    names = [str(n).lower() for n in (params.get("vendors") or [params["vendor"]]) if n]
     hits = [x for x in vulns
-            if v in (str(x.get("vendorProject", "")) + " " +
-                     str(x.get("product", ""))).lower()
+            if any(v in (str(x.get("vendorProject", "")) + " " + str(x.get("product", "")) + " " +
+                         str(x.get("vulnerabilityName", "")) + " " + str(x.get("cveID", ""))).lower() for v in names)
             and s <= str(x.get("dateAdded", "")) <= e_]
     verdict = "YES" if hits else "NO"
+    matched = sorted({str(x.get("cveID", "")) for x in hits})[:6]
     detail = (f"{len(hits)} matching entr{'y' if len(hits)==1 else 'ies'} "
-              f"for '{params['vendor']}' with dateAdded in [{s}..{e_}] "
-              f"across {len(vulns)} catalog rows")
+              f"for {params.get('vendors') or [params['vendor']]} with dateAdded in [{s}..{e_}] "
+              f"across {len(vulns)} catalog rows{(' - ' + ', '.join(matched)) if matched else ''}")
     return _evidence(row_id, "kev", KEV_URL, raw, params, verdict, detail,
                      keep_raw)
 
@@ -119,10 +127,17 @@ def resolve_usgs(row_id, params, keep_raw=False):
     """params: lat, lon, radius_km, min_mag, window (start,end).
     confidence: HIGH — FDSN is a versioned public API; schema unverified here."""
     s, e_ = params["window"]
-    url = ("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson"
-           f"&starttime={s}&endtime={e_}&latitude={params['lat']}"
-           f"&longitude={params['lon']}&maxradiuskm={params['radius_km']}"
-           f"&minmagnitude={params['min_mag']}")
+    if params.get("bbox"):
+        # MAPWIDE-2026-09-15: a regional bounding box instead of a radius (coarse; the proposal says so).
+        b0, b1, b2, b3 = params["bbox"]
+        url = ("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson"
+               f"&starttime={s}&endtime={e_}&minlatitude={b0}&maxlatitude={b1}"
+               f"&minlongitude={b2}&maxlongitude={b3}&minmagnitude={params['min_mag']}")
+    else:
+        url = ("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson"
+               f"&starttime={s}&endtime={e_}&latitude={params['lat']}"
+               f"&longitude={params['lon']}&maxradiuskm={params['radius_km']}"
+               f"&minmagnitude={params['min_mag']}")
     raw = _fetch(url)
     try:
         feats = json.loads(raw.decode("utf-8")).get("features", [])
@@ -152,9 +167,11 @@ def resolve_treasury_10y(row_id, params, keep_raw=False):
         ns = {"m": "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata",
               "d": "http://schemas.microsoft.com/ado/2007/08/dataservices"}
         days = []
+        # MAPWIDE-2026-09-15: the tenor's field (BC_2YEAR, BC_5YEAR, BC_10YEAR, BC_30YEAR); 10-year by default.
+        field = "BC_%sYEAR" % str(params.get("tenor") or "10")
         for props in root.iter("{%s}properties" % ns["m"]):
             date = props.findtext("{%s}NEW_DATE" % ns["d"], "")[:10]
-            val = props.findtext("{%s}BC_10YEAR" % ns["d"], "")
+            val = props.findtext("{%s}%s" % (ns["d"], field), "")
             if date and val:
                 days.append((date, float(val)))
     except Exception as e:
@@ -167,12 +184,16 @@ def resolve_treasury_10y(row_id, params, keep_raw=False):
                          "INDETERMINATE",
                          f"no business days parsed inside [{s}..{e_}] "
                          f"({len(days)} days in year file)", keep_raw)
-    hits = [(d, v) for d, v in inwin if v >= params["threshold"]]
+    # MAPWIDE-2026-09-15: the direction the row states; ">=" by default as before.
+    direction = params.get("direction") or ">="
+    op = {">=": lambda v: v >= params["threshold"], ">": lambda v: v > params["threshold"],
+          "<=": lambda v: v <= params["threshold"], "<": lambda v: v < params["threshold"]}[direction]
+    hits = [(d, v) for d, v in inwin if op(v)]
     verdict = "YES" if hits else "NO"
-    hi = max(inwin, key=lambda x: x[1])
-    detail = (f"{len(inwin)} business days in window; max BC_10YEAR "
-              f"{hi[1]:.2f} on {hi[0]}; threshold {params['threshold']:.2f}; "
-              f"{len(hits)} day(s) at or above")
+    ext = max(inwin, key=lambda x: x[1]) if direction in (">=", ">") else min(inwin, key=lambda x: x[1])
+    detail = (f"{len(inwin)} business days in window; {'max' if direction in ('>=', '>') else 'min'} {field} "
+              f"{ext[1]:.2f} on {ext[0]}; threshold {direction} {params['threshold']:.2f}; "
+              f"{len(hits)} day(s) satisfying")
     return _evidence(row_id, "treasury10y", url, raw, params, verdict, detail,
                      keep_raw)
 
