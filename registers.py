@@ -351,11 +351,57 @@ def venue_scope(resolution: str) -> dict:
         masked, flags=re.I)
     masked = re.sub(r"\b(citing|quoting|attributed\s+to|according\s+to|sourced\s+to)\s+"
                     r"((?:[\w.&\-]+\s+){0,6})or\b", r"\1 \2", masked, flags=re.I)
+    # KK35-REG (R10): organs of one named authority are a defined class, not two
+    # places to look. Three shapes, masked before the scan the way C4 masks
+    # "report an official X or Y statement": (a) a parenthetical member list
+    # after a named head - "the US government (White House, State Department,
+    # or Pentagon)"; (b) "statement(s)/release(s)/confirmation from [both] A, B,
+    # or C"; (c) "A or B announces/confirms/publishes/states/issues ...", where
+    # the disjunction is over who issues the one document. Ruling 2026-09-15,
+    # assistant-authored at the operator's delegation.
+    masked = re.sub(r"(\b[A-Z][\w.&'-]*(?:\s+[\w.&'-]+){0,3}\s*)\(([^()]*\bor\b[^()]*)\)",
+                    lambda mm: mm.group(1) + " " + re.sub(r"\bor\b", " ", mm.group(2)) + " ", masked)
+    masked = re.sub(r"\b(statements?|releases?|announcements?|confirmations?|advisor(?:y|ies)|notices?|"
+                    r"communiques?|readouts?|decrees?|orders?)\s+(from|by|of)\s+(both\s+)?"
+                    r"([\w.&'-]+(?:\s+[\w.&'-]+){0,4}(?:\s*,\s*[\w.&'-]+(?:\s+[\w.&'-]+){0,4})*\s*,?\s+)or\b",
+                    lambda mm: mm.group(0) if named_venues(mm.group(4)) else "%s %s %s%s " % (mm.group(1), mm.group(2), mm.group(3) or "", mm.group(4)), masked, flags=re.I)
+    # (c) only when neither side is a registered venue in its own right: "Reuters, AP, or AFP report X"
+    # is press alternatives and stays a kill; "CENTCOM or the Defense Department announces X" is one issuer class.
+    masked = re.sub(r"\b([A-Z][\w.&'-]*(?:\s+[A-Z][\w.&'-]*){0,3})\s*,?\s+or\s+((?:the\s+)?[A-Z][\w.&'-]*(?:\s+[A-Z][\w.&'-]*){0,3})"
+                    r"\s+(announces?|confirms?|publishes|publish|states?|issues?|releases?|declares?|says?|posts?)\b",
+                    lambda mm: mm.group(0) if (named_venues(mm.group(1)) or named_venues(mm.group(2)))
+                    else "%s %s %s" % (mm.group(1), mm.group(2), mm.group(3)), masked)
+    # KK35-REG (R11): a stated quorum is a counted class ("two of Reuters, AP,
+    # AFP"), like the "two wire services" the counted-class rule already
+    # exempts; the enumeration is masked so its 'or' is not two venues.
+    masked = re.sub(r"\b(?:two|three|four|\d+)\s+of\s+(?:the\s+)?[\w.&'-]+(?:\s*,\s*[\w.&'-]+(?:\s+[\w.&'-]+){0,2})*"
+                    r"\s*,?\s+(?:or|and)\s+[\w.&'-]+(?:\s+[\w.&'-]+){0,2}\b",
+                    lambda mm: re.sub(r"\b(?:or|and)\b", " ", mm.group(0)), masked, flags=re.I)
     low = masked.lower()
     found = named_venues(res)
 
+    # KK35-REG (R9): the immediate disjuncts, and the predicate context that
+    # makes an 'or' a value rather than a venue.
+    _PRED = re.compile(r"\b(?:vendorproject|product|vulnerabilityname|cveid|cve-\d{4}-\d+|eventtype|eventid|"
+                       r"alertlevel|alert|level|category|type|status|field|names?|named|naming|containing|"
+                       r"contains|equal to|equals|dateadded|date-added|struck|seized|attacked|damaged|hit|"
+                       r"lifted|suspended|preliminary|final|examination|investigation|removal|termination|"
+                       r"withdrawal|ceasefire|truce|cessation|orange|red|green|yellow|hurricane|tropical)\b", re.I)
+    def _imm_left(fragment: str) -> str:
+        toks = re.findall(r"[\w.&'/-]+", fragment)
+        return " ".join(toks[-3:])
+    def _imm_right(fragment: str) -> str:
+        toks = re.findall(r"[\w.&'/-]+", fragment)
+        return " ".join(toks[:3])
+
     def _venueish(fragment: str) -> bool:
-        f = " " + re.sub(r"\s+", " ", fragment.lower().strip()) + " "
+        # KK35-REG (R12): punctuation is not part of a name. "AP, Reuters, AFP,"
+        # never matched the alias "afp" because the comma travelled with it,
+        # so a wire list with commas slipped the window test and only died
+        # when some other disjunction caught the row. Exempting those other
+        # disjunctions (R9/R10) would have let the wire list through; the
+        # list is the class the rule exists for.
+        f = " " + re.sub(r"\s+", " ", re.sub(r"[,;:()]", " ", fragment.lower()).strip()) + " "
         if any(f" {a} " in f for a in _venue_alias_index()):
             return True
         return any(f" {n} " in f or f.rstrip().endswith(" " + n)
@@ -381,6 +427,7 @@ def venue_scope(resolution: str) -> dict:
         return True
 
     disj = []
+    _r9_notes = []  # KK35-REG (R9): exemptions taken, printed as notes
     # modifier disjunction over a shared venue head: "a U.S. government or
     # international disaster alert system". Two adjectives pick out two
     # different systems; the noun being shared does not make it one venue.
@@ -391,7 +438,30 @@ def venue_scope(resolution: str) -> dict:
         low)
     if _mod and not _MASK.search(_mod.group(0)) and not _onehost(
             _mod.group(1), _mod.group(2) + low[_mod.end():_mod.end() + 140]):  # KK38-REG (R7)
-        disj.append((_mod.group(1)[-45:], _mod.group(2)[:45]))
+        # KK35-REG (R9/R10d): the same two tests on a modifier disjunction.
+        # R9 - a predicate context with no venue on either side ("an entry whose
+        # vendorProject or product field") is one venue. R10d - a shared head
+        # that is a DOCUMENT noun (statement, release, announcement, confirmation,
+        # advisory, notice, communique, readout) names who issues the one
+        # document, not two places to look, unless either side is a registered
+        # venue in its own right; then they are two venues and it dies.
+        _mg1, _mg2 = _mod.group(1), _mod.group(2)
+        _mhead = low[_mod.end() - 40:_mod.end()]
+        # r2: an issuer disjunction that is itself one item of an OUTER list
+        # ("AP, Reuters, AFP, or a Yemeni or Saudi government statement") is
+        # not exempt - the outer list is the choice of venue the rule exists
+        # for, and under the register of record the wire names are not
+        # aliases, so nothing else would catch it. Found on the box 2026-09-15.
+        _outer = bool(re.search(r"\bor\s*$", low[max(0, _mod.start() - 12):_mod.start()]))
+        _DOC = re.compile(r"\b(?:statements?|releases?|announcements?|confirmations?|advisor(?:y|ies)|"
+                          r"notices?|communiques?|readouts?|acknowledgements?|acknowledgments?)\b$")
+        if (not _outer and not _venueish(_imm_left(_mg1)) and not _venueish(_imm_right(_mg2))
+                and (_PRED.search(_imm_left(_mg1)) or _PRED.search(_imm_right(_mg2)))):
+            _r9_notes.append("(R9) predicate disjunction, one venue: ...%s | or | %s..." % (_mg1[-40:], _mg2[:40]))
+        elif (not _outer and _DOC.search(_mhead.strip()) and not named_venues(_mg1) and not named_venues(_mg2)):
+            _r9_notes.append("(R10) organs of one authority issuing one document: ...%s | or | %s..." % (_mg1[-40:], _mg2[:40]))
+        else:
+            disj.append((_mod.group(1)[-45:], _mod.group(2)[:45]))
     for m in re.finditer(r"\bor\b", low):
         left = low[max(0, m.start() - 90):m.start()]
         right = low[m.end():m.end() + 90]
@@ -403,6 +473,17 @@ def venue_scope(resolution: str) -> dict:
         # evaluator"), not where to look.
         _role = re.match(r"\s*(?:[\w-]+\s+){0,7}as\s+(?:an?|the)\s+[\w-]+",
                          low[m.end():m.end() + 140])
+        # KK35-REG (R9): a window test says "a venue noun occurs within 90
+        # characters on both sides"; a disjunction test asks what the 'or'
+        # joins. Exempt only when neither immediate phrase is venue-shaped and
+        # at least one sits in a predicate context; everything else falls
+        # through to the window test unchanged.
+        _il, _ir = _imm_left(left), _imm_right(right)
+        _outer_or = bool(re.search(r",\s*or\s*$", low[max(0, m.start() - 3):m.start()]))
+        if (not _outer_or and not _venueish(_il) and not _venueish(_ir)
+                and (_PRED.search(_il) or _PRED.search(_ir))):
+            _r9_notes.append("(R9) predicate disjunction, one venue: ...%s | or | %s..." % (_il[-40:], _ir[:40]))
+            continue
         if _venueish(left) and _venueish(right) and not _role and not _onehost(
                 low[max(0, m.start() - 90):m.start()],  # GATE-2026-08-30 (R3b): raw left, host dot intact
                 low[m.end():m.end() + 140]):  # KK38-REG (R7): raw window, host dot intact
@@ -461,7 +542,8 @@ def venue_scope(resolution: str) -> dict:
                 _kept.append((_l, _r))
         disj = _kept
     if not disj and _mnote:
-        return {"verdict": "OK", "named": sorted(found), "reason": "", "note": _mnote}
+        return {"verdict": "OK", "named": sorted(found), "reason": "",
+                "note": "; ".join([_mnote] + _r9_notes)}  # KK35-REG (R9): exemptions ride the note
     if disj:
         l, r = disj[0]
         return {"verdict": "DISJUNCT", "named": sorted(found),
@@ -481,6 +563,8 @@ def venue_scope(resolution: str) -> dict:
                 "reason": ("resolution names no source of record — a stranger "
                            "must know exactly where to look on the deadline "
                            "date")}
+    if _r9_notes:  # KK35-REG (R9): an exemption taken is disclosed on the row, like M1
+        return {"verdict": "OK", "named": sorted(found), "reason": "", "note": "; ".join(_r9_notes)}
     return {"verdict": "OK", "named": sorted(found), "reason": ""}
 
 
