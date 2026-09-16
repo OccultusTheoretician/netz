@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "A missile or drone attack on Saudi Arabian territory claimed by or attributed to the Houthis, counting interceptions, occurs between 2026-09-17 and 2026-10-07.",
+    "resolution": "TRUE if at least two of AP, Reuters and AFP report a missile or drone attack on Saudi territory, claimed by or attributed to the Houthis and including interceptions, occurring between 2026-09-17 and 2026-10-07.",
+    "failure_condition": "No missile or drone attack on Saudi territory claimed by or attributed to the Houthis, including an intercepted one, took place between 2026-09-17 and 2026-10-07.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-12",
+    "probability": 61,
+    "citations": [
+      94,
+      71,
+      87
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US President or the Government of Iran publicly announces a ceasefire, truce or cessation of hostilities between the United States and Iran between 2026-09-17 and 2026-11-02.",
+    "resolution": "TRUE if AP and Reuters both report that the US President or the Government of Iran announced a ceasefire, truce or cessation of US-Iran hostilities between 2026-09-17 and 2026-11-02; otherwise FALSE.",
+    "failure_condition": "Neither the US President nor the Government of Iran announced a ceasefire, truce or cessation of US-Iran hostilities between 2026-09-17 and 2026-11-02.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-05",
+    "probability": 61,
+    "citations": [
+      72,
+      97,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia and Ukraine complete at least one exchange of prisoners of war, announced by both governments, between 2026-09-17 and 2026-10-16.",
+    "resolution": "TRUE if both the Russian Defence Ministry and the Ukrainian government (the President or the POW Coordination Headquarters) announce a completed prisoner-of-war exchange that took place between 2026-09-17 and 2026-10-16.",
+    "failure_condition": "No exchange of prisoners of war between Russia and Ukraine was completed between 2026-09-17 and 2026-10-16.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-20",
+    "probability": 61,
+    "citations": [
+      37
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude oil, as the EIA Cushing spot price in FRED series DCOILWTICO, closes below 90.00 dollars per barrel on at least one trading day between 2026-09-17 and 2026-10-30. Reference: 101.87 on the packet date.",
+    "resolution": "TRUE if FRED series DCOILWTICO shows a daily value below 90.00 for any date between 2026-09-17 and 2026-10-30; otherwise FALSE. Reference: 101.87 WTI on the packet date, per the packet market snapshot.",
+    "failure_condition": "The WTI Cushing spot price closed at or above 90.00 dollars per barrel on every trading day from 2026-09-17 through 2026-10-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-09",
+    "probability": 24,
+    "citations": [
+      46,
+      58
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled meeting of 2026-10-27 to 2026-10-28.",
+    "resolution": "TRUE if FRED DFEDTARU for 2026-10-29 exceeds its 2026-10-27 value, i.e. a hike at the 2026-10-27 to 2026-10-28 meeting. Reference: relative to the 2026-10-27 upper bound; packet holds no funds-rate level.",
+    "failure_condition": "The FOMC left the federal funds target range unchanged or lowered it at its 2026-10-27 to 2026-10-28 meeting.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 24,
+    "citations": [
+      60,
+      57,
+      58
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The S&P 500 closes at or below 7046.19, a 7.5 percent decline from the packet reference, on at least one trading day between 2026-09-17 and 2026-10-30. Reference: 7617.50 on the packet date.",
+    "resolution": "TRUE if FRED series SP500 shows a daily close at or below 7046.19 for any date between 2026-09-17 and 2026-10-30; otherwise FALSE. Reference: 7617.50 on the packet date.",
+    "failure_condition": "The S&P 500 closed above 7046.19 on every trading day from 2026-09-17 through 2026-10-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 24,
+    "citations": [
+      49,
+      57,
+      58
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds the exploited Acronis backup plugin for cPanel vulnerability to its Known Exploited Vulnerabilities catalog between 2026-09-17 and 2026-10-30.",
+    "resolution": "TRUE if the CISA KEV catalog carries an entry with vendorProject Acronis whose product or vulnerabilityName references cPanel and whose dateAdded falls between 2026-09-17 and 2026-10-30; otherwise FALSE.",
+    "failure_condition": "CISA added no Acronis cPanel-related vulnerability to the KEV catalog with a dateAdded between 2026-09-17 and 2026-10-30.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 29,
+    "citations": [
+      13
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds a WSO2 vulnerability to its Known Exploited Vulnerabilities catalog between 2026-09-17 and 2026-10-30.",
+    "resolution": "TRUE if the CISA KEV catalog carries an entry with vendorProject WSO2 whose dateAdded falls between 2026-09-17 and 2026-10-30; otherwise FALSE.",
+    "failure_condition": "CISA added no WSO2 vulnerability to the KEV catalog with a dateAdded between 2026-09-17 and 2026-10-30.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 29,
+    "citations": [
+      26
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democrats win control of the US Senate in the 2026-11-03 midterm elections, holding at least 51 seats with caucusing independents in the 120th Congress.",
+    "resolution": "TRUE if the senate.gov party division for the 120th Congress, read on 2027-01-08 after the 2026-11-03 election, shows Democrats plus independents caucusing with them at 51 or more seats; otherwise FALSE.",
+    "failure_condition": "Democrats plus independents caucusing with them hold 50 or fewer seats in the 120th Congress Senate as of 2027-01-08.",
+    "domain": "political",
+    "deadline": "2027-01-08",
+    "probability": 40,
+    "citations": [
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Friedrich Merz formally resigns as German Federal Chancellor, or the Bundestag elects a different Chancellor, between 2026-09-17 and 2026-12-31.",
+    "resolution": "TRUE if Bundestag or Federal Government records show Merz formally submitted his resignation as Chancellor, or the Bundestag elected another person Chancellor, between 2026-09-17 and 2026-12-31; otherwise FALSE.",
+    "failure_condition": "Merz neither formally resigned the chancellorship nor was replaced by a Bundestag-elected Chancellor between 2026-09-17 and 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 40,
+    "citations": [
+      102
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-16T23:29:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
