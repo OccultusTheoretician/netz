@@ -3204,35 +3204,72 @@ def cmd_keys_propose(args):
                    f"the 2026-08-01 pass.")
             basis = reason
         else:
+            # DEDUCE-2026-09-16: the concession rests on deduction, not on topic.
+            # (i) a shared specific identifier, or (ii) the subject together with
+            # an outcome verb in the prior. Topic-only grounding is the
+            # operator's to rule (keyless candidate), with the prior quoted.
             rare, _ = _rare_tokens(items)
-            claim = _content_words(p.get("statement", "") + " " +
-                                   p.get("resolution", ""))
-            hit_terms, hit_cites, weak = set(), [], set()
+            claim_txt = p.get("statement", "") + " " + p.get("resolution", "")
+            claim = _content_words(claim_txt)
+            _IDENT = re.compile(r"(?<![\w-])(cve-\d{4}-\d+|(?:us|ci|nc|nn|hv|ak|uw|mb|pr|uu|ok|tx|at)[0-9a-z]{6,12}"
+                                r"|dgs\d+|dcoil\w+|nasdaqcom|bc_\d+year|\d{4}-\d{2}-\d{2}"
+                                r"|\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d{3,}(?:\.\d+)?)(?![\w-])", re.I)
+            _OUTCOME = re.compile(r"\b(added|adds|adopted|announced|announces|resigned|resigns|died|dies|signed|signs|"
+                                  r"seized|struck|hit|attacked|indicted|convicted|pleaded|sentenced|elected|"
+                                  r"defeated|won|lost|passed|approved|rejected|dismissed|filed|issued|released|"
+                                  r"published|confirmed|declared|imposed|lifted|suspended|closed|settled|"
+                                  r"reached|recorded|listed|upgraded|downgraded|raised|cut|halted|resumed|"
+                                  r"launched|struck|killed|arrested|charged|extradited|fired|appointed|"
+                                  r"detonated|erupted|capsized|crashed|collapsed)\b", re.I)
+            def _idents(t):
+                out = set()
+                for m in _IDENT.finditer(t or ""):
+                    v = m.group(1).lower().replace(",", "")
+                    if re.fullmatch(r"(?:19|20)\d\d", v):
+                        continue
+                    out.add(v)
+                return out
+            c_ids = _idents(claim_txt)
+            # (ii) needs the SAME predicate: an outcome verb the claim itself uses
+            # (by stem) appearing in the prior, beside a shared subject token.
+            def _verb_stems(t):
+                return {m.group(1).lower()[:5] for m in _OUTCOME.finditer(t or "")}
+            c_verbs = _verb_stems(claim_txt)
+            hit_terms, hit_cites, weak, quotes, subject_only = set(), [], set(), [], []
             for c in sorted(set(cites)):
                 for txt in items.get(c, []):
+                    shared_ids = c_ids & _idents(txt)
                     shared = _tokens_overlap(claim, _content_words(txt))
-                    if not shared:
-                        continue
-                    strong = _tokens_overlap(shared, rare)
-                    # KK27-VENUE: a masthead shared between claim and prior
-                    # is rare inside a report and proves nothing about the
-                    # subject. Venue tokens never carry a concession.
-                    strong = {t for t in strong
+                    strong = {t for t in _tokens_overlap(shared, rare)
                               if t.lower() not in _VENUE_LEXICON}
-                    if strong:
+                    if shared_ids:
+                        hit_terms |= shared_ids
+                        if c not in hit_cites:
+                            hit_cites.append(c)
+                        quotes.append((c, "identifier %s" % ", ".join(sorted(shared_ids)[:3]), txt))
+                    elif strong and c_verbs and (c_verbs & _verb_stems(txt)):
                         hit_terms |= strong
                         if c not in hit_cites:
                             hit_cites.append(c)
-                    else:
+                        quotes.append((c, "subject + the claim's own outcome verb (%s)" % ", ".join(sorted(c_verbs & _verb_stems(txt))[:2]), txt))
+                    elif strong:
+                        subject_only.append((c, sorted(strong)[:4], txt))
+                    elif shared:
                         weak |= shared
             if hit_terms:
                 klass, ruling = "strong", "keyed"
                 terms = ", ".join(sorted(hit_terms)[:6])
-                why = (f"Cited prior(s) "
-                       f"[{', '.join(str(c) for c in hit_cites)}] carry the "
-                       f"claim's operative terms ({terms}); a hit is "
-                       f"deducible from the cited record.")
-                basis = f"G1-strong: {terms}"
+                q = quotes[0]
+                why = (f"Cited prior(s) [{', '.join(str(c) for c in hit_cites)}] state the "
+                       f"outcome, not only the subject ({q[1]}); a hit is deducible from the "
+                       f"cited record. Item {q[0]}: \"{' '.join(str(q[2]).split())[:140]}\"")
+                basis = f"G2-deducible: {terms}"
+            elif subject_only:
+                klass = "candidate"
+                c0, toks, txt = subject_only[0]
+                basis = (f"subject grounded, outcome not stated - prior {c0} shares "
+                         f"{', '.join(toks)} but reports no outcome; item {c0}: "
+                         f"\"{' '.join(str(txt).split())[:120]}\"")
             else:
                 klass = "candidate"
                 basis = (("shared vocabulary generic only: " +
@@ -3267,10 +3304,11 @@ def cmd_keys_propose(args):
     pmd.write_text("\n".join(md), encoding="utf-8")
     pjs.write_text(json.dumps(sheet, indent=1, ensure_ascii=False) + "\n",
                    encoding="utf-8")
-    print(f"KKR - proposal: {counts['strong']} G1-strong keyed, "
+    print(f"KKR - proposal: {counts['strong']} G2-deducible keyed, "
           f"{counts['unreadable']} unreadable keyed, "
           f"{counts['control']} control keyed, "
-          f"{counts['candidate']} keyless-candidate (blank, yours)",
+          f"{counts['candidate']} keyless-candidate (blank, yours; "
+          f"subject-grounded rows quote the prior that grounds them)",
           file=sys.stderr)
     print(f"KKR - packet    -> {pmd}", file=sys.stderr)
     print(f"KKR - worksheet -> {pjs}", file=sys.stderr)
