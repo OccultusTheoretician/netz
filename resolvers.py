@@ -127,6 +127,26 @@ def resolve_usgs(row_id, params, keep_raw=False):
     """params: lat, lon, radius_km, min_mag, window (start,end).
     confidence: HIGH — FDSN is a versioned public API; schema unverified here."""
     s, e_ = params["window"]
+    # EVENTID-2026-09-16: an event id resolves to its epicentre in ComCat before the radius
+    # query runs. A failed lookup is INDETERMINATE naming the id - never a guessed coordinate.
+    _eid_note = ""
+    if params.get("event_id") and not (params.get("lat") and params.get("lon")):
+        _eid = params["event_id"]
+        _durl = ("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventid=%s" % _eid)
+        try:
+            _draw = _fetch(_durl)
+            _d = json.loads(_draw.decode("utf-8"))
+            _feat = _d if _d.get("type") == "Feature" else (_d.get("features") or [None])[0]
+            _lon, _lat = _feat["geometry"]["coordinates"][0], _feat["geometry"]["coordinates"][1]
+            _title = str(_feat.get("properties", {}).get("title", ""))[:60]
+            _otime = _feat.get("properties", {}).get("time")
+            params = dict(params, lat=float(_lat), lon=float(_lon))
+            _eid_note = (" [epicentre from %s: lat %.4f lon %.4f, %s, lookup sha256 %s]"
+                         % (_eid, float(_lat), float(_lon), _title,
+                            hashlib.sha256(_draw).hexdigest()[:16]))
+        except Exception as ex:
+            return _evidence(row_id, "usgs", _durl, b"", params, "INDETERMINATE",
+                             "event id %s could not be resolved to an epicentre: %r" % (_eid, ex), keep_raw)
     if params.get("bbox"):
         # MAPWIDE-2026-09-15: a regional bounding box instead of a radius (coarse; the proposal says so).
         b0, b1, b2, b3 = params["bbox"]
