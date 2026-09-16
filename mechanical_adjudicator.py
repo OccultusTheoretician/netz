@@ -143,7 +143,7 @@ def map_row(e: dict):
         # MAPWIDE-2026-09-15: a compound predicate the feed cannot see stays unmapped.
         if re.search(r"death|fatalit|casualt|killed|injur|damage|tsunami|collapse|displac|depth", tl):
             return None, "USGS-shaped but the predicate needs deaths, casualties, damage, depth or a tsunami - not checked by the feed read"
-        r = re.search(r"radius\s+(\d+)\s*km", tl)
+        r = re.search(r"radius\s+(\d+)\s*km", tl) or re.search(r"within\s+(\d+)\s*km", tl) or re.search(r"(\d+)\s*km\s+(?:of|around|from)", tl)
         mg = re.search(r"minmagnitude\s+(\d+(?:\.\d+)?)|magnitude\s+(?:of\s+)?(\d+(?:\.\d+)?)", tl)
         w = re.findall(DATE, t)
         lat = re.search(r"latitude[= ]([\-\d.]+)", tl)
@@ -158,8 +158,22 @@ def map_row(e: dict):
                                      "using Uto 2026-07-28 (32.69, 130.66); "
                                      "confirm before trusting")
             return "usgs", {**p, "_note": note}
+        # EVENTID-2026-09-16: the arms write the epicentre as a USGS event id. An id is a
+        # public, re-fetchable coordinate: the resolver looks it up in ComCat before the
+        # radius query. FDSN ids are a two-to-three letter network prefix then six or more
+        # alphanumerics (us6000ti6x, ci40521016, nc73899171).
+        _eid = re.search(r"\b((?:us|ci|nc|nn|hv|ak|uw|mb|se|pr|uu|ok|tx|at)[0-9a-z]{6,12})\b", tl)
+        if mg and r and _eid and not (lat and lon):
+            window, wnote = _row_window(e, t)
+            if window:
+                note = ("epicentre taken from USGS event %s, looked up in ComCat at resolution time; "
+                        "the lookup's own hash is printed with the proposal" % _eid.group(1))
+                return "usgs", {"event_id": _eid.group(1), "radius_km": int(r.group(1)),
+                                "min_mag": float(mg.group(1) or mg.group(2)), "window": window,
+                                "_note": note + ("; " + wnote if wnote else "")}
+            return None, "USGS event id and radius read, but no window is extractable"
         if mg and re.search(r"within\s+\d+\s*km|\d+\s*km of", tl) and not (lat and lon):
-            return None, "USGS-shaped radius predicate without epicentre coordinates - not extractable"
+            return None, "USGS-shaped radius predicate without epicentre coordinates or event id - not extractable"
         if mg:
             region = None
             best = None
