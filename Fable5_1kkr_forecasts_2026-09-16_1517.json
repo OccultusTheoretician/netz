@@ -1,0 +1,119 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry for an Acronis product with a dateAdded value between 2026-09-17 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 35,
+    "resolution": "True if the CISA KEV JSON feed contains at least one entry whose vendorProject or product field contains Acronis, case-insensitive, with dateAdded between 2026-09-17 and 2026-10-16 inclusive.",
+    "deadline": "2026-10-20",
+    "citations": [
+      13
+    ],
+    "failure_condition": "On 2026-10-20 the KEV feed holds no Acronis entry with a dateAdded value inside 2026-09-17 to 2026-10-16."
+  },
+  {
+    "statement": "Democrats plus independents caucusing with them win at least 51 of 100 US Senate seats for the 120th Congress in the 2026-11-03 general election, including any subsequent runoff.",
+    "domain": "political",
+    "probability": 50,
+    "resolution": "True if Associated Press race calls published by 2026-12-11 show Democrats and Democratic-caucusing independents holding at least 51 of 100 Senate seats when the 120th Congress convenes.",
+    "deadline": "2026-12-15",
+    "citations": [
+      101
+    ],
+    "failure_condition": "AP race calls as of 2026-12-11 give Democrats and Democratic-caucusing independents 50 or fewer Senate seats."
+  },
+  {
+    "statement": "Friedrich Merz ceases to hold the office of Federal Chancellor of Germany at some point between 2026-09-17 and 2026-12-31.",
+    "domain": "political",
+    "probability": 10,
+    "resolution": "True if German federal government or Bundestag records show Merz ceased to hold the office of Federal Chancellor between 2026-09-17 and 2026-12-31; serving as caretaker after a lost confidence vote counts as holding office.",
+    "deadline": "2027-01-05",
+    "citations": [
+      102
+    ],
+    "failure_condition": "Merz is still Federal Chancellor on 2026-12-31, caretaker status included, so no departure from office occurred in the window."
+  },
+  {
+    "statement": "The defence of Hashim Thaci files a notice of appeal against the Kosovo Specialist Chambers trial judgment of 2026-09-16 between 2026-09-17 and 2026-12-31.",
+    "domain": "crime/security",
+    "probability": 90,
+    "resolution": "True if the public case record on scp-ks.org shows a notice of appeal filed by the Thaci defence, dated between 2026-09-17 and 2026-12-31 inclusive; a filing that only requests extra time does not count.",
+    "deadline": "2027-01-05",
+    "citations": [
+      96,
+      112
+    ],
+    "failure_condition": "By 2026-12-31 the KSC public case record contains no notice of appeal filed by the Thaci defence against the trial judgment."
+  },
+  {
+    "statement": "ICC Pre-Trial Chamber I issues a decision confirming at least one charge against Rodrigo Duterte, dated between 2026-09-17 and 2026-12-18.",
+    "domain": "crime/security",
+    "probability": 55,
+    "resolution": "True if the ICC court records for the Duterte case (ICC-01/21-01/25) show a Pre-Trial Chamber decision on the confirmation of charges, dated between 2026-09-17 and 2026-12-18 inclusive, confirming at least one charge.",
+    "deadline": "2026-12-22",
+    "citations": [
+      90
+    ],
+    "failure_condition": "No Pre-Trial Chamber decision confirming any charge against Duterte is dated within 2026-09-17 to 2026-12-18, whether because no decision issued or because every charge was declined."
+  },
+  {
+    "statement": "Saudi Arabia conducts at least one airstrike or missile strike against Houthi targets inside Yemen between 2026-09-17 and 2026-10-16, with the strike publicly attributed to Saudi forces.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "True if Reuters or AP reports strikes inside Yemen by Saudi aircraft or missiles in the window, and either the Saudi Ministry of Defense or a Houthi-controlled outlet (SABA Sanaa, Al-Masirah) attributes them to Saudi Arabia.",
+    "deadline": "2026-10-20",
+    "citations": [
+      71,
+      94,
+      87
+    ],
+    "failure_condition": "No strike inside Yemen between 2026-09-17 and 2026-10-16 is reported by Reuters or AP with Saudi or Houthi attribution to Saudi forces; strikes attributed only to the UAE, the US, or Yemeni government forces do not count."
+  },
+  {
+    "statement": "The United States and Iran each publicly announce a ceasefire or cessation of hostilities between them between 2026-09-17 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 20,
+    "resolution": "True if, within the window, a White House or State Department statement and an Iranian Foreign Ministry or IRNA statement each announce a ceasefire, truce, or cessation of hostilities between the two states, as reported by Reuters.",
+    "deadline": "2026-11-05",
+    "citations": [
+      72,
+      97,
+      89
+    ],
+    "failure_condition": "By 2026-10-31 one or both governments have made no public announcement of a ceasefire, truce, or cessation of hostilities with the other; a pause announced by only one side is a MISS."
+  },
+  {
+    "statement": "The FRED series DCOILWTICO (WTI spot, Cushing) observation dated 2026-10-16 is at or above 110.00 USD per barrel. Reference: WTI 101.87 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "True if the FRED DCOILWTICO observation dated 2026-10-16 is 110.00 or higher; if no observation exists for that date, use the next posted trading-day observation.",
+    "deadline": "2026-10-21",
+    "citations": [
+      46,
+      58
+    ],
+    "failure_condition": "The DCOILWTICO observation dated 2026-10-16, or the next posted trading day, is below 110.00."
+  },
+  {
+    "statement": "At the FOMC meeting concluding 2026-10-28, the Committee raises the federal funds target range above the range in effect on 2026-10-27.",
+    "domain": "economics/markets",
+    "probability": 38,
+    "resolution": "True if the FRED series DFEDTARU (federal funds target range upper limit) observation dated 2026-10-29 is higher than its observation dated 2026-10-27.",
+    "deadline": "2026-11-02",
+    "citations": [
+      57,
+      60
+    ],
+    "failure_condition": "DFEDTARU dated 2026-10-29 equals or is below its 2026-10-27 value, meaning the range was held or cut at the 2026-10-28 meeting."
+  },
+  {
+    "statement": "Between 2026-09-17 and 2026-10-02, an official Sudanese source reports a death toll of at least 100 from the West Kordofan gold mine collapse reported on 2026-09-16.",
+    "domain": "disaster",
+    "probability": 35,
+    "resolution": "True if Reuters, AFP, or Al Jazeera reports in the window a death toll of at least 100 for that collapse, attributed to the Sudanese Mineral Resources Company, a state government, or a Sudanese health authority.",
+    "deadline": "2026-10-06",
+    "citations": [
+      88
+    ],
+    "failure_condition": "Through 2026-10-02 the highest official toll reported for the collapse by Reuters, AFP, or Al Jazeera remains below 100."
+  }
+]
