@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The Federal Reserve raises its federal funds target range at a scheduled FOMC decision between 2026-10-16 and 2026-11-06, lifting the target range upper bound by at least 25 basis points.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "FRED daily series DFEDTARU shows its 2026-11-06 value at least 0.25 percentage points above its 2026-10-16 value, covering any FOMC decision between 2026-10-16 and 2026-11-06.",
+    "deadline": "2026-11-12",
+    "citations": [57, 60],
+    "failure_condition": "DFEDTARU for 2026-11-06 is less than 0.25 percentage points above its 2026-10-16 value, whether from a hold, a cut, or no decision in the span."
+  },
+  {
+    "statement": "EIA daily Cushing WTI spot price prints at or above 120.00 USD on at least one date between 2026-09-17 and 2026-12-31. Reference: WTI last 101.87 at packet seal 2026-09-16.",
+    "domain": "economics/markets",
+    "probability": 22,
+    "resolution": "EIA series RWTC, Cushing OK WTI spot FOB, records any daily value at or above 120.00 USD dated 2026-09-17 through 2026-12-31 inclusive. Reference at seal: 101.87.",
+    "deadline": "2027-01-13",
+    "citations": [46, 58, 72],
+    "failure_condition": "No RWTC daily value dated 2026-09-17 through 2026-12-31 reaches 120.00 USD."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry for an Acronis product vulnerability with a dateAdded between 2026-09-16 and 2026-10-30.",
+    "domain": "cyber",
+    "probability": 35,
+    "resolution": "The CISA KEV JSON feed contains at least one entry whose vendorProject or product field contains Acronis and whose dateAdded falls between 2026-09-16 and 2026-10-30 inclusive.",
+    "deadline": "2026-11-03",
+    "citations": [13],
+    "failure_condition": "No KEV entry naming Acronis carries a dateAdded from 2026-09-16 through 2026-10-30."
+  },
+  {
+    "statement": "At least one putative class action over the CenterPoint Energy cyberattack and customer data theft is filed in a United States federal district court between 2026-09-17 and 2026-11-16.",
+    "domain": "cyber",
+    "probability": 80,
+    "resolution": "A US federal district court docket on PACER shows a putative class action naming CenterPoint Energy as defendant, arising from the disclosed data breach, filed 2026-09-17 through 2026-11-16.",
+    "deadline": "2026-11-20",
+    "citations": [29],
+    "failure_condition": "No such complaint with a filing date between 2026-09-17 and 2026-11-16 appears on any US federal district court docket."
+  },
+  {
+    "statement": "The United States Senate holds at least one recorded roll call vote on a joint or concurrent resolution directing removal of US armed forces from hostilities against Iran between 2026-09-17 and 2026-12-18.",
+    "domain": "political",
+    "probability": 70,
+    "resolution": "Senate.gov or Congress.gov roll call records show such a vote, on any question including passage, discharge, tabling, or veto override, dated 2026-09-17 through 2026-12-18.",
+    "deadline": "2026-12-22",
+    "citations": [94, 97],
+    "failure_condition": "No Senate roll call on any Iran war powers measure carries a vote date between 2026-09-17 and 2026-12-18."
+  },
+  {
+    "statement": "The European Council or the Council of the European Union adopts conclusions or a decision establishing or formally offering associate member status for Canada between 2026-09-17 and 2027-03-01.",
+    "domain": "political",
+    "probability": 12,
+    "resolution": "Council conclusions or a Council decision published on consilium.europa.eu, dated 2026-09-17 through 2027-03-01, explicitly creates or offers an EU associate membership status for Canada.",
+    "deadline": "2027-03-05",
+    "citations": [48, 111, 118],
+    "failure_condition": "No Council conclusions or decision adopted between 2026-09-17 and 2027-03-01 creates or offers Canadian associate membership; Commission proposals, speeches, and summit remarks do not qualify."
+  },
+  {
+    "statement": "GDACS lists at least one wildfire event in Indonesia at Orange or Red alert level with an event start or update date between 2026-09-17 and 2026-11-15.",
+    "domain": "disaster",
+    "probability": 15,
+    "resolution": "The public GDACS feed shows a WF event for Indonesia at Orange or Red alert with a start or update date 2026-09-17 through 2026-11-15.",
+    "deadline": "2026-11-18",
+    "citations": [44],
+    "failure_condition": "Every GDACS Indonesia wildfire entry dated 2026-09-17 through 2026-11-15 remains at Green alert, or no such entry exists."
+  },
+  {
+    "statement": "Saudi official channels acknowledge at least one Houthi-attributed drone or missile impact or interception over Saudi territory occurring between 2026-09-17 and 2026-10-17.",
+    "domain": "military/conflict",
+    "probability": 75,
+    "resolution": "Saudi Press Agency, the Saudi defense ministry, or Saudi civil defense acknowledges an impact or interception dated 2026-09-17 through 2026-10-17, and Reuters, AP, or AFP carries the acknowledgment by the deadline.",
+    "deadline": "2026-10-21",
+    "citations": [71, 87, 94],
+    "failure_condition": "By the deadline no Saudi official acknowledgment carried by Reuters, AP, or AFP covers any Houthi-attributed impact or interception over Saudi territory dated in the event window."
+  },
+  {
+    "statement": "Commercial vessel transit through the Strait of Hormuz is suspended or effectively halted for at least 48 consecutive hours at any point between 2026-09-17 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 10,
+    "resolution": "UKMTO advisories or Lloyds List document a suspension or effective halt of commercial Hormuz transit lasting 48 or more consecutive hours between 2026-09-17 and 2026-12-31, corroborated by Reuters or AP.",
+    "deadline": "2027-01-06",
+    "citations": [46, 72],
+    "failure_condition": "No documented 48-hour suspension of commercial Hormuz transit occurs between 2026-09-17 and 2026-12-31; reroutings, insurance surcharges, and pauses under 48 hours do not qualify."
+  },
+  {
+    "statement": "The US Department of Justice announces criminal charges against at least one named defendant over a Russia-directed plot to kill or injure a Ukrainian national outside Ukraine, between 2026-09-17 and 2027-01-15.",
+    "domain": "crime/security",
+    "probability": 30,
+    "resolution": "A justice.gov press release or an indictment unsealed on a federal docket, dated 2026-09-17 through 2027-01-15, charges at least one named person in such a plot.",
+    "deadline": "2027-01-20",
+    "citations": [10],
+    "failure_condition": "No qualifying DOJ announcement or unsealed indictment dated between 2026-09-17 and 2027-01-15 exists by the deadline."
+  }
+]
