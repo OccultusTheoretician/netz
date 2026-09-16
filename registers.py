@@ -286,6 +286,15 @@ _MASK = re.compile(
     r"|\bor\s+equal\b", re.I)
 
 
+# MASKNOTE-2026-09-16: what each masking exemption means, printed with the span it took.
+_RULE_WHY = {
+    "R10a": "member list of one named authority, collapsed",
+    "R10b": "issuers of one document, collapsed",
+    "R10c": "who issues the document, not where to look",
+    "R11": "a stated quorum is a counted class",
+}
+
+
 def venue_scope(resolution: str) -> dict:
     """§11.3, re-anchored on VENUE NOUNS rather than on disjunction.
 
@@ -351,6 +360,15 @@ def venue_scope(resolution: str) -> dict:
         masked, flags=re.I)
     masked = re.sub(r"\b(citing|quoting|attributed\s+to|according\s+to|sourced\s+to)\s+"
                     r"((?:[\w.&\-]+\s+){0,6})or\b", r"\1 \2", masked, flags=re.I)
+    # MASKNOTE-2026-09-16: the exemptions the masks take are recorded here, so an
+    # R10 or R11 collapse prints on the row the way R9 and M1 do. Declared above
+    # the masks; the later "_r9_notes = []" is removed by the same patch.
+    _r9_notes = []
+
+    def _note(rule, span):
+        span = " ".join(str(span).split())[:60]
+        _r9_notes.append("(%s) %s: %s" % (rule, _RULE_WHY[rule], span))
+
     # KK35-REG (R10): organs of one named authority are a defined class, not two
     # places to look. Three shapes, masked before the scan the way C4 masks
     # "report an official X or Y statement": (a) a parenthetical member list
@@ -359,24 +377,38 @@ def venue_scope(resolution: str) -> dict:
     # or C"; (c) "A or B announces/confirms/publishes/states/issues ...", where
     # the disjunction is over who issues the one document. Ruling 2026-09-15,
     # assistant-authored at the operator's delegation.
-    masked = re.sub(r"(\b[A-Z][\w.&'-]*(?:\s+[\w.&'-]+){0,3}\s*)\(([^()]*\bor\b[^()]*)\)",
-                    lambda mm: mm.group(1) + " " + re.sub(r"\bor\b", " ", mm.group(2)) + " ", masked)
+    def _m10a(mm):
+        _note("R10a", mm.group(0))
+        return mm.group(1) + " " + re.sub(r"\bor\b", " ", mm.group(2)) + " "
+    masked = re.sub(r"(\b[A-Z][\w.&'-]*(?:\s+[\w.&'-]+){0,3}\s*)\(([^()]*\bor\b[^()]*)\)", _m10a, masked)
+    def _m10b(mm):
+        if named_venues(mm.group(4)):
+            return mm.group(0)
+        _note("R10b", mm.group(0))
+        return "%s %s %s%s " % (mm.group(1), mm.group(2), mm.group(3) or "", mm.group(4))
     masked = re.sub(r"\b(statements?|releases?|announcements?|confirmations?|advisor(?:y|ies)|notices?|"
                     r"communiques?|readouts?|decrees?|orders?)\s+(from|by|of)\s+(both\s+)?"
                     r"([\w.&'-]+(?:\s+[\w.&'-]+){0,4}(?:\s*,\s*[\w.&'-]+(?:\s+[\w.&'-]+){0,4})*\s*,?\s+)or\b",
-                    lambda mm: mm.group(0) if named_venues(mm.group(4)) else "%s %s %s%s " % (mm.group(1), mm.group(2), mm.group(3) or "", mm.group(4)), masked, flags=re.I)
+                    _m10b, masked, flags=re.I)
+    def _m10c(mm):
+        if named_venues(mm.group(1)) or named_venues(mm.group(2)):
+            return mm.group(0)
+        _note("R10c", mm.group(0))
+        return "%s %s %s" % (mm.group(1), mm.group(2), mm.group(3))
     # (c) only when neither side is a registered venue in its own right: "Reuters, AP, or AFP report X"
     # is press alternatives and stays a kill; "CENTCOM or the Defense Department announces X" is one issuer class.
     masked = re.sub(r"\b([A-Z][\w.&'-]*(?:\s+[A-Z][\w.&'-]*){0,3})\s*,?\s+or\s+((?:the\s+)?[A-Z][\w.&'-]*(?:\s+[A-Z][\w.&'-]*){0,3})"
                     r"\s+(announces?|confirms?|publishes|publish|states?|issues?|releases?|declares?|says?|posts?)\b",
-                    lambda mm: mm.group(0) if (named_venues(mm.group(1)) or named_venues(mm.group(2)))
-                    else "%s %s %s" % (mm.group(1), mm.group(2), mm.group(3)), masked)
+                    _m10c, masked)
+    def _m11(mm):
+        _note("R11", mm.group(0))
+        return re.sub(r"\b(?:or|and)\b", " ", mm.group(0))
     # KK35-REG (R11): a stated quorum is a counted class ("two of Reuters, AP,
     # AFP"), like the "two wire services" the counted-class rule already
     # exempts; the enumeration is masked so its 'or' is not two venues.
     masked = re.sub(r"\b(?:two|three|four|\d+)\s+of\s+(?:the\s+)?[\w.&'-]+(?:\s*,\s*[\w.&'-]+(?:\s+[\w.&'-]+){0,2})*"
                     r"\s*,?\s+(?:or|and)\s+[\w.&'-]+(?:\s+[\w.&'-]+){0,2}\b",
-                    lambda mm: re.sub(r"\b(?:or|and)\b", " ", mm.group(0)), masked, flags=re.I)
+                    _m11, masked, flags=re.I)
     low = masked.lower()
     found = named_venues(res)
 
@@ -427,7 +459,6 @@ def venue_scope(resolution: str) -> dict:
         return True
 
     disj = []
-    _r9_notes = []  # KK35-REG (R9): exemptions taken, printed as notes
     # modifier disjunction over a shared venue head: "a U.S. government or
     # international disaster alert system". Two adjectives pick out two
     # different systems; the noun being shared does not make it one venue.
@@ -547,6 +578,7 @@ def venue_scope(resolution: str) -> dict:
     if disj:
         l, r = disj[0]
         return {"verdict": "DISJUNCT", "named": sorted(found),
+                "note": "; ".join(_r9_notes),  # MASKNOTE-2026-09-16
                 "reason": (f"resolution offers alternative VENUES joined by "
                            f"'or' (\u2026{l} | or | {r}\u2026) — name ONE "
                            f"source of record or define the venue class; an "
@@ -554,18 +586,21 @@ def venue_scope(resolution: str) -> dict:
                            f"fact")}
     if marker and (found or any(f" {n} " in " " + low + " " for n in nouns)):
         return {"verdict": "EXEMPLARY", "named": sorted(found),
+                "note": "; ".join(_r9_notes),  # MASKNOTE-2026-09-16
                 "reason": (f"the named venue is introduced by '{marker}', "
                            f"which makes it an example rather than the source "
                            f"of record — the adjudicator still chooses. Strike "
                            f"the softener or name the class exhaustively")}
     if not found and not any(f" {n} " in " " + low + " " for n in nouns):
         return {"verdict": "NO_VENUE", "named": [],
+                "note": "; ".join(_r9_notes),  # MASKNOTE-2026-09-16
                 "reason": ("resolution names no source of record — a stranger "
                            "must know exactly where to look on the deadline "
                            "date")}
     if _r9_notes:  # KK35-REG (R9): an exemption taken is disclosed on the row, like M1
         return {"verdict": "OK", "named": sorted(found), "reason": "", "note": "; ".join(_r9_notes)}
-    return {"verdict": "OK", "named": sorted(found), "reason": ""}
+    return {"verdict": "OK", "named": sorted(found), "reason": "",
+            "note": "; ".join(_r9_notes)}  # MASKNOTE-2026-09-16
 
 
 # ---------------------------------------------------------------- calendars
