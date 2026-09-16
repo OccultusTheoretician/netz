@@ -2261,6 +2261,22 @@ def cmd_ingest(args):
     # silently written into the ledger as manual/fable. Same attribution class as
     # the pooled Brier, one level down.
     arm = getattr(args, "arm", None) or "manual/fable"
+    # DUPSEAL-2026-09-16: a row already sealed under this arm against this
+    # report is not sealed again. The 09-16 lane ran twice and doubled 64 rows.
+    _led = load_ledger()["projections"]
+    _norm = lambda s: " ".join(str(s or "").split())
+    _seen = {}
+    for _r in _led:
+        _seen.setdefault((_r.get("model"), _r.get("source_report"), _norm(_r.get("statement"))), _r.get("id"))
+    _kept = []
+    for _p in accepted_raw:
+        _dup = _seen.get((arm, src_name, _norm(_p.get("statement"))))
+        if _dup:
+            print(f"KKR \u00b7 already sealed as {_dup} against {src_name} - not sealed again: "
+                  f"{_norm(_p.get('statement'))[:70]}", file=sys.stderr)
+            continue
+        _kept.append(_p)
+    accepted_raw = _kept
     added = append_projections(accepted_raw, arm, src_name) if accepted_raw else []
     print(f"KKR · gate: {len(added)} accepted, {len(rejected)} rejected from "
           f"{args.ingest} [arm: {arm}]", file=sys.stderr)
