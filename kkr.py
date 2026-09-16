@@ -1213,6 +1213,16 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
             if len(_w) >= 3:
                 out.add("".join(_w).lower())
                 out.add("".join(_w[1:]).lower())
+                # ACRO-2026-09-16: the same letters in another word order are the
+                # same body seen from another language (ACP for the Panama Canal
+                # Authority, OTAN, UE). Overlap-only, like the rest of E3: this
+                # can clear a false mismatch, never manufacture one.
+                if len(_w) <= 5:
+                    from itertools import permutations as _perm
+                    for _p in _perm(_w):
+                        out.add("".join(_p).lower())
+                    for _p in _perm(_w[1:]):
+                        out.add("".join(_p).lower())
         return out
     _s_subj = set(_s_subj) | _inits(p.get("statement", ""))
     _r_subj = set(_r_subj) | _inits(p.get("resolution", ""))
@@ -1229,7 +1239,8 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                       ("omb", {"united", "states"}), ("congress", {"united", "states"}),
                       ("wti", {"light", "sweet", "crude"}), ("cl", {"wti"}),
                       ("nymex", {"cme", "group"}),
-                      ("mag", {"manchester", "airports", "group"})):
+                      ("mag", {"manchester", "airports", "group"}),
+                      ("acp", {"panama", "canal"})):  # ACRO-2026-09-16: Autoridad del Canal de Panama
         if ((_a in _s_subj and _need <= set(_r_subj))
                 or (_a in _r_subj and _need <= set(_s_subj))):
             _s_subj.add("_acropair"); _r_subj.add("_acropair")
