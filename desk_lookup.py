@@ -450,6 +450,135 @@ def cmd_kev(a):
     return 0
 
 
+# ---------------------------------------------------------------------- clerk
+# KEVCLERK-2026-09-16: the clerk law's KEV check, run over a sitting's juror file.
+# Reads the catalog once; per KEV-criterion row prints what the catalog holds in
+# the row's own window beside what the seat claimed. Proposes nothing, writes
+# nothing: `kkr --resolve` is still the only path that writes a verdict.
+_KEV_STOP = set("""CISA KEV Known Exploited Vulnerabilities Vulnerability Catalog JSON CVE CVEs TRUE FALSE YES NO
+The A An If Any Otherwise Resolved Resolves Resolution Entry Entries Vendor Product VendorProject Field Date Added
+January February March April May June July August September October November December US U.S. United States
+Server Engine Center Management Gateway Client Agent Manager Console Portal Service Services Platform Suite""".split())
+
+
+def _clerk_names(text):
+    """The names a KEV criterion puts forward, in the forms the arms write them."""
+    out = []
+    m = re.search(r"(?:vendorproject or product matching|matching)\s+([A-Za-z0-9._ -]+?)(?:\s+and\b|,|\.)",
+                  text, re.I)
+    if m and len(m.group(1)) <= 40:
+        out.append(m.group(1).strip())
+    for mm in re.finditer(r"\b(?:naming|names|named|affecting|for|targeting)\s+([A-Za-z0-9][A-Za-z0-9._-]*"
+                          r"(?:\s+[A-Z][A-Za-z0-9._-]*){0,2})", text):
+        out.append(mm.group(1))
+    for mm in re.finditer(r"\b([A-Z][A-Za-z0-9._-]+)-related\b", text):
+        out.append(mm.group(1))
+    for mm in re.finditer(r"\b([A-Z][A-Za-z0-9._-]*(?:\s+[A-Z][A-Za-z0-9._-]*){0,2})\b", text):
+        out.append(mm.group(1))
+    clean = []
+    for nm in out:
+        nm = " ".join(x.strip(".,;:()\"'") for x in str(nm).split())
+        nm = " ".join(x for x in nm.split() if x not in _KEV_STOP).strip()
+        if not nm or len(nm) > 40 or nm in _KEV_STOP:
+            continue
+        if len(nm) < 3 and not re.search(r"\d", nm):
+            continue
+        if re.fullmatch(r"[A-Z]{2,5}", nm):
+            continue
+        if nm not in clean:
+            clean.append(nm)
+    return clean
+
+
+def _clerk_window(text, row):
+    ds = sorted(set(re.findall(r"\d{4}-\d{2}-\d{2}", text)))
+    if len(ds) >= 2:
+        return ds[0], ds[-1]
+    di, dl = str(row.get("date_issued", ""))[:10], str(row.get("deadline", ""))[:10]
+    if re.match(r"\d{4}-\d{2}-\d{2}", di) and re.match(r"\d{4}-\d{2}-\d{2}", dl) and di <= dl:
+        return di, dl
+    return None
+
+
+def cmd_clerk(a):
+    with open(a.jury, "r", encoding="utf-8-sig") as _f:
+        jury = json.load(_f)
+    verdicts = {r.get("id"): r for r in (jury if isinstance(jury, list) else jury.get("verdicts", []))}
+    with open(a.packet, "r", encoding="utf-8", errors="replace") as _f:
+        packet = _f.read().replace("\r\n", "\n")
+    secs = re.split(r"\n### (KKR-\d{8}-\d+)\n", packet)
+    rows = {}
+    for i in range(1, len(secs), 2):
+        body = secs[i + 1]
+        crit = re.search(r"\*\*Resolution(?: criterion)?:\*\*\s*(.*)", body)
+        stmt = re.search(r"\*\*(?:Claim|Statement):\*\*\s*(.*)", body)
+        iss = re.search(r"\*\*Issued:\*\*\s*(\d{4}-\d{2}-\d{2})", body)
+        dl = re.search(r"\*\*Deadline:\*\*\s*(\d{4}-\d{2}-\d{2})", body)
+        rows[secs[i]] = {"resolution": (crit.group(1) if crit else "").strip(),
+                         "statement": (stmt.group(1) if stmt else "").strip(),
+                         "date_issued": iss.group(1) if iss else "",
+                         "deadline": dl.group(1) if dl else ""}
+    body = fetch(KEV)
+    if body is None:
+        return 1
+    d = json.loads(body.decode("utf-8"))
+    vulns = d.get("vulnerabilities", [])
+    print("")
+    print("CLERK PASS - KEV CRITERIA IN %s" % str(a.jury).replace("\\", "/").split("/")[-1])
+    print("-" * 74)
+    n = agree = check = 0
+    for rid, row in rows.items():
+        text = row["resolution"] + " " + row["statement"]
+        if not re.search(r"kev catalog|known exploited", text, re.I):
+            continue
+        n += 1
+        jv = str(verdicts.get(rid, {}).get("verdict", "?")).upper()
+        win = _clerk_window(row["resolution"], row)
+        names = _clerk_names(text)
+        cnt = re.search(r"(\d+)\s+or more entries|at least\s+(\d+)\s+entries", text, re.I)
+        if not win:
+            print("  %-17s juror %-9s catalog  window not extractable%sCHECK" % (rid, jv, " " * 22))
+            check += 1
+            continue
+        s, e_ = win
+        inwin = [v for v in vulns if s <= str(v.get("dateAdded", "")) <= e_]
+        if cnt:
+            floor = int(cnt.group(1) or cnt.group(2))
+            hits = inwin
+            supports = (len(hits) >= floor) if jv == "HIT" else (len(hits) < floor)
+            detail = "%d entries in window against a floor of %d" % (len(hits), floor)
+        elif names:
+            low = [x.lower() for x in names]
+            hits = [v for v in inwin
+                    if any(x in (str(v.get("vendorProject", "")) + " " + str(v.get("product", "")) + " "
+                                 + str(v.get("vulnerabilityName", "")) + " " + str(v.get("cveID", ""))).lower()
+                           for x in low)]
+            supports = bool(hits) if jv == "HIT" else (not hits if jv == "MISS" else False)
+            detail = "%d of %d entries in window match %s" % (len(hits), len(inwin), names[:3])
+        else:
+            print("  %-17s juror %-9s catalog  names not extractable %s CHECK" % (rid, jv, " " * 21))
+            check += 1
+            continue
+        mark = "AGREES" if supports else "CHECK"
+        agree, check = (agree + 1, check) if supports else (agree, check + 1)
+        print("  %-17s juror %-9s [%s..%s] %s" % (rid, jv, s, e_, detail))
+        for v in sorted(hits, key=lambda x: str(x.get("dateAdded", "")))[:4]:
+            print("      %s  %-16s %s / %s" % (v.get("dateAdded", "?"), v.get("cveID", "?"),
+                                               str(v.get("vendorProject", "?"))[:18],
+                                               str(v.get("product", "?"))[:22]))
+        print("      -> %s" % mark)
+    print("")
+    print("  %d KEV-criterion row(s): %d AGREES, %d CHECK" % (n, agree, check))
+    print("  catalogVersion %s . dateReleased %s . %d entries . feed sha256 %s"
+          % (d.get("catalogVersion", "?"), str(d.get("dateReleased", "?"))[:10], len(vulns),
+             __import__("hashlib").sha256(body).hexdigest()[:16]))
+    print("  AGREES means the catalog supports the seat's verdict; CHECK means it")
+    print("  does not, or the row's own criterion could not be read. A CHECK is a")
+    print("  finding to carry to the disposition sheet, not a verdict.")
+    cite(KEV)
+    return 0
+
+
 # --------------------------------------------------------------------- quake
 def cmd_quake(a):
     q = {"format": "geojson", "orderby": "time"}
@@ -694,6 +823,10 @@ def main():
     t.add_argument("--to")
     t.add_argument("--above", type=float)
 
+    cl = sub.add_parser("clerk", help="KEVCLERK-2026-09-16: check a sitting's KEV rows against the catalog")
+    cl.add_argument("--jury", required=True, help="forecasts/jury_A_<date>.json")
+    cl.add_argument("--packet", required=True, help="forecasts/audit_packet_<date>.md")
+
     k = sub.add_parser("kev", help="CISA Known Exploited Vulnerabilities")
     k.add_argument("--cve")
     k.add_argument("--since")
@@ -740,6 +873,7 @@ def main():
         return 0
     return {"wire": cmd_wire, "nvd": cmd_nvd, "fema": cmd_fema,
             "eonet": cmd_eonet, "treasury": cmd_treasury, "kev": cmd_kev,
+            "clerk": cmd_clerk,  # KEVCLERK-2026-09-16
             "quake": cmd_quake, "gdacs": cmd_gdacs, "fedreg": cmd_fedreg,
             "ecb": cmd_ecb, "wiki": cmd_wiki}[a.cmd](a)
 
