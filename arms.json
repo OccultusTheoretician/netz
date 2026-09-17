@@ -9,15 +9,25 @@
       "lane": "operator",
       "model": "human",
       "access": "n-a",
-      "status": "active"
+      "status": "closed",
+      "note": " | 2026-09-17: closed to new rows - the cold/advised distinction was never recorded under this tag (access n-a), so its rows are counted, not claimed; from today the operator seals under operator/cold or operator/advised. Open rows keep resolving here."
     },
     {
       "tag": "operator/advised",
       "lane": "operator",
       "model": "human+model-evidence",
       "access": "advised",
-      "status": "reserved",
-      "note": "centaur arm - flips active with the knp-2 era; model supplies evidence and base rates, operator commits probability cold; advisory content stays out of every other arm's prompts"
+      "status": "active",
+      "note": "centaur arm - flips active with the knp-2 era; model supplies evidence and base rates, operator commits probability cold; advisory content stays out of every other arm's prompts | 2026-09-17: ACTIVE by the operator's ruling (running the arm is the ruling; the knp-2 gate was his). Form: the model supplies a worksheet of candidate claims with criteria, failure conditions and deadlines pre-drafted against the day's packet, plus an evidence brief with base rates; the operator sets every probability himself and may strike or rewrite any claim; the file seals under this tag through the ordinary lane. Advisory content stays out of every other channel and is never written onto a row. Scored apart from operator/cold by law: a Brier belongs to one forecaster, and the model is part of this one."
+    },
+    {
+      "tag": "operator/cold",
+      "lane": "operator",
+      "model": "human",
+      "access": "cold",
+      "status": "active",
+      "note": "Registered 2026-09-17. The operator alone: statement, probability, resolution criterion, failure condition, deadline and citations in his own words, with no model evidence, base rate or draft before the commit. The gate is the only reader before seal. Tool access is arm identity: rows written with a model's worksheet or brief go to operator/advised, never here. Out of scope for any capability claim until a registration names the arm. Not named for a result.",
+      "cadence": "as sat; a missed sitting is a coverage gap, never backfilled from a later packet"
     },
     {
       "tag": "lmstudio/auto",
