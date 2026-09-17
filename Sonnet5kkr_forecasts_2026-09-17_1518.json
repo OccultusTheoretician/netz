@@ -1,0 +1,118 @@
+[
+  {
+    "statement": "Between 2026-09-17 and 2026-10-15, the United States and Iran announce a ceasefire, truce, or formal end to hostilities, confirmed by a government statement or by at least two of Reuters, AP, or AFP.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "TRUE if Reuters, AP, or AFP report a US-Iran ceasefire, truce, or hostilities-end announcement dated between 2026-09-17 and 2026-10-15; adjudicated 2026-10-19. FALSE otherwise.",
+    "deadline": "2026-10-19",
+    "citations": [
+      77
+    ],
+    "failure_condition": "No US-Iran ceasefire, truce, or hostilities-end announcement dated within the window is confirmed by Reuters, AP, or AFP as of the deadline."
+  },
+  {
+    "statement": "Between 2026-09-17 and 2026-10-08, India or Pakistan's government issues a formal diplomatic protest or demarche over this week's India-Pakistan naval ship collision, confirmed by a government statement or by Reuters, AP, or AFP.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "TRUE if India's MEA or Pakistan's Foreign Office issues a demarche or formal protest over the collision, reported by Reuters, AP, or AFP, dated 2026-09-17 to 2026-10-08; adjudicated 2026-10-12. FALSE otherwise.",
+    "deadline": "2026-10-12",
+    "citations": [
+      79
+    ],
+    "failure_condition": "Neither India's nor Pakistan's government issues a demarche or formal protest over the collision, as reported by Reuters, AP, or AFP, by the deadline."
+  },
+  {
+    "statement": "WTI crude oil settles below 95.00 dollars per barrel on any NYMEX trading day between 2026-10-01 and 2026-10-30. Reference: 101.09 dollars per barrel on the packet date, 2026-09-17.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "TRUE if the CME/NYMEX WTI front-month settlement price closes below 95.00 dollars on any trading day from 2026-10-01 to 2026-10-30, per CME Group data; adjudicated 2026-11-02. FALSE otherwise.",
+    "deadline": "2026-11-02",
+    "citations": [
+      52,
+      77
+    ],
+    "failure_condition": "The CME/NYMEX WTI front-month settlement price never closes below 95.00 dollars on any trading day in the window, per CME Group data."
+  },
+  {
+    "statement": "Bitcoin trades above 90,000 dollars on any day between 2026-09-17 and 2026-11-14, per Coinbase or Kraken spot price data. Reference: 76,270 dollars on the packet date, 2026-09-17.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "TRUE if Coinbase or Kraken spot BTC-USD trades above 90,000 dollars on any day from 2026-09-17 to 2026-11-14; adjudicated 2026-11-16. FALSE otherwise.",
+    "deadline": "2026-11-16",
+    "citations": [
+      69
+    ],
+    "failure_condition": "Neither Coinbase nor Kraken spot BTC-USD price ever exceeds 90,000 dollars on any day in the window."
+  },
+  {
+    "statement": "Between 2026-09-17 and 2026-10-08, CISA publishes a cybersecurity advisory naming the China-aligned group FamousSparrow or the SparroWocky backdoor, confirmed on cisa.gov.",
+    "domain": "cyber",
+    "probability": 20,
+    "resolution": "TRUE if a CISA advisory on cisa.gov names FamousSparrow or SparroWocky, published between 2026-09-17 and 2026-10-08; adjudicated 2026-10-12. FALSE otherwise.",
+    "deadline": "2026-10-12",
+    "citations": [
+      20,
+      22
+    ],
+    "failure_condition": "No CISA advisory on cisa.gov names FamousSparrow or SparroWocky as of the deadline."
+  },
+  {
+    "statement": "Between 2026-09-17 and 2026-10-08, Microsoft confirms a fix or re-release for the Windows 11 KB5124008 domain-trust break, via its Release Health dashboard or a Support advisory.",
+    "domain": "cyber",
+    "probability": 60,
+    "resolution": "TRUE if Microsoft's Release Health dashboard or Support site confirms a fix or re-release for the KB5124008 domain-trust issue between 2026-09-17 and 2026-10-08; adjudicated 2026-10-12. FALSE otherwise.",
+    "deadline": "2026-10-12",
+    "citations": [
+      23,
+      28
+    ],
+    "failure_condition": "Microsoft's Release Health dashboard and Support site show no fix or re-release for the KB5124008 domain-trust issue as of the deadline."
+  },
+  {
+    "statement": "Between 2026-09-17 and 2026-10-15, the Riksdag holds a formal vote confirming a new Swedish prime minister following Ulf Kristersson's resignation, recorded in the Riksdag's own vote record.",
+    "domain": "political",
+    "probability": 65,
+    "resolution": "TRUE if the Riksdag's vote record shows a confirmation vote for a new prime minister dated 2026-09-17 to 2026-10-15; adjudicated 2026-10-19. FALSE otherwise.",
+    "deadline": "2026-10-19",
+    "citations": [
+      105,
+      116,
+      118
+    ],
+    "failure_condition": "The Riksdag's vote record shows no confirmation vote for a new prime minister by the deadline, or Sweden remains under a caretaker government."
+  },
+  {
+    "statement": "Between 2026-09-17 and 2026-10-08, Meta publicly confirms compliance with the Oversight Board ruling on deepfake removal, via a Meta Newsroom post or the Oversight Board's implementation tracker.",
+    "domain": "political",
+    "probability": 25,
+    "resolution": "TRUE if Meta Newsroom or the Oversight Board implementation tracker shows a confirmed compliance update on the deepfake ruling, dated 2026-09-17 to 2026-10-08; adjudicated 2026-10-12. FALSE otherwise.",
+    "deadline": "2026-10-12",
+    "citations": [
+      108
+    ],
+    "failure_condition": "Neither Meta Newsroom nor the Oversight Board implementation tracker shows a confirmed compliance update on the deepfake ruling by the deadline."
+  },
+  {
+    "statement": "Between 2026-09-17 and 2026-10-22, the US House refers the Leon Black contempt matter to the Department of Justice, or holds a follow-up roll-call vote on enforcement, recorded on congress.gov.",
+    "domain": "crime/security",
+    "probability": 20,
+    "resolution": "TRUE if congress.gov records a DOJ referral or a follow-up House roll-call vote on the Leon Black matter, dated 2026-09-17 to 2026-10-22; adjudicated 2026-10-26. FALSE otherwise.",
+    "deadline": "2026-10-26",
+    "citations": [
+      11
+    ],
+    "failure_condition": "congress.gov shows no DOJ referral and no follow-up House roll-call vote on the Leon Black matter by the deadline."
+  },
+  {
+    "statement": "Between 2026-09-17 and 2026-10-01, an aftershock of magnitude 5.0 or greater occurs within 200 km of the M6.5 earthquake 165 km west of Nikolski, Alaska (USGS event us7000ti1p), per the USGS Earthquake Catalog.",
+    "domain": "disaster",
+    "probability": 35,
+    "resolution": "TRUE if the USGS Earthquake Catalog records an M5.0-or-greater event within 200 km of the Nikolski mainshock, dated 2026-09-17 to 2026-10-01; adjudicated 2026-10-05. FALSE otherwise.",
+    "deadline": "2026-10-05",
+    "citations": [
+      35,
+      39
+    ],
+    "failure_condition": "The USGS Earthquake Catalog records no M5.0-or-greater event within 200 km of the Nikolski mainshock by the deadline."
+  }
+]

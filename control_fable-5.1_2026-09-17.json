@@ -1,0 +1,254 @@
+[
+  {
+    "statement": "Between 2026-09-18 and 2026-10-31, the United States and Iran announce a ceasefire or cessation-of-hostilities agreement covering combat between US and Iranian forces, confirmed publicly by both governments.",
+    "resolution": "TRUE if, between 2026-09-18 and 2026-10-31, the US government and the Iranian government each publicly confirm a ceasefire or cessation-of-hostilities agreement covering US-Iran combat operations, reported by at least two of Reuters, AP, AFP.",
+    "failure_condition": "No ceasefire or cessation-of-hostilities agreement covering US-Iran combat operations is publicly confirmed by both governments with an agreement date between 2026-09-18 and 2026-10-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 61,
+    "citations": [
+      77,
+      124,
+      57
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-18 and 2026-10-16, India or Pakistan officially acknowledges at least one of its own uniformed personnel killed by fire from the forces of the other country.",
+    "resolution": "TRUE if, between 2026-09-18 and 2026-10-16, the Indian Ministry of Defence, Indian Army, Pakistan ISPR, or Pakistan Navy officially acknowledges at least one of its own uniformed personnel killed by fire from the forces of the other country.",
+    "failure_condition": "Neither government acknowledges a death of its own uniformed personnel caused by fire from the forces of the other country between 2026-09-18 and 2026-10-16.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-20",
+    "probability": 61,
+    "citations": [
+      79
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FRED series DCOILWTICO (WTI Cushing spot price) observation dated 2026-10-16 is below 95.00 USD per barrel. Reference: WTI 101.09 on the packet date 2026-09-17.",
+    "resolution": "TRUE if the FRED series DCOILWTICO observation dated 2026-10-16 is below 95.00. If FRED carries no observation for that date, use the EIA daily WTI Cushing spot price for 2026-10-16. Reference: 101.09 on the packet date.",
+    "failure_condition": "The WTI Cushing spot price for 2026-10-16 is at or above 95.00 USD per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-26",
+    "probability": 24,
+    "citations": [
+      52,
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At its scheduled October 2026 meeting (statement expected 2026-10-28), the FOMC raises the federal funds target range above the range set at its September 2026 meeting.",
+    "resolution": "TRUE if the FOMC statement released at the conclusion of its scheduled October 2026 meeting (expected 2026-10-28) sets a federal funds target range higher than the range set at the September 2026 meeting, per federalreserve.gov press releases.",
+    "failure_condition": "The October 2026 FOMC statement leaves the federal funds target range unchanged or lowers it relative to the range set in September 2026.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 24,
+    "citations": [
+      73,
+      59,
+      74,
+      67
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-18 and 2026-10-31, the US President signs an executive order or proclamation imposing new or increased tariffs applying specifically to goods originating in the European Union.",
+    "resolution": "TRUE if the Federal Register publishes an executive order or presidential proclamation, signed between 2026-09-18 and 2026-10-31, imposing new or increased tariff rates that apply specifically to goods originating in the European Union or its member states.",
+    "failure_condition": "No executive order or proclamation signed between 2026-09-18 and 2026-10-31 imposes new or increased tariffs applying specifically to EU-origin goods.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-06",
+    "probability": 24,
+    "citations": [
+      56,
+      73,
+      119
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry for an Issabel product with a dateAdded value between 2026-09-17 and 2026-10-30.",
+    "resolution": "TRUE if the CISA KEV catalog JSON contains at least one entry whose vendorProject or product field names Issabel, with dateAdded between 2026-09-17 and 2026-10-30 inclusive.",
+    "failure_condition": "No CISA KEV entry naming Issabel carries a dateAdded value between 2026-09-17 and 2026-10-30.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 29,
+    "citations": [
+      33
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-18 and 2026-10-16, Microsoft releases a fix and marks the Windows 11 domain trust and domain login issue introduced by update KB5124008 as Resolved.",
+    "resolution": "TRUE if Microsoft Windows release health or the KB5124008 support article shows the domain trust or domain login known issue with status Resolved and a resolution date between 2026-09-18 and 2026-10-16, on the live page or an archive.org capture.",
+    "failure_condition": "The KB5124008 domain trust or domain login issue carries no Resolved status with a resolution date between 2026-09-18 and 2026-10-16.",
+    "domain": "cyber",
+    "deadline": "2026-10-20",
+    "probability": 29,
+    "citations": [
+      28,
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-28 and 2026-11-06, the Riksdag approves a prime minister nominated by the speaker following the September 2026 Swedish general election.",
+    "resolution": "TRUE if the Riksdag voting record on riksdagen.se shows a prime minister vote held between 2026-09-28 and 2026-11-06 in which fewer than 175 members voted no, so that the nominee was approved.",
+    "failure_condition": "No Riksdag prime minister vote in which fewer than 175 members vote no is held between 2026-09-28 and 2026-11-06.",
+    "domain": "political",
+    "deadline": "2026-11-10",
+    "probability": 40,
+    "citations": [
+      105,
+      116,
+      118
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-18 00:00 UTC and 2026-10-15 23:59 UTC, an earthquake of magnitude 5.5 or greater occurs with epicenter within 150 km of USGS event us7000ti1p (M6.5, Fox Islands, Alaska, 2026-09-17).",
+    "resolution": "TRUE if the USGS earthquake catalog lists at least one event of magnitude 5.5 or greater with epicenter within 150 km of USGS event us7000ti1p and origin time between 2026-09-18 00:00 UTC and 2026-10-15 23:59 UTC.",
+    "failure_condition": "No USGS-catalogued earthquake of magnitude 5.5 or greater with epicenter within 150 km of us7000ti1p has origin time between 2026-09-18 00:00 UTC and 2026-10-15 23:59 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-10-19",
+    "probability": 29,
+    "citations": [
+      35,
+      39
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Following the US House vote on Leon Black reported 2026-09-16, a federal criminal charge of contempt of Congress against Leon Black is filed between 2026-09-18 and 2026-12-31.",
+    "resolution": "TRUE if a criminal information or indictment charging Leon Black with contempt of Congress under 2 USC 192 is filed in a US federal district court with a docket filing date between 2026-09-18 and 2026-12-31, per PACER or CourtListener.",
+    "failure_condition": "No criminal information or indictment charging Leon Black under 2 USC 192 is filed in any US federal district court between 2026-09-18 and 2026-12-31.",
+    "domain": "crime/security",
+    "deadline": "2027-01-05",
+    "probability": 23,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-17T16:25:10Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
