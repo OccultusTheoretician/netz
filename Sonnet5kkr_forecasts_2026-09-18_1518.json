@@ -1,0 +1,105 @@
+[
+  {
+    "statement": "The United States military conducts a direct kinetic strike (missile, air, or naval gunfire) against Houthi forces or positions at or near the Bab el-Mandeb strait between 2026-09-25 and 2026-10-16.",
+    "domain": "military/conflict",
+    "probability": 20,
+    "resolution": "TRUE if Reuters, AP, or BBC report a confirmed US strike on Houthi targets at or near Bab el-Mandeb in the stated window; checked 2026-10-20 using wire-service and CENTCOM reporting.",
+    "deadline": "2026-10-20",
+    "citations": [
+      76,
+      85
+    ],
+    "failure_condition": "No US strike on Houthi forces or positions at or near Bab el-Mandeb is reported by Reuters, AP, or BBC between 2026-09-25 and 2026-10-16."
+  },
+  {
+    "statement": "WTI crude oil (NYMEX front-month futures) settles at or above 100.00 USD per barrel on any trading day between 2026-09-21 and 2026-10-16. Reference: 96.92 on the packet date, 2026-09-18.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "TRUE if CME/NYMEX front-month WTI settlement data show a close at or above 100.00 USD/bbl on any session between 2026-09-21 and 2026-10-16; checked 2026-10-20 against exchange records.",
+    "deadline": "2026-10-20",
+    "citations": [
+      53,
+      66
+    ],
+    "failure_condition": "WTI NYMEX front-month settlement stays below 100.00 USD/bbl on every trading day from 2026-09-21 through 2026-10-16."
+  },
+  {
+    "statement": "The Nasdaq index closes at or above 27717.70, five percent above the packet reference, on any trading day between 2026-09-21 and 2026-10-16. Reference: 26397.81 on the packet date, 2026-09-18.",
+    "domain": "economics/markets",
+    "probability": 22,
+    "resolution": "TRUE if Nasdaq closing data show a close at or above 27717.70 on any session between 2026-09-21 and 2026-10-16; checked 2026-10-20 against exchange or major financial-data-provider records.",
+    "deadline": "2026-10-20",
+    "citations": [
+      59,
+      68
+    ],
+    "failure_condition": "Nasdaq closes below 27717.70 on every trading day from 2026-09-21 through 2026-10-16."
+  },
+  {
+    "statement": "CISA adds a CVE for the Microsoft Azure AI Foundry flaw described in the September 18, 2026 report, CVSS 10.0 and already patched by Microsoft, to its Known Exploited Vulnerabilities catalog between 2026-09-25 and 2026-11-06.",
+    "domain": "cyber",
+    "probability": 12,
+    "resolution": "TRUE if the CISA KEV catalog lists an Azure AI Foundry CVE with a dateAdded value between 2026-09-25 and 2026-11-06; checked 2026-11-10 against cisa.gov/known-exploited-vulnerabilities-catalog.",
+    "deadline": "2026-11-10",
+    "citations": [
+      16
+    ],
+    "failure_condition": "No Azure AI Foundry CVE appears in the CISA KEV catalog with a dateAdded in the stated window as of 2026-11-10."
+  },
+  {
+    "statement": "USGS records at least one aftershock of magnitude 5.0 or greater within 300 km of the M6.5 earthquake 169 km west of Nikolski, Alaska, event us7000ti1p, between 2026-09-18 and 2026-10-02.",
+    "domain": "disaster",
+    "probability": 45,
+    "resolution": "TRUE if the USGS earthquake catalog lists a magnitude 5.0-plus event within 300 km of event us7000ti1p between 2026-09-18 and 2026-10-02; checked 2026-10-06 via earthquake.usgs.gov.",
+    "deadline": "2026-10-06",
+    "citations": [
+      34
+    ],
+    "failure_condition": "No magnitude 5.0-plus earthquake within 300 km of event us7000ti1p is recorded by USGS between 2026-09-18 and 2026-10-02."
+  },
+  {
+    "statement": "GDACS raises its alert level above Green, to Orange or Red, for the Italy forest fire logged as event 1032034, already in its 59th day of coverage as of 2026-09-18, between 2026-09-18 and 2026-10-02.",
+    "domain": "disaster",
+    "probability": 8,
+    "resolution": "TRUE if the GDACS report page for event 1032034 shows an Orange or Red alert level at any point between 2026-09-18 and 2026-10-02; checked 2026-10-06 via gdacs.org.",
+    "deadline": "2026-10-06",
+    "citations": [
+      31
+    ],
+    "failure_condition": "GDACS event 1032034 remains at Green alert level, or is closed at Green, throughout 2026-09-18 to 2026-10-02."
+  },
+  {
+    "statement": "Pakistani government, police, or military (ISPR) officials publicly name a specific militant organization as responsible for the September 18, 2026 blast at a police-complex mosque in Pakistan, between 2026-09-18 and 2026-10-02.",
+    "domain": "crime/security",
+    "probability": 55,
+    "resolution": "TRUE if Reuters, AP, Al Jazeera, or Dawn quote a Pakistani official naming a specific militant group for the blast between 2026-09-18 and 2026-10-02; checked 2026-10-06.",
+    "deadline": "2026-10-06",
+    "citations": [
+      94
+    ],
+    "failure_condition": "No Pakistani official is quoted naming a specific militant group as responsible for the blast by 2026-10-02."
+  },
+  {
+    "statement": "Democrats win a majority of seats in the U.S. House of Representatives in the November 3, 2026 election, ending Republican control of the chamber.",
+    "domain": "political",
+    "probability": 78,
+    "resolution": "TRUE if AP, major-network race calls, or official state certifications show Democrats holding 218 or more House seats after the November 3, 2026 election; checked 2026-11-10.",
+    "deadline": "2026-11-10",
+    "citations": [
+      97
+    ],
+    "failure_condition": "Republicans retain a House majority of 218 or more seats following the November 3, 2026 election."
+  },
+  {
+    "statement": "Republicans retain majority control of the U.S. Senate after the November 3, 2026 election.",
+    "domain": "political",
+    "probability": 55,
+    "resolution": "TRUE if Republicans hold 51 or more Senate seats, or 50 seats with the Vice President breaking ties, per AP or major-network calls after the November 3, 2026 election; checked 2026-11-10.",
+    "deadline": "2026-11-10",
+    "citations": [
+      97,
+      110
+    ],
+    "failure_condition": "Democrats and Democratic-caucusing independents hold 51 or more Senate seats as of 2026-11-10, ending Republican Senate control."
+  }
+]

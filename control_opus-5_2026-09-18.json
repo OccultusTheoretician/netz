@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "CISA adds Check Point CVE-2026-91843, the pre-authentication root code-execution flaw in Security Management Server and Log Server, to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-09-19 and 2026-11-20.",
+    "resolution": "TRUE if the CISA KEV catalog JSON lists CVE-2026-91843 with a dateAdded value between 2026-09-19 and 2026-11-20 inclusive; FALSE otherwise.",
+    "failure_condition": "CISA did not add CVE-2026-91843 to the KEV catalog with a dateAdded between 2026-09-19 and 2026-11-20.",
+    "domain": "cyber",
+    "deadline": "2026-11-23",
+    "probability": 29,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one further Linux Kernel vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-09-21 and 2026-11-20, continuing the kernel additions logged on 2026-09-18.",
+    "resolution": "TRUE if the CISA KEV catalog JSON lists at least one entry with vendorProject Linux and product Kernel whose dateAdded falls between 2026-09-21 and 2026-11-20 inclusive.",
+    "failure_condition": "CISA added no Linux Kernel entry to the KEV catalog with a dateAdded between 2026-09-21 and 2026-11-20.",
+    "domain": "cyber",
+    "deadline": "2026-11-23",
+    "probability": 29,
+    "citations": [
+      18
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant-maturity yield prints at or above 5.25 percent on at least one trading day between 2026-09-21 and 2026-11-20. Reference: 5.00 percent on the packet date.",
+    "resolution": "TRUE if FRED series DGS10 shows a daily value of 5.25 or higher on any date from 2026-09-21 through 2026-11-20. Reference: 5.00 percent on the packet date.",
+    "failure_condition": "Every DGS10 daily value from 2026-09-21 through 2026-11-20 is below 5.25 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-24",
+    "probability": 24,
+    "citations": [
+      67,
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude at Cushing prints at or below 85.00 USD per barrel on at least one trading day between 2026-09-21 and 2026-11-20. Reference: 96.92 USD in the packet snapshot; the front-month contract settled at 100.30 USD on 2026-09-18.",
+    "resolution": "TRUE if FRED series DCOILWTICO (EIA Cushing WTI spot) shows a daily value of 85.00 or lower on any date from 2026-09-21 through 2026-11-20. Reference: 96.92 USD on the packet date.",
+    "failure_condition": "Every DCOILWTICO daily value from 2026-09-21 through 2026-11-20 is above 85.00 USD per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-30",
+    "probability": 24,
+    "citations": [
+      53,
+      66,
+      85
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democrats win control of the US Senate in the 2026-11-03 midterm elections, holding at least 51 seats together with independents Angus King and Bernie Sanders on Associated Press race calls made between 2026-11-03 and 2026-12-16.",
+    "resolution": "TRUE if the AP balance-of-power tally, from race calls for the 2026-11-03 election made by 2026-12-16, shows Democrats plus independents King and Sanders holding at least 51 Senate seats.",
+    "failure_condition": "Democrats plus independents King and Sanders hold 50 or fewer seats in the incoming Senate on the AP tally as of 2026-12-16.",
+    "domain": "political",
+    "deadline": "2026-12-18",
+    "probability": 40,
+    "citations": [
+      110,
+      81,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "United Russia receives 50.00 percent or more of the federal party-list vote in the State Duma election held 2026-09-18 to 2026-09-20, per final results certified by the Russian Central Election Commission between 2026-09-21 and 2026-10-02.",
+    "resolution": "TRUE if final results certified by the Russian Central Election Commission between 2026-09-21 and 2026-10-02 give United Russia 50.00 percent or more of the federal party-list vote.",
+    "failure_condition": "The certified United Russia share of the federal party-list vote is below 50.00 percent.",
+    "domain": "political",
+    "deadline": "2026-10-05",
+    "probability": 40,
+    "citations": [
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "US forces strike at least one target on Iranian land territory, including Iranian islands, between 2026-09-21 and 2026-10-31; strikes limited to vessels at sea do not count.",
+    "resolution": "TRUE if the Pentagon or CENTCOM confirms, or both Reuters and AP report, a US strike on a target on Iranian land territory, islands included, occurring between 2026-09-21 and 2026-10-31.",
+    "failure_condition": "No US strike hit a target on Iranian land territory, islands included, between 2026-09-21 and 2026-10-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-03",
+    "probability": 61,
+    "citations": [
+      66,
+      81,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A Chinese coast guard, navy, or maritime militia vessel fires a water cannon at, rams, or collides with a Philippine government vessel in the South China Sea between 2026-09-21 and 2026-10-31.",
+    "resolution": "TRUE if the Philippine Coast Guard or Armed Forces of the Philippines reports a Chinese water-cannon, ramming or collision incident against a Philippine government vessel dated 2026-09-21 to 2026-10-31, carried by Reuters or AP.",
+    "failure_condition": "No Chinese vessel fired a water cannon at, rammed, or collided with a Philippine government vessel in the South China Sea between 2026-09-21 and 2026-10-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-03",
+    "probability": 61,
+    "citations": [
+      82
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A single non-state militant attack in Pakistan kills at least 10 people, not counting the attackers, between 2026-09-21 and 2026-10-31.",
+    "resolution": "TRUE if Reuters or AP reports a non-state militant attack in Pakistan, occurring between 2026-09-21 and 2026-10-31, with a death toll from officials of at least 10 excluding attackers.",
+    "failure_condition": "No single non-state militant attack in Pakistan between 2026-09-21 and 2026-10-31 killed 10 or more people excluding attackers.",
+    "domain": "crime/security",
+    "deadline": "2026-11-03",
+    "probability": 23,
+    "citations": [
+      94
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater strikes within 250 km of the epicenter of the M6.5 event 169 km west of Nikolski, Alaska (USGS event us7000ti1p) between 2026-09-21 and 2026-11-20 UTC.",
+    "resolution": "TRUE if the USGS ComCat catalog lists an event of magnitude 6.0 or greater within 250 km of the us7000ti1p epicenter with origin time between 2026-09-21 and 2026-11-20 UTC.",
+    "failure_condition": "No earthquake of magnitude 6.0 or greater occurred within 250 km of the us7000ti1p epicenter between 2026-09-21 and 2026-11-20 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-23",
+    "probability": 29,
+    "citations": [
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-18T23:21:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

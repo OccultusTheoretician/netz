@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The CISA KEV catalog adds at least one further Linux Kernel CVE, beyond CVE-2025-39964 and CVE-2026-53266, with a date-added value between 2026-09-19 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "TRUE if the CISA KEV JSON feed lists a vendorProject Linux and product Kernel entry with dateAdded between 2026-09-19 and 2026-10-16 inclusive; FALSE otherwise.",
+    "deadline": "2026-10-20",
+    "citations": [18],
+    "failure_condition": "No Linux Kernel entry in the CISA KEV feed carries a dateAdded value in the 2026-09-19 to 2026-10-16 window."
+  },
+  {
+    "statement": "The critical Check Point root code-execution flaw reported 18 Sep 2026 is added to the CISA KEV catalog with a date-added value between 2026-09-18 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if the CISA KEV JSON feed lists a Check Point entry with dateAdded between 2026-09-18 and 2026-10-16 inclusive matching the flaw in item 12; FALSE otherwise.",
+    "deadline": "2026-10-20",
+    "citations": [12],
+    "failure_condition": "No Check Point entry appears in the CISA KEV feed with a dateAdded value between 2026-09-18 and 2026-10-16."
+  },
+  {
+    "statement": "ICE Brent front-month crude settles at or above 110.00 USD on at least one trading session between 2026-09-21 and 2026-10-30. Reference: 99.66 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "TRUE if any ICE Brent front-month daily settlement between 2026-09-21 and 2026-10-30 inclusive is at or above 110.00 USD per barrel per ICE or FRED DCOILBRENTEU; FALSE otherwise.",
+    "deadline": "2026-11-03",
+    "citations": [53, 66, 85],
+    "failure_condition": "Every ICE Brent front-month settlement in the 2026-09-21 to 2026-10-30 window is below 110.00 USD."
+  },
+  {
+    "statement": "A Russian presidential decree placing Nestle Russian assets under temporary state management is published on the official legal portal publication.pravo.gov.ru between 2026-09-18 and 2026-10-16.",
+    "domain": "economics/markets",
+    "probability": 55,
+    "resolution": "TRUE if publication.pravo.gov.ru or kremlin.ru carries a decree dated 2026-09-18 to 2026-10-16 inclusive naming Nestle entities for temporary management or asset transfer; FALSE otherwise.",
+    "deadline": "2026-10-20",
+    "citations": [63, 75],
+    "failure_condition": "No decree naming Nestle Russian assets for temporary management is published on the official portals in the 2026-09-18 to 2026-10-16 window."
+  },
+  {
+    "statement": "The Philippine Coast Guard publicly reports a new collision, ramming, or water-cannon incident involving a Chinese government vessel in the South China Sea between 2026-09-19 and 2026-10-16.",
+    "domain": "military/conflict",
+    "probability": 60,
+    "resolution": "TRUE if an official Philippine Coast Guard statement describes such an incident occurring 2026-09-19 to 2026-10-16 inclusive and at least one wire service (Reuters, AP, or AFP) reports it; FALSE otherwise.",
+    "deadline": "2026-10-20",
+    "citations": [82],
+    "failure_condition": "No Philippine Coast Guard statement describes a new collision, ramming, or water-cannon incident with a Chinese vessel dated within 2026-09-19 to 2026-10-16."
+  },
+  {
+    "statement": "UKMTO or JMIC issues an incident advisory for an attack on a merchant vessel in the Red Sea, Bab al-Mandeb, or Gulf of Aden occurring between 2026-09-19 and 2026-10-16.",
+    "domain": "military/conflict",
+    "probability": 55,
+    "resolution": "TRUE if the UKMTO or JMIC public advisory feed records a projectile, drone, or boarding attack on a merchant vessel in those waters dated 2026-09-19 to 2026-10-16 inclusive; FALSE otherwise.",
+    "deadline": "2026-10-20",
+    "citations": [85, 76, 53],
+    "failure_condition": "The UKMTO and JMIC advisory feeds record no attack on a merchant vessel in the Red Sea, Bab al-Mandeb, or Gulf of Aden dated within 2026-09-19 to 2026-10-16."
+  },
+  {
+    "statement": "The US government files a notice of appeal against the district court ruling blocking demolition of the Kennedy Center, docketed between 2026-09-18 and 2026-10-19.",
+    "domain": "political",
+    "probability": 55,
+    "resolution": "TRUE if the relevant federal district court docket on PACER or CourtListener shows a notice of appeal by the federal defendants entered 2026-09-18 to 2026-10-19 inclusive; FALSE otherwise.",
+    "deadline": "2026-10-22",
+    "citations": [118],
+    "failure_condition": "No notice of appeal by the federal defendants appears on the docket with an entry date between 2026-09-18 and 2026-10-19."
+  },
+  {
+    "statement": "Philippine prosecutors file criminal charges against a named suspect in the 18 Sep 2026 Philippines school shooting between 2026-09-18 and 2026-10-02.",
+    "domain": "crime/security",
+    "probability": 65,
+    "resolution": "TRUE if the Philippine News Agency and at least one of Reuters, AP, or AFP report a criminal complaint or information filed against a named suspect dated 2026-09-18 to 2026-10-02 inclusive; FALSE otherwise.",
+    "deadline": "2026-10-06",
+    "citations": [10, 11],
+    "failure_condition": "No criminal complaint or information against a named suspect in the school shooting is filed within 2026-09-18 to 2026-10-02."
+  },
+  {
+    "statement": "USGS records an earthquake of magnitude 6.0 or greater within 300 km of the 18 Sep 2026 M6.5 Nikolski, Alaska event between 2026-09-18 and 2026-10-16.",
+    "domain": "disaster",
+    "probability": 20,
+    "resolution": "TRUE if the USGS earthquake catalog lists an event of M6.0 or greater with epicenter within 300 km of us7000ti1p and origin time 2026-09-18 to 2026-10-16 inclusive, excluding us7000ti1p itself; FALSE otherwise.",
+    "deadline": "2026-10-20",
+    "citations": [34],
+    "failure_condition": "The USGS catalog contains no M6.0 or greater event within 300 km of us7000ti1p in the 2026-09-18 to 2026-10-16 window other than the original."
+  },
+  {
+    "statement": "GDACS issues an Orange or Red tropical cyclone alert for a storm affecting Japan between 2026-09-18 and 2026-09-25.",
+    "domain": "disaster",
+    "probability": 40,
+    "resolution": "TRUE if the GDACS alerts feed shows a tropical cyclone event with alert level Orange or Red listing Japan among affected countries and an alert date 2026-09-18 to 2026-09-25 inclusive; FALSE otherwise.",
+    "deadline": "2026-09-29",
+    "citations": [46],
+    "failure_condition": "No GDACS tropical cyclone alert at Orange or Red level lists Japan as affected with an alert date between 2026-09-18 and 2026-09-25."
+  }
+]
