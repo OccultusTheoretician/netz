@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "CISA will add at least one Linux Kernel entry to its Known Exploited Vulnerabilities catalog with dateAdded between 2026-09-26 and 2026-10-17.",
+    "resolution": "TRUE if the CISA KEV catalog lists a Linux Kernel entry with dateAdded in 2026-09-26 to 2026-10-17, checked 2026-10-19; else FALSE.",
+    "failure_condition": "No Linux Kernel entry is added to the CISA KEV catalog with dateAdded between 2026-09-26 and 2026-10-17.",
+    "domain": "cyber",
+    "deadline": "2026-10-19",
+    "probability": 29,
+    "citations": [
+      23,
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "GDACS event 1032222, the Australia forest fire tracked Green since day 60 of coverage, will be upgraded to Orange or Red between 2026-09-26 and 2026-10-10.",
+    "resolution": "TRUE if the GDACS report page for event 1032222 shows Orange or Red alert level at any point in the window, checked 2026-10-12; else FALSE.",
+    "failure_condition": "GDACS event 1032222 remains Green, or closes at Green, throughout 2026-09-26 to 2026-10-10.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-10-12",
+    "probability": 29,
+    "citations": [
+      29
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS will record at least one magnitude 5.0+ aftershock within 200 km of event us7000ti1p, the 19 Sep M6.5 Nikolski Alaska quake, between 2026-09-26 and 2026-10-10.",
+    "resolution": "TRUE if the USGS catalog lists an M5.0+ quake within 200 km of us7000ti1p dated 2026-09-26 to 2026-10-10, checked 2026-10-12; else FALSE.",
+    "failure_condition": "No M5.0+ earthquake appears in the USGS catalog within 200 km of us7000ti1p during 2026-09-26 to 2026-10-10.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-10-12",
+    "probability": 29,
+    "citations": [
+      32
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year Treasury yield, FRED series DGS10, will close at or above 5.15 percent, Reference: 5.00 percent on the 2026-09-19 packet date, between 2026-09-28 and 2026-10-23.",
+    "resolution": "TRUE if FRED series DGS10 shows a daily value of 5.15 or higher for any date 2026-09-28 to 2026-10-23, checked 2026-10-26; else FALSE.",
+    "failure_condition": "FRED series DGS10 never reaches 5.15 percent on any trading day between 2026-09-28 and 2026-10-23.",
+    "domain": "economic",
+    "deadline": "2026-10-26",
+    "probability": 24,
+    "citations": [
+      54,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude front-month will settle below 90.00 USD per barrel, Reference: 96.08 on the 2026-09-19 packet date, on any session between 2026-09-28 and 2026-10-23.",
+    "resolution": "TRUE if CME or EIA settlement data show WTI front-month below 90.00 USD/bbl on any day 2026-09-28 to 2026-10-23, checked 2026-10-26; else FALSE.",
+    "failure_condition": "WTI front-month settlement stays at or above 90.00 USD/bbl every session between 2026-09-28 and 2026-10-23.",
+    "domain": "economic",
+    "deadline": "2026-10-26",
+    "probability": 24,
+    "citations": [
+      52,
+      96
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Polish Ministry of National Defence, its Operational Command, or NATO will confirm a Russian-origin drone or missile entered Polish airspace between 2026-09-26 and 2026-10-17.",
+    "resolution": "TRUE if Polish authorities or NATO officially confirm a Russian-origin airspace incursion dated 2026-09-26 to 2026-10-17, wire-reported by 2026-10-19; else FALSE.",
+    "failure_condition": "No official Polish or NATO confirmation of a Russian-origin airspace incursion is issued for 2026-09-26 to 2026-10-17.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-19",
+    "probability": 61,
+    "citations": [
+      86
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "MS NOW, CNN, or Politico will file a US federal lawsuit over the September 2026 White House press-access ban between 2026-09-26 and 2026-11-14.",
+    "resolution": "TRUE if a federal court docket or wire report shows a complaint filed by any of the three outlets within the window, checked 2026-11-17; else FALSE.",
+    "failure_condition": "None of MS NOW, CNN, or Politico files suit over the access ban between 2026-09-26 and 2026-11-14.",
+    "domain": "political",
+    "deadline": "2026-11-17",
+    "probability": 40,
+    "citations": [
+      95,
+      99,
+      116
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Saudi Press Agency or Saudi Ministry of Defence will publicly attribute the 19 Sep 2026 Riyadh alerts and airport-area smoke to hostile launch or false alarm, between 2026-09-26 and 2026-10-10.",
+    "resolution": "TRUE if SPA or the Saudi MOD states a cause, hostile launch or false alarm, in the window, confirmed by Reuters or AP, checked 2026-10-13; else FALSE.",
+    "failure_condition": "No Saudi official source attributes a cause to the Riyadh alerts and smoke during 2026-09-26 to 2026-10-10.",
+    "domain": "crime_security",
+    "deadline": "2026-10-13",
+    "probability": 23,
+    "citations": [
+      9,
+      52,
+      96
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Nscale, the AI cloud infrastructure provider that filed to go public, will begin trading on a public stock exchange between 2026-09-26 and 2026-12-18.",
+    "resolution": "TRUE if Nscale shares begin trading on NASDAQ, NYSE, or another national exchange within the window, per listing notice or SEC EDGAR, checked 2026-12-21; else FALSE.",
+    "failure_condition": "Nscale has not begun trading on any public stock exchange by 2026-12-18.",
+    "domain": "economic",
+    "deadline": "2026-12-21",
+    "probability": 24,
+    "citations": [
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Trump and Xi will hold a confirmed bilateral meeting, in person or virtual, between 2026-09-26 and 2026-12-18.",
+    "resolution": "TRUE if the White House or the Chinese Foreign Ministry issues an official readout confirming a Trump-Xi meeting occurred within the window, checked 2026-12-21; else FALSE.",
+    "failure_condition": "No official White House or Chinese Foreign Ministry confirmation of a Trump-Xi meeting is issued for 2026-09-26 to 2026-12-18.",
+    "domain": "political",
+    "deadline": "2026-12-21",
+    "probability": 40,
+    "citations": [
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:33:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

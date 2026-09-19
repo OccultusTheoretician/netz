@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "CNN, Politico, or MS NOW, or journalists from any of them, file a federal lawsuit challenging the White House access ban announced 2026-09-18, with the complaint filed between 2026-09-20 and 2026-10-23.",
+    "domain": "political",
+    "probability": 80,
+    "resolution": "TRUE if a PACER or CourtListener docket shows a complaint filed between 2026-09-20 and 2026-10-23 in any U.S. district court by CNN, Politico, MS NOW, or their journalists challenging the White House access ban; otherwise FALSE.",
+    "deadline": "2026-10-27",
+    "citations": [
+      95,
+      99,
+      116
+    ],
+    "failure_condition": "No complaint challenging the ban was filed in any U.S. district court by CNN, Politico, MS NOW, or their journalists between 2026-09-20 and 2026-10-23."
+  },
+  {
+    "statement": "United Russia wins at least 300 of 450 State Duma seats in the election held 2026-09-18 to 2026-09-20, per final results the Central Election Commission approves between 2026-09-21 and 2026-10-02.",
+    "domain": "political",
+    "probability": 90,
+    "resolution": "TRUE if final results approved by the Russian Central Election Commission (cikrf.ru) between 2026-09-21 and 2026-10-02 allocate United Russia 300 or more of 450 seats, list and single-mandate combined; otherwise FALSE.",
+    "deadline": "2026-10-06",
+    "citations": [
+      115
+    ],
+    "failure_condition": "United Russia holds fewer than 300 seats in the CEC-approved final results, or no final allocation is approved between 2026-09-21 and 2026-10-02."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled 2026-10-27 to 2026-10-28 meeting. Reference: 3.75 to 4.00 percent at seal, FRED DFEDTARU 4.00.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "TRUE if FRED series DFEDTARU for 2026-10-29 exceeds 4.00, reflecting a target-range increase announced in the FOMC statement of 2026-10-28; otherwise FALSE.",
+    "deadline": "2026-11-02",
+    "citations": [
+      54,
+      62
+    ],
+    "failure_condition": "The FOMC held or cut the target range at its 2026-10-27 to 2026-10-28 meeting, leaving the upper limit at or below 4.00 percent on 2026-10-29."
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or above 115.00 USD per barrel on at least one trading day between 2026-09-21 and 2026-11-20. Reference: 104.87 front-month settlement on 2026-09-18 per Reuters; packet snapshot quote 99.29.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "TRUE if any ICE Brent front-month daily settlement between 2026-09-21 and 2026-11-20 is 115.00 USD or higher, per ICE daily settlement data; otherwise FALSE.",
+    "deadline": "2026-11-24",
+    "citations": [
+      9,
+      52,
+      105
+    ],
+    "failure_condition": "Every ICE Brent front-month daily settlement between 2026-09-21 and 2026-11-20 was below 115.00 USD."
+  },
+  {
+    "statement": "CISA adds CVE-2026-58138, the Orkes Conductor unauthenticated remote code execution flaw, to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-09-21 and 2026-11-13.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "TRUE if the CISA KEV JSON feed lists CVE-2026-58138 with a dateAdded value between 2026-09-21 and 2026-11-13 inclusive; otherwise FALSE.",
+    "deadline": "2026-11-17",
+    "citations": [
+      20
+    ],
+    "failure_condition": "CVE-2026-58138 is not in the KEV catalog with a dateAdded between 2026-09-21 and 2026-11-13."
+  },
+  {
+    "statement": "Have I Been Pwned loads the Gyazo (Helpfeel) breach of 2026-09-11, with an AddedDate between 2026-09-21 and 2026-12-18.",
+    "domain": "cyber",
+    "probability": 18,
+    "resolution": "TRUE if the HIBP breaches API (haveibeenpwned.com/api/v3/breaches) lists a Gyazo breach with AddedDate between 2026-09-21 and 2026-12-18; otherwise FALSE.",
+    "deadline": "2026-12-22",
+    "citations": [
+      26
+    ],
+    "failure_condition": "No Gyazo breach entry was added to HIBP with an AddedDate between 2026-09-21 and 2026-12-18."
+  },
+  {
+    "statement": "South African police arrest a suspect they publicly link to one or more of the nine Ekurhuleni killings of women, with the arrest made between 2026-09-21 and 2026-11-20, excluding the July 2026 Kempton Park arrest.",
+    "domain": "crime/security",
+    "probability": 55,
+    "resolution": "TRUE if SAPS announces, and Reuters, AP, AFP, or News24 reports, an arrest made between 2026-09-21 and 2026-11-20 of a suspect SAPS links to any of the nine Ekurhuleni killings; otherwise FALSE.",
+    "deadline": "2026-11-24",
+    "citations": [
+      71,
+      80
+    ],
+    "failure_condition": "No suspect was arrested between 2026-09-21 and 2026-11-20 whom SAPS links to any of the nine Ekurhuleni killings."
+  },
+  {
+    "statement": "US forces strike Houthi targets inside Yemen at least once between 2026-09-21 and 2026-11-06, with the strike publicly confirmed by US Central Command or the Pentagon.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "TRUE if CENTCOM or the Pentagon publicly confirms at least one US strike on Houthi targets inside Yemen conducted between 2026-09-21 and 2026-11-06; otherwise FALSE.",
+    "deadline": "2026-11-10",
+    "citations": [
+      9,
+      96,
+      105
+    ],
+    "failure_condition": "No US-acknowledged strike on Houthi targets inside Yemen took place between 2026-09-21 and 2026-11-06."
+  },
+  {
+    "statement": "The US formally notifies Congress of at least one Foreign Military Sale to Taiwan, published by DSCA as a Major Arms Sale naming the Taipei Economic and Cultural Representative Office, between 2026-09-25 and 2027-01-15.",
+    "domain": "military/conflict",
+    "probability": 20,
+    "resolution": "TRUE if the DSCA Major Arms Sales listing (dsca.mil) carries at least one TECRO notification dated between 2026-09-25 and 2027-01-15; otherwise FALSE.",
+    "deadline": "2027-01-19",
+    "citations": [
+      73
+    ],
+    "failure_condition": "No Foreign Military Sale congressional notification for TECRO (Taiwan) was made between 2026-09-25 and 2027-01-15."
+  },
+  {
+    "statement": "The Cuban national electric grid suffers a new total collapse, announced by the Ministry of Energy and Mines or Union Electrica, between 2026-09-21 and 2026-10-30.",
+    "domain": "disaster",
+    "probability": 55,
+    "resolution": "TRUE if the Cuban Ministry of Energy and Mines or Union Electrica announces a new total disconnection of the national grid occurring between 2026-09-21 and 2026-10-30, as reported by Reuters or AP; otherwise FALSE.",
+    "deadline": "2026-11-03",
+    "citations": [
+      89
+    ],
+    "failure_condition": "The Cuban national grid did not undergo a new total disconnection between 2026-09-21 and 2026-10-30."
+  }
+]

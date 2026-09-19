@@ -4,310 +4,243 @@
 
 *ANCHOR-ONLY is a finding against this desk's own grader, not against a source: when the only word two sides share is the place name the cluster was built on, that is a coincidence of geography inside a time window and not corroboration of one event. Those rows are marked so the grade can be discounted.*
 
-Events: `tg_events_2026-09-18_1516.json` · pull: `tg_translated_2026-09-18_1516.json` · joined on exact (channel, timestamp) — 156 source messages matched, 0 unmatched · rendered 181522Z SEP 26
+Events: `tg_events_2026-09-19_1515.json` · pull: `tg_translated_2026-09-19_1515.json` · joined on exact (channel, timestamp) — 125 source messages matched, 0 unmatched · rendered 191520Z SEP 26
 
-Comparison basis: **translated (text_en) — translation-mediated, 573 of 715 messages carry a translation**.
+Comparison basis: **translated (text_en) — translation-mediated, 670 of 850 messages carry a translation**.
 
 **LIMIT, NOT A DISCLAIMER:** first-in-this-corpus is not first in the world; a shared word read through translation may be the translator's and not either side's; and overlap between two single-outlet sides is a fact about two outlets, not two nations.
 
-**3 of 32 linked events are ANCHOR-ONLY** — listed in full below and worth reading before any of the convergence figures.
+**1 of 24 linked events are ANCHOR-ONLY** — listed in full below and worth reading before any of the convergence figures.
 
-### Tehran · iran · kinetic · A — confirmed across 3+ hostile sides
+### Gaza City · israel_gaza · kinetic · A — confirmed across 3+ hostile sides
 
-- Sides confirming: AXIS, IL, WEST — single-outlet: AXIS, IL, WEST
-- **Convergence 0.116** on the closest pair (IL / WEST) — little shared vocabulary
-    - shared: `gathering`, `held`, `iran`, `iranian`, `military`, `participation`, `revolution`, `square`, `tehran`, `under`
-- Import ratio 0.02 — mostly wording that appears here first
+- Sides confirming: AXIS, IL, PS — single-outlet: AXIS, IL, PS
+- **Convergence 0.145** on the closest pair (PS / AXIS) — little shared vocabulary
+    - shared: `city`, `drone`, `gaza`, `injured`, `injuries`, `israeli`, `killed`, `neighborhood`, `others`, `palestinian`, `radwan`, `reportedly`
+- Import ratio 0.07 — mostly wording that appears here first
 - Shared phrasing, by how fast it crossed the divide:
-    - `tehran revolution square` — IL → WEST in 1.35h, led by IL
-    - *AXIS only:* `commander describing participants`, `describing participants nightmare`, `understanding global developments`, `janfada-e-iran campaign marching`, `china-iran strategic partnership`, `developments approaches commonly`, `zakariyah explains significance`, `explains significance sacrifice`
-    - *IL only:* `serving military-civilian gathering`, `participants participants marched`, `military-civilian gathering point`, `square serving military-civilian`, `participation iranian president`, `age participants participants`, `tehran participation iranian`, `morning tehran participation`
-    - *WEST only:* `supervision islamic revolutionary`, `hassan-zadeh commander mohammad`, `government conducting training`, `defense participation conflict`, `national defense participation`, `participation conflict israel`, `iranian government conducting`, `hassan hassan-zadeh commander`
+    - `sheikh radwan neighborhood` — AXIS → PS in 0.04h, led by PS
+    - `radwan neighborhood gaza` — AXIS → PS in 0.04h, led by PS
+    - `neighborhood gaza city` — AXIS → PS in 0.04h, led by PS
+    - `vehicle sheikh radwan` — AXIS → PS in 0.04h, led by PS
+    - `israeli drone strike` — AXIS → PS in 0.04h, led by PS · **template** (predates this event in the corpus)
+    - `others injured israeli` — AXIS → PS in 0.16h, led by PS · **template** (predates this event in the corpus)
+    - *AXIS only:* `palestinian reportedly killed`, `targeting civilian vehicle`, `several injuries following`, `injuries following israeli`, `reportedly killed several`, `strike targeting civilian`, `civilian vehicle sheikh`, `strike civilian vehicle`
+    - *IL only:* `rizwan neighborhood northern`, `zitoun neighborhood eastern`, `neighborhood northern gaza`, `palestine mosque collapsed`, `a-najma building palestine`, `teams successfully rescued`, `mosque zitoun neighborhood`, `neighborhood civil defense`
+    - *PS only:* `restrictions construction materials`, `palestinians including children`, `while restrictions construction`, `construction materials hindered`, `orthopaedic department al-shifa`, `war-damaged building collapsed`, `palestinians injuring several`, `least palestinians including`
 
-### Tehran · iran · kinetic · A — confirmed across 3+ hostile sides
+### Sanctions · russia_ukraine · statement · A — confirmed across 3+ hostile sides
 
-- Sides confirming: AXIS, IL, WEST — single-outlet: AXIS, IL, WEST
-- **Convergence 0.053** on the closest pair (AXIS / WEST) — little shared vocabulary
-    - shared: `against`, `country`, `decision`, `following`, `iran`, `iranian`, `tehran`
-- Import ratio 0.00 — mostly wording that appears here first
-    - *AXIS only:* `following stockholm decision`, `consecutive night nationwide`, `iranian diplomat continuing`, `iran dismissed allegations`, `allegations orders swedish`, `dismissed allegations made`, `rejects sweden allegations`, `nationwide rallies support`
-    - *IL only:* `shoulder-fired missiles civilians`, `providing free shoulder-fired`, `free shoulder-fired missiles`, `iranian military providing`, `defense purposes recent`, `military providing free`, `tehran iranian military`, `purchase china comments`
-    - *WEST only:* `response inappropriate statements`, `certain interventionist actions`, `inappropriate statements senior`, `baseless characterized germany`, `interventionist actions german`, `characterized germany approach`, `unjustified harmful chancellor`, `iran certain interventionist`
-
-### Resolution · iran · statement · B — corroborated across the bias divide
-
-- Sides confirming: AXIS, WEST — single-outlet: AXIS, WEST
-- **Convergence 0.190** on the closest pair (WEST / AXIS) — substantial shared vocabulary
-    - shared: `china`, `council`, `experts`, `extend`, `iran`, `mandate`, `meeting`, `panel`, `resolution`, `russia`, `security`
-- Import ratio 0.02 — mostly wording that appears here first
-    - *AXIS only:* `us-backed anti-iran resolution`, `us-drafted resolution security`, `anti-iran resolution security`, `vetoed us-drafted resolution`, `resolution security council`, `veto us-backed anti-iran`, `china vetoed us-drafted`, `meeting blocking effort`
-    - *WEST only:* `delegation emphasized resolution`, `council concluded consideration`, `concluded consideration iran`, `agenda delegation emphasized`, `emphasized resolution 2231`, `sanctions monitoring panel`, `consideration iran nuclear`, `russian delegation council`
-
-### Bryansk · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.175** on the closest pair (RU / UA) — substantial shared vocabulary
-    - shared: `bryansk`, `kaluga`, `krai`, `krasnodar`, `kursk`, `moscow`, `oryol`, `region`, `regions`, `smolensk`, `tula`
-- Import ratio 0.01 — mostly wording that appears here first
-    - *RU only:* `aircraft-type drones territories`, `territories astrakhan belgorod`, `ukrainian aircraft-type drones`, `drones territories astrakhan`, `enterprise injured following`, `forces intercepted destroyed`, `629 ukrainian aircraft-type`, `defense forces intercepted`
-    - *UA only:* `s-400 launchers shelled`, `kursk lipetsk krasnodar`, `smolensk bryansk moscow`, `launchers shelled kyiv`, `struck s-400 launchers`, `lipetsk krasnodar krai`, `russian regions namely`, `threat russian regions`
-
-### Jenin · israel_gaza · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: AXIS, PS — single-outlet: AXIS, PS
-- **Convergence 0.172** on the closest pair (PS / AXIS) — substantial shared vocabulary
-    - shared: `forces`, `israeli`, `jenin`, `palestinian`, `town`
-- Import ratio 0.06 — mostly wording that appears here first
-    - *AXIS only:* `cold-bloodedly kill palestinian`, `israeli forces cold-bloodedly`, `forces cold-bloodedly kill`, `palestinian alaa mahamid`, `footage captures moment`, `warning graphic content`, `captures moment israeli`, `al-fahm northwest jenin`
-    - *PS only:* `israeli occupation forces`, `forces storm palestinian`, `al-harithiya west jenin`, `town silat al-harithiya`, `occupation forces storm`, `silat al-harithiya west`, `storm palestinian homes`, `occupation forces fired`
-
-### Hebron · israel_gaza · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: AXIS, PS — single-outlet: AXIS, PS
-- **Convergence 0.164** on the closest pair (PS / AXIS) — substantial shared vocabulary
-    - shared: `attack`, `bank`, `hebron`, `israeli`, `occupied`, `palestinian`, `settlers`, `south`, `west`, `woman`
-- Import ratio 0.10 — mostly wording that appears here first
-- Shared phrasing, by how fast it crossed the divide:
-    - `attack palestinian woman` — AXIS → PS in 0.4h, led by PS
-    - `south hebron occupied` — AXIS → PS in 0.4h, led by PS · **template** (predates this event in the corpus)
-    - `hebron occupied west` — AXIS → PS in 5.2h, led by PS · **template** (predates this event in the corpus)
-    - `occupied west bank` — AXIS → PS in 5.2h, led by PS · **template** (predates this event in the corpus)
-    - *AXIS only:* `violently attack palestinian`, `iof-backed israeli settlers`, `israeli settlers violently`, `settlers violently attack`, `palestinian woman outside`, `watch iof-backed israeli`, `home south hebron`, `woman outside her`
-    - *PS only:* `accompanied israeli occupation`, `militiamen assault palestinian`, `protection israeli occupation`, `israeli settlers accompanied`, `settlers accompanied israeli`, `attack palestinian families`, `settlers attack palestinian`, `palestinian woman al-markaz`
-
-### Gaza City · israel_gaza · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: IL, PS — single-outlet: IL, PS
-- **Convergence 0.132** on the closest pair (IL / PS) — little shared vocabulary
-    - shared: `building`, `city`, `collapsed`, `gaza`, `neighborhood`
-- Import ratio 0.00 — mostly wording that appears here first
-    - *IL only:* `collapsed zebah neighborhood`, `adjacent building collapsed`, `injuries building collapse`, `killing several occupants`, `trapped person sustained`, `sustained minor injuries`, `building collapsed zebah`, `minor injuries building`
-    - *PS only:* `collapsed al-sabra neighborhood`, `residential building collapsed`, `breaking residential building`, `al-sabra neighborhood south`, `building collapsed al-sabra`, `israeli occupation drone`, `neighborhood south gaza`, `occupation drone flies`
-
-### Kursk · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.100** on the closest pair (RU / UA) — little shared vocabulary
-    - shared: `bryansk`, `kaluga`, `krai`, `krasnodar`, `kursk`, `moscow`, `oryol`, `regions`, `russian`, `smolensk`, `tula`
-- Import ratio 0.01 — mostly wording that appears here first
-    - *RU only:* `conscientiousness fulfilling assigned`, `grandson conscientiousness fulfilling`, `emphasizes grandson conscientiousness`, `participation liberation settlement`, `including participation liberation`, `aircraft-type drones territories`, `participant soviet-finnish great`, `abdulkhakim ismailovich ismailov`
-    - *UA only:* `kursk lipetsk krasnodar`, `smolensk bryansk moscow`, `lipetsk krasnodar krai`, `russian regions namely`, `threat russian regions`, `attack threat russian`, `tver smolensk bryansk`, `bryansk moscow kaluga`
-
-### Odesa · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.087** on the closest pair (RU / UA) — little shared vocabulary
-    - shared: `center`, `forces`, `odesa`, `strike`
-- Import ratio 0.02 — mostly wording that appears here first
-    - *RU only:* `information-processing center odesa`, `strike hit information-processing`, `hit information-processing center`, `kirovohrad vinnytsia geolocation`, `temporarily occupied ukrainian`, `cherkasy kirovohrad vinnytsia`, `mykolaiv kherson temporarily`, `kherson temporarily occupied`
-    - *UA only:* `launched double-tap strike`, `odesa launched double-tap`, `resident captured moment`, `business center building`, `victim serious condition`, `odesa resident captured`, `struck crowded business`, `crowded business center`
-
-### Crimea · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.083** on the closest pair (RU / UA) — little shared vocabulary
-    - shared: `control`, `crimea`, `defense`, `drones`, `forces`, `region`, `strike`
-- Import ratio 0.01 — mostly wording that appears here first
-    - *RU only:* `aircraft-type drones territories`, `territories astrakhan belgorod`, `ukrainian aircraft-type drones`, `drones territories astrakhan`, `enterprise injured following`, `forces intercepted destroyed`, `629 ukrainian aircraft-type`, `defense forces intercepted`
-    - *UA only:* `airfield near novofedorivka`, `novofedorivka crimea they`, `near novofedorivka crimea`, `dovzhansk materiel depot`, `near dovzhansk materiel`, `region confirms strikes`, `luhansk region confirms`, `several russian targets`
-
-### Kupiansk · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.070** on the closest pair (RU / UA) — little shared vocabulary
-    - shared: `direction`, `forces`, `kupiansk`
-- Import ratio 0.04 — mostly wording that appears here first
-    - *RU only:* `anatolyevich eliminated kupiansk`, `andrey anatolyevich eliminated`, `commander mechanized battalion`, `eliminated kupiansk direction`, `position commander mechanized`, `mechanized brigade ukrainian`, `yaitsky andrey anatolyevich`, `separate mechanized brigade`
-    - *UA only:* `south slobozhansky directions`, `slobozhansky directions stay`, `kupiansk south slobozhansky`, `joint forces responsibility`, `spokesman viktor trehubov`, `direction donetsk region`, `lyman direction donetsk`, `viktor trehubov ukraine`
-
-### Hebron · israel_gaza · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: IL, PS — single-outlet: IL, PS
-- **Convergence 0.062** on the closest pair (IL / PS) — little shared vocabulary
-    - shared: `family`, `hebron`, `israeli`, `masafer`, `palestinian`, `palestinians`, `soldiers`, `their`
-- Import ratio 0.00 — mostly wording that appears here first
-    - *IL only:* `palestinian-norwegian film premiered`, `palestinian unauthorized structures`, `palestinians systematically destroy`, `systematically destroy environment`, `co-produced palestinian filmmaker`, `immediately regarding palestinian`, `pride palestinians systematically`, `showing palestinian unauthorized`
-    - *PS only:* `detained palestinian handcuffed`, `palestinian handcuffed forced`, `loses consciousness blocking`, `israeli occupation soldiers`, `detain palestinians masafer`, `consciousness blocking his`, `stand detained palestinian`, `ground loses consciousness`
-
-### Tehran · iran · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: AXIS, WEST — single-outlet: AXIS, WEST
-- **Convergence 0.054** on the closest pair (AXIS / WEST) — little shared vocabulary
-    - shared: `iran`, `march`, `part`, `tehran`, `women`
+- Sides confirming: IL, UA, WEST — single-outlet: IL, UA, WEST
+- **Convergence 0.122** on the closest pair (WEST / IL) — little shared vocabulary
+    - shared: `graham`, `imposing`, `iran`, `lindsey`, `president`, `provisions`, `russia`, `sanctions`, `signed`, `trump`
 - Import ratio 0.09 — mostly wording that appears here first
-    - *AXIS only:* `accusations baseless interventionist`, `ambassador reject chancellor`, `calling accusations baseless`, `demonstrate their readiness`, `ordinary citizens thronging`, `program regional alliances`, `summoned german ambassador`, `hormuz calling accusations`
-    - *WEST only:* `participating long-distance running`, `women participating long-distance`, `called razmāyesh jān-fadāyān-e`, `previously women participating`, `long-distance running events`, `faced opposition authorities`, `today september 10-kilometer`, `razmāyesh jān-fadāyān-e iran`
+- Shared phrasing, by how fast it crossed the divide:
+    - `sanctions against russia` — UA → WEST in 3.7h, led by WEST · **template** (predates this event in the corpus)
+    - *IL only:* `implementation these measures`, `president granted authority`, `delay cancel implementation`, `cancel implementation these`, `goods extension sanctions`, `sanctions putin oligarchs`, `oligarchs banks companies`, `measures comment article`
+    - *UA only:* `further effectively nationalize`, `effectively nationalize western`, `understands language direct`, `saying understands language`, `direct military deterrence`, `nationalize western assets`, `russia further effectively`, `russia saying understands`
+    - *WEST only:* `involvement republican senator`, `drafted involvement republican`, `ukrainian president volodymyr`, `president volodymyr zelensky`, `swiftly implement provisions`, `extending sanctions against`, `volodymyr zelensky thanked`, `republican senator lindsey`
 
-### Donetsk · russia_ukraine · kinetic · B — corroborated across the bias divide
+### Moscow · russia_ukraine · kinetic · A — confirmed across 3+ hostile sides
 
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.053** on the closest pair (RU / UA) — little shared vocabulary
-    - shared: `defense`, `donetsk`, `drones`, `forces`, `people`, `russian`, `targets`
-- Import ratio 0.01 — mostly wording that appears here first
-    - *RU only:* `liberation settlements verolubivka`, `footage liberation settlements`, `settlements verolubivka zoloty`, `verolubivka zoloty kolyedezh`, `liberated verolubivka zoloty`, `forces liberated verolubivka`, `verolubivka zoloty kolyodets`, `released footage liberation`
-    - *UA only:* `south slobozhansky directions`, `slobozhansky directions stay`, `people trust ballot-stuffing`, `zaporizhzhia kherson regions`, `ballot-stuffing clips russia`, `donetsk luhansk zaporizhzhia`, `luhansk zaporizhzhia kherson`, `kupiansk south slobozhansky`
+- Sides confirming: AXIS, RU, UA — single-outlet: AXIS, UA
+- **Convergence 0.068** on the closest pair (RU / UA) — little shared vocabulary
+    - shared: `around`, `attacked`, `bryansk`, `moscow`, `novgorod`, `oryol`, `overnight`, `region`, `rostov`, `russian`, `toward`, `tula`
+- Import ratio 0.04 — mostly wording that appears here first
+    - *AXIS only:* `three-day parliamentary elections`, `parliamentary elections begin`, `vote three-day parliamentary`, `russians vote three-day`, `marina kortunova moscow`, `elections begin marina`, `begin marina kortunova`
+    - *RU only:* `modernism residential construction`, `multi-apartment building designed`, `residential buildings dormitories`, `incredible residential buildings`, `buildings dormitories resembling`, `registered approximately million`, `continuously attacked throughout`, `achievements greatest architect`
+    - *UA only:* `overnight ukrainian uavs`, `ukrainian uavs attacked`, `toward nizhny novgorod`, `defenses active around`, `rostov region russian`, `uavs attacked russia`, `russian air defenses`, `active around moscow`
 
-### Kherson · russia_ukraine · kinetic · B — corroborated across the bias divide
+### Moscow · russia_ukraine · kinetic · A — confirmed across 3+ hostile sides
 
-- Sides confirming: RU, UA — single-outlet: RU
-- **Convergence 0.050** on the closest pair (RU / UA) — little shared vocabulary
-    - shared: `kherson`, `oblast`, `occupied`, `regions`, `temporarily`, `territory`, `zaporizhzhia`
+- Sides confirming: AXIS, RU, UA — single-outlet: AXIS, UA
+- **Convergence 0.037** on the closest pair (RU / UA) — almost nothing in common
+    - shared: `even`, `everyone`, `exclusive`, `moscow`, `multiple`, `peace`, `people`, `person`, `remains`, `russia`, `russian`, `several`
 - Import ratio 0.00 — mostly wording that appears here first
-    - *RU only:* `information-processing center odesa`, `strike hit information-processing`, `hit information-processing center`, `kirovohrad vinnytsia geolocation`, `temporarily occupied ukrainian`, `cherkasy kirovohrad vinnytsia`, `ukrainian territory september`, `mykolaiv kherson temporarily`
-    - *UA only:* `humanitarian catastrophe orchestrated`, `catastrophe orchestrated vladimir`, `death humanitarian catastrophe`, `surrounding district occupied`, `oleshky surrounding district`, `non-existent kherson oleshky`, `people trust ballot-stuffing`, `zaporizhzhia kherson regions`
+    - *AXIS only:* `rejects western-ukrainian fabrication`, `western-ukrainian fabrication bucha`, `probe rejects western-ukrainian`, `fabrication bucha killings`, `marina kortunova moscow`, `russian probe rejects`, `2022 marina kortunova`, `killings 2022 marina`
+    - *RU only:* `military-industrial commission satellite`, `meeting military-industrial commission`, `president meeting military-industrial`, `registered participants additional`, `accounting registered participants`, `meteorologists predict prolonged`, `september meteorologists predict`, `broadband internet constellation`
+    - *UA only:* `increasingly frustrated -mediated`, `growing increasingly frustrated`, `unusual position negotiator`, `moscow growing increasingly`, `relationship russian envoy`, `frustrated -mediated peace`, `close relationship russian`, `position negotiator become`
 
-### Tanker · iran · statement · B — corroborated across the bias divide
+### Isfahan · iran · kinetic · B — corroborated across the bias divide
 
-- Sides confirming: AXIS, WEST — single-outlet: WEST
-- **Convergence 0.050** on the closest pair (WEST / AXIS) — little shared vocabulary
-    - shared: `attempted`, `hormuz`, `route`, `stated`, `strait`, `tanker`
-- Import ratio 0.14 — mostly wording that appears here first
-    - *AXIS only:* `incitement deception child-killing`, `deception child-killing american`, `nothing destruction offending`, `result destruction violating`, `destruction violating vessel`, `destruction offending vessel`, `child-killing american navy`, `islamic revolutionary guard`
-    - *WEST only:* `authorities currently investigating`, `investigating incident previously`, `currently investigating incident`, `environmental impact confirmed`, `maritime incident organization`, `operations september shahrivar`, `incident organization earlier`, `speedboat attempted intercept`
+- Sides confirming: AXIS, WEST — single-outlet: AXIS, WEST
+- **Convergence 0.220** on the closest pair (AXIS / WEST) — substantial shared vocabulary
+    - shared: `agency`, `espionage`, `executed`, `information`, `intelligence`, `iran`, `isfahan`, `israel`, `judiciary`, `military`, `mossad`, `sensitive`
+- Import ratio 0.00 — mostly wording that appears here first
+    - *AXIS only:* `providing sensitive information`, `sensitive information military`, `espionage providing sensitive`, `convicted espionage providing`, `judiciary execution hossein`, `pedaran convicted espionage`, `information military sites`, `mossad intelligence agency`
+    - *WEST only:* `intelligence cooperation government`, `initiating intelligence cooperation`, `espionage intelligence cooperation`, `including initiating intelligence`, `requests expressions willingness`, `intelligence cooperation zionist`, `cooperation government through`, `related espionage intelligence`
 
-### Rostov-On-Don · russia_ukraine · kinetic · B — corroborated across the bias divide
+### Jerusalem · israel_gaza · kinetic · B — corroborated across the bias divide
+
+- Sides confirming: AXIS, PS — single-outlet: AXIS, PS
+- **Convergence 0.204** on the closest pair (PS / AXIS) — substantial shared vocabulary
+    - shared: `fired`, `forces`, `israeli`, `issawiya`, `mount`, `northeast`, `occupied`, `toward`, `town`
+- Import ratio 0.00 — mostly wording that appears here first
+- Shared phrasing, by how fast it crossed the divide:
+    - `issawiya northeast occupied` — AXIS → PS in 2.05h, led by PS
+    - `town issawiya northeast` — AXIS → PS in 2.05h, led by PS
+    - *AXIS only:* `northeast occupied al-quds`, `ammunition stun grenades`, `al-masharf town issawiya`, `toward mount al-masharf`, `mount al-masharf town`, `fired live ammunition`, `grenades toward mount`, `stun grenades toward`
+    - *PS only:* `northeast occupied jerusalem`, `apologized austria holocaust`, `embassy occupied jerusalem`, `israeli occupation forces`, `break israeli occupation`, `herbert kickl apologized`, `kickl apologized austria`, `austria embassy occupied`
+
+### Sanctions · iran · statement · B — corroborated across the bias divide
+
+- Sides confirming: AXIS, WEST — single-outlet: AXIS, WEST
+- **Convergence 0.150** on the closest pair (AXIS / WEST) — substantial shared vocabulary
+    - shared: `bill`, `donald`, `president`, `sanctions`, `signed`, `trump`
+- Import ratio 0.07 — mostly wording that appears here first
+    - *AXIS only:* `signed russia-iran sanctions`, `russia-iran sanctions bill`, `trump signed russia-iran`, `president donald trump`, `donald trump signed`, `sanctions bill into`, `bill into law`
+    - *WEST only:* `officials financial institutions`, `financial institutions entities`, `sanctions tariffs restrictions`, `includes sanctions targeting`, `sectors authorizes president`, `restrictions russia includes`, `authorizes president impose`, `russian officials financial`
+
+### Jabalia · israel_gaza · kinetic · B — corroborated across the bias divide
+
+- Sides confirming: IL, PS — single-outlet: IL, PS
+- **Convergence 0.122** on the closest pair (IL / PS) — little shared vocabulary
+    - shared: `al-bursh`, `drone`, `gaza`, `health`, `israeli`, `jabalia`, `killed`, `ministry`, `northern`, `strike`
+- Import ratio 0.04 — mostly wording that appears here first
+    - *IL only:* `al-aqsa journalists earlier`, `civilian casualties recent`, `reportedly caused civilian`, `caused civilian casualties`, `recent al-aqsa journalists`, `al-aqsa journalist killed`, `casualties recent al-aqsa`, `neighborhood eastern gaza`
+    - *PS only:* `healthcare workers continuing`, `healthcare system throughout`, `palestinians killed israeli`, `intimidate deter healthcare`, `airstrike jabalia northern`, `leadership gaza healthcare`, `genocide israel repeatedly`, `israel repeatedly targeted`
+
+### Bryansk, Rostov-On-Don · russia_ukraine · kinetic · B — corroborated across the bias divide
 
 - Sides confirming: RU, UA — single-outlet: UA
-- **Convergence 0.043** on the closest pair (RU / UA) — almost nothing in common
-    - shared: `defense`, `overnight`, `rostov`, `ukrainian`
-- Import ratio 0.05 — mostly wording that appears here first
-    - *RU only:* `private multi-apartment buildings`, `multi-apartment buildings damaged`, `aircraft-type drones territories`, `eight multi-apartment buildings`, `territories astrakhan belgorod`, `ukrainian aircraft-type drones`, `multi-apartment buildings four`, `district eight multi-apartment`
-    - *UA only:* `defenses overnight seemed`, `all-round defense firing`, `air defenses overnight`, `into all-round defense`, `overnight seemed shift`, `firing back ukrainian`, `shift into all-round`, `rostov air defenses`
-
-### Strait Of Hormuz · iran · statement · B — corroborated across the bias divide
-
-- Sides confirming: AXIS, WEST — single-outlet: WEST
-- **Convergence 0.043** on the closest pair (WEST / AXIS) — almost nothing in common
-    - shared: `attempted`, `hormuz`, `stated`, `strait`, `tanker`
-- Import ratio 0.15 — mostly wording that appears here first
-    - *AXIS only:* `incitement deception child-killing`, `deception child-killing american`, `nothing destruction offending`, `result destruction violating`, `destruction violating vessel`, `destruction offending vessel`, `child-killing american navy`, `islamic revolutionary guard`
-    - *WEST only:* `authorities currently investigating`, `investigating incident previously`, `currently investigating incident`, `environmental impact confirmed`, `maritime incident organization`, `operations september shahrivar`, `incident organization earlier`, `speedboat attempted intercept`
+- **Convergence 0.108** on the closest pair (RU / UA) — little shared vocabulary
+    - shared: `around`, `bryansk`, `moscow`, `novgorod`, `oryol`, `overnight`, `region`, `rostov`, `russian`, `toward`, `tula`, `ukrainian`
+- Import ratio 0.06 — mostly wording that appears here first
+    - *RU only:* `registered approximately million`, `region yamalo-nenets autonomous`, `approximately million residents`, `aircraft territories leningrad`, `territories leningrad novgorod`, `yamalo-nenets autonomous okrug`, `operations targeting ukrainian`, `targeting ukrainian objectives`
+    - *UA only:* `overnight ukrainian uavs`, `ukrainian uavs attacked`, `toward nizhny novgorod`, `defenses active around`, `rostov region russian`, `uavs attacked russia`, `russian air defenses`, `active around moscow`
 
 ### Kyiv · russia_ukraine · kinetic · B — corroborated across the bias divide
 
 - Sides confirming: RU, UA
-- **Convergence 0.038** on the closest pair (RU / UA) — almost nothing in common
-    - shared: `2026`, `attacks`, `even`, `kyiv`, `russia`, `russian`, `targets`, `ukraine`, `wartime`
-- Import ratio 0.01 — mostly wording that appears here first
-    - *RU only:* `retaliatory actions self-defense`, `deliveries long-range offensive`, `accomplice diplomats emphasized`, `facilities ukrainian territory`, `actions self-defense confirmed`, `self-defense confirmed british`, `necessary retaliatory actions`, `military facilities ukrainian`
-    - *UA only:* `european commission spokesperson`, `independent vladyslav musiienko`, `businesses escalate government`, `commission spokesperson balazs`, `so-called election contributor`, `earlier agreements addressing`, `agreements addressing ukraine`, `parliamentary election banned`
+- **Convergence 0.073** on the closest pair (RU / UA) — little shared vocabulary
+    - shared: `battlefield`, `countries`, `defense`, `drones`, `kharkiv`, `korean`, `kyiv`, `military`, `ministry`, `missile`, `north`, `oblast`
+- Import ratio 0.03 — mostly wording that appears here first
+    - *RU only:* `starokonstantinove khmelnytskyi oblast`, `military transportation infrastructure`, `transportation infrastructure targets`, `transportation infrastructure ukraine`, `kyiv starokonstantinove khmelnytskyi`, `ports transportation infrastructure`, `ministry defense customs-logistics`, `ukrainian military transportation`
+    - *UA only:* `drones range-extended laser-guided`, `increasingly dominate battlefield`, `missile technical specifications`, `countering drones range-extended`, `defense demonstrated components`, `technical specifications design`, `reconnaissance soldiers ukraine`, `ukraine reconnaissance soldiers`
+
+### Summit · russia_ukraine · statement · B — corroborated across the bias divide
+
+- Sides confirming: UA, WEST — single-outlet: UA, WEST
+- **Convergence 0.070** on the closest pair (WEST / UA) — little shared vocabulary
+    - shared: `carpathian`, `eight`, `project`, `summit`, `ukraine`
+- Import ratio 0.00 — mostly wording that appears here first
+    - *UA only:* `wartranslated buymeacoffee buymeacoffee`, `wartranslated independent active`, `keeps wartranslated independent`, `buymeacoffee com wartranslated`, `accession negotiating clusters`, `com wartranslated buymeacoffee`, `buymeacoffee buymeacoffee com`, `informed consider supporting`
+    - *WEST only:* `framework cooperation announcement`, `ukraine-led coalition countering`, `cooperation announcement comes`, `coalition countering ballistic`, `initiative ukrainian president`, `countering ballistic missiles`, `participation summit regional`, `ukrainian president volodymyr`
 
 ### Moscow · russia_ukraine · kinetic · B — corroborated across the bias divide
 
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.037** on the closest pair (RU / UA) — almost nothing in common
-    - shared: `moscow`, `putin`, `regions`, `russia`, `russian`, `vote`
+- Sides confirming: RU, UA — single-outlet: UA
+- **Convergence 0.070** on the closest pair (RU / UA) — little shared vocabulary
+    - shared: `drones`, `elections`, `lower`, `moscow`, `regions`, `russia`, `russian`, `voting`
+- Import ratio 0.04 — mostly wording that appears here first
+    - *RU only:* `khanty-mansi yamalo-nenets autonomous`, `tatarstan bashkortostan regions`, `list khanty-mansi yamalo-nenets`, `yamalo-nenets autonomous okrugs`, `bashkortostan regions readovka`, `oblast tatarstan bashkortostan`, `universe competition confessed`, `region investigative committee`
+    - *UA only:* `elections moscow attack`, `ukrainian drones target`, `target russian regions`, `lower house parliament`, `since start full-scale`, `full-scale war against`, `regions amid elections`, `house parliament time`
+
+### Sanctions · russia_ukraine · statement · B — corroborated across the bias divide
+
+- Sides confirming: RU, UA
+- **Convergence 0.067** on the closest pair (RU / UA) — little shared vocabulary
+    - shared: `china`, `imposing`, `russia`, `sanctions`, `signed`, `trump`
 - Import ratio 0.03 — mostly wording that appears here first
-    - *RU only:* `business involvement developing`, `consideration contract between`, `involvement developing russian`, `welcomed business involvement`, `novgorod under consideration`, `crucial condition connecting`, `under consideration contract`, `collided kutuzovsky prospekt`
-    - *UA only:* `people trust ballot-stuffing`, `zaporizhzhia kherson regions`, `ballot-stuffing clips russia`, `donetsk luhansk zaporizhzhia`, `luhansk zaporizhzhia kherson`, `possibly online temporarily`, `trust ballot-stuffing clips`, `full-scale invasion ukraine`
+    - *RU only:* `intensified sanctions pressure`, `global economic fragmentation`, `fragmentation amid escalating`, `accelerating global economic`, `economic fragmentation amid`, `imposing sanctions against`, `lead intensified sanctions`, `china accelerating global`
+    - *UA only:* `russian leadership oligarchs`, `restrictions measure enables`, `leadership oligarchs banking`, `imposing crushing sanctions`, `mechanism permits president`, `national interest notifying`, `potentially impacting china`, `interest notifying congress`
+
+### Gaza City · israel_gaza · kinetic · B — corroborated across the bias divide
+
+- Sides confirming: AXIS, PS — single-outlet: AXIS, PS
+- **Convergence 0.061** on the closest pair (PS / AXIS) — little shared vocabulary
+    - shared: `city`, `gaza`, `israeli`, `killed`, `palestinian`, `strike`
+- Import ratio 0.01 — mostly wording that appears here first
+    - *AXIS only:* `motorcycle kills palestinian`, `including child palestinian`, `palestinian killed several`, `critical condition israeli`, `israeli strike motorcycle`, `al-saada collapse exposes`, `several others including`, `condition israeli forces`
+    - *PS only:* `investigates israeli double-tap`, `macklemore wrapped palestinian`, `shujaiya neighborhood eastern`, `guardian investigates israeli`, `strike shujaiya neighborhood`, `experts high-quality cameras`, `weapons experts high-quality`, `resulted killing 15-year-old`
+
+### Kharkiv · russia_ukraine · kinetic · B — corroborated across the bias divide
+
+- Sides confirming: RU, UA — single-outlet: UA
+- **Convergence 0.051** on the closest pair (RU / UA) — little shared vocabulary
+    - shared: `battlefield`, `drones`, `kharkiv`, `kyiv`, `military`, `oblast`, `part`, `russian`, `soldiers`, `troops`
+- Import ratio 0.02 — mostly wording that appears here first
+    - *RU only:* `starokonstantinove khmelnytskyi oblast`, `kyiv starokonstantinove khmelnytskyi`, `continues successfully establishing`, `successfully establishing security`, `conducting aggressive information`, `settlements lozakovo komissarovо`, `grouping continues successfully`, `settlements liberated september`
+    - *UA only:* `increasingly dominate battlefield`, `reconnaissance soldiers ukraine`, `ukraine reconnaissance soldiers`, `replace ukraine reconnaissance`, `firefight drones increasingly`, `drones increasingly dominate`, `reconnaissance soldiers kyiv`, `meet reconnaissance soldiers`
 
 ### Kyiv · russia_ukraine · kinetic · B — corroborated across the bias divide
 
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.035** on the closest pair (RU / UA) — almost nothing in common
-    - shared: `attack`, `kyiv`, `missile`, `russian`, `sign`, `simply`, `these`, `ukraine`
-- Import ratio 0.02 — mostly wording that appears here first
-    - *RU only:* `warehouses communication infrastructure`, `infrastructure transportation networks`, `druzhkivka lobachevsky non-euclidean`, `energy infrastructure transportation`, `facilities warehouses communication`, `volchya liberated east-zaporizhzhia`, `lobachevsky non-euclidean geometry`, `communication infrastructure kyiv`
-    - *UA only:* `situation russian-occupied oleshky`, `residents russian-occupied oleshky`, `russian-occupied oleshky kherson`, `telegram uaoleshki2026 telegram`, `lubinets telegram uaoleshki2026`, `hell residents russian-occupied`, `escalating humanitarian crisis`, `house representatives approved`
+- Sides confirming: RU, UA
+- **Convergence 0.043** on the closest pair (RU / UA) — almost nothing in common
+    - shared: `around`, `europe`, `free`, `kyiv`, `negotiations`, `order`, `power`, `russia`, `russian`, `taking`, `ukraine`, `ukrainians`
+- Import ratio 0.00 — mostly wording that appears here first
+    - *RU only:* `meeting military-industrial commission`, `convened meeting military-industrial`, `military-industrial commission key`, `ukrainians searching warehouses`, `border podkarpackie voivodeship`, `chairperson election commission`, `podkarpackie voivodeship space`, `election commission zaporozhye`
+    - *UA only:* `far-right kremlin-friendly alternative`, `kremlin-friendly alternative germany`, `organized far-right kremlin-friendly`, `zelensky aide-turned-critic iuliia`, `controversial appearance podcaster`, `story zelensky aide-turned-critic`, `increasingly frustrated -mediated`, `aide-turned-critic iuliia mendel`
 
-### Tanker · iran · statement · B — corroborated across the bias divide
+### Zaporizhzhia · russia_ukraine · kinetic · B — corroborated across the bias divide
+
+- Sides confirming: RU, UA — single-outlet: UA
+- **Convergence 0.036** on the closest pair (RU / UA) — almost nothing in common
+    - shared: `defense`, `destroyed`, `russian`, `since`, `start`, `targets`, `year`, `zaporizhzhia`
+- Import ratio 0.03 — mostly wording that appears here first
+    - *RU only:* `starokonstantinove khmelnytskyi oblast`, `kyiv starokonstantinove khmelnytskyi`, `conducting aggressive information`, `settlements lozakovo komissarovо`, `registered approximately million`, `operations liberated settlement`, `approximately million residents`, `captured loshakovo komissarovka`
+    - *UA only:* `occupied ukrainska zaporizhzhia`, `near occupied ukrainska`, `launcher near occupied`, `target buk-m3 launcher`, `magyar usf destroyed`, `defense assets since`, `buk-m3 launcher near`, `gun-sam systems 124`
+
+### Gaza City · israel_gaza · kinetic · B — corroborated across the bias divide
+
+- Sides confirming: IL, PS — single-outlet: IL, PS
+- **Convergence 0.035** on the closest pair (IL / PS) — almost nothing in common
+    - shared: `city`, `gaza`, `near`
+- Import ratio 0.00 — mostly wording that appears here first
+    - *IL only:* `gaza-based journalists shortly`, `strip gaza-based journalists`, `journalists shortly ago`, `several injuries attack`, `awwad several injuries`, `gaza strip gaza-based`, `attack comes relative`, `injuries attack tent`
+    - *PS only:* `launched airstrike al-rashid`, `mosque al-sabra neighborhood`, `israeli bombardment al-nafaq`, `occupation strike al-rashid`, `breaking palestinian killed`, `aircraft launched airstrike`, `israeli bombardment remains`, `damaged israeli bombardment`
+
+### Sanaa · yemen · kinetic · B — corroborated across the bias divide
 
 - Sides confirming: AXIS, WEST — single-outlet: AXIS, WEST
 - **Convergence 0.033** on the closest pair (AXIS / WEST) — almost nothing in common
-    - shared: `hormuz`, `strait`
-- Import ratio 0.00 — mostly wording that appears here first
-    - *AXIS only:* `unknown projectile strait`, `projectile strait hormuz`, `fire later extinguished`, `hit unknown projectile`, `strait hormuz sparking`, `hormuz sparking fire`, `sparking fire later`, `tanker hit unknown`
-    - *WEST only:* `consequence geopolitical conditions`, `ministers seven industrialized`, `geopolitical conditions french`, `industrialized nations gather`, `emphasized importance freedom`, `importance freedom navigation`, `releasing strategic reserves`, `macron emphasized importance`
-
-### Zaporizhzhia · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.030** on the closest pair (RU / UA) — almost nothing in common
-    - shared: `kherson`, `territory`, `zaporizhzhia`
-- Import ratio 0.00 — mostly wording that appears here first
-    - *RU only:* `ukrainian territory september`, `chronology strikes ukrainian`, `zaporozhye indicate similar`, `strikes zaporozhye indicate`, `ukrainian forces zaporozhye`, `kharkiv zaporizhzhia dnipro`, `zaporizhzhia dnipro kherson`, `strikes ukrainian territory`
-    - *UA only:* `people trust ballot-stuffing`, `zaporizhzhia kherson regions`, `ballot-stuffing clips russia`, `donetsk luhansk zaporizhzhia`, `luhansk zaporizhzhia kherson`, `possibly online temporarily`, `trust ballot-stuffing clips`, `full-scale invasion ukraine`
-
-### Luhansk · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.026** on the closest pair (RU / UA) — almost nothing in common
-    - shared: `forces`, `luhansk`, `people`
-- Import ratio 0.01 — mostly wording that appears here first
-    - *RU only:* `deliberately attacked scheduled`, `people including 16-year-old`, `twice deliberately attacked`, `ukrainian military attacks`, `including 16-year-old girl`, `injured ukrainian military`, `forces twice deliberately`, `republic leader ukrainian`
-    - *UA only:* `people trust ballot-stuffing`, `zaporizhzhia kherson regions`, `ballot-stuffing clips russia`, `donetsk luhansk zaporizhzhia`, `luhansk zaporizhzhia kherson`, `possibly online temporarily`, `trust ballot-stuffing clips`, `full-scale invasion ukraine`
-
-### Strait Of Hormuz · iran · statement · B — corroborated across the bias divide
-
-- Sides confirming: AXIS, WEST — single-outlet: AXIS, WEST
-- **Convergence 0.025** on the closest pair (WEST / AXIS) — almost nothing in common
-    - shared: `hormuz`, `iran`, `strait`
-- Import ratio 0.01 — mostly wording that appears here first
-    - *AXIS only:* `accusations baseless interventionist`, `ambassador reject chancellor`, `calling accusations baseless`, `program regional alliances`, `summoned german ambassador`, `hormuz calling accusations`, `unknown projectile strait`, `regional alliances strait`
-    - *WEST only:* `consequence geopolitical conditions`, `ministers seven industrialized`, `geopolitical conditions french`, `country participate intervene`, `industrialized nations gather`, `emphasized importance freedom`, `importance freedom navigation`, `releasing strategic reserves`
-
-### Beirut · lebanon · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: AXIS, IL — single-outlet: AXIS, IL
-- **Convergence 0.024** on the closest pair (IL / AXIS) — almost nothing in common
-    - shared: `beirut`
-- ⚠ **ANCHOR-ONLY** — the sides share nothing beyond the anchor itself. Treat this grade as unconfirmed: the cluster may be two unrelated reports that named the same place in the same window.
-- Import ratio 0.00 — mostly wording that appears here first
-    - *AXIS only:* `hospitals overflow doctors`, `everyday civilian devices`, `hands hospitals overflow`, `turned everyday civilian`, `watch full documentary`, `people hands hospitals`, `beirut injured blinded`, `massacre israel turned`
-    - *IL only:* `beaches lebanon south`, `south beirut comment`, `beirut comment story`, `lebanon south beirut`, `comment story click`
-
-### Moscow · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: AXIS, RU — single-outlet: AXIS
-- **Convergence 0.021** on the closest pair (RU / AXIS) — almost nothing in common
-    - shared: `advanced`, `moscow`, `opened`, `thursday`
-- Import ratio 0.05 — mostly wording that appears here first
-    - *AXIS only:* `organization conference underground`, `cooperation organization conference`, `shanghai cooperation organization`, `conference underground resources`, `potential shanghai cooperation`, `rare-earth potential shanghai`, `underground resources opened`, `develop rare-earth potential`
-    - *RU only:* `private multi-apartment buildings`, `multi-apartment buildings damaged`, `aircraft-type drones territories`, `eight multi-apartment buildings`, `russian parliamentary elections`, `territories astrakhan belgorod`, `ukrainian aircraft-type drones`, `multi-apartment buildings four`
-
-### Odesa · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: RU, UA — single-outlet: RU, UA
-- **Convergence 0.020** on the closest pair (RU / UA) — almost nothing in common
-    - shared: `captured`, `odesa`, `russian`
-- Import ratio 0.02 — mostly wording that appears here first
-    - *RU only:* `warehouses communication infrastructure`, `infrastructure transportation networks`, `druzhkivka lobachevsky non-euclidean`, `energy infrastructure transportation`, `facilities warehouses communication`, `volchya liberated east-zaporizhzhia`, `lobachevsky non-euclidean geometry`, `communication infrastructure kyiv`
-    - *UA only:* `jet-powered shahed approached`, `yesterday russian jet-powered`, `russian jet-powered shahed`, `captured moment yesterday`, `residents captured moment`, `odesa residents captured`, `moment yesterday russian`, `shahed approached odesa`
-
-### Zaporizhzhia · russia_ukraine · kinetic · B — corroborated across the bias divide
-
-- Sides confirming: RU, UA — single-outlet: UA
-- **Convergence 0.019** on the closest pair (RU / UA) — almost nothing in common
-    - shared: `drone`, `people`, `struck`, `zaporizhzhia`
-- Import ratio 0.00 — mostly wording that appears here first
-    - *RU only:* `warehouses communication infrastructure`, `infrastructure transportation networks`, `druzhkivka lobachevsky non-euclidean`, `energy infrastructure transportation`, `facilities warehouses communication`, `volchya liberated east-zaporizhzhia`, `infrastructure supporting ukrainian`, `lobachevsky non-euclidean geometry`
-    - *UA only:* `zaporizhzhia russians struck`, `carrying people drone`, `bus carrying people`, `struck bus carrying`, `russians struck bus`
-
-### Blockade · iran · statement · B — corroborated across the bias divide
-
-- Sides confirming: AXIS, WEST — single-outlet: AXIS, WEST
-- **Convergence 0.014** on the closest pair (AXIS / WEST) — almost nothing in common
-    - shared: `blockade`
-- ⚠ **ANCHOR-ONLY** — the sides share nothing beyond the anchor itself. Treat this grade as unconfirmed: the cluster may be two unrelated reports that named the same place in the same window.
+    - shared: `sana`, `saudi`
 - Import ratio 0.04 — mostly wording that appears here first
-    - *AXIS only:* `ansarullah resistance movement`, `resistance movement following`, `following recent devastating`, `temporary ceasefire dialogue`, `devastating strikes kingdom`, `yemen ansarullah resistance`, `recent devastating strikes`, `dialogue yemen ansarullah`
-    - *WEST only:* `consequence geopolitical conditions`, `ministers seven industrialized`, `geopolitical conditions french`, `industrialized nations gather`, `emphasized importance freedom`, `importance freedom navigation`, `releasing strategic reserves`, `macron emphasized importance`
+    - *AXIS only:* `reject saudi targeting`, `saudi targeting holy`, `yemenis reject saudi`, `mecca yahya al-wazir`, `yahya al-wazir sana`, `targeting holy city`, `city mecca yahya`, `holy city mecca`
+    - *WEST only:* `neutralized spokesperson blamed`, `defense organization activation`, `spokesperson declared criminal`, `military spokesperson declared`, `escalation hostilities between`, `organization activation early`, `sana neutralized spokesperson`, `houthi military spokesperson`
 
-### Mykolaiv · russia_ukraine · kinetic · B — corroborated across the bias divide
+### Kyiv · russia_ukraine · kinetic · B — corroborated across the bias divide
 
 - Sides confirming: RU, UA — single-outlet: UA
-- **Convergence 0.013** on the closest pair (RU / UA) — almost nothing in common
-    - shared: `military`
-- Import ratio 0.00 — mostly wording that appears here first
-    - *RU only:* `position approaches alekseyevka-druzhkivka`, `approaches alekseyevka-druzhkivka assault`, `alexeyevka-druzhkivka assault detachments`, `position approaches alexeyevka-druzhkivka`, `approaches alexeyevka-druzhkivka assault`, `alekseyevka-druzhkivka assault groups`, `successes kostiantynivka direction`, `successes direction kostiantynivka`
-    - *UA only:* `district military recruitment`, `ukrainian serviceman injured`, `serviceman injured explosion`, `military recruitment social`, `military recruitment center`, `oblast military recruitment`, `entrance district military`, `recruitment social support`
+- **Convergence 0.022** on the closest pair (RU / UA) — almost nothing in common
+    - shared: `kyiv`, `oligarchs`
+- Import ratio 0.04 — mostly wording that appears here first
+    - *RU only:* `slavery channel colonelcassad`, `commented european commission`, `european commission president`, `while residents totalitarian`, `residents totalitarian city`, `beating sending slaughtered`, `sending slaughtered freedom`, `commission president ursula`
+    - *UA only:* `against russia-linked individuals`, `extinguished overnight brussels`, `sanctions against russia-linked`, `russia-linked individuals sept`, `effort extinguished overnight`, `sanctions against individuals`, `against individuals helping`, `diplomats kyiv independent`
 
-### Jerusalem · israel_gaza · kinetic · B — corroborated across the bias divide
+### Sumy · russia_ukraine · kinetic · B — corroborated across the bias divide
 
-- Sides confirming: IL, PS — single-outlet: IL, PS
-- **Convergence 0.010** on the closest pair (IL / PS) — almost nothing in common
-    - shared: `jerusalem`
+- Sides confirming: RU, UA — single-outlet: RU, UA
+- **Convergence 0.021** on the closest pair (RU / UA) — almost nothing in common
+    - shared: `russian`, `sumy`
+- Import ratio 0.02 — mostly wording that appears here first
+    - *RU only:* `drobypolje drobypolje positional`, `geolocation krasnopole ryasnoye`, `direction engagement ukrainian`, `donbas krasnolimansk direction`, `krasnopole ryasnoye positional`, `operations against long-range`, `engagement ukrainian military`, `operations near krasnoarmiysk`
+    - *UA only:* `apartment building 13-year-old`, `condition receiving medical`, `serious condition receiving`, `receiving medical treatment`, `emergency service telegram`, `injured serious condition`, `building 13-year-old girl`, `medical treatment photos`
+
+### Rostov-On-Don · russia_ukraine · kinetic · B — corroborated across the bias divide
+
+- Sides confirming: RU, UA — single-outlet: RU, UA
+- **Convergence 0.017** on the closest pair (RU / UA) — almost nothing in common
+    - shared: `destroyed`
+- Import ratio 0.01 — mostly wording that appears here first
+    - *RU only:* `kremenchuk destroyed shopping`, `military operation september`, `factory kremenchuk destroyed`, `center occupied zaporizhzhia`, `zaporizhzhia hit locomotive`, `chronicle special military`, `tobacco factory kremenchuk`, `special military operation`
+    - *UA only:* `rostov-central airport resulted`, `boroshno attack rostov-central`, `attack rostov-central airport`, `helicopters destroyed along`, `mi-8 helicopters destroyed`, `resulted mi-8 helicopters`, `airport resulted mi-8`, `cyber boroshno attack`
+
+### Dnipro · russia_ukraine · kinetic · B — corroborated across the bias divide
+
+- Sides confirming: RU, UA — single-outlet: UA
+- **Convergence 0.014** on the closest pair (RU / UA) — almost nothing in common
+    - shared: `dnipro`, `strikes`
+- Import ratio 0.02 — mostly wording that appears here first
+    - *RU only:* `starokonstantinove khmelnytskyi oblast`, `kyiv starokonstantinove khmelnytskyi`, `conducting aggressive information`, `information campaign attempting`, `aggressive information campaign`, `explosions dany-t zaporizhzhia`, `khmelnytskyi oblast kirovohrad`, `geran kyiv starokonstantinove`
+    - *UA only:* `infrastructure being dispersed`, `underground shahed production`, `already built infrastructure`, `alabuga building underground`, `shahed production workshops`, `building underground shahed`, `dispersed further protected`, `built infrastructure being`
+
+### Tehran · iran · kinetic · B — corroborated across the bias divide
+
+- Sides confirming: AXIS, WEST — single-outlet: AXIS, WEST
+- **Convergence 0.012** on the closest pair (AXIS / WEST) — almost nothing in common
+    - shared: `tehran`
 - ⚠ **ANCHOR-ONLY** — the sides share nothing beyond the anchor itself. Treat this grade as unconfirmed: the cluster may be two unrelated reports that named the same place in the same window.
-- Import ratio 0.03 — mostly wording that appears here first
-    - *IL only:* `hezbollah bubble exaggeration`, `exaggeration her distinctive`, `minutes enjoyment lebanese`, `distinctive elegant manner`, `built deception inflation`, `deflates hezbollah bubble`, `deception inflation lies`, `zadok deflates hezbollah`
-    - *PS only:* `palestinian territorial contiguity`, `longstanding opposition concerns`, `opposition concerns construction`, `disrupt palestinian territorial`, `occupation authorities advanced`, `territorial contiguity between`, `israeli occupation authorities`, `settlement drawn longstanding`
+- Import ratio 0.01 — mostly wording that appears here first
+    - *AXIS only:* `interdisciplinary science technology`, `scientists college interdisciplinary`, `fabricated innovative bio-scaffolds`, `innovative bio-scaffolds repairing`, `personalized regenerative medicine`, `advance personalized regenerative`, `college interdisciplinary science`, `scientists develop bio-scaffolds`
+    - *WEST only:* `shahrivar building intersection`, `fire-fighting operations ended`, `intersection neshat government`, `irna fire-fighting operations`, `fatalities irna fire-fighting`, `government avenue fatalities`, `building intersection neshat`, `stating firefighters rescued`

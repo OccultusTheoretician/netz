@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one CVE whose vendor or product field names Orkes Conductor, with a date-added value between 2026-09-19 and 2026-10-09.",
+    "resolution": "The CISA KEV JSON feed contains an entry with vendorProject or product matching Orkes or Conductor and dateAdded between 2026-09-19 and 2026-10-09 inclusive.",
+    "failure_condition": "No KEV entry naming Orkes Conductor carries a dateAdded value inside the 2026-09-19 to 2026-10-09 window.",
+    "domain": "cyber",
+    "deadline": "2026-10-13",
+    "probability": 29,
+    "citations": [
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds the SolarWinds ARM hard-coded key vulnerability disclosed 2026-09-19, with a date-added value between 2026-09-19 and 2026-10-16.",
+    "resolution": "The CISA KEV JSON feed contains an entry with vendorProject SolarWinds and product Access Rights Manager or ARM whose dateAdded falls between 2026-09-19 and 2026-10-16 inclusive.",
+    "failure_condition": "The KEV feed carries no SolarWinds Access Rights Manager entry with dateAdded inside the 2026-09-19 to 2026-10-16 window.",
+    "domain": "cyber",
+    "deadline": "2026-10-20",
+    "probability": 29,
+    "citations": [
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI front-month crude settles below 90.00 dollars per barrel on at least one NYMEX trading day between 2026-09-21 and 2026-10-09. Reference: 96.08 on the packet date after a one-day fall of 5.24 percent.",
+    "resolution": "The CME NYMEX official settlement for the front-month CL contract prints below 90.00 on any trading day between 2026-09-21 and 2026-10-09 inclusive; EIA daily spot series accepted as backup.",
+    "failure_condition": "Every NYMEX front-month WTI settlement between 2026-09-21 and 2026-10-09 is at or above 90.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-13",
+    "probability": 24,
+    "citations": [
+      52,
+      96
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant-maturity yield closes at or above 5.25 percent on at least one business day between 2026-09-21 and 2026-10-30. Reference: 5.00 percent on the packet date.",
+    "resolution": "FRED series DGS10 (Treasury H.15) records a value of 5.25 or higher for any date between 2026-09-21 and 2026-10-30 inclusive.",
+    "failure_condition": "Every DGS10 observation dated 2026-09-21 through 2026-10-30 is below 5.25.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 24,
+    "citations": [
+      54,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Federal Register publishes an executive order or OFAC notice terminating or removing Eritrea-related sanctions with a publication date between 2026-09-19 and 2026-10-16.",
+    "resolution": "federalregister.gov shows a document whose title or abstract names Eritrea and terminates, revokes or removes sanctions authorities or designations, with publication_date between 2026-09-19 and 2026-10-16 inclusive.",
+    "failure_condition": "No Federal Register document published 2026-09-19 through 2026-10-16 terminates or removes Eritrea-related sanctions.",
+    "domain": "political",
+    "deadline": "2026-10-20",
+    "probability": 40,
+    "citations": [
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Saudi Arabia officially confirms the interception or impact of at least one further missile or drone directed at Riyadh Province between 2026-09-20 and 2026-09-30, following the first air-raid alerts for Riyadh reported 2026-09-19.",
+    "resolution": "A Saudi Press Agency or Saudi Ministry of Defense statement dated 2026-09-20 to 2026-09-30 confirms an interception or impact in Riyadh Province, and at least two of Reuters, AP and AFP report it.",
+    "failure_condition": "No Saudi official statement in the window confirms a missile or drone interception or impact in Riyadh Province, or no two wire services corroborate one.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-02",
+    "probability": 61,
+    "citations": [
+      9,
+      52,
+      96
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A US federal district court enters a temporary restraining order or preliminary injunction requiring the White House to restore press-pool or briefing access to reporters of CNN, Politico or MS NOW, with the order docketed between 2026-09-19 and 2026-10-16.",
+    "resolution": "A PACER or CourtListener docket entry dated 2026-09-19 to 2026-10-16 records a TRO or preliminary injunction granting access relief to at least one of CNN, Politico or MS NOW against the Executive Office of the President or White House officials.",
+    "failure_condition": "No federal docket shows a TRO or preliminary injunction restoring White House access to any of the three outlets entered inside the window.",
+    "domain": "political",
+    "deadline": "2026-10-20",
+    "probability": 40,
+    "citations": [
+      95,
+      99,
+      116
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Nigeria at federal or Niger State level announces a formal judicial panel or commission of inquiry into the deaths of detainees at the Minna prison facility, with the announcement made between 2026-09-19 and 2026-10-09.",
+    "resolution": "An official Nigerian federal or Niger State government statement dated 2026-09-19 to 2026-10-09 establishes a named panel or commission to investigate the Minna detainee deaths, reported by at least two of Reuters, AP, AFP, BBC and Premium Times.",
+    "failure_condition": "No official Nigerian statement in the window establishes a panel or commission of inquiry into the Minna detainee deaths.",
+    "domain": "crime/security",
+    "deadline": "2026-10-13",
+    "probability": 23,
+    "citations": [
+      10,
+      87
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Cuba suffers another full collapse of its national electrical grid between 2026-09-20 and 2026-10-20, publicly acknowledged by the Union Electrica or the Ministry of Energy and Mines.",
+    "resolution": "Union Electrica or Cuba's Ministry of Energy and Mines acknowledges a total disconnection of the Sistema Electroenergetico Nacional occurring between 2026-09-20 and 2026-10-20 inclusive, corroborated by at least two of Reuters, AP, AFP and EFE.",
+    "failure_condition": "No Cuban official acknowledgment of a total national grid disconnection dated inside the 2026-09-20 to 2026-10-20 window exists, or no two wire services corroborate one.",
+    "domain": "disaster",
+    "deadline": "2026-10-22",
+    "probability": 29,
+    "citations": [
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS records an earthquake of magnitude 6.0 or greater within 300 km of the 2026-09-16 M6.5 event west of Nikolski, Alaska, occurring between 2026-09-20 and 2026-10-19.",
+    "resolution": "The USGS earthquake catalog lists an event with magnitude at least 6.0 and epicenter within 300 km of USGS event us7000ti1p, origin time between 2026-09-20 and 2026-10-19 UTC inclusive.",
+    "failure_condition": "The USGS catalog shows no M6.0 or greater event within 300 km of us7000ti1p with origin time inside the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-21",
+    "probability": 29,
+    "citations": [
+      32
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:55Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
