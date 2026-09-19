@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "CNN, Politico, or MS NOW, or journalists from any of them, file a federal lawsuit challenging the White House access ban announced 2026-09-18, with the complaint filed between 2026-09-20 and 2026-10-23.",
+    "resolution": "TRUE if a PACER or CourtListener docket shows a complaint filed between 2026-09-20 and 2026-10-23 in any U.S. district court by CNN, Politico, MS NOW, or their journalists challenging the White House access ban; otherwise FALSE.",
+    "failure_condition": "No complaint challenging the ban was filed in any U.S. district court by CNN, Politico, MS NOW, or their journalists between 2026-09-20 and 2026-10-23.",
+    "domain": "political",
+    "deadline": "2026-10-27",
+    "probability": 40,
+    "citations": [
+      95,
+      99,
+      116
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "United Russia wins at least 300 of 450 State Duma seats in the election held 2026-09-18 to 2026-09-20, per final results the Central Election Commission approves between 2026-09-21 and 2026-10-02.",
+    "resolution": "TRUE if final results approved by the Russian Central Election Commission (cikrf.ru) between 2026-09-21 and 2026-10-02 allocate United Russia 300 or more of 450 seats, list and single-mandate combined; otherwise FALSE.",
+    "failure_condition": "United Russia holds fewer than 300 seats in the CEC-approved final results, or no final allocation is approved between 2026-09-21 and 2026-10-02.",
+    "domain": "political",
+    "deadline": "2026-10-06",
+    "probability": 40,
+    "citations": [
+      115
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled 2026-10-27 to 2026-10-28 meeting. Reference: 3.75 to 4.00 percent at seal, FRED DFEDTARU 4.00.",
+    "resolution": "TRUE if FRED series DFEDTARU for 2026-10-29 exceeds 4.00, reflecting a target-range increase announced in the FOMC statement of 2026-10-28; otherwise FALSE.",
+    "failure_condition": "The FOMC held or cut the target range at its 2026-10-27 to 2026-10-28 meeting, leaving the upper limit at or below 4.00 percent on 2026-10-29.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 24,
+    "citations": [
+      54,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or above 115.00 USD per barrel on at least one trading day between 2026-09-21 and 2026-11-20. Reference: 104.87 front-month settlement on 2026-09-18 per Reuters; packet snapshot quote 99.29.",
+    "resolution": "TRUE if any ICE Brent front-month daily settlement between 2026-09-21 and 2026-11-20 is 115.00 USD or higher, per ICE daily settlement data; otherwise FALSE.",
+    "failure_condition": "Every ICE Brent front-month daily settlement between 2026-09-21 and 2026-11-20 was below 115.00 USD.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-24",
+    "probability": 24,
+    "citations": [
+      9,
+      52,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds CVE-2026-58138, the Orkes Conductor unauthenticated remote code execution flaw, to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-09-21 and 2026-11-13.",
+    "resolution": "TRUE if the CISA KEV JSON feed lists CVE-2026-58138 with a dateAdded value between 2026-09-21 and 2026-11-13 inclusive; otherwise FALSE.",
+    "failure_condition": "CVE-2026-58138 is not in the KEV catalog with a dateAdded between 2026-09-21 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 29,
+    "citations": [
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Have I Been Pwned loads the Gyazo (Helpfeel) breach of 2026-09-11, with an AddedDate between 2026-09-21 and 2026-12-18.",
+    "resolution": "TRUE if the HIBP breaches API (haveibeenpwned.com/api/v3/breaches) lists a Gyazo breach with AddedDate between 2026-09-21 and 2026-12-18; otherwise FALSE.",
+    "failure_condition": "No Gyazo breach entry was added to HIBP with an AddedDate between 2026-09-21 and 2026-12-18.",
+    "domain": "cyber",
+    "deadline": "2026-12-22",
+    "probability": 29,
+    "citations": [
+      26
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "South African police arrest a suspect they publicly link to one or more of the nine Ekurhuleni killings of women, with the arrest made between 2026-09-21 and 2026-11-20, excluding the July 2026 Kempton Park arrest.",
+    "resolution": "TRUE if SAPS announces, and Reuters, AP, AFP, or News24 reports, an arrest made between 2026-09-21 and 2026-11-20 of a suspect SAPS links to any of the nine Ekurhuleni killings; otherwise FALSE.",
+    "failure_condition": "No suspect was arrested between 2026-09-21 and 2026-11-20 whom SAPS links to any of the nine Ekurhuleni killings.",
+    "domain": "crime/security",
+    "deadline": "2026-11-24",
+    "probability": 23,
+    "citations": [
+      71,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "US forces strike Houthi targets inside Yemen at least once between 2026-09-21 and 2026-11-06, with the strike publicly confirmed by US Central Command or the Pentagon.",
+    "resolution": "TRUE if CENTCOM or the Pentagon publicly confirms at least one US strike on Houthi targets inside Yemen conducted between 2026-09-21 and 2026-11-06; otherwise FALSE.",
+    "failure_condition": "No US-acknowledged strike on Houthi targets inside Yemen took place between 2026-09-21 and 2026-11-06.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-10",
+    "probability": 61,
+    "citations": [
+      9,
+      96,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US formally notifies Congress of at least one Foreign Military Sale to Taiwan, published by DSCA as a Major Arms Sale naming the Taipei Economic and Cultural Representative Office, between 2026-09-25 and 2027-01-15.",
+    "resolution": "TRUE if the DSCA Major Arms Sales listing (dsca.mil) carries at least one TECRO notification dated between 2026-09-25 and 2027-01-15; otherwise FALSE.",
+    "failure_condition": "No Foreign Military Sale congressional notification for TECRO (Taiwan) was made between 2026-09-25 and 2027-01-15.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-19",
+    "probability": 61,
+    "citations": [
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Cuban national electric grid suffers a new total collapse, announced by the Ministry of Energy and Mines or Union Electrica, between 2026-09-21 and 2026-10-30.",
+    "resolution": "TRUE if the Cuban Ministry of Energy and Mines or Union Electrica announces a new total disconnection of the national grid occurring between 2026-09-21 and 2026-10-30, as reported by Reuters or AP; otherwise FALSE.",
+    "failure_condition": "The Cuban national grid did not undergo a new total disconnection between 2026-09-21 and 2026-10-30.",
+    "domain": "disaster",
+    "deadline": "2026-11-03",
+    "probability": 29,
+    "citations": [
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-19T17:32:58Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
