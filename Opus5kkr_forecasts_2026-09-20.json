@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "Russian authorities report drone interceptions over Moscow city or Moscow oblast on at least three separate calendar days between 2026-09-27 and 2026-10-31.",
+    "domain": "military_conflict",
+    "probability": 88,
+    "resolution": "TRUE if drone interception over Moscow city or oblast is reported on three or more distinct dates between 2026-09-27 and 2026-10-31 by a Russian official source and carried by at least one Ukrainian or Western outlet.",
+    "deadline": "2026-11-04",
+    "citations": [25, 63, 74],
+    "failure_condition": "Fewer than three distinct dates inside the window carry a Moscow-area drone interception event."
+  },
+  {
+    "statement": "At least one commercial vessel transiting or near the Strait of Hormuz is struck or seized by Iranian or Iran-aligned forces between 2026-09-27 and 2026-11-15.",
+    "domain": "military_conflict",
+    "probability": 41,
+    "resolution": "TRUE if UKMTO logs an incident of a merchant vessel struck or seized in or near the Strait of Hormuz dated inside the window and at least one major wire service attributes it to Iranian or Iran-aligned forces.",
+    "deadline": "2026-11-19",
+    "citations": [47, 54],
+    "failure_condition": "No merchant vessel in or near the Strait of Hormuz is struck or seized by Iranian or Iran-aligned forces during the window."
+  },
+  {
+    "statement": "Front-month Brent crude settles at or above 110.00 USD per barrel on at least one trading day between 2026-09-28 and 2026-11-13. Reference: 99.29 on the packet date 2026-09-20.",
+    "domain": "economic",
+    "probability": 37,
+    "resolution": "TRUE if the ICE Brent front-month official settlement equals or exceeds 110.00 USD on any trading day from 2026-09-28 through 2026-11-13. Reference level 99.29 at seal.",
+    "deadline": "2026-11-17",
+    "citations": [37, 38, 54],
+    "failure_condition": "Brent front-month settlement never reaches 110.00 USD on any trading day inside the window."
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield prints at or above 5.25 percent on at least one business day between 2026-09-28 and 2026-12-18. Reference: 5.00 percent on the packet date 2026-09-20.",
+    "domain": "economic",
+    "probability": 48,
+    "resolution": "TRUE if the FRED series DGS10 carries a value of 5.25 or higher on any date from 2026-09-28 through 2026-12-18. Reference level 5.00 at seal.",
+    "deadline": "2026-12-22",
+    "citations": [38, 40, 52],
+    "failure_condition": "DGS10 posts no value of 5.25 or higher on any business day inside the window."
+  },
+  {
+    "statement": "CISA adds at least one vulnerability in an npm-distributed or Node.js ecosystem component to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-09-28 and 2026-12-11.",
+    "domain": "cyber",
+    "probability": 13,
+    "resolution": "TRUE if the CISA KEV JSON feed contains an entry whose dateAdded falls inside the window and whose vendorProject or product identifies an npm package, the npm registry, or Node.js itself.",
+    "deadline": "2026-12-15",
+    "citations": [10, 11],
+    "failure_condition": "No KEV entry added inside the window identifies an npm package, the npm registry, or Node.js."
+  },
+  {
+    "statement": "The UN General Assembly adopts a resolution appointing the tenth Secretary-General between 2026-09-27 and 2026-12-18.",
+    "domain": "political",
+    "probability": 85,
+    "resolution": "TRUE if a General Assembly resolution appointing a Secretary-General for the term beginning 2027-01-01 is adopted on a date inside the window and issued in the official UN documents record.",
+    "deadline": "2026-12-22",
+    "citations": [89],
+    "failure_condition": "No General Assembly appointment resolution for the incoming Secretary-General is adopted on or before 2026-12-18."
+  },
+  {
+    "statement": "Friedrich Merz ceases to hold the office of German Federal Chancellor between 2026-09-21 and 2026-12-31.",
+    "domain": "political",
+    "probability": 10,
+    "resolution": "TRUE if a successor is sworn in as Federal Chancellor, or Merz formally resigns with effect inside the window, as recorded by the Bundesregierung and reported by at least two major German outlets.",
+    "deadline": "2027-01-05",
+    "citations": [97, 101],
+    "failure_condition": "Merz still holds the office of Federal Chancellor on 2026-12-31."
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one earthquake of magnitude 8.0 or greater, anywhere on Earth, with origin time between 2026-09-27 and 2027-01-31.",
+    "domain": "disaster_infrastructure",
+    "probability": 24,
+    "resolution": "TRUE if a USGS ComCat query for magnitude 8.0 and above over origin times 2026-09-27 through 2027-01-31 returns one or more events at reviewed magnitude.",
+    "deadline": "2027-02-04",
+    "citations": [17, 18, 24],
+    "failure_condition": "USGS ComCat lists no event of reviewed magnitude 8.0 or greater with origin time inside the window."
+  },
+  {
+    "statement": "The USGS earthquake catalog records three or more earthquakes of magnitude 7.0 or greater, anywhere on Earth, with origin times between 2026-09-27 and 2026-12-31.",
+    "domain": "disaster_infrastructure",
+    "probability": 75,
+    "resolution": "TRUE if a USGS ComCat query for magnitude 7.0 and above over origin times 2026-09-27 through 2026-12-31 returns three or more distinct events at reviewed magnitude.",
+    "deadline": "2027-01-05",
+    "citations": [17, 18, 24],
+    "failure_condition": "Fewer than three events of reviewed magnitude 7.0 or greater carry origin times inside the window."
+  },
+  {
+    "statement": "The sister of former Pakistani prime minister Imran Khan detained on 2026-09-20 is released from custody or granted bail, with release taking effect between 2026-09-21 and 2026-10-12.",
+    "domain": "crime_security",
+    "probability": 62,
+    "resolution": "TRUE if at least two of Dawn, Geo News, and Al Jazeera report her release from custody, or a court order directing it, taking effect on a date inside the window.",
+    "deadline": "2026-10-16",
+    "citations": [87],
+    "failure_condition": "She remains in custody with no release order in effect at the close of 2026-10-12."
+  }
+]
