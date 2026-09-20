@@ -1,0 +1,252 @@
+[
+  {
+    "statement": "Between 2026-09-21 and 2026-10-04, the Russian Ministry of Defense or the Moscow mayor reports 100 or more Ukrainian UAVs intercepted over Moscow city or Moscow Oblast on a single calendar day.",
+    "resolution": "True if a Russian MoD or Moscow mayoral statement, carried by Reuters or AP, gives a single-day Moscow-region intercept count of 100 or more for any day 2026-09-21 to 2026-10-04.",
+    "failure_condition": "No single-day Moscow-region intercept figure of 100 or more is issued by Russian officials for any day in the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-07",
+    "probability": 61,
+    "citations": [
+      25,
+      63,
+      74,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-21 and 2026-10-04, the Saudi Ministry of Defense announces the interception or impact of at least one Houthi-claimed drone or missile directed at Riyadh. Reference: Riyadh airport smoke and Houthi claim on 2026-09-19.",
+    "resolution": "True if Saudi Press Agency publishes a MoD statement on a drone or missile aimed at Riyadh in the window and Reuters or AP carries it.",
+    "failure_condition": "No Saudi MoD statement on a drone or missile directed at Riyadh appears for the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-07",
+    "probability": 61,
+    "citations": [
+      102,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The NYMEX WTI front-month contract settles below 90.00 dollars on at least one trading day between 2026-09-21 and 2026-10-16. Reference: 96.08 on the packet date after a 9.21 percent one-day fall.",
+    "resolution": "True if the CME Group official settlement for front-month WTI is below 90.00 on any trading day 2026-09-21 to 2026-10-16.",
+    "failure_condition": "Every front-month WTI settlement in the window is at or above 90.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-20",
+    "probability": 24,
+    "citations": [
+      37,
+      47,
+      54
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant-maturity yield (FRED series DGS10) closes at or above 5.25 percent on at least one day between 2026-09-21 and 2026-10-30. Reference: 5.00 percent on the packet date.",
+    "resolution": "True if any DGS10 daily value dated 2026-09-21 to 2026-10-30 is 5.25 or higher.",
+    "failure_condition": "No DGS10 daily value in the window reaches 5.25.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 24,
+    "citations": [
+      38,
+      52
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog gains an entry with a date-added value between 2026-09-21 and 2026-10-02 for a vulnerability whose product field names an npm package, the npm CLI, or the Node.js runtime.",
+    "resolution": "True if the CISA KEV JSON feed contains an entry with dateAdded in the window and a product or vendor field matching npm or Node.js.",
+    "failure_condition": "No KEV entry dated in the window names npm, the npm CLI, or Node.js in its product or vendor field.",
+    "domain": "cyber",
+    "deadline": "2026-10-06",
+    "probability": 29,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-21 and 2026-10-05, OpenAI publishes a security advisory, changelog entry, or blog post acknowledging a Codex sandbox escape and stating a fix or mitigation.",
+    "resolution": "True if a page on an openai.com domain dated in the window references a Codex sandbox escape and a fix, and BleepingComputer or The Hacker News reports the publication.",
+    "failure_condition": "No OpenAI-published acknowledgment with a stated fix for the Codex sandbox escape appears in the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-08",
+    "probability": 29,
+    "citations": [
+      11,
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Friedrich Merz ceases to hold the office of German Chancellor, by resignation or a successful Bundestag constructive vote of no confidence, between 2026-09-21 and 2026-12-18.",
+    "resolution": "True if the Bundestag official record or Bundesregierung site records Merz leaving office in the window and Reuters or DW confirm.",
+    "failure_condition": "Merz still holds the office of Chancellor on 2026-12-18 with no recorded resignation or lost constructive no-confidence vote in the window.",
+    "domain": "political",
+    "deadline": "2026-12-22",
+    "probability": 40,
+    "citations": [
+      97,
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The sister of Imran Khan arrested on 2026-09-20 is released from custody, by bail or discharge, between 2026-09-21 and 2026-10-04.",
+    "resolution": "True if Dawn and one wire service (Reuters or AP) report her release from custody within the window.",
+    "failure_condition": "She remains in custody through 2026-10-04.",
+    "domain": "political",
+    "deadline": "2026-10-07",
+    "probability": 40,
+    "citations": [
+      87
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one person is formally charged with murder in a New South Wales court in connection with the Blue Mountains stabbing of 2026-09-20, between 2026-09-21 and 2026-10-02.",
+    "resolution": "True if NSW Police or a NSW court listing records a murder charge for the Blue Mountains stabbing within the window, reported by ABC Australia or the Guardian.",
+    "failure_condition": "No murder charge relating to the Blue Mountains stabbing is laid in the window.",
+    "domain": "crime/security",
+    "deadline": "2026-10-06",
+    "probability": 23,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS records an earthquake of magnitude 6.0 or greater with epicenter within 250 km of the 2026-09-20 M6.4 Kainantu, Papua New Guinea event, between 2026-09-21 and 2026-10-04.",
+    "resolution": "True if the USGS earthquake catalog lists an M6.0 or greater event in the window within 250 km of the us7000tiqc epicenter.",
+    "failure_condition": "The USGS catalog shows no M6.0 or greater event within 250 km of the reference epicenter in the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-06",
+    "probability": 29,
+    "citations": [
+      18,
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:34Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

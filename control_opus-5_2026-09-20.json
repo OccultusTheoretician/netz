@@ -1,0 +1,255 @@
+[
+  {
+    "statement": "Russian authorities report drone interceptions over Moscow city or Moscow oblast on at least three separate calendar days between 2026-09-27 and 2026-10-31.",
+    "resolution": "TRUE if drone interception over Moscow city or oblast is reported on three or more distinct dates between 2026-09-27 and 2026-10-31 by a Russian official source and carried by at least one Ukrainian or Western outlet.",
+    "failure_condition": "Fewer than three distinct dates inside the window carry a Moscow-area drone interception event.",
+    "domain": "military_conflict",
+    "deadline": "2026-11-04",
+    "probability": 61,
+    "citations": [
+      25,
+      63,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one commercial vessel transiting or near the Strait of Hormuz is struck or seized by Iranian or Iran-aligned forces between 2026-09-27 and 2026-11-15.",
+    "resolution": "TRUE if UKMTO logs an incident of a merchant vessel struck or seized in or near the Strait of Hormuz dated inside the window and at least one major wire service attributes it to Iranian or Iran-aligned forces.",
+    "failure_condition": "No merchant vessel in or near the Strait of Hormuz is struck or seized by Iranian or Iran-aligned forces during the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-11-19",
+    "probability": 61,
+    "citations": [
+      47,
+      54
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month Brent crude settles at or above 110.00 USD per barrel on at least one trading day between 2026-09-28 and 2026-11-13. Reference: 99.29 on the packet date 2026-09-20.",
+    "resolution": "TRUE if the ICE Brent front-month official settlement equals or exceeds 110.00 USD on any trading day from 2026-09-28 through 2026-11-13. Reference level 99.29 at seal.",
+    "failure_condition": "Brent front-month settlement never reaches 110.00 USD on any trading day inside the window.",
+    "domain": "economic",
+    "deadline": "2026-11-17",
+    "probability": 24,
+    "citations": [
+      37,
+      38,
+      54
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield prints at or above 5.25 percent on at least one business day between 2026-09-28 and 2026-12-18. Reference: 5.00 percent on the packet date 2026-09-20.",
+    "resolution": "TRUE if the FRED series DGS10 carries a value of 5.25 or higher on any date from 2026-09-28 through 2026-12-18. Reference level 5.00 at seal.",
+    "failure_condition": "DGS10 posts no value of 5.25 or higher on any business day inside the window.",
+    "domain": "economic",
+    "deadline": "2026-12-22",
+    "probability": 24,
+    "citations": [
+      38,
+      40,
+      52
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one vulnerability in an npm-distributed or Node.js ecosystem component to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-09-28 and 2026-12-11.",
+    "resolution": "TRUE if the CISA KEV JSON feed contains an entry whose dateAdded falls inside the window and whose vendorProject or product identifies an npm package, the npm registry, or Node.js itself.",
+    "failure_condition": "No KEV entry added inside the window identifies an npm package, the npm registry, or Node.js.",
+    "domain": "cyber",
+    "deadline": "2026-12-15",
+    "probability": 29,
+    "citations": [
+      10,
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The UN General Assembly adopts a resolution appointing the tenth Secretary-General between 2026-09-27 and 2026-12-18.",
+    "resolution": "TRUE if a General Assembly resolution appointing a Secretary-General for the term beginning 2027-01-01 is adopted on a date inside the window and issued in the official UN documents record.",
+    "failure_condition": "No General Assembly appointment resolution for the incoming Secretary-General is adopted on or before 2026-12-18.",
+    "domain": "political",
+    "deadline": "2026-12-22",
+    "probability": 40,
+    "citations": [
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Friedrich Merz ceases to hold the office of German Federal Chancellor between 2026-09-21 and 2026-12-31.",
+    "resolution": "TRUE if a successor is sworn in as Federal Chancellor, or Merz formally resigns with effect inside the window, as recorded by the Bundesregierung and reported by at least two major German outlets.",
+    "failure_condition": "Merz still holds the office of Federal Chancellor on 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 40,
+    "citations": [
+      97,
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one earthquake of magnitude 8.0 or greater, anywhere on Earth, with origin time between 2026-09-27 and 2027-01-31.",
+    "resolution": "TRUE if a USGS ComCat query for magnitude 8.0 and above over origin times 2026-09-27 through 2027-01-31 returns one or more events at reviewed magnitude.",
+    "failure_condition": "USGS ComCat lists no event of reviewed magnitude 8.0 or greater with origin time inside the window.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2027-02-04",
+    "probability": 29,
+    "citations": [
+      17,
+      18,
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog records three or more earthquakes of magnitude 7.0 or greater, anywhere on Earth, with origin times between 2026-09-27 and 2026-12-31.",
+    "resolution": "TRUE if a USGS ComCat query for magnitude 7.0 and above over origin times 2026-09-27 through 2026-12-31 returns three or more distinct events at reviewed magnitude.",
+    "failure_condition": "Fewer than three events of reviewed magnitude 7.0 or greater carry origin times inside the window.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2027-01-05",
+    "probability": 29,
+    "citations": [
+      17,
+      18,
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The sister of former Pakistani prime minister Imran Khan detained on 2026-09-20 is released from custody or granted bail, with release taking effect between 2026-09-21 and 2026-10-12.",
+    "resolution": "TRUE if at least two of Dawn, Geo News, and Al Jazeera report her release from custody, or a court order directing it, taking effect on a date inside the window.",
+    "failure_condition": "She remains in custody with no release order in effect at the close of 2026-10-12.",
+    "domain": "crime_security",
+    "deadline": "2026-10-16",
+    "probability": 23,
+    "citations": [
+      87
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-20T19:58:36Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
