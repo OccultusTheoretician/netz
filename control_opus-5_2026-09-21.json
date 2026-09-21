@@ -1,0 +1,252 @@
+[
+  {
+    "statement": "Donald Trump and Masoud Pezeshkian meet in person between 2026-09-22 and 2026-09-29, when both are expected in New York for the UN General Assembly high-level week.",
+    "resolution": "TRUE if the White House or Iranian presidency confirms, or two of Reuters, AP and AFP report, a face-to-face Trump-Pezeshkian meeting held between 2026-09-22 and 2026-09-29. Phone calls, passing handshakes and intermediary talks do not count.",
+    "failure_condition": "Trump and Pezeshkian do not meet face to face at any point between 2026-09-22 and 2026-09-29.",
+    "domain": "political",
+    "deadline": "2026-10-01",
+    "probability": 40,
+    "citations": [
+      52,
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US and China announce agreement to establish or launch a dedicated intergovernmental AI dialogue, channel or hotline between 2026-09-23 and 2026-09-30, around the Trump-Xi White House summit.",
+    "resolution": "TRUE if a White House, PRC Foreign Ministry or Xinhua readout, fact sheet or joint statement issued between 2026-09-23 and 2026-09-30 says both sides agreed to establish or launch a dedicated government-to-government AI dialogue, channel or hotline.",
+    "failure_condition": "No agreement to establish or launch a dedicated intergovernmental AI dialogue, channel or hotline is announced by either government between 2026-09-23 and 2026-09-30.",
+    "domain": "political",
+    "deadline": "2026-10-02",
+    "probability": 40,
+    "citations": [
+      76,
+      110
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "US forces carry out at least one strike on a target located on Iranian land territory between 2026-09-22 and 2026-10-21.",
+    "resolution": "TRUE if CENTCOM or the Pentagon announces, or two of Reuters, AP and AFP report, a US strike on a target on Iranian soil conducted between 2026-09-22 and 2026-10-21. Strikes on vessels at sea do not count.",
+    "failure_condition": "No US strike hits a target on Iranian land territory between 2026-09-22 and 2026-10-21.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-23",
+    "probability": 61,
+    "citations": [
+      52,
+      91,
+      67
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater occurs within 300 km of 52.859N 171.376W, epicenter of the 2026-09-17 M6.5 event near Nikolski, Alaska, between 2026-09-22 and 2026-10-21 UTC.",
+    "resolution": "TRUE if a USGS ComCat query for origin times between 2026-09-22 and 2026-10-21 UTC within 300 km of 52.859N 171.376W returns at least one event of magnitude 6.0 or greater; FALSE otherwise.",
+    "failure_condition": "No magnitude 6.0 or greater earthquake occurs within 300 km of 52.859N 171.376W between 2026-09-22 and 2026-10-21 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-10-23",
+    "probability": 29,
+    "citations": [
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "US forces conduct at least one lethal strike on an alleged drug-trafficking vessel in the Caribbean or Eastern Pacific between 2026-09-22 and 2026-10-21.",
+    "resolution": "TRUE if US Southern Command or the Pentagon officially announces a lethal kinetic strike on an alleged drug-trafficking vessel conducted between 2026-09-22 and 2026-10-21; southcom.mil press releases are the primary record.",
+    "failure_condition": "No US lethal strike on an alleged drug-trafficking vessel occurs between 2026-09-22 and 2026-10-21.",
+    "domain": "crime/security",
+    "deadline": "2026-10-23",
+    "probability": 23,
+    "citations": [
+      88
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month (December 2026) crude futures settle below 90.00 dollars per barrel on 2026-10-23. Reference: 100.27 dollars on the packet date.",
+    "resolution": "TRUE if the ICE Futures Europe official settlement price of the front-month (December 2026) Brent crude contract on 2026-10-23 is below 90.00 dollars per barrel; FALSE otherwise. Reference: 100.27 on the packet date.",
+    "failure_condition": "The front-month Brent crude settlement on 2026-10-23 is 90.00 dollars per barrel or higher.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-26",
+    "probability": 24,
+    "citations": [
+      43,
+      67,
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one new Cisco vulnerability to the Known Exploited Vulnerabilities catalog between 2026-09-22 and 2026-10-23.",
+    "resolution": "TRUE if the CISA KEV catalog carries at least one entry with vendorProject Cisco and a dateAdded value between 2026-09-22 and 2026-10-23 inclusive; FALSE otherwise.",
+    "failure_condition": "No Cisco vulnerability is added to the KEV catalog with a dateAdded value between 2026-09-22 and 2026-10-23.",
+    "domain": "cyber",
+    "deadline": "2026-10-26",
+    "probability": 29,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A federal judge orders the White House to restore access for CNN, Politico or MS NOW journalists between 2026-09-22 and 2026-10-23.",
+    "resolution": "TRUE if the US District Court for DC issues a TRO or preliminary injunction, in whole or part, requiring restored White House hard-pass access for at least one plaintiff between 2026-09-22 and 2026-10-23, per the court docket.",
+    "failure_condition": "No TRO or preliminary injunction requiring restored White House access for any plaintiff is issued between 2026-09-22 and 2026-10-23.",
+    "domain": "political",
+    "deadline": "2026-10-26",
+    "probability": 40,
+    "citations": [
+      93,
+      82,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its meeting concluding 2026-10-28. Reference: 3.75 to 4.00 percent on the packet date.",
+    "resolution": "TRUE if FRED series DFEDTARU, the target range upper limit, exceeds 4.00 percent for 2026-10-29 following the FOMC decision announced 2026-10-28; FALSE if 4.00 or lower. Reference: 4.00 upper limit on the packet date.",
+    "failure_condition": "The target range upper limit stays at or below 4.00 percent after the FOMC decision of 2026-10-28.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 24,
+    "citations": [
+      45,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Elif Eralp is elected Governing Mayor of Berlin by the Abgeordnetenhaus between 2026-09-22 and 2027-01-29.",
+    "resolution": "TRUE if the Berlin Abgeordnetenhaus elects Elif Eralp Governing Mayor in a plenary vote held between 2026-09-22 and 2027-01-29, per the official plenary record or two of Reuters, AP, AFP and dpa.",
+    "failure_condition": "The Abgeordnetenhaus does not elect Elif Eralp Governing Mayor in any plenary vote between 2026-09-22 and 2027-01-29.",
+    "domain": "political",
+    "deadline": "2027-02-01",
+    "probability": 40,
+    "citations": [
+      70,
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:11Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

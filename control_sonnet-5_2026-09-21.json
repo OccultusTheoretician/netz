@@ -1,0 +1,247 @@
+[
+  {
+    "statement": "The CISA KEV catalog will add a Cisco-vendor entry with dateAdded between 2026-09-21 and 2026-10-05.",
+    "resolution": "True if CISA's KEV catalog lists an entry with vendorProject Cisco and dateAdded between 2026-09-21 and 2026-10-05, checked 2026-10-08.",
+    "failure_condition": "No Cisco-vendor entry with dateAdded in that window appears in the CISA KEV catalog by the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-10-08",
+    "probability": 29,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "NYMEX WTI front-month crude will settle below 90.00 USD/barrel at close on 2026-10-15. Reference: 92.25 USD/barrel on 2026-09-21.",
+    "resolution": "True if the NYMEX WTI front-month settlement price on 2026-10-15, per CME Group or a wire service, is below 90.00 USD/barrel.",
+    "failure_condition": "The WTI front-month settlement on 2026-10-15 is 90.00 USD/barrel or higher.",
+    "domain": "economic",
+    "deadline": "2026-10-15",
+    "probability": 24,
+    "citations": [
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US 10-Year Treasury yield will close below 4.70 percent on 2026-10-16. Reference: 4.96 percent on 2026-09-21.",
+    "resolution": "True if Treasury.gov's Daily Par Yield Curve Rates or FRED series DGS10 shows the 10-Year yield below 4.70 percent on 2026-10-16.",
+    "failure_condition": "The 10-Year Treasury yield is 4.70 percent or higher on 2026-10-16 per Treasury.gov or FRED.",
+    "domain": "economic",
+    "deadline": "2026-10-16",
+    "probability": 24,
+    "citations": [
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A federal court will enter a ruling in the CNN/MS NOW/Politico lawsuit against the Trump administration over White House press access, between 2026-09-28 and 2026-11-30.",
+    "resolution": "True if the case docket (PACER/CourtListener) shows an order on injunction, dismissal, or judgment entered between 2026-09-28 and 2026-11-30.",
+    "failure_condition": "No ruling, order, or judgment appears on the docket between 2026-09-28 and 2026-11-30.",
+    "domain": "political",
+    "deadline": "2026-12-02",
+    "probability": 40,
+    "citations": [
+      93,
+      96,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Friedrich Merz will leave the German Chancellorship, by resignation, a successful no-confidence vote, or coalition collapse, between 2026-09-28 and 2026-12-31.",
+    "resolution": "True if Reuters, dpa, or the Bundestag record report Merz left office via those routes between 2026-09-28 and 2026-12-31.",
+    "failure_condition": "Merz remains Chancellor continuously through 2026-12-31 with no resignation, no-confidence vote, or coalition collapse.",
+    "domain": "political",
+    "deadline": "2027-01-04",
+    "probability": 40,
+    "citations": [
+      98,
+      100,
+      106
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The White House or Chinese MFA will announce a formal US-China AI hotline in a statement issued between 2026-09-28 and 2026-11-15.",
+    "resolution": "True if a White House readout or Chinese MFA briefing between 2026-09-28 and 2026-11-15 announces a bilateral AI crisis-communication channel.",
+    "failure_condition": "No White House or Chinese MFA statement in the window announces such a hotline or channel.",
+    "domain": "military_conflict",
+    "deadline": "2026-11-17",
+    "probability": 61,
+    "citations": [
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "South Africa's NPA will file formal charges against at least one of the three men held in the murder case, between 2026-09-21 and 2026-10-05.",
+    "resolution": "True if the NPA or a South African court record, per Reuters/BBC, shows charges filed against at least one man in that window.",
+    "failure_condition": "No formal charges are filed against any of the three men within the window.",
+    "domain": "crime_security",
+    "deadline": "2026-10-07",
+    "probability": 23,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "NSW Police will announce an arrest in the shooting of the 11-year-old boy in Sydney, occurring between 2026-09-21 and 2026-09-28.",
+    "resolution": "True if NSW Police or a wire service (Guardian/BBC/AAP) reports an arrest in this case between 2026-09-21 and 2026-09-28.",
+    "failure_condition": "No arrest in this case is reported by NSW Police or wire services within the window.",
+    "domain": "crime_security",
+    "deadline": "2026-09-30",
+    "probability": 23,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Japanese authorities will confirm 10 or more fatalities from Typhoon Dujuan, for the period 2026-09-21 to 2026-09-28.",
+    "resolution": "True if Japan's FDMA, NHK, or a wire service (Kyodo/Reuters/AP) reports 10+ confirmed Dujuan-attributed deaths for that window.",
+    "failure_condition": "Confirmed Dujuan-attributed fatalities remain below 10 as of the deadline per Japanese authorities or wire reporting.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-09-30",
+    "probability": 29,
+    "citations": [
+      25,
+      32
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS will record an M6.0+ earthquake within 300km of the Nikolski, Alaska M6.5 epicenter (us7000ti1p), between 2026-09-21 and 2026-09-28.",
+    "resolution": "True if USGS's catalog lists an M6.0+ event within 300km of that epicenter with origin time in that window.",
+    "failure_condition": "No M6.0+ earthquake within 300km of the Nikolski epicenter is recorded by USGS during the window.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-09-30",
+    "probability": 29,
+    "citations": [
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

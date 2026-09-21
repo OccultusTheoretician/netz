@@ -1,0 +1,282 @@
+[
+  {
+    "statement": "NYMEX front-month WTI crude settles below 85.00 USD per barrel on at least one trading day between 2026-09-22 and 2026-10-16. Reference: 92.25 on the packet date.",
+    "resolution": "CME NYMEX official daily settlement for the front-month CL contract prints below 85.00 on any trading day 2026-09-22 through 2026-10-16.",
+    "failure_condition": "Every front-month WTI settlement from 2026-09-22 through 2026-10-16 is 85.00 or higher.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-20",
+    "probability": 24,
+    "citations": [
+      43,
+      67
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant-maturity yield (FRED DGS10) closes below 4.60 percent on at least one day between 2026-09-22 and 2026-10-30. Reference: 4.96 percent on the packet date.",
+    "resolution": "FRED series DGS10 shows a daily value below 4.60 for any date 2026-09-22 through 2026-10-30.",
+    "failure_condition": "No DGS10 daily value from 2026-09-22 through 2026-10-30 is below 4.60.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 24,
+    "citations": [
+      62,
+      45
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Friedrich Merz ceases to be German chancellor, or loses a Bundestag confidence vote, between 2026-09-22 and 2026-12-18.",
+    "resolution": "Bundestag plenary record shows a lost Vertrauensfrage, or Bundespraesident appoints a successor chancellor, dated 2026-09-22 through 2026-12-18, confirmed by Reuters or DW.",
+    "failure_condition": "Merz remains chancellor with no lost confidence vote recorded through 2026-12-18.",
+    "domain": "political",
+    "deadline": "2026-12-22",
+    "probability": 40,
+    "citations": [
+      98,
+      100,
+      106,
+      112
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A federal court grants a temporary restraining order or preliminary injunction against the White House access ban on CNN, MS NOW and Politico between 2026-09-22 and 2026-11-13.",
+    "resolution": "Docket entry on CourtListener or PACER in the suit filed by CNN, MS NOW and Politico grants TRO or preliminary injunction, dated 2026-09-22 through 2026-11-13.",
+    "failure_condition": "No TRO or preliminary injunction is granted in that case within the window, including denial, dismissal or no ruling.",
+    "domain": "political",
+    "deadline": "2026-11-17",
+    "probability": 40,
+    "citations": [
+      93,
+      97,
+      82
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds at least one Cisco product vulnerability with a dateAdded value between 2026-09-22 and 2026-10-12.",
+    "resolution": "The CISA KEV JSON feed contains an entry with vendorProject Cisco and dateAdded between 2026-09-22 and 2026-10-12 inclusive.",
+    "failure_condition": "No KEV entry with vendorProject Cisco carries a dateAdded in the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-15",
+    "probability": 29,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds 15 or more entries with dateAdded values between 2026-09-22 and 2026-10-19 inclusive.",
+    "resolution": "Count of entries in the CISA KEV JSON feed with dateAdded from 2026-09-22 through 2026-10-19 is 15 or greater.",
+    "failure_condition": "Fewer than 15 KEV entries carry a dateAdded within the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-22",
+    "probability": 29,
+    "citations": [
+      17,
+      22,
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Typhoon Dujuan causes 10 or more confirmed deaths in Japan between 2026-09-21 and 2026-09-30.",
+    "resolution": "Japan Fire and Disaster Management Agency or NHK reports a cumulative Dujuan death toll in Japan of 10 or more for deaths occurring 2026-09-21 through 2026-09-30.",
+    "failure_condition": "The confirmed Japan death toll attributed to Dujuan for the window is 9 or fewer.",
+    "domain": "disaster",
+    "deadline": "2026-10-05",
+    "probability": 29,
+    "citations": [
+      25,
+      32
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS records at least one earthquake of magnitude 7.0 or greater anywhere on Earth between 2026-09-22 and 2026-10-21.",
+    "resolution": "The USGS earthquake catalog lists an event with reviewed magnitude 7.0 or greater and origin time 2026-09-22 through 2026-10-21 UTC.",
+    "failure_condition": "No USGS event in the window has a reviewed magnitude of 7.0 or greater.",
+    "domain": "disaster",
+    "deadline": "2026-10-23",
+    "probability": 29,
+    "citations": [
+      24,
+      33
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A federal immigration agent involved in the 2026-09-20 Austin, Texas shooting is criminally charged between 2026-09-21 and 2026-12-18.",
+    "resolution": "A Texas state or federal court docket shows a criminal complaint, information or indictment against the agent, filed 2026-09-21 through 2026-12-18, confirmed by AP or Reuters.",
+    "failure_condition": "No criminal charge against the agent is filed within the window.",
+    "domain": "crime/security",
+    "deadline": "2026-12-22",
+    "probability": 23,
+    "citations": [
+      15,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Iranian President Pezeshkian delivers a speech in person at the UN General Assembly general debate in New York between 2026-09-22 and 2026-09-29.",
+    "resolution": "UN Web TV archive or UN Journal lists Pezeshkian speaking in person in the General Assembly Hall on a date 2026-09-22 through 2026-09-29.",
+    "failure_condition": "Pezeshkian does not appear in person at the UNGA general debate in the window, including a remote address or substitution by another official.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-01",
+    "probability": 61,
+    "citations": [
+      52,
+      30,
+      35
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US and Iranian governments announce a ceasefire or cessation-of-hostilities agreement, confirmed by both governments, between 2026-09-22 and 2026-10-31.",
+    "resolution": "Official statements from both the White House or State Department and the Iranian presidency or foreign ministry confirm a ceasefire agreement dated 2026-09-22 through 2026-10-31, reported by Reuters and Al Jazeera.",
+    "failure_condition": "No ceasefire agreement is confirmed by both governments within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 61,
+    "citations": [
+      43,
+      52,
+      67
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-21T20:14:16Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
