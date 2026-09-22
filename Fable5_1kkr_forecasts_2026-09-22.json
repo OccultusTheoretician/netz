@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "ICE Brent front-month futures settle above 100.00 USD per barrel on 2026-10-16. Reference: 100.03 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "True if the ICE Brent front-month settlement price published for 2026-10-16 is strictly above 100.00. Reference: 100.03 on the packet date.",
+    "deadline": "2026-10-16",
+    "citations": [60, 61, 70, 78],
+    "failure_condition": "The ICE Brent front-month settlement for 2026-10-16 is at or below 100.00."
+  },
+  {
+    "statement": "The FRED DGS10 series value for 2026-10-15 is at or above 5.00 percent. Reference: 4.96 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "True if the FRED series DGS10 observation dated 2026-10-15 is at or above 5.00. Reference: 4.96 percent on the packet date.",
+    "deadline": "2026-10-15",
+    "citations": [59, 77],
+    "failure_condition": "The DGS10 observation for 2026-10-15 is below 5.00 percent."
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry for the VeloCloud Orchestrator vulnerability with a date-added value between 2026-09-22 and 2026-10-06.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "True if the CISA KEV catalog contains an entry whose product field references VeloCloud Orchestrator or VeloCloud SD-WAN Orchestrator and whose dateAdded is between 2026-09-22 and 2026-10-06 inclusive.",
+    "deadline": "2026-10-08",
+    "citations": [19],
+    "failure_condition": "No KEV entry referencing VeloCloud Orchestrator carries a dateAdded between 2026-09-22 and 2026-10-06."
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry for a D-Link DIR-822A router vulnerability with a date-added value between 2026-09-22 and 2026-10-13.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "True if the CISA KEV catalog contains an entry whose product or description field references DIR-822A and whose dateAdded is between 2026-09-22 and 2026-10-13 inclusive.",
+    "deadline": "2026-10-15",
+    "citations": [17],
+    "failure_condition": "No KEV entry referencing DIR-822A carries a dateAdded between 2026-09-22 and 2026-10-13."
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry for a Microsoft Defender or Windows Defender vulnerability with a date-added value between 2026-09-22 and 2026-10-20.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "True if the CISA KEV catalog contains an entry whose product field references Microsoft Defender or Windows Defender and whose dateAdded is between 2026-09-22 and 2026-10-20 inclusive.",
+    "deadline": "2026-10-22",
+    "citations": [23],
+    "failure_condition": "No KEV entry referencing Microsoft Defender or Windows Defender carries a dateAdded between 2026-09-22 and 2026-10-20."
+  },
+  {
+    "statement": "Between 2026-09-22 and 2026-10-20, at least two of Reuters, AP, AFP, and BBC report that Houthi forces have taken control of the Kahboub Mountains in Yemen.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "True if at least two of Reuters, AP, AFP, BBC publish reports dated 2026-09-22 to 2026-10-20 stating Houthi forces control the Kahboub Mountains or Kahboub heights.",
+    "deadline": "2026-10-22",
+    "citations": [82, 116, 44],
+    "failure_condition": "Fewer than two of the named outlets report Houthi control of the Kahboub Mountains within the window."
+  },
+  {
+    "statement": "Between 2026-09-22 and 2026-10-20, at least two of Reuters, AP, AFP, and Bloomberg report an official Iranian government statement declaring the Strait of Hormuz open to commercial shipping.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "True if at least two of Reuters, AP, AFP, Bloomberg report, dated 2026-09-22 to 2026-10-20, an Iranian government or IRGC statement that the Strait of Hormuz is reopened to commercial transit.",
+    "deadline": "2026-10-22",
+    "citations": [61, 60, 70],
+    "failure_condition": "No Iranian official statement declaring Hormuz reopened to commercial shipping is reported by two of the named outlets within the window."
+  },
+  {
+    "statement": "In the federal lawsuit filed by CNN, MS NOW, and Politico against the Trump administration over press access, the court docket records a ruling on a motion for temporary restraining order or preliminary injunction between 2026-09-22 and 2026-11-10.",
+    "domain": "political",
+    "probability": 45,
+    "resolution": "True if the PACER docket for the CNN, MS NOW, Politico press-access suit shows an order granting or denying a TRO or preliminary injunction entered between 2026-09-22 and 2026-11-10 inclusive.",
+    "deadline": "2026-11-13",
+    "citations": [43, 100],
+    "failure_condition": "No order granting or denying a TRO or preliminary injunction is entered on that docket within the window."
+  },
+  {
+    "statement": "Between 2026-09-22 and 2026-10-30, a Sri Lankan court hands down sentences to at least one of the 15 men convicted on 2026-09-22 over the 2019 Easter Sunday bombings, as reported by at least two of Reuters, AP, AFP, and BBC.",
+    "domain": "crime/security",
+    "probability": 50,
+    "resolution": "True if at least two of Reuters, AP, AFP, BBC report, dated 2026-09-22 to 2026-10-30, a sentence pronounced on at least one of the 15 convicted defendants.",
+    "deadline": "2026-11-03",
+    "citations": [79, 40],
+    "failure_condition": "No sentence for any of the 15 convicted defendants is reported by two of the named outlets within the window."
+  },
+  {
+    "statement": "Between 2026-09-22 and 2026-10-06, the confirmed death toll in Japan attributed to Typhoon Dujuan reaches at least 10, per Japan Fire and Disaster Management Agency figures or two of Reuters, AP, AFP, and NHK.",
+    "domain": "disaster",
+    "probability": 30,
+    "resolution": "True if the FDMA or two of Reuters, AP, AFP, NHK report, dated 2026-09-22 to 2026-10-06, a confirmed Typhoon Dujuan death toll in Japan of 10 or more.",
+    "deadline": "2026-10-08",
+    "citations": [50, 51],
+    "failure_condition": "The confirmed Japan death toll attributed to Typhoon Dujuan remains below 10 through the window."
+  }
+]

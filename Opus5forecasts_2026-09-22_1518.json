@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "The CISA KEV catalog carries at least one entry whose vendorProject or product field names VeloCloud or SD-WAN Orchestrator, with a dateAdded value between 2026-09-23 and 2026-10-23.",
+    "domain": "cyber",
+    "probability": 52,
+    "resolution": "TRUE if the CISA KEV catalog JSON contains a record whose vendorProject or product names VeloCloud or SD-WAN Orchestrator with dateAdded between 2026-09-23 and 2026-10-23 inclusive; otherwise FALSE.",
+    "deadline": "2026-10-27",
+    "citations": [
+      19,
+      29
+    ],
+    "failure_condition": "No KEV record naming VeloCloud or SD-WAN Orchestrator carries a dateAdded inside the window."
+  },
+  {
+    "statement": "The CISA KEV catalog carries at least one entry with vendorProject D-Link and a dateAdded value between 2026-09-23 and 2026-12-15.",
+    "domain": "cyber",
+    "probability": 28,
+    "resolution": "TRUE if the CISA KEV catalog JSON contains a record with vendorProject D-Link and dateAdded between 2026-09-23 and 2026-12-15 inclusive; otherwise FALSE.",
+    "deadline": "2026-12-18",
+    "citations": [
+      17
+    ],
+    "failure_condition": "No D-Link record in the KEV catalog carries a dateAdded inside the window."
+  },
+  {
+    "statement": "The S&P 500 sets a new all-time closing high on at least one session between 2026-09-23 and 2026-10-30. Reference: 7,764.88 close on the packet date, up 2.36 percent.",
+    "domain": "economic",
+    "probability": 80,
+    "resolution": "TRUE if S&P 500 daily close data show a close above the all-time closing high standing on 2026-09-22, on any session from 2026-09-23 through 2026-10-30; otherwise FALSE.",
+    "deadline": "2026-11-04",
+    "citations": [
+      65,
+      75
+    ],
+    "failure_condition": "Every S&P 500 close inside the window sits at or below the all-time closing high that stood on 2026-09-22."
+  },
+  {
+    "statement": "Front-month Brent crude settles at or above 120.00 US dollars a barrel on at least one trading day between 2026-09-23 and 2026-12-31. Reference: 100.03 on the packet date.",
+    "domain": "economic",
+    "probability": 22,
+    "resolution": "TRUE if ICE front-month Brent settlement data show a settlement at or above 120.00 on any trading day from 2026-09-23 through 2026-12-31; otherwise FALSE.",
+    "deadline": "2027-01-06",
+    "citations": [
+      60,
+      61,
+      78
+    ],
+    "failure_condition": "Every ICE front-month Brent settlement inside the window prints below 120.00."
+  },
+  {
+    "statement": "Front-month WTI crude settles below 75.00 US dollars a barrel on at least one trading day between 2026-09-23 and 2026-11-30. Reference: 91.16 on the packet date, down 10.55 percent.",
+    "domain": "economic",
+    "probability": 45,
+    "resolution": "TRUE if NYMEX front-month WTI settlement data show a settlement below 75.00 on any trading day from 2026-09-23 through 2026-11-30; otherwise FALSE.",
+    "deadline": "2026-12-03",
+    "citations": [
+      60,
+      70,
+      61
+    ],
+    "failure_condition": "No NYMEX front-month WTI settlement inside the window prints below 75.00."
+  },
+  {
+    "statement": "FRED series DGS10 prints at or above 5.25 percent on at least one business day between 2026-09-23 and 2026-12-31. Reference: 4.96 percent on the packet date.",
+    "domain": "economic",
+    "probability": 30,
+    "resolution": "TRUE if FRED series DGS10 carries a value at or above 5.25 for any business day from 2026-09-23 through 2026-12-31; otherwise FALSE.",
+    "deadline": "2027-01-07",
+    "citations": [
+      59,
+      77
+    ],
+    "failure_condition": "Every DGS10 observation inside the window sits below 5.25."
+  },
+  {
+    "statement": "Russia and Ukraine both publicly confirm a mutual halt on strikes against each other's energy infrastructure, announced between 2026-09-23 and 2026-12-18.",
+    "domain": "military_conflict",
+    "probability": 18,
+    "resolution": "TRUE if statements from both the Russian and Ukrainian governments, reported by Reuters and AP, confirm a mutual moratorium on energy-infrastructure strikes announced inside the window; otherwise FALSE.",
+    "deadline": "2026-12-22",
+    "citations": [
+      64,
+      108
+    ],
+    "failure_condition": "No mutual energy-strike moratorium is announced and confirmed by both governments inside the window."
+  },
+  {
+    "statement": "A single incident or single-day battle in Yemen kills 100 or more people, combatant or civilian, between 2026-09-23 and 2026-11-30.",
+    "domain": "military_conflict",
+    "probability": 62,
+    "resolution": "TRUE if Reuters or AP, and Al Jazeera, both report a single Yemen incident or single-day battle inside the window with a death toll of 100 or more; otherwise FALSE.",
+    "deadline": "2026-12-04",
+    "citations": [
+      82,
+      116,
+      44
+    ],
+    "failure_condition": "No single Yemen incident inside the window reaches a reported toll of 100 or more deaths."
+  },
+  {
+    "statement": "Democrats win at least 218 seats in the US House of Representatives in the general election held 2026-11-03.",
+    "domain": "political",
+    "probability": 70,
+    "resolution": "TRUE if AP race calls as of the deadline show Democrats winning 218 or more House seats in the 2026-11-03 general election; otherwise FALSE.",
+    "deadline": "2026-12-11",
+    "citations": [
+      107,
+      128
+    ],
+    "failure_condition": "AP race calls at the deadline show Democrats holding fewer than 218 House seats."
+  },
+  {
+    "statement": "The NOAA CPC Oceanic Nino Index table carries a Sep-Oct-Nov 2026 seasonal value at or above plus 2.0 degrees Celsius.",
+    "domain": "disaster_infrastructure",
+    "probability": 55,
+    "resolution": "TRUE if the NOAA CPC ONI table, fetched at the deadline, carries an SON 2026 value of 2.0 or higher; otherwise FALSE.",
+    "deadline": "2026-12-18",
+    "citations": [
+      101
+    ],
+    "failure_condition": "The CPC ONI table shows an SON 2026 value below 2.0 at the deadline."
+  }
+]
