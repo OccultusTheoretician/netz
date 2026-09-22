@@ -1,0 +1,103 @@
+[
+  {
+    "statement": "The Broadcom VMware VeloCloud Orchestrator vulnerability reported as CVSS 10.0 and actively exploited via certificate-based authentication bypass is added to the CISA Known Exploited Vulnerabilities catalog with a Date Added value between 2026-09-22 and 2026-11-13.",
+    "domain": "cyber",
+    "probability": 42,
+    "resolution": "True if the CISA KEV catalog carries an entry for a VeloCloud Orchestrator certificate-based authentication bypass or closely matching actively-exploited flaw with a Date Added value in the stated window; false if no such entry exists by the deadline.",
+    "deadline": "2026-11-17",
+    "citations": [
+      19
+    ],
+    "failure_condition": "No CISA KEV entry for this VeloCloud Orchestrator vulnerability carries a Date Added value within the window by the deadline."
+  },
+  {
+    "statement": "GDACS wildfire event 1032333 in Indonesia, at Green alert level and in its 63rd day of coverage as of 22 Sep 2026, is escalated by GDACS to Orange or Red alert level at any point between 2026-09-22 and 2026-11-20.",
+    "domain": "disaster",
+    "probability": 15,
+    "resolution": "True if the GDACS event report for eventid 1032333 shows an Orange or Red alert level at any point in the window; false if the event remains Green or is closed and archived at Green through window close.",
+    "deadline": "2026-11-24",
+    "citations": [
+      41
+    ],
+    "failure_condition": "GDACS event 1032333 never carries an Orange or Red alert level through the end of the window."
+  },
+  {
+    "statement": "Brent crude oil settles at or above 130.00 USD per barrel on any trading day between 2026-09-23 and 2026-12-18. Reference: 100.03 USD per barrel on the packet date, 22 Sep 2026.",
+    "domain": "economic",
+    "probability": 12,
+    "resolution": "True if Reuters, Bloomberg, or ICE exchange settlement data report a Brent front-month settlement price at or above 130.00 USD per barrel on any trading day in the window; false otherwise.",
+    "deadline": "2026-12-22",
+    "citations": [
+      78,
+      60
+    ],
+    "failure_condition": "Brent never settles at or above 130.00 USD per barrel on any trading day within the window."
+  },
+  {
+    "statement": "The 10-year US Treasury note yield closes at or below 4.55 percent on any trading day between 2026-09-23 and 2026-11-30. Reference: 4.96 percent on the packet date, 22 Sep 2026.",
+    "domain": "economic",
+    "probability": 38,
+    "resolution": "True if the Treasury daily par yield curve or the FRED series DGS10 shows a 10-year close at or below 4.55 percent on any date in the window; false otherwise.",
+    "deadline": "2026-12-03",
+    "citations": [
+      59
+    ],
+    "failure_condition": "The 10-year Treasury close never reaches 4.55 percent or below on any trading day within the window."
+  },
+  {
+    "statement": "A mining, seizure, boarding, or attack on a commercial vessel transiting the Strait of Hormuz is reported between 2026-09-23 and 2026-10-21.",
+    "domain": "military_conflict",
+    "probability": 22,
+    "resolution": "True if two or more of Reuters, AP, S&P Global Platts, or Lloyds List report a mining, seizure, boarding, or attack on a commercial vessel transiting the Strait of Hormuz within the window; false otherwise.",
+    "deadline": "2026-10-26",
+    "citations": [
+      61
+    ],
+    "failure_condition": "No such vessel incident in the Strait of Hormuz is corroborated by two or more of the named outlets within the window."
+  },
+  {
+    "statement": "Republicans hold a majority of seats in the US House of Representatives as called by the Associated Press following the 2026-11-03 general election.",
+    "domain": "political",
+    "probability": 33,
+    "resolution": "True if the AP House-control call, or the certified seat count if AP has not called it by the deadline, shows a Republican majority; false otherwise.",
+    "deadline": "2026-11-12",
+    "citations": [
+      107
+    ],
+    "failure_condition": "The Associated Press calls a Democratic majority, or the certified count shows Republicans holding fewer than 218 seats, by the deadline."
+  },
+  {
+    "statement": "Russia and Ukraine both publicly confirm an active moratorium on strikes against energy infrastructure, sustained for at least 5 consecutive days, at some point between 2026-09-23 and 2026-11-06.",
+    "domain": "political",
+    "probability": 17,
+    "resolution": "True if statements from both the Russian and Ukrainian governments or their authorized spokespeople, reported by Reuters or AP, confirm an energy-infrastructure strike moratorium holding for 5 or more consecutive days within the window; false otherwise.",
+    "deadline": "2026-11-10",
+    "citations": [
+      64,
+      108
+    ],
+    "failure_condition": "No 5-consecutive-day energy strike moratorium is confirmed by both governments within the window."
+  },
+  {
+    "statement": "The armed group responsible for the 15 deaths in the Far North Cameroon raid conducts a further attack on a populated locality in Far North Region, Cameroon, between 2026-09-23 and 2026-11-06.",
+    "domain": "crime_security",
+    "probability": 55,
+    "resolution": "True if two or more of Reuters, AP, or Al Jazeera report a further attack by the same or an affiliated armed group on a populated locality in Far North Region within the window; false otherwise.",
+    "deadline": "2026-11-10",
+    "citations": [
+      9
+    ],
+    "failure_condition": "No further attack on a populated locality in Far North Region by this armed group is corroborated by two or more of the named outlets within the window."
+  },
+  {
+    "statement": "OpenAI or Sam Altman files a responsive motion, such as dismissal or transfer, in the British Columbia lawsuit over the Tumbler Ridge school shooting, docketed between 2026-09-23 and 2027-01-29.",
+    "domain": "crime_security",
+    "probability": 58,
+    "resolution": "True if the British Columbia Supreme Court docket for this case shows a filed responsive motion from either defendant within the window; false otherwise.",
+    "deadline": "2027-02-03",
+    "citations": [
+      13
+    ],
+    "failure_condition": "No responsive motion from either defendant appears on the court docket within the window."
+  }
+]

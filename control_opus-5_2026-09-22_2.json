@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "The CISA KEV catalog carries at least one entry whose vendorProject or product field names VeloCloud or SD-WAN Orchestrator, with a dateAdded value between 2026-09-23 and 2026-10-23.",
+    "resolution": "TRUE if the CISA KEV catalog JSON contains a record whose vendorProject or product names VeloCloud or SD-WAN Orchestrator with dateAdded between 2026-09-23 and 2026-10-23 inclusive; otherwise FALSE.",
+    "failure_condition": "No KEV record naming VeloCloud or SD-WAN Orchestrator carries a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-27",
+    "probability": 29,
+    "citations": [
+      19,
+      29
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog carries at least one entry with vendorProject D-Link and a dateAdded value between 2026-09-23 and 2026-12-15.",
+    "resolution": "TRUE if the CISA KEV catalog JSON contains a record with vendorProject D-Link and dateAdded between 2026-09-23 and 2026-12-15 inclusive; otherwise FALSE.",
+    "failure_condition": "No D-Link record in the KEV catalog carries a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-12-18",
+    "probability": 29,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The S&P 500 sets a new all-time closing high on at least one session between 2026-09-23 and 2026-10-30. Reference: 7,764.88 close on the packet date, up 2.36 percent.",
+    "resolution": "TRUE if S&P 500 daily close data show a close above the all-time closing high standing on 2026-09-22, on any session from 2026-09-23 through 2026-10-30; otherwise FALSE.",
+    "failure_condition": "Every S&P 500 close inside the window sits at or below the all-time closing high that stood on 2026-09-22.",
+    "domain": "economic",
+    "deadline": "2026-11-04",
+    "probability": 24,
+    "citations": [
+      65,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month Brent crude settles at or above 120.00 US dollars a barrel on at least one trading day between 2026-09-23 and 2026-12-31. Reference: 100.03 on the packet date.",
+    "resolution": "TRUE if ICE front-month Brent settlement data show a settlement at or above 120.00 on any trading day from 2026-09-23 through 2026-12-31; otherwise FALSE.",
+    "failure_condition": "Every ICE front-month Brent settlement inside the window prints below 120.00.",
+    "domain": "economic",
+    "deadline": "2027-01-06",
+    "probability": 24,
+    "citations": [
+      60,
+      61,
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Front-month WTI crude settles below 75.00 US dollars a barrel on at least one trading day between 2026-09-23 and 2026-11-30. Reference: 91.16 on the packet date, down 10.55 percent.",
+    "resolution": "TRUE if NYMEX front-month WTI settlement data show a settlement below 75.00 on any trading day from 2026-09-23 through 2026-11-30; otherwise FALSE.",
+    "failure_condition": "No NYMEX front-month WTI settlement inside the window prints below 75.00.",
+    "domain": "economic",
+    "deadline": "2026-12-03",
+    "probability": 24,
+    "citations": [
+      60,
+      70,
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "FRED series DGS10 prints at or above 5.25 percent on at least one business day between 2026-09-23 and 2026-12-31. Reference: 4.96 percent on the packet date.",
+    "resolution": "TRUE if FRED series DGS10 carries a value at or above 5.25 for any business day from 2026-09-23 through 2026-12-31; otherwise FALSE.",
+    "failure_condition": "Every DGS10 observation inside the window sits below 5.25.",
+    "domain": "economic",
+    "deadline": "2027-01-07",
+    "probability": 24,
+    "citations": [
+      59,
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia and Ukraine both publicly confirm a mutual halt on strikes against each other's energy infrastructure, announced between 2026-09-23 and 2026-12-18.",
+    "resolution": "TRUE if statements from both the Russian and Ukrainian governments, reported by Reuters and AP, confirm a mutual moratorium on energy-infrastructure strikes announced inside the window; otherwise FALSE.",
+    "failure_condition": "No mutual energy-strike moratorium is announced and confirmed by both governments inside the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-12-22",
+    "probability": 61,
+    "citations": [
+      64,
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A single incident or single-day battle in Yemen kills 100 or more people, combatant or civilian, between 2026-09-23 and 2026-11-30.",
+    "resolution": "TRUE if Reuters or AP, and Al Jazeera, both report a single Yemen incident or single-day battle inside the window with a death toll of 100 or more; otherwise FALSE.",
+    "failure_condition": "No single Yemen incident inside the window reaches a reported toll of 100 or more deaths.",
+    "domain": "military_conflict",
+    "deadline": "2026-12-04",
+    "probability": 61,
+    "citations": [
+      82,
+      116,
+      44
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democrats win at least 218 seats in the US House of Representatives in the general election held 2026-11-03.",
+    "resolution": "TRUE if AP race calls as of the deadline show Democrats winning 218 or more House seats in the 2026-11-03 general election; otherwise FALSE.",
+    "failure_condition": "AP race calls at the deadline show Democrats holding fewer than 218 House seats.",
+    "domain": "political",
+    "deadline": "2026-12-11",
+    "probability": 40,
+    "citations": [
+      107,
+      128
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The NOAA CPC Oceanic Nino Index table carries a Sep-Oct-Nov 2026 seasonal value at or above plus 2.0 degrees Celsius.",
+    "resolution": "TRUE if the NOAA CPC ONI table, fetched at the deadline, carries an SON 2026 value of 2.0 or higher; otherwise FALSE.",
+    "failure_condition": "The CPC ONI table shows an SON 2026 value below 2.0 at the deadline.",
+    "domain": "disaster_infrastructure",
+    "deadline": "2026-12-18",
+    "probability": 29,
+    "citations": [
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

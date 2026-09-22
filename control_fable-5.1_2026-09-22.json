@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "ICE Brent front-month futures settle above 100.00 USD per barrel on 2026-10-16. Reference: 100.03 on the packet date.",
+    "resolution": "True if the ICE Brent front-month settlement price published for 2026-10-16 is strictly above 100.00. Reference: 100.03 on the packet date.",
+    "failure_condition": "The ICE Brent front-month settlement for 2026-10-16 is at or below 100.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-16",
+    "probability": 24,
+    "citations": [
+      60,
+      61,
+      70,
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FRED DGS10 series value for 2026-10-15 is at or above 5.00 percent. Reference: 4.96 percent on the packet date.",
+    "resolution": "True if the FRED series DGS10 observation dated 2026-10-15 is at or above 5.00. Reference: 4.96 percent on the packet date.",
+    "failure_condition": "The DGS10 observation for 2026-10-15 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-15",
+    "probability": 24,
+    "citations": [
+      59,
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry for the VeloCloud Orchestrator vulnerability with a date-added value between 2026-09-22 and 2026-10-06.",
+    "resolution": "True if the CISA KEV catalog contains an entry whose product field references VeloCloud Orchestrator or VeloCloud SD-WAN Orchestrator and whose dateAdded is between 2026-09-22 and 2026-10-06 inclusive.",
+    "failure_condition": "No KEV entry referencing VeloCloud Orchestrator carries a dateAdded between 2026-09-22 and 2026-10-06.",
+    "domain": "cyber",
+    "deadline": "2026-10-08",
+    "probability": 29,
+    "citations": [
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry for a D-Link DIR-822A router vulnerability with a date-added value between 2026-09-22 and 2026-10-13.",
+    "resolution": "True if the CISA KEV catalog contains an entry whose product or description field references DIR-822A and whose dateAdded is between 2026-09-22 and 2026-10-13 inclusive.",
+    "failure_condition": "No KEV entry referencing DIR-822A carries a dateAdded between 2026-09-22 and 2026-10-13.",
+    "domain": "cyber",
+    "deadline": "2026-10-15",
+    "probability": 29,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry for a Microsoft Defender or Windows Defender vulnerability with a date-added value between 2026-09-22 and 2026-10-20.",
+    "resolution": "True if the CISA KEV catalog contains an entry whose product field references Microsoft Defender or Windows Defender and whose dateAdded is between 2026-09-22 and 2026-10-20 inclusive.",
+    "failure_condition": "No KEV entry referencing Microsoft Defender or Windows Defender carries a dateAdded between 2026-09-22 and 2026-10-20.",
+    "domain": "cyber",
+    "deadline": "2026-10-22",
+    "probability": 29,
+    "citations": [
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-22 and 2026-10-20, at least two of Reuters, AP, AFP, and BBC report that Houthi forces have taken control of the Kahboub Mountains in Yemen.",
+    "resolution": "True if at least two of Reuters, AP, AFP, BBC publish reports dated 2026-09-22 to 2026-10-20 stating Houthi forces control the Kahboub Mountains or Kahboub heights.",
+    "failure_condition": "Fewer than two of the named outlets report Houthi control of the Kahboub Mountains within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-22",
+    "probability": 61,
+    "citations": [
+      82,
+      116,
+      44
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-22 and 2026-10-20, at least two of Reuters, AP, AFP, and Bloomberg report an official Iranian government statement declaring the Strait of Hormuz open to commercial shipping.",
+    "resolution": "True if at least two of Reuters, AP, AFP, Bloomberg report, dated 2026-09-22 to 2026-10-20, an Iranian government or IRGC statement that the Strait of Hormuz is reopened to commercial transit.",
+    "failure_condition": "No Iranian official statement declaring Hormuz reopened to commercial shipping is reported by two of the named outlets within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-22",
+    "probability": 61,
+    "citations": [
+      61,
+      60,
+      70
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the federal lawsuit filed by CNN, MS NOW, and Politico against the Trump administration over press access, the court docket records a ruling on a motion for temporary restraining order or preliminary injunction between 2026-09-22 and 2026-11-10.",
+    "resolution": "True if the PACER docket for the CNN, MS NOW, Politico press-access suit shows an order granting or denying a TRO or preliminary injunction entered between 2026-09-22 and 2026-11-10 inclusive.",
+    "failure_condition": "No order granting or denying a TRO or preliminary injunction is entered on that docket within the window.",
+    "domain": "political",
+    "deadline": "2026-11-13",
+    "probability": 40,
+    "citations": [
+      43,
+      100
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-22 and 2026-10-30, a Sri Lankan court hands down sentences to at least one of the 15 men convicted on 2026-09-22 over the 2019 Easter Sunday bombings, as reported by at least two of Reuters, AP, AFP, and BBC.",
+    "resolution": "True if at least two of Reuters, AP, AFP, BBC report, dated 2026-09-22 to 2026-10-30, a sentence pronounced on at least one of the 15 convicted defendants.",
+    "failure_condition": "No sentence for any of the 15 convicted defendants is reported by two of the named outlets within the window.",
+    "domain": "crime/security",
+    "deadline": "2026-11-03",
+    "probability": 23,
+    "citations": [
+      79,
+      40
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-22 and 2026-10-06, the confirmed death toll in Japan attributed to Typhoon Dujuan reaches at least 10, per Japan Fire and Disaster Management Agency figures or two of Reuters, AP, AFP, and NHK.",
+    "resolution": "True if the FDMA or two of Reuters, AP, AFP, NHK report, dated 2026-09-22 to 2026-10-06, a confirmed Typhoon Dujuan death toll in Japan of 10 or more.",
+    "failure_condition": "The confirmed Japan death toll attributed to Typhoon Dujuan remains below 10 through the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-08",
+    "probability": 29,
+    "citations": [
+      50,
+      51
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:14Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

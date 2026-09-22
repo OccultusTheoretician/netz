@@ -1,0 +1,220 @@
+[
+  {
+    "statement": "The Broadcom VMware VeloCloud Orchestrator vulnerability reported as CVSS 10.0 and actively exploited via certificate-based authentication bypass is added to the CISA Known Exploited Vulnerabilities catalog with a Date Added value between 2026-09-22 and 2026-11-13.",
+    "resolution": "True if the CISA KEV catalog carries an entry for a VeloCloud Orchestrator certificate-based authentication bypass or closely matching actively-exploited flaw with a Date Added value in the stated window; false if no such entry exists by the deadline.",
+    "failure_condition": "No CISA KEV entry for this VeloCloud Orchestrator vulnerability carries a Date Added value within the window by the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 29,
+    "citations": [
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "GDACS wildfire event 1032333 in Indonesia, at Green alert level and in its 63rd day of coverage as of 22 Sep 2026, is escalated by GDACS to Orange or Red alert level at any point between 2026-09-22 and 2026-11-20.",
+    "resolution": "True if the GDACS event report for eventid 1032333 shows an Orange or Red alert level at any point in the window; false if the event remains Green or is closed and archived at Green through window close.",
+    "failure_condition": "GDACS event 1032333 never carries an Orange or Red alert level through the end of the window.",
+    "domain": "disaster",
+    "deadline": "2026-11-24",
+    "probability": 29,
+    "citations": [
+      41
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2857,
+      "n": 70,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Brent crude oil settles at or above 130.00 USD per barrel on any trading day between 2026-09-23 and 2026-12-18. Reference: 100.03 USD per barrel on the packet date, 22 Sep 2026.",
+    "resolution": "True if Reuters, Bloomberg, or ICE exchange settlement data report a Brent front-month settlement price at or above 130.00 USD per barrel on any trading day in the window; false otherwise.",
+    "failure_condition": "Brent never settles at or above 130.00 USD per barrel on any trading day within the window.",
+    "domain": "economic",
+    "deadline": "2026-12-22",
+    "probability": 24,
+    "citations": [
+      78,
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury note yield closes at or below 4.55 percent on any trading day between 2026-09-23 and 2026-11-30. Reference: 4.96 percent on the packet date, 22 Sep 2026.",
+    "resolution": "True if the Treasury daily par yield curve or the FRED series DGS10 shows a 10-year close at or below 4.55 percent on any date in the window; false otherwise.",
+    "failure_condition": "The 10-year Treasury close never reaches 4.55 percent or below on any trading day within the window.",
+    "domain": "economic",
+    "deadline": "2026-12-03",
+    "probability": 24,
+    "citations": [
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2407,
+      "n": 54,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A mining, seizure, boarding, or attack on a commercial vessel transiting the Strait of Hormuz is reported between 2026-09-23 and 2026-10-21.",
+    "resolution": "True if two or more of Reuters, AP, S&P Global Platts, or Lloyds List report a mining, seizure, boarding, or attack on a commercial vessel transiting the Strait of Hormuz within the window; false otherwise.",
+    "failure_condition": "No such vessel incident in the Strait of Hormuz is corroborated by two or more of the named outlets within the window.",
+    "domain": "military_conflict",
+    "deadline": "2026-10-26",
+    "probability": 61,
+    "citations": [
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6087,
+      "n": 92,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Republicans hold a majority of seats in the US House of Representatives as called by the Associated Press following the 2026-11-03 general election.",
+    "resolution": "True if the AP House-control call, or the certified seat count if AP has not called it by the deadline, shows a Republican majority; false otherwise.",
+    "failure_condition": "The Associated Press calls a Democratic majority, or the certified count shows Republicans holding fewer than 218 seats, by the deadline.",
+    "domain": "political",
+    "deadline": "2026-11-12",
+    "probability": 40,
+    "citations": [
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia and Ukraine both publicly confirm an active moratorium on strikes against energy infrastructure, sustained for at least 5 consecutive days, at some point between 2026-09-23 and 2026-11-06.",
+    "resolution": "True if statements from both the Russian and Ukrainian governments or their authorized spokespeople, reported by Reuters or AP, confirm an energy-infrastructure strike moratorium holding for 5 or more consecutive days within the window; false otherwise.",
+    "failure_condition": "No 5-consecutive-day energy strike moratorium is confirmed by both governments within the window.",
+    "domain": "political",
+    "deadline": "2026-11-10",
+    "probability": 40,
+    "citations": [
+      64,
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4024,
+      "n": 82,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The armed group responsible for the 15 deaths in the Far North Cameroon raid conducts a further attack on a populated locality in Far North Region, Cameroon, between 2026-09-23 and 2026-11-06.",
+    "resolution": "True if two or more of Reuters, AP, or Al Jazeera report a further attack by the same or an affiliated armed group on a populated locality in Far North Region within the window; false otherwise.",
+    "failure_condition": "No further attack on a populated locality in Far North Region by this armed group is corroborated by two or more of the named outlets within the window.",
+    "domain": "crime_security",
+    "deadline": "2026-11-10",
+    "probability": 23,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "OpenAI or Sam Altman files a responsive motion, such as dismissal or transfer, in the British Columbia lawsuit over the Tumbler Ridge school shooting, docketed between 2026-09-23 and 2027-01-29.",
+    "resolution": "True if the British Columbia Supreme Court docket for this case shows a filed responsive motion from either defendant within the window; false otherwise.",
+    "failure_condition": "No responsive motion from either defendant appears on the court docket within the window.",
+    "domain": "crime_security",
+    "deadline": "2027-02-03",
+    "probability": 23,
+    "citations": [
+      13
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2308,
+      "n": 13,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-22T17:48:23Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
