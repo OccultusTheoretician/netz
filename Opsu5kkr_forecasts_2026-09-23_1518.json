@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "The FOMC raises the federal funds target range to at least 4.00 to 4.25 percent at its scheduled decision on 2026-10-28. Reference: the range was set at 3.75 to 4.00 percent on 2026-09-16.",
+    "domain": "economics",
+    "probability": 55,
+    "resolution": "TRUE if the FOMC statement published on federalreserve.gov on 2026-10-28 names a target range whose lower bound is 4.00 percent or higher. FALSE if the lower bound is 3.75 percent or lower.",
+    "deadline": "2026-10-29",
+    "citations": [
+      59,
+      62
+    ],
+    "failure_condition": "The target range announced on 2026-10-28 carries a lower bound below 4.00 percent."
+  },
+  {
+    "statement": "The US Treasury 10-year par yield closes at or above 5.25 percent on at least one business day between 2026-09-24 and 2026-11-13. Reference: 5.06 percent on the packet date, 2026-09-23.",
+    "domain": "economics",
+    "probability": 50,
+    "resolution": "TRUE if the Daily Treasury Par Yield Curve Rates series carries a 10-year value of 5.25 or greater on any business day dated 2026-09-24 through 2026-11-13 inclusive.",
+    "deadline": "2026-11-16",
+    "citations": [
+      54,
+      62
+    ],
+    "failure_condition": "Every 10-year par yield published for business days inside the window is below 5.25 percent."
+  },
+  {
+    "statement": "Front-month NYMEX WTI crude settles at or above 100.00 dollars per barrel on at least one trading day between 2026-09-24 and 2026-10-30. Reference: 91.30 on the packet date, 2026-09-23.",
+    "domain": "economics",
+    "probability": 35,
+    "resolution": "TRUE if the CME Group settlement record for the front-month light sweet crude contract carries a settlement of 100.00 or higher on any trading day from 2026-09-24 through 2026-10-30 inclusive.",
+    "deadline": "2026-11-02",
+    "citations": [
+      57,
+      60
+    ],
+    "failure_condition": "Every front-month WTI settlement inside the window is below 100.00 dollars per barrel."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries at least one entry with vendorProject Google and a product value naming Chromium or Chrome, with a dateAdded value between 2026-09-24 and 2026-11-14.",
+    "domain": "cyber",
+    "probability": 58,
+    "resolution": "TRUE if the CISA KEV JSON feed contains a vulnerability whose vendorProject is Google, whose product names Chromium or Chrome, and whose dateAdded falls between 2026-09-24 and 2026-11-14 inclusive.",
+    "deadline": "2026-11-17",
+    "citations": [
+      23
+    ],
+    "failure_condition": "No KEV entry satisfying the vendor, product, and dateAdded conditions exists at the deadline."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries at least one entry with vendorProject Oracle and a product value naming PeopleSoft, with a dateAdded value between 2026-09-24 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 22,
+    "resolution": "TRUE if the CISA KEV JSON feed contains a vulnerability whose vendorProject is Oracle, whose product names PeopleSoft, and whose dateAdded falls between 2026-09-24 and 2026-11-30 inclusive.",
+    "deadline": "2026-12-03",
+    "citations": [
+      27,
+      31
+    ],
+    "failure_condition": "No KEV entry naming an Oracle PeopleSoft product with a dateAdded inside the window exists at the deadline."
+  },
+  {
+    "statement": "A reciprocal Russia-Ukraine halt on strikes against energy infrastructure takes effect between 2026-09-24 and 2026-11-15, with both governments confirming it.",
+    "domain": "military_conflict",
+    "probability": 18,
+    "resolution": "TRUE if the Kremlin or Russian MFA and the Ukrainian Presidential Office each publicly confirm a reciprocal energy-strike moratorium in force with a start date between 2026-09-24 and 2026-11-15, carried by at least two of Reuters, AP, and AFP.",
+    "deadline": "2026-11-18",
+    "citations": [
+      80,
+      81
+    ],
+    "failure_condition": "At the deadline no reciprocal energy-strike moratorium has entered into force with both governments confirming it."
+  },
+  {
+    "statement": "Ethiopia declares a state of emergency whose geographic scope includes the Tigray region, taking effect between 2026-09-24 and 2026-11-30.",
+    "domain": "military_conflict",
+    "probability": 25,
+    "resolution": "TRUE if the Ethiopian Council of Ministers or the House of Peoples Representatives adopts a state of emergency naming Tigray within its scope, effective between 2026-09-24 and 2026-11-30, carried by at least two of Reuters, AP, AFP, and the BBC.",
+    "deadline": "2026-12-03",
+    "citations": [
+      79,
+      82
+    ],
+    "failure_condition": "No Ethiopian state of emergency whose scope includes Tigray takes effect inside the window."
+  },
+  {
+    "statement": "A US federal district court enters an order granting a temporary restraining order or preliminary injunction restoring White House press access to CNN, Politico, or MS Now, docketed between 2026-09-24 and 2026-12-11.",
+    "domain": "political",
+    "probability": 35,
+    "resolution": "TRUE if a federal district court docket carries an order granting a TRO or preliminary injunction requiring restoration of White House access for at least one of the three outlets, with a docket entry date between 2026-09-24 and 2026-12-11 inclusive.",
+    "deadline": "2026-12-14",
+    "citations": [
+      103,
+      113,
+      122
+    ],
+    "failure_condition": "No order granting interim relief of that kind carries a federal district court docket entry date inside the window."
+  },
+  {
+    "statement": "Direct US-Iran bilateral talks at foreign-minister level or above convene between 2026-09-24 and 2026-11-20, acknowledged by both governments.",
+    "domain": "political",
+    "probability": 25,
+    "resolution": "TRUE if the US State Department or White House and the Iranian foreign ministry each confirm a direct bilateral meeting at or above foreign-minister level held between 2026-09-24 and 2026-11-20, carried by at least two of Reuters, AP, and AFP.",
+    "deadline": "2026-11-24",
+    "citations": [
+      57,
+      85,
+      101
+    ],
+    "failure_condition": "No direct bilateral meeting at or above foreign-minister level is acknowledged by both governments as having occurred inside the window."
+  },
+  {
+    "statement": "The National Weather Service issues at least one Coastal Flood Warning for a forecast zone in New York State or Massachusetts, with an issuance time between 2026-09-25 and 2026-09-30.",
+    "domain": "disaster",
+    "probability": 60,
+    "resolution": "TRUE if the NWS watch, warning, and advisory archive, such as the Iowa Environmental Mesonet warnings database, records a Coastal Flood Warning product for any New York or Massachusetts zone issued between 2026-09-25 and 2026-09-30 inclusive.",
+    "deadline": "2026-10-05",
+    "citations": [
+      39
+    ],
+    "failure_condition": "No Coastal Flood Warning for a New York or Massachusetts forecast zone is recorded as issued inside the window."
+  }
+]

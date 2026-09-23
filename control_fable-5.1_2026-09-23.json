@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "Between 2026-09-23 and 2026-10-23, CISA adds to its Known Exploited Vulnerabilities catalog a new Oracle PeopleSoft or PeopleTools vulnerability other than CVE-2026-35273, following the ShinyHunters claim of an FBI breach through an unpatched PeopleSoft zero-day.",
+    "resolution": "The CISA KEV JSON feed contains an entry with vendorProject Oracle and a product naming PeopleSoft or PeopleTools, a CVE ID other than CVE-2026-35273, and a dateAdded value from 2026-09-23 through 2026-10-23 inclusive.",
+    "failure_condition": "At the deadline the KEV feed carries no Oracle PeopleSoft or PeopleTools entry other than CVE-2026-35273 with a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-27",
+    "probability": 32,
+    "citations": [
+      27,
+      31
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At its scheduled meeting concluding 2026-10-28, the FOMC raises the federal funds target range above the 3.75 to 4.00 percent range in effect on the packet date. Reference: upper limit 4.00 percent on 2026-09-23.",
+    "resolution": "The FOMC statement released 2026-10-28 on federalreserve.gov sets a target range upper limit of 4.25 percent or higher, and FRED series DFEDTARU shows 4.25 or higher effective 2026-10-29.",
+    "failure_condition": "The 2026-10-28 FOMC statement holds the target range at 3.75 to 4.00 percent or lowers it.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 48,
+    "citations": [
+      62,
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "On at least one business day between 2026-09-24 and 2026-10-30, the 10-year Treasury constant maturity yield (FRED series DGS10) is at or above 5.50 percent. Reference: 10Y yield 5.06 percent in the packet market snapshot on 2026-09-23.",
+    "resolution": "FRED series DGS10 shows a daily value of 5.50 or higher for at least one date from 2026-09-24 through 2026-10-30 inclusive.",
+    "failure_condition": "Every DGS10 daily value dated 2026-09-24 through 2026-10-30 is below 5.50 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 48,
+    "citations": [
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-23 and 2026-10-09, US District Judge Timothy J. Kelly enters an order granting, in whole or in part, a temporary restraining order or preliminary injunction restoring White House access to at least one plaintiff in the suit filed 2026-09-21 by CNN, MS NOW and Politico against the Trump administration.",
+    "resolution": "The D.D.C. docket for the CNN, MS NOW and Politico suit before Judge Kelly shows an order dated 2026-09-23 through 2026-10-09 granting TRO or preliminary injunction relief, in whole or in part, to at least one plaintiff.",
+    "failure_condition": "By 2026-10-09 the docket shows the TRO and preliminary injunction requests denied in full, or no order granting any plaintiff relief has been entered.",
+    "domain": "political",
+    "deadline": "2026-10-13",
+    "probability": 39,
+    "citations": [
+      103,
+      122,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the 2026-11-03 US midterm elections, Democrats plus independents who caucus with them win at least 51 seats in the Senate that convenes in January 2027, counting seats not up in 2026 and any special or runoff elections.",
+    "resolution": "Associated Press race calls as of the deadline give Democrats and Democratic-caucusing independents at least 51 Senate seats for the 120th Congress, including seats not on the 2026 ballot and any runoff decided by then.",
+    "failure_condition": "At the deadline AP calls give Democrats and Democratic-caucusing independents 50 or fewer seats, or a race decisive for the 51st seat remains uncalled.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 39,
+    "citations": [
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-31, Russia and Ukraine each publicly announce acceptance of a mutual halt to strikes on energy infrastructure, the energy truce pushed by Trump and endorsed by Zelensky at the UN.",
+    "resolution": "Within the window, a Kremlin statement on kremlin.ru or via TASS quoting Putin or Peskov, and a Ukrainian presidential statement on president.gov.ua or by Zelensky, each confirm agreement to a mutual energy-strike moratorium.",
+    "failure_condition": "By 2026-10-31 at least one of the two governments has not publicly confirmed agreement to a mutual halt on energy-infrastructure strikes.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 64,
+    "citations": [
+      80,
+      81
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-11-13, the United States announces that its naval blockade of Iranian ports and vessels, in force since 2026-07-14, is lifted or suspended.",
+    "resolution": "A White House, Pentagon or CENTCOM statement dated inside the window declares the naval blockade of Iran lifted or suspended, and both Reuters and AP report that announcement.",
+    "failure_condition": "On 2026-11-13 the US naval blockade of Iran remains in effect, with no official lifting or suspension announced during the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-17",
+    "probability": 64,
+    "citations": [
+      57,
+      85,
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-31, at least one air or drone strike hits Mekelle (Mekele) city, capital of the Tigray region of Ethiopia, amid the mutual offensive accusations between Addis Ababa and the TPLF.",
+    "resolution": "At least two of Reuters, AP, AFP and BBC report, citing residents, hospital staff, humanitarian or UN sources, an air or drone strike impacting inside Mekelle city on a date inside the window.",
+    "failure_condition": "No air or drone strike impacting inside Mekelle city during the window is established by two of the named outlets.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 64,
+    "citations": [
+      79,
+      82
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-23, the South African Police Service announces the arrest of at least one suspect in the mass shooting at a house in South Africa in which eleven people were killed, reported by BBC on 2026-09-23.",
+    "resolution": "A SAPS media statement on saps.gov.za, or a SAPS or NPA spokesperson quoted by two of Reuters, AP, AFP, BBC and News24, confirms at least one arrest for that shooting on a date inside the window.",
+    "failure_condition": "By 2026-10-23 SAPS has announced no arrest of any suspect in that eleven-victim shooting.",
+    "domain": "crime/security",
+    "deadline": "2026-10-27",
+    "probability": 29,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-23, USGS records an earthquake of magnitude 6.0 or greater within 250 km of the epicenter of the 2026 M6.5 event 169 km west of Nikolski, Alaska (USGS event id us7000ti1p).",
+    "resolution": "The USGS ComCat catalog lists an event of magnitude 6.0 or greater with origin time inside the window and epicenter within 250 km of the us7000ti1p epicenter.",
+    "failure_condition": "ComCat shows no M6.0 or greater event within 250 km of the us7000ti1p epicenter with origin time inside the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-27",
+    "probability": 31,
+    "citations": [
+      37
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-23T22:15:09Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

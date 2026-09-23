@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "Between 2026-09-24 and 2026-10-08, Ethiopian federal or allied forces and Tigray-aligned forces engage in at least one wire-reported armed clash (gunfire, shelling, or offensive maneuver), not merely mutual accusations.",
+    "domain": "military_conflict",
+    "probability": 28,
+    "resolution": "A wire service (Reuters, AP, AFP, BBC, or Al Jazeera) reports an actual armed engagement between the two sides inside the window; accusations of planned offensives alone do not satisfy this.",
+    "deadline": "2026-10-12",
+    "citations": [
+      79,
+      82
+    ],
+    "failure_condition": "No wire service reports an actual armed clash between Ethiopian and Tigray-aligned forces in the window; continued accusations with no reported engagement is a MISS."
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-08, Russia and Ukraine jointly implement a verified pause in strikes on each other's energy infrastructure, confirmed by wire reporting from both Russian- and Ukrainian-aligned sources.",
+    "domain": "military_conflict",
+    "probability": 15,
+    "resolution": "Independent wire reporting, corroborated across both Russian- and Ukrainian-aligned channels, confirms an actually implemented halt to energy-infrastructure strikes by both sides during the window; a proposal or one-sided pause is a MISS.",
+    "deadline": "2026-10-12",
+    "citations": [
+      78,
+      80,
+      81
+    ],
+    "failure_condition": "No cross-corroborated report confirms both sides halted energy strikes in the window; continued strikes by either side, or only a proposal without implementation, counts as a MISS."
+  },
+  {
+    "statement": "Reference: 5.06 percent on 2026-09-23 (packet date, per the report market snapshot). The FRED DGS10 10-Year Treasury constant maturity yield closes at or above 5.20 percent on 2026-10-14.",
+    "domain": "economic",
+    "probability": 30,
+    "resolution": "FRED series DGS10 shows a value at or above 5.20 percent for 2026-10-14, or, if that date is not a trading day, for the next trading day; any lower value is a MISS.",
+    "deadline": "2026-10-16",
+    "citations": [
+      62
+    ],
+    "failure_condition": "FRED DGS10 posts a value below 5.20 percent for 2026-10-14, or the next trading day if 2026-10-14 is not one."
+  },
+  {
+    "statement": "Reference: 91.30 USD/bbl on 2026-09-23 (packet date, prior-session close). WTI crude front-month futures settle at or above 100.00 USD/bbl on at least one trading day between 2026-09-24 and 2026-10-15.",
+    "domain": "economic",
+    "probability": 18,
+    "resolution": "CME or EIA settlement data shows a WTI front-month close at or above 100.00 USD/bbl on any trading day in the window; if every close in the window stays below 100.00, this is a MISS.",
+    "deadline": "2026-10-19",
+    "citations": [
+      57,
+      60
+    ],
+    "failure_condition": "No trading-day settlement in the window reaches 100.00 USD/bbl per CME or EIA data."
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-08, CISA adds a networking, VPN, or security-gateway appliance product from a vendor other than Arista, F5, or Check Point to the Known Exploited Vulnerabilities catalog.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "The CISA KEV catalog carries a date-added value between 2026-09-24 and 2026-10-08 for an entry in the networking, VPN, or security-gateway appliance category from a vendor other than Arista, F5, or Check Point.",
+    "deadline": "2026-10-12",
+    "citations": [
+      12,
+      16,
+      22
+    ],
+    "failure_condition": "No such KEV entry, dated in the window, exists for a vendor outside Arista, F5, and Check Point."
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-08, the FBI or DOJ issues an on-record statement confirming a data breach of FBI personnel or case records consistent with the ShinyHunters breach claim.",
+    "domain": "cyber",
+    "probability": 12,
+    "resolution": "A wire service (Reuters, AP) reports an on-record FBI or DOJ statement confirming the breach during the window; a no-comment, denial, or silence through the deadline is a MISS.",
+    "deadline": "2026-10-12",
+    "citations": [
+      27,
+      31
+    ],
+    "failure_condition": "No on-record FBI or DOJ statement confirms the ShinyHunters breach claim by the deadline."
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-15, a federal court issues a ruling granting or denying a preliminary injunction or restraining order in litigation by CNN, Politico, or MS NOW against the White House press-access ban.",
+    "domain": "political",
+    "probability": 33,
+    "resolution": "The court docket shows an entered order ruling on a preliminary injunction or TRO motion in the case during the window; a hearing held with no order issued is not sufficient and is a MISS.",
+    "deadline": "2026-10-19",
+    "citations": [
+      103,
+      113,
+      122
+    ],
+    "failure_condition": "No court docket entry shows a ruling issued on the injunction motion by the deadline."
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-08, US Treasury OFAC designates at least one new individual or entity under an Iran-related sanctions program.",
+    "domain": "political",
+    "probability": 38,
+    "resolution": "OFAC's Recent Actions page or SDN list shows a new Iran-program designation dated in the window; no such listing by the deadline is a MISS.",
+    "deadline": "2026-10-12",
+    "citations": [
+      104,
+      105,
+      57
+    ],
+    "failure_condition": "No new OFAC Iran-sanctions-program designation appears dated between 2026-09-24 and 2026-10-08."
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-08, the South African Police Service publicly announces the arrest of at least one suspect in the eleven-fatality house shooting reported 2026-09-23.",
+    "domain": "crime_security",
+    "probability": 40,
+    "resolution": "SAPS or a wire service reports a named arrest tied to this specific shooting during the window; an investigation continuing with no suspect in custody by the deadline is a MISS.",
+    "deadline": "2026-10-12",
+    "citations": [
+      9
+    ],
+    "failure_condition": "No SAPS statement or wire report confirms an arrest connected to this shooting by the deadline."
+  },
+  {
+    "statement": "Between 2026-09-25 and 2026-10-02, the National Weather Service issues a Coastal Flood Warning, High Wind Warning, or Storm Warning for a New York City or Boston metro forecast zone.",
+    "domain": "disaster_infrastructure",
+    "probability": 72,
+    "resolution": "The NWS public alerts archive shows at least one such warning issued for an NYC or Boston metro zone inside the window; no such warning issued is a MISS.",
+    "deadline": "2026-10-05",
+    "citations": [
+      39
+    ],
+    "failure_condition": "No NWS Coastal Flood Warning, High Wind Warning, or Storm Warning is issued for an NYC or Boston metro zone between 2026-09-25 and 2026-10-02."
+  }
+]

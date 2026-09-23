@@ -1,17 +1,8 @@
 {
   "source": "ledger.json",
-  "entries": 2665,
-  "conformant": false,
-  "must_failures": [
-    {
-      "cite": "RPAS 4.03",
-      "message": "2 entries issued on or after 2026-07-30 lack a failure condition and are unfalsifiable as issued: KKR-20260920-02, KKR-20260920-07"
-    },
-    {
-      "cite": "RPAS 4.02g",
-      "message": "2 entries issued on or after 2026-07-30 carry no seal: KKR-20260920-02, KKR-20260920-07"
-    }
-  ],
+  "entries": 2723,
+  "conformant": true,
+  "must_failures": [],
   "should_departures": [],
   "notes": [
     {
@@ -28,11 +19,11 @@
     },
     {
       "cite": "RPAS 4.03",
-      "message": "1617 seal(s) recompute to their sealed state with the keyed/keyless fields at their sealed nulls - the determination was written after sealing, as 1.04/4.03 direct. No sealed field was edited; the seal proves the determination was absent at seal, and the post-seal determination rests on the anchored history (4.04/4.05) and 5.07 supersession discipline, not on the row seal."
+      "message": "1669 seal(s) recompute to their sealed state with the keyed/keyless fields at their sealed nulls - the determination was written after sealing, as 1.04/4.03 direct. No sealed field was edited; the seal proves the determination was absent at seal, and the post-seal determination rests on the anchored history (4.04/4.05) and 5.07 supersession discipline, not on the row seal."
     },
     {
       "cite": "RPAS 4.02g",
-      "message": "885 seal(s) recompute to their published digest; 1617 recompute to their sealed state (determined after seal); 0 do not"
+      "message": "893 seal(s) recompute to their published digest; 1669 recompute to their sealed state (determined after seal); 0 do not"
     },
     {
       "cite": "RPAS 4.04",
@@ -40,7 +31,7 @@
     },
     {
       "cite": "RPAS 5.03",
-      "message": "control/baserate: issued 918 \u00b7 open 833 \u00b7 void 32 \u00b7 resolved 53 \u00b7 H/M 25/28 \u00b7 Brier 0.2669"
+      "message": "control/baserate: issued 942 \u00b7 open 825 \u00b7 void 32 \u00b7 resolved 85 \u00b7 H/M 50/35 \u00b7 Brier 0.3275"
     },
     {
       "cite": "RPAS 5.03",
@@ -52,27 +43,27 @@
     },
     {
       "cite": "RPAS 5.03",
-      "message": "lmstudio/auto: issued 404 \u00b7 open 193 \u00b7 void 17 \u00b7 resolved 194 \u00b7 H/M 49/145 \u00b7 Brier 0.2044"
+      "message": "lmstudio/auto: issued 409 \u00b7 open 197 \u00b7 void 17 \u00b7 resolved 195 \u00b7 H/M 49/146 \u00b7 Brier 0.2036"
     },
     {
       "cite": "RPAS 5.03",
-      "message": "lmstudio/realist: issued 103 \u00b7 open 98 \u00b7 void 0 \u00b7 resolved 5 \u00b7 H/M 4/1 \u00b7 Brier 0.3735 \u2014 under thirty resolved this figure is noise, not evidence of anything"
+      "message": "lmstudio/realist: issued 108 \u00b7 open 103 \u00b7 void 0 \u00b7 resolved 5 \u00b7 H/M 4/1 \u00b7 Brier 0.3735 \u2014 under thirty resolved this figure is noise, not evidence of anything"
     },
     {
       "cite": "RPAS 5.03",
-      "message": "manual/fable: issued 45 \u00b7 open 29 \u00b7 void 0 \u00b7 resolved 16 \u00b7 H/M 9/7 \u00b7 Brier 0.1860 \u2014 under thirty resolved this figure is noise, not evidence of anything"
+      "message": "manual/fable: issued 45 \u00b7 open 27 \u00b7 void 0 \u00b7 resolved 18 \u00b7 H/M 10/8 \u00b7 Brier 0.1888 \u2014 under thirty resolved this figure is noise, not evidence of anything"
     },
     {
       "cite": "RPAS 5.03",
-      "message": "manual/fable-5: issued 38 \u00b7 open 30 \u00b7 void 0 \u00b7 resolved 8 \u00b7 H/M 5/3 \u00b7 Brier 0.0662 \u2014 under thirty resolved this figure is noise, not evidence of anything"
+      "message": "manual/fable-5: issued 38 \u00b7 open 27 \u00b7 void 0 \u00b7 resolved 11 \u00b7 H/M 6/5 \u00b7 Brier 0.1014 \u2014 under thirty resolved this figure is noise, not evidence of anything"
     },
     {
       "cite": "RPAS 5.03",
-      "message": "manual/fable-5.1/unattested: issued 156 \u00b7 open 146 \u00b7 void 8 \u00b7 resolved 2 \u00b7 H/M 0/2 \u00b7 Brier 0.1563 \u2014 under thirty resolved this figure is noise, not evidence of anything"
+      "message": "manual/fable-5.1/unattested: issued 164 \u00b7 open 147 \u00b7 void 8 \u00b7 resolved 9 \u00b7 H/M 6/3 \u00b7 Brier 0.1758 \u2014 under thirty resolved this figure is noise, not evidence of anything"
     },
     {
       "cite": "RPAS 5.03",
-      "message": "manual/fable-5/unattested: issued 258 \u00b7 open 242 \u00b7 void 9 \u00b7 resolved 7 \u00b7 H/M 7/0 \u00b7 Brier 0.1779 \u2014 under thirty resolved this figure is noise, not evidence of anything"
+      "message": "manual/fable-5/unattested: issued 258 \u00b7 open 237 \u00b7 void 9 \u00b7 resolved 12 \u00b7 H/M 11/1 \u00b7 Brier 0.2137 \u2014 under thirty resolved this figure is noise, not evidence of anything"
     },
     {
       "cite": "RPAS 5.03",
@@ -80,15 +71,15 @@
     },
     {
       "cite": "RPAS 5.03",
-      "message": "manual/opus-5/unattested: issued 312 \u00b7 open 295 \u00b7 void 10 \u00b7 resolved 7 \u00b7 H/M 5/2 \u00b7 Brier 0.1370 \u2014 under thirty resolved this figure is noise, not evidence of anything"
+      "message": "manual/opus-5/unattested: issued 320 \u00b7 open 295 \u00b7 void 10 \u00b7 resolved 15 \u00b7 H/M 11/4 \u00b7 Brier 0.2345 \u2014 under thirty resolved this figure is noise, not evidence of anything"
     },
     {
       "cite": "RPAS 5.03",
-      "message": "manual/sonnet-5: issued 45 \u00b7 open 11 \u00b7 void 1 \u00b7 resolved 33 \u00b7 H/M 18/15 \u00b7 Brier 0.2488"
+      "message": "manual/sonnet-5: issued 45 \u00b7 open 9 \u00b7 void 1 \u00b7 resolved 35 \u00b7 H/M 18/17 \u00b7 Brier 0.2475"
     },
     {
       "cite": "RPAS 5.03",
-      "message": "manual/sonnet-5/unattested: issued 291 \u00b7 open 243 \u00b7 void 5 \u00b7 resolved 43 \u00b7 H/M 21/22 \u00b7 Brier 0.2069"
+      "message": "manual/sonnet-5/unattested: issued 299 \u00b7 open 235 \u00b7 void 5 \u00b7 resolved 59 \u00b7 H/M 31/28 \u00b7 Brier 0.2377"
     },
     {
       "cite": "RPAS 5.03",
@@ -99,6 +90,6 @@
       "message": "no pooled score is computed by this verifier \u2014 a Brier belongs to one forecaster; pooling launders the weaker record into the stronger"
     }
   ],
-  "verified_at": "2026-09-22T15:24:36Z",
+  "verified_at": "2026-09-23T15:23:45Z",
   "verifier": "rpas_verify/1.1"
 }
