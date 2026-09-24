@@ -1,0 +1,118 @@
+[
+  {
+    "statement": "Houthi forces fire at least one ballistic missile, cruise missile, or armed drone that the Saudi-led coalition says it intercepted or destroyed, in an incident occurring between 2026-09-25 and 2026-10-08.",
+    "domain": "military/conflict",
+    "probability": 60,
+    "resolution": "TRUE if a Saudi-led coalition statement, carried by the Saudi Press Agency or at least two of Reuters, AP, AFP, Al Jazeera, reports such an interception dated between 2026-09-25 and 2026-10-08.",
+    "deadline": "2026-10-12",
+    "citations": [
+      80
+    ],
+    "failure_condition": "Houthi forces fire no missile or drone that the Saudi-led coalition intercepts or destroys between 2026-09-25 and 2026-10-08."
+  },
+  {
+    "statement": "Armed clashes between Ethiopian federal forces and Tigrayan armed forces of any faction take place on at least one day between 2026-10-12 and 2026-10-25.",
+    "domain": "military/conflict",
+    "probability": 55,
+    "resolution": "TRUE if at least two of Reuters, AP, AFP, and BBC report fighting between Ethiopian federal forces and Tigrayan forces that occurred between 2026-10-12 and 2026-10-25; fighting dated earlier does not count.",
+    "deadline": "2026-10-28",
+    "citations": [
+      96,
+      118,
+      93
+    ],
+    "failure_condition": "No armed clash between Ethiopian federal forces and Tigrayan forces occurs between 2026-10-12 and 2026-10-25."
+  },
+  {
+    "statement": "The 10-year US Treasury constant-maturity yield closes at or above 5.35 percent on at least one trading day between 2026-09-25 and 2026-10-23. Reference: 5.14 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "TRUE if FRED series DGS10 records a value of 5.35 or higher for any date between 2026-09-25 and 2026-10-23 inclusive; FALSE otherwise.",
+    "deadline": "2026-10-27",
+    "citations": [
+      71,
+      65
+    ],
+    "failure_condition": "Every DGS10 daily value between 2026-09-25 and 2026-10-23 is below 5.35 percent."
+  },
+  {
+    "statement": "ICE Brent front-month crude futures settle at or above 110.00 dollars per barrel on at least one trading day between 2026-09-25 and 2026-10-23. Reference: 101.42 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 33,
+    "resolution": "TRUE if the ICE Futures Europe daily settlement for the front-month Brent contract is 110.00 or higher on any trading day between 2026-09-25 and 2026-10-23 inclusive; FALSE otherwise.",
+    "deadline": "2026-10-27",
+    "citations": [
+      77,
+      101,
+      128
+    ],
+    "failure_condition": "Every ICE Brent front-month daily settlement between 2026-09-25 and 2026-10-23 is below 110.00 dollars per barrel."
+  },
+  {
+    "statement": "CISA adds the WordPress vulnerability CVE-2026-87902 to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-09-24 and 2026-10-08.",
+    "domain": "cyber",
+    "probability": 65,
+    "resolution": "TRUE if the CISA KEV catalog carries an entry with cveID CVE-2026-87902 whose dateAdded falls between 2026-09-24 and 2026-10-08 inclusive; FALSE otherwise.",
+    "deadline": "2026-10-12",
+    "citations": [
+      27,
+      33
+    ],
+    "failure_condition": "CVE-2026-87902 has no KEV entry with a dateAdded between 2026-09-24 and 2026-10-08."
+  },
+  {
+    "statement": "CISA adds CVE-2026-48842, the Roundcube Webmail virtuser_query SQL injection flaw, to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-09-24 and 2026-10-08.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if the CISA KEV catalog carries an entry with cveID CVE-2026-48842 whose dateAdded falls between 2026-09-24 and 2026-10-08 inclusive; FALSE otherwise.",
+    "deadline": "2026-10-12",
+    "citations": [
+      18
+    ],
+    "failure_condition": "CVE-2026-48842 has no KEV entry with a dateAdded between 2026-09-24 and 2026-10-08."
+  },
+  {
+    "statement": "Vladimir Putin attends the G20 leaders summit at Trump National Doral in Doral, Florida, in person on 2026-12-14 or 2026-12-15.",
+    "domain": "political",
+    "probability": 12,
+    "resolution": "TRUE if the Kremlin or at least two of Reuters, AP, AFP confirm Putin was physically present at the summit on 2026-12-14 or 2026-12-15; video participation or a delegation without Putin resolves FALSE.",
+    "deadline": "2026-12-17",
+    "citations": [
+      76
+    ],
+    "failure_condition": "Putin is not physically present at the G20 summit in Doral on 2026-12-14 or 2026-12-15, including if the summit does not convene on those dates."
+  },
+  {
+    "statement": "The US Supreme Court grants, in whole or in part, a federal government application to stay or vacate a lower-court order restricting deportations to third countries, by an order entered between 2026-09-25 and 2026-11-20.",
+    "domain": "political",
+    "probability": 50,
+    "resolution": "TRUE if the supremecourt.gov docket shows an order granting such an application in whole or in part, entered between 2026-09-25 and 2026-11-20; an administrative stay alone, a denial, or no ruling resolves FALSE.",
+    "deadline": "2026-11-24",
+    "citations": [
+      108
+    ],
+    "failure_condition": "No Supreme Court order granting, in whole or in part, a federal application to stay or vacate a third-country deportation restriction is entered between 2026-09-25 and 2026-11-20."
+  },
+  {
+    "statement": "Polish authorities charge or detain at least one person in connection with the Starlink station fire that Polish authorities have called sabotage, with the charge or detention occurring between 2026-09-25 and 2026-10-23.",
+    "domain": "crime/security",
+    "probability": 40,
+    "resolution": "TRUE if Polish prosecutors, police, or the ABW announce, or at least two of Reuters, AP, AFP, PAP report, a charge (including in absentia) or detention tied to the fire made between 2026-09-25 and 2026-10-23.",
+    "deadline": "2026-10-27",
+    "citations": [
+      99
+    ],
+    "failure_condition": "No person is charged or detained in connection with the Starlink station fire between 2026-09-25 and 2026-10-23."
+  },
+  {
+    "statement": "The National Weather Service issues a Hurricane Warning for at least one Hawaii zone between 2026-09-24 and 2026-09-30 UTC.",
+    "domain": "disaster",
+    "probability": 35,
+    "resolution": "TRUE if the NWS alert record, via the NWS API or the Iowa Environmental Mesonet VTEC archive, shows a Hurricane Warning (HU.W) issued by WFO Honolulu between 2026-09-24 and 2026-09-30 UTC.",
+    "deadline": "2026-10-02",
+    "citations": [
+      41
+    ],
+    "failure_condition": "No Hurricane Warning is issued for any Hawaii zone between 2026-09-24 and 2026-09-30 UTC."
+  }
+]

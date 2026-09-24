@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "The Central Pacific Hurricane Center issues a Hurricane Warning (not merely a Watch) covering any part of Hawaii County for tropical cyclone Nolo in a public advisory dated between 2026-09-24 and 2026-10-01.",
+    "domain": "disaster",
+    "probability": 55,
+    "resolution": "TRUE if any NHC or CPHC public advisory for Nolo dated 2026-09-24 through 2026-10-01 (NHC text archive) lists a Hurricane Warning in effect for Hawaii County or any of its zones; otherwise FALSE.",
+    "deadline": "2026-10-05",
+    "citations": [
+      41
+    ],
+    "failure_condition": "No NHC or CPHC public advisory for Nolo dated 2026-09-24 through 2026-10-01 carries a Hurricane Warning for any part of Hawaii County, a Tropical Storm Warning or continued Hurricane Watch alone being insufficient."
+  },
+  {
+    "statement": "The 10-year Treasury constant maturity yield (FRED series DGS10) records a daily value of 5.50 percent or higher on at least one business day between 2026-09-25 and 2026-10-30. Reference: 5.14 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 27,
+    "resolution": "TRUE if FRED series DGS10 shows any observation dated 2026-09-25 through 2026-10-30 with a value of 5.50 or higher; FALSE otherwise. Reference: 5.14 percent on the packet date.",
+    "deadline": "2026-11-04",
+    "citations": [
+      71,
+      65
+    ],
+    "failure_condition": "Every DGS10 observation dated 2026-09-25 through 2026-10-30 is below 5.50 percent."
+  },
+  {
+    "statement": "At its scheduled meeting concluding 2026-10-28, the FOMC raises the federal funds target range above the 3.75 to 4.00 percent range in effect on the packet date.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "TRUE if the FOMC statement released 2026-10-28 on federalreserve.gov announces a target range whose upper bound exceeds 4.00 percent; FALSE if the range is held, lowered, or no decision is announced that day.",
+    "deadline": "2026-10-30",
+    "citations": [
+      65,
+      71
+    ],
+    "failure_condition": "The FOMC statement of 2026-10-28 leaves the target range at 3.75 to 4.00 percent or lowers it, or no decision is announced that day."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Check Point entry (expected: CVE-2026-85102 or CVE-2026-85103, the VPN certificate-handling RCE flaws) with a dateAdded between 2026-09-23 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 75,
+    "resolution": "TRUE if the CISA KEV JSON feed contains at least one entry with a vendorProject value beginning Check Point and a dateAdded from 2026-09-23 through 2026-10-16 inclusive; FALSE otherwise, including additions dated after 2026-10-16.",
+    "deadline": "2026-10-20",
+    "citations": [
+      32
+    ],
+    "failure_condition": "The KEV catalog holds no Check Point entry with a dateAdded from 2026-09-23 through 2026-10-16, including if the flaws are added only after that date."
+  },
+  {
+    "statement": "Between 2026-09-24 and 2026-10-30 the Ethiopian Council of Ministers declares a federal state of emergency whose scope includes Tigray Region, in response to the TPLF and allied rebel offensive.",
+    "domain": "military/conflict",
+    "probability": 45,
+    "resolution": "TRUE if between 2026-09-24 and 2026-10-30 the Ethiopian Council of Ministers declares a federal state of emergency whose stated scope includes Tigray Region, reported by ENA or Fana and by Reuters or AP; FALSE otherwise.",
+    "deadline": "2026-11-03",
+    "citations": [
+      96,
+      118,
+      93
+    ],
+    "failure_condition": "No federal state of emergency whose scope includes Tigray is declared between 2026-09-24 and 2026-10-30, a regional emergency, military operation order, or terrorist designation alone being insufficient."
+  },
+  {
+    "statement": "Between 2026-09-25 and 2026-11-13 the United States and Iran both confirm a new ceasefire, written agreement, or Strait of Hormuz reopening arrangement concluded between the two governments.",
+    "domain": "military/conflict",
+    "probability": 20,
+    "resolution": "TRUE if between 2026-09-25 and 2026-11-13 the White House or State Department and the Iranian Foreign Ministry or IRNA each confirm the same concluded US-Iran ceasefire, agreement, or Hormuz reopening arrangement; talks or progress claims alone are FALSE.",
+    "deadline": "2026-11-17",
+    "citations": [
+      77,
+      128
+    ],
+    "failure_condition": "By 2026-11-13 no ceasefire, agreement, or Hormuz reopening arrangement is confirmed by both the US government and the Iranian government, unilateral or mediator-only announcements being insufficient."
+  },
+  {
+    "statement": "After the 2026-11-03 midterm elections, Democrats plus independents caucusing with them hold at least 51 seats in the Senate that convenes 2027-01-03, as established by Associated Press race calls and any runoff by 2026-12-08.",
+    "domain": "political",
+    "probability": 45,
+    "resolution": "TRUE if by 2026-12-08 AP race calls for the 2026-11-03 elections and any runoff, plus holdover seats, give Democrats and Democratic-caucusing independents at least 51 seats in the Senate convening 2027-01-03; FALSE otherwise, including 50-50.",
+    "deadline": "2026-12-08",
+    "citations": [
+      62,
+      121
+    ],
+    "failure_condition": "AP-called results plus holdover seats leave Democrats and Democratic-caucusing independents at 50 or fewer Senate seats as of 2026-12-08."
+  },
+  {
+    "statement": "The UN General Assembly adopts a resolution appointing the next Secretary-General, for the term beginning 2027-01-01, between 2026-09-25 and 2026-12-31.",
+    "domain": "political",
+    "probability": 80,
+    "resolution": "TRUE if between 2026-09-25 and 2026-12-31 the General Assembly adopts a resolution appointing a Secretary-General for a term beginning 2027-01-01, per the UN document record (A/RES/81 series) or UN press release; FALSE otherwise.",
+    "deadline": "2027-01-05",
+    "citations": [
+      100
+    ],
+    "failure_condition": "No General Assembly resolution appointing a Secretary-General for the term beginning 2027-01-01 is adopted by 2026-12-31, a Security Council recommendation alone being insufficient."
+  },
+  {
+    "statement": "Between 2026-09-25 and 2026-10-30 the US District Court for the District of Columbia enters an order holding the government or any official in contempt, or imposing sanctions, for violating the 2026-09-24 temporary restraining order restoring White House access for CNN, MS NOW and Politico.",
+    "domain": "political",
+    "probability": 12,
+    "resolution": "TRUE if between 2026-09-25 and 2026-10-30 the D.D.C. docket in the CNN, MS NOW and Politico hard-pass suit shows an order holding any defendant in contempt or imposing sanctions for TRO noncompliance; show-cause orders alone are FALSE.",
+    "deadline": "2026-11-03",
+    "citations": [
+      81,
+      111,
+      113
+    ],
+    "failure_condition": "No contempt or sanctions order for TRO noncompliance is entered on the docket between 2026-09-25 and 2026-10-30, with orders to show cause, compliance directives, or oral warnings not counting."
+  },
+  {
+    "statement": "Between 2026-09-25 and 2026-11-06 Polish authorities (National Prosecutor Office, ABW, or police) announce the detention or formal charging of at least one person in connection with the 2026-09-23 fire at the Exatel-operated Starlink ground station at Wola Krobowska.",
+    "domain": "crime/security",
+    "probability": 40,
+    "resolution": "TRUE if between 2026-09-25 and 2026-11-06 Polish prosecutors, ABW, or police announce a detention or formal charge tied specifically to the Wola Krobowska station fire, reported by PAP, Reuters, or AP; FALSE otherwise.",
+    "deadline": "2026-11-10",
+    "citations": [
+      99
+    ],
+    "failure_condition": "No detention or formal charge tied to the Wola Krobowska station fire is announced by Polish authorities between 2026-09-25 and 2026-11-06, a finding of accidental cause or an unattributed investigation update not counting."
+  }
+]

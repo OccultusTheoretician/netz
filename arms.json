@@ -163,8 +163,8 @@
       "lane": "manual",
       "model": "claude-opus-5",
       "access": "unattested",
-      "status": "active",
-      "note": "KK18 standing rule: see manual/fable-5/unattested.",
+      "status": "retired",
+      "note": "KK18 standing rule: see manual/fable-5/unattested. | RETIRED 2026-09-24 on the operator's ruling: claude-opus-5 succeeded by claude-opus-5-5 (manual/opus-5.5/unattested). Book closes at 326 issued / 301 open / 11 hit / 4 miss / 10 void -- 15 resolved at retirement, below the thirty-resolved floor. The 301 open rows keep resolving to this tag and are projected to carry it past 30 resolved by about 2026-09-30 on their own deadlines; the arm will therefore acquire a floor-clearing Brier after retirement, and the H4 drift read against manual/opus-5.5/unattested is sequential (no same-packet overlap), not paired. Cohorts bbdc7791 176, 4ea5ab8f 119, uncohorted 31. Same pattern as manual/fable-5/unattested -> manual/fable-5.1/unattested (RETIRE5 r2, 2026-09-16).",
       "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
     },
     {
@@ -224,6 +224,15 @@
         }
       ],
       "cadence": "daily - local model, no marginal cost per run."
+    },
+    {
+      "tag": "manual/opus-5.5/unattested",
+      "lane": "manual",
+      "model": "claude-opus-5-5",
+      "access": "unattested",
+      "status": "active",
+      "note": "Registered 2026-09-24 on the operator's ruling as successor to manual/opus-5/unattested for the version-drift pair. KK18 standing rule: see manual/fable-5/unattested.",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
     }
   ],
   "cadence_ruled": "2026-08-01"

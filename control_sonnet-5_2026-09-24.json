@@ -1,0 +1,247 @@
+[
+  {
+    "statement": "The Office of the Australian Information Commissioner (OAIC) will publicly confirm it has opened a Notifiable Data Breach or preliminary inquiry into the OpenAI agent intrusion at an Australian government Medicare-linked site, with confirmation occurring between 2026-09-24 and 2026-11-15.",
+    "resolution": "OAIC's published register, a Commissioner statement, or an OAIC media release naming the OpenAI/Medicare incident and confirming an open inquiry, dated between 2026-09-24 and 2026-11-15, verified by 2026-11-17.",
+    "failure_condition": "No OAIC register entry, Commissioner statement, or OAIC release confirming an opened inquiry into this specific incident exists by 2026-11-17.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 32,
+    "citations": [
+      15,
+      23,
+      28
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog will list a new entry for a TeamCity CVE with a dateAdded value between 2026-09-24 and 2026-10-31.",
+    "resolution": "The public CISA KEV catalog (cisa.gov) shows a TeamCity-product CVE with dateAdded between 2026-09-24 and 2026-10-31, checked on 2026-11-02.",
+    "failure_condition": "No TeamCity CVE carries a KEV dateAdded value in that window when the catalog is checked on 2026-11-02.",
+    "domain": "cyber",
+    "deadline": "2026-11-02",
+    "probability": 32,
+    "citations": [
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury yield (Reference: 5.14 percent on the packet date, 2026-09-24) will close at or above 5.35 percent on at least one trading day between 2026-10-01 and 2026-12-15.",
+    "resolution": "FRED series DGS10 or Treasury.gov's daily par yield curve shows a 10-year close at or above 5.35 percent for any date between 2026-10-01 and 2026-12-15, checked 2026-12-17.",
+    "failure_condition": "The 10-year Treasury yield never closes at or above 5.35 percent on any trading day in the stated window per FRED or Treasury.gov data.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-17",
+    "probability": 48,
+    "citations": [
+      71,
+      65
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Brent crude (Reference: 101.42 USD/bbl on the packet date, 2026-09-24) will settle below 95.00 USD/bbl on at least one trading day between 2026-10-01 and 2026-11-30.",
+    "resolution": "ICE Brent front-month settlement price is below 95.00 USD/bbl on any trading day between 2026-10-01 and 2026-11-30, per ICE or EIA data, checked 2026-12-02.",
+    "failure_condition": "Brent front-month settlement never trades below 95.00 USD/bbl on any date in the stated window per ICE or EIA records.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 48,
+    "citations": [
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US Supreme Court will issue a ruling or order, granting or denying the Trump administration's application on third-country deportations, between 2026-09-24 and 2026-11-30.",
+    "resolution": "The Supreme Court's public docket at supremecourt.gov shows an order or opinion disposing of the third-country-deportation application, dated between 2026-09-24 and 2026-11-30, checked 2026-12-02.",
+    "failure_condition": "The Supreme Court docket shows no order or opinion disposing of this application by 2026-12-02.",
+    "domain": "political",
+    "deadline": "2026-12-02",
+    "probability": 39,
+    "citations": [
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A federal judge will hold the White House or Trump administration officials in contempt for violating the press-access restoration order, between 2026-09-24 and 2026-11-15.",
+    "resolution": "A federal district or appellate court issues a contempt finding against White House or administration officials tied to the CNN, MS NOW, and Politico access order, dated 2026-09-24 to 2026-11-15, per court docket, checked 2026-11-17.",
+    "failure_condition": "No federal court issues a contempt finding on this order against White House or administration officials by 2026-11-17.",
+    "domain": "political",
+    "deadline": "2026-11-17",
+    "probability": 39,
+    "citations": [
+      105,
+      111,
+      113
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A named airport in the Gulf or Middle East region will suspend, reduce, or issue a NOTAM-based flight restriction explicitly citing an Iranian threat, between 2026-09-24 and 2026-10-15.",
+    "resolution": "A wire service such as Reuters, AP, or AFP, or an aviation authority NOTAM database, reports a named airport's flight suspension or reduction citing an Iran-linked threat, dated 2026-09-24 to 2026-10-15, checked 2026-10-17.",
+    "failure_condition": "No wire service or NOTAM record ties an airport flight suspension or reduction to an Iranian threat in the stated window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-17",
+    "probability": 64,
+    "citations": [
+      128
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Saudi-led coalition will report intercepting or shooting down at least one additional Houthi-launched ballistic missile aimed at Saudi territory, between 2026-09-24 and 2026-10-08.",
+    "resolution": "The Saudi Press Agency, a coalition statement, or a wire service such as Reuters or AFP reports at least one further interception of a Houthi ballistic missile, dated 2026-09-24 to 2026-10-08, checked 2026-10-10.",
+    "failure_condition": "No coalition statement or wire service reports a further Houthi ballistic missile interception in the stated window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-10",
+    "probability": 64,
+    "citations": [
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "UK police or the Crown Prosecution Service will formally charge Daniel Thomas in connection with the Channel dinghy-slashing arrest, between 2026-09-24 and 2026-11-15.",
+    "resolution": "A CPS charging announcement or UK police statement confirms Daniel Thomas has been charged over the dinghy-slashing incident, dated 2026-09-24 to 2026-11-15, per news report, checked 2026-11-17.",
+    "failure_condition": "No CPS or police statement confirms a formal charge against Daniel Thomas over this incident by 2026-11-17.",
+    "domain": "crime/security",
+    "deadline": "2026-11-17",
+    "probability": 29,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The GDACS wildfire alert for event ID 1032372 in Brazil will be upgraded from Green to Orange or Red, between 2026-09-24 and 2026-10-08.",
+    "resolution": "The GDACS report page for eventid=1032372 at gdacs.org shows an Orange or Red alert level at any point between 2026-09-24 and 2026-10-08, checked 2026-10-10.",
+    "failure_condition": "The GDACS event page for 1032372 never shows an Orange or Red alert level in the stated window; it stays Green or is closed out.",
+    "domain": "disaster",
+    "deadline": "2026-10-10",
+    "probability": 31,
+    "citations": [
+      38
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-24T16:43:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
