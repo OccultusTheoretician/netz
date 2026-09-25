@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "Between 2026-09-26 and 2026-11-02, the United States government and the government of Iran each publicly confirm acceptance of an agreement under which the Strait of Hormuz is reopened to commercial shipping.",
+    "resolution": "TRUE if, between 2026-09-26 and 2026-11-02, both the White House or State Department and the Iranian Foreign Ministry publicly confirm an agreement providing for reopening the Strait of Hormuz, as reported by Reuters and AP.",
+    "failure_condition": "MISS if, by 2026-11-05, no agreement to reopen the Strait of Hormuz was publicly confirmed by both the US government and the Iranian government within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-05",
+    "probability": 64,
+    "citations": [
+      81,
+      119
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-26 and 2026-11-13, the Kremlin and the Office of the President of Ukraine each publicly state that Russia and Ukraine have agreed to a mutual halt on strikes against energy infrastructure.",
+    "resolution": "TRUE if, between 2026-09-26 and 2026-11-13, both the Kremlin and the Ukrainian presidential office publicly confirm a bilateral agreement to stop strikes on energy infrastructure, as reported by Reuters and AP; unilateral or US-only announcements do not count.",
+    "failure_condition": "MISS if, by 2026-11-17, the Kremlin and the Ukrainian presidential office had not both confirmed a mutual energy-infrastructure strike moratorium agreed within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-17",
+    "probability": 64,
+    "citations": [
+      87
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-26 and 2026-11-13, the Ethiopian federal government declares a state of emergency covering all or part of the Tigray, Amhara, or Afar regions.",
+    "resolution": "TRUE if, between 2026-09-26 and 2026-11-13, the Ethiopian Council of Ministers or federal parliament issues a state of emergency declaration covering any part of Tigray, Amhara, or Afar, reported by Reuters and AP.",
+    "failure_condition": "MISS if, by 2026-11-17, no Ethiopian federal state of emergency declaration covering any part of Tigray, Amhara, or Afar was issued within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-17",
+    "probability": 64,
+    "citations": [
+      88,
+      86,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC statement released on 2026-10-28 raises the federal funds target range above 3.75 to 4.00 percent. Reference: target range 3.75 to 4.00 percent on the packet date.",
+    "resolution": "TRUE if the FOMC statement dated 2026-10-28 on federalreserve.gov sets a federal funds target range whose upper bound exceeds 4.00 percent; a hold or a cut resolves FALSE. Reference: 3.75 to 4.00 percent on the packet date.",
+    "failure_condition": "MISS if the 2026-10-28 FOMC statement leaves the target range at 3.75 to 4.00 percent or lowers it.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 48,
+    "citations": [
+      65,
+      67,
+      49
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The ICE Brent crude front-month futures settlement price on 2026-10-30 is below 90.00 USD per barrel. Reference: 99.46 USD on the packet date.",
+    "resolution": "TRUE if the official ICE Futures Europe settlement price for the front-month Brent crude contract on 2026-10-30 is below 90.00 USD per barrel. Reference: 99.46 USD on the packet date.",
+    "failure_condition": "MISS if the front-month Brent settlement on 2026-10-30 is at or above 90.00 USD per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 48,
+    "citations": [
+      54,
+      81,
+      41
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-26 and 2026-10-23, CISA adds CVE-2026-48842 (Roundcube Webmail virtuser_query pre-authentication SQL injection) to the Known Exploited Vulnerabilities catalog.",
+    "resolution": "TRUE if the CISA KEV catalog JSON feed lists CVE-2026-48842 with a dateAdded value between 2026-09-26 and 2026-10-23 inclusive.",
+    "failure_condition": "MISS if CVE-2026-48842 is absent from the KEV catalog at the deadline or carries a dateAdded value outside the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-27",
+    "probability": 32,
+    "citations": [
+      18,
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-26 and 2026-10-09, Pakistani authorities suspend mobile internet service in Islamabad in connection with the PTI march on the capital.",
+    "resolution": "TRUE if NetBlocks or the Pakistan Telecommunication Authority publicly confirms a suspension of mobile internet or mobile data service in Islamabad on any day between 2026-09-26 and 2026-10-09 inclusive.",
+    "failure_condition": "MISS if no suspension of mobile internet service in Islamabad occurred on any day within the window.",
+    "domain": "crime/security",
+    "deadline": "2026-10-13",
+    "probability": 29,
+    "citations": [
+      111
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 seats in the US House of Representatives in the 2026-11-03 general election, as called by the Associated Press.",
+    "resolution": "TRUE if, by 2026-12-04, the Associated Press has called at least 218 US House races from the 2026-11-03 general election for Democratic candidates.",
+    "failure_condition": "MISS if, by 2026-12-04, the Associated Press has called fewer than 218 House seats for Democratic candidates.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 39,
+    "citations": [
+      108,
+      113,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-26 and 2027-03-19, a royal proclamation dissolving the UK Parliament and calling a general election is published in the London Gazette.",
+    "resolution": "TRUE if the London Gazette publishes a proclamation dissolving Parliament for a UK general election with a publication date between 2026-09-26 and 2027-03-19 inclusive.",
+    "failure_condition": "MISS if no proclamation dissolving Parliament for a UK general election was published in the London Gazette within the window.",
+    "domain": "political",
+    "deadline": "2027-03-23",
+    "probability": 39,
+    "citations": [
+      109,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-26 and 2026-11-06, the President issues a Major Disaster Declaration for the State of Hawaii for Hurricane Nolo, as listed in the FEMA disaster declarations database.",
+    "resolution": "TRUE if the FEMA declarations database on fema.gov lists a Major Disaster Declaration (DR number) for Hawaii whose incident description names Nolo or its late-September 2026 rainfall, declared between 2026-09-26 and 2026-11-06.",
+    "failure_condition": "MISS if, at the deadline, no Major Disaster Declaration for Hawaii attributable to Nolo appears in the FEMA declarations database with a declaration date inside the window.",
+    "domain": "disaster",
+    "deadline": "2026-11-10",
+    "probability": 31,
+    "citations": [
+      32
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-25T19:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

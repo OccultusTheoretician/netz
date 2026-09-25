@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "CISA adds the Roundcube Webmail pre-authentication SQL injection flaw CVE-2026-48842 to its Known Exploited Vulnerabilities catalog between 2026-09-25 and 2026-10-23.",
+    "domain": "cyber",
+    "probability": 33,
+    "resolution": "TRUE if the CISA KEV catalog JSON feed lists CVE-2026-48842 with a dateAdded value from 2026-09-25 through 2026-10-23; FALSE if the CVE is absent or its dateAdded falls outside that span.",
+    "deadline": "2026-10-26",
+    "citations": [
+      18
+    ],
+    "failure_condition": "CISA does not add CVE-2026-48842 to the KEV catalog with a dateAdded from 2026-09-25 through 2026-10-23."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled meeting concluding 2026-10-28. Reference: target range 3.75 to 4.00 percent, upper bound 4.00, on the packet date.",
+    "domain": "economics/markets",
+    "probability": 58,
+    "resolution": "TRUE if the FOMC statement released 2026-10-28 sets a higher target range, confirmed by FRED series DFEDTARU at 4.25 or above for 2026-10-29. FALSE if the range is held or lowered.",
+    "deadline": "2026-10-30",
+    "citations": [
+      65,
+      67
+    ],
+    "failure_condition": "The FOMC holds the target range at 3.75 to 4.00 percent or lowers it at the meeting concluding 2026-10-28."
+  },
+  {
+    "statement": "Between 2026-09-26 and 2026-10-30, President Trump or the White House announces or confirms an agreement or ceasefire with Iran under which Iran is to reopen the Strait of Hormuz to commercial shipping.",
+    "domain": "military/conflict",
+    "probability": 27,
+    "resolution": "TRUE if AP and Reuters both report that the US president or White House announced or confirmed, between 2026-09-26 and 2026-10-30, an agreement or ceasefire with Iran including reopening of the Strait of Hormuz; otherwise FALSE.",
+    "deadline": "2026-11-02",
+    "citations": [
+      81,
+      119
+    ],
+    "failure_condition": "No US-Iran agreement or ceasefire providing for reopening of the Strait of Hormuz is announced or confirmed by the US president or White House between 2026-09-26 and 2026-10-30."
+  },
+  {
+    "statement": "The FBI publicly attributes the roughly USD 351.6 million Bitget exchange theft to North Korea between 2026-09-25 and 2026-10-30.",
+    "domain": "cyber",
+    "probability": 20,
+    "resolution": "TRUE if an FBI press release, IC3 public service announcement or on-record FBI statement issued between 2026-09-25 and 2026-10-30 attributes the Bitget theft to North Korea or a named DPRK actor such as TraderTraitor or Lazarus; otherwise FALSE.",
+    "deadline": "2026-11-02",
+    "citations": [
+      16,
+      19,
+      70
+    ],
+    "failure_condition": "The FBI makes no public attribution of the Bitget theft to North Korea or a DPRK-linked actor between 2026-09-25 and 2026-10-30."
+  },
+  {
+    "statement": "Government delegations of the United States, Russia and Ukraine meet in person in a trilateral negotiating session between 2026-09-28 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 42,
+    "resolution": "TRUE if at least two of AP, Reuters and AFP report that US, Russian and Ukrainian government delegations met together in person in one session between 2026-09-28 and 2026-10-31; otherwise FALSE.",
+    "deadline": "2026-11-04",
+    "citations": [
+      87
+    ],
+    "failure_condition": "No in-person session attended jointly by US, Russian and Ukrainian government delegations takes place between 2026-09-28 and 2026-10-31."
+  },
+  {
+    "statement": "The Ethiopian federal government declares a new state of emergency covering Tigray, Afar, Amhara or the whole country between 2026-09-26 and 2026-11-06.",
+    "domain": "military/conflict",
+    "probability": 35,
+    "resolution": "TRUE if Reuters, AP or AFP reports that the Ethiopian Council of Ministers or federal parliament declared or approved a new state of emergency covering Tigray, Afar, Amhara or all of Ethiopia between 2026-09-26 and 2026-11-06; otherwise FALSE.",
+    "deadline": "2026-11-10",
+    "citations": [
+      73,
+      86,
+      88
+    ],
+    "failure_condition": "The Ethiopian federal government declares no new state of emergency covering Tigray, Afar, Amhara or the whole country between 2026-09-26 and 2026-11-06."
+  },
+  {
+    "statement": "Between 2026-09-26 and 2026-11-06, Pakistan or Turkiye officially announces strikes on Houthi targets or a deployment of additional combat or air-defence units to Saudi Arabia.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "TRUE if the government or military of Pakistan or Turkiye announces, between 2026-09-26 and 2026-11-06, strikes on Houthi targets or deployment of additional combat or air-defence units to Saudi Arabia, as reported by Reuters or AP; otherwise FALSE.",
+    "deadline": "2026-11-10",
+    "citations": [
+      92,
+      45,
+      76
+    ],
+    "failure_condition": "Neither Pakistan nor Turkiye announces strikes on Houthi targets or a deployment of additional combat or air-defence units to Saudi Arabia between 2026-09-26 and 2026-11-06."
+  },
+  {
+    "statement": "The President approves a major disaster declaration for the State of Hawaii covering Hurricane Nolo impacts between 2026-09-26 and 2026-11-13.",
+    "domain": "disaster",
+    "probability": 30,
+    "resolution": "TRUE if OpenFEMA DisasterDeclarationsSummaries lists a DR declaration for Hawaii with declarationDate from 2026-09-26 through 2026-11-13 and an incident period touching 2026-09-24 through 2026-09-28; otherwise FALSE.",
+    "deadline": "2026-11-16",
+    "citations": [
+      32
+    ],
+    "failure_condition": "No major disaster (DR) declaration for Hawaii with an incident period touching 2026-09-24 through 2026-09-28 is approved between 2026-09-26 and 2026-11-13."
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield closes at or above 5.50 percent on at least one business day between 2026-09-28 and 2026-11-20. Reference: 5.21 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 38,
+    "resolution": "TRUE if FRED series DGS10 shows a value of 5.50 or higher for any date from 2026-09-28 through 2026-11-20; FALSE if every value in that span is below 5.50. Reference: 5.21 percent at seal.",
+    "deadline": "2026-11-24",
+    "citations": [
+      49,
+      51,
+      65
+    ],
+    "failure_condition": "The 10-year constant-maturity yield stays below 5.50 percent on every business day from 2026-09-28 through 2026-11-20."
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of the 435 US House seats in the general election held on 2026-11-03.",
+    "domain": "political",
+    "probability": 88,
+    "resolution": "TRUE if, as of the deadline, AP race calls award at least 218 House seats in the 2026-11-03 general election to Democratic candidates; otherwise FALSE.",
+    "deadline": "2026-12-18",
+    "citations": [
+      113,
+      108
+    ],
+    "failure_condition": "Democratic candidates are declared winners of fewer than 218 House seats in the 2026-11-03 general election as of 2026-12-18."
+  }
+]
