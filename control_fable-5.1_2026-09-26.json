@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "Between 2026-09-27 and 2026-11-30 the United States and Iranian governments both publicly confirm a ceasefire, truce or Strait of Hormuz reopening agreement concluded between them.",
+    "resolution": "Between 2026-09-27 and 2026-11-30 the White House and the Iranian Foreign Ministry each publicly confirm a US-Iran ceasefire, truce or Hormuz-reopening agreement, corroborated by two of Reuters, AP and AFP; a proposal or talks alone do not count.",
+    "failure_condition": "No US-Iran ceasefire, truce or Hormuz-reopening agreement is confirmed by both governments with an announcement dated between 2026-09-27 and 2026-11-30.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-03",
+    "probability": 64,
+    "citations": [
+      66,
+      91,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-11-04 and 2026-12-31 US Central Command confirms US strikes on at least one target inside Iran located more than 50 km inland from the Persian Gulf and Gulf of Oman coasts.",
+    "resolution": "A CENTCOM or Department of War release names a US-struck target inside Iran more than 50 km from the Persian Gulf or Gulf of Oman coast, struck between 2026-11-04 and 2026-12-31; vessel and coastal-site strikes are excluded.",
+    "failure_condition": "No CENTCOM-confirmed US strike on a target more than 50 km inland in Iran takes place between 2026-11-04 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 64,
+    "citations": [
+      91,
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield (FRED series DGS10) closes at or above 5.50 percent on at least one trading day between 2026-09-28 and 2026-12-31. Reference: 5.18 percent on the packet date.",
+    "resolution": "FRED series DGS10 shows at least one daily value of 5.50 or higher dated between 2026-09-28 and 2026-12-31 inclusive; reference level 5.18 percent held at packet seal; 5.49 or lower every day is false.",
+    "failure_condition": "Every DGS10 daily value dated 2026-09-28 through 2026-12-31 is below 5.50 percent.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 48,
+    "citations": [
+      52
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Cushing WTI crude spot price (FRED series DCOILWTICO, EIA daily) settles at or below 75.00 dollars per barrel on at least one trading day between 2026-09-28 and 2026-12-31. Reference: 92.41 dollars on the packet date.",
+    "resolution": "FRED series DCOILWTICO shows at least one daily value of 75.00 or lower dated between 2026-09-28 and 2026-12-31 inclusive; reference level 92.41 dollars per barrel held at packet seal.",
+    "failure_condition": "Every DCOILWTICO daily value dated 2026-09-28 through 2026-12-31 is above 75.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-08",
+    "probability": 48,
+    "citations": [
+      66,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry whose vendorProject or product field names Kiteworks or Accellion, with a dateAdded value between 2026-09-26 and 2026-10-31.",
+    "resolution": "The CISA KEV JSON feed (known_exploited_vulnerabilities.json) contains an entry whose vendorProject or product field includes Kiteworks or Accellion and whose dateAdded is between 2026-09-26 and 2026-10-31 inclusive.",
+    "failure_condition": "No KEV entry naming Kiteworks or Accellion carries a dateAdded between 2026-09-26 and 2026-10-31.",
+    "domain": "cyber",
+    "deadline": "2026-11-04",
+    "probability": 32,
+    "citations": [
+      16,
+      18
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry whose product field names Elementor (the WordPress plugin), with a dateAdded value between 2026-09-26 and 2026-10-31.",
+    "resolution": "The CISA KEV JSON feed contains an entry whose vendorProject or product field includes Elementor and whose dateAdded is between 2026-09-26 and 2026-10-31 inclusive; entries for WordPress core or other plugins do not count.",
+    "failure_condition": "No KEV entry naming Elementor carries a dateAdded between 2026-09-26 and 2026-10-31.",
+    "domain": "cyber",
+    "deadline": "2026-11-04",
+    "probability": 32,
+    "citations": [
+      14,
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the Brazilian presidential election first round held on 2026-10-04 no candidate wins more than 50 percent of valid votes, so a second round on 2026-10-25 is required.",
+    "resolution": "Official TSE results (tse.jus.br) for the 2026-10-04 presidential first round show no candidate above 50 percent of valid votes and the TSE proceeds to a 2026-10-25 second round between the top two candidates.",
+    "failure_condition": "A candidate wins more than 50 percent of valid votes in the 2026-10-04 first round and no second round is held.",
+    "domain": "political",
+    "deadline": "2026-10-08",
+    "probability": 39,
+    "citations": [
+      95,
+      111
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-27 and 2026-10-19 the Israeli Supreme Court reverses the Central Elections Committee disqualifications of both the Joint List (Hadash, Taal, Balad) and the United Arab List (Raam), clearing both to run in the 2026-10-27 Knesset election.",
+    "resolution": "Supreme Court rulings dated between 2026-09-27 and 2026-10-19 overturn the CEC disqualification of both the Joint List and the United Arab List, and both appear on the official candidate lists for 2026-10-27; either still barred is false.",
+    "failure_condition": "At least one of the Joint List or the United Arab List remains disqualified from the 2026-10-27 election as of 2026-10-19, or no reversal is issued in the window.",
+    "domain": "political",
+    "deadline": "2026-10-22",
+    "probability": 39,
+    "citations": [
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A FEMA major disaster declaration (declarationType DR) for the State of Hawaii tied to Hurricane Nolo is issued with a declarationDate between 2026-09-26 and 2026-11-13.",
+    "resolution": "The OpenFEMA DisasterDeclarationsSummaries dataset contains a record with state HI, declarationType DR, declarationDate between 2026-09-26 and 2026-11-13 inclusive, and a declarationTitle or incident description naming Nolo; an EM-type declaration alone is false.",
+    "failure_condition": "No DR-type FEMA declaration for Hawaii referencing Nolo carries a declarationDate between 2026-09-26 and 2026-11-13.",
+    "domain": "disaster",
+    "deadline": "2026-11-17",
+    "probability": 31,
+    "citations": [
+      40
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-27 and 2026-12-31 the WHO confirms at least one laboratory-confirmed Bundibugyo Ebola case linked to the 2026 DR Congo outbreak diagnosed in a country other than the Democratic Republic of the Congo, Uganda or France.",
+    "resolution": "A WHO Disease Outbreak News item or WHO AFRO situation report published between 2026-09-27 and 2026-12-31 reports a laboratory-confirmed outbreak-linked Ebola case in a country other than DRC, Uganda or France; suspected or probable cases do not count.",
+    "failure_condition": "No laboratory-confirmed outbreak-linked Ebola case in a country other than DRC, Uganda or France is confirmed by WHO in a report dated between 2026-09-27 and 2026-12-31.",
+    "domain": "disaster",
+    "deadline": "2027-01-06",
+    "probability": 31,
+    "citations": [
+      84
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-26T21:09:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

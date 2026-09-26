@@ -1,0 +1,121 @@
+[
+  {
+    "statement": "Luiz Inacio Lula da Silva receives more valid votes than Flavio Bolsonaro in the first round of the Brazilian presidential election held on 2026-10-04.",
+    "domain": "political",
+    "probability": 50,
+    "resolution": "TRUE if the TSE official first-round totals for 2026-10-04 show Luiz Inacio Lula da Silva with more valid votes than Flavio Bolsonaro.",
+    "deadline": "2026-10-07",
+    "citations": [
+      95,
+      111
+    ],
+    "failure_condition": "Flavio Bolsonaro receives at least as many first-round valid votes as Lula on 2026-10-04."
+  },
+  {
+    "statement": "The Israeli Supreme Court overturns the Central Elections Committee disqualification of both the Raam (United Arab List) slate and the Joint List slate, in rulings issued between 2026-09-28 and 2026-10-23.",
+    "domain": "political",
+    "probability": 80,
+    "resolution": "TRUE if Supreme Court of Israel docket rulings issued between 2026-09-28 and 2026-10-23 permit both the Raam slate and the Joint List slate to run in the 2026-10-27 Knesset election.",
+    "deadline": "2026-10-27",
+    "citations": [
+      108
+    ],
+    "failure_condition": "At least one of the Raam or Joint List disqualifications stands un-overturned as of 2026-10-23."
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater occurs within 150 km of the epicenter of the 2026-09-26 M6.6 event near Tadine, New Caledonia (USGS us6000txpi), between 2026-09-28 and 2026-10-25 UTC.",
+    "domain": "disaster",
+    "probability": 20,
+    "resolution": "TRUE if the USGS ComCat catalog lists an event of magnitude 6.0 or greater within 150 km of the us6000txpi epicenter with origin time between 2026-09-28 and 2026-10-25 UTC.",
+    "deadline": "2026-10-28",
+    "citations": [
+      26
+    ],
+    "failure_condition": "No magnitude 6.0 or greater earthquake occurs within 150 km of the us6000txpi epicenter between 2026-09-28 and 2026-10-25 UTC."
+  },
+  {
+    "statement": "A single suicide attack in Pakistan kills at least 10 people, excluding the attackers, between 2026-09-28 and 2026-10-25.",
+    "domain": "crime/security",
+    "probability": 40,
+    "resolution": "TRUE if at least two of Reuters, AP, AFP and Dawn report one attack involving a suicide bomber in Pakistan between 2026-09-28 and 2026-10-25 that killed at least 10 people, excluding attackers.",
+    "deadline": "2026-10-28",
+    "citations": [
+      69,
+      83
+    ],
+    "failure_condition": "No single suicide attack in Pakistan between 2026-09-28 and 2026-10-25 kills 10 or more people other than the attackers."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range by at least 25 basis points at its meeting ending 2026-10-28. Reference: 4.00 percent upper bound on the packet date.",
+    "domain": "economics/markets",
+    "probability": 60,
+    "resolution": "TRUE if FRED series DFEDTARU reads 4.25 or higher for 2026-10-29, reflecting the 2026-10-28 FOMC decision. Reference: 4.00 percent upper bound on the packet date.",
+    "deadline": "2026-10-30",
+    "citations": [
+      52
+    ],
+    "failure_condition": "The FOMC leaves the target range upper bound at or below 4.00 percent at the meeting ending 2026-10-28."
+  },
+  {
+    "statement": "NYMEX WTI crude front-month futures settle at or above 100.00 dollars per barrel on at least one trading day between 2026-09-28 and 2026-10-30. Reference: 92.41 on the packet date (2026-09-25 settlement).",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "TRUE if the CME NYMEX WTI front-month daily settlement is 100.00 or higher on any trading day from 2026-09-28 through 2026-10-30. Reference: 92.41 settlement on the packet date.",
+    "deadline": "2026-11-03",
+    "citations": [
+      66,
+      91,
+      99
+    ],
+    "failure_condition": "WTI front-month settles below 100.00 on every trading day from 2026-09-28 through 2026-10-30."
+  },
+  {
+    "statement": "The US and Iranian governments both announce, between 2026-09-28 and 2026-11-03, an agreement or memorandum under which Iran commits to reopening the Strait of Hormuz.",
+    "domain": "political",
+    "probability": 12,
+    "resolution": "TRUE if the White House or State Department and the Iranian Foreign Ministry each publicly confirm, between 2026-09-28 and 2026-11-03, an agreement that includes Iran reopening the Strait of Hormuz, per Reuters, AP or AFP.",
+    "deadline": "2026-11-05",
+    "citations": [
+      66,
+      99,
+      104
+    ],
+    "failure_condition": "No agreement including Iranian reopening of the Strait of Hormuz is confirmed by both the US and Iranian governments between 2026-09-28 and 2026-11-03."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry whose vendorProject or product names Kiteworks, with a dateAdded value between 2026-09-28 and 2026-11-13.",
+    "domain": "cyber",
+    "probability": 22,
+    "resolution": "TRUE if the CISA KEV JSON feed contains an entry with vendorProject or product containing Kiteworks and dateAdded between 2026-09-28 and 2026-11-13 inclusive.",
+    "deadline": "2026-11-17",
+    "citations": [
+      16,
+      18
+    ],
+    "failure_condition": "No Kiteworks vulnerability enters the CISA KEV catalog with a dateAdded between 2026-09-28 and 2026-11-13."
+  },
+  {
+    "statement": "A laboratory-confirmed Bundibugyo virus disease case is confirmed in a country other than DR Congo, Uganda and France between 2026-09-28 and 2026-11-27, excluding patients medically evacuated after diagnosis in DR Congo.",
+    "domain": "disaster",
+    "probability": 22,
+    "resolution": "TRUE if WHO Disease Outbreak News, WHO AFRO, or a national health ministry confirms a Bundibugyo case in a new country (not DR Congo, Uganda, France; medevacs excluded) dated 2026-09-28 to 2026-11-27.",
+    "deadline": "2026-12-01",
+    "citations": [
+      84
+    ],
+    "failure_condition": "No country other than DR Congo, Uganda and France records a laboratory-confirmed Bundibugyo case, excluding medevacs, between 2026-09-28 and 2026-11-27."
+  },
+  {
+    "statement": "US military forces strike at least one target on Iranian land territory, including Iranian islands, on any day between 2026-11-04 and 2026-12-18.",
+    "domain": "military/conflict",
+    "probability": 40,
+    "resolution": "TRUE if a US Central Command or Pentagon statement, or at least two of Reuters, AP and AFP, report a US strike on a target on Iranian land territory occurring between 2026-11-04 and 2026-12-18.",
+    "deadline": "2026-12-22",
+    "citations": [
+      66,
+      91,
+      104
+    ],
+    "failure_condition": "No US strike hits a target on Iranian land territory between 2026-11-04 and 2026-12-18."
+  }
+]
