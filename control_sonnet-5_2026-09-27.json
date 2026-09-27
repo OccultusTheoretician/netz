@@ -1,0 +1,247 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog will add at least one entry for a Citrix NetScaler product, with a date-added value between 2026-09-28 and 2026-10-11.",
+    "resolution": "True if the CISA KEV catalog (cisa.gov/known-exploited-vulnerabilities-catalog) lists a NetScaler-related CVE with dateAdded between 2026-09-28 and 2026-10-11 inclusive; false otherwise.",
+    "failure_condition": "No CISA KEV catalog entry naming a NetScaler product carries a date-added value inside the window.",
+    "domain": "cyber",
+    "deadline": "2026-10-13",
+    "probability": 32,
+    "citations": [
+      13
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Microsoft will document a resumed rollout or a replacement fix for the KB5002907 Office license-deactivation issue between 2026-09-28 and 2026-10-18.",
+    "resolution": "True if Microsoft's Release Health dashboard or a support.microsoft.com KB article confirms KB5002907, or its direct successor patch, is fixed and redistributed inside the window; false otherwise.",
+    "failure_condition": "Microsoft has not documented a fix or resumed rollout for the KB5002907 issue by the deadline.",
+    "domain": "cyber",
+    "deadline": "2026-10-20",
+    "probability": 32,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The S&P 500 will close below 7,600 (Reference: 7,743.41 at the 26 Sep 2026 close, per the packet) on at least one trading day between 2026-09-28 and 2026-10-16.",
+    "resolution": "True if any official S&P 500 closing print reported by a major index provider or wire service falls below 7,600.00 on a trading day in the window; false otherwise.",
+    "failure_condition": "No trading-day close below 7,600 occurs in the window.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-19",
+    "probability": 48,
+    "citations": [
+      40,
+      45
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US 10-Year Treasury yield will close at or above 5.30 percent (Reference: 5.18 percent on 2026-09-27, per the packet) on at least one day between 2026-09-28 and 2026-10-09.",
+    "resolution": "True if the Treasury daily par yield curve or FRED series DGS10 shows a close at or above 5.30 percent on any date in the window; false otherwise.",
+    "failure_condition": "DGS10 never closes at or above 5.30 percent on any date in the window.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-12",
+    "probability": 48,
+    "citations": [
+      45,
+      46
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A lapse in federal appropriations will force at least one US federal department to furlough staff or suspend non-excepted operations between 2026-10-01 and 2026-10-08.",
+    "resolution": "True if OMB, OPM, or two of Reuters, AP, and Politico report a funding lapse causing furloughs or suspended operations at a federal department starting in the window; false otherwise.",
+    "failure_condition": "Congress and the President enact full-year or stopgap appropriations before the deadline, so no department loses funding in the window.",
+    "domain": "political",
+    "deadline": "2026-10-12",
+    "probability": 39,
+    "citations": [
+      52
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Vivek Ramaswamy will win the 2026 Ohio gubernatorial general election held on 2026-11-03.",
+    "resolution": "True if the Ohio Secretary of State certified result or an AP race call names Ramaswamy the winner by the deadline; false if Acton wins or the race is uncalled.",
+    "failure_condition": "Amy Acton is certified or called the winner, or the race remains uncalled at the deadline.",
+    "domain": "political",
+    "deadline": "2026-11-05",
+    "probability": 39,
+    "citations": [
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "No candidate will win an outright majority in Brazil's first-round presidential election on 2026-10-04, forcing an October 25 runoff.",
+    "resolution": "True if Brazil's Tribunal Superior Eleitoral (TSE) results portal shows no candidate above 50 percent of valid votes and schedules the runoff; false if one candidate exceeds 50 percent.",
+    "failure_condition": "A single candidate is certified with more than 50 percent of valid first-round votes.",
+    "domain": "political",
+    "deadline": "2026-10-06",
+    "probability": 39,
+    "citations": [
+      95
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran will not publicly announce a signed or explicitly agreed arrangement reopening the Strait of Hormuz to normal commercial shipping between 2026-09-28 and 2026-10-25.",
+    "resolution": "True unless two of Reuters, AP, and Al Jazeera report a named, explicit US-Iran arrangement reopening Hormuz shipping announced in the window; then false.",
+    "failure_condition": "The United States and Iran publicly announce a named agreement reopening Hormuz shipping inside the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-27",
+    "probability": 64,
+    "citations": [
+      66,
+      91,
+      103
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "South African Police Service will announce at least one arrest connected to either of the two mass shootings reported on 2026-09-27 in Johannesburg and Cape Town, between 2026-09-28 and 2026-10-12.",
+    "resolution": "True if SAPS, News24, or Reuters reports a named arrest tied to either shooting, dated inside the window; false otherwise.",
+    "failure_condition": "No SAPS-confirmed arrest tied to either shooting is reported by the deadline.",
+    "domain": "crime/security",
+    "deadline": "2026-10-14",
+    "probability": 29,
+    "citations": [
+      9,
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS will catalog at least one aftershock of magnitude 5.0 or greater within 200 km of the 2026-09-26 M6.6 New Caledonia mainshock (event id us6000txpi), occurring between 2026-09-28 and 2026-10-11.",
+    "resolution": "True if USGS ComCat lists a magnitude 5.0 or greater event within 200 km of the us6000txpi epicenter with an origin time inside the window; false otherwise.",
+    "failure_condition": "USGS catalogs no magnitude 5.0 or greater event within 200 km of the epicenter inside the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-13",
+    "probability": 31,
+    "citations": [
+      33
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-27T18:49:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

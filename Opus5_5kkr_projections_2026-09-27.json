@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "The State of Tennessee carries out the scheduled execution of Christa Pike between 2026-09-30 and 2026-10-02.",
+    "domain": "crime/security",
+    "probability": 76,
+    "resolution": "TRUE if the Tennessee Department of Correction, or AP or Reuters citing it, confirms Pike was executed on a date between 2026-09-30 and 2026-10-02; FALSE on clemency, stay, reprieve, or postponement past 2026-10-02.",
+    "deadline": "2026-10-05",
+    "citations": [
+      10
+    ],
+    "failure_condition": "Christa Pike is alive at the end of 2026-10-02 because of clemency, a court stay, a reprieve, or a rescheduled date."
+  },
+  {
+    "statement": "At least one of the five men arrested near RAF Fairford on 2026-09-27 is criminally charged between 2026-09-27 and 2026-10-11.",
+    "domain": "crime/security",
+    "probability": 62,
+    "resolution": "TRUE if the Crown Prosecution Service or Counter Terrorism Policing announces a charge against at least one of the five arrestees dated between 2026-09-27 and 2026-10-11; FALSE if all are released, bailed, or still uncharged.",
+    "deadline": "2026-10-14",
+    "citations": [
+      28,
+      78,
+      86
+    ],
+    "failure_condition": "No arrestee from the Whelford/RAF Fairford incident has been charged with any offence by the end of 2026-10-11."
+  },
+  {
+    "statement": "CISA adds at least one new Citrix NetScaler ADC or Gateway CVE to the KEV catalog between 2026-09-28 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 75,
+    "resolution": "TRUE if the CISA KEV JSON feed carries an entry with vendorProject Citrix, product naming NetScaler, a CVE other than CVE-2026-19490 or CVE-2026-19489, and dateAdded between 2026-09-28 and 2026-10-16.",
+    "deadline": "2026-10-19",
+    "citations": [
+      13
+    ],
+    "failure_condition": "No Citrix NetScaler KEV entry other than CVE-2026-19490 and CVE-2026-19489 has a dateAdded value between 2026-09-28 and 2026-10-16."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range by 25 basis points to 4.00-4.25 percent at its scheduled 2026-10-28 decision. Reference: range 3.75-4.00 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 66,
+    "resolution": "TRUE if FRED series DFEDTARU reads 4.25 for 2026-10-29; FALSE if it reads 4.00 or any other value.",
+    "deadline": "2026-10-30",
+    "citations": [
+      45,
+      46,
+      53
+    ],
+    "failure_condition": "The FOMC holds, cuts, or hikes by other than 25 basis points on 2026-10-28, so DFEDTARU for 2026-10-29 is not 4.25."
+  },
+  {
+    "statement": "The Brent spot price is below 90.00 USD per barrel on 2026-11-13. Reference: Brent 97.44 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "TRUE if FRED series DCOILBRENTEU (EIA Europe Brent spot FOB) prints a value below 90.00 for 2026-11-13; FALSE if 90.00 or above.",
+    "deadline": "2026-11-18",
+    "citations": [
+      81,
+      103,
+      108
+    ],
+    "failure_condition": "DCOILBRENTEU for 2026-11-13 is at or above 90.00 USD per barrel."
+  },
+  {
+    "statement": "The United States and Iran both publicly confirm a ceasefire or agreement providing for reopening of the Strait of Hormuz between 2026-09-28 and 2026-11-02.",
+    "domain": "political",
+    "probability": 12,
+    "resolution": "TRUE if the White House or State Department and the Iranian foreign ministry each confirm an agreed ceasefire or Hormuz reopening deal between 2026-09-28 and 2026-11-02, reported by both Reuters and AP.",
+    "deadline": "2026-11-05",
+    "citations": [
+      66,
+      91,
+      102,
+      103
+    ],
+    "failure_condition": "By the end of 2026-11-02 no ceasefire or Hormuz reopening agreement has been confirmed by both the US and Iranian governments."
+  },
+  {
+    "statement": "US forces conduct at least one strike on Iranian land territory between 2026-11-04 and 2026-12-15.",
+    "domain": "military/conflict",
+    "probability": 38,
+    "resolution": "TRUE if the Pentagon, CENTCOM, or the White House acknowledges a US strike on a target on Iranian land territory occurring between 2026-11-04 and 2026-12-15, reported by Reuters or AP.",
+    "deadline": "2026-12-18",
+    "citations": [
+      66,
+      103,
+      108
+    ],
+    "failure_condition": "No US government-acknowledged US strike on Iranian land territory occurs between 2026-11-04 and 2026-12-15."
+  },
+  {
+    "statement": "Luiz Inacio Lula da Silva finishes first in valid votes in the first round of the Brazilian presidential election on 2026-10-04.",
+    "domain": "political",
+    "probability": 72,
+    "resolution": "TRUE if final first-round results published by the Tribunal Superior Eleitoral show Lula with more valid votes than any other presidential candidate; FALSE otherwise.",
+    "deadline": "2026-10-07",
+    "citations": [
+      95
+    ],
+    "failure_condition": "TSE first-round results show any candidate other than Lula with the most valid votes on 2026-10-04."
+  },
+  {
+    "statement": "Amy Acton defeats Vivek Ramaswamy in the Ohio gubernatorial election held 2026-11-03.",
+    "domain": "political",
+    "probability": 52,
+    "resolution": "TRUE if official results published by the Ohio Secretary of State show Acton receiving more votes than Ramaswamy for governor; FALSE if Ramaswamy receives more.",
+    "deadline": "2026-12-15",
+    "citations": [
+      22
+    ],
+    "failure_condition": "Ohio Secretary of State official results show Ramaswamy with more gubernatorial votes than Acton."
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater occurs within 150 km of the 2026-09-26 M6.6 New Caledonia epicenter between 2026-09-28 and 2026-10-11.",
+    "domain": "disaster",
+    "probability": 12,
+    "resolution": "TRUE if the USGS ComCat catalog lists an event of M6.0 or greater with epicenter within 150 km of event us6000txpi and origin time between 2026-09-28 and 2026-10-11 UTC.",
+    "deadline": "2026-10-14",
+    "citations": [
+      33
+    ],
+    "failure_condition": "USGS ComCat lists no M6.0 or greater event within 150 km of us6000txpi with origin time between 2026-09-28 and 2026-10-11 UTC."
+  }
+]

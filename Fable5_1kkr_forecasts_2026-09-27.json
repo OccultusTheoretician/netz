@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "The United States and Iran publicly confirm a ceasefire, truce, or halt-to-hostilities agreement that takes effect on a date between 2026-09-28 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "TRUE if both the White House or State Department and the Iran Foreign Ministry publicly confirm a ceasefire, truce, or halt to hostilities taking effect between 2026-09-28 and 2026-10-31, as reported by at least two of Reuters, AP, AFP.",
+    "deadline": "2026-11-04",
+    "citations": [
+      103,
+      108,
+      91
+    ],
+    "failure_condition": "No ceasefire, truce, or halt-to-hostilities agreement between the United States and Iran is confirmed by both governments as taking effect between 2026-09-28 and 2026-10-31."
+  },
+  {
+    "statement": "Forces of the internationally recognized Yemeni government retake the Red Sea port city of Mocha (al-Mokha) from the Houthis on a date between 2026-09-28 and 2026-11-30.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "TRUE if the Yemeni government announces control of Mocha city and at least two of Reuters, AP, AFP independently report government forces holding the city, with the recapture dated between 2026-09-28 and 2026-11-30.",
+    "deadline": "2026-12-03",
+    "citations": [
+      75,
+      61,
+      82
+    ],
+    "failure_condition": "Mocha city is not retaken and held by Yemeni government forces at any point between 2026-09-28 and 2026-11-30."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one CVE affecting Citrix NetScaler ADC or NetScaler Gateway with a dateAdded value between 2026-09-27 and 2026-10-09.",
+    "domain": "cyber",
+    "probability": 85,
+    "resolution": "TRUE if the CISA KEV JSON feed contains at least one entry whose product or vulnerabilityName field includes NetScaler and whose dateAdded is between 2026-09-27 and 2026-10-09 inclusive.",
+    "deadline": "2026-10-13",
+    "citations": [
+      13
+    ],
+    "failure_condition": "No KEV entry naming Citrix NetScaler ADC or NetScaler Gateway carries a dateAdded between 2026-09-27 and 2026-10-09."
+  },
+  {
+    "statement": "CISA issues an Emergency Directive naming Citrix NetScaler ADC or NetScaler Gateway, with an issue date between 2026-09-27 and 2026-10-16.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if the CISA directives page lists an Emergency Directive (any ED number) naming NetScaler ADC or NetScaler Gateway, dated between 2026-09-27 and 2026-10-16. Binding Operational Directives, alerts, and KEV additions do not count.",
+    "deadline": "2026-10-20",
+    "citations": [
+      13
+    ],
+    "failure_condition": "No CISA Emergency Directive naming Citrix NetScaler is issued with a date between 2026-09-27 and 2026-10-16; alerts, advisories, or KEV additions alone do not satisfy."
+  },
+  {
+    "statement": "The State of Tennessee carries out the execution of Christa Pike on 2026-09-30 as scheduled.",
+    "domain": "crime/security",
+    "probability": 75,
+    "resolution": "TRUE if the Tennessee Department of Correction confirms Christa Pike was executed on 2026-09-30 and the Death Penalty Information Center execution database records that date; a stay, reprieve, or commutation resolves FALSE.",
+    "deadline": "2026-10-05",
+    "citations": [
+      10
+    ],
+    "failure_condition": "Christa Pike is alive at the deadline or was executed on any date other than 2026-09-30, whether by stay, clemency, reprieve, or rescheduling."
+  },
+  {
+    "statement": "At least one suspect appears in a South African court charged in connection with the 2026-09-26 Wedela tavern mass shooting near Johannesburg, with the first appearance dated between 2026-09-28 and 2026-10-30.",
+    "domain": "crime/security",
+    "probability": 55,
+    "resolution": "TRUE if SAPS or the National Prosecuting Authority publicly confirms, or two of Reuters, AP, AFP report, a court appearance by at least one accused charged for the Wedela shooting, dated between 2026-09-28 and 2026-10-30.",
+    "deadline": "2026-11-04",
+    "citations": [
+      9,
+      60,
+      21
+    ],
+    "failure_condition": "No person charged for the Wedela tavern shooting makes a first court appearance between 2026-09-28 and 2026-10-30; arrests without a court appearance do not satisfy."
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of 435 US House seats in the 2026-11-03 general election, per Associated Press race calls as of 2026-12-04.",
+    "domain": "political",
+    "probability": 80,
+    "resolution": "TRUE if the AP election results tally, as of 2026-12-04, shows Democratic candidates called as winners in at least 218 US House races from the 2026-11-03 general election. Uncalled races count as not won.",
+    "deadline": "2026-12-04",
+    "citations": [
+      90,
+      22
+    ],
+    "failure_condition": "As of 2026-12-04 the AP has called 217 or fewer US House races for Democratic candidates."
+  },
+  {
+    "statement": "The USGS earthquake catalog records an earthquake of magnitude 6.5 or greater with epicenter within 200 km of USGS event us6000txpi (the 2026-09-26 M6.6 near Tadine, New Caledonia) and origin time between 2026-09-28 and 2026-10-27 UTC.",
+    "domain": "disaster",
+    "probability": 20,
+    "resolution": "TRUE if a USGS FDSN event query returns at least one event with USGS preferred magnitude 6.5 or greater, epicenter within 200 km of event us6000txpi, and origin time from 2026-09-28T00:00Z through 2026-10-27T23:59Z.",
+    "deadline": "2026-10-30",
+    "citations": [
+      33
+    ],
+    "failure_condition": "No USGS-cataloged event of magnitude 6.5 or greater occurs within 200 km of us6000txpi between 2026-09-28 and 2026-10-27 UTC."
+  },
+  {
+    "statement": "The S&P 500 records at least one close-to-close daily decline of 2.00 percent or more on a trading day between 2026-09-28 and 2026-10-30. Reference: 7743.41 close on the packet date.",
+    "domain": "economics/markets",
+    "probability": 55,
+    "resolution": "TRUE if FRED series SP500 shows any observation dated 2026-09-28 through 2026-10-30 whose close is at least 2.00 percent below the immediately preceding trading day close. Reference level 7743.41 on the packet date.",
+    "deadline": "2026-11-04",
+    "citations": [
+      40,
+      45,
+      43
+    ],
+    "failure_condition": "Every S&P 500 close-to-close daily change from 2026-09-28 through 2026-10-30 is better than minus 2.00 percent."
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield (FRED DGS10) prints 5.50 percent or higher on at least one observation dated between 2026-09-28 and 2026-10-30. Reference: 5.18 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "TRUE if FRED series DGS10 contains any observation dated 2026-09-28 through 2026-10-30 with value 5.50 or greater. Reference level 5.18 percent on the packet date.",
+    "deadline": "2026-11-04",
+    "citations": [
+      45,
+      46
+    ],
+    "failure_condition": "Every DGS10 observation dated 2026-09-28 through 2026-10-30 is below 5.50 percent."
+  }
+]
