@@ -1,0 +1,254 @@
+[
+  {
+    "statement": "At least one of the five men arrested near RAF Fairford on 2026-09-27 is charged with a criminal offence, with the charge publicly announced between 2026-09-27 and 2026-10-12.",
+    "resolution": "TRUE if Counter Terrorism Policing, the Metropolitan Police, or the Crown Prosecution Service publicly announces criminal charges against at least one of the five Fairford arrestees, with the announcement dated between 2026-09-27 and 2026-10-12 inclusive.",
+    "failure_condition": "No criminal charge against any of the five Fairford arrestees is announced by 2026-10-12, including if all five are released, bailed, or released under investigation.",
+    "domain": "crime/security",
+    "deadline": "2026-10-15",
+    "probability": 29,
+    "citations": [
+      33,
+      91,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FBI, the US Department of Justice, or the US Treasury Department publicly attributes the September 2026 theft of roughly 387 million dollars in crypto assets from Bitget to North Korean state actors, in a publication dated between 2026-09-28 and 2026-11-13.",
+    "resolution": "TRUE if a publication on fbi.gov, ic3.gov, justice.gov, or home.treasury.gov dated between 2026-09-28 and 2026-11-13 names Bitget and attributes the theft to North Korean, DPRK, Lazarus, or TraderTraitor actors.",
+    "failure_condition": "No FBI, DOJ, or Treasury publication dated inside the window attributes the Bitget theft to North Korean actors; attributions by Bitget itself or by private analytics firms do not count.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 32,
+    "citations": [
+      17,
+      13
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Citrix NetScaler ADC or NetScaler Gateway CVE other than CVE-2026-88771 and CVE-2026-88772 with a dateAdded value between 2026-09-29 and 2026-12-31.",
+    "resolution": "TRUE if the CISA KEV JSON feed contains an entry with vendorProject Citrix, a product field naming NetScaler, ADC, or Gateway, and dateAdded between 2026-09-29 and 2026-12-31 inclusive, excluding CVE-2026-88771 and CVE-2026-88772.",
+    "failure_condition": "No Citrix NetScaler CVE other than CVE-2026-88771 and CVE-2026-88772 carries a KEV dateAdded value inside the window.",
+    "domain": "cyber",
+    "deadline": "2027-01-05",
+    "probability": 32,
+    "citations": [
+      19,
+      20,
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran publicly announce an agreed bilateral ceasefire, memorandum of understanding, or framework agreement, confirmed by both governments, between 2026-09-29 and 2026-11-13.",
+    "resolution": "TRUE if, between 2026-09-29 and 2026-11-13, the White House or State Department and the Iranian Foreign Ministry each publicly confirm a bilateral ceasefire, MoU, or framework agreement has been agreed, and Reuters and AP report both confirmations.",
+    "failure_condition": "No bilateral US-Iran agreement is confirmed by both governments inside the window, including if only one side announces or claims an agreement.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-17",
+    "probability": 64,
+    "citations": [
+      50,
+      98,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "United States forces strike at least one target located in Tehran province, Iran, between 2026-11-04 and 2026-12-18, with the strike publicly confirmed by the US Department of Defense or CENTCOM.",
+    "resolution": "TRUE if the US Department of Defense or CENTCOM publicly confirms a US strike on a target in Tehran province conducted between 2026-11-04 and 2026-12-18 inclusive, and Reuters and AP both report the strike.",
+    "failure_condition": "No US strike on a target in Tehran province is conducted inside the window; US strikes confined to coastal, island, maritime, or other provinces, and Israeli strikes, do not count.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-22",
+    "probability": 64,
+    "citations": [
+      50,
+      98,
+      44
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A Presidential proclamation, executive order, or federal agency rule imposing a mandatory prohibition, quota, or license requirement on exports of diesel or distillate fuel from the United States is published in the Federal Register between 2026-09-29 and 2026-11-17.",
+    "resolution": "TRUE if federalregister.gov shows a document with publication date between 2026-09-29 and 2026-11-17 that imposes a mandatory ban, quota, or license requirement on US diesel or distillate fuel exports; voluntary refiner commitments do not count.",
+    "failure_condition": "No mandatory federal restriction on diesel or distillate exports is published in the Federal Register inside the window, including if the administration relies only on voluntary export curbs or a fuel-tax measure.",
+    "domain": "political",
+    "deadline": "2026-11-19",
+    "probability": 39,
+    "citations": [
+      64,
+      50
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democrats win a majority of the US House of Representatives in the 2026-11-03 midterm election, with Associated Press race calls assigning Democratic candidates at least 218 seats as of 2026-11-24.",
+    "resolution": "TRUE if, as of 2026-11-24, Associated Press race calls for the 2026-11-03 US House general elections assign at least 218 of 435 seats to Democratic candidates.",
+    "failure_condition": "Democratic candidates hold fewer than 218 AP-called House seats on 2026-11-24, whether because Republicans retain a majority or because enough races remain uncalled.",
+    "domain": "political",
+    "deadline": "2026-11-24",
+    "probability": 39,
+    "citations": [
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC statement released on 2026-10-28 announces an increase in the federal funds target range above the 3.75 to 4.00 percent range held on the packet date. Reference: upper bound 4.00 percent on the packet date.",
+    "resolution": "TRUE if the FOMC statement dated 2026-10-28 on federalreserve.gov announces a federal funds target range whose upper bound exceeds 4.00 percent; a hold or a cut resolves FALSE.",
+    "failure_condition": "The 2026-10-28 FOMC statement leaves the target range at 3.75 to 4.00 percent or lowers it, or no statement is issued on that date.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 48,
+    "citations": [
+      53
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The official NYMEX WTI crude oil front-month futures settlement price on 2026-10-30 is above 100.00 dollars per barrel. Reference: 95.60 dollars per barrel on the packet date.",
+    "resolution": "TRUE if the CME Group official settlement for the front-month NYMEX WTI crude oil futures contract on 2026-10-30, as also recorded in the EIA daily futures price series, is strictly greater than 100.00 dollars per barrel.",
+    "failure_condition": "The front-month WTI settlement on 2026-10-30 is at or below 100.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 48,
+    "citations": [
+      50,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Hurricane Polo makes landfall on the Baja California Peninsula between 2026-09-28 and 2026-10-04 with National Hurricane Center operational products stating maximum sustained winds of at least 111 mph at landfall.",
+    "resolution": "TRUE if an NHC Tropical Cyclone Update or Public Advisory issued between 2026-09-28 and 2026-10-04 reports the center of Polo crossing the Baja California Peninsula coast with maximum sustained winds of 111 mph or greater.",
+    "failure_condition": "NHC reports the Baja California Peninsula landfall of Polo with maximum sustained winds below 111 mph, or no landfall on the peninsula occurs inside the window.",
+    "domain": "disaster",
+    "deadline": "2026-10-06",
+    "probability": 31,
+    "citations": [
+      32,
+      40
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:15Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
