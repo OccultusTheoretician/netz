@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "Between 2026-09-28 and 2026-10-11, at least one of the five men arrested on 2026-09-27 near RAF Fairford on suspicion of Explosives Act offences and preparing a terrorist act is formally charged with a criminal offence arising from those arrests.",
+    "resolution": "Counter Terrorism Policing, the CPS, or a court record confirms a charge against at least one of the five men, dated between 2026-09-28 and 2026-10-11, arising from the 2026-09-27 RAF Fairford arrests.",
+    "failure_condition": "As of 2026-10-14, every one of the five men arrested on 2026-09-27 near RAF Fairford has been released without charge, released under investigation, or held uncharged.",
+    "domain": "crime/security",
+    "deadline": "2026-10-14",
+    "probability": 29,
+    "citations": [
+      33,
+      91,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-29 and 2026-10-20, the CISA Known Exploited Vulnerabilities catalog adds at least one further Citrix NetScaler vulnerability, beyond the two Citrix NetScaler entries added on 2026-09-27.",
+    "resolution": "CISA KEV JSON contains an entry with vendorProject Citrix, product referencing NetScaler, dateAdded between 2026-09-29 and 2026-10-20 inclusive, and a cveID different from the two Citrix entries dated 2026-09-27.",
+    "failure_condition": "On 2026-10-22 the CISA KEV catalog holds no Citrix NetScaler entry, other than the two dated 2026-09-27, with dateAdded between 2026-09-29 and 2026-10-20.",
+    "domain": "cyber",
+    "deadline": "2026-10-22",
+    "probability": 32,
+    "citations": [
+      19,
+      20,
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-29 and 2026-10-20, the FBI publicly attributes the roughly 387.5 million dollar theft from the Bitget exchange on 2026-09-24 to North Korea or a named North Korean hacking group.",
+    "resolution": "An FBI public service announcement or press release on IC3.gov or fbi.gov, dated between 2026-09-29 and 2026-10-20, names North Korea or a North Korean group as responsible for the Bitget theft.",
+    "failure_condition": "No FBI public service announcement or press release dated between 2026-09-29 and 2026-10-20 names North Korea or a North Korean group as responsible for the Bitget theft.",
+    "domain": "cyber",
+    "deadline": "2026-10-22",
+    "probability": 32,
+    "citations": [
+      13,
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-01 and 2026-10-30, the FRED series DGS10 (10-year Treasury constant maturity yield) records a value at or above 5.50 percent on at least one business day. Reference: 5.27 percent per the packet market snapshot; FRED DGS10 was 5.18 percent on 2026-09-24.",
+    "resolution": "At least one FRED DGS10 observation dated between 2026-10-01 and 2026-10-30 is 5.50 or higher. Reference: 5.27 percent per the packet market snapshot on 2026-09-28.",
+    "failure_condition": "Every FRED DGS10 observation dated between 2026-10-01 and 2026-10-30 is below 5.50 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-04",
+    "probability": 48,
+    "citations": [
+      53
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "On 2026-09-29 the Reserve Bank of Australia board announces an increase in the cash rate target. Reference: cash rate target of 4.35 percent before the meeting.",
+    "resolution": "The RBA media release for the 2026-09-29 monetary policy decision states a new cash rate target above the 4.35 percent reference.",
+    "failure_condition": "The RBA media release for 2026-09-29 leaves the cash rate target at 4.35 percent or sets it lower.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-05",
+    "probability": 48,
+    "citations": [
+      45
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-29 and 2026-10-30, the US President or a federal agency signs or issues an order, proclamation, or rule that prohibits, restricts, or caps exports of diesel fuel from the United States. Voluntary industry export restraint does not count.",
+    "resolution": "whitehouse.gov, the Federal Register, or a BIS or Commerce notice shows a mandatory diesel export ban, licensing requirement, or quota signed or issued between 2026-09-29 and 2026-10-30; voluntary export restraint does not count.",
+    "failure_condition": "No mandatory federal restriction on diesel exports is signed or issued between 2026-09-29 and 2026-10-30.",
+    "domain": "political",
+    "deadline": "2026-11-06",
+    "probability": 39,
+    "citations": [
+      64
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-01 and 2026-10-31, OFAC designates at least one entity located outside Iran for supporting Iranian airlines or the Iranian aviation sector.",
+    "resolution": "A US Treasury press release or OFAC Recent Actions SDN list update dated between 2026-10-01 and 2026-10-31 designates an entity located outside Iran and cites support to Iranian airlines or the Iranian aviation sector.",
+    "failure_condition": "No OFAC designation dated between 2026-10-01 and 2026-10-31 of an entity located outside Iran cites support to Iranian airlines or the Iranian aviation sector.",
+    "domain": "political",
+    "deadline": "2026-11-04",
+    "probability": 39,
+    "citations": [
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-28 and 2026-10-05, Hurricane Polo makes landfall on mainland Mexico after crossing the Baja California peninsula, with National Hurricane Center advisories giving maximum sustained winds of at least 74 mph at that landfall.",
+    "resolution": "The first NHC advisory or bulletin reporting that Polo has made landfall on or moved inland over mainland Mexico, dated between 2026-09-28 and 2026-10-05, gives maximum sustained winds of 74 mph or higher.",
+    "failure_condition": "The first NHC advisory reporting Polo onshore over mainland Mexico gives maximum sustained winds below 74 mph, or Polo dissipates before reaching the mainland.",
+    "domain": "disaster",
+    "deadline": "2026-10-07",
+    "probability": 31,
+    "citations": [
+      32,
+      40
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-11-04 and 2026-12-04, US forces conduct at least one acknowledged air or missile strike on a land target or island inside Iran.",
+    "resolution": "A US government statement, or Reuters and AP reporting, confirms a US air or missile strike on a land target or island inside Iranian territory carried out between 2026-11-04 and 2026-12-04.",
+    "failure_condition": "No US air or missile strike on a land target or island inside Iran takes place between 2026-11-04 and 2026-12-04.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-08",
+    "probability": 64,
+    "citations": [
+      50,
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-09-29 and 2026-10-16, the Australian Greens party room elects a new federal parliamentary leader to replace Larissa Waters, who announced on 2026-09-28 that she is stepping down.",
+    "resolution": "The Greens or two of ABC, Guardian Australia, and AAP report a party room vote choosing a new federal leader between 2026-09-29 and 2026-10-16; acting or interim appointments do not count.",
+    "failure_condition": "No new federal leader of the Australian Greens has been chosen by party room vote between 2026-09-29 and 2026-10-16.",
+    "domain": "political",
+    "deadline": "2026-10-20",
+    "probability": 39,
+    "citations": [
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:21Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

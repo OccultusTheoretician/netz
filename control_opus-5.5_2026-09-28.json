@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "CISA adds at least one Citrix vulnerability other than CVE-2026-88771 and CVE-2026-88772 to the KEV catalog between 2026-09-29 and 2026-12-31.",
+    "resolution": "The CISA KEV catalog carries an entry with vendorProject Citrix, a CVE ID other than CVE-2026-88771 or CVE-2026-88772, and a dateAdded value between 2026-09-29 and 2026-12-31 inclusive.",
+    "failure_condition": "No Citrix entry other than the two named CVEs has a KEV dateAdded value within 2026-09-29 to 2026-12-31.",
+    "domain": "cyber",
+    "deadline": "2027-01-05",
+    "probability": 32,
+    "citations": [
+      19,
+      20,
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FBI publicly attributes the 387.5 million dollar Bitget theft to North Korean actors between 2026-09-29 and 2026-11-30.",
+    "resolution": "An FBI press release or IC3 public service announcement dated between 2026-09-29 and 2026-11-30 attributes the Bitget theft to the DPRK or a named DPRK cluster such as TraderTraitor or Lazarus.",
+    "failure_condition": "No FBI or IC3 publication dated within the window attributes the Bitget theft to North Korea or a DPRK-linked cluster.",
+    "domain": "cyber",
+    "deadline": "2026-12-03",
+    "probability": 32,
+    "citations": [
+      13,
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield for 2026-12-31 is above the packet-date level. Reference: 5.27 percent on the packet date.",
+    "resolution": "FRED series DGS10 value for 2026-12-31 is strictly greater than 5.27. Reference: 5.27 percent on the packet date.",
+    "failure_condition": "The DGS10 value for 2026-12-31 is 5.27 or lower.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 48,
+    "citations": [
+      53
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WTI crude spot prints at or above 110.00 dollars on at least one day between 2026-09-29 and 2026-11-30. Reference: 95.60 on the packet date.",
+    "resolution": "FRED series DCOILWTICO shows at least one daily value of 110.00 or higher dated 2026-09-29 through 2026-11-30. Reference: 95.60 on the packet date.",
+    "failure_condition": "Every DCOILWTICO daily value dated 2026-09-29 through 2026-11-30 is below 110.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-03",
+    "probability": 48,
+    "citations": [
+      50,
+      64,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US government formally restricts diesel or distillate fuel exports via a Federal Register document published between 2026-09-29 and 2026-12-31.",
+    "resolution": "The Federal Register publishes a presidential document or agency rule, dated 2026-09-29 through 2026-12-31, that prohibits, licenses, or caps exports of diesel or distillate fuel from the United States.",
+    "failure_condition": "No Federal Register document published in the window imposes a prohibition, licensing requirement, or cap on US diesel or distillate exports.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 39,
+    "citations": [
+      64
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A Federal Register document modifying US tariffs on products of China is published between 2026-09-29 and 2026-11-30.",
+    "resolution": "The Federal Register publishes an executive order, proclamation, or USTR notice dated 2026-09-29 through 2026-11-30 that changes duty rates on goods of Chinese origin.",
+    "failure_condition": "No Federal Register document published in the window changes US duty rates applicable to goods of Chinese origin.",
+    "domain": "political",
+    "deadline": "2026-12-03",
+    "probability": 39,
+    "citations": [
+      100,
+      117
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "US and Iranian officials hold direct talks, confirmed by both governments, between 2026-09-29 and 2026-11-15.",
+    "resolution": "Reuters or AP reports that a direct US-Iran meeting occurred between 2026-09-29 and 2026-11-15, and both the US government and the Iranian government publicly acknowledge that meeting.",
+    "failure_condition": "No direct US-Iran meeting within the window is acknowledged by both governments.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-18",
+    "probability": 64,
+    "citations": [
+      50,
+      98
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Ethiopian federal government and Tigrayan forces announce a ceasefire or cessation of hostilities between 2026-09-29 and 2026-11-30.",
+    "resolution": "Reuters and AP each report that the Ethiopian government and Tigrayan armed forces agreed or declared a ceasefire or cessation of hostilities dated within 2026-09-29 to 2026-11-30.",
+    "failure_condition": "No ceasefire or cessation of hostilities between the Ethiopian government and Tigrayan forces is agreed or declared within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-03",
+    "probability": 64,
+    "citations": [
+      87,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one of the five men arrested near RAF Fairford is charged with a terrorism or explosives offence between 2026-09-28 and 2026-10-12.",
+    "resolution": "The CPS or Counter Terrorism Policing announces, dated 2026-09-28 through 2026-10-12, a terrorism or explosives charge against at least one person arrested in the RAF Fairford investigation.",
+    "failure_condition": "No person arrested in the RAF Fairford investigation is charged with a terrorism or explosives offence within the window.",
+    "domain": "crime/security",
+    "deadline": "2026-10-14",
+    "probability": 29,
+    "citations": [
+      33,
+      91,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Hurricane Polo makes landfall on the Baja California peninsula at hurricane intensity between 2026-09-28 and 2026-10-06.",
+    "resolution": "NHC public advisories or tropical cyclone updates for Polo state a landfall on the Baja California peninsula with maximum sustained winds of 64 knots or higher, dated within the window.",
+    "failure_condition": "Polo does not make landfall on the Baja California peninsula at hurricane intensity within the window per NHC products.",
+    "domain": "disaster",
+    "deadline": "2026-10-08",
+    "probability": 31,
+    "citations": [
+      32,
+      40
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-28T16:01:18Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
