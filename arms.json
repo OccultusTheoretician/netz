@@ -172,8 +172,8 @@
       "lane": "manual",
       "model": "claude-sonnet-5",
       "access": "unattested",
-      "status": "active",
-      "note": "KK18 standing rule: see manual/fable-5/unattested.",
+      "status": "retired",
+      "note": "KK18 standing rule: see manual/fable-5/unattested. | RETIRED 2026-09-29 on the operator's ruling: claude-sonnet-5 succeeded by claude-sonnet-5-5 (manual/sonnet-5.5/unattested). Book closes at 342 issued / 278 open / 31 hit / 28 miss / 5 void -- 59 resolved, ABOVE the thirty-resolved floor, Brier 0.2377 at retirement against control/baserate 0.3275: the desk's first arm-versus-control comparison and the reason this retirement is recorded carefully. Retirement closes the book to NEW rows only; the 278 open rows keep resolving to this tag and the floor-clearing record continues to grow. Cohorts bbdc7791 205, 4ea5ab8f 113, uncohorted 24. The H4 drift read against manual/sonnet-5.5/unattested is sequential (no same-packet overlap), not paired; same pattern as opus-5 -> opus-5.5 (OPUS55, 2026-09-24).",
       "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
     },
     {
@@ -232,6 +232,15 @@
       "access": "unattested",
       "status": "active",
       "note": "Registered 2026-09-24 on the operator's ruling as successor to manual/opus-5/unattested for the version-drift pair. KK18 standing rule: see manual/fable-5/unattested.",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "manual/sonnet-5.5/unattested",
+      "lane": "manual",
+      "model": "claude-sonnet-5-5",
+      "access": "unattested",
+      "status": "active",
+      "note": "Registered 2026-09-29 on the operator's ruling as successor to manual/sonnet-5/unattested for the version-drift pair. KK18 standing rule: see manual/fable-5/unattested.",
       "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
     }
   ],

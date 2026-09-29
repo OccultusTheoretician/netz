@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one further CVE with vendorProject Apple (any CVE other than CVE-2026-86950) carrying a dateAdded value between 2026-10-01 and 2026-10-31 inclusive.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "TRUE if the CISA KEV JSON feed lists any Apple vendorProject entry other than CVE-2026-86950 with dateAdded from 2026-10-01 through 2026-10-31; FALSE otherwise.",
+    "deadline": "2026-11-04",
+    "citations": [12],
+    "failure_condition": "No Apple-vendor KEV entry other than CVE-2026-86950 carries a dateAdded within 2026-10-01 to 2026-10-31."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries at least one entry whose vendorProject or product field names Kiteworks, with a dateAdded value between 2026-09-29 and 2026-11-13 inclusive.",
+    "domain": "cyber",
+    "probability": 35,
+    "resolution": "TRUE if the CISA KEV JSON feed contains an entry naming Kiteworks in vendorProject or product with dateAdded from 2026-09-29 through 2026-11-13; FALSE otherwise.",
+    "deadline": "2026-11-17",
+    "citations": [15],
+    "failure_condition": "No KEV entry naming Kiteworks has a dateAdded within 2026-09-29 to 2026-11-13."
+  },
+  {
+    "statement": "The State of Tennessee carries out the scheduled execution of Christa Gail Pike on 2026-09-30, the date set by the Tennessee Supreme Court.",
+    "domain": "crime/security",
+    "probability": 82,
+    "resolution": "TRUE if the Tennessee Department of Correction confirms Pike was executed on 2026-09-30 and the Death Penalty Information Center execution database records it; FALSE if stayed, delayed past that date, or commuted.",
+    "deadline": "2026-10-06",
+    "citations": [42],
+    "failure_condition": "The execution does not take place on 2026-09-30 for any reason, including a stay, reprieve, commutation, or rescheduling."
+  },
+  {
+    "statement": "Between 2026-09-30 and 2026-12-31, the UK Crown Prosecution Service or Counter Terrorism Policing publicly announces that at least one person arrested in the RAF Fairford suspected-plot investigation has been charged under the Terrorism Act 2000, the Terrorism Act 2006, or the National Security Act 2023.",
+    "domain": "crime/security",
+    "probability": 25,
+    "resolution": "TRUE if a CPS or Counter Terrorism Policing statement, or a court listing, confirms a Terrorism Act or National Security Act 2023 charge against an RAF Fairford suspect dated within the window; FALSE otherwise.",
+    "deadline": "2027-01-05",
+    "citations": [30, 78],
+    "failure_condition": "No RAF Fairford suspect is charged under the Terrorism Acts or the National Security Act 2023 within the window."
+  },
+  {
+    "statement": "Between 2026-10-01 and 2026-11-30, the United States government and the Iranian government each publicly confirm a signed or jointly announced agreement (memorandum, ceasefire, or framework) that provides for reopening the Strait of Hormuz to commercial shipping.",
+    "domain": "military/conflict",
+    "probability": 35,
+    "resolution": "TRUE if within the window the White House or State Department and the Iranian Foreign Ministry or state media (IRNA) each confirm the same agreement providing for Hormuz reopening; a unilateral proposal or talks alone do not count.",
+    "deadline": "2026-12-02",
+    "citations": [94, 89],
+    "failure_condition": "No agreement providing for Hormuz reopening is confirmed by both Washington and Tehran within the window."
+  },
+  {
+    "statement": "Between 2026-10-01 and 2026-10-31, the UK Maritime Trade Operations (UKMTO) centre publishes at least one incident or warning advisory reporting a merchant vessel attacked or struck by a projectile in the Red Sea, Bab el-Mandeb, or Gulf of Aden.",
+    "domain": "military/conflict",
+    "probability": 85,
+    "resolution": "TRUE if the UKMTO public advisories list at least one incident dated within the window describing an attack on or projectile strike against a merchant vessel in the Red Sea, Bab el-Mandeb, or Gulf of Aden; FALSE otherwise.",
+    "deadline": "2026-11-06",
+    "citations": [87, 89],
+    "failure_condition": "No UKMTO advisory records an attack on or strike against a merchant vessel in those waters dated within October 2026."
+  },
+  {
+    "statement": "The ICE Brent crude front-month futures contract settles at or below 85.00 US dollars per barrel on at least one trading day between 2026-10-01 and 2026-10-30. Reference: 97.04 on the packet date, after an 8.97 percent one-day fall (section V).",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "TRUE if any official ICE Brent front-month settlement price dated 2026-10-01 through 2026-10-30 is at or below 85.00; FALSE if every settlement in the window is above 85.00.",
+    "deadline": "2026-11-04",
+    "citations": [94, 49],
+    "failure_condition": "Every ICE Brent front-month settlement from 2026-10-01 to 2026-10-30 is above 85.00 dollars per barrel."
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield (FRED series DGS10) prints at or above 5.50 percent on at least one business day between 2026-10-01 and 2026-10-30. Reference: 5.26 percent on the packet date (section V).",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "TRUE if any DGS10 observation dated 2026-10-01 through 2026-10-30 is greater than or equal to 5.50; FALSE if all observations in the window are below 5.50.",
+    "deadline": "2026-11-04",
+    "citations": [55, 60, 49],
+    "failure_condition": "Every DGS10 observation in the window is below 5.50 percent."
+  },
+  {
+    "statement": "Oura files a final IPO prospectus (SEC form type 424B4 or 424B1) on EDGAR between 2026-09-30 and 2026-12-31, or its shares begin regular-way trading on Nasdaq under the ticker OURA within that window.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "TRUE if EDGAR shows a 424B4 or 424B1 filing by the Oura issuer dated within the window, or Nasdaq records a first trading day for OURA within the window; FALSE otherwise.",
+    "deadline": "2027-01-05",
+    "citations": [57, 58],
+    "failure_condition": "No Oura final prospectus is filed and OURA has not begun trading on Nasdaq by 2026-12-31."
+  },
+  {
+    "statement": "The French National Assembly adopts a motion de censure against the government in a vote held between 2026-10-01 and 2026-12-31, reaching the 289-vote absolute majority required under Article 49 of the Constitution.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "TRUE if the Assemblee nationale official vote record (scrutin) shows a motion de censure adopted with at least 289 votes on a date within the window; FALSE otherwise.",
+    "deadline": "2027-01-05",
+    "citations": [72, 113],
+    "failure_condition": "No motion de censure reaches 289 votes in the National Assembly within the window."
+  }
+]

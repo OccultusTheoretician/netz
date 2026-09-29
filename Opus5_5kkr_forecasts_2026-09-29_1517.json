@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "Tennessee carries out the execution of Christa Gail Pike on her scheduled execution date, 2026-09-30.",
+    "domain": "crime/security",
+    "probability": 87,
+    "resolution": "True if the Tennessee Department of Correction or AP reports Christa Gail Pike was executed on 2026-09-30, Central Time. False if a stay, reprieve, commutation or halted procedure prevents execution that day.",
+    "deadline": "2026-10-06",
+    "citations": [
+      42
+    ],
+    "failure_condition": "Christa Gail Pike is not executed on 2026-09-30."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range by at least 25 basis points at its scheduled meeting concluding 2026-10-28, lifting the upper bound to 4.25 percent or higher. Reference: upper bound 4.00 percent on 2026-09-29.",
+    "domain": "economics/markets",
+    "probability": 58,
+    "resolution": "True if the FOMC statement released 2026-10-28 sets the target range upper bound at 4.25 percent or higher, as shown by FRED series DFEDTARU for 2026-10-29. Reference: DFEDTARU 4.00 on 2026-09-29.",
+    "deadline": "2026-10-30",
+    "citations": [
+      49,
+      55
+    ],
+    "failure_condition": "The federal funds target range upper bound in effect on 2026-10-29 is 4.00 percent or lower."
+  },
+  {
+    "statement": "The US 10-year Treasury constant-maturity yield is at or above 5.50 percent on at least one daily reading between 2026-10-01 and 2026-11-30. Reference: 5.26 percent at seal on the packet date, 2026-09-29.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "True if FRED series DGS10 shows a daily value of 5.50 or higher for any date from 2026-10-01 through 2026-11-30. Reference: 5.26 percent on 2026-09-29 per the packet market snapshot.",
+    "deadline": "2026-12-02",
+    "citations": [
+      55,
+      60
+    ],
+    "failure_condition": "Every DGS10 daily value from 2026-10-01 through 2026-11-30 is below 5.50 percent."
+  },
+  {
+    "statement": "Oura Inc., which postponed its IPO on 2026-09-29, prices the offering and its common stock begins trading on a US exchange (planned Nasdaq ticker OURA) between 2026-09-30 and 2026-12-31.",
+    "domain": "economics/markets",
+    "probability": 18,
+    "resolution": "True if Oura common stock begins regular trading on a US national exchange between 2026-09-30 and 2026-12-31, evidenced by a final 424B4 prospectus on SEC EDGAR and exchange listing records.",
+    "deadline": "2027-01-05",
+    "citations": [
+      57,
+      58
+    ],
+    "failure_condition": "Oura common stock has not begun trading on any US exchange by the close of 2026-12-31."
+  },
+  {
+    "statement": "CISA adds at least one Apple vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-09-30 and 2026-12-31.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "True if the CISA KEV JSON feed contains at least one entry with vendorProject Apple and a dateAdded from 2026-09-30 through 2026-12-31 inclusive.",
+    "deadline": "2027-01-05",
+    "citations": [
+      12
+    ],
+    "failure_condition": "No KEV entry with vendorProject Apple carries a dateAdded between 2026-09-30 and 2026-12-31."
+  },
+  {
+    "statement": "Democrat James Talarico defeats Republican Ken Paxton in the scheduled 2026-11-03 US Senate general election in Texas.",
+    "domain": "political",
+    "probability": 42,
+    "resolution": "True if the AP calls the 2026-11-03 Texas US Senate race for James Talarico, or the certified Texas state canvass shows him with the most votes. False if Ken Paxton or another candidate prevails.",
+    "deadline": "2026-12-15",
+    "citations": [
+      106,
+      49
+    ],
+    "failure_condition": "A candidate other than James Talarico wins the 2026-11-03 Texas US Senate election."
+  },
+  {
+    "statement": "Between 2026-09-30 and 2026-12-31, the US terminates or fully suspends the Section 338 import ban on Canadian alcoholic beverages that took effect on 2026-09-29.",
+    "domain": "political",
+    "probability": 10,
+    "resolution": "True if the Federal Register publishes a presidential proclamation or executive order, dated between 2026-09-30 and 2026-12-31, that terminates or fully suspends the Section 338 exclusion of Canadian alcoholic beverages.",
+    "deadline": "2027-01-05",
+    "citations": [
+      52,
+      81,
+      116
+    ],
+    "failure_condition": "The import ban on covered Canadian alcoholic beverages has not been terminated or fully suspended by 2026-12-31."
+  },
+  {
+    "statement": "US forces strike at least one target located on Iranian land territory, including ports and Iranian-held islands, between 2026-09-30 and 2026-11-03, before the US midterm elections.",
+    "domain": "military/conflict",
+    "probability": 35,
+    "resolution": "True if CENTCOM or the Pentagon confirms, or AP and Reuters both report, a US strike on a target on Iranian land territory, ports or Iranian-held islands occurring between 2026-09-30 and 2026-11-03.",
+    "deadline": "2026-11-06",
+    "citations": [
+      94,
+      30
+    ],
+    "failure_condition": "No US strike hits a target on Iranian land territory, ports or Iranian-held islands between 2026-09-30 and 2026-11-03."
+  },
+  {
+    "statement": "An eastern North Pacific tropical cyclone other than Polo makes landfall in Mexico, mainland or Baja California, at hurricane strength between 2026-09-30 and 2026-11-15.",
+    "domain": "disaster",
+    "probability": 55,
+    "resolution": "True if an NHC public advisory or Tropical Cyclone Report states that an eastern Pacific system other than Polo made landfall in Mexico as a hurricane between 2026-09-30 and 2026-11-15.",
+    "deadline": "2026-11-20",
+    "citations": [
+      37
+    ],
+    "failure_condition": "No eastern Pacific system other than Polo crosses the Mexican coastline at hurricane intensity between 2026-09-30 and 2026-11-15."
+  },
+  {
+    "statement": "At least one of the five men arrested near RAF Fairford on 2026-09-27 is charged with a criminal offence arising from that investigation between 2026-09-30 and 2026-12-31.",
+    "domain": "crime/security",
+    "probability": 22,
+    "resolution": "True if Counter Terrorism Policing, the CPS or a UK court listing states that any of the five men arrested near RAF Fairford on 2026-09-27 was charged between 2026-09-30 and 2026-12-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      30,
+      78
+    ],
+    "failure_condition": "None of the five men arrested near RAF Fairford on 2026-09-27 is charged with any offence between 2026-09-30 and 2026-12-31."
+  }
+]
