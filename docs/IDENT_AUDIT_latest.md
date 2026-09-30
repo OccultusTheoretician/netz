@@ -1,22 +1,22 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-09-29T11:33:37Z · 101 report(s)
+Generated 2026-09-30T11:21:00Z · 102 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **101**
-- findings: **184**
+- reports audited: **102**
+- findings: **185**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 4
-  - UNSOURCED: 180
-- distinct tokens: **109**
+  - UNSOURCED: 181
+- distinct tokens: **110**
 
 ## Reached a sealed row
 
-**109** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
+**111** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
 
 | row | token | finding | arm | status | k/kl |
 |---|---|---|---|---|---|
@@ -129,6 +129,8 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20260923-22` | `CVE-2026-35273` | UNSOURCED | control/baserate | open | — |
 | `KKR-20260928-08` | `CVE-2026-88772` | UNSOURCED | lmstudio/realist | open | — |
 | `KKR-20260928-08` | `CVE-2026-88771` | UNSOURCED | lmstudio/realist | open | — |
+| `KKR-20260929-01` | `CVE-2026-86950` | UNSOURCED | lmstudio/auto | open | — |
+| `KKR-20260929-08` | `CVE-2026-86950` | UNSOURCED | lmstudio/realist | open | — |
 
 ## Every finding
 
@@ -318,4 +320,5 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-09-27_1517.md | `CVE-2026-35273` | UNSOURCED |
 | battle_report_2026-09-28_1516.md | `CVE-2026-88772` | UNSOURCED |
 | battle_report_2026-09-28_1516.md | `CVE-2026-88771` | UNSOURCED |
+| battle_report_2026-09-29_1517.md | `CVE-2026-86950` | UNSOURCED |
 
