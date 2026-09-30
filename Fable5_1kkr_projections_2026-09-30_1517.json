@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "United States forces carry out at least one kinetic strike on a target on Iranian land territory between 2026-10-01 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 22,
+    "resolution": "True if the Pentagon, CENTCOM or the White House confirms, or both Reuters and AP report citing US officials, a US strike on Iranian land territory occurring between 2026-10-01 and 2026-12-31; otherwise false.",
+    "deadline": "2027-01-05",
+    "citations": [
+      86,
+      99,
+      127
+    ],
+    "failure_condition": "No United States strike hits a target on Iranian land territory between 2026-10-01 and 2026-12-31."
+  },
+  {
+    "statement": "Ukrenergo imposes scheduled or emergency power outages on Kyiv city on at least one day between 2026-10-08 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 85,
+    "resolution": "True if Ukrenergo announces scheduled or emergency outages applying to Kyiv city on any day between 2026-10-08 and 2026-10-31, as carried by at least two of Reuters, Kyiv Independent and Ukrinform; otherwise false.",
+    "deadline": "2026-11-03",
+    "citations": [
+      81,
+      102
+    ],
+    "failure_condition": "Kyiv city goes every day between 2026-10-08 and 2026-10-31 with neither scheduled nor emergency outages imposed by Ukrenergo."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled meeting concluding 2026-10-28. Reference: target range 3.75 to 4.00 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 33,
+    "resolution": "True if FRED series DFEDTARU reads 4.25 or higher for 2026-10-29; false if it reads 4.00 or lower. Reference: upper limit 4.00 percent on the packet date.",
+    "deadline": "2026-10-30",
+    "citations": [
+      55,
+      59,
+      64
+    ],
+    "failure_condition": "The target range upper limit is still 4.00 percent or lower on 2026-10-29."
+  },
+  {
+    "statement": "The 10-year Treasury constant maturity yield closes at or above 5.50 percent on at least one business day between 2026-10-01 and 2026-10-30. Reference: 5.27 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "True if FRED series DGS10 prints 5.50 or higher for any date between 2026-10-01 and 2026-10-30 inclusive; otherwise false. Reference: 5.27 percent on the packet date.",
+    "deadline": "2026-11-03",
+    "citations": [
+      55,
+      64
+    ],
+    "failure_condition": "DGS10 stays below 5.50 percent on every business day between 2026-10-01 and 2026-10-30."
+  },
+  {
+    "statement": "The ICE Brent December 2026 futures contract settles below 90.00 dollars a barrel on at least one trading day between 2026-10-01 and 2026-10-30. Reference: 99.12 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "True if the ICE Brent December 2026 contract daily settlement is below 90.00 on any trading day between 2026-10-01 and 2026-10-30 inclusive; otherwise false. Reference: 99.12 on the packet date.",
+    "deadline": "2026-11-03",
+    "citations": [
+      99
+    ],
+    "failure_condition": "The December 2026 Brent contract settles at or above 90.00 on every trading day between 2026-10-01 and 2026-10-30."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Cisco vulnerability whose product field contains SD-WAN with a date-added value between 2026-10-01 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "True if the CISA KEV catalog lists any Cisco entry with SD-WAN in the product field and a dateAdded value between 2026-10-01 and 2026-11-30 inclusive; otherwise false.",
+    "deadline": "2026-12-02",
+    "citations": [
+      12
+    ],
+    "failure_condition": "No Cisco vulnerability with SD-WAN in the product field receives a KEV date-added value between 2026-10-01 and 2026-11-30."
+  },
+  {
+    "statement": "Between 2026-10-01 and 2026-12-11 CISA changes the known ransomware campaign use field to Known on the KEV catalog entry for Citrix NetScaler CVE-2026-88771 or CVE-2026-88772.",
+    "domain": "cyber",
+    "probability": 15,
+    "resolution": "True if on 2026-12-15 the CISA KEV catalog entry for CVE-2026-88771 or CVE-2026-88772 shows knownRansomwareCampaignUse equal to Known, reflecting a change made between 2026-10-01 and 2026-12-11; false if both read Unknown.",
+    "deadline": "2026-12-15",
+    "citations": [
+      21,
+      23,
+      28
+    ],
+    "failure_condition": "Both CVE-2026-88771 and CVE-2026-88772 still carry an Unknown ransomware campaign use value in the KEV catalog on 2026-12-15."
+  },
+  {
+    "statement": "Branko Blanusa of the SDS finishes first in the election for President of Republika Srpska held on 2026-10-04, ahead of SNSD candidate Savo Minic.",
+    "domain": "political",
+    "probability": 37,
+    "resolution": "True if Central Election Commission of Bosnia and Herzegovina results for the 2026-10-04 election, confirmed or else the latest preliminary count at the deadline, show Blanusa with the most votes for President of Republika Srpska; otherwise false.",
+    "deadline": "2026-11-10",
+    "citations": [
+      123
+    ],
+    "failure_condition": "A candidate other than Blanusa holds the most votes for President of Republika Srpska in the Central Election Commission count."
+  },
+  {
+    "statement": "The Crown Prosecution Service authorises criminal charges against at least one individual or organisation over the Grenfell Tower fire between 2026-10-01 and 2027-03-15.",
+    "domain": "crime/security",
+    "probability": 15,
+    "resolution": "True if a CPS or Metropolitan Police statement dated between 2026-10-01 and 2027-03-15 announces authorised charges against any Grenfell suspect, as published on cps.gov.uk or carried by both BBC and Guardian; otherwise false.",
+    "deadline": "2027-03-18",
+    "citations": [
+      11
+    ],
+    "failure_condition": "No Grenfell suspect has been charged with CPS authorisation between 2026-10-01 and 2027-03-15."
+  },
+  {
+    "statement": "Tropical cyclone 26W (Choi-wan), GDACS event 1001332, reaches typhoon strength of 65 knots or more between 2026-10-01 and 2026-10-10.",
+    "domain": "disaster",
+    "probability": 70,
+    "resolution": "True if any Joint Typhoon Warning Center advisory or best-track entry dated between 2026-10-01 and 2026-10-10 lists 26W at 65 knots or higher one-minute sustained wind; otherwise false.",
+    "deadline": "2026-10-13",
+    "citations": [
+      54
+    ],
+    "failure_condition": "Tropical cyclone 26W peaks below 65 knots in every Joint Typhoon Warning Center fix between 2026-10-01 and 2026-10-10."
+  }
+]
