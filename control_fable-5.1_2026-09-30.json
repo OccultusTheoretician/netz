@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "United States forces carry out at least one kinetic strike on a target on Iranian land territory between 2026-10-01 and 2026-12-31.",
+    "resolution": "True if the Pentagon, CENTCOM or the White House confirms, or both Reuters and AP report citing US officials, a US strike on Iranian land territory occurring between 2026-10-01 and 2026-12-31; otherwise false.",
+    "failure_condition": "No United States strike hits a target on Iranian land territory between 2026-10-01 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 64,
+    "citations": [
+      86,
+      99,
+      127
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Ukrenergo imposes scheduled or emergency power outages on Kyiv city on at least one day between 2026-10-08 and 2026-10-31.",
+    "resolution": "True if Ukrenergo announces scheduled or emergency outages applying to Kyiv city on any day between 2026-10-08 and 2026-10-31, as carried by at least two of Reuters, Kyiv Independent and Ukrinform; otherwise false.",
+    "failure_condition": "Kyiv city goes every day between 2026-10-08 and 2026-10-31 with neither scheduled nor emergency outages imposed by Ukrenergo.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-03",
+    "probability": 64,
+    "citations": [
+      81,
+      102
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled meeting concluding 2026-10-28. Reference: target range 3.75 to 4.00 percent on the packet date.",
+    "resolution": "True if FRED series DFEDTARU reads 4.25 or higher for 2026-10-29; false if it reads 4.00 or lower. Reference: upper limit 4.00 percent on the packet date.",
+    "failure_condition": "The target range upper limit is still 4.00 percent or lower on 2026-10-29.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 48,
+    "citations": [
+      55,
+      59,
+      64
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year Treasury constant maturity yield closes at or above 5.50 percent on at least one business day between 2026-10-01 and 2026-10-30. Reference: 5.27 percent on the packet date.",
+    "resolution": "True if FRED series DGS10 prints 5.50 or higher for any date between 2026-10-01 and 2026-10-30 inclusive; otherwise false. Reference: 5.27 percent on the packet date.",
+    "failure_condition": "DGS10 stays below 5.50 percent on every business day between 2026-10-01 and 2026-10-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 48,
+    "citations": [
+      55,
+      64
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The ICE Brent December 2026 futures contract settles below 90.00 dollars a barrel on at least one trading day between 2026-10-01 and 2026-10-30. Reference: 99.12 on the packet date.",
+    "resolution": "True if the ICE Brent December 2026 contract daily settlement is below 90.00 on any trading day between 2026-10-01 and 2026-10-30 inclusive; otherwise false. Reference: 99.12 on the packet date.",
+    "failure_condition": "The December 2026 Brent contract settles at or above 90.00 on every trading day between 2026-10-01 and 2026-10-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 48,
+    "citations": [
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Cisco vulnerability whose product field contains SD-WAN with a date-added value between 2026-10-01 and 2026-11-30.",
+    "resolution": "True if the CISA KEV catalog lists any Cisco entry with SD-WAN in the product field and a dateAdded value between 2026-10-01 and 2026-11-30 inclusive; otherwise false.",
+    "failure_condition": "No Cisco vulnerability with SD-WAN in the product field receives a KEV date-added value between 2026-10-01 and 2026-11-30.",
+    "domain": "cyber",
+    "deadline": "2026-12-02",
+    "probability": 32,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-01 and 2026-12-11 CISA changes the known ransomware campaign use field to Known on the KEV catalog entry for Citrix NetScaler CVE-2026-88771 or CVE-2026-88772.",
+    "resolution": "True if on 2026-12-15 the CISA KEV catalog entry for CVE-2026-88771 or CVE-2026-88772 shows knownRansomwareCampaignUse equal to Known, reflecting a change made between 2026-10-01 and 2026-12-11; false if both read Unknown.",
+    "failure_condition": "Both CVE-2026-88771 and CVE-2026-88772 still carry an Unknown ransomware campaign use value in the KEV catalog on 2026-12-15.",
+    "domain": "cyber",
+    "deadline": "2026-12-15",
+    "probability": 32,
+    "citations": [
+      21,
+      23,
+      28
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Branko Blanusa of the SDS finishes first in the election for President of Republika Srpska held on 2026-10-04, ahead of SNSD candidate Savo Minic.",
+    "resolution": "True if Central Election Commission of Bosnia and Herzegovina results for the 2026-10-04 election, confirmed or else the latest preliminary count at the deadline, show Blanusa with the most votes for President of Republika Srpska; otherwise false.",
+    "failure_condition": "A candidate other than Blanusa holds the most votes for President of Republika Srpska in the Central Election Commission count.",
+    "domain": "political",
+    "deadline": "2026-11-10",
+    "probability": 39,
+    "citations": [
+      123
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Crown Prosecution Service authorises criminal charges against at least one individual or organisation over the Grenfell Tower fire between 2026-10-01 and 2027-03-15.",
+    "resolution": "True if a CPS or Metropolitan Police statement dated between 2026-10-01 and 2027-03-15 announces authorised charges against any Grenfell suspect, as published on cps.gov.uk or carried by both BBC and Guardian; otherwise false.",
+    "failure_condition": "No Grenfell suspect has been charged with CPS authorisation between 2026-10-01 and 2027-03-15.",
+    "domain": "crime/security",
+    "deadline": "2027-03-18",
+    "probability": 29,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Tropical cyclone 26W (Choi-wan), GDACS event 1001332, reaches typhoon strength of 65 knots or more between 2026-10-01 and 2026-10-10.",
+    "resolution": "True if any Joint Typhoon Warning Center advisory or best-track entry dated between 2026-10-01 and 2026-10-10 lists 26W at 65 knots or higher one-minute sustained wind; otherwise false.",
+    "failure_condition": "Tropical cyclone 26W peaks below 65 knots in every Joint Typhoon Warning Center fix between 2026-10-01 and 2026-10-10.",
+    "domain": "disaster",
+    "deadline": "2026-10-13",
+    "probability": 31,
+    "citations": [
+      54
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-09-30T23:47:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

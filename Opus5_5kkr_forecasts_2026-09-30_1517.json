@@ -1,0 +1,118 @@
+[
+  {
+    "statement": "Russia launches at least 500 drones and missiles combined against Ukraine in a single overnight attack at least once between 2026-10-01 and 2026-10-31.",
+    "domain": "military/conflict",
+    "probability": 42,
+    "resolution": "True if a Ukrainian Air Force daily report, as carried by Reuters or AP, records 500 or more drones and missiles combined launched in one overnight attack between 2026-10-01 and 2026-10-31; otherwise false.",
+    "deadline": "2026-11-03",
+    "citations": [
+      81,
+      102
+    ],
+    "failure_condition": "Russia launches fewer than 500 drones and missiles combined in every overnight attack on Ukraine between 2026-10-01 and 2026-10-31."
+  },
+  {
+    "statement": "US forces strike at least one land target inside Iran, including Iranian islands, between 2026-10-01 and 2026-11-30.",
+    "domain": "military/conflict",
+    "probability": 44,
+    "resolution": "True if CENTCOM or the Pentagon confirms, or Reuters and AP both report citing US officials, a US strike on a land target in Iran between 2026-10-01 and 2026-11-30. Strikes on vessels at sea do not count.",
+    "deadline": "2026-12-03",
+    "citations": [
+      99,
+      127
+    ],
+    "failure_condition": "No US strike hits a land target inside Iran, including its islands, between 2026-10-01 and 2026-11-30."
+  },
+  {
+    "statement": "North Korea launches at least one ballistic missile between 2026-10-01 and 2026-11-30.",
+    "domain": "military/conflict",
+    "probability": 82,
+    "resolution": "True if the South Korean Joint Chiefs of Staff or the Japanese Ministry of Defense reports a North Korean ballistic missile launch, suspected ballistic included, occurring between 2026-10-01 and 2026-11-30; otherwise false.",
+    "deadline": "2026-12-03",
+    "citations": [
+      104
+    ],
+    "failure_condition": "North Korea conducts no ballistic missile launch between 2026-10-01 and 2026-11-30."
+  },
+  {
+    "statement": "The FOMC holds the federal funds target range at 3.75 to 4.00 percent at its meeting concluding 2026-10-28.",
+    "domain": "economics/markets",
+    "probability": 63,
+    "resolution": "True if FRED series DFEDTARU reads 4.00 for 2026-10-29, reflecting the 2026-10-28 decision; any other value is false. Reference: 4.00 percent upper bound held at seal on 2026-09-30.",
+    "deadline": "2026-10-30",
+    "citations": [
+      55
+    ],
+    "failure_condition": "The FOMC raises or lowers the federal funds target range at its meeting concluding 2026-10-28."
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield closes at or above 5.50 percent on at least one business day between 2026-10-01 and 2026-10-30. Reference: 5.27 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "True if FRED series DGS10 shows 5.50 or higher for any date between 2026-10-01 and 2026-10-30; otherwise false. Reference: 5.27 percent on 2026-09-30 per the packet market snapshot.",
+    "deadline": "2026-11-03",
+    "citations": [
+      64,
+      67
+    ],
+    "failure_condition": "The 10-year Treasury constant-maturity yield closes below 5.50 percent on every business day from 2026-10-01 through 2026-10-30."
+  },
+  {
+    "statement": "CISA adds at least one more Citrix NetScaler vulnerability to its Known Exploited Vulnerabilities catalog between 2026-10-01 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "True if the CISA KEV catalog carries an entry with vendorProject Citrix and a NetScaler product whose dateAdded falls between 2026-10-01 and 2026-11-30; otherwise false.",
+    "deadline": "2026-12-02",
+    "citations": [
+      21,
+      23,
+      28
+    ],
+    "failure_condition": "CISA adds no Citrix NetScaler vulnerability to the KEV catalog between 2026-10-01 and 2026-11-30."
+  },
+  {
+    "statement": "Law enforcement arrests or charges at least one person identified as a ShinyHunters member or associate, other than the suspect arrested in the Netherlands on 2026-09-15, between 2026-10-01 and 2026-12-31.",
+    "domain": "crime/security",
+    "probability": 50,
+    "resolution": "True if DOJ, FBI, Europol or a national police force announces, or a court filing shows, an arrest or charge of a ShinyHunters-linked person other than the 2026-09-15 Dutch arrestee between 2026-10-01 and 2026-12-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      15,
+      27
+    ],
+    "failure_condition": "No person other than the 2026-09-15 Dutch arrestee is arrested or charged as a ShinyHunters member or associate between 2026-10-01 and 2026-12-31."
+  },
+  {
+    "statement": "The Crown Prosecution Service authorises criminal charges against at least one individual or organisation over the Grenfell Tower fire between 2026-10-01 and 2027-03-26.",
+    "domain": "crime/security",
+    "probability": 12,
+    "resolution": "True if a CPS or Metropolitan Police statement announces criminal charges authorised against any individual or organisation over the Grenfell Tower fire between 2026-10-01 and 2027-03-26; otherwise false.",
+    "deadline": "2027-03-29",
+    "citations": [
+      11
+    ],
+    "failure_condition": "No criminal charge over the Grenfell Tower fire is authorised against any individual or organisation between 2026-10-01 and 2027-03-26."
+  },
+  {
+    "statement": "The Spanish Congress of Deputies validates Royal Decree-law 26/2026 on housing and eviction protection in a plenary vote held between 2026-10-02 and 2026-10-29.",
+    "domain": "political",
+    "probability": 40,
+    "resolution": "True if the Congress of Deputies votes to convalidate Royal Decree-law 26/2026 between 2026-10-02 and 2026-10-29, per the Congress voting record or BOE convalidation notice; false if derogated or never voted.",
+    "deadline": "2026-11-02",
+    "citations": [
+      82
+    ],
+    "failure_condition": "Royal Decree-law 26/2026 is not validated by the Congress of Deputies between 2026-10-02 and 2026-10-29."
+  },
+  {
+    "statement": "The Iranian parliament passes a bill mandating withdrawal from the Nuclear Non-Proliferation Treaty in an open-session vote between 2026-10-01 and 2026-12-31.",
+    "domain": "political",
+    "probability": 10,
+    "resolution": "True if IRNA, Tasnim or Mehr and one of Reuters or AP report final Majlis approval of an NPT withdrawal bill in open session between 2026-10-01 and 2026-12-31; urgency-status votes alone do not count.",
+    "deadline": "2027-01-05",
+    "citations": [
+      86
+    ],
+    "failure_condition": "The Iranian parliament does not pass an NPT withdrawal bill in an open-session vote between 2026-10-01 and 2026-12-31."
+  }
+]
