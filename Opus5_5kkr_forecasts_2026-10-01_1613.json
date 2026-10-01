@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "Tesla Q3 2026 total vehicle deliveries, published in its production and deliveries release between 2026-10-01 and 2026-10-06, come in below the Q3 2025 record of 497,099. Reference: Q2 2026 deliveries were 480,126.",
+    "domain": "economics/markets",
+    "probability": 85,
+    "resolution": "True if the total deliveries figure in the Tesla Q3 2026 production and deliveries release (ir.tesla.com or SEC Form 8-K) issued between 2026-10-01 and 2026-10-06 is 497,098 or lower; false otherwise.",
+    "deadline": "2026-10-09",
+    "citations": [
+      56,
+      48
+    ],
+    "failure_condition": "Tesla reports Q3 2026 total deliveries of 497,099 or more, or issues no Q3 2026 deliveries release between 2026-10-01 and 2026-10-06."
+  },
+  {
+    "statement": "At its scheduled 2026-10-28 decision, the FOMC raises the federal funds target range above 3.75-4.00 percent. Reference: target range 3.75-4.00 percent, upper bound 4.00, on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "True if FRED series DFEDTARU, the federal funds target upper limit, reads above 4.00 for 2026-10-29 following the 2026-10-28 FOMC decision; false if it reads 4.00 or lower.",
+    "deadline": "2026-10-30",
+    "citations": [
+      50,
+      59,
+      63
+    ],
+    "failure_condition": "The federal funds target range upper bound in effect on 2026-10-29 is 4.00 percent or lower."
+  },
+  {
+    "statement": "In the Knesset election held on 2026-10-27, lists containing Likud, Shas, United Torah Judaism, Otzma Yehudit or Religious Zionism (the Netanyahu bloc) win a combined 61 or more of the 120 seats.",
+    "domain": "political",
+    "probability": 10,
+    "resolution": "True if Central Elections Committee official final results for the 2026-10-27 Knesset election give lists containing Likud, Shas, United Torah Judaism, Otzma Yehudit or Religious Zionism a combined 61 or more seats; false otherwise.",
+    "deadline": "2026-11-13",
+    "citations": [
+      71,
+      103,
+      105
+    ],
+    "failure_condition": "Lists containing those five parties win a combined 60 or fewer seats, or no Knesset election is held on 2026-10-27."
+  },
+  {
+    "statement": "The United States and Iran both publicly confirm a mutually agreed ceasefire or agreement ending hostilities between 2026-10-02 and 2026-11-30.",
+    "domain": "military/conflict",
+    "probability": 20,
+    "resolution": "True if between 2026-10-02 and 2026-11-30 the White House and the Iranian government each publicly confirm a mutually agreed US-Iran ceasefire or end-of-war deal, per Reuters or AP; unilateral pauses do not count.",
+    "deadline": "2026-12-04",
+    "citations": [
+      97,
+      83
+    ],
+    "failure_condition": "No US-Iran ceasefire or end-of-war agreement is confirmed by both the White House and the Iranian government between 2026-10-02 and 2026-11-30."
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield closes at or above 5.50 percent on at least one trading day between 2026-10-02 and 2026-12-31. Reference: 5.25 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 55,
+    "resolution": "True if FRED series DGS10 shows any daily value of 5.50 or higher dated between 2026-10-02 and 2026-12-31 inclusive; false otherwise.",
+    "deadline": "2027-01-06",
+    "citations": [
+      50,
+      54,
+      62
+    ],
+    "failure_condition": "The 10-year Treasury constant-maturity yield closes below 5.50 percent on every trading day from 2026-10-02 through 2026-12-31."
+  },
+  {
+    "statement": "CISA adds CVE-2026-102489 or CVE-2026-102490, the Zammad zero-days DIVD says were exploited in its breach, to the Known Exploited Vulnerabilities catalog between 2026-10-01 and 2026-12-31.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "True if the CISA KEV catalog carries CVE-2026-102489 or CVE-2026-102490 with a dateAdded value between 2026-10-01 and 2026-12-31 inclusive; false otherwise.",
+    "deadline": "2027-01-06",
+    "citations": [
+      29
+    ],
+    "failure_condition": "CISA does not add CVE-2026-102489 or CVE-2026-102490 to the KEV catalog between 2026-10-01 and 2026-12-31."
+  },
+  {
+    "statement": "CISA adds a Kiteworks vulnerability to the Known Exploited Vulnerabilities catalog between 2026-10-01 and 2026-12-31, following the patch for a maximum-severity code injection flaw in its email protection gateway.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "True if the CISA KEV catalog carries an entry with vendorProject Kiteworks or Accellion and a dateAdded value between 2026-10-01 and 2026-12-31 inclusive; false otherwise.",
+    "deadline": "2027-01-06",
+    "citations": [
+      17
+    ],
+    "failure_condition": "CISA does not add any Kiteworks or Accellion vulnerability to the KEV catalog between 2026-10-01 and 2026-12-31."
+  },
+  {
+    "statement": "After the 2026-11-03 US midterm elections, Democrats plus independents caucusing with them hold at least 51 seats in the Senate of the 120th Congress, giving them outright control.",
+    "domain": "political",
+    "probability": 58,
+    "resolution": "True if, after the 2026-11-03 elections, the senate.gov party division for the 120th Congress, read on 2027-01-08, shows Democrats plus independents caucusing with Democrats holding 51 or more seats; false otherwise.",
+    "deadline": "2027-01-11",
+    "citations": [
+      99,
+      41
+    ],
+    "failure_condition": "Democrats plus independents caucusing with them hold 50 or fewer seats in the Senate of the 120th Congress."
+  },
+  {
+    "statement": "The NOAA CPC Relative Oceanic Nino Index for October-December 2026 reaches +2.5 C or higher, a strength CPC says no El Nino since 1950 has reached. Reference: CPC put the August 2026 Nino-3.4 anomaly at +1.8 C.",
+    "domain": "disaster",
+    "probability": 72,
+    "resolution": "True if the NOAA CPC RONI table, read on 2027-01-15, lists an October-December 2026 (OND) value of 2.5 or higher; false otherwise.",
+    "deadline": "2027-01-19",
+    "citations": [
+      43
+    ],
+    "failure_condition": "The October-December 2026 Relative Oceanic Nino Index value is below +2.5 C."
+  },
+  {
+    "statement": "Tennessee carries out at least one execution between 2026-10-02 and 2027-03-24, after Governor Bill Lee halted the remaining 2026 execution following the failed Christa Pike lethal injection.",
+    "domain": "crime/security",
+    "probability": 5,
+    "resolution": "True if the Death Penalty Information Center execution database lists any Tennessee execution dated between 2026-10-02 and 2027-03-24 inclusive; false otherwise.",
+    "deadline": "2027-03-29",
+    "citations": [
+      72,
+      11,
+      116
+    ],
+    "failure_condition": "No execution is carried out in Tennessee between 2026-10-02 and 2027-03-24."
+  }
+]
