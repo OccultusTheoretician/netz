@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled meeting of 2026-10-27 to 2026-10-28, lifting the upper limit to 4.25 percent or higher. Reference: upper limit 4.00 percent on the packet date.",
+    "resolution": "FRED series DFEDTARU shows 4.25 or higher for 2026-10-29, the day after the 2026-10-27 to 2026-10-28 meeting. Reference: 4.00 on the packet date.",
+    "failure_condition": "The FOMC leaves the target range upper limit at 4.00 percent or lower at its 2026-10-27 to 2026-10-28 meeting.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 48,
+    "citations": [
+      50,
+      59,
+      63
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year Treasury constant maturity yield stands at or above 5.50 percent on 2026-10-30. Reference: 5.25 percent on the packet date.",
+    "resolution": "FRED series DGS10 shows 5.50 or higher for 2026-10-30. Reference: 5.25 percent on the packet date.",
+    "failure_condition": "The 10-year constant maturity yield for 2026-10-30 is below 5.50 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 48,
+    "citations": [
+      50,
+      54,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least 40 vulnerabilities to its Known Exploited Vulnerabilities catalog between 2026-10-01 and 2026-10-31. Reference: 43 entries carry a September 2026 date-added value in catalog version 2026.09.30.",
+    "resolution": "The CISA KEV catalog feed carries 40 or more entries with a dateAdded value between 2026-10-01 and 2026-10-31 inclusive.",
+    "failure_condition": "CISA adds fewer than 40 vulnerabilities to the KEV catalog between 2026-10-01 and 2026-10-31.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 32,
+    "citations": [
+      21,
+      27,
+      31
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one Zammad vulnerability to its Known Exploited Vulnerabilities catalog between 2026-10-01 and 2026-10-31.",
+    "resolution": "The CISA KEV catalog feed carries at least one entry naming Zammad in vendorProject or product with a dateAdded value between 2026-10-01 and 2026-10-31 inclusive.",
+    "failure_condition": "CISA adds no Zammad vulnerability to the KEV catalog between 2026-10-01 and 2026-10-31.",
+    "domain": "cyber",
+    "deadline": "2026-11-03",
+    "probability": 32,
+    "citations": [
+      29
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Ukrainian forces strike at least one oil refinery on internationally recognized Russian territory between 2026-10-02 and 2026-10-15.",
+    "resolution": "Reuters, AP or the Kyiv Independent reports a Ukrainian strike on a named oil refinery on Russian territory occurring between 2026-10-02 and 2026-10-15, confirmed by the General Staff of Ukraine, the SBU or Russian officials.",
+    "failure_condition": "No Ukrainian strike hits an oil refinery on internationally recognized Russian territory between 2026-10-02 and 2026-10-15.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-19",
+    "probability": 64,
+    "citations": [
+      91
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "United States forces strike at least one target on Iranian land territory or islands between 2026-10-02 and 2026-10-23.",
+    "resolution": "A US Central Command public release, Pentagon statement or White House statement confirms United States strikes on Iranian land territory or islands conducted between 2026-10-02 and 2026-10-23.",
+    "failure_condition": "United States forces conduct no strike on Iranian land territory or islands between 2026-10-02 and 2026-10-23.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-27",
+    "probability": 64,
+    "citations": [
+      83,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Ethiopian federal forces or allied militias enter Mekelle city between 2026-10-02 and 2026-10-31.",
+    "resolution": "Reuters, AP or AFP reports, citing the Ethiopian government or independent sources, that federal or allied forces entered Mekelle city on a date between 2026-10-02 and 2026-10-31.",
+    "failure_condition": "Ethiopian federal and allied forces do not enter Mekelle city between 2026-10-02 and 2026-10-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-03",
+    "probability": 64,
+    "citations": [
+      74,
+      84
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the Knesset election scheduled for 2026-10-27, the lists of the outgoing Netanyahu coalition (Likud, Shas, United Torah Judaism, Otzma Yehudit, Religious Zionism) win a combined 61 seats or more.",
+    "resolution": "Israeli Central Elections Committee final results for the 2026-10-27 election give the lists of Likud, Shas, United Torah Judaism, Otzma Yehudit and Religious Zionism, including joint lists containing them, a combined 61 seats or more.",
+    "failure_condition": "The five listed parties win a combined 60 seats or fewer, or no Knesset election is held on 2026-10-27.",
+    "domain": "political",
+    "deadline": "2026-11-05",
+    "probability": 39,
+    "citations": [
+      71,
+      103
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FBI publicly attributes the September 2026 theft of about 387.5 million dollars from the Bitget exchange to North Korean actors between 2026-10-02 and 2026-11-27.",
+    "resolution": "An FBI press release or IC3 public service announcement dated between 2026-10-02 and 2026-11-27 attributes the Bitget theft to North Korean actors under any name, including Lazarus Group or TraderTraitor.",
+    "failure_condition": "The FBI does not publicly attribute the Bitget theft to North Korean actors between 2026-10-02 and 2026-11-27.",
+    "domain": "crime/security",
+    "deadline": "2026-12-01",
+    "probability": 29,
+    "citations": [
+      25
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "An earthquake of magnitude 5.0 or greater occurs within 100 km of the 2026-09-30 magnitude 5.6 epicenter off Costa Rica (9.808 N, 86.436 W) between 2026-10-02 and 2026-10-31 UTC.",
+    "resolution": "The USGS ComCat catalog lists at least one event of magnitude 5.0 or greater within 100 km of 9.808 N, 86.436 W with origin time between 2026-10-02 and 2026-10-31 UTC.",
+    "failure_condition": "No earthquake of magnitude 5.0 or greater occurs within 100 km of 9.808 N, 86.436 W between 2026-10-02 and 2026-10-31 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-03",
+    "probability": 31,
+    "citations": [
+      44
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

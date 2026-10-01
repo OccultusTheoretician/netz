@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "The Federal Open Market Committee raises the federal funds target range at its meeting concluding on 2026-10-28. Reference: target range 3.75 to 4.00 percent on the packet date.",
+    "resolution": "The FOMC statement released 2026-10-28 sets a target range whose upper bound is above 4.00 percent. Reference: range was 3.75 to 4.00 percent on the packet date.",
+    "failure_condition": "The FOMC statement released 2026-10-28 leaves the target range at 3.75 to 4.00 percent or lowers it.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 48,
+    "citations": [
+      50,
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield (FRED series DGS10) closes at or above 5.50 percent on at least one business day between 2026-10-02 and 2026-10-30. Reference: 5.25 percent on the packet date.",
+    "resolution": "FRED series DGS10 shows at least one daily value of 5.50 or higher dated between 2026-10-02 and 2026-10-30 inclusive. Reference: 5.25 percent on the packet date.",
+    "failure_condition": "Every FRED DGS10 daily value dated between 2026-10-02 and 2026-10-30 is below 5.50 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-03",
+    "probability": 48,
+    "citations": [
+      50,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the Israeli Knesset election held on 2026-10-27, Likud wins strictly more seats than any other single list.",
+    "resolution": "Israeli Central Elections Committee seat results for the 2026-10-27 election show Likud with more seats than every other list; a tie for first place resolves false.",
+    "failure_condition": "Another list wins as many or more Knesset seats as Likud in the 2026-10-27 election.",
+    "domain": "political",
+    "deadline": "2026-11-09",
+    "probability": 39,
+    "citations": [
+      71,
+      103
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A single Russian air attack kills at least 15 people inside the boundaries of Kyiv city on a date between 2026-10-02 and 2026-11-13.",
+    "resolution": "The Kyiv City Military Administration, the Kyiv mayor or the Ukrainian State Emergency Service reports at least 15 deaths in Kyiv city from one Russian attack dated between 2026-10-02 and 2026-11-13, carried by Reuters or AP.",
+    "failure_condition": "No single Russian attack dated between 2026-10-02 and 2026-11-13 has an official death toll of 15 or more inside Kyiv city.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-17",
+    "probability": 64,
+    "citations": [
+      85,
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran both publicly confirm an agreement that restores a ceasefire or reopens the Strait of Hormuz to commercial shipping, announced between 2026-10-02 and 2026-11-06.",
+    "resolution": "Both the US government and the Iranian government publicly confirm, between 2026-10-02 and 2026-11-06, an agreement to restore a ceasefire or reopen the Strait of Hormuz, as reported by Reuters and AP.",
+    "failure_condition": "The United States and Iran do not both confirm an agreement restoring a ceasefire or reopening the Strait of Hormuz between 2026-10-02 and 2026-11-06.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-10",
+    "probability": 64,
+    "citations": [
+      97,
+      83
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A Ukrainian drone or missile strike damages an oil refinery in Russia or Russian-occupied territory on a date between 2026-10-05 and 2026-10-18.",
+    "resolution": "Reuters or AP reports that a Ukrainian drone or missile strike damaged an oil refinery in Russia or Russian-occupied territory on a date between 2026-10-05 and 2026-10-18, citing Ukrainian or Russian officials.",
+    "failure_condition": "No oil refinery in Russia or Russian-occupied territory is damaged by a Ukrainian drone or missile strike between 2026-10-05 and 2026-10-18.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-21",
+    "probability": 64,
+    "citations": [
+      91
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least 22 entries with a dateAdded value between 2026-10-02 and 2026-10-22 inclusive.",
+    "resolution": "The CISA KEV catalog JSON lists at least 22 entries whose dateAdded value falls between 2026-10-02 and 2026-10-22 inclusive.",
+    "failure_condition": "The KEV catalog carries 21 or fewer entries with a dateAdded value between 2026-10-02 and 2026-10-22 inclusive.",
+    "domain": "cyber",
+    "deadline": "2026-10-26",
+    "probability": 32,
+    "citations": [
+      21,
+      27,
+      31
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds a Kiteworks vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-10-02 and 2026-11-13 inclusive.",
+    "resolution": "The CISA KEV catalog lists at least one entry with vendorProject Kiteworks and a dateAdded value between 2026-10-02 and 2026-11-13 inclusive.",
+    "failure_condition": "No CISA KEV catalog entry for a Kiteworks product has a dateAdded value between 2026-10-02 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 32,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one of the five men arrested near RAF Fairford on 2026-09-27 is charged with a criminal offence on a date between 2026-10-02 and 2026-11-13.",
+    "resolution": "Counter Terrorism Policing, the local police force or the Crown Prosecution Service announces a criminal charge against at least one of the five men arrested near RAF Fairford, dated between 2026-10-02 and 2026-11-13.",
+    "failure_condition": "None of the five men arrested near RAF Fairford on 2026-09-27 is charged with any offence between 2026-10-02 and 2026-11-13.",
+    "domain": "crime/security",
+    "deadline": "2026-11-17",
+    "probability": 29,
+    "citations": [
+      83
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The NOAA Climate Prediction Center relative Oceanic Nino Index (RONI) for the three-month season spanning 2026-10-01 to 2026-12-31 is +2.5 C or higher. Reference: CPC reported August 2026 Nino-3.4 at +1.8 C on 2026-09-10.",
+    "resolution": "The CPC RONI table, published by 2027-01-15, lists a value of +2.5 or higher for the October-December 2026 season. Reference: August 2026 Nino-3.4 was +1.8 C.",
+    "failure_condition": "The CPC RONI value for the October-December 2026 season is below +2.5.",
+    "domain": "disaster",
+    "deadline": "2027-01-15",
+    "probability": 31,
+    "citations": [
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-01T19:16:08Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
