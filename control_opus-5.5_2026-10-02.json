@@ -1,0 +1,252 @@
+[
+  {
+    "statement": "CISA adds at least one Fortinet vulnerability other than CVE-2026-104286 to its Known Exploited Vulnerabilities catalog between 2026-10-03 and 2026-11-13.",
+    "resolution": "TRUE if the CISA KEV catalog contains an entry with vendorProject Fortinet, a CVE other than CVE-2026-104286, and a dateAdded value between 2026-10-03 and 2026-11-13 inclusive; otherwise FALSE.",
+    "failure_condition": "CISA adds no Fortinet CVE other than CVE-2026-104286 to the KEV catalog between 2026-10-03 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 32,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one of the Dell Container Storage Modules vulnerabilities disclosed on 2026-10-01, including CVE-2026-63688 and CVE-2026-63692, to its Known Exploited Vulnerabilities catalog between 2026-10-03 and 2026-11-27.",
+    "resolution": "TRUE if the CISA KEV catalog shows a dateAdded value between 2026-10-03 and 2026-11-27 inclusive for any Dell Container Storage Modules CVE disclosed 2026-10-01, including CVE-2026-63688 and CVE-2026-63692; otherwise FALSE.",
+    "failure_condition": "CISA adds none of the Dell Container Storage Modules CVEs disclosed on 2026-10-01 to the KEV catalog between 2026-10-03 and 2026-11-27.",
+    "domain": "cyber",
+    "deadline": "2026-12-01",
+    "probability": 32,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "After the scheduled FOMC decisions of 2026-10-28 and 2026-12-09, the upper bound of the federal funds target range stands at or above 4.25 percent (Reference: 4.00 percent upper bound at packet seal).",
+    "resolution": "TRUE if FRED series DFEDTARU shows a value of 4.25 or higher for 2026-12-10, reflecting the FOMC decisions of 2026-10-28 and 2026-12-09. Reference: 4.00 percent on the packet date.",
+    "failure_condition": "The federal funds target range upper bound in effect on 2026-12-10 is below 4.25 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-11",
+    "probability": 48,
+    "citations": [
+      39,
+      52,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The BLS Employment Situation release scheduled for 2026-11-06 reports an October 2026 unemployment rate of 4.3 percent or higher (Reference: 4.2 percent for September 2026, 4.175 unrounded, at packet seal).",
+    "resolution": "TRUE if the BLS Employment Situation for October 2026, published 2026-11-06, shows a seasonally adjusted unemployment rate of 4.3 percent or higher (FRED UNRATE first release). Reference: 4.2 percent for September 2026.",
+    "failure_condition": "The October 2026 seasonally adjusted unemployment rate as first published by BLS is 4.2 percent or lower.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-09",
+    "probability": 48,
+    "citations": [
+      25,
+      52,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The EIA weekly US average retail on-highway diesel price for the survey date 2026-11-16 is below 6.00 USD per gallon (Reference: 6.382 for the week of 2026-09-28, the latest reading at packet seal).",
+    "resolution": "TRUE if FRED series GASDESW (EIA weekly US on-highway diesel retail price) shows a value below 6.000 for the observation dated 2026-11-16. Reference: 6.382 USD per gallon for 2026-09-28, latest at packet seal.",
+    "failure_condition": "The EIA US average on-highway diesel retail price for the 2026-11-16 survey is 6.000 USD per gallon or higher.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-19",
+    "probability": 48,
+    "citations": [
+      28,
+      45,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia launches 500 or more drones and missiles combined against Ukraine within a single attack period, as counted by the Ukrainian Air Force, between 2026-10-03 and 2026-11-30.",
+    "resolution": "TRUE if one Ukrainian Air Force summary covering a single attack period between 2026-10-03 and 2026-11-30 reports 500 or more drones and missiles launched combined, as relayed by Reuters or AP.",
+    "failure_condition": "Every Russian attack period between 2026-10-03 and 2026-11-30 involves fewer than 500 drones and missiles launched combined.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-03",
+    "probability": 64,
+    "citations": [
+      92,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Ethiopian and Eritrean state armed forces clash directly, or the military of one state strikes targets inside the territory of the other, between 2026-10-03 and 2026-12-31.",
+    "resolution": "TRUE if at least two of Reuters, AP and AFP report as fact, not as an allegation, a direct clash between Ethiopian and Eritrean state forces or a cross-border strike by either military between 2026-10-03 and 2026-12-31.",
+    "failure_condition": "No direct engagement between Ethiopian and Eritrean state forces and no strike by either state military on the territory of the other occurs between 2026-10-03 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 64,
+    "citations": [
+      68,
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The French National Assembly adopts a motion of censure against the government of Prime Minister Sebastien Lecornu between 2026-10-03 and 2026-12-23.",
+    "resolution": "TRUE if the Assemblee nationale official vote record shows a motion de censure against the Lecornu government adopted by the required absolute majority on any date between 2026-10-03 and 2026-12-23; otherwise FALSE.",
+    "failure_condition": "No motion of censure against the Lecornu government is adopted by the National Assembly between 2026-10-03 and 2026-12-23.",
+    "domain": "political",
+    "deadline": "2026-12-28",
+    "probability": 39,
+    "citations": [
+      96,
+      102,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Cumulative deaths in the DRC Ebola outbreak declared on 2026-05-15 reach 5,000 or more in an official count published between 2026-10-03 and 2026-11-13 (Reference: 4,018 deaths at packet seal).",
+    "resolution": "TRUE if a DRC Ministry of Health or WHO situation update published between 2026-10-03 and 2026-11-13 gives cumulative outbreak deaths of 5,000 or more. Reference: 4,018 deaths at packet seal.",
+    "failure_condition": "The official cumulative death count for the outbreak stays below 5,000 through 2026-11-13.",
+    "domain": "disaster",
+    "deadline": "2026-11-17",
+    "probability": 31,
+    "citations": [
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Former NSW police officer Beau Lamarre-Condon is convicted of murder on at least one count, by jury verdict or plea, in the NSW Supreme Court between 2026-10-03 and 2027-03-26.",
+    "resolution": "TRUE if, between 2026-10-03 and 2027-03-26, Beau Lamarre-Condon is convicted in the NSW Supreme Court, by verdict or plea, of murdering Jesse Baird or Luke Davies, as reported by ABC News Australia or Reuters.",
+    "failure_condition": "No murder conviction of Beau Lamarre-Condon for either killing is entered between 2026-10-03 and 2027-03-26.",
+    "domain": "crime/security",
+    "deadline": "2027-03-30",
+    "probability": 29,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:27Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
