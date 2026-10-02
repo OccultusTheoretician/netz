@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "The FOMC leaves the federal funds target range unchanged at 3.75 to 4.00 percent at its scheduled meeting ending 2026-10-28. Reference: upper bound 4.00 percent on the packet date.",
+    "resolution": "FRED series DFEDTARU reads 4.00 for 2026-10-29, the first day a 2026-10-28 decision takes effect. Reference: 4.00 on the packet date.",
+    "failure_condition": "The target range upper bound in effect on 2026-10-29 is any value other than 4.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 48,
+    "citations": [
+      52,
+      97,
+      39
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The ICE Brent December 2026 futures contract settles below 95.00 dollars per barrel on at least one trading day between 2026-10-05 and 2026-10-29. Reference: 100.27 on the packet date.",
+    "resolution": "The ICE daily settlement price for Brent December 2026 futures is below 95.00 on any trading day between 2026-10-05 and 2026-10-29. Reference: 100.27 on the packet date.",
+    "failure_condition": "Every ICE Brent December 2026 settlement from 2026-10-05 through 2026-10-29 is at or above 95.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 48,
+    "citations": [
+      55,
+      45,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Ethiopian federal forces or the allied Tigray Peace Forces take control of Mekelle, the Tigray regional capital, on a date between 2026-10-03 and 2026-10-30.",
+    "resolution": "At least two of Reuters, AFP, AP and BBC report federal or allied forces holding Mekelle on a date between 2026-10-03 and 2026-10-30, citing residents, the TPLF or their own reporters rather than a government claim alone.",
+    "failure_condition": "Federal and allied forces do not hold Mekelle on any date from 2026-10-03 through 2026-10-30.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-02",
+    "probability": 64,
+    "citations": [
+      77,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The DR Congo health ministry cumulative death toll for the Ebola outbreak declared 2026-05-15 reaches 5,000 or more in figures published between 2026-10-03 and 2026-10-30. Reference: 4,018 in figures published 2026-10-01.",
+    "resolution": "At least two of AP, Reuters and AFP report a DR Congo health ministry cumulative Ebola death toll of 5,000 or more, published between 2026-10-03 and 2026-10-30. Reference: 4,018 on 2026-10-01.",
+    "failure_condition": "The health ministry cumulative death toll published through 2026-10-30 stays below 5,000.",
+    "domain": "disaster",
+    "deadline": "2026-11-02",
+    "probability": 31,
+    "citations": [
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one further Fortinet vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-05 and 2026-11-06, beyond the FortiMail entry CVE-2026-104286 added 2026-10-01.",
+    "resolution": "The CISA KEV catalog JSON contains at least one entry with vendorProject Fortinet and a dateAdded value between 2026-10-05 and 2026-11-06 inclusive.",
+    "failure_condition": "The count of KEV entries with vendorProject Fortinet and dateAdded from 2026-10-05 through 2026-11-06 is zero.",
+    "domain": "cyber",
+    "deadline": "2026-11-09",
+    "probability": 32,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The BLS Employment Situation report scheduled for 2026-11-06 shows a first-print October 2026 change in total nonfarm payroll employment below zero. Reference: plus 29,000 for September on the packet date.",
+    "resolution": "The BLS Employment Situation release for October 2026, scheduled 2026-11-06, reports the over-the-month change in total nonfarm payroll employment as a negative number. Reference: plus 29,000 for September.",
+    "failure_condition": "The first print of the October 2026 change in total nonfarm payroll employment is zero or higher.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-09",
+    "probability": 48,
+    "citations": [
+      52,
+      97,
+      25
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A royal decree dissolving the Cortes Generales and calling an early general election in Spain is published in the Boletin Oficial del Estado between 2026-10-03 and 2026-11-30.",
+    "resolution": "The BOE at boe.es carries a Real Decreto de disolucion del Congreso de los Diputados y del Senado y de convocatoria de elecciones with a publication date between 2026-10-03 and 2026-11-30.",
+    "failure_condition": "The Cortes Generales remain undissolved, with no election decree published in the BOE from 2026-10-03 through 2026-11-30.",
+    "domain": "political",
+    "deadline": "2026-12-02",
+    "probability": 39,
+    "citations": [
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The French National Assembly adopts a motion of censure against the sitting government on a date between 2026-10-05 and 2026-12-18.",
+    "resolution": "The Assemblee nationale public vote record shows a motion de censure adopted with the required absolute majority of members on a date between 2026-10-05 and 2026-12-18.",
+    "failure_condition": "No motion of censure reaches the required majority in the National Assembly from 2026-10-05 through 2026-12-18.",
+    "domain": "political",
+    "deadline": "2026-12-21",
+    "probability": 39,
+    "citations": [
+      107,
+      96,
+      102
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one of the six Dell Container Storage Modules flaws patched 2026-10-01 to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-03 and 2026-12-31.",
+    "resolution": "The CISA KEV catalog JSON lists any of CVE-2026-63688, CVE-2026-63692, CVE-2026-67269, CVE-2026-54472, CVE-2026-61421 or CVE-2026-67273 with a dateAdded value between 2026-10-03 and 2026-12-31 inclusive.",
+    "failure_condition": "None of the six listed CVE identifiers carries a KEV dateAdded value from 2026-10-03 through 2026-12-31.",
+    "domain": "cyber",
+    "deadline": "2027-01-04",
+    "probability": 32,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A New South Wales Supreme Court jury finds Beau Lamarre-Condon guilty of murder on both counts, for the deaths of Jesse Baird and Luke Davies, with verdicts delivered between 2026-10-05 and 2027-03-19.",
+    "resolution": "At least two of ABC News Australia, Guardian Australia, SBS News and AAP report jury verdicts of guilty of murder on both counts, delivered on a date between 2026-10-05 and 2027-03-19.",
+    "failure_condition": "The jury does not return guilty verdicts for murder on both counts between 2026-10-05 and 2027-03-19, whether through acquittal, a manslaughter verdict, a hung jury or a discharged jury.",
+    "domain": "crime/security",
+    "deadline": "2027-03-22",
+    "probability": 29,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-02T23:27:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
