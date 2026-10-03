@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "Between 2026-10-04 and 2026-10-17, a Russian drone or missile strike damages at least one Kyiv Dnipro road bridge other than Pivdennyi and Pivnichnyi, namely the Paton, Metro, Darnytskyi or Podilskyi bridge.",
+    "resolution": "TRUE if Reuters, AP or BBC, citing Kyiv city authorities, report a Russian strike damaging the Paton, Metro, Darnytskyi or Podilskyi bridge between 2026-10-04 and 2026-10-17; otherwise FALSE.",
+    "failure_condition": "None of the Paton, Metro, Darnytskyi or Podilskyi bridges in Kyiv is damaged by a Russian strike between 2026-10-04 and 2026-10-17.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-20",
+    "probability": 64,
+    "citations": [
+      67,
+      68,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-04 and 2026-10-25, Ethiopian federal forces or the allied Tigray Peace Force take control of Mekelle city itself, not only its Alula Aba Nega airport.",
+    "resolution": "TRUE if AP, Reuters or BBC report between 2026-10-04 and 2026-10-25 that Ethiopian federal forces or the Tigray Peace Force control Mekelle city, beyond the airport; otherwise FALSE.",
+    "failure_condition": "Mekelle city is not under federal or Tigray Peace Force control at any point between 2026-10-04 and 2026-10-25.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-28",
+    "probability": 64,
+    "citations": [
+      65,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Luiz Inacio Lula da Silva is elected president of Brazil, either outright in the 2026-10-04 first round or in the scheduled 2026-10-25 runoff.",
+    "resolution": "TRUE if official TSE results show Lula above 50 percent of valid votes on 2026-10-04 or winning the 2026-10-25 runoff; any other outcome is FALSE.",
+    "failure_condition": "A candidate other than Lula is elected president of Brazil on 2026-10-04 or 2026-10-25.",
+    "domain": "political",
+    "deadline": "2026-10-28",
+    "probability": 39,
+    "citations": [
+      87,
+      93,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At its scheduled 2026-10-27 to 2026-10-28 meeting, the FOMC raises the federal funds target range above 3.75 to 4.00 percent. Reference: 3.75 to 4.00 percent on the packet date.",
+    "resolution": "TRUE if the 2026-10-28 FOMC statement raises the target range, confirmed by FRED series DFEDTARU above 4.00 on 2026-10-29; unchanged or lower is FALSE. Reference: 3.75 to 4.00 percent on the packet date.",
+    "failure_condition": "The FOMC holds the target range at 3.75 to 4.00 percent or lowers it at the 2026-10-27 to 2026-10-28 meeting.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 48,
+    "citations": [
+      48,
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the scheduled 2026-10-27 Knesset election, Likud, Shas, United Torah Judaism, Otzma Yehudit and Religious Zionism-Zehut together win 61 or more of the 120 seats.",
+    "resolution": "TRUE if Central Elections Committee official final results for the 2026-10-27 election give Likud, Shas, United Torah Judaism, Otzma Yehudit and Religious Zionism-Zehut a combined 61 or more seats; otherwise FALSE.",
+    "failure_condition": "The five named lists win a combined 60 or fewer seats in the 2026-10-27 Knesset election.",
+    "domain": "political",
+    "deadline": "2026-11-10",
+    "probability": 39,
+    "citations": [
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The ICE Brent front-month futures contract settles below 100.00 USD per barrel on 2026-11-13. Reference: 102.25 on the packet date.",
+    "resolution": "TRUE if the ICE Futures Europe Brent front-month settlement price for 2026-11-13 is below 100.00 USD per barrel; 100.00 or higher is FALSE. Reference: 102.25 on the packet date.",
+    "failure_condition": "The ICE Brent front-month settlement on 2026-11-13 is 100.00 USD per barrel or higher.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-17",
+    "probability": 48,
+    "citations": [
+      81
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-04 and 2026-11-30, the National Hurricane Center classifies at least one Atlantic-basin tropical cyclone as a hurricane.",
+    "resolution": "TRUE if an NHC advisory issued between 2026-10-04 and 2026-11-30 UTC assigns hurricane intensity, sustained winds of 64 knots or more, to any Atlantic-basin cyclone; otherwise FALSE.",
+    "failure_condition": "No Atlantic-basin tropical cyclone reaches hurricane intensity between 2026-10-04 and 2026-11-30.",
+    "domain": "disaster",
+    "deadline": "2026-12-03",
+    "probability": 31,
+    "citations": [
+      33
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3108,
+      "n": 74,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-04 and 2026-12-31, a royal decree dissolving the Cortes Generales and calling an early Spanish general election is published in the Boletin Oficial del Estado.",
+    "resolution": "TRUE if the BOE publishes, between 2026-10-04 and 2026-12-31, a royal decree dissolving the Congress of Deputies and Senate and calling a general election; otherwise FALSE.",
+    "failure_condition": "The Cortes Generales are not dissolved between 2026-10-04 and 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 39,
+    "citations": [
+      100,
+      88,
+      95
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-04 and 2026-12-31, at least one person arrested over the 2026-09-27 RAF Fairford incident is charged with a criminal offence in the UK.",
+    "resolution": "TRUE if Counter Terrorism Policing or the CPS announces, between 2026-10-04 and 2026-12-31, a criminal charge against anyone arrested over the RAF Fairford incident, as reported by BBC, Reuters or the Guardian; otherwise FALSE.",
+    "failure_condition": "No person arrested over the RAF Fairford incident is charged with any offence between 2026-10-04 and 2026-12-31.",
+    "domain": "crime/security",
+    "deadline": "2027-01-05",
+    "probability": 29,
+    "citations": [
+      10,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-04 and 2027-01-29, CISA adds at least one of the six newly patched Dell Container Storage Modules vulnerabilities, including CVSS 10.0 CVE-2026-63688 and CVE-2026-63692, to the KEV catalog.",
+    "resolution": "TRUE if the CISA KEV catalog lists a dateAdded between 2026-10-04 and 2027-01-29 for CVE-2026-63688, CVE-2026-63692, CVE-2026-54472, CVE-2026-61421, CVE-2026-67269 or CVE-2026-67273; otherwise FALSE.",
+    "failure_condition": "None of the six Dell Container Storage Modules CVEs is added to the KEV catalog between 2026-10-04 and 2027-01-29.",
+    "domain": "cyber",
+    "deadline": "2027-02-02",
+    "probability": 32,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-03T21:13:38Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

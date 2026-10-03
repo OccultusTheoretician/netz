@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "No candidate exceeds 50 percent of valid votes in the first round of the Brazilian presidential election on 2026-10-04, sending the race to the scheduled runoff on 2026-10-25.",
+    "domain": "political",
+    "probability": 95,
+    "resolution": "True if TSE official first-round totals for 2026-10-04 show every presidential candidate at or below 50 percent of valid votes.",
+    "deadline": "2026-10-12",
+    "citations": [
+      87,
+      97
+    ],
+    "failure_condition": "Any candidate holds more than 50 percent of valid votes in the 2026-10-04 first round, deciding the presidency without a runoff."
+  },
+  {
+    "statement": "Luiz Inacio Lula da Silva wins the 2026 Brazilian presidential election, either outright in the first round on 2026-10-04 or in the runoff on 2026-10-25.",
+    "domain": "political",
+    "probability": 43,
+    "resolution": "True if TSE official results show Lula with the winning majority of valid votes in the 2026-10-04 first round or in the 2026-10-25 runoff.",
+    "deadline": "2026-10-28",
+    "citations": [
+      87,
+      93,
+      97
+    ],
+    "failure_condition": "Lula does not hold the majority of valid votes in the round that decides the presidency."
+  },
+  {
+    "statement": "A royal decree dissolving the Cortes Generales and calling an early Spanish general election is published in the Boletin Oficial del Estado between 2026-10-05 and 2026-10-16.",
+    "domain": "political",
+    "probability": 40,
+    "resolution": "True if the BOE carries a real decreto dissolving the Congreso and Senado and calling general elections, with a publication date between 2026-10-05 and 2026-10-16.",
+    "deadline": "2026-10-19",
+    "citations": [
+      88,
+      95,
+      100
+    ],
+    "failure_condition": "The Cortes Generales are not dissolved by a decree published between 2026-10-05 and 2026-10-16."
+  },
+  {
+    "statement": "Likud, Shas, United Torah Judaism, Religious Zionism-Zehut, Otzma Yehudit and Amcha Yisrael (Ofer Winter) win a combined 61 or more of the 120 Knesset seats in the Israeli election on 2026-10-27.",
+    "domain": "political",
+    "probability": 8,
+    "resolution": "True if Central Elections Committee official results for the 2026-10-27 election give the lists containing those six parties 61 or more seats combined.",
+    "deadline": "2026-11-05",
+    "citations": [
+      90
+    ],
+    "failure_condition": "The lists containing those six parties hold 60 or fewer seats combined in the official results."
+  },
+  {
+    "statement": "The FOMC leaves the federal funds target range unchanged at 3.75 to 4.00 percent at its scheduled decision on 2026-10-28. Reference: 3.75 to 4.00 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 82,
+    "resolution": "True if the Federal Reserve statement of 2026-10-28 keeps the target range at 3.75 to 4.00 percent, so that FRED series DFEDTARU reads 4.00 on 2026-10-29.",
+    "deadline": "2026-10-30",
+    "citations": [
+      46,
+      48
+    ],
+    "failure_condition": "The upper bound of the target range is anything other than 4.00 percent after the 2026-10-28 decision."
+  },
+  {
+    "statement": "ICE Brent crude futures for December 2026 delivery settle at or below 95.00 dollars per barrel on 2026-10-23. Reference: 102.25 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "True if the ICE settlement price of the December 2026 Brent contract on 2026-10-23 is 95.00 dollars or lower. Reference: 102.25 on the packet date.",
+    "deadline": "2026-10-26",
+    "citations": [
+      81
+    ],
+    "failure_condition": "The December 2026 Brent contract settles above 95.00 dollars per barrel on 2026-10-23."
+  },
+  {
+    "statement": "CISA adds the GitLab AI Gateway vulnerability CVE-2026-90970 to its Known Exploited Vulnerabilities catalog between 2026-10-04 and 2026-11-06.",
+    "domain": "cyber",
+    "probability": 5,
+    "resolution": "True if the CISA KEV catalog lists CVE-2026-90970 with a date-added value between 2026-10-04 and 2026-11-06.",
+    "deadline": "2026-11-09",
+    "citations": [
+      15,
+      18
+    ],
+    "failure_condition": "CVE-2026-90970 is not in the KEV catalog with a date-added value between 2026-10-04 and 2026-11-06."
+  },
+  {
+    "statement": "At least one Atlantic basin tropical cyclone reaches hurricane strength between 2026-10-05 and 2026-11-06.",
+    "domain": "disaster",
+    "probability": 18,
+    "resolution": "True if National Hurricane Center advisories or best-track data show any Atlantic basin system with sustained winds of 64 knots or more on a date between 2026-10-05 and 2026-11-06.",
+    "deadline": "2026-11-09",
+    "citations": [
+      33
+    ],
+    "failure_condition": "No Atlantic basin system attains sustained winds of 64 knots between 2026-10-05 and 2026-11-06."
+  },
+  {
+    "statement": "A Russian strike hits a Kyiv bridge over the Dnipro other than the Pivdennyi (Southern) and Pivnichnyi (Northern) bridges between 2026-10-04 and 2026-10-17.",
+    "domain": "military/conflict",
+    "probability": 40,
+    "resolution": "True if at least two of BBC, Reuters, AP and Kyiv Independent report a Russian drone or missile strike damaging a third Kyiv Dnipro bridge on a date between 2026-10-04 and 2026-10-17.",
+    "deadline": "2026-10-20",
+    "citations": [
+      67,
+      68,
+      109
+    ],
+    "failure_condition": "No Kyiv crossing of the Dnipro other than the Pivdennyi and Pivnichnyi bridges is struck by Russian fire between 2026-10-04 and 2026-10-17."
+  },
+  {
+    "statement": "At least one person is criminally charged in connection with the September 2026 security incident at RAF Fairford between 2026-10-05 and 2026-11-13.",
+    "domain": "crime/security",
+    "probability": 12,
+    "resolution": "True if Counter Terrorism Policing or the Crown Prosecution Service announces a charge tied to the RAF Fairford incident dated between 2026-10-05 and 2026-11-13, as reported by BBC or the Guardian.",
+    "deadline": "2026-11-16",
+    "citations": [
+      10,
+      76
+    ],
+    "failure_condition": "No person is charged over the RAF Fairford incident between 2026-10-05 and 2026-11-13."
+  }
+]
