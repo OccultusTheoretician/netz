@@ -1,0 +1,254 @@
+[
+  {
+    "statement": "Between 2026-10-05 and 2026-10-25, Russia launches at least 500 drones and missiles combined at Ukraine in a single attack period covered by one Ukrainian Air Force summary.",
+    "resolution": "TRUE if any Ukrainian Air Force summary for an attack period between 2026-10-05 and 2026-10-25, as carried by Reuters, AP or Kyiv Independent, totals 500 or more drones and missiles launched; otherwise FALSE.",
+    "failure_condition": "Russia launches fewer than 500 drones and missiles combined in every single attack period between 2026-10-05 and 2026-10-25.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-28",
+    "probability": 64,
+    "citations": [
+      54,
+      63,
+      64
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-05 and 2026-11-30, the US and Iranian governments both publicly confirm a ceasefire, memorandum or deal under which Iran commits to reopen the Strait of Hormuz to commercial shipping.",
+    "resolution": "TRUE if, between 2026-10-05 and 2026-11-30, both the US government and the Iranian government publicly confirm an agreement committing Iran to reopen Hormuz to commercial shipping, as reported by Reuters or AP; otherwise FALSE.",
+    "failure_condition": "The US and Iran conclude no agreement, confirmed by both governments, that commits Iran to reopen the Strait of Hormuz between 2026-10-05 and 2026-11-30.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-03",
+    "probability": 64,
+    "citations": [
+      53,
+      62,
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-05 and 2026-12-31, Yemeni government or government-aligned forces retake control of the Red Sea port city of Mocha in Taiz governorate from Houthi forces.",
+    "resolution": "TRUE if Reuters or AP report as fact, between 2026-10-05 and 2026-12-31, that Yemeni government or government-aligned forces have taken control of Mocha city from the Houthis; otherwise FALSE.",
+    "failure_condition": "Yemeni government and allied forces do not take control of Mocha city at any point between 2026-10-05 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-04",
+    "probability": 64,
+    "citations": [
+      61,
+      82,
+      57
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6364,
+      "n": 99,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At the FOMC meeting concluding on 2026-10-28, the Federal Reserve raises the federal funds target range above 3.75 to 4.00 percent (Reference: upper bound 4.00 percent on the packet date).",
+    "resolution": "TRUE if the FOMC statement issued on 2026-10-28 sets the federal funds target range upper bound above 4.00 percent, per federalreserve.gov or FRED series DFEDTARU; otherwise FALSE. Reference: 4.00 percent at seal.",
+    "failure_condition": "The FOMC holds the target range at 3.75 to 4.00 percent, or lowers it, at the meeting concluding on 2026-10-28.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 48,
+    "citations": [
+      38,
+      45
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-05 and 2026-11-30, the ICE Brent front-month futures contract settles at or below 90.00 USD per barrel on at least one trading day (Reference: 102.25 USD, the 2026-10-02 settlement held at seal on the packet date).",
+    "resolution": "TRUE if any ICE Futures Europe front-month Brent daily settlement price dated between 2026-10-05 and 2026-11-30 is 90.00 USD or lower; otherwise FALSE. Reference: 102.25 USD at seal.",
+    "failure_condition": "Every ICE Brent front-month daily settlement between 2026-10-05 and 2026-11-30 stays above 90.00 USD per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 48,
+    "citations": [
+      62,
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4808,
+      "n": 104,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Flavio Bolsonaro is elected President of Brazil in the 2026 election, decided either in the first round on 2026-10-04 or in the runoff scheduled for 2026-10-25.",
+    "resolution": "TRUE if official TSE results show Flavio Bolsonaro winning more than 50 percent of valid votes in the 2026-10-04 first round or in the 2026-10-25 runoff; otherwise FALSE.",
+    "failure_condition": "Flavio Bolsonaro does not win the presidency in either the 2026-10-04 first round or the 2026-10-25 runoff.",
+    "domain": "political",
+    "deadline": "2026-10-28",
+    "probability": 39,
+    "citations": [
+      89,
+      93,
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the Knesset election held on 2026-10-27, Likud wins strictly more seats than any other single list.",
+    "resolution": "TRUE if final official results of the 2026-10-27 Knesset election published by the Israeli Central Elections Committee give Likud more seats than every other list; a tie for first is FALSE.",
+    "failure_condition": "Likud does not win strictly more Knesset seats than every other list in an election held on 2026-10-27.",
+    "domain": "political",
+    "deadline": "2026-11-10",
+    "probability": 39,
+    "citations": [
+      100
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-05 and 2026-12-31, the Spanish government publishes a royal decree in the Boletin Oficial del Estado dissolving the Cortes Generales and calling an early general election.",
+    "resolution": "TRUE if the Boletin Oficial del Estado publishes, between 2026-10-05 and 2026-12-31, a royal decree dissolving the Congress of Deputies and calling a general election; otherwise FALSE.",
+    "failure_condition": "The Cortes Generales are not dissolved by royal decree at any point between 2026-10-05 and 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-04",
+    "probability": 39,
+    "citations": [
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3882,
+      "n": 85,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-05 and 2026-11-20, Japanese prosecutors indict the US Marine arrested by Okinawa police over the killing of a woman at a Naha hotel, on any charge connected to her death or robbery.",
+    "resolution": "TRUE if Kyodo, NHK or The Japan Times report the Naha District Public Prosecutors Office indicted the Marine on any charge connected to the death or robbery of the woman between 2026-10-05 and 2026-11-20; otherwise FALSE.",
+    "failure_condition": "The Marine is not indicted on any charge connected to the death or robbery of the woman between 2026-10-05 and 2026-11-20.",
+    "domain": "crime/security",
+    "deadline": "2026-11-23",
+    "probability": 29,
+    "citations": [
+      9,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.2941,
+      "n": 17,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-05 and 2026-12-31, the US Department of Justice publicly announces or unseals federal criminal charges against at least one person identified as a member of the ShinyHunters hacking group.",
+    "resolution": "TRUE if, between 2026-10-05 and 2026-12-31, DOJ announces on justice.gov or unseals in federal court charges against a defendant that DOJ, the FBI, Reuters or AP identify as a ShinyHunters member; otherwise FALSE.",
+    "failure_condition": "No person identified as a ShinyHunters member has US federal charges announced or unsealed between 2026-10-05 and 2026-12-31.",
+    "domain": "cyber",
+    "deadline": "2027-01-04",
+    "probability": 32,
+    "citations": [
+      10,
+      16
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3158,
+      "n": 76,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-04T19:18:19Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
