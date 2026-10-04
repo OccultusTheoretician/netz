@@ -1,5 +1,5 @@
 # FOGWAR - RULES 1.0 (P1: the engine)
-**rules_version `fogwar/1.0` - 2026-09-04 - DRAFT until the operator's rework. The engine is `fogwar.py`; its twin is `fogwar_core.js`; the differential test is `test_fogwar_parity.py`.**
+**rules_version `fogwar/1.0` - 2026-09-04 - drafted by the desk's assistant under the operator's direction. The engine is `fogwar.py`; its twin is `fogwar_core.js`; the differential test is `test_fogwar_parity.py`.**
 
 ## 0. What this is, in the desk's own terms
 A wargame you can audit. A game is a pure function of four things - the scenario's bytes, the rules version, the seed, and blue's move log - so anyone re-executes it and obtains the same final state hash, byte for byte, in Python or in the browser. Red's dispositions, the fog, are committed before blue's first move and opened in the receipt at the end. The commitment binds the RECORD: a published receipt lets a third party check that the fog held what the game says it held and that no disposition moved behind it. It does not hide anything from a player who reads their own browser's memory, and no page will claim that it does.
