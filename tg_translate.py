@@ -29,10 +29,29 @@ MODEL  = os.environ.get("NETZ_LM_MODEL", "")   # blank = ask the server
 MODELS_URL = "http://localhost:1234/v1/models"
 
 
+def _registered_input_model(tag="lmstudio/auto"):
+    """INPUTBIND-1004: the model arms.json registers for the input-side arm, or None."""
+    try:
+        _p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "arms.json")
+        with open(_p, encoding="utf-8-sig") as _fh:
+            for _a in json.load(_fh)["arms"]:
+                if _a.get("tag") == tag:
+                    return str(_a.get("model") or "").strip() or None
+    except Exception:
+        return None
+    return None
+
+
 def resolve_model() -> str:
     """Ask LM Studio what is actually loaded. Never guess a model id."""
     global MODEL
     if MODEL:
+        return MODEL
+    # INPUTBIND-1004: the registry names the input model; the server list is the fallback.
+    _reg = _registered_input_model()
+    if _reg:
+        MODEL = _reg
+        print("LM model: %s  (bound: arms.json lmstudio/auto)" % MODEL, file=sys.stderr)
         return MODEL
     try:
         with urllib.request.urlopen(MODELS_URL, timeout=15) as r:

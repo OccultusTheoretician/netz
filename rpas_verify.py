@@ -72,7 +72,7 @@ def rec(level, cite, msg):
 
 def load(src):
     if str(src).startswith(("http://", "https://")):
-        req = Request(str(src), headers={"User-Agent": "rpas_verify/1.1"})
+        req = Request(str(src), headers={"User-Agent": "rpas_verify/1.2"})
         with urlopen(req, timeout=30) as r:
             raw = r.read().decode("utf-8")
     else:
@@ -139,6 +139,39 @@ def check_entries(rows):
                                        f"in time")
 
 
+MASKABLE = ("4.03", "4.02g")  # VERIFY12 (c)
+_SAID = set()
+
+
+def _disclosed_split(h, clause, ids, what):
+    """VERIFY12 (c): entries the ledger discloses by id on its own face (RPAS 6.04).
+    A disclosure needs ids, clauses, a date and a finding. Only 4.03 and 4.02g can be
+    read conformant-as-disclosed; every disclosed id is printed; the rest return."""
+    if clause not in MASKABLE:
+        return ids
+    named = {}
+    for d in (h.get("disclosed_entries") or []):
+        ok = (isinstance(d, dict) and d.get("ids") and d.get("clauses")
+              and str(d.get("dated") or "").strip() and str(d.get("finding") or "").strip())
+        if not ok:
+            msg = "a disclosed_entries record lacks ids, clauses, a date or a finding - not read"
+            if msg not in _SAID:
+                _SAID.add(msg)
+                rec("SHOULD", "RPAS 6.04", msg)
+            continue
+        if clause in [str(c) for c in d["clauses"]]:
+            for i in d["ids"]:
+                named[str(i)] = str(d["dated"])
+    hit = [i for i in ids if i in named]
+    if hit:
+        rec("INFO", "RPAS 6.04",
+            f"{len(hit)} entr{'y' if len(hit) == 1 else 'ies'} issued on or after "
+            f"{SEAL_CUTOVER} {what} and the ledger discloses them by id "
+            f"({', '.join(hit)}; dated {', '.join(sorted(set(named[i] for i in hit)))}) - "
+            f"conformant-as-disclosed")
+    return [i for i in ids if i not in named]
+
+
 def check_failure_conditions(h, rows):
     """RPAS 4.02e/4.03, aggregated. Post-cutover: always MUST. Pre-cutover:
     conformant-as-disclosed when the ledger prints the finding (6.04)."""
@@ -151,6 +184,7 @@ def check_failure_conditions(h, rows):
     post = [e.get("id","?") for e in miss
             if str(e.get("date_issued","")) >= SEAL_CUTOVER]
     pre = len(miss) - len(post)
+    post = _disclosed_split(h, "4.03", post, "lack a failure condition")  # VERIFY12 (c)
     if post:
         rec("MUST", "RPAS 4.03", f"{len(post)} entr{'y' if len(post)==1 else 'ies'} "
             f"issued on or after {SEAL_CUTOVER} lack a failure condition and are "
@@ -214,6 +248,7 @@ def check_seals(h, rows):
                 f"field was edited after sealing, or the construction diverged. "
                 f"A retroactive edit to a sealed entry scores as a MISS where "
                 f"recoverable and voids the span where not.")
+    unsealed_post = _disclosed_split(h, "4.02g", unsealed_post, "carry no seal")  # VERIFY12 (c)
     if unsealed_post:
         rec("MUST", "RPAS 4.02g",
             f"{len(unsealed_post)} entr{'y' if len(unsealed_post)==1 else 'ies'} "
@@ -336,9 +371,18 @@ def check_append_only(h, prev):
             # the cheap cheat and fails.
             fillable = (f in ("keyed_keyless", "failure_condition",
                               "keyed_keyless_rationale")
-                        and str(o.get(f) or "").strip() in ("", "None", "unset")
+                        and (str(o.get(f) or "").strip() in ("", "None", "unset")
+                             or str(o.get(f) or "").strip().upper().startswith("UNSET"))  # VERIFY12 (a)
                         and o.get("status") == "open")
-            if o.get(f) != n.get(f) and not fillable:
+            # VERIFY12 (b): a determination superseded under RPAS 5.07 - the earlier value
+            # retained on the row, the correction dated, the row open when superseded.
+            superseded = (f in ("keyed_keyless", "keyed_keyless_rationale")
+                          and o.get("status") == "open"
+                          and o.get("keyed_keyless") != n.get("keyed_keyless")
+                          and str(o.get("keyed_keyless") or "").strip() != ""
+                          and n.get("keyed_keyless_superseded") == o.get("keyed_keyless")
+                          and str(n.get("keyed_keyless_corrected") or "").strip() != "")
+            if o.get(f) != n.get(f) and not fillable and not superseded:
                 rec("MUST", "RPAS 4.01", f"{rid}: pre-registered field '{f}' changed "
                                          f"after issue ({o.get(f)!r} -> {n.get(f)!r})")
         if o.get("seal_sha256") and o.get("seal_sha256") != n.get("seal_sha256"):
@@ -398,7 +442,7 @@ def report(as_json, src, nrec):
             "should_departures": [{"cite": c, "message": m} for _, c, m in shoulds],
             "notes": [{"cite": c, "message": m} for l, c, m in findings if l == "INFO"],
             "verified_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "verifier": "rpas_verify/1.1"}, indent=2))
+            "verifier": "rpas_verify/1.2"}, indent=2))
         return 1 if musts else 0
     print(f"\nRPAS-26 CONFORMANCE — {src}")
     print("-" * 66)

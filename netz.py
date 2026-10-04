@@ -339,6 +339,19 @@ def convergence(clusters: list, min_categories: int = 2, top_n: int = 12) -> lis
 # LM Studio synthesis (optional layer) — ICD 203 discipline
 # ----------------------------------------------------------------------
 
+def _registered_input_model(tag: str = "lmstudio/auto"):
+    """INPUTBIND-1004: the model arms.json registers for the input-side arm, or None."""
+    try:
+        _arms = json.loads((Path(__file__).resolve().parent / "arms.json")
+                           .read_text(encoding="utf-8-sig"))["arms"]
+        for _a in _arms:
+            if _a.get("tag") == tag:
+                return str(_a.get("model") or "").strip() or None
+    except Exception:
+        return None
+    return None
+
+
 def llm_probe(base_url: str, timeout: int = 5):
     try:
         r = requests.get(f"{base_url.rstrip('/')}/models", timeout=timeout)
@@ -1351,7 +1364,10 @@ def main():
     synth, model_used = {}, None
     if not args.no_llm:
         base = config.get("lmstudio_base_url", "http://localhost:1234/v1")
-        model_used = config.get("lmstudio_model") or llm_probe(base)
+        # INPUTBIND-1004: the input side runs the model arms.json binds to lmstudio/auto,
+        # never the first id the server lists; NETZ_LM_MODEL overrides, the probe is last.
+        model_used = (os.environ.get("NETZ_LM_MODEL") or _registered_input_model()
+                      or config.get("lmstudio_model") or llm_probe(base))
         if model_used:
             print(f"NETZ · synthesis via {model_used}", file=sys.stderr)
             pir_note = ""

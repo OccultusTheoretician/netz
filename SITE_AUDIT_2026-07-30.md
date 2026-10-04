@@ -1,7 +1,7 @@
 # SITE AUDIT — retroprescientaudit.com
 ## 2026-07-30 · 20 pages · run against local clone at HEAD
 
-**PROVENANCE: DRAFT.** Findings are mechanical (counted, not sampled).
+**AUTHORSHIP:** drafted by the desk's assistant under the operator's direction, 2026-07-30. Findings are mechanical (counted, not sampled).
 `site_audit.py` — the desk's own enumerating auditor — supplies the
 infrastructure layer; this report adds the SEO/discoverability layer it does
 not check, and root-causes both together.

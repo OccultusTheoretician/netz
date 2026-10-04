@@ -150,7 +150,7 @@ The audit's UNSOURCED verdict means *not present in the published record* — th
 - first seen in synthesis: 2026-07-21 across 1 report(s)
 - reaches no sealed row (synthesis prose only)
 
-## The elicitation finding (data summary; DRAFT tier)
+## The elicitation finding (data summary; drafted by the desk's assistant)
 
 2 of 25 probed identifiers were never assigned by the issuing authority. Machine-drafted synthesis prose cited CVE identifiers that do not exist, and 0 of them reached sealed forecast rows.
 
