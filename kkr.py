@@ -2071,10 +2071,38 @@ def _rubric_hash():
     return hashlib.sha256(PROJECTION_PROMPT.encode("utf-8")).hexdigest()
 
 
+def _local_model_for(tag):
+    """LOCALARM-1004: the model arms.json registers for an active local arm, or None."""
+    if not tag:
+        return None
+    try:
+        for _a in json.loads((HERE / "arms.json").read_text(encoding="utf-8-sig"))["arms"]:
+            if _a.get("tag") == tag and _a.get("status") == "active":
+                return str(_a.get("model") or "").strip() or None
+    except Exception:
+        return None
+    return None
+
+
+def _local_slug(tag):
+    """LOCALARM-1004: a filename-safe slug for a local arm's packet."""
+    return re.sub(r"[^A-Za-z0-9._-]+", "-", str(tag or "").replace("lmstudio/", "", 1)).strip("-") or "local"
+
+
 def cmd_generate(args):
     # FRAMEARM-2026-09-03: a frame run is local by construction (cold access is
     # what makes the arm what it is) and seals only under a registered active tag.
     frame = getattr(args, "frame", None)
+    local_arm = getattr(args, "local_arm", None)  # LOCALARM-1004
+    _bound = (_local_model_for(local_arm or (f"lmstudio/{frame}" if frame else "lmstudio/auto"))
+              if args.provider == "lmstudio" and not args.model else None)
+    if local_arm:
+        if args.provider != "lmstudio" or frame or args.model:
+            print("KKR \u00b7 --local-arm requires --provider lmstudio and no --frame or --model; nothing run", file=sys.stderr)
+            sys.exit(2)
+        if not _bound:
+            print(f"KKR \u00b7 local arm {local_arm} is not registered active with a model in arms.json; nothing run", file=sys.stderr)
+            sys.exit(2)
     if frame:
         if args.provider != "lmstudio":
             print("KKR \u00b7 --frame requires --provider lmstudio; nothing run", file=sys.stderr)
@@ -2104,7 +2132,8 @@ def cmd_generate(args):
     # the packet is always written — the manual Fable path costs nothing
     OUT.mkdir(exist_ok=True)
     packet = OUT / (f"kkr_packet_frame_{frame}_{now.strftime('%Y-%m-%d_%H%M')}.md" if frame
-                    else f"kkr_packet_{now.strftime('%Y-%m-%d_%H%M')}.md")  # FRAMEARM-2026-09-03
+                    else f"kkr_packet_local_{_local_slug(local_arm)}_{now.strftime('%Y-%m-%d_%H%M')}.md" if local_arm
+                    else f"kkr_packet_{now.strftime('%Y-%m-%d_%H%M')}.md")  # FRAMEARM-2026-09-03 / LOCALARM-1004
     _latest_packet = OUT / "kkr_packet_latest.md"
     # KK21l: through the guard, and _LAST_PACKET set from the path ACTUALLY
     # written. This writer destroyed 19 elicitation inputs between 07-20 and
@@ -2117,7 +2146,7 @@ def cmd_generate(args):
     packet = write_run_artifact(packet, prompt, tag="packet")
     globals()["_LAST_PACKET"] = packet.name
     print(f"KKR - rubric sha256: {_rubric_hash()[:16]}... (frozen; rows seal under this hash)", file=sys.stderr)
-    if not frame:  # FRAMEARM-2026-09-03: a frame run never touches the frontier arms' packet
+    if not frame and not local_arm:  # FRAMEARM-2026-09-03 / LOCALARM-1004: frame and local arms never touch the frontier arms' packet
         _latest_packet.write_text(prompt, encoding="utf-8")
     print(f"KKR · packet → {packet}", file=sys.stderr)
     if args.packet_only:
@@ -2131,11 +2160,15 @@ def cmd_generate(args):
             print("KKR · primary (anthropic) unavailable — failing over to LM Studio",
                   file=sys.stderr)
     if raw is None and args.provider in ("lmstudio", "auto"):
-        raw = call_lmstudio(args.lmstudio_url, None if args.provider == "auto" else args.model,
+        if _bound:  # LOCALARM-1004: the registry names the model; the arm runs exactly it
+            print(f"KKR \u00b7 local arm bound to registered model {_bound}", file=sys.stderr)
+        raw = call_lmstudio(args.lmstudio_url, None if args.provider == "auto" else (_bound or args.model),
                             prompt)
         tag = "lmstudio/auto" if args.provider == "auto" else f"lmstudio/{args.model or 'auto'}"
         if frame:
             tag = f"lmstudio/{frame}"  # FRAMEARM-2026-09-03
+        if local_arm:
+            tag = local_arm  # LOCALARM-1004
     if not raw:
         print("KKR · no model output — packet written, ledger unchanged", file=sys.stderr)
         return
@@ -3481,6 +3514,9 @@ def main():
     ap.add_argument("--frame", default=None, choices=sorted(FRAMES),
                     help="FRAMEARM-2026-09-03: fire a local frame arm (lmstudio/<frame>); "
                          "requires --provider lmstudio; writes its own packet")
+    ap.add_argument("--local-arm", default=None, metavar="TAG",
+                    help="LOCALARM-1004: fire a registered local arm by tag; it runs the model "
+                         "arms.json names for it and writes its own packet")
     ap.add_argument("--ingest", metavar="FILE")
     ap.add_argument("--packet", metavar="NAME",
                     help="with --ingest: the packet filename this arm forecast against")
