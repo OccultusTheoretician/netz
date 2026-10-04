@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-10-03T10:36:13Z · ledger `ledger.json` · 3270 rows in scope
+Generated 2026-10-04T11:16:16Z · ledger `ledger.json` · 3322 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,12 +12,12 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **3269**
+- rows audited: **3321**
 - scope limitation (no resolvable source report): **1**
-- defective: **477** (14.6% of audited)
-- rows whose citation number does not identify a unique item: **384** (max candidates behind one number: 8)
-  - AMBIGUOUS_REF: 384
-  - UNSUPPORTED: 297
+- defective: **479** (14.4% of audited)
+- rows whose citation number does not identify a unique item: **387** (max candidates behind one number: 8)
+  - AMBIGUOUS_REF: 387
+  - UNSUPPORTED: 299
   - DEADWEIGHT: 167
   - SHOTGUN: 52
   - NO_CITES: 24
@@ -26,7 +26,7 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 ## The number that matters
 
 Rows determined **KEYLESS**: 210
-Of those, citations defective: **40** (19.0%)
+Of those, citations defective: **14** (6.7%)
 
 A keyless determination says the claim went beyond its declared priors. Where the priors are unreadable, that determination was made against nothing. These rows are listed so the keyless count can be stated with its defect rate attached rather than as a clean integer.
 
@@ -41,35 +41,9 @@ A keyless determination says the claim went beyond its declared priors. Where th
 - `KKR-20260731-27` · manual/opus-5 · 2026-07-31 · UNSUPPORTED/AMBIGUOUS_REF · 3 cites (0 strong, 0 weak, 3 none)
 - `KKR-20260802-01` · lmstudio/auto · 2026-08-02 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
 - `KKR-20260808-05` · lmstudio/auto · 2026-08-08 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260910-02` · lmstudio/auto · 2026-09-10 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260911-01` · lmstudio/auto · 2026-09-11 · UNSUPPORTED · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260911-03` · lmstudio/auto · 2026-09-11 · UNSUPPORTED · 1 cites (0 strong, 0 weak, 1 none)
 - `KKR-20260911-08` · lmstudio/realist · 2026-09-11 · SHOTGUN/UNSUPPORTED · 14 cites (0 strong, 0 weak, 14 none)
-- `KKR-20260911-09` · lmstudio/realist · 2026-09-11 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260911-10` · lmstudio/realist · 2026-09-11 · UNSUPPORTED/AMBIGUOUS_REF · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260911-11` · lmstudio/realist · 2026-09-11 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260911-13` · lmstudio/realist · 2026-09-11 · SHOTGUN/DEADWEIGHT/AMBIGUOUS_REF · 115 cites (20 strong, 0 weak, 95 none)
-- `KKR-20260912-09` · lmstudio/realist · 2026-09-12 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260912-11` · lmstudio/realist · 2026-09-12 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260912-13` · lmstudio/realist · 2026-09-12 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260913-06` · lmstudio/realist · 2026-09-13 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
 - `KKR-20260914-01` · lmstudio/auto · 2026-09-14 · DEADWEIGHT/AMBIGUOUS_REF · 3 cites (1 strong, 0 weak, 2 none)
-- `KKR-20260915-11` · lmstudio/realist · 2026-09-15 · UNSUPPORTED · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260916-01` · lmstudio/auto · 2026-09-16 · UNSUPPORTED · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260917-01` · lmstudio/auto · 2026-09-17 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260917-06` · lmstudio/auto · 2026-09-17 · UNSUPPORTED/AMBIGUOUS_REF · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260917-11` · lmstudio/realist · 2026-09-17 · UNSUPPORTED · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260918-01` · lmstudio/auto · 2026-09-18 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260918-08` · lmstudio/realist · 2026-09-18 · SHOTGUN/DEADWEIGHT/AMBIGUOUS_REF · 94 cites (28 strong, 9 weak, 57 none)
-- `KKR-20260918-09` · lmstudio/realist · 2026-09-18 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260918-12` · lmstudio/realist · 2026-09-18 · SHOTGUN · 25 cites (20 strong, 1 weak, 4 none)
-- `KKR-20260918-15` · lmstudio/realist · 2026-09-18 · SHOTGUN · 25 cites (22 strong, 0 weak, 3 none)
-- `KKR-20260919-02` · lmstudio/auto · 2026-09-19 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260919-03` · lmstudio/auto · 2026-09-19 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260920-04` · lmstudio/auto · 2026-09-20 · UNSUPPORTED · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260920-43` · manual/sonnet-5/unattested · 2026-09-20 · THIN · 1 cites (0 strong, 1 weak, 0 none)
-- `KKR-20260921-09` · lmstudio/realist · 2026-09-21 · UNSUPPORTED · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20260925-03` · lmstudio/realist · 2026-09-25 · UNSUPPORTED/AMBIGUOUS_REF · 1 cites (0 strong, 0 weak, 1 none)
+- `KKR-20260928-07` · lmstudio/auto · 2026-09-28 · SHOTGUN · 27 cites (21 strong, 0 weak, 6 none)
 
 ## By arm
 
@@ -77,17 +51,17 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| lmstudio/auto | 441 | 126 | 29% |
-| control/baserate | 1173 | 124 | 11% |
-| lmstudio/realist | 161 | 67 | 42% |
+| lmstudio/auto | 448 | 126 | 28% |
+| control/baserate | 1193 | 124 | 10% |
+| lmstudio/realist | 166 | 69 | 42% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| manual/fable-5.1/unattested | 243 | 35 | 14% |
+| manual/fable-5.1/unattested | 250 | 35 | 14% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
 | manual/opus-5 | 74 | 12 | 16% |
 | manual/fable | 45 | 6 | 13% |
-| manual/opus-5.5/unattested | 71 | 6 | 8% |
-| manual/sonnet-5.5/unattested | 32 | 5 | 16% |
+| manual/opus-5.5/unattested | 78 | 6 | 8% |
+| manual/sonnet-5.5/unattested | 38 | 5 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
 | manual/sonnet-5 | 45 | 1 | 2% |
 | operator/human | 10 | 0 | 0% |
