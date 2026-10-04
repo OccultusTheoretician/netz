@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-10-04T03:16:27Z",
+  "as_of": "2026-10-04T03:32:38Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -64259,17 +64259,12 @@
       "sealed_at": "2026-09-10T15:21:07.758110+00:00",
       "seal_sha256": "57f6f8fb13bcaf99b507934554e5a488594a58332190cbde58650c93257e5407",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a ransomware attack exploiting CVE-2026-20079 will be confirmed by CISA.",
@@ -64938,17 +64933,12 @@
       "sealed_at": "2026-09-10T23:24:35.987856+00:00",
       "seal_sha256": "52f3ed47998bb8df79f95ad53081eeb22ba3b140bf932567f7b21aed2012afc7",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [83,97] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [83,97] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "The Federal Open Market Committee raises the federal funds rate target range above 3.50 to 3.75 percent at its meeting concluding 2026-09-16 (Reference: range held at 3.50 to 3.75 percent since the 2026-07-29 meeting).",
@@ -66938,17 +66928,12 @@
       "sealed_at": "2026-09-11T15:19:59.553505+00:00",
       "seal_sha256": "fa4836af6528bcac44cb6892fcef132f31ec58a4c33fc3f2aa8bc14cddb00b54",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [44] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [44] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a Green flood alert is issued for Spain by GDACS and remains active through 2026-09-24.",
@@ -66973,17 +66958,12 @@
       "sealed_at": "2026-09-11T15:19:59.553526+00:00",
       "seal_sha256": "ddaa7799dc593e5aaba76d0396b9839c656dd40748827eb94168c1c6351ea539",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [32] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [32] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, the U.S. dollar strengthens to a 1.17 exchange rate against the euro on at least one weekday.",
@@ -67008,17 +66988,12 @@
       "sealed_at": "2026-09-11T15:19:59.553538+00:00",
       "seal_sha256": "416d7254a0aa8e2c699131d132f822989b65fc858da16647829d1d74b03aec19",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [44] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [44] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a new earthquake of magnitude 5.0 or higher is recorded in Indonesia with a depth less than 100 km, as confirmed by USGS.",
@@ -67043,17 +67018,12 @@
       "sealed_at": "2026-09-11T15:19:59.553552+00:00",
       "seal_sha256": "e2da110a6f3c55837b02b2c220357e99946b65b3f6ff42a6ae704a4513afd11d",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [43] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [43] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a new political statement by a U.S. government official about Iran's nuclear program is confirmed by at least two independent news outlets (e.g., BBC, Guardian, Al Jazeera).",
@@ -67078,17 +67048,12 @@
       "sealed_at": "2026-09-11T15:19:59.553562+00:00",
       "seal_sha256": "ef285d190f9c244a3b0c12cea4c39a86f3b4e8749942c66bae6e4ed64788356a",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [100] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [100] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-11 and 2026-09-17, at least one reported drone strike in the Kyiv theater will be confirmed by cross-bias agreement across three hostile sides.",
@@ -67331,17 +67296,12 @@
       "sealed_at": "2026-09-11T15:22:36.800987+00:00",
       "seal_sha256": "faf37028bf3416783ce5cf027a98b53cb0ca2e860220894029e80278b0394e48",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-15 and 2026-09-21, at least one confirmed airstrike in the Khan Younis area will be reported by three or more independent outlets with hostile bias.",
@@ -67369,17 +67329,12 @@
       "sealed_at": "2026-09-11T15:22:36.800995+00:00",
       "seal_sha256": "751e2aa9bef63362ad8c425f251bcc5248a7f3f69284db704bd6abd02d39cec3",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [2,3] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [2,3] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-16 and 2026-09-22, the U.S. dollar will trade above 1.17 against the euro on at least one weekday.",
@@ -67406,17 +67361,12 @@
       "sealed_at": "2026-09-11T15:22:36.801004+00:00",
       "seal_sha256": "b2ba8fe70a99aebb60f70d47e9b2609797ea488c0dd8ae28a278bde52c30e337",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-17 and 2026-09-23, at least one new cyberattack exploiting CVE-2026-67277 will be reported by two or more independent outlets.",
@@ -67446,17 +67396,12 @@
       "sealed_at": "2026-09-11T15:22:36.801011+00:00",
       "seal_sha256": "85110be47217006cee834224c1e47e6da8d5059f30582cd319b74dd2c633c3b4",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [8,16,20,26] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [8,16,20,26] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-24, at least one major political statement about Iran's nuclear program will be made by a U.S. or EU official and confirmed by cross-bias agreement across two hostile sides.",
@@ -67597,17 +67542,12 @@
       "sealed_at": "2026-09-11T15:22:36.801020+00:00",
       "seal_sha256": "c24a5006825616eb73d1b74cd3c43d51ef2df4b20a619323281da586c1ab12e6",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [115 items] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [115 items] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "A ceasefire or truce between the United States or Israel and Iran, formally announced by a government of a combatant state with a stated effective date, takes effect between 2026-09-18 and 2026-12-03.",
@@ -69671,17 +69611,12 @@
       "sealed_at": "2026-09-12T16:58:30.780409+00:00",
       "seal_sha256": "f4673921887000e9aff19acab9e3e5a47af444fd4c65905bdc40ec17de8b048b",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [1,2] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [1,2] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-15 and 2026-09-22, the USGS Significant Quakes catalog will record a magnitude 6.0 or greater earthquake in Indonesia.",
@@ -69737,17 +69672,12 @@
       "sealed_at": "2026-09-12T16:58:30.780445+00:00",
       "seal_sha256": "5e18e03a80f55d268c14b053b7d3a5de8c7b63b772b2ae9d922bc44870537588",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [52,71] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [52,71] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-17 and 2026-09-24, the 10-year U.S. Treasury yield will close above 5.0 percent on at least one weekday.",
@@ -69774,17 +69704,12 @@
       "sealed_at": "2026-09-12T16:58:30.780455+00:00",
       "seal_sha256": "8821699bd2e85d48a8a50de253faa7a0834af5dc38f5f0206966890d5fa6d711",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-25, the GDACS Alerts system will issue a Red or Orange alert for a forest fire in Russia or Kazakhstan.",
@@ -69839,17 +69764,12 @@
       "sealed_at": "2026-09-12T16:58:30.780470+00:00",
       "seal_sha256": "7f259b6688aa062f7500c8c8df3ca58a356e5725db46039a19fdc862e692fec2",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-20 and 2026-09-27, at least one of the following will be reported in two or more independent outlets: a cyberattack on a U.S. federal agency using a vulnerability from the CISA KEV catalog or a ransomware attack on a U.S. hospital system.",
@@ -69905,17 +69825,12 @@
       "sealed_at": "2026-09-12T16:58:30.780486+00:00",
       "seal_sha256": "ff1774ee7e3d6b45ab1408ada35fdcc16e4145befcb998755c5578168b089b77",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Both candidate priors concern Trump and Irish unification; neither bears on a Brent price. Not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Both candidate priors concern Trump and Irish unification; neither bears on a Brent price. Not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "WTI crude front-month futures settle at or above 110.00 USD per barrel on any trading day between 2026-09-19 and 2026-10-17. Reference: 100.05 USD per barrel on 2026-09-12, the packet date",
@@ -71491,17 +71406,12 @@
       "sealed_at": "2026-09-13T17:15:50.259086+00:00",
       "seal_sha256": "43e8f530565b95e074d322d05f83d1c5e506f3e1077403805fa2d00be42d6c91",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [25,33] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [25,33] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-20 and 2026-09-27, a cyberattack exploiting a vulnerability in a major cloud provider's API is confirmed by CISA KEV and two independent security firms.",
@@ -71558,17 +71468,12 @@
       "sealed_at": "2026-09-13T17:15:50.259120+00:00",
       "seal_sha256": "91e188976303f1a65a960cc006f744f7a43db4d2daa7b49889be117374743fc7",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [17,23] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [17,23] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "On 2026-09-23, a new political coalition in Sweden is formed following the general election, with the far-right party securing a ministerial role, as confirmed by the Swedish government's official website and two international news agencies.",
@@ -71654,17 +71559,12 @@
       "sealed_at": "2026-09-13T17:15:50.259148+00:00",
       "seal_sha256": "5cc2adf705f8e02fc57f2bceefd862b5cd0fa2ebe7909daddd1437c79f2d052e",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [25,34] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [25,34] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "On 2026-09-25, a new BRICS summit resolution is adopted calling for a joint peace initiative in the Middle East, as confirmed by the official BRICS website and two international news agencies.",
@@ -71692,17 +71592,12 @@
       "sealed_at": "2026-09-13T17:15:50.259155+00:00",
       "seal_sha256": "15895b44215891549ae6566b153cde2af546c01edcedb7fef4091fc5048d1641",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [40,68] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [40,68] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-20 and 2026-10-04, at least one additional commercial or military vessel will be struck, hit, or attacked while transiting the Strait of Hormuz.",
@@ -73398,17 +73293,12 @@
       "sealed_at": "2026-09-14T15:17:56.519571+00:00",
       "seal_sha256": "7b5092958d9c1d5cc220ed981d8802c5b4742f8e58379e2827bcbd1d75166a6e",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [83,84,90] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [83,84,90] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-27 and 2026-09-30, a cyberattack on a U.S. federal agency results in the exposure of at least 1 million user records, as confirmed by a CISA KEV entry and a federal press release.",
@@ -74083,17 +73973,12 @@
       "sealed_at": "2026-09-14T16:44:44.496967+00:00",
       "seal_sha256": "d1014ab58a77443b56f1ca8bd25e5cf77364a2a3174c3a74a43935ffad275d9f",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [49,74] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [49,74] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "The CISA Known Exploited Vulnerabilities catalog contains at least 20 entries with a dateAdded value between 2026-09-15 and 2026-10-14 inclusive.",
@@ -75833,17 +75718,12 @@
       "sealed_at": "2026-09-15T15:48:55.795103+00:00",
       "seal_sha256": "4c78ec204840ad19b6d69301c706efb464c36e92f8706aadd4e19eb1d72b32f5",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [18] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [18] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-15 and 2026-09-22, the 10-year U.S. Treasury yield will exceed 5.00 percent at any point during the window.",
@@ -75870,17 +75750,12 @@
       "sealed_at": "2026-09-15T15:48:55.795125+00:00",
       "seal_sha256": "acad8665276833b914b633fb71dac482e1a7172727c04c98c1efc16168db1043",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [59] state the outcome. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [59] state the outcome. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-15 and 2026-09-22, a drone strike will be reported in Kyiv with at least one casualty confirmed by two independent sources.",
@@ -75907,17 +75782,12 @@
       "sealed_at": "2026-09-15T15:48:55.795136+00:00",
       "seal_sha256": "cca4e008003c6d3403ec4bad64eb28977788c446e485fd0d65b00c55cd08b6b6",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [20] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [20] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-15 and 2026-09-22, a major oil pipeline disruption in the Panama Canal region will be confirmed by two independent sources due to drought.",
@@ -77238,17 +77108,12 @@
       "sealed_at": "2026-09-15T22:10:01.011168+00:00",
       "seal_sha256": "5489555ac532a09ddaf6d1bbaea6bdbaffa9fffc755b352169f1b02cfd4863c2",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [54,68,77] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [54,68,77] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "A NATO member state government attributes an intercepted, engaged, or shot-down aircraft or drone violating its airspace to Russia or a Russia-aligned actor, between 2026-09-16 and 2026-10-06.",
@@ -77300,17 +77165,12 @@
       "sealed_at": "2026-09-15T22:10:01.011203+00:00",
       "seal_sha256": "a8569b133ccf379e432921c19b23bb1f9af2f945a87fc8eecb091f340546bd53",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [25] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [25] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "GDACS upgrades its alert level for Tropical Cyclone TWENTYFOUR-26 from Green to Orange or Red, between 2026-09-16 and 2026-09-25.",
@@ -78340,17 +78200,12 @@
       "sealed_at": "2026-09-16T15:19:26.199492+00:00",
       "seal_sha256": "d3be4cf08ffa253b60b52e87257afae5acb15b640e7aff42c1ff128a6faabe41",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [8] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [8] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-16 and 2026-09-23, a green forest fire notification will be issued for Spain via GDACS Alerts.",
@@ -82586,17 +82441,12 @@
       "sealed_at": "2026-09-17T15:20:12.304055+00:00",
       "seal_sha256": "fa217dda41a29e163cf986c020709b78279aee56f9ac80cbab313c6245d82b42",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [38,39] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [38,39] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a new political scandal involving a U.S. government official will be reported by at least two major outlets with independent corroboration.",
@@ -82622,17 +82472,12 @@
       "sealed_at": "2026-09-17T15:20:12.304078+00:00",
       "seal_sha256": "43bcaa6a61f0d9e74da31f5b41373f3cc93959d8d0765965e815ac1311f87432",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [102,113] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [102,113] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a major earthquake of magnitude 6.5 or higher will be recorded by the USGS in the Aleutian Islands.",
@@ -82684,17 +82529,12 @@
       "sealed_at": "2026-09-17T15:20:12.304100+00:00",
       "seal_sha256": "8c9928e21c770886c30c2d72408d2e5be141f242a280b0ccaa1294130bf0f066",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [20,22] state the outcome. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [20,22] state the outcome. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a new political resignation in a European country will be confirmed by at least two major news outlets.",
@@ -82720,17 +82560,12 @@
       "sealed_at": "2026-09-17T15:20:12.304110+00:00",
       "seal_sha256": "85342fe9b61b76d3494e5989ebd10eb904e6ec9c76964445e368ac5b5b3b5f11",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [105,116] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [105,116] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a new military escalation in the Russia-Ukraine conflict will be confirmed by at least two hostile sides with cross-bias agreement.",
@@ -82756,17 +82591,12 @@
       "sealed_at": "2026-09-17T15:20:12.304119+00:00",
       "seal_sha256": "b59da5df2a77537ac37f73b87fa85f0d046606dd1b1eccb6d821be0bcecedf9b",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [1,2] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [1,2] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-24, the USGS Significant Quakes feed will report a magnitude 6.5 or higher earthquake in the Fox Islands, Aleutian Islands, with a depth of 100 km or more.",
@@ -82824,17 +82654,12 @@
       "sealed_at": "2026-09-17T15:22:34.384978+00:00",
       "seal_sha256": "41fc7976558f99c68a91ded06d3f73575620db8d9ea5c5ea6b426ea6cd052a07",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [10,12,13,14] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [10,12,13,14] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-24, a new vulnerability in Cisco Identity Services Engine (ISE) will be exploited in at least one confirmed cyberattack, as reported by two independent sources.",
@@ -82918,17 +82743,12 @@
       "sealed_at": "2026-09-17T15:22:34.385008+00:00",
       "seal_sha256": "d86f81c6d3eebe5b786b1594c1b6f9034419a12b9dfa771c06129bf0493b575e",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [7] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [7] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-24, the Bank of England will leave interest rates unchanged, as confirmed by a press release from the Bank.",
@@ -84919,17 +84739,12 @@
       "sealed_at": "2026-09-18T15:19:48.206063+00:00",
       "seal_sha256": "68965860e7027c58ba0fcb917e53c897c37857d1675e9b4512c4778a7ae5407f",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a magnitude 6.0 or higher earthquake will be recorded by the USGS in the Pacific Northwest.",
@@ -85209,17 +85024,12 @@
       "sealed_at": "2026-09-18T15:22:35.895205+00:00",
       "seal_sha256": "9f4b487110ede70496d41e8c57348540c3b31f6558b79c417e6a6bee66520408",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [94 items] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [94 items] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-25, the 10-year Treasury yield will exceed 5.10 percent on at least one weekday.",
@@ -85246,17 +85056,12 @@
       "sealed_at": "2026-09-18T15:22:35.895233+00:00",
       "seal_sha256": "35830288bb177b02472d67c6940b5131cbd82979862dc21016ca55a40ff6042b",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-25, a cyberattack exploiting CVE-2025-39964 will be confirmed by at least two independent sources.",
@@ -85283,17 +85088,12 @@
       "sealed_at": "2026-09-18T15:22:35.895248+00:00",
       "seal_sha256": "9f80895cca3f1b80fb3f7a13078c6fdd32f0d3499e9fe4f01f63fbf2394a8426",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [18] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [18] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-25, a major earthquake of magnitude 6.5 or higher will be recorded by the USGS in any region.",
@@ -85372,17 +85172,12 @@
       "sealed_at": "2026-09-18T15:22:35.895269+00:00",
       "seal_sha256": "97edb12d45407d395248bfe2bc320fe4fe75f93f864e302fb1bcb3b5b88c6c75",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [25 items] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [25 items] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-25, a new cyberattack targeting Microsoft 365 will be confirmed by at least two independent sources.",
@@ -85437,17 +85232,12 @@
       "sealed_at": "2026-09-18T15:22:35.895288+00:00",
       "seal_sha256": "a7c1e65ac6b8e715ff34bd022433b1e03b780d9ba64c00984571aca094292505",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [35] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [35] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-18 and 2026-09-25, a new political resignation or indictment involving a senior official in the European Union will be confirmed by at least two independent sources.",
@@ -85498,17 +85288,12 @@
       "sealed_at": "2026-09-18T15:22:35.895297+00:00",
       "seal_sha256": "caf107912d12bd1d647418e08e40acd2b0930a57c7bec8ff0e652b4604032073",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [25 items] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [25 items] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "The critical Check Point root code-execution flaw reported 18 Sep 2026 is added to the CISA KEV catalog with a date-added value between 2026-09-18 and 2026-10-16.",
@@ -86992,17 +86777,12 @@
       "sealed_at": "2026-09-19T15:18:33.943099+00:00",
       "seal_sha256": "c419dcdd1791189475b2e544def58d50afb352231ef508a066b4b803f0c03ec3",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [11,12] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [11,12] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, the 10-year U.S. Treasury yield will exceed 5.10 percent at market close on at least one day.",
@@ -87027,17 +86807,12 @@
       "sealed_at": "2026-09-19T15:18:33.943112+00:00",
       "seal_sha256": "b21fb9704663552d3058213a7e48a9a2e132cd3f2ecb564c551ca7470825165c",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a new exploit for CVE-2026-53266 will be publicly disclosed in a security advisory.",
@@ -87062,17 +86837,12 @@
       "sealed_at": "2026-09-19T15:18:33.943122+00:00",
       "seal_sha256": "4f87bd9e01cf8ea005c69cd165725a2f7cabfe5f47fa05398a844cb008e15db9",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [23] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [23] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, the European Union will issue a public statement urging the United States to lift the travel ban on the Palestinian delegation to the UN General Assembly.",
@@ -87124,17 +86894,12 @@
       "sealed_at": "2026-09-19T15:18:33.943140+00:00",
       "seal_sha256": "28ef0b5e98623f30e0b55c48e27095e096c7c1367ec052d621a64adea391e22a",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [9,96] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [9,96] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, a major cyberattack exploiting the Orkes Conductor Workflow Platform vulnerability (CVE-2025-39964) will be confirmed by CISA.",
@@ -87160,17 +86925,12 @@
       "sealed_at": "2026-09-19T15:18:33.943148+00:00",
       "seal_sha256": "5c3a94c923a5ca23f7e5746e7010e7df17698ffe8a0321898f22898d85481e30",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [20,23] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [20,23] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-24, the U.S. and Denmark will publicly announce the implementation of a new military presence in Greenland under the security deal.",
@@ -88430,17 +88190,12 @@
       "sealed_at": "2026-09-20T15:19:00.472438+00:00",
       "seal_sha256": "8fb5c932cdc9a4f88612d854edb1db8a923a7499d07997259a2801f7b650b10a",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [47] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [47] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "A cyberattack targeting a U.S. federal agency is confirmed by CISA KEV between 2026-09-21 and 2026-09-24, with a public advisory issued.",
@@ -88465,17 +88220,12 @@
       "sealed_at": "2026-09-20T15:19:00.472450+00:00",
       "seal_sha256": "f796db3e52dea72b318f7203da37fa164dfd08b8ecc680418a39a9cfce7c78ca",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [8] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [8] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "A tropical cyclone with Category 3 or higher intensity makes landfall in the U.S. between 2026-09-21 and 2026-09-24, confirmed by the National Hurricane Center.",
@@ -88553,17 +88303,12 @@
       "sealed_at": "2026-09-20T15:19:00.472483+00:00",
       "seal_sha256": "c52465cde944ecdd9b9b900ad0f46417f3ed327a6fee143a3d913f566be99e54",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [8] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [8] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "On 2026-09-25, the S&P 500 will close below 7,500.00 points.",
@@ -88590,17 +88335,12 @@
       "sealed_at": "2026-09-20T15:21:13.171602+00:00",
       "seal_sha256": "3cf5e17ba5deb4c617ddda2cafa09e3bb290f2e92cec91277cfce487e583162e",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-27, a military escalation in the Russia-Ukraine Theatre will result in a confirmed drone strike on Kyiv with at least one casualty.",
@@ -88684,17 +88424,12 @@
       "sealed_at": "2026-09-20T15:21:13.171647+00:00",
       "seal_sha256": "a5aec7cfb56756ac37502bdeffd08f02167ac3d81f3b4c90c0e94102c5c57216",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-22",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-22",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [5] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-22 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-21 and 2026-09-27, a political scandal involving a U.S. federal official will result in a formal indictment by a grand jury.",
@@ -89587,17 +89322,12 @@
       "sealed_at": "2026-09-20T19:58:39.259290+00:00",
       "seal_sha256": "589c13ed50ad4c754cd37d7a345f78890bfc6b5b22b774196fd771d45d77e3b1",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [25,63,74] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Priors report the 09-20 attack. The claim is a further wave in the following week; a past event grounds but does not decide a repeat.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Priors report the 09-20 attack. The claim is a further wave in the following week; a past event grounds but does not decide a repeat.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [25,63,74] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "A formal ceasefire or truce between the United States and Iran, confirmed by matching statements from the US State Department or White House and the Iranian Foreign Ministry, is announced between 2026-09-21 and 2026-10-19.",
@@ -89671,17 +89401,12 @@
       "sealed_at": "2026-09-20T19:58:39.259477+00:00",
       "seal_sha256": "40a91c520d0f2ba6ef26f98979fdc19e14c74b301097dabb5bd80a7c7aab42c0",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [80] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Prior 80 is a drone story sharing only the token single-mandate. It states nothing about the Duma result.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Prior 80 is a drone story sharing only the token single-mandate. It states nothing about the Duma result.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [80] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "The CISA Known Exploited Vulnerabilities catalog adds an entry, with dateAdded between 2026-09-21 and 2026-10-19, for a vulnerability in the class of AI coding-agent sandbox escapes or malicious npm package supply-chain compromise, matching the techniques reported 20 September 2026.",
@@ -90242,17 +89967,12 @@
       "sealed_at": "2026-09-21T15:19:52.192752+00:00",
       "seal_sha256": "dac4e7ad688381af28b56c0f64ab6ae2fd6353e7a2f551cebaa89dcf17ed9103",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [62] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [62] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-25 and 2026-09-28, a major earthquake of magnitude 6.5 or higher will be recorded in the Pacific Ring of Fire, as confirmed by the USGS Significant Quakes feed.",
@@ -90418,17 +90138,12 @@
       "sealed_at": "2026-09-21T20:14:11.145125+00:00",
       "seal_sha256": "1a9c36b7df514a417576c6ccf41966d8675970d7444b83912ea8e87da26dcbdf",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [76,110] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [76,110] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "US forces carry out at least one strike on a target located on Iranian land territory between 2026-09-22 and 2026-10-21.",
@@ -90911,17 +90626,12 @@
       "sealed_at": "2026-09-21T20:14:14.102767+00:00",
       "seal_sha256": "66d63f0ed0ec7d0b414ed404c37af98f6dd20f359a6881345034a20ca8cefb4a",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [12] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Prior 12 states the shooting, not an arrest.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Prior 12 states the shooting, not an arrest.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [12] name the same specific subject and proceeding; the claim asserts its continuation, resolution or ordinary next stage. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Japanese authorities will confirm 10 or more fatalities from Typhoon Dujuan, for the period 2026-09-21 to 2026-09-28.",
@@ -96397,17 +96107,12 @@
       "sealed_at": "2026-09-24T16:43:05.905570+00:00",
       "seal_sha256": "b184fae7878cc8162856f8f6bdd49d35a86007ed3ba0b28d2aa46fae45d5ae5e",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [41] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [41] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Houthi forces fire at least one ballistic missile, cruise missile, or armed drone that the Saudi-led coalition says it intercepted or destroyed, in an incident occurring between 2026-09-25 and 2026-10-08.",
@@ -97320,17 +97025,12 @@
       "sealed_at": "2026-09-25T15:24:22.959243+00:00",
       "seal_sha256": "be36a916b67d07b58ff4c8b98267b55c14e841e4308213686afc6c03de4e1a3b",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [29,30,43] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [29,30,43] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-26 and 2026-10-02, the CISA KEV catalog will list at least one new exploited vulnerability in a critical infrastructure system.",
@@ -97358,17 +97058,12 @@
       "sealed_at": "2026-09-25T15:24:22.959266+00:00",
       "seal_sha256": "f5cb414eeee13ee1ca8965fecd4b920a88bf7a4810da9755dac227f5370f1513",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [18,22] state the outcome. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "Cited prior grounds the subject but states no outcome bearing on this claim.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [18,22] state the outcome. KEYED (KEYED_KEYLESS_DOCTRINE_2026-08-04). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-26 and 2026-10-02, the 10-year Treasury yield will exceed 5.30 percent.",
@@ -97395,17 +97090,12 @@
       "sealed_at": "2026-09-25T15:24:22.959277+00:00",
       "seal_sha256": "5ab56994254f47f5efa7f62e8fcbc0b299b6df7c9cca3cb42e58f1644ae72874",
       "keyed_keyless": "keyed",
-      "keyed_keyless_rationale": "Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
-      "keyed_keyless_dated": "2026-10-04",
-      "keyed_keyless_superseded": [
-        {
-          "value": "keyless",
-          "rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
-          "dated": "2026-09-27",
-          "superseded": "2026-10-04",
-          "by": "SUPERSEDE-KK-1004"
-        }
-      ]
+      "keyed_keyless_rationale": "No cited prior shares substantive vocabulary with the claim, so the entry was not derived from the priors.",
+      "keyed_keyless_dated": "2026-09-27",
+      "keyed_keyless_superseded": "keyless",
+      "keyed_keyless_corrected": "2026-10-04",
+      "keyed_keyless_correction": "CORRECTED from keyless. Cited prior(s) [1] share no discriminating vocabulary with the claim, or the entry cites most of the record; priors unreadable, KEYED by rule (KEYED_KEYLESS_DOCTRINE_2026-08-04, 4.03). SUPERSEDE-KK-1004: supersedes a 2026-09-27 KEYLESS ruling that applied strict deduction; RPAS 5.07, superseded value kept in keyed_keyless_superseded.",
+      "keyed_keyless_authority": "Ruled by the operator on 2026-10-04 under KEYED_KEYLESS_DOCTRINE_2026-08-04 (RPAS 5.07); drafted by the assistant as SUPERSEDE-KK-1004, re-recorded in the keys_correct.py schema by KK-SCHEMA-1004."
     },
     {
       "statement": "Between 2026-09-26 and 2026-10-02, a new tropical cyclone will be designated as a Category 3 or higher storm by the National Hurricane Center.",
