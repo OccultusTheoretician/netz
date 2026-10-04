@@ -12,7 +12,7 @@ if %LMSTRIES% GEQ 30 (
 ping -n 3 127.0.0.1 >nul
 goto lmswait
 :lmsready
-lms ps 2>nul | findstr /C:"qwen/qwen3-30b-a3b-2507" >nul || call lms load qwen/qwen3-30b-a3b-2507 -y
+lms ps 2>nul | findstr /C:"qwen/qwen3-30b-a3b-2507" >nul || (call lms unload --all >nul 2>&1 & call lms load qwen/qwen3-30b-a3b-2507 -y)
 :lmsdone
 :: end KK30-LMS-PREFLIGHT
 REM ============================================================
@@ -60,7 +60,9 @@ call :run "war-desk + collation + forecast (daily.bat)" call daily.bat
 REM FRAMEARM-2026-09-03: second local arm - same model, same rubric, a hashed
 REM realist frame preamble; own packet; rows carry frame/frame_hash. LM Studio
 REM down = packet written, ledger unchanged, printed. Fail-open under :run.
-call :run "frame arm realist (local)"  python kkr.py --provider lmstudio --frame realist
+REM LOCALARM-1004: every registered local arm except lmstudio/auto (daily.bat fires
+REM that), grouped by the model arms.json names, one model in memory at a time.
+call :run "local arms (sequential)"   python local_arms.py
 call :run "ohrwurm propagation"        python ohrwurm.py --latest
 call :run "ohrwurm velocity"           python ohrwurm_velocity.py --latest
 call :run "ohrwurm event-phrase join"  python ohrwurm_link.py --latest
