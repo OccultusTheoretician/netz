@@ -1,25 +1,16 @@
-# URTEIL - verdict-grounding audit - 2026-10-03T15:24:20Z
+# URTEIL - verdict-grounding audit - 2026-10-04T15:24:16Z
 
 Every non-ABSTAIN jury verdict audited against the held evidence for its row, by the same mechanics that audit forecast citations. Grounding is checkable even when the verdict is right; the CORRECT-BUT-UNGROUNDED class is the one the blind protocol cannot see on its own.
 
 | class | n |
 |---|---|
-| GROUNDED | 7 |
+| GROUNDED | 26 |
 | THIN | 0 |
-| UNGROUNDED-SPECIFIC | 13 |
+| UNGROUNDED-SPECIFIC | 41 |
 | UNHELD-VERDICT | 0 |
 | UNHELD-SEARCHED | 101 |
 | OUT-OF-HELD | 20 |
-| ABSTAIN | 245 |
-
-## CORRECT-BUT-UNGROUNDED - printed at full size
-- **KKR-20260725-08** juror B (cold) ruled HIT, final HIT - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 08, 12, 2026-08-12
-- **KKR-20260731-04** juror B (cold) ruled MISS, final MISS - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- **KKR-20260901-04** juror B (cold) ruled HIT, final HIT - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- **KKR-20260903-04** juror B (cold) ruled HIT, final HIT - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- **KKR-20260903-11** juror B (cold) ruled HIT, final HIT - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- **KKR-20260827-05** juror B (cold) ruled MISS, final MISS - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- **KKR-20260827-37** juror B (cold) ruled MISS, final MISS - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
+| ABSTAIN | 507 |
 
 ## All non-GROUNDED verdicts
 - KKR-20260817-36 - juror A (searched) - AMBIGUOUS (final OPEN) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
@@ -143,18 +134,46 @@ Every non-ABSTAIN jury verdict audited against the held evidence for its row, by
 - KKR-20260912-33 - juror A (searched) - HIT (final HIT) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
 - KKR-20260914-23 - juror A (searched) - MISS (final MISS) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
 - KKR-20260914-29 - juror A (searched) - MISS (final MISS) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
-- KKR-20260725-08 - juror B (cold) - HIT (final HIT) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 08, 12, 2026-08-12
-- KKR-20260731-04 - juror B (cold) - MISS (final MISS) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- KKR-20260901-04 - juror B (cold) - HIT (final HIT) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- KKR-20260904-10 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- KKR-20260818-22 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 19, 2026-08-19
-- KKR-20260818-38 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 4 figure(s)/date(s) asserted beyond the held record by a cold juror: 19, 2026-08-19, 2026-09-22, 22
-- KKR-20260903-04 - juror B (cold) - HIT (final HIT) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- KKR-20260903-11 - juror B (cold) - HIT (final HIT) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- KKR-20260827-05 - juror B (cold) - MISS (final MISS) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- KKR-20260827-37 - juror B (cold) - MISS (final MISS) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- KKR-20260822-11 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-09-22, 22
-- KKR-20260906-03 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 4 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 2026-09-06, 2026-09-22, 22
-- KKR-20260906-30 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 4 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 2026-09-06, 2026-09-22, 22
+- KKR-20260904-10 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260817-41 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 5 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-08-25, 2026-10-04, 25
+- KKR-20260817-49 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 5 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-08-25, 2026-10-04, 25
+- KKR-20260818-22 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 5 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 19, 2026-08-19, 2026-10-04
+- KKR-20260818-38 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 5 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 19, 2026-08-19, 2026-10-04
+- KKR-20260906-03 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-10-04
+- KKR-20260906-30 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-10-04
+- KKR-20260813-22 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260813-27 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260820-09 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260822-09 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260822-10 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260822-12 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260822-13 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260911-09 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 5.0
+- KKR-20260915-10 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 1 figure(s)/date(s) asserted beyond the held record by a cold juror: 10
+- KKR-20260909-20 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-09-10
+- KKR-20260909-28 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-09-10
+- KKR-20260912-09 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 4 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 17, 2026-09-17, 5.0
+- KKR-20260902-58 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 1 figure(s)/date(s) asserted beyond the held record by a cold juror: 10
+- KKR-20260902-60 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 03, 2026-09-03
+- KKR-20260902-77 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 1 figure(s)/date(s) asserted beyond the held record by a cold juror: 10
+- KKR-20260902-79 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 03, 2026-09-03, 20261004
+- KKR-20260911-01 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 5 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-09-23, 23, 5.0, 5.15
+- KKR-20260918-09 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 7 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-09-22, 2026-09-23, 22, 23, 5.12, 5.15
+- KKR-20260920-12 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-09-23, 23
+- KKR-20260820-23 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261004
+- KKR-20260904-19 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260904-49 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260722-16 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 4 figure(s)/date(s) asserted beyond the held record by a cold juror: 07, 10, 2026-07-23, 23
+- KKR-20260725-03 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 4 figure(s)/date(s) asserted beyond the held record by a cold juror: 07, 10, 2026-07-27, 27
+- KKR-20260729-15 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-07-28, 28
+- KKR-20260914-02 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 5.1
+- KKR-20260918-01 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-09-23, 23
+- KKR-20260919-03 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 1 figure(s)/date(s) asserted beyond the held record by a cold juror: 10
+- KKR-20260812-07 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260812-24 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
+- KKR-20260829-06 - juror B (cold) - HIT (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 4.8
+- KKR-20260909-09 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 2026-10-04
+- KKR-20260909-16 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 2 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 2026-10-04
+- KKR-20260917-04 - juror B (cold) - MISS (final OPEN) - **UNGROUNDED-SPECIFIC** - 3 figure(s)/date(s) asserted beyond the held record by a cold juror: 04, 10, 2026-10-04
 
 urteil/1.0 - read-only - the desk's method pointed at the desk's own bench
