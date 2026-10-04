@@ -188,7 +188,18 @@ def call_lmstudio(base_url: str, model: str | None, prompt: str) -> str | None:
                           json={"model": model, "temperature": 0.3, "max_tokens": 6000,
                                 "messages": [{"role": "user", "content": prompt}]})
         r.raise_for_status()
-        return r.json()["choices"][0]["message"]["content"]
+        _j = r.json()
+        _msg = _j["choices"][0]["message"]
+        _c = _msg["content"]
+        # TOKENLOG-1004: what the server says it ran and what it was given to read.
+        _u = _j.get("usage") or {}
+        globals()["_LAST_LM_RUN"] = {
+            "requested_model": model, "response_model": _j.get("model"),
+            "prompt_tokens": _u.get("prompt_tokens"),
+            "completion_tokens": _u.get("completion_tokens"),
+            "think_block": "<think>" in (_c or ""),
+            "reasoning_content": bool(_msg.get("reasoning_content"))}
+        return _c
     except Exception as exc:
         print(f"KKR · LM Studio call failed: {exc}", file=sys.stderr)
         return None
@@ -2071,6 +2082,19 @@ def _rubric_hash():
     return hashlib.sha256(PROJECTION_PROMPT.encode("utf-8")).hexdigest()
 
 
+def _local_frame_for(tag):
+    """FRAMEROUTE-1004: the frame arms.json registers for an active local arm, or None."""
+    if not tag:
+        return None
+    try:
+        for _a in json.loads((HERE / "arms.json").read_text(encoding="utf-8-sig"))["arms"]:
+            if _a.get("tag") == tag and _a.get("status") == "active":
+                return str(_a.get("frame") or "").strip() or None
+    except Exception:
+        return None
+    return None
+
+
 def _local_model_for(tag):
     """LOCALARM-1004: the model arms.json registers for an active local arm, or None."""
     if not tag:
@@ -2089,6 +2113,44 @@ def _local_slug(tag):
     return re.sub(r"[^A-Za-z0-9._-]+", "-", str(tag or "").replace("lmstudio/", "", 1)).strip("-") or "local"
 
 
+def _log_local_run(tag, registered, lm, report, packet, accepted, rejected, path=None):
+    """TOKENLOG-1004: one line per local run in forecasts/local_runs.jsonl - the model
+    the server says it ran, the tokens it was given, the gate it met. Two arms on one
+    packet with equal prompt_tokens rendered the same prompt."""
+    import hashlib as _h
+    try:
+        _gate = _h.sha256(Path(__file__).read_bytes().replace(b"\r\n", b"\n")).hexdigest()[:16]
+    except Exception:
+        _gate = None
+    rec = {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+           "arm": tag, "registered_model": registered,
+           "requested_model": lm.get("requested_model"),
+           "response_model": lm.get("response_model"),
+           "prompt_tokens": lm.get("prompt_tokens"),
+           "completion_tokens": lm.get("completion_tokens"),
+           "think_block": lm.get("think_block"),
+           "reasoning_content": lm.get("reasoning_content"),
+           "report": report, "packet": packet,
+           "accepted": accepted, "rejected": rejected,
+           "gate": _gate, "rubric_hash": str(_rubric_hash() or "")[:16]}
+    _p = Path(path) if path else (OUT / "local_runs.jsonl")
+    try:
+        with open(_p, "a", encoding="utf-8") as _fh:
+            _fh.write(json.dumps(rec, sort_keys=True) + "\n")
+    except Exception as _e:
+        print("KKR - local run log not written: %s" % _e, file=sys.stderr)
+    print("KKR - local run: %s registered %s, server ran %s, prompt_tokens %s, completion_tokens %s"
+          % (tag, registered, rec["response_model"], rec["prompt_tokens"],
+             rec["completion_tokens"]), file=sys.stderr)
+    if registered and rec["response_model"] and rec["response_model"] != registered:
+        print("KKR - BINDING MISMATCH: %s registered %s, server ran %s"
+              % (tag, registered, rec["response_model"]), file=sys.stderr)
+    if rec["think_block"] or rec["reasoning_content"]:
+        print("KKR - REASONING OUTPUT present in %s's run - reasoning is registered off" % tag,
+              file=sys.stderr)
+    return rec
+
+
 def cmd_generate(args):
     # FRAMEARM-2026-09-03: a frame run is local by construction (cold access is
     # what makes the arm what it is) and seals only under a registered active tag.
@@ -2103,7 +2165,15 @@ def cmd_generate(args):
         if not _bound:
             print(f"KKR \u00b7 local arm {local_arm} is not registered active with a model in arms.json; nothing run", file=sys.stderr)
             sys.exit(2)
-    if frame:
+    # FRAMEROUTE-1004: a frame is a property of the registered arm. Under --local-arm the
+    # frame comes from the arm's own registry entry, so a frame arm on a second model
+    # seals under its own tag and runs its own model; the shared --frame path binds
+    # lmstudio/<frame> and that arm's model.
+    _arm_frame = _local_frame_for(local_arm) if local_arm else None
+    if _arm_frame:
+        frame = _arm_frame
+        globals()["_FRAME"] = frame
+    if frame and not _arm_frame:
         if args.provider != "lmstudio":
             print("KKR \u00b7 --frame requires --provider lmstudio; nothing run", file=sys.stderr)
             sys.exit(2)
@@ -2131,7 +2201,7 @@ def cmd_generate(args):
 
     # the packet is always written — the manual Fable path costs nothing
     OUT.mkdir(exist_ok=True)
-    packet = OUT / (f"kkr_packet_frame_{frame}_{now.strftime('%Y-%m-%d_%H%M')}.md" if frame
+    packet = OUT / (f"kkr_packet_frame_{frame}_{now.strftime('%Y-%m-%d_%H%M')}.md" if frame and not _arm_frame  # FRAMEROUTE-1004
                     else f"kkr_packet_local_{_local_slug(local_arm)}_{now.strftime('%Y-%m-%d_%H%M')}.md" if local_arm
                     else f"kkr_packet_{now.strftime('%Y-%m-%d_%H%M')}.md")  # FRAMEARM-2026-09-03 / LOCALARM-1004
     _latest_packet = OUT / "kkr_packet_latest.md"
@@ -2182,12 +2252,22 @@ def cmd_generate(args):
     accepted_raw, rejected = [], []
     _fc_rej = _foreclosure_reasons(projs, globals().get("_LAST_PACKET", ""))
     for p in projs:
+        # GENGATE-1004: the record is stamped before the gate, as the ingest path
+        # stamps it; validated with an empty source_report, _citation_support
+        # passed every generated row and the local arms were never citation-gated.
+        if rep:
+            p["source_report"] = rep.name
+            p["rubric_hash"] = _rubric_hash()
         reasons = validate_projection(p)
         if id(p) in _fc_rej:
             reasons = list(reasons) + [_fc_rej[id(p)]]
         (rejected.append((p, reasons)) if reasons else accepted_raw.append(p))
     added = append_projections(accepted_raw, tag, rep.name) if accepted_raw else []
     print(f"KKR · gate: {len(added)} accepted, {len(rejected)} rejected", file=sys.stderr)
+    _lm = globals().get("_LAST_LM_RUN")  # TOKENLOG-1004
+    if _lm and str(tag).startswith("lmstudio/"):
+        _log_local_run(tag, _bound, _lm, rep.name if rep else "",
+                       str(globals().get("_LAST_PACKET", "")), len(added), len(rejected))
     render_ledger()
     render_kkr(added, rejected, tag, rep.name)
 

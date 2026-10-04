@@ -1,7 +1,7 @@
 {
   "schema": "kkr-ledger/1.1",
   "generator": "kkr.py",
-  "as_of": "2026-10-04T19:35:48Z",
+  "as_of": "2026-10-04T23:38:37Z",
   "disclosure": "FINDING 2026-07-29 (RPAS 4.02f, 4.02g, 4.03, 6.04). The 161 entries issued through 2026-07-29 carry no per-entry seal hash: their statements, probabilities, and deadlines are supported by this repository's public commit history (RPAS 4.04) and the external beacon (4.05), not by per-entry commitment. All 15 resolved entries lack a keyed/keyless determination made before resolution; by RPAS 4.03 their hits are KEYED by rule and bear on no faculty claim — the published Brier stands as arm-calibration arithmetic only, which is the only claim the arm ever made. Entries issued from 2026-07-30 are sealed at first save under the 4.02g construction: SHA-256 over the sorted-JSON of the eight pre-registered fields (statement, resolution, deadline, probability, failure_condition, keyed_keyless, keyed_keyless_rationale, date_issued). Separately, ALL 161 entries issued through 2026-07-29 carry no substantive failure condition (RPAS 4.02e, 4.03): 94 hold no value and 67 hold a migration placeholder. CORRECTION 2026-07-30: this finding previously stated 94, counting placeholder text as substance — the same defect class it reports; corrected in the open. None has resolved. Failure conditions and keyed/keyless determinations may still be added to open entries before their resolution (4.02f); an entry resolving without them is KEYED by rule and its miss stands. Entries issued from 2026-07-30 are refused a seal while the failure condition is absent (4.03). Nothing sealed or published is altered by this finding; it is printed, not repaired. AMENDED 2026-08-05 (RPAS 4.03, 4.06): the '15 resolved' count above was as of 2026-07-29; as of this amendment 23 of 27 resolved entries lack a pre-resolution keyed/keyless determination -- a permanent 4.03 failure printed per row -- and 4 comply (determined 2026-08-01, resolved 2026-08-03/04). 59 open entries carried undated determinations until re-affirmed and dated 2026-08-05; the undated originals stand in commit history. 26 determinations were corrected keyless-to-keyed on 2026-08-04 on mechanical cite_integrity grounds, authored by an Anthropic model classifying Anthropic forecaster arms -- a non-independent authority, disclosed as such pending blind adjudication. Two entries are VOID under RPAS 4.06 (2026-08-05, resolution-basis fidelity), voided before either claim's window opened, itemised with reasons in the ledger. Two entries sealed 2026-08-05 were already decided by the elicitation packet the arm read and stand to score as printed findings, not forecasts; the already-decided gate (foreclose_check) rejects the class at generation from 2026-08-06.",
   "anchor": {
     "mechanism": "public version-control history",
@@ -91933,6 +91933,26 @@
       "keyed_keyless_dated": "2026-09-27"
     },
     {
+      "statement": "The S&P 500 closes above 7,800.00 on or before 2026-10-05.",
+      "domain": "economics/markets",
+      "probability": 45,
+      "resolution": "The closing price of the S&P 500 index on or before 2026-10-05 is greater than 7,800.00, as reported by the CBOE or a major financial data provider such as Bloomberg or Reuters.",
+      "deadline": "2026-10-07",
+      "citations": [
+        5
+      ],
+      "id": "KKR-20260920-02",
+      "date_issued": "2026-09-20",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-09-20_1517.md",
+      "source_packet": "kkr_packet_2026-09-20_1517.md",
+      "rubric_hash": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+      "status": "miss",
+      "resolved_date": "2026-10-04",
+      "notes": "MISS by rule (RPAS 5.06). Issued 2026-09-20 without a failure condition, so never sealed (4.03, 4.02g); published at 8575674; removed from the ledger at f63cceb (2026-09-22 19:17Z) with no void and no correction entry. Restored as published at 631404e and scored MISS by rule; the outcome was not consulted. Ruled 2026-10-04 by the desk's assistant under the operator's delegation; audit of 2026-10-04, finding F-2.",
+      "register": "registers/1.0@ce14b50ce884bbb4"
+    },
+    {
       "statement": "Iran announces a new condition for ending its war with the U.S. between 2026-09-21 and 2026-09-24, confirmed by at least two independent news outlets.",
       "domain": "political",
       "probability": 40,
@@ -92089,6 +92109,26 @@
         },
         "evidence": "Al Jazeera (Sep 10, Sep 19), Middle East Monitor (Sep 17) and PCHR (Sep 30) describe continuing Israeli strikes in Gaza under the October 2025 ceasefire, with no new major offensive reported Sep 21-24."
       }
+    },
+    {
+      "statement": "The 10-year U.S. Treasury yield exceeds 5.25% on or before 2026-10-05, based on the FRED database.",
+      "domain": "economics/markets",
+      "probability": 50,
+      "resolution": "The 10-year U.S. Treasury yield, as reported by FRED (Federal Reserve Economic Data), exceeds 5.25% on or before 2026-10-05.",
+      "deadline": "2026-10-07",
+      "citations": [
+        5
+      ],
+      "id": "KKR-20260920-07",
+      "date_issued": "2026-09-20",
+      "model": "lmstudio/auto",
+      "source_report": "battle_report_2026-09-20_1517.md",
+      "source_packet": "kkr_packet_2026-09-20_1517.md",
+      "rubric_hash": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+      "status": "miss",
+      "resolved_date": "2026-10-04",
+      "notes": "MISS by rule (RPAS 5.06). Issued 2026-09-20 without a failure condition, so never sealed (4.03, 4.02g); published at 8575674; removed from the ledger at f63cceb (2026-09-22 19:17Z) with no void and no correction entry. Restored as published at 631404e and scored MISS by rule; the outcome was not consulted. Ruled 2026-10-04 by the desk's assistant under the operator's delegation; audit of 2026-10-04, finding F-2.",
+      "register": "registers/1.0@ce14b50ce884bbb4"
     },
     {
       "statement": "A new cyberattack on a critical infrastructure system in Europe is confirmed by the EU Agency for Cybersecurity (ENISA) between 2026-09-21 and 2026-09-24.",
@@ -118668,6 +118708,23 @@
       "register": "registers/1.0@ce14b50ce884bbb4",
       "sealed_at": "2026-10-04T19:18:23.800656+00:00",
       "seal_sha256": "506f53cc48ae1097b1e49322f124b98710bfcbf2644ac5ee598f373773c0387e"
+    }
+  ],
+  "disclosed_entries": [
+    {
+      "ids": [
+        "KKR-20260920-02",
+        "KKR-20260920-07"
+      ],
+      "clauses": [
+        "4.03",
+        "4.02g"
+      ],
+      "dated": "2026-10-04",
+      "restored": "2026-10-04",
+      "restored_from": "631404e",
+      "rule": "RPAS 5.06",
+      "finding": "Two lmstudio/auto entries issued 2026-09-20 without a failure condition were never sealed; on 2026-09-22 they were removed from the ledger without a void or a correction entry. They are restored as published at 631404e and scored MISS by rule under RPAS 5.06. Audit of 2026-10-04, finding F-2."
     }
   ]
 }

@@ -104,6 +104,7 @@ def build():
     # and order every packet by its stamp so the chain stays append-only.
     files = sorted([f for f in list(PACKETS.glob("kkr_packet_2*.md"))
                     + list(PACKETS.glob("kkr_packet_frame_*_2*.md"))
+                    + list(PACKETS.glob("kkr_packet_local_*_2*.md"))  # PACKETLOCAL-1004
                     if f.name != "kkr_packet_latest.md"],
                    key=lambda f: (_packet_stamp(f.name), f.name))
     entries, prev = [], GENESIS

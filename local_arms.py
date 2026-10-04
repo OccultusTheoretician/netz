@@ -74,7 +74,10 @@ def plan():
 
 
 def command(arm):
-    if arm.get("frame"):
+    # FRAMEROUTE-1004: only the arm named lmstudio/<frame> takes the shared frame path;
+    # a frame arm on another model runs under its own tag and kkr reads its frame from
+    # arms.json, so it can never seal under lmstudio/<frame> or run that arm's model.
+    if arm.get("frame") and arm.get("tag") == "lmstudio/%s" % arm["frame"]:
         return [sys.executable, "kkr.py", "--provider", "lmstudio", "--frame", arm["frame"]]
     return [sys.executable, "kkr.py", "--provider", "lmstudio", "--local-arm", arm["tag"]]
 
