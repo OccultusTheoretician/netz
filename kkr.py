@@ -2132,6 +2132,7 @@ def _log_local_run(tag, registered, lm, report, packet, accepted, rejected, path
            "reasoning_content": lm.get("reasoning_content"),
            "report": report, "packet": packet,
            "accepted": accepted, "rejected": rejected,
+           "parse_failed": bool(lm.get("parse_failed")),  # PARSELOG-1005
            "gate": _gate, "rubric_hash": str(_rubric_hash() or "")[:16]}
     _p = Path(path) if path else (OUT / "local_runs.jsonl")
     try:
@@ -2248,6 +2249,13 @@ def cmd_generate(args):
         print("KKR · model output unparseable — nothing ingested. Raw saved for audit.",
               file=sys.stderr)
         (OUT / "kkr_raw_last.txt").write_text(raw, encoding="utf-8")
+        # PARSELOG-1005: a local run whose output never parsed is logged too
+        # (registration 16.5, H7c (iv)); before this it returned unlogged.
+        _lm = globals().get("_LAST_LM_RUN")
+        if _lm and str(tag).startswith("lmstudio/"):
+            _log_local_run(tag, _bound, dict(_lm, parse_failed=True),
+                           rep.name if rep else "",
+                           str(globals().get("_LAST_PACKET", "")), 0, 0)
         return
     accepted_raw, rejected = [], []
     _fc_rej = _foreclosure_reasons(projs, globals().get("_LAST_PACKET", ""))

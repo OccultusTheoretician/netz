@@ -35,7 +35,7 @@
       "model": "qwen/qwen3-30b-a3b-2507",
       "access": "cold",
       "status": "active",
-      "note": "local model, no network - cold is certain. Era split at d36fd3f (record-only model input, Rueckkopplungsverbot): before it, model prose re-entered prompts, so pre- and post-verbot are different effective forecasters. Scoring buckets by date_issued; rows are never edited. Second split at the KK19 window patch: the elicitation prompt barred point-date windows for unscheduled events, required a settling margin between window close and deadline, and barred conditions about the absence of reporting. Boundary is 2026-08-03 because 2026-08-02 already carries rows sealed under the old prompt.",
+      "note": "local model, no network - cold is certain. Era split at d36fd3f (record-only model input, Rueckkopplungsverbot): before it, model prose re-entered prompts, so pre- and post-verbot are different effective forecasters. Scoring buckets by date_issued; rows are never edited. Second split at the KK19 window patch: the elicitation prompt barred point-date windows for unscheduled events, required a settling margin between window close and deadline, and barred conditions about the absence of reporting. Boundary is 2026-08-03 because 2026-08-02 already carries rows sealed under the old prompt. SUCCESSION-1005 (2026-10-05): lmstudio/qwen36 registered (Section 16). This arm retires together with its sibling 21 days after lmstudio/qwen36's first sealed rows, the date set when those rows exist; open rows keep resolving and counting toward every floor.",
       "eras": [
         {
           "id": "pre-verbot",
@@ -207,7 +207,7 @@
       "model": "qwen/qwen3-30b-a3b-2507",
       "access": "cold",
       "status": "active",
-      "note": "FRAMEARM-2026-09-03: second local arm. Same model, access and rubric as lmstudio/auto; fired by the chain on the same packet day with a realist balance-of-power FRAME preamble (part of the arm, not the rubric; rows carry frame and frame_hash). No control mirrors (local arm). Registration Section 14 (H6 frame drift vs lmstudio/auto[post-window]).",
+      "note": "FRAMEARM-2026-09-03: second local arm. Same model, access and rubric as lmstudio/auto; fired by the chain on the same packet day with a realist balance-of-power FRAME preamble (part of the arm, not the rubric; rows carry frame and frame_hash). No control mirrors (local arm). Registration Section 14 (H6 frame drift vs lmstudio/auto[post-window]). SUCCESSION-1005 (2026-10-05): lmstudio/qwen36 registered (Section 16). This arm retires together with its sibling 21 days after lmstudio/qwen36's first sealed rows, the date set when those rows exist; open rows keep resolving and counting toward every floor.",
       "frame": "realist",
       "frame_sha256": "442300f131b11b7ca106096532293924c3a9c4d20b4adcbde63bd932757efc77",
       "frame_revisions": [
@@ -242,6 +242,38 @@
       "status": "active",
       "note": "Registered 2026-09-29 on the operator's ruling as successor to manual/sonnet-5/unattested for the version-drift pair. KK18 standing rule: see manual/fable-5/unattested.",
       "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+    },
+    {
+      "tag": "lmstudio/qwen36",
+      "lane": "lmstudio",
+      "model": "qwen3.6-35b-a3b",
+      "access": "cold",
+      "status": "active",
+      "note": "REGISTER-1005 (2026-10-05): the local successor. Qwen3.6-35B-A3B official weights, static GGUF quantization by mradermacher, Q4_K_S. Registration Section 16: H4 against lmstudio/auto[post-window] on the 21-day same-packet overlap; the stock side of H7; the plain side of H6 and H8. Run conditions identical to the incumbent: context 32768, temperature 0.3, max_tokens 6000, top-k 20, top-p 0.8, min-p 0, repeat and presence penalties off, thinking off.",
+      "file_sha256": "97cc5853d3c163c9cb81782ffc8ee18d909c67f8a3c6b4816b98f1103125c6c6",
+      "cadence": "daily - local model, no marginal cost per run."
+    },
+    {
+      "tag": "lmstudio/qwen36-abliterated",
+      "lane": "lmstudio",
+      "model": "huihui-qwen3.6-35b-a3b-abliterated",
+      "access": "cold",
+      "status": "active",
+      "note": "REGISTER-1005 (2026-10-05): the ablation twin. huihui-ai's refusal-direction ablation of the same official weights, static GGUF quantization by the same quantizer, Q4_K_S; single-variable as files against lmstudio/qwen36 (Section 16.1). Registration Section 16: H7. Run conditions identical to the incumbent: context 32768, temperature 0.3, max_tokens 6000, top-k 20, top-p 0.8, min-p 0, repeat and presence penalties off, thinking off.",
+      "file_sha256": "e3787c675133e7abf4eb328d10791ab539f034f7902481b756a239b8ca09aa20",
+      "cadence": "daily - local model, no marginal cost per run."
+    },
+    {
+      "tag": "lmstudio/qwen36-realist",
+      "lane": "lmstudio",
+      "model": "qwen3.6-35b-a3b",
+      "access": "cold",
+      "status": "active",
+      "note": "REGISTER-1005 (2026-10-05): the realist frame on the successor - the frame in force for lmstudio/realist, on lmstudio/qwen36's model and file. Fired as its own tag through --local-arm (FRAMEROUTE-1004); rows carry frame and frame_hash. Registration Section 16: H6 on the successor; the framed side of H8. Run conditions identical to the incumbent: context 32768, temperature 0.3, max_tokens 6000, top-k 20, top-p 0.8, min-p 0, repeat and presence penalties off, thinking off.",
+      "frame": "realist",
+      "frame_sha256": "442300f131b11b7ca106096532293924c3a9c4d20b4adcbde63bd932757efc77",
+      "file_sha256": "97cc5853d3c163c9cb81782ffc8ee18d909c67f8a3c6b4816b98f1103125c6c6",
+      "cadence": "daily - local model, no marginal cost per run."
     }
   ],
   "cadence_ruled": "2026-08-01"
