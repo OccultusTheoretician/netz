@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "Flavio Bolsonaro receives more valid votes than Luiz Inacio Lula da Silva in the Brazilian presidential runoff held on 2026-10-25.",
+    "resolution": "TSE official results for the presidential runoff held on 2026-10-25 show Flavio Bolsonaro with more valid votes than Lula da Silva.",
+    "failure_condition": "Lula da Silva receives at least as many valid votes as Flavio Bolsonaro, or no presidential runoff is held on 2026-10-25.",
+    "domain": "political",
+    "deadline": "2026-10-28",
+    "probability": 41,
+    "citations": [
+      106
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Partido Popular wins more seats in the Congress of Deputies than any other party in the Spanish general election held on 2026-11-29.",
+    "resolution": "Spanish Interior Ministry official results for the general election held on 2026-11-29 show the Partido Popular with strictly more Congress seats than every other party.",
+    "failure_condition": "Another party wins at least as many Congress seats as the Partido Popular, or no general election is held on 2026-11-29.",
+    "domain": "political",
+    "deadline": "2026-12-02",
+    "probability": 41,
+    "citations": [
+      95,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The French National Assembly adopts a motion of censure against the sitting government between 2026-10-12 and 2026-12-18.",
+    "resolution": "Assemblee nationale official vote records show a motion of censure adopted by the required absolute majority in a vote held between 2026-10-12 and 2026-12-18.",
+    "failure_condition": "No motion of censure reaches the required absolute majority in any National Assembly vote held between 2026-10-12 and 2026-12-18.",
+    "domain": "political",
+    "deadline": "2026-12-21",
+    "probability": 41,
+    "citations": [
+      60,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic Party candidates win at least 17 of the 35 US Senate contests of the 2026-11-03 elections, counting any runoff held on or before 2026-12-12.",
+    "resolution": "AP race calls as of the deadline show Democratic Party candidates winning at least 17 of the 35 Senate contests of the 2026-11-03 elections, counting any runoff held on or before 2026-12-12.",
+    "failure_condition": "Democratic Party candidates win 16 or fewer of the 35 Senate contests of the 2026-11-03 elections.",
+    "domain": "political",
+    "deadline": "2026-12-18",
+    "probability": 41,
+    "citations": [
+      88,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its meeting ending 2026-10-28. Reference: target range 3.75 to 4.00 percent on the packet date.",
+    "resolution": "FRED series DFEDTARU, the target range upper limit, reads 4.25 or higher for 2026-10-29. Reference: 4.00 percent on the packet date.",
+    "failure_condition": "The federal funds target range upper limit is 4.00 percent or lower on 2026-10-29.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 58,
+    "citations": [
+      39,
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Nvidia shares close at or above 248.00 dollars on Nasdaq on at least one trading day between 2026-10-06 and 2026-10-30. Reference: 233.95 dollars at the 2026-10-02 close, about 237 intraday on the packet date.",
+    "resolution": "The Nasdaq official closing price of NVDA is 248.00 dollars or higher on at least one trading day between 2026-10-06 and 2026-10-30. Reference: 233.95 dollars at the 2026-10-02 close.",
+    "failure_condition": "NVDA closes below 248.00 dollars on every Nasdaq trading day between 2026-10-06 and 2026-10-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 58,
+    "citations": [
+      47
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one further Citrix NetScaler vulnerability, beyond CVE-2026-88779, to its Known Exploited Vulnerabilities catalog between 2026-10-06 and 2026-11-06.",
+    "resolution": "The CISA KEV catalog carries at least one Citrix NetScaler entry with a date-added value between 2026-10-06 and 2026-11-06.",
+    "failure_condition": "No Citrix NetScaler vulnerability has a KEV date-added value between 2026-10-06 and 2026-11-06.",
+    "domain": "cyber",
+    "deadline": "2026-11-09",
+    "probability": 42,
+    "citations": [
+      12,
+      15
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4172,
+      "n": 151,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one person is arrested on charges tied to the 2026-10-04 block party shooting in Vienna, Dooly County, Georgia, between 2026-10-05 and 2026-10-26.",
+    "resolution": "The Georgia Bureau of Investigation or the Dooly County Sheriff confirms an arrest, made between 2026-10-05 and 2026-10-26, on charges tied to the Vienna shooting of 2026-10-04.",
+    "failure_condition": "No person is arrested on charges tied to the Vienna shooting between 2026-10-05 and 2026-10-26.",
+    "domain": "crime/security",
+    "deadline": "2026-10-28",
+    "probability": 33,
+    "citations": [
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States carries out at least one military strike on a target on Iranian land territory between 2026-10-12 and 2026-12-04.",
+    "resolution": "The Pentagon, CENTCOM or the White House confirms, or both Reuters and AP report, a US strike on Iranian land territory carried out between 2026-10-12 and 2026-12-04.",
+    "failure_condition": "No US military strike hits Iranian land territory between 2026-10-12 and 2026-12-04.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-07",
+    "probability": 69,
+    "citations": [
+      64,
+      80
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one commercial vessel is struck or attacked in the Strait of Hormuz, Persian Gulf or Gulf of Oman between 2026-10-12 and 2026-10-25.",
+    "resolution": "UKMTO publishes at least one incident notice of a vessel struck or attacked in the Strait of Hormuz, Persian Gulf or Gulf of Oman, with an incident date between 2026-10-12 and 2026-10-25.",
+    "failure_condition": "No commercial vessel is struck or attacked in the Strait of Hormuz, Persian Gulf or Gulf of Oman between 2026-10-12 and 2026-10-25.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-28",
+    "probability": 69,
+    "citations": [
+      53,
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:56Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
