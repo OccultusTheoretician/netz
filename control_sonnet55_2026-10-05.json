@@ -1,0 +1,248 @@
+[
+  {
+    "statement": "US forces conduct at least one strike on a target located on Iranian land territory or Iranian-held islands between 2026-10-06 and 2026-11-13.",
+    "resolution": "CENTCOM, the Pentagon, or the White House acknowledges, or both Reuters and AP report, a US strike on Iranian land or island territory dated between 2026-10-06 and 2026-11-13.",
+    "failure_condition": "No US strike on Iranian land or Iranian-held island territory occurred between 2026-10-06 and 2026-11-13.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-17",
+    "probability": 69,
+    "citations": [
+      64,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or above 120.00 USD per barrel on at least one trading day between 2026-10-06 and 2026-11-13. Reference: 101.99 USD per barrel on the packet date.",
+    "resolution": "ICE Brent front-month daily settlement is at or above 120.00 USD per barrel on any trading day between 2026-10-06 and 2026-11-13. Reference: 101.99 on the packet date.",
+    "failure_condition": "Every ICE Brent front-month settlement between 2026-10-06 and 2026-11-13 is below 120.00 USD per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-17",
+    "probability": 58,
+    "citations": [
+      53,
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant-maturity yield is at or above 5.75 percent on at least one trading day between 2026-10-06 and 2026-11-13. Reference: 5.32 percent on the packet date.",
+    "resolution": "FRED series DGS10 reports a daily value at or above 5.75 for any date between 2026-10-06 and 2026-11-13. Reference: 5.32 percent on the packet date.",
+    "failure_condition": "Every FRED DGS10 daily value between 2026-10-06 and 2026-11-13 is below 5.75 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-17",
+    "probability": 58,
+    "citations": [
+      39,
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one Fortinet product vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-06 and 2026-10-26.",
+    "resolution": "The CISA KEV catalog JSON feed lists at least one entry with vendorProject Fortinet and a dateAdded value between 2026-10-06 and 2026-10-26 inclusive.",
+    "failure_condition": "No CISA KEV entry with vendorProject Fortinet has a dateAdded value between 2026-10-06 and 2026-10-26.",
+    "domain": "cyber",
+    "deadline": "2026-10-29",
+    "probability": 42,
+    "citations": [
+      15
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4172,
+      "n": 151,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the Spanish general election held on 2026-11-29, the Partido Popular wins more Congress of Deputies seats than the PSOE.",
+    "resolution": "Official Spanish Interior Ministry results for the general election held on 2026-11-29 show the Partido Popular with more Congress of Deputies seats than the PSOE.",
+    "failure_condition": "The PSOE wins as many or more Congress of Deputies seats as the Partido Popular on 2026-11-29, or no general election is held on that date.",
+    "domain": "political",
+    "deadline": "2026-12-03",
+    "probability": 41,
+    "citations": [
+      95,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Flavio Bolsonaro defeats Luiz Inacio Lula da Silva in the Brazilian presidential runoff held on 2026-10-25.",
+    "resolution": "The Superior Electoral Court (TSE) official tally for the presidential runoff held on 2026-10-25 shows Flavio Bolsonaro with more valid votes than Lula.",
+    "failure_condition": "Lula receives more valid votes than Flavio Bolsonaro in the runoff held on 2026-10-25, or no runoff is held on that date.",
+    "domain": "political",
+    "deadline": "2026-10-28",
+    "probability": 41,
+    "citations": [
+      106
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Japanese prosecutors formally indict the US Marine arrested in Okinawa in October 2026 over the killing of a woman in Naha, on any charge arising from her death, between 2026-10-06 and 2026-10-30.",
+    "resolution": "NHK, Kyodo, Reuters, or AP reports that Naha prosecutors filed an indictment against the arrested Marine on any charge arising from the death of the woman, dated between 2026-10-06 and 2026-10-30.",
+    "failure_condition": "The arrested Marine is not indicted on any charge arising from the death of the woman between 2026-10-06 and 2026-10-30.",
+    "domain": "crime/security",
+    "deadline": "2026-11-03",
+    "probability": 33,
+    "citations": [
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United Arab Emirates Public Prosecution announces criminal charges against, or a trial referral of, the FlyDubai flight FZ1073 co-pilot between 2026-10-06 and 2026-11-13.",
+    "resolution": "The UAE Attorney General or state news agency WAM announces formal charges or referral to trial of the FlyDubai FZ1073 co-pilot, dated between 2026-10-06 and 2026-11-13, as carried by Reuters or AP.",
+    "failure_condition": "The FlyDubai FZ1073 co-pilot is neither formally charged nor referred to trial by UAE authorities between 2026-10-06 and 2026-11-13.",
+    "domain": "crime/security",
+    "deadline": "2026-11-17",
+    "probability": 33,
+    "citations": [
+      30,
+      77
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Global Disaster Alert and Coordination System assigns Red alert level to at least one tropical cyclone on any date between 2026-10-06 and 2026-10-19.",
+    "resolution": "A GDACS tropical cyclone event record, fetched from its public API or RSS feed, shows alert level Red for an episode or bulletin dated between 2026-10-06 and 2026-10-19.",
+    "failure_condition": "No GDACS tropical cyclone record shows Red alert level on any date between 2026-10-06 and 2026-10-19.",
+    "domain": "disaster",
+    "deadline": "2026-10-23",
+    "probability": 43,
+    "citations": [
+      36
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russian federal or Irkutsk regional health authorities, or WHO, officially confirm plague infection in at least one human case in Irkutsk Oblast between 2026-10-06 and 2026-10-19.",
+    "resolution": "Rospotrebnadzor, the Russian health ministry, the Irkutsk regional government, or WHO publishes a statement dated between 2026-10-06 and 2026-10-19 naming laboratory-confirmed plague in a human case in Irkutsk Oblast.",
+    "failure_condition": "Plague is not officially confirmed in any human case in Irkutsk Oblast between 2026-10-06 and 2026-10-19.",
+    "domain": "disaster",
+    "deadline": "2026-10-23",
+    "probability": 43,
+    "citations": [
+      52,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:48:59Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

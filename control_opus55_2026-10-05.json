@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "Flavio Bolsonaro wins the Brazilian presidential runoff held on 2026-10-25, defeating Luiz Inacio Lula da Silva with more than 50 percent of valid votes.",
+    "resolution": "TRUE if the Superior Electoral Court (TSE) official result for the 2026-10-25 presidential runoff gives Flavio Bolsonaro more than 50 percent of valid votes; otherwise FALSE.",
+    "failure_condition": "Flavio Bolsonaro does not receive more than 50 percent of valid votes in a presidential runoff held on 2026-10-25.",
+    "domain": "political",
+    "deadline": "2026-10-28",
+    "probability": 41,
+    "citations": [
+      106
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the Spanish general election held on 2026-11-29, PP lists and Vox lists together win at least 176 of the 350 seats in the Congress of Deputies.",
+    "resolution": "TRUE if Interior Ministry or Central Electoral Board results for the 2026-11-29 general election, including the overseas vote, give PP lists (including PP-led coalitions) and Vox at least 176 Congress seats combined; otherwise FALSE.",
+    "failure_condition": "PP and Vox lists hold 175 or fewer of the 350 Congress seats after the 2026-11-29 election, or no general election is held on that date.",
+    "domain": "political",
+    "deadline": "2026-12-09",
+    "probability": 41,
+    "citations": [
+      95,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In a floor vote held between 2027-01-03 and 2027-01-15, the US House of Representatives elects a Democrat as Speaker of the 120th Congress following the 2026-11-03 midterm elections.",
+    "resolution": "TRUE if a roll call recorded by the Clerk of the House between 2027-01-03 and 2027-01-15 elects a Democratic member as Speaker of the 120th Congress; otherwise FALSE.",
+    "failure_condition": "By 2027-01-15 the House has elected a Republican or other non-Democrat as Speaker of the 120th Congress, or has elected no Speaker.",
+    "domain": "political",
+    "deadline": "2027-01-19",
+    "probability": 41,
+    "citations": [
+      88,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At its meeting concluding on 2026-10-28, the FOMC raises the federal funds target range above the 3.75-4.00 percent range in force at seal.",
+    "resolution": "TRUE if the FOMC statement released on 2026-10-28 sets a target range upper bound above 4.00 percent, shown by FRED series DFEDTARU for 2026-10-29; otherwise FALSE. Reference: 3.75-4.00 percent on the packet date.",
+    "failure_condition": "The federal funds target range upper bound remains at or below 4.00 percent after the 2026-10-28 FOMC decision.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 58,
+    "citations": [
+      39,
+      48
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The ECB euro foreign exchange reference rate for the US dollar published for 2026-11-27 is below 1.1000 dollars per euro.",
+    "resolution": "TRUE if the ECB USD reference rate published for 2026-11-27 is below 1.1000; FALSE if it is 1.1000 or higher. Reference: EUR/USD 1.12 on the packet date.",
+    "failure_condition": "The ECB USD reference rate published for 2026-11-27 is at or above 1.1000.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-30",
+    "probability": 58,
+    "citations": [
+      60,
+      95
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds CVE-2026-61500, the Rejetto HFS session forgery flaw, to its Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-05 and 2026-11-30.",
+    "resolution": "TRUE if the CISA KEV catalog lists CVE-2026-61500 with a dateAdded value between 2026-10-05 and 2026-11-30 inclusive; otherwise FALSE.",
+    "failure_condition": "CISA does not add CVE-2026-61500 to the KEV catalog on any date from 2026-10-05 through 2026-11-30.",
+    "domain": "cyber",
+    "deadline": "2026-12-02",
+    "probability": 42,
+    "citations": [
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4172,
+      "n": 151,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-12 and 2026-10-25, at least three separate weapon strikes on or seizures of merchant vessels occur in the Strait of Hormuz, Persian Gulf or Gulf of Oman.",
+    "resolution": "TRUE if UKMTO incident notices record at least three distinct incidents dated 2026-10-12 to 2026-10-25 of merchant vessels struck by weapons or seized in the Strait of Hormuz, Persian Gulf or Gulf of Oman; otherwise FALSE.",
+    "failure_condition": "Fewer than three distinct weapon strikes on or seizures of merchant vessels take place in the Strait of Hormuz, Persian Gulf or Gulf of Oman between 2026-10-12 and 2026-10-25.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-28",
+    "probability": 69,
+    "citations": [
+      53,
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran agree a ceasefire or truce, publicly confirmed by both the White House and the Iranian government, between 2026-10-05 and 2026-11-13.",
+    "resolution": "TRUE if between 2026-10-05 and 2026-11-13 the White House and the Iranian government each publicly confirm a US-Iran ceasefire or truce, as reported by at least two of Reuters, AP and AFP; otherwise FALSE.",
+    "failure_condition": "No US-Iran ceasefire or truce is confirmed by both governments at any point from 2026-10-05 through 2026-11-13.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-17",
+    "probability": 69,
+    "citations": [
+      44,
+      64,
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-05 and 2026-11-13, Japanese prosecutors indict the US Marine arrested on Okinawa on 2026-10-04 over the killing of a 39-year-old woman in a Naha hotel.",
+    "resolution": "TRUE if Kyodo or NHK reports the Naha District Public Prosecutors Office indicted that Marine on murder, robbery-murder or any other charge tied to the death, with the indictment dated 2026-10-05 to 2026-11-13; otherwise FALSE.",
+    "failure_condition": "The Marine has not been indicted on any charge tied to the death by 2026-11-13, whether due to psychiatric evaluation detention, release pending disposition, or a decision not to prosecute.",
+    "domain": "crime/security",
+    "deadline": "2026-11-17",
+    "probability": 33,
+    "citations": [
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "GDACS raises tropical cyclone KOGUMA-26 to an Orange or Red alert level at any update issued between 2026-10-05 and 2026-10-19.",
+    "resolution": "TRUE if the GDACS event record for tropical cyclone KOGUMA-26 shows an Orange or Red alert level at any episode issued between 2026-10-05 and 2026-10-19; FALSE if every episode in that window is Green.",
+    "failure_condition": "KOGUMA-26 never reaches Orange or Red impact level in any GDACS episode issued between 2026-10-05 and 2026-10-19.",
+    "domain": "disaster",
+    "deadline": "2026-10-21",
+    "probability": 43,
+    "citations": [
+      36
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-05T16:49:02Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
