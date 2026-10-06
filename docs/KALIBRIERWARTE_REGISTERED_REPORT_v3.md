@@ -233,3 +233,13 @@ Two-sided. One read, at the end of the overlap; counts before it. The frame effe
 16.11 Claimed, and banked. Claimed: nothing wider than the comparisons on this ledger - one ablation recipe (huihui-ai's) on one model. Banked, not built: a second ablation recipe or author on the same base model as a robustness arm (the reference's own stated limitation); a refusal battery run apart from the forecasting task as a behavioural label check (16.1's file provenance and 16.8 (h) are the label checks in force); a realist frame on the twin (a frame-by-ablation cell); cross-pricing of one arm's claims by another (forbidden by the letter of the Rueckkopplungsverbot; Section 14).
 
 Seen (Section 11, continued). At this amendment the registrant has seen: the incumbents' figures (lmstudio/auto 222 resolved all-time, Brier 0.206; lmstudio/realist 34 resolved all-time, Brier 0.383; within cohort bbdc7791, lmstudio/auto 18 resolved and lmstudio/realist under the revised frame 13 resolved, 11 of them hits); the description on record that the realist arm prices low claims that land most of the time; the first paired read of 2026-10-04; the audit's citation-gate replay; the 2026-10-04 research pass and frontier sweep (16.4's references among them). No row of any new arm exists, and nothing of either new model's behaviour on this desk has been observed.
+
+16.12 AMENDMENT 2026-10-06 - THE OVERLAP DATES AND A SELECTION COMPANION
+
+AUTHORSHIP - drafted by the desk's assistant under the registrant's direction on 2026-10-05; read in full and adopted by the registrant on 2026-10-06.
+
+Appended under Section 12 before any read point of Section 16. Nothing registered in Section 16 changes.
+
+(a) lmstudio/qwen36 sealed its first rows on 2026-10-05. The overlap of 16.2 and 16.6 therefore runs 2026-10-05 to 2026-10-25, and lmstudio/auto and lmstudio/realist retire from 2026-10-26 (16.10).
+
+(b) On 2026-10-05, the first day under the corrected gate, every local arm lost half or more of its generated rows at the gate (lmstudio/qwen36 8 of 10, lmstudio/qwen36-abliterated 5 of 10). Every statistic of 16.5 and 16.6 is computed on sealed rows, so a difference between two arms could be the gate's selection rather than the arms' disposition. From the first chain run after this amendment, forecasts/local_runs.jsonl records every generated row's probability, domain and gate verdict (GENLOG-1005). Beside H7a, H7b and H8 the instrument prints the same statistic computed on all generated rows, accepted and rejected, over the days that carry the record. The companion is printed, never read as a test: it shows whether a sealed-row result survives the removal of the gate's selection. Generated rows before that run are not recorded.
