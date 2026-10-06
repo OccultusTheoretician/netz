@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "At least one merchant vessel is struck by a projectile, drone, mine or explosive in the Strait of Hormuz, Persian Gulf or Gulf of Oman between 2026-10-08 and 2026-10-21.",
+    "resolution": "YES if UKMTO reports a merchant vessel struck by a projectile, drone, mine or explosive in the Strait of Hormuz, Persian Gulf or Gulf of Oman between 2026-10-08 and 2026-10-21; NO otherwise.",
+    "failure_condition": "No merchant vessel is struck by a projectile, drone, mine or explosive in the Strait of Hormuz, Persian Gulf or Gulf of Oman between 2026-10-08 and 2026-10-21.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-23",
+    "probability": 69,
+    "citations": [
+      58,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A merchant vessel is struck by an aerial or naval drone or a missile inside the Bulgarian or Romanian Black Sea exclusive economic zone between 2026-10-08 and 2026-11-06.",
+    "resolution": "YES if the Bulgarian or Romanian government, or Reuters or AP citing either, reports a drone or missile strike on a merchant vessel inside the Bulgarian or Romanian Black Sea EEZ between 2026-10-08 and 2026-11-06; NO otherwise.",
+    "failure_condition": "No merchant vessel is struck by a drone or missile inside the Bulgarian or Romanian Black Sea EEZ between 2026-10-08 and 2026-11-06.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-10",
+    "probability": 69,
+    "citations": [
+      67
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled meeting of 2026-10-27 to 2026-10-28, lifting the upper bound above 4.00 percent. Reference: 3.75 to 4.00 percent target range at seal on 2026-10-06.",
+    "resolution": "YES if the FOMC statement issued 2026-10-28 for the meeting of 2026-10-27 to 2026-10-28 sets an upper bound above 4.00 percent, per federalreserve.gov or FRED series DFEDTARU. Reference: 4.00 percent at seal.",
+    "failure_condition": "The target range announced on 2026-10-28 has an upper bound of 4.00 percent or lower.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 58,
+    "citations": [
+      55,
+      57
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The WTI Cushing spot crude price for 2026-12-01 is below 80.00 dollars per barrel. Reference: WTI 87.77 dollars per barrel in the packet market snapshot on 2026-10-06.",
+    "resolution": "YES if FRED series DCOILWTICO shows a value below 80.00 for 2026-12-01; NO if 80.00 or higher. If no value posts for that date, use the nearest prior trading day. Reference: 87.77 on 2026-10-06.",
+    "failure_condition": "The WTI Cushing spot price for 2026-12-01 is 80.00 dollars per barrel or higher.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-14",
+    "probability": 58,
+    "citations": [
+      55,
+      70,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds CVE-2026-61500, the Rejetto HFS session forgery flaw that enables unauthenticated remote code execution, to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-10-07 and 2026-12-04.",
+    "resolution": "YES if the CISA KEV catalog JSON feed lists CVE-2026-61500 with a dateAdded value from 2026-10-07 through 2026-12-04 inclusive; NO otherwise.",
+    "failure_condition": "CISA does not add CVE-2026-61500 to the KEV catalog with a dateAdded between 2026-10-07 and 2026-12-04.",
+    "domain": "cyber",
+    "deadline": "2026-12-08",
+    "probability": 42,
+    "citations": [
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4172,
+      "n": 151,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of the 435 US House seats in the general election held on 2026-11-03, per AP race calls standing on 2026-12-02.",
+    "resolution": "YES if AP race calls standing on 2026-12-02 credit Democratic candidates with at least 218 House seats from the 2026-11-03 election; NO if fewer than 218 are called for Democrats by then.",
+    "failure_condition": "Democratic candidates win fewer than 218 of the 435 House seats contested on 2026-11-03.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 41,
+    "citations": [
+      35,
+      94
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US Army carries out the death sentence of Nidal Hasan, the convicted Fort Hood shooter, between 2026-10-07 and 2027-03-31.",
+    "resolution": "YES if the Army or Pentagon confirms, or AP or Reuters reports, that Nidal Hasan was executed on a date between 2026-10-07 and 2027-03-31; NO otherwise.",
+    "failure_condition": "Nidal Hasan is not executed between 2026-10-07 and 2027-03-31, whether because of a court stay, an Army postponement or any other cause.",
+    "domain": "crime/security",
+    "deadline": "2027-04-02",
+    "probability": 33,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The German Federal Prosecutor General files an indictment against former BND president August Hanning between 2026-10-07 and 2027-03-31.",
+    "resolution": "YES if a Federal Prosecutor General press release, or Reuters, AP or dpa, states that charges were filed against August Hanning at a German court between 2026-10-07 and 2027-03-31; NO otherwise.",
+    "failure_condition": "No indictment against August Hanning is filed with a German court between 2026-10-07 and 2027-03-31.",
+    "domain": "crime/security",
+    "deadline": "2027-04-02",
+    "probability": 33,
+    "citations": [
+      34,
+      65
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Kenya confirms at least one additional laboratory-confirmed Ebola case, beyond the fatal imported case announced on 2026-10-06, between 2026-10-07 and 2026-11-06.",
+    "resolution": "YES if the Kenya Ministry of Health, or a WHO Disease Outbreak News or situation report, confirms a new laboratory-confirmed Ebola case in Kenya between 2026-10-07 and 2026-11-06; NO otherwise.",
+    "failure_condition": "No Ebola case other than the index case announced on 2026-10-06 is laboratory-confirmed in Kenya between 2026-10-07 and 2026-11-06.",
+    "domain": "disaster",
+    "deadline": "2026-11-10",
+    "probability": 43,
+    "citations": [
+      80,
+      111
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CDC cumulative count of confirmed 2026 US measles cases reaches at least 5,500 in a weekly update published between 2026-10-07 and 2026-12-02. Reference: about 3,880 cases at the start of October 2026.",
+    "resolution": "YES if any CDC Measles Cases and Outbreaks weekly update published from 2026-10-07 through 2026-12-02 shows at least 5,500 confirmed 2026 US cases; NO otherwise. Reference: about 3,880 at start of October.",
+    "failure_condition": "The CDC confirmed 2026 US measles count stays below 5,500 in every weekly update published from 2026-10-07 through 2026-12-02.",
+    "domain": "disaster",
+    "deadline": "2026-12-04",
+    "probability": 43,
+    "citations": [
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-06T21:19:50Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

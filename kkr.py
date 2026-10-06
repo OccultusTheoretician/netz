@@ -2133,6 +2133,7 @@ def _log_local_run(tag, registered, lm, report, packet, accepted, rejected, path
            "report": report, "packet": packet,
            "accepted": accepted, "rejected": rejected,
            "parse_failed": bool(lm.get("parse_failed")),  # PARSELOG-1005
+           "generated": globals().get("_LAST_GENERATED"),  # GENLOG-1005
            "gate": _gate, "rubric_hash": str(_rubric_hash() or "")[:16]}
     _p = Path(path) if path else (OUT / "local_runs.jsonl")
     try:
@@ -2272,6 +2273,13 @@ def cmd_generate(args):
         (rejected.append((p, reasons)) if reasons else accepted_raw.append(p))
     added = append_projections(accepted_raw, tag, rep.name) if accepted_raw else []
     print(f"KKR · gate: {len(added)} accepted, {len(rejected)} rejected", file=sys.stderr)
+    # GENLOG-1005: every generated row's probability, domain and gate verdict, so a
+    # sealed-row statistic can be printed beside its all-generated companion (16.12).
+    globals()["_LAST_GENERATED"] = (
+        [{"p": q.get("probability"), "domain": q.get("domain"), "accepted": True}
+         for q in accepted_raw]
+        + [{"p": q.get("probability"), "domain": q.get("domain"), "accepted": False,
+            "why": str(rs[0])[:80] if rs else ""} for q, rs in rejected])
     _lm = globals().get("_LAST_LM_RUN")  # TOKENLOG-1004
     if _lm and str(tag).startswith("lmstudio/"):
         _log_local_run(tag, _bound, _lm, rep.name if rep else "",
