@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-10-05T12:37:07Z · ledger `ledger.json` · 3391 rows in scope
+Generated 2026-10-06T12:13:03Z · ledger `ledger.json` · 3461 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,12 +12,12 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **3390**
+- rows audited: **3460**
 - scope limitation (no resolvable source report): **1**
-- defective: **498** (14.7% of audited)
-- rows whose citation number does not identify a unique item: **394** (max candidates behind one number: 8)
-  - AMBIGUOUS_REF: 394
-  - UNSUPPORTED: 314
+- defective: **510** (14.7% of audited)
+- rows whose citation number does not identify a unique item: **399** (max candidates behind one number: 8)
+  - AMBIGUOUS_REF: 399
+  - UNSUPPORTED: 326
   - DEADWEIGHT: 171
   - SHOTGUN: 56
   - NO_CITES: 24
@@ -51,19 +51,22 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| lmstudio/auto | 458 | 129 | 28% |
-| control/baserate | 1218 | 129 | 11% |
-| lmstudio/realist | 175 | 75 | 43% |
+| control/baserate | 1242 | 135 | 11% |
+| lmstudio/auto | 463 | 129 | 28% |
+| lmstudio/realist | 180 | 75 | 42% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| manual/fable-5.1/unattested | 258 | 35 | 14% |
+| manual/fable-5.1/unattested | 266 | 37 | 14% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
 | manual/opus-5 | 74 | 12 | 16% |
-| manual/opus-5.5/unattested | 87 | 8 | 9% |
-| manual/sonnet-5.5/unattested | 46 | 8 | 17% |
+| manual/opus-5.5/unattested | 95 | 11 | 12% |
+| manual/sonnet-5.5/unattested | 54 | 9 | 17% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
 | manual/sonnet-5 | 45 | 1 | 2% |
 | operator/human | 10 | 0 | 0% |
 | kfk/halflife | 10 | 0 | 0% |
+| lmstudio/qwen36 | 2 | 0 | 0% |
+| lmstudio/qwen36-realist | 5 | 0 | 0% |
+| lmstudio/qwen36-abliterated | 5 | 0 | 0% |
 
