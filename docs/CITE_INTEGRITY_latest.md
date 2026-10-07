@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-10-06T12:13:03Z · ledger `ledger.json` · 3461 rows in scope
+Generated 2026-10-07T11:59:16Z · ledger `ledger.json` · 3534 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,13 +12,13 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **3460**
+- rows audited: **3533**
 - scope limitation (no resolvable source report): **1**
-- defective: **510** (14.7% of audited)
-- rows whose citation number does not identify a unique item: **399** (max candidates behind one number: 8)
-  - AMBIGUOUS_REF: 399
-  - UNSUPPORTED: 326
-  - DEADWEIGHT: 171
+- defective: **528** (14.9% of audited)
+- rows whose citation number does not identify a unique item: **400** (max candidates behind one number: 8)
+  - AMBIGUOUS_REF: 400
+  - UNSUPPORTED: 339
+  - DEADWEIGHT: 176
   - SHOTGUN: 56
   - NO_CITES: 24
   - THIN: 3
@@ -51,22 +51,22 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| control/baserate | 1242 | 135 | 11% |
-| lmstudio/auto | 463 | 129 | 28% |
-| lmstudio/realist | 180 | 75 | 42% |
+| control/baserate | 1265 | 141 | 11% |
+| lmstudio/auto | 467 | 129 | 28% |
+| lmstudio/realist | 185 | 75 | 41% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| manual/fable-5.1/unattested | 266 | 37 | 14% |
+| manual/fable-5.1/unattested | 274 | 39 | 14% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
+| manual/opus-5.5/unattested | 103 | 14 | 14% |
 | manual/opus-5 | 74 | 12 | 16% |
-| manual/opus-5.5/unattested | 95 | 11 | 12% |
-| manual/sonnet-5.5/unattested | 54 | 9 | 17% |
+| manual/sonnet-5.5/unattested | 61 | 10 | 16% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
+| lmstudio/qwen36 | 9 | 2 | 22% |
+| lmstudio/qwen36-realist | 13 | 2 | 15% |
+| lmstudio/qwen36-abliterated | 8 | 2 | 25% |
 | manual/sonnet-5 | 45 | 1 | 2% |
 | operator/human | 10 | 0 | 0% |
 | kfk/halflife | 10 | 0 | 0% |
-| lmstudio/qwen36 | 2 | 0 | 0% |
-| lmstudio/qwen36-realist | 5 | 0 | 0% |
-| lmstudio/qwen36-abliterated | 5 | 0 | 0% |
 
