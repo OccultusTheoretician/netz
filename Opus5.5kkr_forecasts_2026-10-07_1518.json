@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "Between 2026-10-08 and 2026-11-07, a single Russian air attack (missile, drone, or glide bomb) on one Ukrainian city or town kills at least 10 people.",
+    "domain": "military/conflict",
+    "probability": 50,
+    "resolution": "TRUE if Reuters or AP, citing Ukrainian national or regional officials, report one Russian air attack on a single Ukrainian city or town between 2026-10-08 and 2026-11-07 with a death toll of at least 10.",
+    "deadline": "2026-11-10",
+    "citations": [
+      77
+    ],
+    "failure_condition": "No single Russian air attack on one Ukrainian city or town between 2026-10-08 and 2026-11-07 kills 10 or more people."
+  },
+  {
+    "statement": "Between 2026-10-08 and 2026-12-31, the US and Iranian governments both publicly announce or confirm a ceasefire or agreement ending hostilities between the United States and Iran.",
+    "domain": "military/conflict",
+    "probability": 17,
+    "resolution": "TRUE if, between 2026-10-08 and 2026-12-31, the US government and the Iranian government each publicly announce or confirm a ceasefire or agreement ending US-Iran hostilities, as reported by Reuters or AP.",
+    "deadline": "2027-01-05",
+    "citations": [
+      57,
+      116
+    ],
+    "failure_condition": "The US and Iranian governments do not both announce or confirm a ceasefire or hostilities-ending agreement between 2026-10-08 and 2026-12-31."
+  },
+  {
+    "statement": "The S&P 500 closes at or below 7000.00 on at least one trading day between 2026-10-08 and 2026-12-31 (reference: 7,777.51 on the packet date).",
+    "domain": "economics/markets",
+    "probability": 18,
+    "resolution": "TRUE if FRED series SP500 shows a daily close at or below 7000.00 on any trading day between 2026-10-08 and 2026-12-31. Reference: 7,777.51 on the packet date.",
+    "deadline": "2027-01-05",
+    "citations": [
+      60,
+      69
+    ],
+    "failure_condition": "The S&P 500 closes above 7000.00 on every trading day from 2026-10-08 through 2026-12-31."
+  },
+  {
+    "statement": "The 10-year US Treasury constant-maturity yield prints at or above 5.50 percent on at least one day between 2026-10-08 and 2026-12-31 (reference: 5.30 percent on the packet date).",
+    "domain": "economics/markets",
+    "probability": 58,
+    "resolution": "TRUE if FRED series DGS10 shows a value at or above 5.50 on any date between 2026-10-08 and 2026-12-31. Reference: 5.30 percent on the packet date.",
+    "deadline": "2027-01-05",
+    "citations": [
+      69,
+      52
+    ],
+    "failure_condition": "The 10-year Treasury constant-maturity yield stays below 5.50 percent on every business day from 2026-10-08 through 2026-12-31."
+  },
+  {
+    "statement": "Between 2026-10-08 and 2026-12-31, the US government publishes in the Federal Register a binding prohibition, quota, or export-license requirement on diesel fuel exports.",
+    "domain": "economics/markets",
+    "probability": 15,
+    "resolution": "TRUE if a proclamation, executive order, or rule published in the Federal Register between 2026-10-08 and 2026-12-31 prohibits, caps by quota, or imposes a license requirement on US diesel fuel exports.",
+    "deadline": "2027-01-05",
+    "citations": [
+      71,
+      70
+    ],
+    "failure_condition": "No binding prohibition, quota, or license requirement on US diesel exports is promulgated in the Federal Register between 2026-10-08 and 2026-12-31."
+  },
+  {
+    "statement": "CISA adds at least one Atlassian vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-07 and 2026-11-06.",
+    "domain": "cyber",
+    "probability": 70,
+    "resolution": "TRUE if the CISA KEV catalog carries an entry with vendorProject Atlassian and a dateAdded value between 2026-10-07 and 2026-11-06 inclusive.",
+    "deadline": "2026-11-09",
+    "citations": [
+      33,
+      23,
+      20
+    ],
+    "failure_condition": "CISA adds no Atlassian vulnerability to the KEV catalog with a date-added value between 2026-10-07 and 2026-11-06."
+  },
+  {
+    "statement": "CISA adds a SonicWall SMA1000 vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-07 and 2026-12-31.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if the CISA KEV catalog carries a SonicWall entry whose product field names SMA1000 or SMA 1000, with a dateAdded value between 2026-10-07 and 2026-12-31 inclusive.",
+    "deadline": "2027-01-05",
+    "citations": [
+      25
+    ],
+    "failure_condition": "CISA adds no SonicWall SMA1000 vulnerability to the KEV catalog with a date-added value between 2026-10-07 and 2026-12-31."
+  },
+  {
+    "statement": "The Democratic nominee wins the Texas US Senate election held on 2026-11-03 against Republican nominee Ken Paxton.",
+    "domain": "political",
+    "probability": 33,
+    "resolution": "TRUE if Texas Secretary of State returns for the general election held 2026-11-03 show the Democratic nominee receiving the most votes for US Senate.",
+    "deadline": "2026-12-04",
+    "citations": [
+      114,
+      116
+    ],
+    "failure_condition": "The Democratic nominee does not receive the most votes in the 2026-11-03 Texas US Senate election."
+  },
+  {
+    "statement": "Flavio Bolsonaro wins the Brazilian presidential runoff held on 2026-10-25.",
+    "domain": "political",
+    "probability": 45,
+    "resolution": "TRUE if official TSE results for the Brazilian presidential runoff held on 2026-10-25 show Flavio Bolsonaro receiving the most valid votes.",
+    "deadline": "2026-10-28",
+    "citations": [
+      126,
+      103
+    ],
+    "failure_condition": "Flavio Bolsonaro does not receive the most valid votes in the 2026-10-25 Brazilian presidential runoff."
+  },
+  {
+    "statement": "Between 2026-10-07 and 2026-11-06, the cumulative count of laboratory-confirmed Ebola disease cases in Kenya reaches at least 2.",
+    "domain": "disaster",
+    "probability": 27,
+    "resolution": "TRUE if WHO Disease Outbreak News or the Kenya Ministry of Health reports at least 2 cumulative laboratory-confirmed Ebola disease cases in Kenya, with the count reached between 2026-10-07 and 2026-11-06.",
+    "deadline": "2026-11-09",
+    "citations": [
+      88
+    ],
+    "failure_condition": "Kenya records fewer than 2 cumulative laboratory-confirmed Ebola disease cases through 2026-11-06."
+  }
+]
