@@ -262,7 +262,27 @@ def check_unmerged():
     return "pass", "no unmerged paths, no conflict markers"
 
 
-CHECKS = [("identity guard", check_identity),
+def check_family_rulings():
+    """KEYSFAM-1009: the standing family ruling of 2026-08-18 (manual s9) - lmstudio
+    rows are KEYED always. A keyless determination on a local arm dated after the
+    ruling, without a dated correction, fails the publish guard."""
+    d = load_json(ROOT/"ledger.json")
+    if d is None:
+        return "fail", "ledger.json unreadable"
+    bad_rows = [str(p.get("id")) for p in d.get("projections", [])
+                if str(p.get("model", "")).startswith("lmstudio/")
+                and str(p.get("keyed_keyless", "")).strip().lower() == "keyless"
+                and str(p.get("keyed_keyless_dated") or "") > "2026-08-18"
+                and not p.get("keyed_keyless_superseded")]
+    if bad_rows:
+        return "fail", (f"{len(bad_rows)} lmstudio keyless determination(s) dated after "
+                        f"2026-08-18 without correction: " + ", ".join(bad_rows[:4])
+                        + (" ..." if len(bad_rows) > 4 else ""))
+    return "pass", "no lmstudio keyless determination after 2026-08-18 (ruling of that date)"
+
+
+CHECKS = [("family rulings", check_family_rulings),  # KEYSFAM-1009
+          ("identity guard", check_identity),
           ("ledger envelope", check_envelope),
           ("vault leak", check_vault_leak),
           ("merge state", check_unmerged),  # PUBGUARD-2026-09-01
