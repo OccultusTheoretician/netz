@@ -1,0 +1,255 @@
+[
+  {
+    "statement": "A Houthi missile or drone attack kills at least one person inside Saudi Arabia between 2026-10-10 and 2026-11-08.",
+    "resolution": "TRUE if Saudi authorities (GACA, civil defence, Saudi Press Agency or the coalition spokesman) confirm at least one death in Saudi territory from a Houthi attack occurring in the window, as carried by Reuters or AP.",
+    "failure_condition": "No person is killed inside Saudi Arabia by a Houthi missile or drone attack between 2026-10-10 and 2026-11-08.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-11",
+    "probability": 69,
+    "citations": [
+      92,
+      103,
+      127
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Ethiopian forces carry out an air, drone, artillery or ground attack on targets inside the internationally recognized territory of Eritrea between 2026-10-10 and 2026-11-22.",
+    "resolution": "TRUE if the Ethiopian government acknowledges such an attack, or at least two of Reuters, AP and AFP report it as established fact rather than solely as an Eritrean claim, for an attack in the window.",
+    "failure_condition": "No Ethiopian military strike or incursion into Eritrean territory takes place between 2026-10-10 and 2026-11-22.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-25",
+    "probability": 69,
+    "citations": [
+      88,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The front-month ICE Brent crude futures contract settles at or above 100.00 USD per barrel on 2026-12-07. Reference: 104.81 USD per barrel on the packet date.",
+    "resolution": "TRUE if the ICE Futures Europe settlement price of the front-month Brent crude futures contract on 2026-12-07 is at or above 100.00 USD per barrel; FALSE if below.",
+    "failure_condition": "The front-month Brent futures settlement price on 2026-12-07 is below 100.00 USD per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-09",
+    "probability": 58,
+    "citations": [
+      127,
+      45,
+      41
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant-maturity yield is at or below 5.00 percent on 2026-12-31. Reference: 5.27 percent on the packet date.",
+    "resolution": "TRUE if FRED series DGS10 shows a value at or below 5.00 for 2026-12-31; FALSE if above. If no value is published for that date, the last prior published value is used.",
+    "failure_condition": "The 10-year constant-maturity Treasury yield recorded for 2026-12-31 is above 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 58,
+    "citations": [
+      108,
+      59,
+      112
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds a Citrix NetScaler ADC or Gateway vulnerability to the Known Exploited Vulnerabilities catalog between 2026-10-09 and 2026-11-06, following the new NetScaler RCE flaw reported on 2026-10-09.",
+    "resolution": "TRUE if the CISA KEV catalog contains an entry with vendorProject Citrix, a product naming NetScaler ADC or NetScaler Gateway, and a dateAdded value between 2026-10-09 and 2026-11-06; otherwise FALSE.",
+    "failure_condition": "No Citrix NetScaler ADC or Gateway vulnerability is added to the CISA KEV catalog between 2026-10-09 and 2026-11-06.",
+    "domain": "cyber",
+    "deadline": "2026-11-09",
+    "probability": 42,
+    "citations": [
+      24,
+      26
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4172,
+      "n": 151,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democrats win control of the US Senate in the 2026-11-03 election, with Democrats plus independents caucusing with them holding at least 51 seats in the Senate that convenes in January 2027.",
+    "resolution": "TRUE if AP race calls or certified results available by 2026-12-11, including any Georgia runoff, show Democrats plus independents caucusing with them holding at least 51 seats for January 2027; otherwise FALSE.",
+    "failure_condition": "Democrats plus independents caucusing with them hold 50 or fewer seats in the Senate elected for January 2027.",
+    "domain": "political",
+    "deadline": "2026-12-14",
+    "probability": 41,
+    "citations": [
+      108,
+      115
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Florida Amendment 3 (HJR 1F, raising the homestead exemption from non-school property taxes) receives at least 60 percent Yes votes in the 2026-11-03 general election.",
+    "resolution": "TRUE if official results published by the Florida Division of Elections show Amendment 3 receiving Yes votes at or above 60.0 percent of votes cast on the measure; FALSE otherwise.",
+    "failure_condition": "Amendment 3 receives less than 60.0 percent Yes votes in the 2026-11-03 Florida general election.",
+    "domain": "political",
+    "deadline": "2026-11-20",
+    "probability": 41,
+    "citations": [
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Nidal Hasan is executed by Army firing squad at Fort Hood between 2026-12-03 and 2026-12-04; the published execution date is 2026-12-03.",
+    "resolution": "TRUE if the Army or the Pentagon confirms Hasan was executed on 2026-12-03 or 2026-12-04, as reported by AP or Reuters; FALSE if the execution is stayed, postponed past 2026-12-04, or commuted.",
+    "failure_condition": "Hasan is not executed on 2026-12-03 or 2026-12-04, whether because of a court stay, postponement, commutation or any other cause.",
+    "domain": "crime/security",
+    "deadline": "2026-12-07",
+    "probability": 33,
+    "citations": [
+      101,
+      83,
+      10
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The President approves a major disaster declaration (FEMA type DR) for Florida for Hurricane Isaias between 2026-10-09 and 2026-11-06.",
+    "resolution": "TRUE if the OpenFEMA Disaster Declarations Summaries dataset lists a DR declaration for state FL whose title names Hurricane Isaias, with a declarationDate between 2026-10-09 and 2026-11-06; otherwise FALSE.",
+    "failure_condition": "No major disaster declaration for Florida covering Hurricane Isaias is approved between 2026-10-09 and 2026-11-06.",
+    "domain": "disaster",
+    "deadline": "2026-11-09",
+    "probability": 43,
+    "citations": [
+      42,
+      48,
+      41
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater occurs within 250 km of the epicenter of USGS event us6000u0xi (M6.3, 102 km NE of Norsup, Vanuatu) between 2026-10-12 and 2026-11-08 UTC.",
+    "resolution": "TRUE if the USGS ComCat catalog at the deadline lists an event of magnitude 6.0 or greater with origin time between 2026-10-12 and 2026-11-08 UTC and epicenter within 250 km of the us6000u0xi epicenter.",
+    "failure_condition": "No magnitude 6.0 or greater earthquake occurs within 250 km of the us6000u0xi epicenter between 2026-10-12 and 2026-11-08 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-10",
+    "probability": 43,
+    "citations": [
+      49
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-09T23:03:39Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

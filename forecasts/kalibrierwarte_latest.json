@@ -1,17 +1,17 @@
 {
  "_meta": {
-  "generated": "2026-10-08T15:28:16Z",
+  "generated": "2026-10-09T15:28:31Z",
   "instrument": "kalibrierwarte/1.0",
   "doctrine": "no pooled score exists; a Brier belongs to one forecaster; trend under a frozen rubric is the measurement",
   "n_floor_arm": 10,
   "n_floor_bin": 5,
-  "open_rows_rubric_hashed": "2651/2829"
+  "open_rows_rubric_hashed": "2733/2911"
  },
  "arms": {
   "control/baserate": {
    "resolved": 169,
-   "issued": 1292,
-   "open": 1091,
+   "issued": 1320,
+   "open": 1119,
    "hits": 106,
    "misses": 63,
    "split": {
@@ -233,19 +233,19 @@
   },
   "lmstudio/auto[post-window]": {
    "resolved": 170,
-   "issued": 400,
-   "open": 221,
+   "issued": 405,
+   "open": 226,
    "hits": 45,
    "misses": 125,
    "split": {
     "keyed": {
-     "resolved": 156,
-     "hits": 43,
-     "misses": 113,
-     "brier": 0.211,
-     "base_rate": 0.276,
-     "climatological": 0.2,
-     "skill": -0.055,
+     "resolved": 163,
+     "hits": 44,
+     "misses": 119,
+     "brier": 0.207,
+     "base_rate": 0.27,
+     "climatological": 0.197,
+     "skill": -0.049,
      "note": null,
      "defect_ids": [
       "KKR-20260804-08",
@@ -294,6 +294,7 @@
       "KKR-20260907-01",
       "KKR-20260911-01",
       "KKR-20260911-03",
+      "KKR-20260914-01",
       "KKR-20260916-01",
       "KKR-20260918-01",
       "KKR-20260919-03",
@@ -301,17 +302,15 @@
      ]
     },
     "keyless": {
-     "resolved": 12,
-     "hits": 2,
-     "misses": 10,
-     "brier": 0.134,
-     "base_rate": 0.167,
-     "climatological": 0.139,
-     "skill": 0.034,
-     "note": null,
-     "defect_ids": [
-      "KKR-20260914-01"
-     ]
+     "resolved": 5,
+     "hits": 1,
+     "misses": 4,
+     "brier": 0.158,
+     "base_rate": 0.2,
+     "climatological": 0.16,
+     "skill": null,
+     "note": "n<10 - printed, not hidden",
+     "defect_ids": []
     }
    },
    "undetermined": 2,
@@ -482,49 +481,49 @@
   },
   "lmstudio/qwen36": {
    "resolved": 0,
-   "issued": 17,
-   "open": 17,
+   "issued": 21,
+   "open": 21,
    "hits": 0,
    "misses": 0,
-   "zero_state": "era registered - 17 issued, 17 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
+   "zero_state": "era registered - 21 issued, 21 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
    "frame_note": null,
    "bins": []
   },
   "lmstudio/qwen36-abliterated": {
    "resolved": 0,
-   "issued": 17,
-   "open": 17,
+   "issued": 23,
+   "open": 23,
    "hits": 0,
    "misses": 0,
-   "zero_state": "era registered - 17 issued, 17 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
+   "zero_state": "era registered - 23 issued, 23 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
    "frame_note": null,
    "bins": []
   },
   "lmstudio/qwen36-realist": {
    "resolved": 0,
-   "issued": 26,
-   "open": 26,
+   "issued": 33,
+   "open": 33,
    "hits": 0,
    "misses": 0,
-   "zero_state": "era registered - 26 issued, 26 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
-   "frame_note": "frame: 26 rows under the frame in force 442300f131b11b7c",
+   "zero_state": "era registered - 33 issued, 33 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
+   "frame_note": "frame: 33 rows under the frame in force 442300f131b11b7c",
    "bins": []
   },
   "lmstudio/realist": {
    "resolved": 34,
-   "issued": 197,
-   "open": 162,
+   "issued": 200,
+   "open": 165,
    "hits": 26,
    "misses": 8,
    "split": {
     "keyed": {
-     "resolved": 29,
-     "hits": 24,
-     "misses": 5,
-     "brier": 0.392,
-     "base_rate": 0.828,
-     "climatological": 0.143,
-     "skill": -1.748,
+     "resolved": 34,
+     "hits": 26,
+     "misses": 8,
+     "brier": 0.383,
+     "base_rate": 0.765,
+     "climatological": 0.18,
+     "skill": -1.128,
      "note": null,
      "defect_ids": [
       "KKR-20260905-09",
@@ -545,15 +544,8 @@
      ]
     },
     "keyless": {
-     "resolved": 5,
-     "hits": 2,
-     "misses": 3,
-     "brier": 0.33,
-     "base_rate": 0.4,
-     "climatological": 0.24,
-     "skill": null,
-     "note": "n<10 - printed, not hidden",
-     "defect_ids": []
+     "resolved": 0,
+     "note": "no resolved rows"
     }
    },
    "undetermined": 0,
@@ -564,7 +556,7 @@
    "n_floor": null,
    "rubric_hashed": 34,
    "rubric_note": null,
-   "frame_note": "frame: 137 rows under the frame in force 442300f131b11b7c; 60 rows under an earlier frame text 7b96df749db5034b - pre-revision class, printed here, outside the H6 population (registration Section 15)",
+   "frame_note": "frame: 140 rows under the frame in force 442300f131b11b7c; 60 rows under an earlier frame text 7b96df749db5034b - pre-revision class, printed here, outside the H6 population (registration Section 15)",
    "bins": [
     {
      "bin": "10-20",
@@ -823,8 +815,8 @@
   },
   "manual/fable-5.1/unattested": {
    "resolved": 25,
-   "issued": 283,
-   "open": 250,
+   "issued": 293,
+   "open": 260,
    "hits": 20,
    "misses": 5,
    "split": {
@@ -1134,11 +1126,11 @@
   },
   "manual/opus-5.5/unattested": {
    "resolved": 0,
-   "issued": 112,
-   "open": 112,
+   "issued": 121,
+   "open": 121,
    "hits": 0,
    "misses": 0,
-   "zero_state": "era registered - 112 issued, 112 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
+   "zero_state": "era registered - 121 issued, 121 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
    "frame_note": null,
    "bins": []
   },
@@ -1359,11 +1351,11 @@
   },
   "manual/sonnet-5.5/unattested": {
    "resolved": 0,
-   "issued": 70,
-   "open": 70,
+   "issued": 80,
+   "open": 80,
    "hits": 0,
    "misses": 0,
-   "zero_state": "era registered - 70 issued, 70 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
+   "zero_state": "era registered - 80 issued, 80 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
    "frame_note": null,
    "bins": []
   },
