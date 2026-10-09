@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "CISA adds the maximum-severity SonicWall SMA1000 flaw CVE-2026-102255 to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-09 and 2026-10-23.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "The CISA KEV JSON catalog carries an entry with cveID CVE-2026-102255 and a dateAdded value between 2026-10-09 and 2026-10-23 inclusive.",
+    "deadline": "2026-10-27",
+    "citations": [18],
+    "failure_condition": "CVE-2026-102255 is absent from the CISA KEV catalog, or carries a dateAdded outside 2026-10-09 to 2026-10-23, when the catalog is fetched on the deadline."
+  },
+  {
+    "statement": "CISA adds the NetScaler ADC and NetScaler Gateway memory overflow flaw CVE-2026-107406 to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-09 and 2026-11-06.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "The CISA KEV JSON catalog carries an entry with cveID CVE-2026-107406 and a dateAdded value between 2026-10-09 and 2026-11-06 inclusive.",
+    "deadline": "2026-11-10",
+    "citations": [24, 26],
+    "failure_condition": "CVE-2026-107406 is absent from the CISA KEV catalog, or carries a dateAdded outside 2026-10-09 to 2026-11-06, when the catalog is fetched on the deadline."
+  },
+  {
+    "statement": "The FRED series DCOILWTICO WTI spot price is at or above 100.00 USD per barrel on at least one date between 2026-10-12 and 2026-11-06. Reference: 91.98 USD per barrel in the packet market snapshot dated 2026-10-09.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "FRED series DCOILWTICO shows at least one daily value of 100.00 USD per barrel or higher dated 2026-10-12 through 2026-11-06 inclusive. Reference: 91.98 on the packet date.",
+    "deadline": "2026-11-13",
+    "citations": [58, 127],
+    "failure_condition": "No FRED DCOILWTICO daily value dated 2026-10-12 through 2026-11-06 reaches 100.00 USD per barrel."
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield in FRED series DGS10 is at or above 5.50 percent on at least one date between 2026-10-12 and 2026-11-06. Reference: 5.27 percent in the packet market snapshot dated 2026-10-09.",
+    "domain": "economics/markets",
+    "probability": 22,
+    "resolution": "FRED series DGS10 shows at least one daily value of 5.50 percent or higher dated 2026-10-12 through 2026-11-06 inclusive. Reference: 5.27 percent on the packet date.",
+    "deadline": "2026-11-10",
+    "citations": [59],
+    "failure_condition": "No FRED DGS10 daily value dated 2026-10-12 through 2026-11-06 reaches 5.50 percent."
+  },
+  {
+    "statement": "FEMA records a presidentially declared major disaster (type DR) for Hurricane Isaias in at least one US state, with a declaration date between 2026-10-09 and 2026-10-23.",
+    "domain": "disaster",
+    "probability": 82,
+    "resolution": "OpenFEMA DisasterDeclarationsSummaries or the fema.gov declarations page lists a DR-type declaration titled for Hurricane Isaias with a declarationDate from 2026-10-09 through 2026-10-23 inclusive.",
+    "deadline": "2026-10-28",
+    "citations": [41, 42],
+    "failure_condition": "No DR-type declaration for Hurricane Isaias has a declarationDate between 2026-10-09 and 2026-10-23 in FEMA records on the deadline."
+  },
+  {
+    "statement": "USGS lists at least one earthquake of magnitude 6.5 or greater with Vanuatu in its place text and an origin time between 2026-10-10 and 2026-10-24 UTC.",
+    "domain": "disaster",
+    "probability": 9,
+    "resolution": "A USGS ComCat query returns at least one event of magnitude 6.5 or greater whose place field contains Vanuatu, with origin time from 2026-10-10 00:00 UTC through 2026-10-24 23:59 UTC.",
+    "deadline": "2026-10-27",
+    "citations": [49],
+    "failure_condition": "No USGS event of magnitude 6.5 or greater with Vanuatu in its place text has an origin time between 2026-10-10 and 2026-10-24 UTC."
+  },
+  {
+    "statement": "At least one person is killed inside Saudi Arabia by a Houthi missile or drone strike that occurs between 2026-10-12 and 2026-10-26.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "Reuters and AP both report that at least one person was killed inside Saudi Arabia by a Houthi missile or drone strike occurring between 2026-10-12 and 2026-10-26 inclusive.",
+    "deadline": "2026-10-30",
+    "citations": [92, 103],
+    "failure_condition": "No person was killed inside Saudi Arabia by a Houthi missile or drone strike occurring between 2026-10-12 and 2026-10-26."
+  },
+  {
+    "statement": "The US and Iranian governments each publicly confirm a ceasefire or cessation of hostilities between them, in statements dated between 2026-10-12 and 2026-11-06.",
+    "domain": "military/conflict",
+    "probability": 8,
+    "resolution": "Reuters and AP both report official statements from Washington and Tehran, dated 2026-10-12 through 2026-11-06 inclusive, confirming a mutual ceasefire or end of hostilities between the two countries.",
+    "deadline": "2026-11-10",
+    "citations": [45, 127],
+    "failure_condition": "No mutual US-Iran ceasefire or end of hostilities was confirmed by both governments in statements dated 2026-10-12 through 2026-11-06."
+  },
+  {
+    "statement": "After the general election held on 2026-11-03, AP race calls as of 2026-12-11 show Democrats and independents who caucus with them holding at least 51 of the 100 US Senate seats.",
+    "domain": "political",
+    "probability": 62,
+    "resolution": "AP results as of 2026-12-11 show the Democratic caucus winning or holding at least 51 of 100 Senate seats after the 2026-11-03 election, counting any runoffs completed by that date.",
+    "deadline": "2026-12-11",
+    "citations": [108, 115],
+    "failure_condition": "AP race calls as of 2026-12-11 give the Democratic caucus fewer than 51 of the 100 Senate seats."
+  },
+  {
+    "statement": "The Army executes Nidal Hasan by firing squad at Fort Hood, Texas, on 2026-12-03, the date set in the Army execution order signed 2026-10-06.",
+    "domain": "crime/security",
+    "probability": 20,
+    "resolution": "The Army, the Pentagon, AP or Reuters confirm that Nidal Hasan was executed by firing squad at Fort Hood, Texas, on 2026-12-03.",
+    "deadline": "2026-12-07",
+    "citations": [83, 101],
+    "failure_condition": "Nidal Hasan was not executed at Fort Hood on 2026-12-03."
+  }
+]

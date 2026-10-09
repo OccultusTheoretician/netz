@@ -1,0 +1,101 @@
+[
+{
+"statement": "Hurricane Isaias makes landfall on the US Gulf Coast between 2026-10-09 and 2026-10-16 with a National Hurricane Center landfall intensity of at least 111 mph maximum sustained winds (Category 3 or stronger).",
+"domain": "disaster",
+"probability": 62,
+"resolution": "True if the NHC advisory archive for Isaias (Tropical Cyclone Update or public advisory) gives maximum sustained winds of 111 mph or more at a US Gulf Coast landfall between 2026-10-09 and 2026-10-16; otherwise false.",
+"deadline": "2026-10-20",
+"citations": [42, 48],
+"failure_condition": "Isaias reaches the US Gulf Coast with landfall winds below 111 mph, or makes no US Gulf Coast landfall between 2026-10-09 and 2026-10-16."
+},
+
+{
+"statement": "CISA adds the SonicWall SMA1000 vulnerability CVE-2026-102255 to its Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-09 and 2026-11-06.",
+"domain": "cyber",
+"probability": 70,
+"resolution": "True if the CISA KEV catalog JSON lists CVE-2026-102255 with a dateAdded value between 2026-10-09 and 2026-11-06 inclusive; otherwise false.",
+"deadline": "2026-11-10",
+"citations": [18],
+"failure_condition": "CVE-2026-102255 is not added to the CISA KEV catalog between 2026-10-09 and 2026-11-06."
+},
+
+{
+"statement": "CISA adds the Citrix NetScaler ADC and Gateway vulnerability CVE-2026-107406 to its Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-09 and 2026-11-13.",
+"domain": "cyber",
+"probability": 40,
+"resolution": "True if the CISA KEV catalog JSON lists CVE-2026-107406 with a dateAdded value between 2026-10-09 and 2026-11-13 inclusive; otherwise false.",
+"deadline": "2026-11-17",
+"citations": [24, 26],
+"failure_condition": "CVE-2026-107406 is not added to the CISA KEV catalog between 2026-10-09 and 2026-11-13."
+},
+
+{
+"statement": "ICE Brent crude front-month futures settle at or above 110.00 USD per barrel on at least one trading day between 2026-10-12 and 2026-10-30. Reference: 104.81 on the packet date 2026-10-09.",
+"domain": "economics/markets",
+"probability": 30,
+"resolution": "True if any daily ICE Brent front-month settlement from 2026-10-12 through 2026-10-30 is 110.00 USD or higher; otherwise false. Reference level at seal: 104.81.",
+"deadline": "2026-11-03",
+"citations": [41, 58, 127],
+"failure_condition": "Every ICE Brent front-month settlement from 2026-10-12 through 2026-10-30 is below 110.00 USD per barrel."
+},
+
+{
+"statement": "The Federal Open Market Committee raises the federal funds target range in its policy statement of 2026-10-28, issued at the close of the meeting scheduled for 2026-10-27 to 2026-10-28.",
+"domain": "economics/markets",
+"probability": 18,
+"resolution": "True if the Federal Reserve statement dated 2026-10-28 announces a higher target range, so that FRED series DFEDTARU is higher on 2026-10-29 than on 2026-10-27; otherwise false.",
+"deadline": "2026-10-30",
+"citations": [59, 66, 112],
+"failure_condition": "The Committee holds or lowers the federal funds target range at the meeting ending 2026-10-28."
+},
+
+{
+"statement": "After the US Senate elections of 2026-11-03, the Democratic caucus (Democrats plus independents who caucus with them) holds at least 51 of 100 Senate seats when the 120th Congress convenes on 2027-01-03.",
+"domain": "political",
+"probability": 63,
+"resolution": "True if the Senate.gov party division record shows 51 or more senators in the Democratic caucus at the convening of the 120th Congress on 2027-01-03, following the 2026-11-03 elections; otherwise false.",
+"deadline": "2027-01-08",
+"citations": [108, 115],
+"failure_condition": "The Democratic caucus holds 50 or fewer Senate seats when the 120th Congress convenes on 2027-01-03."
+},
+
+{
+"statement": "Florida voters approve the constitutional amendment cutting homestead property taxes with at least 60 percent yes votes in the general election of 2026-11-03.",
+"domain": "political",
+"probability": 35,
+"resolution": "True if official Florida Division of Elections results for the 2026-11-03 general election show the homestead property tax amendment with a yes share of 60.00 percent or more; otherwise false.",
+"deadline": "2026-11-20",
+"citations": [68],
+"failure_condition": "The homestead property tax amendment draws less than 60 percent yes votes in the Florida general election of 2026-11-03."
+},
+
+{
+"statement": "The United States carries out an air, missile or drone strike on targets located on Iranian land territory, mainland or islands, between 2026-10-10 and 2026-11-02.",
+"domain": "military/conflict",
+"probability": 7,
+"resolution": "True if US Central Command or the Pentagon confirms, or at least two of Reuters, AP and AFP report, a US strike on Iranian land territory occurring between 2026-10-10 and 2026-11-02; otherwise false.",
+"deadline": "2026-11-05",
+"citations": [45, 127],
+"failure_condition": "US forces strike no target on Iranian land territory between 2026-10-10 and 2026-11-02."
+},
+
+{
+"statement": "Ethiopian federal forces carry out an air or drone strike or a ground incursion inside the internationally recognized territory of Eritrea between 2026-10-10 and 2026-11-08.",
+"domain": "military/conflict",
+"probability": 35,
+"resolution": "True if at least two of Reuters, AP, AFP and BBC report an Ethiopian strike or ground incursion on Eritrean territory occurring between 2026-10-10 and 2026-11-08, citing either government, the UN or ACLED; otherwise false.",
+"deadline": "2026-11-12",
+"citations": [88, 93],
+"failure_condition": "Ethiopian strikes and ground operations stay confined to Ethiopian territory from 2026-10-10 through 2026-11-08."
+},
+
+{
+"statement": "The US Army carries out the execution of Fort Hood gunman Nidal Hasan between 2026-10-10 and 2026-12-31.",
+"domain": "crime/security",
+"probability": 30,
+"resolution": "True if the Army or the Pentagon officially confirms, as carried by AP or Reuters, that Nidal Hasan was executed on a date between 2026-10-10 and 2026-12-31; otherwise false.",
+"deadline": "2027-01-05",
+"citations": [83, 101, 109],
+"failure_condition": "The execution of Hasan is not carried out between 2026-10-10 and 2026-12-31."
+}
+]
