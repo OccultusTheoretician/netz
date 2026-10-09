@@ -3254,6 +3254,13 @@ def cmd_keys_import(args):
         if ruling not in ("keyed", "keyless"):
             errs.append(f"{rid}: ruling '{ruling}' is not keyed or keyless")
             continue
+        if ruling == "keyless" and str(p.get("model", "")).startswith("lmstudio/"):
+            # KEYSFAM-1009: the standing family ruling of 2026-08-18 is enforced at
+            # the only write path; a re-ruling belongs in the manual first.
+            errs.append(f"{rid}: keyless refused on a local arm - standing family "
+                        f"ruling 2026-08-18 (lmstudio is KEYED always); re-rule in "
+                        f"the manual before importing keyless on lmstudio (KEYSFAM-1009)")
+            continue
         if not why:
             errs.append(f"{rid}: no rationale - 4.02f requires the priors and "
                         f"the deducibility condition, not a bare label")
@@ -3334,7 +3341,7 @@ def cmd_keys_propose(args):
           f"forecasts/keys_worksheet_{stamp}_proposed.json`",
           ""]
     sheet = {}
-    counts = {"strong": 0, "unreadable": 0, "control": 0, "candidate": 0}
+    counts = {"strong": 0, "unreadable": 0, "control": 0, "family": 0, "candidate": 0}  # KEYSFAM-1009
     cache = {}
     for dl, p in todo:
         arm = str(p.get("model", ""))
@@ -3345,7 +3352,15 @@ def cmd_keys_propose(args):
         cites = [int(c) for c in (p.get("citations") or [])
                  if str(c).strip().lstrip("-").isdigit() and int(c) > 0]
         ruling, why, basis, klass = "", "", "", ""
-        if arm.startswith("control/"):
+        if arm.startswith("lmstudio/"):
+            # KEYSFAM-1009: standing family ruling 2026-08-18 (manual s9) - lmstudio is
+            # KEYED always; the arm cites by position; its keyless count cannot grow.
+            klass, ruling = "family", "keyed"
+            why = ("Standing family ruling 2026-08-18 (manual s9): lmstudio is KEYED "
+                   "always - the arm cites by position; its keyless count cannot grow. "
+                   "Applied by the proposer (KEYSFAM-1009).")
+            basis = "family ruling 2026-08-18 (lmstudio)"
+        elif arm.startswith("control/"):
             klass, ruling = "control", "keyed"
             why = ("Control arm - projection derived from the ledger's own "
                    "base rates; deducible by construction.")
@@ -3367,7 +3382,7 @@ def cmd_keys_propose(args):
             rare, _ = _rare_tokens(items)
             claim_txt = p.get("statement", "") + " " + p.get("resolution", "")
             claim = _content_words(claim_txt)
-            _IDENT = re.compile(r"(?<![\w-])(cve-\d{4}-\d+|(?:us|ci|nc|nn|hv|ak|uw|mb|pr|uu|ok|tx|at)[0-9a-z]{6,12}"
+            _IDENT = re.compile(r"(?<![\w-])(cve-\d{4}-\d+|(?:us|ci|nc|nn|hv|ak|uw|mb|pr|uu|ok|tx|at)(?=[0-9a-z]*\d)[0-9a-z]{6,12}"
                                 r"|dgs\d+|dcoil\w+|nasdaqcom|bc_\d+year|\d{4}-\d{2}-\d{2}"
                                 r"|\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d{3,}(?:\.\d+)?)(?![\w-])", re.I)
             _OUTCOME = re.compile(r"\b(added|adds|adopted|announced|announces|resigned|resigns|died|dies|signed|signs|"
@@ -3463,6 +3478,7 @@ def cmd_keys_propose(args):
     print(f"KKR - proposal: {counts['strong']} G2-deducible keyed, "
           f"{counts['unreadable']} unreadable keyed, "
           f"{counts['control']} control keyed, "
+          f"{counts['family']} family keyed (lmstudio, KEYSFAM-1009), "
           f"{counts['candidate']} keyless-candidate (blank, yours; "
           f"subject-grounded rows quote the prior that grounds them)",
           file=sys.stderr)
