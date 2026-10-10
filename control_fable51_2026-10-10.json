@@ -1,0 +1,256 @@
+[
+  {
+    "statement": "Between 2026-10-12 and 2026-10-25, King Khalid International Airport in Riyadh is hit or targeted by at least one further missile or drone attack that Saudi authorities acknowledge or the attacking party claims.",
+    "resolution": "TRUE if at least two of AP, Reuters, AFP and BBC report a missile or drone attack on or aimed at Riyadh airport between 2026-10-12 and 2026-10-25, acknowledged by Saudi authorities or claimed by the attacker; otherwise FALSE.",
+    "failure_condition": "No missile or drone attack is launched at King Khalid International Airport between 2026-10-12 and 2026-10-25.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-28",
+    "probability": 69,
+    "citations": [
+      77,
+      85
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS catalog records at least one earthquake of magnitude 6.0 or greater within 200 km of the epicenter of the M 7.7 Panama mainshock (USGS event us6000u18k) with origin time between 2026-10-11 and 2026-10-31 UTC.",
+    "resolution": "TRUE if a USGS ComCat query (minimum magnitude 6.0, 200 km radius around event us6000u18k, origin times 2026-10-11 through 2026-10-31 UTC) returns at least one event; otherwise FALSE.",
+    "failure_condition": "No earthquake of magnitude 6.0 or greater occurs within 200 km of the mainshock epicenter between 2026-10-11 and 2026-10-31 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-03",
+    "probability": 43,
+    "citations": [
+      27,
+      32,
+      35
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US National Hurricane Center names at least one new Atlantic-basin tropical or subtropical storm (any name after Isaias on the 2026 list) between 2026-10-11 and 2026-10-31 UTC.",
+    "resolution": "TRUE if the NHC Atlantic advisory archive shows a storm first receiving a name after Isaias on the 2026 list in an advisory issued between 2026-10-11 and 2026-10-31 UTC; otherwise FALSE.",
+    "failure_condition": "No Atlantic-basin tropical or subtropical storm is first named between 2026-10-11 and 2026-10-31 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-03",
+    "probability": 43,
+    "citations": [
+      33,
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month crude oil futures settle below 95.00 dollars per barrel on 2026-11-20. Reference: 104.72 on the packet date.",
+    "resolution": "TRUE if the official ICE settlement price of the front-month Brent futures contract on 2026-11-20 is below 95.00; FALSE if it is 95.00 or higher. Reference: 104.72 on the packet date.",
+    "failure_condition": "The front-month Brent futures contract settles at or above 95.00 dollars per barrel on 2026-11-20.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-23",
+    "probability": 58,
+    "citations": [
+      49,
+      51,
+      55
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield (FRED series DGS10) is below 5.00 percent on 2026-11-30. Reference: 5.24 percent on the packet date.",
+    "resolution": "TRUE if the FRED DGS10 observation for 2026-11-30 is below 5.00 percent; FALSE if it is 5.00 or higher. Reference: 5.24 percent on the packet date.",
+    "failure_condition": "The 10-year Treasury constant maturity yield for 2026-11-30 is 5.00 percent or higher.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 58,
+    "citations": [
+      53,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries at least one AhsayCBS vulnerability with a date-added value between 2026-10-11 and 2026-11-30.",
+    "resolution": "TRUE if the CISA KEV catalog JSON contains at least one entry whose vendor or product field names Ahsay or AhsayCBS with a dateAdded value between 2026-10-11 and 2026-11-30 inclusive; otherwise FALSE.",
+    "failure_condition": "CISA does not add any AhsayCBS vulnerability to the KEV catalog with a date-added value between 2026-10-11 and 2026-11-30.",
+    "domain": "cyber",
+    "deadline": "2026-12-02",
+    "probability": 42,
+    "citations": [
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4172,
+      "n": 151,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-12 and 2026-11-30, at least one additional person, beyond those reported arrested through 2026-10-10, is arrested or criminally charged in any country in connection with the ShinyHunters hacking group.",
+    "resolution": "TRUE if at least two of Reuters, AP, BleepingComputer, KrebsOnSecurity and The Record report a ShinyHunters-linked arrest or criminal charge of a previously unarrested person occurring between 2026-10-12 and 2026-11-30; otherwise FALSE.",
+    "failure_condition": "No previously unarrested person is arrested or criminally charged in connection with ShinyHunters between 2026-10-12 and 2026-11-30.",
+    "domain": "crime/security",
+    "deadline": "2026-12-03",
+    "probability": 33,
+    "citations": [
+      14,
+      19,
+      24
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of the 435 US House seats in the general election held on 2026-11-03.",
+    "resolution": "TRUE if Associated Press race calls or state-certified results available at the deadline show Democrats winning at least 218 House seats in the 2026-11-03 election; otherwise FALSE.",
+    "failure_condition": "Democrats win 217 or fewer House seats in the 2026-11-03 election.",
+    "domain": "political",
+    "deadline": "2026-12-11",
+    "probability": 41,
+    "citations": [
+      104,
+      108,
+      118
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-12 and 2026-12-31, the United States and Iran both publicly confirm a concluded agreement ending their war (a final deal, not a truce extension, framework or agreement in principle).",
+    "resolution": "TRUE if at least two of Reuters, AP, AFP and BBC report that both governments confirmed a signed or finalized agreement ending the war, concluded between 2026-10-12 and 2026-12-31; otherwise FALSE.",
+    "failure_condition": "The United States and Iran do not conclude a final agreement ending the war between 2026-10-12 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-04",
+    "probability": 69,
+    "citations": [
+      55,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Donald Trump and Vladimir Putin meet in person at least once between 2026-10-12 and 2026-12-31, either in a bilateral meeting or by interacting face to face at a multilateral summit.",
+    "resolution": "TRUE if at least two of Reuters, AP, AFP and BBC report an in-person encounter in which Trump and Putin interact, taking place between 2026-10-12 and 2026-12-31; phone and video calls do not count; otherwise FALSE.",
+    "failure_condition": "Trump and Putin are not in the same place interacting face to face at any time between 2026-10-12 and 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-04",
+    "probability": 41,
+    "citations": [
+      55,
+      83,
+      126
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-10T22:53:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
