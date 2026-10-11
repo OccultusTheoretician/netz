@@ -1,0 +1,254 @@
+[
+  {
+    "statement": "Saudi or Saudi-led coalition aircraft carry out at least one airstrike on Houthi-held territory in Yemen between 2026-10-12 and 2026-10-25.",
+    "resolution": "True if at least two of Reuters, AP, AFP, BBC or Al Jazeera report an airstrike attributed to Saudi or Saudi-led coalition forces hitting Houthi-held territory in Yemen on a date between 2026-10-12 and 2026-10-25.",
+    "failure_condition": "No Saudi or Saudi-led coalition airstrike hits Houthi-held territory in Yemen on any date from 2026-10-12 through 2026-10-25.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-28",
+    "probability": 69,
+    "citations": [
+      56,
+      66,
+      52
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "United States forces carry out at least one kinetic strike on Houthi targets inside Yemen between 2026-10-12 and 2026-11-08.",
+    "resolution": "True if CENTCOM or the Pentagon confirms, or at least two of Reuters, AP, AFP or BBC report citing US officials, a US military strike on Houthi targets in Yemen dated between 2026-10-12 and 2026-11-08.",
+    "failure_condition": "No US military strike hits Houthi targets inside Yemen on any date from 2026-10-12 through 2026-11-08.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-12",
+    "probability": 69,
+    "citations": [
+      57,
+      87
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one commercial vessel is struck, boarded or seized in the Strait of Hormuz, Persian Gulf or Gulf of Oman between 2026-10-12 and 2026-10-25.",
+    "resolution": "True if UKMTO publishes at least one incident report of a vessel struck by a projectile or explosion, boarded, or seized in the Strait of Hormuz, Persian Gulf or Gulf of Oman, incident dated between 2026-10-12 and 2026-10-25.",
+    "failure_condition": "No commercial vessel is struck, boarded or seized in the Strait of Hormuz, Persian Gulf or Gulf of Oman on any date from 2026-10-12 through 2026-10-25.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-28",
+    "probability": 69,
+    "citations": [
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle at or above 110.00 dollars per barrel on at least one trading day between 2026-10-12 and 2026-10-29. Reference: 104.72 on the packet date.",
+    "resolution": "True if the ICE Brent front-month futures settlement price is at or above 110.00 on any trading day between 2026-10-12 and 2026-10-29. Reference: 104.72 on the packet date.",
+    "failure_condition": "ICE Brent front-month futures settle below 110.00 on every trading day from 2026-10-12 through 2026-10-29.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 58,
+    "citations": [
+      60,
+      55,
+      56
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield (FRED series DGS10) is at or above 5.50 percent on at least one business day between 2026-10-13 and 2026-11-13. Reference: 5.24 percent on the packet date.",
+    "resolution": "True if FRED series DGS10 shows a value of 5.50 or higher for any date between 2026-10-13 and 2026-11-13. Reference: 5.24 percent on the packet date.",
+    "failure_condition": "The DGS10 yield stays below 5.50 percent on every business day from 2026-10-13 through 2026-11-13.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-18",
+    "probability": 58,
+    "citations": [
+      39,
+      43,
+      51
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one Apple vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-12 and 2026-11-13.",
+    "resolution": "True if the CISA KEV catalog lists at least one entry with vendorProject Apple and a dateAdded value between 2026-10-12 and 2026-11-13.",
+    "failure_condition": "CISA adds no Apple vulnerability to the KEV catalog on any date from 2026-10-12 through 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 42,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4172,
+      "n": 151,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 seats in the US House of Representatives in the general election held on 2026-11-03.",
+    "resolution": "True if the Associated Press has called at least 218 House races from the 2026-11-03 general election for Democratic candidates by the deadline.",
+    "failure_condition": "Democratic candidates win fewer than 218 House seats in the 2026-11-03 general election.",
+    "domain": "political",
+    "deadline": "2026-12-11",
+    "probability": 41,
+    "citations": [
+      30,
+      94
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Verkhovna Rada adopts a resolution scheduling a Ukrainian presidential election, with the vote taken between 2026-10-12 and 2027-01-29.",
+    "resolution": "True if, between 2026-10-12 and 2027-01-29, the Verkhovna Rada adopts a resolution scheduling a Ukrainian presidential election, per rada.gov.ua or reports by at least two of Reuters, AP, AFP or BBC.",
+    "failure_condition": "The Verkhovna Rada adopts no resolution scheduling a presidential election on any date from 2026-10-12 through 2027-01-29.",
+    "domain": "political",
+    "deadline": "2027-02-02",
+    "probability": 41,
+    "citations": [
+      99,
+      95,
+      54
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one earthquake of magnitude 6.0 or greater occurs within 200 km of the epicenter of the M 7.7 Panama earthquake (USGS event us6000u18k) between 2026-10-13 and 2026-10-27 UTC.",
+    "resolution": "True if the USGS earthquake catalog lists at least one event of magnitude 6.0 or greater within 200 km of the epicenter of event us6000u18k, with origin time between 2026-10-13 and 2026-10-27 UTC.",
+    "failure_condition": "No earthquake of magnitude 6.0 or greater occurs within 200 km of the us6000u18k epicenter from 2026-10-13 through 2026-10-27 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-10-30",
+    "probability": 43,
+    "citations": [
+      13,
+      33,
+      31
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Hurricane Simon makes landfall in Mexico at major hurricane strength, with maximum sustained winds of at least 111 mph, between 2026-10-11 and 2026-10-18.",
+    "resolution": "True if a National Hurricane Center advisory, update or report states that Simon made landfall in Mexico between 2026-10-11 and 2026-10-18 with maximum sustained winds of at least 111 mph.",
+    "failure_condition": "Simon does not make landfall in Mexico with sustained winds of 111 mph or more on any date from 2026-10-11 through 2026-10-18.",
+    "domain": "disaster",
+    "deadline": "2026-10-21",
+    "probability": 43,
+    "citations": [
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:33Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

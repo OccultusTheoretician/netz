@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "Saudi Arabia or the Saudi-led coalition carries out at least one air or missile strike on Houthi-controlled Yemen between 2026-10-12 and 2026-10-25.",
+    "resolution": "TRUE if at least two of Reuters, AP and AFP report a Saudi or Saudi-led coalition air or missile strike on Houthi-controlled Yemen occurring between 2026-10-12 and 2026-10-25.",
+    "failure_condition": "No Saudi or Saudi-led coalition air or missile strike hits Houthi-controlled Yemen between 2026-10-12 and 2026-10-25.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-28",
+    "probability": 69,
+    "citations": [
+      56,
+      66,
+      55
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one merchant vessel is attacked, struck by a projectile, boarded or seized in the Strait of Hormuz, the Gulf of Oman or the Persian Gulf between 2026-10-12 and 2026-10-25.",
+    "resolution": "TRUE if UKMTO reports a merchant vessel attacked, struck, boarded or seized in the Strait of Hormuz, Gulf of Oman or Persian Gulf with an incident date between 2026-10-12 and 2026-10-25.",
+    "failure_condition": "No merchant vessel is attacked, struck, boarded or seized in the Strait of Hormuz, Gulf of Oman or Persian Gulf between 2026-10-12 and 2026-10-25.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-28",
+    "probability": 69,
+    "citations": [
+      60
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A Russian missile or drone strike damages a Ukrainian thermal or hydroelectric power plant or gas-production facility between 2026-10-19 and 2026-11-01.",
+    "resolution": "TRUE if Reuters or AP reports, citing Ukrainian officials or the operator, Russian strike damage to a Ukrainian thermal or hydroelectric power plant or gas-production facility occurring between 2026-10-19 and 2026-11-01.",
+    "failure_condition": "No Russian strike damages any Ukrainian thermal or hydroelectric power plant or gas-production facility between 2026-10-19 and 2026-11-01.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-04",
+    "probability": 69,
+    "citations": [
+      77,
+      53
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6859,
+      "n": 156,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant-maturity yield is at or above 5.50 percent on at least one trading day between 2026-10-13 and 2026-12-31. Reference: 5.24 percent on the packet date, 2026-10-11.",
+    "resolution": "TRUE if FRED series DGS10 shows a daily value of 5.50 or higher for any date between 2026-10-13 and 2026-12-31.",
+    "failure_condition": "The 10-year Treasury constant-maturity yield is below 5.50 percent on every trading day between 2026-10-13 and 2026-12-31.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-06",
+    "probability": 58,
+    "citations": [
+      39,
+      43,
+      51
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month crude futures settle at or above 125.00 US dollars per barrel on at least one trading day between 2026-10-12 and 2026-11-30. Reference: 104.72 dollars per barrel on the packet date, 2026-10-11.",
+    "resolution": "TRUE if any ICE Futures Europe Brent front-month daily settlement price dated between 2026-10-12 and 2026-11-30 is 125.00 US dollars per barrel or higher.",
+    "failure_condition": "Every ICE Brent front-month daily settlement between 2026-10-12 and 2026-11-30 is below 125.00 US dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 58,
+    "citations": [
+      60,
+      55
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.581,
+      "n": 179,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one Apple vulnerability affecting iOS or iPadOS to its Known Exploited Vulnerabilities catalog between 2026-10-12 and 2026-11-30.",
+    "resolution": "TRUE if the CISA KEV catalog contains an entry with vendorProject Apple, a dateAdded value between 2026-10-12 and 2026-11-30, and iOS or iPadOS named in its product or shortDescription field.",
+    "failure_condition": "CISA adds no Apple vulnerability affecting iOS or iPadOS to the KEV catalog between 2026-10-12 and 2026-11-30.",
+    "domain": "cyber",
+    "deadline": "2026-12-02",
+    "probability": 42,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4172,
+      "n": 151,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "An earthquake of magnitude 6.5 or greater occurs within 250 km of the epicenter of the M7.7 Panama mainshock, USGS event us6000u18k, between 2026-10-12 and 2026-11-08 UTC.",
+    "resolution": "TRUE if USGS ComCat lists an event of magnitude 6.5 or greater with origin time between 2026-10-12 and 2026-11-08 UTC located within 250 km of the us6000u18k epicenter.",
+    "failure_condition": "No earthquake of magnitude 6.5 or greater occurs within 250 km of the us6000u18k epicenter between 2026-10-12 and 2026-11-08 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-11",
+    "probability": 43,
+    "citations": [
+      13,
+      31,
+      33
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A presidential major disaster declaration naming Isaias is approved for Florida or Alabama between 2026-10-12 and 2026-11-30.",
+    "resolution": "TRUE if the OpenFEMA Disaster Declarations Summaries dataset lists a DR declaration for Florida or Alabama whose title names Isaias, with a declarationDate between 2026-10-12 and 2026-11-30.",
+    "failure_condition": "No major disaster declaration naming Isaias is approved for Florida or Alabama between 2026-10-12 and 2026-11-30.",
+    "domain": "disaster",
+    "deadline": "2026-12-02",
+    "probability": 43,
+    "citations": [
+      19
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4312,
+      "n": 109,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "US Senator John Fetterman changes his party affiliation away from the Democratic Party between 2026-10-12 and 2027-03-31.",
+    "resolution": "TRUE if the Congress.gov member record or the Senate.gov senator list shows Fetterman with a party other than Democratic, with the change effective between 2026-10-12 and 2027-03-31.",
+    "failure_condition": "Fetterman remains affiliated with the Democratic Party on every date from 2026-10-12 through 2027-03-31.",
+    "domain": "political",
+    "deadline": "2027-04-05",
+    "probability": 41,
+    "citations": [
+      86
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4091,
+      "n": 110,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Polish prosecutors charge at least one person over the alleged plot against Prime Minister Donald Tusk and the defence minister between 2026-10-12 and 2026-11-13.",
+    "resolution": "TRUE if Polish prosecutors announce charges against at least one person over the alleged plot against Tusk or the defence minister between 2026-10-12 and 2026-11-13, as reported by PAP or Reuters.",
+    "failure_condition": "No person is charged by Polish prosecutors over the alleged plot against Tusk or the defence minister between 2026-10-12 and 2026-11-13.",
+    "domain": "crime/security",
+    "deadline": "2026-11-17",
+    "probability": 33,
+    "citations": [
+      69,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3333,
+      "n": 21,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-11T18:31:40Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
