@@ -1,0 +1,255 @@
+[
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled meeting ending 2026-10-28. Reference: target range 3.75 to 4.00 percent on the packet date.",
+    "resolution": "TRUE if the Federal Reserve statement of 2026-10-28 or FRED series DFEDTARU for 2026-10-29 shows a target-range upper bound above 4.00 percent. Reference: 4.00 percent on 2026-10-12.",
+    "failure_condition": "The FOMC leaves the target range upper bound at or below 4.00 percent at its 2026-10-28 decision.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 60,
+    "citations": [
+      50,
+      61,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5962,
+      "n": 208,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The BLS release scheduled for 2026-10-14 shows the September 2026 CPI-U all-items 12-month change at or above 3.7 percent. Reference: 3.4 percent for August 2026, the latest reading on the packet date.",
+    "resolution": "TRUE if the BLS Consumer Price Index release of 2026-10-14 (FRED CPIAUCNS) shows September 2026 all-items CPI-U up 3.7 percent or more over 12 months, not seasonally adjusted. Reference: 3.4 percent for August 2026.",
+    "failure_condition": "The September 2026 CPI-U all-items 12-month change is 3.6 percent or lower, or BLS has not published the September figure by the deadline.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-19",
+    "probability": 60,
+    "citations": [
+      49,
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5962,
+      "n": 208,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month crude futures (January 2027 contract) settle above 100.00 USD per barrel on 2026-11-13. Reference: front-month Brent at 106.95 on the packet date.",
+    "resolution": "TRUE if the ICE Brent front-month futures settlement price for 2026-11-13 is above 100.00 USD per barrel. Reference: 106.95 on 2026-10-12.",
+    "failure_condition": "ICE Brent front-month futures settle at or below 100.00 USD per barrel on 2026-11-13.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-16",
+    "probability": 60,
+    "citations": [
+      63,
+      70,
+      84
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5962,
+      "n": 208,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds the critical SonicWall SMA 1000 vulnerability CVE-2026-102255 to its Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-13 and 2026-11-13.",
+    "resolution": "TRUE if the CISA KEV catalog JSON lists CVE-2026-102255 with a dateAdded value between 2026-10-13 and 2026-11-13 inclusive.",
+    "failure_condition": "CISA does not add CVE-2026-102255 to the KEV catalog between 2026-10-13 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-16",
+    "probability": 45,
+    "citations": [
+      18
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4451,
+      "n": 182,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds the maximum-severity GitLab code execution vulnerability CVE-2026-97229 to its Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-13 and 2026-11-13.",
+    "resolution": "TRUE if the CISA KEV catalog JSON lists CVE-2026-97229 with a dateAdded value between 2026-10-13 and 2026-11-13 inclusive.",
+    "failure_condition": "CISA does not add CVE-2026-97229 to the KEV catalog between 2026-10-13 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-16",
+    "probability": 45,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4451,
+      "n": 182,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States military carries out at least one strike on Houthi targets in Yemen between 2026-10-13 and 2026-11-02, publicly confirmed by US Central Command, the Pentagon or the White House.",
+    "resolution": "TRUE if US Central Command, the Pentagon or the White House publicly confirms a US strike on Houthi targets in Yemen carried out between 2026-10-13 and 2026-11-02, as reported by Reuters or AP.",
+    "failure_condition": "The United States carries out no officially confirmed strike on Houthi targets in Yemen between 2026-10-13 and 2026-11-02.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-05",
+    "probability": 66,
+    "citations": [
+      71,
+      76,
+      91
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6562,
+      "n": 224,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Ukrainian forces strike at least one oil refinery inside internationally recognized Russian territory between 2026-10-13 and 2026-10-26, with the strike publicly confirmed by the General Staff of the Armed Forces of Ukraine.",
+    "resolution": "TRUE if the General Staff of the Armed Forces of Ukraine publicly confirms a Ukrainian strike on an oil refinery inside Russia carried out between 2026-10-13 and 2026-10-26, as reported by Reuters, AP or the Kyiv Independent.",
+    "failure_condition": "No Ukrainian strike on an oil refinery inside Russia confirmed by the General Staff of the Armed Forces of Ukraine takes place between 2026-10-13 and 2026-10-26.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-29",
+    "probability": 66,
+    "citations": [
+      34,
+      67,
+      72
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6562,
+      "n": 224,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of the 435 US House seats in the general election held on 2026-11-03.",
+    "resolution": "TRUE if Associated Press race calls as of 2026-12-15 show Democratic candidates winning 218 or more US House seats in the 2026-11-03 general election.",
+    "failure_condition": "Democratic candidates win fewer than 218 US House seats in the 2026-11-03 general election.",
+    "domain": "political",
+    "deadline": "2026-12-15",
+    "probability": 42,
+    "citations": [
+      105,
+      116
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4184,
+      "n": 141,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A federal indictment, criminal information or criminal complaint naming Representative Ilhan Omar as a defendant is filed or unsealed in a US district court between 2026-10-13 and 2027-01-15.",
+    "resolution": "TRUE if a federal court docket (PACER or CourtListener) or a Justice Department release shows a charging document naming Ilhan Omar as defendant filed or unsealed between 2026-10-13 and 2027-01-15.",
+    "failure_condition": "No federal charging document naming Ilhan Omar as a defendant is filed or unsealed between 2026-10-13 and 2027-01-15.",
+    "domain": "crime/security",
+    "deadline": "2027-01-19",
+    "probability": 32,
+    "citations": [
+      43,
+      92,
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3235,
+      "n": 34,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one earthquake of magnitude 6.0 or greater occurs within 150 km of the epicenter of the M 7.7 Panama earthquake (USGS event us6000u18k) with origin time between 2026-10-13 and 2026-11-12 UTC.",
+    "resolution": "TRUE if the USGS ComCat catalog lists an event of magnitude 6.0 or greater within 150 km of the us6000u18k epicenter with origin time between 2026-10-13 and 2026-11-12 UTC.",
+    "failure_condition": "No earthquake of magnitude 6.0 or greater occurs within 150 km of the us6000u18k epicenter between 2026-10-13 and 2026-11-12 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-16",
+    "probability": 44,
+    "citations": [
+      22,
+      40
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4371,
+      "n": 151,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-12T18:41:03Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
