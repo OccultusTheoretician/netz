@@ -1,12 +1,12 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-10-11T11:35:42Z · 113 report(s)
+Generated 2026-10-12T13:30:32Z · 114 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **113**
+- reports audited: **114**
 - findings: **202**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
@@ -114,8 +114,8 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20260919-07` | `CVE-2025-39964` | UNSOURCED | lmstudio/auto | miss | keyed |
 | `KKR-20260919-04` | `CVE-2026-53266` | UNSOURCED | lmstudio/auto | open | keyed |
 | `KKR-20260919-09` | `CVE-2026-53266` | UNSOURCED | lmstudio/realist | open | keyed |
-| `KKR-20260923-03` | `CVE-2026-94127` | UNSOURCED | lmstudio/auto | open | keyed |
-| `KKR-20260923-09` | `CVE-2026-94127` | UNSOURCED | lmstudio/realist | open | keyed |
+| `KKR-20260923-03` | `CVE-2026-94127` | UNSOURCED | lmstudio/auto | hit | keyed |
+| `KKR-20260923-09` | `CVE-2026-94127` | UNSOURCED | lmstudio/realist | hit | keyed |
 | `KKR-20260924-27` | `CVE-2026-48842` | UNSOURCED | manual/opus-5.5/unattested | open | keyed |
 | `KKR-20260924-37` | `CVE-2026-48842` | UNSOURCED | control/baserate | open | keyed |
 | `KKR-20260925-12` | `CVE-2026-48842` | UNSOURCED | manual/fable-5.1/unattested | open | — |
@@ -133,7 +133,7 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20260928-08` | `CVE-2026-88771` | UNSOURCED | lmstudio/realist | open | — |
 | `KKR-20260930-17` | `CVE-2026-88771` | UNSOURCED | manual/fable-5.1/unattested | open | — |
 | `KKR-20260930-25` | `CVE-2026-88771` | UNSOURCED | control/baserate | open | — |
-| `KKR-20260929-01` | `CVE-2026-86950` | UNSOURCED | lmstudio/auto | open | keyed |
+| `KKR-20260929-01` | `CVE-2026-86950` | UNSOURCED | lmstudio/auto | hit | keyed |
 | `KKR-20260929-08` | `CVE-2026-86950` | UNSOURCED | lmstudio/realist | open | — |
 | `KKR-20261001-11` | `CVE-2026-76504` | UNSOURCED | lmstudio/realist | open | keyed |
 | `KKR-20261001-34` | `CVE-2026-102490` | UNSOURCED | manual/opus-5.5/unattested | open | — |
