@@ -45,7 +45,7 @@ def build_post() -> tuple[str, str]:
     line = (
         f"KKR LEDGER {dtg} · {len(projs)} issued · {c.get('open', 0)} open · "
         f"{c.get('hit', 0)}H/{c.get('miss', 0)}M"
-        + (f" · Brier {brier:.3f}" if brier is not None else "")
+        # BRIER-1013: pooled Brier removed from the beacon (RPAS 5.04); per-arm Briers live on the ledger face
         + (f" · {c.get('void', 0)} void" if c.get("void") else "")
     )
     return line, sha
