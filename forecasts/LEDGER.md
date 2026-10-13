@@ -1,6 +1,6 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 131626Z OCT 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 131928Z OCT 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
@@ -23,7 +23,7 @@ Window: all-time · 4095 issued across 21 forecaster arms · 2984 open (332 past
 | lmstudio/qwen36 | 49 | 49 | 0 | — | — | not computed | — | — | — |
 | lmstudio/qwen36-abliterated | 48 | 48 | 0 | — | — | not computed | — | — | — |
 | lmstudio/qwen36-realist | 54 | 54 | 0 | — | — | not computed | — | — | — |
-| lmstudio/realist | 217 | 158 | 58 | 30 | 28 | 0.293 | 51.7% | 0.250 | -0.173 |
+| lmstudio/realist | 217 | 158 | 58 | 31 | 27 | 0.296 | 53.4% | 0.249 | -0.191 |
 | manual/fable | 45 | 18 | 27 | 14 | 13 | 0.180 | 51.9% | 0.250 | +0.279 |
 | manual/fable-5 | 38 | 20 | 18 | 10 | 8 | 0.164 | 55.6% | 0.247 | +0.334 |
 | manual/fable-5.1/unattested | 337 | 279 | 50 | 34 | 16 | 0.248 | 68.0% | 0.218 | -0.140 |
@@ -88,7 +88,7 @@ Window: all-time · 4095 issued across 21 forecaster arms · 2984 open (332 past
 |---|---|---|
 | 0-20% | 4 | 75% |
 | 20-40% | 42 | 45% |
-| 40-60% | 10 | 60% |
+| 40-60% | 10 | 70% |
 | 60-80% | 1 | 100% |
 | 80-100% | 1 | 100% |
 
@@ -3585,7 +3585,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 - **✓ HIT** KKR-20260912-34 [`control/baserate`] (26%, due 2026-10-02, resolved 2026-10-12): Between 2026-09-12 and 2026-09-30, Saudi Arabia publicly announces through its Energy Ministry, Saudi Aramco, or SPA that crude oil is again flowing through the East-West pipeline from Abqaiq to Yanbu, which was shut on 2026-09-11 after drone attacks launched from Iraq. — *[jury] Reuters reported on 22 Sep that Saudi Arabia had restarted East-West Pipeline operations, with corroboration from other outlets. Sources named: Reuters.*
 - **✗ MISS** KKR-20260913-05 [`lmstudio/realist`] (35%, due 2026-09-29, resolved 2026-10-12): Between 2026-09-19 and 2026-09-26, Iran conducts a ballistic missile test near the Strait of Hormuz, resulting in a confirmed alert from the UKMTO and two independent satellite tracking services. — *[jury] No Iranian ballistic-missile test near Hormuz confirmed by UKMTO plus two satellite services was found for 19-26 Sep. Sources named: none.*
 - **✗ MISS** KKR-20260914-04 [`lmstudio/auto`] (25%, due 2026-10-02, resolved 2026-10-12): Between 2026-09-27 and 2026-09-30, a cyberattack on a U.S. federal agency results in the exposure of at least 1 million user records, as confirmed by a CISA KEV entry and a federal press release. — *[jury] No 27-30 Sep KEV entry paired with a federal agency press release reporting 1 million or more records was found. Sources named: none.*
-- **✗ MISS** KKR-20260915-13 [`lmstudio/realist`] (40%, due 2026-09-24, resolved 2026-10-12): Between 2026-09-15 and 2026-09-22, a U.S. military statement will confirm the deployment of weapons in space, verified by two independent sources. — *[jury] No confirmed US deployment of weapons in space was reported in 15-22 Sep. Sources named: none.*
+- **✓ HIT** KKR-20260915-13 [`lmstudio/realist`] (40%, due 2026-09-24, resolved 2026-10-12): Between 2026-09-15 and 2026-09-22, a U.S. military statement will confirm the deployment of weapons in space, verified by two independent sources. — *validated 2026-10-13: On 15 September, Chief of Space Operations Gen. Douglas Schiess said guardians operate on-orbit weapons, a day after Air Force Secretary Troy Meink first confirmed on-orbit space control weapons. Al Jazeera reported the US confirmation on 15 September and NPR carried the acknowledgment on 16 September, and no US denial was found. Sources: National Defense Magazine – Space Force Ready to Operate Space-Based Weapons <https://www.nationaldefensemagazine.org/articles/2026/9/15/arming-guardians-top-priority-for-new-space-chief> (2026-09-15); Al Jazeera – What are ‘space weapons’, which US says it has deployed into orbit? <https://www.aljazeera.com/features/2026/9/15/what-are-space-weapons-which-us-says-it-has-deployed-into-orbit> (2026-09-15); NPR – U.S. acknowledges for the first time that it has deployed weapons in space <https://www.npr.org/2026/09/16/nx-s1-5970937/us-weapons-space> (2026-09-16)*
 - **✗ MISS** KKR-20260917-07 [`lmstudio/realist`] (25%, due 2026-09-26, resolved 2026-10-12): Between 2026-09-18 and 2026-09-24, the USGS Significant Quakes feed will report a magnitude 6.5 or higher earthquake in the Fox Islands, Aleutian Islands, with a depth of 100 km or more. — *https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&starttime=2026-09-18&endtime=2026-09-25&minmagnitude=6.5&minlatitude=51.0&maxlatitude=56.0&minlongitude=-173.0&maxlongitude=-163.0 returned 0 event(s), fetched 2026-10-12T21:13:54Z; Fox Islands box 51-56N 173-163W M6.5, 09-18..09-24 run through its last day: no M6.5+ event at any depth*
 - **✗ MISS** KKR-20260917-10 [`lmstudio/realist`] (20%, due 2026-09-26, resolved 2026-10-12): Between 2026-09-18 and 2026-09-24, the European Union will formally propose associate membership for Canada, as confirmed by two independent news outlets. — *[jury] No formal EU proposal of associate membership for Canada was found in 18-24 Sep. Sources named: none.*
 - **✗ MISS** KKR-20260917-13 [`lmstudio/realist`] (25%, due 2026-09-26, resolved 2026-10-12): Between 2026-09-18 and 2026-09-24, the U.S. House will vote to hold billionaire Epstein associate Leon Black in contempt of Congress, as confirmed by a roll call vote on Congress.gov. — *[jury] No House contempt vote against Leon Black appears for 18-24 Sep. Sources named: none.*
