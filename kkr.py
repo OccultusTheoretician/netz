@@ -2809,6 +2809,26 @@ def cmd_jury_ingest(args):
                                   + str(_v.get("evidence", "")))
                 _v["verdict"] = "ABSTAIN"
                 _coerced += 1
+        # HELDMATCH-1013: a seat-B verdict whose evidence names a USGS event id or CVE that is
+        # not in its own row (statement, resolution, failure condition, held reading) is a
+        # suspected cross-row bleed - the 2026-10-11 sitting's -0804-61 case.
+        _P13 = {p.get("id"): p for p in load_ledger()["projections"]}
+        _IDRX = re.compile(r"\b(?:us|ci|nc|nn|hv|ak|uw|mb|se|pr|uu|ok|tx|at)(?=[0-9a-z]*\d)[0-9a-z]{6,12}\b|\bcve-\d{4}-\d{4,7}\b", re.I)
+        _bled = 0
+        for _rid, _v in B.items():
+            if str(_v.get("verdict", "")).upper() not in ("HIT", "MISS"):
+                continue
+            _own = " ".join(str(_P13.get(_rid, {}).get(_k, "")) for _k in ("statement", "resolution", "failure_condition"))
+            _own += " " + json.dumps(HELD.get(_rid, ""), default=str)
+            _mine = {x.lower() for x in _IDRX.findall(_own)}
+            _foreign = sorted({x.lower() for x in _IDRX.findall(str(_v.get("evidence", "")))} - _mine)
+            if _foreign:
+                _v["evidence"] = ("[ABSTAIN BY RULE - evidence names " + ", ".join(_foreign)
+                                  + ", not this row's; cross-row bleed suspected. original verdict: "
+                                  + str(_v.get("verdict")) + "] " + str(_v.get("evidence", "")))
+                _v["verdict"] = "ABSTAIN"
+                _bled += 1
+        print(f"KKR - evidence-match rule: {_bled} seat-B verdict(s) naming another row's id coerced to ABSTAIN", file=sys.stderr)
         print(f"KKR - held-evidence rule: {len(HELD)} row(s) held; "
               f"{_coerced} cold-seat verdict(s) coerced to ABSTAIN",
               file=sys.stderr)

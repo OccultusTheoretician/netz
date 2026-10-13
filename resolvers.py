@@ -109,9 +109,15 @@ def resolve_kev(row_id, params, keep_raw=False):
                   f"{params['min_count']} across {len(vulns)} catalog rows")
         return _evidence(row_id, "kev", KEV_URL, raw, params, verdict, detail, keep_raw)
     names = [str(n).lower() for n in (params.get("vendors") or [params["vendor"]]) if n]
+    # KEVMATCH-1013: a name matches when every one of its words is in the entry (vendorProject,
+    # product, vulnerabilityName, cveID), not only as one contiguous run; "chrome" reads as
+    # "chromium" (the catalog files Chrome flaws under Google Chromium).
+    def _kev_hit13(v, hay):
+        toks = ["chromium" if w == "chrome" else w for w in v.split()]
+        return bool(toks) and all(w in hay for w in toks)
     hits = [x for x in vulns
-            if any(v in (str(x.get("vendorProject", "")) + " " + str(x.get("product", "")) + " " +
-                         str(x.get("vulnerabilityName", "")) + " " + str(x.get("cveID", ""))).lower() for v in names)
+            if any(_kev_hit13(v, (str(x.get("vendorProject", "")) + " " + str(x.get("product", "")) + " " +
+                                  str(x.get("vulnerabilityName", "")) + " " + str(x.get("cveID", ""))).lower()) for v in names)
             and s <= str(x.get("dateAdded", "")) <= e_]
     verdict = "YES" if hits else "NO"
     matched = sorted({str(x.get("cveID", "")) for x in hits})[:6]
@@ -127,6 +133,11 @@ def resolve_usgs(row_id, params, keep_raw=False):
     """params: lat, lon, radius_km, min_mag, window (start,end).
     confidence: HIGH — FDSN is a versioned public API; schema unverified here."""
     s, e_ = params["window"]
+    # USGSFIX-1013: FDSN reads a bare endtime as 00:00 of that day, so the last day of the
+    # window was never queried. The query now runs through it (endtime = last day + 1).
+    if len(str(e_)) == 10 and str(e_)[4] == "-" and str(e_)[7] == "-":
+        from datetime import datetime as _dt, timedelta as _td
+        e_ = (_dt.strptime(str(e_), "%Y-%m-%d") + _td(days=1)).strftime("%Y-%m-%d")
     # EVENTID-2026-09-16: an event id resolves to its epicentre in ComCat before the radius
     # query runs. A failed lookup is INDETERMINATE naming the id - never a guessed coordinate.
     _eid_note = ""

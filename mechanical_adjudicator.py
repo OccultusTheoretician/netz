@@ -148,12 +148,12 @@ def map_row(e: dict):
         w = re.findall(DATE, t)
         lat = re.search(r"latitude[= ]([\-\d.]+)", tl)
         lon = re.search(r"longitude[= ]([\-\d.]+)", tl)
-        if r and mg and len(w) >= 2:
+        if r and mg and len(w) >= 2 and lat and lon:  # USGSFIX-1013: no default epicentre
             p = {"radius_km": int(r.group(1)),
                  "min_mag": float(mg.group(1) or mg.group(2)),
                  "window": (w[-2], w[-1]),
-                 "lat": float(lat.group(1)) if lat else 32.69,
-                 "lon": float(lon.group(1)) if lon else 130.66}
+                 "lat": float(lat.group(1)),
+                 "lon": float(lon.group(1))}
             note = None if lat else ("epicentre coordinates not in text - "
                                      "using Uto 2026-07-28 (32.69, 130.66); "
                                      "confirm before trusting")
