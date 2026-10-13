@@ -1,13 +1,13 @@
 # RPAS-26 Conformance Report — ledger.json
-*Generated 2026-10-12. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
+*Generated 2026-10-13. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
 
-- entries: **3963** · resolved: **942** · keyless: **172** · keyed: **2101**
+- entries: **4039** · resolved: **1025** · keyless: **172** · keyed: **2101**
 - 5.02 fifty-entry gate: **MET**
 - thirty-resolved noise floor: **cleared**
-- 1.04 keyed/keyless missing: **1690/3963**
-- 4.03 failure condition missing: **27/3963**
+- 1.04 keyed/keyless missing: **1766/4039**
+- 4.03 failure condition missing: **27/4039**
 
-- findings: **1717 FAIL**, **3396 WARN**
+- findings: **1793 FAIL**, **3541 WARN**
 
 ## Findings
 
@@ -53,6 +53,7 @@
 | KKR-20260720-16 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260720-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260720-17 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260720-18 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260720-19 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260720-20 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260720-21 | FAIL | 4.02e/4.03 | no failure condition — UNFALSIFIABLE by 4.03 |
@@ -163,10 +164,12 @@
 | KKR-20260726-07 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260726-08 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260726-09 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260726-09 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260726-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260726-11 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260726-13 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260726-14 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260726-14 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260726-15 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260726-15 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260726-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -211,6 +214,7 @@
 | KKR-20260727-20 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260727-21 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260727-21 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260727-22 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260727-23 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260727-24 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260727-25 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -218,10 +222,14 @@
 | KKR-20260727-27 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260727-28 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260727-29 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260727-30 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260727-31 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260727-32 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260727-33 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260727-33 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260727-34 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260727-34 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
+| KKR-20260727-35 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260728-01 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260728-01 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260728-02 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -265,6 +273,7 @@
 | KKR-20260730-11 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260730-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260730-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260730-13 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260730-15 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260730-16 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260730-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -291,6 +300,7 @@
 | KKR-20260731-04 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260731-05 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260731-06 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
+| KKR-20260731-09 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260731-11 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260731-12 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260731-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -331,6 +341,7 @@
 | KKR-20260801-16 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260801-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260801-19 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260801-19 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260801-20 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260801-21 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260801-22 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -343,6 +354,7 @@
 | KKR-20260802-02 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260802-02 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260802-03 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260802-03 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260802-04 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260802-05 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260802-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -382,8 +394,10 @@
 | KKR-20260804-21 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260804-21 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260804-22 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260804-22 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260804-23 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260804-24 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260804-24 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260804-25 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260804-26 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260804-26 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -405,8 +419,10 @@
 | KKR-20260804-37 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260804-37 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260804-38 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260804-38 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260804-39 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260804-40 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260804-40 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260804-41 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260804-42 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260804-42 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -468,6 +484,7 @@
 | KKR-20260806-12 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260806-14 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260806-15 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260806-15 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260806-16 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260806-18 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260806-19 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -483,6 +500,7 @@
 | KKR-20260806-27 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260806-29 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260806-30 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260806-30 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260806-31 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260806-31 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260806-32 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -503,6 +521,7 @@
 | KKR-20260807-08 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260807-09 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260807-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260807-14 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260807-15 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260807-16 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260807-17 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
@@ -514,6 +533,7 @@
 | KKR-20260808-02 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260808-03 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260808-05 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260808-05 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260808-06 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260808-07 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260808-08 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -727,29 +747,37 @@
 | KKR-20260813-08 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-10 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260813-11 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260813-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260813-13 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-15 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260813-15 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-17 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-18 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260813-18 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260813-20 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260813-20 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-22 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260813-22 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260813-23 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-26 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260813-26 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260813-27 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260813-27 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260813-28 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-31 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260813-31 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260813-32 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260813-32 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-33 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260813-33 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260813-34 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260813-35 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260813-35 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-36 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260813-36 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260813-37 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260813-37 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260813-38 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260813-39 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260813-39 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
@@ -844,24 +872,30 @@
 | KKR-20260817-37 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260817-38 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-38 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260817-39 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260817-40 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-41 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-41 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260817-42 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260817-43 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260817-44 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-46 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-46 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
+| KKR-20260817-47 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260817-48 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-49 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-49 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260817-50 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260817-51 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260817-52 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-54 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260817-55 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260817-57 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-58 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-59 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-61 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-62 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260817-63 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260817-65 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-66 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260817-67 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -888,10 +922,12 @@
 | KKR-20260818-10 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-10 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260818-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260818-12 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260818-14 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-15 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-15 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260818-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260818-17 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260818-18 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-20 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-21 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -906,10 +942,12 @@
 | KKR-20260818-26 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-26 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260818-27 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260818-28 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260818-30 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-31 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-31 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260818-33 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260818-33 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260818-34 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-36 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260818-37 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -986,6 +1024,7 @@
 | KKR-20260820-19 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260820-20 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260820-20 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260820-21 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260820-23 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260820-23 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260820-24 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1018,6 +1057,7 @@
 | KKR-20260822-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260822-13 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260822-14 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260822-15 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260822-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260822-21 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260822-22 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -1027,6 +1067,7 @@
 | KKR-20260822-24 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260822-25 | WARN | 5.03 | resolved (void) but no audit verdict recorded |
 | KKR-20260822-26 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260822-26 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260822-28 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260822-29 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260822-30 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1039,6 +1080,7 @@
 | KKR-20260822-39 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260822-39 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260822-40 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260822-40 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260822-41 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260822-44 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260822-46 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1116,6 +1158,7 @@
 | KKR-20260827-05 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260827-05 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260827-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260827-06 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260827-07 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260827-07 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260827-08 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -1153,6 +1196,7 @@
 | KKR-20260827-37 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260827-37 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260827-38 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260827-38 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260827-39 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260827-39 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260827-40 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -1258,6 +1302,7 @@
 | KKR-20260829-10 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260829-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260829-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260829-14 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260829-15 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260829-15 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260829-16 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1266,6 +1311,7 @@
 | KKR-20260829-23 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260829-24 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260829-25 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260829-27 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260829-28 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260829-28 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260829-29 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1319,12 +1365,14 @@
 | KKR-20260831-08 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260831-09 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260831-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260831-12 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260831-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260831-14 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260831-16 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260831-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260831-18 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260831-21 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260831-21 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260831-22 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260831-23 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260831-25 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
@@ -1361,6 +1409,7 @@
 | KKR-20260831-73 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260831-73 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260831-74 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260831-75 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260831-76 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260831-77 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260831-78 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1369,6 +1418,7 @@
 | KKR-20260831-80 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260831-80 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260831-81 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260831-82 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260831-83 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260831-83 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260831-85 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1596,6 +1646,7 @@
 | KKR-20260904-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260904-11 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260904-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260904-12 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260904-13 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260904-14 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260904-15 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
@@ -1668,6 +1719,7 @@
 | KKR-20260905-09 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260905-09 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260905-10 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260905-10 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260905-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260905-11 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260905-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1727,8 +1779,11 @@
 | KKR-20260906-64 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-64 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260906-65 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260906-65 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260906-66 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260906-66 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260906-67 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260906-67 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260906-69 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-70 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-71 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1741,6 +1796,7 @@
 | KKR-20260906-76 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-76 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260906-77 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260906-78 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260906-79 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-79 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260906-80 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1757,6 +1813,7 @@
 | KKR-20260906-88 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-89 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-92 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260906-93 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260906-95 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-96 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-97 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1769,6 +1826,7 @@
 | KKR-20260906-102 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-102 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260906-103 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260906-104 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260906-105 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-105 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260906-106 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1785,9 +1843,11 @@
 | KKR-20260906-114 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-115 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260906-118 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260906-119 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260907-01 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260907-02 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260907-03 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260907-03 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260907-04 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260907-05 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260907-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -1948,6 +2008,7 @@
 | KKR-20260910-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260910-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260910-14 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260910-14 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260910-16 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260910-17 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260910-18 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -2023,10 +2084,12 @@
 | KKR-20260911-02 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260911-03 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260911-03 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260911-04 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260911-05 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260911-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260911-07 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260911-08 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260911-08 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260911-09 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260911-09 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260911-10 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -2125,6 +2188,7 @@
 | KKR-20260912-09 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260912-10 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260912-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260912-11 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260912-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260912-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260912-13 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
@@ -2150,6 +2214,7 @@
 | KKR-20260912-25 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260912-26 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260912-26 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260912-27 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260912-28 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260912-31 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260912-31 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
@@ -2157,6 +2222,7 @@
 | KKR-20260912-32 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260912-33 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260912-33 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260912-34 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260912-35 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260912-38 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260912-38 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
@@ -2204,6 +2270,7 @@
 | KKR-20260913-03 | WARN | 5.03 | resolved (void) but no audit verdict recorded |
 | KKR-20260913-04 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260913-05 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260913-05 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260913-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260913-06 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260913-07 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -2279,6 +2346,7 @@
 | KKR-20260913-57 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260914-01 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260914-02 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260914-04 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260914-05 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260914-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260914-06 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -2378,6 +2446,7 @@
 | KKR-20260915-10 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260915-10 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260915-11 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
+| KKR-20260915-13 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260915-14 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260915-16 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260915-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -2770,14 +2839,17 @@
 | KKR-20260917-04 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260917-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260917-07 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260917-07 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260917-08 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260917-08 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260917-09 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260917-10 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260917-10 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260917-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260917-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260917-12 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260917-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260917-13 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260917-14 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260917-15 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260917-16 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -2955,10 +3027,13 @@
 | KKR-20260919-03 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260919-04 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260919-05 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260919-05 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260919-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260919-06 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260919-07 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260919-07 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260919-08 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260919-08 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260919-09 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260919-10 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260919-10 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -3076,6 +3151,7 @@
 | KKR-20260920-44 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260920-44 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260920-45 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260920-45 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260920-46 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260920-46 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260920-47 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -3087,6 +3163,7 @@
 | KKR-20260920-51 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260920-51 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260920-52 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260920-52 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260920-53 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260920-53 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260921-01 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -3106,6 +3183,7 @@
 | KKR-20260921-09 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260921-10 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260921-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260921-11 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260921-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260921-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260921-14 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -3130,6 +3208,7 @@
 | KKR-20260921-28 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260921-29 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260921-29 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260921-31 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260921-32 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260921-33 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260921-33 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
@@ -3137,6 +3216,7 @@
 | KKR-20260921-35 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260921-36 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260921-36 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260921-38 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260921-39 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260921-40 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260921-41 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -3355,6 +3435,7 @@
 | KKR-20260924-29 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260924-29 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260924-30 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260924-31 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260924-33 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260924-34 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260924-35 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -3365,6 +3446,7 @@
 | KKR-20260924-39 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260924-39 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260924-40 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20260924-41 | WARN | 5.03 | resolved (hit) but no audit verdict recorded |
 | KKR-20260924-42 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260924-42 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260924-43 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
@@ -3394,6 +3476,7 @@
 | KKR-20260924-56 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20260924-57 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260925-01 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20260925-01 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
 | KKR-20260925-02 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260925-03 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20260925-03 | WARN | 5.03 | resolved (miss) but no audit verdict recorded |
@@ -5126,3 +5209,141 @@
 | KKR-20261012-28 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20261012-29 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20261012-29 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-30 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-30 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-31 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-31 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-32 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-32 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-33 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-33 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-34 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-35 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-36 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-36 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-37 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-37 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-38 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-38 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-39 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-39 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-40 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-40 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-41 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-41 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-42 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-43 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-44 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-44 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-45 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-45 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-46 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-47 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-48 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-48 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-49 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-49 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-50 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-51 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-51 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-52 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-52 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-53 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-53 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-54 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-54 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-55 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-56 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-57 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-57 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-58 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-58 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-59 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-59 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-60 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-60 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-61 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-61 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-62 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-62 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-63 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-63 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-64 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-64 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-65 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-65 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-66 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-66 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-67 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-67 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-68 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-68 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-69 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-69 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-70 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-70 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-71 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-71 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-72 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-72 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-73 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-73 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-74 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-74 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-75 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-75 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-76 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-76 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-77 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-77 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-78 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-78 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-79 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-79 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261012-80 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261012-80 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-01 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-01 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-02 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-03 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-03 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-04 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-04 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-05 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-05 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-06 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-07 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-07 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-08 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-08 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-09 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-09 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-10 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-10 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-11 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-12 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-13 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-14 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-15 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-16 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-16 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-17 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-18 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-18 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-19 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-19 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-20 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-20 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-21 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-21 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-22 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-22 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-23 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-23 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-24 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-24 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261013-25 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261013-25 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
