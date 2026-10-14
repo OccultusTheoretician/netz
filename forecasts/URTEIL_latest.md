@@ -1,4 +1,4 @@
-# URTEIL - verdict-grounding audit - 2026-10-13T15:22:39Z
+# URTEIL - verdict-grounding audit - 2026-10-14T15:23:55Z
 
 Every non-ABSTAIN jury verdict audited against the held evidence for its row, by the same mechanics that audit forecast citations. Grounding is checkable even when the verdict is right; the CORRECT-BUT-UNGROUNDED class is the one the blind protocol cannot see on its own.
 
@@ -117,7 +117,7 @@ Every non-ABSTAIN jury verdict audited against the held evidence for its row, by
 - KKR-20260913-05 - juror A (searched) - MISS (final MISS) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
 - KKR-20260914-04 - juror A (searched) - MISS (final MISS) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
 - KKR-20260915-12 - juror A (searched) - MISS (final OPEN) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
-- KKR-20260915-13 - juror A (searched) - MISS (final MISS) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
+- KKR-20260915-13 - juror A (searched) - MISS (final HIT) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
 - KKR-20260917-07 - juror A (searched) - MISS (final MISS) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
 - KKR-20260917-09 - juror A (searched) - AMBIGUOUS (final OPEN) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
 - KKR-20260917-10 - juror A (searched) - MISS (final MISS) - **UNHELD-SEARCHED** - no held evidence for this row - a searched juror may rule from its own access (8.07 coercion is cold-seat only), but grounding cannot be audited; disclosed, unauditable
