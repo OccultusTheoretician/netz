@@ -1,22 +1,22 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-10-13T12:56:22Z · 115 report(s)
+Generated 2026-10-14T10:35:50Z · 116 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **115**
-- findings: **204**
+- reports audited: **116**
+- findings: **205**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 4
-  - UNSOURCED: 200
-- distinct tokens: **125**
+  - UNSOURCED: 201
+- distinct tokens: **126**
 
 ## Reached a sealed row
 
-**147** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
+**148** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
 
 | row | token | finding | arm | status | k/kl |
 |---|---|---|---|---|---|
@@ -167,6 +167,7 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20261009-52` | `CVE-2026-102255` | UNSOURCED | control/baserate | open | — |
 | `KKR-20261012-32` | `CVE-2026-102255` | UNSOURCED | manual/fable-5.1/unattested | open | — |
 | `KKR-20261012-40` | `CVE-2026-102255` | UNSOURCED | control/baserate | open | — |
+| `KKR-20261013-06` | `CVE-2026-104935` | UNSOURCED | lmstudio/auto | open | — |
 
 ## Every finding
 
@@ -376,4 +377,5 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-10-09_1516.md | `CVE-2026-105133` | UNSOURCED |
 | battle_report_2026-10-12_1513.md | `CVE-2026-102255` | UNSOURCED |
 | battle_report_2026-10-12_1513.md | `CVE-2026-85097` | UNSOURCED |
+| battle_report_2026-10-13_1512.md | `CVE-2026-104935` | UNSOURCED |
 
