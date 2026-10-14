@@ -1,0 +1,252 @@
+[
+  {
+    "statement": "Saudi Arabia and the Houthis, directly or via Oman or the UN envoy, announce a ceasefire, truce or de-escalation agreement covering cross-border attacks between 2026-10-15 and 2026-11-13.",
+    "resolution": "Reuters and AP both report an announced ceasefire, truce or de-escalation agreement between Saudi Arabia and the Houthis, with the announcement dated between 2026-10-15 and 2026-11-13; unilateral pledges do not count.",
+    "failure_condition": "No ceasefire, truce or de-escalation agreement between Saudi Arabia and the Houthis is announced between 2026-10-15 and 2026-11-13.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-18",
+    "probability": 64,
+    "citations": [
+      88,
+      98,
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6429,
+      "n": 238,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "SpaceX or the Ukrainian government publicly states that the restriction on Ukrainian military Starlink access reported on 2026-10-14 has been lifted or reversed, with the statement dated between 2026-10-15 and 2026-11-04.",
+    "resolution": "Two major outlets report a SpaceX or Ukrainian government statement, dated between 2026-10-15 and 2026-11-04, that the Starlink restriction on Ukrainian military access reported on 2026-10-14 was lifted or reversed.",
+    "failure_condition": "No SpaceX or Ukrainian government announcement dated between 2026-10-15 and 2026-11-04 states that the Starlink restriction on Ukrainian military access has been lifted or reversed.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-09",
+    "probability": 64,
+    "citations": [
+      87,
+      94
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6429,
+      "n": 238,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield is at or above 5.50 percent on at least one business day between 2026-10-15 and 2026-11-13. Reference: 5.26 percent on the packet date 2026-10-14.",
+    "resolution": "FRED series DGS10 shows a daily value of 5.50 or higher for at least one date between 2026-10-15 and 2026-11-13 inclusive. Reference: 5.26 percent on 2026-10-14.",
+    "failure_condition": "The 10-year Treasury constant maturity yield stays below 5.50 percent on every business day from 2026-10-15 through 2026-11-13.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-17",
+    "probability": 60,
+    "citations": [
+      66,
+      110
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5991,
+      "n": 212,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The ICE front-month Brent futures daily settlement price is at or above 115.00 USD per barrel on at least one trading day between 2026-10-15 and 2026-11-13. Reference: 105.75 USD on the packet date 2026-10-14.",
+    "resolution": "ICE Futures Europe front-month Brent settlement at or above 115.00 USD per barrel on at least one trading day between 2026-10-15 and 2026-11-13, per ICE data or Reuters. Reference: 105.75 on 2026-10-14.",
+    "failure_condition": "ICE front-month Brent settles below 115.00 USD per barrel on every trading day from 2026-10-15 through 2026-11-13.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-17",
+    "probability": 60,
+    "citations": [
+      63,
+      103
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5991,
+      "n": 212,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one Ivanti vulnerability other than CVE-2026-104935 to the KEV catalog with a date-added value between 2026-10-15 and 2026-11-13.",
+    "resolution": "The CISA KEV catalog carries at least one entry with vendorProject Ivanti, a cveID other than CVE-2026-104935, and a dateAdded value between 2026-10-15 and 2026-11-13 inclusive.",
+    "failure_condition": "CISA adds no Ivanti CVE other than CVE-2026-104935 to KEV with a dateAdded from 2026-10-15 through 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 41,
+    "citations": [
+      19,
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4129,
+      "n": 201,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one Microsoft vulnerability to the KEV catalog with a date-added value between 2026-11-10 and 2026-11-12, around the scheduled November 2026 Patch Tuesday on 2026-11-10.",
+    "resolution": "The CISA KEV catalog carries at least one entry with vendorProject Microsoft and a dateAdded value between 2026-11-10 and 2026-11-12 inclusive.",
+    "failure_condition": "CISA adds no Microsoft CVE to KEV with a dateAdded from 2026-11-10 through 2026-11-12.",
+    "domain": "cyber",
+    "deadline": "2026-11-16",
+    "probability": 41,
+    "citations": [
+      30,
+      36
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4129,
+      "n": 201,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win or lead in at least 218 of 435 US House districts in the general election held on 2026-11-03, per Associated Press results compiled between 2026-11-03 and 2026-11-20.",
+    "resolution": "Associated Press House results as of 2026-11-20, covering vote counting between 2026-11-03 and 2026-11-20, show Democratic candidates having won or leading in at least 218 of 435 districts.",
+    "failure_condition": "Associated Press House results as of 2026-11-20 show Democratic candidates winning or leading in 217 or fewer of 435 districts.",
+    "domain": "political",
+    "deadline": "2026-11-24",
+    "probability": 40,
+    "citations": [
+      110,
+      127,
+      130
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3961,
+      "n": 154,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The White House transmits to the US Senate a nomination of a successor US Ambassador to Greece between 2026-10-15 and 2026-12-18.",
+    "resolution": "Congress.gov nominations records show a PN entry for Ambassador Extraordinary and Plenipotentiary to the Hellenic Republic with a date received in the Senate between 2026-10-15 and 2026-12-18 inclusive.",
+    "failure_condition": "No nomination for US Ambassador to Greece is received in the Senate between 2026-10-15 and 2026-12-18.",
+    "domain": "political",
+    "deadline": "2026-12-22",
+    "probability": 40,
+    "citations": [
+      128
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3961,
+      "n": 154,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A federal indictment or prosecutor information charging the Saudi national arrested on 2026-10-13 over a recording device planted at OpenAI offices is filed between 2026-10-15 and 2026-11-13.",
+    "resolution": "The federal court docket in the OpenAI recording-device case, via CourtListener or PACER, shows an indictment or information filed between 2026-10-15 and 2026-11-13 inclusive; a criminal complaint alone does not count.",
+    "failure_condition": "No indictment or information against the arrested Saudi national is filed in federal court between 2026-10-15 and 2026-11-13.",
+    "domain": "crime/security",
+    "deadline": "2026-11-18",
+    "probability": 39,
+    "citations": [
+      9,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3864,
+      "n": 44,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS lists at least one earthquake of magnitude 6.0 or greater within 300 km of the epicenter of the M7.7 Panama earthquake (event us6000u18k), with origin time between 2026-10-15 and 2026-11-13 UTC.",
+    "resolution": "A USGS ComCat search returns an event other than us6000u18k, magnitude 6.0 or greater, within 300 km of its epicenter, with origin time between 2026-10-15T00:00Z and 2026-11-13T23:59Z.",
+    "failure_condition": "No earthquake of magnitude 6.0 or greater other than us6000u18k occurs within 300 km of its epicenter between 2026-10-15 and 2026-11-13 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-17",
+    "probability": 42,
+    "citations": [
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4195,
+      "n": 174,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "Between 2026-10-15 and 2026-10-28, Saudi authorities or the Saudi-led coalition confirm at least one further Houthi missile or drone launched toward Saudi territory, following the 2026-10-14 Aramco building strike and the Riyadh interception.",
+    "resolution": "Reuters or AP carries an SPA, Saudi defence ministry, or coalition statement confirming a Houthi missile or drone intercepted over or impacting Saudi territory on a date between 2026-10-15 and 2026-10-28.",
+    "failure_condition": "No Houthi missile or drone reaches or is intercepted over Saudi territory on any date between 2026-10-15 and 2026-10-28.",
+    "domain": "military/conflict",
+    "deadline": "2026-10-30",
+    "probability": 64,
+    "citations": [
+      98,
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6429,
+      "n": 238,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-15 and 2026-10-31, at least one merchant vessel is struck by a projectile, boarded, or seized in the Strait of Hormuz, Persian Gulf, or Gulf of Oman, as logged by UKMTO.",
+    "resolution": "A UKMTO incident notice or advisory records a merchant vessel struck, boarded, or seized in the Strait of Hormuz, Persian Gulf, or Gulf of Oman with an incident date between 2026-10-15 and 2026-10-31.",
+    "failure_condition": "No merchant vessel is struck, boarded, or seized in the Strait of Hormuz, Persian Gulf, or Gulf of Oman on any date between 2026-10-15 and 2026-10-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-03",
+    "probability": 64,
+    "citations": [
+      82,
+      103
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6429,
+      "n": 238,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At the FOMC meeting of 2026-10-27 and 2026-10-28, the Federal Reserve raises the federal funds target range above the range in effect on 2026-10-14.",
+    "resolution": "The Federal Reserve statement released 2026-10-28 announces a target range higher than the range in effect on 2026-10-14; FRED series DFEDTARU for 2026-10-29 exceeds its 2026-10-14 value.",
+    "failure_condition": "The federal funds target range announced on 2026-10-28 is equal to or lower than the range in effect on 2026-10-14.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-02",
+    "probability": 60,
+    "citations": [
+      66,
+      110,
+      59
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5991,
+      "n": 212,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FRED daily WTI spot series DCOILWTICO prints at or above 100.00 dollars per barrel on at least one business day between 2026-10-15 and 2026-11-13. Reference: 94.99 on the packet date.",
+    "resolution": "FRED series DCOILWTICO shows a value of 100.00 or higher for at least one business day dated between 2026-10-15 and 2026-11-13. Reference level: 94.99 on 2026-10-14.",
+    "failure_condition": "Every DCOILWTICO value dated between 2026-10-15 and 2026-11-13 is below 100.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-17",
+    "probability": 60,
+    "citations": [
+      63,
+      103
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5991,
+      "n": 212,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-15 and 2026-11-13, CISA adds to the KEV catalog at least one Ivanti Connect Secure vulnerability other than CVE-2026-104935.",
+    "resolution": "The CISA KEV catalog JSON contains an entry with vendorProject Ivanti, a product field containing Connect Secure, a cveID other than CVE-2026-104935, and dateAdded between 2026-10-15 and 2026-11-13 inclusive.",
+    "failure_condition": "No Ivanti Connect Secure CVE other than CVE-2026-104935 carries a KEV dateAdded between 2026-10-15 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-16",
+    "probability": 41,
+    "citations": [
+      19,
+      20
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4129,
+      "n": 201,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-15 and 2026-11-13, CISA adds a Ghostscript vulnerability to the KEV catalog.",
+    "resolution": "The CISA KEV catalog JSON contains an entry whose vendorProject or product field contains Ghostscript, with dateAdded between 2026-10-15 and 2026-11-13 inclusive.",
+    "failure_condition": "No KEV entry naming Ghostscript carries a dateAdded between 2026-10-15 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-16",
+    "probability": 41,
+    "citations": [
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4129,
+      "n": 201,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A federal grand jury returns an indictment against the Saudi national arrested in October 2026 for allegedly planting a listening device at OpenAI offices, with the indictment filed between 2026-10-15 and 2026-11-30.",
+    "resolution": "A US district court docket entry or Department of Justice release shows a grand jury indictment of that defendant filed on a date between 2026-10-15 and 2026-11-30.",
+    "failure_condition": "No grand jury indictment of the defendant is filed between 2026-10-15 and 2026-11-30, whether because the case proceeds by information, plea, dismissal, or a deadline extension past that date.",
+    "domain": "crime/security",
+    "deadline": "2026-12-02",
+    "probability": 39,
+    "citations": [
+      9,
+      74,
+      31
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3864,
+      "n": 44,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Incumbent Republican Roger Marshall receives the most votes in the Kansas US Senate general election held on 2026-11-03.",
+    "resolution": "Official results published by the Kansas Secretary of State show Roger Marshall with the highest vote total among candidates for US Senate in the 2026-11-03 general election.",
+    "failure_condition": "A candidate other than Roger Marshall receives the highest certified vote total for US Senate in Kansas in the 2026-11-03 election.",
+    "domain": "political",
+    "deadline": "2026-12-11",
+    "probability": 40,
+    "citations": [
+      130,
+      127
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3961,
+      "n": 154,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Japanese journalist whose arrest on espionage suspicion Russia announced on 2026-10-14 is released from Russian custody, deported, or exchanged on a date between 2026-10-15 and 2026-12-15.",
+    "resolution": "Reuters, AP, or Kyodo reports the journalist leaving Russian custody by release, deportation, or exchange on a date between 2026-10-15 and 2026-12-15, with the Japanese government confirming.",
+    "failure_condition": "The journalist remains in Russian custody through 2026-12-15.",
+    "domain": "political",
+    "deadline": "2026-12-17",
+    "probability": 40,
+    "citations": [
+      81
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3961,
+      "n": 154,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater occurs within 150 km of the USGS epicenter of the M7.7 Panama event us6000u18k, with origin time between 2026-10-15 and 2026-11-13 UTC.",
+    "resolution": "The USGS ComCat catalog lists an event of magnitude 6.0 or greater with epicenter within 150 km of event us6000u18k and origin time between 2026-10-15 00:00 UTC and 2026-11-13 23:59 UTC.",
+    "failure_condition": "No USGS-catalogued earthquake of magnitude 6.0 or greater occurs within 150 km of us6000u18k between 2026-10-15 and 2026-11-13 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-16",
+    "probability": 42,
+    "citations": [
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4195,
+      "n": 174,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-14T20:20:45Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
