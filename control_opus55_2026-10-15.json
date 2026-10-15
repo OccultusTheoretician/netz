@@ -1,0 +1,252 @@
+[
+  {
+    "statement": "Between 2026-10-16 and 2026-10-31, a Ukrainian drone or missile attack causes a fire or physical damage at one or more oil refineries in Russia.",
+    "resolution": "TRUE if Reuters or AP reports a Ukrainian drone or missile attack causing fire or damage at a named oil refinery in Russia between 2026-10-16 and 2026-10-31 inclusive, confirmed by a Russian official or the Ukrainian military.",
+    "failure_condition": "No oil refinery in Russia suffers fire or physical damage from a Ukrainian drone or missile attack between 2026-10-16 and 2026-10-31.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-03",
+    "probability": 64,
+    "citations": [
+      44,
+      87,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6429,
+      "n": 238,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-16 and 2026-11-15, a drone or missile hits at least one tanker vessel in the Black Sea or Sea of Azov, other than vessels already struck on or before 2026-10-15.",
+    "resolution": "TRUE if Reuters or AP reports a new drone or missile hit on a named tanker in the Black Sea or Sea of Azov, at sea or in port, occurring between 2026-10-16 and 2026-11-15 inclusive.",
+    "failure_condition": "No tanker other than those struck on or before 2026-10-15 is hit by a drone or missile in the Black Sea or Sea of Azov between 2026-10-16 and 2026-11-15.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-18",
+    "probability": 64,
+    "citations": [
+      79,
+      81
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6429,
+      "n": 238,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-16 and 2026-12-31, US forces drop a GBU-43/B Massive Ordnance Air Blast bomb on a target in Iran or Iranian territorial waters.",
+    "resolution": "TRUE if the Pentagon or CENTCOM confirms, or Reuters and AP both report citing US officials, that a GBU-43/B was used against a target in Iran or its territorial waters between 2026-10-16 and 2026-12-31 inclusive.",
+    "failure_condition": "No GBU-43/B is dropped by US forces on any target in Iran or Iranian territorial waters between 2026-10-16 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 64,
+    "citations": [
+      80,
+      97
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6429,
+      "n": 238,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant-maturity yield for 2026-12-31 is above 5.00 percent. Reference: 5.05 percent on the packet date 2026-10-15.",
+    "resolution": "TRUE if FRED series DGS10 shows a value strictly above 5.00 for 2026-12-31. Reference: 5.05 percent on 2026-10-15 per the packet market snapshot.",
+    "failure_condition": "The 10-year Treasury constant-maturity yield for 2026-12-31 is 5.00 percent or lower.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 60,
+    "citations": [
+      64,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5991,
+      "n": 212,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The BLS final-demand Producer Price Index 12-month change for October 2026, in its first release published between 2026-11-09 and 2026-11-30, is 6.0 percent or higher. Reference: 6.3 percent for September 2026.",
+    "resolution": "TRUE if the first BLS release of October 2026 PPI data, published between 2026-11-09 and 2026-11-30, shows series WPUFD4 up 6.0 percent or more from October 2025. Reference: 6.3 percent for September 2026.",
+    "failure_condition": "The October 2026 final-demand PPI 12-month change in its first BLS release is below 6.0 percent, or that release is not published between 2026-11-09 and 2026-11-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-04",
+    "probability": 60,
+    "citations": [
+      53
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5991,
+      "n": 212,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-15 and 2026-11-30, CISA adds at least one vulnerability with Nextcloud or Collabora as vendor to its Known Exploited Vulnerabilities catalog.",
+    "resolution": "TRUE if the CISA KEV catalog contains an entry whose vendorProject names Nextcloud or Collabora with a dateAdded value between 2026-10-15 and 2026-11-30 inclusive.",
+    "failure_condition": "No vulnerability with Nextcloud or Collabora as vendor is added to the CISA KEV catalog between 2026-10-15 and 2026-11-30.",
+    "domain": "cyber",
+    "deadline": "2026-12-03",
+    "probability": 41,
+    "citations": [
+      33
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4129,
+      "n": 201,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the US general election held on 2026-11-03, Democratic candidates win at least 218 of the 435 seats in the House of Representatives.",
+    "resolution": "TRUE if, by 2026-12-15, AP race calls, or certified state results for races AP has not called, give Democrats 218 or more House seats from the 2026-11-03 general election.",
+    "failure_condition": "Democratic candidates win 217 or fewer House seats in the 2026-11-03 general election.",
+    "domain": "political",
+    "deadline": "2026-12-15",
+    "probability": 40,
+    "citations": [
+      118,
+      125
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3961,
+      "n": 154,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-16 and 2026-12-31, Edi Rama formally resigns as Prime Minister of Albania or is removed from that office by parliament.",
+    "resolution": "TRUE if Reuters or AP reports that Edi Rama formally resigned as Prime Minister of Albania, or was removed by parliament, between 2026-10-16 and 2026-12-31 inclusive. A stated intention to resign does not count.",
+    "failure_condition": "Edi Rama neither formally resigns nor is removed as Prime Minister of Albania between 2026-10-16 and 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 40,
+    "citations": [
+      83,
+      121
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3961,
+      "n": 154,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-16 and 2027-03-31, the United States carries out the death sentence of Nidal Hasan, the 2009 Fort Hood shooter.",
+    "resolution": "TRUE if the US Army, the Pentagon, or the Bureau of Prisons confirms, or Reuters and AP report, that Nidal Hasan was executed between 2026-10-16 and 2027-03-31 inclusive.",
+    "failure_condition": "Nidal Hasan is not executed between 2026-10-16 and 2027-03-31, whether because of a stay, commutation, rescheduling, or any other cause.",
+    "domain": "crime/security",
+    "deadline": "2027-04-05",
+    "probability": 39,
+    "citations": [
+      9,
+      46,
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3864,
+      "n": 44,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-16 and 2026-11-15, at least one earthquake of magnitude 6.0 or greater occurs within 200 km of the epicenter of the M7.7 Pitaloza Arriba, Panama mainshock, USGS event us6000u18k.",
+    "resolution": "TRUE if a USGS ComCat search for magnitude 6.0 or greater within 200 km of the us6000u18k epicenter returns at least one event with a UTC origin date between 2026-10-16 and 2026-11-15 inclusive.",
+    "failure_condition": "No earthquake of magnitude 6.0 or greater occurs within 200 km of the us6000u18k epicenter between 2026-10-16 and 2026-11-15 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-18",
+    "probability": 42,
+    "citations": [
+      39,
+      51
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4195,
+      "n": 174,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-15T16:16:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
