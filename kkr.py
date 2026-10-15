@@ -1251,7 +1251,14 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                       ("wti", {"light", "sweet", "crude"}), ("cl", {"wti"}),
                       ("nymex", {"cme", "group"}),
                       ("mag", {"manchester", "airports", "group"}),
-                      ("acp", {"panama", "canal"})):  # ACRO-2026-09-16: Autoridad del Canal de Panama
+                      ("acp", {"panama", "canal"}),  # ACRO-2026-09-16: Autoridad del Canal de Panama
+                      # CAPITALS-1015: a capital names its state (the 2026-10-13 ceasefire kill:
+                      # Moscow and Kyiv vs Russia and Ukraine). Overlap-only, like the pairs above.
+                      ("moscow", {"russia"}), ("kremlin", {"russia"}), ("kyiv", {"ukraine"}),
+                      ("kiev", {"ukraine"}), ("tehran", {"iran"}), ("beijing", {"china"}),
+                      ("riyadh", {"saudi"}), ("sanaa", {"yemen"}), ("jerusalem", {"israel"}),
+                      ("pyongyang", {"north", "korea"}), ("taipei", {"taiwan"}),
+                      ("damascus", {"syria"}), ("caracas", {"venezuela"})):
         if ((_a in _s_subj and _need <= set(_r_subj))
                 or (_a in _r_subj and _need <= set(_s_subj))):
             _s_subj.add("_acropair"); _r_subj.add("_acropair")

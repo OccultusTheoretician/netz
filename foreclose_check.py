@@ -118,8 +118,14 @@ DEPTH_CEIL = re.compile(r"depth\s+of\s+less\s+than\s+(\d+(?:\.\d+)?)\s*km",
 
 
 def row_text(row):
-    return " ".join(str(row.get(k, "")) for k in
-                    ("statement", "resolution", "failure_condition"))
+    # FCOTHER-1015: a CVE the row excludes ("other than CVE-X", "excluding CVE-X") is not the
+    # row's subject; strip it before any CVE is read, so an excluded entry cannot foreclose the
+    # row (2026-10-14: the Ivanti rows in three arms died on the excluded CVE's dateAdded).
+    t = " ".join(str(row.get(k, "")) for k in
+                 ("statement", "resolution", "failure_condition"))
+    return re.sub(r"(?i)\b(?:other\s+than|excluding|except(?:\s+for)?|besides|not\s+counting)\s+"
+                  r"(?:a\s+cveid\s+other\s+than\s+)?CVE-\d{4}-\d{4,7}"
+                  r"(?:\s*(?:,|or|and)\s*CVE-\d{4}-\d{4,7})*", " ", t)
 
 
 def parse_window(row):
