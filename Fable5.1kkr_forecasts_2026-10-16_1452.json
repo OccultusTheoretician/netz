@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry with vendorProject BeyondTrust and a dateAdded between 2026-10-16 and 2026-10-30, following the Remote Support zero-day disclosed on 2026-10-16.",
+    "domain": "cyber",
+    "probability": 75,
+    "resolution": "The KEV JSON feed at cisa.gov contains an entry whose vendorProject field is BeyondTrust and whose dateAdded is between 2026-10-16 and 2026-10-30 inclusive. Any BeyondTrust product qualifies.",
+    "deadline": "2026-11-02",
+    "citations": [23, 25],
+    "failure_condition": "No KEV entry with vendorProject BeyondTrust carries a dateAdded in the 2026-10-16 to 2026-10-30 window."
+  },
+  {
+    "statement": "The FOMC statement released at the close of the meeting scheduled for 2026-10-27 to 2026-10-28 announces a change to the federal funds target range, in either direction, relative to the range in force on 2026-10-16.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "The policy statement posted on federalreserve.gov for the FOMC meeting ending 2026-10-28 states a target range different from the range in effect on 2026-10-16. An unchanged range resolves false.",
+    "deadline": "2026-10-30",
+    "citations": [69],
+    "failure_condition": "The 2026-10-28 FOMC statement keeps the federal funds target range identical to the range in effect on 2026-10-16."
+  },
+  {
+    "statement": "The EIA daily Cushing OK WTI spot price (series RWTC) prints at or above 100.00 dollars per barrel on at least one trading day between 2026-10-19 and 2026-11-20. Reference: 95.71 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "The EIA RWTC daily series shows a value of 100.00 or higher for at least one date from 2026-10-19 through 2026-11-20 inclusive. Reference level 95.71 on 2026-10-16.",
+    "deadline": "2026-11-24",
+    "citations": [86, 120],
+    "failure_condition": "Every EIA RWTC daily print from 2026-10-19 through 2026-11-20 is below 100.00 dollars per barrel."
+  },
+  {
+    "statement": "Between 2026-10-19 and 2026-11-15 at least one Houthi missile or drone attack on Saudi Arabian territory is both claimed by the Houthi military spokesman and confirmed as an interception or impact by Saudi authorities or by Reuters, AP, or AFP.",
+    "domain": "military/conflict",
+    "probability": 55,
+    "resolution": "A Houthi claim and an independent confirmation (Saudi Press Agency, Saudi Defense Ministry, Reuters, AP, or AFP) both describe a missile or drone attack on Saudi territory dated 2026-10-19 to 2026-11-15.",
+    "deadline": "2026-11-18",
+    "citations": [86],
+    "failure_condition": "No missile or drone attack on Saudi territory dated 2026-10-19 to 2026-11-15 is both claimed by the Houthis and confirmed by Saudi authorities or a named wire service."
+  },
+  {
+    "statement": "Between 2026-10-19 and 2026-11-20 the US Department of Defense or US Central Command publicly announces a US military strike on at least one target located inside the internationally recognized territory of Iran.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "An official DoD or CENTCOM release, briefing, or official account post acknowledges a US strike on a target inside Iran conducted between 2026-10-19 and 2026-11-20. Strikes on proxies or vessels outside Iran do not count.",
+    "deadline": "2026-11-24",
+    "citations": [120],
+    "failure_condition": "No official DoD or CENTCOM statement acknowledges a US strike inside Iranian territory conducted between 2026-10-19 and 2026-11-20."
+  },
+  {
+    "statement": "Edi Rama ceases to hold the office of Prime Minister of Albania, by resignation, dismissal, or a successful no-confidence vote, between 2026-10-16 and 2027-01-15.",
+    "domain": "political",
+    "probability": 10,
+    "resolution": "An official Albanian government or parliamentary announcement, confirmed by Reuters, AP, or AFP, records that Rama left or was removed from the office of Prime Minister on a date between 2026-10-16 and 2027-01-15 inclusive.",
+    "deadline": "2027-01-19",
+    "citations": [109, 110],
+    "failure_condition": "Edi Rama remains Prime Minister of Albania continuously through 2027-01-15."
+  },
+  {
+    "statement": "The Republican nominee wins the Texas United States Senate general election held on 2026-11-03, as called by the Associated Press.",
+    "domain": "political",
+    "probability": 60,
+    "resolution": "The Associated Press race call for the 2026-11-03 Texas US Senate general election names the Republican nominee as winner. A race uncalled by AP as of the deadline resolves false.",
+    "deadline": "2026-11-17",
+    "citations": [108],
+    "failure_condition": "The AP call names a candidate other than the Republican nominee as winner, or AP has made no call, as of 2026-11-17."
+  },
+  {
+    "statement": "Between 2026-10-16 and 2026-11-30 the Turkish broadcast regulator RTUK imposes a broadcast suspension (screen blackout) of any duration on Halk TV or revokes its license.",
+    "domain": "crime/security",
+    "probability": 40,
+    "resolution": "An RTUK decision suspending Halk TV broadcasts for any period, or cancelling its license, is announced between 2026-10-16 and 2026-11-30 and reported by Reuters, AP, or AFP. Fines alone resolve false.",
+    "deadline": "2026-12-03",
+    "citations": [16],
+    "failure_condition": "RTUK issues no broadcast suspension or license revocation against Halk TV dated 2026-10-16 to 2026-11-30; fines alone do not count."
+  },
+  {
+    "statement": "Between 2026-10-16 and 2026-12-18 Israeli prosecutors file an indictment against at least one Israeli civilian for the West Bank attack on olive harvesters reported on 2026-10-16 in which Washington Post journalist Heidi Levine was injured.",
+    "domain": "crime/security",
+    "probability": 15,
+    "resolution": "An indictment of an Israeli civilian for that attack is filed in an Israeli court between 2026-10-16 and 2026-12-18, reported by Times of Israel or Haaretz and by Reuters, AP, or AFP. Arrests alone resolve false.",
+    "deadline": "2026-12-22",
+    "citations": [79, 83, 112],
+    "failure_condition": "No indictment of an Israeli civilian for the attack that injured Heidi Levine is filed between 2026-10-16 and 2026-12-18."
+  },
+  {
+    "statement": "At least one wildfire igniting between 2026-10-17 and 2026-11-15 in Los Angeles, Ventura, Orange, Riverside, San Bernardino, San Diego, or Santa Barbara County reaches 10,000 acres or more per CAL FIRE incident data.",
+    "domain": "disaster",
+    "probability": 45,
+    "resolution": "The CAL FIRE incidents register lists a fire in one of the seven named counties with a start date from 2026-10-17 through 2026-11-15 and acreage of at least 10,000 as of the deadline.",
+    "deadline": "2026-11-18",
+    "citations": [37],
+    "failure_condition": "No CAL FIRE incident in the seven named counties with a start date between 2026-10-17 and 2026-11-15 shows 10,000 acres or more by 2026-11-18."
+  }
+]
