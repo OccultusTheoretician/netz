@@ -1259,7 +1259,8 @@ def validate_projection(p: dict, min_days: int = 3, max_days: int = 800) -> list
                       ("riyadh", {"saudi"}), ("sanaa", {"yemen"}), ("jerusalem", {"israel"}),
                       ("pyongyang", {"north", "korea"}), ("taipei", {"taiwan"}),
                       ("damascus", {"syria"}), ("caracas", {"venezuela"})):
-        if ((_a in _s_subj and _need <= set(_r_subj))
+        _rsv = set(_r_subj) | {str(_t).lower() for _t in _r_ven}  # FOMCFIX-1017: pairs read E4-demoted tokens too
+        if ((_a in _s_subj and _need <= _rsv)
                 or (_a in _r_subj and _need <= set(_s_subj))):
             _s_subj.add("_acropair"); _r_subj.add("_acropair")
     if _s_subj and _r_subj and not _tokens_overlap(_s_subj, _r_subj):
