@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-10-17T09:39:51Z · ledger `ledger.json` · 4319 rows in scope
+Generated 2026-10-18T09:52:45Z · ledger `ledger.json` · 4406 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,13 +12,13 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **4318**
+- rows audited: **4405**
 - scope limitation (no resolvable source report): **1**
-- defective: **644** (14.9% of audited)
-- rows whose citation number does not identify a unique item: **417** (max candidates behind one number: 8)
-  - UNSUPPORTED: 438
-  - AMBIGUOUS_REF: 417
-  - DEADWEIGHT: 193
+- defective: **658** (14.9% of audited)
+- rows whose citation number does not identify a unique item: **418** (max candidates behind one number: 8)
+  - UNSUPPORTED: 450
+  - AMBIGUOUS_REF: 418
+  - DEADWEIGHT: 195
   - SHOTGUN: 56
   - NO_CITES: 24
   - THIN: 3
@@ -48,19 +48,19 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| control/baserate | 1526 | 181 | 12% |
-| lmstudio/auto | 512 | 134 | 26% |
-| lmstudio/realist | 224 | 80 | 36% |
-| manual/fable-5.1/unattested | 362 | 57 | 16% |
+| control/baserate | 1556 | 187 | 12% |
+| lmstudio/auto | 517 | 134 | 26% |
+| lmstudio/realist | 227 | 80 | 35% |
+| manual/fable-5.1/unattested | 372 | 60 | 16% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
+| manual/opus-5.5/unattested | 203 | 29 | 14% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
-| manual/opus-5.5/unattested | 193 | 26 | 13% |
-| manual/sonnet-5.5/unattested | 146 | 21 | 14% |
+| manual/sonnet-5.5/unattested | 156 | 21 | 13% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
+| lmstudio/qwen36-abliterated | 72 | 13 | 18% |
 | manual/opus-5 | 74 | 12 | 16% |
-| lmstudio/qwen36-abliterated | 64 | 12 | 19% |
-| lmstudio/qwen36 | 71 | 10 | 14% |
-| lmstudio/qwen36-realist | 72 | 9 | 12% |
+| lmstudio/qwen36 | 75 | 10 | 13% |
+| lmstudio/qwen36-realist | 79 | 10 | 13% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
 | manual/sonnet-5 | 45 | 1 | 2% |
