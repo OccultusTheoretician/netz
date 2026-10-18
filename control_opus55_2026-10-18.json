@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "Between 2026-10-19 and 2026-12-31, US military forces conduct at least one strike on a target located on Iranian land territory, including Iranian islands.",
+    "resolution": "YES if the Pentagon, CENTCOM or the White House confirms, or Reuters and AP both report, a US strike on a target on Iranian land territory or islands occurring between 2026-10-19 and 2026-12-31.",
+    "failure_condition": "No US strike hits a target on Iranian land territory or Iranian islands between 2026-10-19 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-04",
+    "probability": 64,
+    "citations": [
+      51
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6429,
+      "n": 238,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-19 and 2026-11-22, a Ukrainian drone or missile strike causes fire or damage at an oil refinery, oil terminal or fuel depot in St Petersburg city or Leningrad Oblast.",
+    "resolution": "YES if Reuters or AP, citing Russian regional or Ukrainian officials, reports a Ukrainian strike causing fire or damage at an oil refinery, oil terminal or fuel depot in St Petersburg or Leningrad Oblast between 2026-10-19 and 2026-11-22.",
+    "failure_condition": "No Ukrainian strike causes fire or damage at any oil refinery, oil terminal or fuel depot in St Petersburg or Leningrad Oblast between 2026-10-19 and 2026-11-22.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-25",
+    "probability": 64,
+    "citations": [
+      64,
+      71
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6429,
+      "n": 238,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At the FOMC meeting concluding on 2026-10-28, the Federal Reserve raises the federal funds target range. Reference: target range upper bound 4.00 percent on the packet date.",
+    "resolution": "YES if FRED series DFEDTARU for 2026-10-29 is higher than its value for 2026-10-27, reflecting a target-range increase announced at the meeting concluding 2026-10-28.",
+    "failure_condition": "The FOMC leaves the federal funds target range unchanged or lowers it at the meeting concluding 2026-10-28.",
+    "domain": "economics/markets",
+    "deadline": "2026-10-30",
+    "probability": 60,
+    "citations": [
+      32,
+      45
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5991,
+      "n": 212,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant-maturity yield prints at or above 5.50 percent on at least one trading day between 2026-10-19 and 2026-11-30. Reference: 5.10 percent on the packet date.",
+    "resolution": "YES if FRED series DGS10 records a value of 5.50 or higher for any date from 2026-10-19 through 2026-11-30. Reference: 5.10 percent on the packet date.",
+    "failure_condition": "The 10-year Treasury constant-maturity yield stays below 5.50 percent on every trading day from 2026-10-19 through 2026-11-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 60,
+    "citations": [
+      32,
+      38
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5991,
+      "n": 212,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month crude futures settle at or above 120.00 USD per barrel on at least one trading day between 2026-10-19 and 2026-11-30. Reference: 109.86 USD on the packet date.",
+    "resolution": "YES if any ICE Futures Europe Brent front-month daily settlement price dated 2026-10-19 through 2026-11-30 is 120.00 USD per barrel or higher. Reference: 109.86 USD on the packet date.",
+    "failure_condition": "Brent front-month futures settle below 120.00 USD per barrel on every trading day from 2026-10-19 through 2026-11-30.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-02",
+    "probability": 60,
+    "citations": [
+      51,
+      64,
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5991,
+      "n": 212,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-19 and 2026-11-30, CISA adds a SiteGuard vulnerability, such as the exploited Server Edition command-injection flaw CVE-2026-106931, to its Known Exploited Vulnerabilities catalog.",
+    "resolution": "YES if the CISA KEV catalog contains a SiteGuard entry, for example CVE-2026-106931, whose dateAdded value falls between 2026-10-19 and 2026-11-30 inclusive.",
+    "failure_condition": "CISA adds no SiteGuard vulnerability to the KEV catalog between 2026-10-19 and 2026-11-30.",
+    "domain": "cyber",
+    "deadline": "2026-12-02",
+    "probability": 41,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4129,
+      "n": 201,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-19 and 2026-12-31, the government of French Prime Minister Sebastien Lecornu ends through a censure motion adopted by the National Assembly or a decree terminating his functions as Prime Minister.",
+    "resolution": "YES if the Assemblee nationale adopts a censure motion against the Lecornu government, or the Journal officiel publishes a decree ending his functions as Prime Minister, dated 2026-10-19 through 2026-12-31.",
+    "failure_condition": "The Lecornu government is neither censured by the National Assembly nor terminated by decree between 2026-10-19 and 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-04",
+    "probability": 40,
+    "citations": [
+      49,
+      72,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3961,
+      "n": 154,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democrat Scott Colom defeats incumbent Republican Senator Cindy Hyde-Smith in the Mississippi US Senate general election held on 2026-11-03.",
+    "resolution": "YES if, as of the deadline, AP has called the 2026-11-03 Mississippi US Senate race for Colom or certified state results show Colom winning.",
+    "failure_condition": "Colom does not win the Mississippi US Senate general election held on 2026-11-03.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 40,
+    "citations": [
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3961,
+      "n": 154,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of the 435 US House seats in the general election held on 2026-11-03.",
+    "resolution": "YES if, as of the deadline, AP race calls credit Democratic candidates with 218 or more US House seats from the 2026-11-03 general election.",
+    "failure_condition": "Democratic candidates win fewer than 218 US House seats in the general election held on 2026-11-03.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 40,
+    "citations": [
+      50,
+      75,
+      89
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3961,
+      "n": 154,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-19 and 2026-11-30, the center of an eastern North Pacific tropical storm or hurricane, Trudy included, makes landfall on mainland Mexico or Baja California.",
+    "resolution": "YES if an NHC advisory or update states that the center of an eastern North Pacific tropical storm or hurricane made landfall in mainland Mexico or Baja California between 2026-10-19 and 2026-11-30.",
+    "failure_condition": "No eastern North Pacific tropical storm or hurricane center makes landfall in mainland Mexico or Baja California between 2026-10-19 and 2026-11-30.",
+    "domain": "disaster",
+    "deadline": "2026-12-02",
+    "probability": 42,
+    "citations": [
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4195,
+      "n": 174,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-18T21:20:24Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]

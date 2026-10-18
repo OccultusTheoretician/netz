@@ -1,0 +1,92 @@
+[
+{
+"statement": "CISA adds a SiteGuard WAF vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-10-19 and 2026-11-20.",
+"domain": "cyber",
+"probability": 30,
+"resolution": "The CISA KEV JSON feed contains an entry whose vendorProject or product field includes SiteGuard, with dateAdded between 2026-10-19 and 2026-11-20 inclusive.",
+"deadline": "2026-11-24",
+"citations": [9],
+"failure_condition": "The SiteGuard WAF flaw is not added to the KEV catalog with a dateAdded inside the 2026-10-19 to 2026-11-20 window."
+},
+{
+"statement": "ConnectWise publicly announces that its Cloud Backup service, suspended after the Microsoft 365 tenant compromises, is restored to general customer availability on a date between 2026-10-19 and 2026-11-30.",
+"domain": "cyber",
+"probability": 60,
+"resolution": "An official ConnectWise channel (trust center, status page, bulletin, or blog) dated between 2026-10-19 and 2026-11-30 inclusive states Cloud Backup is restored or re-enabled for customers generally.",
+"deadline": "2026-12-02",
+"citations": [10, 11],
+"failure_condition": "ConnectWise Cloud Backup remains suspended, or is restored only for a limited subset of customers, through 2026-11-30."
+},
+{
+"statement": "Hurricane Trudy, Category 2 on 2026-10-17 while heading toward Mexico, reaches Category 3 or higher (maximum sustained winds at least 111 mph) in at least one NHC advisory valid between 2026-10-18 and 2026-10-25.",
+"domain": "disaster",
+"probability": 45,
+"resolution": "The NHC archive for Trudy (nhc.noaa.gov) shows an advisory or Tropical Cyclone Report with maximum sustained winds of at least 111 mph (96 kt) valid at a time between 2026-10-18 and 2026-10-25 inclusive.",
+"deadline": "2026-10-28",
+"citations": [22],
+"failure_condition": "Trudy never attains maximum sustained winds of 111 mph or more in any NHC advisory valid between 2026-10-18 and 2026-10-25."
+},
+{
+"statement": "An earthquake of magnitude 5.0 or greater occurs within 100 km of the epicenter of the M5.7 Khuzdar, Pakistan event (USGS id us6000u2y1) between 2026-10-19 and 2026-11-18.",
+"domain": "disaster",
+"probability": 15,
+"resolution": "The USGS ComCat catalog lists an event with magnitude at least 5.0, epicenter within 100 km of us6000u2y1, and origin time between 2026-10-19 00:00 UTC and 2026-11-18 23:59 UTC.",
+"deadline": "2026-11-20",
+"citations": [21],
+"failure_condition": "No earthquake of magnitude 5.0 or greater occurs within 100 km of the Khuzdar epicenter between 2026-10-19 and 2026-11-18."
+},
+{
+"statement": "The EIA daily Cushing WTI spot price (FRED series DCOILWTICO) is at or above 110.00 dollars per barrel on at least one trading day between 2026-10-19 and 2026-11-13. Reference: 99.02 dollars on the packet date, 2026-10-18.",
+"domain": "economics/markets",
+"probability": 35,
+"resolution": "FRED series DCOILWTICO shows a value of 110.00 or higher for at least one date between 2026-10-19 and 2026-11-13 inclusive. Reference level at seal: 99.02.",
+"deadline": "2026-11-17",
+"citations": [51, 37],
+"failure_condition": "WTI spot (DCOILWTICO) stays below 110.00 dollars on every trading day from 2026-10-19 through 2026-11-13."
+},
+{
+"statement": "The FOMC statement released on 2026-10-28 leaves the target range for the federal funds rate unchanged from the range announced in the 2026-09-16 statement.",
+"domain": "economics/markets",
+"probability": 65,
+"resolution": "The 2026-10-28 FOMC statement on federalreserve.gov states the same target range for the federal funds rate as the 2026-09-16 statement; any change, up or down, resolves false.",
+"deadline": "2026-10-30",
+"citations": [32, 38, 45],
+"failure_condition": "The 2026-10-28 FOMC statement sets a target range different from the 2026-09-16 range."
+},
+{
+"statement": "The French Government falls between 2026-10-18 and 2026-11-30: a presidential decree ending the functions of the Prime Minister, whether after a censure vote or a voluntary resignation, is dated within that window.",
+"domain": "political",
+"probability": 25,
+"resolution": "Legifrance or the Journal Officiel contains a presidential decree on the cessation of functions of the Government (Prime Minister resignation accepted) dated between 2026-10-18 and 2026-11-30 inclusive.",
+"deadline": "2026-12-02",
+"citations": [49, 72, 76],
+"failure_condition": "The Prime Minister in office on 2026-10-18 is still in office on 2026-11-30 with no cessation decree dated in the window."
+},
+{
+"statement": "French authorities announce a cumulative arrest total of at least 3,000 for the student-led protest wave that began in October 2026, for a period ending on or before 2026-11-01. Reference: 1,800 arrests announced as of 2026-10-18.",
+"domain": "crime/security",
+"probability": 40,
+"resolution": "An official statement or post by the French Interior Ministry or the Paris Prefecture de Police gives a cumulative arrest figure of 3,000 or more for the protest wave, covering a period ending on or before 2026-11-01.",
+"deadline": "2026-11-04",
+"citations": [24, 72, 57],
+"failure_condition": "The highest cumulative arrest total announced by French authorities for the protest wave, for periods ending by 2026-11-01, is below 3,000."
+},
+{
+"statement": "A Ukrainian drone strike hits an oil refinery, oil terminal, or fuel depot in St Petersburg or Leningrad Oblast between 2026-10-19 and 2026-11-01, acknowledged by Russian officials and claimed by Ukrainian officials.",
+"domain": "military/conflict",
+"probability": 45,
+"resolution": "Russian officials (regional governor or MoD) and Ukrainian officials (General Staff, SBU, or Unmanned Systems Forces) both acknowledge the same strike on an oil or fuel facility in St Petersburg or Leningrad Oblast dated 2026-10-19 to 2026-11-01.",
+"deadline": "2026-11-04",
+"citations": [64, 71, 48],
+"failure_condition": "No strike on an oil or fuel facility in St Petersburg or Leningrad Oblast dated 2026-10-19 to 2026-11-01 is acknowledged by both Russian and Ukrainian officials."
+},
+{
+"statement": "A merchant vessel is attacked, hit by an explosion, boarded, or seized in the Strait of Hormuz, Persian Gulf, or Gulf of Oman between 2026-10-19 and 2026-11-01, as recorded by UKMTO.",
+"domain": "military/conflict",
+"probability": 30,
+"resolution": "UKMTO records an attack, explosion, boarding, or seizure of a merchant vessel in the Strait of Hormuz, Persian Gulf, or Gulf of Oman dated 2026-10-19 to 2026-11-01; suspicious approaches or hailing alone do not count.",
+"deadline": "2026-11-04",
+"citations": [51],
+"failure_condition": "No merchant vessel is attacked, hit by an explosion, boarded, or seized in the Strait of Hormuz, Persian Gulf, or Gulf of Oman between 2026-10-19 and 2026-11-01."
+}
+]
