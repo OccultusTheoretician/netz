@@ -1,0 +1,121 @@
+[
+ {
+  "statement": "Between 2026-10-20 and 2026-11-16, a single air or drone strike in Sudan kills at least 50 people.",
+  "domain": "military/conflict",
+  "probability": 45,
+  "resolution": "True if Reuters, AP, or UN OCHA reports a single air or drone strike in Sudan, occurring between 2026-10-20 and 2026-11-16, with a death toll of at least 50 as of the deadline.",
+  "deadline": "2026-11-19",
+  "citations": [
+   61
+  ],
+  "failure_condition": "No single air or drone strike in Sudan between 2026-10-20 and 2026-11-16 kills at least 50 people."
+ },
+ {
+  "statement": "Between 2026-10-20 and 2026-11-16, UKMTO records at least one incident in which a merchant vessel in the Strait of Hormuz, Gulf of Oman, or Persian Gulf is fired upon, struck, or seized.",
+  "domain": "military/conflict",
+  "probability": 65,
+  "resolution": "True if a UKMTO incident report dated between 2026-10-20 and 2026-11-16 describes a merchant vessel in the Strait of Hormuz, Gulf of Oman, or Persian Gulf being fired upon, struck by a projectile or mine, or seized.",
+  "deadline": "2026-11-19",
+  "citations": [
+   88,
+   67
+  ],
+  "failure_condition": "No merchant vessel in the Strait of Hormuz, Gulf of Oman, or Persian Gulf is fired upon, struck, or seized between 2026-10-20 and 2026-11-16."
+ },
+ {
+  "statement": "The S&P 500 closes below 7300.00 on at least one trading day between 2026-10-20 and 2026-11-20. Reference: 7712.71 on the packet date 2026-10-19.",
+  "domain": "economics/markets",
+  "probability": 32,
+  "resolution": "True if the S&P 500 official daily close (S&P Dow Jones Indices, FRED series SP500) is below 7300.00 on any trading day from 2026-10-20 through 2026-11-20 inclusive. Reference level: 7712.71 on 2026-10-19.",
+  "deadline": "2026-11-24",
+  "citations": [
+   35,
+   54,
+   53
+  ],
+  "failure_condition": "Every S&P 500 official daily close from 2026-10-20 through 2026-11-20 is at or above 7300.00."
+ },
+ {
+  "statement": "WTI crude front-month futures settle at or above 110.00 USD per barrel on at least one trading day between 2026-10-20 and 2026-11-20. Reference: 97.75 on the packet date 2026-10-19.",
+  "domain": "economics/markets",
+  "probability": 30,
+  "resolution": "True if the official CME NYMEX settlement price for the front-month WTI crude futures contract is at or above 110.00 USD per barrel on any trading day from 2026-10-20 through 2026-11-20. Reference: 97.75 on 2026-10-19.",
+  "deadline": "2026-11-24",
+  "citations": [
+   88,
+   81,
+   67
+  ],
+  "failure_condition": "No front-month WTI settlement from 2026-10-20 through 2026-11-20 reaches 110.00 USD per barrel."
+ },
+ {
+  "statement": "Democratic candidates win a majority (at least 218) of US House seats in the 2026-11-03 general election.",
+  "domain": "political",
+  "probability": 73,
+  "resolution": "True if, by the deadline, the Associated Press has called at least 218 of the 435 US House seats contested in the 2026-11-03 general election for Democratic candidates.",
+  "deadline": "2026-12-04",
+  "citations": [
+   95,
+   106,
+   107
+  ],
+  "failure_condition": "Fewer than 218 US House races from the 2026-11-03 election have been called for Democratic candidates by 2026-12-04."
+ },
+ {
+  "statement": "Flavio Bolsonaro wins the Brazilian presidential run-off held on 2026-10-25.",
+  "domain": "political",
+  "probability": 56,
+  "resolution": "True if the TSE official totalization (tse.jus.br) for the 2026-10-25 presidential second round shows Flavio Bolsonaro with more valid votes than Luiz Inacio Lula da Silva.",
+  "deadline": "2026-10-28",
+  "citations": [
+   75
+  ],
+  "failure_condition": "Luiz Inacio Lula da Silva receives more valid votes than Flavio Bolsonaro in the 2026-10-25 run-off, or the run-off is not held on 2026-10-25."
+ },
+ {
+  "statement": "In the 2026-10-19 Alberta referendum, the option that Alberta should remain a province of Canada receives at least 70.0 percent of valid ballots on the separation-process question.",
+  "domain": "political",
+  "probability": 55,
+  "resolution": "True if Elections Alberta official results for the 2026-10-19 referendum question on remaining in Canada versus commencing a binding separation referendum process show the remain option at or above 70.0 percent of valid ballots.",
+  "deadline": "2026-11-13",
+  "citations": [
+   64
+  ],
+  "failure_condition": "The remain option receives less than 70.0 percent of valid ballots on the separation-process question in Elections Alberta official results."
+ },
+ {
+  "statement": "Between 2026-10-19 and 2026-12-31, the French prime minister in office on 2026-10-19 is replaced by a different prime minister, or the Assemblee nationale adopts a motion de censure against the government.",
+  "domain": "political",
+  "probability": 30,
+  "resolution": "True if, between 2026-10-19 and 2026-12-31, the Journal officiel publishes a decree appointing a different prime minister, or the Assemblee nationale records an adopted motion de censure (at least 289 votes).",
+  "deadline": "2027-01-05",
+  "citations": [
+   87,
+   104,
+   46
+  ],
+  "failure_condition": "The prime minister in office on 2026-10-19 remains in office through 2026-12-31 and no motion de censure is adopted in that period."
+ },
+ {
+  "statement": "Between 2026-10-19 and 2026-11-30, CISA adds at least one NGINX vulnerability to the KEV catalog, following the October 2026 F5 out-of-band NGINX patches.",
+  "domain": "cyber",
+  "probability": 30,
+  "resolution": "True if the CISA KEV catalog JSON contains an entry with NGINX in its vendorProject or product field and a dateAdded value between 2026-10-19 and 2026-11-30 inclusive.",
+  "deadline": "2026-12-02",
+  "citations": [
+   13
+  ],
+  "failure_condition": "No CISA KEV entry with NGINX in its vendorProject or product field carries a dateAdded between 2026-10-19 and 2026-11-30."
+ },
+ {
+  "statement": "Between 2026-10-20 and 2026-11-19, an earthquake of magnitude 6.5 or greater occurs within 300 km of the epicenter of the 2026-10-19 07:49 UTC M6.0 Vanuatu earthquake.",
+  "domain": "disaster",
+  "probability": 20,
+  "resolution": "True if the USGS ComCat catalog lists an earthquake of magnitude 6.5 or greater with origin time from 2026-10-20 00:00 UTC through 2026-11-19 23:59 UTC and epicenter within 300 km of the 2026-10-19 07:49 UTC Vanuatu M6.0 epicenter.",
+  "deadline": "2026-11-23",
+  "citations": [
+   31
+  ],
+  "failure_condition": "No magnitude 6.5 or greater earthquake occurs within 300 km of the 2026-10-19 Vanuatu M6.0 epicenter between 2026-10-20 and 2026-11-19."
+ }
+]

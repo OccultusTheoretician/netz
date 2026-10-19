@@ -1,0 +1,250 @@
+[
+  {
+    "statement": "Flavio Bolsonaro defeats incumbent President Luiz Inacio Lula da Silva in the Brazilian presidential runoff held on 2026-10-25.",
+    "resolution": "TRUE if official TSE totals for the 2026-10-25 runoff give Flavio Bolsonaro more than 50 percent of valid votes; FALSE if Lula da Silva receives more than 50 percent.",
+    "failure_condition": "Lula da Silva receives more than 50 percent of valid votes in the 2026-10-25 runoff.",
+    "domain": "political",
+    "deadline": "2026-10-28",
+    "probability": 42,
+    "citations": [
+      75
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Likud list wins more Knesset seats than any other single list in the Israeli election held on 2026-10-27.",
+    "resolution": "TRUE if the Central Elections Committee final results for the 2026-10-27 Knesset election give the Likud list strictly more seats than every other list; FALSE if any list equals or exceeds the Likud seat total.",
+    "failure_condition": "Another list wins a seat total equal to or greater than the Likud total in the 2026-10-27 Knesset election.",
+    "domain": "political",
+    "deadline": "2026-11-12",
+    "probability": 42,
+    "citations": [
+      76
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Donald Trump, Vladimir Putin and Xi Jinping hold an in-person three-way meeting, with no other leader taking part, between 2026-11-14 and 2026-11-22 around the APEC summit in Shenzhen.",
+    "resolution": "TRUE if official readouts from at least two of the White House, Kremlin and Xinhua confirm Trump, Putin and Xi met together in person, with no other leader taking part, between 2026-11-14 and 2026-11-22.",
+    "failure_condition": "No in-person meeting joined by Trump, Putin and Xi and no other leader takes place between 2026-11-14 and 2026-11-22.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-25",
+    "probability": 66,
+    "citations": [
+      83
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The French government declares a state of emergency under the law of 3 April 1955 for all or part of metropolitan France between 2026-10-20 and 2026-11-30.",
+    "resolution": "TRUE if Legifrance shows a decree declaring the state of emergency under law 55-385 of 3 April 1955 for any part of metropolitan France, published in the Journal officiel from 2026-10-20 through 2026-11-30; otherwise FALSE.",
+    "failure_condition": "No state of emergency under the law of 3 April 1955 is declared for any part of metropolitan France between 2026-10-20 and 2026-11-30.",
+    "domain": "crime/security",
+    "deadline": "2026-12-02",
+    "probability": 36,
+    "citations": [
+      104,
+      87,
+      58
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.36,
+      "n": 50,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Kenya records a cumulative total of 15 or more laboratory-confirmed Ebola cases at any point between 2026-10-20 and 2026-11-30.",
+    "resolution": "TRUE if a Kenya Ministry of Health statement or WHO situation report issued from 2026-10-20 through 2026-11-30 gives 15 or more cumulative confirmed Ebola cases in Kenya; otherwise FALSE.",
+    "failure_condition": "Cumulative laboratory-confirmed Ebola cases in Kenya stay at 14 or fewer through 2026-11-30.",
+    "domain": "disaster",
+    "deadline": "2026-12-03",
+    "probability": 42,
+    "citations": [
+      91
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.425,
+      "n": 200,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic Party candidates win at least 218 of the 435 US House seats in the midterm election held on 2026-11-03.",
+    "resolution": "TRUE if AP race calls published by the deadline credit Democratic candidates with 218 or more House seats in the 2026-11-03 election; FALSE otherwise.",
+    "failure_condition": "Democratic candidates have won fewer than 218 House seats in the 2026-11-03 election as of the deadline.",
+    "domain": "political",
+    "deadline": "2026-12-11",
+    "probability": 42,
+    "citations": [
+      95,
+      107,
+      86
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The upper limit of the federal funds target range is 4.25 percent or higher on 2026-12-10, after the FOMC decisions of 2026-10-28 and 2026-12-09. Reference: 4.00 percent upper limit on 2026-10-19.",
+    "resolution": "TRUE if FRED series DFEDTARU shows 4.25 or higher for 2026-12-10, the day after the 2026-12-09 FOMC decision; FALSE if the 2026-12-10 value is 4.00 or lower.",
+    "failure_condition": "The federal funds target range upper limit is 4.00 percent or lower on 2026-12-10.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-14",
+    "probability": 60,
+    "citations": [
+      53,
+      42
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.597,
+      "n": 263,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States announces the lifting or suspension of its naval blockade of Iranian ports between 2026-10-20 and 2026-12-31.",
+    "resolution": "TRUE if the US President, White House, Pentagon or CENTCOM announces between 2026-10-20 and 2026-12-31 that the blockade of Iranian ports is lifted or suspended, as reported by at least two of Reuters, AP and AFP.",
+    "failure_condition": "No US announcement lifting or suspending the naval blockade of Iranian ports is made between 2026-10-20 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-04",
+    "probability": 66,
+    "citations": [
+      88,
+      67,
+      81
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The S&P 500 index closes below 7000 on at least one trading day between 2026-10-20 and 2026-12-31. Reference: 7712.71 on 2026-10-19.",
+    "resolution": "TRUE if FRED series SP500 shows any daily close below 7000.00 dated from 2026-10-20 through 2026-12-31; FALSE if all closes in that window are 7000.00 or higher.",
+    "failure_condition": "Every S&P 500 daily close from 2026-10-20 through 2026-12-31 is at or above 7000.00.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 60,
+    "citations": [
+      35,
+      54
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.597,
+      "n": 263,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one of the critical F5 NGINX flaws CVE-2026-15176, CVE-2026-93479 or CVE-2026-97205 to its Known Exploited Vulnerabilities catalog between 2026-10-20 and 2027-01-15.",
+    "resolution": "TRUE if the CISA KEV catalog lists CVE-2026-15176, CVE-2026-93479 or CVE-2026-97205 with a dateAdded value from 2026-10-20 through 2027-01-15; FALSE otherwise.",
+    "failure_condition": "None of CVE-2026-15176, CVE-2026-93479 or CVE-2026-97205 is added to the CISA KEV catalog between 2026-10-20 and 2027-01-15.",
+    "domain": "cyber",
+    "deadline": "2027-01-19",
+    "probability": 46,
+    "citations": [
+      13
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4588,
+      "n": 255,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-19T22:11:20Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
