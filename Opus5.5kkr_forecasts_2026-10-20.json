@@ -1,0 +1,119 @@
+[
+ {
+  "statement": "The CISA KEV catalog adds a Siemens Software Center vulnerability, the flaw ClickFix attackers reportedly exploited, with a date-added value between 2026-10-21 and 2026-11-20.",
+  "domain": "cyber",
+  "probability": 30,
+  "resolution": "TRUE if the CISA KEV catalog lists a Siemens Software Center CVE with dateAdded between 2026-10-21 and 2026-11-20 inclusive; otherwise FALSE.",
+  "deadline": "2026-11-23",
+  "citations": [
+   28
+  ],
+  "failure_condition": "No Siemens Software Center CVE carries a KEV dateAdded value inside 2026-10-21 to 2026-11-20."
+ },
+ {
+  "statement": "The CISA KEV catalog adds at least one Plex Media Server CVE tied to the Plex2Shell exploitation, with a date-added value between 2026-10-21 and 2026-11-30.",
+  "domain": "cyber",
+  "probability": 35,
+  "resolution": "TRUE if the CISA KEV catalog lists a Plex product CVE with dateAdded between 2026-10-21 and 2026-11-30 inclusive; otherwise FALSE.",
+  "deadline": "2026-12-02",
+  "citations": [
+   35
+  ],
+  "failure_condition": "No Plex product CVE carries a KEV dateAdded value inside 2026-10-21 to 2026-11-30."
+ },
+ {
+  "statement": "The US 10-year Treasury constant maturity yield is above 5.00 percent on 2026-12-31. Reference: 5.10 percent on the packet date.",
+  "domain": "economics/markets",
+  "probability": 55,
+  "resolution": "TRUE if the FRED series DGS10 observation for 2026-12-31 is greater than 5.00; FALSE if 5.00 or lower. Reference: 5.10 percent on 2026-10-20.",
+  "deadline": "2027-01-04",
+  "citations": [
+   55,
+   61
+  ],
+  "failure_condition": "The DGS10 value for 2026-12-31 is 5.00 percent or lower."
+ },
+ {
+  "statement": "Brent crude spot falls below 100.00 USD per barrel on at least one trading day between 2026-10-21 and 2026-12-18. Reference: 106.63 USD on the packet date.",
+  "domain": "economics/markets",
+  "probability": 50,
+  "resolution": "TRUE if FRED series DCOILBRENTEU shows any daily value below 100.00 dated 2026-10-21 through 2026-12-18; otherwise FALSE. Reference: 106.63 on 2026-10-20.",
+  "deadline": "2026-12-22",
+  "citations": [
+   54
+  ],
+  "failure_condition": "Every DCOILBRENTEU daily value from 2026-10-21 through 2026-12-18 is 100.00 or higher."
+ },
+ {
+  "statement": "In the scheduled 2026-11-03 US midterm election, Democrats win at least 218 House seats as called by the Associated Press by 2026-12-11.",
+  "domain": "political",
+  "probability": 62,
+  "resolution": "TRUE if AP race calls published by 2026-12-11 award Democratic candidates at least 218 of 435 House seats; otherwise FALSE.",
+  "deadline": "2026-12-14",
+  "citations": [
+   110,
+   112
+  ],
+  "failure_condition": "AP calls by 2026-12-11 award Democrats fewer than 218 House seats."
+ },
+ {
+  "statement": "Albanian Prime Minister Edi Rama resigns or is removed from office between 2026-10-21 and 2027-01-31.",
+  "domain": "political",
+  "probability": 12,
+  "resolution": "TRUE if Reuters or AP report Rama resigned, was dismissed, or lost office via no-confidence vote with effect between 2026-10-21 and 2027-01-31; otherwise FALSE.",
+  "deadline": "2027-02-03",
+  "citations": [
+   91
+  ],
+  "failure_condition": "Rama holds the office of Prime Minister continuously from 2026-10-21 through 2027-01-31."
+ },
+ {
+  "statement": "The UK Ministry of Defence or RAF officially confirms RAF Typhoon jets have arrived in Saudi Arabia between 2026-10-21 and 2026-11-30.",
+  "domain": "military/conflict",
+  "probability": 80,
+  "resolution": "TRUE if an official UK MoD or RAF statement, published between 2026-10-21 and 2026-11-30, confirms Typhoons are deployed in Saudi Arabia; otherwise FALSE.",
+  "deadline": "2026-12-03",
+  "citations": [
+   90,
+   100,
+   118
+  ],
+  "failure_condition": "No RAF Typhoons arrive in Saudi Arabia between 2026-10-21 and 2026-11-30."
+ },
+ {
+  "statement": "Russia and Ukraine both announce a general ceasefire that takes effect between 2026-10-21 and 2027-01-31.",
+  "domain": "military/conflict",
+  "probability": 10,
+  "resolution": "TRUE if Reuters and AP both report that the Russian and Ukrainian governments each declared a front-wide ceasefire taking effect between 2026-10-21 and 2027-01-31; otherwise FALSE.",
+  "deadline": "2027-02-03",
+  "citations": [
+   83,
+   125
+  ],
+  "failure_condition": "No front-wide ceasefire agreed by both governments takes effect between 2026-10-21 and 2027-01-31."
+ },
+ {
+  "statement": "USGS records an earthquake of magnitude 7.0 or greater within 300 km of Port-Olry, Vanuatu between 2026-10-21 and 2026-12-31.",
+  "domain": "disaster",
+  "probability": 12,
+  "resolution": "TRUE if the USGS ComCat catalog lists an event of magnitude 7.0+ within 300 km of Port-Olry with origin time between 2026-10-21 and 2026-12-31 UTC; otherwise FALSE.",
+  "deadline": "2027-01-05",
+  "citations": [
+   49,
+   51
+  ],
+  "failure_condition": "No M7.0+ event within 300 km of Port-Olry occurs between 2026-10-21 and 2026-12-31 UTC."
+ },
+ {
+  "statement": "A Kenyan court sentences cult leader Paul Mackenzie following his murder conviction, with sentence pronounced between 2026-10-21 and 2026-12-31.",
+  "domain": "crime/security",
+  "probability": 55,
+  "resolution": "TRUE if at least two of Reuters, AP, or BBC report a Kenyan court pronounced sentence on Mackenzie between 2026-10-21 and 2026-12-31; otherwise FALSE.",
+  "deadline": "2027-01-05",
+  "citations": [
+   13,
+   85
+  ],
+  "failure_condition": "No sentence is pronounced on Mackenzie by a Kenyan court between 2026-10-21 and 2026-12-31."
+ }
+]

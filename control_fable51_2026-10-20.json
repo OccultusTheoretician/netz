@@ -1,0 +1,253 @@
+[
+  {
+    "statement": "The EIA Cushing WTI crude spot price for 2026-11-20, as carried in FRED series DCOILWTICO, is at or above 100.00 dollars per barrel. Reference: 95.81 on the packet date 2026-10-20.",
+    "resolution": "FRED series DCOILWTICO observation dated 2026-11-20 is at or above 100.00 (reference 95.81 on 2026-10-20). If no observation is posted for that date, the nearest prior observation governs.",
+    "failure_condition": "The DCOILWTICO observation for 2026-11-20, or the nearest prior observation if that date is missing, is below 100.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-01",
+    "probability": 60,
+    "citations": [
+      54,
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.597,
+      "n": 263,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Salesforce completes its announced acquisition of Braze Inc between 2026-10-20 and 2027-03-31, with closing of the merger reported in an 8-K on SEC EDGAR.",
+    "resolution": "An 8-K filed on SEC EDGAR by Braze Inc or Salesforce Inc with a filing date between 2026-10-20 and 2027-03-31 inclusive reports completion of the acquisition of Braze by Salesforce.",
+    "failure_condition": "No 8-K with a filing date on or before 2027-03-31 reports completion of the Salesforce acquisition of Braze, whether because the deal is still pending, renegotiated, or terminated.",
+    "domain": "economics/markets",
+    "deadline": "2027-04-02",
+    "probability": 60,
+    "citations": [
+      64,
+      69
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.597,
+      "n": 263,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "France declares a state of emergency under the law of 3 April 1955 for all or part of its territory in response to the current unrest, with the decree published in the Journal officiel between 2026-10-20 and 2026-11-20.",
+    "resolution": "A decree declaring a state of emergency under the law of 3 April 1955 for any part of French territory appears on Legifrance (Journal officiel) with publication date between 2026-10-20 and 2026-11-20 inclusive.",
+    "failure_condition": "No decree declaring a state of emergency under the law of 3 April 1955 carries a Journal officiel publication date between 2026-10-20 and 2026-11-20; curfews, troop deployments and prefectoral orders alone do not satisfy the condition.",
+    "domain": "political",
+    "deadline": "2026-11-24",
+    "probability": 42,
+    "citations": [
+      53,
+      105,
+      116
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win a majority (at least 218 of 435 seats) of the US House of Representatives in the general election held on 2026-11-03.",
+    "resolution": "AP race calls as of the deadline show Democratic candidates winning at least 218 US House seats in the 2026-11-03 general election; uncalled races and pending runoffs count as not won.",
+    "failure_condition": "Democratic candidates have been called winners in fewer than 218 US House seats as of 2026-12-04.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 42,
+    "citations": [
+      110,
+      112,
+      120
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia and Ukraine sign a ceasefire, armistice or peace agreement covering the entire line of contact between 2026-10-20 and 2027-01-29, with the signing confirmed by both governments.",
+    "resolution": "Both the Russian and Ukrainian governments publicly confirm that authorized representatives signed a ceasefire, armistice or peace agreement covering all front lines between 2026-10-20 and 2027-01-29, as reported by both Reuters and AP.",
+    "failure_condition": "As of 2027-02-02 no ceasefire, armistice or peace agreement covering all front lines has been signed and confirmed by both the Russian and Ukrainian governments; partial, local or energy-only truces do not count.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-02",
+    "probability": 66,
+    "citations": [
+      83,
+      125
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The United States and Iran announce or sign a ceasefire, cessation-of-hostilities or framework agreement between 2026-10-20 and 2026-12-31 that both governments publicly confirm.",
+    "resolution": "The US and Iranian governments each publicly confirm the same ceasefire, cessation-of-hostilities or framework agreement between the two countries, announced or signed between 2026-10-20 and 2026-12-31, as reported by both Reuters and AP.",
+    "failure_condition": "As of 2027-01-05 there is no single ceasefire, cessation-of-hostilities or framework agreement announced or signed between 2026-10-20 and 2026-12-31 that both Washington and Tehran have publicly confirmed; unilateral pauses and mediator claims do not count.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 66,
+    "citations": [
+      78,
+      86,
+      94,
+      121
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Siemens entry with a date-added value between 2026-10-21 and 2026-11-20, following the reported in-the-wild exploitation of a Siemens Software Center flaw.",
+    "resolution": "The CISA KEV catalog JSON contains at least one entry whose vendorProject field contains the string Siemens and whose dateAdded value falls between 2026-10-21 and 2026-11-20 inclusive.",
+    "failure_condition": "The KEV catalog contains no entry with vendorProject containing Siemens and dateAdded between 2026-10-21 and 2026-11-20, including if the flaw was catalogued before 2026-10-21 or never catalogued.",
+    "domain": "cyber",
+    "deadline": "2026-11-24",
+    "probability": 46,
+    "citations": [
+      28
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4588,
+      "n": 255,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A ransomware or data-extortion group claims the Ahold Delhaize cyberattack by publishing a leak-site listing naming Ahold Delhaize or one of its retail banners between 2026-10-20 and 2026-11-30.",
+    "resolution": "Between 2026-10-20 and 2026-11-30 a leak-site listing by a ransomware or extortion group names Ahold Delhaize or one of its retail banners, as reported by at least two of BleepingComputer, The Record, SecurityWeek, Reuters.",
+    "failure_condition": "No ransomware or extortion group publishes a leak-site listing naming Ahold Delhaize or one of its retail banners between 2026-10-20 and 2026-11-30.",
+    "domain": "cyber",
+    "deadline": "2026-12-03",
+    "probability": 46,
+    "citations": [
+      23
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4588,
+      "n": 255,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Tommy Robinson (Stephen Yaxley-Lennon) is convicted, by jury verdict or guilty plea, on at least one count in the London Crown Court trial in progress on 2026-10-20 concerning alleged harassment of journalists, with the conviction recorded between 2026-10-20 and 2026-11-27.",
+    "resolution": "A guilty verdict or guilty plea against Tommy Robinson on at least one count in the London journalist-harassment trial is recorded between 2026-10-20 and 2026-11-27 inclusive, as reported by at least two of BBC, Guardian, PA Media, Reuters.",
+    "failure_condition": "No guilty verdict or guilty plea on any count in the trial is recorded by 2026-11-27; acquittal on all counts, a hung or discharged jury, a mistrial, or an adjournment past the window all make this a MISS.",
+    "domain": "crime/security",
+    "deadline": "2026-12-01",
+    "probability": 36,
+    "citations": [
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.36,
+      "n": 50,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS catalogs at least one earthquake of magnitude 6.0 or greater with epicenter within 250 km of the 2026-10-20 M6.3 Vanuatu event (USGS id us6000u3jl) and origin time between 2026-10-21 and 2026-11-20.",
+    "resolution": "The USGS ComCat earthquake catalog contains at least one event with magnitude 6.0 or greater, epicenter within 250 km of event us6000u3jl, and origin time between 2026-10-21 00:00 UTC and 2026-11-20 23:59 UTC.",
+    "failure_condition": "No USGS-catalogued event of magnitude 6.0 or greater with epicenter within 250 km of us6000u3jl has an origin time between 2026-10-21 and 2026-11-20.",
+    "domain": "disaster",
+    "deadline": "2026-11-24",
+    "probability": 42,
+    "citations": [
+      49,
+      51
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.425,
+      "n": 200,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:42Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
