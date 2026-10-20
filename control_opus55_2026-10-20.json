@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "The CISA KEV catalog adds a Siemens Software Center vulnerability, the flaw ClickFix attackers reportedly exploited, with a date-added value between 2026-10-21 and 2026-11-20.",
+    "resolution": "TRUE if the CISA KEV catalog lists a Siemens Software Center CVE with dateAdded between 2026-10-21 and 2026-11-20 inclusive; otherwise FALSE.",
+    "failure_condition": "No Siemens Software Center CVE carries a KEV dateAdded value inside 2026-10-21 to 2026-11-20.",
+    "domain": "cyber",
+    "deadline": "2026-11-23",
+    "probability": 46,
+    "citations": [
+      28
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4588,
+      "n": 255,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds at least one Plex Media Server CVE tied to the Plex2Shell exploitation, with a date-added value between 2026-10-21 and 2026-11-30.",
+    "resolution": "TRUE if the CISA KEV catalog lists a Plex product CVE with dateAdded between 2026-10-21 and 2026-11-30 inclusive; otherwise FALSE.",
+    "failure_condition": "No Plex product CVE carries a KEV dateAdded value inside 2026-10-21 to 2026-11-30.",
+    "domain": "cyber",
+    "deadline": "2026-12-02",
+    "probability": 46,
+    "citations": [
+      35
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4588,
+      "n": 255,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield is above 5.00 percent on 2026-12-31. Reference: 5.10 percent on the packet date.",
+    "resolution": "TRUE if the FRED series DGS10 observation for 2026-12-31 is greater than 5.00; FALSE if 5.00 or lower. Reference: 5.10 percent on 2026-10-20.",
+    "failure_condition": "The DGS10 value for 2026-12-31 is 5.00 percent or lower.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-04",
+    "probability": 60,
+    "citations": [
+      55,
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.597,
+      "n": 263,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Brent crude spot falls below 100.00 USD per barrel on at least one trading day between 2026-10-21 and 2026-12-18. Reference: 106.63 USD on the packet date.",
+    "resolution": "TRUE if FRED series DCOILBRENTEU shows any daily value below 100.00 dated 2026-10-21 through 2026-12-18; otherwise FALSE. Reference: 106.63 on 2026-10-20.",
+    "failure_condition": "Every DCOILBRENTEU daily value from 2026-10-21 through 2026-12-18 is 100.00 or higher.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-22",
+    "probability": 60,
+    "citations": [
+      54
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.597,
+      "n": 263,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "In the scheduled 2026-11-03 US midterm election, Democrats win at least 218 House seats as called by the Associated Press by 2026-12-11.",
+    "resolution": "TRUE if AP race calls published by 2026-12-11 award Democratic candidates at least 218 of 435 House seats; otherwise FALSE.",
+    "failure_condition": "AP calls by 2026-12-11 award Democrats fewer than 218 House seats.",
+    "domain": "political",
+    "deadline": "2026-12-14",
+    "probability": 42,
+    "citations": [
+      110,
+      112
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Albanian Prime Minister Edi Rama resigns or is removed from office between 2026-10-21 and 2027-01-31.",
+    "resolution": "TRUE if Reuters or AP report Rama resigned, was dismissed, or lost office via no-confidence vote with effect between 2026-10-21 and 2027-01-31; otherwise FALSE.",
+    "failure_condition": "Rama holds the office of Prime Minister continuously from 2026-10-21 through 2027-01-31.",
+    "domain": "political",
+    "deadline": "2027-02-03",
+    "probability": 42,
+    "citations": [
+      91
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The UK Ministry of Defence or RAF officially confirms RAF Typhoon jets have arrived in Saudi Arabia between 2026-10-21 and 2026-11-30.",
+    "resolution": "TRUE if an official UK MoD or RAF statement, published between 2026-10-21 and 2026-11-30, confirms Typhoons are deployed in Saudi Arabia; otherwise FALSE.",
+    "failure_condition": "No RAF Typhoons arrive in Saudi Arabia between 2026-10-21 and 2026-11-30.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-03",
+    "probability": 66,
+    "citations": [
+      90,
+      100,
+      118
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Russia and Ukraine both announce a general ceasefire that takes effect between 2026-10-21 and 2027-01-31.",
+    "resolution": "TRUE if Reuters and AP both report that the Russian and Ukrainian governments each declared a front-wide ceasefire taking effect between 2026-10-21 and 2027-01-31; otherwise FALSE.",
+    "failure_condition": "No front-wide ceasefire agreed by both governments takes effect between 2026-10-21 and 2027-01-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-03",
+    "probability": 66,
+    "citations": [
+      83,
+      125
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS records an earthquake of magnitude 7.0 or greater within 300 km of Port-Olry, Vanuatu between 2026-10-21 and 2026-12-31.",
+    "resolution": "TRUE if the USGS ComCat catalog lists an event of magnitude 7.0+ within 300 km of Port-Olry with origin time between 2026-10-21 and 2026-12-31 UTC; otherwise FALSE.",
+    "failure_condition": "No M7.0+ event within 300 km of Port-Olry occurs between 2026-10-21 and 2026-12-31 UTC.",
+    "domain": "disaster",
+    "deadline": "2027-01-05",
+    "probability": 42,
+    "citations": [
+      49,
+      51
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.425,
+      "n": 200,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A Kenyan court sentences cult leader Paul Mackenzie following his murder conviction, with sentence pronounced between 2026-10-21 and 2026-12-31.",
+    "resolution": "TRUE if at least two of Reuters, AP, or BBC report a Kenyan court pronounced sentence on Mackenzie between 2026-10-21 and 2026-12-31; otherwise FALSE.",
+    "failure_condition": "No sentence is pronounced on Mackenzie by a Kenyan court between 2026-10-21 and 2026-12-31.",
+    "domain": "crime/security",
+    "deadline": "2027-01-05",
+    "probability": 36,
+    "citations": [
+      13,
+      85
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.36,
+      "n": 50,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-20T16:48:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
