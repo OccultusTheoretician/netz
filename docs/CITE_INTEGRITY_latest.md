@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-10-19T11:14:51Z · ledger `ledger.json` · 4481 rows in scope
+Generated 2026-10-20T10:24:23Z · ledger `ledger.json` · 4547 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,13 +12,13 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **4480**
+- rows audited: **4546**
 - scope limitation (no resolvable source report): **1**
-- defective: **682** (15.2% of audited)
+- defective: **693** (15.2% of audited)
 - rows whose citation number does not identify a unique item: **421** (max candidates behind one number: 8)
-  - UNSUPPORTED: 467
+  - UNSUPPORTED: 476
   - AMBIGUOUS_REF: 421
-  - DEADWEIGHT: 202
+  - DEADWEIGHT: 204
   - SHOTGUN: 56
   - NO_CITES: 24
   - THIN: 3
@@ -51,19 +51,19 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| control/baserate | 1580 | 195 | 12% |
-| lmstudio/auto | 524 | 136 | 26% |
-| lmstudio/realist | 230 | 81 | 35% |
-| manual/fable-5.1/unattested | 378 | 61 | 16% |
+| control/baserate | 1603 | 200 | 12% |
+| lmstudio/auto | 525 | 136 | 26% |
+| lmstudio/realist | 231 | 81 | 35% |
+| manual/fable-5.1/unattested | 388 | 64 | 16% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| manual/opus-5.5/unattested | 212 | 34 | 16% |
+| manual/opus-5.5/unattested | 219 | 35 | 16% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
-| manual/sonnet-5.5/unattested | 165 | 23 | 14% |
+| manual/sonnet-5.5/unattested | 171 | 24 | 14% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
-| lmstudio/qwen36-abliterated | 76 | 15 | 20% |
+| lmstudio/qwen36-abliterated | 81 | 15 | 19% |
+| lmstudio/qwen36-realist | 92 | 13 | 14% |
 | manual/opus-5 | 74 | 12 | 16% |
-| lmstudio/qwen36-realist | 86 | 12 | 14% |
-| lmstudio/qwen36 | 81 | 11 | 14% |
+| lmstudio/qwen36 | 88 | 11 | 12% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
 | manual/sonnet-5 | 45 | 1 | 2% |
