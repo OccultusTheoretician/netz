@@ -1,0 +1,126 @@
+[
+ {
+  "statement": "CISA adds CVE-2026-109618 or CVE-2026-109619, the PHP2Shell remote code execution flaws in PHP, to its Known Exploited Vulnerabilities catalog between 2026-10-21 and 2026-11-20.",
+  "domain": "cyber",
+  "probability": 85,
+  "resolution": "The CISA KEV catalog lists CVE-2026-109618 or CVE-2026-109619 with a dateAdded value between 2026-10-21 and 2026-11-20 inclusive.",
+  "deadline": "2026-11-23",
+  "citations": [
+   14,
+   25,
+   34
+  ],
+  "failure_condition": "Neither PHP2Shell CVE has been added to the CISA KEV catalog with an addition date from 2026-10-21 through 2026-11-20."
+ },
+ {
+  "statement": "The Federal Open Market Committee announces an increase in the federal funds target range at its scheduled meeting concluding on 2026-12-09.",
+  "domain": "economics/markets",
+  "probability": 60,
+  "resolution": "The FOMC statement dated 2026-12-09 raises the target range; equivalently, FRED series DFEDTARU for 2026-12-10 exceeds its 2026-12-08 value. A hold or cut resolves false.",
+  "deadline": "2026-12-11",
+  "citations": [
+   73,
+   66
+  ],
+  "failure_condition": "The federal funds target range in effect on 2026-12-10 is no higher than the range in effect on 2026-12-08."
+ },
+ {
+  "statement": "Moodys lowers the long-term issuer rating of the Government of France by at least one notch in a rating action published between 2026-10-22 and 2026-10-30.",
+  "domain": "economics/markets",
+  "probability": 40,
+  "resolution": "A rating action on moodys.com, or the Agence France Tresor ratings page, shows a Moodys downgrade of France dated 2026-10-22 to 2026-10-30. An affirmation or outlook-only change resolves false.",
+  "deadline": "2026-11-02",
+  "citations": [
+   75,
+   121
+  ],
+  "failure_condition": "France holds the same Moodys long-term rating on 2026-10-30 that it held at the packet date."
+ },
+ {
+  "statement": "The WTI Cushing spot crude oil price for 2026-12-31 is below 80.00 dollars per barrel. Reference: 97.86 dollars per barrel on the packet date per the report market snapshot.",
+  "domain": "economics/markets",
+  "probability": 20,
+  "resolution": "FRED series DCOILWTICO (EIA WTI Cushing spot) shows a value below 80.00 for 2026-12-31. If no value is recorded that day, use the last value on or before 2026-12-31.",
+  "deadline": "2027-01-08",
+  "citations": [
+   69,
+   65
+  ],
+  "failure_condition": "The WTI Cushing spot price for 2026-12-31 is at or above 80.00 dollars per barrel."
+ },
+ {
+  "statement": "A member of the House Democratic Caucus is elected Speaker of the US House of Representatives for the 120th Congress in a vote held between 2027-01-03 and 2027-01-10.",
+  "domain": "political",
+  "probability": 80,
+  "resolution": "The Clerk of the House roll call for election of the Speaker, held between 2027-01-03 and 2027-01-10, records a Democrat elected. Another winner, or no Speaker elected in that window, resolves false.",
+  "deadline": "2027-01-12",
+  "citations": [
+   104,
+   110,
+   125
+  ],
+  "failure_condition": "By the end of 2027-01-10 the House has not elected a Democratic Speaker for the 120th Congress."
+ },
+ {
+  "statement": "The French National Assembly adopts a motion of censure, bringing down the sitting government, in a vote held between 2026-10-22 and 2026-12-31.",
+  "domain": "political",
+  "probability": 18,
+  "resolution": "Assemblee nationale records or the Journal officiel show a motion de censure adopted under Article 49 of the Constitution in a sitting held between 2026-10-22 and 2026-12-31.",
+  "deadline": "2027-01-04",
+  "citations": [
+   121,
+   86,
+   113
+  ],
+  "failure_condition": "No motion of censure is adopted by the National Assembly between 2026-10-22 and 2026-12-31."
+ },
+ {
+  "statement": "A general ceasefire covering the entire Russia-Ukraine front line takes effect between 2026-10-22 and 2027-01-31, declared in force by both the Russian and Ukrainian governments.",
+  "domain": "military/conflict",
+  "probability": 6,
+  "resolution": "The Kremlin and the Office of the President of Ukraine each declare a front-wide general ceasefire in effect, starting between 2026-10-22 and 2027-01-31, per Reuters or AP. Partial, energy-only or sub-30-day truces resolve false.",
+  "deadline": "2027-02-03",
+  "citations": [
+   56,
+   79,
+   109
+  ],
+  "failure_condition": "No front-wide general ceasefire accepted by both Moscow and Kyiv enters into force between 2026-10-22 and 2027-01-31."
+ },
+ {
+  "statement": "The United States and Iran both publicly confirm an agreement or understanding on commercial shipping passage through the Strait of Hormuz, announced between 2026-10-22 and 2026-12-31.",
+  "domain": "military/conflict",
+  "probability": 18,
+  "resolution": "The White House or State Department and the Iranian foreign ministry each publicly confirm a Hormuz shipping agreement or understanding announced between 2026-10-22 and 2026-12-31, as reported by Reuters or AP.",
+  "deadline": "2027-01-04",
+  "citations": [
+   91,
+   69,
+   65
+  ],
+  "failure_condition": "No agreement or understanding on Hormuz shipping acknowledged by both Washington and Tehran is announced between 2026-10-22 and 2026-12-31."
+ },
+ {
+  "statement": "Kenya reaches a cumulative total of 20 or more laboratory-confirmed Ebola cases in an official count dated between 2026-10-22 and 2026-12-15. Reference: nine confirmed cases at the packet date per item 100.",
+  "domain": "disaster",
+  "probability": 15,
+  "resolution": "A WHO Disease Outbreak News post, WHO AFRO situation report, or Kenya Ministry of Health statement dated 2026-10-22 to 2026-12-15 gives Kenya a cumulative confirmed Ebola case count of 20 or more.",
+  "deadline": "2026-12-18",
+  "citations": [
+   100,
+   88
+  ],
+  "failure_condition": "The cumulative number of laboratory-confirmed Ebola cases in Kenya remains below 20 through 2026-12-15."
+ },
+ {
+  "statement": "The US Department of Justice announces criminal charges against, or the arrest or extradition of, at least one person for SafePay ransomware activity between 2026-10-22 and 2027-04-09.",
+  "domain": "crime/security",
+  "probability": 8,
+  "resolution": "A justice.gov press release dated 2026-10-22 to 2027-04-09 announces charges, an arrest, or an extradition of a named or unnamed defendant for participation in SafePay ransomware operations.",
+  "deadline": "2027-04-13",
+  "citations": [
+   27
+  ],
+  "failure_condition": "No person is publicly charged, arrested, or extradited by US authorities for SafePay ransomware activity between 2026-10-22 and 2027-04-09."
+ }
+]
