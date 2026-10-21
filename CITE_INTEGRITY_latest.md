@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-10-20T10:24:23Z · ledger `ledger.json` · 4547 rows in scope
+Generated 2026-10-21T10:34:35Z · ledger `ledger.json` · 4631 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,13 +12,13 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **4546**
+- rows audited: **4630**
 - scope limitation (no resolvable source report): **1**
-- defective: **693** (15.2% of audited)
-- rows whose citation number does not identify a unique item: **421** (max candidates behind one number: 8)
-  - UNSUPPORTED: 476
-  - AMBIGUOUS_REF: 421
-  - DEADWEIGHT: 204
+- defective: **707** (15.3% of audited)
+- rows whose citation number does not identify a unique item: **422** (max candidates behind one number: 8)
+  - UNSUPPORTED: 487
+  - AMBIGUOUS_REF: 422
+  - DEADWEIGHT: 207
   - SHOTGUN: 56
   - NO_CITES: 24
   - THIN: 3
@@ -51,17 +51,17 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| control/baserate | 1603 | 200 | 12% |
-| lmstudio/auto | 525 | 136 | 26% |
-| lmstudio/realist | 231 | 81 | 35% |
-| manual/fable-5.1/unattested | 388 | 64 | 16% |
+| control/baserate | 1633 | 206 | 13% |
+| lmstudio/auto | 532 | 137 | 26% |
+| lmstudio/realist | 234 | 81 | 35% |
+| manual/fable-5.1/unattested | 398 | 67 | 17% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| manual/opus-5.5/unattested | 219 | 35 | 16% |
+| manual/opus-5.5/unattested | 229 | 36 | 16% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
-| manual/sonnet-5.5/unattested | 171 | 24 | 14% |
+| manual/sonnet-5.5/unattested | 181 | 26 | 14% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
-| lmstudio/qwen36-abliterated | 81 | 15 | 19% |
-| lmstudio/qwen36-realist | 92 | 13 | 14% |
+| lmstudio/qwen36-abliterated | 88 | 15 | 17% |
+| lmstudio/qwen36-realist | 99 | 14 | 14% |
 | manual/opus-5 | 74 | 12 | 16% |
 | lmstudio/qwen36 | 88 | 11 | 12% |
 | manual/fable | 45 | 6 | 13% |
