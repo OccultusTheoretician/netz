@@ -1,0 +1,255 @@
+[
+  {
+    "statement": "Democratic candidates win at least 218 of 435 seats in the US House elections held on 2026-11-03, as called by 2026-12-18.",
+    "resolution": "Associated Press race calls or the House Clerk official results, checked on 2026-12-18, show Democratic candidates winning at least 218 House seats in the 2026-11-03 elections.",
+    "failure_condition": "Democratic candidates are called winners in fewer than 218 House seats as of 2026-12-18.",
+    "domain": "political",
+    "deadline": "2026-12-18",
+    "probability": 42,
+    "citations": [
+      104,
+      110
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The French Prime Minister leaves office, by a decree ending the government functions or by an adopted motion de censure, between 2026-10-22 and 2026-12-31.",
+    "resolution": "A decree published in the Journal Officiel (legifrance.gouv.fr) recording the end of the Prime Minister functions, or a motion de censure adopted by the National Assembly, dated between 2026-10-22 and 2026-12-31.",
+    "failure_condition": "The Prime Minister remains in office with no cessation decree and no adopted censure motion dated between 2026-10-22 and 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-05",
+    "probability": 42,
+    "citations": [
+      121,
+      86,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The governments of Russia and Ukraine both publicly announce agreement to a general ceasefire covering the entire front line between 2026-10-22 and 2027-01-29.",
+    "resolution": "Official statements on kremlin.ru and president.gov.ua, corroborated by Reuters and AP, record both governments agreeing to a front-wide ceasefire between 2026-10-22 and 2027-01-29; energy-only or maritime-only pauses do not count.",
+    "failure_condition": "Russia and Ukraine do not both agree to a front-wide ceasefire between 2026-10-22 and 2027-01-29.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-02",
+    "probability": 66,
+    "citations": [
+      56,
+      79,
+      101
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The UK Ministry of Defence or the French Ministry of the Armed Forces publicly confirms that its own forces struck Houthi targets inside Yemen between 2026-10-22 and 2026-12-31.",
+    "resolution": "An official gov.uk or defense.gouv.fr statement, corroborated by Reuters or AP, confirms a UK or French strike on targets inside Yemen dated between 2026-10-22 and 2026-12-31; interceptions do not count.",
+    "failure_condition": "Neither UK nor French forces conduct an officially confirmed strike on targets inside Yemen between 2026-10-22 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 66,
+    "citations": [
+      83,
+      97,
+      111
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The daily Europe Brent spot price (EIA, FRED DCOILBRENTEU) is at or above 120.00 USD per barrel on at least one date between 2026-10-22 and 2026-12-18. Reference: 109.25 on 2026-10-21.",
+    "resolution": "The EIA Europe Brent spot series (FRED DCOILBRENTEU) shows a daily value at or above 120.00 for at least one date between 2026-10-22 and 2026-12-18. Reference: 109.25 on 2026-10-21.",
+    "failure_condition": "Every Europe Brent spot value dated 2026-10-22 through 2026-12-18 is below 120.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-30",
+    "probability": 60,
+    "citations": [
+      69,
+      65
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.597,
+      "n": 263,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield (FRED DGS10) dated 2026-12-31 is at or above 5.00 percent. Reference: 5.11 percent on 2026-10-21.",
+    "resolution": "The FRED DGS10 observation dated 2026-12-31 is at or above 5.00. If no observation exists for 2026-12-31, the last observation dated on or before it governs. Reference: 5.11 on 2026-10-21.",
+    "failure_condition": "The governing DGS10 observation for 2026-12-31 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-06",
+    "probability": 60,
+    "citations": [
+      73,
+      66
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.597,
+      "n": 263,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds at least one PHP Group (PHP) vulnerability to the Known Exploited Vulnerabilities catalog with a date-added value between 2026-10-21 and 2026-11-18.",
+    "resolution": "The CISA KEV JSON feed contains at least one entry whose vendorProject is PHP Group (product PHP) with dateAdded between 2026-10-21 and 2026-11-18 inclusive.",
+    "failure_condition": "No KEV entry with vendorProject PHP Group carries a dateAdded between 2026-10-21 and 2026-11-18.",
+    "domain": "cyber",
+    "deadline": "2026-11-20",
+    "probability": 46,
+    "citations": [
+      14,
+      25,
+      34
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4588,
+      "n": 255,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-22 and 2027-03-31 the US Justice Department announces criminal charges against a person identified as a SafePay ransomware operator or affiliate, or OFAC designates a person or entity for SafePay ransomware activity.",
+    "resolution": "A justice.gov press release announcing charges, or an OFAC SDN designation press release on treasury.gov, explicitly naming SafePay ransomware, dated between 2026-10-22 and 2027-03-31.",
+    "failure_condition": "Neither DOJ charges nor an OFAC designation naming SafePay is issued between 2026-10-22 and 2027-03-31.",
+    "domain": "cyber",
+    "deadline": "2027-04-02",
+    "probability": 46,
+    "citations": [
+      27
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4588,
+      "n": 255,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Australian federal government announces new funding, with a stated dollar amount, for the security of federal parliamentarians between 2026-10-22 and 2026-12-31.",
+    "resolution": "An official Commonwealth media release (pm.gov.au, a ministerial site, or the 2026-27 MYEFO) dated between 2026-10-22 and 2026-12-31 states a dollar amount of new funding for the security of federal parliamentarians.",
+    "failure_condition": "The Commonwealth commits no stated dollar amount of new funding for parliamentarian security between 2026-10-22 and 2026-12-31.",
+    "domain": "crime/security",
+    "deadline": "2027-01-05",
+    "probability": 36,
+    "citations": [
+      9,
+      114
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.36,
+      "n": 50,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "WHO reporting published between 2026-10-22 and 2026-12-04 shows a cumulative total of at least 20 confirmed Ebola cases in Kenya for the outbreak confirmed in October 2026. Reference: 9 confirmed cases on 2026-10-21.",
+    "resolution": "A WHO Disease Outbreak News post or WHO AFRO situation report published between 2026-10-22 and 2026-12-04 gives a cumulative count of at least 20 confirmed Ebola cases in Kenya. Reference: 9 on 2026-10-21.",
+    "failure_condition": "Cumulative confirmed Ebola cases in Kenya remain below 20 in all WHO reports published through 2026-12-04.",
+    "domain": "disaster",
+    "deadline": "2026-12-08",
+    "probability": 42,
+    "citations": [
+      88,
+      100
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.425,
+      "n": 200,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-21T22:54:00Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
