@@ -1,0 +1,123 @@
+[
+ {
+  "statement": "Following reported exploitation of the PHP2Shell flaws, the CISA KEV catalog adds at least one entry whose vendorProject or product field contains PHP, with a dateAdded value between 2026-10-22 and 2026-11-05.",
+  "domain": "cyber",
+  "probability": 82,
+  "resolution": "Fetch the CISA known exploited vulnerabilities JSON catalog after the deadline; true if any entry has vendorProject or product containing PHP and dateAdded from 2026-10-22 through 2026-11-05 inclusive.",
+  "deadline": "2026-11-09",
+  "citations": [
+   18,
+   39,
+   75
+  ],
+  "failure_condition": "No KEV entry with vendorProject or product containing PHP has a dateAdded value from 2026-10-22 through 2026-11-05."
+ },
+ {
+  "statement": "After disclosure of the CVSS 10.0 GitLab code execution flaw, the CISA KEV catalog adds at least one entry with vendorProject GitLab and a dateAdded value between 2026-10-22 and 2026-11-12.",
+  "domain": "cyber",
+  "probability": 10,
+  "resolution": "Fetch the CISA known exploited vulnerabilities JSON catalog after the deadline; true if any entry has vendorProject equal to GitLab and dateAdded from 2026-10-22 through 2026-11-12 inclusive.",
+  "deadline": "2026-11-16",
+  "citations": [
+   22,
+   34
+  ],
+  "failure_condition": "No KEV entry with vendorProject GitLab has a dateAdded value from 2026-10-22 through 2026-11-12."
+ },
+ {
+  "statement": "ICE front-month Brent crude futures settle above 125.00 USD per barrel on at least one trading day between 2026-10-23 and 2026-11-20. Reference: 111.58 USD in the packet market snapshot dated 2026-10-22.",
+  "domain": "economics/markets",
+  "probability": 20,
+  "resolution": "ICE Brent front-month daily settlement, as reported by Reuters or ICE, exceeds 125.00 USD on any trading day from 2026-10-23 through 2026-11-20 inclusive.",
+  "deadline": "2026-11-24",
+  "citations": [
+   130,
+   129,
+   89
+  ],
+  "failure_condition": "Every ICE front-month Brent daily settlement from 2026-10-23 through 2026-11-20 is at or below 125.00 USD."
+ },
+ {
+  "statement": "The NASDAQ Composite closes below 24,500 on at least one trading day between 2026-10-23 and 2026-11-20. Reference: 26,099.07 in the packet market snapshot dated 2026-10-22.",
+  "domain": "economics/markets",
+  "probability": 22,
+  "resolution": "The official NASDAQ Composite daily close, as shown by FRED series NASDAQCOM or Nasdaq data, is below 24,500 on any trading day from 2026-10-23 through 2026-11-20 inclusive.",
+  "deadline": "2026-11-24",
+  "citations": [
+   73,
+   68
+  ],
+  "failure_condition": "Every NASDAQ Composite daily close from 2026-10-23 through 2026-11-20 is at or above 24,500."
+ },
+ {
+  "statement": "At its meeting on 2026-10-27 and 2026-10-28, the FOMC leaves the federal funds target range unchanged from the range in effect on 2026-10-22.",
+  "domain": "economics/markets",
+  "probability": 85,
+  "resolution": "The Federal Reserve FOMC statement released on 2026-10-28 maintains the federal funds target range at its pre-meeting level; any increase or decrease makes the claim false.",
+  "deadline": "2026-10-30",
+  "citations": [
+   64,
+   130
+  ],
+  "failure_condition": "The FOMC statement of 2026-10-28 announces any increase or decrease in the federal funds target range."
+ },
+ {
+  "statement": "At least one person is killed inside Saudi Arabia by a Houthi missile or drone attack occurring between 2026-10-23 and 2026-11-05.",
+  "domain": "military/conflict",
+  "probability": 85,
+  "resolution": "At least two of Reuters, AP, AFP and BBC report one or more deaths inside Saudi Arabia from a Houthi missile or drone strike dated 2026-10-23 through 2026-11-05 inclusive.",
+  "deadline": "2026-11-09",
+  "citations": [
+   89,
+   123
+  ],
+  "failure_condition": "No person is killed inside Saudi Arabia by a Houthi missile or drone attack occurring from 2026-10-23 through 2026-11-05."
+ },
+ {
+  "statement": "US or Israeli forces strike a target on Iranian soil between 2026-10-23 and 2026-11-30.",
+  "domain": "military/conflict",
+  "probability": 40,
+  "resolution": "At least two of Reuters, AP, AFP and BBC report a US or Israeli air, missile or drone strike on a target on Iranian soil dated 2026-10-23 through 2026-11-30 inclusive; strikes on vessels at sea do not count.",
+  "deadline": "2026-12-03",
+  "citations": [
+   129,
+   98,
+   84
+  ],
+  "failure_condition": "No US or Israeli strike hits a target on Iranian soil from 2026-10-23 through 2026-11-30."
+ },
+ {
+  "statement": "Official delegations of Russia, Ukraine and the United States meet in person for trilateral negotiations between 2026-10-23 and 2026-12-04.",
+  "domain": "military/conflict",
+  "probability": 40,
+  "resolution": "At least two of Reuters, AP, AFP and BBC report that Russian, Ukrainian and US delegations met in person at one venue for negotiations dated 2026-10-23 through 2026-12-04; separate shuttle meetings do not count.",
+  "deadline": "2026-12-08",
+  "citations": [
+   107
+  ],
+  "failure_condition": "No in-person session with Russian, Ukrainian and US delegations at one venue takes place from 2026-10-23 through 2026-12-04."
+ },
+ {
+  "statement": "USGS lists an earthquake of magnitude 6.0 or greater, other than event us6000u43g, within 300 km of that event epicenter with origin time between 2026-10-23 and 2026-11-05 UTC.",
+  "domain": "disaster",
+  "probability": 16,
+  "resolution": "Query the USGS ComCat catalog after the deadline; true if any event other than us6000u43g with magnitude 6.0 or greater lies within 300 km of its epicenter with origin time 2026-10-23 through 2026-11-05 UTC.",
+  "deadline": "2026-11-09",
+  "citations": [
+   40
+  ],
+  "failure_condition": "No earthquake of magnitude 6.0 or greater other than us6000u43g occurs within 300 km of its epicenter from 2026-10-23 through 2026-11-05 UTC."
+ },
+ {
+  "statement": "France declares a state of emergency covering any part of metropolitan France between 2026-10-23 and 2026-11-12.",
+  "domain": "political",
+  "probability": 6,
+  "resolution": "The Journal Officiel on Legifrance publishes a decree declaring a state of emergency under the 1955 law that covers any part of metropolitan France, dated 2026-10-23 through 2026-11-12 inclusive.",
+  "deadline": "2026-11-16",
+  "citations": [
+   94,
+   131
+  ],
+  "failure_condition": "No decree declaring a state of emergency for any part of metropolitan France is issued from 2026-10-23 through 2026-11-12."
+ }
+]
