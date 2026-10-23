@@ -1,6 +1,6 @@
 # The forgetting curve - resolution lag (LAG-1016)
 
-As of 2026-10-21. Ledger rows: 4690. Scored with a deadline and a resolved date: 1265. Open past deadline: 544.
+As of 2026-10-22. Ledger rows: 4756. Scored with a deadline and a resolved date: 1265. Open past deadline: 585.
 
 Lag = resolved_date minus deadline, in days. A row the desk forgets sits in the right-hand buckets. No pooled score is printed (RPAS 5.04: a Brier belongs to one forecaster); the lag table carries counts and hit share only, and Brier appears per arm below.
 
@@ -38,23 +38,23 @@ Median lag 6 d; 90th percentile 14 d; max 52 d; share resolved on or before dead
 
 | overdue age | rows | arms |
 |---|---|---|
-| 1-3 d | 238 | control/baserate 104, manual/sonnet-5/unattested 34, manual/fable-5.1/unattested 29 |
-| 4-7 d | 41 | control/baserate 13, manual/sonnet-5/unattested 8, lmstudio/realist 6 |
-| 8-14 d | 100 | lmstudio/auto 48, lmstudio/realist 20, control/baserate 16 |
-| 15-30 d | 130 | control/baserate 34, lmstudio/auto 30, lmstudio/realist 23 |
-| over 30 d | 35 | lmstudio/auto 15, control/baserate 7, manual/sonnet-5/unattested 6 |
+| 1-3 d | 272 | control/baserate 117, manual/sonnet-5/unattested 36, manual/fable-5.1/unattested 32 |
+| 4-7 d | 28 | lmstudio/realist 8, control/baserate 7, manual/sonnet-5/unattested 6 |
+| 8-14 d | 92 | lmstudio/auto 39, control/baserate 19, lmstudio/realist 14 |
+| 15-30 d | 154 | lmstudio/auto 43, control/baserate 36, lmstudio/realist 30 |
+| over 30 d | 39 | lmstudio/auto 15, control/baserate 9, manual/sonnet-5/unattested 7 |
 
 Ten oldest open rows:
 
-- KKR-20260817-36 deadline 2026-08-26 (56 d) lmstudio/auto - Between 2026-08-21 and 2026-08-24, a drone strike will be reported in Dnipro with at least
-- KKR-20260809-02 deadline 2026-09-02 (49 d) lmstudio/auto - Between 2026-08-27 and 2026-08-30, a new cyberattack targeting a U.S. government system is
-- KKR-20260815-25 deadline 2026-09-02 (49 d) lmstudio/auto - At least one major wildfire in Europe causes over 100 evacuations between 2026-08-21 and 2
-- KKR-20260820-04 deadline 2026-09-02 (49 d) lmstudio/auto - Between 2026-08-21 and 2026-08-24, a new military offensive will be reported in the Zapori
-- KKR-20260824-06 deadline 2026-09-04 (47 d) lmstudio/auto - A new cyberattack campaign targeting critical infrastructure in the U.S. will be attribute
-- KKR-20260808-04 deadline 2026-09-07 (44 d) lmstudio/auto - Between 2026-08-27 and 2026-09-03, a new wildfire will be reported in the United States by
-- KKR-20260827-63 deadline 2026-09-07 (44 d) lmstudio/auto - Between 2026-08-27 and 2026-09-03, a confirmed cyberattack exploiting CVE-2021-23758 will 
-- KKR-20260827-64 deadline 2026-09-07 (44 d) lmstudio/auto - Between 2026-08-27 and 2026-09-03, a confirmed forest fire will be reported in Canada with
-- KKR-20260827-65 deadline 2026-09-07 (44 d) lmstudio/auto - Between 2026-08-27 and 2026-09-03, a confirmed political statement by Trump regarding Iran
-- KKR-20260822-05 deadline 2026-09-08 (43 d) manual/sonnet-5/unattested - At the sentencing hearing scheduled for 2026-09-04 at Preston Crown Court, at least one of
+- KKR-20260817-36 deadline 2026-08-26 (57 d) lmstudio/auto - Between 2026-08-21 and 2026-08-24, a drone strike will be reported in Dnipro with at least
+- KKR-20260809-02 deadline 2026-09-02 (50 d) lmstudio/auto - Between 2026-08-27 and 2026-08-30, a new cyberattack targeting a U.S. government system is
+- KKR-20260815-25 deadline 2026-09-02 (50 d) lmstudio/auto - At least one major wildfire in Europe causes over 100 evacuations between 2026-08-21 and 2
+- KKR-20260820-04 deadline 2026-09-02 (50 d) lmstudio/auto - Between 2026-08-21 and 2026-08-24, a new military offensive will be reported in the Zapori
+- KKR-20260824-06 deadline 2026-09-04 (48 d) lmstudio/auto - A new cyberattack campaign targeting critical infrastructure in the U.S. will be attribute
+- KKR-20260808-04 deadline 2026-09-07 (45 d) lmstudio/auto - Between 2026-08-27 and 2026-09-03, a new wildfire will be reported in the United States by
+- KKR-20260827-63 deadline 2026-09-07 (45 d) lmstudio/auto - Between 2026-08-27 and 2026-09-03, a confirmed cyberattack exploiting CVE-2021-23758 will 
+- KKR-20260827-64 deadline 2026-09-07 (45 d) lmstudio/auto - Between 2026-08-27 and 2026-09-03, a confirmed forest fire will be reported in Canada with
+- KKR-20260827-65 deadline 2026-09-07 (45 d) lmstudio/auto - Between 2026-08-27 and 2026-09-03, a confirmed political statement by Trump regarding Iran
+- KKR-20260822-05 deadline 2026-09-08 (44 d) manual/sonnet-5/unattested - At the sentencing hearing scheduled for 2026-09-04 at Preston Crown Court, at least one of
 
 Reading rule: compare each arm's over-14-day count with its row count; an arm whose late rows cluster is an arm whose claims the desk cannot look up, and that is a property of the claims, not of the lateness. Either way the queue table is the to-do list; the keys pass runs before each sitting and the overdue rows are the sitting.
