@@ -1,0 +1,251 @@
+[
+  {
+    "statement": "Government-designated Russian and Ukrainian delegations take part in the same negotiating session in the United Arab Emirates on at least one day between 2026-11-01 and 2026-11-30.",
+    "resolution": "TRUE if two of Reuters, AP, AFP, BBC report government-designated Russian and Ukrainian delegations took part in the same talks session in the UAE on a date between 2026-11-01 and 2026-11-30; a prisoner exchange alone does not count.",
+    "failure_condition": "No negotiating session attended by both government-designated Russian and Ukrainian delegations took place in the UAE between 2026-11-01 and 2026-11-30.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-03",
+    "probability": 66,
+    "citations": [
+      94
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Between 2026-10-24 and 2026-11-30, the United States and Iran each publicly confirm an agreed ceasefire or truce between the two countries, of any stated duration.",
+    "resolution": "TRUE if, between 2026-10-24 and 2026-11-30, the White House, State Department or Pentagon and the Iranian government or foreign ministry each publicly confirm an agreed US-Iran ceasefire or truce, as reported by at least two of Reuters, AP, AFP.",
+    "failure_condition": "No ceasefire or truce between the United States and Iran was publicly confirmed by both governments between 2026-10-24 and 2026-11-30.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-03",
+    "probability": 66,
+    "citations": [
+      40,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "US forces conduct at least one strike on a target on Iranian land territory between 2026-10-24 and 2026-11-20 that US Central Command, the Pentagon or the White House publicly acknowledges.",
+    "resolution": "TRUE if US Central Command, the Pentagon or the White House publicly acknowledges a US strike on a target on Iranian land territory that occurred between 2026-10-24 and 2026-11-20, as reported by Reuters or AP.",
+    "failure_condition": "US forces conducted no publicly acknowledged strike on a target on Iranian land territory between 2026-10-24 and 2026-11-20.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-24",
+    "probability": 66,
+    "citations": [
+      40,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6634,
+      "n": 303,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The ICE front-month Brent crude futures contract settles at or above 125.00 US dollars per barrel on at least one trading day between 2026-10-26 and 2026-11-20. Reference: Brent 111.27 on the packet date.",
+    "resolution": "TRUE if the ICE Futures Europe daily settlement price of the front-month Brent crude futures contract is 125.00 US dollars or higher on at least one trading day between 2026-10-26 and 2026-11-20 inclusive. Reference: 111.27 on 2026-10-23.",
+    "failure_condition": "No ICE front-month Brent settlement at or above 125.00 US dollars occurred on any trading day between 2026-10-26 and 2026-11-20.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-24",
+    "probability": 60,
+    "citations": [
+      68,
+      45
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.597,
+      "n": 263,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog lists CVE-2026-114625, the Arista VeloCloud Orchestrator SQL injection zero-day, with a dateAdded between 2026-10-22 and 2026-11-13.",
+    "resolution": "TRUE if the CISA KEV catalog JSON feed, fetched on or after the deadline, contains an entry with cveID CVE-2026-114625 whose dateAdded falls between 2026-10-22 and 2026-11-13 inclusive.",
+    "failure_condition": "CVE-2026-114625 is absent from the CISA KEV catalog or carries a dateAdded outside 2026-10-22 to 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 46,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4588,
+      "n": 255,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog lists CVE-2026-109618 or CVE-2026-109619, the PHP2Shell flaws, with a dateAdded between 2026-10-21 and 2026-11-13.",
+    "resolution": "TRUE if the CISA KEV catalog JSON feed, fetched on or after the deadline, contains an entry with cveID CVE-2026-109618 or CVE-2026-109619 whose dateAdded falls between 2026-10-21 and 2026-11-13 inclusive.",
+    "failure_condition": "Neither CVE-2026-109618 nor CVE-2026-109619 appears in the CISA KEV catalog with a dateAdded between 2026-10-21 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-17",
+    "probability": 46,
+    "citations": [
+      16,
+      18,
+      22
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4588,
+      "n": 255,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Flavio Bolsonaro receives more valid votes than Luiz Inacio Lula da Silva in the Brazilian presidential runoff held on 2026-10-25, per the official Tribunal Superior Eleitoral count.",
+    "resolution": "TRUE if the Tribunal Superior Eleitoral official results for the 2026-10-25 presidential runoff show Flavio Bolsonaro with more valid votes than Luiz Inacio Lula da Silva; FALSE otherwise, including if the runoff is not held that date.",
+    "failure_condition": "The TSE official count shows Lula with more valid votes than Flavio Bolsonaro, or the runoff is not held on 2026-10-25.",
+    "domain": "political",
+    "deadline": "2026-10-30",
+    "probability": 42,
+    "citations": [
+      47,
+      79
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "James Talarico wins the 2026-11-03 US Senate general election in Texas, as called by the Associated Press.",
+    "resolution": "TRUE if the Associated Press has called the 2026-11-03 Texas US Senate general election for James Talarico by the deadline; FALSE if AP has called it for another candidate or has not called it by the deadline.",
+    "failure_condition": "By 2026-11-20 the Associated Press had called the Texas US Senate race for a candidate other than James Talarico, or had not called it for him.",
+    "domain": "political",
+    "deadline": "2026-11-20",
+    "probability": 42,
+    "citations": [
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4219,
+      "n": 192,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "At least one suspect in the 2026-10-23 gun attack on a church funeral in Karak governorate, Jordan, is arrested or killed between 2026-10-23 and 2026-11-06, as announced by Jordanian authorities.",
+    "resolution": "TRUE if the Public Security Directorate, interior ministry or government spokesperson of Jordan announces, and Reuters, AP or AFP reports, that at least one suspect in the 2026-10-23 Karak church attack was arrested or killed between 2026-10-23 and 2026-11-06.",
+    "failure_condition": "No suspect in the 2026-10-23 Karak church attack was arrested or killed between 2026-10-23 and 2026-11-06.",
+    "domain": "crime/security",
+    "deadline": "2026-11-10",
+    "probability": 36,
+    "citations": [
+      78,
+      87
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.36,
+      "n": 50,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The USGS catalog records at least one earthquake of magnitude 6.0 or greater with epicenter within 100 km of USGS event us6000u43g (M7.0 near Nagqu, China) and origin time between 2026-10-24 and 2026-11-06 UTC.",
+    "resolution": "TRUE if a USGS ComCat search on or after the deadline returns at least one event with magnitude 6.0 or greater, origin time from 2026-10-24 00:00 to 2026-11-06 23:59 UTC, and epicenter within 100 km of event us6000u43g.",
+    "failure_condition": "No USGS-catalogued earthquake of magnitude 6.0 or greater with epicenter within 100 km of event us6000u43g occurred between 2026-10-24 and 2026-11-06 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-10",
+    "probability": 42,
+    "citations": [
+      32,
+      49,
+      50
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.425,
+      "n": 200,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-23T20:56:49Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
