@@ -1,0 +1,121 @@
+[
+ {
+  "statement": "Government-designated Russian and Ukrainian delegations take part in the same negotiating session in the United Arab Emirates on at least one day between 2026-11-01 and 2026-11-30.",
+  "domain": "military/conflict",
+  "probability": 45,
+  "resolution": "TRUE if two of Reuters, AP, AFP, BBC report government-designated Russian and Ukrainian delegations took part in the same talks session in the UAE on a date between 2026-11-01 and 2026-11-30; a prisoner exchange alone does not count.",
+  "deadline": "2026-12-03",
+  "citations": [
+   94
+  ],
+  "failure_condition": "No negotiating session attended by both government-designated Russian and Ukrainian delegations took place in the UAE between 2026-11-01 and 2026-11-30."
+ },
+ {
+  "statement": "Between 2026-10-24 and 2026-11-30, the United States and Iran each publicly confirm an agreed ceasefire or truce between the two countries, of any stated duration.",
+  "domain": "military/conflict",
+  "probability": 25,
+  "resolution": "TRUE if, between 2026-10-24 and 2026-11-30, the White House, State Department or Pentagon and the Iranian government or foreign ministry each publicly confirm an agreed US-Iran ceasefire or truce, as reported by at least two of Reuters, AP, AFP.",
+  "deadline": "2026-12-03",
+  "citations": [
+   40,
+   68
+  ],
+  "failure_condition": "No ceasefire or truce between the United States and Iran was publicly confirmed by both governments between 2026-10-24 and 2026-11-30."
+ },
+ {
+  "statement": "US forces conduct at least one strike on a target on Iranian land territory between 2026-10-24 and 2026-11-20 that US Central Command, the Pentagon or the White House publicly acknowledges.",
+  "domain": "military/conflict",
+  "probability": 40,
+  "resolution": "TRUE if US Central Command, the Pentagon or the White House publicly acknowledges a US strike on a target on Iranian land territory that occurred between 2026-10-24 and 2026-11-20, as reported by Reuters or AP.",
+  "deadline": "2026-11-24",
+  "citations": [
+   40,
+   68
+  ],
+  "failure_condition": "US forces conducted no publicly acknowledged strike on a target on Iranian land territory between 2026-10-24 and 2026-11-20."
+ },
+ {
+  "statement": "The ICE front-month Brent crude futures contract settles at or above 125.00 US dollars per barrel on at least one trading day between 2026-10-26 and 2026-11-20. Reference: Brent 111.27 on the packet date.",
+  "domain": "economics/markets",
+  "probability": 30,
+  "resolution": "TRUE if the ICE Futures Europe daily settlement price of the front-month Brent crude futures contract is 125.00 US dollars or higher on at least one trading day between 2026-10-26 and 2026-11-20 inclusive. Reference: 111.27 on 2026-10-23.",
+  "deadline": "2026-11-24",
+  "citations": [
+   68,
+   45
+  ],
+  "failure_condition": "No ICE front-month Brent settlement at or above 125.00 US dollars occurred on any trading day between 2026-10-26 and 2026-11-20."
+ },
+ {
+  "statement": "The CISA Known Exploited Vulnerabilities catalog lists CVE-2026-114625, the Arista VeloCloud Orchestrator SQL injection zero-day, with a dateAdded between 2026-10-22 and 2026-11-13.",
+  "domain": "cyber",
+  "probability": 80,
+  "resolution": "TRUE if the CISA KEV catalog JSON feed, fetched on or after the deadline, contains an entry with cveID CVE-2026-114625 whose dateAdded falls between 2026-10-22 and 2026-11-13 inclusive.",
+  "deadline": "2026-11-17",
+  "citations": [
+   12
+  ],
+  "failure_condition": "CVE-2026-114625 is absent from the CISA KEV catalog or carries a dateAdded outside 2026-10-22 to 2026-11-13."
+ },
+ {
+  "statement": "The CISA Known Exploited Vulnerabilities catalog lists CVE-2026-109618 or CVE-2026-109619, the PHP2Shell flaws, with a dateAdded between 2026-10-21 and 2026-11-13.",
+  "domain": "cyber",
+  "probability": 70,
+  "resolution": "TRUE if the CISA KEV catalog JSON feed, fetched on or after the deadline, contains an entry with cveID CVE-2026-109618 or CVE-2026-109619 whose dateAdded falls between 2026-10-21 and 2026-11-13 inclusive.",
+  "deadline": "2026-11-17",
+  "citations": [
+   16,
+   18,
+   22
+  ],
+  "failure_condition": "Neither CVE-2026-109618 nor CVE-2026-109619 appears in the CISA KEV catalog with a dateAdded between 2026-10-21 and 2026-11-13."
+ },
+ {
+  "statement": "Flavio Bolsonaro receives more valid votes than Luiz Inacio Lula da Silva in the Brazilian presidential runoff held on 2026-10-25, per the official Tribunal Superior Eleitoral count.",
+  "domain": "political",
+  "probability": 62,
+  "resolution": "TRUE if the Tribunal Superior Eleitoral official results for the 2026-10-25 presidential runoff show Flavio Bolsonaro with more valid votes than Luiz Inacio Lula da Silva; FALSE otherwise, including if the runoff is not held that date.",
+  "deadline": "2026-10-30",
+  "citations": [
+   47,
+   79
+  ],
+  "failure_condition": "The TSE official count shows Lula with more valid votes than Flavio Bolsonaro, or the runoff is not held on 2026-10-25."
+ },
+ {
+  "statement": "James Talarico wins the 2026-11-03 US Senate general election in Texas, as called by the Associated Press.",
+  "domain": "political",
+  "probability": 40,
+  "resolution": "TRUE if the Associated Press has called the 2026-11-03 Texas US Senate general election for James Talarico by the deadline; FALSE if AP has called it for another candidate or has not called it by the deadline.",
+  "deadline": "2026-11-20",
+  "citations": [
+   108
+  ],
+  "failure_condition": "By 2026-11-20 the Associated Press had called the Texas US Senate race for a candidate other than James Talarico, or had not called it for him."
+ },
+ {
+  "statement": "At least one suspect in the 2026-10-23 gun attack on a church funeral in Karak governorate, Jordan, is arrested or killed between 2026-10-23 and 2026-11-06, as announced by Jordanian authorities.",
+  "domain": "crime/security",
+  "probability": 75,
+  "resolution": "TRUE if the Public Security Directorate, interior ministry or government spokesperson of Jordan announces, and Reuters, AP or AFP reports, that at least one suspect in the 2026-10-23 Karak church attack was arrested or killed between 2026-10-23 and 2026-11-06.",
+  "deadline": "2026-11-10",
+  "citations": [
+   78,
+   87
+  ],
+  "failure_condition": "No suspect in the 2026-10-23 Karak church attack was arrested or killed between 2026-10-23 and 2026-11-06."
+ },
+ {
+  "statement": "The USGS catalog records at least one earthquake of magnitude 6.0 or greater with epicenter within 100 km of USGS event us6000u43g (M7.0 near Nagqu, China) and origin time between 2026-10-24 and 2026-11-06 UTC.",
+  "domain": "disaster",
+  "probability": 15,
+  "resolution": "TRUE if a USGS ComCat search on or after the deadline returns at least one event with magnitude 6.0 or greater, origin time from 2026-10-24 00:00 to 2026-11-06 23:59 UTC, and epicenter within 100 km of event us6000u43g.",
+  "deadline": "2026-11-10",
+  "citations": [
+   32,
+   49,
+   50
+  ],
+  "failure_condition": "No USGS-catalogued earthquake of magnitude 6.0 or greater with epicenter within 100 km of event us6000u43g occurred between 2026-10-24 and 2026-11-06 UTC."
+ }
+]
