@@ -1,0 +1,120 @@
+[
+ {
+  "statement": "US military forces conduct at least one kinetic strike on a target inside the territory of Iran between 2026-10-25 and 2026-11-15.",
+  "domain": "military/conflict",
+  "probability": 35,
+  "resolution": "True if US Central Command or the White House publicly confirms, or Reuters and AP both report, a US kinetic strike on a target inside Iran occurring between 2026-10-25 and 2026-11-15. Interceptions of Iranian projectiles do not count.",
+  "deadline": "2026-11-18",
+  "citations": [
+   79,
+   82
+  ],
+  "failure_condition": "No US kinetic strike on a target inside the territory of Iran occurs between 2026-10-25 and 2026-11-15."
+ },
+ {
+  "statement": "Between 2026-10-25 and 2026-11-07, the Ukrainian Air Force reports at least one overnight Russian attack in which 500 or more drones and missiles combined were launched against Ukraine.",
+  "domain": "military/conflict",
+  "probability": 75,
+  "resolution": "True if an official Ukrainian Air Force daily report, as carried by Reuters, AP or Ukrinform, states that Russia launched 500 or more drones and missiles combined in a single overnight attack dated between 2026-10-25 and 2026-11-07.",
+  "deadline": "2026-11-10",
+  "citations": [
+   71
+  ],
+  "failure_condition": "Every overnight Russian attack on Ukraine between 2026-10-25 and 2026-11-07 involves fewer than 500 drones and missiles combined."
+ },
+ {
+  "statement": "ICE Brent front-month crude futures settle at or above 125.00 USD per barrel on at least one trading day between 2026-10-26 and 2026-11-20. Reference: 111.70 USD on the packet date 2026-10-24.",
+  "domain": "economics/markets",
+  "probability": 30,
+  "resolution": "True if the ICE Brent front-month futures official daily settlement price is 125.00 USD per barrel or higher on any trading day between 2026-10-26 and 2026-11-20, per ICE settlement data. Reference: 111.70 on the packet date.",
+  "deadline": "2026-11-24",
+  "citations": [
+   79,
+   82
+  ],
+  "failure_condition": "Every ICE Brent front-month daily settlement between 2026-10-26 and 2026-11-20 is below 125.00 USD per barrel."
+ },
+ {
+  "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one PHP entry (vendorProject PHP Group or PHP) with a dateAdded value between 2026-10-24 and 2026-11-30.",
+  "domain": "cyber",
+  "probability": 40,
+  "resolution": "True if the CISA KEV catalog JSON contains an entry whose vendorProject field is PHP Group or PHP and whose dateAdded is between 2026-10-24 and 2026-11-30 inclusive, as of the deadline.",
+  "deadline": "2026-12-03",
+  "citations": [
+   22,
+   24
+  ],
+  "failure_condition": "No KEV entry with vendorProject PHP Group or PHP carries a dateAdded between 2026-10-24 and 2026-11-30."
+ },
+ {
+  "statement": "The HHS Office for Civil Rights breach portal lists a Quest Diagnostics breach affecting 500 or more individuals with a breach submission date between 2026-10-24 and 2026-12-31.",
+  "domain": "cyber",
+  "probability": 50,
+  "resolution": "True if the HHS OCR Breach Portal lists an entry whose Name of Covered Entity contains Quest Diagnostics, affecting 500 or more individuals, with Breach Submission Date between 2026-10-24 and 2026-12-31.",
+  "deadline": "2027-01-06",
+  "citations": [
+   23
+  ],
+  "failure_condition": "No Quest Diagnostics entry with a breach submission date between 2026-10-24 and 2026-12-31 is listed on the HHS OCR Breach Portal as of 2027-01-06."
+ },
+ {
+  "statement": "Democratic candidates win at least 218 of the 435 US House seats in the general election scheduled for 2026-11-03.",
+  "domain": "political",
+  "probability": 80,
+  "resolution": "True if, as of 2026-12-01, the Associated Press has called at least 218 of the 435 US House races from the 2026-11-03 general election for Democratic Party candidates.",
+  "deadline": "2026-12-01",
+  "citations": [
+   112,
+   116,
+   113
+  ],
+  "failure_condition": "Fewer than 218 US House races from the 2026-11-03 election have been called for Democratic candidates by the Associated Press as of 2026-12-01."
+ },
+ {
+  "statement": "The US Treasury Office of Foreign Assets Control designates at least one additional International Criminal Court judge, prosecutor or staff member under Executive Order 14203 between 2026-10-24 and 2026-12-31.",
+  "domain": "political",
+  "probability": 35,
+  "resolution": "True if an OFAC Recent Actions notice dated between 2026-10-24 and 2026-12-31 announces a new SDN designation of an ICC judge, prosecutor or staff member under Executive Order 14203. Designations of non-ICC persons do not count.",
+  "deadline": "2027-01-05",
+  "citations": [
+   108
+  ],
+  "failure_condition": "OFAC adds no International Criminal Court judge, prosecutor or staff member to the SDN list under Executive Order 14203 between 2026-10-24 and 2026-12-31."
+ },
+ {
+  "statement": "The Malaysian government or the Malaysian Communications and Multimedia Commission formally orders a nationwide public ban or block of the Waze navigation app between 2026-10-24 and 2026-12-31.",
+  "domain": "political",
+  "probability": 20,
+  "resolution": "True if Bernama, Reuters or The Star reports a formal Malaysian government or MCMC order, announced between 2026-10-24 and 2026-12-31, banning or blocking Waze nationwide for the general public.",
+  "deadline": "2027-01-05",
+  "citations": [
+   83
+  ],
+  "failure_condition": "No formal nationwide public ban or block of Waze in Malaysia is ordered between 2026-10-24 and 2026-12-31."
+ },
+ {
+  "statement": "USGS catalogs an earthquake of magnitude 6.0 or greater with epicenter within 250 km of USGS event us6000u4j2 (the M6.9 Vanuatu earthquake of 2026-10-24) and origin time between 2026-10-25 and 2026-11-07.",
+  "domain": "disaster",
+  "probability": 35,
+  "resolution": "True if the USGS ComCat catalog, as of the deadline, lists an event of magnitude 6.0 or greater with origin time between 2026-10-25 00:00 UTC and 2026-11-07 23:59 UTC and epicenter within 250 km of event us6000u4j2.",
+  "deadline": "2026-11-10",
+  "citations": [
+   37,
+   38
+  ],
+  "failure_condition": "No earthquake of magnitude 6.0 or greater with origin time between 2026-10-25 and 2026-11-07 occurs within 250 km of the us6000u4j2 epicenter."
+ },
+ {
+  "statement": "The Islamic State group, via its Amaq agency or an official statement, claims responsibility between 2026-10-24 and 2026-11-07 for the gun attack on a church funeral in Jordan first reported on 2026-10-23.",
+  "domain": "crime/security",
+  "probability": 15,
+  "resolution": "True if SITE Intelligence Group, Reuters or AP reports an Islamic State or Amaq claim of responsibility, issued between 2026-10-24 and 2026-11-07, for the gun attack on a church funeral in Jordan first reported on 2026-10-23.",
+  "deadline": "2026-11-10",
+  "citations": [
+   76,
+   80,
+   96
+  ],
+  "failure_condition": "No Islamic State or Amaq claim of responsibility for the Jordan church funeral attack is issued between 2026-10-24 and 2026-11-07."
+ }
+]
