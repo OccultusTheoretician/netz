@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-10-24T09:46:59Z · ledger `ledger.json` · 4836 rows in scope
+Generated 2026-10-25T10:07:49Z · ledger `ledger.json` · 4906 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,13 +12,13 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **4835**
+- rows audited: **4905**
 - scope limitation (no resolvable source report): **1**
-- defective: **748** (15.5% of audited)
+- defective: **755** (15.4% of audited)
 - rows whose citation number does not identify a unique item: **427** (max candidates behind one number: 8)
   - UNSUPPORTED: 514
   - AMBIGUOUS_REF: 427
-  - DEADWEIGHT: 221
+  - DEADWEIGHT: 228
   - SHOTGUN: 56
   - NO_CITES: 24
   - THIN: 3
@@ -51,18 +51,18 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| control/baserate | 1701 | 222 | 13% |
-| lmstudio/auto | 546 | 137 | 25% |
-| lmstudio/realist | 242 | 81 | 33% |
-| manual/fable-5.1/unattested | 420 | 73 | 17% |
+| control/baserate | 1727 | 225 | 13% |
+| lmstudio/auto | 550 | 137 | 25% |
+| lmstudio/realist | 247 | 82 | 33% |
+| manual/fable-5.1/unattested | 429 | 74 | 17% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| manual/opus-5.5/unattested | 251 | 42 | 17% |
-| manual/sonnet-5.5/unattested | 205 | 30 | 15% |
+| manual/opus-5.5/unattested | 259 | 44 | 17% |
+| manual/sonnet-5.5/unattested | 214 | 30 | 14% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
-| lmstudio/qwen36-abliterated | 105 | 20 | 19% |
+| lmstudio/qwen36-abliterated | 109 | 20 | 18% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
-| lmstudio/qwen36-realist | 113 | 16 | 14% |
-| lmstudio/qwen36 | 104 | 13 | 12% |
+| lmstudio/qwen36-realist | 114 | 16 | 14% |
+| lmstudio/qwen36 | 108 | 13 | 12% |
 | manual/opus-5 | 74 | 12 | 16% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
