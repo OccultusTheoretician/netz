@@ -1,0 +1,122 @@
+[
+ {
+  "statement": "US forces conduct at least one strike on a target located on Iranian land territory, including Iranian islands, between 2026-11-04 and 2026-12-15.",
+  "domain": "military/conflict",
+  "probability": 55,
+  "resolution": "TRUE if US Central Command, the Pentagon or the White House officially confirms a US strike on Iranian land territory or islands occurring between 2026-11-04 and 2026-12-15. Strikes only on vessels at sea do not count.",
+  "deadline": "2026-12-18",
+  "citations": [
+   69,
+   75
+  ],
+  "failure_condition": "The United States carries out no strike on Iranian land territory or islands at any time between 2026-11-04 and 2026-12-15."
+ },
+ {
+  "statement": "At least one Houthi-launched ballistic missile or drone is intercepted over, or strikes, Saudi Arabian territory between 2026-11-02 and 2026-11-15.",
+  "domain": "military/conflict",
+  "probability": 85,
+  "resolution": "TRUE if the Saudi-led coalition spokesman, the Saudi Ministry of Defense or the Saudi Press Agency states that a Houthi missile or drone was intercepted over or struck Saudi territory between 2026-11-02 and 2026-11-15.",
+  "deadline": "2026-11-18",
+  "citations": [
+   59,
+   61,
+   72
+  ],
+  "failure_condition": "No Houthi-launched missile or drone is intercepted over or impacts Saudi Arabian territory between 2026-11-02 and 2026-11-15."
+ },
+ {
+  "statement": "The FOMC raises the federal funds target range at its 2026-12-08 to 2026-12-09 meeting, with the decision announced on 2026-12-09.",
+  "domain": "economics/markets",
+  "probability": 60,
+  "resolution": "TRUE if the FOMC statement issued 2026-12-09 raises the target range, as shown by FRED series DFEDTARU for 2026-12-10 exceeding its 2026-12-08 value. Unchanged or lower resolves FALSE.",
+  "deadline": "2026-12-11",
+  "citations": [
+   44,
+   47
+  ],
+  "failure_condition": "The FOMC leaves the federal funds target range unchanged or lowers it at the meeting concluding on 2026-12-09."
+ },
+ {
+  "statement": "The ICE Brent front-month crude futures contract settles below 100.00 USD per barrel on 2026-12-15. Reference: 111.70 on the packet date.",
+  "domain": "economics/markets",
+  "probability": 32,
+  "resolution": "TRUE if the ICE Futures Europe official settlement price of the front-month Brent crude futures contract on 2026-12-15 is below 100.00 USD per barrel. Reference: 111.70 on the packet date.",
+  "deadline": "2026-12-17",
+  "citations": [
+   68,
+   69
+  ],
+  "failure_condition": "The front-month ICE Brent settlement price on 2026-12-15 is at or above 100.00 USD per barrel."
+ },
+ {
+  "statement": "Likud wins more Knesset seats than any other list in the Israeli general election held on 2026-10-27.",
+  "domain": "political",
+  "probability": 48,
+  "resolution": "TRUE if the final official results of the 2026-10-27 Knesset election published by the Israeli Central Elections Committee give Likud strictly more seats than every other list. A tie resolves FALSE.",
+  "deadline": "2026-11-16",
+  "citations": [
+   98
+  ],
+  "failure_condition": "Another list wins as many Knesset seats as Likud, or more, in the 2026-10-27 election."
+ },
+ {
+  "statement": "Democrats win at least 218 of 435 seats in the US House of Representatives in the general election held on 2026-11-03.",
+  "domain": "political",
+  "probability": 86,
+  "resolution": "TRUE if the Clerk of the House party breakdown for the 120th Congress, after members elected on 2026-11-03 are sworn in, lists at least 218 Democrats. Fewer than 218 resolves FALSE.",
+  "deadline": "2027-01-11",
+  "citations": [
+   22,
+   101
+  ],
+  "failure_condition": "Democrats hold fewer than 218 House seats when the members elected on 2026-11-03 are sworn into the 120th Congress."
+ },
+ {
+  "statement": "Luiz Inacio Lula da Silva defeats Flavio Bolsonaro in the Brazilian presidential runoff held on 2026-10-25.",
+  "domain": "political",
+  "probability": 38,
+  "resolution": "TRUE if the Superior Electoral Court (TSE) official totals for the 2026-10-25 presidential runoff give Lula da Silva more than 50 percent of valid votes; FALSE if Flavio Bolsonaro wins.",
+  "deadline": "2026-11-02",
+  "citations": [
+   80,
+   93,
+   100
+  ],
+  "failure_condition": "Flavio Bolsonaro receives more than 50 percent of valid votes in the 2026-10-25 runoff."
+ },
+ {
+  "statement": "The French National Assembly adopts a motion of censure against the government between 2026-11-01 and 2026-12-31.",
+  "domain": "political",
+  "probability": 17,
+  "resolution": "TRUE if the Assemblee nationale official vote record shows a motion de censure adopted by an absolute majority of deputies on a date between 2026-11-01 and 2026-12-31.",
+  "deadline": "2027-01-04",
+  "citations": [
+   48,
+   90,
+   35
+  ],
+  "failure_condition": "No motion of censure reaches an absolute majority of deputies in the National Assembly between 2026-11-01 and 2026-12-31."
+ },
+ {
+  "statement": "Nigeria confirms at least one new Ebola case between 2026-10-26 and 2026-11-20, raising its cumulative confirmed count above the total held on 2026-10-25.",
+  "domain": "disaster",
+  "probability": 30,
+  "resolution": "TRUE if an NCDC situation report or WHO Disease Outbreak News shows Nigeria with a higher cumulative confirmed Ebola case count for a date between 2026-10-26 and 2026-11-20 than on 2026-10-25.",
+  "deadline": "2026-11-24",
+  "citations": [
+   62
+  ],
+  "failure_condition": "No additional person in Nigeria is laboratory-confirmed with Ebola between 2026-10-26 and 2026-11-20."
+ },
+ {
+  "statement": "The UK Met Office, Met Eireann or KNMI names at least one new storm, following Storm Boelo, between 2026-11-01 and 2026-11-30.",
+  "domain": "disaster",
+  "probability": 47,
+  "resolution": "TRUE if the Met Office storm names page records a storm named by the UK, Ireland and Netherlands group with a naming date between 2026-11-01 and 2026-11-30.",
+  "deadline": "2026-12-03",
+  "citations": [
+   87
+  ],
+  "failure_condition": "The UK, Ireland and Netherlands naming group names no new storm between 2026-11-01 and 2026-11-30."
+ }
+]
