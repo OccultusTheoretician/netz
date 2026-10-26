@@ -1,28 +1,28 @@
 {
  "_meta": {
-  "generated": "2026-10-26T15:20:54Z",
+  "generated": "2026-10-26T23:15:50Z",
   "instrument": "kalibrierwarte/1.0",
   "doctrine": "no pooled score exists; a Brier belongs to one forecaster; trend under a frozen rubric is the measurement",
   "n_floor_arm": 10,
   "n_floor_bin": 5,
-  "open_rows_rubric_hashed": "3500/3634"
+  "open_rows_rubric_hashed": "3185/3310"
  },
  "arms": {
   "control/baserate": {
-   "resolved": 351,
-   "issued": 1751,
-   "open": 1368,
-   "hits": 216,
-   "misses": 135,
+   "resolved": 477,
+   "issued": 1770,
+   "open": 1261,
+   "hits": 273,
+   "misses": 204,
    "split": {
     "keyed": {
-     "resolved": 351,
-     "hits": 216,
-     "misses": 135,
-     "brier": 0.316,
-     "base_rate": 0.615,
-     "climatological": 0.237,
-     "skill": -0.337,
+     "resolved": 477,
+     "hits": 273,
+     "misses": 204,
+     "brier": 0.3,
+     "base_rate": 0.572,
+     "climatological": 0.245,
+     "skill": -0.226,
      "note": null,
      "defect_ids": [
       "KKR-20260804-16",
@@ -40,6 +40,7 @@
       "KKR-20260902-34",
       "KKR-20260903-09",
       "KKR-20260903-61",
+      "KKR-20260903-64",
       "KKR-20260903-78",
       "KKR-20260904-46",
       "KKR-20260904-55",
@@ -58,10 +59,17 @@
       "KKR-20260910-38",
       "KKR-20260910-54",
       "KKR-20260911-37",
+      "KKR-20260911-51",
       "KKR-20260911-65",
+      "KKR-20260913-18",
       "KKR-20260913-32",
       "KKR-20260913-36",
-      "KKR-20260920-50"
+      "KKR-20260916-43",
+      "KKR-20260918-24",
+      "KKR-20260918-56",
+      "KKR-20260920-22",
+      "KKR-20260920-50",
+      "KKR-20261012-38"
      ]
     },
     "keyless": {
@@ -70,13 +78,13 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.316,
-   "base_rate": 0.615,
-   "climatological": 0.237,
-   "skill": -0.337,
+   "brier": 0.3,
+   "base_rate": 0.572,
+   "climatological": 0.245,
+   "skill": -0.226,
    "n_floor": null,
-   "rubric_hashed": 325,
-   "rubric_note": "26 of 351 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_hashed": 451,
+   "rubric_note": "26 of 477 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "frame_note": null,
    "bins": [
     {
@@ -88,37 +96,37 @@
     },
     {
      "bin": "20-30",
-     "n": 131,
-     "mean_p": 0.252,
-     "obs": 0.557,
+     "n": 173,
+     "mean_p": 0.256,
+     "obs": 0.52,
      "note": null
     },
     {
      "bin": "30-40",
-     "n": 127,
-     "mean_p": 0.331,
-     "obs": 0.583,
+     "n": 168,
+     "mean_p": 0.332,
+     "obs": 0.548,
      "note": null
     },
     {
      "bin": "40-50",
-     "n": 33,
-     "mean_p": 0.463,
-     "obs": 0.818,
+     "n": 49,
+     "mean_p": 0.454,
+     "obs": 0.694,
      "note": null
     },
     {
      "bin": "50-60",
-     "n": 48,
+     "n": 59,
      "mean_p": 0.529,
-     "obs": 0.667,
+     "obs": 0.644,
      "note": null
     },
     {
      "bin": "60-70",
-     "n": 5,
-     "mean_p": 0.622,
-     "obs": 0.6,
+     "n": 21,
+     "mean_p": 0.631,
+     "obs": 0.571,
      "note": null
     }
    ]
@@ -176,19 +184,19 @@
    ]
   },
   "lmstudio/auto[post-verbot]": {
-   "resolved": 9,
+   "resolved": 11,
    "issued": 20,
-   "open": 11,
+   "open": 9,
    "hits": 1,
-   "misses": 8,
+   "misses": 10,
    "split": {
     "keyed": {
-     "resolved": 6,
+     "resolved": 7,
      "hits": 1,
-     "misses": 5,
-     "brier": 0.162,
-     "base_rate": 0.167,
-     "climatological": 0.139,
+     "misses": 6,
+     "brier": 0.142,
+     "base_rate": 0.143,
+     "climatological": 0.122,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": [
@@ -200,10 +208,10 @@
      ]
     },
     "keyless": {
-     "resolved": 3,
+     "resolved": 4,
      "hits": 0,
-     "misses": 3,
-     "brier": 0.113,
+     "misses": 4,
+     "brier": 0.091,
      "base_rate": 0.0,
      "climatological": 0.0,
      "skill": null,
@@ -214,15 +222,22 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.146,
-   "base_rate": 0.111,
-   "climatological": 0.099,
-   "skill": null,
-   "n_floor": "insufficient n (9<10) - printed, not hidden",
+   "brier": 0.123,
+   "base_rate": 0.091,
+   "climatological": 0.083,
+   "skill": -0.49,
+   "n_floor": null,
    "rubric_hashed": 0,
-   "rubric_note": "9 of 9 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "11 of 11 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "frame_note": null,
    "bins": [
+    {
+     "bin": "10-20",
+     "n": 2,
+     "mean_p": 0.15,
+     "obs": null,
+     "note": "n<5"
+    },
     {
      "bin": "20-30",
      "n": 3,
@@ -247,20 +262,20 @@
    ]
   },
   "lmstudio/auto[post-window]": {
-   "resolved": 231,
+   "resolved": 259,
    "issued": 470,
-   "open": 229,
-   "hits": 70,
-   "misses": 161,
+   "open": 201,
+   "hits": 75,
+   "misses": 184,
    "split": {
     "keyed": {
-     "resolved": 223,
-     "hits": 69,
-     "misses": 154,
-     "brier": 0.213,
-     "base_rate": 0.309,
-     "climatological": 0.214,
-     "skill": 0.002,
+     "resolved": 251,
+     "hits": 74,
+     "misses": 177,
+     "brier": 0.205,
+     "base_rate": 0.295,
+     "climatological": 0.208,
+     "skill": 0.013,
      "note": null,
      "defect_ids": [
       "KKR-20260804-08",
@@ -268,6 +283,7 @@
       "KKR-20260807-02",
       "KKR-20260808-01",
       "KKR-20260808-06",
+      "KKR-20260809-02",
       "KKR-20260810-06",
       "KKR-20260812-02",
       "KKR-20260812-04",
@@ -304,10 +320,13 @@
       "KKR-20260829-03",
       "KKR-20260829-04",
       "KKR-20260831-01",
+      "KKR-20260831-04",
       "KKR-20260831-05",
       "KKR-20260831-06",
       "KKR-20260901-14",
+      "KKR-20260901-17",
       "KKR-20260902-37",
+      "KKR-20260902-38",
       "KKR-20260903-19",
       "KKR-20260904-04",
       "KKR-20260905-01",
@@ -350,13 +369,13 @@
     }
    },
    "undetermined": 2,
-   "brier": 0.211,
-   "base_rate": 0.303,
-   "climatological": 0.211,
-   "skill": -0.001,
+   "brier": 0.204,
+   "base_rate": 0.29,
+   "climatological": 0.206,
+   "skill": 0.009,
    "n_floor": null,
-   "rubric_hashed": 203,
-   "rubric_note": "28 of 231 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_hashed": 231,
+   "rubric_note": "28 of 259 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "frame_note": null,
    "bins": [
     {
@@ -368,30 +387,30 @@
     },
     {
      "bin": "10-20",
-     "n": 16,
-     "mean_p": 0.156,
-     "obs": 0.125,
+     "n": 25,
+     "mean_p": 0.152,
+     "obs": 0.12,
      "note": null
     },
     {
      "bin": "20-30",
-     "n": 77,
-     "mean_p": 0.236,
-     "obs": 0.195,
+     "n": 88,
+     "mean_p": 0.237,
+     "obs": 0.193,
      "note": null
     },
     {
      "bin": "30-40",
-     "n": 82,
+     "n": 89,
      "mean_p": 0.326,
-     "obs": 0.378,
+     "obs": 0.36,
      "note": null
     },
     {
      "bin": "40-50",
-     "n": 30,
-     "mean_p": 0.428,
-     "obs": 0.4,
+     "n": 31,
+     "mean_p": 0.429,
+     "obs": 0.419,
      "note": null
     },
     {
@@ -525,21 +544,21 @@
    ]
   },
   "lmstudio/qwen36": {
-   "resolved": 1,
+   "resolved": 11,
    "issued": 116,
-   "open": 115,
-   "hits": 1,
-   "misses": 0,
+   "open": 105,
+   "hits": 4,
+   "misses": 7,
    "split": {
     "keyed": {
-     "resolved": 1,
-     "hits": 1,
-     "misses": 0,
-     "brier": 0.722,
-     "base_rate": 1.0,
-     "climatological": 0.0,
-     "skill": null,
-     "note": "n<10 - printed, not hidden",
+     "resolved": 11,
+     "hits": 4,
+     "misses": 7,
+     "brier": 0.227,
+     "base_rate": 0.364,
+     "climatological": 0.231,
+     "skill": 0.02,
+     "note": null,
      "defect_ids": [
       "KKR-20261007-13"
      ]
@@ -550,68 +569,14 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.722,
-   "base_rate": 1.0,
-   "climatological": 0.0,
-   "skill": null,
-   "n_floor": "insufficient n (1<10) - printed, not hidden",
-   "rubric_hashed": 1,
+   "brier": 0.227,
+   "base_rate": 0.364,
+   "climatological": 0.231,
+   "skill": 0.02,
+   "n_floor": null,
+   "rubric_hashed": 11,
    "rubric_note": null,
    "frame_note": null,
-   "bins": [
-    {
-     "bin": "10-20",
-     "n": 1,
-     "mean_p": 0.15,
-     "obs": null,
-     "note": "n<5"
-    }
-   ]
-  },
-  "lmstudio/qwen36-abliterated": {
-   "resolved": 0,
-   "issued": 123,
-   "open": 123,
-   "hits": 0,
-   "misses": 0,
-   "zero_state": "era registered - 123 issued, 123 open, nothing resolved yet. Printed rather than omitted; a hole the register discloses.",
-   "frame_note": null,
-   "bins": []
-  },
-  "lmstudio/qwen36-realist": {
-   "resolved": 7,
-   "issued": 122,
-   "open": 115,
-   "hits": 3,
-   "misses": 4,
-   "split": {
-    "keyed": {
-     "resolved": 7,
-     "hits": 3,
-     "misses": 4,
-     "brier": 0.297,
-     "base_rate": 0.429,
-     "climatological": 0.245,
-     "skill": null,
-     "note": "n<10 - printed, not hidden",
-     "defect_ids": [
-      "KKR-20261006-17"
-     ]
-    },
-    "keyless": {
-     "resolved": 0,
-     "note": "no resolved rows"
-    }
-   },
-   "undetermined": 0,
-   "brier": 0.297,
-   "base_rate": 0.429,
-   "climatological": 0.245,
-   "skill": null,
-   "n_floor": "insufficient n (7<10) - printed, not hidden",
-   "rubric_hashed": 7,
-   "rubric_note": null,
-   "frame_note": "frame: 122 rows under the frame in force 442300f131b11b7c",
    "bins": [
     {
      "bin": "10-20",
@@ -622,22 +587,71 @@
     },
     {
      "bin": "20-30",
-     "n": 1,
-     "mean_p": 0.25,
+     "n": 2,
+     "mean_p": 0.225,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "30-40",
-     "n": 2,
+     "n": 4,
      "mean_p": 0.325,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "40-50",
-     "n": 2,
-     "mean_p": 0.425,
+     "n": 3,
+     "mean_p": 0.417,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "80-90",
+     "n": 1,
+     "mean_p": 0.85,
+     "obs": null,
+     "note": "n<5"
+    }
+   ]
+  },
+  "lmstudio/qwen36-abliterated": {
+   "resolved": 2,
+   "issued": 123,
+   "open": 121,
+   "hits": 2,
+   "misses": 0,
+   "split": {
+    "keyed": {
+     "resolved": 2,
+     "hits": 2,
+     "misses": 0,
+     "brier": 0.381,
+     "base_rate": 1.0,
+     "climatological": 0.0,
+     "skill": null,
+     "note": "n<10 - printed, not hidden",
+     "defect_ids": []
+    },
+    "keyless": {
+     "resolved": 0,
+     "note": "no resolved rows"
+    }
+   },
+   "undetermined": 0,
+   "brier": 0.381,
+   "base_rate": 1.0,
+   "climatological": 0.0,
+   "skill": null,
+   "n_floor": "insufficient n (2<10) - printed, not hidden",
+   "rubric_hashed": 2,
+   "rubric_note": null,
+   "frame_note": null,
+   "bins": [
+    {
+     "bin": "20-30",
+     "n": 1,
+     "mean_p": 0.2,
      "obs": null,
      "note": "n<5"
     },
@@ -650,21 +664,109 @@
     }
    ]
   },
-  "lmstudio/realist": {
-   "resolved": 86,
-   "issued": 249,
-   "open": 162,
-   "hits": 49,
-   "misses": 37,
+  "lmstudio/qwen36-realist": {
+   "resolved": 31,
+   "issued": 122,
+   "open": 91,
+   "hits": 10,
+   "misses": 21,
    "split": {
     "keyed": {
-     "resolved": 86,
-     "hits": 49,
-     "misses": 37,
-     "brier": 0.321,
-     "base_rate": 0.57,
-     "climatological": 0.245,
-     "skill": -0.311,
+     "resolved": 31,
+     "hits": 10,
+     "misses": 21,
+     "brier": 0.242,
+     "base_rate": 0.323,
+     "climatological": 0.219,
+     "skill": -0.106,
+     "note": null,
+     "defect_ids": [
+      "KKR-20261006-17",
+      "KKR-20261007-18",
+      "KKR-20261010-18"
+     ]
+    },
+    "keyless": {
+     "resolved": 0,
+     "note": "no resolved rows"
+    }
+   },
+   "undetermined": 0,
+   "brier": 0.242,
+   "base_rate": 0.323,
+   "climatological": 0.219,
+   "skill": -0.106,
+   "n_floor": null,
+   "rubric_hashed": 31,
+   "rubric_note": null,
+   "frame_note": "frame: 122 rows under the frame in force 442300f131b11b7c",
+   "bins": [
+    {
+     "bin": "10-20",
+     "n": 6,
+     "mean_p": 0.133,
+     "obs": 0.0,
+     "note": null
+    },
+    {
+     "bin": "20-30",
+     "n": 8,
+     "mean_p": 0.231,
+     "obs": 0.5,
+     "note": null
+    },
+    {
+     "bin": "30-40",
+     "n": 7,
+     "mean_p": 0.314,
+     "obs": 0.286,
+     "note": null
+    },
+    {
+     "bin": "40-50",
+     "n": 4,
+     "mean_p": 0.425,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "50-60",
+     "n": 1,
+     "mean_p": 0.55,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "60-70",
+     "n": 4,
+     "mean_p": 0.625,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "70-80",
+     "n": 1,
+     "mean_p": 0.75,
+     "obs": null,
+     "note": "n<5"
+    }
+   ]
+  },
+  "lmstudio/realist": {
+   "resolved": 119,
+   "issued": 249,
+   "open": 128,
+   "hits": 66,
+   "misses": 53,
+   "split": {
+    "keyed": {
+     "resolved": 119,
+     "hits": 66,
+     "misses": 53,
+     "brier": 0.317,
+     "base_rate": 0.555,
+     "climatological": 0.247,
+     "skill": -0.285,
      "note": null,
      "defect_ids": [
       "KKR-20260904-11",
@@ -678,6 +780,7 @@
       "KKR-20260906-67",
       "KKR-20260910-10",
       "KKR-20260910-11",
+      "KKR-20260910-12",
       "KKR-20260911-06",
       "KKR-20260911-08",
       "KKR-20260911-09",
@@ -688,24 +791,31 @@
       "KKR-20260912-13",
       "KKR-20260913-06",
       "KKR-20260915-11",
+      "KKR-20260916-09",
       "KKR-20260918-08",
       "KKR-20260918-09",
       "KKR-20260921-09",
+      "KKR-20260921-13",
       "KKR-20260923-08",
       "KKR-20260923-09",
       "KKR-20260925-03",
       "KKR-20260925-06",
       "KKR-20260926-01",
       "KKR-20260927-06",
+      "KKR-20260927-07",
       "KKR-20260929-06",
+      "KKR-20260930-10",
       "KKR-20261001-12",
+      "KKR-20261003-11",
+      "KKR-20261003-12",
       "KKR-20261004-09",
       "KKR-20261004-10",
       "KKR-20261004-11",
       "KKR-20261004-12",
       "KKR-20261004-13",
       "KKR-20261004-17",
-      "KKR-20261007-06"
+      "KKR-20261007-06",
+      "KKR-20261010-05"
      ]
     },
     "keyless": {
@@ -714,41 +824,41 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.321,
-   "base_rate": 0.57,
-   "climatological": 0.245,
-   "skill": -0.311,
+   "brier": 0.317,
+   "base_rate": 0.555,
+   "climatological": 0.247,
+   "skill": -0.285,
    "n_floor": null,
-   "rubric_hashed": 86,
+   "rubric_hashed": 119,
    "rubric_note": null,
    "frame_note": "frame: 189 rows under the frame in force 442300f131b11b7c; 60 rows under an earlier frame text 7b96df749db5034b - pre-revision class, printed here, outside the H6 population (registration Section 15)",
    "bins": [
     {
      "bin": "10-20",
-     "n": 6,
-     "mean_p": 0.155,
-     "obs": 0.5,
+     "n": 9,
+     "mean_p": 0.153,
+     "obs": 0.444,
      "note": null
     },
     {
      "bin": "20-30",
-     "n": 29,
+     "n": 41,
      "mean_p": 0.23,
-     "obs": 0.586,
+     "obs": 0.585,
      "note": null
     },
     {
      "bin": "30-40",
-     "n": 36,
-     "mean_p": 0.32,
-     "obs": 0.528,
+     "n": 49,
+     "mean_p": 0.321,
+     "obs": 0.551,
      "note": null
     },
     {
      "bin": "40-50",
-     "n": 11,
-     "mean_p": 0.432,
-     "obs": 0.636,
+     "n": 15,
+     "mean_p": 0.427,
+     "obs": 0.467,
      "note": null
     },
     {
@@ -762,6 +872,13 @@
      "bin": "60-70",
      "n": 1,
      "mean_p": 0.6,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "70-80",
+     "n": 1,
+     "mean_p": 0.75,
      "obs": null,
      "note": "n<5"
     },
@@ -879,20 +996,20 @@
    ]
   },
   "manual/fable-5": {
-   "resolved": 23,
+   "resolved": 24,
    "issued": 38,
-   "open": 15,
-   "hits": 13,
+   "open": 14,
+   "hits": 14,
    "misses": 10,
    "split": {
     "keyed": {
-     "resolved": 17,
-     "hits": 10,
+     "resolved": 18,
+     "hits": 11,
      "misses": 7,
-     "brier": 0.144,
-     "base_rate": 0.588,
-     "climatological": 0.242,
-     "skill": 0.406,
+     "brier": 0.137,
+     "base_rate": 0.611,
+     "climatological": 0.238,
+     "skill": 0.423,
      "note": null,
      "defect_ids": []
     },
@@ -911,13 +1028,13 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.17,
-   "base_rate": 0.565,
-   "climatological": 0.246,
-   "skill": 0.307,
+   "brier": 0.164,
+   "base_rate": 0.583,
+   "climatological": 0.243,
+   "skill": 0.325,
    "n_floor": null,
    "rubric_hashed": 6,
-   "rubric_note": "17 of 23 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "18 of 24 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "frame_note": null,
    "bins": [
     {
@@ -971,8 +1088,8 @@
     },
     {
      "bin": "80-90",
-     "n": 2,
-     "mean_p": 0.865,
+     "n": 3,
+     "mean_p": 0.86,
      "obs": null,
      "note": "n<5"
     },
@@ -986,24 +1103,25 @@
    ]
   },
   "manual/fable-5.1/unattested": {
-   "resolved": 73,
-   "issued": 437,
-   "open": 356,
-   "hits": 47,
-   "misses": 26,
+   "resolved": 107,
+   "issued": 447,
+   "open": 332,
+   "hits": 61,
+   "misses": 46,
    "split": {
     "keyed": {
-     "resolved": 57,
-     "hits": 37,
-     "misses": 20,
-     "brier": 0.242,
-     "base_rate": 0.649,
-     "climatological": 0.228,
-     "skill": -0.062,
+     "resolved": 79,
+     "hits": 47,
+     "misses": 32,
+     "brier": 0.222,
+     "base_rate": 0.595,
+     "climatological": 0.241,
+     "skill": 0.078,
      "note": null,
      "defect_ids": [
       "KKR-20260903-02",
       "KKR-20260903-30",
+      "KKR-20260903-33",
       "KKR-20260904-25",
       "KKR-20260904-26",
       "KKR-20260906-08",
@@ -1014,28 +1132,33 @@
       "KKR-20260910-28",
       "KKR-20260911-30",
       "KKR-20260913-24",
-      "KKR-20260913-28"
+      "KKR-20260913-28",
+      "KKR-20260916-35",
+      "KKR-20260920-16",
+      "KKR-20261012-30"
      ]
     },
     "keyless": {
-     "resolved": 16,
-     "hits": 10,
-     "misses": 6,
-     "brier": 0.2,
-     "base_rate": 0.625,
-     "climatological": 0.234,
-     "skill": 0.148,
+     "resolved": 28,
+     "hits": 14,
+     "misses": 14,
+     "brier": 0.179,
+     "base_rate": 0.5,
+     "climatological": 0.25,
+     "skill": 0.284,
      "note": null,
-     "defect_ids": []
+     "defect_ids": [
+      "KKR-20260918-19"
+     ]
     }
    },
    "undetermined": 0,
-   "brier": 0.233,
-   "base_rate": 0.644,
-   "climatological": 0.229,
-   "skill": -0.015,
+   "brier": 0.211,
+   "base_rate": 0.57,
+   "climatological": 0.245,
+   "skill": 0.14,
    "n_floor": null,
-   "rubric_hashed": 73,
+   "rubric_hashed": 107,
    "rubric_note": null,
    "frame_note": null,
    "bins": [
@@ -1048,58 +1171,58 @@
     },
     {
      "bin": "10-20",
-     "n": 8,
-     "mean_p": 0.14,
-     "obs": 0.5,
+     "n": 11,
+     "mean_p": 0.143,
+     "obs": 0.364,
      "note": null
     },
     {
      "bin": "20-30",
-     "n": 5,
-     "mean_p": 0.246,
+     "n": 10,
+     "mean_p": 0.238,
      "obs": 0.0,
      "note": null
     },
     {
      "bin": "30-40",
-     "n": 9,
-     "mean_p": 0.317,
-     "obs": 0.556,
+     "n": 18,
+     "mean_p": 0.321,
+     "obs": 0.444,
      "note": null
     },
     {
      "bin": "40-50",
-     "n": 17,
-     "mean_p": 0.422,
-     "obs": 0.588,
+     "n": 20,
+     "mean_p": 0.421,
+     "obs": 0.55,
      "note": null
     },
     {
      "bin": "50-60",
-     "n": 10,
-     "mean_p": 0.537,
-     "obs": 0.8,
+     "n": 15,
+     "mean_p": 0.536,
+     "obs": 0.733,
      "note": null
     },
     {
      "bin": "60-70",
-     "n": 5,
+     "n": 9,
      "mean_p": 0.63,
-     "obs": 1.0,
+     "obs": 0.778,
      "note": null
     },
     {
      "bin": "70-80",
-     "n": 6,
-     "mean_p": 0.725,
-     "obs": 0.833,
+     "n": 9,
+     "mean_p": 0.733,
+     "obs": 0.889,
      "note": null
     },
     {
      "bin": "80-90",
-     "n": 5,
-     "mean_p": 0.834,
-     "obs": 0.6,
+     "n": 7,
+     "mean_p": 0.839,
+     "obs": 0.714,
      "note": null
     },
     {
@@ -1112,20 +1235,20 @@
    ]
   },
   "manual/fable-5/unattested": {
-   "resolved": 84,
+   "resolved": 102,
    "issued": 258,
-   "open": 165,
-   "hits": 57,
-   "misses": 27,
+   "open": 147,
+   "hits": 65,
+   "misses": 37,
    "split": {
     "keyed": {
-     "resolved": 76,
-     "hits": 53,
-     "misses": 23,
-     "brier": 0.196,
-     "base_rate": 0.697,
-     "climatological": 0.211,
-     "skill": 0.072,
+     "resolved": 92,
+     "hits": 60,
+     "misses": 32,
+     "brier": 0.208,
+     "base_rate": 0.652,
+     "climatological": 0.227,
+     "skill": 0.081,
      "note": null,
      "defect_ids": [
       "KKR-20260818-10",
@@ -1137,31 +1260,33 @@
      ]
     },
     "keyless": {
-     "resolved": 8,
-     "hits": 4,
-     "misses": 4,
-     "brier": 0.165,
+     "resolved": 10,
+     "hits": 5,
+     "misses": 5,
+     "brier": 0.155,
      "base_rate": 0.5,
      "climatological": 0.25,
-     "skill": null,
-     "note": "n<10 - printed, not hidden",
-     "defect_ids": []
+     "skill": 0.381,
+     "note": null,
+     "defect_ids": [
+      "KKR-20260911-43"
+     ]
     }
    },
    "undetermined": 0,
-   "brier": 0.193,
-   "base_rate": 0.679,
-   "climatological": 0.218,
-   "skill": 0.116,
+   "brier": 0.203,
+   "base_rate": 0.637,
+   "climatological": 0.231,
+   "skill": 0.121,
    "n_floor": null,
-   "rubric_hashed": 81,
-   "rubric_note": "3 of 84 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_hashed": 98,
+   "rubric_note": "4 of 102 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "frame_note": null,
    "bins": [
     {
      "bin": "10-20",
-     "n": 2,
-     "mean_p": 0.1,
+     "n": 3,
+     "mean_p": 0.107,
      "obs": null,
      "note": "n<5"
     },
@@ -1174,44 +1299,44 @@
     },
     {
      "bin": "30-40",
-     "n": 14,
-     "mean_p": 0.307,
-     "obs": 0.286,
+     "n": 15,
+     "mean_p": 0.31,
+     "obs": 0.333,
      "note": null
     },
     {
      "bin": "40-50",
-     "n": 12,
+     "n": 15,
      "mean_p": 0.417,
-     "obs": 0.667,
+     "obs": 0.533,
      "note": null
     },
     {
      "bin": "50-60",
-     "n": 5,
-     "mean_p": 0.53,
-     "obs": 1.0,
+     "n": 7,
+     "mean_p": 0.536,
+     "obs": 0.857,
      "note": null
     },
     {
      "bin": "60-70",
-     "n": 13,
-     "mean_p": 0.631,
-     "obs": 0.769,
+     "n": 17,
+     "mean_p": 0.626,
+     "obs": 0.706,
      "note": null
     },
     {
      "bin": "70-80",
-     "n": 8,
+     "n": 11,
      "mean_p": 0.735,
-     "obs": 0.875,
+     "obs": 0.818,
      "note": null
     },
     {
      "bin": "80-90",
-     "n": 14,
-     "mean_p": 0.834,
-     "obs": 0.786,
+     "n": 18,
+     "mean_p": 0.838,
+     "obs": 0.722,
      "note": null
     },
     {
@@ -1224,20 +1349,20 @@
    ]
   },
   "manual/opus-5": {
-   "resolved": 32,
+   "resolved": 35,
    "issued": 74,
-   "open": 42,
-   "hits": 15,
+   "open": 39,
+   "hits": 18,
    "misses": 17,
    "split": {
     "keyed": {
-     "resolved": 25,
-     "hits": 12,
+     "resolved": 28,
+     "hits": 15,
      "misses": 13,
-     "brier": 0.204,
-     "base_rate": 0.48,
-     "climatological": 0.25,
-     "skill": 0.183,
+     "brier": 0.216,
+     "base_rate": 0.536,
+     "climatological": 0.249,
+     "skill": 0.132,
      "note": null,
      "defect_ids": [
       "KKR-20260728-02",
@@ -1260,13 +1385,13 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.204,
-   "base_rate": 0.469,
-   "climatological": 0.249,
-   "skill": 0.182,
+   "brier": 0.213,
+   "base_rate": 0.514,
+   "climatological": 0.25,
+   "skill": 0.146,
    "n_floor": null,
-   "rubric_hashed": 5,
-   "rubric_note": "27 of 32 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_hashed": 6,
+   "rubric_note": "29 of 35 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "frame_note": null,
    "bins": [
     {
@@ -1285,24 +1410,24 @@
     },
     {
      "bin": "30-40",
-     "n": 4,
-     "mean_p": 0.32,
-     "obs": null,
-     "note": "n<5"
+     "n": 5,
+     "mean_p": 0.332,
+     "obs": 0.6,
+     "note": null
     },
     {
      "bin": "40-50",
-     "n": 8,
-     "mean_p": 0.439,
-     "obs": 0.5,
+     "n": 9,
+     "mean_p": 0.434,
+     "obs": 0.556,
      "note": null
     },
     {
      "bin": "50-60",
-     "n": 4,
-     "mean_p": 0.538,
-     "obs": null,
-     "note": "n<5"
+     "n": 5,
+     "mean_p": 0.54,
+     "obs": 0.8,
+     "note": null
     },
     {
      "bin": "60-70",
@@ -1328,42 +1453,42 @@
    ]
   },
   "manual/opus-5.5/unattested": {
-   "resolved": 11,
-   "issued": 267,
-   "open": 256,
-   "hits": 5,
+   "resolved": 14,
+   "issued": 276,
+   "open": 262,
+   "hits": 8,
    "misses": 6,
    "split": {
     "keyed": {
-     "resolved": 7,
-     "hits": 3,
+     "resolved": 8,
+     "hits": 4,
      "misses": 4,
-     "brier": 0.396,
-     "base_rate": 0.429,
-     "climatological": 0.245,
+     "brier": 0.349,
+     "base_rate": 0.5,
+     "climatological": 0.25,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": []
     },
     "keyless": {
-     "resolved": 4,
-     "hits": 2,
+     "resolved": 6,
+     "hits": 4,
      "misses": 2,
-     "brier": 0.303,
-     "base_rate": 0.5,
-     "climatological": 0.25,
+     "brier": 0.263,
+     "base_rate": 0.667,
+     "climatological": 0.222,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": []
     }
    },
    "undetermined": 0,
-   "brier": 0.362,
-   "base_rate": 0.455,
-   "climatological": 0.248,
-   "skill": -0.46,
+   "brier": 0.312,
+   "base_rate": 0.571,
+   "climatological": 0.245,
+   "skill": -0.275,
    "n_floor": null,
-   "rubric_hashed": 11,
+   "rubric_hashed": 14,
    "rubric_note": null,
    "frame_note": null,
    "bins": [
@@ -1371,6 +1496,13 @@
      "bin": "30-40",
      "n": 3,
      "mean_p": 0.333,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "40-50",
+     "n": 1,
+     "mean_p": 0.45,
      "obs": null,
      "note": "n<5"
     },
@@ -1390,35 +1522,35 @@
     },
     {
      "bin": "70-80",
-     "n": 2,
-     "mean_p": 0.74,
+     "n": 3,
+     "mean_p": 0.743,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "80-90",
-     "n": 3,
-     "mean_p": 0.84,
+     "n": 4,
+     "mean_p": 0.843,
      "obs": null,
      "note": "n<5"
     }
    ]
   },
   "manual/opus-5/unattested": {
-   "resolved": 69,
+   "resolved": 95,
    "issued": 326,
-   "open": 247,
-   "hits": 48,
-   "misses": 21,
+   "open": 221,
+   "hits": 61,
+   "misses": 34,
    "split": {
     "keyed": {
-     "resolved": 56,
-     "hits": 42,
-     "misses": 14,
-     "brier": 0.198,
-     "base_rate": 0.75,
-     "climatological": 0.188,
-     "skill": -0.053,
+     "resolved": 78,
+     "hits": 54,
+     "misses": 24,
+     "brier": 0.208,
+     "base_rate": 0.692,
+     "climatological": 0.213,
+     "skill": 0.022,
      "note": null,
      "defect_ids": [
       "KKR-20260801-06",
@@ -1440,25 +1572,25 @@
      ]
     },
     "keyless": {
-     "resolved": 13,
-     "hits": 6,
-     "misses": 7,
-     "brier": 0.186,
-     "base_rate": 0.462,
-     "climatological": 0.249,
-     "skill": 0.253,
+     "resolved": 17,
+     "hits": 7,
+     "misses": 10,
+     "brier": 0.205,
+     "base_rate": 0.412,
+     "climatological": 0.242,
+     "skill": 0.154,
      "note": null,
      "defect_ids": []
     }
    },
    "undetermined": 0,
-   "brier": 0.195,
-   "base_rate": 0.696,
-   "climatological": 0.212,
-   "skill": 0.078,
+   "brier": 0.208,
+   "base_rate": 0.642,
+   "climatological": 0.23,
+   "skill": 0.097,
    "n_floor": null,
-   "rubric_hashed": 56,
-   "rubric_note": "13 of 69 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_hashed": 80,
+   "rubric_note": "15 of 95 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "frame_note": null,
    "bins": [
     {
@@ -1469,52 +1601,59 @@
      "note": "n<5"
     },
     {
+     "bin": "10-20",
+     "n": 3,
+     "mean_p": 0.16,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
      "bin": "20-30",
-     "n": 8,
-     "mean_p": 0.246,
-     "obs": 0.25,
+     "n": 10,
+     "mean_p": 0.247,
+     "obs": 0.3,
      "note": null
     },
     {
      "bin": "30-40",
-     "n": 9,
-     "mean_p": 0.317,
-     "obs": 0.444,
+     "n": 13,
+     "mean_p": 0.318,
+     "obs": 0.462,
      "note": null
     },
     {
      "bin": "40-50",
-     "n": 11,
-     "mean_p": 0.434,
-     "obs": 0.818,
+     "n": 13,
+     "mean_p": 0.432,
+     "obs": 0.692,
      "note": null
     },
     {
      "bin": "50-60",
-     "n": 10,
+     "n": 13,
      "mean_p": 0.545,
-     "obs": 0.7,
+     "obs": 0.615,
      "note": null
     },
     {
      "bin": "60-70",
-     "n": 9,
-     "mean_p": 0.624,
-     "obs": 0.778,
+     "n": 11,
+     "mean_p": 0.622,
+     "obs": 0.818,
      "note": null
     },
     {
      "bin": "70-80",
-     "n": 9,
-     "mean_p": 0.723,
-     "obs": 0.889,
+     "n": 16,
+     "mean_p": 0.73,
+     "obs": 0.688,
      "note": null
     },
     {
      "bin": "80-90",
-     "n": 11,
-     "mean_p": 0.836,
-     "obs": 0.909,
+     "n": 14,
+     "mean_p": 0.839,
+     "obs": 0.929,
      "note": null
     },
     {
@@ -1527,20 +1666,20 @@
    ]
   },
   "manual/sonnet-5": {
-   "resolved": 40,
+   "resolved": 41,
    "issued": 45,
-   "open": 4,
+   "open": 3,
    "hits": 22,
-   "misses": 18,
+   "misses": 19,
    "split": {
     "keyed": {
-     "resolved": 38,
+     "resolved": 39,
      "hits": 21,
-     "misses": 17,
-     "brier": 0.255,
-     "base_rate": 0.553,
-     "climatological": 0.247,
-     "skill": -0.032,
+     "misses": 18,
+     "brier": 0.25,
+     "base_rate": 0.538,
+     "climatological": 0.249,
+     "skill": -0.004,
      "note": null,
      "defect_ids": [
       "KKR-20260807-18"
@@ -1559,13 +1698,13 @@
     }
    },
    "undetermined": 0,
-   "brier": 0.256,
-   "base_rate": 0.55,
-   "climatological": 0.247,
-   "skill": -0.033,
+   "brier": 0.25,
+   "base_rate": 0.537,
+   "climatological": 0.249,
+   "skill": -0.007,
    "n_floor": null,
    "rubric_hashed": 12,
-   "rubric_note": "28 of 40 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_note": "29 of 41 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "frame_note": null,
    "bins": [
     {
@@ -1577,10 +1716,10 @@
     },
     {
      "bin": "10-20",
-     "n": 4,
-     "mean_p": 0.155,
-     "obs": null,
-     "note": "n<5"
+     "n": 5,
+     "mean_p": 0.16,
+     "obs": 0.2,
+     "note": null
     },
     {
      "bin": "20-30",
@@ -1641,76 +1780,118 @@
    ]
   },
   "manual/sonnet-5.5/unattested": {
-   "resolved": 3,
+   "resolved": 15,
    "issued": 222,
-   "open": 219,
-   "hits": 3,
-   "misses": 0,
+   "open": 207,
+   "hits": 10,
+   "misses": 5,
    "split": {
     "keyed": {
-     "resolved": 1,
-     "hits": 1,
-     "misses": 0,
-     "brier": 0.014,
-     "base_rate": 1.0,
-     "climatological": 0.0,
-     "skill": null,
-     "note": "n<10 - printed, not hidden",
+     "resolved": 11,
+     "hits": 7,
+     "misses": 4,
+     "brier": 0.102,
+     "base_rate": 0.636,
+     "climatological": 0.231,
+     "skill": 0.56,
+     "note": null,
      "defect_ids": []
     },
     "keyless": {
-     "resolved": 2,
-     "hits": 2,
-     "misses": 0,
-     "brier": 0.007,
-     "base_rate": 1.0,
-     "climatological": 0.0,
+     "resolved": 4,
+     "hits": 3,
+     "misses": 1,
+     "brier": 0.177,
+     "base_rate": 0.75,
+     "climatological": 0.188,
      "skill": null,
      "note": "n<10 - printed, not hidden",
      "defect_ids": []
     }
    },
    "undetermined": 0,
-   "brier": 0.009,
-   "base_rate": 1.0,
-   "climatological": 0.0,
-   "skill": null,
-   "n_floor": "insufficient n (3<10) - printed, not hidden",
-   "rubric_hashed": 3,
+   "brier": 0.122,
+   "base_rate": 0.667,
+   "climatological": 0.222,
+   "skill": 0.451,
+   "n_floor": null,
+   "rubric_hashed": 15,
    "rubric_note": null,
    "frame_note": null,
    "bins": [
     {
-     "bin": "80-90",
+     "bin": "20-30",
      "n": 1,
-     "mean_p": 0.88,
+     "mean_p": 0.2,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "30-40",
+     "n": 1,
+     "mean_p": 0.33,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "40-50",
+     "n": 2,
+     "mean_p": 0.4,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "50-60",
+     "n": 1,
+     "mean_p": 0.58,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "60-70",
+     "n": 2,
+     "mean_p": 0.635,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "70-80",
+     "n": 2,
+     "mean_p": 0.71,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "80-90",
+     "n": 3,
+     "mean_p": 0.853,
      "obs": null,
      "note": "n<5"
     },
     {
      "bin": "90-100",
-     "n": 2,
-     "mean_p": 0.92,
+     "n": 3,
+     "mean_p": 0.917,
      "obs": null,
      "note": "n<5"
     }
    ]
   },
   "manual/sonnet-5/unattested": {
-   "resolved": 158,
+   "resolved": 196,
    "issued": 342,
-   "open": 179,
-   "hits": 83,
-   "misses": 75,
+   "open": 141,
+   "hits": 98,
+   "misses": 98,
    "split": {
     "keyed": {
-     "resolved": 131,
-     "hits": 70,
-     "misses": 61,
-     "brier": 0.253,
-     "base_rate": 0.534,
-     "climatological": 0.249,
-     "skill": -0.018,
+     "resolved": 161,
+     "hits": 82,
+     "misses": 79,
+     "brier": 0.246,
+     "base_rate": 0.509,
+     "climatological": 0.25,
+     "skill": 0.015,
      "note": null,
      "defect_ids": [
       "KKR-20260801-15",
@@ -1725,78 +1906,80 @@
       "KKR-20260901-20",
       "KKR-20260904-16",
       "KKR-20260906-71",
+      "KKR-20260913-10",
+      "KKR-20260918-48",
       "KKR-20260920-43"
      ]
     },
     "keyless": {
-     "resolved": 27,
-     "hits": 13,
-     "misses": 14,
-     "brier": 0.24,
-     "base_rate": 0.481,
-     "climatological": 0.25,
-     "skill": 0.038,
+     "resolved": 35,
+     "hits": 16,
+     "misses": 19,
+     "brier": 0.242,
+     "base_rate": 0.457,
+     "climatological": 0.248,
+     "skill": 0.025,
      "note": null,
      "defect_ids": []
     }
    },
    "undetermined": 0,
-   "brier": 0.251,
-   "base_rate": 0.525,
-   "climatological": 0.249,
-   "skill": -0.006,
+   "brier": 0.245,
+   "base_rate": 0.5,
+   "climatological": 0.25,
+   "skill": 0.019,
    "n_floor": null,
-   "rubric_hashed": 142,
-   "rubric_note": "16 of 158 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
+   "rubric_hashed": 180,
+   "rubric_note": "16 of 196 resolved rows predate the rubric commitment - drift comparison anchors at the first hashed row",
    "frame_note": null,
    "bins": [
     {
      "bin": "0-10",
-     "n": 5,
+     "n": 7,
      "mean_p": 0.074,
-     "obs": 0.2,
+     "obs": 0.143,
      "note": null
     },
     {
      "bin": "10-20",
-     "n": 22,
-     "mean_p": 0.151,
-     "obs": 0.318,
+     "n": 27,
+     "mean_p": 0.15,
+     "obs": 0.296,
      "note": null
     },
     {
      "bin": "20-30",
-     "n": 26,
-     "mean_p": 0.239,
+     "n": 39,
+     "mean_p": 0.238,
      "obs": 0.308,
      "note": null
     },
     {
      "bin": "30-40",
-     "n": 30,
-     "mean_p": 0.332,
-     "obs": 0.633,
+     "n": 37,
+     "mean_p": 0.334,
+     "obs": 0.595,
      "note": null
     },
     {
      "bin": "40-50",
-     "n": 22,
-     "mean_p": 0.434,
-     "obs": 0.636,
+     "n": 25,
+     "mean_p": 0.43,
+     "obs": 0.68,
      "note": null
     },
     {
      "bin": "50-60",
-     "n": 23,
-     "mean_p": 0.547,
-     "obs": 0.652,
+     "n": 28,
+     "mean_p": 0.546,
+     "obs": 0.643,
      "note": null
     },
     {
      "bin": "60-70",
-     "n": 12,
-     "mean_p": 0.636,
-     "obs": 0.583,
+     "n": 14,
+     "mean_p": 0.638,
+     "obs": 0.5,
      "note": null
     },
     {
@@ -1815,10 +1998,10 @@
     },
     {
      "bin": "90-100",
-     "n": 4,
-     "mean_p": 0.907,
-     "obs": null,
-     "note": "n<5"
+     "n": 5,
+     "mean_p": 0.906,
+     "obs": 1.0,
+     "note": null
     }
    ]
   },
