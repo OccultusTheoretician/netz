@@ -1,0 +1,1596 @@
+{
+ "instrument": "warte_frame/1.0",
+ "self_sha256": "b622640764aff818a68f0c4f32dae91e5e50f453a6a5fe4786a6848bbfad8d54",
+ "estimator": "warte_report.py fa560fe3a58570bb",
+ "registration": "docs/KALIBRIERWARTE_REGISTERED_REPORT_v3.md",
+ "registration_lf_sha16": "2c3fddab3acf1889",
+ "generated": "2026-10-26T19:18:14.730006+00:00",
+ "ledger_as_of": "2026-10-26T17:00:30Z",
+ "cohort": "bbdc779152ddea3a83ff3fa3e44d3d3c841a87649386f1269b34bee1ca3af05e",
+ "label": "cohort bbdc779152ddea3a",
+ "bootstrap": {
+  "reps": 2000,
+  "seed": 26,
+  "unit": "row"
+ },
+ "frame_population_hash16": "442300f131b11b7c",
+ "frame_pre_revision_classes": {
+  "7b96df749db5034b": 60
+ },
+ "plain": {
+  "bucket": "lmstudio/auto[post-window]",
+  "tag": "lmstudio/auto",
+  "issued": 293,
+  "open": 190,
+  "void": 1,
+  "resolved": 102,
+  "stage": "checkpoint",
+  "point": {
+   "resolved": 102,
+   "hits": 35,
+   "misses": 67,
+   "brier": 0.208,
+   "base_rate": 0.343,
+   "climatological": 0.225,
+   "skill": 0.076,
+   "skill_unfloored": 0.076,
+   "n_floor": null,
+   "bins": [
+    {
+     "bin": "0-10",
+     "n": 1,
+     "mean_p": 0.05,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "10-20",
+     "n": 15,
+     "mean_p": 0.149,
+     "obs": 0.2,
+     "note": null
+    },
+    {
+     "bin": "20-30",
+     "n": 36,
+     "mean_p": 0.236,
+     "obs": 0.278,
+     "note": null
+    },
+    {
+     "bin": "30-40",
+     "n": 30,
+     "mean_p": 0.326,
+     "obs": 0.367,
+     "note": null
+    },
+    {
+     "bin": "40-50",
+     "n": 13,
+     "mean_p": 0.427,
+     "obs": 0.538,
+     "note": null
+    },
+    {
+     "bin": "50-60",
+     "n": 2,
+     "mean_p": 0.525,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "60-70",
+     "n": 2,
+     "mean_p": 0.65,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "80-90",
+     "n": 1,
+     "mean_p": 0.85,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "90-100",
+     "n": 2,
+     "mean_p": 0.925,
+     "obs": null,
+     "note": "n<5"
+    }
+   ]
+  },
+  "bootstrap": {
+   "reps": 2000,
+   "seed": 26,
+   "unit": "row",
+   "brier_ci95": [
+    0.1698,
+    0.248
+   ],
+   "skill_ci95": [
+    -0.0508,
+    0.1817
+   ],
+   "skill_resamples": 2000,
+   "bins": {
+    "90-100": {
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "resamples_nonempty": 1720
+    },
+    "20-30": {
+     "ci95": [
+      0.1389,
+      0.4324
+     ],
+     "resamples_nonempty": 2000
+    },
+    "40-50": {
+     "ci95": [
+      0.2726,
+      0.8126
+     ],
+     "resamples_nonempty": 2000
+    },
+    "10-20": {
+     "ci95": [
+      0.0,
+      0.4286
+     ],
+     "resamples_nonempty": 2000
+    },
+    "30-40": {
+     "ci95": [
+      0.2,
+      0.5406
+     ],
+     "resamples_nonempty": 2000
+    },
+    "50-60": {
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "resamples_nonempty": 1765
+    },
+    "60-70": {
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "resamples_nonempty": 1755
+    },
+    "80-90": {
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "resamples_nonempty": 1297
+    },
+    "0-10": {
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "resamples_nonempty": 1308
+    }
+   },
+   "keyless_minus_keyed_brier_ci95": null,
+   "diff_resamples": 0
+  },
+  "quality": {
+   "a_mirror_completeness": {
+    "binding": false,
+    "rows_checked": 102,
+    "same_run": 0,
+    "late_mirror": 0,
+    "no_mirror": 102,
+    "gap_unknown": 0,
+    "same_run_minutes": 360,
+    "listed": [
+     {
+      "id": "KKR-20260901-11",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260901-12",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260901-14",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260901-17",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260902-36",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260902-37",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260902-38",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260902-39",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260902-41",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260902-43",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260903-16",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260903-17",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260903-18",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260903-19",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260903-21",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260904-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260904-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260904-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260904-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260904-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260904-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260904-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260904-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260905-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260905-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260905-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260906-55",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260906-58",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260907-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260907-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260907-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260908-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260908-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260908-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260908-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260908-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260909-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260909-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260910-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260910-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260910-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260910-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260910-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260910-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260910-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260910-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260911-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260911-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260911-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260911-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260912-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260912-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260914-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260914-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260914-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260914-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260914-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260915-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260915-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260916-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260916-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260916-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260916-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260916-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260918-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260918-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260918-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260919-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260919-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260919-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260919-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260919-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260919-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260919-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260920-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260920-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260920-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260920-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260920-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260920-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260922-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260922-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260922-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260922-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260923-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260923-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260923-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260923-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260923-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260923-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260928-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260928-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260929-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260929-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     }
+    ],
+    "result": "PASS",
+    "note": "binds frontier rows (Section 7a); the local arm's coverage is printed, not gated"
+   },
+   "b_rubric_coverage": {
+    "rows": 293,
+    "carrying_cohort_hash": 293,
+    "off_hash": [],
+    "result": "PASS"
+   },
+   "c_seat_recorded": {
+    "resolved": 102,
+    "seats": {
+     "jury-searched-adopted": 72,
+     "jury-divergence": 28,
+     "operator": 2
+    },
+    "outside_registration": 0,
+    "result": "PASS"
+   },
+   "d_determination_coverage": {
+    "resolved": 102,
+    "keyed": 100,
+    "keyless": 0,
+    "keyed_by_rule": 2,
+    "result": "PASS"
+   },
+   "e_control_skill_zero": {
+    "within_cohort": {
+     "resolved": 312,
+     "hits": 181,
+     "brier": 0.298,
+     "base_rate": 0.58,
+     "climatological": 0.244,
+     "skill": -0.224,
+     "skill_ci95": [
+      -0.3709,
+      -0.1185
+     ],
+     "under_arm_floor": false,
+     "result": "FAIL"
+    },
+    "all_time_exploratory": {
+     "resolved": 477,
+     "hits": 273,
+     "brier": 0.3,
+     "base_rate": 0.572,
+     "climatological": 0.245,
+     "skill": -0.226,
+     "skill_ci95": [
+      -0.3341,
+      -0.1351
+     ],
+     "under_arm_floor": false,
+     "result": "FAIL",
+     "label": "exploratory - all cohorts pooled, the face's figure"
+    },
+    "result": "FAIL",
+    "note": "departure - the control's reference class is not the control's own base rate; prints as a defect"
+   },
+   "f_void_rate": {
+    "resolved": 102,
+    "voids": 1,
+    "void_rate": 0.01,
+    "result": "PASS"
+   },
+   "all_pass": false
+  },
+  "defective_citation_rows": 0
+ },
+ "frame": {
+  "bucket": "lmstudio/realist[442300f131b11b7c]",
+  "tag": "lmstudio/realist",
+  "issued": 189,
+  "open": 105,
+  "void": 1,
+  "resolved": 83,
+  "stage": "checkpoint",
+  "point": {
+   "resolved": 83,
+   "hits": 47,
+   "misses": 36,
+   "brier": 0.326,
+   "base_rate": 0.566,
+   "climatological": 0.246,
+   "skill": -0.325,
+   "skill_unfloored": -0.325,
+   "n_floor": null,
+   "bins": [
+    {
+     "bin": "10-20",
+     "n": 7,
+     "mean_p": 0.154,
+     "obs": 0.429,
+     "note": null
+    },
+    {
+     "bin": "20-30",
+     "n": 31,
+     "mean_p": 0.228,
+     "obs": 0.581,
+     "note": null
+    },
+    {
+     "bin": "30-40",
+     "n": 29,
+     "mean_p": 0.321,
+     "obs": 0.655,
+     "note": null
+    },
+    {
+     "bin": "40-50",
+     "n": 13,
+     "mean_p": 0.427,
+     "obs": 0.385,
+     "note": null
+    },
+    {
+     "bin": "50-60",
+     "n": 1,
+     "mean_p": 0.55,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "70-80",
+     "n": 1,
+     "mean_p": 0.75,
+     "obs": null,
+     "note": "n<5"
+    },
+    {
+     "bin": "80-90",
+     "n": 1,
+     "mean_p": 0.85,
+     "obs": null,
+     "note": "n<5"
+    }
+   ]
+  },
+  "bootstrap": {
+   "reps": 2000,
+   "seed": 26,
+   "unit": "row",
+   "brier_ci95": [
+    0.2768,
+    0.3752
+   ],
+   "skill_ci95": [
+    -0.6977,
+    -0.1175
+   ],
+   "skill_resamples": 2000,
+   "bins": {
+    "40-50": {
+     "ci95": [
+      0.1111,
+      0.6667
+     ],
+     "resamples_nonempty": 2000
+    },
+    "10-20": {
+     "ci95": [
+      0.0,
+      0.8333
+     ],
+     "resamples_nonempty": 1999
+    },
+    "20-30": {
+     "ci95": [
+      0.4053,
+      0.7586
+     ],
+     "resamples_nonempty": 2000
+    },
+    "30-40": {
+     "ci95": [
+      0.4815,
+      0.8261
+     ],
+     "resamples_nonempty": 2000
+    },
+    "70-80": {
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "resamples_nonempty": 1269
+    },
+    "80-90": {
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "resamples_nonempty": 1257
+    },
+    "50-60": {
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "resamples_nonempty": 1306
+    }
+   },
+   "keyless_minus_keyed_brier_ci95": null,
+   "diff_resamples": 0
+  },
+  "quality": {
+   "a_mirror_completeness": {
+    "binding": false,
+    "rows_checked": 83,
+    "same_run": 0,
+    "late_mirror": 0,
+    "no_mirror": 83,
+    "gap_unknown": 0,
+    "same_run_minutes": 360,
+    "listed": [
+     {
+      "id": "KKR-20260915-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260915-10",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260915-11",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260915-12",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260915-13",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260915-15",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260915-16",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260915-17",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260916-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260916-10",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260916-11",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-10",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-12",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-13",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260917-14",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260918-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260918-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260918-10",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260918-11",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260919-10",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260920-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260920-10",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260920-12",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260921-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260921-10",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260921-11",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260921-13",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260923-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260923-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260924-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260924-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260924-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260924-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260925-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260925-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260925-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260925-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260925-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260926-01",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260926-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260926-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260927-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260927-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260929-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260930-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20260930-10",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261001-11",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261001-12",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261001-13",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261002-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261002-12",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261003-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261003-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261003-11",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261003-12",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-10",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-11",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-12",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-13",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-14",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-16",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261004-17",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261005-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261005-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261005-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261005-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261007-06",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261007-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261007-09",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261008-11",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261008-13",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261009-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261010-03",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261010-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261011-02",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261012-08",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261013-07",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261014-05",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     },
+     {
+      "id": "KKR-20261016-04",
+      "mirror": null,
+      "gap_min": null,
+      "class": "no-mirror"
+     }
+    ],
+    "result": "PASS",
+    "note": "binds frontier rows (Section 7a); the local arm's coverage is printed, not gated"
+   },
+   "b_rubric_coverage": {
+    "rows": 189,
+    "carrying_cohort_hash": 189,
+    "off_hash": [],
+    "result": "PASS"
+   },
+   "c_seat_recorded": {
+    "resolved": 83,
+    "seats": {
+     "jury-searched-adopted": 69,
+     "jury-divergence": 14
+    },
+    "outside_registration": 0,
+    "result": "PASS"
+   },
+   "d_determination_coverage": {
+    "resolved": 83,
+    "keyed": 83,
+    "keyless": 0,
+    "keyed_by_rule": 0,
+    "result": "PASS"
+   },
+   "e_control_skill_zero": {
+    "within_cohort": {
+     "resolved": 312,
+     "hits": 181,
+     "brier": 0.298,
+     "base_rate": 0.58,
+     "climatological": 0.244,
+     "skill": -0.224,
+     "skill_ci95": [
+      -0.3709,
+      -0.1185
+     ],
+     "under_arm_floor": false,
+     "result": "FAIL"
+    },
+    "all_time_exploratory": {
+     "resolved": 477,
+     "hits": 273,
+     "brier": 0.3,
+     "base_rate": 0.572,
+     "climatological": 0.245,
+     "skill": -0.226,
+     "skill_ci95": [
+      -0.3341,
+      -0.1351
+     ],
+     "under_arm_floor": false,
+     "result": "FAIL",
+     "label": "exploratory - all cohorts pooled, the face's figure"
+    },
+    "result": "FAIL",
+    "note": "departure - the control's reference class is not the control's own base rate; prints as a defect"
+   },
+   "f_void_rate": {
+    "resolved": 83,
+    "voids": 1,
+    "void_rate": 0.012,
+    "result": "PASS"
+   },
+   "all_pass": false
+  },
+  "defective_citation_rows": 0
+ },
+ "H6_frame_drift": {
+  "result": "HALTED - a quality check failed (plain all_pass=False, frame all_pass=False)",
+  "deciles_both_clear": []
+ },
+ "halted": true
+}
