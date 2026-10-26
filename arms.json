@@ -90,48 +90,54 @@
       "lane": "manual",
       "model": "claude-fable-5",
       "access": "searched",
-      "status": "active",
-      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+      "status": "retired",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet.",
+      "note": "RETIRED 2026-10-26 on the operator's ruling (LANE-1026): registered active, never sealed a row; the model it names was succeeded (claude-fable-5-1). No rows, so nothing keeps scoring under this tag."
     },
     {
       "tag": "manual/fable-5/cold",
       "lane": "manual",
       "model": "claude-fable-5",
       "access": "cold",
-      "status": "active",
-      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+      "status": "retired",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet.",
+      "note": "RETIRED 2026-10-26 on the operator's ruling (LANE-1026): registered active, never sealed a row; the model it names was succeeded (claude-fable-5-1). No rows, so nothing keeps scoring under this tag."
     },
     {
       "tag": "manual/opus-5/searched",
       "lane": "manual",
       "model": "claude-opus-5",
       "access": "searched",
-      "status": "active",
-      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+      "status": "retired",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet.",
+      "note": "RETIRED 2026-10-26 on the operator's ruling (LANE-1026): registered active, never sealed a row; the model it names was succeeded (claude-opus-5-5). No rows, so nothing keeps scoring under this tag."
     },
     {
       "tag": "manual/opus-5/cold",
       "lane": "manual",
       "model": "claude-opus-5",
       "access": "cold",
-      "status": "active",
-      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+      "status": "retired",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet.",
+      "note": "RETIRED 2026-10-26 on the operator's ruling (LANE-1026): registered active, never sealed a row; the model it names was succeeded (claude-opus-5-5). No rows, so nothing keeps scoring under this tag."
     },
     {
       "tag": "manual/sonnet-5/searched",
       "lane": "manual",
       "model": "claude-sonnet-5",
       "access": "searched",
-      "status": "active",
-      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+      "status": "retired",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet.",
+      "note": "RETIRED 2026-10-26 on the operator's ruling (LANE-1026): registered active, never sealed a row; the model it names was succeeded (claude-sonnet-5-5). No rows, so nothing keeps scoring under this tag."
     },
     {
       "tag": "manual/sonnet-5/cold",
       "lane": "manual",
       "model": "claude-sonnet-5",
       "access": "cold",
-      "status": "active",
-      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
+      "status": "retired",
+      "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet.",
+      "note": "RETIRED 2026-10-26 on the operator's ruling (LANE-1026): registered active, never sealed a row; the model it names was succeeded (claude-sonnet-5-5). No rows, so nothing keeps scoring under this tag."
     },
     {
       "tag": "fogsim/scenario",
@@ -239,8 +245,8 @@
       "lane": "manual",
       "model": "claude-sonnet-5-5",
       "access": "unattested",
-      "status": "active",
-      "note": "Registered 2026-09-29 on the operator's ruling as successor to manual/sonnet-5/unattested for the version-drift pair. KK18 standing rule: see manual/fable-5/unattested.",
+      "status": "retired",
+      "note": "Registered 2026-09-29 on the operator's ruling as successor to manual/sonnet-5/unattested for the version-drift pair. KK18 standing rule: see manual/fable-5/unattested. | RETIRED 2026-10-26 on the operator's ruling (LANE-1026): the frontier lane narrows to manual/fable-5.1/unattested and manual/opus-5.5/unattested; status set by this dated patch, run 2026-10-26T19:46Z. Book at retirement: 222 issued / 207 open / 10 hit / 5 miss / 0 void -- 15 resolved (ledger.json LF sha16 0791d314781adeb0). Retirement changes status, never rows: the open rows keep resolving and scoring under this tag, its tile stands, and its own checkpoint and the sequential version read against manual/sonnet-5/unattested wait on their floors as before.",
       "cadence": "weekly, all Anthropic manual arms on the SAME packet - staggering them would make their Briers incomparable, since arms forecasting different packets face different questions and different base rates. A missed run is a coverage gap and shows as one; it is never backfilled from a later packet."
     },
     {
