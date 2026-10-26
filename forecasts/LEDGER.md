@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 262315Z OCT 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 262321Z OCT 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 5024 issued across 21 forecaster arms · 3310 open (347 past deadline, unresolved)
+Window: all-time · 5024 issued across 21 forecaster arms · 3302 open (346 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -20,9 +20,9 @@ Window: all-time · 5024 issued across 21 forecaster arms · 3310 open (347 past
 | lmstudio/auto[post-verbot] | 20 | 9 | 11 | 1 | 10 | 0.123 | 9.1% | 0.083 | -0.490 |
 | lmstudio/auto[post-window] | 470 | 201 | 259 | 75 | 184 | 0.204 | 29.0% | 0.206 | +0.009 |
 | lmstudio/auto[pre-verbot] | 60 | 3 | 49 | 13 | 36 | 0.212 | 26.5% | 0.195 | -0.086 |
-| lmstudio/qwen36 | 116 | 105 | 11 | 4 | 7 | 0.227 | 36.4% | 0.231 | +0.020 |
+| lmstudio/qwen36 | 116 | 99 | 11 | 4 | 7 | 0.227 | 36.4% | 0.231 | +0.020 |
 | lmstudio/qwen36-abliterated | 123 | 121 | 2 | 2 | 0 | 0.381 | 100.0% | 0.000 | — |
-| lmstudio/qwen36-realist | 122 | 91 | 31 | 10 | 21 | 0.242 | 32.3% | 0.219 | -0.106 |
+| lmstudio/qwen36-realist | 122 | 89 | 31 | 10 | 21 | 0.242 | 32.3% | 0.219 | -0.106 |
 | lmstudio/realist | 249 | 128 | 119 | 66 | 53 | 0.317 | 55.5% | 0.247 | -0.285 |
 | manual/fable | 45 | 18 | 27 | 14 | 13 | 0.180 | 51.9% | 0.250 | +0.279 |
 | manual/fable-5 | 38 | 14 | 24 | 14 | 10 | 0.164 | 58.3% | 0.243 | +0.325 |
@@ -571,7 +571,6 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 - **KKR-20261012-10** (45%, due 2026-10-22) On 2026-10-19, the U.S. Federal Aviation Administration will issue a new safety advisory for flights over Saudi Arabia, citing increased risk from Houthi attacks, as published in the FAA's official advisory database. — *resolves on:* The FAA's official advisory database will publish a new safety advisory for flights over Saudi Arabia on or before 2026-10-19, citing increased risk from Houthi attacks, as confirmed by the FAA's official website.
 - **KKR-20261012-11** (20%, due 2026-10-24) Houthi forces strike a commercial airport in Saudi Arabia between 2026-10-19 and 2026-10-22. — *resolves on:* Two wire services report a Houthi strike on a Saudi commercial airport with a date of impact falling within the event window.
 - **KKR-20261012-13** (25%, due 2026-10-24) The European Commission imposes a final anti-dumping tariff on Chinese hybrid vehicles between 2026-10-19 and 2026-10-22. — *resolves on:* The European Commission publishes an official regulation or press release imposing a final anti-dumping tariff on Chinese hybrid vehicles with a date within the event window.
-- **KKR-20261012-16** (25%, due 2026-10-24) The European Commission imposes a final anti-dumping tariff on Chinese hybrid vehicles between 2026-10-19 and 2026-10-22. — *resolves on:* The European Commission publishes an official regulation or press release imposing a final anti-dumping tariff on Chinese hybrid vehicles with a date within the event window.
 - **KKR-20261012-19** (20%, due 2026-10-23) Between 2026-10-14 and 2026-10-21, the Federal Register publishes a notice of a new US sanctions regime targeting Iranian entities related to the Strait of Hormuz, as discussed in item 70. — *resolves on:* The Federal Register publishes a notice of a new US sanctions regime targeting Iranian entities related to the Strait of Hormuz.
 - **KKR-20261012-21** (15%, due 2026-10-23) Between 2026-10-14 and 2026-10-21, the Federal Register publishes a notice of a new US sanctions regime targeting Russian entities related to the energy ceasefire, as discussed in item 34. — *resolves on:* The Federal Register publishes a notice of a new US sanctions regime targeting Russian entities related to the energy ceasefire.
 - **KKR-20261013-12** (30%, due 2026-10-22) Yemeni government forces advance into or capture Taiz between 2026-10-13 and 2026-10-20 — *resolves on:* Yemeni government forces advance into or capture Taiz between 2026-10-13 and 2026-10-20
@@ -919,7 +918,6 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261011-03 | `lmstudio/realist` | 2026-10-11 | 2026-10-24 | 25% | military/conflict | Between 2026-10-16 and 2026-10-22, Saudi Arabia launches a retaliatory airstrike on a Houthi-controlled airfield in Yemen, confirmed by at least two independent sources from hostile sides (IL, AXIS). |
 | KKR-20261012-11 | `lmstudio/qwen36` | 2026-10-12 | 2026-10-24 | 20% | military_conflict | Houthi forces strike a commercial airport in Saudi Arabia between 2026-10-19 and 2026-10-22. |
 | KKR-20261012-13 | `lmstudio/qwen36` | 2026-10-12 | 2026-10-24 | 25% | political | The European Commission imposes a final anti-dumping tariff on Chinese hybrid vehicles between 2026-10-19 and 2026-10-22. |
-| KKR-20261012-16 | `lmstudio/qwen36` | 2026-10-12 | 2026-10-24 | 25% | political | The European Commission imposes a final anti-dumping tariff on Chinese hybrid vehicles between 2026-10-19 and 2026-10-22. |
 | KKR-20261006-06 | `lmstudio/realist` | 2026-10-06 | 2026-10-25 | 15% | cyber | Between 2026-10-16 and 2026-10-22, a major cyberattack will be confirmed on a critical infrastructure system in the United States, resulting in a disruption to essential services lasting more than 24 hours. |
 | KKR-20261008-23 | `lmstudio/qwen36-realist` | 2026-10-08 | 2026-10-25 | 20% | cyber | The CISA KEV catalog adds an entry for a critical vulnerability in the FortiGate VPN appliance between 2026-10-15 and 2026-10-22. |
 | KKR-20261008-25 | `lmstudio/qwen36-realist` | 2026-10-08 | 2026-10-25 | 35% | political | South Korea formally recalls its ambassador to Ukraine from duty between 2026-10-15 and 2026-10-22. |
@@ -966,7 +964,6 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261009-13 | `lmstudio/qwen36-realist` | 2026-10-09 | 2026-10-26 | 15% | economics | The S&P 500 index closes below 7,500.00 on any trading day between 2026-10-16 and 2026-10-23. |
 | KKR-20261009-14 | `lmstudio/qwen36-realist` | 2026-10-09 | 2026-10-26 | 65% | disaster | The USGS records an earthquake of magnitude 6.0 or higher in the Pacific Ring of Fire between 2026-10-16 and 2026-10-23. |
 | KKR-20261009-17 | `lmstudio/qwen36-realist` | 2026-10-09 | 2026-10-26 | 55% | economics | WTI Crude oil futures settle above $100.00 on any trading day between 2026-10-16 and 2026-10-23. |
-| KKR-20261009-19 | `lmstudio/qwen36-realist` | 2026-10-09 | 2026-10-26 | 65% | disaster | The USGS records an earthquake of magnitude 6.0 or higher in the Pacific Ring of Fire between 2026-10-16 and 2026-10-23. |
 | KKR-20261010-06 | `lmstudio/realist` | 2026-10-10 | 2026-10-26 | 25% | cyber | Between 2026-10-16 and 2026-10-22, a cyberattack using ARTEX AI or Claude agents will target at least one South Korean financial institution. |
 | KKR-20261011-05 | `lmstudio/realist` | 2026-10-11 | 2026-10-26 | 40% | cyber | Between 2026-10-18 and 2026-10-24, a new exploit kit named 'P7 DarkSword' is observed in the wild, targeting iOS devices and stealing cryptocurrency wallet data, as confirmed by at least two independent cybersecurity sources. |
 | KKR-20261014-01 | `lmstudio/auto` | 2026-10-14 | 2026-10-26 | 25% | disaster | Between 2026-10-21 and 2026-10-24, the USGS Significant Quakes catalog will record a magnitude 7.0 or greater earthquake in the Mid-Atlantic Ridge region. |
@@ -1895,8 +1892,6 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261020-83 | `control/baserate` | 2026-10-20 | 2026-11-06 | 42% | disaster | A magnitude 7.0 or greater earthquake will strike anywhere in the world between 2026-10-21 and 2026-11-03. |
 | KKR-20261021-04 | `lmstudio/qwen36` | 2026-10-21 | 2026-11-06 | 30% | disaster | A confirmed Ebola case is reported in Kenya between 2026-10-28 and 2026-11-04. |
 | KKR-20261021-05 | `lmstudio/qwen36` | 2026-10-21 | 2026-11-06 | 15% | political | The UK government approves a new North Sea gas drilling license between 2026-10-28 and 2026-11-04. |
-| KKR-20261021-06 | `lmstudio/qwen36` | 2026-10-21 | 2026-11-06 | 30% | disaster | A confirmed Ebola case is reported in Kenya between 2026-10-28 and 2026-11-04. |
-| KKR-20261021-07 | `lmstudio/qwen36` | 2026-10-21 | 2026-11-06 | 15% | political | The UK government approves a new North Sea gas drilling license between 2026-10-28 and 2026-11-04. |
 | KKR-20261021-46 | `manual/sonnet-5.5/unattested` | 2026-10-21 | 2026-11-06 | 33% | cyber | CISA adds a vulnerability in PHP itself to its Known Exploited Vulnerabilities catalog with a date added between 2026-10-22 and 2026-11-04. |
 | KKR-20261021-54 | `control/baserate` | 2026-10-21 | 2026-11-06 | 46% | cyber | CISA adds a vulnerability in PHP itself to its Known Exploited Vulnerabilities catalog with a date added between 2026-10-22 and 2026-11-04. |
 | KKR-20261022-11 | `lmstudio/qwen36-realist` | 2026-10-22 | 2026-11-06 | 40% | economics | WTI Crude closes below 95.00 USD per barrel on 2026-11-05. |
@@ -1946,9 +1941,6 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261011-08 | `lmstudio/qwen36` | 2026-10-11 | 2026-11-09 | 35% | military_conflict | A Houthi strike hits a target in Saudi Arabia between 2026-11-02 and 2026-11-06. |
 | KKR-20261011-09 | `lmstudio/qwen36` | 2026-10-11 | 2026-11-09 | 15% | disaster | The USGS catalog records a magnitude 7.0 or greater earthquake in Panama between 2026-11-02 and 2026-11-06. |
 | KKR-20261011-10 | `lmstudio/qwen36` | 2026-10-11 | 2026-11-09 | 10% | political | Polish authorities formally indict Prime Minister Donald Tusk for the alleged assassination plot between 2026-11-02 and 2026-11-06. |
-| KKR-20261011-11 | `lmstudio/qwen36` | 2026-10-11 | 2026-11-09 | 35% | military_conflict | A Houthi strike hits a target in Saudi Arabia between 2026-11-02 and 2026-11-06. |
-| KKR-20261011-12 | `lmstudio/qwen36` | 2026-10-11 | 2026-11-09 | 15% | disaster | The USGS catalog records a magnitude 7.0 or greater earthquake in Panama between 2026-11-02 and 2026-11-06. |
-| KKR-20261011-13 | `lmstudio/qwen36` | 2026-10-11 | 2026-11-09 | 10% | political | Polish authorities formally indict Prime Minister Donald Tusk for the alleged assassination plot between 2026-11-02 and 2026-11-06. |
 | KKR-20261013-19 | `lmstudio/qwen36-abliterated` | 2026-10-13 | 2026-11-09 | 60% | economics | WTI Crude closes above 95.00 on at least one trading day between 2026-11-02 and 2026-11-06. |
 | KKR-20261014-40 | `manual/sonnet-5.5/unattested` | 2026-10-14 | 2026-11-09 | 25% | military/conflict | SpaceX or the Ukrainian government publicly states that the restriction on Ukrainian military Starlink access reported on 2026-10-14 has been lifted or reversed, with the statement dated between 2026-10-15 and 2026-11-04. |
 | KKR-20261014-49 | `control/baserate` | 2026-10-14 | 2026-11-09 | 64% | military/conflict | SpaceX or the Ukrainian government publicly states that the restriction on Ukrainian military Starlink access reported on 2026-10-14 has been lifted or reversed, with the statement dated between 2026-10-15 and 2026-11-04. |
@@ -2110,7 +2102,6 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261023-66 | `lmstudio/qwen36` | 2026-10-23 | 2026-11-10 | 25% | cyber | The CISA KEV catalog adds a new entry for an actively exploited zero-day vulnerability affecting PHP between 2026-11-01 and 2026-11-07. |
 | KKR-20261023-68 | `lmstudio/qwen36-realist` | 2026-10-23 | 2026-11-10 | 20% | disaster | A magnitude 6.0 or greater earthquake is recorded by USGS in the Indonesia archipelago between 2026-11-01 and 2026-11-08. |
 | KKR-20261023-70 | `lmstudio/qwen36-realist` | 2026-10-23 | 2026-11-10 | 30% | military | Russia conducts a kinetic strike on a Ukrainian city with over 500,000 population between 2026-11-01 and 2026-11-08. |
-| KKR-20261023-72 | `lmstudio/qwen36-realist` | 2026-10-23 | 2026-11-10 | 30% | military | Russia conducts a kinetic strike on a Ukrainian city with over 500,000 population between 2026-11-01 and 2026-11-08. |
 | KKR-20261023-86 | `manual/fable-5.1/unattested` | 2026-10-23 | 2026-11-10 | 75% | crime/security | At least one suspect in the 2026-10-23 gun attack on a church funeral in Karak governorate, Jordan, is arrested or killed between 2026-10-23 and 2026-11-06, as announced by Jordanian authorities. |
 | KKR-20261023-87 | `manual/fable-5.1/unattested` | 2026-10-23 | 2026-11-10 | 15% | disaster | The USGS catalog records at least one earthquake of magnitude 6.0 or greater with epicenter within 100 km of USGS event us6000u43g (M7.0 near Nagqu, China) and origin time between 2026-10-24 and 2026-11-06 UTC. |
 | KKR-20261023-93 | `control/baserate` | 2026-10-23 | 2026-11-10 | 36% | crime/security | At least one suspect in the 2026-10-23 gun attack on a church funeral in Karak governorate, Jordan, is arrested or killed between 2026-10-23 and 2026-11-06, as announced by Jordanian authorities. |
@@ -5525,7 +5516,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*88 of 5024 issued (1.8%) have been voided.*
+*96 of 5024 issued (1.9%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
@@ -5701,8 +5692,24 @@ A sealed projection is never edited. Where one cannot be adjudicated as written,
     - *Reason:* DUPLICATE SEAL: the 2026-09-16 lane ran twice (23:07Z, 23:28Z); this row duplicates KKR-20260916-35, which stands; voided 2026-09-16 under RPAS 5.07 as a dated correction
 - **KKR-20261004-01** [`lmstudio/auto`] (65%, due 2026-10-13, voided 2026-10-19) — statement as sealed: “A drone strike on Kyiv's central bridge occurred between 2026-10-04 and 2026-10-11, causing structural damage and disrupting traffic for at least 72 hours.”
     - *Reason:* VOID - defect of the record: the criterion requires a CISA KEV addition and a USGS M4.0 earthquake in Kyiv to confirm a drone strike on a bridge, so the row cannot resolve on its own terms (jury sitting 2026-10-18; precedent KKR-20260913-03).
+- **KKR-20261009-19** [`lmstudio/qwen36-realist`] (65%, due 2026-10-26, voided 2026-10-26) — statement as sealed: “The USGS records an earthquake of magnitude 6.0 or higher in the Pacific Ring of Fire between 2026-10-16 and 2026-10-23.”
+    - *Reason:* DUPLICATE SEAL: the lmstudio/qwen36-realist run of 2026-10-09 wrote this claim twice in one answer and the gate sealed both copies (DUPBATCH-1026); this row duplicates KKR-20261009-14, which stands; voided 2026-10-26 under RPAS 5.07 as a dated correction
+- **KKR-20261011-11** [`lmstudio/qwen36`] (35%, due 2026-11-09, voided 2026-10-26) — statement as sealed: “A Houthi strike hits a target in Saudi Arabia between 2026-11-02 and 2026-11-06.”
+    - *Reason:* DUPLICATE SEAL: the lmstudio/qwen36 run of 2026-10-11 wrote this claim twice in one answer and the gate sealed both copies (DUPBATCH-1026); this row duplicates KKR-20261011-08, which stands; voided 2026-10-26 under RPAS 5.07 as a dated correction
+- **KKR-20261011-12** [`lmstudio/qwen36`] (15%, due 2026-11-09, voided 2026-10-26) — statement as sealed: “The USGS catalog records a magnitude 7.0 or greater earthquake in Panama between 2026-11-02 and 2026-11-06.”
+    - *Reason:* DUPLICATE SEAL: the lmstudio/qwen36 run of 2026-10-11 wrote this claim twice in one answer and the gate sealed both copies (DUPBATCH-1026); this row duplicates KKR-20261011-09, which stands; voided 2026-10-26 under RPAS 5.07 as a dated correction
+- **KKR-20261011-13** [`lmstudio/qwen36`] (10%, due 2026-11-09, voided 2026-10-26) — statement as sealed: “Polish authorities formally indict Prime Minister Donald Tusk for the alleged assassination plot between 2026-11-02 and 2026-11-06.”
+    - *Reason:* DUPLICATE SEAL: the lmstudio/qwen36 run of 2026-10-11 wrote this claim twice in one answer and the gate sealed both copies (DUPBATCH-1026); this row duplicates KKR-20261011-10, which stands; voided 2026-10-26 under RPAS 5.07 as a dated correction
+- **KKR-20261012-16** [`lmstudio/qwen36`] (25%, due 2026-10-24, voided 2026-10-26) — statement as sealed: “The European Commission imposes a final anti-dumping tariff on Chinese hybrid vehicles between 2026-10-19 and 2026-10-22.”
+    - *Reason:* DUPLICATE SEAL: the lmstudio/qwen36 run of 2026-10-12 wrote this claim twice in one answer and the gate sealed both copies (DUPBATCH-1026); this row duplicates KKR-20261012-13, which stands; voided 2026-10-26 under RPAS 5.07 as a dated correction
 - **KKR-20261013-08** [`lmstudio/realist`] (45%, due 2026-10-23, voided 2026-10-26) — statement as sealed: “Between 2026-10-13 and 2026-10-20, a new political scandal involving a U.S. ambassador leads to their resignation, confirmed by at least two independent outlets from hostile political camps.”
     - *Reason:* VOID - defect of the record: the resolution criterion is only a CISA KEV date-added clause unrelated to the claim, and the failure condition tests the ambassador resignation instead, so the two can both hold and the row cannot resolve on its own terms (sitting 2026-10-26; precedents KKR-20261004-01, KKR-20260913-03).
+- **KKR-20261021-06** [`lmstudio/qwen36`] (30%, due 2026-11-06, voided 2026-10-26) — statement as sealed: “A confirmed Ebola case is reported in Kenya between 2026-10-28 and 2026-11-04.”
+    - *Reason:* DUPLICATE SEAL: the lmstudio/qwen36 run of 2026-10-21 wrote this claim twice in one answer and the gate sealed both copies (DUPBATCH-1026); this row duplicates KKR-20261021-04, which stands; voided 2026-10-26 under RPAS 5.07 as a dated correction
+- **KKR-20261021-07** [`lmstudio/qwen36`] (15%, due 2026-11-06, voided 2026-10-26) — statement as sealed: “The UK government approves a new North Sea gas drilling license between 2026-10-28 and 2026-11-04.”
+    - *Reason:* DUPLICATE SEAL: the lmstudio/qwen36 run of 2026-10-21 wrote this claim twice in one answer and the gate sealed both copies (DUPBATCH-1026); this row duplicates KKR-20261021-05, which stands; voided 2026-10-26 under RPAS 5.07 as a dated correction
+- **KKR-20261023-72** [`lmstudio/qwen36-realist`] (30%, due 2026-11-10, voided 2026-10-26) — statement as sealed: “Russia conducts a kinetic strike on a Ukrainian city with over 500,000 population between 2026-11-01 and 2026-11-08.”
+    - *Reason:* DUPLICATE SEAL: the lmstudio/qwen36-realist run of 2026-10-23 wrote this claim twice in one answer and the gate sealed both copies (DUPBATCH-1026); this row duplicates KKR-20261023-70, which stands; voided 2026-10-26 under RPAS 5.07 as a dated correction
 
 ---
 **NOTHING CLASSIFIED OR PRIVILEGED** · *the ledger scores the system, not the operator; consistency is not correctness — resolution is.*
