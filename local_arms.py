@@ -8,6 +8,11 @@ loaded once: the model the morning preflight already loaded goes first, the rest
 follow in registry order, and the box ends with that first model loaded again, as
 it started. Only one model is ever in memory.
 
+RETIRE-1026 (2026-10-26): lmstudio/auto and lmstudio/realist are retired (registration
+16.10) and neither is fired anywhere. The model the box starts and ends on is still read
+from the lmstudio/auto entry, whatever its status: the input side is bound to that entry
+(INPUTBIND-1004, 16.9) and the morning preflight loads it.
+
 An arm with a "frame" field runs as a frame arm (kkr.py --frame); any other runs by
 tag (kkr.py --local-arm). Either way kkr.py sends the registered model by name, so
 a model left loaded by mistake cannot answer for an arm it is not.
@@ -30,7 +35,7 @@ from pathlib import Path
 
 TAG = "LOCAL_ARMS"
 HERE = Path(__file__).resolve().parent
-SKIP = {"lmstudio/auto"}          # fired by daily.bat
+SKIP = {"lmstudio/auto"}          # retired 2026-10-26 (RETIRE-1026); never fired here
 GATE = re.compile(r"gate: (\d+) accepted, (\d+) rejected")
 
 
@@ -59,7 +64,8 @@ def loaded(base):
 def plan():
     arms = json.loads((HERE / "arms.json").read_text(encoding="utf-8-sig"))["arms"]
     local = [a for a in arms if a.get("lane") == "lmstudio" and a.get("status") == "active"]
-    primary = next((a.get("model") for a in local if a.get("tag") == "lmstudio/auto"), None)
+    # RETIRE-1026: the input model, read from the lmstudio/auto entry whatever its status.
+    primary = next((a.get("model") for a in arms if a.get("tag") == "lmstudio/auto"), None)
     groups, bad = {}, []
     for a in local:
         if a.get("tag") in SKIP:
