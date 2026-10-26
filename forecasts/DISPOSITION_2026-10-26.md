@@ -182,3 +182,14 @@ Rows settled in section 3.2 on a public record are not on the list. The five row
 - The 24 held claims (33 rows) go to the next sitting. Each names the element a targeted check would settle.
 - KKR-20261010-01 stays open. ComCat puts an M6.0 (10-10 04:14Z) and an M6.1 (10-12 23:20Z) in Panama inside its window; the GDACS leg is unchecked. Juror A's ambiguity rested on reading the M6.0 as 9 Oct, which is the local date.
 - KKR-20260915-54 / -62 and KKR-20260924-02 remain AMBIGUOUS and open.
+
+## 9. Validation, 2026-10-26
+
+The blind validation seat ran on 2026-10-26: Claude Opus 5.5 at max effort, incognito with web search, one chat per part, on VALIDATE_2026-10-26 part 1 (36 claims) and part 2 (35 claims), validation-prompt sha256 50609be8112575d6, blind to the rulings. The replies are forecasts/jury_A_parts/JuryA_validate_2026-10-26_part1of2.json (sha256 b2c263263d5c1aaf) and part2of2.json (sha256 bc641232426e4729).
+
+Rate for this sitting: 68 of 71 claims validated (107 of 113 rows), none reversed, 3 not validated. A claim is validated when the seat's HIT or MISS matches the ruling at high or moderate confidence, the sitting's adoption standard.
+
+Not validated; each ruling stands as ruled:
+- KKR-20260904-34 and -64 (MISS). The seat returned AMBIGUOUS at low confidence. On 2026-09-05 the Kremlin said Putin ordered no strikes on Kyiv for three days, and Zelensky said Ukraine was ready to refrain from strikes on Moscow through the Monday; AP carried both. The criterion also needs Reuters to carry both statements, and that was not confirmed. Whether two reciprocal pauses count as one agreement is left unruled.
+- KKR-20260914-61 and -70 (MISS). The seat returned AMBIGUOUS at low confidence because it could not retrieve the GDACS alert history. The clerk's check: GDACS's tropical-cyclone event list for 2026-09-10 to 2026-09-30 with Green included (gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=TC&fromDate=2026-09-10&toDate=2026-09-30&alertlevel=Green;Orange;Red) carries NOLO-26 (eventid 1001321, the system first designated FIFTEEN-E) at Green with alert score 1, and the default Orange-and-Red list omits it. The event page and its episode history could not be fetched.
+- KKR-20261003-41 and -47 (MISS). The seat agreed at low confidence, below the adoption standard.
