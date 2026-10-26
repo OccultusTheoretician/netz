@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-10-25T10:07:49Z · ledger `ledger.json` · 4906 rows in scope
+Generated 2026-10-26T11:31:52Z · ledger `ledger.json` · 4964 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,12 +12,12 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **4905**
+- rows audited: **4963**
 - scope limitation (no resolvable source report): **1**
-- defective: **755** (15.4% of audited)
-- rows whose citation number does not identify a unique item: **427** (max candidates behind one number: 8)
-  - UNSUPPORTED: 514
-  - AMBIGUOUS_REF: 427
+- defective: **770** (15.5% of audited)
+- rows whose citation number does not identify a unique item: **428** (max candidates behind one number: 8)
+  - UNSUPPORTED: 529
+  - AMBIGUOUS_REF: 428
   - DEADWEIGHT: 228
   - SHOTGUN: 56
   - NO_CITES: 24
@@ -25,8 +25,8 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## The number that matters
 
-Rows determined **KEYLESS**: 204
-Of those, citations defective: **14** (6.9%)
+Rows determined **KEYLESS**: 243
+Of those, citations defective: **15** (6.2%)
 
 A keyless determination says the claim went beyond its declared priors. Where the priors are unreadable, that determination was made against nothing. These rows are listed so the keyless count can be stated with its defect rate attached rather than as a clean integer.
 
@@ -43,6 +43,7 @@ A keyless determination says the claim went beyond its declared priors. Where th
 - `KKR-20260808-05` · lmstudio/auto · 2026-08-08 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
 - `KKR-20260911-43` · manual/fable-5/unattested · 2026-09-11 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
 - `KKR-20260915-38` · manual/opus-5/unattested · 2026-09-15 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
+- `KKR-20260917-35` · manual/opus-5/unattested · 2026-09-17 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
 - `KKR-20260918-19` · manual/fable-5.1/unattested · 2026-09-18 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
 
 ## By arm
@@ -51,18 +52,18 @@ A keyless determination says the claim went beyond its declared priors. Where th
 
 | arm | audited | defective | rate |
 |---|---:|---:|---:|
-| control/baserate | 1727 | 225 | 13% |
+| control/baserate | 1751 | 231 | 13% |
 | lmstudio/auto | 550 | 137 | 25% |
-| lmstudio/realist | 247 | 82 | 33% |
-| manual/fable-5.1/unattested | 429 | 74 | 17% |
+| lmstudio/realist | 249 | 82 | 33% |
+| manual/fable-5.1/unattested | 437 | 76 | 17% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| manual/opus-5.5/unattested | 259 | 44 | 17% |
-| manual/sonnet-5.5/unattested | 214 | 30 | 14% |
+| manual/opus-5.5/unattested | 267 | 46 | 17% |
+| manual/sonnet-5.5/unattested | 222 | 32 | 14% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
-| lmstudio/qwen36-abliterated | 109 | 20 | 18% |
+| lmstudio/qwen36-abliterated | 115 | 22 | 19% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
 | lmstudio/qwen36-realist | 114 | 16 | 14% |
-| lmstudio/qwen36 | 108 | 13 | 12% |
+| lmstudio/qwen36 | 110 | 14 | 13% |
 | manual/opus-5 | 74 | 12 | 16% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
