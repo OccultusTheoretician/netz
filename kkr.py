@@ -1647,6 +1647,31 @@ def publish_served():
     print(f"KKR · served copies synced -> {DOCS}", file=sys.stderr)
 
 
+def _dupbatch(rows, arm, report, ledger_rows=None):
+    """DUPBATCH-1026: a claim is sealed once per arm per report.
+
+    The local arms wrote the same row twice in one answer and the gate sealed
+    both copies (eight pairs, 2026-10-09 to 2026-10-23); DUPSEAL-2026-09-16
+    guarded the ingest lane only, and only against rows already in the ledger.
+    Returns (kept, dups): each repeated row paired with the id it repeats, or
+    with 'an earlier row of this batch'. Keyed as DUPSEAL keys: arm, report
+    and the statement with its whitespace collapsed."""
+    _n = lambda s: " ".join(str(s or "").split())
+    seen = {}
+    for r in (load_ledger()["projections"] if ledger_rows is None else ledger_rows):
+        if r.get("model") == arm and r.get("source_report") == report:
+            seen.setdefault(_n(r.get("statement")), r.get("id"))
+    kept, dups = [], []
+    for p in rows:
+        k = _n(p.get("statement"))
+        if k in seen:
+            dups.append((p, seen[k]))
+            continue
+        seen[k] = "an earlier row of this batch"
+        kept.append(p)
+    return kept, dups
+
+
 def append_projections(projs: list, model_tag: str, source_report: str) -> list:
     data = load_ledger()
     today = datetime.now(timezone.utc).strftime("%Y%m%d")
@@ -2279,6 +2304,12 @@ def cmd_generate(args):
         if id(p) in _fc_rej:
             reasons = list(reasons) + [_fc_rej[id(p)]]
         (rejected.append((p, reasons)) if reasons else accepted_raw.append(p))
+    # DUPBATCH-1026: a row the model wrote twice in one answer, or one already sealed
+    # under this arm against this report, is rejected with its reason, so the trail
+    # and the generated record (GENLOG-1005) both show it.
+    accepted_raw, _dups = _dupbatch(accepted_raw, tag, rep.name if rep else "")
+    for _p, _ref in _dups:
+        rejected.append((_p, ["DUPBATCH-1026 duplicate of %s; not sealed twice" % _ref]))
     added = append_projections(accepted_raw, tag, rep.name) if accepted_raw else []
     print(f"KKR · gate: {len(added)} accepted, {len(rejected)} rejected", file=sys.stderr)
     # GENLOG-1005: every generated row's probability, domain and gate verdict, so a
@@ -2412,6 +2443,7 @@ def cmd_ingest(args):
             print(f"KKR \u00b7 already sealed as {_dup} against {src_name} - not sealed again: "
                   f"{_norm(_p.get('statement'))[:70]}", file=sys.stderr)
             continue
+        _seen[(arm, src_name, _norm(_p.get("statement")))] = "an earlier row of this file"  # DUPBATCH-1026
         _kept.append(_p)
     accepted_raw = _kept
     added = append_projections(accepted_raw, arm, src_name) if accepted_raw else []
