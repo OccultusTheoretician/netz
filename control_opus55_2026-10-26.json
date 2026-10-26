@@ -1,0 +1,255 @@
+[
+  {
+    "statement": "US military forces strike at least one target on Iranian territory, mainland or islands, between 2026-10-27 and 2026-12-31.",
+    "resolution": "TRUE if the White House or Pentagon confirms, or both AP and Reuters report, a US military strike on a target on Iranian territory occurring between 2026-10-27 and 2026-12-31; otherwise FALSE.",
+    "failure_condition": "No US military strike hit any target on Iranian territory between 2026-10-27 and 2026-12-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 63,
+    "citations": [
+      50,
+      70,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6303,
+      "n": 376,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Houthi forces launch at least one missile or drone at Saudi Arabian territory between 2026-11-02 and 2026-11-15.",
+    "resolution": "TRUE if an official Saudi or Saudi-led coalition statement, or reporting by two of Reuters, AP and AFP, confirms a Houthi missile or drone launched at Saudi territory between 2026-11-02 and 2026-11-15, intercepted or not.",
+    "failure_condition": "No Houthi missile or drone was launched at Saudi territory between 2026-11-02 and 2026-11-15.",
+    "domain": "military/conflict",
+    "deadline": "2026-11-18",
+    "probability": 63,
+    "citations": [
+      70,
+      80,
+      90
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6303,
+      "n": 376,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The WTI crude oil spot price closes at or below 85.00 US dollars per barrel on at least one day between 2026-11-02 and 2026-12-31. Reference: 100.93 on the packet date.",
+    "resolution": "TRUE if FRED series DCOILWTICO shows any daily value at or below 85.00 dated between 2026-11-02 and 2026-12-31 inclusive; otherwise FALSE. Reference: 100.93 on the packet date.",
+    "failure_condition": "The WTI spot price stayed above 85.00 dollars per barrel on every day from 2026-11-02 through 2026-12-31.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-08",
+    "probability": 59,
+    "citations": [
+      50,
+      59,
+      92
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5909,
+      "n": 308,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Anthropic Class A common stock begins trading on the Nasdaq under ticker ANT between 2026-11-09 and 2026-12-11.",
+    "resolution": "TRUE if Nasdaq trading records show the first regular trading session for ticker ANT, Anthropic Class A stock, on a date between 2026-11-09 and 2026-12-11 inclusive; otherwise FALSE.",
+    "failure_condition": "Anthropic Class A stock did not begin regular Nasdaq trading as ANT on any date from 2026-11-09 through 2026-12-11.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-14",
+    "probability": 59,
+    "citations": [
+      48,
+      51,
+      61
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5909,
+      "n": 308,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of 435 US House seats in the general election held on 2026-11-03, as called between 2026-11-03 and 2026-12-01.",
+    "resolution": "TRUE if Associated Press race calls made between 2026-11-03 and 2026-12-01 credit Democratic candidates with at least 218 House seats from the 2026-11-03 election; otherwise FALSE.",
+    "failure_condition": "Democratic candidates had not secured at least 218 House seats from the 2026-11-03 election by 2026-12-01.",
+    "domain": "political",
+    "deadline": "2026-12-04",
+    "probability": 42,
+    "citations": [
+      34,
+      38,
+      108
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4204,
+      "n": 226,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A new Israeli government formed after the 2026-10-27 Knesset election wins a Knesset confidence vote between 2026-11-02 and 2027-01-29.",
+    "resolution": "TRUE if the Knesset holds a successful confidence vote installing a new government formed after the 2026-10-27 election on a date between 2026-11-02 and 2027-01-29, per Knesset records; otherwise FALSE.",
+    "failure_condition": "No new government won a Knesset confidence vote between 2026-11-02 and 2027-01-29.",
+    "domain": "political",
+    "deadline": "2027-02-02",
+    "probability": 42,
+    "citations": [
+      78
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4204,
+      "n": 226,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds CVE-2026-109618 or CVE-2026-109619, the PHP2Shell remote code execution flaws, to its Known Exploited Vulnerabilities catalog between 2026-10-26 and 2026-11-13.",
+    "resolution": "TRUE if the CISA KEV catalog lists CVE-2026-109618 or CVE-2026-109619 with a dateAdded value between 2026-10-26 and 2026-11-13 inclusive; otherwise FALSE.",
+    "failure_condition": "CISA did not add either PHP2Shell CVE to the KEV catalog between 2026-10-26 and 2026-11-13.",
+    "domain": "cyber",
+    "deadline": "2026-11-16",
+    "probability": 45,
+    "citations": [
+      20,
+      25
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4527,
+      "n": 349,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The first trial session for the US Marine indicted over the October 2026 robbery and killing of a woman in Naha, Okinawa, is held at Naha District Court between 2026-10-27 and 2027-04-16.",
+    "resolution": "TRUE if Kyodo, NHK, AP or Reuters report the first public trial session for the indicted US Marine in the Naha killing case was held at Naha District Court between 2026-10-27 and 2027-04-16; otherwise FALSE.",
+    "failure_condition": "The first public trial session in the Naha case had not been held by 2027-04-16.",
+    "domain": "crime/security",
+    "deadline": "2027-04-20",
+    "probability": 44,
+    "citations": [
+      10,
+      110
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4412,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The Southwark Crown Court jury in the Russell Brand sexual offences trial returns a verdict on at least one count between 2026-10-27 and 2026-12-18.",
+    "resolution": "TRUE if BBC, Guardian, AP or Reuters report that the jury in the Brand trial at Southwark Crown Court returned a verdict on at least one count between 2026-10-27 and 2026-12-18; otherwise FALSE.",
+    "failure_condition": "The Brand trial jury delivered no verdict on any count between 2026-10-27 and 2026-12-18.",
+    "domain": "crime/security",
+    "deadline": "2026-12-22",
+    "probability": 44,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4412,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "USGS records at least one magnitude 6.0 or greater earthquake in the Bonin Islands region, latitude 24.0N to 30.0N and longitude 137.0E to 145.0E, between 2026-10-27 and 2026-11-30.",
+    "resolution": "TRUE if the USGS ComCat catalog lists an event of magnitude 6.0 or greater inside latitude 24.0N to 30.0N and longitude 137.0E to 145.0E with origin time between 2026-10-27 and 2026-11-30 UTC; otherwise FALSE.",
+    "failure_condition": "No magnitude 6.0 or greater earthquake occurred inside the stated Bonin box between 2026-10-27 and 2026-11-30 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-12-02",
+    "probability": 38,
+    "citations": [
+      41,
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3771,
+      "n": 297,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-26T23:15:44Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
