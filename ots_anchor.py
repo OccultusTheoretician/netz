@@ -85,6 +85,9 @@ TARGETS = [
     # OTSTARGETS-2026-09-01: the pre-registration is the paper; its text gets a clock
     # the operator does not hold, same as the standards.
     "KALIBRIERWARTE_REGISTERED_REPORT_v3.md",
+    # V4ADOPT-1027: registration v4, adopted 2026-10-27; its text gets a clock the
+    # operator does not hold, same as v3.
+    "KALIBRIERWARTE_REGISTERED_REPORT_v4.md",
     # PAPERS-2026-09-14: the desk's technical notes and the prior-art sweep get a clock
     # the operator does not hold, same as the standards.
     "NOTES_2026-09-14.md",
