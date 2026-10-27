@@ -18,7 +18,7 @@
       "model": "human+model-evidence",
       "access": "advised",
       "status": "active",
-      "note": "centaur arm - flips active with the knp-2 era; model supplies evidence and base rates, operator commits probability cold; advisory content stays out of every other arm's prompts | 2026-09-17: ACTIVE by the operator's ruling (running the arm is the ruling; the knp-2 gate was his). Form: the model supplies a worksheet of candidate claims with criteria, failure conditions and deadlines pre-drafted against the day's packet, plus an evidence brief with base rates; the operator sets every probability himself and may strike or rewrite any claim; the file seals under this tag through the ordinary lane. Advisory content stays out of every other channel and is never written onto a row. Scored apart from operator/cold by law: a Brier belongs to one forecaster, and the model is part of this one."
+      "note": "centaur arm - flips active with the knp-2 era; model supplies evidence and base rates, operator commits probability cold; advisory content stays out of every other arm's prompts | 2026-09-17: ACTIVE by the operator's ruling (running the arm is the ruling; the knp-2 gate was his). Form: the model supplies a worksheet of candidate claims with criteria, failure conditions and deadlines pre-drafted against the day's packet, plus an evidence brief with base rates; the operator sets every probability himself and may strike or rewrite any claim; the file seals under this tag through the ordinary lane. Advisory content stays out of every other channel and is never written onto a row. Scored apart from operator/cold by law: a Brier belongs to one forecaster, and the model is part of this one. | V4ADOPT-1027 (2026-10-27): in scope for registration v4 under the same sections when it seals (the registrant's ruling of 2026-10-27); mirrored by control/trailing; scored apart from operator/cold and never compared with it under V3."
     },
     {
       "tag": "operator/cold",
@@ -26,7 +26,7 @@
       "model": "human",
       "access": "cold",
       "status": "active",
-      "note": "Registered 2026-09-17. The operator alone: statement, probability, resolution criterion, failure condition, deadline and citations in his own words, with no model evidence, base rate or draft before the commit. The gate is the only reader before seal. Tool access is arm identity: rows written with a model's worksheet or brief go to operator/advised, never here. Out of scope for any capability claim until a registration names the arm. Not named for a result.",
+      "note": "Registered 2026-09-17. The operator alone: statement, probability, resolution criterion, failure condition, deadline and citations in his own words, with no model evidence, base rate or draft before the commit. The gate is the only reader before seal. Tool access is arm identity: rows written with a model's worksheet or brief go to operator/advised, never here. Out of scope for any capability claim until a registration names the arm. Not named for a result. | V4ADOPT-1027 (2026-10-27): named by registration v4 on its adoption (Section 5 is this arm's protocol) and in scope for v4's reads from the adoption commit. At most 10 rows per packet day. The cold file arrives before any frontier file of its packet; the lane checks the order before ingest and prints it, and a file that arrives after a frontier file of its packet does not seal here. Mirrored by control/trailing.",
       "cadence": "as sat; a missed sitting is a coverage gap, never backfilled from a later packet"
     },
     {
@@ -187,9 +187,18 @@
       "lane": "control",
       "model": "climatological",
       "access": "n-a",
-      "status": "active",
-      "note": "The arm is not trying to be right. It emits the same probability for every row drawn from the same reference class, computed from this ledger's own resolved history as of the pairing date and pre-registered before the outcome existed. Its Brier is the floor a forecaster arm must clear to have demonstrated anything; a forecaster arm that does not beat it has skill zero regardless of its raw score. Paired same-run against the arm it controls, on the identical packet - a control issued later mirrors rows sealed under a different gate and is not a control. Every row carries control_basis: rate, n, reference class, as-of date.",
+      "status": "retired",
+      "note": "The arm is not trying to be right. It emits the same probability for every row drawn from the same reference class, computed from this ledger's own resolved history as of the pairing date and pre-registered before the outcome existed. Its Brier is the floor a forecaster arm must clear to have demonstrated anything; a forecaster arm that does not beat it has skill zero regardless of its raw score. Paired same-run against the arm it controls, on the identical packet - a control issued later mirrors rows sealed under a different gate and is not a control. Every row carries control_basis: rate, n, reference class, as-of date. | RETIRED 2026-10-27 by registration v4's adoption (V4ADOPT-1027; Section 3, the registrant's ruling of 2026-10-27): control/trailing mirrors every arm v4 names from the adoption commit, and running both would double the control rows for no read. Status set by this dated patch, run 2026-10-27T19:54Z. Book at retirement: 1788 issued / 1279 open / 273 hit / 204 miss / 32 void -- 477 resolved (ledger.json LF sha16 94e56eda79fd98e2). Retirement changes status, never rows: its rows keep resolving and scoring under this tag, its tile stands, registration v3's reads keep it as their control, and it mirrors nothing after the adoption date.",
       "cadence": "paired same-run with every sealed forecaster batch; never issued alone, never backfilled."
+    },
+    {
+      "tag": "control/trailing",
+      "lane": "control",
+      "model": "climatological-trailing",
+      "access": "n-a",
+      "status": "active",
+      "note": "V4ADOPT-1027: registered 2026-10-27 by registration v4 (KALIBRIERWARTE_REGISTERED_REPORT_v4, Section 3) on its adoption; the control of every arm v4 names, from the adoption commit. Like control/baserate it is not trying to be right: one number per arm and domain, the floor an arm must clear. Unlike it, the number is the realized hit rate of the mirrored arm's own resolved rows, counting only rows resolved on or before the packet date, by the first step of the ladder with at least 10 rows: the arm and the row's canonical domain; the arm; the forecaster arms in scope and the domain; the forecaster arms in scope. Clamped to the gate's 5-95 band, clamping recorded. Every row carries control_basis: the step, the rate, the n, the history cut, the ledger digest and the id of the row it mirrors. Composed and sealed in the same run as that row, through the same gate (RPAS 4.06); a mirror the gate kills is a finding about the row.",
+      "cadence": "paired same-run with every sealed in-scope batch, from the ledger so ids travel; never issued alone, never backfilled."
     },
     {
       "tag": "control/market-implied",

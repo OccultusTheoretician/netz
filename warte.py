@@ -273,7 +273,10 @@ def main():
          "<dt>Prepared by</dt><dd><code>warte.py</code>, unattended, at every seal and every chain run</dd>",
          "<dt>Governed by</dt><dd><a href='KALIBRIERWARTE_REGISTERED_REPORT_v3.md'>the registration</a>, "
          "Sections 13 and 14: hypotheses, floors and quality checks are fixed there, and any "
-         "confirmatory figure comes from <code>warte_report.py</code> at 50 resolved within one cohort</dd>",
+         "confirmatory figure comes from <code>warte_report.py</code> at 50 resolved within one cohort. "
+         "From 2026-10-27 the frontier and operator arms are read under "  # V4ADOPT-1027
+         "<a href='KALIBRIERWARTE_REGISTERED_REPORT_v4.md'>registration v4</a>, each against its "
+         "paired control <code>control/trailing</code>, at 50 resolved pairs</dd>",
          "</dl>",
          "<details class='wp-howto'><summary>How to read this</summary>",
          "<p>Reliability is mean stated probability against observed frequency per decile; a "

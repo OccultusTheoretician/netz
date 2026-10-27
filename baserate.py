@@ -45,10 +45,18 @@ USAGE
   python baserate.py --pair forecasts/kkr_raw_last.txt -o control_packet.json
   python kkr.py --ingest control_packet.json --arm control/baserate
 
+  V4ADOPT-1027 (registration v4, Section 3): from v4's adoption on 2026-10-27
+  the control is control/trailing; control/baserate is retired and mirrors
+  nothing after that date. The method above stays so its rows recompute.
+  python baserate.py --rates --method trailing --mirror-of manual/fable-5.1/unattested
+  python baserate.py --from-ledger manual/fable-5.1/unattested --method trailing
+      --date YYYY-MM-DD --as-of YYYY-MM-DD -o control_trailing_fable51_YYYY-MM-DD.json
+  python kkr.py --ingest control_trailing_fable51_YYYY-MM-DD.json --arm control/trailing
+
 The control is ingested through the same gate as every other arm. If the gate
 rejects a control row, that is a finding about the row, not about the control.
 """
-import argparse, json, sys
+import argparse, hashlib, json, sys
 from collections import Counter
 from datetime import datetime, timezone   # KK21e: default packet name needs today
 from datetime import date
@@ -119,6 +127,113 @@ def pick(r, domain):
     return g["rate"], g["n"], "global", d
 
 
+# V4ADOPT-1027: control/trailing, the control of registration v4 (Section 3).
+# Each mirror is priced at the realized hit rate of the mirrored arm's own resolved
+# rows, counting only rows resolved on or before the packet date, by the first step
+# of this ladder with at least TRAIL_MIN_N rows:
+#   1. the mirrored arm, the row's canonical domain
+#   2. the mirrored arm, all domains
+#   3. every forecaster arm in scope, the row's canonical domain
+#   4. every forecaster arm in scope, all domains
+# Scope is the forecaster arms registration v4 Section 4 names. The control's own
+# rows stay out of the reference class: they carry the claims, and so the outcomes,
+# of the rows they mirror. Voids are not outcomes. A resolved row with no
+# resolved_date cannot be shown to fall on or before the cut and is left out.
+ARM_TRAILING = "control/trailing"
+TRAIL_MIN_N = 10
+V4_SCOPE = ("manual/fable-5.1/unattested", "manual/opus-5.5/unattested",
+            "operator/cold", "operator/advised")
+TRAIL_STEPS = {1: "mirrored arm, canonical domain", 2: "mirrored arm, all domains",
+               3: "arms in scope, canonical domain", 4: "arms in scope, all domains"}
+
+
+def cut_date(a):
+    """The history cut: --as-of when given, else the UTC date of the run. A
+    same-run lane seals before the UTC day rolls, so that is the packet date."""
+    if a.as_of:
+        return date(*map(int, a.as_of.split("-")))
+    return datetime.now(timezone.utc).date()
+
+
+def trailing_history(data, cut):
+    """(arm, canonical domain) -> [hits, misses] over rows resolved on or before cut."""
+    hist = {}
+    for p in data["projections"]:
+        if p.get("status") not in ("hit", "miss"):
+            continue
+        rd = str(p.get("resolved_date") or "")[:10]
+        if not rd or rd > cut.isoformat():
+            continue
+        c = hist.setdefault((p.get("model") or "", canon(p.get("domain", ""))), [0, 0])
+        c[0 if p["status"] == "hit" else 1] += 1
+    return hist
+
+
+def pick_trailing(hist, mirror_of, domain):
+    """(rate, n, step, canonical domain) from the first step of the ladder
+    with at least TRAIL_MIN_N resolved rows."""
+    d = canon(domain)
+    for step, arms, dom in ((1, (mirror_of,), d), (2, (mirror_of,), None),
+                            (3, V4_SCOPE, d), (4, V4_SCOPE, None)):
+        h = m = 0
+        for (arm, dd), (x, y) in hist.items():
+            if arm in arms and (dom is None or dd == dom):
+                h, m = h + x, m + y
+        if h + m >= TRAIL_MIN_N:
+            return h / (h + m), h + m, step, d
+    sys.exit("no step of the trailing ladder has %d resolved rows - the control "
+             "has nothing to stand on yet" % TRAIL_MIN_N)
+
+
+def trailing_setup(a, data):
+    if a.mirror_of not in V4_SCOPE:
+        sys.exit("refusing: control/trailing mirrors the arms registration v4 "
+                 "Section 4 names (%s); got %r" % (", ".join(V4_SCOPE), a.mirror_of))
+    cut = cut_date(a)
+    lsha = hashlib.sha256(Path(a.ledger).read_bytes()
+                          .replace(b"\r\n", b"\n")).hexdigest()[:16]
+    return cut, trailing_history(data, cut), lsha
+
+
+def trailing_basis(a, cut, lsha, data, rate, n, step, d, clamped):
+    return {
+        "arm": ARM_TRAILING,
+        "rule": "climatological, trailing - the realized hit rate of the mirrored "
+                "arm's own resolved rows, by the first step of the ladder with at "
+                "least %d rows (registration v4, Section 3)" % TRAIL_MIN_N,
+        "mirror_of": a.mirror_of,
+        "step": step,
+        "step_name": TRAIL_STEPS[step],
+        "rate": round(rate, 4),
+        "n": n,
+        "domain_canonical": d,
+        "min_n": TRAIL_MIN_N,
+        "scope": list(V4_SCOPE),
+        "history_cut": cut.isoformat(),
+        "ledger_as_of": data.get("as_of"),
+        "ledger_sha16": lsha,
+        "clamped_to_gate_band": clamped,
+        "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+        "note": "pre-registered before the outcome existed. The floor the mirrored "
+                "arm must clear, priced from its own record; it is not an attempt "
+                "to be right.",
+    }
+
+
+def cmd_rates_trailing(a):
+    data = load_ledger(Path(a.ledger))
+    if a.mirror_of not in V4_SCOPE:
+        sys.exit("refusing: %r is not an arm registration v4 Section 4 names" % (a.mirror_of,))
+    cut = cut_date(a)
+    hist = trailing_history(data, cut)
+    print(f"control/trailing for {a.mirror_of}, history cut {cut.isoformat()} "
+          f"(ledger as_of {data.get('as_of')})")
+    for dd in sorted({dd for (arm, dd) in hist if arm in V4_SCOPE}):
+        rate, n, step, _ = pick_trailing(hist, a.mirror_of, dd)
+        print(f"  {dd:16} step {step} ({TRAIL_STEPS[step]:31}) n={n:<4} "
+              f"rate={rate:.3f} -> {round(rate * 100)}%")
+
+
 def cmd_rates(a):
     data = load_ledger(Path(a.ledger))
     r = rates(data)
@@ -143,9 +258,16 @@ def cmd_pair(a):
     if a.as_of:
         as_of = date(*map(int, a.as_of.split("-")))
     r = rates(data, as_of)
+    trailing = getattr(a, "method", "baserate") == "trailing"  # V4ADOPT-1027
+    if trailing:
+        cut, hist, lsha = trailing_setup(a, data)
     out = []
     for p in src:
-        rate, n, basis, d = pick(r, p.get("domain", ""))
+        if trailing:
+            rate, n, step, d = pick_trailing(hist, a.mirror_of, p.get("domain", ""))
+            basis = None
+        else:
+            rate, n, basis, d = pick(r, p.get("domain", ""))
         pct = round(rate * 100)
         clamped = False
         if pct < P_FLOOR:
@@ -177,6 +299,8 @@ def cmd_pair(a):
                         "attempt to be right.",
             },
         }
+        if trailing:
+            row["control_basis"] = trailing_basis(a, cut, lsha, data, rate, n, step, d, clamped)
         if p.get("id"):
             row["control_basis"]["control_for"] = p["id"]
         out.append(row)
@@ -195,11 +319,11 @@ def cmd_pair(a):
         _p = _alt
         a.out = str(_p)
     _p.write_text(_txt, encoding="utf-8")
-    b = Counter(x["control_basis"]["basis"] for x in out)
+    b = Counter(x["control_basis"]["step" if trailing else "basis"] for x in out)
     pr = Counter(x["probability"] for x in out)
     print(f"{len(out)} control row(s) -> {a.out}")
-    print(f"  basis: {dict(b)}   probabilities: {dict(pr)}")
-    print(f"  next: python kkr.py --ingest {a.out} --arm {ARM}")
+    print(f"  {'step' if trailing else 'basis'}: {dict(b)}   probabilities: {dict(pr)}")
+    print(f"  next: python kkr.py --ingest {a.out} --arm {ARM_TRAILING if trailing else ARM}")
 
 
 def cmd_from_ledger(a):
@@ -257,7 +381,19 @@ def main():
                          "the previous run's packet.")
     ap.add_argument("--as-of", dest="as_of", metavar="YYYY-MM-DD",
                     help="exclude rows resolved after this date from the rate")
+    # V4ADOPT-1027: the trailing method (registration v4, Section 3)
+    ap.add_argument("--method", choices=("baserate", "trailing"), default="baserate",
+                    help="baserate: control/baserate, retired 2026-10-27 and kept so "
+                         "its rows recompute. trailing: control/trailing, priced from "
+                         "the mirrored arm's own resolved rows")
+    ap.add_argument("--mirror-of", dest="mirror_of", metavar="ARM_TAG",
+                    help="with --method trailing: the arm being mirrored (defaults "
+                         "to the --from-ledger arm)")
     a = ap.parse_args()
+    if a.method == "trailing" and not a.mirror_of and a.from_ledger:
+        a.mirror_of = a.from_ledger
+    if a.method == "trailing" and not a.mirror_of:
+        ap.error("--method trailing needs --mirror-of (or --from-ledger)")
     # KK21e: compose a run-distinguishing default. A fixed filename cannot hold
     # two runs and answers a second one by discarding the first, without error.
     if not a.out:
@@ -272,7 +408,7 @@ def main():
         else:
             a.out = "control_packet.json"
     if a.rates:
-        return cmd_rates(a)
+        return cmd_rates_trailing(a) if a.method == "trailing" else cmd_rates(a)
     if a.from_ledger:
         return cmd_from_ledger(a)
     if a.pair:
