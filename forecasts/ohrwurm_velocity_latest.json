@@ -1,7 +1,7 @@
 {
   "schema": "ohrwurm_velocity/v1",
-  "generated": "2026-10-26T15:18:10.338557+00:00",
-  "source_pull": "tg_translated_2026-10-26_1512.json",
+  "generated": "2026-10-27T15:21:02.845866+00:00",
+  "source_pull": "tg_translated_2026-10-27_1514.json",
   "floors": {
     "min_reports": 3,
     "min_channels": 2,
@@ -12,87 +12,42 @@
   },
   "caveat": "velocity is measured WITHIN this pull; acceleration needs two dated pulls with non-overlapping windows and is not computed unless --prior supplies one. First-in-this-corpus is not first in the world. Per-language stoplists are partial — Cyrillic coverage misses common function words — so each phrase carries rarest_token_msg_share and a function_shaped flag as a language-neutral guard.",
   "summary": {
-    "phrases_total": 106,
-    "function_shaped": 30,
-    "crossed_side": 54,
-    "confined": 52,
-    "median_velocity": 0.33,
-    "median_cross_latency_hrs": 6.41,
+    "phrases_total": 117,
+    "function_shaped": 24,
+    "crossed_side": 40,
+    "confined": 77,
+    "median_velocity": 0.28,
+    "median_cross_latency_hrs": 6.73,
     "crossed_under_1hr": 7,
     "fastest": {
-      "phrase": "lula silva victory",
-      "cross_latency_hrs": 0.04,
-      "velocity": 0.84
+      "phrase": "national security",
+      "cross_latency_hrs": 0.0,
+      "velocity": 0.27
     }
   },
   "acceleration": null,
   "phrases": [
     {
-      "phrase": "lula silva victory",
-      "rarest_token_msg_share": 0.0229,
+      "phrase": "national security",
+      "rarest_token_msg_share": 0.0242,
       "function_shaped": true,
-      "reports": 3,
+      "reports": 9,
       "channels": 3,
       "sides": 2,
       "side_balance": {
-        "AXIS": 2,
+        "AXIS": 8,
         "PS": 1
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-26T02:42:36+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 3.56,
-      "velocity_chan_per_hr": 0.84,
-      "hours_to_cross_side": 0.04,
-      "cross_fraction": 0.011,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.04,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 3.56,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "brazilian president",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 6,
-      "channels": 4,
-      "sides": 3,
-      "side_balance": {
-        "AXIS": 3,
-        "PS": 2,
-        "UA": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-26T01:24:59+00:00",
+        "at": "2026-10-26T15:53:13+00:00",
         "channel": "QudsNen",
         "side": "PS"
       },
-      "span_hours": 6.82,
-      "velocity_chan_per_hr": 0.59,
-      "hours_to_cross_side": 0.3,
-      "cross_fraction": 0.044,
+      "span_hours": 10.98,
+      "velocity_chan_per_hr": 0.27,
+      "hours_to_cross_side": 0.0,
+      "cross_fraction": 0.0,
       "crossed_to": {
         "side": "AXIS",
         "channel": "AlmayadeenEnglish"
@@ -105,470 +60,41 @@
           "side": "PS"
         },
         {
-          "h": 0.3,
+          "h": 0.0,
           "channel": "AlmayadeenEnglish",
           "side": "AXIS"
         },
         {
-          "h": 2.1,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 6.82,
+          "h": 10.98,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "donald trump",
-      "rarest_token_msg_share": 0.0115,
+      "phrase": "meeting between",
+      "rarest_token_msg_share": 0.0193,
       "function_shaped": false,
       "reports": 6,
       "channels": 4,
-      "sides": 3,
-      "side_balance": {
-        "AXIS": 4,
-        "UA": 1,
-        "PS": 1
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T21:12:42+00:00",
-        "channel": "kyivindependent_official",
-        "side": "UA"
-      },
-      "span_hours": 10.09,
-      "velocity_chan_per_hr": 0.4,
-      "hours_to_cross_side": 0.7,
-      "cross_fraction": 0.069,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "AlmayadeenEnglish"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 0.7,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 9.04,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 10.09,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "conceded defeat",
-      "rarest_token_msg_share": 0.0057,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 3,
-      "sides": 3,
-      "side_balance": {
-        "AXIS": 1,
-        "UA": 1,
-        "PS": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T20:56:44+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 10.82,
-      "velocity_chan_per_hr": 0.28,
-      "hours_to_cross_side": 1.43,
-      "cross_fraction": 0.132,
-      "crossed_to": {
-        "side": "UA",
-        "channel": "kyivindependent_official"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 1.43,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 10.82,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "brazilian president luiz",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 3,
-      "sides": 3,
-      "side_balance": {
-        "AXIS": 2,
-        "UA": 1,
-        "PS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-26T01:42:46+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 7.79,
-      "velocity_chan_per_hr": 0.39,
-      "hours_to_cross_side": 1.8,
-      "cross_fraction": 0.231,
-      "crossed_to": {
-        "side": "UA",
-        "channel": "kyivindependent_official"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 1.8,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 7.79,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "lula silva won",
-      "rarest_token_msg_share": 0.0172,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 3,
-      "sides": 3,
-      "side_balance": {
-        "PS": 2,
-        "AXIS": 1,
-        "UA": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-26T00:38:05+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 2.88,
-      "velocity_chan_per_hr": 1.04,
-      "hours_to_cross_side": 0.78,
-      "cross_fraction": 0.271,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.78,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 2.88,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        }
-      ]
-    },
-    {
-      "phrase": "luiz inácio lula silva won",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 3,
-      "sides": 3,
-      "side_balance": {
-        "AXIS": 1,
-        "UA": 1,
-        "PS": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-26T00:38:05+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 7.13,
-      "velocity_chan_per_hr": 0.42,
-      "hours_to_cross_side": 2.88,
-      "cross_fraction": 0.404,
-      "crossed_to": {
-        "side": "UA",
-        "channel": "kyivindependent_official"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 2.88,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 7.13,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "president luiz inácio lula silva",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 6,
-      "channels": 4,
-      "sides": 3,
-      "side_balance": {
-        "AXIS": 3,
-        "PS": 2,
-        "UA": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T21:06:07+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 10.66,
-      "velocity_chan_per_hr": 0.38,
-      "hours_to_cross_side": 6.41,
-      "cross_fraction": 0.601,
-      "crossed_to": {
-        "side": "UA",
-        "channel": "kyivindependent_official"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 3.53,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 6.41,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 10.66,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "luiz inácio lula silva",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 8,
-      "channels": 4,
-      "sides": 3,
-      "side_balance": {
-        "AXIS": 4,
-        "PS": 3,
-        "UA": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T21:06:07+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 10.66,
-      "velocity_chan_per_hr": 0.38,
-      "hours_to_cross_side": 6.41,
-      "cross_fraction": 0.601,
-      "crossed_to": {
-        "side": "UA",
-        "channel": "kyivindependent_official"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 3.53,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 6.41,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 10.66,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "president luiz",
-      "rarest_token_msg_share": 0.021,
-      "function_shaped": true,
-      "reports": 8,
-      "channels": 4,
-      "sides": 3,
-      "side_balance": {
-        "AXIS": 5,
-        "PS": 2,
-        "UA": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T21:06:07+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 10.66,
-      "velocity_chan_per_hr": 0.38,
-      "hours_to_cross_side": 6.41,
-      "cross_fraction": 0.601,
-      "crossed_to": {
-        "side": "UA",
-        "channel": "kyivindependent_official"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 3.53,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 6.41,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 10.66,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "military vehicles",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 3,
       "sides": 2,
       "side_balance": {
-        "AXIS": 3,
-        "PS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T17:17:15+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 20.38,
-      "velocity_chan_per_hr": 0.15,
-      "hours_to_cross_side": 12.78,
-      "cross_fraction": 0.627,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 12.78,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 20.38,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "fourth term",
-      "rarest_token_msg_share": 0.0191,
-      "function_shaped": false,
-      "reports": 7,
-      "channels": 3,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 5,
-        "PS": 2
+        "AXIS": 4,
+        "UA": 2
       },
       "zone": "iran",
       "origin": {
-        "at": "2026-10-26T00:15:00+00:00",
+        "at": "2026-10-26T15:25:18+00:00",
         "channel": "PRESSTV",
         "side": "AXIS"
       },
-      "span_hours": 1.46,
-      "velocity_chan_per_hr": 2.05,
-      "hours_to_cross_side": 1.17,
-      "cross_fraction": 0.801,
+      "span_hours": 21.79,
+      "velocity_chan_per_hr": 0.18,
+      "hours_to_cross_side": 0.15,
+      "cross_fraction": 0.007,
       "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
+        "side": "UA",
+        "channel": "kyivindependent_official"
       },
       "confined": false,
       "timeline": [
@@ -578,464 +104,96 @@
           "side": "AXIS"
         },
         {
-          "h": 1.17,
-          "channel": "QudsNen",
-          "side": "PS"
+          "h": 0.15,
+          "channel": "kyivindependent_official",
+          "side": "UA"
         },
         {
-          "h": 1.46,
+          "h": 0.69,
           "channel": "AlmayadeenEnglish",
           "side": "AXIS"
+        },
+        {
+          "h": 21.79,
+          "channel": "wartranslated",
+          "side": "UA"
         }
       ]
     },
     {
-      "phrase": "flávio bolsonaro",
-      "rarest_token_msg_share": 0.0172,
+      "phrase": "prime minister",
+      "rarest_token_msg_share": 0.0145,
       "function_shaped": false,
       "reports": 9,
       "channels": 4,
       "sides": 3,
       "side_balance": {
         "AXIS": 5,
-        "PS": 3,
-        "UA": 1
+        "UA": 3,
+        "PS": 1
       },
-      "zone": "iran",
+      "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T15:22:26+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
+        "at": "2026-10-26T15:28:35+00:00",
+        "channel": "kyivindependent_official",
+        "side": "UA"
       },
-      "span_hours": 12.14,
-      "velocity_chan_per_hr": 0.33,
-      "hours_to_cross_side": 10.04,
-      "cross_fraction": 0.827,
+      "span_hours": 23.31,
+      "velocity_chan_per_hr": 0.17,
+      "hours_to_cross_side": 0.41,
+      "cross_fraction": 0.018,
       "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
+        "side": "AXIS",
+        "channel": "AlmayadeenEnglish"
       },
       "confined": false,
       "timeline": [
         {
           "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
+          "channel": "kyivindependent_official",
+          "side": "UA"
         },
         {
-          "h": 5.73,
+          "h": 0.41,
           "channel": "AlmayadeenEnglish",
           "side": "AXIS"
         },
         {
-          "h": 10.04,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 12.14,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        }
-      ]
-    },
-    {
-      "phrase": "lula silva",
-      "rarest_token_msg_share": 0.0363,
-      "function_shaped": true,
-      "reports": 19,
-      "channels": 4,
-      "sides": 3,
-      "side_balance": {
-        "AXIS": 13,
-        "PS": 5,
-        "UA": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T15:22:26+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 12.14,
-      "velocity_chan_per_hr": 0.33,
-      "hours_to_cross_side": 10.04,
-      "cross_fraction": 0.827,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
+          "h": 16.89,
           "channel": "PRESSTV",
           "side": "AXIS"
         },
         {
-          "h": 5.73,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 10.04,
+          "h": 23.31,
           "channel": "QudsNen",
           "side": "PS"
-        },
-        {
-          "h": 12.14,
-          "channel": "kyivindependent_official",
-          "side": "UA"
         }
       ]
     },
     {
-      "phrase": "president donald trump",
-      "rarest_token_msg_share": 0.0115,
+      "phrase": "gadi eisenkot",
+      "rarest_token_msg_share": 0.0048,
       "function_shaped": false,
-      "reports": 5,
+      "reports": 3,
       "channels": 3,
       "sides": 2,
       "side_balance": {
-        "AXIS": 4,
+        "AXIS": 2,
         "PS": 1
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T21:54:36+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 9.39,
-      "velocity_chan_per_hr": 0.32,
-      "hours_to_cross_side": 8.34,
-      "cross_fraction": 0.888,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 8.34,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 9.39,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "brazilian president luiz inácio lula",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 3,
-      "sides": 3,
-      "side_balance": {
-        "UA": 1,
-        "PS": 1,
-        "AXIS": 1
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-26T03:30:41+00:00",
-        "channel": "kyivindependent_official",
-        "side": "UA"
-      },
-      "span_hours": 6.37,
-      "velocity_chan_per_hr": 0.47,
-      "hours_to_cross_side": 5.99,
-      "cross_fraction": 0.94,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 5.99,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 6.37,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "israeli strikes",
-      "rarest_token_msg_share": 0.0363,
-      "function_shaped": true,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 2,
-        "AXIS": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T22:20:25+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 0.49,
-      "velocity_chan_per_hr": 4.08,
-      "hours_to_cross_side": 0.49,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.49,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "defeating flávio bolsonaro",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 2,
-        "AXIS": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-26T00:38:05+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 0.78,
-      "velocity_chan_per_hr": 2.56,
-      "hours_to_cross_side": 0.78,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.78,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "term defeating",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 2,
-        "AXIS": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-26T00:38:05+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 0.78,
-      "velocity_chan_per_hr": 2.56,
-      "hours_to_cross_side": 0.78,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.78,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "regional security",
-      "rarest_token_msg_share": 0.0229,
-      "function_shaped": true,
-      "reports": 5,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 4,
-        "UA": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-26T08:40:06+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 1.16,
-      "velocity_chan_per_hr": 1.72,
-      "hours_to_cross_side": 1.16,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "UA",
-        "channel": "kyivindependent_official"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 1.16,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        }
-      ]
-    },
-    {
-      "phrase": "president lula silva",
-      "rarest_token_msg_share": 0.0363,
-      "function_shaped": true,
-      "reports": 4,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 2,
-        "PS": 2
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-26T00:15:00+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 1.17,
-      "velocity_chan_per_hr": 1.71,
-      "hours_to_cross_side": 1.17,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 1.17,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "southern lebanon",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 3,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T20:11:32+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 1.45,
-      "velocity_chan_per_hr": 1.38,
-      "hours_to_cross_side": 1.45,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 1.45,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "hossam al-zamli",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 2,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-26T08:04:43+00:00",
+        "at": "2026-10-27T07:08:08+00:00",
         "channel": "QudsNen",
         "side": "PS"
       },
-      "span_hours": 1.64,
-      "velocity_chan_per_hr": 1.22,
-      "hours_to_cross_side": 1.64,
-      "cross_fraction": 1.0,
+      "span_hours": 5.86,
+      "velocity_chan_per_hr": 0.51,
+      "hours_to_cross_side": 0.32,
+      "cross_fraction": 0.055,
       "crossed_to": {
         "side": "AXIS",
-        "channel": "PRESSTV"
+        "channel": "AlmayadeenEnglish"
       },
       "confined": false,
       "timeline": [
@@ -1045,85 +203,12 @@
           "side": "PS"
         },
         {
-          "h": 1.64,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "right-wing senator",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 2,
-        "UA": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-26T01:42:46+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 1.8,
-      "velocity_chan_per_hr": 1.11,
-      "hours_to_cross_side": 1.8,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "UA",
-        "channel": "kyivindependent_official"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
+          "h": 0.32,
           "channel": "AlmayadeenEnglish",
           "side": "AXIS"
         },
         {
-          "h": 1.8,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        }
-      ]
-    },
-    {
-      "phrase": "occupied west bank",
-      "rarest_token_msg_share": 0.0363,
-      "function_shaped": true,
-      "reports": 18,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 17,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T17:04:05+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 2.32,
-      "velocity_chan_per_hr": 0.86,
-      "hours_to_cross_side": 2.32,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 2.32,
+          "h": 5.86,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
@@ -1131,24 +216,461 @@
     },
     {
       "phrase": "west bank",
-      "rarest_token_msg_share": 0.0363,
+      "rarest_token_msg_share": 0.0805,
       "function_shaped": true,
-      "reports": 19,
-      "channels": 2,
+      "reports": 50,
+      "channels": 3,
       "sides": 2,
       "side_balance": {
-        "PS": 17,
+        "PS": 43,
+        "AXIS": 7
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T16:03:55+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 20.62,
+      "velocity_chan_per_hr": 0.15,
+      "hours_to_cross_side": 1.55,
+      "cross_fraction": 0.075,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 1.55,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 20.62,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "chief staff",
+      "rarest_token_msg_share": 0.0145,
+      "function_shaped": false,
+      "reports": 5,
+      "channels": 3,
+      "sides": 2,
+      "side_balance": {
+        "PS": 3,
         "AXIS": 2
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T17:04:05+00:00",
+        "at": "2026-10-26T16:31:16+00:00",
         "channel": "QudsNen",
         "side": "PS"
       },
-      "span_hours": 2.32,
-      "velocity_chan_per_hr": 0.86,
-      "hours_to_cross_side": 2.32,
+      "span_hours": 8.65,
+      "velocity_chan_per_hr": 0.35,
+      "hours_to_cross_side": 2.65,
+      "cross_fraction": 0.306,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 2.65,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 8.65,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "war crimes",
+      "rarest_token_msg_share": 0.0064,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 3,
+      "sides": 3,
+      "side_balance": {
+        "PS": 1,
+        "AXIS": 1,
+        "UA": 1
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T21:22:25+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 8.78,
+      "velocity_chan_per_hr": 0.34,
+      "hours_to_cross_side": 3.14,
+      "cross_fraction": 0.358,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 3.14,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 8.78,
+          "channel": "kyivindependent_official",
+          "side": "UA"
+        }
+      ]
+    },
+    {
+      "phrase": "lula silva",
+      "rarest_token_msg_share": 0.0081,
+      "function_shaped": false,
+      "reports": 5,
+      "channels": 3,
+      "sides": 2,
+      "side_balance": {
+        "AXIS": 4,
+        "PS": 1
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T18:19:53+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
+      },
+      "span_hours": 8.06,
+      "velocity_chan_per_hr": 0.37,
+      "hours_to_cross_side": 4.77,
+      "cross_fraction": 0.592,
+      "crossed_to": {
+        "side": "PS",
+        "channel": "QudsNen"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 4.77,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 8.06,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "israeli occupation forces",
+      "rarest_token_msg_share": 0.0789,
+      "function_shaped": true,
+      "reports": 34,
+      "channels": 3,
+      "sides": 2,
+      "side_balance": {
+        "PS": 32,
+        "AXIS": 2
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T15:08:18+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 10.56,
+      "velocity_chan_per_hr": 0.28,
+      "hours_to_cross_side": 7.12,
+      "cross_fraction": 0.674,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "AlmayadeenEnglish"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 7.12,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 10.56,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "israeli occupation",
+      "rarest_token_msg_share": 0.0789,
+      "function_shaped": true,
+      "reports": 46,
+      "channels": 3,
+      "sides": 2,
+      "side_balance": {
+        "PS": 42,
+        "AXIS": 4
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T15:08:18+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 10.56,
+      "velocity_chan_per_hr": 0.28,
+      "hours_to_cross_side": 7.12,
+      "cross_fraction": 0.674,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "AlmayadeenEnglish"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 7.12,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 10.56,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "benjamin netanyahu",
+      "rarest_token_msg_share": 0.0097,
+      "function_shaped": false,
+      "reports": 6,
+      "channels": 3,
+      "sides": 2,
+      "side_balance": {
+        "AXIS": 5,
+        "PS": 1
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T15:53:21+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
+      },
+      "span_hours": 21.1,
+      "velocity_chan_per_hr": 0.14,
+      "hours_to_cross_side": 15.25,
+      "cross_fraction": 0.723,
+      "crossed_to": {
+        "side": "PS",
+        "channel": "QudsNen"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 15.25,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 21.1,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "ballistic missile",
+      "rarest_token_msg_share": 0.0161,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 3,
+      "sides": 2,
+      "side_balance": {
+        "UA": 2,
+        "AXIS": 2
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T21:42:31+00:00",
+        "channel": "kyivindependent_official",
+        "side": "UA"
+      },
+      "span_hours": 16.2,
+      "velocity_chan_per_hr": 0.19,
+      "hours_to_cross_side": 13.6,
+      "cross_fraction": 0.84,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "kyivindependent_official",
+          "side": "UA"
+        },
+        {
+          "h": 13.6,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 16.2,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "former president",
+      "rarest_token_msg_share": 0.0113,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 3,
+      "sides": 3,
+      "side_balance": {
+        "PS": 1,
+        "UA": 1,
+        "AXIS": 1
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T16:12:16+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 6.92,
+      "velocity_chan_per_hr": 0.43,
+      "hours_to_cross_side": 6.73,
+      "cross_fraction": 0.973,
+      "crossed_to": {
+        "side": "UA",
+        "channel": "kyivindependent_official"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 6.73,
+          "channel": "kyivindependent_official",
+          "side": "UA"
+        },
+        {
+          "h": 6.92,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "four-way meeting",
+      "rarest_token_msg_share": 0.0129,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "AXIS": 3,
+        "UA": 1
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T15:34:08+00:00",
+        "channel": "kyivindependent_official",
+        "side": "UA"
+      },
+      "span_hours": 0.28,
+      "velocity_chan_per_hr": 7.14,
+      "hours_to_cross_side": 0.28,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "kyivindependent_official",
+          "side": "UA"
+        },
+        {
+          "h": 0.28,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "gaza strip",
+      "rarest_token_msg_share": 0.0081,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "PS": 2,
+        "AXIS": 2
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T18:28:37+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 0.36,
+      "velocity_chan_per_hr": 5.56,
+      "hours_to_cross_side": 0.36,
       "cross_fraction": 1.0,
       "crossed_to": {
         "side": "AXIS",
@@ -1162,36 +684,153 @@
           "side": "PS"
         },
         {
-          "h": 2.32,
+          "h": 0.36,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "securing fourth",
-      "rarest_token_msg_share": 0.0096,
+      "phrase": "general staff",
+      "rarest_token_msg_share": 0.0145,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
       "side_balance": {
-        "AXIS": 2,
-        "UA": 1
+        "UA": 2,
+        "AXIS": 1
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T16:35:25+00:00",
+        "channel": "kyivindependent_official",
+        "side": "UA"
+      },
+      "span_hours": 0.59,
+      "velocity_chan_per_hr": 3.39,
+      "hours_to_cross_side": 0.59,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "kyivindependent_official",
+          "side": "UA"
+        },
+        {
+          "h": 0.59,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "lara bird",
+      "rarest_token_msg_share": 0.0064,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "PS": 3,
+        "AXIS": 1
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T22:49:42+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 2.87,
+      "velocity_chan_per_hr": 0.7,
+      "hours_to_cross_side": 2.87,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 2.87,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "army chief",
+      "rarest_token_msg_share": 0.0145,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "PS": 3,
+        "AXIS": 1
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T16:31:16+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 3.81,
+      "velocity_chan_per_hr": 0.52,
+      "hours_to_cross_side": 3.81,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 3.81,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "southern lebanon",
+      "rarest_token_msg_share": 0.0129,
+      "function_shaped": false,
+      "reports": 6,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "PS": 5,
+        "AXIS": 1
       },
       "zone": "iran",
       "origin": {
-        "at": "2026-10-26T00:38:05+00:00",
+        "at": "2026-10-26T17:36:52+00:00",
         "channel": "PRESSTV",
         "side": "AXIS"
       },
-      "span_hours": 2.88,
-      "velocity_chan_per_hr": 0.69,
-      "hours_to_cross_side": 2.88,
+      "span_hours": 3.95,
+      "velocity_chan_per_hr": 0.51,
+      "hours_to_cross_side": 3.95,
       "cross_fraction": 1.0,
       "crossed_to": {
-        "side": "UA",
-        "channel": "kyivindependent_official"
+        "side": "PS",
+        "channel": "QudsNen"
       },
       "confined": false,
       "timeline": [
@@ -1201,15 +840,15 @@
           "side": "AXIS"
         },
         {
-          "h": 2.88,
-          "channel": "kyivindependent_official",
-          "side": "UA"
+          "h": 3.95,
+          "channel": "QudsNen",
+          "side": "PS"
         }
       ]
     },
     {
-      "phrase": "prime minister",
-      "rarest_token_msg_share": 0.0076,
+      "phrase": "political leadership",
+      "rarest_token_msg_share": 0.0081,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
@@ -1220,13 +859,13 @@
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T19:47:53+00:00",
+        "at": "2026-10-26T16:31:16+00:00",
         "channel": "QudsNen",
         "side": "PS"
       },
-      "span_hours": 3.02,
-      "velocity_chan_per_hr": 0.66,
-      "hours_to_cross_side": 3.02,
+      "span_hours": 4.86,
+      "velocity_chan_per_hr": 0.41,
+      "hours_to_cross_side": 4.86,
       "cross_fraction": 1.0,
       "crossed_to": {
         "side": "AXIS",
@@ -1240,115 +879,71 @@
           "side": "PS"
         },
         {
-          "h": 3.02,
+          "h": 4.86,
           "channel": "AlmayadeenEnglish",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "social media",
-      "rarest_token_msg_share": 0.0057,
+      "phrase": "crimes against",
+      "rarest_token_msg_share": 0.0064,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
       "side_balance": {
-        "PS": 2,
-        "AXIS": 1
+        "AXIS": 2,
+        "PS": 1
       },
-      "zone": "israel_gaza",
+      "zone": "iran",
       "origin": {
-        "at": "2026-10-25T15:23:20+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
+        "at": "2026-10-26T16:32:50+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
       },
-      "span_hours": 4.53,
-      "velocity_chan_per_hr": 0.44,
-      "hours_to_cross_side": 4.53,
+      "span_hours": 4.83,
+      "velocity_chan_per_hr": 0.41,
+      "hours_to_cross_side": 4.83,
       "cross_fraction": 1.0,
       "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
+        "side": "PS",
+        "channel": "QudsNen"
       },
       "confined": false,
       "timeline": [
         {
           "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 4.53,
           "channel": "PRESSTV",
           "side": "AXIS"
+        },
+        {
+          "h": 4.83,
+          "channel": "QudsNen",
+          "side": "PS"
         }
       ]
     },
     {
-      "phrase": "benjamin netanyahu",
-      "rarest_token_msg_share": 0.0076,
+      "phrase": "olive harvest",
+      "rarest_token_msg_share": 0.0113,
       "function_shaped": false,
       "reports": 4,
-      "channels": 3,
+      "channels": 2,
       "sides": 2,
       "side_balance": {
-        "AXIS": 2,
-        "PS": 2
+        "PS": 3,
+        "AXIS": 1
       },
-      "zone": "israel_gaza",
+      "zone": "iran",
       "origin": {
-        "at": "2026-10-25T22:48:53+00:00",
-        "channel": "AlmayadeenEnglish",
+        "at": "2026-10-27T01:42:01+00:00",
+        "channel": "PRESSTV",
         "side": "AXIS"
       },
-      "span_hours": 7.44,
+      "span_hours": 4.95,
       "velocity_chan_per_hr": 0.4,
-      "hours_to_cross_side": 7.44,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.82,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 7.44,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "his victory",
-      "rarest_token_msg_share": 0.0229,
-      "function_shaped": true,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 2,
-        "PS": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-26T06:43:42+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 5.08,
-      "velocity_chan_per_hr": 0.39,
-      "hours_to_cross_side": 5.08,
+      "hours_to_cross_side": 4.95,
       "cross_fraction": 1.0,
       "crossed_to": {
         "side": "PS",
@@ -1362,422 +957,32 @@
           "side": "AXIS"
         },
         {
-          "h": 5.08,
+          "h": 4.95,
           "channel": "QudsNen",
           "side": "PS"
         }
       ]
     },
     {
-      "phrase": "killed israeli",
-      "rarest_token_msg_share": 0.0363,
-      "function_shaped": true,
-      "reports": 4,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 3,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T16:01:55+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 6.31,
-      "velocity_chan_per_hr": 0.32,
-      "hours_to_cross_side": 6.31,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 6.31,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "al-iqlimi area",
-      "rarest_token_msg_share": 0.0057,
+      "phrase": "take part",
+      "rarest_token_msg_share": 0.0129,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
       "side_balance": {
         "PS": 2,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-26T03:18:12+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 6.41,
-      "velocity_chan_per_hr": 0.31,
-      "hours_to_cross_side": 6.41,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 6.41,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "several others",
-      "rarest_token_msg_share": 0.0172,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 3,
-        "PS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T15:05:26+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 6.69,
-      "velocity_chan_per_hr": 0.3,
-      "hours_to_cross_side": 6.69,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 6.69,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "gaza strip",
-      "rarest_token_msg_share": 0.0249,
-      "function_shaped": true,
-      "reports": 13,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 11,
-        "AXIS": 2
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T15:26:46+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 6.89,
-      "velocity_chan_per_hr": 0.29,
-      "hours_to_cross_side": 6.89,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 6.89,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "khan yunis",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 3,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-26T01:28:18+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 7.33,
-      "velocity_chan_per_hr": 0.27,
-      "hours_to_cross_side": 7.33,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 7.33,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "secured unprecedented fourth",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 2,
-        "PS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-26T01:42:46+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 7.79,
-      "velocity_chan_per_hr": 0.26,
-      "hours_to_cross_side": 7.79,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 7.79,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "palestinians killed",
-      "rarest_token_msg_share": 0.0363,
-      "function_shaped": true,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 2,
-        "AXIS": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T22:20:25+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 7.72,
-      "velocity_chan_per_hr": 0.26,
-      "hours_to_cross_side": 7.72,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 7.72,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "bolsonaro dramatic",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 2,
-        "PS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-26T01:42:46+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 7.79,
-      "velocity_chan_per_hr": 0.26,
-      "hours_to_cross_side": 7.79,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 7.79,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "islamic university gaza city",
-      "rarest_token_msg_share": 0.0115,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 2,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T22:49:34+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 8.79,
-      "velocity_chan_per_hr": 0.23,
-      "hours_to_cross_side": 8.79,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 8.79,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "army chief",
-      "rarest_token_msg_share": 0.0115,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 2,
-        "PS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T19:47:53+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 8.98,
-      "velocity_chan_per_hr": 0.22,
-      "hours_to_cross_side": 8.98,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 8.98,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "armed forces",
-      "rarest_token_msg_share": 0.0249,
-      "function_shaped": true,
-      "reports": 11,
-      "channels": 3,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 10,
         "UA": 1
       },
-      "zone": "iran",
+      "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T17:10:52+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
+        "at": "2026-10-26T15:39:41+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
       },
-      "span_hours": 14.6,
-      "velocity_chan_per_hr": 0.21,
-      "hours_to_cross_side": 14.6,
+      "span_hours": 5.56,
+      "velocity_chan_per_hr": 0.36,
+      "hours_to_cross_side": 5.56,
       "cross_fraction": 1.0,
       "crossed_to": {
         "side": "UA",
@@ -1787,102 +992,19 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
+          "channel": "QudsNen",
+          "side": "PS"
         },
         {
-          "h": 0.11,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 14.6,
+          "h": 5.56,
           "channel": "kyivindependent_official",
           "side": "UA"
         }
       ]
     },
     {
-      "phrase": "балістичних ракет",
-      "rarest_token_msg_share": 0.0057,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "MIXED": 2,
-        "UA": 1
-      },
-      "zone": "global",
-      "origin": {
-        "at": "2026-10-25T19:39:28+00:00",
-        "channel": "war_monitor",
-        "side": "MIXED"
-      },
-      "span_hours": 11.37,
-      "velocity_chan_per_hr": 0.18,
-      "hours_to_cross_side": 11.37,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "UA",
-        "channel": "DIUkraine"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "war_monitor",
-          "side": "MIXED"
-        },
-        {
-          "h": 11.37,
-          "channel": "DIUkraine",
-          "side": "UA"
-        }
-      ]
-    },
-    {
-      "phrase": "israeli forces",
-      "rarest_token_msg_share": 0.0688,
-      "function_shaped": true,
-      "reports": 5,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 4,
-        "AXIS": 1
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T19:23:23+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 11.13,
-      "velocity_chan_per_hr": 0.18,
-      "hours_to_cross_side": 11.13,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "PS",
-        "channel": "QudsNen"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 11.13,
-          "channel": "QudsNen",
-          "side": "PS"
-        }
-      ]
-    },
-    {
-      "phrase": "expressing hope",
-      "rarest_token_msg_share": 0.0057,
+      "phrase": "energy infrastructure",
+      "rarest_token_msg_share": 0.0081,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
@@ -1893,13 +1015,13 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T18:23:52+00:00",
-        "channel": "wartranslated",
+        "at": "2026-10-27T06:09:13+00:00",
+        "channel": "kyivindependent_official",
         "side": "UA"
       },
-      "span_hours": 12.33,
-      "velocity_chan_per_hr": 0.16,
-      "hours_to_cross_side": 12.33,
+      "span_hours": 6.36,
+      "velocity_chan_per_hr": 0.31,
+      "hours_to_cross_side": 6.36,
       "cross_fraction": 1.0,
       "crossed_to": {
         "side": "AXIS",
@@ -1909,40 +1031,157 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "wartranslated",
+          "channel": "kyivindependent_official",
           "side": "UA"
         },
         {
-          "h": 12.33,
+          "h": 6.36,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "national security",
-      "rarest_token_msg_share": 0.0191,
+      "phrase": "world wrestling",
+      "rarest_token_msg_share": 0.0064,
       "function_shaped": false,
-      "reports": 5,
+      "reports": 3,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "AXIS": 2,
+        "WEST": 1
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T15:44:26+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 6.72,
+      "velocity_chan_per_hr": 0.3,
+      "hours_to_cross_side": 6.72,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "WEST",
+        "channel": "BBCPersian"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 6.72,
+          "channel": "BBCPersian",
+          "side": "WEST"
+        }
+      ]
+    },
+    {
+      "phrase": "gaza genocide",
+      "rarest_token_msg_share": 0.0225,
+      "function_shaped": true,
+      "reports": 3,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "PS": 2,
+        "AXIS": 1
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-27T07:08:08+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 6.74,
+      "velocity_chan_per_hr": 0.3,
+      "hours_to_cross_side": 6.74,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 6.74,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "occupied west bank",
+      "rarest_token_msg_share": 0.0805,
+      "function_shaped": true,
+      "reports": 47,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "PS": 43,
+        "AXIS": 4
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T16:03:55+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 8.45,
+      "velocity_chan_per_hr": 0.24,
+      "hours_to_cross_side": 8.45,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 8.45,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "chief staff eyal zamir",
+      "rarest_token_msg_share": 0.0064,
+      "function_shaped": false,
+      "reports": 4,
       "channels": 2,
       "sides": 2,
       "side_balance": {
         "PS": 3,
-        "AXIS": 2
+        "AXIS": 1
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T15:50:48+00:00",
+        "at": "2026-10-26T16:31:16+00:00",
         "channel": "QudsNen",
         "side": "PS"
       },
-      "span_hours": 12.93,
-      "velocity_chan_per_hr": 0.15,
-      "hours_to_cross_side": 12.93,
+      "span_hours": 8.65,
+      "velocity_chan_per_hr": 0.23,
+      "hours_to_cross_side": 8.65,
       "cross_fraction": 1.0,
       "crossed_to": {
         "side": "AXIS",
-        "channel": "PRESSTV"
+        "channel": "AlmayadeenEnglish"
       },
       "confined": false,
       "timeline": [
@@ -1952,99 +1191,16 @@
           "side": "PS"
         },
         {
-          "h": 12.93,
-          "channel": "PRESSTV",
+          "h": 8.65,
+          "channel": "AlmayadeenEnglish",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "vladimir putin",
-      "rarest_token_msg_share": 0.0057,
+      "phrase": "israeli settlers",
+      "rarest_token_msg_share": 0.0129,
       "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "AXIS": 2,
-        "UA": 1
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T21:12:42+00:00",
-        "channel": "kyivindependent_official",
-        "side": "UA"
-      },
-      "span_hours": 13.14,
-      "velocity_chan_per_hr": 0.15,
-      "hours_to_cross_side": 13.14,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 13.14,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "drone strikes",
-      "rarest_token_msg_share": 0.0268,
-      "function_shaped": true,
-      "reports": 3,
-      "channels": 3,
-      "sides": 2,
-      "side_balance": {
-        "UA": 2,
-        "AXIS": 1
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T16:32:07+00:00",
-        "channel": "wartranslated",
-        "side": "UA"
-      },
-      "span_hours": 21.13,
-      "velocity_chan_per_hr": 0.14,
-      "hours_to_cross_side": 21.13,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "wartranslated",
-          "side": "UA"
-        },
-        {
-          "h": 16.89,
-          "channel": "kyivindependent_official",
-          "side": "UA"
-        },
-        {
-          "h": 21.13,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "gaza city",
-      "rarest_token_msg_share": 0.0268,
-      "function_shaped": true,
       "reports": 7,
       "channels": 2,
       "sides": 2,
@@ -2054,13 +1210,13 @@
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T17:41:18+00:00",
+        "at": "2026-10-26T22:26:07+00:00",
         "channel": "QudsNen",
         "side": "PS"
       },
-      "span_hours": 13.93,
-      "velocity_chan_per_hr": 0.14,
-      "hours_to_cross_side": 13.93,
+      "span_hours": 8.78,
+      "velocity_chan_per_hr": 0.23,
+      "hours_to_cross_side": 8.78,
       "cross_fraction": 1.0,
       "crossed_to": {
         "side": "AXIS",
@@ -2074,15 +1230,259 @@
           "side": "PS"
         },
         {
-          "h": 13.93,
+          "h": 8.78,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "islamic university gaza",
-      "rarest_token_msg_share": 0.0115,
+      "phrase": "genocide gaza",
+      "rarest_token_msg_share": 0.0225,
+      "function_shaped": true,
+      "reports": 7,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "PS": 4,
+        "AXIS": 3
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T15:39:41+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 8.85,
+      "velocity_chan_per_hr": 0.23,
+      "hours_to_cross_side": 8.85,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 8.85,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "israel continues",
+      "rarest_token_msg_share": 0.0097,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "AXIS": 2,
+        "PS": 1
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-27T00:30:46+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 10.14,
+      "velocity_chan_per_hr": 0.2,
+      "hours_to_cross_side": 10.14,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "PS",
+        "channel": "QudsNen"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 10.14,
+          "channel": "QudsNen",
+          "side": "PS"
+        }
+      ]
+    },
+    {
+      "phrase": "end war",
+      "rarest_token_msg_share": 0.0225,
+      "function_shaped": true,
+      "reports": 4,
+      "channels": 3,
+      "sides": 2,
+      "side_balance": {
+        "AXIS": 3,
+        "UA": 1
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T18:50:09+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 15.68,
+      "velocity_chan_per_hr": 0.19,
+      "hours_to_cross_side": 15.68,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "UA",
+        "channel": "wartranslated"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 3.42,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 15.68,
+          "channel": "wartranslated",
+          "side": "UA"
+        }
+      ]
+    },
+    {
+      "phrase": "foreign minister",
+      "rarest_token_msg_share": 0.0177,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "AXIS": 3,
+        "UA": 1
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-27T02:57:01+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 10.99,
+      "velocity_chan_per_hr": 0.18,
+      "hours_to_cross_side": 10.99,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "UA",
+        "channel": "wartranslated"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 10.99,
+          "channel": "wartranslated",
+          "side": "UA"
+        }
+      ]
+    },
+    {
+      "phrase": "ballistic missiles",
+      "rarest_token_msg_share": 0.0129,
+      "function_shaped": false,
+      "reports": 7,
+      "channels": 3,
+      "sides": 2,
+      "side_balance": {
+        "UA": 6,
+        "AXIS": 1
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T20:28:25+00:00",
+        "channel": "kyivindependent_official",
+        "side": "UA"
+      },
+      "span_hours": 17.44,
+      "velocity_chan_per_hr": 0.17,
+      "hours_to_cross_side": 17.44,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "AlmayadeenEnglish"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "kyivindependent_official",
+          "side": "UA"
+        },
+        {
+          "h": 4.02,
+          "channel": "wartranslated",
+          "side": "UA"
+        },
+        {
+          "h": 17.44,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "israeli forces",
+      "rarest_token_msg_share": 0.0918,
+      "function_shaped": true,
+      "reports": 4,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "PS": 3,
+        "AXIS": 1
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T18:50:09+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 11.7,
+      "velocity_chan_per_hr": 0.17,
+      "hours_to_cross_side": 11.7,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "PS",
+        "channel": "QudsNen"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 11.7,
+          "channel": "QudsNen",
+          "side": "PS"
+        }
+      ]
+    },
+    {
+      "phrase": "ethnic cleansing",
+      "rarest_token_msg_share": 0.0081,
       "function_shaped": false,
       "reports": 5,
       "channels": 2,
@@ -2093,13 +1493,13 @@
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T15:05:26+00:00",
+        "at": "2026-10-26T16:03:55+00:00",
         "channel": "QudsNen",
         "side": "PS"
       },
-      "span_hours": 16.53,
-      "velocity_chan_per_hr": 0.12,
-      "hours_to_cross_side": 16.53,
+      "span_hours": 12.56,
+      "velocity_chan_per_hr": 0.16,
+      "hours_to_cross_side": 12.56,
       "cross_fraction": 1.0,
       "crossed_to": {
         "side": "AXIS",
@@ -2113,16 +1513,138 @@
           "side": "PS"
         },
         {
-          "h": 16.53,
+          "h": 12.56,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "meeting between",
-      "rarest_token_msg_share": 0.021,
-      "function_shaped": true,
+      "phrase": "october 2023",
+      "rarest_token_msg_share": 0.0129,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "AXIS": 2,
+        "PS": 1
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T16:12:16+00:00",
+        "channel": "QudsNen",
+        "side": "PS"
+      },
+      "span_hours": 14.08,
+      "velocity_chan_per_hr": 0.14,
+      "hours_to_cross_side": 14.08,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "AXIS",
+        "channel": "PRESSTV"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "QudsNen",
+          "side": "PS"
+        },
+        {
+          "h": 14.08,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "their own",
+      "rarest_token_msg_share": 0.0145,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 2,
+      "side_balance": {
+        "PS": 2,
+        "AXIS": 1
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T16:15:17+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 13.82,
+      "velocity_chan_per_hr": 0.14,
+      "hours_to_cross_side": 13.82,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "PS",
+        "channel": "QudsNen"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 13.82,
+          "channel": "QudsNen",
+          "side": "PS"
+        }
+      ]
+    },
+    {
+      "phrase": "israeli prime minister",
+      "rarest_token_msg_share": 0.0145,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 3,
+      "sides": 2,
+      "side_balance": {
+        "AXIS": 2,
+        "PS": 1
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T15:53:21+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
+      },
+      "span_hours": 22.89,
+      "velocity_chan_per_hr": 0.13,
+      "hours_to_cross_side": 22.89,
+      "cross_fraction": 1.0,
+      "crossed_to": {
+        "side": "PS",
+        "channel": "QudsNen"
+      },
+      "confined": false,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 21.1,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 22.89,
+          "channel": "QudsNen",
+          "side": "PS"
+        }
+      ]
+    },
+    {
+      "phrase": "russian president vladimir putin",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 2,
@@ -2132,13 +1654,13 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T21:12:42+00:00",
+        "at": "2026-10-26T15:34:08+00:00",
         "channel": "kyivindependent_official",
         "side": "UA"
       },
-      "span_hours": 16.14,
-      "velocity_chan_per_hr": 0.12,
-      "hours_to_cross_side": 16.14,
+      "span_hours": 21.81,
+      "velocity_chan_per_hr": 0.09,
+      "hours_to_cross_side": 21.81,
       "cross_fraction": 1.0,
       "crossed_to": {
         "side": "AXIS",
@@ -2152,307 +1674,15 @@
           "side": "UA"
         },
         {
-          "h": 16.14,
+          "h": 21.81,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "khan younis southern gaza",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 6,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 5,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T15:26:46+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 18.27,
-      "velocity_chan_per_hr": 0.11,
-      "hours_to_cross_side": 18.27,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 18.27,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "southern gaza",
-      "rarest_token_msg_share": 0.0382,
-      "function_shaped": true,
-      "reports": 9,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 8,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T15:26:46+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 18.27,
-      "velocity_chan_per_hr": 0.11,
-      "hours_to_cross_side": 18.27,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 18.27,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "khan younis",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 8,
-      "channels": 2,
-      "sides": 2,
-      "side_balance": {
-        "PS": 7,
-        "AXIS": 1
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T15:26:46+00:00",
-        "channel": "QudsNen",
-        "side": "PS"
-      },
-      "span_hours": 18.27,
-      "velocity_chan_per_hr": 0.11,
-      "hours_to_cross_side": 18.27,
-      "cross_fraction": 1.0,
-      "crossed_to": {
-        "side": "AXIS",
-        "channel": "PRESSTV"
-      },
-      "confined": false,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "QudsNen",
-          "side": "PS"
-        },
-        {
-          "h": 18.27,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "yemeni armed forces",
-      "rarest_token_msg_share": 0.0249,
-      "function_shaped": true,
-      "reports": 9,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "AXIS": 9
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T17:10:52+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 0.11,
-      "velocity_chan_per_hr": 18.18,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.11,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "yahya saree",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "AXIS": 4
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T18:42:09+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 0.11,
-      "velocity_chan_per_hr": 18.18,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.11,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "deep inside saudi",
-      "rarest_token_msg_share": 0.0115,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "AXIS": 3
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T18:36:20+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 0.2,
-      "velocity_chan_per_hr": 10.0,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.2,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "against yemen",
-      "rarest_token_msg_share": 0.0325,
-      "function_shaped": true,
-      "reports": 4,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "AXIS": 4
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T18:36:20+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 0.2,
-      "velocity_chan_per_hr": 10.0,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.2,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "deep inside",
-      "rarest_token_msg_share": 0.0115,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "AXIS": 4
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T18:36:20+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 0.2,
-      "velocity_chan_per_hr": 10.0,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.2,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "тресвятская сомово отрожка воронеж",
-      "rarest_token_msg_share": 0.0057,
+      "phrase": "обычном режиме",
+      "rarest_token_msg_share": 0.0048,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
@@ -2462,12 +1692,12 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-26T06:15:01+00:00",
-        "channel": "rian_ru",
+        "at": "2026-10-26T18:01:23+00:00",
+        "channel": "readovkanews",
         "side": "RU"
       },
-      "span_hours": 0.75,
-      "velocity_chan_per_hr": 2.67,
+      "span_hours": 0.01,
+      "velocity_chan_per_hr": 200.0,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -2475,194 +1705,19 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 0.75,
           "channel": "readovkanews",
           "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "воронежской области",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "RU": 4
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-26T06:15:01+00:00",
-        "channel": "rian_ru",
-        "side": "RU"
-      },
-      "span_hours": 0.75,
-      "velocity_chan_per_hr": 2.67,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
         },
         {
-          "h": 0.75,
-          "channel": "readovkanews",
+          "h": 0.01,
+          "channel": "boris_rozhin",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "атаки всу",
-      "rarest_token_msg_share": 0.0153,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "RU": 4
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-26T06:03:33+00:00",
-        "channel": "rian_ru",
-        "side": "RU"
-      },
-      "span_hours": 0.94,
-      "velocity_chan_per_hr": 2.13,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 0.94,
-          "channel": "readovkanews",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "saudi arabia",
-      "rarest_token_msg_share": 0.0344,
-      "function_shaped": true,
-      "reports": 18,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "AXIS": 18
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T18:36:20+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 0.97,
-      "velocity_chan_per_hr": 2.06,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 0.97,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "united states",
-      "rarest_token_msg_share": 0.0134,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "AXIS": 4
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T17:49:46+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 1.16,
-      "velocity_chan_per_hr": 1.72,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 1.16,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "риа новости",
-      "rarest_token_msg_share": 0.0191,
-      "function_shaped": false,
-      "reports": 10,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "RU": 10
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T15:03:39+00:00",
-        "channel": "rian_ru",
-        "side": "RU"
-      },
-      "span_hours": 1.29,
-      "velocity_chan_per_hr": 1.55,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 1.29,
-          "channel": "readovkanews",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "strikes targeting",
-      "rarest_token_msg_share": 0.0153,
+      "phrase": "jordanian airstrikes",
+      "rarest_token_msg_share": 0.0081,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
@@ -2672,12 +1727,12 @@
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T17:17:15+00:00",
+        "at": "2026-10-26T22:37:33+00:00",
         "channel": "AlmayadeenEnglish",
         "side": "AXIS"
       },
-      "span_hours": 1.42,
-      "velocity_chan_per_hr": 1.41,
+      "span_hours": 0.04,
+      "velocity_chan_per_hr": 50.0,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -2689,30 +1744,450 @@
           "side": "AXIS"
         },
         {
-          "h": 1.42,
+          "h": 0.04,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "более чем",
-      "rarest_token_msg_share": 0.0229,
-      "function_shaped": true,
+      "phrase": "regional peace security",
+      "rarest_token_msg_share": 0.0145,
+      "function_shaped": false,
       "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T16:00:01+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 0.12,
+      "velocity_chan_per_hr": 16.67,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 0.12,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "agreed continue",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T16:00:01+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 0.12,
+      "velocity_chan_per_hr": 16.67,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 0.12,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "сама наносит удар своей промышленности",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T11:32:28+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 0.15,
+      "velocity_chan_per_hr": 13.33,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.15,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "любые попытки исключить россию",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T11:32:28+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 0.15,
+      "velocity_chan_per_hr": 13.33,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.15,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "европа сама наносит удар своей",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T11:32:28+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 0.15,
+      "velocity_chan_per_hr": 13.33,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.15,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "отказываясь российского газа",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T11:32:28+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 0.15,
+      "velocity_chan_per_hr": 13.33,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.15,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "мирового газового рынка",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T11:32:28+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 0.15,
+      "velocity_chan_per_hr": 13.33,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.15,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "серьезные последствия",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T11:32:28+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 0.15,
+      "velocity_chan_per_hr": 13.33,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.15,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "природного газа",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T11:30:44+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 0.18,
+      "velocity_chan_per_hr": 11.11,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.18,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "президентом финляндии премьером норвегии",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T09:25:24+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 0.28,
+      "velocity_chan_per_hr": 7.14,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.28,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "between iran",
+      "rarest_token_msg_share": 0.0193,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T16:06:55+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
+      },
+      "span_hours": 0.29,
+      "velocity_chan_per_hr": 6.9,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 0.29,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "strikes russian",
+      "rarest_token_msg_share": 0.0209,
+      "function_shaped": true,
+      "reports": 4,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "UA": 4
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T16:09:29+00:00",
+        "channel": "wartranslated",
+        "side": "UA"
+      },
+      "span_hours": 0.43,
+      "velocity_chan_per_hr": 4.65,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "wartranslated",
+          "side": "UA"
+        },
+        {
+          "h": 0.43,
+          "channel": "kyivindependent_official",
+          "side": "UA"
+        }
+      ]
+    },
+    {
+      "phrase": "своей промышленности",
+      "rarest_token_msg_share": 0.0081,
+      "function_shaped": false,
+      "reports": 4,
       "channels": 3,
       "sides": 1,
       "side_balance": {
-        "RU": 3
+        "RU": 4
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-26T11:24:38+00:00",
+        "at": "2026-10-27T11:32:28+00:00",
         "channel": "rian_ru",
         "side": "RU"
       },
-      "span_hours": 2.44,
-      "velocity_chan_per_hr": 1.23,
+      "span_hours": 0.9,
+      "velocity_chan_per_hr": 3.33,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -2724,21 +2199,166 @@
           "side": "RU"
         },
         {
-          "h": 1.35,
+          "h": 0.15,
           "channel": "readovkanews",
           "side": "RU"
         },
         {
-          "h": 2.44,
+          "h": 0.9,
           "channel": "rybar",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "war iran",
-      "rarest_token_msg_share": 0.0363,
+      "phrase": "европа сама",
+      "rarest_token_msg_share": 0.0097,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 3,
+      "sides": 1,
+      "side_balance": {
+        "RU": 4
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T11:32:28+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 0.9,
+      "velocity_chan_per_hr": 3.33,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.15,
+          "channel": "readovkanews",
+          "side": "RU"
+        },
+        {
+          "h": 0.9,
+          "channel": "rybar",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "saudi arabia turkey pakistan",
+      "rarest_token_msg_share": 0.0177,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T15:25:18+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 0.69,
+      "velocity_chan_per_hr": 2.9,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 0.69,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "saudi arabia turkey",
+      "rarest_token_msg_share": 0.0193,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 4
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T15:25:18+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 0.69,
+      "velocity_chan_per_hr": 2.9,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 0.69,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "security officials",
+      "rarest_token_msg_share": 0.029,
       "function_shaped": true,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T15:25:18+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 0.69,
+      "velocity_chan_per_hr": 2.9,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 0.69,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "turkey pakistan",
+      "rarest_token_msg_share": 0.0177,
+      "function_shaped": false,
       "reports": 5,
       "channels": 2,
       "sides": 1,
@@ -2747,12 +2367,12 @@
       },
       "zone": "iran",
       "origin": {
-        "at": "2026-10-25T15:47:47+00:00",
+        "at": "2026-10-26T15:25:18+00:00",
         "channel": "PRESSTV",
         "side": "AXIS"
       },
-      "span_hours": 2.03,
-      "velocity_chan_per_hr": 0.99,
+      "span_hours": 0.69,
+      "velocity_chan_per_hr": 2.9,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -2764,85 +2384,15 @@
           "side": "AXIS"
         },
         {
-          "h": 2.03,
+          "h": 0.69,
           "channel": "AlmayadeenEnglish",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "mahdi al-mashat",
-      "rarest_token_msg_share": 0.0057,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "AXIS": 3
-      },
-      "zone": "iran",
-      "origin": {
-        "at": "2026-10-25T17:24:07+00:00",
-        "channel": "PRESSTV",
-        "side": "AXIS"
-      },
-      "span_hours": 2.17,
-      "velocity_chan_per_hr": 0.92,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        },
-        {
-          "h": 2.17,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "студенческий список",
-      "rarest_token_msg_share": 0.0096,
-      "function_shaped": false,
-      "reports": 5,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "RU": 5
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-26T05:51:11+00:00",
-        "channel": "readovkanews",
-        "side": "RU"
-      },
-      "span_hours": 2.19,
-      "velocity_chan_per_hr": 0.91,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 2.19,
-          "channel": "rybar",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "запорожской области",
-      "rarest_token_msg_share": 0.0096,
+      "phrase": "регионах балтийского моря севера европы",
+      "rarest_token_msg_share": 0.0048,
       "function_shaped": false,
       "reports": 3,
       "channels": 3,
@@ -2852,12 +2402,12 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-26T05:25:05+00:00",
-        "channel": "rybar",
+        "at": "2026-10-27T10:23:16+00:00",
+        "channel": "rian_ru",
         "side": "RU"
       },
-      "span_hours": 3.65,
-      "velocity_chan_per_hr": 0.82,
+      "span_hours": 1.1,
+      "velocity_chan_per_hr": 2.73,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -2865,39 +2415,39 @@
       "timeline": [
         {
           "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.91,
           "channel": "rybar",
           "side": "RU"
         },
         {
-          "h": 3.25,
+          "h": 1.1,
           "channel": "boris_rozhin",
-          "side": "RU"
-        },
-        {
-          "h": 3.65,
-          "channel": "rian_ru",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "lula silva his",
-      "rarest_token_msg_share": 0.0363,
+      "phrase": "saudi arabia",
+      "rarest_token_msg_share": 0.0258,
       "function_shaped": true,
-      "reports": 3,
+      "reports": 16,
       "channels": 2,
       "sides": 1,
       "side_balance": {
-        "AXIS": 3
+        "AXIS": 16
       },
       "zone": "iran",
       "origin": {
-        "at": "2026-10-26T06:43:42+00:00",
+        "at": "2026-10-26T15:15:07+00:00",
         "channel": "PRESSTV",
         "side": "AXIS"
       },
-      "span_hours": 3.16,
-      "velocity_chan_per_hr": 0.63,
+      "span_hours": 0.86,
+      "velocity_chan_per_hr": 2.33,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -2909,15 +2459,175 @@
           "side": "AXIS"
         },
         {
-          "h": 3.16,
+          "h": 0.86,
           "channel": "AlmayadeenEnglish",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "может стать",
-      "rarest_token_msg_share": 0.0076,
+      "phrase": "armed forces",
+      "rarest_token_msg_share": 0.0161,
+      "function_shaped": false,
+      "reports": 9,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 9
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T16:06:55+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
+      },
+      "span_hours": 1.06,
+      "velocity_chan_per_hr": 1.89,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 1.06,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "президент финляндии",
+      "rarest_token_msg_share": 0.0129,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 3,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T09:41:35+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 1.6,
+      "velocity_chan_per_hr": 1.88,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.14,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        },
+        {
+          "h": 1.6,
+          "channel": "rybar",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "премьер норвегии",
+      "rarest_token_msg_share": 0.0081,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 3,
+      "sides": 1,
+      "side_balance": {
+        "RU": 4
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-27T09:41:35+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 1.6,
+      "velocity_chan_per_hr": 1.88,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 0.14,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        },
+        {
+          "h": 1.6,
+          "channel": "rybar",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "том числе",
+      "rarest_token_msg_share": 0.0209,
+      "function_shaped": true,
+      "reports": 13,
+      "channels": 4,
+      "sides": 1,
+      "side_balance": {
+        "RU": 13
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T15:00:21+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 2.34,
+      "velocity_chan_per_hr": 1.71,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 1.0,
+          "channel": "readovkanews",
+          "side": "RU"
+        },
+        {
+          "h": 2.1,
+          "channel": "rybar",
+          "side": "RU"
+        },
+        {
+          "h": 2.34,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "студенческому списку",
+      "rarest_token_msg_share": 0.0064,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
@@ -2927,12 +2637,12 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-26T09:50:23+00:00",
-        "channel": "rian_ru",
+        "at": "2026-10-26T18:55:21+00:00",
+        "channel": "rybar",
         "side": "RU"
       },
-      "span_hours": 4.49,
-      "velocity_chan_per_hr": 0.45,
+      "span_hours": 1.41,
+      "velocity_chan_per_hr": 1.42,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -2940,64 +2650,19 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 4.49,
           "channel": "rybar",
           "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "флавиу болсонару",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 4,
-      "sides": 1,
-      "side_balance": {
-        "RU": 4
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-26T02:30:29+00:00",
-        "channel": "rian_ru",
-        "side": "RU"
-      },
-      "span_hours": 9.6,
-      "velocity_chan_per_hr": 0.42,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
         },
         {
-          "h": 4.16,
+          "h": 1.41,
           "channel": "boris_rozhin",
           "side": "RU"
-        },
-        {
-          "h": 7.92,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 9.6,
-          "channel": "rybar",
-          "side": "RU"
         }
       ]
     },
     {
-      "phrase": "brazil presidential",
-      "rarest_token_msg_share": 0.0191,
+      "phrase": "cooperation among",
+      "rarest_token_msg_share": 0.0161,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
@@ -3007,12 +2672,12 @@
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-26T01:42:46+00:00",
+        "at": "2026-10-26T16:06:55+00:00",
         "channel": "AlmayadeenEnglish",
         "side": "AXIS"
       },
-      "span_hours": 5.02,
-      "velocity_chan_per_hr": 0.4,
+      "span_hours": 1.49,
+      "velocity_chan_per_hr": 1.34,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3024,15 +2689,50 @@
           "side": "AXIS"
         },
         {
-          "h": 5.02,
+          "h": 1.49,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "этом фоне",
-      "rarest_token_msg_share": 0.0115,
+      "phrase": "strait hormuz",
+      "rarest_token_msg_share": 0.0081,
+      "function_shaped": false,
+      "reports": 5,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 5
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T17:10:34+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 1.79,
+      "velocity_chan_per_hr": 1.12,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 1.79,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "конфликта украине",
+      "rarest_token_msg_share": 0.0097,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
@@ -3042,87 +2742,12 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-26T08:15:49+00:00",
-        "channel": "rybar",
-        "side": "RU"
-      },
-      "span_hours": 5.82,
-      "velocity_chan_per_hr": 0.34,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rybar",
-          "side": "RU"
-        },
-        {
-          "h": 5.82,
-          "channel": "readovkanews",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "погибли двое",
-      "rarest_token_msg_share": 0.0096,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 3,
-      "sides": 1,
-      "side_balance": {
-        "RU": 3
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T22:59:58+00:00",
-        "channel": "boris_rozhin",
-        "side": "RU"
-      },
-      "span_hours": 10.04,
-      "velocity_chan_per_hr": 0.3,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "boris_rozhin",
-          "side": "RU"
-        },
-        {
-          "h": 8.0,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 10.04,
-          "channel": "rybar",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "лула силва",
-      "rarest_token_msg_share": 0.0057,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 3,
-      "sides": 1,
-      "side_balance": {
-        "RU": 3
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-26T00:14:01+00:00",
+        "at": "2026-10-27T09:41:35+00:00",
         "channel": "rian_ru",
         "side": "RU"
       },
-      "span_hours": 10.19,
-      "velocity_chan_per_hr": 0.29,
+      "span_hours": 1.8,
+      "velocity_chan_per_hr": 1.11,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3134,35 +2759,205 @@
           "side": "RU"
         },
         {
-          "h": 6.44,
+          "h": 1.8,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "результаты выборов",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T17:03:16+00:00",
+        "channel": "boris_rozhin",
+        "side": "RU"
+      },
+      "span_hours": 1.87,
+      "velocity_chan_per_hr": 1.07,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
           "channel": "boris_rozhin",
           "side": "RU"
         },
         {
-          "h": 10.19,
+          "h": 1.87,
+          "channel": "rybar",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "united states",
+      "rarest_token_msg_share": 0.0081,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 4
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T17:02:39+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 1.92,
+      "velocity_chan_per_hr": 1.04,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 1.92,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "стран экспортеров газа",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T16:01:01+00:00",
+        "channel": "boris_rozhin",
+        "side": "RU"
+      },
+      "span_hours": 2.01,
+      "velocity_chan_per_hr": 1.0,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        },
+        {
+          "h": 2.01,
           "channel": "readovkanews",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "2026 года",
-      "rarest_token_msg_share": 0.044,
+      "phrase": "regional countries",
+      "rarest_token_msg_share": 0.029,
       "function_shaped": true,
-      "reports": 14,
-      "channels": 4,
+      "reports": 4,
+      "channels": 2,
       "sides": 1,
       "side_balance": {
-        "RU": 14
+        "AXIS": 4
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T16:15:17+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 2.71,
+      "velocity_chan_per_hr": 0.74,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 2.71,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "university campus",
+      "rarest_token_msg_share": 0.0064,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "UA": 4
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T15:08:02+00:00",
+        "at": "2026-10-26T21:42:31+00:00",
+        "channel": "kyivindependent_official",
+        "side": "UA"
+      },
+      "span_hours": 2.78,
+      "velocity_chan_per_hr": 0.72,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "kyivindependent_official",
+          "side": "UA"
+        },
+        {
+          "h": 2.78,
+          "channel": "wartranslated",
+          "side": "UA"
+        }
+      ]
+    },
+    {
+      "phrase": "российские войска",
+      "rarest_token_msg_share": 0.0113,
+      "function_shaped": false,
+      "reports": 6,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 6
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T15:11:01+00:00",
         "channel": "rybar",
         "side": "RU"
       },
-      "span_hours": 13.71,
-      "velocity_chan_per_hr": 0.29,
+      "span_hours": 2.83,
+      "velocity_chan_per_hr": 0.71,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3174,85 +2969,65 @@
           "side": "RU"
         },
         {
-          "h": 1.88,
-          "channel": "boris_rozhin",
-          "side": "RU"
-        },
-        {
-          "h": 6.03,
+          "h": 2.83,
           "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 13.71,
-          "channel": "readovkanews",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "том числе",
-      "rarest_token_msg_share": 0.0134,
-      "function_shaped": false,
-      "reports": 7,
-      "channels": 4,
-      "sides": 1,
-      "side_balance": {
-        "RU": 7
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T15:03:39+00:00",
-        "channel": "rian_ru",
-        "side": "RU"
-      },
-      "span_hours": 14.36,
-      "velocity_chan_per_hr": 0.28,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 3.22,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 10.01,
-          "channel": "boris_rozhin",
-          "side": "RU"
-        },
-        {
-          "h": 14.36,
-          "channel": "rybar",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "вучич заявил",
-      "rarest_token_msg_share": 0.0115,
+      "phrase": "pakistan saudi arabia",
+      "rarest_token_msg_share": 0.0177,
       "function_shaped": false,
       "reports": 3,
-      "channels": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T17:36:32+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 2.87,
+      "velocity_chan_per_hr": 0.7,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 2.87,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "гуманитарной операции алешках",
+      "rarest_token_msg_share": 0.0064,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
       "sides": 1,
       "side_balance": {
         "RU": 3
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T20:37:03+00:00",
+        "at": "2026-10-27T01:02:13+00:00",
         "channel": "rian_ru",
         "side": "RU"
       },
-      "span_hours": 11.65,
-      "velocity_chan_per_hr": 0.26,
+      "span_hours": 3.28,
+      "velocity_chan_per_hr": 0.61,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3264,35 +3039,30 @@
           "side": "RU"
         },
         {
-          "h": 9.24,
+          "h": 3.28,
           "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 11.65,
-          "channel": "rybar",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "первом туре",
-      "rarest_token_msg_share": 0.0076,
+      "phrase": "вооруженных сил",
+      "rarest_token_msg_share": 0.0048,
       "function_shaped": false,
       "reports": 3,
-      "channels": 3,
+      "channels": 2,
       "sides": 1,
       "side_balance": {
         "RU": 3
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-26T00:38:40+00:00",
+        "at": "2026-10-26T15:02:07+00:00",
         "channel": "boris_rozhin",
         "side": "RU"
       },
-      "span_hours": 11.46,
-      "velocity_chan_per_hr": 0.26,
+      "span_hours": 3.29,
+      "velocity_chan_per_hr": 0.61,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3304,20 +3074,300 @@
           "side": "RU"
         },
         {
-          "h": 9.78,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 11.46,
+          "h": 3.29,
           "channel": "rybar",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "ballistic missiles",
-      "rarest_token_msg_share": 0.0096,
+      "phrase": "президент россии",
+      "rarest_token_msg_share": 0.0274,
+      "function_shaped": true,
+      "reports": 4,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 4
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T15:00:21+00:00",
+        "channel": "rian_ru",
+        "side": "RU"
+      },
+      "span_hours": 3.33,
+      "velocity_chan_per_hr": 0.6,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 3.33,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "security meeting tehran",
+      "rarest_token_msg_share": 0.0338,
+      "function_shaped": true,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T15:15:07+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 3.71,
+      "velocity_chan_per_hr": 0.54,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 3.71,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "regional security",
+      "rarest_token_msg_share": 0.029,
+      "function_shaped": true,
+      "reports": 4,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 4
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T15:15:07+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 3.71,
+      "velocity_chan_per_hr": 0.54,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 3.71,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "киевского режима",
+      "rarest_token_msg_share": 0.0081,
+      "function_shaped": false,
+      "reports": 5,
+      "channels": 3,
+      "sides": 1,
+      "side_balance": {
+        "RU": 5
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T15:11:01+00:00",
+        "channel": "rybar",
+        "side": "RU"
+      },
+      "span_hours": 5.57,
+      "velocity_chan_per_hr": 0.54,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rybar",
+          "side": "RU"
+        },
+        {
+          "h": 1.9,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 5.57,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "pakistan turkey",
+      "rarest_token_msg_share": 0.0177,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 4
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T15:15:07+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 3.71,
+      "velocity_chan_per_hr": 0.54,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 3.71,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "meeting tehran",
+      "rarest_token_msg_share": 0.0338,
+      "function_shaped": true,
+      "reports": 8,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 8
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T15:15:07+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 3.71,
+      "velocity_chan_per_hr": 0.54,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 3.71,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "west asia",
+      "rarest_token_msg_share": 0.0081,
+      "function_shaped": false,
+      "reports": 5,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 5
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T16:40:43+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 3.8,
+      "velocity_chan_per_hr": 0.53,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 3.8,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "southern syria",
+      "rarest_token_msg_share": 0.0129,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 4
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T17:36:52+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 5.01,
+      "velocity_chan_per_hr": 0.4,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 5.01,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "security west asia must",
+      "rarest_token_msg_share": 0.0081,
       "function_shaped": false,
       "reports": 4,
       "channels": 2,
@@ -3327,12 +3377,12 @@
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T18:48:30+00:00",
+        "at": "2026-10-26T20:28:38+00:00",
         "channel": "AlmayadeenEnglish",
         "side": "AXIS"
       },
-      "span_hours": 8.18,
-      "velocity_chan_per_hr": 0.24,
+      "span_hours": 6.39,
+      "velocity_chan_per_hr": 0.31,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3344,15 +3394,15 @@
           "side": "AXIS"
         },
         {
-          "h": 8.18,
+          "h": 6.39,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "китайском шэньчжэне",
-      "rarest_token_msg_share": 0.0057,
+      "phrase": "первое место",
+      "rarest_token_msg_share": 0.0064,
       "function_shaped": false,
       "reports": 3,
       "channels": 3,
@@ -3362,12 +3412,12 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T16:10:32+00:00",
-        "channel": "rian_ru",
+        "at": "2026-10-27T02:05:11+00:00",
+        "channel": "boris_rozhin",
         "side": "RU"
       },
-      "span_hours": 13.24,
-      "velocity_chan_per_hr": 0.23,
+      "span_hours": 9.67,
+      "velocity_chan_per_hr": 0.31,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3375,104 +3425,94 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 0.17,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 13.24,
-          "channel": "rybar",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "путина трампа",
-      "rarest_token_msg_share": 0.0057,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 3,
-      "sides": 1,
-      "side_balance": {
-        "RU": 3
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T16:10:32+00:00",
-        "channel": "rian_ru",
-        "side": "RU"
-      },
-      "span_hours": 13.24,
-      "velocity_chan_per_hr": 0.23,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 0.17,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 13.24,
-          "channel": "rybar",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "президентских выборов",
-      "rarest_token_msg_share": 0.0096,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 3,
-      "sides": 1,
-      "side_balance": {
-        "RU": 3
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T20:58:01+00:00",
-        "channel": "rybar",
-        "side": "RU"
-      },
-      "span_hours": 13.46,
-      "velocity_chan_per_hr": 0.22,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rybar",
-          "side": "RU"
-        },
-        {
-          "h": 9.7,
           "channel": "boris_rozhin",
           "side": "RU"
         },
         {
-          "h": 13.46,
+          "h": 9.61,
           "channel": "readovkanews",
+          "side": "RU"
+        },
+        {
+          "h": 9.67,
+          "channel": "rian_ru",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "российские войска",
-      "rarest_token_msg_share": 0.0115,
+      "phrase": "causing massive",
+      "rarest_token_msg_share": 0.0097,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-27T07:16:42+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 6.63,
+      "velocity_chan_per_hr": 0.3,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 6.63,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "ras tanura",
+      "rarest_token_msg_share": 0.0048,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-27T07:16:42+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 6.63,
+      "velocity_chan_per_hr": 0.3,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 6.63,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "гуманитарной операции",
+      "rarest_token_msg_share": 0.0064,
       "function_shaped": false,
       "reports": 4,
       "channels": 3,
@@ -3482,12 +3522,12 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T18:59:31+00:00",
-        "channel": "rybar",
+        "at": "2026-10-27T01:02:13+00:00",
+        "channel": "rian_ru",
         "side": "RU"
       },
-      "span_hours": 14.07,
-      "velocity_chan_per_hr": 0.21,
+      "span_hours": 10.45,
+      "velocity_chan_per_hr": 0.29,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3495,24 +3535,64 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "rybar",
+          "channel": "rian_ru",
           "side": "RU"
         },
         {
-          "h": 0.06,
+          "h": 3.28,
           "channel": "readovkanews",
           "side": "RU"
         },
         {
-          "h": 14.07,
-          "channel": "rian_ru",
+          "h": 10.45,
+          "channel": "boris_rozhin",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "luiz inacio lula silva",
-      "rarest_token_msg_share": 0.0057,
+      "phrase": "харьковской области",
+      "rarest_token_msg_share": 0.0081,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 3,
+      "sides": 1,
+      "side_balance": {
+        "RU": 4
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T22:45:08+00:00",
+        "channel": "boris_rozhin",
+        "side": "RU"
+      },
+      "span_hours": 10.3,
+      "velocity_chan_per_hr": 0.29,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        },
+        {
+          "h": 7.37,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 10.3,
+          "channel": "rybar",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "quadrilateral meeting",
+      "rarest_token_msg_share": 0.0129,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
@@ -3522,12 +3602,12 @@
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-26T01:42:46+00:00",
+        "at": "2026-10-26T16:06:55+00:00",
         "channel": "AlmayadeenEnglish",
         "side": "AXIS"
       },
-      "span_hours": 10.13,
-      "velocity_chan_per_hr": 0.2,
+      "span_hours": 7.44,
+      "velocity_chan_per_hr": 0.27,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3539,15 +3619,60 @@
           "side": "AXIS"
         },
         {
-          "h": 10.13,
+          "h": 7.44,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "территории украины",
-      "rarest_token_msg_share": 0.0172,
+      "phrase": "при этом",
+      "rarest_token_msg_share": 0.0274,
+      "function_shaped": true,
+      "reports": 12,
+      "channels": 4,
+      "sides": 1,
+      "side_balance": {
+        "RU": 12
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T15:35:26+00:00",
+        "channel": "readovkanews",
+        "side": "RU"
+      },
+      "span_hours": 16.93,
+      "velocity_chan_per_hr": 0.24,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "readovkanews",
+          "side": "RU"
+        },
+        {
+          "h": 4.0,
+          "channel": "rybar",
+          "side": "RU"
+        },
+        {
+          "h": 15.93,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 16.93,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "кроме того",
+      "rarest_token_msg_share": 0.0097,
       "function_shaped": false,
       "reports": 6,
       "channels": 3,
@@ -3557,11 +3682,86 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T17:01:01+00:00",
-        "channel": "boris_rozhin",
+        "at": "2026-10-26T18:20:12+00:00",
+        "channel": "readovkanews",
         "side": "RU"
       },
-      "span_hours": 16.02,
+      "span_hours": 13.71,
+      "velocity_chan_per_hr": 0.22,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "readovkanews",
+          "side": "RU"
+        },
+        {
+          "h": 11.78,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 13.71,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "israeli military",
+      "rarest_token_msg_share": 0.0306,
+      "function_shaped": true,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T15:01:28+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 10.15,
+      "velocity_chan_per_hr": 0.2,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 10.15,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "iran supreme national security council",
+      "rarest_token_msg_share": 0.0113,
+      "function_shaped": false,
+      "reports": 5,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 5
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T16:06:55+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
+      },
+      "span_hours": 10.75,
       "velocity_chan_per_hr": 0.19,
       "hours_to_cross_side": null,
       "cross_fraction": null,
@@ -3570,204 +3770,34 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "boris_rozhin",
-          "side": "RU"
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
         },
         {
-          "h": 13.74,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 16.02,
-          "channel": "rybar",
-          "side": "RU"
+          "h": 10.75,
+          "channel": "PRESSTV",
+          "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "сразу несколько",
-      "rarest_token_msg_share": 0.0191,
+      "phrase": "supreme national security council",
+      "rarest_token_msg_share": 0.0113,
       "function_shaped": false,
-      "reports": 4,
-      "channels": 4,
-      "sides": 1,
-      "side_balance": {
-        "RU": 4
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T15:47:06+00:00",
-        "channel": "readovkanews",
-        "side": "RU"
-      },
-      "span_hours": 22.2,
-      "velocity_chan_per_hr": 0.18,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 9.28,
-          "channel": "boris_rozhin",
-          "side": "RU"
-        },
-        {
-          "h": 18.35,
-          "channel": "rybar",
-          "side": "RU"
-        },
-        {
-          "h": 22.2,
-          "channel": "rian_ru",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "санкции против",
-      "rarest_token_msg_share": 0.0057,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 3,
-      "sides": 1,
-      "side_balance": {
-        "RU": 3
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T15:30:13+00:00",
-        "channel": "rian_ru",
-        "side": "RU"
-      },
-      "span_hours": 16.76,
-      "velocity_chan_per_hr": 0.18,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 14.35,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 16.76,
-          "channel": "rybar",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "при этом",
-      "rarest_token_msg_share": 0.0229,
-      "function_shaped": true,
-      "reports": 9,
-      "channels": 3,
-      "sides": 1,
-      "side_balance": {
-        "RU": 9
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T15:47:06+00:00",
-        "channel": "readovkanews",
-        "side": "RU"
-      },
-      "span_hours": 16.3,
-      "velocity_chan_per_hr": 0.18,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 15.38,
-          "channel": "boris_rozhin",
-          "side": "RU"
-        },
-        {
-          "h": 16.3,
-          "channel": "rian_ru",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "ракет patriot",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 3,
-      "channels": 3,
-      "sides": 1,
-      "side_balance": {
-        "RU": 3
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T19:32:23+00:00",
-        "channel": "boris_rozhin",
-        "side": "RU"
-      },
-      "span_hours": 17.78,
-      "velocity_chan_per_hr": 0.17,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "boris_rozhin",
-          "side": "RU"
-        },
-        {
-          "h": 17.18,
-          "channel": "rybar",
-          "side": "RU"
-        },
-        {
-          "h": 17.78,
-          "channel": "rian_ru",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "сумской области",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 3,
+      "reports": 6,
       "channels": 2,
       "sides": 1,
       "side_balance": {
-        "RU": 3
+        "AXIS": 6
       },
-      "zone": "russia_ukraine",
+      "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T16:42:01+00:00",
-        "channel": "boris_rozhin",
-        "side": "RU"
+        "at": "2026-10-26T16:06:55+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
       },
-      "span_hours": 12.72,
-      "velocity_chan_per_hr": 0.16,
+      "span_hours": 10.75,
+      "velocity_chan_per_hr": 0.19,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3775,34 +3805,34 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "boris_rozhin",
-          "side": "RU"
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
         },
         {
-          "h": 12.72,
-          "channel": "rybar",
-          "side": "RU"
+          "h": 10.75,
+          "channel": "PRESSTV",
+          "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "наносили удары",
-      "rarest_token_msg_share": 0.0057,
+      "phrase": "mohsen rezaei",
+      "rarest_token_msg_share": 0.0097,
       "function_shaped": false,
-      "reports": 3,
+      "reports": 5,
       "channels": 2,
       "sides": 1,
       "side_balance": {
-        "RU": 3
+        "AXIS": 5
       },
-      "zone": "russia_ukraine",
+      "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T17:01:01+00:00",
-        "channel": "boris_rozhin",
-        "side": "RU"
+        "at": "2026-10-26T16:06:55+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
       },
-      "span_hours": 12.4,
-      "velocity_chan_per_hr": 0.16,
+      "span_hours": 10.75,
+      "velocity_chan_per_hr": 0.19,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3810,19 +3840,19 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "boris_rozhin",
-          "side": "RU"
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
         },
         {
-          "h": 12.4,
-          "channel": "rybar",
-          "side": "RU"
+          "h": 10.75,
+          "channel": "PRESSTV",
+          "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "кроме того",
-      "rarest_token_msg_share": 0.0096,
+      "phrase": "владимир путин",
+      "rarest_token_msg_share": 0.0113,
       "function_shaped": false,
       "reports": 5,
       "channels": 3,
@@ -3832,12 +3862,12 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T16:20:51+00:00",
-        "channel": "readovkanews",
+        "at": "2026-10-26T16:01:01+00:00",
+        "channel": "boris_rozhin",
         "side": "RU"
       },
-      "span_hours": 18.35,
-      "velocity_chan_per_hr": 0.16,
+      "span_hours": 20.42,
+      "velocity_chan_per_hr": 0.15,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3845,39 +3875,74 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "readovkanews",
-          "side": "RU"
-        },
-        {
-          "h": 14.67,
           "channel": "boris_rozhin",
           "side": "RU"
         },
         {
-          "h": 18.35,
-          "channel": "rian_ru",
+          "h": 2.32,
+          "channel": "readovkanews",
+          "side": "RU"
+        },
+        {
+          "h": 20.42,
+          "channel": "rybar",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "midterm elections",
-      "rarest_token_msg_share": 0.0076,
+      "phrase": "2025 года",
+      "rarest_token_msg_share": 0.0145,
       "function_shaped": false,
       "reports": 4,
       "channels": 2,
       "sides": 1,
       "side_balance": {
-        "AXIS": 4
+        "RU": 4
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T16:01:01+00:00",
+        "channel": "boris_rozhin",
+        "side": "RU"
+      },
+      "span_hours": 13.4,
+      "velocity_chan_per_hr": 0.15,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        },
+        {
+          "h": 13.4,
+          "channel": "readovkanews",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "supreme national security council mohsen",
+      "rarest_token_msg_share": 0.0097,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T17:49:46+00:00",
+        "at": "2026-10-26T20:28:38+00:00",
         "channel": "AlmayadeenEnglish",
         "side": "AXIS"
       },
-      "span_hours": 13.47,
-      "velocity_chan_per_hr": 0.15,
+      "span_hours": 14.11,
+      "velocity_chan_per_hr": 0.14,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -3889,29 +3954,29 @@
           "side": "AXIS"
         },
         {
-          "h": 13.47,
+          "h": 14.11,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "октября 2026 года",
-      "rarest_token_msg_share": 0.0306,
+      "phrase": "путин президент",
+      "rarest_token_msg_share": 0.0242,
       "function_shaped": true,
-      "reports": 7,
+      "reports": 4,
       "channels": 3,
       "sides": 1,
       "side_balance": {
-        "RU": 7
+        "RU": 4
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T17:01:01+00:00",
-        "channel": "boris_rozhin",
+        "at": "2026-10-26T15:00:21+00:00",
+        "channel": "rian_ru",
         "side": "RU"
       },
-      "span_hours": 21.74,
+      "span_hours": 20.69,
       "velocity_chan_per_hr": 0.14,
       "hours_to_cross_side": null,
       "cross_fraction": null,
@@ -3920,64 +3985,24 @@
       "timeline": [
         {
           "h": 0.0,
+          "channel": "rian_ru",
+          "side": "RU"
+        },
+        {
+          "h": 1.01,
           "channel": "boris_rozhin",
           "side": "RU"
         },
         {
-          "h": 12.4,
-          "channel": "rybar",
-          "side": "RU"
-        },
-        {
-          "h": 21.74,
+          "h": 20.69,
           "channel": "readovkanews",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "октября 2026",
-      "rarest_token_msg_share": 0.0306,
-      "function_shaped": true,
-      "reports": 8,
-      "channels": 3,
-      "sides": 1,
-      "side_balance": {
-        "RU": 8
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T17:01:01+00:00",
-        "channel": "boris_rozhin",
-        "side": "RU"
-      },
-      "span_hours": 21.74,
-      "velocity_chan_per_hr": 0.14,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "boris_rozhin",
-          "side": "RU"
-        },
-        {
-          "h": 12.4,
-          "channel": "rybar",
-          "side": "RU"
-        },
-        {
-          "h": 21.74,
-          "channel": "readovkanews",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "российские бойцы",
-      "rarest_token_msg_share": 0.0096,
+      "phrase": "2023 года",
+      "rarest_token_msg_share": 0.0129,
       "function_shaped": false,
       "reports": 3,
       "channels": 3,
@@ -3987,12 +4012,12 @@
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T15:03:22+00:00",
+        "at": "2026-10-26T16:01:01+00:00",
         "channel": "boris_rozhin",
         "side": "RU"
       },
-      "span_hours": 23.28,
-      "velocity_chan_per_hr": 0.13,
+      "span_hours": 21.63,
+      "velocity_chan_per_hr": 0.14,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -4004,70 +4029,105 @@
           "side": "RU"
         },
         {
-          "h": 19.64,
-          "channel": "rian_ru",
-          "side": "RU"
-        },
-        {
-          "h": 23.28,
-          "channel": "rybar",
-          "side": "RU"
-        }
-      ]
-    },
-    {
-      "phrase": "сих пор",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 4,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "RU": 4
-      },
-      "zone": "russia_ukraine",
-      "origin": {
-        "at": "2026-10-25T17:31:01+00:00",
-        "channel": "rybar",
-        "side": "RU"
-      },
-      "span_hours": 15.49,
-      "velocity_chan_per_hr": 0.13,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "rybar",
-          "side": "RU"
-        },
-        {
-          "h": 15.49,
+          "h": 2.66,
           "channel": "readovkanews",
           "side": "RU"
+        },
+        {
+          "h": 21.63,
+          "channel": "rybar",
+          "side": "RU"
         }
       ]
     },
     {
-      "phrase": "крылатых ракет",
-      "rarest_token_msg_share": 0.0076,
-      "function_shaped": false,
-      "reports": 4,
+      "phrase": "war iran",
+      "rarest_token_msg_share": 0.0515,
+      "function_shaped": true,
+      "reports": 3,
       "channels": 2,
       "sides": 1,
       "side_balance": {
-        "RU": 4
+        "AXIS": 3
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T18:57:59+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
+      },
+      "span_hours": 14.65,
+      "velocity_chan_per_hr": 0.14,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 14.65,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "saying they",
+      "rarest_token_msg_share": 0.0177,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 3
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T18:19:53+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
+      },
+      "span_hours": 14.84,
+      "velocity_chan_per_hr": 0.13,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 14.84,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "2026 года",
+      "rarest_token_msg_share": 0.0354,
+      "function_shaped": true,
+      "reports": 6,
+      "channels": 3,
+      "sides": 1,
+      "side_balance": {
+        "RU": 6
       },
       "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T17:31:01+00:00",
-        "channel": "rybar",
+        "at": "2026-10-26T15:10:15+00:00",
+        "channel": "readovkanews",
         "side": "RU"
       },
-      "span_hours": 17.15,
-      "velocity_chan_per_hr": 0.12,
+      "span_hours": 22.48,
+      "velocity_chan_per_hr": 0.13,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -4075,34 +4135,39 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "rybar",
+          "channel": "readovkanews",
           "side": "RU"
         },
         {
-          "h": 17.15,
+          "h": 0.85,
           "channel": "boris_rozhin",
+          "side": "RU"
+        },
+        {
+          "h": 22.48,
+          "channel": "rybar",
           "side": "RU"
         }
       ]
     },
     {
-      "phrase": "against iran",
-      "rarest_token_msg_share": 0.0459,
-      "function_shaped": true,
+      "phrase": "зоне сво",
+      "rarest_token_msg_share": 0.0113,
+      "function_shaped": false,
       "reports": 3,
       "channels": 2,
       "sides": 1,
       "side_balance": {
-        "AXIS": 3
+        "RU": 3
       },
-      "zone": "israel_gaza",
+      "zone": "russia_ukraine",
       "origin": {
-        "at": "2026-10-25T17:22:26+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
+        "at": "2026-10-26T19:31:59+00:00",
+        "channel": "boris_rozhin",
+        "side": "RU"
       },
-      "span_hours": 17.19,
-      "velocity_chan_per_hr": 0.12,
+      "span_hours": 14.96,
+      "velocity_chan_per_hr": 0.13,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -4110,19 +4175,19 @@
       "timeline": [
         {
           "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
+          "channel": "boris_rozhin",
+          "side": "RU"
         },
         {
-          "h": 17.19,
-          "channel": "PRESSTV",
-          "side": "AXIS"
+          "h": 14.96,
+          "channel": "rybar",
+          "side": "RU"
         }
       ]
     },
     {
-      "phrase": "questions about",
-      "rarest_token_msg_share": 0.0057,
+      "phrase": "israeli voters",
+      "rarest_token_msg_share": 0.0129,
       "function_shaped": false,
       "reports": 3,
       "channels": 2,
@@ -4132,12 +4197,12 @@
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T20:11:32+00:00",
+        "at": "2026-10-26T15:53:21+00:00",
         "channel": "AlmayadeenEnglish",
         "side": "AXIS"
       },
-      "span_hours": 18.19,
-      "velocity_chan_per_hr": 0.11,
+      "span_hours": 16.18,
+      "velocity_chan_per_hr": 0.12,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -4149,50 +4214,15 @@
           "side": "AXIS"
         },
         {
-          "h": 18.19,
+          "h": 16.18,
           "channel": "PRESSTV",
           "side": "AXIS"
         }
       ]
     },
     {
-      "phrase": "yemeni forces",
-      "rarest_token_msg_share": 0.0306,
-      "function_shaped": true,
-      "reports": 3,
-      "channels": 2,
-      "sides": 1,
-      "side_balance": {
-        "AXIS": 3
-      },
-      "zone": "israel_gaza",
-      "origin": {
-        "at": "2026-10-25T18:48:30+00:00",
-        "channel": "AlmayadeenEnglish",
-        "side": "AXIS"
-      },
-      "span_hours": 18.86,
-      "velocity_chan_per_hr": 0.11,
-      "hours_to_cross_side": null,
-      "cross_fraction": null,
-      "crossed_to": null,
-      "confined": true,
-      "timeline": [
-        {
-          "h": 0.0,
-          "channel": "AlmayadeenEnglish",
-          "side": "AXIS"
-        },
-        {
-          "h": 18.86,
-          "channel": "PRESSTV",
-          "side": "AXIS"
-        }
-      ]
-    },
-    {
-      "phrase": "targeting saudi",
-      "rarest_token_msg_share": 0.0153,
+      "phrase": "secretary iran supreme national security",
+      "rarest_token_msg_share": 0.0113,
       "function_shaped": false,
       "reports": 4,
       "channels": 2,
@@ -4202,12 +4232,12 @@
       },
       "zone": "israel_gaza",
       "origin": {
-        "at": "2026-10-25T17:17:15+00:00",
+        "at": "2026-10-26T16:06:55+00:00",
         "channel": "AlmayadeenEnglish",
         "side": "AXIS"
       },
-      "span_hours": 20.38,
-      "velocity_chan_per_hr": 0.1,
+      "span_hours": 18.47,
+      "velocity_chan_per_hr": 0.11,
       "hours_to_cross_side": null,
       "cross_fraction": null,
       "crossed_to": null,
@@ -4219,9 +4249,219 @@
           "side": "AXIS"
         },
         {
-          "h": 20.38,
+          "h": 18.47,
           "channel": "PRESSTV",
           "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "mojtaba khamenei",
+      "rarest_token_msg_share": 0.0097,
+      "function_shaped": false,
+      "reports": 6,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 6
+      },
+      "zone": "iran",
+      "origin": {
+        "at": "2026-10-26T16:32:50+00:00",
+        "channel": "PRESSTV",
+        "side": "AXIS"
+      },
+      "span_hours": 19.39,
+      "velocity_chan_per_hr": 0.1,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        },
+        {
+          "h": 19.39,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "будет только",
+      "rarest_token_msg_share": 0.0274,
+      "function_shaped": true,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T15:59:03+00:00",
+        "channel": "rybar",
+        "side": "RU"
+      },
+      "span_hours": 19.53,
+      "velocity_chan_per_hr": 0.1,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rybar",
+          "side": "RU"
+        },
+        {
+          "h": 19.53,
+          "channel": "rian_ru",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "должна быть",
+      "rarest_token_msg_share": 0.0064,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T17:11:12+00:00",
+        "channel": "boris_rozhin",
+        "side": "RU"
+      },
+      "span_hours": 20.46,
+      "velocity_chan_per_hr": 0.1,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        },
+        {
+          "h": 20.46,
+          "channel": "rybar",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "2027 года",
+      "rarest_token_msg_share": 0.0145,
+      "function_shaped": false,
+      "reports": 5,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 5
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T15:10:15+00:00",
+        "channel": "readovkanews",
+        "side": "RU"
+      },
+      "span_hours": 20.18,
+      "velocity_chan_per_hr": 0.1,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "readovkanews",
+          "side": "RU"
+        },
+        {
+          "h": 20.18,
+          "channel": "boris_rozhin",
+          "side": "RU"
+        }
+      ]
+    },
+    {
+      "phrase": "prime minister benjamin netanyahu",
+      "rarest_token_msg_share": 0.0097,
+      "function_shaped": false,
+      "reports": 4,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "AXIS": 4
+      },
+      "zone": "israel_gaza",
+      "origin": {
+        "at": "2026-10-26T15:53:21+00:00",
+        "channel": "AlmayadeenEnglish",
+        "side": "AXIS"
+      },
+      "span_hours": 21.1,
+      "velocity_chan_per_hr": 0.09,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "AlmayadeenEnglish",
+          "side": "AXIS"
+        },
+        {
+          "h": 21.1,
+          "channel": "PRESSTV",
+          "side": "AXIS"
+        }
+      ]
+    },
+    {
+      "phrase": "несколько месяцев",
+      "rarest_token_msg_share": 0.0064,
+      "function_shaped": false,
+      "reports": 3,
+      "channels": 2,
+      "sides": 1,
+      "side_balance": {
+        "RU": 3
+      },
+      "zone": "russia_ukraine",
+      "origin": {
+        "at": "2026-10-26T15:11:01+00:00",
+        "channel": "rybar",
+        "side": "RU"
+      },
+      "span_hours": 21.82,
+      "velocity_chan_per_hr": 0.09,
+      "hours_to_cross_side": null,
+      "cross_fraction": null,
+      "crossed_to": null,
+      "confined": true,
+      "timeline": [
+        {
+          "h": 0.0,
+          "channel": "rybar",
+          "side": "RU"
+        },
+        {
+          "h": 21.82,
+          "channel": "boris_rozhin",
+          "side": "RU"
         }
       ]
     }
