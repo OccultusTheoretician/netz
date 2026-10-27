@@ -348,7 +348,7 @@ def main():
       "time. These rates therefore compare one gated arm against arms that were "
       "never gated, and the manual arms' rates are what an ungated lane "
       "produced — not evidence that gating does or does not work. Rows sealed "
-      "from 2026-08-04 forward are gated on both paths (KK21c).")
+      "from 2026-08-04 forward are gated on both paths.")  # KKSWEEP-1027: no tracking number in served text
     w("")
     w("| arm | audited | defective | rate |")
     w("|---|---:|---:|---:|")

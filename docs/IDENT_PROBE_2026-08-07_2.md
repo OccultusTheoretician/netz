@@ -155,4 +155,6 @@ The audit's UNSOURCED verdict means *not present in the published record* — th
 
 This is a measured property of the elicitation pipeline, printed rather than tidied. Sealed rows stand; the finding enters the record as a new entry.
 
-Probe evidence: `evidence/ident_probe_2026-08-07_0335.json` (withheld per the KK23 evidence ruling, available on analyst query).
+Probe evidence: `evidence/ident_probe_2026-08-07_0335.json` (withheld per the evidence ruling of 2026-08-05, available on analyst query).
+
+Correction, 2026-10-27 (RPAS-26 5.07): an internal tracking number in the evidence line above now reads as the date of the ruling it names; the text as first served is in the repository at commit d7b42d2.

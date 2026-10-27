@@ -54,6 +54,12 @@ def esc(s) -> str:
     return html.escape(str(s), quote=True)
 
 
+def dated_book(s) -> str:
+    """KKSWEEP-1027: the register is frozen and keeps its wording; the face prints
+    the frontier item by the date it was banked. Tracking numbers never publish."""
+    return str(s).replace("(KK17 #4)", "(frontier bank item 4, 2026-07-31)")
+
+
 def sha_lf(p: Path) -> str:
     return hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
@@ -104,7 +110,7 @@ def main() -> int:
              "this book seals those commitments as forecast rows before their outcomes, under the same gate, "
              "the same controls and the same adjudication as every other row on the desk. Stated versus "
              "operational, applied to the people building the measurement stack. "
-             f"{esc(reg.get('book', ''))}.</p>\n")
+             f"{esc(dated_book(reg.get('book', '')))}.</p>\n")
 
     B.append("<h2>Sealed rows</h2>\n")
     B.append("<p class='note'>Each row quotes the promise as the lab stated it and names the page; the "
