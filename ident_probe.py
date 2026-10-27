@@ -376,8 +376,8 @@ def render_md(meta, results):
                      "stand; the finding enters the record as a new entry.")
     lines.append("")
     lines.append(f"Probe evidence: `evidence/ident_probe_"
-                 f"{meta['stamp']}.json` (withheld per the KK23 evidence "
-                 f"ruling, available on analyst query).")
+                 f"{meta['stamp']}.json` (withheld per the evidence "
+                 f"ruling of 2026-08-05, available on analyst query).")  # KKSWEEP-1027: the ruling by its date
     lines.append("")
     return "\n".join(lines)
 

@@ -35,6 +35,10 @@ SITE
   noindex     pages declaring noindex that appear in the sitemap anyway.
   bom         served files carrying a UTF-8 byte order mark. Harmless to
               browsers, but it is three bytes no diff explains.
+  kk          the desk's internal tracking numbers (KK and a digit) in
+              served text. They never publish. Sealed rows keep their
+              notes as sealed, so the ledger and its full face are
+              counted apart and never flagged.
 
 GIT
   secrets     VALUE SHAPES, not keywords. The last keyword scan's only hits
@@ -386,6 +390,33 @@ def audit_site(r, verbose):
         print("    Let Python write these files instead.")
     else:
         r.ok("no BOMs in served text files")
+
+    # --- KK numbers -------------------------------------------------------
+    # KKSWEEP-1027: the desk's internal tracking numbers never publish. A
+    # sealed row keeps its notes as sealed, so the files that serve sealed
+    # rows verbatim are counted apart and never flagged; anything else served
+    # is a finding. Line numbers only.
+    kk_re = re.compile(r"\bKK\d")
+    sealed_faces = {"docs/ledger.json", "docs/ledger_full.html"}
+    n = 0
+    hits, kept = [], []
+    for p in sorted(DOCS.rglob("*")):
+        pp = p.as_posix()
+        if not (p.is_file() and pp in _served and p.suffix.lower() in
+                (".html", ".json", ".css", ".js", ".xml", ".md", ".txt")):
+            continue
+        n += 1
+        for i, line in enumerate(p.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
+            if kk_re.search(line):
+                (kept if pp in sealed_faces else hits).append("%s:%d" % (pp, i))
+    r.sub("KK numbers", n, "served text files")
+    for h in hits:
+        r.bad("KK", "%s carries an internal tracking number" % h)
+    if kept:
+        print("    %d line(s) in sealed rows (%s), kept as sealed"
+              % (len(kept), ", ".join(sorted(sealed_faces))))
+    if not hits:
+        r.ok("no internal tracking numbers in served text outside sealed rows")
 
 
 def audit_degradation(r, verbose):
