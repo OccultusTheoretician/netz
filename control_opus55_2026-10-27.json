@@ -1,0 +1,249 @@
+[
+  {
+    "statement": "The man serving a life sentence for murder whose escape from a Tennessee prison was reported on 2026-10-27 is apprehended, surrenders, or is confirmed dead between 2026-10-27 and 2026-11-16.",
+    "resolution": "TRUE if Tennessee Department of Correction, TBI, or US Marshals officials announce that the life-sentenced inmate reported escaped from a Tennessee prison on 2026-10-27 was apprehended, surrendered, or found dead between 2026-10-27 and 2026-11-16; FALSE otherwise.",
+    "failure_condition": "The escaped inmate remains at large, neither apprehended, surrendered, nor confirmed dead, at the end of 2026-11-16.",
+    "domain": "crime/security",
+    "deadline": "2026-11-18",
+    "probability": 44,
+    "citations": [
+      9
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4412,
+      "n": 68,
+      "basis": "domain",
+      "domain_canonical": "crime-security",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater occurs on the Vanuatu arc, within latitude -21 to -13 and longitude 166 to 171, between 2026-10-28 and 2026-11-30 UTC.",
+    "resolution": "TRUE if the USGS ComCat catalog lists an event of magnitude 6.0 or greater with epicenter in latitude -21 to -13 and longitude 166 to 171, origin time between 2026-10-28 and 2026-11-30 UTC; FALSE otherwise.",
+    "failure_condition": "No earthquake of magnitude 6.0 or greater has an epicenter within latitude -21 to -13 and longitude 166 to 171 with an origin time between 2026-10-28 and 2026-11-30 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-12-02",
+    "probability": 38,
+    "citations": [
+      40
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3771,
+      "n": 297,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The FOMC lowers the federal funds target range at its scheduled meeting concluding on 2026-12-09.",
+    "resolution": "TRUE if the FOMC statement issued on 2026-12-09 lowers the federal funds target range, confirmed by FRED series DFEDTARU for 2026-12-10 being below its 2026-12-08 value; FALSE otherwise.",
+    "failure_condition": "The federal funds target range in effect after the 2026-12-09 FOMC decision is equal to or higher than the range in effect on 2026-12-08.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-14",
+    "probability": 59,
+    "citations": [
+      43
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5909,
+      "n": 308,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of the 435 US House seats in the general election held on 2026-11-03.",
+    "resolution": "TRUE if Associated Press race calls made between 2026-11-03 and 2026-12-16 credit Democratic candidates with at least 218 House seats from the 2026-11-03 election; FALSE otherwise.",
+    "failure_condition": "Democratic candidates win fewer than 218 House seats in the 2026-11-03 election as decided by 2026-12-16.",
+    "domain": "political",
+    "deadline": "2026-12-18",
+    "probability": 42,
+    "citations": [
+      60,
+      114
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4204,
+      "n": 226,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "ICE Brent front-month crude futures settle below 100.00 USD per barrel on 2026-12-18. Reference: 109.18 USD on the packet date.",
+    "resolution": "TRUE if the ICE Brent front-month futures settlement price on 2026-12-18 is below 100.00 USD per barrel; FALSE if at or above 100.00. Reference: 109.18 USD on the packet date.",
+    "failure_condition": "The ICE Brent front-month settlement price on 2026-12-18 is at or above 100.00 USD per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-21",
+    "probability": 59,
+    "citations": [
+      44
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.5909,
+      "n": 308,
+      "basis": "domain",
+      "domain_canonical": "economics",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Following the 2026-10-27 Knesset election, a new Israeli government wins a Knesset confidence vote and is sworn in between 2026-10-28 and 2026-12-31.",
+    "resolution": "TRUE if the Knesset approves a new government in a confidence vote held between 2026-10-28 and 2026-12-31, per the Knesset plenum record or two of Reuters, AP, Times of Israel; FALSE otherwise.",
+    "failure_condition": "The Knesset has not approved a new government in a confidence vote at any point between 2026-10-28 and 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-04",
+    "probability": 42,
+    "citations": [
+      94,
+      111,
+      115
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4204,
+      "n": 226,
+      "basis": "domain",
+      "domain_canonical": "political",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "CISA adds the Brotli decompression flaw publicized as HTTP2Shell to the KEV catalog with a dateAdded value between 2026-10-27 and 2026-12-31.",
+    "resolution": "TRUE if the CISA KEV catalog lists an entry naming Brotli in its vulnerabilityName or shortDescription with a dateAdded value between 2026-10-27 and 2026-12-31; FALSE otherwise.",
+    "failure_condition": "CISA does not add the Brotli HTTP2Shell flaw to the KEV catalog with a dateAdded value between 2026-10-27 and 2026-12-31.",
+    "domain": "cyber",
+    "deadline": "2027-01-04",
+    "probability": 45,
+    "citations": [
+      29,
+      31
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.4527,
+      "n": 349,
+      "basis": "domain",
+      "domain_canonical": "cyber",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "The DRC Ebola outbreak reaches at least 15,000 cumulative cases, all classifications combined, in official data dated between 2026-10-28 and 2026-12-31. Reference: above 10,000 on the packet date.",
+    "resolution": "TRUE if a WHO publication or official DRC health ministry update, with data dated between 2026-10-28 and 2026-12-31, reports at least 15,000 cumulative cases, all classifications combined, for the DRC Ebola outbreak; FALSE otherwise.",
+    "failure_condition": "The cumulative case count of the DRC Ebola outbreak, all classifications combined, stays below 15,000 through 2026-12-31.",
+    "domain": "disaster",
+    "deadline": "2027-01-11",
+    "probability": 38,
+    "citations": [
+      86
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.3771,
+      "n": 297,
+      "basis": "domain",
+      "domain_canonical": "disaster",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "A front-wide Russia-Ukraine ceasefire, open-ended or at least 30 days long and announced by both governments, takes effect between 2026-10-28 and 2027-01-31.",
+    "resolution": "TRUE if Kyiv and Moscow both officially announce a front-wide ceasefire, open-ended or at least 30 days long, taking effect between 2026-10-28 and 2027-01-31, per Reuters and AP; localized, energy-only or holiday truces excluded.",
+    "failure_condition": "No front-wide Russia-Ukraine ceasefire agreed by both governments, open-ended or at least 30 days long, takes effect between 2026-10-28 and 2027-01-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-03",
+    "probability": 63,
+    "citations": [
+      74,
+      89,
+      99
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6303,
+      "n": 376,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  },
+  {
+    "statement": "Israel or the United States carries out an officially acknowledged air, missile, or drone strike on targets inside Iran between 2026-10-28 and 2027-01-31.",
+    "resolution": "TRUE if the Israeli or US government officially acknowledges an air, missile, or drone strike on targets inside Iran conducted between 2026-10-28 and 2027-01-31, as reported by two of Reuters, AP, AFP; FALSE otherwise.",
+    "failure_condition": "Neither Israel nor the United States carries out an officially acknowledged strike on targets inside Iran between 2026-10-28 and 2027-01-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-03",
+    "probability": 63,
+    "citations": [
+      80,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/baserate",
+      "rule": "climatological — same probability for every row drawn from the same reference class",
+      "rate": 0.6303,
+      "n": 376,
+      "basis": "domain",
+      "domain_canonical": "military",
+      "min_domain_n": 10,
+      "ledger_as_of": "2026-10-27T16:30:13Z",
+      "history_cutoff": "none — all resolved rows",
+      "clamped_to_gate_band": false,
+      "note": "pre-registered before the outcome existed. This is the floor the forecaster arm must clear; it is not an attempt to be right."
+    }
+  }
+]
