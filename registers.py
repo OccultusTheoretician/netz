@@ -250,6 +250,21 @@ def geo_support(statement: str, resolution: str, cited_texts: list) -> dict:
         return {"verdict": "NO_GEO", "claim": sorted(claim), "cited": [],
                 "shared": [],
                 "reason": "no cited item names a registered entity"}
+    # GEOSILENT-1026: an item that names no registered place may still concern
+    # the claim's own - a House race story need not say "United States" - so a
+    # record with a silent item is not ruled disjoint. DISJOINT needs every
+    # cited item to name a place and none to be the claim's. The abstention is
+    # returned as a note; the gate prints it and keeps it on the row.
+    if len(speaking) < len(per_item):
+        return {"verdict": "NO_GEO", "claim": sorted(claim),
+                "cited": sorted(cited), "shared": [], "reason": "",
+                "note": ("%d of %d cited items name no registered place; the "
+                         "others name %s and the claim %s. A silent item may "
+                         "concern the claim's place, so the record is not "
+                         "ruled disjoint (GEOSILENT-1026)"
+                         % (len(per_item) - len(speaking), len(per_item),
+                            ", ".join(sorted(cited)[:6]),
+                            ", ".join(sorted(claim)[:6])))}
     return {
         "verdict": "DISJOINT", "claim": sorted(claim), "cited": sorted(cited),
         "shared": [],
@@ -406,9 +421,29 @@ def venue_scope(resolution: str) -> dict:
     # KK35-REG (R11): a stated quorum is a counted class ("two of Reuters, AP,
     # AFP"), like the "two wire services" the counted-class rule already
     # exempts; the enumeration is masked so its 'or' is not two venues.
-    masked = re.sub(r"\b(?:two|three|four|\d+)\s+of\s+(?:the\s+)?[\w.&'-]+(?:\s*,\s*[\w.&'-]+(?:\s+[\w.&'-]+){0,2})*"
-                    r"\s*,?\s+(?:or|and)\s+[\w.&'-]+(?:\s+[\w.&'-]+){0,2}\b",
+    # QUORUM-1026: a stated quorum, read the ways the arms write it. A member
+    # may run to three words, carry a slash ("US Fifth Fleet/CENTCOM") or a
+    # parenthetical ("Ukrzaliznytsia (Ukrainian state railways)"); a count of
+    # reports or sources is the same class ("two independent news reports from
+    # BBC World or Al Jazeera"), with or without examples ("two credible news
+    # sources (e.g., Al Jazeera, BBC World, or Guardian)"); and so is a list
+    # followed by its own count ("Reuters, AP, or AFP report ... confirmed by two
+    # of the three outlets"). None of this mattered while the wires were
+    # unregistered; each would have died once they were (WIRES-1026). Known
+    # boundary: a member that is itself a list ("an official Israeli, US, or
+    # Iranian statement") is read only to its first words.
+    _QE = r"[\w.&'/-]+(?:\s+[\w.&'/-]+){0,2}(?:\s*\([^()]{0,60}\))?"
+    _QL = (_QE + r"(?:\s*,\s*(?:the\s+)?" + _QE + r")*\s*,?\s+(?:or|and)\s+(?:the\s+|an?\s+)?" + _QE)
+    _QN = r"\b(?:two|three|four|\d+)\s+"
+    _QA = (r"(?:(?:independent|separate|major|credible|different|distinct|international|public|"
+           r"reliable)\s+)*(?:news\s+)?(?:reports?|sources?|outlets?|wire\s+services?|wires?|media)\b")
+    masked = re.sub(_QN + r"of\s+(?:the\s+)?" + _QL + r"\b", _m11, masked, flags=re.I)
+    masked = re.sub(_QN + _QA + r"\s+(?:from|by|in|among|across)\s+(?:the\s+)?" + _QL + r"\b",
                     _m11, masked, flags=re.I)
+    masked = re.sub(_QN + _QA + r"[^.;]{0,60}?(?:\(\s*)?(?:e\.g\.,?|including|such\s+as|for\s+example,?)\s+"
+                    r"(?:the\s+)?" + _QL + r"\b", _m11, masked, flags=re.I)
+    masked = re.sub(_QL + r"(?=[^.;]{0,200}?\b(?:two|three|four|\d+)\s+of\s+(?:the\s+(?:two|three|four|\d+)|"
+                    r"those|these)\b)", _m11, masked, flags=re.I)
     low = masked.lower()
     found = named_venues(res)
 
@@ -418,7 +453,11 @@ def venue_scope(resolution: str) -> dict:
                        r"alertlevel|alert|level|category|type|status|field|names?|named|naming|containing|"
                        r"contains|equal to|equals|dateadded|date-added|struck|seized|attacked|damaged|hit|"
                        r"lifted|suspended|preliminary|final|examination|investigation|removal|termination|"
-                       r"withdrawal|ceasefire|truce|cessation|orange|red|green|yellow|hurricane|tropical)\b", re.I)
+                       r"withdrawal|ceasefire|truce|cessation|orange|red|green|yellow|hurricane|tropical|"
+                       # PREDWORDS-1026: the event nouns the arms join with 'or' (a seizure or boarding,
+                       # an impact or interception, a drone or missile, access or theft, a strait or gulf)
+                       r"seizures?|boarding|impacts?|interceptions?|intercepted|drones?|missiles?|"
+                       r"projectiles?|rockets?|theft|breach(?:es)?|strait\s+of|gulf\s+of)\b", re.I)
     def _imm_left(fragment: str) -> str:
         toks = re.findall(r"[\w.&'/-]+", fragment)
         return " ".join(toks[-3:])
@@ -994,6 +1033,73 @@ def _fixtures() -> list:
              failure=("The KEV catalog holds no Gitea entry with a dateAdded "
                       "value inside the window."),
              expect="OK", why="failure is the negation"),
+        # -- GATE-1026 ---------------------------------------------------
+        dict(name="KKR-20261026-50, a wire list (WIRES-1026)",
+             kind="venue", provenance="SEALED",
+             resolution=("TRUE if BBC, Guardian, AP or Reuters report that "
+                         "the jury in the Brand trial at Southwark Crown Court "
+                         "returned a verdict on at least one count between "
+                         "2026-10-27 and 2026-12-18; otherwise FALSE."),
+             expect="DISJUNCT",
+             why="four outlets joined by 'or', sealed before they were registered"),
+        dict(name="opus-5.5 House row of 2026-10-26 (GEOSILENT-1026)",
+             kind="geo", provenance="REJECTED",
+             statement=("Democratic candidates win at least 218 of 435 US "
+                        "House seats in the general election held on "
+                        "2026-11-03, as called between 2026-11-03 and "
+                        "2026-12-01."),
+             resolution=("TRUE if Associated Press race calls made between "
+                         "2026-11-03 and 2026-12-01 credit Democratic "
+                         "candidates with at least 218 House seats from the "
+                         "2026-11-03 election; otherwise FALSE."),
+             cited=["\U0001f195 [B3] Redistricting isn't playing out how the GOP hoped. And, Brazil's \u2026 \xb7 NPR News (single-source) \xb7 26 Oct 11:11 UTC \xb7  first newsletter republican redistricting france serbia protests brazil luiz inacio lula silva ",
+                    "\U0001f195 [B3] Republicans are spending millions and still may not win districts \u2026 \xb7 NPR News (single-source) \xb7 26 Oct 09:00 UTC \xb7  republican redistricting midterms competitive ",
+                    "\U0001f195 [B3] Why Dems\u2019 late House reaches don\u2019t usually pan out \xb7 Politico (single-source) \xb7 26 Oct 14:00 UTC \xb7  news democrats house candidates support dccc "],
+             expect="NO_GEO",
+             why="two cited US items name no place; killed DISJOINT before the fix"),
+        dict(name="KKR-20260827-12, a quorum led by a two-word name (QUORUM-1026)",
+             kind="venue", provenance="SEALED",
+             resolution=("The US State Department, Iranian Foreign Ministry, or "
+                         "Omani government confirms a formal round of US-Iran "
+                         "nuclear talks occurred, dated between 2026-09-05 and "
+                         "2026-11-15, per at least two of Al Jazeera, Reuters, "
+                         "or AP."),
+             expect="OK", why="a stated quorum is a counted class (R11)"),
+        dict(name="KKR-20260720-21, a count of reports (QUORUM-1026)",
+             kind="venue", provenance="SEALED",
+             resolution=("A confirmed U.S. military strike on an Iranian target "
+                         "in the Strait of Hormuz, documented in at least two "
+                         "independent news reports from BBC World or Al Jazeera, "
+                         "published between 2026-07-21 and 2026-07-23."),
+             expect="OK", why="two reports from a named pair is a counted class (R11)"),
+        dict(name="KKR-20260902-13, a strait or a gulf (PREDWORDS-1026)",
+             kind="venue", provenance="SEALED",
+             resolution=("UKMTO issues an incident advisory for a commercial vessel "
+                         "struck in the Strait of Hormuz or Gulf of Oman inside the "
+                         "window, and Reuters reports the same incident."),
+             expect="OK", why="the 'or' joins two places, not two venues (R9)"),
+        dict(name="KKR-20261024-02, a count of sources with examples (QUORUM-1026)",
+             kind="venue", provenance="SEALED",
+             resolution=("A fire in the West Bank region results in at least one "
+                         "confirmed casualty, as reported by two independent sources "
+                         "including Al Jazeera or BBC World."),
+             expect="OK", why="a counted class; its examples do not reopen the choice (R11)"),
+        dict(name="KKR-20260911-14, a list with its own count (QUORUM-1026)",
+             kind="venue", provenance="SEALED",
+             resolution=("Reuters, AP, or AFP report a formal ceasefire or truce "
+                         "between the US/Israel and Iran with a stated effective date "
+                         "inside the 2026-09-18 to 2026-12-03 window, confirmed by two "
+                         "of the three outlets."),
+             expect="OK", why="the list carries its own quorum (R11)"),
+        dict(name="KKR-20260914-07, a member with a parenthetical (QUORUM-1026)",
+             kind="venue", provenance="SEALED",
+             resolution=("TRUE if at least two of Reuters, AP, Ukrzaliznytsia "
+                         "(Ukrainian state railways), or a Polish government statement "
+                         "confirm a Russian missile or drone strike hit rail "
+                         "infrastructure (track, station, or rolling stock) within 50 km "
+                         "of the Ukraine-Poland border at any point between 2026-09-15 "
+                         "and 2026-10-05. FALSE otherwise."),
+             expect="OK", why="a stated quorum, one member glossed (R11)"),
     ]
 
 

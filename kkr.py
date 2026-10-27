@@ -523,6 +523,10 @@ def _citation_support(p: dict):
                                     p.get("resolution", ""), cited_text)
             if _g25.get("verdict") == "DISJOINT":
                 return _g25["reason"]
+            if _g25.get("note"):  # GEOSILENT-1026: the abstention taken is printed and kept on the row
+                print("KKR \u00b7 NOTE \u00b7 (GEO): " + _g25["note"], file=sys.stderr)
+                if _g25["note"] not in (p.get("notes") or ""):
+                    p["notes"] = ((p.get("notes") or "") + " | (GEO) " + _g25["note"]).strip(" |")
         except Exception as _e:
             print(f"KKR \u00b7 NOTE \u00b7 geo register check errored "
                   f"({type(_e).__name__}) -- SKIPPED (fail-open, printed)",
