@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "The CISA KEV catalog adds at least one PHP Group PHP CVE other than CVE-2026-109618 and CVE-2026-109619 with a date-added value between 2026-10-28 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "True if the CISA KEV catalog JSON shows a PHP Group PHP entry, excluding CVE-2026-109618 and CVE-2026-109619, with dateAdded between 2026-10-28 and 2026-11-30 inclusive.",
+    "deadline": "2026-12-02",
+    "citations": [
+      20,
+      22,
+      28
+    ],
+    "failure_condition": "No new PHP Group PHP entry with dateAdded in the window exists in the CISA KEV catalog at the deadline."
+  },
+  {
+    "statement": "The CISA KEV catalog adds a CVE for the Brotli compression flaw called HTTP2Shell, affecting .NET or the Brotli library, with a date-added value between 2026-10-28 and 2026-12-31.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "True if the CISA KEV catalog JSON contains an entry whose vendor or product is Google Brotli or Microsoft .NET describing the Brotli flaw, with dateAdded between 2026-10-28 and 2026-12-31 inclusive.",
+    "deadline": "2027-01-05",
+    "citations": [
+      29,
+      31
+    ],
+    "failure_condition": "No KEV entry for the Brotli or .NET Brotli flaw has a dateAdded value inside the window at the deadline."
+  },
+  {
+    "statement": "Benjamin Netanyahu is sworn in by the Knesset as prime minister of a new Israeli government following the 2026-10-27 election, between 2026-10-28 and 2027-01-15.",
+    "domain": "political",
+    "probability": 40,
+    "resolution": "True if the Knesset website or at least two of Reuters, AP, AFP record a Knesset confidence vote installing a government headed by Netanyahu between 2026-10-28 and 2027-01-15 inclusive.",
+    "deadline": "2027-01-19",
+    "citations": [
+      94,
+      111,
+      115
+    ],
+    "failure_condition": "At the deadline no Knesset confidence vote has installed a government headed by Netanyahu within the window."
+  },
+  {
+    "statement": "The third federal case against James Comey produces a conviction, meaning a jury guilty verdict or an accepted guilty plea, between 2026-10-28 and 2027-04-15.",
+    "domain": "crime/security",
+    "probability": 10,
+    "resolution": "True if a federal court docket on PACER or CourtListener records a guilty verdict or accepted guilty plea for Comey in that case between 2026-10-28 and 2027-04-15 inclusive.",
+    "deadline": "2027-04-20",
+    "citations": [
+      88
+    ],
+    "failure_condition": "At the deadline no docket entry records a guilty verdict or accepted guilty plea for Comey in the third case within the window."
+  },
+  {
+    "statement": "The FOMC statement issued 2026-10-28 announces no change to the federal funds target range.",
+    "domain": "economics/markets",
+    "probability": 85,
+    "resolution": "True if the FOMC statement dated 2026-10-28 on federalreserve.gov states the target range is maintained at its prior level; false if any change is announced.",
+    "deadline": "2026-11-03",
+    "citations": [
+      43
+    ],
+    "failure_condition": "The 2026-10-28 FOMC statement announces a change, up or down, to the federal funds target range."
+  },
+  {
+    "statement": "WTI crude front-month futures settle below 90.00 dollars per barrel on at least one trading day between 2026-10-28 and 2026-11-27. Reference: 100.01 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "True if the CME NYMEX official daily settlement for the front-month WTI contract is below 90.00 on any trading day from 2026-10-28 through 2026-11-27 inclusive.",
+    "deadline": "2026-12-01",
+    "citations": [
+      44
+    ],
+    "failure_condition": "Every CME front-month WTI settlement from 2026-10-28 through 2026-11-27 is at or above 90.00."
+  },
+  {
+    "statement": "The Ukrainian government officially declares the localised Oleshky ceasefire ended, suspended, or collapsed between 2026-10-28 and 2026-11-30.",
+    "domain": "military/conflict",
+    "probability": 55,
+    "resolution": "True if at least two of Reuters, AP, AFP report an official statement from the Ukrainian presidency, foreign ministry, or general staff that the Oleshky ceasefire has ended, been suspended, or collapsed, dated within the window.",
+    "deadline": "2026-12-02",
+    "citations": [
+      69,
+      76,
+      89
+    ],
+    "failure_condition": "At the deadline no corroborated official Ukrainian statement declares the Oleshky ceasefire ended, suspended, or collapsed within the window."
+  },
+  {
+    "statement": "WHO reports cumulative confirmed and probable Ebola cases in the DR Congo outbreak of at least 15,000 in a Disease Outbreak News or situation report published between 2026-10-28 and 2026-12-31.",
+    "domain": "disaster",
+    "probability": 50,
+    "resolution": "True if a WHO Disease Outbreak News item or WHO situation report published in the window states a cumulative case count of 15,000 or more for this DRC Ebola outbreak.",
+    "deadline": "2027-01-05",
+    "citations": [
+      86
+    ],
+    "failure_condition": "No WHO publication within the window reports a cumulative case count of 15,000 or more for the DRC Ebola outbreak."
+  },
+  {
+    "statement": "The man serving a life sentence who escaped a Tennessee prison on or about 2026-10-27 is taken back into custody between 2026-10-28 and 2026-11-10.",
+    "domain": "crime/security",
+    "probability": 65,
+    "resolution": "True if the Tennessee Department of Correction, TBI, or a county sheriff announces the escapee is in custody, confirmed by at least one of AP, Reuters, or the Tennessean, dated within the window.",
+    "deadline": "2026-11-12",
+    "citations": [
+      9
+    ],
+    "failure_condition": "At the deadline no official Tennessee agency announcement confirms the escapee was recaptured within the window."
+  },
+  {
+    "statement": "Israeli or US strikes hit targets on Iranian territory between 2026-11-04 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "True if at least two of Reuters, AP, AFP report strikes on Iranian territory attributed to Israel or the US, and Iranian state media or an Iranian government body acknowledges strikes occurred, within the window.",
+    "deadline": "2027-01-05",
+    "citations": [
+      80,
+      107
+    ],
+    "failure_condition": "At the deadline no cross-side corroborated strike on Iranian territory attributed to Israel or the US occurred within the window."
+  }
+]
