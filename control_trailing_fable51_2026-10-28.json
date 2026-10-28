@@ -1,0 +1,181 @@
+[
+  {
+    "statement": "ICE Brent crude front-month futures settle below 100.00 US dollars per barrel on at least one trading day between 2026-10-29 and 2026-11-27. Reference: 112.00 on the packet date, 2026-10-28.",
+    "resolution": "True if the official ICE daily settlement price of the front-month Brent crude futures contract is below 100.00 on any trading day from 2026-10-29 through 2026-11-27 inclusive. Reference: 112.00 on 2026-10-28.",
+    "failure_condition": "Every ICE front-month Brent settlement from 2026-10-29 through 2026-11-27 is at or above 100.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-01",
+    "probability": 69,
+    "citations": [
+      91,
+      80,
+      53
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6923,
+      "n": 26,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-10-28",
+      "ledger_as_of": "2026-10-28T23:53:31Z",
+      "ledger_sha16": "8f4251456b528e32",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261028-14"
+    }
+  },
+  {
+    "statement": "The Wendys Company (NASDAQ: WEN) files a Form 8-K with the SEC between 2026-10-29 and 2027-01-29 announcing a signed definitive agreement to be acquired in whole by Trian Fund Management or any other party.",
+    "resolution": "True if SEC EDGAR shows a Wendys Form 8-K filed between 2026-10-29 and 2027-01-29 disclosing a signed definitive agreement for the acquisition of the whole company; non-binding proposals or letters of intent do not count.",
+    "failure_condition": "No Wendys Form 8-K filed between 2026-10-29 and 2027-01-29 discloses a signed definitive whole-company acquisition agreement; an offer still pending, withdrawn, or rejected at the deadline is a MISS.",
+    "domain": "economics/markets",
+    "deadline": "2027-02-02",
+    "probability": 69,
+    "citations": [
+      58
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6923,
+      "n": 26,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-10-28",
+      "ledger_as_of": "2026-10-28T23:53:31Z",
+      "ledger_sha16": "8f4251456b528e32",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261028-15"
+    }
+  },
+  {
+    "statement": "CISA adds at least one CVE affecting Oracle E-Business Suite to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-10-29 and 2026-11-27.",
+    "resolution": "True if the CISA KEV catalog JSON contains at least one entry with vendorProject Oracle, product naming E-Business Suite, and dateAdded between 2026-10-29 and 2026-11-27 inclusive.",
+    "failure_condition": "At the deadline the KEV catalog carries no Oracle E-Business Suite entry whose dateAdded falls between 2026-10-29 and 2026-11-27, whether because the entry was added on or before 2026-10-28 or has not been added at all.",
+    "domain": "cyber",
+    "deadline": "2026-12-01",
+    "probability": 55,
+    "citations": [
+      15,
+      16
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.5517,
+      "n": 29,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-10-28",
+      "ledger_as_of": "2026-10-28T23:53:31Z",
+      "ledger_sha16": "8f4251456b528e32",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261028-16"
+    }
+  },
+  {
+    "statement": "Between 2026-10-29 and 2026-12-18 a US federal agency (FEC, CISA, FBI, ODNI, or DOJ) publicly attributes the October 2026 intrusion into the FEC campaign finance filing system to a named foreign government, threat group, or charged individual.",
+    "resolution": "True if an official FEC, CISA, FBI, ODNI, or DOJ statement, advisory, or charging document published between 2026-10-29 and 2026-12-18 names a specific foreign government, threat group, or charged individual as responsible for the FEC filing-system intrusion.",
+    "failure_condition": "At the deadline no official US federal statement, advisory, or charging document issued between 2026-10-29 and 2026-12-18 has named a responsible government, group, or individual; anonymous-official press leaks and private-sector attribution do not count.",
+    "domain": "cyber",
+    "deadline": "2026-12-22",
+    "probability": 55,
+    "citations": [
+      51,
+      92
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.5517,
+      "n": 29,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-10-28",
+      "ledger_as_of": "2026-10-28T23:53:31Z",
+      "ledger_sha16": "8f4251456b528e32",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261028-17"
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one magnitude 6.0 or greater earthquake with epicenter in the Vanuatu region box 12S-21S, 164E-171E, with origin time between 2026-10-29 and 2026-11-27 UTC.",
+    "resolution": "True if the USGS ComCat catalog lists at least one event with magnitude 6.0 or greater, origin time between 2026-10-29T00:00Z and 2026-11-27T23:59Z, and epicenter within latitude 12S-21S and longitude 164E-171E.",
+    "failure_condition": "The USGS catalog shows no event of magnitude 6.0 or greater inside the stated box with origin time between 2026-10-29 and 2026-11-27 UTC, after any magnitude revisions in effect at the deadline.",
+    "domain": "disaster",
+    "deadline": "2026-12-01",
+    "probability": 50,
+    "citations": [
+      49
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.5,
+      "n": 18,
+      "domain_canonical": "disaster",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-10-28",
+      "ledger_as_of": "2026-10-28T23:53:31Z",
+      "ledger_sha16": "8f4251456b528e32",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261028-18"
+    }
+  }
+]
