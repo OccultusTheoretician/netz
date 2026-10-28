@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "Between 2026-10-29 and 2026-12-31 the United States government and the Iranian government each publicly confirm a ceasefire or cessation of hostilities between the two countries.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "True if between 2026-10-29 and 2026-12-31 both a US government statement (White House, State Department, or Pentagon) and an Iranian government statement (Foreign Ministry or SNSC) confirm a US-Iran ceasefire or cessation of hostilities, per Reuters or AP.",
+    "deadline": "2027-01-05",
+    "citations": [
+      91,
+      80,
+      77
+    ],
+    "failure_condition": "No ceasefire or cessation of hostilities between the United States and Iran has been confirmed by both governments for any date between 2026-10-29 and 2026-12-31; a unilateral pause or a ceasefire covering only Israel and Iran is a MISS."
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle below 100.00 US dollars per barrel on at least one trading day between 2026-10-29 and 2026-11-27. Reference: 112.00 on the packet date, 2026-10-28.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "True if the official ICE daily settlement price of the front-month Brent crude futures contract is below 100.00 on any trading day from 2026-10-29 through 2026-11-27 inclusive. Reference: 112.00 on 2026-10-28.",
+    "deadline": "2026-12-01",
+    "citations": [
+      91,
+      80,
+      53
+    ],
+    "failure_condition": "Every ICE front-month Brent settlement from 2026-10-29 through 2026-11-27 is at or above 100.00 dollars per barrel."
+  },
+  {
+    "statement": "The Wendys Company (NASDAQ: WEN) files a Form 8-K with the SEC between 2026-10-29 and 2027-01-29 announcing a signed definitive agreement to be acquired in whole by Trian Fund Management or any other party.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "True if SEC EDGAR shows a Wendys Form 8-K filed between 2026-10-29 and 2027-01-29 disclosing a signed definitive agreement for the acquisition of the whole company; non-binding proposals or letters of intent do not count.",
+    "deadline": "2027-02-02",
+    "citations": [
+      58
+    ],
+    "failure_condition": "No Wendys Form 8-K filed between 2026-10-29 and 2027-01-29 discloses a signed definitive whole-company acquisition agreement; an offer still pending, withdrawn, or rejected at the deadline is a MISS."
+  },
+  {
+    "statement": "CISA adds at least one CVE affecting Oracle E-Business Suite to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-10-29 and 2026-11-27.",
+    "domain": "cyber",
+    "probability": 50,
+    "resolution": "True if the CISA KEV catalog JSON contains at least one entry with vendorProject Oracle, product naming E-Business Suite, and dateAdded between 2026-10-29 and 2026-11-27 inclusive.",
+    "deadline": "2026-12-01",
+    "citations": [
+      15,
+      16
+    ],
+    "failure_condition": "At the deadline the KEV catalog carries no Oracle E-Business Suite entry whose dateAdded falls between 2026-10-29 and 2026-11-27, whether because the entry was added on or before 2026-10-28 or has not been added at all."
+  },
+  {
+    "statement": "Between 2026-10-29 and 2026-12-18 a US federal agency (FEC, CISA, FBI, ODNI, or DOJ) publicly attributes the October 2026 intrusion into the FEC campaign finance filing system to a named foreign government, threat group, or charged individual.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "True if an official FEC, CISA, FBI, ODNI, or DOJ statement, advisory, or charging document published between 2026-10-29 and 2026-12-18 names a specific foreign government, threat group, or charged individual as responsible for the FEC filing-system intrusion.",
+    "deadline": "2026-12-22",
+    "citations": [
+      51,
+      92
+    ],
+    "failure_condition": "At the deadline no official US federal statement, advisory, or charging document issued between 2026-10-29 and 2026-12-18 has named a responsible government, group, or individual; anonymous-official press leaks and private-sector attribution do not count."
+  },
+  {
+    "statement": "The HHS Office for Civil Rights breach portal lists a hacking/IT-incident breach submission from a UNM Health entity (University of New Mexico Hospital, UNM Health System, or affiliate) affecting 500 or more individuals, with a submission date between 2026-10-29 and 2027-01-15.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "True if the HHS OCR Breach Portal lists an entry with covered entity name including UNM or University of New Mexico, type Hacking/IT Incident, 500 or more individuals, and breach submission date between 2026-10-29 and 2027-01-15.",
+    "deadline": "2027-01-19",
+    "citations": [
+      31
+    ],
+    "failure_condition": "At the deadline the HHS OCR breach portal shows no qualifying UNM entry with a submission date between 2026-10-29 and 2027-01-15; an entry dated outside the window or listing fewer than 500 individuals is a MISS."
+  },
+  {
+    "statement": "A new Israeli government formed after the October 2026 Knesset election wins a Knesset confidence vote and is sworn in between 2026-10-29 and 2026-12-31.",
+    "domain": "political",
+    "probability": 25,
+    "resolution": "True if a new Israeli government wins a Knesset confidence vote and is sworn in between 2026-10-29 and 2026-12-31, per the Knesset website or Reuters or AP; a continuing caretaker government does not count.",
+    "deadline": "2027-01-05",
+    "citations": [
+      97,
+      124,
+      110
+    ],
+    "failure_condition": "No new Israeli government has been sworn in between 2026-10-29 and 2026-12-31, whether because coalition talks continue, the mandate has passed to another candidate, or the Knesset has voted to dissolve."
+  },
+  {
+    "statement": "The incumbent Spanish Minister of Transport and Sustainable Mobility (the person holding the post on 2026-10-28) resigns or is removed from that post between 2026-10-29 and 2026-12-31.",
+    "domain": "political",
+    "probability": 15,
+    "resolution": "True if the Spanish government announces, or the BOE publishes a royal decree effecting, the resignation or removal of the incumbent Minister of Transport and Sustainable Mobility between 2026-10-29 and 2026-12-31; removal by reshuffle counts.",
+    "deadline": "2027-01-05",
+    "citations": [
+      109,
+      102,
+      116
+    ],
+    "failure_condition": "The person holding the Transport and Sustainable Mobility portfolio on 2026-10-28 still holds it on 2026-12-31 with no resignation or removal announced or effected between 2026-10-29 and 2026-12-31."
+  },
+  {
+    "statement": "A jury returns a verdict on at least one count in the criminal trial of Russell Brand that was in progress in England on 2026-10-28, between 2026-10-29 and 2026-11-27.",
+    "domain": "crime/security",
+    "probability": 65,
+    "resolution": "True if a jury in the criminal trial of Russell Brand in progress on 2026-10-28 returns a verdict (guilty or not guilty) on at least one count between 2026-10-29 and 2026-11-27, per the BBC, Guardian, or PA Media.",
+    "deadline": "2026-12-01",
+    "citations": [
+      9
+    ],
+    "failure_condition": "No jury verdict on any count has been returned in that trial between 2026-10-29 and 2026-11-27, whether because deliberations continue, the jury was discharged without verdict, or the trial was halted."
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one magnitude 6.0 or greater earthquake with epicenter in the Vanuatu region box 12S-21S, 164E-171E, with origin time between 2026-10-29 and 2026-11-27 UTC.",
+    "domain": "disaster",
+    "probability": 35,
+    "resolution": "True if the USGS ComCat catalog lists at least one event with magnitude 6.0 or greater, origin time between 2026-10-29T00:00Z and 2026-11-27T23:59Z, and epicenter within latitude 12S-21S and longitude 164E-171E.",
+    "deadline": "2026-12-01",
+    "citations": [
+      49
+    ],
+    "failure_condition": "The USGS catalog shows no event of magnitude 6.0 or greater inside the stated box with origin time between 2026-10-29 and 2026-11-27 UTC, after any magnitude revisions in effect at the deadline."
+  }
+]

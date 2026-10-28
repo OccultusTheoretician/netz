@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "The United States and Iran each publicly confirm a newly concluded agreement to end their war or halt hostilities between 2026-10-29 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "TRUE if, between 2026-10-29 and 2026-12-31, the White House or State Department and the Iranian government each confirm a newly concluded ceasefire, memorandum, or war-ending agreement between the two states, per Reuters or AP.",
+    "deadline": "2027-01-05",
+    "citations": [
+      91,
+      80,
+      77
+    ],
+    "failure_condition": "By 2026-12-31 the United States and Iran had not both confirmed a newly concluded ceasefire, memorandum, or war-ending agreement between them."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range at its scheduled meeting concluding on 2026-12-09.",
+    "domain": "economics/markets",
+    "probability": 60,
+    "resolution": "TRUE if the FOMC statement released on 2026-12-09 announces a higher target range, equivalently FRED series DFEDTARU for 2026-12-10 exceeds its 2026-12-08 value; FALSE if the range is held or cut.",
+    "deadline": "2026-12-11",
+    "citations": [
+      123,
+      53,
+      68
+    ],
+    "failure_condition": "The FOMC held or lowered the federal funds target range at the meeting concluding on 2026-12-09, or announced no decision that day."
+  },
+  {
+    "statement": "WTI crude (FRED series DCOILWTICO) records a daily value below 90.00 dollars per barrel on at least one day between 2026-11-02 and 2026-12-31. Reference: WTI 102.60 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "TRUE if any DCOILWTICO daily observation dated 2026-11-02 through 2026-12-31, as published on FRED at the deadline, is below 90.00; FALSE otherwise. Reference: 102.60 dollars per barrel at seal.",
+    "deadline": "2027-01-13",
+    "citations": [
+      91,
+      53,
+      98
+    ],
+    "failure_condition": "Every DCOILWTICO daily value from 2026-11-02 through 2026-12-31 was at or above 90.00 dollars per barrel."
+  },
+  {
+    "statement": "CISA adds at least one Oracle E-Business Suite vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded value between 2026-10-28 and 2026-12-11.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "TRUE if the CISA KEV JSON feed, fetched on the deadline, holds an entry with vendorProject Oracle, product E-Business Suite, and dateAdded from 2026-10-28 through 2026-12-11 inclusive; FALSE otherwise.",
+    "deadline": "2026-12-15",
+    "citations": [
+      15,
+      16
+    ],
+    "failure_condition": "CISA did not add any Oracle E-Business Suite vulnerability to the KEV catalog with a dateAdded between 2026-10-28 and 2026-12-11."
+  },
+  {
+    "statement": "A University of New Mexico health entity submits a HIPAA breach report to the HHS Office for Civil Rights with a breach submission date between 2026-10-28 and 2027-01-08.",
+    "domain": "cyber",
+    "probability": 40,
+    "resolution": "TRUE if the HHS OCR breach portal, checked on the deadline, lists a covered entity whose name contains UNM or University of New Mexico with a breach submission date between 2026-10-28 and 2027-01-08; FALSE otherwise.",
+    "deadline": "2027-01-15",
+    "citations": [
+      31
+    ],
+    "failure_condition": "No University of New Mexico health entity had a HIPAA breach report with a submission date between 2026-10-28 and 2027-01-08 on file and publicly posted by HHS OCR by 2027-01-15."
+  },
+  {
+    "statement": "A new Israeli government formed after the 2026-10-27 Knesset election wins a Knesset confidence vote between 2026-10-29 and 2027-02-26.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "TRUE if the Knesset approves a new government in a confidence vote held between 2026-10-29 and 2027-02-26, per the Knesset official website or Reuters, Times of Israel, or Haaretz reporting; FALSE otherwise.",
+    "deadline": "2027-03-03",
+    "citations": [
+      97,
+      108,
+      124
+    ],
+    "failure_condition": "No new Israeli government won a Knesset confidence vote between 2026-10-29 and 2027-02-26."
+  },
+  {
+    "statement": "Oscar Puente leaves office as the Spanish Minister of Transport and Sustainable Mobility between 2026-10-29 and 2026-12-31.",
+    "domain": "political",
+    "probability": 18,
+    "resolution": "TRUE if the Boletin Oficial del Estado publishes a royal decree dated between 2026-10-29 and 2026-12-31 ending the appointment of Oscar Puente as Minister of Transport and Sustainable Mobility; FALSE otherwise.",
+    "deadline": "2027-01-05",
+    "citations": [
+      50,
+      76,
+      109
+    ],
+    "failure_condition": "Oscar Puente still held the post of Minister of Transport and Sustainable Mobility at the close of 2026-12-31."
+  },
+  {
+    "statement": "No candidate wins more than 50 percent in the 2026-11-03 Georgia US Senate general election, sending the race to a runoff.",
+    "domain": "political",
+    "probability": 15,
+    "resolution": "TRUE if Georgia Secretary of State results (certified, or final unofficial if certification is pending) for the 2026-11-03 US Senate general election show no candidate above 50 percent; FALSE otherwise.",
+    "deadline": "2026-11-24",
+    "citations": [
+      44
+    ],
+    "failure_condition": "A candidate received more than 50 percent of the votes cast in the 2026-11-03 Georgia US Senate general election."
+  },
+  {
+    "statement": "The Southwark Crown Court jury in the Russell Brand sexual offences trial returns a verdict on at least one count between 2026-10-29 and 2026-12-11.",
+    "domain": "crime/security",
+    "probability": 75,
+    "resolution": "TRUE if, between 2026-10-29 and 2026-12-11, the jury returns a guilty or not guilty verdict on at least one count against Russell Brand, as reported by BBC News, PA Media, or the Guardian; FALSE otherwise.",
+    "deadline": "2026-12-15",
+    "citations": [
+      9
+    ],
+    "failure_condition": "By 2026-12-11 the jury had returned no verdict on any count, because the trial was still running, was halted, or the jury was discharged without verdicts."
+  },
+  {
+    "statement": "Cumulative confirmed Ebola cases in the Democratic Republic of the Congo reach 12500 or more, with data up to a date between 2026-10-29 and 2026-12-11.",
+    "domain": "disaster",
+    "probability": 72,
+    "resolution": "TRUE if a WHO, Africa CDC, or ECDC update published by the deadline reports at least 12500 cumulative confirmed Ebola cases in DRC, with data up to a date between 2026-10-29 and 2026-12-11; FALSE otherwise.",
+    "deadline": "2026-12-16",
+    "citations": [
+      123
+    ],
+    "failure_condition": "DRC cumulative confirmed Ebola cases, counting data through 2026-12-11, stood below 12500."
+  }
+]
