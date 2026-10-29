@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one Cisco ASA, FTD, or Secure Firewall vulnerability with a dateAdded between 2026-10-29 and 2026-11-13.",
+    "domain": "cyber",
+    "probability": 85,
+    "resolution": "The CISA KEV JSON feed contains an entry with vendorProject Cisco and a product field containing ASA, Adaptive Security Appliance, FTD, Firepower Threat Defense, or Secure Firewall, with dateAdded from 2026-10-29 through 2026-11-13.",
+    "deadline": "2026-11-17",
+    "citations": [
+      23,
+      24
+    ],
+    "failure_condition": "No KEV entry for a Cisco ASA, FTD, or Secure Firewall product carries a dateAdded between 2026-10-29 and 2026-11-13."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds at least one entry whose vendorProject field contains Telegram with a dateAdded between 2026-10-29 and 2026-12-31.",
+    "domain": "cyber",
+    "probability": 10,
+    "resolution": "The CISA KEV JSON feed contains an entry whose vendorProject field contains Telegram and whose dateAdded is from 2026-10-29 through 2026-12-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      20
+    ],
+    "failure_condition": "No KEV entry with a vendorProject containing Telegram carries a dateAdded between 2026-10-29 and 2026-12-31."
+  },
+  {
+    "statement": "The FOMC statement released on 2026-12-09 sets a federal funds target range whose upper bound is higher than the upper bound of the range in force on 2026-10-29, which was set by the FOMC statement of 2026-10-28.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "The Federal Reserve press release dated 2026-12-09 on federalreserve.gov states a target range with an upper bound above the upper bound stated in the most recent FOMC statement issued before 2026-10-29.",
+    "deadline": "2026-12-11",
+    "citations": [
+      63,
+      70,
+      82
+    ],
+    "failure_condition": "The target range announced on 2026-12-09 has an upper bound equal to or below the upper bound in force on 2026-10-29, or no rate decision is announced on 2026-12-09."
+  },
+  {
+    "statement": "The ECB monetary policy decision announced on 2026-12-17 leaves the deposit facility rate unchanged from the level announced on 2026-10-29.",
+    "domain": "economics/markets",
+    "probability": 60,
+    "resolution": "The ECB press release dated 2026-12-17 on ecb.europa.eu states a deposit facility rate equal to the rate stated in the ECB monetary policy decision press release of 2026-10-29.",
+    "deadline": "2026-12-21",
+    "citations": [
+      62,
+      60
+    ],
+    "failure_condition": "The deposit facility rate announced on 2026-12-17 differs from the rate announced on 2026-10-29, or no monetary policy decision is announced on 2026-12-17."
+  },
+  {
+    "statement": "The FRED series DCOILBRENTEU (Brent crude spot price) observation for 2026-12-31 is below 100.00 US dollars per barrel. Reference: Brent 109.56 on the packet date 2026-10-29.",
+    "domain": "economics/markets",
+    "probability": 33,
+    "resolution": "The FRED DCOILBRENTEU observation dated 2026-12-31 (or the last observation before that date if none exists) is below 100.00. Reference level at seal: 109.56 on 2026-10-29.",
+    "deadline": "2027-01-08",
+    "citations": [
+      105,
+      91
+    ],
+    "failure_condition": "The DCOILBRENTEU value for 2026-12-31 (or the last prior observation) is 100.00 or higher."
+  },
+  {
+    "statement": "Democratic candidates win at least 218 of the 435 seats in the US House of Representatives in the general election of 2026-11-03, as determined by Associated Press race calls made by 2026-12-15.",
+    "domain": "political",
+    "probability": 78,
+    "resolution": "Associated Press race calls as of 2026-12-15 show Democrats winning 218 or more House seats in the 2026-11-03 general election; uncalled races do not count toward 218.",
+    "deadline": "2026-12-17",
+    "citations": [
+      109,
+      40,
+      73
+    ],
+    "failure_condition": "Democrats hold 217 or fewer called House seats as of 2026-12-15."
+  },
+  {
+    "statement": "When the 120th Congress convenes in January 2027, the Democratic caucus (Democrats plus independents caucusing with them) holds at least 51 of the 100 US Senate seats.",
+    "domain": "political",
+    "probability": 30,
+    "resolution": "The senate.gov Party Division page, read on 2027-01-06, lists at least 51 senators who are Democrats or independents caucusing with Democrats for the 120th Congress.",
+    "deadline": "2027-01-08",
+    "citations": [
+      109,
+      112,
+      123
+    ],
+    "failure_condition": "The Democratic caucus holds 50 or fewer Senate seats when the 120th Congress convenes."
+  },
+  {
+    "statement": "Between 2026-10-30 and 2026-11-30, at least one merchant vessel is seized, boarded, or struck by a weapon in the Strait of Hormuz, Gulf of Oman, or Persian/Arabian Gulf, as recorded in a UKMTO incident report or advisory.",
+    "domain": "military/conflict",
+    "probability": 40,
+    "resolution": "The UKMTO (ukmto.org) incidents or advisories list includes an entry dated 2026-10-30 through 2026-11-30 describing a merchant vessel seized, boarded, or hit by a projectile or explosive in the Strait of Hormuz, Gulf of Oman, or Persian/Arabian Gulf.",
+    "deadline": "2026-12-02",
+    "citations": [
+      105
+    ],
+    "failure_condition": "No merchant vessel is seized, boarded, or struck by a weapon in the Strait of Hormuz, Gulf of Oman, or Persian/Arabian Gulf between 2026-10-30 and 2026-11-30."
+  },
+  {
+    "statement": "Between 2026-10-30 and 2026-11-27, the Court of Appeal of the Supreme Court of Victoria delivers a judgment dismissing in full the appeal by Erin Patterson against her murder and attempted murder convictions.",
+    "domain": "crime/security",
+    "probability": 65,
+    "resolution": "A Victorian Court of Appeal judgment dated 2026-10-30 through 2026-11-27, published on AustLII or the court website, dismisses the Patterson appeal against conviction on every ground; any quashed conviction or retrial order resolves false.",
+    "deadline": "2026-12-01",
+    "citations": [
+      119
+    ],
+    "failure_condition": "The appeal against conviction is allowed in whole or in part, a retrial is ordered, or no judgment is delivered between 2026-10-30 and 2026-11-27."
+  },
+  {
+    "statement": "At least one earthquake occurring between 2026-10-30 and 2026-11-30 receives a GDACS alert level of Red.",
+    "domain": "disaster",
+    "probability": 20,
+    "resolution": "The GDACS event list (gdacs.org) shows an earthquake entry with alert level Red and an event date from 2026-10-30 through 2026-11-30, as displayed at any time up to the deadline.",
+    "deadline": "2026-12-02",
+    "citations": [
+      44,
+      53,
+      56
+    ],
+    "failure_condition": "No earthquake with an event date between 2026-10-30 and 2026-11-30 carries a GDACS Red alert level at any time up to 2026-12-02."
+  }
+]
