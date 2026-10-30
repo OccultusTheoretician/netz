@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-10-29T11:44:33Z · ledger `ledger.json` · 5113 rows in scope
+Generated 2026-10-30T11:37:11Z · ledger `ledger.json` · 5151 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,13 +12,13 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **5112**
+- rows audited: **5150**
 - scope limitation (no resolvable source report): **1**
-- defective: **786** (15.4% of audited)
-- rows whose citation number does not identify a unique item: **428** (max candidates behind one number: 8)
-  - UNSUPPORTED: 543
-  - AMBIGUOUS_REF: 428
-  - DEADWEIGHT: 230
+- defective: **797** (15.5% of audited)
+- rows whose citation number does not identify a unique item: **430** (max candidates behind one number: 8)
+  - UNSUPPORTED: 547
+  - AMBIGUOUS_REF: 430
+  - DEADWEIGHT: 237
   - SHOTGUN: 56
   - NO_CITES: 24
   - THIN: 3
@@ -55,18 +55,18 @@ A keyless determination says the claim went beyond its declared priors. Where th
 | control/baserate | 1788 | 234 | 13% |
 | lmstudio/auto | 550 | 137 | 25% |
 | lmstudio/realist | 249 | 82 | 33% |
-| manual/fable-5.1/unattested | 460 | 78 | 17% |
-| manual/opus-5.5/unattested | 291 | 50 | 17% |
+| manual/fable-5.1/unattested | 467 | 80 | 17% |
+| manual/opus-5.5/unattested | 297 | 51 | 17% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
 | manual/sonnet-5.5/unattested | 222 | 32 | 14% |
+| lmstudio/qwen36-abliterated | 138 | 29 | 21% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
-| lmstudio/qwen36-abliterated | 133 | 24 | 18% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
-| lmstudio/qwen36-realist | 129 | 17 | 13% |
-| lmstudio/qwen36 | 132 | 15 | 11% |
+| lmstudio/qwen36-realist | 131 | 17 | 13% |
+| lmstudio/qwen36 | 137 | 15 | 11% |
 | manual/opus-5 | 74 | 12 | 16% |
 | manual/fable | 45 | 6 | 13% |
-| control/trailing | 10 | 3 | 30% |
+| control/trailing | 23 | 6 | 26% |
 | manual/fable-5 | 38 | 2 | 5% |
 | manual/sonnet-5 | 45 | 1 | 2% |
 | operator/human | 10 | 0 | 0% |
