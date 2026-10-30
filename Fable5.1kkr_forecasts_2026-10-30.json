@@ -1,0 +1,128 @@
+[
+  {
+    "statement": "Democratic candidates win a majority of US House seats in the 2026-11-03 midterm elections, with the Associated Press having called at least 218 of 435 seats for Democrats by 2026-12-15.",
+    "domain": "political",
+    "probability": 72,
+    "resolution": "TRUE if Associated Press race calls as of 2026-12-15 show Democratic candidates winning at least 218 of 435 US House seats in the 2026-11-03 general election. FALSE if fewer than 218 are called for Democrats.",
+    "deadline": "2026-12-18",
+    "citations": [
+      114,
+      126,
+      67
+    ],
+    "failure_condition": "Democratic candidates have been called winners in fewer than 218 US House seats as of 2026-12-15, including because races remain uncalled."
+  },
+  {
+    "statement": "US Central Command or the US Department of War (Defense) officially acknowledges US military strikes on targets inside Iran conducted between 2026-10-31 and 2026-12-15.",
+    "domain": "military/conflict",
+    "probability": 35,
+    "resolution": "TRUE if an official press release or on-record statement from US Central Command or the US Department of War (Defense) confirms US strikes on targets within Iranian territory or territorial waters conducted between 2026-10-31 and 2026-12-15. FALSE otherwise.",
+    "deadline": "2026-12-18",
+    "citations": [
+      89,
+      96,
+      91
+    ],
+    "failure_condition": "US forces conduct no strikes on targets inside Iranian territory or territorial waters between 2026-10-31 and 2026-12-15."
+  },
+  {
+    "statement": "A new Israeli government wins a Knesset vote of confidence and is sworn in between 2026-10-30 and 2027-01-15.",
+    "domain": "political",
+    "probability": 45,
+    "resolution": "TRUE if the Knesset approves a new government in a vote of confidence held between 2026-10-30 and 2027-01-15, per the Knesset website or Reuters, AP, or Times of Israel reporting. FALSE otherwise.",
+    "deadline": "2027-01-19",
+    "citations": [
+      103,
+      99
+    ],
+    "failure_condition": "No new Israeli government is approved in a Knesset confidence vote between 2026-10-30 and 2027-01-15."
+  },
+  {
+    "statement": "The CME CF Bitcoin Reference Rate (BRR) prints below 65000 USD on at least one day between 2026-10-31 and 2026-11-30. Reference: 77510 USD packet quote on 2026-10-30.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "TRUE if the published CME CF Bitcoin Reference Rate (BRR, 4pm London) is below 65000.00 USD on any calendar day from 2026-10-31 through 2026-11-30. Reference level at seal: 77510 USD. FALSE otherwise.",
+    "deadline": "2026-12-02",
+    "citations": [
+      20,
+      24,
+      55
+    ],
+    "failure_condition": "The CME CF Bitcoin Reference Rate is at or above 65000 USD on every calendar day from 2026-10-31 through 2026-11-30."
+  },
+  {
+    "statement": "The Nasdaq Composite closes below 24000 on at least one trading day between 2026-11-02 and 2026-12-31. Reference: 25587.46 packet quote on 2026-10-30.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "TRUE if the Nasdaq Composite official daily close (FRED series NASDAQCOM) is below 24000.00 on any trading day from 2026-11-02 through 2026-12-31. Reference level at seal: 25587.46. FALSE otherwise.",
+    "deadline": "2027-01-05",
+    "citations": [
+      72,
+      56,
+      76
+    ],
+    "failure_condition": "The Nasdaq Composite closes at or above 24000 on every trading day from 2026-11-02 through 2026-12-31."
+  },
+  {
+    "statement": "CISA adds a Drupal Commerce (Commerce Core) vulnerability to the Known Exploited Vulnerabilities catalog with a dateAdded between 2026-10-30 and 2026-11-27.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "TRUE if the CISA KEV JSON feed contains an entry whose vendorProject, product, or vulnerabilityName fields name Drupal and Commerce, with dateAdded between 2026-10-30 and 2026-11-27 inclusive. FALSE otherwise.",
+    "deadline": "2026-12-01",
+    "citations": [
+      19,
+      22
+    ],
+    "failure_condition": "No KEV entry for a Drupal Commerce vulnerability carries a dateAdded between 2026-10-30 and 2026-11-27."
+  },
+  {
+    "statement": "The FBI or the US Treasury Department publicly attributes the October 2026 Binance theft to North Korean state-sponsored actors in an official release dated between 2026-10-30 and 2026-12-04.",
+    "domain": "cyber",
+    "probability": 50,
+    "resolution": "TRUE if an official release on fbi.gov, ic3.gov, or home.treasury.gov dated between 2026-10-30 and 2026-12-04 attributes the October 2026 Binance theft to North Korean (DPRK) actors such as Lazarus or TraderTraitor. FALSE otherwise.",
+    "deadline": "2026-12-08",
+    "citations": [
+      20,
+      41,
+      68
+    ],
+    "failure_condition": "Neither the FBI nor the US Treasury issues an official release dated 2026-10-30 to 2026-12-04 attributing the Binance theft to North Korea."
+  },
+  {
+    "statement": "The person serving as Minister of Transport and Sustainable Mobility of Spain on 2026-10-30 leaves that office, with a Real Decreto of cese dated between 2026-10-30 and 2026-12-31 published in the Boletin Oficial del Estado.",
+    "domain": "political",
+    "probability": 20,
+    "resolution": "TRUE if the BOE (boe.es) carries a Real Decreto dated between 2026-10-30 and 2026-12-31 disposing the cese of the person who was Minister of Transport and Sustainable Mobility on 2026-10-30. FALSE otherwise.",
+    "deadline": "2027-01-05",
+    "citations": [
+      79,
+      113,
+      125
+    ],
+    "failure_condition": "The incumbent transport minister as of 2026-10-30 remains in office through 2026-12-31 with no cese decree dated in that window."
+  },
+  {
+    "statement": "The Tennessee Supreme Court enters an order setting a new execution date for Christa Pike, with the order filed between 2026-10-30 and 2027-01-29.",
+    "domain": "crime/security",
+    "probability": 10,
+    "resolution": "TRUE if a Tennessee Supreme Court order filed between 2026-10-30 and 2027-01-29 sets an execution date for Christa Pike, as shown on tncourts.gov or reported by AP. FALSE otherwise.",
+    "deadline": "2027-02-02",
+    "citations": [
+      10,
+      81
+    ],
+    "failure_condition": "No Tennessee Supreme Court order setting an execution date for Christa Pike is filed between 2026-10-30 and 2027-01-29."
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one earthquake of magnitude 7.5 or greater anywhere in the world with origin time between 2026-11-01 and 2026-11-30 UTC.",
+    "domain": "disaster",
+    "probability": 30,
+    "resolution": "TRUE if the USGS ComCat catalog (earthquake.usgs.gov), as listed on 2026-12-02, contains at least one event with magnitude 7.5 or greater and origin time between 2026-11-01 00:00 UTC and 2026-11-30 23:59 UTC. FALSE otherwise.",
+    "deadline": "2026-12-02",
+    "citations": [
+      46,
+      52
+    ],
+    "failure_condition": "No earthquake of magnitude 7.5 or greater has an origin time between 2026-11-01 and 2026-11-30 UTC in the USGS catalog."
+  }
+]
