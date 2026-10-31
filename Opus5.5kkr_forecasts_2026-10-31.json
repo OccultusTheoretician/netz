@@ -1,0 +1,124 @@
+[
+  {
+    "statement": "CISA adds at least one Ivanti Connect Secure CVE, other than CVE-2026-118527 and CVE-2026-111357, to the KEV catalog between 2026-10-31 and 2026-12-31, consistent with the reported three-flaw exploit chain.",
+    "domain": "cyber",
+    "probability": 50,
+    "resolution": "CISA KEV catalog carries an Ivanti Connect Secure entry, excluding CVE-2026-118527 and CVE-2026-111357, with dateAdded between 2026-10-31 and 2026-12-31 inclusive.",
+    "deadline": "2027-01-04",
+    "citations": [
+      13
+    ],
+    "failure_condition": "No Ivanti Connect Secure CVE other than the two named has a KEV dateAdded value between 2026-10-31 and 2026-12-31."
+  },
+  {
+    "statement": "Democratic candidates win at least 218 US House seats in the general election held on 2026-11-03.",
+    "domain": "political",
+    "probability": 66,
+    "resolution": "AP race calls, as published by the deadline, credit Democratic candidates with 218 or more House seats from the 2026-11-03 general election.",
+    "deadline": "2026-12-15",
+    "citations": [
+      80,
+      102,
+      106
+    ],
+    "failure_condition": "Democratic candidates hold fewer than 218 AP-called House seats from the 2026-11-03 election at the deadline."
+  },
+  {
+    "statement": "Democrats and Democratic-caucusing independents win at least 51 US Senate seats as a result of the general election held on 2026-11-03.",
+    "domain": "political",
+    "probability": 28,
+    "resolution": "AP race calls by the deadline produce a Senate composition for the next Congress with 51 or more Democrats plus Democratic-caucusing independents.",
+    "deadline": "2026-12-15",
+    "citations": [
+      80,
+      67,
+      92
+    ],
+    "failure_condition": "The AP-called Senate composition for the next Congress gives Democrats plus caucusing independents 50 or fewer seats at the deadline."
+  },
+  {
+    "statement": "WTI crude spot price on 2026-12-31 is below 100.00 USD per barrel. Reference: 104.12 USD on the packet date 2026-10-31.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "FRED series DCOILWTICO value for 2026-12-31 is below 100.00. Reference: 104.12 on 2026-10-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      50,
+      73,
+      42
+    ],
+    "failure_condition": "The FRED DCOILWTICO value for 2026-12-31 is 100.00 or higher."
+  },
+  {
+    "statement": "The US 10-year Treasury constant maturity yield on 2026-12-31 is above 5.00 percent. Reference: 4.93 percent on the packet date 2026-10-31.",
+    "domain": "economics/markets",
+    "probability": 33,
+    "resolution": "FRED series DGS10 value for 2026-12-31 exceeds 5.00. Reference: 4.93 percent on 2026-10-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      41,
+      47
+    ],
+    "failure_condition": "The FRED DGS10 value for 2026-12-31 is 5.00 or lower."
+  },
+  {
+    "statement": "US and Iranian government officials hold direct, face-to-face talks between 2026-11-01 and 2026-12-31, following Qatari mediation efforts.",
+    "domain": "political",
+    "probability": 35,
+    "resolution": "Reuters or AP reports, with confirmation by both the US State Department and the Iranian Foreign Ministry, a direct in-person US-Iran meeting occurring between 2026-11-01 and 2026-12-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      42,
+      90,
+      73
+    ],
+    "failure_condition": "No in-person meeting between US and Iranian officials occurs between 2026-11-01 and 2026-12-31 that both governments confirm."
+  },
+  {
+    "statement": "Iran formally submits notice of withdrawal from the NPT under Article X between 2026-11-01 and 2027-03-31.",
+    "domain": "political",
+    "probability": 7,
+    "resolution": "The UN Security Council or depositary governments receive a formal Iranian Article X withdrawal notice dated between 2026-11-01 and 2027-03-31, per UN records or Reuters/AP.",
+    "deadline": "2027-04-05",
+    "citations": [
+      99,
+      73
+    ],
+    "failure_condition": "Iran has not delivered a formal Article X NPT withdrawal notice dated between 2026-11-01 and 2027-03-31."
+  },
+  {
+    "statement": "Iranian forces seize or detain a commercial tanker in the Strait of Hormuz or Gulf of Oman between 2026-11-01 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "Reuters and AP each report Iranian forces (IRGC or navy) seized or detained a commercial tanker in the Strait of Hormuz or Gulf of Oman between 2026-11-01 and 2026-12-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      73,
+      99
+    ],
+    "failure_condition": "No commercial tanker is seized or detained by Iranian forces in the Strait of Hormuz or Gulf of Oman between 2026-11-01 and 2026-12-31."
+  },
+  {
+    "statement": "WHO declares the Ebola outbreak in the Democratic Republic of the Congo over between 2026-11-01 and 2027-04-15.",
+    "domain": "disaster",
+    "probability": 8,
+    "resolution": "WHO Disease Outbreak News or an official WHO statement declares the end of the current DRC Ebola outbreak, with the declaration dated between 2026-11-01 and 2027-04-15.",
+    "deadline": "2027-04-20",
+    "citations": [
+      61
+    ],
+    "failure_condition": "The DRC Ebola outbreak has not been declared over by WHO between 2026-11-01 and 2027-04-15."
+  },
+  {
+    "statement": "The FBI publicly attributes the reported 6.3 billion USD Binance hack to North Korean actors between 2026-10-31 and 2026-12-31.",
+    "domain": "crime/security",
+    "probability": 45,
+    "resolution": "An FBI press release or IC3 public service announcement dated between 2026-10-31 and 2026-12-31 attributes the Binance hack to North Korea or a DPRK-linked group.",
+    "deadline": "2027-01-05",
+    "citations": [
+      51,
+      39
+    ],
+    "failure_condition": "The FBI has not attributed the Binance hack to North Korea or a DPRK-linked group in a statement dated between 2026-10-31 and 2026-12-31."
+  }
+]
