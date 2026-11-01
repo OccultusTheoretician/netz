@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "Between 2026-11-02 and 2026-11-30, Birmingham, Alabama police announce an arrest or criminal charge in the 2026-11-01 fatal shooting outside the Magic City Classic football game.",
+    "domain": "crime/security",
+    "probability": 50,
+    "resolution": "TRUE if Birmingham police or Jefferson County prosecutors announce, or two established news outlets report, an arrest or charge in this shooting dated between 2026-11-02 and 2026-11-30.",
+    "deadline": "2026-12-03",
+    "citations": [
+      9
+    ],
+    "failure_condition": "No person is arrested or charged in this shooting between 2026-11-02 and 2026-11-30."
+  },
+  {
+    "statement": "The NYMEX WTI front-month crude settlement on 2026-12-15 is above 100.00 USD per barrel. Reference: 104.12 USD on the packet date.",
+    "domain": "economics/markets",
+    "probability": 55,
+    "resolution": "TRUE if the FRED series DCOILWTICO value for 2026-12-15 is greater than 100.00. Reference: 104.12 on the packet date.",
+    "deadline": "2026-12-17",
+    "citations": [
+      29,
+      36,
+      64
+    ],
+    "failure_condition": "The WTI spot or settlement value for 2026-12-15 is at or below 100.00 USD per barrel."
+  },
+  {
+    "statement": "The US 10-year Treasury constant-maturity yield closes at or above 5.00 percent on at least one trading day between 2026-11-02 and 2026-12-31. Reference: 4.93 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 50,
+    "resolution": "TRUE if the FRED series DGS10 shows a value of 5.00 or higher on any date from 2026-11-02 through 2026-12-31. Reference: 4.93 percent on the packet date.",
+    "deadline": "2027-01-05",
+    "citations": [
+      29,
+      35
+    ],
+    "failure_condition": "Every DGS10 daily value from 2026-11-02 through 2026-12-31 is below 5.00 percent."
+  },
+  {
+    "statement": "Bitcoin closes below 70,000 USD on at least one day between 2026-11-02 and 2026-12-31. Reference: 77,934 USD on the packet date.",
+    "domain": "economics/markets",
+    "probability": 55,
+    "resolution": "TRUE if any Coinbase BTC-USD daily close at 00:00 UTC, dated 2026-11-02 through 2026-12-31, is below 70,000. Reference: 77,934 USD on the packet date.",
+    "deadline": "2027-01-05",
+    "citations": [
+      41,
+      63,
+      98
+    ],
+    "failure_condition": "Every Coinbase BTC-USD daily close from 2026-11-02 through 2026-12-31 is at or above 70,000 USD."
+  },
+  {
+    "statement": "CISA adds a CVE affecting Canonical LXD or MicroCloud to the Known Exploited Vulnerabilities catalog between 2026-11-02 and 2027-01-31.",
+    "domain": "cyber",
+    "probability": 12,
+    "resolution": "TRUE if the CISA KEV catalog has an entry with vendor Canonical and product LXD or MicroCloud whose dateAdded value is between 2026-11-02 and 2027-01-31.",
+    "deadline": "2027-02-03",
+    "citations": [
+      12
+    ],
+    "failure_condition": "No Canonical LXD or MicroCloud vulnerability is added to the KEV catalog between 2026-11-02 and 2027-01-31."
+  },
+  {
+    "statement": "Between 2026-11-02 and 2027-03-31, the US Department of Justice files an indictment, criminal complaint, or civil forfeiture complaint tied to the Binance theft the FBI attributed to North Korea.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "TRUE if a justice.gov press release or a federal court docket shows such a filing tied to the Binance theft, dated 2026-11-02 through 2027-03-31.",
+    "deadline": "2027-04-05",
+    "citations": [
+      14,
+      73
+    ],
+    "failure_condition": "No DOJ indictment, criminal complaint, or forfeiture complaint tied to the Binance theft is filed between 2026-11-02 and 2027-03-31."
+  },
+  {
+    "statement": "In the scheduled 2026-11-03 US midterm elections, Democratic candidates win at least 218 of 435 House seats.",
+    "domain": "political",
+    "probability": 72,
+    "resolution": "TRUE if Associated Press race calls published by 2026-12-15 give Democratic candidates 218 or more House seats.",
+    "deadline": "2026-12-15",
+    "citations": [
+      83,
+      91,
+      92
+    ],
+    "failure_condition": "Democratic candidates hold fewer than 218 AP-called House seats from the 2026-11-03 election as of 2026-12-15."
+  },
+  {
+    "statement": "Dan Sullivan is certified the winner of the 2026-11-03 Alaska US Senate election, with certification on or before 2026-12-15.",
+    "domain": "political",
+    "probability": 55,
+    "resolution": "TRUE if the Alaska Division of Elections certified results, issued on or before 2026-12-15, show Dan Sullivan winning the 2026 US Senate race after ranked-choice tabulation.",
+    "deadline": "2026-12-17",
+    "citations": [
+      78
+    ],
+    "failure_condition": "Another candidate is certified the winner, or certification has not occurred by 2026-12-15."
+  },
+  {
+    "statement": "The US military conducts a strike on Iranian territory between 2026-11-02 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "TRUE if the US Department of Defense or White House confirms a US kinetic strike on targets inside Iran's internationally recognized territory occurring between 2026-11-02 and 2026-12-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      64,
+      72,
+      68
+    ],
+    "failure_condition": "No US military strike on Iranian territory occurs between 2026-11-02 and 2026-12-31."
+  },
+  {
+    "statement": "A magnitude 6.0 or greater earthquake occurs in the Vanuatu region between 2026-11-02 and 2026-12-31.",
+    "domain": "disaster",
+    "probability": 50,
+    "resolution": "TRUE if the USGS earthquake catalog lists an event of magnitude 6.0 or greater with a place name containing Vanuatu and an origin time between 2026-11-02 and 2026-12-31 UTC.",
+    "deadline": "2027-01-05",
+    "citations": [
+      23
+    ],
+    "failure_condition": "No magnitude 6.0 or greater earthquake occurs in the Vanuatu region between 2026-11-02 and 2026-12-31 UTC."
+  }
+]
