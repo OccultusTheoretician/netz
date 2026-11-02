@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "Democrat Abdul El-Sayed defeats Republican Mike Rogers in the Michigan US Senate election held on 2026-11-03.",
+    "domain": "political",
+    "probability": 66,
+    "resolution": "True if the Associated Press calls the 2026-11-03 Michigan US Senate race for El-Sayed by 2026-11-13. False if it calls the race for Rogers or has made no call.",
+    "deadline": "2026-11-13",
+    "citations": [
+      91,
+      98,
+      108
+    ],
+    "failure_condition": "El-Sayed has not been called the winner of the Michigan Senate race by the Associated Press at the deadline."
+  },
+  {
+    "statement": "Senators in the Democratic caucus, including independents who caucus with Democrats, hold at least 51 seats in the US Senate between 2027-01-03 and 2027-01-08.",
+    "domain": "political",
+    "probability": 57,
+    "resolution": "True if the official Senate.gov party division page shows at least 51 Democrats plus caucusing independents on any day between 2027-01-03 and 2027-01-08. Otherwise false.",
+    "deadline": "2027-01-11",
+    "citations": [
+      100,
+      105
+    ],
+    "failure_condition": "The Democratic caucus holds 50 or fewer Senate seats throughout 2027-01-03 to 2027-01-08."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range by 25 basis points to 4.00-4.25 percent at its meeting concluding 2026-12-09.",
+    "domain": "economics",
+    "probability": 74,
+    "resolution": "True if FRED series DFEDTARU shows 4.25 percent for 2026-12-10. Reference: upper bound 4.00 percent on the packet date. Otherwise false.",
+    "deadline": "2026-12-11",
+    "citations": [
+      43,
+      59
+    ],
+    "failure_condition": "The target range upper bound in effect on 2026-12-10 is not 4.25 percent."
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or above 120.00 dollars on at least one trading day between 2026-11-04 and 2026-12-18.",
+    "domain": "economics",
+    "probability": 30,
+    "resolution": "True if an ICE Brent front-month daily settlement is at or above 120.00 between 2026-11-04 and 2026-12-18. Reference: 105.99 on the packet date. Otherwise false.",
+    "deadline": "2026-12-21",
+    "citations": [
+      44,
+      76
+    ],
+    "failure_condition": "Every ICE Brent front-month daily settlement between 2026-11-04 and 2026-12-18 is below 120.00 dollars."
+  },
+  {
+    "statement": "The S&P 500 closes at or above 7,800 on 2026-12-31.",
+    "domain": "economics",
+    "probability": 46,
+    "resolution": "True if FRED series SP500 shows a 2026-12-31 close at or above 7,800. Reference: 7,631.17 on the packet date. Otherwise false.",
+    "deadline": "2027-01-04",
+    "citations": [
+      93
+    ],
+    "failure_condition": "The S&P 500 official close on 2026-12-31 is below 7,800."
+  },
+  {
+    "statement": "US forces conduct at least one kinetic strike on a target on Iranian land territory between 2026-11-04 and 2026-12-11.",
+    "domain": "military",
+    "probability": 32,
+    "resolution": "True if CENTCOM or the Pentagon acknowledges a US strike on Iranian land territory occurring between 2026-11-04 and 2026-12-11, and both Reuters and AP report it. Otherwise false.",
+    "deadline": "2026-12-14",
+    "citations": [
+      66,
+      76
+    ],
+    "failure_condition": "No US strike on Iranian land territory occurs between 2026-11-04 and 2026-12-11."
+  },
+  {
+    "statement": "US and Iranian government delegations meet in the same city for a round of talks, direct or mediated, between 2026-11-04 and 2026-12-11.",
+    "domain": "military",
+    "probability": 35,
+    "resolution": "True if both governments confirm such a round took place between 2026-11-04 and 2026-12-11, as reported by Reuters or AP. Talks with mediators alone, without both delegations present, do not count.",
+    "deadline": "2026-12-14",
+    "citations": [
+      44,
+      78
+    ],
+    "failure_condition": "US and Iranian delegations do not both attend a confirmed round of talks in one city between 2026-11-04 and 2026-12-11."
+  },
+  {
+    "statement": "CISA adds GitLab vulnerability CVE-2026-110264 to the Known Exploited Vulnerabilities catalog between 2026-11-03 and 2026-12-04.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "True if the CISA KEV catalog carries CVE-2026-110264 with a date-added value between 2026-11-03 and 2026-12-04. Otherwise false.",
+    "deadline": "2026-12-07",
+    "citations": [
+      18
+    ],
+    "failure_condition": "CVE-2026-110264 lacks a CISA KEV date-added value between 2026-11-03 and 2026-12-04."
+  },
+  {
+    "statement": "A national government formally attributes the European supermarket refrigeration cyberattacks to a named state or named threat group between 2026-11-03 and 2027-01-29.",
+    "domain": "cyber",
+    "probability": 12,
+    "resolution": "True if a national government, prosecutor or cyber agency publicly names a responsible state or group between 2026-11-03 and 2027-01-29, as reported by Reuters or AP. Anonymous sourcing and private-sector attribution do not count.",
+    "deadline": "2027-02-01",
+    "citations": [
+      16,
+      69,
+      92
+    ],
+    "failure_condition": "No national government body publicly names a responsible state or group between 2026-11-03 and 2027-01-29."
+  },
+  {
+    "statement": "The NTSB publishes a preliminary report on the South Florida jet crash that killed nine people between 2026-11-02 and 2026-12-04.",
+    "domain": "disaster",
+    "probability": 80,
+    "resolution": "True if the NTSB CAROL database or NTSB website shows a preliminary report for this crash published between 2026-11-02 and 2026-12-04. Otherwise false.",
+    "deadline": "2026-12-07",
+    "citations": [
+      38,
+      99
+    ],
+    "failure_condition": "The NTSB has not published a preliminary report on this crash by 2026-12-04."
+  }
+]
