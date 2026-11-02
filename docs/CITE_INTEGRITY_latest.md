@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-11-01T12:01:22Z · ledger `ledger.json` · 5212 rows in scope
+Generated 2026-11-02T13:49:38Z · ledger `ledger.json` · 5242 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,13 +12,13 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **5211**
+- rows audited: **5241**
 - scope limitation (no resolvable source report): **1**
-- defective: **810** (15.5% of audited)
+- defective: **822** (15.7% of audited)
 - rows whose citation number does not identify a unique item: **431** (max candidates behind one number: 8)
-  - UNSUPPORTED: 554
+  - UNSUPPORTED: 564
   - AMBIGUOUS_REF: 431
-  - DEADWEIGHT: 243
+  - DEADWEIGHT: 245
   - SHOTGUN: 56
   - NO_CITES: 24
   - THIN: 3
@@ -73,16 +73,16 @@ A keyless determination says the claim went beyond its declared priors. Where th
 | lmstudio/auto | 550 | 137 | 25% |
 | lmstudio/realist | 249 | 82 | 33% |
 | manual/fable-5.1/unattested | 473 | 80 | 17% |
-| manual/opus-5.5/unattested | 312 | 56 | 18% |
+| manual/opus-5.5/unattested | 321 | 59 | 18% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
 | manual/sonnet-5.5/unattested | 222 | 32 | 14% |
-| lmstudio/qwen36-abliterated | 144 | 30 | 21% |
+| lmstudio/qwen36-abliterated | 149 | 32 | 21% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
-| lmstudio/qwen36-realist | 136 | 18 | 13% |
-| lmstudio/qwen36 | 145 | 16 | 11% |
+| lmstudio/qwen36 | 149 | 19 | 13% |
+| lmstudio/qwen36-realist | 139 | 19 | 14% |
+| control/trailing | 53 | 14 | 26% |
 | manual/opus-5 | 74 | 12 | 16% |
-| control/trailing | 44 | 11 | 25% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
 | manual/sonnet-5 | 45 | 1 | 2% |
