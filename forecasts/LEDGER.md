@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 011710Z NOV 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 021629Z NOV 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 5242 issued across 22 forecaster arms · 3520 open (720 past deadline, unresolved)
+Window: all-time · 5273 issued across 22 forecaster arms · 3551 open (721 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -15,22 +15,22 @@ Window: all-time · 5242 issued across 22 forecaster arms · 3520 open (720 past
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
 | control/baserate | 1788 | 1279 | 477 | 273 | 204 | 0.300 | 57.2% | 0.245 | -0.226 |
-| control/trailing | 53 | 53 | 0 | — | — | not computed | — | — | — |
+| control/trailing | 59 | 59 | 0 | — | — | not computed | — | — | — |
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 1 | 9 | 0 | 9 | 0.250 | 0.0% | 0.000 | — |
 | lmstudio/auto[post-verbot] | 20 | 9 | 11 | 1 | 10 | 0.123 | 9.1% | 0.083 | -0.490 |
 | lmstudio/auto[post-window] | 470 | 201 | 259 | 75 | 184 | 0.204 | 29.0% | 0.206 | +0.009 |
 | lmstudio/auto[pre-verbot] | 60 | 3 | 49 | 13 | 36 | 0.212 | 26.5% | 0.195 | -0.086 |
-| lmstudio/qwen36 | 149 | 132 | 11 | 4 | 7 | 0.227 | 36.4% | 0.231 | +0.020 |
-| lmstudio/qwen36-abliterated | 149 | 147 | 2 | 2 | 0 | 0.381 | 100.0% | 0.000 | — |
-| lmstudio/qwen36-realist | 139 | 106 | 31 | 10 | 21 | 0.242 | 32.3% | 0.219 | -0.106 |
+| lmstudio/qwen36 | 155 | 138 | 11 | 4 | 7 | 0.227 | 36.4% | 0.231 | +0.020 |
+| lmstudio/qwen36-abliterated | 157 | 155 | 2 | 2 | 0 | 0.381 | 100.0% | 0.000 | — |
+| lmstudio/qwen36-realist | 144 | 111 | 31 | 10 | 21 | 0.242 | 32.3% | 0.219 | -0.106 |
 | lmstudio/realist | 249 | 128 | 119 | 66 | 53 | 0.317 | 55.5% | 0.247 | -0.285 |
 | manual/fable | 45 | 18 | 27 | 14 | 13 | 0.180 | 51.9% | 0.250 | +0.279 |
 | manual/fable-5 | 38 | 14 | 24 | 14 | 10 | 0.164 | 58.3% | 0.243 | +0.325 |
 | manual/fable-5.1/unattested | 473 | 358 | 107 | 61 | 46 | 0.211 | 57.0% | 0.245 | +0.140 |
 | manual/fable-5/unattested | 258 | 147 | 102 | 65 | 37 | 0.203 | 63.7% | 0.231 | +0.121 |
 | manual/opus-5 | 74 | 39 | 35 | 18 | 17 | 0.213 | 51.4% | 0.250 | +0.146 |
-| manual/opus-5.5/unattested | 321 | 307 | 14 | 8 | 6 | 0.312 | 57.1% | 0.245 | -0.275 |
+| manual/opus-5.5/unattested | 327 | 313 | 14 | 8 | 6 | 0.312 | 57.1% | 0.245 | -0.275 |
 | manual/opus-5/unattested | 326 | 221 | 95 | 61 | 34 | 0.208 | 64.2% | 0.230 | +0.097 |
 | manual/sonnet-5 | 45 | 3 | 41 | 22 | 19 | 0.250 | 53.7% | 0.249 | -0.007 |
 | manual/sonnet-5.5/unattested | 222 | 207 | 15 | 10 | 5 | 0.122 | 66.7% | 0.222 | +0.451 |
@@ -780,6 +780,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 - **KKR-20261008-66** (69%, due 2026-10-28) Between 2026-10-12 and 2026-10-25, a single Russian attack on one locality in Ukraine will kill at least 20 people by official Ukrainian toll. — *resolves on:* At least two of Reuters, AP and BBC report an official Ukrainian death toll of 20 or more from one Russian attack on one locality in Ukraine, with the attack dated between 2026-10-12 and 2026-10-25.
 - **KKR-20261009-01** (85%, due 2026-10-30) Between 2026-10-25 and 2026-10-28, the FBI will publicly confirm the disruption of Chinese hacking tools used to breach critical infrastructure, citing the Flax Typhoon campaign. — *resolves on:* The FBI publicly confirms the disruption of Chinese hacking tools used to breach critical infrastructure, specifically referencing the Flax Typhoon campaign, between 2026-10-25 and 2026-10-28.
 - **KKR-20261009-02** (40%, due 2026-10-31) Between 2026-10-26 and 2026-10-29, a ransomware attack will disrupt a government agency's IT systems in Japan, with a public statement from the agency confirming the incident. — *resolves on:* A government agency in Japan publicly confirms a ransomware attack disrupting its IT systems between 2026-10-26 and 2026-10-29.
+- **KKR-20261009-03** (15%, due 2026-11-01) Between 2026-10-27 and 2026-10-30, a major earthquake of magnitude 6.0 or higher will be recorded by the USGS in the Pacific region, with a confirmed location in Vanuatu or Alaska. — *resolves on:* The USGS records a magnitude 6.0 or higher earthquake in the Pacific region, with a confirmed location in Vanuatu or Alaska, between 2026-10-27 and 2026-10-30.
 - **KKR-20261009-06** (25%, due 2026-10-25) Between 2026-10-16 and 2026-10-23, at least one new cyberattack exploiting CVE-2016-3081 in Apache Struts will be reported in at least two independent public sources. — *resolves on:* At least two independent public sources (e.g., BleepingComputer, The Hacker News, or CISA) report a confirmed cyberattack exploiting CVE-2016-3081 in Apache Struts between 2026-10-16 and 2026-10-23.
 - **KKR-20261009-08** (30%, due 2026-10-25) Between 2026-10-16 and 2026-10-23, at least one new cyberattack exploiting a zero-day vulnerability in a widely used open-source project will be reported in at least two independent public sources. — *resolves on:* At least two independent public sources (e.g., BleepingComputer, The Hacker News, or CISA) report a confirmed cyberattack exploiting a zero-day vulnerability in a widely used open-source project between 2026-10-16 and 2026-10-23.
 - **KKR-20261009-13** (15%, due 2026-10-26) The S&P 500 index closes below 7,500.00 on any trading day between 2026-10-16 and 2026-10-23. — *resolves on:* The S&P 500 index closes below 7,500.00 on any trading day between 2026-10-16 and 2026-10-23. Reference: 7,796.60 on the packet date.
@@ -2374,6 +2375,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261031-01 | `lmstudio/qwen36` | 2026-10-31 | 2026-11-09 | 30% | economics | WTI Crude Oil closes above 110.00 USD per barrel on at least one trading day between 2026-11-02 and 2026-11-06. |
 | KKR-20261031-04 | `lmstudio/qwen36-abliterated` | 2026-10-31 | 2026-11-09 | 40% | economics/markets | WTI Crude closes above 110.00 on any weekday between 2026-11-02 and 2026-11-06. Reference: 104.12 on the packet date. |
 | KKR-20261101-05 | `lmstudio/qwen36-realist` | 2026-11-01 | 2026-11-09 | 30% | economics/markets | WTI Crude closes above 110.00 on a weekday between 2026-11-02 and 2026-11-06. |
+| KKR-20261102-07 | `lmstudio/qwen36-realist` | 2026-11-02 | 2026-11-09 | 30% | economics/markets | WTI Crude settles below 90.00 USD per barrel on the New York Mercantile Exchange on any weekday between 2026-11-02 and 2026-11-06. |
 | KKR-20260806-08 | `manual/sonnet-5/unattested` | 2026-08-06 | 2026-11-10 | 55% | political | Abdul El-Sayed will win the 2026 Michigan US Senate general election held on 2026-11-03. |
 | KKR-20260806-23 | `control/baserate` | 2026-08-06 | 2026-11-10 | 31% | political | Abdul El-Sayed will win the 2026 Michigan US Senate general election held on 2026-11-03. |
 | KKR-20260901-01 | `manual/opus-5/unattested` | 2026-09-01 | 2026-11-10 | 45% | political | The Federal Register publishes at least one Presidential Document adjusting duties on steel or aluminum imports into the United States, with a publication date between 2026-09-08 and 2026-11-06. |
@@ -2568,6 +2570,20 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261026-22 | `lmstudio/qwen36-abliterated` | 2026-10-26 | 2026-11-11 | 10% | cyber | A major cyberattack disrupts Microsoft 365 services for more than 4 hours between 2026-11-01 and 2026-11-08 |
 | KKR-20261027-17 | `lmstudio/qwen36-abliterated` | 2026-10-27 | 2026-11-11 | 20% | political | A US federal court docket records a new indictment against a former US official between 2026-11-02 and 2026-11-09 |
 | KKR-20261029-03 | `lmstudio/qwen36` | 2026-10-29 | 2026-11-11 | 10% | economics | The European Central Bank announces a 25 basis point interest rate cut between 2026-11-06 and 2026-11-09 |
+| KKR-20261102-01 | `lmstudio/qwen36` | 2026-11-02 | 2026-11-11 | 25% | economics | WTI Crude oil closes below 90.00 USD per barrel on a weekday between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-02 | `lmstudio/qwen36` | 2026-11-02 | 2026-11-11 | 45% | disaster | A new active Flash Flood Warning is issued by the NWS for a county in Florida between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-03 | `lmstudio/qwen36` | 2026-11-02 | 2026-11-11 | 20% | military | A new major offensive operation is reported in the Russia-Ukraine Theatre between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-04 | `lmstudio/qwen36` | 2026-11-02 | 2026-11-11 | 40% | disaster | A new active Flood Warning is issued by the NWS for a county in Arizona between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-05 | `lmstudio/qwen36` | 2026-11-02 | 2026-11-11 | 35% | disaster | A new active Flash Flood Warning is issued by the NWS for a county in Louisiana between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-06 | `lmstudio/qwen36` | 2026-11-02 | 2026-11-11 | 15% | military | A new major offensive operation is reported in the Israel-Gaza-Levant Theatre between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-12 | `lmstudio/qwen36-abliterated` | 2026-11-02 | 2026-11-11 | 25% | cyber | The CISA KEV catalog carries a date-added value between 2026-11-02 and 2026-11-09 for a vulnerability exploited in the supermarket refrigeration systems. |
+| KKR-20261102-13 | `lmstudio/qwen36-abliterated` | 2026-11-02 | 2026-11-11 | 30% | economics/markets | WTI Crude oil closes below 90.00 USD per barrel on at least one trading day between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-14 | `lmstudio/qwen36-abliterated` | 2026-11-02 | 2026-11-11 | 45% | military/conflict | A confirmed kinetic event (drone, missile, or airstrike) occurs in the Kherson region between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-15 | `lmstudio/qwen36-abliterated` | 2026-11-02 | 2026-11-11 | 35% | economics/markets | The Nasdaq Composite index closes below 25,000 points on at least one trading day between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-16 | `lmstudio/qwen36-abliterated` | 2026-11-02 | 2026-11-11 | 60% | disaster | A forest fire notification is issued by GDACS for a location in Africa between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-17 | `lmstudio/qwen36-abliterated` | 2026-11-02 | 2026-11-11 | 40% | economics/markets | The 10-year US Treasury yield closes above 5.00 percent on at least one trading day between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-18 | `lmstudio/qwen36-abliterated` | 2026-11-02 | 2026-11-11 | 35% | economics/markets | The S&P 500 index closes below 7,600 points on at least one trading day between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-19 | `lmstudio/qwen36-abliterated` | 2026-11-02 | 2026-11-11 | 45% | military/conflict | A confirmed kinetic event (drone, missile, or airstrike) occurs in the Khan Younis region between 2026-11-02 and 2026-11-09. |
 | KKR-20260729-04 | `lmstudio/auto` | 2026-07-29 | 2026-11-12 | 40% | political | Between 2026-11-05 and 2026-11-12, the U.S. Senate confirms a nominee to the Supreme Court who has previously served as a federal judge. |
 | KKR-20260809-17 | `manual/sonnet-5` | 2026-08-09 | 2026-11-12 | 55% | economics/markets | The Form 10-Q filed by Berkshire Hathaway for the quarter ended 2026-09-30 reports cash, cash equivalents, and short-term investments below 365.5 billion dollars, continuing the Q2 decline. |
 | KKR-20260909-39 | `manual/fable-5/unattested` | 2026-09-09 | 2026-11-12 | 15% | military/conflict | Commercial tanker transit through the Strait of Hormuz is halted or suspended for at least 48 consecutive hours at some point between 2026-09-10 and 2026-11-09. |
@@ -2607,6 +2623,10 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261031-06 | `lmstudio/qwen36-abliterated` | 2026-10-31 | 2026-11-12 | 35% | military/conflict | The US Senate passes a resolution to confirm the sale of 500 Patriot missiles to Ukraine between 2026-11-02 and 2026-11-09. |
 | KKR-20261101-06 | `lmstudio/qwen36-realist` | 2026-11-01 | 2026-11-12 | 65% | disaster | The USGS records a magnitude 6.0 or higher earthquake between 2026-11-02 and 2026-11-09. |
 | KKR-20261101-07 | `lmstudio/qwen36-realist` | 2026-11-01 | 2026-11-12 | 70% | military/conflict | An Israeli airstrike kills at least five people in Gaza between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-08 | `lmstudio/qwen36-realist` | 2026-11-02 | 2026-11-12 | 20% | political | The Federal Register publishes a final rule between 2026-11-02 and 2026-11-09 that imposes new sanctions on entities linked to the Iranian nuclear program. |
+| KKR-20261102-09 | `lmstudio/qwen36-realist` | 2026-11-02 | 2026-11-12 | 15% | disaster | A confirmed earthquake with magnitude 6.0 or higher occurs in Tanzania between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-10 | `lmstudio/qwen36-realist` | 2026-11-02 | 2026-11-12 | 40% | cyber | A confirmed cyberattack disrupts refrigeration systems at European supermarkets between 2026-11-02 and 2026-11-09. |
+| KKR-20261102-11 | `lmstudio/qwen36-realist` | 2026-11-02 | 2026-11-12 | 15% | disaster | A confirmed earthquake with magnitude 6.0 or higher occurs in Sudan between 2026-11-02 and 2026-11-09. |
 | KKR-20260909-42 | `manual/fable-5/unattested` | 2026-09-09 | 2026-11-13 | 60% | political | The Associated Press declares Chris Pappas the winner of the 2026 US Senate general election in New Hampshire held on the scheduled date of 2026-11-03. |
 | KKR-20260909-50 | `control/baserate` | 2026-09-09 | 2026-11-13 | 35% | political | The Associated Press declares Chris Pappas the winner of the 2026 US Senate general election in New Hampshire held on the scheduled date of 2026-11-03. |
 | KKR-20260911-19 | `manual/sonnet-5/unattested` | 2026-09-11 | 2026-11-13 | 20% | political | Republicans retain a majority of seats in the US House of Representatives as elected on November 3, 2026. |
@@ -2638,6 +2658,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261023-122 | `control/baserate` | 2026-10-23 | 2026-11-13 | 42% | disaster | USGS lists an earthquake of magnitude 5.5 or greater, with origin time between 2026-10-26 and 2026-11-08, located within 250 km of the epicenter of USGS event us6000u43g. |
 | KKR-20261026-20 | `lmstudio/qwen36-abliterated` | 2026-10-26 | 2026-11-13 | 40% | economics/markets | The US Federal Reserve raises the federal funds rate by at least 25 basis points at its November 2026 meeting |
 | KKR-20261027-04 | `lmstudio/qwen36` | 2026-10-27 | 2026-11-13 | 85% | cyber | A new CVE is added to the CISA KEV catalog with a date-added value between 2026-11-05 and 2026-11-11. |
+| KKR-20261102-20 | `manual/opus-5.5/unattested` | 2026-11-02 | 2026-11-13 | 66% | political | Democrat Abdul El-Sayed defeats Republican Mike Rogers in the Michigan US Senate election held on 2026-11-03. |
+| KKR-20261102-26 | `control/trailing` | 2026-11-02 | 2026-11-13 | 57% | political | Democrat Abdul El-Sayed defeats Republican Mike Rogers in the Michigan US Senate election held on 2026-11-03. |
 | KKR-20261023-57 | `lmstudio/realist` | 2026-10-23 | 2026-11-14 | 32% | cyber | Between 2026-11-05 and 2026-11-12, a cyberattack on a U.S. state government system will be confirmed by CISA to have exploited a known vulnerability in a widely used open-source library. |
 | KKR-20261024-03 | `lmstudio/auto` | 2026-10-24 | 2026-11-14 | 85% | crime/security | Between 2026-11-05 and 2026-11-12, the German police will confirm the arrest of a suspect in connection with the fire at Hitler's Eagle's Nest. |
 | KKR-20260726-16 | `lmstudio/auto` | 2026-07-26 | 2026-11-15 | 25% | economics/markets | The European Central Bank announces a 0.5 percentage point interest rate hike on or before 2026-11-15, citing inflation concerns. |
@@ -3545,6 +3567,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261009-77 | `control/baserate` | 2026-10-09 | 2026-12-07 | 33% | crime/security | Nidal Hasan is executed by Army firing squad at Fort Hood between 2026-12-03 and 2026-12-04; the published execution date is 2026-12-03. |
 | KKR-20261010-11 | `lmstudio/qwen36` | 2026-10-10 | 2026-12-07 | 85% | economics | The S&P 500 index closes above 8,000 on at least one trading day between 2026-12-01 and 2026-12-04 |
 | KKR-20261020-15 | `lmstudio/qwen36-realist` | 2026-10-20 | 2026-12-07 | 15% | disaster | The USGS Significant Quakes catalog records a magnitude 6.0 or greater earthquake in the Vanuatu Islands between 2026-12-01 and 2026-12-05. |
+| KKR-20261102-25 | `manual/opus-5.5/unattested` | 2026-11-02 | 2026-12-07 | 45% | cyber | CISA adds GitLab vulnerability CVE-2026-110264 to the Known Exploited Vulnerabilities catalog between 2026-11-03 and 2026-12-04. |
+| KKR-20261102-31 | `control/trailing` | 2026-11-02 | 2026-12-07 | 57% | cyber | CISA adds GitLab vulnerability CVE-2026-110264 to the Known Exploited Vulnerabilities catalog between 2026-11-03 and 2026-12-04. |
 | KKR-20260729-05 | `lmstudio/auto` | 2026-07-29 | 2026-12-08 | 20% | military/conflict | Between 2026-12-01 and 2026-12-08, Iran launches a missile or drone attack on a U.S. military base in the Middle East. |
 | KKR-20260811-15 | `manual/fable-5/unattested` | 2026-08-11 | 2026-12-08 | 30% | cyber | CISA publishes a new cybersecurity advisory, distinct from any existing on 2026-08-11, that names Gunra ransomware, with publication date between 2026-08-12 and 2026-12-04. |
 | KKR-20260811-41 | `control/baserate` | 2026-08-11 | 2026-12-08 | 33% | cyber | CISA publishes a new cybersecurity advisory, distinct from any existing on 2026-08-11, that names Gunra ransomware, with publication date between 2026-08-12 and 2026-12-04. |
@@ -3666,6 +3690,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261027-49 | `control/baserate` | 2026-10-27 | 2026-12-14 | 59% | economics/markets | The FOMC lowers the federal funds target range at its scheduled meeting concluding on 2026-12-09. |
 | KKR-20261030-28 | `manual/opus-5.5/unattested` | 2026-10-30 | 2026-12-14 | 75% | economics/markets | The FOMC raises the federal funds target range at its scheduled 2026-12-08 to 2026-12-09 meeting. Reference: 4.00 percent upper limit on the packet date. |
 | KKR-20261030-35 | `control/trailing` | 2026-10-30 | 2026-12-14 | 57% | economics/markets | The FOMC raises the federal funds target range at its scheduled 2026-12-08 to 2026-12-09 meeting. Reference: 4.00 percent upper limit on the packet date. |
+| KKR-20261102-24 | `manual/opus-5.5/unattested` | 2026-11-02 | 2026-12-14 | 32% | military | US forces conduct at least one kinetic strike on a target on Iranian land territory between 2026-11-04 and 2026-12-11. |
+| KKR-20261102-30 | `control/trailing` | 2026-11-02 | 2026-12-14 | 57% | military | US forces conduct at least one kinetic strike on a target on Iranian land territory between 2026-11-04 and 2026-12-11. |
 | KKR-20260722-11 | `manual/fable` | 2026-07-22 | 2026-12-15 | 45% | political | Andy Biggs wins the Arizona gubernatorial general election, defeating Katie Hobbs by any margin, with results certified between 2026-11-05 and 2026-12-15 |
 | KKR-20260801-20 | `manual/sonnet-5/unattested` | 2026-08-01 | 2026-12-15 | 60% | disaster | A magnitude 4.0 or greater earthquake will strike the Campi Flegrei or greater Naples area of Italy, between 2026-08-08 and 2026-12-15. |
 | KKR-20260819-18 | `manual/opus-5/unattested` | 2026-08-19 | 2026-12-15 | 33% | crime/security | Croatia surrenders to German custody the Ukrainian diver arrested in Pula on 2026-08-19 over the Nord Stream blasts, in the window 2026-08-26 to 2026-12-11. |
@@ -3826,6 +3852,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261009-11 | `lmstudio/qwen36` | 2026-10-09 | 2026-12-21 | 40% | political | The US Senate confirms a new Treasury Secretary between 2026-12-15 and 2026-12-18. |
 | KKR-20261027-41 | `manual/opus-5.5/unattested` | 2026-10-27 | 2026-12-21 | 42% | economics/markets | ICE Brent front-month crude futures settle below 100.00 USD per barrel on 2026-12-18. Reference: 109.18 USD on the packet date. |
 | KKR-20261027-51 | `control/baserate` | 2026-10-27 | 2026-12-21 | 59% | economics/markets | ICE Brent front-month crude futures settle below 100.00 USD per barrel on 2026-12-18. Reference: 109.18 USD on the packet date. |
+| KKR-20261102-22 | `manual/opus-5.5/unattested` | 2026-11-02 | 2026-12-21 | 30% | economics | ICE Brent front-month futures settle at or above 120.00 dollars on at least one trading day between 2026-11-04 and 2026-12-18. |
+| KKR-20261102-28 | `control/trailing` | 2026-11-02 | 2026-12-21 | 57% | economics | ICE Brent front-month futures settle at or above 120.00 dollars on at least one trading day between 2026-11-04 and 2026-12-18. |
 | KKR-20260807-09 | `manual/opus-5` | 2026-08-07 | 2026-12-22 | 25% | political | The Russia sanctions bill passed by the Senate on 2026-08-07 becomes public law between 2026-08-08 and 2026-12-18. |
 | KKR-20260810-13 | `manual/fable-5` | 2026-08-10 | 2026-12-22 | 40% | political | A US House committee or subcommittee holds a hearing between 2026-09-01 and 2026-12-18 at which an OpenAI or Anthropic executive testifies about the reported AI company security breach. |
 | KKR-20260820-13 | `manual/fable-5/unattested` | 2026-08-20 | 2026-12-22 | 30% | political | Congress.gov records Senate passage of a bill whose short title includes CLARITY Act between 2026-08-21 and 2026-12-18. |
@@ -3951,6 +3979,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261029-37 | `control/trailing` | 2026-10-29 | 2027-01-04 | 57% | crime/security | The Victorian Court of Appeal quashes at least one murder conviction of Erin Patterson in a ruling delivered between 2026-10-29 and 2026-12-31. |
 | KKR-20261031-07 | `manual/opus-5.5/unattested` | 2026-10-31 | 2027-01-04 | 50% | cyber | CISA adds at least one Ivanti Connect Secure CVE, other than CVE-2026-118527 and CVE-2026-111357, to the KEV catalog between 2026-10-31 and 2026-12-31, consistent with the reported three-flaw exploit chain. |
 | KKR-20261031-15 | `control/trailing` | 2026-10-31 | 2027-01-04 | 57% | cyber | CISA adds at least one Ivanti Connect Secure CVE, other than CVE-2026-118527 and CVE-2026-111357, to the KEV catalog between 2026-10-31 and 2026-12-31, consistent with the reported three-flaw exploit chain. |
+| KKR-20261102-23 | `manual/opus-5.5/unattested` | 2026-11-02 | 2027-01-04 | 46% | economics | The S&P 500 closes at or above 7,800 on 2026-12-31. |
+| KKR-20261102-29 | `control/trailing` | 2026-11-02 | 2027-01-04 | 57% | economics | The S&P 500 closes at or above 7,800 on 2026-12-31. |
 | KKR-20260815-06 | `manual/opus-5/unattested` | 2026-08-15 | 2027-01-05 | 45% | economics | The FRED series DGS10 records a daily value at or above 5.00 percent on at least one business day between 2026-08-17 and 2026-12-31. |
 | KKR-20260815-08 | `manual/opus-5/unattested` | 2026-08-15 | 2027-01-05 | 22% | political | The UK Electoral Commission publishes a concluded investigation outcome naming Reform UK on its enforcement register between 2026-08-17 and 2026-12-31. |
 | KKR-20260815-12 | `control/baserate` | 2026-08-15 | 2027-01-05 | 18% | economics | The FRED series DGS10 records a daily value at or above 5.00 percent on at least one business day between 2026-08-17 and 2026-12-31. |
@@ -4212,6 +4242,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261025-39 | `control/baserate` | 2026-10-25 | 2027-01-11 | 42% | political | Democrats win at least 218 of 435 seats in the US House of Representatives in the general election held on 2026-11-03. |
 | KKR-20261027-44 | `manual/opus-5.5/unattested` | 2026-10-27 | 2027-01-11 | 70% | disaster | The DRC Ebola outbreak reaches at least 15,000 cumulative cases, all classifications combined, in official data dated between 2026-10-28 and 2026-12-31. Reference: above 10,000 on the packet date. |
 | KKR-20261027-54 | `control/baserate` | 2026-10-27 | 2027-01-11 | 38% | disaster | The DRC Ebola outbreak reaches at least 15,000 cumulative cases, all classifications combined, in official data dated between 2026-10-28 and 2026-12-31. Reference: above 10,000 on the packet date. |
+| KKR-20261102-21 | `manual/opus-5.5/unattested` | 2026-11-02 | 2027-01-11 | 57% | political | Senators in the Democratic caucus, including independents who caucus with Democrats, hold at least 51 seats in the US Senate between 2027-01-03 and 2027-01-08. |
+| KKR-20261102-27 | `control/trailing` | 2026-11-02 | 2027-01-11 | 57% | political | Senators in the Democratic caucus, including independents who caucus with Democrats, hold at least 51 seats in the US Senate between 2027-01-03 and 2027-01-08. |
 | KKR-20260908-41 | `manual/fable-5/unattested` | 2026-09-08 | 2027-01-12 | 15% | political | A presidential document directing federal recognition or renaming of the state of New Mexico as New America is published in the Federal Register between 2026-09-09 and 2027-01-08. |
 | KKR-20260908-49 | `control/baserate` | 2026-09-08 | 2027-01-12 | 35% | political | A presidential document directing federal recognition or renaming of the state of New Mexico as New America is published in the Federal Register between 2026-09-09 and 2027-01-08. |
 | KKR-20261010-67 | `manual/opus-5.5/unattested` | 2026-10-10 | 2027-01-12 | 35% | cyber | CISA adds at least one vulnerability in Ahsay Systems products, including AhsayCBS, to the Known Exploited Vulnerabilities catalog between 2026-10-12 and 2027-01-08. |
@@ -6109,7 +6141,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*96 of 5242 issued (1.8%) have been voided.*
+*96 of 5273 issued (1.8%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists
