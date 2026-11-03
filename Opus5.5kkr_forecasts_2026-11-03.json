@@ -1,0 +1,119 @@
+[
+  {
+    "statement": "A Democratic member is elected Speaker of the 120th Congress in a House roll call held between 2027-01-03 and 2027-01-15.",
+    "domain": "political",
+    "probability": 89,
+    "resolution": "True if the Clerk of the House roll call held between 2027-01-03 and 2027-01-15 records a Democratic member elected Speaker of the 120th Congress.",
+    "deadline": "2027-01-20",
+    "citations": [
+      66,
+      98,
+      119
+    ],
+    "failure_condition": "No Democratic member has been elected Speaker in a House roll call held between 2027-01-03 and 2027-01-15."
+  },
+  {
+    "statement": "Democrats and independents caucusing with them hold at least 51 US Senate seats between 2027-01-03 and 2027-01-15.",
+    "domain": "political",
+    "probability": 52,
+    "resolution": "True if the Senate.gov party division record shows at least 51 Democrats plus caucusing independents at any point between 2027-01-03 and 2027-01-15.",
+    "deadline": "2027-01-20",
+    "citations": [
+      98,
+      119
+    ],
+    "failure_condition": "Democrats and caucusing independents hold 50 or fewer Senate seats throughout 2027-01-03 to 2027-01-15."
+  },
+  {
+    "statement": "Russian and Ukrainian delegations attend US-mediated talks in Abu Dhabi between 2026-11-04 and 2026-11-20.",
+    "domain": "military_conflict",
+    "probability": 72,
+    "resolution": "True if Reuters and AP both report Russian and Ukrainian delegations attended US-mediated talks in Abu Dhabi held between 2026-11-04 and 2026-11-20.",
+    "deadline": "2026-11-24",
+    "citations": [
+      68
+    ],
+    "failure_condition": "No US-mediated session attended by both Russian and Ukrainian delegations takes place in Abu Dhabi between 2026-11-04 and 2026-11-20."
+  },
+  {
+    "statement": "Russia and Ukraine both announce a general ceasefire covering the full front line that takes effect between 2026-11-04 and 2027-01-31.",
+    "domain": "military_conflict",
+    "probability": 6,
+    "resolution": "True if Reuters and AP report both governments announced a general front-wide ceasefire taking effect between 2026-11-04 and 2027-01-31. Local, humanitarian, energy-only, or holiday truces do not count.",
+    "deadline": "2027-02-03",
+    "citations": [
+      68,
+      72
+    ],
+    "failure_condition": "No general front-wide ceasefire accepted by both governments takes effect between 2026-11-04 and 2027-01-31."
+  },
+  {
+    "statement": "US forces conduct at least one new strike on Iranian territory between 2026-11-05 and 2026-11-30.",
+    "domain": "military_conflict",
+    "probability": 50,
+    "resolution": "True if CENTCOM or the Pentagon confirms a US strike on Iranian land or islands occurring between 2026-11-05 and 2026-11-30, as reported by Reuters or AP.",
+    "deadline": "2026-12-03",
+    "citations": [
+      86,
+      90
+    ],
+    "failure_condition": "No US strike on Iranian land or islands occurs between 2026-11-05 and 2026-11-30."
+  },
+  {
+    "statement": "ICE Brent front-month futures settle above 100.00 dollars per barrel on 2026-12-18. Reference: 103.31 dollars on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "True if the ICE Brent front-month settlement on 2026-12-18 is above 100.00 dollars. Reference: 103.31 dollars on 2026-11-03.",
+    "deadline": "2026-12-22",
+    "citations": [
+      48
+    ],
+    "failure_condition": "The ICE Brent front-month settlement on 2026-12-18 is at or below 100.00 dollars."
+  },
+  {
+    "statement": "The S&P 500 closes above 7,800.00 on 2026-12-31. Reference: 7,586.77 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 42,
+    "resolution": "True if the FRED SP500 series value for 2026-12-31 is above 7,800.00. Reference: 7,586.77 on 2026-11-03.",
+    "deadline": "2027-01-05",
+    "citations": [
+      66,
+      69
+    ],
+    "failure_condition": "The S&P 500 close on 2026-12-31 is at or below 7,800.00."
+  },
+  {
+    "statement": "CISA adds a Siemens IoT2050 vulnerability to the Known Exploited Vulnerabilities catalog between 2026-11-04 and 2026-12-04.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "True if the CISA KEV catalog carries a Siemens entry naming IoT2050 with a date-added value between 2026-11-04 and 2026-12-04.",
+    "deadline": "2026-12-08",
+    "citations": [
+      28
+    ],
+    "failure_condition": "No Siemens IoT2050 entry has a KEV date-added value between 2026-11-04 and 2026-12-04."
+  },
+  {
+    "statement": "A European national government or national cyber agency publicly attributes the supermarket refrigeration cyberattacks to a named state or named threat group between 2026-11-04 and 2026-12-15.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "True if Reuters or AP reports such an official attribution to a named state or named group, made between 2026-11-04 and 2026-12-15. Anonymous-source and vendor attributions do not count.",
+    "deadline": "2026-12-18",
+    "citations": [
+      83,
+      85
+    ],
+    "failure_condition": "No European national government or national cyber agency makes an on-record attribution to a named state or group between 2026-11-04 and 2026-12-15."
+  },
+  {
+    "statement": "PHIVOLCS raises Mayon Volcano to Alert Level 4 or higher between 2026-11-04 and 2026-12-15.",
+    "domain": "disaster",
+    "probability": 12,
+    "resolution": "True if a PHIVOLCS Mayon bulletin issued between 2026-11-04 and 2026-12-15 raises the volcano to Alert Level 4 or 5.",
+    "deadline": "2026-12-18",
+    "citations": [
+      46
+    ],
+    "failure_condition": "Mayon is not raised to Alert Level 4 or 5 between 2026-11-04 and 2026-12-15."
+  }
+]
