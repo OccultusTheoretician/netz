@@ -1,0 +1,119 @@
+[
+  {
+    "statement": "Jim Jordan wins the House Republican Conference vote for party leader in the 120th Congress between 2026-11-09 and 2026-11-20.",
+    "domain": "political",
+    "probability": 57,
+    "resolution": "TRUE if the House Republican Conference elects Jim Jordan as its top leader for the 120th Congress in a vote held between 2026-11-09 and 2026-11-20, per AP or Reuters.",
+    "deadline": "2026-11-24",
+    "citations": [
+      101
+    ],
+    "failure_condition": "Steve Scalise or any other member wins the leader vote, or no leader is elected inside the window."
+  },
+  {
+    "statement": "The ANC finishes below 35.0 percent of the national vote in the South African local government elections held on 2026-11-04, per IEC results declared between 2026-11-05 and 2026-11-11.",
+    "domain": "political",
+    "probability": 64,
+    "resolution": "TRUE if IEC final results declared between 2026-11-05 and 2026-11-11 show the ANC below 35.0 percent of the national valid vote; FALSE at 35.0 or above.",
+    "deadline": "2026-11-13",
+    "citations": [
+      107
+    ],
+    "failure_condition": "The declared national ANC share is 35.0 percent or higher, or no national declaration is made inside the window."
+  },
+  {
+    "statement": "The Knesset approves a new Israeli government in a confidence vote between 2026-11-05 and 2027-01-29.",
+    "domain": "political",
+    "probability": 24,
+    "resolution": "TRUE if the Knesset plenum passes a confidence vote installing a new government between 2026-11-05 and 2027-01-29, per the Knesset website or Reuters; a continuing caretaker government does not count.",
+    "deadline": "2027-02-01",
+    "citations": [
+      98
+    ],
+    "failure_condition": "No new government has won a Knesset confidence vote inside the window."
+  },
+  {
+    "statement": "The FOMC raises the federal funds target range to at least 4.00-4.25 percent on 2026-12-09. Reference: 3.75-4.00 percent target range on the packet date.",
+    "domain": "economics/markets",
+    "probability": 75,
+    "resolution": "TRUE if the FOMC statement of 2026-12-09 sets a target range with an upper limit of 4.25 percent or higher, confirmed by FRED series DFEDTARU for 2026-12-10.",
+    "deadline": "2026-12-11",
+    "citations": [
+      39,
+      40,
+      63
+    ],
+    "failure_condition": "The target range upper limit stays at 4.00 percent or lower after the 2026-12-09 decision."
+  },
+  {
+    "statement": "ICE Brent front-month futures settle at or above 110.00 dollars per barrel on at least one trading day between 2026-11-05 and 2026-12-31. Reference: 98.91 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "TRUE if any ICE Brent front-month daily settlement between 2026-11-05 and 2026-12-31 is 110.00 or higher; FALSE if every settlement in that window is below 110.00.",
+    "deadline": "2027-01-04",
+    "citations": [
+      66,
+      68,
+      81
+    ],
+    "failure_condition": "Every ICE Brent front-month settlement inside the window is below 110.00 dollars per barrel."
+  },
+  {
+    "statement": "Congress enacts a law raising or suspending the federal debt limit between 2026-11-05 and 2027-01-02, before the new Democratic majorities take their seats.",
+    "domain": "economics/markets",
+    "probability": 9,
+    "resolution": "TRUE if Congress.gov shows a public law enacted between 2026-11-05 and 2027-01-02 that raises or suspends the statutory debt limit at 31 USC 3101.",
+    "deadline": "2027-01-05",
+    "citations": [
+      53,
+      108
+    ],
+    "failure_condition": "No statute raising or suspending the debt limit is enacted inside the window."
+  },
+  {
+    "statement": "CISA adds at least one SonicWall vulnerability to the KEV catalog between 2026-11-05 and 2027-01-29.",
+    "domain": "cyber",
+    "probability": 52,
+    "resolution": "TRUE if the CISA KEV catalog carries a date-added value between 2026-11-05 and 2027-01-29 for at least one entry with vendor SonicWall.",
+    "deadline": "2027-02-01",
+    "citations": [
+      12
+    ],
+    "failure_condition": "No SonicWall entry in the KEV catalog has a date-added value inside the window."
+  },
+  {
+    "statement": "The UK Supreme Court hands down judgment in the Ammori appeal against the proscription of Palestine Action between 2026-11-06 and 2027-01-29.",
+    "domain": "crime/security",
+    "probability": 45,
+    "resolution": "TRUE if the UK Supreme Court case page for UKSC/2026/0099 records a judgment handed down between 2026-11-06 and 2027-01-29, whichever side prevails.",
+    "deadline": "2027-02-01",
+    "citations": [
+      97
+    ],
+    "failure_condition": "The Supreme Court has not delivered its judgment inside the window."
+  },
+  {
+    "statement": "US forces strike Iranian land or island territory at least once between 2026-11-05 and 2026-11-30, with the strike acknowledged on the record by the US government.",
+    "domain": "military/conflict",
+    "probability": 55,
+    "resolution": "TRUE if CENTCOM, the Pentagon or the president confirms on the record a US strike on Iranian land or island territory occurring between 2026-11-05 and 2026-11-30, per Reuters or AP; strikes on vessels do not count.",
+    "deadline": "2026-12-03",
+    "citations": [
+      66,
+      68
+    ],
+    "failure_condition": "The United States carried out no acknowledged strike on Iranian land or island territory inside the window."
+  },
+  {
+    "statement": "Russia and Ukraine both confirm a new truce, nationwide or covering energy infrastructure, the Black Sea or a named city, taking effect between 2026-11-05 and 2026-12-20.",
+    "domain": "military/conflict",
+    "probability": 20,
+    "resolution": "TRUE if Reuters or AP reports the Kremlin and Kyiv both confirmed such a truce taking effect between 2026-11-05 and 2026-12-20; prisoner swaps and IAEA repair pauses do not count.",
+    "deadline": "2026-12-22",
+    "citations": [
+      70,
+      89
+    ],
+    "failure_condition": "No new truce agreed by both governments takes effect inside the window."
+  }
+]
