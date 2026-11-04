@@ -1,10 +1,10 @@
 {
  "schema": "packet-register/1.0",
- "generated": "2026-11-03T16:33:47Z",
+ "generated": "2026-11-04T17:05:59Z",
  "what_this_proves": "Each digest fixes the bytes of an elicitation packet a sealed entry names. It proves the input was not rewritten after the outcome was known.",
  "what_this_does_not_prove": "It does not make the input readable. RPAS-26 1.04 asks whether a hit was deducible from the declared priors; a digest does not disclose them, so the keyed/keyless determination on these entries remains uncheckable by a third party. The packet bodies are excluded from this repository by ignore rule. This register closes retrofit, not readability, and the distinction is stated because Amendment 2026-08-04 Part I-E overstated it.",
- "packets": 256,
- "rows_covered": 5205,
+ "packets": 260,
+ "rows_covered": 5220,
  "named_but_absent": [],
  "present_but_unnamed": [
   "kkr_packet_2026-07-20.md",
@@ -19,13 +19,15 @@
   "kkr_packet_2026-08-03_1424.md",
   "kkr_packet_2026-08-03_2320.md",
   "kkr_packet_2026-08-03_2351.md",
+  "kkr_packet_2026-11-04_1615.md",
   "kkr_packet_frame_realist_2026-09-09_1533.md",
   "kkr_packet_frame_realist_2026-09-14_1517.md",
   "kkr_packet_frame_realist_2026-10-15_1514.md",
   "kkr_packet_local_qwen36-realist_2026-10-25_1518.md",
+  "kkr_packet_local_qwen36-realist_2026-11-04_1617.md",
   "kkr_packet_local_qwen36_2026-10-20_1517.md"
  ],
- "head": "aa38b4c1de8728d97127e98500c78486afe414aa73c55340b230807ba6a960ab",
+ "head": "fc2dbf367ecd842650663ff7114a209ca36bd2e27dabdc4207b2b79288438c98",
  "entries": [
   {
    "packet": "kkr_packet_2026-07-20.md",
@@ -8030,6 +8032,63 @@
    ],
    "prev": "fd7f84c4df03cb6dd1a3de5e6fac0ac2565b8dd7f246d3f0f17d5cf6567f90cf",
    "chain": "aa38b4c1de8728d97127e98500c78486afe414aa73c55340b230807ba6a960ab"
+  },
+  {
+   "packet": "kkr_packet_2026-11-04_1615.md",
+   "sha256": "f8de3962169721260a677a5a961e51c2adc9222daa0392f126383a1150b7be6b",
+   "bytes": 49285,
+   "mtime_utc": "2026-11-04T16:15:30Z",
+   "rows": 0,
+   "row_ids": [],
+   "prev": "aa38b4c1de8728d97127e98500c78486afe414aa73c55340b230807ba6a960ab",
+   "chain": "11af8d04d071410f102dda86f57f21883be31cd8445a440de8495d156cbf7cc8"
+  },
+  {
+   "packet": "kkr_packet_local_qwen36_2026-11-04_1616.md",
+   "sha256": "f8de3962169721260a677a5a961e51c2adc9222daa0392f126383a1150b7be6b",
+   "bytes": 49285,
+   "mtime_utc": "2026-11-04T16:16:03Z",
+   "rows": 7,
+   "row_ids": [
+    "KKR-20261104-01",
+    "KKR-20261104-02",
+    "KKR-20261104-03",
+    "KKR-20261104-04",
+    "KKR-20261104-05",
+    "KKR-20261104-06",
+    "KKR-20261104-07"
+   ],
+   "prev": "11af8d04d071410f102dda86f57f21883be31cd8445a440de8495d156cbf7cc8",
+   "chain": "c19f0dafcd0380cb8328ff2a1bd22778365608fcf54f498afcb5bef441097803"
+  },
+  {
+   "packet": "kkr_packet_local_qwen36-realist_2026-11-04_1617.md",
+   "sha256": "b2360226a1f668a43f58e3a6c939b3659d3377cc23b936241551c859aa34c9b6",
+   "bytes": 50343,
+   "mtime_utc": "2026-11-04T16:17:00Z",
+   "rows": 0,
+   "row_ids": [],
+   "prev": "c19f0dafcd0380cb8328ff2a1bd22778365608fcf54f498afcb5bef441097803",
+   "chain": "eb2122008bee091074bf243ee1e4a0b2902a5304e9c82033f1ed91caf76b80cf"
+  },
+  {
+   "packet": "kkr_packet_local_qwen36-abliterated_2026-11-04_1618.md",
+   "sha256": "f8de3962169721260a677a5a961e51c2adc9222daa0392f126383a1150b7be6b",
+   "bytes": 49285,
+   "mtime_utc": "2026-11-04T16:18:19Z",
+   "rows": 8,
+   "row_ids": [
+    "KKR-20261104-08",
+    "KKR-20261104-09",
+    "KKR-20261104-10",
+    "KKR-20261104-11",
+    "KKR-20261104-12",
+    "KKR-20261104-13",
+    "KKR-20261104-14",
+    "KKR-20261104-15"
+   ],
+   "prev": "eb2122008bee091074bf243ee1e4a0b2902a5304e9c82033f1ed91caf76b80cf",
+   "chain": "fc2dbf367ecd842650663ff7114a209ca36bd2e27dabdc4207b2b79288438c98"
   }
  ]
 }
