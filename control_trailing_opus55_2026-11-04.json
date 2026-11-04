@@ -1,0 +1,107 @@
+[
+  {
+    "statement": "The ANC finishes below 35.0 percent of the national vote in the South African local government elections held on 2026-11-04, per IEC results declared between 2026-11-05 and 2026-11-11.",
+    "resolution": "TRUE if IEC final results declared between 2026-11-05 and 2026-11-11 show the ANC below 35.0 percent of the national valid vote; FALSE at 35.0 or above.",
+    "failure_condition": "The declared national ANC share is 35.0 percent or higher, or no national declaration is made inside the window.",
+    "domain": "political",
+    "deadline": "2026-11-13",
+    "probability": 57,
+    "citations": [
+      107
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-04",
+      "ledger_as_of": "2026-11-04T17:19:05Z",
+      "ledger_sha16": "f80615e4d409d9f1",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261104-28"
+    }
+  },
+  {
+    "statement": "CISA adds at least one SonicWall vulnerability to the KEV catalog between 2026-11-05 and 2027-01-29.",
+    "resolution": "TRUE if the CISA KEV catalog carries a date-added value between 2026-11-05 and 2027-01-29 for at least one entry with vendor SonicWall.",
+    "failure_condition": "No SonicWall entry in the KEV catalog has a date-added value inside the window.",
+    "domain": "cyber",
+    "deadline": "2027-02-01",
+    "probability": 57,
+    "citations": [
+      12
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-04",
+      "ledger_as_of": "2026-11-04T17:19:05Z",
+      "ledger_sha16": "f80615e4d409d9f1",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261104-29"
+    }
+  },
+  {
+    "statement": "The UK Supreme Court hands down judgment in the Ammori appeal against the proscription of Palestine Action between 2026-11-06 and 2027-01-29.",
+    "resolution": "TRUE if the UK Supreme Court case page for UKSC/2026/0099 records a judgment handed down between 2026-11-06 and 2027-01-29, whichever side prevails.",
+    "failure_condition": "The Supreme Court has not delivered its judgment inside the window.",
+    "domain": "crime/security",
+    "deadline": "2027-02-01",
+    "probability": 57,
+    "citations": [
+      97
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "crime-security",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-04",
+      "ledger_as_of": "2026-11-04T17:19:05Z",
+      "ledger_sha16": "f80615e4d409d9f1",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261104-30"
+    }
+  }
+]

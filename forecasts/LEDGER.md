@@ -1,12 +1,12 @@
 **NOTHING CLASSIFIED OR PRIVILEGED**
 
-# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 041705Z NOV 26
+# KAOS KONTROL REPORT — PREDICTIVE LEDGER — 041719Z NOV 26
 
 **KKR is the Kaos Kontrol Report** — the daily forecasting stage that issues these projections. This is its permanent record: every projection ever sealed, resolved or open, hits and misses alike, segregated by the forecaster arm that issued it.
 
 **A standing Retro-Prescient Audit™** · method: [RETRO_PRESCIENT_AUDIT.md](https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md)
 
-Window: all-time · 5317 issued across 22 forecaster arms · 3595 open (1018 past deadline, unresolved)
+Window: all-time · 5335 issued across 22 forecaster arms · 3613 open (1018 past deadline, unresolved)
 
 **No pooled score is published.** A Brier score is a property of one forecaster; an average across arms is nobody's record. Every figure below is segregated by the arm that issued the projection. Skill is measured against that arm's OWN realized base rate — the strategy of stating the base rate every single time. Negative skill means the arm is losing to that strategy.
 
@@ -15,7 +15,7 @@ Window: all-time · 5317 issued across 22 forecaster arms · 3595 open (1018 pas
 | forecaster arm | issued | open | resolved | hits | misses | Brier | base rate | climatological | skill |
 |---|---|---|---|---|---|---|---|---|---|
 | control/baserate | 1788 | 1279 | 477 | 273 | 204 | 0.300 | 57.2% | 0.245 | -0.226 |
-| control/trailing | 66 | 66 | 0 | — | — | not computed | — | — | — |
+| control/trailing | 75 | 75 | 0 | — | — | not computed | — | — | — |
 | fogsim/scenario | 1 | 1 | 0 | — | — | not computed | — | — | — |
 | kfk/halflife | 10 | 1 | 9 | 0 | 9 | 0.250 | 0.0% | 0.000 | — |
 | lmstudio/auto[post-verbot] | 20 | 9 | 11 | 1 | 10 | 0.123 | 9.1% | 0.083 | -0.490 |
@@ -27,10 +27,10 @@ Window: all-time · 5317 issued across 22 forecaster arms · 3595 open (1018 pas
 | lmstudio/realist | 249 | 128 | 119 | 66 | 53 | 0.317 | 55.5% | 0.247 | -0.285 |
 | manual/fable | 45 | 18 | 27 | 14 | 13 | 0.180 | 51.9% | 0.250 | +0.279 |
 | manual/fable-5 | 38 | 14 | 24 | 14 | 10 | 0.164 | 58.3% | 0.243 | +0.325 |
-| manual/fable-5.1/unattested | 473 | 358 | 107 | 61 | 46 | 0.211 | 57.0% | 0.245 | +0.140 |
+| manual/fable-5.1/unattested | 479 | 364 | 107 | 61 | 46 | 0.211 | 57.0% | 0.245 | +0.140 |
 | manual/fable-5/unattested | 258 | 147 | 102 | 65 | 37 | 0.203 | 63.7% | 0.231 | +0.121 |
 | manual/opus-5 | 74 | 39 | 35 | 18 | 17 | 0.213 | 51.4% | 0.250 | +0.146 |
-| manual/opus-5.5/unattested | 334 | 320 | 14 | 8 | 6 | 0.312 | 57.1% | 0.245 | -0.275 |
+| manual/opus-5.5/unattested | 337 | 323 | 14 | 8 | 6 | 0.312 | 57.1% | 0.245 | -0.275 |
 | manual/opus-5/unattested | 326 | 221 | 95 | 61 | 34 | 0.208 | 64.2% | 0.230 | +0.097 |
 | manual/sonnet-5 | 45 | 3 | 41 | 22 | 19 | 0.250 | 53.7% | 0.249 | -0.007 |
 | manual/sonnet-5.5/unattested | 222 | 207 | 15 | 10 | 5 | 0.122 | 66.7% | 0.222 | +0.451 |
@@ -2968,6 +2968,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261104-13 | `lmstudio/qwen36-abliterated` | 2026-11-04 | 2026-11-13 | 20% | disaster | A forest fire notification is recorded in GDACS Alerts for Sudan between 2026-11-04 and 2026-11-11. |
 | KKR-20261104-14 | `lmstudio/qwen36-abliterated` | 2026-11-04 | 2026-11-13 | 15% | political | The US House of Representatives passes a resolution to reverse Trump tariffs between 2026-11-04 and 2026-11-11. |
 | KKR-20261104-15 | `lmstudio/qwen36-abliterated` | 2026-11-04 | 2026-11-13 | 20% | disaster | A forest fire notification is recorded in GDACS Alerts for Botswana between 2026-11-04 and 2026-11-11. |
+| KKR-20261104-28 | `manual/opus-5.5/unattested` | 2026-11-04 | 2026-11-13 | 64% | political | The ANC finishes below 35.0 percent of the national vote in the South African local government elections held on 2026-11-04, per IEC results declared between 2026-11-05 and 2026-11-11. |
+| KKR-20261104-31 | `control/trailing` | 2026-11-04 | 2026-11-13 | 57% | political | The ANC finishes below 35.0 percent of the national vote in the South African local government elections held on 2026-11-04, per IEC results declared between 2026-11-05 and 2026-11-11. |
 | KKR-20261023-57 | `lmstudio/realist` | 2026-10-23 | 2026-11-14 | 32% | cyber | Between 2026-11-05 and 2026-11-12, a cyberattack on a U.S. state government system will be confirmed by CISA to have exploited a known vulnerability in a widely used open-source library. |
 | KKR-20261024-03 | `lmstudio/auto` | 2026-10-24 | 2026-11-14 | 85% | crime/security | Between 2026-11-05 and 2026-11-12, the German police will confirm the arrest of a suspect in connection with the fire at Hitler's Eagle's Nest. |
 | KKR-20260726-16 | `lmstudio/auto` | 2026-07-26 | 2026-11-15 | 25% | economics/markets | The European Central Bank announces a 0.5 percentage point interest rate hike on or before 2026-11-15, citing inflation concerns. |
@@ -3892,6 +3894,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261020-15 | `lmstudio/qwen36-realist` | 2026-10-20 | 2026-12-07 | 15% | disaster | The USGS Significant Quakes catalog records a magnitude 6.0 or greater earthquake in the Vanuatu Islands between 2026-12-01 and 2026-12-05. |
 | KKR-20261102-25 | `manual/opus-5.5/unattested` | 2026-11-02 | 2026-12-07 | 45% | cyber | CISA adds GitLab vulnerability CVE-2026-110264 to the Known Exploited Vulnerabilities catalog between 2026-11-03 and 2026-12-04. |
 | KKR-20261102-31 | `control/trailing` | 2026-11-02 | 2026-12-07 | 57% | cyber | CISA adds GitLab vulnerability CVE-2026-110264 to the Known Exploited Vulnerabilities catalog between 2026-11-03 and 2026-12-04. |
+| KKR-20261104-16 | `manual/fable-5.1/unattested` | 2026-11-04 | 2026-12-07 | 25% | cyber | Between 2026-11-05 and 2026-12-04 inclusive, CISA adds at least one Android or Pixel vulnerability (KEV vendorProject Android, or Google with product Android or Pixel) to its Known Exploited Vulnerabilities catalog. |
+| KKR-20261104-22 | `control/trailing` | 2026-11-04 | 2026-12-07 | 55% | cyber | Between 2026-11-05 and 2026-12-04 inclusive, CISA adds at least one Android or Pixel vulnerability (KEV vendorProject Android, or Google with product Android or Pixel) to its Known Exploited Vulnerabilities catalog. |
 | KKR-20260729-05 | `lmstudio/auto` | 2026-07-29 | 2026-12-08 | 20% | military/conflict | Between 2026-12-01 and 2026-12-08, Iran launches a missile or drone attack on a U.S. military base in the Middle East. |
 | KKR-20260811-15 | `manual/fable-5/unattested` | 2026-08-11 | 2026-12-08 | 30% | cyber | CISA publishes a new cybersecurity advisory, distinct from any existing on 2026-08-11, that names Gunra ransomware, with publication date between 2026-08-12 and 2026-12-04. |
 | KKR-20260811-41 | `control/baserate` | 2026-08-11 | 2026-12-08 | 33% | cyber | CISA publishes a new cybersecurity advisory, distinct from any existing on 2026-08-11, that names Gunra ransomware, with publication date between 2026-08-12 and 2026-12-04. |
@@ -3981,6 +3985,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261029-29 | `manual/opus-5.5/unattested` | 2026-10-29 | 2026-12-11 | 35% | economics/markets | The FOMC raises the federal funds target range at its scheduled meeting concluding on 2026-12-09. |
 | KKR-20261029-35 | `control/trailing` | 2026-10-29 | 2026-12-11 | 57% | economics/markets | The FOMC raises the federal funds target range at its scheduled meeting concluding on 2026-12-09. |
 | KKR-20261101-02 | `lmstudio/qwen36` | 2026-11-01 | 2026-12-11 | 30% | economics | WTI Crude oil closes above 115.00 USD per barrel on any weekday between 2026-12-01 and 2026-12-10. |
+| KKR-20261104-20 | `manual/fable-5.1/unattested` | 2026-11-04 | 2026-12-11 | 55% | military/conflict | Between 2026-11-05 and 2026-12-04 inclusive, a single Russian missile or drone strike on Ukraine kills 20 or more people according to the Ukrainian official death toll. |
+| KKR-20261104-26 | `control/trailing` | 2026-11-04 | 2026-12-11 | 65% | military/conflict | Between 2026-11-05 and 2026-12-04 inclusive, a single Russian missile or drone strike on Ukraine kills 20 or more people according to the Ukrainian official death toll. |
 | KKR-20261104-04 | `lmstudio/qwen36` | 2026-11-04 | 2026-12-12 | 85% | cyber | A new CVE is added to the CISA KEV catalog with a date-added value between 2026-12-01 and 2026-12-08. |
 | KKR-20261028-10 | `lmstudio/qwen36-realist` | 2026-10-28 | 2026-12-13 | 35% | political | The US Congress passes a continuing resolution to fund the federal government past 2026-12-11. |
 | KKR-20260820-11 | `manual/fable-5/unattested` | 2026-08-20 | 2026-12-14 | 88% | disaster | The NOAA Climate Prediction Center ENSO diagnostic discussion scheduled for 2026-12-10 carries an active El Nino Advisory status. |
@@ -4497,6 +4503,10 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261101-30 | `control/trailing` | 2026-11-01 | 2027-01-05 | 57% | disaster | A magnitude 6.0 or greater earthquake occurs in the Vanuatu region between 2026-11-02 and 2026-12-31. |
 | KKR-20261103-20 | `manual/opus-5.5/unattested` | 2026-11-03 | 2027-01-05 | 42% | economics/markets | The S&P 500 closes above 7,800.00 on 2026-12-31. Reference: 7,586.77 on the packet date. |
 | KKR-20261103-27 | `control/trailing` | 2026-11-03 | 2027-01-05 | 57% | economics/markets | The S&P 500 closes above 7,800.00 on 2026-12-31. Reference: 7,586.77 on the packet date. |
+| KKR-20261104-17 | `manual/fable-5.1/unattested` | 2026-11-04 | 2027-01-05 | 40% | economics/markets | The 10-year US Treasury constant maturity yield (FRED series DGS10) for 2026-12-31 is below 4.75 percent. Reference: 4.91 percent on the packet date, 2026-11-04. |
+| KKR-20261104-21 | `manual/fable-5.1/unattested` | 2026-11-04 | 2027-01-05 | 25% | military/conflict | Between 2026-11-05 and 2026-12-31 inclusive, US forces carry out at least one kinetic strike on a target inside Iranian territory that the US government publicly confirms. |
+| KKR-20261104-23 | `control/trailing` | 2026-11-04 | 2027-01-05 | 69% | economics/markets | The 10-year US Treasury constant maturity yield (FRED series DGS10) for 2026-12-31 is below 4.75 percent. Reference: 4.91 percent on the packet date, 2026-11-04. |
+| KKR-20261104-27 | `control/trailing` | 2026-11-04 | 2027-01-05 | 65% | military/conflict | Between 2026-11-05 and 2026-12-31 inclusive, US forces carry out at least one kinetic strike on a target inside Iranian territory that the US government publicly confirms. |
 | KKR-20260804-29 | `manual/sonnet-5/unattested` | 2026-08-04 | 2027-01-06 | 15% | economics/markets | The Federal Reserve will raise its federal funds target range above the level in effect on 2026-08-03, in an FOMC decision announced between 2026-08-10 and 2026-12-31. |
 | KKR-20260804-45 | `control/baserate` | 2026-08-04 | 2027-01-06 | 25% | economics/markets | The Federal Reserve will raise its federal funds target range above the level in effect on 2026-08-03, in an FOMC decision announced between 2026-08-10 and 2026-12-31. |
 | KKR-20260806-04 | `manual/opus-5/unattested` | 2026-08-06 | 2027-01-06 | 18% | cyber | The CISA KEV catalog carries at least one entry naming Gitea in its vendorProject or product field, with a dateAdded value between 2026-08-06 and 2026-12-31. |
@@ -4629,6 +4639,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261019-47 | `manual/opus-5.5/unattested` | 2026-10-19 | 2027-01-19 | 20% | cyber | CISA adds at least one of the critical F5 NGINX flaws CVE-2026-15176, CVE-2026-93479 or CVE-2026-97205 to its Known Exploited Vulnerabilities catalog between 2026-10-20 and 2027-01-15. |
 | KKR-20261019-54 | `control/baserate` | 2026-10-19 | 2027-01-19 | 46% | cyber | CISA adds at least one of the critical F5 NGINX flaws CVE-2026-15176, CVE-2026-93479 or CVE-2026-97205 to its Known Exploited Vulnerabilities catalog between 2026-10-20 and 2027-01-15. |
 | KKR-20261023-80 | `lmstudio/qwen36-abliterated` | 2026-10-23 | 2027-01-19 | 30% | political | The US Supreme Court issues a written opinion in the student ID case between 2027-01-11 and 2027-01-17 |
+| KKR-20261104-19 | `manual/fable-5.1/unattested` | 2026-11-04 | 2027-01-19 | 30% | political | Between 2026-11-05 and 2027-01-15 inclusive, the Knesset approves a new Israeli government in a vote of confidence and that government is sworn in. |
+| KKR-20261104-25 | `control/trailing` | 2026-11-04 | 2027-01-19 | 42% | political | Between 2026-11-05 and 2027-01-15 inclusive, the Knesset approves a new Israeli government in a vote of confidence and that government is sworn in. |
 | KKR-20260817-14 | `manual/opus-5/unattested` | 2026-08-17 | 2027-01-20 | 30% | political | FDA publishes a Federal Register document on the FSMA Section 204 food traceability rule - proposed rule, final rule, or request for information - between 2026-08-24 and 2027-01-15. |
 | KKR-20260817-19 | `control/baserate` | 2026-08-17 | 2027-01-20 | 29% | political | FDA publishes a Federal Register document on the FSMA Section 204 food traceability rule - proposed rule, final rule, or request for information - between 2026-08-24 and 2027-01-15. |
 | KKR-20260818-18 | `manual/opus-5/unattested` | 2026-08-18 | 2027-01-20 | 15% | cyber | The CISA Known Exploited Vulnerabilities catalog adds at least one entry whose vendorProject field is GitLab, with a dateAdded between 2026-08-19 and 2027-01-15. |
@@ -4647,6 +4659,10 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20260806-29 | `control/baserate` | 2026-08-06 | 2027-02-01 | 31% | political | Pete Hegseth departs the office of US Secretary of War, via announced resignation or removal, between 2026-08-06 and 2027-01-30. |
 | KKR-20260921-19 | `manual/opus-5/unattested` | 2026-09-21 | 2027-02-01 | 50% | political | Elif Eralp is elected Governing Mayor of Berlin by the Abgeordnetenhaus between 2026-09-22 and 2027-01-29. |
 | KKR-20260921-25 | `control/baserate` | 2026-09-21 | 2027-02-01 | 40% | political | Elif Eralp is elected Governing Mayor of Berlin by the Abgeordnetenhaus between 2026-09-22 and 2027-01-29. |
+| KKR-20261104-29 | `manual/opus-5.5/unattested` | 2026-11-04 | 2027-02-01 | 52% | cyber | CISA adds at least one SonicWall vulnerability to the KEV catalog between 2026-11-05 and 2027-01-29. |
+| KKR-20261104-30 | `manual/opus-5.5/unattested` | 2026-11-04 | 2027-02-01 | 45% | crime/security | The UK Supreme Court hands down judgment in the Ammori appeal against the proscription of Palestine Action between 2026-11-06 and 2027-01-29. |
+| KKR-20261104-32 | `control/trailing` | 2026-11-04 | 2027-02-01 | 57% | cyber | CISA adds at least one SonicWall vulnerability to the KEV catalog between 2026-11-05 and 2027-01-29. |
+| KKR-20261104-33 | `control/trailing` | 2026-11-04 | 2027-02-01 | 57% | crime/security | The UK Supreme Court hands down judgment in the Ammori appeal against the proscription of Palestine Action between 2026-11-06 and 2027-01-29. |
 | KKR-20260831-33 | `manual/opus-5/unattested` | 2026-08-31 | 2027-02-02 | 25% | crime/security | The Crown Prosecution Service announces a decision to bring criminal charges against at least one former undercover police officer in the undercover policing matter, between 2026-09-07 and 2027-01-29. |
 | KKR-20260831-40 | `control/baserate` | 2026-08-31 | 2027-02-02 | 43% | crime/security | The Crown Prosecution Service announces a decision to bring criminal charges against at least one former undercover police officer in the undercover policing matter, between 2026-09-07 and 2027-01-29. |
 | KKR-20260903-49 | `manual/opus-5/unattested` | 2026-09-03 | 2027-02-02 | 10% | cyber | The CISA KEV catalog carries an entry naming CrowdStrike as the vendor with a date-added value between 2026-09-04 and 2027-01-29. |
@@ -4846,6 +4862,8 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 | KKR-20261023-51 | `lmstudio/auto` | 2026-10-23 | 2027-04-21 | 25% | disaster | Between 2026-11-15 and 2026-11-21, a confirmed outbreak of Ebola in Nigeria will be reported by the BBC World and NPR News with at least one confirmed fatality. |
 | KKR-20261023-52 | `lmstudio/auto` | 2026-10-23 | 2027-04-21 | 35% | political | Between 2026-12-10 and 2026-12-16, a major political scandal involving a U.S. presidential candidate will be reported by Al Jazeera and BBC World with at least one indictment or formal charge. |
 | KKR-20261023-53 | `lmstudio/auto` | 2026-10-23 | 2027-04-21 | 20% | cyber | Between 2026-11-25 and 2026-12-01, a confirmed cyberattack on a U.S. government system will be reported by CISA and The Hacker News with a CVSS score of 9.0 or higher. |
+| KKR-20261104-18 | `manual/fable-5.1/unattested` | 2026-11-04 | 2027-05-03 | 50% | political | Between 2027-01-03 and 2027-04-30 inclusive, President Trump vetoes at least one bill or joint resolution passed by the 120th Congress. |
+| KKR-20261104-24 | `control/trailing` | 2026-11-04 | 2027-05-03 | 42% | political | Between 2027-01-03 and 2027-04-30 inclusive, President Trump vetoes at least one bill or joint resolution passed by the 120th Congress. |
 | KKR-20260827-114 | `operator/human` | 2026-08-27 | 2027-07-15 | 50% | ai-claims | Anthropic records the Leveling up across the board security goal of its Frontier Safety Roadmap, stated with a target of 2027-07-01, as completed with a completion date on or before 2027-07-01, on the Frontier Safety Roadmap updates page at anthropic.com. |
 | KKR-20260827-117 | `control/baserate` | 2026-08-27 | 2027-07-15 | 43% | ai-claims | Anthropic records the Leveling up across the board security goal of its Frontier Safety Roadmap, stated with a target of 2027-07-01, as completed with a completion date on or before 2027-07-01, on the Frontier Safety Roadmap updates page at anthropic.com. |
 
@@ -6482,7 +6500,7 @@ The bound that keeps this from becoming a parking space: a row sitting here more
 
 A sealed projection is never edited. Where one cannot be adjudicated as written, the only legitimate disposition is to terminate it and print why. The statement below is reproduced exactly as sealed, defect included. A void removes a position from scoring, which favours the forecaster — so every one is itemised here with its reason rather than listed as an id.
 
-*96 of 5317 issued (1.8%) have been voided.*
+*96 of 5335 issued (1.8%) have been voided.*
 
 - **KKR-20260720-06** [`lmstudio/auto`] (70%, due 2026-07-25, voided 2026-07-20) — statement as sealed: “Brent crude oil prices will exceed $95 per barrel on 2026-07-25, based on official data from Reuters or Bloomberg.”
     - *Reason:* deadline is a Saturday - no market settlement exists

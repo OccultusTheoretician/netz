@@ -1,0 +1,216 @@
+[
+  {
+    "statement": "Between 2026-11-05 and 2026-12-04 inclusive, CISA adds at least one Android or Pixel vulnerability (KEV vendorProject Android, or Google with product Android or Pixel) to its Known Exploited Vulnerabilities catalog.",
+    "resolution": "The CISA KEV catalog JSON carries an entry whose vendorProject is Android, or whose vendorProject is Google with product Android or Pixel, with dateAdded between 2026-11-05 and 2026-12-04 inclusive.",
+    "failure_condition": "No Android or Pixel vulnerability is added to the KEV catalog with a dateAdded value between 2026-11-05 and 2026-12-04 inclusive.",
+    "domain": "cyber",
+    "deadline": "2026-12-07",
+    "probability": 55,
+    "citations": [
+      22
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.5517,
+      "n": 29,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-04",
+      "ledger_as_of": "2026-11-04T17:18:58Z",
+      "ledger_sha16": "faad6724f76715fc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261104-16"
+    }
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield (FRED series DGS10) for 2026-12-31 is below 4.75 percent. Reference: 4.91 percent on the packet date, 2026-11-04.",
+    "resolution": "The FRED DGS10 observation dated 2026-12-31 is strictly below 4.75. Reference level at seal: 4.91 percent on 2026-11-04. If no observation exists for that date, the last prior observation governs.",
+    "failure_condition": "The DGS10 observation for 2026-12-31 is 4.75 percent or higher.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 69,
+    "citations": [
+      39,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6923,
+      "n": 26,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-04",
+      "ledger_as_of": "2026-11-04T17:18:58Z",
+      "ledger_sha16": "faad6724f76715fc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261104-17"
+    }
+  },
+  {
+    "statement": "Between 2027-01-03 and 2027-04-30 inclusive, President Trump vetoes at least one bill or joint resolution passed by the 120th Congress.",
+    "resolution": "The US Senate Vetoes by President page or Congress.gov records a presidential veto (regular or pocket) of a 120th Congress measure dated between 2027-01-03 and 2027-04-30 inclusive.",
+    "failure_condition": "No veto of any 120th Congress measure is issued with a date between 2027-01-03 and 2027-04-30 inclusive.",
+    "domain": "political",
+    "deadline": "2027-05-03",
+    "probability": 42,
+    "citations": [
+      105,
+      108,
+      53
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.4167,
+      "n": 12,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-04",
+      "ledger_as_of": "2026-11-04T17:18:58Z",
+      "ledger_sha16": "faad6724f76715fc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261104-18"
+    }
+  },
+  {
+    "statement": "Between 2026-11-05 and 2027-01-15 inclusive, the Knesset approves a new Israeli government in a vote of confidence and that government is sworn in.",
+    "resolution": "A Knesset vote of confidence approves a new government, and the government is sworn in, on a date between 2026-11-05 and 2027-01-15 inclusive, as reported by at least two of Reuters, AP, AFP, Times of Israel.",
+    "failure_condition": "No new Israeli government wins a Knesset confidence vote and is sworn in between 2026-11-05 and 2027-01-15 inclusive.",
+    "domain": "political",
+    "deadline": "2027-01-19",
+    "probability": 42,
+    "citations": [
+      98
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.4167,
+      "n": 12,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-04",
+      "ledger_as_of": "2026-11-04T17:18:58Z",
+      "ledger_sha16": "faad6724f76715fc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261104-19"
+    }
+  },
+  {
+    "statement": "Between 2026-11-05 and 2026-12-04 inclusive, a single Russian missile or drone strike on Ukraine kills 20 or more people according to the Ukrainian official death toll.",
+    "resolution": "Ukrainian national or regional authorities state a death toll of 20 or more from one Russian strike that occurred between 2026-11-05 and 2026-12-04 inclusive, as reported by at least two of Reuters, AP, AFP, BBC.",
+    "failure_condition": "No single Russian strike occurring between 2026-11-05 and 2026-12-04 reaches an official Ukrainian death toll of 20 by the deadline.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-11",
+    "probability": 65,
+    "citations": [
+      89
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6471,
+      "n": 17,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-04",
+      "ledger_as_of": "2026-11-04T17:18:58Z",
+      "ledger_sha16": "faad6724f76715fc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261104-20"
+    }
+  },
+  {
+    "statement": "Between 2026-11-05 and 2026-12-31 inclusive, US forces carry out at least one kinetic strike on a target inside Iranian territory that the US government publicly confirms.",
+    "resolution": "An official statement from the Pentagon, CENTCOM or the White House confirms a US strike on a target on Iranian soil conducted between 2026-11-05 and 2026-12-31 inclusive.",
+    "failure_condition": "US forces conduct no publicly confirmed strike on Iranian territory between 2026-11-05 and 2026-12-31 inclusive.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 65,
+    "citations": [
+      66,
+      68
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6471,
+      "n": 17,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-04",
+      "ledger_as_of": "2026-11-04T17:18:58Z",
+      "ledger_sha16": "faad6724f76715fc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261104-21"
+    }
+  }
+]
