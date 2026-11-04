@@ -1,7 +1,7 @@
 {
   "schema": "spion-log/1.0",
   "generator": "spion_ci.py/1.0",
-  "as_of": "2026-11-04T06:38:21Z",
+  "as_of": "2026-11-04T19:51:50Z",
   "events": [
     {
       "utc": "2026-07-26T23:58:36Z",
@@ -438,6 +438,35 @@
       "source": "pcaob-standard-setting-projects",
       "kind": "error",
       "detail": "HTTP 403 Forbidden"
+    },
+    {
+      "utc": "2026-11-04T19:51:51Z",
+      "source": "fasb-technical-agenda",
+      "kind": "change",
+      "signal": "derived-bytes",
+      "declared_moved": true,
+      "note": "byte hash over binary; PDF metadata churn can produce a move with no substantive edit",
+      "bytes_before": 293997,
+      "bytes_after": 293948
+    },
+    {
+      "utc": "2026-11-04T19:51:54Z",
+      "source": "pcaob-standard-setting-projects",
+      "kind": "change",
+      "signal": "derived-and-declared",
+      "declared_moved": true,
+      "paragraphs_added": 3,
+      "paragraphs_removed": 0,
+      "text_len_before": 17038,
+      "text_len_after": 17165,
+      "hash_before": "f6b81275e57749735d6e197cdd5eb5f61c0f2843234394342df16e06c73668af",
+      "hash_after": "ff8e135c7d98b617789e1212fe78ce3bc83cf67dd375a0344f9e4e33e9fb8692",
+      "excerpt": [
+        "Recently Issued Proposals",
+        "Date Public Comments Due",
+        "Board issued proposal on November 3, 2026. Comment period closes on January 4, 2027."
+      ],
+      "excerpt_truncated": false
     }
   ]
 }
