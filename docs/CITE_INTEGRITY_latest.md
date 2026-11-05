@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-11-04T13:15:53Z · ledger `ledger.json` · 5302 rows in scope
+Generated 2026-11-05T13:28:50Z · ledger `ledger.json` · 5335 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,12 +12,12 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **5301**
+- rows audited: **5334**
 - scope limitation (no resolvable source report): **1**
-- defective: **839** (15.8% of audited)
-- rows whose citation number does not identify a unique item: **434** (max candidates behind one number: 8)
+- defective: **839** (15.7% of audited)
+- rows whose citation number does not identify a unique item: **437** (max candidates behind one number: 8)
   - UNSUPPORTED: 578
-  - AMBIGUOUS_REF: 434
+  - AMBIGUOUS_REF: 437
   - DEADWEIGHT: 248
   - SHOTGUN: 56
   - NO_CITES: 24
@@ -25,8 +25,8 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## The number that matters
 
-Rows determined **KEYLESS**: 279
-Of those, citations defective: **32** (11.5%)
+Rows determined **KEYLESS**: 313
+Of those, citations defective: **19** (6.1%)
 
 A keyless determination says the claim went beyond its declared priors. Where the priors are unreadable, that determination was made against nothing. These rows are listed so the keyless count can be stated with its defect rate attached rather than as a clean integer.
 
@@ -46,22 +46,9 @@ A keyless determination says the claim went beyond its declared priors. Where th
 - `KKR-20260915-38` · manual/opus-5/unattested · 2026-09-15 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
 - `KKR-20260917-35` · manual/opus-5/unattested · 2026-09-17 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
 - `KKR-20260918-19` · manual/fable-5.1/unattested · 2026-09-18 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
-- `KKR-20260919-13` · manual/fable-5.1/unattested · 2026-09-19 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260919-22` · manual/opus-5/unattested · 2026-09-19 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
 - `KKR-20260925-11` · manual/fable-5.1/unattested · 2026-09-25 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
-- `KKR-20260926-29` · manual/opus-5.5/unattested · 2026-09-26 · UNSUPPORTED · 3 cites (0 strong, 0 weak, 3 none)
-- `KKR-20260930-14` · manual/fable-5.1/unattested · 2026-09-30 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20260930-15` · manual/fable-5.1/unattested · 2026-09-30 · UNSUPPORTED · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20261002-40` · manual/sonnet-5.5/unattested · 2026-10-02 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20261004-58` · manual/sonnet-5.5/unattested · 2026-10-04 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20261008-35` · manual/fable-5.1/unattested · 2026-10-08 · UNSUPPORTED · 3 cites (0 strong, 0 weak, 3 none)
-- `KKR-20261009-29` · manual/fable-5.1/unattested · 2026-10-09 · UNSUPPORTED · 3 cites (0 strong, 0 weak, 3 none)
-- `KKR-20261010-50` · manual/sonnet-5.5/unattested · 2026-10-10 · UNSUPPORTED · 3 cites (0 strong, 0 weak, 3 none)
-- `KKR-20261011-27` · manual/fable-5.1/unattested · 2026-10-11 · UNSUPPORTED · 3 cites (0 strong, 0 weak, 3 none)
-- `KKR-20261012-66` · manual/opus-5.5/unattested · 2026-10-12 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20261016-61` · manual/opus-5.5/unattested · 2026-10-16 · UNSUPPORTED · 1 cites (0 strong, 0 weak, 1 none)
-- `KKR-20261021-30` · manual/opus-5.5/unattested · 2026-10-21 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
-- `KKR-20261025-46` · manual/sonnet-5.5/unattested · 2026-10-25 · UNSUPPORTED · 2 cites (0 strong, 0 weak, 2 none)
+- `KKR-20260927-16` · manual/fable-5.1/unattested · 2026-09-27 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
+- `KKR-20261018-41` · manual/sonnet-5.5/unattested · 2026-10-18 · DEADWEIGHT · 3 cites (1 strong, 0 weak, 2 none)
 
 ## By arm
 
@@ -72,16 +59,16 @@ A keyless determination says the claim went beyond its declared priors. Where th
 | control/baserate | 1788 | 234 | 13% |
 | lmstudio/auto | 550 | 137 | 25% |
 | lmstudio/realist | 249 | 82 | 33% |
-| manual/fable-5.1/unattested | 473 | 80 | 17% |
-| manual/opus-5.5/unattested | 334 | 62 | 19% |
+| manual/fable-5.1/unattested | 479 | 80 | 17% |
+| manual/opus-5.5/unattested | 337 | 62 | 18% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| lmstudio/qwen36-abliterated | 161 | 36 | 22% |
+| lmstudio/qwen36-abliterated | 169 | 36 | 21% |
 | manual/sonnet-5.5/unattested | 222 | 32 | 14% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
-| lmstudio/qwen36 | 161 | 24 | 15% |
+| lmstudio/qwen36 | 168 | 24 | 14% |
 | lmstudio/qwen36-realist | 149 | 21 | 14% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
-| control/trailing | 66 | 17 | 26% |
+| control/trailing | 75 | 17 | 23% |
 | manual/opus-5 | 74 | 12 | 16% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
