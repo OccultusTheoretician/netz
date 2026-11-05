@@ -1,0 +1,218 @@
+[
+  {
+    "statement": "The CISA KEV catalog carries a date-added value between 2026-11-05 and 2026-12-04 for CVE-2026-107441, the Zyxel GS1900 out-of-bounds write flaw.",
+    "resolution": "TRUE if the CISA KEV JSON feed lists CVE-2026-107441 with a dateAdded value between 2026-11-05 and 2026-12-04.",
+    "failure_condition": "CVE-2026-107441 has no KEV entry with a date-added value between 2026-11-05 and 2026-12-04.",
+    "domain": "cyber",
+    "deadline": "2026-12-07",
+    "probability": 57,
+    "citations": [
+      23,
+      26
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-05",
+      "ledger_as_of": "2026-11-05T18:42:29Z",
+      "ledger_sha16": "797e0526e2f14d7e",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261105-30"
+    }
+  },
+  {
+    "statement": "A federal court order barring construction of the Trump arch at Memorial Circle, entered between 2026-11-05 and 2026-12-04, is in force and unstayed on 2026-12-04.",
+    "resolution": "TRUE if the D.D.C. docket in the arch cases before Judge Chutkan shows an injunction or restraining order against construction, entered between 2026-11-05 and 2026-12-04, in force on 2026-12-04 and not stayed on appeal.",
+    "failure_condition": "On 2026-12-04 no court order barring arch construction at Memorial Circle is in force, because none was entered or it expired, was dissolved or was stayed.",
+    "domain": "political",
+    "deadline": "2026-12-07",
+    "probability": 57,
+    "citations": [
+      41
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-05",
+      "ledger_as_of": "2026-11-05T18:42:29Z",
+      "ledger_sha16": "797e0526e2f14d7e",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261105-31"
+    }
+  },
+  {
+    "statement": "The FOMC raises the upper bound of the federal funds target range to at least 4.25 percent at its meeting of 2026-12-08 to 2026-12-09. Reference: 4.00 percent on the packet date.",
+    "resolution": "TRUE if FRED series DFEDTARU reads 4.25 or higher on 2026-12-10, following the FOMC decision of 2026-12-09. Reference: 4.00 percent on the packet date.",
+    "failure_condition": "The upper bound of the federal funds target range stays at or below 4.00 percent after the FOMC decision of 2026-12-09.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-11",
+    "probability": 57,
+    "citations": [
+      53
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-05",
+      "ledger_as_of": "2026-11-05T18:42:29Z",
+      "ledger_sha16": "797e0526e2f14d7e",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261105-32"
+    }
+  },
+  {
+    "statement": "US forces carry out at least one air or missile strike on Iranian territory, including Iranian islands, between 2026-11-09 and 2026-12-11.",
+    "resolution": "TRUE if CENTCOM or the Pentagon acknowledges, or two of Reuters, AP and BBC report citing US officials, a US strike on Iranian land or islands dated between 2026-11-09 and 2026-12-11.",
+    "failure_condition": "No US air or missile strike hit Iranian land or islands between 2026-11-09 and 2026-12-11.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-14",
+    "probability": 57,
+    "citations": [
+      76,
+      92,
+      102
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-05",
+      "ledger_as_of": "2026-11-05T18:42:29Z",
+      "ledger_sha16": "797e0526e2f14d7e",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261105-33"
+    }
+  },
+  {
+    "statement": "The Bank of England MPC raises Bank Rate above 4.00 percent at its decision of 2026-12-17. Reference: 4.00 percent on the packet date.",
+    "resolution": "TRUE if the Bank of England official Bank Rate series shows a rate above 4.00 percent effective 2026-12-17. Reference: 4.00 percent on the packet date.",
+    "failure_condition": "Bank Rate remains at or below 4.00 percent after the MPC decision of 2026-12-17.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-21",
+    "probability": 57,
+    "citations": [
+      47,
+      99
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-05",
+      "ledger_as_of": "2026-11-05T18:42:29Z",
+      "ledger_sha16": "797e0526e2f14d7e",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261105-34"
+    }
+  },
+  {
+    "statement": "The US Senate passes a joint or concurrent resolution directing the removal of US forces from hostilities against Iran between 2027-01-03 and 2027-02-26.",
+    "resolution": "TRUE if a Senate.gov roll call dated between 2027-01-03 and 2027-02-26 records majority passage of a war powers resolution directing removal of US forces from hostilities against Iran.",
+    "failure_condition": "The Senate does not pass any war powers resolution on hostilities against Iran between 2027-01-03 and 2027-02-26.",
+    "domain": "political",
+    "deadline": "2027-03-01",
+    "probability": 57,
+    "citations": [
+      39,
+      92,
+      116
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-05",
+      "ledger_as_of": "2026-11-05T18:42:29Z",
+      "ledger_sha16": "797e0526e2f14d7e",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261105-35"
+    }
+  }
+]
