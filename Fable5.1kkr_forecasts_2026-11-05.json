@@ -1,0 +1,116 @@
+[
+  {
+    "statement": "Israeli President Isaac Herzog formally tasks Gadi Eisenkot with forming the next government between 2026-11-05 and 2026-11-13.",
+    "domain": "political",
+    "probability": 92,
+    "resolution": "TRUE if the Office of the President of Israel, or at least two of Reuters, AP and Times of Israel, report the mandate conferred on Eisenkot between 2026-11-05 and 2026-11-13; otherwise FALSE.",
+    "deadline": "2026-11-16",
+    "citations": [
+      108
+    ],
+    "failure_condition": "The mandate is not conferred on Eisenkot by the end of 2026-11-13, either because another lawmaker receives it or because no assignment is made in the window."
+  },
+  {
+    "statement": "Russell Brand receives a total custodial sentence of 10 years or more at a sentencing hearing held between 2026-11-09 and 2026-11-20.",
+    "domain": "crime/security",
+    "probability": 25,
+    "resolution": "TRUE if the total custodial term imposed by the trial court between 2026-11-09 and 2026-11-20 is 10 years or more, per the judiciary sentencing remarks or BBC and PA Media court reports; otherwise FALSE.",
+    "deadline": "2026-11-24",
+    "citations": [
+      10
+    ],
+    "failure_condition": "The total custodial term imposed is under 10 years, or no sentence is passed between 2026-11-09 and 2026-11-20."
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog carries a Zyxel entry with a date-added value between 2026-11-05 and 2026-12-04.",
+    "domain": "cyber",
+    "probability": 72,
+    "resolution": "TRUE if the CISA KEV catalog JSON contains at least one entry with vendorProject Zyxel and dateAdded between 2026-11-05 and 2026-12-04 inclusive; otherwise FALSE.",
+    "deadline": "2026-12-08",
+    "citations": [
+      23,
+      26
+    ],
+    "failure_condition": "No KEV entry with vendorProject Zyxel has a dateAdded value between 2026-11-05 and 2026-12-04."
+  },
+  {
+    "statement": "The Federal Open Market Committee raises the federal funds target range at its scheduled meeting concluding 2026-12-09.",
+    "domain": "economics/markets",
+    "probability": 78,
+    "resolution": "TRUE if FRED series DFEDTARU, the target range upper limit, is higher for 2026-12-10 than for 2026-12-09; FALSE if equal or lower.",
+    "deadline": "2026-12-14",
+    "citations": [
+      53
+    ],
+    "failure_condition": "The target range upper limit in effect on 2026-12-10 is equal to or lower than the limit in effect on 2026-12-09."
+  },
+  {
+    "statement": "Mississippi certifies Democrat Scott Colom as winner of the 2026 US Senate election over Senator Cindy Hyde-Smith, with statewide certification issued between 2026-11-06 and 2026-12-11.",
+    "domain": "political",
+    "probability": 70,
+    "resolution": "TRUE if certified statewide results issued by the Mississippi Secretary of State between 2026-11-06 and 2026-12-11 show Colom with the most votes; FALSE if Hyde-Smith leads or no statewide certification is issued in that window.",
+    "deadline": "2026-12-15",
+    "citations": [
+      97
+    ],
+    "failure_condition": "Certified statewide results show Hyde-Smith with the most votes, or no statewide certification is issued between 2026-11-06 and 2026-12-11."
+  },
+  {
+    "statement": "The 10-year US Treasury constant maturity yield is at or above 5.00 percent on 2026-12-11. Reference: 4.84 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 28,
+    "resolution": "TRUE if FRED series DGS10 for 2026-12-11 is 5.00 or higher; FALSE if lower. Reference: 4.84 percent at seal on 2026-11-05.",
+    "deadline": "2026-12-15",
+    "citations": [
+      53,
+      47
+    ],
+    "failure_condition": "The DGS10 value for 2026-12-11 is below 5.00 percent."
+  },
+  {
+    "statement": "The Bank of England Monetary Policy Committee raises Bank Rate at its scheduled decision announced on 2026-12-17.",
+    "domain": "economics/markets",
+    "probability": 18,
+    "resolution": "TRUE if the Bank of England Official Bank Rate series IUDBEDR is higher for 2026-12-18 than for 2026-12-16; FALSE if equal or lower.",
+    "deadline": "2026-12-21",
+    "citations": [
+      47
+    ],
+    "failure_condition": "Bank Rate in effect on 2026-12-18 is equal to or lower than the rate in effect on 2026-12-16."
+  },
+  {
+    "statement": "The United States and Iran both publicly confirm an interim or final agreement that provides for reopening the Strait of Hormuz to commercial shipping, between 2026-11-06 and 2026-12-18.",
+    "domain": "military/conflict",
+    "probability": 27,
+    "resolution": "TRUE if, between 2026-11-06 and 2026-12-18, both governments confirm such an agreement, as reported by at least two of Reuters, AP and AFP; FALSE if either government has not confirmed one in that window.",
+    "deadline": "2026-12-22",
+    "citations": [
+      76,
+      102
+    ],
+    "failure_condition": "By the end of 2026-12-18 Washington and Tehran have not both confirmed an agreement providing for the reopening of the Strait of Hormuz."
+  },
+  {
+    "statement": "A government headed by Gadi Eisenkot as prime minister wins a Knesset confidence vote and is sworn in between 2026-11-06 and 2027-01-08.",
+    "domain": "political",
+    "probability": 22,
+    "resolution": "TRUE if the Knesset website, or at least two of Reuters, AP and Times of Israel, record Eisenkot sworn in as prime minister between 2026-11-06 and 2027-01-08; otherwise FALSE.",
+    "deadline": "2027-01-12",
+    "citations": [
+      108
+    ],
+    "failure_condition": "Eisenkot is not sworn in as prime minister between 2026-11-06 and 2027-01-08."
+  },
+  {
+    "statement": "At least one chamber of the US Congress passes a joint resolution or bill directing the removal of US armed forces from hostilities against Iran between 2027-01-03 and 2027-03-31.",
+    "domain": "political",
+    "probability": 60,
+    "resolution": "TRUE if Congress.gov records House or Senate passage, between 2027-01-03 and 2027-03-31, of a joint resolution or bill directing removal of US armed forces from hostilities against Iran; concurrent resolutions do not count. Otherwise FALSE.",
+    "deadline": "2027-04-02",
+    "citations": [
+      39,
+      116
+    ],
+    "failure_condition": "Neither the House nor the Senate passes such a joint resolution or bill between 2027-01-03 and 2027-03-31."
+  }
+]
