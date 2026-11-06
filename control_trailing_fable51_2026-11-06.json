@@ -1,0 +1,327 @@
+[
+  {
+    "statement": "The Central Pollution Control Board daily bulletin reports a 24-hour average air quality index of 401 or higher for Delhi on at least one day between 2026-11-07 and 2026-11-15.",
+    "resolution": "At least one CPCB daily AQI bulletin dated between 2026-11-07 and 2026-11-15 lists a 24-hour average AQI of 401 or higher, the severe category, for Delhi.",
+    "failure_condition": "The CPCB 24-hour average AQI for Delhi stays at 400 or lower on every day from 2026-11-07 through 2026-11-15.",
+    "domain": "disaster",
+    "deadline": "2026-11-18",
+    "probability": 50,
+    "citations": [
+      91,
+      94
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.5,
+      "n": 18,
+      "domain_canonical": "disaster",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:14Z",
+      "ledger_sha16": "f7e86a2df8a4a2d8",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-16"
+    }
+  },
+  {
+    "statement": "Donald Trump, Xi Jinping and Vladimir Putin hold a dedicated in-person three-leader meeting between 2026-11-14 and 2026-11-22.",
+    "resolution": "An official readout from the White House, the Kremlin or the Chinese Foreign Ministry confirms a dedicated three-leader meeting of Trump, Xi and Putin, separate from any multilateral summit session, held in person between 2026-11-14 and 2026-11-22.",
+    "failure_condition": "No dedicated in-person meeting of all three leaders takes place between 2026-11-14 and 2026-11-22.",
+    "domain": "political",
+    "deadline": "2026-11-25",
+    "probability": 42,
+    "citations": [
+      82
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.4167,
+      "n": 12,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:14Z",
+      "ledger_sha16": "f7e86a2df8a4a2d8",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-17"
+    }
+  },
+  {
+    "statement": "The Alaska Division of Elections publishes a final-round ranked-choice tabulation or certified result between 2026-11-18 and 2026-12-04 showing Mary Peltola defeating incumbent Dan Sullivan for US Senate.",
+    "resolution": "Results published by the Alaska Division of Elections between 2026-11-18 and 2026-12-04, either the final-round ranked-choice tabulation or the certified result, show Mary Peltola with more votes than incumbent Dan Sullivan for US Senate.",
+    "failure_condition": "By 2026-12-04 the Alaska Division of Elections has issued no final-round tabulation or certified result in which Mary Peltola has more votes than incumbent Dan Sullivan.",
+    "domain": "political",
+    "deadline": "2026-12-08",
+    "probability": 42,
+    "citations": [
+      105
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.4167,
+      "n": 12,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:14Z",
+      "ledger_sha16": "f7e86a2df8a4a2d8",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-18"
+    }
+  },
+  {
+    "statement": "Authorities in at least one European country announce the arrest or charging of a suspect for sending bomb threats against European flights or airports, with the announcement made between 2026-11-07 and 2026-12-05.",
+    "resolution": "European police or prosecutors announce, between 2026-11-07 and 2026-12-05, the arrest or charging of a person suspected of sending bomb threats made since 2026-11-01 against European flights or airports, per two of Reuters, AP, AFP, BBC.",
+    "failure_condition": "No European authority arrests or charges anyone for sending bomb threats against European flights or airports between 2026-11-07 and 2026-12-05.",
+    "domain": "crime/security",
+    "deadline": "2026-12-08",
+    "probability": 57,
+    "citations": [
+      76,
+      100,
+      115
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5701,
+      "n": 107,
+      "domain_canonical": "crime-security",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:14Z",
+      "ledger_sha16": "f7e86a2df8a4a2d8",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-19"
+    }
+  },
+  {
+    "statement": "ICE Brent crude front-month futures settle below 90.00 dollars per barrel on 2026-12-11. Reference: 97.09 on the packet date.",
+    "resolution": "The ICE Brent front-month futures settlement price for 2026-12-11 is below 90.00 dollars per barrel. Reference: 97.09 on the packet date.",
+    "failure_condition": "ICE Brent front-month futures settle at or above 90.00 dollars per barrel on 2026-12-11.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-14",
+    "probability": 69,
+    "citations": [
+      49,
+      86
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6923,
+      "n": 26,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:14Z",
+      "ledger_sha16": "f7e86a2df8a4a2d8",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-20"
+    }
+  },
+  {
+    "statement": "The S&P 500 closes below 7,000.00 on at least one trading day between 2026-11-09 and 2026-12-18. Reference: 7,405.12 on the packet date.",
+    "resolution": "At least one official S&P 500 daily close between 2026-11-09 and 2026-12-18 inclusive, per S&P Dow Jones Indices or FRED series SP500, is below 7,000.00. Reference: 7,405.12 on the packet date.",
+    "failure_condition": "The S&P 500 closes at or above 7,000.00 on every trading day from 2026-11-09 through 2026-12-18.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-21",
+    "probability": 69,
+    "citations": [
+      53,
+      69,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6923,
+      "n": 26,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:14Z",
+      "ledger_sha16": "f7e86a2df8a4a2d8",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-21"
+    }
+  },
+  {
+    "statement": "The United States and Iran both officially confirm a concluded agreement that includes reopening the Strait of Hormuz to commercial shipping, announced between 2026-11-09 and 2026-12-20.",
+    "resolution": "Official statements from both the US and Iranian governments, reported by at least two of Reuters, AP and AFP, confirm a concluded agreement that includes reopening the Strait of Hormuz, announced between 2026-11-09 and 2026-12-20.",
+    "failure_condition": "The two governments do not both confirm a concluded agreement that includes reopening the Strait of Hormuz between 2026-11-09 and 2026-12-20.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-23",
+    "probability": 65,
+    "citations": [
+      49,
+      86,
+      87
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6471,
+      "n": 17,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:14Z",
+      "ledger_sha16": "f7e86a2df8a4a2d8",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-22"
+    }
+  },
+  {
+    "statement": "The US House of Representatives elects Hakeem Jeffries as Speaker in a roll call vote held between 2027-01-03 and 2027-01-15.",
+    "resolution": "The Clerk of the House roll call for election of the Speaker of the 120th Congress, held between 2027-01-03 and 2027-01-15, records Hakeem Jeffries as elected Speaker.",
+    "failure_condition": "The House does not elect Hakeem Jeffries as Speaker in any roll call held from 2027-01-03 through 2027-01-15.",
+    "domain": "political",
+    "deadline": "2027-01-19",
+    "probability": 42,
+    "citations": [
+      39,
+      107
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.4167,
+      "n": 12,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:14Z",
+      "ledger_sha16": "f7e86a2df8a4a2d8",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-23"
+    }
+  },
+  {
+    "statement": "CISA adds an OpenSSH vulnerability to its Known Exploited Vulnerabilities catalog with a date-added value between 2026-11-07 and 2027-01-29.",
+    "resolution": "The CISA KEV catalog carries at least one entry whose vendorProject or product field names OpenSSH and whose dateAdded value falls between 2026-11-07 and 2027-01-29 inclusive.",
+    "failure_condition": "CISA adds no OpenSSH vulnerability to the KEV catalog with a date-added value from 2026-11-07 through 2027-01-29.",
+    "domain": "cyber",
+    "deadline": "2027-02-02",
+    "probability": 55,
+    "citations": [
+      27,
+      28
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.5517,
+      "n": 29,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:14Z",
+      "ledger_sha16": "f7e86a2df8a4a2d8",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-24"
+    }
+  }
+]

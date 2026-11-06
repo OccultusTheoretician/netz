@@ -1,0 +1,216 @@
+[
+  {
+    "statement": "The S&P 500 closes below 7,000.00 on at least one trading day between 2026-11-09 and 2026-12-31. Reference: 7,405.12 on the packet date.",
+    "resolution": "True if FRED series SP500 records any daily close below 7000.00 dated from 2026-11-09 through 2026-12-31. Reference: 7405.12 on the packet date.",
+    "failure_condition": "Every S&P 500 daily close from 2026-11-09 through 2026-12-31 is at or above 7000.00.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 57,
+    "citations": [
+      53,
+      62,
+      73
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:22Z",
+      "ledger_sha16": "2edae3aa5586d9ee",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-34"
+    }
+  },
+  {
+    "statement": "CISA adds CVE-2026-123158, the OpenSSH password-authentication bypass affecting musl-based Linux systems without PAM, to its Known Exploited Vulnerabilities catalog between 2026-11-06 and 2026-12-31.",
+    "resolution": "True if the CISA KEV catalog carries CVE-2026-123158, the bypass fixed in OpenSSH 10.6p2, with a dateAdded value from 2026-11-06 through 2026-12-31.",
+    "failure_condition": "CISA does not add CVE-2026-123158 to the KEV catalog with a dateAdded value between 2026-11-06 and 2026-12-31.",
+    "domain": "cyber",
+    "deadline": "2027-01-05",
+    "probability": 57,
+    "citations": [
+      27,
+      28
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:22Z",
+      "ledger_sha16": "2edae3aa5586d9ee",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-35"
+    }
+  },
+  {
+    "statement": "CISA adds a vulnerability in D-Link DGS-3130 Series switches to its Known Exploited Vulnerabilities catalog between 2026-11-06 and 2027-01-29.",
+    "resolution": "True if the CISA KEV catalog carries an entry with vendorProject D-Link naming DGS-3130 in its product or vulnerabilityName field, with a dateAdded value from 2026-11-06 through 2027-01-29.",
+    "failure_condition": "CISA does not add any D-Link DGS-3130 vulnerability to the KEV catalog with a dateAdded value between 2026-11-06 and 2027-01-29.",
+    "domain": "cyber",
+    "deadline": "2027-02-02",
+    "probability": 57,
+    "citations": [
+      16
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:22Z",
+      "ledger_sha16": "2edae3aa5586d9ee",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-36"
+    }
+  },
+  {
+    "statement": "Pete Hegseth leaves the post of US Secretary of Defense, also styled Secretary of War, by resignation, dismissal or removal between 2026-11-09 and 2027-02-26.",
+    "resolution": "True if, between 2026-11-09 and 2027-02-26, Hegseth resigns, is fired or is removed from office, as announced by the White House or reported by both Reuters and AP.",
+    "failure_condition": "Hegseth remains in office, having neither resigned nor been fired or removed, throughout 2026-11-09 to 2027-02-26.",
+    "domain": "political",
+    "deadline": "2027-03-02",
+    "probability": 57,
+    "citations": [
+      39
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:22Z",
+      "ledger_sha16": "2edae3aa5586d9ee",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-37"
+    }
+  },
+  {
+    "statement": "At the Victorian state election held on 2026-11-28, the Liberal-National Coalition wins at least 45 of the 88 Legislative Assembly seats.",
+    "resolution": "True if Victorian Electoral Commission declared results for the 2026-11-28 election show Liberal and National candidates winning a combined 45 or more of the 88 Legislative Assembly seats.",
+    "failure_condition": "Liberal and National candidates win a combined 44 or fewer of the 88 Legislative Assembly seats at the 2026-11-28 election.",
+    "domain": "political",
+    "deadline": "2026-12-22",
+    "probability": 57,
+    "citations": [
+      113
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:22Z",
+      "ledger_sha16": "2edae3aa5586d9ee",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-38"
+    }
+  },
+  {
+    "statement": "Delhi records an official daily AQI of 401 or higher, the Severe band, on at least one day between 2026-11-09 and 2026-11-22.",
+    "resolution": "True if the CPCB 4 PM National AQI Bulletin lists Delhi at 401 or higher for any date from 2026-11-09 through 2026-11-22.",
+    "failure_condition": "The CPCB daily AQI for Delhi stays at 400 or below on every day from 2026-11-09 through 2026-11-22.",
+    "domain": "disaster",
+    "deadline": "2026-11-25",
+    "probability": 57,
+    "citations": [
+      91,
+      94
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "disaster",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-06",
+      "ledger_as_of": "2026-11-06T17:09:22Z",
+      "ledger_sha16": "2edae3aa5586d9ee",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261106-39"
+    }
+  }
+]
