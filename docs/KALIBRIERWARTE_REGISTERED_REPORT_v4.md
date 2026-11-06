@@ -143,3 +143,24 @@ Priors and rulings: given by the registrant on 2026-10-27 and written in above.
 Adoption: drafted by the desk's assistant under the registrant's direction on 2026-10-26; read in full and adopted by the registrant on 2026-10-27, by his ruling in the session of that day (the option "Adopt today (read in full)"). In force from the commit that carries this line.
 Built in the same commit (V4ADOPT-1027, Section 3): baserate.py gains --method trailing; arms.json registers control/trailing and retires control/baserate; the lane pairs each in-scope arm's sealed rows with control/trailing through --from-ledger, so every mirror carries the id of the row it controls; this text joins the anchoring targets (RPAS 4.05); the Warte face names v4 beside v3. warte_v4.py follows by a dated amendment (Section 8).
 Seen between the draft and the adoption: what the desk published on 2026-10-27 before the adoption commit, all of it under v3. No v4 figure exists.
+
+12.1 AMENDMENT 2026-11-06 - THE INSTRUMENT PINNED
+
+AUTHORSHIP - drafted by the desk's assistant under the registrant's direction on 2026-11-06; read in full and adopted by the registrant on 2026-11-06.
+
+Appended under Section 12 before any v4 checkpoint and before any row of v4's population resolved. Nothing in Sections 1 to 11 or the adoption block changes.
+
+(a) The instrument. warte_v4.py, LF SHA-256 0be92d709b8e8adccf9e3b726837965f42c51dc8f30b74840b043b79d3bfd10c, is the instrument of Section 8. It reads ledger.json and arms.json, imports warte_report.py (LF SHA-256 fa560fe3a58570bb2b4e8b888bf524732691f15b2141502fc75e171532909723) and redefines none of its estimators, floors or constants, and writes forecasts/warte_v4_<date>.json. A change to it before an arm's first checkpoint is a further dated amendment carrying the new hash; after it, Section 12 governs.
+
+(b) Seen. When it was written no row of v4's population had resolved: 102 arm rows (manual/fable-5.1/unattested 39, manual/opus-5.5/unattested 63) and 102 control/trailing mirrors, every one open, every arm row paired in the same run. operator/cold and operator/advised had no rows. No v4 figure existed. The instrument was tested on synthetic rows only.
+
+(c) Readings the instrument fixes where Sections 6 and 8 leave a choice.
+  1. Population. The adoption commit is a257f2c, committer time 2026-10-27T19:55:42Z. A row is in the population if its sealed_at is at or after that instant and it carries the cohort's hash. Rows the frontier lane sealed earlier that day are v3's.
+  2. Pairing. A row's mirror is the control/trailing row whose control_basis.control_for is the row's id and whose control_basis.mirror_of is its arm, from the same packet, sealed within 360 minutes of it (v3's same-run window), in the same cohort. Any other state is a gap under check (a); a gap fails (a) and halts that arm's read, as Section 8 states.
+  3. Stages count resolved pairs in the read set. Checks (a) to (g) run at the checkpoint. At an interim stage the instrument prints the paired difference, its interval and the noise line, and nothing is read.
+  4. V2 reads the arm's resolved rows in the read set, rows rather than pairs, by v3's H1 rule and v3's row bootstrap.
+  5. Check (c) fails on a resolved row or mirror with no seat. A resolved operator/cold row in the operator's hand seat leaves the read and is counted (Section 5).
+  6. Check (g) reads a cold_order record on each operator/cold row, {"ok": true} when its file arrived before every frontier file of its packet. The lane writes no such record yet; until it does, every operator/cold row is out of the read and listed. The record is a lane build owed before the first cold row. The instrument does not read anchor_log.json, because Section 8 limits it to the ledger and the registry.
+  7. Rows out under (g) leave the read and are listed; they do not halt it.
+  8. Bootstrap. One generator seeded 26 per arm per statistic (V1, (e')); for V3 one generator seeded 26 per comparison, drawing the operator's pairs and then the frontier arm's in each resample.
+  9. Beside V1 the instrument prints the count of pairs whose arm and mirror outcomes differ: a finding about the pairing, not a test.
