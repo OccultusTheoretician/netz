@@ -1,0 +1,121 @@
+[
+  {
+    "statement": "US forces strike at least one target on Iranian soil, mainland or islands, between 2026-11-09 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 55,
+    "resolution": "True if a CENTCOM statement, or reporting by both Reuters and AP, confirms a US strike on a target on Iranian soil, mainland or islands, carried out between 2026-11-09 and 2026-12-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      64,
+      86,
+      87
+    ],
+    "failure_condition": "US forces carry out no strike on any target on Iranian soil, mainland or islands, between 2026-11-09 and 2026-12-31."
+  },
+  {
+    "statement": "The UN Human Rights Monitoring Mission in Ukraine (HRMMU) reports at least 300 civilians killed in Ukraine during the event window 2026-11-01 to 2026-11-30.",
+    "domain": "military/conflict",
+    "probability": 42,
+    "resolution": "True if the HRMMU monthly protection of civilians update covering November 2026 states at least 300 civilians killed in Ukraine between 2026-11-01 and 2026-11-30.",
+    "deadline": "2027-01-08",
+    "citations": [
+      84
+    ],
+    "failure_condition": "The verified civilian death toll in Ukraine for 2026-11-01 to 2026-11-30 is below 300."
+  },
+  {
+    "statement": "At its scheduled meeting concluding 2026-12-09, the FOMC raises the federal funds target range by at least 25 basis points, lifting the upper limit to 4.25 percent or higher. Reference: upper limit 4.00 percent at seal.",
+    "domain": "economics/markets",
+    "probability": 74,
+    "resolution": "True if FRED series DFEDTARU shows 4.25 or higher for 2026-12-10, reflecting the FOMC decision of 2026-12-09. Reference: 4.00 percent at seal.",
+    "deadline": "2026-12-14",
+    "citations": [
+      33,
+      50
+    ],
+    "failure_condition": "The FOMC decision of 2026-12-09 leaves the upper limit of the target range at 4.00 percent or lower."
+  },
+  {
+    "statement": "The S&P 500 closes below 7,000.00 on at least one trading day between 2026-11-09 and 2026-12-31. Reference: 7,405.12 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 33,
+    "resolution": "True if FRED series SP500 records any daily close below 7000.00 dated from 2026-11-09 through 2026-12-31. Reference: 7405.12 on the packet date.",
+    "deadline": "2027-01-05",
+    "citations": [
+      53,
+      62,
+      73
+    ],
+    "failure_condition": "Every S&P 500 daily close from 2026-11-09 through 2026-12-31 is at or above 7000.00."
+  },
+  {
+    "statement": "CISA adds CVE-2026-123158, the OpenSSH password-authentication bypass affecting musl-based Linux systems without PAM, to its Known Exploited Vulnerabilities catalog between 2026-11-06 and 2026-12-31.",
+    "domain": "cyber",
+    "probability": 50,
+    "resolution": "True if the CISA KEV catalog carries CVE-2026-123158, the bypass fixed in OpenSSH 10.6p2, with a dateAdded value from 2026-11-06 through 2026-12-31.",
+    "deadline": "2027-01-05",
+    "citations": [
+      27,
+      28
+    ],
+    "failure_condition": "CISA does not add CVE-2026-123158 to the KEV catalog with a dateAdded value between 2026-11-06 and 2026-12-31."
+  },
+  {
+    "statement": "CISA adds a vulnerability in D-Link DGS-3130 Series switches to its Known Exploited Vulnerabilities catalog between 2026-11-06 and 2027-01-29.",
+    "domain": "cyber",
+    "probability": 9,
+    "resolution": "True if the CISA KEV catalog carries an entry with vendorProject D-Link naming DGS-3130 in its product or vulnerabilityName field, with a dateAdded value from 2026-11-06 through 2027-01-29.",
+    "deadline": "2027-02-02",
+    "citations": [
+      16
+    ],
+    "failure_condition": "CISA does not add any D-Link DGS-3130 vulnerability to the KEV catalog with a dateAdded value between 2026-11-06 and 2027-01-29."
+  },
+  {
+    "statement": "Pete Hegseth leaves the post of US Secretary of Defense, also styled Secretary of War, by resignation, dismissal or removal between 2026-11-09 and 2027-02-26.",
+    "domain": "political",
+    "probability": 27,
+    "resolution": "True if, between 2026-11-09 and 2027-02-26, Hegseth resigns, is fired or is removed from office, as announced by the White House or reported by both Reuters and AP.",
+    "deadline": "2027-03-02",
+    "citations": [
+      39
+    ],
+    "failure_condition": "Hegseth remains in office, having neither resigned nor been fired or removed, throughout 2026-11-09 to 2027-02-26."
+  },
+  {
+    "statement": "At the Victorian state election held on 2026-11-28, the Liberal-National Coalition wins at least 45 of the 88 Legislative Assembly seats.",
+    "domain": "political",
+    "probability": 45,
+    "resolution": "True if Victorian Electoral Commission declared results for the 2026-11-28 election show Liberal and National candidates winning a combined 45 or more of the 88 Legislative Assembly seats.",
+    "deadline": "2026-12-22",
+    "citations": [
+      113
+    ],
+    "failure_condition": "Liberal and National candidates win a combined 44 or fewer of the 88 Legislative Assembly seats at the 2026-11-28 election."
+  },
+  {
+    "statement": "Between 2026-11-09 and 2027-01-08, a government of an EU member state or the UK publicly attributes the November 2026 hoax bomb threats against European flights to Russian state actors or their proxies.",
+    "domain": "crime/security",
+    "probability": 25,
+    "resolution": "True if, between 2026-11-09 and 2027-01-08, an EU member-state or UK minister, or national police or intelligence agency, says Russian state actors or proxies were behind the hoax threats, per Reuters or AP. Suspicion alone fails.",
+    "deadline": "2027-01-12",
+    "citations": [
+      31,
+      76,
+      100
+    ],
+    "failure_condition": "No EU member-state or UK minister, national police or intelligence agency attributes the hoax bomb threats to Russian state actors or proxies between 2026-11-09 and 2027-01-08."
+  },
+  {
+    "statement": "Delhi records an official daily AQI of 401 or higher, the Severe band, on at least one day between 2026-11-09 and 2026-11-22.",
+    "domain": "disaster",
+    "probability": 73,
+    "resolution": "True if the CPCB 4 PM National AQI Bulletin lists Delhi at 401 or higher for any date from 2026-11-09 through 2026-11-22.",
+    "deadline": "2026-11-25",
+    "citations": [
+      91,
+      94
+    ],
+    "failure_condition": "The CPCB daily AQI for Delhi stays at 400 or below on every day from 2026-11-09 through 2026-11-22."
+  }
+]
