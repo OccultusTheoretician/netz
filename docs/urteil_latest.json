@@ -1,25 +1,25 @@
 {
  "_meta": {
-  "generated": "2026-11-06T16:24:15Z",
+  "generated": "2026-11-07T16:21:30Z",
   "instrument": "urteil/1.0",
   "doctrine": "grounding is checkable even when the verdict is right; a correct ungrounded verdict is the failure the blind protocol cannot see, printed here",
   "sources": [
    "jury_A_2026-10-26.json",
-   "jury_B_2026-10-26.json",
+   "jury_B_2026-11-06.json",
    "held_evidence_2026-10-26.json",
-   "held_evidence_2026-10-26.json"
+   "held_evidence_2026-11-06.json"
   ],
   "custody_notes": [],
   "counts": {
-   "GROUNDED": 27,
+   "GROUNDED": 30,
    "THIN": 13,
-   "UNGROUNDED-SPECIFIC": 29,
+   "UNGROUNDED-SPECIFIC": 107,
    "UNHELD-VERDICT": 1,
    "UNHELD-SEARCHED": 607,
    "OUT-OF-HELD": 26,
-   "ABSTAIN": 661
+   "ABSTAIN": 1139
   },
-  "correct_but_ungrounded": 25
+  "correct_but_ungrounded": 0
  },
  "audits": [
   {
@@ -10292,27 +10292,6 @@
    "held_sha256": ""
   },
   {
-   "row": "KKR-20260912-10",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "8 figure(s)/date(s) asserted beyond the held record by a cold juror: 09, 10, 18, 2026-09-18, 2026-09-25, 2026-10-26, 25, 26",
-   "figures_beyond_held": [
-    "09",
-    "10",
-    "18",
-    "2026-09-18",
-    "2026-09-25",
-    "2026-10-26",
-    "25",
-    "26"
-   ],
-   "held_sha256": "203f39cd6c2beb28bb54a997f6da6d26dff8655d87c723d33c647315af0c7551"
-  },
-  {
    "row": "KKR-20260930-07",
    "juror": "B",
    "juror_access": "cold",
@@ -10320,404 +10299,13 @@
    "final_status": "OPEN",
    "agreed_with_final": false,
    "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
    "figures_beyond_held": [
-    "2026-10-26",
-    "26"
+    "06",
+    "11",
+    "2026-11-06"
    ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260808-15",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "7 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260817-58",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260817-66",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260827-78",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "MISS",
-   "agreed_with_final": false,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "4 figure(s)/date(s) asserted beyond the held record by a cold juror: 03, 09, 2026-09-03, 2026-09-15",
-   "figures_beyond_held": [
-    "03",
-    "09",
-    "2026-09-03",
-    "2026-09-15"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260827-101",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "MISS",
-   "agreed_with_final": false,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "4 figure(s)/date(s) asserted beyond the held record by a cold juror: 03, 09, 2026-09-03, 2026-09-15",
-   "figures_beyond_held": [
-    "03",
-    "09",
-    "2026-09-03",
-    "2026-09-15"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260901-22",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "890511968396b7d9682678467e702a1385cb40efb3c25d07e7dfeee988e1a09b"
-  },
-  {
-   "row": "KKR-20260902-19",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "890511968396b7d9682678467e702a1385cb40efb3c25d07e7dfeee988e1a09b"
-  },
-  {
-   "row": "KKR-20260902-53",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260902-72",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260915-76",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "MISS",
-   "agreed_with_final": false,
-   "class": "GROUNDED",
-   "detail": "7 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260915-85",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "MISS",
-   "agreed_with_final": false,
-   "class": "GROUNDED",
-   "detail": "7 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260917-23",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 00, 15, 2026-10-15, 23, 59",
-   "figures_beyond_held": [
-    "00",
-    "15",
-    "2026-10-15",
-    "23",
-    "59"
-   ],
-   "held_sha256": "e4be6ade1f783bc46638c21fbf41ed387596d169a95f79471134461661483c3c"
-  },
-  {
-   "row": "KKR-20260917-33",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 00, 15, 2026-10-15, 23, 59",
-   "figures_beyond_held": [
-    "00",
-    "15",
-    "2026-10-15",
-    "23",
-    "59"
-   ],
-   "held_sha256": "e4be6ade1f783bc46638c21fbf41ed387596d169a95f79471134461661483c3c"
-  },
-  {
-   "row": "KKR-20260919-33",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26",
-   "figures_beyond_held": [
-    "2026-10-26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260919-40",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26",
-   "figures_beyond_held": [
-    "2026-10-26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20261006-16",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "4 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "8737df57ea0ba4da829f118089736388a577f71f800c6a9d766529133a33acf7"
-  },
-  {
-   "row": "KKR-20261007-07",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 15, 2026-10-15",
-   "figures_beyond_held": [
-    "15",
-    "2026-10-15"
-   ],
-   "held_sha256": "890511968396b7d9682678467e702a1385cb40efb3c25d07e7dfeee988e1a09b"
-  },
-  {
-   "row": "KKR-20261008-21",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "7 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "890511968396b7d9682678467e702a1385cb40efb3c25d07e7dfeee988e1a09b"
-  },
-  {
-   "row": "KKR-20260829-49",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260829-68",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260909-21",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "MISS",
-   "agreed_with_final": false,
-   "class": "GROUNDED",
-   "detail": "9 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260909-29",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "MISS",
-   "agreed_with_final": false,
-   "class": "GROUNDED",
-   "detail": "9 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260911-18",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "7 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260911-25",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "7 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260911-33",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "6 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260911-40",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "6 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260912-15",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "10 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260912-21",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
   },
   {
    "row": "KKR-20261007-08",
@@ -10726,171 +10314,14 @@
    "verdict": "MISS",
    "final_status": "OPEN",
    "agreed_with_final": false,
-   "class": "GROUNDED",
-   "detail": "14 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260907-16",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "14 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260907-44",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "14 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260916-67",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "MISS",
-   "agreed_with_final": false,
-   "class": "UNHELD-VERDICT",
-   "detail": "non-ABSTAIN verdict by a COLD juror on a row that held no evidence - 8.07 coercion should have fired; protocol defect",
-   "figures_beyond_held": [
-    "05",
-    "10",
-    "19",
-    "20",
-    "2026-10-05",
-    "5.10",
-    "5.31"
-   ],
-   "held_sha256": ""
-  },
-  {
-   "row": "KKR-20260916-73",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "10 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "890511968396b7d9682678467e702a1385cb40efb3c25d07e7dfeee988e1a09b"
-  },
-  {
-   "row": "KKR-20260922-13",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
    "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
    "figures_beyond_held": [
-    "2026-10-26",
-    "26"
+    "06",
+    "11",
+    "2026-11-06"
    ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20260922-21",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
-   "figures_beyond_held": [
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20261007-43",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "4 figure(s)/date(s) asserted beyond the held record by a cold juror: 13, 2026-10-13, 2026-10-26, 26",
-   "figures_beyond_held": [
-    "13",
-    "2026-10-13",
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20261007-52",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "HIT",
-   "final_status": "HIT",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "4 figure(s)/date(s) asserted beyond the held record by a cold juror: 13, 2026-10-13, 2026-10-26, 26",
-   "figures_beyond_held": [
-    "13",
-    "2026-10-13",
-    "2026-10-26",
-    "26"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20261011-02",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "GROUNDED",
-   "detail": "8 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
-  },
-  {
-   "row": "KKR-20261014-05",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 5.3",
-   "figures_beyond_held": [
-    "5.3"
-   ],
-   "held_sha256": "890511968396b7d9682678467e702a1385cb40efb3c25d07e7dfeee988e1a09b"
-  },
-  {
-   "row": "KKR-20261012-17",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 1000, 20261026",
-   "figures_beyond_held": [
-    "1000",
-    "20261026"
-   ],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
   },
   {
    "row": "KKR-20261012-19",
@@ -10900,54 +10331,12 @@
    "final_status": "OPEN",
    "agreed_with_final": false,
    "class": "UNGROUNDED-SPECIFIC",
-   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261026",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 16, 2026-10-16",
    "figures_beyond_held": [
-    "20261026"
+    "16",
+    "2026-10-16"
    ],
    "held_sha256": "b0233dbfad0cfa73c0473c272ebed275001d201ebeeb254d22fc5cbc8927f380"
-  },
-  {
-   "row": "KKR-20261012-20",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261026",
-   "figures_beyond_held": [
-    "20261026"
-   ],
-   "held_sha256": "a70545a0c356da813ecd6e66e32bf4485ce08befc46669e6c8f83be55f0a56bc"
-  },
-  {
-   "row": "KKR-20261012-22",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261026",
-   "figures_beyond_held": [
-    "20261026"
-   ],
-   "held_sha256": "bf21cc5e8b0feaedc552d1949977cd255fac0c1aff04ba9c4bf7e23bf60e2de1"
-  },
-  {
-   "row": "KKR-20261002-12",
-   "juror": "B",
-   "juror_access": "cold",
-   "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
-   "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 19, 2026-10-19",
-   "figures_beyond_held": [
-    "19",
-    "2026-10-19"
-   ],
-   "held_sha256": "10efa9c1ba0f73f06624f4235a074c343d99a3c5131eed2b9d43512c6ecc7723"
   },
   {
    "row": "KKR-20261008-23",
@@ -10956,25 +10345,1938 @@
    "verdict": "MISS",
    "final_status": "OPEN",
    "agreed_with_final": false,
-   "class": "GROUNDED",
-   "detail": "6 substantive token(s) shared with held record; no out-of-record figures",
-   "figures_beyond_held": [],
-   "held_sha256": "97a6e54bc74c651ab3c55657191db9adec6c63b05ca54e4205327cfd97a8fb70"
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
   },
   {
-   "row": "KKR-20261008-24",
+   "row": "KKR-20260829-43",
    "juror": "B",
    "juror_access": "cold",
    "verdict": "MISS",
-   "final_status": "MISS",
-   "agreed_with_final": true,
+   "final_status": "OPEN",
+   "agreed_with_final": false,
    "class": "UNGROUNDED-SPECIFIC",
-   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-22, 22",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
    "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260829-62",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260921-18",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260921-24",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260925-25",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260925-33",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260928-09",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "4 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06, 5.4",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06",
+    "5.4"
+   ],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20261001-49",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261001-56",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261006-07",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "5 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20261011-05",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "4 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261014-02",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "5 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20261017-13",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "5 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260906-73",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260906-99",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260911-17",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260911-24",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260913-11",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260913-19",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260922-26",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260922-34",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260923-21",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "2bc251f83b4cbdb08553a100e5cefc451f92bcfcd7d9c02f5b604bcddc64ac08"
+  },
+  {
+   "row": "KKR-20260923-30",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "4 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "2bc251f83b4cbdb08553a100e5cefc451f92bcfcd7d9c02f5b604bcddc64ac08"
+  },
+  {
+   "row": "KKR-20261008-53",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "4 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "5fb459f08d1544601fe79407689e7e80db9f0161003c1f57b5a3e8329bb9c8dd"
+  },
+  {
+   "row": "KKR-20261008-63",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "4 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "5fb459f08d1544601fe79407689e7e80db9f0161003c1f57b5a3e8329bb9c8dd"
+  },
+  {
+   "row": "KKR-20261009-48",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "4 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "f7efd73633965428a48b77b4d642cb9b95c13d2f839ef4274a881fbe0eee2f7e"
+  },
+  {
+   "row": "KKR-20261009-56",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "4 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "f7efd73633965428a48b77b4d642cb9b95c13d2f839ef4274a881fbe0eee2f7e"
+  },
+  {
+   "row": "KKR-20261010-54",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "4 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "b684610c903dd6ec252bc4814a6a2dc35c2c90090c25cc6734eb505387a305e6"
+  },
+  {
+   "row": "KKR-20261010-61",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "4 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "b684610c903dd6ec252bc4814a6a2dc35c2c90090c25cc6734eb505387a305e6"
+  },
+  {
+   "row": "KKR-20261015-06",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "6 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20261016-06",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "5 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20260926-26",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-25, 25",
+   "figures_beyond_held": [
+    "2026-10-25",
+    "25"
+   ],
+   "held_sha256": "e41343b76e8f3a652df474604a644e9298f075c032fbb717d06137830c420681"
+  },
+  {
+   "row": "KKR-20260926-35",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-25, 25",
+   "figures_beyond_held": [
+    "2026-10-25",
+    "25"
+   ],
+   "held_sha256": "e41343b76e8f3a652df474604a644e9298f075c032fbb717d06137830c420681"
+  },
+  {
+   "row": "KKR-20261002-02",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-24, 24",
+   "figures_beyond_held": [
+    "2026-10-24",
+    "24"
+   ],
+   "held_sha256": "dd89ef656678f5317a66531a91cf1937a65b7899a45e3aa3185088da834297ea"
+  },
+  {
+   "row": "KKR-20261002-14",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261007-10",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261011-45",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 00, 2026-10-25, 23, 25, 59",
+   "figures_beyond_held": [
+    "00",
+    "2026-10-25",
+    "23",
+    "25",
+    "59"
+   ],
+   "held_sha256": "912d8878b6e0db897eebf43595bf47dc926a1b06bc004205c9779419a883f041"
+  },
+  {
+   "row": "KKR-20261011-54",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 00, 2026-10-25, 23, 25, 59",
+   "figures_beyond_held": [
+    "00",
+    "2026-10-25",
+    "23",
+    "25",
+    "59"
+   ],
+   "held_sha256": "912d8878b6e0db897eebf43595bf47dc926a1b06bc004205c9779419a883f041"
+  },
+  {
+   "row": "KKR-20261012-01",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "7 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261012-03",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "5 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261013-03",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "7 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20261018-09",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-25, 25",
+   "figures_beyond_held": [
+    "2026-10-25",
+    "25"
+   ],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20261005-42",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 14, 2026-10-14",
+   "figures_beyond_held": [
+    "14",
+    "2026-10-14"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261005-50",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 14, 2026-10-14",
+   "figures_beyond_held": [
+    "14",
+    "2026-10-14"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261007-11",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "5 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261012-54",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-26, 26",
+   "figures_beyond_held": [
+    "2026-10-26",
+    "26"
+   ],
+   "held_sha256": "64a80327bff3ea977e513782089208cc00f4ee832b6f85820275e4aa19ccd72a"
+  },
+  {
+   "row": "KKR-20261012-62",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-26, 2026-11-06, 26",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-10-26",
+    "2026-11-06",
+    "26"
+   ],
+   "held_sha256": "64a80327bff3ea977e513782089208cc00f4ee832b6f85820275e4aa19ccd72a"
+  },
+  {
+   "row": "KKR-20261018-08",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260724-04",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "4 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06, 30",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06",
+    "30"
+   ],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20260727-29",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260729-11",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260729-12",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260729-17",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "7 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 07, 11, 2026-07-30, 2026-10-30, 2026-11-06, 30",
+   "figures_beyond_held": [
+    "06",
+    "07",
+    "11",
+    "2026-07-30",
+    "2026-10-30",
+    "2026-11-06",
+    "30"
+   ],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20260729-20",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "591dcb4eae75447e015e4482e0f335ba7e02044b4f015831b4a138b19fd2c8ed"
+  },
+  {
+   "row": "KKR-20260731-26",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260801-09",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260801-26",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260927-02",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-27, 27",
+   "figures_beyond_held": [
+    "2026-10-27",
+    "27"
+   ],
+   "held_sha256": "a46715e4f53353702eac088ec028540100b30af88ae2569d82068966b87fb195"
+  },
+  {
+   "row": "KKR-20260927-15",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "7 figure(s)/date(s) asserted beyond the held record by a cold juror: 09, 10, 200, 2026-09-28, 2026-10-27, 27, 28",
+   "figures_beyond_held": [
+    "09",
+    "10",
+    "200",
+    "2026-09-28",
+    "2026-10-27",
+    "27",
+    "28"
+   ],
+   "held_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "row": "KKR-20260927-25",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "8 figure(s)/date(s) asserted beyond the held record by a cold juror: 09, 10, 200, 2026-09-28, 2026-10-27, 27, 28, 6.5",
+   "figures_beyond_held": [
+    "09",
+    "10",
+    "200",
+    "2026-09-28",
+    "2026-10-27",
+    "27",
+    "28",
+    "6.5"
+   ],
+   "held_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "row": "KKR-20260930-03",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261006-08",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-28, 2026-11-06, 28",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-10-28",
+    "2026-11-06",
+    "28"
+   ],
+   "held_sha256": "14cd4f6145088095afe8fba168015766227cac4bd7f86b12c08c086180b5921e"
+  },
+  {
+   "row": "KKR-20261006-46",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261006-53",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261007-28",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261007-37",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261008-04",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "4 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06, 5.5",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06",
+    "5.5"
+   ],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20261011-32",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-27, 2026-11-06, 27",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-10-27",
+    "2026-11-06",
+    "27"
+   ],
+   "held_sha256": "f0f2d3d4fb8100303d188e1fe39cd9a5279541556b14a10c3d451073f7960aa1"
+  },
+  {
+   "row": "KKR-20261011-40",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-27, 27, 7.7",
+   "figures_beyond_held": [
+    "2026-10-27",
+    "27",
+    "7.7"
+   ],
+   "held_sha256": "f0f2d3d4fb8100303d188e1fe39cd9a5279541556b14a10c3d451073f7960aa1"
+  },
+  {
+   "row": "KKR-20261013-46",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-27, 27, 7.7",
+   "figures_beyond_held": [
+    "2026-10-27",
+    "27",
+    "7.7"
+   ],
+   "held_sha256": "5df87a49a5a2f7735b48a0a04e3aa37c55a401956f06938822df585a8f3538b6"
+  },
+  {
+   "row": "KKR-20261013-55",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-27, 27, 7.7",
+   "figures_beyond_held": [
+    "2026-10-27",
+    "27",
+    "7.7"
+   ],
+   "held_sha256": "5df87a49a5a2f7735b48a0a04e3aa37c55a401956f06938822df585a8f3538b6"
+  },
+  {
+   "row": "KKR-20261019-11",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-27, 27",
+   "figures_beyond_held": [
+    "2026-10-27",
+    "27"
+   ],
+   "held_sha256": "6512b02d1176e38fa3eb0d6d8e2303f2e82698c608790c7edf31b4db6ad903fb"
+  },
+  {
+   "row": "KKR-20261009-03",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-30, 2026-11-06, 30",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-10-30",
+    "2026-11-06",
+    "30"
+   ],
+   "held_sha256": "0a3598c6535fcbf0d1dc34ff373598c1805a3c56470832327d8d54866b470816"
+  },
+  {
+   "row": "KKR-20260812-06",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260812-23",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260924-43",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 02, 11, 2026-11-02",
+   "figures_beyond_held": [
+    "02",
+    "11",
+    "2026-11-02"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260924-51",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 02, 11, 2026-11-02",
+   "figures_beyond_held": [
+    "02",
+    "11",
+    "2026-11-02"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260926-46",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 02, 11, 2026-11-02",
+   "figures_beyond_held": [
+    "02",
+    "11",
+    "2026-11-02"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260926-53",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 02, 11, 2026-11-02",
+   "figures_beyond_held": [
+    "02",
+    "11",
+    "2026-11-02"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260929-09",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-22, 2026-11-06, 22",
+   "figures_beyond_held": [
+    "06",
+    "11",
     "2026-10-22",
+    "2026-11-06",
     "22"
    ],
-   "held_sha256": "9b831ee44183166aa035c93cce7de7629f308e1629a29f216af4cabd96c2907b"
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20261008-03",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261016-43",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-22, 2026-11-06, 22",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-10-22",
+    "2026-11-06",
+    "22"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261016-46",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-30, 30",
+   "figures_beyond_held": [
+    "2026-10-30",
+    "30"
+   ],
+   "held_sha256": "2438fcf172a39140a298b8c18e0e0c79100edaf699f515790cae6eca3b4d6a98"
+  },
+  {
+   "row": "KKR-20261016-51",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-22, 2026-11-06, 22",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-10-22",
+    "2026-11-06",
+    "22"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261016-54",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 2026-10-30, 30",
+   "figures_beyond_held": [
+    "2026-10-30",
+    "30"
+   ],
+   "held_sha256": "2438fcf172a39140a298b8c18e0e0c79100edaf699f515790cae6eca3b4d6a98"
+  },
+  {
+   "row": "KKR-20261016-63",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-22, 2026-11-06, 22",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-10-22",
+    "2026-11-06",
+    "22"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261016-72",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-22, 2026-11-06, 22",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-10-22",
+    "2026-11-06",
+    "22"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260806-11",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 11, 2026-11-06",
+   "figures_beyond_held": [
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260806-26",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 11, 2026-11-06",
+   "figures_beyond_held": [
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260818-11",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260818-14",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "4 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-10-31, 20261106, 31",
+   "figures_beyond_held": [
+    "10",
+    "2026-10-31",
+    "20261106",
+    "31"
+   ],
+   "held_sha256": "cbbb663e3fbec75937c420a6ac9b0b6282f49bb1e20a2c4df07d7deab15d6841"
+  },
+  {
+   "row": "KKR-20260818-27",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260818-30",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "4 figure(s)/date(s) asserted beyond the held record by a cold juror: 10, 2026-10-31, 20261106, 31",
+   "figures_beyond_held": [
+    "10",
+    "2026-10-31",
+    "20261106",
+    "31"
+   ],
+   "held_sha256": "cbbb663e3fbec75937c420a6ac9b0b6282f49bb1e20a2c4df07d7deab15d6841"
+  },
+  {
+   "row": "KKR-20260827-70",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260827-93",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260907-35",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "6 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260907-63",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "6 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260912-54",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "9 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260912-58",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260916-52",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260916-53",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260916-62",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260916-63",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260917-20",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260917-30",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261001-17",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNHELD-VERDICT",
+   "detail": "non-ABSTAIN verdict by a COLD juror on a row that held no evidence - 8.07 coercion should have fired; protocol defect",
+   "figures_beyond_held": [
+    "01",
+    "06",
+    "10",
+    "11",
+    "2026-10-01",
+    "2026-10-31",
+    "2026-11-06",
+    "31",
+    "36",
+    "40"
+   ],
+   "held_sha256": ""
+  },
+  {
+   "row": "KKR-20261001-18",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 102489, 102490, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "102489",
+    "102490",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261001-25",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261001-26",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261006-01",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261014-10",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "9cee4a11cad003f67583876160bb05668a008756c487480776cb2601d657d2a8"
+  },
+  {
+   "row": "KKR-20260811-14",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260811-40",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260822-43",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260827-16",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "1 figure(s)/date(s) asserted beyond the held record by a cold juror: 20261106",
+   "figures_beyond_held": [
+    "20261106"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20260827-32",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "GROUNDED",
+   "detail": "10 substantive token(s) shared with held record; no out-of-record figures",
+   "figures_beyond_held": [],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261005-01",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261005-03",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "5 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-10-28, 2026-11-06, 28",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-10-28",
+    "2026-11-06",
+    "28"
+   ],
+   "held_sha256": "9aba2a40d612cd037b1ad862bbc87851e999cc55f8657f526168681f4740f9c5"
+  },
+  {
+   "row": "KKR-20261008-59",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261008-69",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261018-12",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "8 figure(s)/date(s) asserted beyond the held record by a cold juror: 02, 06, 10, 11, 2026-10-26, 2026-11-02, 2026-11-06, 26",
+   "figures_beyond_held": [
+    "02",
+    "06",
+    "10",
+    "11",
+    "2026-10-26",
+    "2026-11-02",
+    "2026-11-06",
+    "26"
+   ],
+   "held_sha256": "c91935d33880d41c7a098fb3acb15d20fbce3cb88dd3d2615a2cd4b086915331"
+  },
+  {
+   "row": "KKR-20261018-17",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261018-40",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261018-49",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "HIT",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "2 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
+  },
+  {
+   "row": "KKR-20261022-05",
+   "juror": "B",
+   "juror_access": "cold",
+   "verdict": "MISS",
+   "final_status": "OPEN",
+   "agreed_with_final": false,
+   "class": "UNGROUNDED-SPECIFIC",
+   "detail": "3 figure(s)/date(s) asserted beyond the held record by a cold juror: 06, 11, 2026-11-06",
+   "figures_beyond_held": [
+    "06",
+    "11",
+    "2026-11-06"
+   ],
+   "held_sha256": "273b7e449828f0af92e012bf03270a6a6c3deb21dc7a50b46ebe0447ea196bff"
   }
  ]
 }
