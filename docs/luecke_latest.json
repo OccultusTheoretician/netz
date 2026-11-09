@@ -1,48 +1,30 @@
 {
  "_meta": {
-  "generated": "2026-11-07T16:21:30Z",
+  "generated": "2026-11-09T16:19:22Z",
   "instrument": "luecke/1.0",
   "source_render": "WARDESK_latest.md",
-  "ledger_rows": 5433,
+  "ledger_rows": 5491,
   "doctrine": "a Brier cannot see an uncalled event; this is the completeness assertion a forecasting ledger otherwise hides. Coverage is a denominator, not a score.",
   "matching": "generous - an anchor counts as named if its token or a known alias appears in any row's statement or resolution. Generous matching UNDERSTATES the gap, so every figure here is a floor.",
   "grade_a_confirmed": 2,
   "grade_a_gaps": 0,
   "grade_a_gap_rate_pct": 0.0,
-  "grade_b_confirmed": 11,
-  "grade_b_gaps": 2,
-  "grade_b_gap_rate_pct": 18.2
+  "grade_b_confirmed": 5,
+  "grade_b_gaps": 0,
+  "grade_b_gap_rate_pct": 0.0
  },
  "events": [
   {
-   "anchor": "Moscow",
-   "zone": "Russia-Ukraine Theatre",
+   "anchor": "Deir Al-Balah",
+   "zone": "Israel-Gaza-Levant Theatre",
    "grade": "A",
    "rows_naming": [
-    "KKR-20260817-35",
-    "KKR-20260817-54",
-    "KKR-20260817-62",
-    "KKR-20260902-55",
-    "KKR-20260902-74",
-    "KKR-20260904-15",
-    "KKR-20260904-45",
-    "KKR-20260906-02",
-    "KKR-20260906-29",
-    "KKR-20260912-06",
-    "KKR-20260920-01",
-    "KKR-20260920-14"
+    "KKR-20260824-02"
    ],
-   "n_rows": 22,
-   "open_rows": 10,
+   "n_rows": 1,
+   "open_rows": 0,
    "arms": [
-    "control/baserate",
-    "lmstudio/auto",
-    "lmstudio/qwen36",
-    "lmstudio/qwen36-realist",
-    "lmstudio/realist",
-    "manual/fable-5.1/unattested",
-    "manual/fable-5/unattested",
-    "manual/opus-5.5/unattested"
+    "lmstudio/auto"
    ],
    "covered": true
   },
@@ -92,8 +74,8 @@
     "KKR-20260817-06",
     "KKR-20260817-30"
    ],
-   "n_rows": 121,
-   "open_rows": 54,
+   "n_rows": 122,
+   "open_rows": 55,
    "arms": [
     "control/baserate",
     "lmstudio/auto",
@@ -139,6 +121,27 @@
    "covered": true
   },
   {
+   "anchor": "Zaporizhzhia",
+   "zone": "Russia-Ukraine Theatre",
+   "grade": "B",
+   "rows_naming": [
+    "KKR-20260807-01",
+    "KKR-20260810-06",
+    "KKR-20260820-04",
+    "KKR-20260826-01",
+    "KKR-20260929-07",
+    "KKR-20261005-10",
+    "KKR-20261010-03"
+   ],
+   "n_rows": 7,
+   "open_rows": 3,
+   "arms": [
+    "lmstudio/auto",
+    "lmstudio/realist"
+   ],
+   "covered": true
+  },
+  {
    "anchor": "Tehran",
    "zone": "Iran Theatre",
    "grade": "B",
@@ -180,141 +183,6 @@
    "arms": [
     "lmstudio/auto",
     "lmstudio/realist"
-   ],
-   "covered": true
-  },
-  {
-   "anchor": "Rostov-On-Don",
-   "zone": "Russia-Ukraine Theatre",
-   "grade": "B",
-   "rows_naming": [],
-   "n_rows": 0,
-   "open_rows": 0,
-   "arms": [],
-   "covered": false
-  },
-  {
-   "anchor": "Zaporizhzhia",
-   "zone": "Russia-Ukraine Theatre",
-   "grade": "B",
-   "rows_naming": [
-    "KKR-20260807-01",
-    "KKR-20260810-06",
-    "KKR-20260820-04",
-    "KKR-20260826-01",
-    "KKR-20260929-07",
-    "KKR-20261005-10",
-    "KKR-20261010-03"
-   ],
-   "n_rows": 7,
-   "open_rows": 3,
-   "arms": [
-    "lmstudio/auto",
-    "lmstudio/realist"
-   ],
-   "covered": true
-  },
-  {
-   "anchor": "Dnipro",
-   "zone": "Russia-Ukraine Theatre",
-   "grade": "B",
-   "rows_naming": [
-    "KKR-20260817-36",
-    "KKR-20260819-05",
-    "KKR-20261003-18",
-    "KKR-20261003-25",
-    "KKR-20261003-27",
-    "KKR-20261003-34",
-    "KKR-20261003-41",
-    "KKR-20261003-47",
-    "KKR-20261004-11",
-    "KKR-20261004-22",
-    "KKR-20261004-30",
-    "KKR-20261007-06"
-   ],
-   "n_rows": 12,
-   "open_rows": 7,
-   "arms": [
-    "control/baserate",
-    "lmstudio/auto",
-    "lmstudio/realist",
-    "manual/fable-5.1/unattested",
-    "manual/opus-5.5/unattested",
-    "manual/sonnet-5.5/unattested"
-   ],
-   "covered": true
-  },
-  {
-   "anchor": "Gaza City",
-   "zone": "Israel-Gaza-Levant Theatre",
-   "grade": "B",
-   "rows_naming": [
-    "KKR-20260727-15",
-    "KKR-20260727-24",
-    "KKR-20260731-06",
-    "KKR-20260731-11",
-    "KKR-20260731-21",
-    "KKR-20260802-08",
-    "KKR-20260804-17",
-    "KKR-20260804-26",
-    "KKR-20260804-33",
-    "KKR-20260804-42",
-    "KKR-20260809-10",
-    "KKR-20260810-20"
-   ],
-   "n_rows": 43,
-   "open_rows": 19,
-   "arms": [
-    "control/baserate",
-    "lmstudio/auto",
-    "lmstudio/qwen36",
-    "lmstudio/qwen36-abliterated",
-    "lmstudio/qwen36-realist",
-    "lmstudio/realist",
-    "manual/fable",
-    "manual/fable-5"
-   ],
-   "covered": true
-  },
-  {
-   "anchor": "Deir Al-Balah",
-   "zone": "Israel-Gaza-Levant Theatre",
-   "grade": "B",
-   "rows_naming": [
-    "KKR-20260824-02"
-   ],
-   "n_rows": 1,
-   "open_rows": 0,
-   "arms": [
-    "lmstudio/auto"
-   ],
-   "covered": true
-  },
-  {
-   "anchor": "Bryansk",
-   "zone": "Russia-Ukraine Theatre",
-   "grade": "B",
-   "rows_naming": [],
-   "n_rows": 0,
-   "open_rows": 0,
-   "arms": [],
-   "covered": false
-  },
-  {
-   "anchor": "Jerusalem",
-   "zone": "Israel-Gaza-Levant Theatre",
-   "grade": "B",
-   "rows_naming": [
-    "KKR-20261006-45",
-    "KKR-20261006-52",
-    "KKR-20261014-17"
-   ],
-   "n_rows": 3,
-   "open_rows": 3,
-   "arms": [
-    "control/baserate",
-    "lmstudio/qwen36-realist",
-    "manual/sonnet-5.5/unattested"
    ],
    "covered": true
   }
@@ -1209,6 +1077,22 @@
     "a_gaps": 0,
     "b_confirmed": 11,
     "b_gaps": 2
+   },
+   {
+    "render": "WARDESK_2026-11-08_1612.md",
+    "as_of": "2026-11-08",
+    "a_confirmed": 3,
+    "a_gaps": 2,
+    "b_confirmed": 9,
+    "b_gaps": 2
+   },
+   {
+    "render": "WARDESK_2026-11-09_1610.md",
+    "as_of": "2026-11-09",
+    "a_confirmed": 2,
+    "a_gaps": 0,
+    "b_confirmed": 5,
+    "b_gaps": 0
    }
   ]
  }
