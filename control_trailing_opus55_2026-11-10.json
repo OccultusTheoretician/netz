@@ -1,0 +1,297 @@
+[
+  {
+    "statement": "The Federal Reserve raises the federal funds target range at an FOMC meeting concluding between 2026-11-17 and 2026-12-31.",
+    "resolution": "TRUE if FRED series DFEDTARU shows an upper bound on 2026-12-31 higher than its value on 2026-11-10; FALSE otherwise.",
+    "failure_condition": "The target range upper bound on 2026-12-31 is equal to or lower than its 2026-11-10 value.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 57,
+    "citations": [
+      59,
+      81,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:36Z",
+      "ledger_sha16": "d437f16011b72530",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-37"
+    }
+  },
+  {
+    "statement": "The US 10-year Treasury constant-maturity yield closes at or above 5.00 percent on at least one trading day between 2026-11-17 and 2026-12-11. Reference: 4.99 percent on the packet date.",
+    "resolution": "TRUE if FRED series DGS10 records any daily value of 5.00 or higher dated between 2026-11-17 and 2026-12-11 inclusive.",
+    "failure_condition": "Every DGS10 daily value dated 2026-11-17 through 2026-12-11 is below 5.00.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-15",
+    "probability": 57,
+    "citations": [
+      62,
+      59,
+      81
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:36Z",
+      "ledger_sha16": "d437f16011b72530",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-38"
+    }
+  },
+  {
+    "statement": "The BLS initial release of November 2026 CPI-U shows a seasonally adjusted all-items monthly increase of 0.3 percent or more, published between 2026-12-01 and 2026-12-31.",
+    "resolution": "TRUE if the BLS CPI news release for November 2026, first published between 2026-12-01 and 2026-12-31, reports seasonally adjusted all-items CPI-U change of 0.3 percent or higher.",
+    "failure_condition": "The initial November 2026 seasonally adjusted all-items CPI-U monthly change is 0.2 percent or lower, or no release occurs in the window.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 57,
+    "citations": [
+      59,
+      65,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:36Z",
+      "ledger_sha16": "d437f16011b72530",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-39"
+    }
+  },
+  {
+    "statement": "CISA adds at least one Google Chromium or Chrome vulnerability to the KEV catalog with a date-added value between 2026-11-17 and 2026-12-31.",
+    "resolution": "TRUE if the CISA KEV catalog lists any entry with vendor Google and product Chromium or Chrome whose dateAdded falls between 2026-11-17 and 2026-12-31 inclusive.",
+    "failure_condition": "No Google Chromium or Chrome entry in the KEV catalog carries a dateAdded between 2026-11-17 and 2026-12-31.",
+    "domain": "cyber",
+    "deadline": "2027-01-05",
+    "probability": 57,
+    "citations": [
+      30,
+      33
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:36Z",
+      "ledger_sha16": "d437f16011b72530",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-40"
+    }
+  },
+  {
+    "statement": "The EU adopts restrictive measures naming the Iranian cyber unit Shahid Kaveh or persons tied to it over the French refrigeration-controller attacks, published between 2026-11-17 and 2027-02-28.",
+    "resolution": "TRUE if the Official Journal of the EU (EUR-Lex) publishes a Council decision or implementing regulation between 2026-11-17 and 2027-02-28 listing Shahid Kaveh or a named member of it.",
+    "failure_condition": "No Official Journal act published 2026-11-17 through 2027-02-28 lists Shahid Kaveh or a named member of it.",
+    "domain": "cyber",
+    "deadline": "2027-03-03",
+    "probability": 57,
+    "citations": [
+      29,
+      95,
+      124
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:36Z",
+      "ledger_sha16": "d437f16011b72530",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-41"
+    }
+  },
+  {
+    "statement": "Pete Hegseth leaves the office of Secretary of Defense through resignation, removal or conviction between 2026-11-17 and 2027-03-31.",
+    "resolution": "TRUE if the defense.gov leadership listing, or a White House announcement reported by Reuters and AP, shows Hegseth no longer serving as Secretary of Defense on or before 2027-03-31.",
+    "failure_condition": "Hegseth holds the office of Secretary of Defense on 2027-03-31.",
+    "domain": "political",
+    "deadline": "2027-04-05",
+    "probability": 57,
+    "citations": [
+      89,
+      110,
+      126
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:36Z",
+      "ledger_sha16": "d437f16011b72530",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-42"
+    }
+  },
+  {
+    "statement": "Russia and Ukraine sign a ceasefire or peace agreement between 2026-11-17 and 2027-01-31.",
+    "resolution": "TRUE if both the Russian and Ukrainian governments publicly confirm signing a ceasefire or peace agreement dated 2026-11-17 through 2027-01-31, reported by both Reuters and AP.",
+    "failure_condition": "No agreement signed by both governments with a signing date between 2026-11-17 and 2027-01-31 exists.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-03",
+    "probability": 57,
+    "citations": [
+      91,
+      113,
+      129,
+      131
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:36Z",
+      "ledger_sha16": "d437f16011b72530",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-43"
+    }
+  },
+  {
+    "statement": "USGS records at least one earthquake of magnitude 7.0 or greater anywhere in the world between 2026-11-17 and 2026-12-15.",
+    "resolution": "TRUE if the USGS ComCat catalog lists any event with magnitude 7.0 or higher and origin time between 2026-11-17T00:00Z and 2026-12-15T23:59Z.",
+    "failure_condition": "No USGS ComCat event of magnitude 7.0 or higher has an origin time between 2026-11-17 and 2026-12-15.",
+    "domain": "disaster",
+    "deadline": "2026-12-17",
+    "probability": 57,
+    "citations": [
+      54,
+      42
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "disaster",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:36Z",
+      "ledger_sha16": "d437f16011b72530",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-44"
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "statement": "The 10-year Treasury constant maturity yield (FRED DGS10) prints at or above 5.00 percent on at least one trading day between 2026-11-12 and 2026-11-27. Reference: 4.99 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 72,
+    "resolution": "TRUE if FRED series DGS10 shows a value of 5.00 or higher for any observation dated between 2026-11-12 and 2026-11-27 inclusive. Reference level at seal: 4.99.",
+    "deadline": "2026-12-01",
+    "citations": [59, 62],
+    "failure_condition": "Every DGS10 observation dated between 2026-11-12 and 2026-11-27 is below 5.00 percent."
+  },
+  {
+    "statement": "The Federal Open Market Committee raises the federal funds target range by at least 50 basis points at its meeting concluding 2026-12-09.",
+    "domain": "economics/markets",
+    "probability": 18,
+    "resolution": "TRUE if FRED series DFEDTARU for 2026-12-10 is at least 0.50 percentage points above its value for 2026-11-10.",
+    "deadline": "2026-12-11",
+    "citations": [59, 81],
+    "failure_condition": "The upper bound of the target range on 2026-12-10 is less than 0.50 percentage points above its 2026-11-10 level."
+  },
+  {
+    "statement": "The WTI Cushing spot price falls below 80.00 dollars per barrel on at least one trading day between 2026-11-12 and 2026-12-04. Reference: 85.63 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 28,
+    "resolution": "TRUE if EIA daily series RWTC (FRED DCOILWTICO) shows any value below 80.00 for dates between 2026-11-12 and 2026-12-04 inclusive. Reference level at seal: 85.63.",
+    "deadline": "2026-12-09",
+    "citations": [87],
+    "failure_condition": "Every daily WTI Cushing spot value dated between 2026-11-12 and 2026-12-04 is at or above 80.00 dollars."
+  },
+  {
+    "statement": "Anthropic files a final IPO prospectus between 2026-11-12 and 2026-12-04 with an offering price between 70.00 and 78.00 dollars per share inclusive.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "TRUE if SEC EDGAR carries an Anthropic Rule 424B4 prospectus with filing date between 2026-11-12 and 2026-12-04 stating an initial public offering price from 70.00 to 78.00 dollars inclusive.",
+    "deadline": "2026-12-08",
+    "citations": [64, 73],
+    "failure_condition": "Anthropic does not price its IPO between 2026-11-12 and 2026-12-04, or prices it below 70.00 or above 78.00 dollars per share."
+  },
+  {
+    "statement": "The US House of Representatives adopts at least one article of impeachment against Defense Secretary Pete Hegseth in a floor vote held between 2026-11-10 and 2026-11-20.",
+    "domain": "political",
+    "probability": 25,
+    "resolution": "TRUE if the Clerk of the House roll call record on Congress.gov shows adoption of a resolution containing an article of impeachment against Hegseth with a vote date between 2026-11-10 and 2026-11-20.",
+    "deadline": "2026-11-24",
+    "citations": [52, 89, 109],
+    "failure_condition": "The House does not adopt any article of impeachment against Hegseth between 2026-11-10 and 2026-11-20, including because the measure is tabled, referred, defeated or not voted on."
+  },
+  {
+    "statement": "CISA adds at least one Google Chromium or Chrome vulnerability to the Known Exploited Vulnerabilities catalog between 2026-11-10 and 2026-11-27.",
+    "domain": "cyber",
+    "probability": 80,
+    "resolution": "TRUE if the CISA KEV catalog carries an entry with vendor Google and product containing Chromium or Chrome with a date-added value between 2026-11-10 and 2026-11-27 inclusive.",
+    "deadline": "2026-12-01",
+    "citations": [30, 33],
+    "failure_condition": "CISA adds no Google Chromium or Chrome vulnerability to the KEV catalog between 2026-11-10 and 2026-11-27."
+  },
+  {
+    "statement": "CISA adds at least one Barracuda Email Security Gateway vulnerability to the Known Exploited Vulnerabilities catalog between 2026-11-10 and 2026-12-01.",
+    "domain": "cyber",
+    "probability": 62,
+    "resolution": "TRUE if the CISA KEV catalog carries an entry with vendor Barracuda Networks and product Email Security Gateway with a date-added value between 2026-11-10 and 2026-12-01 inclusive.",
+    "deadline": "2026-12-03",
+    "citations": [27],
+    "failure_condition": "CISA adds no Barracuda Email Security Gateway vulnerability to the KEV catalog between 2026-11-10 and 2026-12-01."
+  },
+  {
+    "statement": "Russia and Ukraine sign a ceasefire or peace agreement between 2026-11-12 and 2026-12-11.",
+    "domain": "military/conflict",
+    "probability": 10,
+    "resolution": "TRUE if Reuters and AP both report that representatives of the Russian and Ukrainian governments signed a ceasefire or peace agreement on a date between 2026-11-12 and 2026-12-11.",
+    "deadline": "2026-12-15",
+    "citations": [91, 113, 129],
+    "failure_condition": "Russian and Ukrainian government representatives do not sign any ceasefire or peace agreement between 2026-11-12 and 2026-12-11."
+  },
+  {
+    "statement": "The United States and Iran both publicly confirm a ceasefire or cessation of hostilities that takes effect between 2026-11-12 and 2026-12-04.",
+    "domain": "military/conflict",
+    "probability": 22,
+    "resolution": "TRUE if Reuters and AP both report that the US and Iranian governments each confirmed a ceasefire or cessation of hostilities with an effective date between 2026-11-12 and 2026-12-04.",
+    "deadline": "2026-12-08",
+    "citations": [87],
+    "failure_condition": "No ceasefire or cessation of hostilities confirmed by both the US and Iranian governments takes effect between 2026-11-12 and 2026-12-04."
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater occurs within 300 km of the epicenter of USGS event us7000tx16 near Lata, Solomon Islands, between 2026-11-11 and 2026-11-25.",
+    "domain": "disaster",
+    "probability": 8,
+    "resolution": "TRUE if the USGS ComCat catalog lists an event of magnitude 6.0 or greater, origin time between 2026-11-11 and 2026-11-25 UTC, with epicenter within 300 km of event us7000tx16.",
+    "deadline": "2026-11-27",
+    "citations": [54],
+    "failure_condition": "No earthquake of magnitude 6.0 or greater occurs within 300 km of the us7000tx16 epicenter between 2026-11-11 and 2026-11-25 UTC."
+  }
+]
