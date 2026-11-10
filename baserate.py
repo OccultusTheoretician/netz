@@ -141,7 +141,7 @@ def pick(r, domain):
 # resolved_date cannot be shown to fall on or before the cut and is left out.
 ARM_TRAILING = "control/trailing"
 TRAIL_MIN_N = 10
-V4_SCOPE = ("manual/fable-5.1/unattested", "manual/opus-5.5/unattested",
+V4_SCOPE = ("manual/fable-5.1/unattested", "manual/opus-5.5/unattested", "manual/fable-5.2/unattested",
             "operator/cold", "operator/advised")
 TRAIL_STEPS = {1: "mirrored arm, canonical domain", 2: "mirrored arm, all domains",
                3: "arms in scope, canonical domain", 4: "arms in scope, all domains"}

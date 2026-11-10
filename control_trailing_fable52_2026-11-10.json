@@ -1,0 +1,297 @@
+[
+  {
+    "statement": "The 10-year Treasury constant maturity yield (FRED DGS10) prints at or above 5.00 percent on at least one trading day between 2026-11-12 and 2026-11-27. Reference: 4.99 percent on the packet date.",
+    "resolution": "TRUE if FRED series DGS10 shows a value of 5.00 or higher for any observation dated between 2026-11-12 and 2026-11-27 inclusive. Reference level at seal: 4.99.",
+    "failure_condition": "Every DGS10 observation dated between 2026-11-12 and 2026-11-27 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-01",
+    "probability": 70,
+    "citations": [
+      59,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.7037,
+      "n": 27,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:43Z",
+      "ledger_sha16": "e1b8e1d6d657064a",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-53"
+    }
+  },
+  {
+    "statement": "The Federal Open Market Committee raises the federal funds target range by at least 50 basis points at its meeting concluding 2026-12-09.",
+    "resolution": "TRUE if FRED series DFEDTARU for 2026-12-10 is at least 0.50 percentage points above its value for 2026-11-10.",
+    "failure_condition": "The upper bound of the target range on 2026-12-10 is less than 0.50 percentage points above its 2026-11-10 level.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-11",
+    "probability": 70,
+    "citations": [
+      59,
+      81
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.7037,
+      "n": 27,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:43Z",
+      "ledger_sha16": "e1b8e1d6d657064a",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-54"
+    }
+  },
+  {
+    "statement": "The US House of Representatives adopts at least one article of impeachment against Defense Secretary Pete Hegseth in a floor vote held between 2026-11-10 and 2026-11-20.",
+    "resolution": "TRUE if the Clerk of the House roll call record on Congress.gov shows adoption of a resolution containing an article of impeachment against Hegseth with a vote date between 2026-11-10 and 2026-11-20.",
+    "failure_condition": "The House does not adopt any article of impeachment against Hegseth between 2026-11-10 and 2026-11-20, including because the measure is tabled, referred, defeated or not voted on.",
+    "domain": "political",
+    "deadline": "2026-11-24",
+    "probability": 36,
+    "citations": [
+      52,
+      89,
+      109
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.3571,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:43Z",
+      "ledger_sha16": "e1b8e1d6d657064a",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-55"
+    }
+  },
+  {
+    "statement": "CISA adds at least one Google Chromium or Chrome vulnerability to the Known Exploited Vulnerabilities catalog between 2026-11-10 and 2026-11-27.",
+    "resolution": "TRUE if the CISA KEV catalog carries an entry with vendor Google and product containing Chromium or Chrome with a date-added value between 2026-11-10 and 2026-11-27 inclusive.",
+    "failure_condition": "CISA adds no Google Chromium or Chrome vulnerability to the KEV catalog between 2026-11-10 and 2026-11-27.",
+    "domain": "cyber",
+    "deadline": "2026-12-01",
+    "probability": 56,
+    "citations": [
+      30,
+      33
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.5625,
+      "n": 32,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:43Z",
+      "ledger_sha16": "e1b8e1d6d657064a",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-56"
+    }
+  },
+  {
+    "statement": "CISA adds at least one Barracuda Email Security Gateway vulnerability to the Known Exploited Vulnerabilities catalog between 2026-11-10 and 2026-12-01.",
+    "resolution": "TRUE if the CISA KEV catalog carries an entry with vendor Barracuda Networks and product Email Security Gateway with a date-added value between 2026-11-10 and 2026-12-01 inclusive.",
+    "failure_condition": "CISA adds no Barracuda Email Security Gateway vulnerability to the KEV catalog between 2026-11-10 and 2026-12-01.",
+    "domain": "cyber",
+    "deadline": "2026-12-03",
+    "probability": 56,
+    "citations": [
+      27
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.5625,
+      "n": 32,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:43Z",
+      "ledger_sha16": "e1b8e1d6d657064a",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-57"
+    }
+  },
+  {
+    "statement": "Russia and Ukraine sign a ceasefire or peace agreement between 2026-11-12 and 2026-12-11.",
+    "resolution": "TRUE if Reuters and AP both report that representatives of the Russian and Ukrainian governments signed a ceasefire or peace agreement on a date between 2026-11-12 and 2026-12-11.",
+    "failure_condition": "Russian and Ukrainian government representatives do not sign any ceasefire or peace agreement between 2026-11-12 and 2026-12-11.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-15",
+    "probability": 68,
+    "citations": [
+      91,
+      113,
+      129
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.6842,
+      "n": 19,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:43Z",
+      "ledger_sha16": "e1b8e1d6d657064a",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-58"
+    }
+  },
+  {
+    "statement": "The United States and Iran both publicly confirm a ceasefire or cessation of hostilities that takes effect between 2026-11-12 and 2026-12-04.",
+    "resolution": "TRUE if Reuters and AP both report that the US and Iranian governments each confirmed a ceasefire or cessation of hostilities with an effective date between 2026-11-12 and 2026-12-04.",
+    "failure_condition": "No ceasefire or cessation of hostilities confirmed by both the US and Iranian governments takes effect between 2026-11-12 and 2026-12-04.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-08",
+    "probability": 68,
+    "citations": [
+      87
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.6842,
+      "n": 19,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:43Z",
+      "ledger_sha16": "e1b8e1d6d657064a",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-59"
+    }
+  },
+  {
+    "statement": "An earthquake of magnitude 6.0 or greater occurs within 300 km of the epicenter of USGS event us7000tx16 near Lata, Solomon Islands, between 2026-11-11 and 2026-11-25.",
+    "resolution": "TRUE if the USGS ComCat catalog lists an event of magnitude 6.0 or greater, origin time between 2026-11-11 and 2026-11-25 UTC, with epicenter within 300 km of event us7000tx16.",
+    "failure_condition": "No earthquake of magnitude 6.0 or greater occurs within 300 km of the us7000tx16 epicenter between 2026-11-11 and 2026-11-25 UTC.",
+    "domain": "disaster",
+    "deadline": "2026-11-27",
+    "probability": 57,
+    "citations": [
+      54
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.5714,
+      "n": 21,
+      "domain_canonical": "disaster",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-10",
+      "ledger_as_of": "2026-11-10T16:32:43Z",
+      "ledger_sha16": "e1b8e1d6d657064a",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261110-60"
+    }
+  }
+]
