@@ -164,3 +164,9 @@ Appended under Section 12 before any v4 checkpoint and before any row of v4's po
   7. Rows out under (g) leave the read and are listed; they do not halt it.
   8. Bootstrap. One generator seeded 26 per arm per statistic (V1, (e')); for V3 one generator seeded 26 per comparison, drawing the operator's pairs and then the frontier arm's in each resample.
   9. Beside V1 the instrument prints the count of pairs whose arm and mirror outcomes differ: a finding about the pairing, not a test.
+
+12.2 AMENDMENT 2026-11-10 - FABLE 5.2 IN SCOPE
+
+AUTHORSHIP - drafted by the desk's assistant under the registrant's direction on 2026-11-10; read in full and adopted by the registrant on 2026-11-10.
+
+manual/fable-5.2/unattested, registered 2026-11-10, joins the frontier arms of Section 4 with the same population rule (sealed at or after its registration, cohort hash), its own control/trailing mirrors, V1 and V2 read on its own pairs and rows at its own first checkpoint, and V3 against operator/cold. Its Brier is its own; no score pools it with manual/fable-5.1/unattested or any arm. The registrant states no prior for V1 or V2. Seen: when adopted, the arm had sealed its first file only (packet 2026-11-10) and none of its rows had resolved. The instrument is warte_v4.py 1.1, LF SHA-256 17491697788f1cdbb35377724e3a479cdb4d0b582dfb97dcead6ca9be3194e3d; the only changes from 1.0 are this arm in scope and its priors line.
