@@ -37,19 +37,20 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import warte_report as W  # noqa: E402
 
-INSTRUMENT = "warte_v4/1.0"
+INSTRUMENT = "warte_v4/1.1"
 REGISTRATION = "docs/KALIBRIERWARTE_REGISTERED_REPORT_v4.md"
 ADOPTION_COMMIT = "a257f2c879dad31ba0c4b6a2a3e8917dba705129"
 ADOPTION_UTC = "2026-10-27T19:55:42+00:00"
 DEFAULT_COHORT = "bbdc7791"
 TRAILING = "control/trailing"
-FRONTIER_V4 = ("manual/fable-5.1/unattested", "manual/opus-5.5/unattested")
+FRONTIER_V4 = ("manual/fable-5.1/unattested", "manual/opus-5.5/unattested", "manual/fable-5.2/unattested")
 COLD = "operator/cold"
 ADVISED = "operator/advised"
 SCOPE = FRONTIER_V4 + (COLD, ADVISED)
 PRIORS = {  # v4 Section 7, the registrant's, 2026-10-27
     "manual/fable-5.1/unattested": {"V1": "yes", "V2": "no"},
     "manual/opus-5.5/unattested": {"V1": "yes", "V2": "no"},
+    "manual/fable-5.2/unattested": {"V1": "not stated", "V2": "not stated"},
     COLD: {"V1": "no", "V2": "yes"},
     ADVISED: {"V1": "not stated", "V2": "not stated"},
 }
