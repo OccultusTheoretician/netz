@@ -1,22 +1,22 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-11-10T13:45:47Z · 143 report(s)
+Generated 2026-11-11T12:56:40Z · 144 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **143**
-- findings: **247**
+- reports audited: **144**
+- findings: **251**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 4
-  - UNSOURCED: 243
-- distinct tokens: **157**
+  - UNSOURCED: 247
+- distinct tokens: **161**
 
 ## Reached a sealed row
 
-**185** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
+**187** sealed row(s) carry an identifier this audit flags. A sealed row is never edited; these are printed as findings.
 
 | row | token | finding | arm | status | k/kl |
 |---|---|---|---|---|---|
@@ -205,6 +205,8 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | `KKR-20261031-15` | `CVE-2026-111357` | UNSOURCED | control/trailing | open | — |
 | `KKR-20261108-13` | `CVE-2026-19868` | UNSOURCED | manual/opus-5.5/unattested | open | — |
 | `KKR-20261108-26` | `CVE-2026-19868` | UNSOURCED | control/trailing | open | — |
+| `KKR-20261106-35` | `CVE-2026-123158` | UNSOURCED | manual/opus-5.5/unattested | open | — |
+| `KKR-20261106-41` | `CVE-2026-123158` | UNSOURCED | control/trailing | open | — |
 
 ## Every finding
 
@@ -457,4 +459,8 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-11-04_1615.md | `CVE-2026-119977` | UNSOURCED |
 | battle_report_2026-11-05_1613.md | `CVE-2024-27834` | UNSOURCED |
 | battle_report_2026-11-07_1612.md | `CVE-2026-19868` | UNSOURCED |
+| battle_report_2026-11-10_1613.md | `CVE-2026-102895` | UNSOURCED |
+| battle_report_2026-11-10_1613.md | `CVE-2026-123158` | UNSOURCED |
+| battle_report_2026-11-10_1613.md | `CVE-2026-116779` | UNSOURCED |
+| battle_report_2026-11-10_1613.md | `CVE-2026-123218` | UNSOURCED |
 
