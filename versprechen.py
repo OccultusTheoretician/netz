@@ -36,7 +36,11 @@ OUT = HERE / "docs" / "versprechen.html"
 
 STYLE = (
     "body{background:#0c0e11;color:#d6d3cb;font-family:'IBM Plex Sans',sans-serif;"
-    "max-width:900px;margin:0 auto;padding:0 1.25rem 3rem;font-size:15px;line-height:1.6}"
+    "margin:0;padding:0 0 3rem;font-size:15px;line-height:1.6}"
+    # BODY-2026-11-11: the body is full width so the stamped header is; its
+    # children keep the 900px column.
+    "html:root body>:not(.desknav-unified):not(script):not(style):not(link){box-sizing:border-box;"
+    "margin-left:auto;margin-right:auto;max-width:min(860px,calc(100% - 2.5rem))}"
     ".kicker{font:500 .8rem 'IBM Plex Mono',monospace;letter-spacing:.06em;"
     "text-transform:uppercase;color:#8b8b85;margin-top:2.4rem}"
     "h1{color:#f2f0ea}h2{color:#e9e7e2;font-size:1.05rem;margin-top:2rem}"
