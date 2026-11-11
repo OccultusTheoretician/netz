@@ -259,7 +259,7 @@ def main():
          ".warn{color:#c9a227}"
          "</style></head><body>",
          # SHELL-WARTE-2026-09-06: the face is a workpaper (INSTRUMENT_SHELL.md)
-         "<h1>Kalibrierwarte</h1>",
+         "<h1>Calibration <span class='pg-tag' translate='no'>Warte</span></h1>",
          "<section class='wp'>",
          "<aside class='wp-index'>",
          f"<p class='wp-ref'>W/P WARTE<small>kalibrierwarte/1.0 &middot; generated {now}</small></p>",
