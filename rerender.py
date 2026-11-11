@@ -9,7 +9,7 @@ reports = sorted(pathlib.Path("reports").glob("battle_report_*.md"))
 for md in reports:
     stamp = md.stem.replace("battle_report_", "")
     md.with_suffix(".html").write_text(
-        render_html(md.read_text(encoding="utf-8"), f"The Prescient Desk \u2014 Report {stamp}"),
+        render_html(md.read_text(encoding="utf-8"), f"Report {stamp}"),
         encoding="utf-8")
 print(f"reports re-rendered: {len(reports)}")
 if reports:

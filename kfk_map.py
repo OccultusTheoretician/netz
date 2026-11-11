@@ -204,7 +204,7 @@ def main() -> int:
 <title>Overlay - KriegForeKaster - Retro-Prescient Audit</title>
 <link rel="canonical" href="https://retroprescientaudit.com/kfk_map.html">
 <meta name="description" content="The KriegForeKaster board plotted with its own doctrine visible: command-located versus state-only coordinates, existence grades, location half-life, and WarDesk sighting recency.">
-<meta property="og:title" content="KFK Overlay &middot; The Prescient Desk">
+<meta property="og:title" content="KFK Overlay &middot; Retro-Prescient Audit">
 <meta property="og:description" content="An order-of-battle face that shows what the desk knows apart from what it merely lists. Solid points locate commands; dashed points locate states.">
 <meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
 <meta property="og:url" content="https://retroprescientaudit.com/kfk_map.html">

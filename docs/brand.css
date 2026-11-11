@@ -209,3 +209,37 @@ section p{font-size:1.02rem;line-height:1.62}
 header .wrap{padding-top:1.8rem}
 section{padding:3rem 0}
 @media (max-width:640px){h1{font-size:2.1rem}}
+
+
+/* ===== GROUND-2026-11-11 - one ground, one ink. The ground is black and the
+   chrome is white and grey, as on the front page. Brass leaves the chrome under
+   every name the pages gave it. Verdict and state colours (hit, miss, warn, late,
+   stale) are not chrome and are not touched. Screen only: a page's print rules
+   keep their own paper. html:root outranks a page's own :root whichever of the
+   two sheets loads first. ===== */
+@media screen{
+  html:root{
+    --bg:#000; --nacht:#000; --field:#000;
+    --brass:#fff; --brass2:#fff; --brass3:#8d929b; --brass-dim:#8d929b;
+    --messing:#fff; --messing2:#fff; --messing3:#8d929b;
+    --messing-deep:#c4c7cc; --messing-dim:rgba(255,255,255,.55);
+    --accent:#fff;
+    --brand-brass:#c4c7cc; --brand-brass-lit:#fff;
+    --brand-line:rgba(255,255,255,.14);
+  }
+  html:root{background:#000}
+  html:root body{background-color:transparent}
+}
+
+
+/* ===== PHONE-2026-11-11 - seven pages scrolled sideways at phone width. A wide
+   table now scrolls inside its own box, a long token breaks, and a track label
+   that ran past the edge is clipped there, so the page itself no longer moves.
+   Layout only. ===== */
+@media screen and (max-width:760px){
+  pre{max-width:100%;overflow-x:auto}
+  code{overflow-wrap:anywhere}
+  table#reg, body>table, details>table, .wp-body>table{
+    display:block;max-width:100%;overflow-x:auto}
+  #body>.ph{overflow-x:clip}
+}

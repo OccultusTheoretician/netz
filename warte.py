@@ -231,7 +231,7 @@ def main():
          "<title>KALIBRIERWARTE</title>",
          "<meta name='description' content='The multi-model calibration observatory: per-arm reliability against its own base rates.'>",
          "<meta property='og:image' content='https://retroprescientaudit.com/og_nebelkraehe.png'>",
-         "<meta property='og:title' content='Kalibrierwarte &middot; The Prescient Desk'>",
+         "<meta property='og:title' content='Kalibrierwarte &middot; Retro-Prescient Audit'>",
          "<meta property='og:description' content='The multi-model calibration observatory: per-arm reliability against its own base rates.'>",
          "<meta property='og:url' content='https://retroprescientaudit.com/kalibrierwarte.html'>",
          "<meta property='og:type' content='website'>",

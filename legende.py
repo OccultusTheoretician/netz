@@ -26,11 +26,11 @@ def main():
     o = []
     o.append('<!doctype html><html lang="en"><head><meta charset="utf-8">')
     o.append('<meta name="viewport" content="width=device-width,initial-scale=1">')
-    o.append('<title>Instruments &mdash; The Prescient Desk</title>')
+    o.append('<title>Instruments &mdash; Retro-Prescient Audit</title>')
     o.append('<link rel="canonical" href="https://retroprescientaudit.com/instruments.html">')
     o.append('<meta name="description" content="Every instrument on the desk, defined from its own source; every served record, indexed.">')
     o.append('<meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">')
-    o.append('<meta property="og:title" content="Instruments &mdash; The Prescient Desk">')
+    o.append('<meta property="og:title" content="Instruments &mdash; Retro-Prescient Audit">')
     o.append('<meta property="og:description" content="Every instrument on the desk, defined from its own source; every served record, indexed.">')
     o.append('<meta property="og:url" content="https://retroprescientaudit.com/instruments.html">')
     o.append('<meta property="og:type" content="website">')
@@ -45,6 +45,10 @@ def main():
     o.append('table{border-collapse:collapse;width:100%}td{padding:.42rem .6rem .42rem 0;vertical-align:top;border-top:1px solid var(--line)}')
     o.append('td.n{white-space:nowrap;font:600 .72rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}')
     o.append('a{color:#c9c7c1;text-decoration:none}a:hover{color:#fff}')
+    # NAMES-2026-11-11: plain name first, working name as a tag; rows and list links
+    # get a taller target, and the name column may wrap on a phone.
+    o.append('td.n a,li a{display:inline-block;padding:.3rem 0}.tg{display:block;font:400 .62rem "IBM Plex Mono",monospace;letter-spacing:.08em;color:#8b8b85}')
+    o.append('@media(max-width:640px){td.n{white-space:normal;min-width:7.5rem}}')
     o.append('.src{display:block;font:400 .66rem "IBM Plex Mono",monospace;color:#6a6a64;margin-top:.15rem}')
     o.append('ul{margin:.2rem 0;padding-left:1.1rem}li{margin:.3rem 0}</style></head>')
     o.append('<body data-kk30-legend="1"><header><div class="wrap">')
@@ -59,7 +63,8 @@ def main():
             mod = spec.get("module")
             srcline = docline(mod) if mod else None
             src = ('<span class="src">' + esc(mod) + (' &mdash; ' + esc(srcline) if srcline else '') + '</span>') if mod else ''
-            o.append('<tr><td class="n"><a href="' + ln["href"] + '">' + esc(ln["text"]) + '</a></td>'
+            tag = ('<span class="tg" translate="no">' + esc(ln["tag"]) + '</span>') if ln.get("tag") else ''
+            o.append('<tr><td class="n"><a href="' + ln["href"] + '">' + esc(ln["text"]) + '</a>' + tag + '</td>'
                      '<td>' + esc(blurb) + src + '</td></tr>')
         o.append('</table></div></section>')
     # LEGENDETRACKED-2026-09-06: a served document is a file git tracks under docs/;

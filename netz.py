@@ -1044,7 +1044,7 @@ function netzTab(id, btn){
     # a capital K here once broke every link preview on the site.
     _meta = (
         f'<meta name="description" content="{_desc}">'
-        f'<meta property="og:title" content="{_ttl} &middot; The Prescient Desk">'
+        f'<meta property="og:title" content="{_ttl} &middot; Retro-Prescient Audit">'
         f'<meta property="og:description" content="{_desc}">'
         f'<meta property="og:image" content="{_site}/og_nebelkraehe.png">'
         f'<meta property="og:url" content="{_site}/{_slug}">'
@@ -1060,7 +1060,7 @@ function netzTab(id, btn){
         '"url":"' + _site + '/' + _slug + '",'
         '"isPartOf":{"@type":"WebSite","name":"Retro-Prescient Audit",'
         '"url":"' + _site + '"},'
-        '"publisher":{"@type":"Organization","name":"The Prescient Desk"}}'
+        '"publisher":{"@type":"Organization","name":"NebelKr\u00e4he"}}'
         '</script>'
     )
     return (f"<!doctype html><html lang='en'><head><meta charset='utf-8'>"
@@ -1422,7 +1422,7 @@ def main():
         report += f"\n\n*identity policy: {_idn} token(s) withheld at write time.*\n"
         print(f"NETZ \u00b7 identity policy: {_idn} token(s) withheld from the report", file=sys.stderr)
     out_path.write_text(report, encoding="utf-8")
-    html_doc = render_html(report, f"The Prescient Desk \u2014 Report {stamp}")
+    html_doc = render_html(report, f"Report {stamp}")
     html_path = out_dir / f"battle_report_{stamp}.html"
     html_doc, _idh = _ident_redact(html_doc)  # GUARDGATE-2026-09-01
     if _idh and "</body>" in html_doc:
