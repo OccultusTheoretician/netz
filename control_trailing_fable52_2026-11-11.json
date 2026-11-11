@@ -1,0 +1,147 @@
+[
+  {
+    "statement": "The Federal Open Market Committee lowers the federal funds target range at its scheduled meeting concluding on 2026-12-09.",
+    "resolution": "TRUE if FRED series DFEDTARU shows a lower value for 2026-12-10 than for 2026-12-08.",
+    "failure_condition": "The upper bound of the federal funds target range on 2026-12-10 is equal to or higher than its level on 2026-12-08.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-14",
+    "probability": 70,
+    "citations": [
+      75
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.7037,
+      "n": 27,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:43Z",
+      "ledger_sha16": "1d9fb6ecebef48ed",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-48"
+    }
+  },
+  {
+    "statement": "The 10-year Treasury constant maturity yield prints at or above 5.25 percent on at least one trading day between 2026-11-12 and 2026-12-11. Reference: 5.00 percent on the packet date.",
+    "resolution": "TRUE if any FRED DGS10 daily observation dated between 2026-11-12 and 2026-12-11 is 5.25 or higher. Reference: 5.00 percent on the packet date.",
+    "failure_condition": "Every DGS10 daily observation dated between 2026-11-12 and 2026-12-11 is below 5.25.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-15",
+    "probability": 70,
+    "citations": [
+      70,
+      75
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.7037,
+      "n": 27,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:43Z",
+      "ledger_sha16": "1d9fb6ecebef48ed",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-49"
+    }
+  },
+  {
+    "statement": "Anthropic prices its initial public offering, evidenced by a final prospectus on Form 424B4 filed with the SEC, between 2026-11-12 and 2026-12-04.",
+    "resolution": "TRUE if SEC EDGAR lists a Form 424B4 filed by Anthropic with a filing date between 2026-11-12 and 2026-12-04.",
+    "failure_condition": "Anthropic did not file a Form 424B4 final prospectus with a filing date between 2026-11-12 and 2026-12-04.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-07",
+    "probability": 70,
+    "citations": [
+      61
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.7037,
+      "n": 27,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:43Z",
+      "ledger_sha16": "1d9fb6ecebef48ed",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-50"
+    }
+  },
+  {
+    "statement": "CISA adds a Xen Orchestra vulnerability to its Known Exploited Vulnerabilities catalog between 2026-11-12 and 2026-12-11.",
+    "resolution": "TRUE if the CISA KEV catalog JSON contains an entry naming Xen Orchestra in its product or vulnerabilityName field with a dateAdded value between 2026-11-12 and 2026-12-11.",
+    "failure_condition": "No Xen Orchestra vulnerability was added to the KEV catalog with a dateAdded value between 2026-11-12 and 2026-12-11.",
+    "domain": "cyber",
+    "deadline": "2026-12-14",
+    "probability": 56,
+    "citations": [
+      40
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.2/unattested",
+      "step": 3,
+      "step_name": "arms in scope, canonical domain",
+      "rate": 0.5625,
+      "n": 32,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:43Z",
+      "ledger_sha16": "1d9fb6ecebef48ed",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-51"
+    }
+  }
+]

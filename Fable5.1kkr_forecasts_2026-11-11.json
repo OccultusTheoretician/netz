@@ -1,0 +1,120 @@
+[
+  {
+    "statement": "The CISA KEV catalog adds an entry for the Xen Orchestra authentication bypass vulnerability with a date-added value between 2026-11-12 and 2026-11-30.",
+    "domain": "cyber",
+    "probability": 55,
+    "resolution": "The CISA KEV catalog JSON contains an entry whose vendor or product field names Xen Orchestra or Vates with dateAdded between 2026-11-12 and 2026-11-30 inclusive.",
+    "deadline": "2026-12-03",
+    "citations": [
+      40
+    ],
+    "failure_condition": "No KEV entry naming Xen Orchestra or Vates carries a dateAdded value inside the window."
+  },
+  {
+    "statement": "Russia and Ukraine carry out a prisoner exchange of at least 100 persons per side between 2026-11-12 and 2026-12-04, following the Abu Dhabi agreement.",
+    "domain": "military/conflict",
+    "probability": 65,
+    "resolution": "Both the Ukrainian Coordination Headquarters and the Russian Ministry of Defence publish statements confirming an exchange of at least 100 persons each way occurring between 2026-11-12 and 2026-12-04.",
+    "deadline": "2026-12-08",
+    "citations": [
+      45,
+      100,
+      90
+    ],
+    "failure_condition": "No exchange of at least 100 persons per side is confirmed by both governments as having occurred inside the window."
+  },
+  {
+    "statement": "The United States and Iran announce a signed agreement or formal ceasefire that suspends or lifts the US naval blockade of Iran between 2026-11-12 and 2026-12-10.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "Official statements from both the US government and the Iranian government, dated within the window, confirm an agreement that suspends or lifts the blockade; carried by at least two wire services.",
+    "deadline": "2026-12-14",
+    "citations": [
+      94,
+      87,
+      82
+    ],
+    "failure_condition": "No agreement suspending or lifting the blockade is confirmed by both governments inside the window."
+  },
+  {
+    "statement": "The 10-year US Treasury yield closes at or above 5.25 percent on at least one trading day between 2026-11-12 and 2026-12-11. Reference: 5.00 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "FRED series DGS10 shows a daily value of 5.25 or higher for at least one date between 2026-11-12 and 2026-12-11 inclusive.",
+    "deadline": "2026-12-15",
+    "citations": [
+      75,
+      70
+    ],
+    "failure_condition": "Every DGS10 daily value in the window is below 5.25."
+  },
+  {
+    "statement": "The S&P 500 closes at or below 7223.71, five percent below the packet reference, on at least one trading day between 2026-11-12 and 2026-12-11. Reference: 7603.91 on the packet date.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "FRED series SP500 or the official S&P Dow Jones Indices close shows a value of 7223.71 or lower for at least one date between 2026-11-12 and 2026-12-11 inclusive.",
+    "deadline": "2026-12-15",
+    "citations": [
+      70,
+      75,
+      60
+    ],
+    "failure_condition": "Every S&P 500 daily close in the window is above 7223.71."
+  },
+  {
+    "statement": "The Federal Open Market Committee lowers the federal funds target range at its December 2026 meeting, scheduled to conclude on or about 2026-12-09.",
+    "domain": "economics/markets",
+    "probability": 20,
+    "resolution": "The Federal Reserve Board press release for the December 2026 FOMC meeting states a target range lower than the range in effect on 2026-11-11.",
+    "deadline": "2026-12-22",
+    "citations": [
+      75
+    ],
+    "failure_condition": "The December 2026 FOMC statement holds or raises the target range."
+  },
+  {
+    "statement": "Anthropic common stock begins trading on a US exchange between 2026-11-12 and 2026-12-18.",
+    "domain": "economics/markets",
+    "probability": 50,
+    "resolution": "NYSE or Nasdaq listing records and at least two wire services show a first trading day for Anthropic common stock dated between 2026-11-12 and 2026-12-18 inclusive.",
+    "deadline": "2026-12-22",
+    "citations": [
+      61,
+      70
+    ],
+    "failure_condition": "No first trade of Anthropic common stock on a US exchange is recorded inside the window."
+  },
+  {
+    "statement": "The Mississippi Secretary of State certifies Scott Colom as the winner of the 2026 US Senate general election over Cindy Hyde-Smith by 2026-12-04.",
+    "domain": "political",
+    "probability": 78,
+    "resolution": "Certified results published on the Mississippi Secretary of State website on or before 2026-12-04 show Colom with more votes than Hyde-Smith.",
+    "deadline": "2026-12-08",
+    "citations": [
+      110
+    ],
+    "failure_condition": "Certified results show Hyde-Smith ahead, or no certification is published by 2026-12-04."
+  },
+  {
+    "statement": "A federal grand jury indictment is docketed against the US soldier arrested for spying for Russia between 2026-11-12 and 2026-12-18.",
+    "domain": "crime/security",
+    "probability": 70,
+    "resolution": "A PACER or CourtListener docket entry titled indictment, filed between 2026-11-12 and 2026-12-18 inclusive, appears in the federal criminal case against the soldier named in item 104.",
+    "deadline": "2026-12-22",
+    "citations": [
+      104
+    ],
+    "failure_condition": "No indictment is docketed in the case inside the window, whether because of a plea, dismissal, continuance, or delay."
+  },
+  {
+    "statement": "WHO or the Kenya Ministry of Health declares the Kenya Ebola outbreak over between 2026-12-20 and 2027-01-15.",
+    "domain": "disaster",
+    "probability": 60,
+    "resolution": "A WHO Disease Outbreak News post, WHO AFRO release, or Kenya Ministry of Health statement dated between 2026-12-20 and 2027-01-15 declares the outbreak ended.",
+    "deadline": "2027-01-19",
+    "citations": [
+      84
+    ],
+    "failure_condition": "No end-of-outbreak declaration is issued inside the window, including because a new confirmed case resets the countdown."
+  }
+]

@@ -1,6 +1,6 @@
 # The forgetting curve - resolution lag (LAG-1016)
 
-As of 2026-11-11. Ledger rows: 5593. Scored with a deadline and a resolved date: 1626. Open past deadline: 1598.
+As of 2026-11-11. Ledger rows: 5648. Scored with a deadline and a resolved date: 1626. Open past deadline: 1598.
 
 Lag = resolved_date minus deadline, in days. A row the desk forgets sits in the right-hand buckets. No pooled score is printed (RPAS 5.04: a Brier belongs to one forecaster); the lag table carries counts and hit share only, and Brier appears per arm below.
 

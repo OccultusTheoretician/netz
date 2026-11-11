@@ -1,0 +1,119 @@
+[
+  {
+    "statement": "The CISA KEV catalog adds at least one Microsoft CVE with a dateAdded value of 2026-12-08, the scheduled December 2026 Patch Tuesday.",
+    "domain": "cyber",
+    "probability": 75,
+    "resolution": "The CISA KEV JSON feed contains at least one entry whose vendorProject is Microsoft and whose dateAdded equals 2026-12-08.",
+    "deadline": "2026-12-11",
+    "citations": [
+      27,
+      32,
+      38
+    ],
+    "failure_condition": "At the deadline no KEV entry with vendorProject Microsoft carries dateAdded 2026-12-08."
+  },
+  {
+    "statement": "The CISA KEV catalog adds an N-able entry with a dateAdded value between 2026-11-11 and 2026-12-04, following the N-able zero-day hotfixes.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "The CISA KEV JSON feed contains an entry whose vendorProject is N-able and whose dateAdded falls between 2026-11-11 and 2026-12-04 inclusive.",
+    "deadline": "2026-12-08",
+    "citations": [
+      20
+    ],
+    "failure_condition": "At the deadline no KEV entry with vendorProject N-able carries a dateAdded within 2026-11-11 to 2026-12-04."
+  },
+  {
+    "statement": "The US Treasury 10-year par yield for 2026-12-31 is at or above 5.00 percent. Reference: 5.00 percent per the packet snapshot on 2026-11-11.",
+    "domain": "economics/markets",
+    "probability": 45,
+    "resolution": "The Treasury Daily Par Yield Curve Rates table shows a 10 Yr value of 5.00 or higher for the row dated 2026-12-31. Reference level 5.00 on 2026-11-11.",
+    "deadline": "2027-01-05",
+    "citations": [
+      75
+    ],
+    "failure_condition": "The Treasury 10 Yr par yield value for 2026-12-31 is below 5.00 percent."
+  },
+  {
+    "statement": "The FOMC statement from the December 2026 meeting, scheduled for 2026-12-09, announces a federal funds target range identical to the range in effect immediately before that meeting.",
+    "domain": "economics/markets",
+    "probability": 65,
+    "resolution": "The Federal Reserve press release for the December 2026 FOMC meeting states a target range equal to the range in force on 2026-12-08.",
+    "deadline": "2026-12-11",
+    "citations": [
+      75
+    ],
+    "failure_condition": "The December 2026 FOMC statement announces a target range different from the one in force on 2026-12-08."
+  },
+  {
+    "statement": "ICE Brent front-month crude settles above 100.00 dollars per barrel on at least one trading day between 2026-11-12 and 2026-12-18. Reference: 93.87 on the packet date 2026-11-11.",
+    "domain": "economics/markets",
+    "probability": 30,
+    "resolution": "ICE Futures Europe daily settlement data show a Brent front-month settlement above 100.00 on any trading day from 2026-11-12 to 2026-12-18 inclusive. Reference 93.87 on 2026-11-11.",
+    "deadline": "2026-12-22",
+    "citations": [
+      82,
+      87,
+      94
+    ],
+    "failure_condition": "No ICE Brent front-month settlement between 2026-11-12 and 2026-12-18 exceeds 100.00 dollars per barrel."
+  },
+  {
+    "statement": "The Mississippi Secretary of State publishes certified 2026 general election results on or before 2026-12-18 showing Scott Colom with more votes than Cindy Hyde-Smith for US Senate.",
+    "domain": "political",
+    "probability": 60,
+    "resolution": "Certified US Senate results on the Mississippi Secretary of State website, dated on or before 2026-12-18, list a higher vote total for Colom than for Hyde-Smith.",
+    "deadline": "2026-12-22",
+    "citations": [
+      110
+    ],
+    "failure_condition": "Certified Mississippi results by 2026-12-18 show Hyde-Smith with more votes than Colom, or no certification exists by that date."
+  },
+  {
+    "statement": "Russia and Ukraine carry out a prisoner exchange of at least 300 persons per side between 2026-11-12 and 2026-12-15, confirmed by both the Russian Ministry of Defence and the Ukrainian Coordination Headquarters.",
+    "domain": "military/conflict",
+    "probability": 60,
+    "resolution": "Official statements from both the Russian Ministry of Defence and the Ukrainian Coordination Headquarters confirm a single exchange of 300 or more persons per side completed between 2026-11-12 and 2026-12-15.",
+    "deadline": "2026-12-18",
+    "citations": [
+      45,
+      100
+    ],
+    "failure_condition": "No exchange of at least 300 persons per side is confirmed by both governments as completed within 2026-11-12 to 2026-12-15."
+  },
+  {
+    "statement": "Iranian forces board or seize a commercial tanker in the Persian Gulf, Strait of Hormuz, or Gulf of Oman between 2026-11-12 and 2026-12-11, confirmed by a UKMTO advisory and the vessel operator or flag state.",
+    "domain": "military/conflict",
+    "probability": 35,
+    "resolution": "A UKMTO advisory plus a statement from the tanker operator or flag state both attribute a boarding or seizure of a named commercial tanker to Iranian forces, event dated 2026-11-12 to 2026-12-11.",
+    "deadline": "2026-12-15",
+    "citations": [
+      82,
+      87
+    ],
+    "failure_condition": "No named commercial tanker is confirmed by UKMTO and operator or flag state as boarded or seized by Iranian forces within 2026-11-12 to 2026-12-11."
+  },
+  {
+    "statement": "Italian authorities announce the arrest of at least one named or identified suspect for the November 2026 email bomb threats against Italian schools between 2026-11-12 and 2026-12-11.",
+    "domain": "crime/security",
+    "probability": 30,
+    "resolution": "An Italian police, Carabinieri, or prosecutor statement announces an arrest tied to the school email bomb threats, dated 2026-11-12 to 2026-12-11, reported by ANSA and one non-Italian wire service.",
+    "deadline": "2026-12-15",
+    "citations": [
+      46,
+      103
+    ],
+    "failure_condition": "No arrest tied to the Italian school email bomb threats is announced by Italian authorities within 2026-11-12 to 2026-12-11."
+  },
+  {
+    "statement": "GDACS issues an Orange or Red flood alert for Kenya with an event start date between 2026-11-12 and 2026-12-31.",
+    "domain": "disaster",
+    "probability": 30,
+    "resolution": "The GDACS event list contains a flood event with country Kenya, alert level Orange or Red, and a start date between 2026-11-12 and 2026-12-31 inclusive.",
+    "deadline": "2027-01-05",
+    "citations": [
+      56
+    ],
+    "failure_condition": "No GDACS flood event for Kenya at Orange or Red level starts within 2026-11-12 to 2026-12-31."
+  }
+]
