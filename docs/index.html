@@ -1,836 +1,567 @@
-<!DOCTYPE html><html lang="en"><head>
+<!doctype html>
+<!-- HOME-2026-11-10. Layout and the lines new to this page were drafted by the desk's assistant under the operator's direction on 2026-11-10; read and adopted by the operator on 2026-11-10. The figures in this markup are a dated snapshot; the block at the foot of the page replaces them in the reader's browser from ledger_index.json and recomputes the seal from ledger.json. -->
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Retro-Prescient Audit™ — NebelKrähe · The Prescient Desk</title>
-<meta name="description" content="Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses — permanently, in public.">
+<title>Retro-Prescient Audit — NebelKrähe</title>
+<meta name="description" content="Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses.">
 <link rel="icon" type="image/svg+xml" href="crow_mark.svg">
 <link rel="alternate icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://retroprescientaudit.com/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Retro-Prescient Audit™">
-<meta property="og:title" content="Retro-Prescient Audit™ — The Prescient Desk">
-<meta property="og:description" content="Foresight, told from arithmetic. Sealed forecasts, blind adjudication, misses kept permanently. A light that sweeps the fog on a fixed period and reports what it finds.">
+<meta property="og:site_name" content="Retro-Prescient Audit">
+<meta property="og:title" content="Retro-Prescient Audit — NebelKrähe">
+<meta property="og:description" content="Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses.">
 <meta property="og:url" content="https://retroprescientaudit.com/">
 <meta property="og:image" content="https://retroprescientaudit.com/og_nebelkraehe.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Retro-Prescient Audit™","alternateName":"The Prescient Desk · NebelKrähe","url":"https://retroprescientaudit.com/","description":"Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses."}</script>
-<script>
-  // --- war desk as-of --------------------------------------------------
-  // The tile fetched war_desk.json and rendered it with no date shown, so a
-  // four-day-old cross-bias pull looked live. An undated figure on a desk
-  // whose argument is dated records is the defect it exists to prevent.
-  // (Relocated 2026-07-29: this block was patched inside the ld+json element,
-  // where it never executed and broke the structured data — printed here
-  // rather than silently tidied.)
-  document.addEventListener('DOMContentLoaded', function(){
-    fetch('war_desk.json').then(function(r){return r.json()}).then(function(d){
-      var raw = d.generated || d.generated_at || d.as_of || d.updated || null;
-      var el  = document.getElementById('wardesk-asof');
-      if(!el) return;
-      if(!raw){ el.textContent = 'as-of not recorded'; el.className = 'stale'; return; }
-      var t = new Date(raw), hrs = (Date.now() - t.getTime()) / 3.6e6;
-      el.textContent = 'as of ' + t.toISOString().slice(0,16).replace('T',' ') + 'Z'
-                     + (hrs > 24 ? ' · STALE (' + Math.floor(hrs) + 'h)' : '');
-      el.className = hrs > 24 ? 'stale' : 'fresh';
-    }).catch(function(){
-      var el = document.getElementById('wardesk-asof');
-      if(el){ el.textContent = 'war desk unreadable'; el.className = 'stale'; }
-    });
-  });
-  // ---------------------------------------------------------------------
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Retro-Prescient Audit","alternateName":"NebelKrähe","url":"https://retroprescientaudit.com/","description":"Forecasts sealed before their outcomes, adjudicated blind, scored on a record that keeps its own misses."}</script>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
-:root{
-  --nacht:#080B0F; --nacht2:#0C1015; --rauch:#12171E; --rauch2:#161C24;
-  --line:#1B222C; --line2:#28313D; --hair:#1E2630;
-  --fg:#AEB9C6; --fg2:#ECF1F7; --dim:#5A6675; --nebel:#8E9DAC;
-  --messing:#9a978f; --messing2:#e9e7e2; --messing3:#6a6a64;
-  --hit:#6FA36F; --miss:#B0605A;
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'IBM Plex Sans',system-ui,sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,monospace;
+body{margin:0;background:#000}
+a{color:#fff}a:hover{color:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.wrap{max-width:1240px;margin-left:auto;margin-right:auto;padding-left:clamp(20px,5cqi,72px);padding-right:clamp(20px,5cqi,72px);box-sizing:border-box}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border:1px solid #fff;color:#fff;background:transparent;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;line-height:1;box-sizing:border-box}
+.btn:hover{background:#fff;color:#000}
+.btn-solid{background:#fff;color:#000}
+.btn-solid:hover{background:#000;color:#fff}
+.toc{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#fff;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.toc:hover{text-decoration:underline;text-underline-offset:6px}
+.tn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:400;color:#8d929b}
+.arrow{display:inline-flex;align-items:center;min-height:44px;color:#fff;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;text-decoration:underline;text-decoration-color:rgba(255,255,255,.45);text-underline-offset:6px}
+.arrow:hover{text-decoration-color:#fff}
+.flink{display:flex;align-items:center;min-height:44px;color:#c4c7cc;text-decoration:none;font-size:14.5px;line-height:1.3}
+.flink:hover{color:#fff}
+.np-crow{display:block;flex:0 0 auto;width:clamp(190px,18cqi,270px);height:auto}
+.np-word{font-family:'Cinzel',serif;font-weight:500;font-size:clamp(38px,6.9cqi,104px);letter-spacing:.06em;line-height:.82;white-space:nowrap}
+.sec{display:grid;grid-template-columns:240px minmax(0,1fr);gap:36px 56px;padding-top:clamp(56px,8cqi,112px);padding-bottom:clamp(56px,8cqi,112px);border-top:1px solid rgba(255,255,255,.14)}
+.drow{display:grid;grid-template-columns:104px minmax(0,1fr) 128px;grid-template-areas:"due stmt prob";gap:10px 32px;align-items:start;padding:24px 0;border-top:1px solid rgba(255,255,255,.14)}
+.dd{grid-area:due}
+.ds{grid-area:stmt}
+.dp{grid-area:prob;text-align:right}
+.mrow{display:grid;grid-template-columns:48px minmax(0,1fr) minmax(0,1.25fr);gap:6px 32px;align-items:baseline;padding:22px 0;border-top:1px solid rgba(255,255,255,.14)}
+.prow{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) minmax(0,1.1fr);gap:8px 32px;align-items:baseline;padding:24px 0;border-top:1px solid rgba(255,255,255,.14)}
+.two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 56px}
+.ftab{font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.3}
+.fhead{color:#8d929b;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.frow{display:grid;grid-template-columns:minmax(160px,1fr) 88px 64px 72px 110px;gap:0 12px;align-items:center}
+.frow span{overflow-wrap:anywhere}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 32px}
+.chart-wide{display:block;width:100%;height:auto}
+.chart-narrow{display:none;width:100%;height:auto}
+@container (max-width: 880px){
+.sec{grid-template-columns:minmax(0,1fr);gap:28px}
+.drow{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"due prob" "stmt stmt";align-items:end}
+.mrow{grid-template-columns:40px minmax(0,1fr)}
+.mx{grid-column:2}
+.prow{grid-template-columns:minmax(0,1fr)}
+.two-col{grid-template-columns:minmax(0,1fr)}
+.ftab{font-size:12px}
+.fhead{font-size:11px}
+.frow{grid-template-columns:minmax(0,1fr) 62px 30px 34px 58px;gap:0 8px}
+.chart-wide{display:none}
+.chart-narrow{display:block}
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--nacht);color:var(--fg);font:16px/1.75 var(--sans);
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
-::selection{background:var(--messing3);color:var(--fg2)}
-a{color:var(--fg2);text-decoration:none;transition:color .2s}
-a:hover{color:var(--messing2)}
-:focus-visible{outline:2px solid var(--messing2);outline-offset:2px}
-img{max-width:100%;display:block}
-
-/* ---------- NACHT UND NEBEL: the fog field ---------- */
-.nebelfeld{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.bank{position:absolute;width:140vw;height:70vh;filter:blur(60px);opacity:.5;
-  will-change:transform}
-.bank.b1{top:-12vh;left:-25vw;
-  background:radial-gradient(55% 60% at 35% 45%, rgba(142,157,172,.10), transparent 70%),
-             radial-gradient(40% 50% at 70% 60%, rgba(142,157,172,.06), transparent 70%);
-  animation:drift1 160s linear infinite alternate}
-.bank.b2{top:28vh;left:-15vw;
-  background:radial-gradient(50% 55% at 60% 40%, rgba(142,157,172,.08), transparent 72%),
-             radial-gradient(35% 45% at 25% 65%, rgba(122,140,158,.05), transparent 70%);
-  animation:drift2 210s linear infinite alternate}
-.bank.b3{bottom:-18vh;left:-20vw;
-  background:radial-gradient(60% 60% at 50% 50%, rgba(110,126,142,.07), transparent 72%);
-  animation:drift1 260s linear infinite alternate-reverse}
-@keyframes drift1{from{transform:translateX(-4vw) translateY(0)}to{transform:translateX(9vw) translateY(2vh)}}
-@keyframes drift2{from{transform:translateX(6vw) translateY(1vh)}to{transform:translateX(-7vw) translateY(-1vh)}}
-.grund{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(120% 90% at 50% 0%, var(--nacht2) 0%, var(--nacht) 55%)}
-.korn{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
-
-/* ---------- chrome ---------- */
-.nav{position:sticky;top:0;z-index:40;background:rgba(8,11,15,.72);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line)}
-.nav-in{max-width:1180px;margin:0 auto;padding:.85rem 2rem;
-  display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.nav-mark{display:flex;align-items:center;gap:.65rem;flex-shrink:0}
-.nav-mark img{width:64px;height:26px;filter:drop-shadow(0 0 6px rgba(220,182,94,.25))}
-.nav-mark span{font-family:var(--mono);font-size:.68rem;font-weight:600;
-  letter-spacing:.3em;color:var(--fg2);text-transform:uppercase;white-space:nowrap}
-.nav-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:flex-end;row-gap:.5rem;min-width:0}
-.nav-links a{font-family:var(--mono);font-size:.62rem;font-weight:500;
-  letter-spacing:.18em;color:var(--dim);text-transform:uppercase}
-.nav-links a:hover{color:var(--fg2)}
-.nav-links a.cta{color:var(--messing2);border:1px solid var(--line2);
-  padding:.42rem .85rem;transition:border-color .2s,background .2s}
-.nav-links a.cta:hover{border-color:var(--messing);background:rgba(184,147,63,.06)}
-
-.wrap{max-width:1180px;margin:0 auto;padding:0 2rem;position:relative;z-index:2}
-
-/* ---------- hero: the sighted crow in the fog ---------- */
-header.hero-wrap{position:relative;z-index:2;border-bottom:1px solid var(--line)}
-.hero{display:grid;grid-template-columns:1.02fr 1.18fr;gap:2.2rem;align-items:center;
-  padding:5.5rem 0 4.5rem;min-height:78vh}
-@media(max-width:900px){.hero{grid-template-columns:1fr;gap:2.6rem}}
-.kicker{font-family:var(--mono);font-size:.62rem;letter-spacing:.34em;
-  text-transform:uppercase;color:var(--messing2);margin-bottom:1.4rem}
-.kicker::before{content:"";display:inline-block;width:2.2rem;height:1px;
-  background:var(--messing3);vertical-align:middle;margin-right:.8rem}
-h1{font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:clamp(2.6rem,5.4vw,4.4rem);
-  line-height:1.04;color:var(--fg2);letter-spacing:.01em}
-h1 .tm{font-size:.32em;vertical-align:super;color:var(--dim);font-family:var(--sans)}
-.dek{margin-top:1.5rem;max-width:34rem;font-size:1.06rem;line-height:1.8;color:var(--fg)}
-.motto{margin-top:1.1rem;font-family:var(--serif);font-style:italic;font-weight:400;
-  font-size:1.15rem;color:var(--nebel)}
-.actions{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap}
-.btn{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;padding:.85rem 1.5rem;border:1px solid var(--line2);
-  transition:all .22s}
-.btn.primary{background:transparent;border-color:#e9e7e2;color:#f2f0ea}
-.btn.primary:hover{background:#f2f0ea;border-color:#f2f0ea;color:#0c0e11}
-.btn.ghost{color:var(--fg)}
-.btn.ghost:hover{border-color:var(--messing);color:var(--messing2)}
-
-/* the lighthouse: a light that sweeps the fog on a fixed period */
-.leuchte{position:relative;width:min(620px,100%);aspect-ratio:1;margin:0 auto;
-  display:grid;place-items:center}
-.beam{position:absolute;inset:-12%;border-radius:50%;
-  background:conic-gradient(from 0deg,
-    transparent 0deg, transparent 330deg,
-    rgba(220,182,94,.05) 342deg, rgba(220,182,94,.14) 352deg,
-    rgba(236,241,247,.10) 356deg, transparent 360deg);
-  animation:sweep 22s linear infinite;filter:blur(2px)}
-.rings{position:absolute;inset:0}
-.rings circle{fill:none;stroke:var(--line2);stroke-width:1;opacity:.55}
-.rings circle.mark{stroke:var(--messing3);stroke-dasharray:2 10;opacity:.8}
-.rings text{fill:var(--dim);font-family:var(--mono);font-size:7.5px;letter-spacing:.28em}
-.rings .ticker{fill:#b9b6ae;font-size:20px;font-weight:600;letter-spacing:.18em;
-  text-transform:uppercase;transition:opacity .3s;
-  filter:drop-shadow(0 0 9px rgba(224,72,58,.5)) drop-shadow(0 0 26px rgba(224,72,58,.22))}
-.rings .ticker.hot{animation:tflash .38s steps(1,end) 5}
-@keyframes tflash{0%,100%{opacity:.95}50%{opacity:.12}}
-@media(prefers-reduced-motion:reduce){.rings .ticker.hot{animation:none}}
-.crow-orbit{position:absolute;inset:0;animation:sweep 22s linear infinite;
-  pointer-events:none;z-index:4}
-.crow-mark{position:absolute;left:50%;top:10.5%;width:14%;
-  transform:translate(-50%,-50%) scaleX(-1);
-  filter:drop-shadow(0 0 22px rgba(220,182,94,.42))
-         drop-shadow(0 0 32px rgba(220,182,94,.14))
-         drop-shadow(0 3px 10px rgba(0,0,0,.75))}
-.hub{position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;
-  border-radius:50%;background:var(--messing2);box-shadow:0 0 12px rgba(220,182,94,.7)}
-.rings text{letter-spacing:.28em}
-@media(prefers-reduced-motion:reduce){.crow-orbit{animation:none}}
-@keyframes sweep{to{transform:rotate(360deg)}}
-
-/* ---------- the instrument band: the fog never covers the record ---------- */
-.band{position:relative;z-index:3;border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg, rgba(18,23,30,.9), rgba(12,16,21,.9));
-  backdrop-filter:blur(8px)}
-.band-in{max-width:1180px;margin:0 auto;padding:1.05rem 2rem;
-  display:flex;align-items:center;gap:0;flex-wrap:wrap}
-.stat{padding:0 1.7rem;border-right:1px solid var(--hair);
-  display:flex;flex-direction:column;gap:.22rem}
-.stat:first-child{padding-left:0}
-.stat .lbl{font-family:var(--mono);font-size:.54rem;letter-spacing:.24em;
-  color:var(--dim);text-transform:uppercase}
-.stat .val{font-family:var(--mono);font-size:1.22rem;font-weight:600;color:var(--fg2);
-  font-variant-numeric:tabular-nums;line-height:1}
-.stat .val.brass{color:var(--messing2)}
-.asof{margin-left:auto;font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;
-  color:var(--dim);text-transform:uppercase}
-.go{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;color:var(--messing2);
-  text-transform:uppercase;margin-left:1.4rem;white-space:nowrap}
-
-/* ---------- the seal strip: the commitment itself, visible ---------- */
-.siegel{position:relative;z-index:2;border-bottom:1px solid var(--hair);
-  background:rgba(8,11,15,.6);overflow:hidden}
-.siegel-track{white-space:nowrap;padding:.45rem 0}
-.siegel-run{display:inline-block;font-family:var(--mono);font-size:.58rem;
-  letter-spacing:.22em;color:var(--messing3);text-transform:uppercase;
-  padding-left:100vw;animation:siegel 80s linear infinite}
-@keyframes siegel{to{transform:translateX(-100%)}}
-
-/* ---------- sections in the report's own grammar ---------- */
-section{padding:5rem 0;position:relative;z-index:2}
-section + section{border-top:1px solid var(--line)}
-.sec-head{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:2.6rem}
-.sec-num{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--messing2);
-  min-width:2.2rem}
-.sec-head h2{font-family:var(--serif);font-weight:500;font-size:1.9rem;color:var(--fg2);
-  letter-spacing:.01em}
-.rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
-
-.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
-.prose p{margin-bottom:1.1rem;line-height:1.85}
-.prose .dictum{font-family:var(--serif);font-style:italic;font-size:1.3rem;
-  color:var(--nebel);border-left:2px solid var(--messing3);padding-left:1.1rem;
-  margin:1.6rem 0}
-.prose .seal{font-family:var(--mono);font-size:.78rem;color:var(--dim);line-height:1.7}
-.prose .seal a{color:var(--nebel);border-bottom:1px dotted var(--line2)}
-.prose .seal a:hover{color:var(--messing2)}
-.laws{list-style:none;counter-reset:law}
-.laws li{position:relative;padding:1.05rem 0 1.05rem 3.1rem;border-bottom:1px solid var(--hair);
-  line-height:1.7;counter-increment:law}
-.laws li::before{content:counter(law,upper-roman);position:absolute;left:0;top:1.05rem;
-  font-family:var(--serif);font-size:1.15rem;color:var(--messing2);width:2.2rem}
-.laws b{color:var(--fg2);font-weight:600}
-
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;
-  background:var(--line);border:1px solid var(--line)}
-.card{background:var(--rauch);padding:1.9rem 1.7rem;display:flex;flex-direction:column;
-  gap:.55rem;transition:background .25s;position:relative;overflow:hidden}
-.card::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;
-  background:linear-gradient(90deg,var(--messing3),transparent);
-  transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.card:hover{background:var(--rauch2)}
-.card:hover::after{transform:scaleX(1)}
-.card-k{font-family:var(--mono);font-size:.56rem;letter-spacing:.24em;color:var(--dim);
-  text-transform:uppercase}
-.card-t{font-family:var(--serif);font-size:1.42rem;font-weight:500;color:var(--fg2)}
-.card-d{font-size:.9rem;line-height:1.7;color:var(--fg)}
-.card-live{font-family:var(--mono);font-size:.72rem;color:var(--nebel);margin-top:.2rem}
-.card-live b{color:var(--messing2);font-weight:600}
-.card-top3{display:block;font-family:var(--mono);font-size:.68rem;line-height:1.9;
-  color:var(--fg);margin-top:.3rem}
-.card-top3 .g{display:inline-block;width:1.1rem;color:var(--messing2);font-weight:600}
-.card-top3 .z{color:var(--dim)}
-.card-go{margin-top:auto;padding-top:1rem;font-family:var(--mono);font-size:.62rem;
-  letter-spacing:.16em;color:var(--messing2);text-transform:uppercase}
-
-.record-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:start}
-.standing{max-width:46rem}
-.tiefe{margin:2rem 0 .4rem;max-width:30rem}
-.tiefe-lbl{display:flex;justify-content:space-between;font-family:var(--mono);
-  font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
-  margin-bottom:.5rem}
-.tiefe-lbl #tiefe-n{color:var(--messing2)}
-.tiefe-bar{position:relative;height:6px;background:var(--rauch2);border:1px solid var(--hair)}
-.tiefe-fill{height:100%;width:0;background:linear-gradient(90deg,var(--messing3),var(--messing2));
-  transition:width 1.2s ease}
-.tiefe-mark{position:absolute;right:0;top:-3px;bottom:-3px;width:2px;background:var(--fg2);opacity:.7}
-.tiefe-sub{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--dim);
-  margin-top:.5rem;text-transform:uppercase}
-.verdicts{border:1px solid var(--line);background:var(--rauch);padding:1.6rem 1.5rem;
-  display:flex;flex-direction:column}
-.verdicts-k{font-family:var(--mono);font-size:.56rem;letter-spacing:.24em;color:var(--dim);
-  text-transform:uppercase;margin-bottom:1rem}
-.verdicts ul{list-style:none}
-.verdicts li{padding:.75rem 0;border-bottom:1px solid var(--hair);font-size:.86rem;
-  line-height:1.6}
-.verdicts li:last-of-type{border-bottom:0}
-.verdicts .vid{font-family:var(--mono);font-size:.68rem;color:var(--dim);margin-right:.5rem}
-.verdicts .tag{font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.12em;
-  padding:.1rem .45rem;margin-right:.55rem;border:1px solid}
-.verdicts .tag.hit{color:var(--hit);border-color:var(--hit)}
-.verdicts .tag.miss{color:var(--miss);border-color:var(--miss)}
-.verdicts .pend{color:var(--dim)}
-@media(max-width:960px){.record-grid{grid-template-columns:1fr}}
-.standing p{margin-bottom:1.2rem;font-size:1.05rem;line-height:1.9}
-.standing strong{color:var(--fg2)}
-.standing .close{font-family:var(--serif);font-style:italic;font-size:1.35rem;
-  color:var(--nebel);margin-top:1.8rem}
-
-/* ---------- footer ---------- */
-footer{position:relative;z-index:2;border-top:1px solid var(--line);
-  background:linear-gradient(180deg,transparent,rgba(12,16,21,.85))}
-.foot{max-width:1180px;margin:0 auto;padding:3.2rem 2rem 2.2rem;
-  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2.5rem}
-.foot-mark{display:flex;gap:.9rem;align-items:flex-start}
-.foot-mark img{width:34px;filter:drop-shadow(0 0 8px rgba(220,182,94,.2))}
-.fm-t{font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.24em;
-  color:var(--fg2);text-transform:uppercase;margin-bottom:.4rem}
-.fm-d{font-size:.8rem;line-height:1.7;color:var(--dim);max-width:24rem}
-footer h4{font-family:var(--mono);font-size:.56rem;letter-spacing:.24em;color:var(--dim);
-  text-transform:uppercase;margin-bottom:.9rem}
-footer ul{list-style:none}
-footer li{margin-bottom:.5rem}
-footer li a{font-size:.85rem;color:var(--fg)}
-.legal{border-top:1px solid var(--hair)}
-.legal-in{max-width:1180px;margin:0 auto;padding:1rem 2rem;display:flex;
-  justify-content:space-between;gap:1rem;flex-wrap:wrap;
-  font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;color:var(--dim);
-  text-transform:uppercase}
-.cls{color:var(--messing3)}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
-.rv.in{opacity:1;transform:none}
-
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .beam{background:radial-gradient(50% 50% at 50% 50%, rgba(220,182,94,.08), transparent 70%)}
-  .rv{opacity:1;transform:none}
+@container (max-width: 520px){
+.np-crow{width:74cqi}
+.np-word{font-size:10.6cqi}
 }
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;min-height:0;padding:3.5rem 0 3rem;gap:2.5rem}
-  .leuchte{order:-1;width:min(300px,76vw)}
-  .masthead-crow img{width:112px}
-  .masthead-crow .mc-word{font-size:1.05rem}
-  .method-grid{grid-template-columns:1fr}
-  .foot{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  .wrap,.nav-in,.band-in,.foot,.legal-in{padding-left:1.1rem;padding-right:1.1rem}
-  .nav-links a:not(.cta){display:none}
-  .stat{padding:.35rem 1rem .35rem 0;border-right:0}
-  .band-in{gap:.2rem}
-  .asof{margin-left:0;width:100%;order:9;margin-top:.4rem}
-  .foot{grid-template-columns:1fr}
-  h1{font-size:2.5rem}
-}
-.pruef{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--nacht2)}
-.pruef-in{max-width:1180px;margin:0 auto;padding:1.15rem 2rem}
-.pruef-head{font:600 .62rem var(--mono);letter-spacing:.24em;color:var(--messing2)}
-.pruef-cmd{font:12.5px/1.75 var(--mono);color:var(--fg2);background:var(--rauch);
-  border:1px solid var(--line);padding:.7rem .95rem;margin:.65rem 0 .55rem;
-  overflow-x:auto;white-space:pre}
-.pruef-note{font-size:.8rem;line-height:1.7;color:var(--dim);max-width:64rem}
-.pruef-note a{color:var(--messing2)}
-.pruef-mono{font-family:var(--mono);font-size:.75rem;color:var(--fg)}
-@media (max-width:720px){.pruef-in{padding-left:1.1rem;padding-right:1.1rem}}
-</style><link rel="stylesheet" href="brand.css">
-<script defer src="brand.js"></script>
-</head><body>
+</style>
+</head>
+<body>
+<div style="container-type: inline-size; background: #000; color: #fff; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow: hidden">
 
-<div class="grund" aria-hidden="true"></div>
-<div class="nebelfeld" aria-hidden="true">
-  <div class="bank b1"></div><div class="bank b2"></div><div class="bank b3"></div>
+<header>
+<div class="wrap" style="padding-top: clamp(24px, 3.4cqi, 48px)">
+<a href="index.html" aria-label="NebelKrähe, home" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: clamp(16px, 2.6cqi, 40px); padding-bottom: clamp(16px, 1.9cqi, 28px); text-decoration: none; color: #fff">
+<svg class="np-crow" viewBox="0 0 729 300" aria-hidden="true">
+<path d="M149 4 L258 29 L264 116 L268 125 L475 85 L602 149 L557 168 L609 189 L553 211 L582 234 L570 237 L725 296 L573 296 L456 257 L421 263 L271 219 L268 125 L234 138 L249 169 L202 163 L204 200 L164 159 L170 113 L186 109 L165 92 L4 53 Z" fill="#fff"></path>
+<path d="M269 132 L392 162 L326 188 L388 216 L336 227 L272 226 Z" fill="#000"></path>
+<path d="M271 219 L268 125 L234 138 L249 169 L202 163 L204 200 L164 159 L170 113" fill="none" stroke="#000" stroke-width="40" stroke-linejoin="miter" stroke-miterlimit="12"></path>
+<path d="M139.9 45.7 L160.5 45.3 L173.1 53.3 L156.6 53.5 Z" fill="#000"></path>
+</svg>
+<span class="np-word">NEBELKRÄHE</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 32px; border-top: 2px solid #fff; border-bottom: 1px solid rgba(255,255,255,0.28)">
+<div role="navigation" aria-label="Contents" style="display: flex; flex-wrap: wrap; gap: 0 26px">
+<a class="toc" href="ledger.html"><span class="tn">01</span>Record</a>
+<a class="toc" href="#method"><span class="tn">02</span>Method</a>
+<a class="toc" href="findings.html"><span class="tn">03</span>Findings</a>
+<a class="toc" href="standards.html"><span class="tn">04</span>Standards</a>
+<a class="toc" href="instruments.html"><span class="tn">05</span>Instruments</a>
+<a class="toc" href="verify.html"><span class="tn">06</span>Run the check</a>
 </div>
-<div class="korn" aria-hidden="true"></div>
-
-<style id="desknav-style">.desknav-unified{display:flex;flex-wrap:wrap;gap:.2rem 1.05rem;align-items:center;padding:.5rem 1.1rem;border-bottom:1px solid #26292f;background:rgba(7,9,12,.55);position:relative;z-index:40}.desknav-unified .ng-brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;margin-right:.9rem}.desknav-unified .ng-brand img{height:26px;width:auto;opacity:.95}.desknav-unified .ng-word{font:500 .8rem 'Cinzel',serif;letter-spacing:.28em;color:#e9e7e2}.desknav-unified .ng-brand:hover .ng-word{color:#ffffff}.desknav-unified .ng-drop{position:relative;display:inline-block;outline:none}.desknav-unified .ng-label{display:inline-block;color:#8b8b85;font:600 .62rem 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;user-select:none;padding:.25rem .1rem}.desknav-unified .ng-label::after{content:' \25BE';color:#565650}.desknav-unified .ng-drop:hover .ng-label,.desknav-unified .ng-drop:focus-within .ng-label{color:#e9e7e2}.desknav-unified .ng-here .ng-label{color:#f2f0ea}.desknav-unified .ng-panel{display:none;position:absolute;left:0;top:100%;min-width:19rem;max-width:23rem;background:#0c0e11;border:1px solid #26292f;padding:.6rem .85rem;z-index:41;flex-direction:column;gap:.42rem}.desknav-unified .ng-drop:hover>.ng-panel,.desknav-unified .ng-drop:focus-within>.ng-panel{display:flex}.desknav-unified .ng-item{display:block}.desknav-unified .ng-panel a{color:#c9c7c1;text-decoration:none;font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding:.05rem 0}.desknav-unified .ng-panel a:hover{color:#ffffff}.desknav-unified .ng-def{display:block;font:400 .58rem 'IBM Plex Mono',monospace;color:#6a6a64;letter-spacing:.02em;text-transform:none;line-height:1.5;max-width:20rem;margin-top:.1rem}.desknav-unified a[aria-current="page"]{color:#f2f0ea}.desknav-unified .ng-ext{color:#565650;text-decoration:none;font:600 .62rem 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-left:auto}.desknav-unified .ng-ext:hover{color:#e9e7e2}.desknav-unified .ng-fresh{flex-basis:100%;display:flex;flex-wrap:wrap;gap:.2rem .7rem;align-items:baseline;margin-top:.15rem;font:500 .56rem 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#6a6a64}.desknav-unified .ng-fresh b{font-weight:600;color:#8b8b85}.desknav-unified .ng-fresh.ok b{color:#4E9E71}.desknav-unified .ng-fresh.late b{color:#c9a04a}.desknav-unified .ng-fresh.stale b{color:#C05149}.desknav-unified .ng-fresh a{color:#8b8b85;text-decoration:none}.desknav-unified .ng-fresh a:hover{color:#e9e7e2}</style><nav class="desknav-unified" data-navgen="2" aria-label="site" translate="no"><a class="ng-brand" href="index.html"><img src="brand/crow_mark_small_reverse.svg" alt=""><span class="ng-word">NEBELKR&Auml;HE</span></a><div class="ng-drop ng-here" tabindex="0"><span class="ng-label">DESK</span><div class="ng-panel"><div class="ng-item"><a aria-current="page" title="Forecasts sealed before their outcomes, adjudicated in public." href="index.html">Desk</a><span class="ng-def">Forecasts sealed before their outcomes, adjudicated in public.</span></div><div class="ng-item"><a title="Machine-collated open-source intelligence; every claim graded and cited." href="report.html">Report</a><span class="ng-def">Machine-collated open-source intelligence; every claim graded and cited.</span></div><div class="ng-item"><a title="Hosted page-watch over standard-setting bodies." href="spion.html">Spion</a><span class="ng-def">Hosted page-watch over standard-setting bodies.</span></div><div class="ng-item"><a title="Every served surface, graded against its own cadence." href="health.html">Health</a><span class="ng-def">Every served surface, graded against its own cadence.</span></div><div class="ng-item"><a title="The desk's printed defects; corrections supersede, never replace." href="findings.html">Findings</a><span class="ng-def">The desk's printed defects; corrections supersede, never replace.</span></div><div class="ng-item"><a href="instruments.html">Instruments</a></div></div></div><div class="ng-drop" tabindex="0"><span class="ng-label">FORECASTING</span><div class="ng-panel"><div class="ng-item"><a title="Falsifiable projections sealed at issue - the forecasting stage." href="kkr.html">Forecasts</a><span class="ng-def">Falsifiable projections sealed at issue - the forecasting stage.</span></div><div class="ng-item"><a title="The permanent record: every projection ever sealed, hit or miss." href="ledger.html">Ledger</a><span class="ng-def">The permanent record: every projection ever sealed, hit or miss.</span></div><div class="ng-item"><a title="A scored order of battle - graded existence and location claims." href="KriegForeKaster.html">ForeKaster</a><span class="ng-def">A scored order of battle - graded existence and location claims.</span></div><div class="ng-item"><a title="Every formation claim, its grade, and its full citation trail." href="KriegForeKaster_compendium.html">Compendium</a><span class="ng-def">Every formation claim, its grade, and its full citation trail.</span></div><div class="ng-item"><a title="The KriegForeKaster board plotted on its own data." href="kfk_map.html">Overlay</a><span class="ng-def">The KriegForeKaster board plotted on its own data.</span></div><div class="ng-item"><a title="The graded order of battle, played forward." href="globalkaster.html">GlobalKaster</a><span class="ng-def">The graded order of battle, played forward.</span></div><div class="ng-item"><a title="Deterministic scenario runs, sealed as a set." href="fogsim.html">FogSim</a><span class="ng-def">Deterministic scenario runs, sealed as a set.</span></div><div class="ng-item"><a href="fogwar.html">Fogwar</a></div><div class="ng-item"><a title="OberKommando der Kraehe: the command view of KriegForeKaster." href="okk.html">OberKommando</a><span class="ng-def">OberKommando der Kraehe: the command view of KriegForeKaster.</span></div><div class="ng-item"><a title="The multi-model calibration observatory." href="kalibrierwarte.html">Warte</a><span class="ng-def">The multi-model calibration observatory.</span></div><div class="ng-item"><a title="The promise book: labs' stated commitments sealed before their outcomes." href="versprechen.html">Versprechen</a><span class="ng-def">The promise book: labs' stated commitments sealed before their outcomes.</span></div></div></div><div class="ng-drop" tabindex="0"><span class="ng-label">FEDERATION</span><div class="ng-panel"><div class="ng-item"><a title="Abductions sealed at the moment they fire." href="kraehes_kalls.html">Kalls</a><span class="ng-def">Abductions sealed at the moment they fire.</span></div><div class="ng-item"><a title="The Prophet Board: a federation reader over public claims." href="nest.html">Nest</a><span class="ng-def">The Prophet Board: a federation reader over public claims.</span></div></div></div><div class="ng-drop" tabindex="0"><span class="ng-label">STANDARDS</span><div class="ng-panel"><div class="ng-item"><a title="The standards register: RPAS-26, KNM-26, KNP-26, DECC-26." href="standards.html">Standards</a><span class="ng-def">The standards register: RPAS-26, KNM-26, KNP-26, DECC-26.</span></div><div class="ng-item"><a title="Machine-checkable conformance, computed from the ledger." href="conformance.html">Conformance</a><span class="ng-def">Machine-checkable conformance, computed from the ledger.</span></div><div class="ng-item"><a title="Parties on the record with a conformance statement." href="register.html">Register</a><span class="ng-def">Parties on the record with a conformance statement.</span></div><div class="ng-item"><a title="Two reference verifiers, paragraph-cited against RPAS." href="verify.html">Verify</a><span class="ng-def">Two reference verifiers, paragraph-cited against RPAS.</span></div><div class="ng-item"><a title="DECC-26 conformance testing for denominator-committed disclosures." href="decc.html">DECC-26</a><span class="ng-def">DECC-26 conformance testing for denominator-committed disclosures.</span></div><div class="ng-item"><a title="Every blind-jury verdict audited against its held evidence." href="urteil.html">Urteil</a><span class="ng-def">Every blind-jury verdict audited against its held evidence.</span></div><div class="ng-item"><a title="Confirmed events the desk never called - the completeness audit." href="luecke.html">Luecke</a><span class="ng-def">Confirmed events the desk never called - the completeness audit.</span></div></div></div><div class="ng-drop" tabindex="0"><span class="ng-label">CABINET</span><div class="ng-panel"><div class="ng-item"><a title="Phrase propagation and variance across the open-source feed." href="ohrwurm.html">Ohrwurm</a><span class="ng-def">Phrase propagation and variance across the open-source feed.</span></div><div class="ng-item"><a title="Operator console face for the desk's live boards." href="konsole.html">Konsole</a><span class="ng-def">Operator console face for the desk's live boards.</span></div><div class="ng-item"><a title="Original sigils in a heraldic abatement grammar." href="marks.html">Marks</a><span class="ng-def">Original sigils in a heraldic abatement grammar.</span></div></div></div><a class="ng-ext" href="https://github.com/OccultusTheoretician/netz">GitHub</a><span class="ng-fresh late" title="desk health as of 2026-11-10 16:35Z: 20 OK 1 LATE 0 STALE 5 EVENT; worst LATE. health.py grades every served surface against the cadence the desk committed to in health_expect.json."><span>desk as of <b>2026-11-10 16:35Z</b></span><span>20 OK 1 LATE 0 STALE 5 EVENT</span><span>worst <b>LATE</b></span><a href="health.html">health</a></span></nav>
-
-<style id="masthead-crow-style">
-.masthead-crow{display:flex;align-items:center;gap:1rem;margin:0 0 1.4rem}
-.masthead-crow img{width:150px;height:auto;opacity:.96;filter:drop-shadow(0 0 14px rgba(220,182,94,.22))}
-.masthead-crow .mc-word{font:600 1.3rem 'IBM Plex Mono',ui-monospace,monospace;
-  letter-spacing:.3em;text-transform:uppercase;color:#ECF1F7}
-.masthead-crow .mc-sub{font:600 .66rem 'IBM Plex Mono',ui-monospace,monospace;
-  letter-spacing:.22em;text-transform:uppercase;color:#5A6675;margin-top:.2rem}
-</style><header class="hero-wrap"><div class="wrap"><div class="hero">
-  <div class="rv in">
-    <div class="masthead-crow" aria-label="NebelKr&auml;he">
-  <img src="crow_mark.svg" alt="">
-  <div><div class="mc-word">NebelKr&auml;he</div><div class="mc-sub">The Prescient Desk</div></div>
+<p style="margin: 0; padding: 12px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b" data-live="folio">Day 114 · 10 Nov 2026 · 16:35Z</p>
 </div>
-    <div class="kicker">The Prescient Desk™ · Under public test</div>
-    <h1>Retro-Prescient Audit<span class="tm">™</span></h1>
-    <p class="dek">A method for telling foresight from arithmetic. Forecasts sealed before
-    their outcomes, adjudicated blind, and scored on a record that keeps its own misses —
-    permanently, in public.</p>
-    <p class="motto">Calling our shots in the fog. Soaring through our misses.</p>
-    <p style="font:500 .7rem var(--mono,monospace);letter-spacing:.16em;text-transform:uppercase;color:var(--dim,#8b8b85);margin:.9rem 0 0">Retro-Prescient Audit™ — the method &nbsp;·&nbsp; The Prescient Desk™ — the instrument that runs it</p>
-    <div class="actions">
-      <a class="btn primary" href="ledger.html">Read the Ledger</a>
-      <a class="btn ghost" href="#pruefung">Verify the Desk</a>
-      <a class="btn ghost" href="#method">The Method</a>
-    </div>
-  </div>
-  <div class="leuchte" role="img" aria-label="The NebelKrähe sigil within sighting rings, a slow light sweeping the fog behind it">
-    <div class="beam" aria-hidden="true"></div>
-    
-    <svg class="rings" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="200" cy="200" r="192"/>
-      <circle cx="200" cy="200" r="158" class="mark"/>
-      <circle cx="200" cy="200" r="122"/>
-      <circle cx="200" cy="200" r="88" class="mark"/>
-      <text x="200" y="16" text-anchor="middle">SEALED · ADJUDICATED · SCORED</text>
-      <text x="200" y="386" text-anchor="middle">DIE KRÄHE SIEHT DURCH DEN NEBEL</text>
-    <g id="contacts"></g><text id="scope-ticker" class="ticker" x="200" y="264" text-anchor="middle" style="opacity:0" aria-hidden="true"></text></svg>
-    <div class="crow-orbit" aria-hidden="true"><img class="crow-mark" src="crow_mark_small.svg" alt=""></div>
-    <div class="hub" aria-hidden="true"></div>
-  </div>
-</div></div></header>
+</div>
+</header>
 
-<div class="band" aria-label="Live record"><div class="band-in" id="band">
-  <div class="stat"><span class="lbl">Issued</span><span class="val" id="b-issued">—</span></div>
-  <div class="stat"><span class="lbl">Open</span><span class="val" id="b-open">—</span></div>
-  <div class="stat"><span class="lbl">Hits / Misses</span><span class="val" id="b-hm">—</span></div>
-  <div class="stat"><span class="lbl">Brier</span><span class="val brass" id="b-brier">—</span></div>
-  <div class="stat"><span class="lbl">Voided</span><span class="val" id="b-void">—</span></div>
-  <div class="stat"><span class="lbl">War Desk A/B</span><span class="val" id="b-wd">—</span></div><div class="stat"><span class="lbl">War Desk pull</span><span class="val" id="wardesk-asof">—</span></div>
-  <span class="asof" id="b-asof">Live from the ledger</span>
-  <a class="go" href="ledger.html">Full record →</a>
+<section>
+<div class="wrap" style="padding-top: clamp(40px, 6cqi, 88px); padding-bottom: clamp(40px, 6cqi, 88px); display: flex; flex-direction: column; gap: clamp(24px, 3cqi, 36px)">
+<h1 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">Retro-Prescient Audit<sup style="font-size: 0.72em; line-height: 0">™</sup></h1>
+<p style="margin: 0; font-size: clamp(30px, 4.2cqi, 58px); line-height: 1.12; letter-spacing: -0.02em; font-weight: 400; color: #fff; text-wrap: balance">Forecasts sealed before their outcomes, adjudicated blind, and scored on a record that keeps its own misses.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px">
+<a class="btn btn-solid" href="ledger.html">Read the record</a>
+<a class="btn" href="verify.html">Run the check</a>
+<span style="display: inline-flex; align-items: center; min-height: 48px; padding: 6px 16px; border: 1px dashed rgba(255,255,255,0.6); font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.4; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; box-sizing: border-box">Under public test · not a validated instrument</span>
+</div>
+</div>
+</section>
+
+<section aria-label="The record, day by day">
+<div style="border-top: 1px solid rgba(255,255,255,0.14); padding-top: clamp(20px, 3cqi, 40px)">
+<svg class="chart-wide" id="chart-wide" viewBox="0 0 1140 398" role="img" aria-label="Each day's sealed forecasts from 2026-07-20 to 2026-11-10: 816 hits above the line, 810 misses below it, 3,871 still open, 96 void">
+<path d="M21.5 292.8h7M21.5 290.4h7M21.5 288h7M21.5 285.6h7M41.5 297.6h7M51.5 297.6h7M61.5 304.8h7M61.5 302.4h7M61.5 300h7M61.5 297.6h7M61.5 295.2h7M61.5 292.8h7M61.5 290.4h7M61.5 288h7M61.5 285.6h7M61.5 283.2h7M61.5 280.8h7M71.5 283.2h7M71.5 280.8h7M71.5 278.4h7M71.5 276h7M71.5 273.6h7M71.5 271.2h7M71.5 268.8h7M71.5 266.4h7M71.5 264h7M81.5 302.4h7M81.5 300h7M81.5 297.6h7M81.5 295.2h7M81.5 292.8h7M91.5 297.6h7M91.5 295.2h7M91.5 292.8h7M91.5 290.4h7M91.5 288h7M91.5 285.6h7M91.5 283.2h7M91.5 280.8h7M91.5 278.4h7M91.5 276h7M91.5 273.6h7M101.5 295.2h7M101.5 292.8h7M101.5 290.4h7M101.5 288h7M101.5 285.6h7M101.5 283.2h7M101.5 280.8h7M101.5 278.4h7M101.5 276h7M101.5 273.6h7M101.5 271.2h7M101.5 268.8h7M101.5 266.4h7M111.5 273.6h7M111.5 271.2h7M111.5 268.8h7M111.5 266.4h7M111.5 264h7M111.5 261.6h7M111.5 259.2h7M111.5 256.8h7M111.5 254.4h7M111.5 252h7M111.5 249.6h7M121.5 295.2h7M121.5 292.8h7M121.5 290.4h7M121.5 288h7M121.5 285.6h7M121.5 283.2h7M121.5 280.8h7M121.5 278.4h7M121.5 276h7M121.5 273.6h7M121.5 271.2h7M121.5 268.8h7M121.5 266.4h7M121.5 264h7M121.5 261.6h7M131.5 304.8h7M131.5 302.4h7M131.5 300h7M131.5 297.6h7M141.5 304.8h7M151.5 256.8h7M151.5 254.4h7M151.5 252h7M151.5 249.6h7M151.5 247.2h7M151.5 244.8h7M151.5 242.4h7M151.5 240h7M151.5 237.6h7M151.5 235.2h7M171.5 288h7M171.5 285.6h7M171.5 283.2h7M171.5 280.8h7M171.5 278.4h7M171.5 276h7M171.5 273.6h7M171.5 271.2h7M171.5 268.8h7M171.5 266.4h7M171.5 264h7M171.5 261.6h7M171.5 259.2h7M171.5 256.8h7M171.5 254.4h7M171.5 252h7M171.5 249.6h7M171.5 247.2h7M171.5 244.8h7M171.5 242.4h7M181.5 292.8h7M181.5 290.4h7M181.5 288h7M181.5 285.6h7M181.5 283.2h7M181.5 280.8h7M181.5 278.4h7M191.5 268.8h7M191.5 266.4h7M201.5 288h7M201.5 285.6h7M201.5 283.2h7M201.5 280.8h7M211.5 288h7M211.5 285.6h7M211.5 283.2h7M211.5 280.8h7M211.5 278.4h7M211.5 276h7M211.5 273.6h7M211.5 271.2h7M211.5 268.8h7M211.5 266.4h7M211.5 264h7M221.5 256.8h7M221.5 254.4h7M221.5 252h7M221.5 249.6h7M221.5 247.2h7M221.5 244.8h7M221.5 242.4h7M221.5 240h7M221.5 237.6h7M221.5 235.2h7M221.5 232.8h7M221.5 230.4h7M221.5 228h7M221.5 225.6h7M221.5 223.2h7M221.5 220.8h7M221.5 218.4h7M221.5 216h7M221.5 213.6h7M221.5 211.2h7M221.5 208.8h7M221.5 206.4h7M221.5 204h7M221.5 201.6h7M231.5 276h7M231.5 273.6h7M231.5 271.2h7M231.5 268.8h7M231.5 266.4h7M231.5 264h7M231.5 261.6h7M231.5 259.2h7M231.5 256.8h7M231.5 254.4h7M241.5 266.4h7M241.5 264h7M241.5 261.6h7M241.5 259.2h7M241.5 256.8h7M241.5 254.4h7M261.5 295.2h7M261.5 292.8h7M261.5 290.4h7M261.5 288h7M261.5 285.6h7M261.5 283.2h7M261.5 280.8h7M261.5 278.4h7M261.5 276h7M261.5 273.6h7M261.5 271.2h7M261.5 268.8h7M261.5 266.4h7M261.5 264h7M261.5 261.6h7M261.5 259.2h7M261.5 256.8h7M281.5 242.4h7M281.5 240h7M281.5 237.6h7M281.5 235.2h7M281.5 232.8h7M281.5 230.4h7M281.5 228h7M281.5 225.6h7M281.5 223.2h7M281.5 220.8h7M281.5 218.4h7M281.5 216h7M281.5 213.6h7M281.5 211.2h7M281.5 208.8h7M281.5 206.4h7M281.5 204h7M281.5 201.6h7M281.5 199.2h7M281.5 196.8h7M281.5 194.4h7M281.5 192h7M281.5 189.6h7M291.5 285.6h7M291.5 283.2h7M291.5 280.8h7M291.5 278.4h7M291.5 276h7M291.5 273.6h7M291.5 271.2h7M291.5 268.8h7M291.5 266.4h7M291.5 264h7M291.5 261.6h7M291.5 259.2h7M301.5 280.8h7M301.5 278.4h7M301.5 276h7M301.5 273.6h7M301.5 271.2h7M301.5 268.8h7M301.5 266.4h7M301.5 264h7M301.5 261.6h7M301.5 259.2h7M301.5 256.8h7M301.5 254.4h7M301.5 252h7M301.5 249.6h7M301.5 247.2h7M301.5 244.8h7M301.5 242.4h7M301.5 240h7M301.5 237.6h7M301.5 235.2h7M301.5 232.8h7M301.5 230.4h7M301.5 228h7M301.5 225.6h7M301.5 223.2h7M301.5 220.8h7M301.5 218.4h7M301.5 216h7M311.5 276h7M311.5 273.6h7M311.5 271.2h7M311.5 268.8h7M311.5 266.4h7M311.5 264h7M311.5 261.6h7M311.5 259.2h7M311.5 256.8h7M311.5 254.4h7M331.5 283.2h7M331.5 280.8h7M331.5 278.4h7M331.5 276h7M331.5 273.6h7M331.5 271.2h7M331.5 268.8h7M331.5 266.4h7M331.5 264h7M331.5 261.6h7M331.5 259.2h7M331.5 256.8h7M331.5 254.4h7M331.5 252h7M331.5 249.6h7M331.5 247.2h7M331.5 244.8h7M331.5 242.4h7M331.5 240h7M331.5 237.6h7M361.5 290.4h7M361.5 288h7M361.5 285.6h7M361.5 283.2h7M361.5 280.8h7M361.5 278.4h7M361.5 276h7M361.5 273.6h7M361.5 271.2h7M361.5 268.8h7M361.5 266.4h7M361.5 264h7M381.5 204h7M381.5 201.6h7M381.5 199.2h7M381.5 196.8h7M381.5 194.4h7M381.5 192h7M381.5 189.6h7M381.5 187.2h7M381.5 184.8h7M381.5 182.4h7M381.5 180h7M381.5 177.6h7M381.5 175.2h7M381.5 172.8h7M381.5 170.4h7M381.5 168h7M381.5 165.6h7M381.5 163.2h7M381.5 160.8h7M381.5 158.4h7M381.5 156h7M381.5 153.6h7M381.5 151.2h7M381.5 148.8h7M381.5 146.4h7M381.5 144h7M381.5 141.6h7M381.5 139.2h7M381.5 136.8h7M381.5 134.4h7M381.5 132h7M381.5 129.6h7M381.5 127.2h7M381.5 124.8h7M381.5 122.4h7M381.5 120h7M381.5 117.6h7M381.5 115.2h7M381.5 112.8h7M381.5 110.4h7M381.5 108h7M381.5 105.6h7M381.5 103.2h7M381.5 100.8h7M381.5 98.4h7M381.5 96h7M381.5 93.6h7M381.5 91.2h7M381.5 88.8h7M381.5 86.4h7M381.5 84h7M381.5 81.6h7M381.5 79.2h7M381.5 76.8h7M381.5 74.4h7M381.5 72h7M381.5 69.6h7M381.5 67.2h7M381.5 64.8h7M381.5 62.4h7M381.5 60h7M381.5 57.6h7M401.5 256.8h7M401.5 254.4h7M401.5 252h7M401.5 249.6h7M401.5 247.2h7M401.5 244.8h7M401.5 242.4h7M401.5 240h7M401.5 237.6h7M401.5 235.2h7M401.5 232.8h7M401.5 230.4h7M401.5 228h7M401.5 225.6h7M401.5 223.2h7M401.5 220.8h7M401.5 218.4h7M401.5 216h7M401.5 213.6h7M401.5 211.2h7M401.5 208.8h7M401.5 206.4h7M401.5 204h7M401.5 201.6h7M401.5 199.2h7M401.5 196.8h7M401.5 194.4h7M401.5 192h7M401.5 189.6h7M401.5 187.2h7M401.5 184.8h7M401.5 182.4h7M401.5 180h7M401.5 177.6h7M401.5 175.2h7M401.5 172.8h7M401.5 170.4h7M401.5 168h7M401.5 165.6h7M401.5 163.2h7M401.5 160.8h7M401.5 158.4h7M401.5 156h7M401.5 153.6h7M421.5 256.8h7M421.5 254.4h7M421.5 252h7M421.5 249.6h7M421.5 247.2h7M421.5 244.8h7M421.5 242.4h7M421.5 240h7M421.5 237.6h7M421.5 235.2h7M421.5 232.8h7M421.5 230.4h7M421.5 228h7M421.5 225.6h7M421.5 223.2h7M421.5 220.8h7M421.5 218.4h7M421.5 216h7M421.5 213.6h7M421.5 211.2h7M421.5 208.8h7M421.5 206.4h7M421.5 204h7M421.5 201.6h7M421.5 199.2h7M421.5 196.8h7M421.5 194.4h7M421.5 192h7M421.5 189.6h7M421.5 187.2h7M421.5 184.8h7M421.5 182.4h7M421.5 180h7M421.5 177.6h7M421.5 175.2h7M421.5 172.8h7M421.5 170.4h7M421.5 168h7M421.5 165.6h7M421.5 163.2h7M421.5 160.8h7M421.5 158.4h7M421.5 156h7M421.5 153.6h7M421.5 151.2h7M421.5 148.8h7M421.5 146.4h7M421.5 144h7M421.5 141.6h7M421.5 139.2h7M421.5 136.8h7M421.5 134.4h7M421.5 132h7M421.5 129.6h7M421.5 127.2h7M431.5 276h7M431.5 273.6h7M431.5 271.2h7M431.5 268.8h7M431.5 266.4h7M431.5 264h7M431.5 261.6h7M441.5 252h7M441.5 249.6h7M441.5 247.2h7M441.5 244.8h7M441.5 242.4h7M441.5 240h7M441.5 237.6h7M441.5 235.2h7M441.5 232.8h7M441.5 230.4h7M441.5 228h7M441.5 225.6h7M441.5 223.2h7M441.5 220.8h7M441.5 218.4h7M441.5 216h7M441.5 213.6h7M441.5 211.2h7M441.5 208.8h7M441.5 206.4h7M441.5 204h7M441.5 201.6h7M441.5 199.2h7M441.5 196.8h7M441.5 194.4h7M441.5 192h7M441.5 189.6h7M441.5 187.2h7M441.5 184.8h7M441.5 182.4h7M441.5 180h7M441.5 177.6h7M441.5 175.2h7M441.5 172.8h7M441.5 170.4h7M441.5 168h7M451.5 252h7M451.5 249.6h7M451.5 247.2h7M451.5 244.8h7M451.5 242.4h7M451.5 240h7M451.5 237.6h7M451.5 235.2h7M451.5 232.8h7M451.5 230.4h7M451.5 228h7M451.5 225.6h7M451.5 223.2h7M451.5 220.8h7M451.5 218.4h7M451.5 216h7M451.5 213.6h7M451.5 211.2h7M451.5 208.8h7M451.5 206.4h7M451.5 204h7M451.5 201.6h7M451.5 199.2h7M451.5 196.8h7M451.5 194.4h7M451.5 192h7M451.5 189.6h7M451.5 187.2h7M451.5 184.8h7M451.5 182.4h7M451.5 180h7M451.5 177.6h7M451.5 175.2h7M451.5 172.8h7M451.5 170.4h7M451.5 168h7M451.5 165.6h7M451.5 163.2h7M451.5 160.8h7M461.5 237.6h7M461.5 235.2h7M461.5 232.8h7M461.5 230.4h7M461.5 228h7M461.5 225.6h7M461.5 223.2h7M461.5 220.8h7M461.5 218.4h7M461.5 216h7M461.5 213.6h7M461.5 211.2h7M461.5 208.8h7M461.5 206.4h7M461.5 204h7M461.5 201.6h7M471.5 285.6h7M471.5 283.2h7M471.5 280.8h7M471.5 278.4h7M471.5 276h7M471.5 273.6h7M481.5 196.8h7M481.5 194.4h7M481.5 192h7M481.5 189.6h7M481.5 187.2h7M481.5 184.8h7M481.5 182.4h7M481.5 180h7M481.5 177.6h7M481.5 175.2h7M481.5 172.8h7M481.5 170.4h7M481.5 168h7M481.5 165.6h7M481.5 163.2h7M481.5 160.8h7M481.5 158.4h7M481.5 156h7M481.5 153.6h7M481.5 151.2h7M481.5 148.8h7M481.5 146.4h7M481.5 144h7M481.5 141.6h7M481.5 139.2h7M481.5 136.8h7M481.5 134.4h7M481.5 132h7M481.5 129.6h7M481.5 127.2h7M481.5 124.8h7M481.5 122.4h7M481.5 120h7M481.5 117.6h7M481.5 115.2h7M481.5 112.8h7M481.5 110.4h7M481.5 108h7M481.5 105.6h7M481.5 103.2h7M481.5 100.8h7M481.5 98.4h7M481.5 96h7M481.5 93.6h7M481.5 91.2h7M481.5 88.8h7M481.5 86.4h7M481.5 84h7M481.5 81.6h7M481.5 79.2h7M481.5 76.8h7M481.5 74.4h7M481.5 72h7M481.5 69.6h7M481.5 67.2h7M481.5 64.8h7M481.5 62.4h7M481.5 60h7M491.5 285.6h7M491.5 283.2h7M491.5 280.8h7M491.5 278.4h7M491.5 276h7M491.5 273.6h7M491.5 271.2h7M491.5 268.8h7M491.5 266.4h7M491.5 264h7M491.5 261.6h7M491.5 259.2h7M491.5 256.8h7M491.5 254.4h7M491.5 252h7M491.5 249.6h7M491.5 247.2h7M491.5 244.8h7M491.5 242.4h7M491.5 240h7M491.5 237.6h7M491.5 235.2h7M491.5 232.8h7M491.5 230.4h7M491.5 228h7M491.5 225.6h7M491.5 223.2h7M491.5 220.8h7M491.5 218.4h7M491.5 216h7M491.5 213.6h7M491.5 211.2h7M491.5 208.8h7M491.5 206.4h7M491.5 204h7M491.5 201.6h7M491.5 199.2h7M491.5 196.8h7M491.5 194.4h7M491.5 192h7M491.5 189.6h7M491.5 187.2h7M491.5 184.8h7M491.5 182.4h7M491.5 180h7M491.5 177.6h7M491.5 175.2h7M491.5 172.8h7M491.5 170.4h7M491.5 168h7M491.5 165.6h7M501.5 240h7M501.5 237.6h7M501.5 235.2h7M501.5 232.8h7M501.5 230.4h7M501.5 228h7M501.5 225.6h7M501.5 223.2h7M501.5 220.8h7M501.5 218.4h7M501.5 216h7M501.5 213.6h7M501.5 211.2h7M501.5 208.8h7M501.5 206.4h7M501.5 204h7M501.5 201.6h7M501.5 199.2h7M501.5 196.8h7M501.5 194.4h7M501.5 192h7M501.5 189.6h7M501.5 187.2h7M501.5 184.8h7M501.5 182.4h7M501.5 180h7M501.5 177.6h7M501.5 175.2h7M501.5 172.8h7M501.5 170.4h7M511.5 271.2h7M511.5 268.8h7M511.5 266.4h7M511.5 264h7M511.5 261.6h7M511.5 259.2h7M511.5 256.8h7M511.5 254.4h7M511.5 252h7M511.5 249.6h7M511.5 247.2h7M511.5 244.8h7M511.5 242.4h7M511.5 240h7M511.5 237.6h7M511.5 235.2h7M511.5 232.8h7M511.5 230.4h7M511.5 228h7M511.5 225.6h7M511.5 223.2h7M511.5 220.8h7M511.5 218.4h7M511.5 216h7M511.5 213.6h7M511.5 211.2h7M511.5 208.8h7M511.5 206.4h7M511.5 204h7M511.5 201.6h7M511.5 199.2h7M511.5 196.8h7M511.5 194.4h7M511.5 192h7M511.5 189.6h7M511.5 187.2h7M511.5 184.8h7M521.5 249.6h7M521.5 247.2h7M521.5 244.8h7M521.5 242.4h7M521.5 240h7M521.5 237.6h7M521.5 235.2h7M521.5 232.8h7M521.5 230.4h7M521.5 228h7M521.5 225.6h7M521.5 223.2h7M521.5 220.8h7M521.5 218.4h7M521.5 216h7M521.5 213.6h7M521.5 211.2h7M521.5 208.8h7M521.5 206.4h7M521.5 204h7M521.5 201.6h7M521.5 199.2h7M521.5 196.8h7M521.5 194.4h7M521.5 192h7M521.5 189.6h7M521.5 187.2h7M521.5 184.8h7M521.5 182.4h7M521.5 180h7M521.5 177.6h7M521.5 175.2h7M521.5 172.8h7M521.5 170.4h7M531.5 266.4h7M531.5 264h7M531.5 261.6h7M531.5 259.2h7M531.5 256.8h7M531.5 254.4h7M531.5 252h7M531.5 249.6h7M531.5 247.2h7M531.5 244.8h7M531.5 242.4h7M531.5 240h7M531.5 237.6h7M531.5 235.2h7M531.5 232.8h7M531.5 230.4h7M531.5 228h7M531.5 225.6h7M531.5 223.2h7M531.5 220.8h7M531.5 218.4h7M531.5 216h7M531.5 213.6h7M531.5 211.2h7M531.5 208.8h7M531.5 206.4h7M531.5 204h7M531.5 201.6h7M531.5 199.2h7M531.5 196.8h7M531.5 194.4h7M531.5 192h7M531.5 189.6h7M531.5 187.2h7M531.5 184.8h7M531.5 182.4h7M531.5 180h7M531.5 177.6h7M541.5 278.4h7M541.5 276h7M541.5 273.6h7M541.5 271.2h7M541.5 268.8h7M541.5 266.4h7M541.5 264h7M541.5 261.6h7M541.5 259.2h7M541.5 256.8h7M541.5 254.4h7M541.5 252h7M541.5 249.6h7M541.5 247.2h7M541.5 244.8h7M541.5 242.4h7M541.5 240h7M541.5 237.6h7M541.5 235.2h7M541.5 232.8h7M541.5 230.4h7M541.5 228h7M541.5 225.6h7M541.5 223.2h7M541.5 220.8h7M541.5 218.4h7M541.5 216h7M541.5 213.6h7M541.5 211.2h7M541.5 208.8h7M541.5 206.4h7M541.5 204h7M541.5 201.6h7M541.5 199.2h7M541.5 196.8h7M541.5 194.4h7M541.5 192h7M541.5 189.6h7M541.5 187.2h7M541.5 184.8h7M541.5 182.4h7M551.5 271.2h7M551.5 268.8h7M551.5 266.4h7M551.5 264h7M551.5 261.6h7M551.5 259.2h7M551.5 256.8h7M551.5 254.4h7M551.5 252h7M551.5 249.6h7M551.5 247.2h7M551.5 244.8h7M551.5 242.4h7M551.5 240h7M551.5 237.6h7M551.5 235.2h7M551.5 232.8h7M551.5 230.4h7M551.5 228h7M551.5 225.6h7M551.5 223.2h7M551.5 220.8h7M551.5 218.4h7M551.5 216h7M551.5 213.6h7M551.5 211.2h7M551.5 208.8h7M551.5 206.4h7M561.5 259.2h7M561.5 256.8h7M561.5 254.4h7M561.5 252h7M561.5 249.6h7M561.5 247.2h7M561.5 244.8h7M561.5 242.4h7M561.5 240h7M561.5 237.6h7M561.5 235.2h7M561.5 232.8h7M561.5 230.4h7M561.5 228h7M561.5 225.6h7M561.5 223.2h7M561.5 220.8h7M561.5 218.4h7M561.5 216h7M561.5 213.6h7M561.5 211.2h7M561.5 208.8h7M561.5 206.4h7M561.5 204h7M561.5 201.6h7M561.5 199.2h7M561.5 196.8h7M561.5 194.4h7M561.5 192h7M561.5 189.6h7M561.5 187.2h7M571.5 256.8h7M571.5 254.4h7M571.5 252h7M571.5 249.6h7M571.5 247.2h7M571.5 244.8h7M571.5 242.4h7M571.5 240h7M571.5 237.6h7M571.5 235.2h7M571.5 232.8h7M571.5 230.4h7M571.5 228h7M571.5 225.6h7M571.5 223.2h7M571.5 220.8h7M571.5 218.4h7M571.5 216h7M571.5 213.6h7M571.5 211.2h7M571.5 208.8h7M571.5 206.4h7M571.5 204h7M571.5 201.6h7M571.5 199.2h7M571.5 196.8h7M571.5 194.4h7M571.5 192h7M571.5 189.6h7M571.5 187.2h7M571.5 184.8h7M571.5 182.4h7M571.5 180h7M571.5 177.6h7M571.5 175.2h7M571.5 172.8h7M571.5 170.4h7M571.5 168h7M571.5 165.6h7M571.5 163.2h7M571.5 160.8h7M571.5 158.4h7M571.5 156h7M571.5 153.6h7M571.5 151.2h7M571.5 148.8h7M571.5 146.4h7M571.5 144h7M571.5 141.6h7M571.5 139.2h7M571.5 136.8h7M571.5 134.4h7M571.5 132h7M571.5 129.6h7M571.5 127.2h7M571.5 124.8h7M571.5 122.4h7M581.5 280.8h7M581.5 278.4h7M581.5 276h7M581.5 273.6h7M581.5 271.2h7M581.5 268.8h7M581.5 266.4h7M581.5 264h7M581.5 261.6h7M581.5 259.2h7M581.5 256.8h7M581.5 254.4h7M581.5 252h7M581.5 249.6h7M581.5 247.2h7M581.5 244.8h7M581.5 242.4h7M581.5 240h7M581.5 237.6h7M581.5 235.2h7M581.5 232.8h7M581.5 230.4h7M581.5 228h7M581.5 225.6h7M581.5 223.2h7M581.5 220.8h7M581.5 218.4h7M581.5 216h7M581.5 213.6h7M581.5 211.2h7M581.5 208.8h7M581.5 206.4h7M581.5 204h7M581.5 201.6h7M581.5 199.2h7M581.5 196.8h7M581.5 194.4h7M581.5 192h7M581.5 189.6h7M581.5 187.2h7M581.5 184.8h7M581.5 182.4h7M581.5 180h7M581.5 177.6h7M581.5 175.2h7M581.5 172.8h7M581.5 170.4h7M581.5 168h7M581.5 165.6h7M581.5 163.2h7M581.5 160.8h7M591.5 288h7M591.5 285.6h7M591.5 283.2h7M591.5 280.8h7M591.5 278.4h7M591.5 276h7M591.5 273.6h7M591.5 271.2h7M591.5 268.8h7M591.5 266.4h7M591.5 264h7M591.5 261.6h7M591.5 259.2h7M591.5 256.8h7M591.5 254.4h7M591.5 252h7M591.5 249.6h7M591.5 247.2h7M591.5 244.8h7M591.5 242.4h7M591.5 240h7M591.5 237.6h7M591.5 235.2h7M591.5 232.8h7M591.5 230.4h7M591.5 228h7M591.5 225.6h7M591.5 223.2h7M591.5 220.8h7M591.5 218.4h7M591.5 216h7M591.5 213.6h7M591.5 211.2h7M591.5 208.8h7M591.5 206.4h7M591.5 204h7M591.5 201.6h7M591.5 199.2h7M591.5 196.8h7M591.5 194.4h7M591.5 192h7M591.5 189.6h7M591.5 187.2h7M591.5 184.8h7M591.5 182.4h7M591.5 180h7M591.5 177.6h7M591.5 175.2h7M591.5 172.8h7M591.5 170.4h7M601.5 271.2h7M601.5 268.8h7M601.5 266.4h7M601.5 264h7M601.5 261.6h7M601.5 259.2h7M601.5 256.8h7M601.5 254.4h7M601.5 252h7M601.5 249.6h7M601.5 247.2h7M601.5 244.8h7M601.5 242.4h7M601.5 240h7M601.5 237.6h7M601.5 235.2h7M601.5 232.8h7M601.5 230.4h7M601.5 228h7M601.5 225.6h7M601.5 223.2h7M601.5 220.8h7M601.5 218.4h7M601.5 216h7M601.5 213.6h7M601.5 211.2h7M601.5 208.8h7M601.5 206.4h7M601.5 204h7M601.5 201.6h7M601.5 199.2h7M601.5 196.8h7M601.5 194.4h7M601.5 192h7M601.5 189.6h7M601.5 187.2h7M601.5 184.8h7M601.5 182.4h7M601.5 180h7M601.5 177.6h7M611.5 292.8h7M611.5 290.4h7M611.5 288h7M611.5 285.6h7M611.5 283.2h7M611.5 280.8h7M611.5 278.4h7M611.5 276h7M611.5 273.6h7M611.5 271.2h7M611.5 268.8h7M611.5 266.4h7M611.5 264h7M611.5 261.6h7M611.5 259.2h7M611.5 256.8h7M611.5 254.4h7M611.5 252h7M611.5 249.6h7M611.5 247.2h7M611.5 244.8h7M611.5 242.4h7M621.5 290.4h7M621.5 288h7M621.5 285.6h7M621.5 283.2h7M621.5 280.8h7M621.5 278.4h7M621.5 276h7M621.5 273.6h7M621.5 271.2h7M621.5 268.8h7M621.5 266.4h7M621.5 264h7M621.5 261.6h7M621.5 259.2h7M621.5 256.8h7M621.5 254.4h7M621.5 252h7M621.5 249.6h7M621.5 247.2h7M621.5 244.8h7M621.5 242.4h7M621.5 240h7M621.5 237.6h7M621.5 235.2h7M621.5 232.8h7M621.5 230.4h7M621.5 228h7M621.5 225.6h7M631.5 259.2h7M631.5 256.8h7M631.5 254.4h7M631.5 252h7M631.5 249.6h7M631.5 247.2h7M631.5 244.8h7M631.5 242.4h7M631.5 240h7M631.5 237.6h7M631.5 235.2h7M631.5 232.8h7M631.5 230.4h7M631.5 228h7M631.5 225.6h7M631.5 223.2h7M631.5 220.8h7M631.5 218.4h7M631.5 216h7M631.5 213.6h7M631.5 211.2h7M631.5 208.8h7M631.5 206.4h7M631.5 204h7M631.5 201.6h7M631.5 199.2h7M631.5 196.8h7M631.5 194.4h7M631.5 192h7M641.5 285.6h7M641.5 283.2h7M641.5 280.8h7M641.5 278.4h7M641.5 276h7M641.5 273.6h7M641.5 271.2h7M641.5 268.8h7M641.5 266.4h7M641.5 264h7M641.5 261.6h7M641.5 259.2h7M641.5 256.8h7M641.5 254.4h7M641.5 252h7M641.5 249.6h7M641.5 247.2h7M641.5 244.8h7M641.5 242.4h7M641.5 240h7M641.5 237.6h7M641.5 235.2h7M641.5 232.8h7M641.5 230.4h7M641.5 228h7M641.5 225.6h7M641.5 223.2h7M641.5 220.8h7M641.5 218.4h7M641.5 216h7M641.5 213.6h7M641.5 211.2h7M641.5 208.8h7M641.5 206.4h7M641.5 204h7M641.5 201.6h7M641.5 199.2h7M641.5 196.8h7M641.5 194.4h7M641.5 192h7M641.5 189.6h7M641.5 187.2h7M641.5 184.8h7M651.5 276h7M651.5 273.6h7M651.5 271.2h7M651.5 268.8h7M651.5 266.4h7M651.5 264h7M651.5 261.6h7M651.5 259.2h7M651.5 256.8h7M651.5 254.4h7M651.5 252h7M651.5 249.6h7M651.5 247.2h7M651.5 244.8h7M651.5 242.4h7M651.5 240h7M651.5 237.6h7M651.5 235.2h7M651.5 232.8h7M651.5 230.4h7M651.5 228h7M651.5 225.6h7M651.5 223.2h7M651.5 220.8h7M651.5 218.4h7M651.5 216h7M651.5 213.6h7M651.5 211.2h7M651.5 208.8h7M651.5 206.4h7M651.5 204h7M651.5 201.6h7M651.5 199.2h7M651.5 196.8h7M661.5 285.6h7M661.5 283.2h7M661.5 280.8h7M661.5 278.4h7M661.5 276h7M661.5 273.6h7M661.5 271.2h7M661.5 268.8h7M661.5 266.4h7M661.5 264h7M661.5 261.6h7M661.5 259.2h7M661.5 256.8h7M661.5 254.4h7M661.5 252h7M661.5 249.6h7M661.5 247.2h7M661.5 244.8h7M661.5 242.4h7M661.5 240h7M661.5 237.6h7M661.5 235.2h7M661.5 232.8h7M661.5 230.4h7M661.5 228h7M661.5 225.6h7M661.5 223.2h7M661.5 220.8h7M661.5 218.4h7M661.5 216h7M661.5 213.6h7M661.5 211.2h7M661.5 208.8h7M661.5 206.4h7M661.5 204h7M661.5 201.6h7M661.5 199.2h7M661.5 196.8h7M661.5 194.4h7M661.5 192h7M661.5 189.6h7M661.5 187.2h7M661.5 184.8h7M671.5 297.6h7M671.5 295.2h7M671.5 292.8h7M671.5 290.4h7M671.5 288h7M671.5 285.6h7M671.5 283.2h7M671.5 280.8h7M671.5 278.4h7M671.5 276h7M671.5 273.6h7M671.5 271.2h7M671.5 268.8h7M671.5 266.4h7M671.5 264h7M671.5 261.6h7M671.5 259.2h7M671.5 256.8h7M671.5 254.4h7M671.5 252h7M671.5 249.6h7M671.5 247.2h7M671.5 244.8h7M671.5 242.4h7M671.5 240h7M671.5 237.6h7M671.5 235.2h7M671.5 232.8h7M671.5 230.4h7M671.5 228h7M671.5 225.6h7M671.5 223.2h7M671.5 220.8h7M671.5 218.4h7M671.5 216h7M671.5 213.6h7M671.5 211.2h7M671.5 208.8h7M671.5 206.4h7M671.5 204h7M671.5 201.6h7M671.5 199.2h7M671.5 196.8h7M671.5 194.4h7M671.5 192h7M671.5 189.6h7M671.5 187.2h7M681.5 290.4h7M681.5 288h7M681.5 285.6h7M681.5 283.2h7M681.5 280.8h7M681.5 278.4h7M681.5 276h7M681.5 273.6h7M681.5 271.2h7M681.5 268.8h7M681.5 266.4h7M681.5 264h7M681.5 261.6h7M681.5 259.2h7M681.5 256.8h7M681.5 254.4h7M681.5 252h7M681.5 249.6h7M681.5 247.2h7M681.5 244.8h7M681.5 242.4h7M681.5 240h7M681.5 237.6h7M681.5 235.2h7M681.5 232.8h7M681.5 230.4h7M681.5 228h7M681.5 225.6h7M681.5 223.2h7M681.5 220.8h7M681.5 218.4h7M681.5 216h7M681.5 213.6h7M681.5 211.2h7M681.5 208.8h7M681.5 206.4h7M681.5 204h7M681.5 201.6h7M681.5 199.2h7M681.5 196.8h7M681.5 194.4h7M681.5 192h7M681.5 189.6h7M681.5 187.2h7M681.5 184.8h7M681.5 182.4h7M691.5 271.2h7M691.5 268.8h7M691.5 266.4h7M691.5 264h7M691.5 261.6h7M691.5 259.2h7M691.5 256.8h7M691.5 254.4h7M691.5 252h7M691.5 249.6h7M691.5 247.2h7M691.5 244.8h7M691.5 242.4h7M691.5 240h7M691.5 237.6h7M691.5 235.2h7M691.5 232.8h7M691.5 230.4h7M691.5 228h7M691.5 225.6h7M691.5 223.2h7M691.5 220.8h7M691.5 218.4h7M691.5 216h7M691.5 213.6h7M691.5 211.2h7M691.5 208.8h7M691.5 206.4h7M691.5 204h7M701.5 290.4h7M701.5 288h7M701.5 285.6h7M701.5 283.2h7M701.5 280.8h7M701.5 278.4h7M701.5 276h7M701.5 273.6h7M701.5 271.2h7M701.5 268.8h7M701.5 266.4h7M701.5 264h7M701.5 261.6h7M701.5 259.2h7M701.5 256.8h7M701.5 254.4h7M701.5 252h7M701.5 249.6h7M701.5 247.2h7M701.5 244.8h7M701.5 242.4h7M701.5 240h7M701.5 237.6h7M701.5 235.2h7M701.5 232.8h7M701.5 230.4h7M701.5 228h7M701.5 225.6h7M701.5 223.2h7M701.5 220.8h7M701.5 218.4h7M701.5 216h7M701.5 213.6h7M701.5 211.2h7M701.5 208.8h7M701.5 206.4h7M701.5 204h7M701.5 201.6h7M711.5 302.4h7M711.5 300h7M711.5 297.6h7M711.5 295.2h7M711.5 292.8h7M711.5 290.4h7M711.5 288h7M711.5 285.6h7M711.5 283.2h7M711.5 280.8h7M711.5 278.4h7M711.5 276h7M711.5 273.6h7M711.5 271.2h7M711.5 268.8h7M711.5 266.4h7M711.5 264h7M711.5 261.6h7M711.5 259.2h7M711.5 256.8h7M711.5 254.4h7M711.5 252h7M711.5 249.6h7M711.5 247.2h7M711.5 244.8h7M711.5 242.4h7M711.5 240h7M711.5 237.6h7M711.5 235.2h7M711.5 232.8h7M711.5 230.4h7M711.5 228h7M711.5 225.6h7M711.5 223.2h7M711.5 220.8h7M711.5 218.4h7M711.5 216h7M711.5 213.6h7M711.5 211.2h7M711.5 208.8h7M711.5 206.4h7M711.5 204h7M711.5 201.6h7M711.5 199.2h7M711.5 196.8h7M711.5 194.4h7M711.5 192h7M711.5 189.6h7M721.5 295.2h7M721.5 292.8h7M721.5 290.4h7M721.5 288h7M721.5 285.6h7M721.5 283.2h7M721.5 280.8h7M721.5 278.4h7M721.5 276h7M721.5 273.6h7M721.5 271.2h7M721.5 268.8h7M721.5 266.4h7M721.5 264h7M721.5 261.6h7M721.5 259.2h7M721.5 256.8h7M721.5 254.4h7M721.5 252h7M721.5 249.6h7M721.5 247.2h7M721.5 244.8h7M721.5 242.4h7M721.5 240h7M721.5 237.6h7M721.5 235.2h7M721.5 232.8h7M721.5 230.4h7M721.5 228h7M721.5 225.6h7M721.5 223.2h7M721.5 220.8h7M721.5 218.4h7M721.5 216h7M721.5 213.6h7M721.5 211.2h7M721.5 208.8h7M721.5 206.4h7M721.5 204h7M721.5 201.6h7M721.5 199.2h7M721.5 196.8h7M721.5 194.4h7M721.5 192h7M721.5 189.6h7M721.5 187.2h7M721.5 184.8h7M721.5 182.4h7M721.5 180h7M721.5 177.6h7M721.5 175.2h7M721.5 172.8h7M721.5 170.4h7M721.5 168h7M721.5 165.6h7M721.5 163.2h7M721.5 160.8h7M721.5 158.4h7M721.5 156h7M721.5 153.6h7M731.5 285.6h7M731.5 283.2h7M731.5 280.8h7M731.5 278.4h7M731.5 276h7M731.5 273.6h7M731.5 271.2h7M731.5 268.8h7M731.5 266.4h7M731.5 264h7M731.5 261.6h7M731.5 259.2h7M731.5 256.8h7M731.5 254.4h7M731.5 252h7M731.5 249.6h7M731.5 247.2h7M731.5 244.8h7M731.5 242.4h7M731.5 240h7M731.5 237.6h7M731.5 235.2h7M731.5 232.8h7M731.5 230.4h7M731.5 228h7M731.5 225.6h7M731.5 223.2h7M731.5 220.8h7M731.5 218.4h7M731.5 216h7M731.5 213.6h7M731.5 211.2h7M731.5 208.8h7M731.5 206.4h7M731.5 204h7M731.5 201.6h7M731.5 199.2h7M731.5 196.8h7M731.5 194.4h7M731.5 192h7M731.5 189.6h7M731.5 187.2h7M731.5 184.8h7M731.5 182.4h7M731.5 180h7M731.5 177.6h7M731.5 175.2h7M731.5 172.8h7M741.5 300h7M741.5 297.6h7M741.5 295.2h7M741.5 292.8h7M741.5 290.4h7M741.5 288h7M741.5 285.6h7M741.5 283.2h7M741.5 280.8h7M741.5 278.4h7M741.5 276h7M741.5 273.6h7M741.5 271.2h7M741.5 268.8h7M741.5 266.4h7M741.5 264h7M741.5 261.6h7M741.5 259.2h7M741.5 256.8h7M741.5 254.4h7M741.5 252h7M741.5 249.6h7M741.5 247.2h7M741.5 244.8h7M741.5 242.4h7M741.5 240h7M741.5 237.6h7M741.5 235.2h7M741.5 232.8h7M741.5 230.4h7M741.5 228h7M741.5 225.6h7M741.5 223.2h7M741.5 220.8h7M741.5 218.4h7M741.5 216h7M741.5 213.6h7M741.5 211.2h7M741.5 208.8h7M741.5 206.4h7M741.5 204h7M741.5 201.6h7M741.5 199.2h7M741.5 196.8h7M741.5 194.4h7M741.5 192h7M741.5 189.6h7M741.5 187.2h7M751.5 288h7M751.5 285.6h7M751.5 283.2h7M751.5 280.8h7M751.5 278.4h7M751.5 276h7M751.5 273.6h7M751.5 271.2h7M751.5 268.8h7M751.5 266.4h7M751.5 264h7M751.5 261.6h7M751.5 259.2h7M751.5 256.8h7M751.5 254.4h7M751.5 252h7M751.5 249.6h7M751.5 247.2h7M751.5 244.8h7M751.5 242.4h7M751.5 240h7M751.5 237.6h7M751.5 235.2h7M751.5 232.8h7M751.5 230.4h7M751.5 228h7M751.5 225.6h7M751.5 223.2h7M751.5 220.8h7M751.5 218.4h7M751.5 216h7M751.5 213.6h7M751.5 211.2h7M751.5 208.8h7M751.5 206.4h7M751.5 204h7M751.5 201.6h7M751.5 199.2h7M751.5 196.8h7M751.5 194.4h7M751.5 192h7M751.5 189.6h7M761.5 288h7M761.5 285.6h7M761.5 283.2h7M761.5 280.8h7M761.5 278.4h7M761.5 276h7M761.5 273.6h7M761.5 271.2h7M761.5 268.8h7M761.5 266.4h7M761.5 264h7M761.5 261.6h7M761.5 259.2h7M761.5 256.8h7M761.5 254.4h7M761.5 252h7M761.5 249.6h7M761.5 247.2h7M761.5 244.8h7M761.5 242.4h7M761.5 240h7M761.5 237.6h7M761.5 235.2h7M761.5 232.8h7M761.5 230.4h7M761.5 228h7M761.5 225.6h7M761.5 223.2h7M761.5 220.8h7M761.5 218.4h7M761.5 216h7M761.5 213.6h7M761.5 211.2h7M761.5 208.8h7M761.5 206.4h7M761.5 204h7M761.5 201.6h7M761.5 199.2h7M761.5 196.8h7M761.5 194.4h7M761.5 192h7M761.5 189.6h7M761.5 187.2h7M761.5 184.8h7M761.5 182.4h7M761.5 180h7M761.5 177.6h7M761.5 175.2h7M761.5 172.8h7M761.5 170.4h7M761.5 168h7M771.5 295.2h7M771.5 292.8h7M771.5 290.4h7M771.5 288h7M771.5 285.6h7M771.5 283.2h7M771.5 280.8h7M771.5 278.4h7M771.5 276h7M771.5 273.6h7M771.5 271.2h7M771.5 268.8h7M771.5 266.4h7M771.5 264h7M771.5 261.6h7M771.5 259.2h7M771.5 256.8h7M771.5 254.4h7M771.5 252h7M771.5 249.6h7M771.5 247.2h7M771.5 244.8h7M771.5 242.4h7M771.5 240h7M771.5 237.6h7M771.5 235.2h7M771.5 232.8h7M771.5 230.4h7M771.5 228h7M771.5 225.6h7M771.5 223.2h7M771.5 220.8h7M771.5 218.4h7M771.5 216h7M771.5 213.6h7M771.5 211.2h7M771.5 208.8h7M771.5 206.4h7M771.5 204h7M771.5 201.6h7M771.5 199.2h7M771.5 196.8h7M771.5 194.4h7M771.5 192h7M771.5 189.6h7M771.5 187.2h7M771.5 184.8h7M771.5 182.4h7M771.5 180h7M771.5 177.6h7M771.5 175.2h7M771.5 172.8h7M771.5 170.4h7M771.5 168h7M771.5 165.6h7M771.5 163.2h7M771.5 160.8h7M771.5 158.4h7M771.5 156h7M771.5 153.6h7M771.5 151.2h7M781.5 288h7M781.5 285.6h7M781.5 283.2h7M781.5 280.8h7M781.5 278.4h7M781.5 276h7M781.5 273.6h7M781.5 271.2h7M781.5 268.8h7M781.5 266.4h7M781.5 264h7M781.5 261.6h7M781.5 259.2h7M781.5 256.8h7M781.5 254.4h7M781.5 252h7M781.5 249.6h7M781.5 247.2h7M781.5 244.8h7M781.5 242.4h7M781.5 240h7M781.5 237.6h7M781.5 235.2h7M781.5 232.8h7M781.5 230.4h7M781.5 228h7M781.5 225.6h7M781.5 223.2h7M781.5 220.8h7M781.5 218.4h7M781.5 216h7M781.5 213.6h7M781.5 211.2h7M781.5 208.8h7M781.5 206.4h7M781.5 204h7M781.5 201.6h7M781.5 199.2h7M781.5 196.8h7M781.5 194.4h7M781.5 192h7M781.5 189.6h7M781.5 187.2h7M781.5 184.8h7M781.5 182.4h7M781.5 180h7M781.5 177.6h7M781.5 175.2h7M781.5 172.8h7M781.5 170.4h7M781.5 168h7M781.5 165.6h7M781.5 163.2h7M781.5 160.8h7M781.5 158.4h7M781.5 156h7M781.5 153.6h7M781.5 151.2h7M781.5 148.8h7M781.5 146.4h7M791.5 285.6h7M791.5 283.2h7M791.5 280.8h7M791.5 278.4h7M791.5 276h7M791.5 273.6h7M791.5 271.2h7M791.5 268.8h7M791.5 266.4h7M791.5 264h7M791.5 261.6h7M791.5 259.2h7M791.5 256.8h7M791.5 254.4h7M791.5 252h7M791.5 249.6h7M791.5 247.2h7M791.5 244.8h7M791.5 242.4h7M791.5 240h7M791.5 237.6h7M791.5 235.2h7M791.5 232.8h7M791.5 230.4h7M791.5 228h7M791.5 225.6h7M791.5 223.2h7M791.5 220.8h7M791.5 218.4h7M791.5 216h7M791.5 213.6h7M791.5 211.2h7M791.5 208.8h7M791.5 206.4h7M791.5 204h7M791.5 201.6h7M791.5 199.2h7M791.5 196.8h7M791.5 194.4h7M791.5 192h7M791.5 189.6h7M791.5 187.2h7M791.5 184.8h7M791.5 182.4h7M791.5 180h7M791.5 177.6h7M791.5 175.2h7M791.5 172.8h7M791.5 170.4h7M791.5 168h7M791.5 165.6h7M791.5 163.2h7M791.5 160.8h7M791.5 158.4h7M791.5 156h7M791.5 153.6h7M791.5 151.2h7M791.5 148.8h7M791.5 146.4h7M791.5 144h7M791.5 141.6h7M791.5 139.2h7M791.5 136.8h7M791.5 134.4h7M801.5 280.8h7M801.5 278.4h7M801.5 276h7M801.5 273.6h7M801.5 271.2h7M801.5 268.8h7M801.5 266.4h7M801.5 264h7M801.5 261.6h7M801.5 259.2h7M801.5 256.8h7M801.5 254.4h7M801.5 252h7M801.5 249.6h7M801.5 247.2h7M801.5 244.8h7M801.5 242.4h7M801.5 240h7M801.5 237.6h7M801.5 235.2h7M801.5 232.8h7M801.5 230.4h7M801.5 228h7M801.5 225.6h7M801.5 223.2h7M801.5 220.8h7M801.5 218.4h7M801.5 216h7M801.5 213.6h7M801.5 211.2h7M801.5 208.8h7M801.5 206.4h7M801.5 204h7M801.5 201.6h7M801.5 199.2h7M801.5 196.8h7M801.5 194.4h7M801.5 192h7M801.5 189.6h7M801.5 187.2h7M801.5 184.8h7M801.5 182.4h7M801.5 180h7M801.5 177.6h7M801.5 175.2h7M801.5 172.8h7M801.5 170.4h7M801.5 168h7M801.5 165.6h7M801.5 163.2h7M801.5 160.8h7M801.5 158.4h7M801.5 156h7M801.5 153.6h7M801.5 151.2h7M801.5 148.8h7M801.5 146.4h7M801.5 144h7M801.5 141.6h7M801.5 139.2h7M801.5 136.8h7M801.5 134.4h7M801.5 132h7M801.5 129.6h7M801.5 127.2h7M801.5 124.8h7M801.5 122.4h7M801.5 120h7M801.5 117.6h7M801.5 115.2h7M801.5 112.8h7M801.5 110.4h7M801.5 108h7M811.5 304.8h7M811.5 302.4h7M811.5 300h7M811.5 297.6h7M811.5 295.2h7M811.5 292.8h7M811.5 290.4h7M811.5 288h7M811.5 285.6h7M811.5 283.2h7M811.5 280.8h7M811.5 278.4h7M811.5 276h7M811.5 273.6h7M811.5 271.2h7M811.5 268.8h7M811.5 266.4h7M811.5 264h7M811.5 261.6h7M811.5 259.2h7M811.5 256.8h7M811.5 254.4h7M811.5 252h7M811.5 249.6h7M811.5 247.2h7M811.5 244.8h7M811.5 242.4h7M811.5 240h7M811.5 237.6h7M811.5 235.2h7M811.5 232.8h7M811.5 230.4h7M811.5 228h7M811.5 225.6h7M811.5 223.2h7M811.5 220.8h7M811.5 218.4h7M811.5 216h7M811.5 213.6h7M811.5 211.2h7M811.5 208.8h7M811.5 206.4h7M811.5 204h7M811.5 201.6h7M811.5 199.2h7M811.5 196.8h7M811.5 194.4h7M811.5 192h7M811.5 189.6h7M811.5 187.2h7M811.5 184.8h7M811.5 182.4h7M811.5 180h7M811.5 177.6h7M811.5 175.2h7M811.5 172.8h7M811.5 170.4h7M811.5 168h7M811.5 165.6h7M811.5 163.2h7M811.5 160.8h7M811.5 158.4h7M811.5 156h7M811.5 153.6h7M811.5 151.2h7M811.5 148.8h7M811.5 146.4h7M811.5 144h7M811.5 141.6h7M811.5 139.2h7M811.5 136.8h7M811.5 134.4h7M811.5 132h7M811.5 129.6h7M811.5 127.2h7M821.5 300h7M821.5 297.6h7M821.5 295.2h7M821.5 292.8h7M821.5 290.4h7M821.5 288h7M821.5 285.6h7M821.5 283.2h7M821.5 280.8h7M821.5 278.4h7M821.5 276h7M821.5 273.6h7M821.5 271.2h7M821.5 268.8h7M821.5 266.4h7M821.5 264h7M821.5 261.6h7M821.5 259.2h7M821.5 256.8h7M821.5 254.4h7M821.5 252h7M821.5 249.6h7M821.5 247.2h7M821.5 244.8h7M821.5 242.4h7M821.5 240h7M821.5 237.6h7M821.5 235.2h7M821.5 232.8h7M821.5 230.4h7M821.5 228h7M821.5 225.6h7M821.5 223.2h7M821.5 220.8h7M821.5 218.4h7M821.5 216h7M821.5 213.6h7M821.5 211.2h7M821.5 208.8h7M821.5 206.4h7M821.5 204h7M821.5 201.6h7M821.5 199.2h7M821.5 196.8h7M821.5 194.4h7M821.5 192h7M821.5 189.6h7M821.5 187.2h7M821.5 184.8h7M821.5 182.4h7M821.5 180h7M821.5 177.6h7M821.5 175.2h7M821.5 172.8h7M821.5 170.4h7M821.5 168h7M821.5 165.6h7M821.5 163.2h7M821.5 160.8h7M821.5 158.4h7M821.5 156h7M821.5 153.6h7M821.5 151.2h7M821.5 148.8h7M821.5 146.4h7M821.5 144h7M821.5 141.6h7M821.5 139.2h7M821.5 136.8h7M821.5 134.4h7M831.5 295.2h7M831.5 292.8h7M831.5 290.4h7M831.5 288h7M831.5 285.6h7M831.5 283.2h7M831.5 280.8h7M831.5 278.4h7M831.5 276h7M831.5 273.6h7M831.5 271.2h7M831.5 268.8h7M831.5 266.4h7M831.5 264h7M831.5 261.6h7M831.5 259.2h7M831.5 256.8h7M831.5 254.4h7M831.5 252h7M831.5 249.6h7M831.5 247.2h7M831.5 244.8h7M831.5 242.4h7M831.5 240h7M831.5 237.6h7M831.5 235.2h7M831.5 232.8h7M831.5 230.4h7M831.5 228h7M831.5 225.6h7M831.5 223.2h7M831.5 220.8h7M831.5 218.4h7M831.5 216h7M831.5 213.6h7M831.5 211.2h7M831.5 208.8h7M831.5 206.4h7M831.5 204h7M831.5 201.6h7M831.5 199.2h7M831.5 196.8h7M831.5 194.4h7M831.5 192h7M831.5 189.6h7M831.5 187.2h7M831.5 184.8h7M831.5 182.4h7M831.5 180h7M831.5 177.6h7M831.5 175.2h7M831.5 172.8h7M831.5 170.4h7M831.5 168h7M831.5 165.6h7M831.5 163.2h7M831.5 160.8h7M831.5 158.4h7M831.5 156h7M831.5 153.6h7M831.5 151.2h7M831.5 148.8h7M831.5 146.4h7M831.5 144h7M841.5 292.8h7M841.5 290.4h7M841.5 288h7M841.5 285.6h7M841.5 283.2h7M841.5 280.8h7M841.5 278.4h7M841.5 276h7M841.5 273.6h7M841.5 271.2h7M841.5 268.8h7M841.5 266.4h7M841.5 264h7M841.5 261.6h7M841.5 259.2h7M841.5 256.8h7M841.5 254.4h7M841.5 252h7M841.5 249.6h7M841.5 247.2h7M841.5 244.8h7M841.5 242.4h7M841.5 240h7M841.5 237.6h7M841.5 235.2h7M841.5 232.8h7M841.5 230.4h7M841.5 228h7M841.5 225.6h7M841.5 223.2h7M841.5 220.8h7M841.5 218.4h7M841.5 216h7M841.5 213.6h7M841.5 211.2h7M841.5 208.8h7M841.5 206.4h7M841.5 204h7M841.5 201.6h7M841.5 199.2h7M841.5 196.8h7M841.5 194.4h7M841.5 192h7M841.5 189.6h7M841.5 187.2h7M841.5 184.8h7M841.5 182.4h7M841.5 180h7M841.5 177.6h7M841.5 175.2h7M841.5 172.8h7M841.5 170.4h7M841.5 168h7M841.5 165.6h7M841.5 163.2h7M841.5 160.8h7M841.5 158.4h7M841.5 156h7M841.5 153.6h7M841.5 151.2h7M841.5 148.8h7M841.5 146.4h7M841.5 144h7M841.5 141.6h7M841.5 139.2h7M841.5 136.8h7M841.5 134.4h7M841.5 132h7M841.5 129.6h7M851.5 295.2h7M851.5 292.8h7M851.5 290.4h7M851.5 288h7M851.5 285.6h7M851.5 283.2h7M851.5 280.8h7M851.5 278.4h7M851.5 276h7M851.5 273.6h7M851.5 271.2h7M851.5 268.8h7M851.5 266.4h7M851.5 264h7M851.5 261.6h7M851.5 259.2h7M851.5 256.8h7M851.5 254.4h7M851.5 252h7M851.5 249.6h7M851.5 247.2h7M851.5 244.8h7M851.5 242.4h7M851.5 240h7M851.5 237.6h7M851.5 235.2h7M851.5 232.8h7M851.5 230.4h7M851.5 228h7M851.5 225.6h7M851.5 223.2h7M851.5 220.8h7M851.5 218.4h7M851.5 216h7M851.5 213.6h7M851.5 211.2h7M851.5 208.8h7M851.5 206.4h7M851.5 204h7M851.5 201.6h7M851.5 199.2h7M851.5 196.8h7M851.5 194.4h7M851.5 192h7M851.5 189.6h7M851.5 187.2h7M851.5 184.8h7M851.5 182.4h7M851.5 180h7M851.5 177.6h7M851.5 175.2h7M851.5 172.8h7M851.5 170.4h7M851.5 168h7M851.5 165.6h7M851.5 163.2h7M851.5 160.8h7M851.5 158.4h7M851.5 156h7M851.5 153.6h7M851.5 151.2h7M851.5 148.8h7M851.5 146.4h7M851.5 144h7M851.5 141.6h7M851.5 139.2h7M851.5 136.8h7M851.5 134.4h7M851.5 132h7M851.5 129.6h7M851.5 127.2h7M851.5 124.8h7M851.5 122.4h7M851.5 120h7M861.5 304.8h7M861.5 302.4h7M861.5 300h7M861.5 297.6h7M861.5 295.2h7M861.5 292.8h7M861.5 290.4h7M861.5 288h7M861.5 285.6h7M861.5 283.2h7M861.5 280.8h7M861.5 278.4h7M861.5 276h7M861.5 273.6h7M861.5 271.2h7M861.5 268.8h7M861.5 266.4h7M861.5 264h7M861.5 261.6h7M861.5 259.2h7M861.5 256.8h7M861.5 254.4h7M861.5 252h7M861.5 249.6h7M861.5 247.2h7M861.5 244.8h7M861.5 242.4h7M861.5 240h7M861.5 237.6h7M861.5 235.2h7M861.5 232.8h7M861.5 230.4h7M861.5 228h7M861.5 225.6h7M861.5 223.2h7M861.5 220.8h7M861.5 218.4h7M861.5 216h7M861.5 213.6h7M861.5 211.2h7M861.5 208.8h7M861.5 206.4h7M861.5 204h7M861.5 201.6h7M861.5 199.2h7M861.5 196.8h7M861.5 194.4h7M861.5 192h7M861.5 189.6h7M861.5 187.2h7M861.5 184.8h7M861.5 182.4h7M861.5 180h7M861.5 177.6h7M861.5 175.2h7M861.5 172.8h7M861.5 170.4h7M861.5 168h7M861.5 165.6h7M861.5 163.2h7M861.5 160.8h7M861.5 158.4h7M861.5 156h7M861.5 153.6h7M861.5 151.2h7M861.5 148.8h7M861.5 146.4h7M871.5 302.4h7M871.5 300h7M871.5 297.6h7M871.5 295.2h7M871.5 292.8h7M871.5 290.4h7M871.5 288h7M871.5 285.6h7M871.5 283.2h7M871.5 280.8h7M871.5 278.4h7M871.5 276h7M871.5 273.6h7M871.5 271.2h7M871.5 268.8h7M871.5 266.4h7M871.5 264h7M871.5 261.6h7M871.5 259.2h7M871.5 256.8h7M871.5 254.4h7M871.5 252h7M871.5 249.6h7M871.5 247.2h7M871.5 244.8h7M871.5 242.4h7M871.5 240h7M871.5 237.6h7M871.5 235.2h7M871.5 232.8h7M871.5 230.4h7M871.5 228h7M871.5 225.6h7M871.5 223.2h7M871.5 220.8h7M871.5 218.4h7M871.5 216h7M871.5 213.6h7M871.5 211.2h7M871.5 208.8h7M871.5 206.4h7M871.5 204h7M871.5 201.6h7M871.5 199.2h7M871.5 196.8h7M871.5 194.4h7M871.5 192h7M871.5 189.6h7M871.5 187.2h7M871.5 184.8h7M871.5 182.4h7M871.5 180h7M871.5 177.6h7M871.5 175.2h7M871.5 172.8h7M871.5 170.4h7M871.5 168h7M871.5 165.6h7M871.5 163.2h7M871.5 160.8h7M871.5 158.4h7M871.5 156h7M871.5 153.6h7M871.5 151.2h7M871.5 148.8h7M871.5 146.4h7M871.5 144h7M871.5 141.6h7M871.5 139.2h7M871.5 136.8h7M871.5 134.4h7M871.5 132h7M871.5 129.6h7M871.5 127.2h7M871.5 124.8h7M871.5 122.4h7M871.5 120h7M871.5 117.6h7M871.5 115.2h7M881.5 302.4h7M881.5 300h7M881.5 297.6h7M881.5 295.2h7M881.5 292.8h7M881.5 290.4h7M881.5 288h7M881.5 285.6h7M881.5 283.2h7M881.5 280.8h7M881.5 278.4h7M881.5 276h7M881.5 273.6h7M881.5 271.2h7M881.5 268.8h7M881.5 266.4h7M881.5 264h7M881.5 261.6h7M881.5 259.2h7M881.5 256.8h7M881.5 254.4h7M881.5 252h7M881.5 249.6h7M881.5 247.2h7M881.5 244.8h7M881.5 242.4h7M881.5 240h7M881.5 237.6h7M881.5 235.2h7M881.5 232.8h7M881.5 230.4h7M881.5 228h7M881.5 225.6h7M881.5 223.2h7M881.5 220.8h7M881.5 218.4h7M881.5 216h7M881.5 213.6h7M881.5 211.2h7M881.5 208.8h7M881.5 206.4h7M881.5 204h7M881.5 201.6h7M881.5 199.2h7M881.5 196.8h7M881.5 194.4h7M881.5 192h7M881.5 189.6h7M881.5 187.2h7M881.5 184.8h7M881.5 182.4h7M881.5 180h7M881.5 177.6h7M881.5 175.2h7M881.5 172.8h7M881.5 170.4h7M881.5 168h7M881.5 165.6h7M881.5 163.2h7M881.5 160.8h7M881.5 158.4h7M881.5 156h7M881.5 153.6h7M881.5 151.2h7M881.5 148.8h7M881.5 146.4h7M881.5 144h7M881.5 141.6h7M881.5 139.2h7M881.5 136.8h7M881.5 134.4h7M881.5 132h7M881.5 129.6h7M881.5 127.2h7M881.5 124.8h7M891.5 304.8h7M891.5 302.4h7M891.5 300h7M891.5 297.6h7M891.5 295.2h7M891.5 292.8h7M891.5 290.4h7M891.5 288h7M891.5 285.6h7M891.5 283.2h7M891.5 280.8h7M891.5 278.4h7M891.5 276h7M891.5 273.6h7M891.5 271.2h7M891.5 268.8h7M891.5 266.4h7M891.5 264h7M891.5 261.6h7M891.5 259.2h7M891.5 256.8h7M891.5 254.4h7M891.5 252h7M891.5 249.6h7M891.5 247.2h7M891.5 244.8h7M891.5 242.4h7M891.5 240h7M891.5 237.6h7M891.5 235.2h7M891.5 232.8h7M891.5 230.4h7M891.5 228h7M891.5 225.6h7M891.5 223.2h7M891.5 220.8h7M891.5 218.4h7M891.5 216h7M891.5 213.6h7M891.5 211.2h7M891.5 208.8h7M891.5 206.4h7M891.5 204h7M891.5 201.6h7M891.5 199.2h7M891.5 196.8h7M891.5 194.4h7M891.5 192h7M891.5 189.6h7M891.5 187.2h7M891.5 184.8h7M891.5 182.4h7M891.5 180h7M891.5 177.6h7M891.5 175.2h7M891.5 172.8h7M891.5 170.4h7M891.5 168h7M891.5 165.6h7M891.5 163.2h7M891.5 160.8h7M891.5 158.4h7M891.5 156h7M891.5 153.6h7M891.5 151.2h7M891.5 148.8h7M891.5 146.4h7M891.5 144h7M891.5 141.6h7M891.5 139.2h7M891.5 136.8h7M891.5 134.4h7M891.5 132h7M891.5 129.6h7M891.5 127.2h7M891.5 124.8h7M891.5 122.4h7M891.5 120h7M891.5 117.6h7M891.5 115.2h7M891.5 112.8h7M891.5 110.4h7M891.5 108h7M891.5 105.6h7M891.5 103.2h7M891.5 100.8h7M891.5 98.4h7M901.5 304.8h7M901.5 302.4h7M901.5 300h7M901.5 297.6h7M901.5 295.2h7M901.5 292.8h7M901.5 290.4h7M901.5 288h7M901.5 285.6h7M901.5 283.2h7M901.5 280.8h7M901.5 278.4h7M901.5 276h7M901.5 273.6h7M901.5 271.2h7M901.5 268.8h7M901.5 266.4h7M901.5 264h7M901.5 261.6h7M901.5 259.2h7M901.5 256.8h7M901.5 254.4h7M901.5 252h7M901.5 249.6h7M901.5 247.2h7M901.5 244.8h7M901.5 242.4h7M901.5 240h7M901.5 237.6h7M901.5 235.2h7M901.5 232.8h7M901.5 230.4h7M901.5 228h7M901.5 225.6h7M901.5 223.2h7M901.5 220.8h7M901.5 218.4h7M901.5 216h7M901.5 213.6h7M901.5 211.2h7M901.5 208.8h7M901.5 206.4h7M901.5 204h7M901.5 201.6h7M901.5 199.2h7M901.5 196.8h7M901.5 194.4h7M901.5 192h7M901.5 189.6h7M901.5 187.2h7M901.5 184.8h7M901.5 182.4h7M901.5 180h7M901.5 177.6h7M901.5 175.2h7M901.5 172.8h7M901.5 170.4h7M901.5 168h7M901.5 165.6h7M901.5 163.2h7M901.5 160.8h7M901.5 158.4h7M901.5 156h7M901.5 153.6h7M901.5 151.2h7M901.5 148.8h7M901.5 146.4h7M901.5 144h7M901.5 141.6h7M901.5 139.2h7M901.5 136.8h7M901.5 134.4h7M901.5 132h7M901.5 129.6h7M901.5 127.2h7M911.5 304.8h7M911.5 302.4h7M911.5 300h7M911.5 297.6h7M911.5 295.2h7M911.5 292.8h7M911.5 290.4h7M911.5 288h7M911.5 285.6h7M911.5 283.2h7M911.5 280.8h7M911.5 278.4h7M911.5 276h7M911.5 273.6h7M911.5 271.2h7M911.5 268.8h7M911.5 266.4h7M911.5 264h7M911.5 261.6h7M911.5 259.2h7M911.5 256.8h7M911.5 254.4h7M911.5 252h7M911.5 249.6h7M911.5 247.2h7M911.5 244.8h7M911.5 242.4h7M911.5 240h7M911.5 237.6h7M911.5 235.2h7M911.5 232.8h7M911.5 230.4h7M911.5 228h7M911.5 225.6h7M911.5 223.2h7M911.5 220.8h7M911.5 218.4h7M911.5 216h7M911.5 213.6h7M911.5 211.2h7M911.5 208.8h7M911.5 206.4h7M911.5 204h7M911.5 201.6h7M911.5 199.2h7M911.5 196.8h7M911.5 194.4h7M911.5 192h7M911.5 189.6h7M911.5 187.2h7M911.5 184.8h7M911.5 182.4h7M911.5 180h7M911.5 177.6h7M911.5 175.2h7M911.5 172.8h7M911.5 170.4h7M911.5 168h7M911.5 165.6h7M911.5 163.2h7M911.5 160.8h7M911.5 158.4h7M911.5 156h7M911.5 153.6h7M911.5 151.2h7M911.5 148.8h7M921.5 304.8h7M921.5 302.4h7M921.5 300h7M921.5 297.6h7M921.5 295.2h7M921.5 292.8h7M921.5 290.4h7M921.5 288h7M921.5 285.6h7M921.5 283.2h7M921.5 280.8h7M921.5 278.4h7M921.5 276h7M921.5 273.6h7M921.5 271.2h7M921.5 268.8h7M921.5 266.4h7M921.5 264h7M921.5 261.6h7M921.5 259.2h7M921.5 256.8h7M921.5 254.4h7M921.5 252h7M921.5 249.6h7M921.5 247.2h7M921.5 244.8h7M921.5 242.4h7M921.5 240h7M921.5 237.6h7M921.5 235.2h7M921.5 232.8h7M921.5 230.4h7M921.5 228h7M921.5 225.6h7M921.5 223.2h7M921.5 220.8h7M921.5 218.4h7M921.5 216h7M921.5 213.6h7M921.5 211.2h7M921.5 208.8h7M921.5 206.4h7M921.5 204h7M921.5 201.6h7M921.5 199.2h7M921.5 196.8h7M921.5 194.4h7M921.5 192h7M921.5 189.6h7M921.5 187.2h7M921.5 184.8h7M921.5 182.4h7M921.5 180h7M921.5 177.6h7M921.5 175.2h7M921.5 172.8h7M921.5 170.4h7M921.5 168h7M921.5 165.6h7M921.5 163.2h7M921.5 160.8h7M921.5 158.4h7M921.5 156h7M921.5 153.6h7M921.5 151.2h7M921.5 148.8h7M921.5 146.4h7M921.5 144h7M921.5 141.6h7M921.5 139.2h7M921.5 136.8h7M921.5 134.4h7M921.5 132h7M921.5 129.6h7M921.5 127.2h7M921.5 124.8h7M921.5 122.4h7M921.5 120h7M921.5 117.6h7M921.5 115.2h7M921.5 112.8h7M921.5 110.4h7M921.5 108h7M921.5 105.6h7M931.5 304.8h7M931.5 302.4h7M931.5 300h7M931.5 297.6h7M931.5 295.2h7M931.5 292.8h7M931.5 290.4h7M931.5 288h7M931.5 285.6h7M931.5 283.2h7M931.5 280.8h7M931.5 278.4h7M931.5 276h7M931.5 273.6h7M931.5 271.2h7M931.5 268.8h7M931.5 266.4h7M931.5 264h7M931.5 261.6h7M931.5 259.2h7M931.5 256.8h7M931.5 254.4h7M931.5 252h7M931.5 249.6h7M931.5 247.2h7M931.5 244.8h7M931.5 242.4h7M931.5 240h7M931.5 237.6h7M931.5 235.2h7M931.5 232.8h7M931.5 230.4h7M931.5 228h7M931.5 225.6h7M931.5 223.2h7M931.5 220.8h7M931.5 218.4h7M931.5 216h7M931.5 213.6h7M931.5 211.2h7M931.5 208.8h7M931.5 206.4h7M931.5 204h7M931.5 201.6h7M931.5 199.2h7M931.5 196.8h7M931.5 194.4h7M931.5 192h7M931.5 189.6h7M931.5 187.2h7M931.5 184.8h7M931.5 182.4h7M931.5 180h7M931.5 177.6h7M931.5 175.2h7M931.5 172.8h7M931.5 170.4h7M941.5 304.8h7M941.5 302.4h7M941.5 300h7M941.5 297.6h7M941.5 295.2h7M941.5 292.8h7M941.5 290.4h7M941.5 288h7M941.5 285.6h7M941.5 283.2h7M941.5 280.8h7M941.5 278.4h7M941.5 276h7M941.5 273.6h7M941.5 271.2h7M941.5 268.8h7M941.5 266.4h7M941.5 264h7M941.5 261.6h7M941.5 259.2h7M941.5 256.8h7M941.5 254.4h7M951.5 304.8h7M951.5 302.4h7M951.5 300h7M951.5 297.6h7M951.5 295.2h7M951.5 292.8h7M951.5 290.4h7M951.5 288h7M951.5 285.6h7M951.5 283.2h7M951.5 280.8h7M951.5 278.4h7M951.5 276h7M951.5 273.6h7M951.5 271.2h7M951.5 268.8h7M951.5 266.4h7M951.5 264h7M951.5 261.6h7M951.5 259.2h7M951.5 256.8h7M951.5 254.4h7M951.5 252h7M951.5 249.6h7M951.5 247.2h7M951.5 244.8h7M951.5 242.4h7M951.5 240h7M951.5 237.6h7M951.5 235.2h7M951.5 232.8h7M951.5 230.4h7M951.5 228h7M951.5 225.6h7M951.5 223.2h7M951.5 220.8h7M951.5 218.4h7M951.5 216h7M951.5 213.6h7M951.5 211.2h7M951.5 208.8h7M951.5 206.4h7M951.5 204h7M951.5 201.6h7M951.5 199.2h7M951.5 196.8h7M951.5 194.4h7M951.5 192h7M951.5 189.6h7M951.5 187.2h7M951.5 184.8h7M951.5 182.4h7M951.5 180h7M951.5 177.6h7M951.5 175.2h7M951.5 172.8h7M951.5 170.4h7M951.5 168h7M951.5 165.6h7M951.5 163.2h7M951.5 160.8h7M951.5 158.4h7M951.5 156h7M951.5 153.6h7M951.5 151.2h7M951.5 148.8h7M951.5 146.4h7M951.5 144h7M951.5 141.6h7M951.5 139.2h7M951.5 136.8h7M951.5 134.4h7M951.5 132h7M951.5 129.6h7M951.5 127.2h7M951.5 124.8h7M951.5 122.4h7M951.5 120h7M951.5 117.6h7M951.5 115.2h7M951.5 112.8h7M951.5 110.4h7M951.5 108h7M951.5 105.6h7M951.5 103.2h7M951.5 100.8h7M951.5 98.4h7M951.5 96h7M951.5 93.6h7M951.5 91.2h7M951.5 88.8h7M951.5 86.4h7M951.5 84h7M951.5 81.6h7M951.5 79.2h7M951.5 76.8h7M951.5 74.4h7M951.5 72h7M951.5 69.6h7M951.5 67.2h7M951.5 64.8h7M951.5 62.4h7M951.5 60h7M951.5 57.6h7M951.5 55.2h7M951.5 52.8h7M951.5 50.4h7M951.5 48h7M951.5 45.6h7M951.5 43.2h7M951.5 40.8h7M951.5 38.4h7M951.5 36h7M951.5 33.6h7M951.5 31.2h7M951.5 28.8h7M951.5 26.4h7M951.5 24h7M951.5 21.6h7M951.5 19.2h7M951.5 16.8h7M951.5 14.4h7M951.5 12h7M961.5 304.8h7M961.5 302.4h7M961.5 300h7M961.5 297.6h7M961.5 295.2h7M961.5 292.8h7M961.5 290.4h7M961.5 288h7M961.5 285.6h7M961.5 283.2h7M961.5 280.8h7M961.5 278.4h7M961.5 276h7M961.5 273.6h7M961.5 271.2h7M961.5 268.8h7M961.5 266.4h7M961.5 264h7M961.5 261.6h7M961.5 259.2h7M961.5 256.8h7M961.5 254.4h7M961.5 252h7M961.5 249.6h7M961.5 247.2h7M961.5 244.8h7M961.5 242.4h7M961.5 240h7M961.5 237.6h7M961.5 235.2h7M961.5 232.8h7M961.5 230.4h7M961.5 228h7M961.5 225.6h7M961.5 223.2h7M961.5 220.8h7M961.5 218.4h7M961.5 216h7M961.5 213.6h7M961.5 211.2h7M961.5 208.8h7M961.5 206.4h7M961.5 204h7M961.5 201.6h7M961.5 199.2h7M961.5 196.8h7M961.5 194.4h7M961.5 192h7M961.5 189.6h7M961.5 187.2h7M961.5 184.8h7M961.5 182.4h7M961.5 180h7M961.5 177.6h7M961.5 175.2h7M961.5 172.8h7M961.5 170.4h7M961.5 168h7M961.5 165.6h7M961.5 163.2h7M961.5 160.8h7M961.5 158.4h7M961.5 156h7M961.5 153.6h7M961.5 151.2h7M961.5 148.8h7M961.5 146.4h7M961.5 144h7M961.5 141.6h7M961.5 139.2h7M971.5 304.8h7M971.5 302.4h7M971.5 300h7M971.5 297.6h7M971.5 295.2h7M971.5 292.8h7M971.5 290.4h7M971.5 288h7M971.5 285.6h7M971.5 283.2h7M971.5 280.8h7M971.5 278.4h7M971.5 276h7M971.5 273.6h7M971.5 271.2h7M971.5 268.8h7M971.5 266.4h7M971.5 264h7M971.5 261.6h7M971.5 259.2h7M971.5 256.8h7M971.5 254.4h7M971.5 252h7M971.5 249.6h7M971.5 247.2h7M971.5 244.8h7M971.5 242.4h7M971.5 240h7M971.5 237.6h7M971.5 235.2h7M971.5 232.8h7M971.5 230.4h7M971.5 228h7M971.5 225.6h7M971.5 223.2h7M971.5 220.8h7M971.5 218.4h7M971.5 216h7M971.5 213.6h7M971.5 211.2h7M971.5 208.8h7M971.5 206.4h7M971.5 204h7M971.5 201.6h7M971.5 199.2h7M971.5 196.8h7M971.5 194.4h7M971.5 192h7M971.5 189.6h7M971.5 187.2h7M971.5 184.8h7M971.5 182.4h7M971.5 180h7M971.5 177.6h7M971.5 175.2h7M971.5 172.8h7M971.5 170.4h7M971.5 168h7M981.5 304.8h7M981.5 302.4h7M981.5 300h7M981.5 297.6h7M981.5 295.2h7M981.5 292.8h7M981.5 290.4h7M981.5 288h7M981.5 285.6h7M981.5 283.2h7M981.5 280.8h7M981.5 278.4h7M981.5 276h7M981.5 273.6h7M981.5 271.2h7M981.5 268.8h7M981.5 266.4h7M981.5 264h7M981.5 261.6h7M981.5 259.2h7M981.5 256.8h7M981.5 254.4h7M981.5 252h7M981.5 249.6h7M981.5 247.2h7M981.5 244.8h7M981.5 242.4h7M981.5 240h7M981.5 237.6h7M981.5 235.2h7M981.5 232.8h7M981.5 230.4h7M981.5 228h7M981.5 225.6h7M981.5 223.2h7M981.5 220.8h7M981.5 218.4h7M981.5 216h7M981.5 213.6h7M981.5 211.2h7M981.5 208.8h7M981.5 206.4h7M981.5 204h7M981.5 201.6h7M981.5 199.2h7M981.5 196.8h7M981.5 194.4h7M981.5 192h7M981.5 189.6h7M981.5 187.2h7M981.5 184.8h7M981.5 182.4h7M981.5 180h7M981.5 177.6h7M981.5 175.2h7M981.5 172.8h7M981.5 170.4h7M981.5 168h7M981.5 165.6h7M981.5 163.2h7M991.5 304.8h7M991.5 302.4h7M991.5 300h7M991.5 297.6h7M991.5 295.2h7M991.5 292.8h7M991.5 290.4h7M991.5 288h7M991.5 285.6h7M991.5 283.2h7M991.5 280.8h7M991.5 278.4h7M991.5 276h7M991.5 273.6h7M991.5 271.2h7M991.5 268.8h7M991.5 266.4h7M991.5 264h7M991.5 261.6h7M991.5 259.2h7M991.5 256.8h7M991.5 254.4h7M991.5 252h7M991.5 249.6h7M991.5 247.2h7M991.5 244.8h7M991.5 242.4h7M991.5 240h7M991.5 237.6h7M991.5 235.2h7M991.5 232.8h7M991.5 230.4h7M991.5 228h7M991.5 225.6h7M991.5 223.2h7M991.5 220.8h7M991.5 218.4h7M991.5 216h7M991.5 213.6h7M991.5 211.2h7M991.5 208.8h7M991.5 206.4h7M991.5 204h7M991.5 201.6h7M991.5 199.2h7M991.5 196.8h7M991.5 194.4h7M991.5 192h7M991.5 189.6h7M991.5 187.2h7M991.5 184.8h7M991.5 182.4h7M991.5 180h7M991.5 177.6h7M991.5 175.2h7M991.5 172.8h7M1001.5 304.8h7M1001.5 302.4h7M1001.5 300h7M1001.5 297.6h7M1001.5 295.2h7M1001.5 292.8h7M1001.5 290.4h7M1001.5 288h7M1001.5 285.6h7M1001.5 283.2h7M1001.5 280.8h7M1001.5 278.4h7M1001.5 276h7M1001.5 273.6h7M1001.5 271.2h7M1001.5 268.8h7M1001.5 266.4h7M1001.5 264h7M1001.5 261.6h7M1001.5 259.2h7M1001.5 256.8h7M1001.5 254.4h7M1001.5 252h7M1001.5 249.6h7M1001.5 247.2h7M1001.5 244.8h7M1001.5 242.4h7M1001.5 240h7M1001.5 237.6h7M1001.5 235.2h7M1001.5 232.8h7M1001.5 230.4h7M1001.5 228h7M1011.5 304.8h7M1011.5 302.4h7M1011.5 300h7M1011.5 297.6h7M1011.5 295.2h7M1011.5 292.8h7M1011.5 290.4h7M1011.5 288h7M1011.5 285.6h7M1011.5 283.2h7M1011.5 280.8h7M1011.5 278.4h7M1011.5 276h7M1011.5 273.6h7M1011.5 271.2h7M1011.5 268.8h7M1011.5 266.4h7M1011.5 264h7M1011.5 261.6h7M1011.5 259.2h7M1011.5 256.8h7M1011.5 254.4h7M1011.5 252h7M1011.5 249.6h7M1011.5 247.2h7M1011.5 244.8h7M1011.5 242.4h7M1011.5 240h7M1011.5 237.6h7M1011.5 235.2h7M1011.5 232.8h7M1011.5 230.4h7M1011.5 228h7M1011.5 225.6h7M1011.5 223.2h7M1011.5 220.8h7M1011.5 218.4h7M1011.5 216h7M1021.5 304.8h7M1021.5 302.4h7M1021.5 300h7M1021.5 297.6h7M1021.5 295.2h7M1021.5 292.8h7M1021.5 290.4h7M1021.5 288h7M1021.5 285.6h7M1021.5 283.2h7M1021.5 280.8h7M1021.5 278.4h7M1021.5 276h7M1021.5 273.6h7M1021.5 271.2h7M1021.5 268.8h7M1021.5 266.4h7M1021.5 264h7M1021.5 261.6h7M1021.5 259.2h7M1021.5 256.8h7M1021.5 254.4h7M1021.5 252h7M1021.5 249.6h7M1021.5 247.2h7M1021.5 244.8h7M1021.5 242.4h7M1021.5 240h7M1021.5 237.6h7M1021.5 235.2h7M1021.5 232.8h7M1021.5 230.4h7M1021.5 228h7M1021.5 225.6h7M1021.5 223.2h7M1021.5 220.8h7M1021.5 218.4h7M1021.5 216h7M1021.5 213.6h7M1031.5 304.8h7M1031.5 302.4h7M1031.5 300h7M1031.5 297.6h7M1031.5 295.2h7M1031.5 292.8h7M1031.5 290.4h7M1031.5 288h7M1031.5 285.6h7M1031.5 283.2h7M1031.5 280.8h7M1031.5 278.4h7M1031.5 276h7M1031.5 273.6h7M1031.5 271.2h7M1031.5 268.8h7M1031.5 266.4h7M1031.5 264h7M1031.5 261.6h7M1031.5 259.2h7M1031.5 256.8h7M1031.5 254.4h7M1041.5 304.8h7M1041.5 302.4h7M1041.5 300h7M1041.5 297.6h7M1041.5 295.2h7M1041.5 292.8h7M1041.5 290.4h7M1041.5 288h7M1041.5 285.6h7M1041.5 283.2h7M1041.5 280.8h7M1041.5 278.4h7M1041.5 276h7M1041.5 273.6h7M1041.5 271.2h7M1041.5 268.8h7M1041.5 266.4h7M1041.5 264h7M1041.5 261.6h7M1041.5 259.2h7M1041.5 256.8h7M1041.5 254.4h7M1041.5 252h7M1041.5 249.6h7M1041.5 247.2h7M1041.5 244.8h7M1041.5 242.4h7M1041.5 240h7M1041.5 237.6h7M1041.5 235.2h7M1051.5 304.8h7M1051.5 302.4h7M1051.5 300h7M1051.5 297.6h7M1051.5 295.2h7M1051.5 292.8h7M1051.5 290.4h7M1051.5 288h7M1051.5 285.6h7M1051.5 283.2h7M1051.5 280.8h7M1051.5 278.4h7M1051.5 276h7M1051.5 273.6h7M1051.5 271.2h7M1051.5 268.8h7M1051.5 266.4h7M1051.5 264h7M1051.5 261.6h7M1051.5 259.2h7M1051.5 256.8h7M1051.5 254.4h7M1051.5 252h7M1051.5 249.6h7M1051.5 247.2h7M1051.5 244.8h7M1051.5 242.4h7M1051.5 240h7M1051.5 237.6h7M1051.5 235.2h7M1051.5 232.8h7M1061.5 304.8h7M1061.5 302.4h7M1061.5 300h7M1061.5 297.6h7M1061.5 295.2h7M1061.5 292.8h7M1061.5 290.4h7M1061.5 288h7M1061.5 285.6h7M1061.5 283.2h7M1061.5 280.8h7M1061.5 278.4h7M1061.5 276h7M1061.5 273.6h7M1061.5 271.2h7M1061.5 268.8h7M1061.5 266.4h7M1061.5 264h7M1061.5 261.6h7M1061.5 259.2h7M1061.5 256.8h7M1061.5 254.4h7M1061.5 252h7M1061.5 249.6h7M1061.5 247.2h7M1061.5 244.8h7M1061.5 242.4h7M1061.5 240h7M1061.5 237.6h7M1071.5 304.8h7M1071.5 302.4h7M1071.5 300h7M1071.5 297.6h7M1071.5 295.2h7M1071.5 292.8h7M1071.5 290.4h7M1071.5 288h7M1071.5 285.6h7M1071.5 283.2h7M1071.5 280.8h7M1071.5 278.4h7M1071.5 276h7M1071.5 273.6h7M1071.5 271.2h7M1071.5 268.8h7M1071.5 266.4h7M1071.5 264h7M1071.5 261.6h7M1071.5 259.2h7M1071.5 256.8h7M1071.5 254.4h7M1071.5 252h7M1071.5 249.6h7M1071.5 247.2h7M1071.5 244.8h7M1071.5 242.4h7M1071.5 240h7M1071.5 237.6h7M1071.5 235.2h7M1071.5 232.8h7M1071.5 230.4h7M1071.5 228h7M1081.5 304.8h7M1081.5 302.4h7M1081.5 300h7M1081.5 297.6h7M1081.5 295.2h7M1081.5 292.8h7M1081.5 290.4h7M1081.5 288h7M1081.5 285.6h7M1081.5 283.2h7M1081.5 280.8h7M1081.5 278.4h7M1081.5 276h7M1081.5 273.6h7M1081.5 271.2h7M1081.5 268.8h7M1081.5 266.4h7M1081.5 264h7M1081.5 261.6h7M1081.5 259.2h7M1081.5 256.8h7M1081.5 254.4h7M1081.5 252h7M1081.5 249.6h7M1081.5 247.2h7M1081.5 244.8h7M1081.5 242.4h7M1081.5 240h7M1081.5 237.6h7M1081.5 235.2h7M1081.5 232.8h7M1081.5 230.4h7M1081.5 228h7M1081.5 225.6h7M1081.5 223.2h7M1081.5 220.8h7M1081.5 218.4h7M1081.5 216h7M1081.5 213.6h7M1081.5 211.2h7M1081.5 208.8h7M1091.5 304.8h7M1091.5 302.4h7M1091.5 300h7M1091.5 297.6h7M1091.5 295.2h7M1091.5 292.8h7M1091.5 290.4h7M1091.5 288h7M1091.5 285.6h7M1091.5 283.2h7M1091.5 280.8h7M1091.5 278.4h7M1091.5 276h7M1091.5 273.6h7M1091.5 271.2h7M1091.5 268.8h7M1091.5 266.4h7M1091.5 264h7M1091.5 261.6h7M1091.5 259.2h7M1091.5 256.8h7M1091.5 254.4h7M1091.5 252h7M1091.5 249.6h7M1091.5 247.2h7M1091.5 244.8h7M1091.5 242.4h7M1091.5 240h7M1091.5 237.6h7M1091.5 235.2h7M1091.5 232.8h7M1091.5 230.4h7M1091.5 228h7M1091.5 225.6h7M1091.5 223.2h7M1091.5 220.8h7M1091.5 218.4h7M1091.5 216h7M1091.5 213.6h7M1091.5 211.2h7M1091.5 208.8h7M1091.5 206.4h7M1091.5 204h7M1091.5 201.6h7M1091.5 199.2h7M1101.5 304.8h7M1101.5 302.4h7M1101.5 300h7M1101.5 297.6h7M1101.5 295.2h7M1101.5 292.8h7M1101.5 290.4h7M1101.5 288h7M1101.5 285.6h7M1101.5 283.2h7M1101.5 280.8h7M1101.5 278.4h7M1111.5 304.8h7M1111.5 302.4h7M1111.5 300h7M1111.5 297.6h7M1111.5 295.2h7M1111.5 292.8h7M1111.5 290.4h7M1111.5 288h7M1111.5 285.6h7M1111.5 283.2h7M1111.5 280.8h7M1111.5 278.4h7M1111.5 276h7M1111.5 273.6h7M1111.5 271.2h7M1111.5 268.8h7M1111.5 266.4h7M1111.5 264h7M1111.5 261.6h7M1111.5 259.2h7M1111.5 256.8h7M1111.5 254.4h7M1111.5 252h7M1111.5 249.6h7M1111.5 247.2h7M1111.5 244.8h7M1111.5 242.4h7M1111.5 240h7M1111.5 237.6h7M1111.5 235.2h7M1111.5 232.8h7M1111.5 230.4h7M1111.5 228h7M1111.5 225.6h7M1111.5 223.2h7M1111.5 220.8h7M1111.5 218.4h7M1111.5 216h7M1111.5 213.6h7M1111.5 211.2h7M1111.5 208.8h7M1121.5 304.8h7M1121.5 302.4h7M1121.5 300h7M1121.5 297.6h7M1121.5 295.2h7M1121.5 292.8h7M1121.5 290.4h7M1121.5 288h7M1121.5 285.6h7M1121.5 283.2h7M1121.5 280.8h7M1121.5 278.4h7M1121.5 276h7M1121.5 273.6h7M1121.5 271.2h7M1121.5 268.8h7M1121.5 266.4h7M1121.5 264h7M1121.5 261.6h7M1121.5 259.2h7M1121.5 256.8h7M1121.5 254.4h7M1121.5 252h7M1121.5 249.6h7M1121.5 247.2h7M1121.5 244.8h7M1121.5 242.4h7M1121.5 240h7M1121.5 237.6h7M1121.5 235.2h7M1121.5 232.8h7M1121.5 230.4h7M1121.5 228h7M1121.5 225.6h7M1121.5 223.2h7M1121.5 220.8h7M1121.5 218.4h7M1121.5 216h7M1121.5 213.6h7M1121.5 211.2h7M1121.5 208.8h7M1121.5 206.4h7M1121.5 204h7M1121.5 201.6h7M1121.5 199.2h7M1121.5 196.8h7M1121.5 194.4h7M1121.5 192h7M1121.5 189.6h7M1121.5 187.2h7M1121.5 184.8h7M1131.5 304.8h7M1131.5 302.4h7M1131.5 300h7M1131.5 297.6h7M1131.5 295.2h7M1131.5 292.8h7M1131.5 290.4h7M1131.5 288h7M1131.5 285.6h7M1131.5 283.2h7M1131.5 280.8h7M1131.5 278.4h7M1131.5 276h7M1131.5 273.6h7M1131.5 271.2h7M1131.5 268.8h7M1131.5 266.4h7M1131.5 264h7M1131.5 261.6h7M1131.5 259.2h7M1131.5 256.8h7M1131.5 254.4h7M1131.5 252h7M1131.5 249.6h7M1131.5 247.2h7M1131.5 244.8h7M1131.5 242.4h7M1131.5 240h7M1131.5 237.6h7M1131.5 235.2h7M1131.5 232.8h7M1131.5 230.4h7M1131.5 228h7M1131.5 225.6h7M1131.5 223.2h7M1131.5 220.8h7M1131.5 218.4h7M1131.5 216h7M1131.5 213.6h7M1131.5 211.2h7M1131.5 208.8h7M1131.5 206.4h7M1131.5 204h7M1131.5 201.6h7M1131.5 199.2h7M1131.5 196.8h7M1131.5 194.4h7M1131.5 192h7M1131.5 189.6h7M1131.5 187.2h7M1131.5 184.8h7M1131.5 182.4h7M1131.5 180h7M1131.5 177.6h7M1131.5 175.2h7M1131.5 172.8h7M1131.5 170.4h7M1131.5 168h7M1131.5 165.6h7M1131.5 163.2h7M1131.5 160.8h7M1131.5 158.4h7M1131.5 156h7M1131.5 153.6h7M1131.5 151.2h7M1131.5 148.8h7M1131.5 146.4h7M1131.5 144h7" fill="none" stroke="#6b7079" stroke-width="1.5"></path>
+<path d="M3.5 288h3M3.5 285.6h3M3.5 283.2h3M3.5 280.8h3M3.5 278.4h3M3.5 276h3M23.5 283.2h3M23.5 280.8h3M23.5 278.4h3M33.5 302.4h3M43.5 295.2h3M153.5 232.8h3M153.5 230.4h3M153.5 228h3M173.5 240h3M213.5 261.6h3M223.5 199.2h3M243.5 252h3M303.5 213.6h3M323.5 300h3M333.5 235.2h3M553.5 204h3M583.5 158.4h3M583.5 156h3M583.5 153.6h3M583.5 151.2h3M583.5 148.8h3M583.5 146.4h3M583.5 144h3M583.5 141.6h3M583.5 139.2h3M583.5 136.8h3M583.5 134.4h3M583.5 132h3M583.5 129.6h3M583.5 127.2h3M583.5 124.8h3M583.5 122.4h3M583.5 120h3M583.5 117.6h3M583.5 115.2h3M583.5 112.8h3M583.5 110.4h3M583.5 108h3M583.5 105.6h3M583.5 103.2h3M583.5 100.8h3M583.5 98.4h3M583.5 96h3M583.5 93.6h3M583.5 91.2h3M583.5 88.8h3M583.5 86.4h3M583.5 84h3M583.5 81.6h3M583.5 79.2h3M583.5 76.8h3M583.5 74.4h3M583.5 72h3M583.5 69.6h3M583.5 67.2h3M583.5 64.8h3M583.5 62.4h3M583.5 60h3M583.5 57.6h3M583.5 55.2h3M583.5 52.8h3M583.5 50.4h3M583.5 48h3M583.5 45.6h3M583.5 43.2h3M583.5 40.8h3M583.5 38.4h3M583.5 36h3M583.5 33.6h3M583.5 31.2h3M583.5 28.8h3M583.5 26.4h3M583.5 24h3M583.5 21.6h3M583.5 19.2h3M583.5 16.8h3M583.5 14.4h3M583.5 12h3M583.5 9.6h3M583.5 7.2h3M763.5 165.6h3M813.5 124.8h3M833.5 141.6h3M833.5 139.2h3M833.5 136.8h3M843.5 127.2h3M853.5 117.6h3M933.5 168h3M933.5 165.6h3M953.5 9.6h3" fill="none" stroke="#6b7079" stroke-width="1.5"></path>
+<path d="M1.5 304.8h7M1.5 302.4h7M1.5 300h7M1.5 297.6h7M1.5 295.2h7M1.5 292.8h7M1.5 290.4h7M11.5 304.8h7M11.5 302.4h7M11.5 300h7M21.5 304.8h7M21.5 302.4h7M21.5 300h7M21.5 297.6h7M21.5 295.2h7M31.5 304.8h7M41.5 304.8h7M41.5 302.4h7M41.5 300h7M51.5 304.8h7M51.5 302.4h7M51.5 300h7M71.5 304.8h7M71.5 302.4h7M71.5 300h7M71.5 297.6h7M71.5 295.2h7M71.5 292.8h7M71.5 290.4h7M71.5 288h7M71.5 285.6h7M81.5 304.8h7M91.5 304.8h7M91.5 302.4h7M91.5 300h7M101.5 304.8h7M101.5 302.4h7M101.5 300h7M101.5 297.6h7M111.5 304.8h7M111.5 302.4h7M111.5 300h7M111.5 297.6h7M111.5 295.2h7M111.5 292.8h7M111.5 290.4h7M111.5 288h7M111.5 285.6h7M111.5 283.2h7M111.5 280.8h7M111.5 278.4h7M111.5 276h7M121.5 304.8h7M121.5 302.4h7M121.5 300h7M121.5 297.6h7M151.5 304.8h7M151.5 302.4h7M151.5 300h7M151.5 297.6h7M151.5 295.2h7M151.5 292.8h7M151.5 290.4h7M151.5 288h7M151.5 285.6h7M151.5 283.2h7M151.5 280.8h7M151.5 278.4h7M151.5 276h7M151.5 273.6h7M151.5 271.2h7M151.5 268.8h7M151.5 266.4h7M151.5 264h7M151.5 261.6h7M151.5 259.2h7M161.5 304.8h7M171.5 304.8h7M171.5 302.4h7M171.5 300h7M171.5 297.6h7M171.5 295.2h7M171.5 292.8h7M171.5 290.4h7M181.5 304.8h7M181.5 302.4h7M181.5 300h7M181.5 297.6h7M181.5 295.2h7M191.5 304.8h7M191.5 302.4h7M191.5 300h7M191.5 297.6h7M191.5 295.2h7M191.5 292.8h7M191.5 290.4h7M191.5 288h7M191.5 285.6h7M191.5 283.2h7M191.5 280.8h7M191.5 278.4h7M191.5 276h7M191.5 273.6h7M191.5 271.2h7M201.5 304.8h7M201.5 302.4h7M201.5 300h7M201.5 297.6h7M201.5 295.2h7M201.5 292.8h7M201.5 290.4h7M211.5 304.8h7M211.5 302.4h7M211.5 300h7M211.5 297.6h7M211.5 295.2h7M211.5 292.8h7M211.5 290.4h7M221.5 304.8h7M221.5 302.4h7M221.5 300h7M221.5 297.6h7M221.5 295.2h7M221.5 292.8h7M221.5 290.4h7M221.5 288h7M221.5 285.6h7M221.5 283.2h7M221.5 280.8h7M221.5 278.4h7M221.5 276h7M221.5 273.6h7M221.5 271.2h7M221.5 268.8h7M221.5 266.4h7M221.5 264h7M221.5 261.6h7M221.5 259.2h7M231.5 304.8h7M231.5 302.4h7M231.5 300h7M231.5 297.6h7M231.5 295.2h7M231.5 292.8h7M231.5 290.4h7M231.5 288h7M231.5 285.6h7M231.5 283.2h7M231.5 280.8h7M231.5 278.4h7M241.5 304.8h7M241.5 302.4h7M241.5 300h7M241.5 297.6h7M241.5 295.2h7M241.5 292.8h7M241.5 290.4h7M241.5 288h7M241.5 285.6h7M241.5 283.2h7M241.5 280.8h7M241.5 278.4h7M241.5 276h7M241.5 273.6h7M241.5 271.2h7M241.5 268.8h7M261.5 304.8h7M261.5 302.4h7M261.5 300h7M261.5 297.6h7M271.5 304.8h7M271.5 302.4h7M271.5 300h7M281.5 304.8h7M281.5 302.4h7M281.5 300h7M281.5 297.6h7M281.5 295.2h7M281.5 292.8h7M281.5 290.4h7M281.5 288h7M281.5 285.6h7M281.5 283.2h7M281.5 280.8h7M281.5 278.4h7M281.5 276h7M281.5 273.6h7M281.5 271.2h7M281.5 268.8h7M281.5 266.4h7M281.5 264h7M281.5 261.6h7M281.5 259.2h7M281.5 256.8h7M281.5 254.4h7M281.5 252h7M281.5 249.6h7M281.5 247.2h7M281.5 244.8h7M291.5 304.8h7M291.5 302.4h7M291.5 300h7M291.5 297.6h7M291.5 295.2h7M291.5 292.8h7M291.5 290.4h7M291.5 288h7M301.5 304.8h7M301.5 302.4h7M301.5 300h7M301.5 297.6h7M301.5 295.2h7M301.5 292.8h7M301.5 290.4h7M301.5 288h7M301.5 285.6h7M301.5 283.2h7M311.5 304.8h7M311.5 302.4h7M311.5 300h7M311.5 297.6h7M311.5 295.2h7M311.5 292.8h7M311.5 290.4h7M311.5 288h7M311.5 285.6h7M311.5 283.2h7M311.5 280.8h7M311.5 278.4h7M321.5 304.8h7M321.5 302.4h7M331.5 304.8h7M331.5 302.4h7M331.5 300h7M331.5 297.6h7M331.5 295.2h7M331.5 292.8h7M331.5 290.4h7M331.5 288h7M331.5 285.6h7M341.5 304.8h7M341.5 302.4h7M351.5 304.8h7M351.5 302.4h7M351.5 300h7M361.5 304.8h7M361.5 302.4h7M361.5 300h7M361.5 297.6h7M361.5 295.2h7M361.5 292.8h7M371.5 304.8h7M381.5 304.8h7M381.5 302.4h7M381.5 300h7M381.5 297.6h7M381.5 295.2h7M381.5 292.8h7M381.5 290.4h7M381.5 288h7M381.5 285.6h7M381.5 283.2h7M381.5 280.8h7M381.5 278.4h7M381.5 276h7M381.5 273.6h7M381.5 271.2h7M381.5 268.8h7M381.5 266.4h7M381.5 264h7M381.5 261.6h7M381.5 259.2h7M381.5 256.8h7M381.5 254.4h7M381.5 252h7M381.5 249.6h7M381.5 247.2h7M381.5 244.8h7M381.5 242.4h7M381.5 240h7M381.5 237.6h7M381.5 235.2h7M381.5 232.8h7M381.5 230.4h7M381.5 228h7M381.5 225.6h7M381.5 223.2h7M381.5 220.8h7M381.5 218.4h7M381.5 216h7M381.5 213.6h7M381.5 211.2h7M381.5 208.8h7M381.5 206.4h7M401.5 304.8h7M401.5 302.4h7M401.5 300h7M401.5 297.6h7M401.5 295.2h7M401.5 292.8h7M401.5 290.4h7M401.5 288h7M401.5 285.6h7M401.5 283.2h7M401.5 280.8h7M401.5 278.4h7M401.5 276h7M401.5 273.6h7M401.5 271.2h7M401.5 268.8h7M401.5 266.4h7M401.5 264h7M401.5 261.6h7M401.5 259.2h7M421.5 304.8h7M421.5 302.4h7M421.5 300h7M421.5 297.6h7M421.5 295.2h7M421.5 292.8h7M421.5 290.4h7M421.5 288h7M421.5 285.6h7M421.5 283.2h7M421.5 280.8h7M421.5 278.4h7M421.5 276h7M421.5 273.6h7M421.5 271.2h7M421.5 268.8h7M421.5 266.4h7M421.5 264h7M421.5 261.6h7M421.5 259.2h7M431.5 304.8h7M431.5 302.4h7M431.5 300h7M431.5 297.6h7M431.5 295.2h7M431.5 292.8h7M431.5 290.4h7M431.5 288h7M431.5 285.6h7M431.5 283.2h7M431.5 280.8h7M431.5 278.4h7M441.5 304.8h7M441.5 302.4h7M441.5 300h7M441.5 297.6h7M441.5 295.2h7M441.5 292.8h7M441.5 290.4h7M441.5 288h7M441.5 285.6h7M441.5 283.2h7M441.5 280.8h7M441.5 278.4h7M441.5 276h7M441.5 273.6h7M441.5 271.2h7M441.5 268.8h7M441.5 266.4h7M441.5 264h7M441.5 261.6h7M441.5 259.2h7M441.5 256.8h7M441.5 254.4h7M451.5 304.8h7M451.5 302.4h7M451.5 300h7M451.5 297.6h7M451.5 295.2h7M451.5 292.8h7M451.5 290.4h7M451.5 288h7M451.5 285.6h7M451.5 283.2h7M451.5 280.8h7M451.5 278.4h7M451.5 276h7M451.5 273.6h7M451.5 271.2h7M451.5 268.8h7M451.5 266.4h7M451.5 264h7M451.5 261.6h7M451.5 259.2h7M451.5 256.8h7M451.5 254.4h7M461.5 304.8h7M461.5 302.4h7M461.5 300h7M461.5 297.6h7M461.5 295.2h7M461.5 292.8h7M461.5 290.4h7M461.5 288h7M461.5 285.6h7M461.5 283.2h7M461.5 280.8h7M461.5 278.4h7M461.5 276h7M461.5 273.6h7M461.5 271.2h7M461.5 268.8h7M461.5 266.4h7M461.5 264h7M461.5 261.6h7M461.5 259.2h7M461.5 256.8h7M461.5 254.4h7M461.5 252h7M461.5 249.6h7M461.5 247.2h7M461.5 244.8h7M461.5 242.4h7M461.5 240h7M471.5 304.8h7M471.5 302.4h7M471.5 300h7M471.5 297.6h7M471.5 295.2h7M471.5 292.8h7M471.5 290.4h7M471.5 288h7M481.5 304.8h7M481.5 302.4h7M481.5 300h7M481.5 297.6h7M481.5 295.2h7M481.5 292.8h7M481.5 290.4h7M481.5 288h7M481.5 285.6h7M481.5 283.2h7M481.5 280.8h7M481.5 278.4h7M481.5 276h7M481.5 273.6h7M481.5 271.2h7M481.5 268.8h7M481.5 266.4h7M481.5 264h7M481.5 261.6h7M481.5 259.2h7M481.5 256.8h7M481.5 254.4h7M481.5 252h7M481.5 249.6h7M481.5 247.2h7M481.5 244.8h7M481.5 242.4h7M481.5 240h7M481.5 237.6h7M481.5 235.2h7M481.5 232.8h7M481.5 230.4h7M481.5 228h7M481.5 225.6h7M481.5 223.2h7M481.5 220.8h7M481.5 218.4h7M481.5 216h7M481.5 213.6h7M481.5 211.2h7M481.5 208.8h7M481.5 206.4h7M481.5 204h7M481.5 201.6h7M481.5 199.2h7M491.5 304.8h7M491.5 302.4h7M491.5 300h7M491.5 297.6h7M491.5 295.2h7M491.5 292.8h7M491.5 290.4h7M491.5 288h7M501.5 304.8h7M501.5 302.4h7M501.5 300h7M501.5 297.6h7M501.5 295.2h7M501.5 292.8h7M501.5 290.4h7M501.5 288h7M501.5 285.6h7M501.5 283.2h7M501.5 280.8h7M501.5 278.4h7M501.5 276h7M501.5 273.6h7M501.5 271.2h7M501.5 268.8h7M501.5 266.4h7M501.5 264h7M501.5 261.6h7M501.5 259.2h7M501.5 256.8h7M501.5 254.4h7M501.5 252h7M501.5 249.6h7M501.5 247.2h7M501.5 244.8h7M501.5 242.4h7M511.5 304.8h7M511.5 302.4h7M511.5 300h7M511.5 297.6h7M511.5 295.2h7M511.5 292.8h7M511.5 290.4h7M511.5 288h7M511.5 285.6h7M511.5 283.2h7M511.5 280.8h7M511.5 278.4h7M511.5 276h7M511.5 273.6h7M521.5 304.8h7M521.5 302.4h7M521.5 300h7M521.5 297.6h7M521.5 295.2h7M521.5 292.8h7M521.5 290.4h7M521.5 288h7M521.5 285.6h7M521.5 283.2h7M521.5 280.8h7M521.5 278.4h7M521.5 276h7M521.5 273.6h7M521.5 271.2h7M521.5 268.8h7M521.5 266.4h7M521.5 264h7M521.5 261.6h7M521.5 259.2h7M521.5 256.8h7M521.5 254.4h7M521.5 252h7M531.5 304.8h7M531.5 302.4h7M531.5 300h7M531.5 297.6h7M531.5 295.2h7M531.5 292.8h7M531.5 290.4h7M531.5 288h7M531.5 285.6h7M531.5 283.2h7M531.5 280.8h7M531.5 278.4h7M531.5 276h7M531.5 273.6h7M531.5 271.2h7M531.5 268.8h7M541.5 304.8h7M541.5 302.4h7M541.5 300h7M541.5 297.6h7M541.5 295.2h7M541.5 292.8h7M541.5 290.4h7M541.5 288h7M541.5 285.6h7M541.5 283.2h7M541.5 280.8h7M551.5 304.8h7M551.5 302.4h7M551.5 300h7M551.5 297.6h7M551.5 295.2h7M551.5 292.8h7M551.5 290.4h7M551.5 288h7M551.5 285.6h7M551.5 283.2h7M551.5 280.8h7M551.5 278.4h7M551.5 276h7M551.5 273.6h7M561.5 304.8h7M561.5 302.4h7M561.5 300h7M561.5 297.6h7M561.5 295.2h7M561.5 292.8h7M561.5 290.4h7M561.5 288h7M561.5 285.6h7M561.5 283.2h7M561.5 280.8h7M561.5 278.4h7M561.5 276h7M561.5 273.6h7M561.5 271.2h7M561.5 268.8h7M561.5 266.4h7M561.5 264h7M561.5 261.6h7M571.5 304.8h7M571.5 302.4h7M571.5 300h7M571.5 297.6h7M571.5 295.2h7M571.5 292.8h7M571.5 290.4h7M571.5 288h7M571.5 285.6h7M571.5 283.2h7M571.5 280.8h7M571.5 278.4h7M571.5 276h7M571.5 273.6h7M571.5 271.2h7M571.5 268.8h7M571.5 266.4h7M571.5 264h7M571.5 261.6h7M571.5 259.2h7M581.5 304.8h7M581.5 302.4h7M581.5 300h7M581.5 297.6h7M581.5 295.2h7M581.5 292.8h7M581.5 290.4h7M581.5 288h7M581.5 285.6h7M581.5 283.2h7M591.5 304.8h7M591.5 302.4h7M591.5 300h7M591.5 297.6h7M591.5 295.2h7M591.5 292.8h7M591.5 290.4h7M601.5 304.8h7M601.5 302.4h7M601.5 300h7M601.5 297.6h7M601.5 295.2h7M601.5 292.8h7M601.5 290.4h7M601.5 288h7M601.5 285.6h7M601.5 283.2h7M601.5 280.8h7M601.5 278.4h7M601.5 276h7M601.5 273.6h7M611.5 304.8h7M611.5 302.4h7M611.5 300h7M611.5 297.6h7M611.5 295.2h7M621.5 304.8h7M621.5 302.4h7M621.5 300h7M621.5 297.6h7M621.5 295.2h7M621.5 292.8h7M631.5 304.8h7M631.5 302.4h7M631.5 300h7M631.5 297.6h7M631.5 295.2h7M631.5 292.8h7M631.5 290.4h7M631.5 288h7M631.5 285.6h7M631.5 283.2h7M631.5 280.8h7M631.5 278.4h7M631.5 276h7M631.5 273.6h7M631.5 271.2h7M631.5 268.8h7M631.5 266.4h7M631.5 264h7M631.5 261.6h7M641.5 304.8h7M641.5 302.4h7M641.5 300h7M641.5 297.6h7M641.5 295.2h7M641.5 292.8h7M641.5 290.4h7M641.5 288h7M651.5 304.8h7M651.5 302.4h7M651.5 300h7M651.5 297.6h7M651.5 295.2h7M651.5 292.8h7M651.5 290.4h7M651.5 288h7M651.5 285.6h7M651.5 283.2h7M651.5 280.8h7M651.5 278.4h7M661.5 304.8h7M661.5 302.4h7M661.5 300h7M661.5 297.6h7M661.5 295.2h7M661.5 292.8h7M661.5 290.4h7M661.5 288h7M671.5 304.8h7M671.5 302.4h7M671.5 300h7M681.5 304.8h7M681.5 302.4h7M681.5 300h7M681.5 297.6h7M681.5 295.2h7M681.5 292.8h7M691.5 304.8h7M691.5 302.4h7M691.5 300h7M691.5 297.6h7M691.5 295.2h7M691.5 292.8h7M691.5 290.4h7M691.5 288h7M691.5 285.6h7M691.5 283.2h7M691.5 280.8h7M691.5 278.4h7M691.5 276h7M691.5 273.6h7M701.5 304.8h7M701.5 302.4h7M701.5 300h7M701.5 297.6h7M701.5 295.2h7M701.5 292.8h7M711.5 304.8h7M721.5 304.8h7M721.5 302.4h7M721.5 300h7M721.5 297.6h7M731.5 304.8h7M731.5 302.4h7M731.5 300h7M731.5 297.6h7M731.5 295.2h7M731.5 292.8h7M731.5 290.4h7M731.5 288h7M741.5 304.8h7M741.5 302.4h7M751.5 304.8h7M751.5 302.4h7M751.5 300h7M751.5 297.6h7M751.5 295.2h7M751.5 292.8h7M751.5 290.4h7M761.5 304.8h7M761.5 302.4h7M761.5 300h7M761.5 297.6h7M761.5 295.2h7M761.5 292.8h7M761.5 290.4h7M771.5 304.8h7M771.5 302.4h7M771.5 300h7M771.5 297.6h7M781.5 304.8h7M781.5 302.4h7M781.5 300h7M781.5 297.6h7M781.5 295.2h7M781.5 292.8h7M781.5 290.4h7M791.5 304.8h7M791.5 302.4h7M791.5 300h7M791.5 297.6h7M791.5 295.2h7M791.5 292.8h7M791.5 290.4h7M791.5 288h7M801.5 304.8h7M801.5 302.4h7M801.5 300h7M801.5 297.6h7M801.5 295.2h7M801.5 292.8h7M801.5 290.4h7M801.5 288h7M801.5 285.6h7M801.5 283.2h7M821.5 304.8h7M821.5 302.4h7M831.5 304.8h7M831.5 302.4h7M831.5 300h7M831.5 297.6h7M841.5 304.8h7M841.5 302.4h7M841.5 300h7M841.5 297.6h7M841.5 295.2h7M851.5 304.8h7M851.5 302.4h7M851.5 300h7M851.5 297.6h7M871.5 304.8h7M881.5 304.8h7" fill="none" stroke="#fff" stroke-width="1.5"></path>
+<path d="M1.5 311.2h7M1.5 313.6h7M1.5 316h7M1.5 318.4h7M1.5 320.8h7M1.5 323.2h7M1.5 325.6h7M1.5 328h7M1.5 330.4h7M1.5 332.8h7M1.5 335.2h7M1.5 337.6h7M1.5 340h7M1.5 342.4h7M1.5 344.8h7M1.5 347.2h7M11.5 311.2h7M11.5 313.6h7M11.5 316h7M11.5 318.4h7M21.5 311.2h7M21.5 313.6h7M21.5 316h7M21.5 318.4h7M31.5 311.2h7M31.5 313.6h7M41.5 311.2h7M41.5 313.6h7M41.5 316h7M41.5 318.4h7M41.5 320.8h7M41.5 323.2h7M51.5 311.2h7M51.5 313.6h7M51.5 316h7M51.5 318.4h7M51.5 320.8h7M51.5 323.2h7M61.5 311.2h7M61.5 313.6h7M61.5 316h7M61.5 318.4h7M61.5 320.8h7M61.5 323.2h7M61.5 325.6h7M61.5 328h7M71.5 311.2h7M71.5 313.6h7M71.5 316h7M71.5 318.4h7M71.5 320.8h7M71.5 323.2h7M71.5 325.6h7M71.5 328h7M71.5 330.4h7M71.5 332.8h7M71.5 335.2h7M71.5 337.6h7M71.5 340h7M71.5 342.4h7M71.5 344.8h7M71.5 347.2h7M71.5 349.6h7M81.5 311.2h7M81.5 313.6h7M81.5 316h7M81.5 318.4h7M91.5 311.2h7M91.5 313.6h7M91.5 316h7M91.5 318.4h7M91.5 320.8h7M91.5 323.2h7M101.5 311.2h7M101.5 313.6h7M101.5 316h7M101.5 318.4h7M101.5 320.8h7M101.5 323.2h7M101.5 325.6h7M101.5 328h7M101.5 330.4h7M101.5 332.8h7M101.5 335.2h7M101.5 337.6h7M101.5 340h7M111.5 311.2h7M111.5 313.6h7M111.5 316h7M111.5 318.4h7M111.5 320.8h7M121.5 311.2h7M121.5 313.6h7M121.5 316h7M121.5 318.4h7M121.5 320.8h7M121.5 323.2h7M121.5 325.6h7M131.5 311.2h7M131.5 313.6h7M131.5 316h7M131.5 318.4h7M151.5 311.2h7M151.5 313.6h7M151.5 316h7M151.5 318.4h7M151.5 320.8h7M151.5 323.2h7M151.5 325.6h7M151.5 328h7M151.5 330.4h7M151.5 332.8h7M151.5 335.2h7M151.5 337.6h7M151.5 340h7M151.5 342.4h7M151.5 344.8h7M151.5 347.2h7M151.5 349.6h7M151.5 352h7M151.5 354.4h7M151.5 356.8h7M151.5 359.2h7M151.5 361.6h7M151.5 364h7M151.5 366.4h7M151.5 368.8h7M151.5 371.2h7M151.5 373.6h7M151.5 376h7M151.5 378.4h7M151.5 380.8h7M151.5 383.2h7M151.5 385.6h7M151.5 388h7M151.5 390.4h7M161.5 311.2h7M171.5 311.2h7M171.5 313.6h7M171.5 316h7M171.5 318.4h7M171.5 320.8h7M171.5 323.2h7M171.5 325.6h7M171.5 328h7M181.5 311.2h7M181.5 313.6h7M181.5 316h7M181.5 318.4h7M181.5 320.8h7M181.5 323.2h7M181.5 325.6h7M191.5 311.2h7M191.5 313.6h7M191.5 316h7M191.5 318.4h7M191.5 320.8h7M191.5 323.2h7M191.5 325.6h7M201.5 311.2h7M201.5 313.6h7M201.5 316h7M201.5 318.4h7M201.5 320.8h7M201.5 323.2h7M211.5 311.2h7M211.5 313.6h7M211.5 316h7M211.5 318.4h7M211.5 320.8h7M211.5 323.2h7M211.5 325.6h7M211.5 328h7M211.5 330.4h7M211.5 332.8h7M211.5 335.2h7M211.5 337.6h7M211.5 340h7M211.5 342.4h7M211.5 344.8h7M211.5 347.2h7M211.5 349.6h7M221.5 311.2h7M221.5 313.6h7M221.5 316h7M221.5 318.4h7M221.5 320.8h7M221.5 323.2h7M221.5 325.6h7M221.5 328h7M221.5 330.4h7M221.5 332.8h7M221.5 335.2h7M221.5 337.6h7M221.5 340h7M221.5 342.4h7M221.5 344.8h7M221.5 347.2h7M231.5 311.2h7M231.5 313.6h7M231.5 316h7M231.5 318.4h7M231.5 320.8h7M231.5 323.2h7M231.5 325.6h7M231.5 328h7M231.5 330.4h7M231.5 332.8h7M231.5 335.2h7M231.5 337.6h7M231.5 340h7M231.5 342.4h7M231.5 344.8h7M231.5 347.2h7M241.5 311.2h7M241.5 313.6h7M241.5 316h7M241.5 318.4h7M241.5 320.8h7M241.5 323.2h7M241.5 325.6h7M241.5 328h7M241.5 330.4h7M241.5 332.8h7M241.5 335.2h7M241.5 337.6h7M241.5 340h7M241.5 342.4h7M241.5 344.8h7M241.5 347.2h7M251.5 311.2h7M251.5 313.6h7M251.5 316h7M251.5 318.4h7M251.5 320.8h7M251.5 323.2h7M261.5 311.2h7M261.5 313.6h7M261.5 316h7M261.5 318.4h7M261.5 320.8h7M271.5 311.2h7M271.5 313.6h7M271.5 316h7M271.5 318.4h7M271.5 320.8h7M281.5 311.2h7M281.5 313.6h7M281.5 316h7M281.5 318.4h7M281.5 320.8h7M281.5 323.2h7M281.5 325.6h7M281.5 328h7M281.5 330.4h7M281.5 332.8h7M281.5 335.2h7M281.5 337.6h7M281.5 340h7M281.5 342.4h7M281.5 344.8h7M281.5 347.2h7M281.5 349.6h7M281.5 352h7M281.5 354.4h7M281.5 356.8h7M281.5 359.2h7M281.5 361.6h7M281.5 364h7M281.5 366.4h7M281.5 368.8h7M291.5 311.2h7M291.5 313.6h7M291.5 316h7M291.5 318.4h7M291.5 320.8h7M291.5 323.2h7M291.5 325.6h7M291.5 328h7M291.5 330.4h7M291.5 332.8h7M291.5 335.2h7M291.5 337.6h7M291.5 340h7M291.5 342.4h7M291.5 344.8h7M291.5 347.2h7M291.5 349.6h7M291.5 352h7M291.5 354.4h7M291.5 356.8h7M301.5 311.2h7M301.5 313.6h7M301.5 316h7M301.5 318.4h7M301.5 320.8h7M301.5 323.2h7M301.5 325.6h7M301.5 328h7M311.5 311.2h7M311.5 313.6h7M311.5 316h7M311.5 318.4h7M311.5 320.8h7M311.5 323.2h7M311.5 325.6h7M311.5 328h7M311.5 330.4h7M311.5 332.8h7M321.5 311.2h7M331.5 311.2h7M331.5 313.6h7M331.5 316h7M331.5 318.4h7M331.5 320.8h7M331.5 323.2h7M331.5 325.6h7M331.5 328h7M331.5 330.4h7M331.5 332.8h7M331.5 335.2h7M331.5 337.6h7M331.5 340h7M331.5 342.4h7M331.5 344.8h7M331.5 347.2h7M341.5 311.2h7M341.5 313.6h7M341.5 316h7M341.5 318.4h7M341.5 320.8h7M341.5 323.2h7M341.5 325.6h7M351.5 311.2h7M351.5 313.6h7M351.5 316h7M361.5 311.2h7M361.5 313.6h7M361.5 316h7M361.5 318.4h7M361.5 320.8h7M371.5 311.2h7M371.5 313.6h7M371.5 316h7M371.5 318.4h7M371.5 320.8h7M371.5 323.2h7M371.5 325.6h7M381.5 311.2h7M381.5 313.6h7M381.5 316h7M381.5 318.4h7M381.5 320.8h7M381.5 323.2h7M381.5 325.6h7M381.5 328h7M381.5 330.4h7M381.5 332.8h7M381.5 335.2h7M381.5 337.6h7M381.5 340h7M381.5 342.4h7M381.5 344.8h7M381.5 347.2h7M381.5 349.6h7M381.5 352h7M401.5 311.2h7M401.5 313.6h7M401.5 316h7M401.5 318.4h7M401.5 320.8h7M401.5 323.2h7M401.5 325.6h7M401.5 328h7M401.5 330.4h7M401.5 332.8h7M401.5 335.2h7M401.5 337.6h7M401.5 340h7M401.5 342.4h7M421.5 311.2h7M421.5 313.6h7M421.5 316h7M421.5 318.4h7M421.5 320.8h7M421.5 323.2h7M421.5 325.6h7M421.5 328h7M421.5 330.4h7M421.5 332.8h7M421.5 335.2h7M421.5 337.6h7M421.5 340h7M421.5 342.4h7M421.5 344.8h7M421.5 347.2h7M421.5 349.6h7M431.5 311.2h7M431.5 313.6h7M431.5 316h7M431.5 318.4h7M431.5 320.8h7M441.5 311.2h7M441.5 313.6h7M441.5 316h7M441.5 318.4h7M441.5 320.8h7M441.5 323.2h7M441.5 325.6h7M441.5 328h7M441.5 330.4h7M441.5 332.8h7M441.5 335.2h7M441.5 337.6h7M441.5 340h7M441.5 342.4h7M441.5 344.8h7M441.5 347.2h7M441.5 349.6h7M441.5 352h7M441.5 354.4h7M441.5 356.8h7M441.5 359.2h7M441.5 361.6h7M441.5 364h7M451.5 311.2h7M451.5 313.6h7M451.5 316h7M451.5 318.4h7M451.5 320.8h7M451.5 323.2h7M451.5 325.6h7M451.5 328h7M451.5 330.4h7M451.5 332.8h7M451.5 335.2h7M451.5 337.6h7M451.5 340h7M451.5 342.4h7M451.5 344.8h7M451.5 347.2h7M451.5 349.6h7M451.5 352h7M451.5 354.4h7M451.5 356.8h7M451.5 359.2h7M451.5 361.6h7M451.5 364h7M461.5 311.2h7M461.5 313.6h7M461.5 316h7M461.5 318.4h7M461.5 320.8h7M461.5 323.2h7M461.5 325.6h7M461.5 328h7M461.5 330.4h7M461.5 332.8h7M461.5 335.2h7M461.5 337.6h7M461.5 340h7M461.5 342.4h7M461.5 344.8h7M461.5 347.2h7M461.5 349.6h7M461.5 352h7M461.5 354.4h7M461.5 356.8h7M461.5 359.2h7M461.5 361.6h7M461.5 364h7M461.5 366.4h7M461.5 368.8h7M461.5 371.2h7M461.5 373.6h7M461.5 376h7M471.5 311.2h7M481.5 311.2h7M481.5 313.6h7M481.5 316h7M481.5 318.4h7M481.5 320.8h7M481.5 323.2h7M481.5 325.6h7M481.5 328h7M481.5 330.4h7M481.5 332.8h7M481.5 335.2h7M481.5 337.6h7M481.5 340h7M481.5 342.4h7M481.5 344.8h7M481.5 347.2h7M491.5 311.2h7M491.5 313.6h7M491.5 316h7M491.5 318.4h7M491.5 320.8h7M491.5 323.2h7M491.5 325.6h7M491.5 328h7M491.5 330.4h7M501.5 311.2h7M501.5 313.6h7M501.5 316h7M501.5 318.4h7M501.5 320.8h7M501.5 323.2h7M501.5 325.6h7M501.5 328h7M511.5 311.2h7M511.5 313.6h7M511.5 316h7M511.5 318.4h7M511.5 320.8h7M511.5 323.2h7M511.5 325.6h7M511.5 328h7M511.5 330.4h7M511.5 332.8h7M511.5 335.2h7M511.5 337.6h7M511.5 340h7M511.5 342.4h7M521.5 311.2h7M521.5 313.6h7M521.5 316h7M521.5 318.4h7M521.5 320.8h7M521.5 323.2h7M521.5 325.6h7M521.5 328h7M521.5 330.4h7M521.5 332.8h7M521.5 335.2h7M521.5 337.6h7M521.5 340h7M521.5 342.4h7M521.5 344.8h7M531.5 311.2h7M531.5 313.6h7M531.5 316h7M531.5 318.4h7M531.5 320.8h7M531.5 323.2h7M531.5 325.6h7M531.5 328h7M531.5 330.4h7M531.5 332.8h7M531.5 335.2h7M531.5 337.6h7M531.5 340h7M531.5 342.4h7M531.5 344.8h7M531.5 347.2h7M531.5 349.6h7M541.5 311.2h7M541.5 313.6h7M541.5 316h7M541.5 318.4h7M541.5 320.8h7M541.5 323.2h7M541.5 325.6h7M541.5 328h7M541.5 330.4h7M551.5 311.2h7M551.5 313.6h7M551.5 316h7M551.5 318.4h7M551.5 320.8h7M551.5 323.2h7M551.5 325.6h7M551.5 328h7M551.5 330.4h7M551.5 332.8h7M551.5 335.2h7M551.5 337.6h7M551.5 340h7M551.5 342.4h7M561.5 311.2h7M561.5 313.6h7M561.5 316h7M561.5 318.4h7M561.5 320.8h7M561.5 323.2h7M561.5 325.6h7M561.5 328h7M561.5 330.4h7M561.5 332.8h7M561.5 335.2h7M561.5 337.6h7M561.5 340h7M561.5 342.4h7M561.5 344.8h7M561.5 347.2h7M561.5 349.6h7M561.5 352h7M561.5 354.4h7M561.5 356.8h7M571.5 311.2h7M571.5 313.6h7M571.5 316h7M571.5 318.4h7M571.5 320.8h7M571.5 323.2h7M571.5 325.6h7M571.5 328h7M571.5 330.4h7M571.5 332.8h7M581.5 311.2h7M581.5 313.6h7M581.5 316h7M581.5 318.4h7M581.5 320.8h7M581.5 323.2h7M581.5 325.6h7M581.5 328h7M581.5 330.4h7M581.5 332.8h7M581.5 335.2h7M581.5 337.6h7M581.5 340h7M581.5 342.4h7M591.5 311.2h7M591.5 313.6h7M591.5 316h7M591.5 318.4h7M591.5 320.8h7M591.5 323.2h7M591.5 325.6h7M591.5 328h7M591.5 330.4h7M591.5 332.8h7M591.5 335.2h7M591.5 337.6h7M591.5 340h7M591.5 342.4h7M591.5 344.8h7M591.5 347.2h7M591.5 349.6h7M601.5 311.2h7M601.5 313.6h7M601.5 316h7M601.5 318.4h7M601.5 320.8h7M601.5 323.2h7M601.5 325.6h7M611.5 311.2h7M611.5 313.6h7M611.5 316h7M611.5 318.4h7M611.5 320.8h7M611.5 323.2h7M611.5 325.6h7M611.5 328h7M611.5 330.4h7M611.5 332.8h7M611.5 335.2h7M611.5 337.6h7M611.5 340h7M611.5 342.4h7M611.5 344.8h7M611.5 347.2h7M611.5 349.6h7M611.5 352h7M611.5 354.4h7M621.5 311.2h7M621.5 313.6h7M621.5 316h7M621.5 318.4h7M621.5 320.8h7M621.5 323.2h7M621.5 325.6h7M621.5 328h7M621.5 330.4h7M621.5 332.8h7M621.5 335.2h7M621.5 337.6h7M621.5 340h7M621.5 342.4h7M621.5 344.8h7M621.5 347.2h7M621.5 349.6h7M621.5 352h7M621.5 354.4h7M631.5 311.2h7M631.5 313.6h7M631.5 316h7M631.5 318.4h7M631.5 320.8h7M631.5 323.2h7M631.5 325.6h7M631.5 328h7M631.5 330.4h7M641.5 311.2h7M641.5 313.6h7M641.5 316h7M641.5 318.4h7M641.5 320.8h7M641.5 323.2h7M651.5 311.2h7M651.5 313.6h7M651.5 316h7M651.5 318.4h7M651.5 320.8h7M651.5 323.2h7M651.5 325.6h7M651.5 328h7M651.5 330.4h7M651.5 332.8h7M661.5 311.2h7M661.5 313.6h7M661.5 316h7M661.5 318.4h7M661.5 320.8h7M661.5 323.2h7M671.5 311.2h7M671.5 313.6h7M681.5 311.2h7M681.5 313.6h7M681.5 316h7M691.5 311.2h7M691.5 313.6h7M691.5 316h7M691.5 318.4h7M691.5 320.8h7M691.5 323.2h7M691.5 325.6h7M691.5 328h7M691.5 330.4h7M691.5 332.8h7M691.5 335.2h7M691.5 337.6h7M691.5 340h7M691.5 342.4h7M701.5 311.2h7M701.5 313.6h7M701.5 316h7M701.5 318.4h7M701.5 320.8h7M701.5 323.2h7M701.5 325.6h7M701.5 328h7M711.5 311.2h7M711.5 313.6h7M711.5 316h7M711.5 318.4h7M711.5 320.8h7M711.5 323.2h7M711.5 325.6h7M711.5 328h7M731.5 311.2h7M741.5 311.2h7M741.5 313.6h7M751.5 311.2h7M751.5 313.6h7M751.5 316h7M761.5 311.2h7M761.5 313.6h7M761.5 316h7M761.5 318.4h7M761.5 320.8h7M761.5 323.2h7M761.5 325.6h7M761.5 328h7M771.5 311.2h7M771.5 313.6h7M771.5 316h7M771.5 318.4h7M771.5 320.8h7M781.5 311.2h7M781.5 313.6h7M781.5 316h7M781.5 318.4h7M781.5 320.8h7M781.5 323.2h7M791.5 311.2h7M791.5 313.6h7M791.5 316h7M791.5 318.4h7M791.5 320.8h7M791.5 323.2h7M801.5 311.2h7M801.5 313.6h7M801.5 316h7M801.5 318.4h7M801.5 320.8h7M811.5 311.2h7M811.5 313.6h7M811.5 316h7M821.5 311.2h7M821.5 313.6h7M821.5 316h7M821.5 318.4h7M821.5 320.8h7M831.5 311.2h7M831.5 313.6h7M831.5 316h7M831.5 318.4h7M831.5 320.8h7M831.5 323.2h7M831.5 325.6h7M841.5 311.2h7M841.5 313.6h7M841.5 316h7M841.5 318.4h7M841.5 320.8h7M851.5 311.2h7M851.5 313.6h7M861.5 311.2h7" fill="none" stroke="#fff" stroke-width="1.5"></path>
+<path d="M0 308H1140" fill="none" stroke="#fff" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+</svg>
+<svg class="chart-narrow" id="chart-narrow" viewBox="0 0 684 652" role="img" aria-label="Each day's sealed forecasts from 2026-07-20 to 2026-11-10: 816 hits above the line, 810 misses below it, 3,871 still open, 96 void">
+<path d="M15 486V470M27 494V490M33 494V490M39 506V462M45 470V434M51 502V482M57 494V450M63 490V438M69 454V410M75 490V430M81 506V490M87 506V502M93 426V386M105 478V398M111 486V458M117 446V438M123 478V462M129 478V434M135 426V330M141 458V418M147 442V418M159 490V422M171 402V310M177 474V426M183 466V354M189 458V418M201 470V390M219 482V434M231 338V90M243 426V250M255 426V206M261 458V430M267 418V274M273 418V262M279 394V330M285 474V450M291 326V94M297 474V270M303 398V278M309 450V302M315 414V278M321 442V290M327 462V298M333 450V338M339 430V306M345 426V198M351 466V262M357 478V278M363 450V290M369 486V398M375 482V370M381 430V314M387 474V302M393 458V322M399 474V302M405 494V306M411 482V298M417 450V334M423 482V330M429 502V310M435 490V250M441 474V282M447 498V306M453 478V310M459 478V274M465 490V246M471 478V238M477 474V218M483 466V174M489 506V206M495 498V218M501 490V234M507 486V210M513 490V194M519 506V238M525 502V186M531 502V202M537 506V158M543 506V206M549 506V242M555 506V170M561 506V278M567 506V418M573 506V14M579 506V226M585 506V274M591 506V266M597 506V282M603 506V374M609 506V354M615 506V350M621 506V418M627 506V386M633 506V382M639 506V390M645 506V374M651 506V342M657 506V326M663 506V458M669 506V342M675 506V302M681 506V234" fill="none" stroke="#6b7079" stroke-width="4"></path>
+<path d="M3 478V454M15 470V458M21 502V498M27 490V486M93 386V374M105 398V394M129 434V430M135 330V326M147 418V414M183 354V350M195 498V494M201 390V386M333 338V334M351 262V6M459 274V270M489 206V202M501 234V222M507 210V206M513 194V190M561 278V270M573 14V10" fill="none" stroke="#6b7079" stroke-width="1.6"></path>
+<path d="M3 506V478M9 506V494M15 506V486M21 506V502M27 506V494M33 506V494M45 506V470M51 506V502M57 506V494M63 506V490M69 506V454M75 506V490M93 506V426M99 506V502M105 506V478M111 506V486M117 506V446M123 506V478M129 506V478M135 506V426M141 506V458M147 506V442M159 506V490M165 506V494M171 506V402M177 506V474M183 506V466M189 506V458M195 506V498M201 506V470M207 506V498M213 506V494M219 506V482M225 506V502M231 506V338M243 506V426M255 506V426M261 506V458M267 506V418M273 506V418M279 506V394M285 506V474M291 506V326M297 506V474M303 506V398M309 506V450M315 506V414M321 506V442M327 506V462M333 506V450M339 506V430M345 506V426M351 506V466M357 506V478M363 506V450M369 506V486M375 506V482M381 506V430M387 506V474M393 506V458M399 506V474M405 506V494M411 506V482M417 506V450M423 506V482M429 506V502M435 506V490M441 506V474M447 506V498M453 506V478M459 506V478M465 506V490M471 506V478M477 506V474M483 506V466M495 506V498M501 506V490M507 506V486M513 506V490M525 506V502M531 506V502" fill="none" stroke="#fff" stroke-width="4"></path>
+<path d="M3 510V574M9 510V526M15 510V526M21 510V518M27 510V534M33 510V534M39 510V542M45 510V578M51 510V526M57 510V534M63 510V562M69 510V530M75 510V538M81 510V526M93 510V646M99 510V514M105 510V542M111 510V538M117 510V538M123 510V534M129 510V578M135 510V574M141 510V574M147 510V574M153 510V534M159 510V530M165 510V530M171 510V610M177 510V590M183 510V542M189 510V550M195 510V514M201 510V574M207 510V538M213 510V522M219 510V530M225 510V538M231 510V582M243 510V566M255 510V578M261 510V530M267 510V602M273 510V602M279 510V622M285 510V514M291 510V574M297 510V546M303 510V542M309 510V566M315 510V570M321 510V578M327 510V546M333 510V566M339 510V590M345 510V550M351 510V566M357 510V578M363 510V538M369 510V586M375 510V586M381 510V546M387 510V534M393 510V550M399 510V534M405 510V518M411 510V522M417 510V566M423 510V542M429 510V542M441 510V514M447 510V518M453 510V522M459 510V542M465 510V530M471 510V534M477 510V534M483 510V530M489 510V522M495 510V530M501 510V538M507 510V530M513 510V518M519 510V514" fill="none" stroke="#fff" stroke-width="4"></path>
+<path d="M0 508H684" fill="none" stroke="#fff" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+</svg>
+<div aria-hidden="true" id="months" style="position: relative; height: 32px; border-top: 1px solid rgba(255,255,255,0.14); font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.04em; color: #8d929b"><span style="position: absolute; left: 0%; top: 0px; height: 32px; display: flex; align-items: center; padding-left: 6px; border-left: 1px solid rgb(141, 146, 155);">JUL</span><span style="position: absolute; left: 10.53%; top: 0px; height: 32px; display: flex; align-items: center; padding-left: 6px; border-left: 1px solid rgb(141, 146, 155);">AUG</span><span style="position: absolute; left: 37.72%; top: 0px; height: 32px; display: flex; align-items: center; padding-left: 6px; border-left: 1px solid rgb(141, 146, 155);">SEP</span><span style="position: absolute; left: 64.04%; top: 0px; height: 32px; display: flex; align-items: center; padding-left: 6px; border-left: 1px solid rgb(141, 146, 155);">OCT</span><span style="position: absolute; left: 91.23%; top: 0px; height: 32px; display: flex; align-items: center; padding-left: 6px; border-left: 1px solid rgb(141, 146, 155);">NOV</span></div>
+</div>
+<div class="wrap" style="padding-top: 24px; padding-bottom: clamp(48px, 7cqi, 96px); display: flex; flex-direction: column; gap: clamp(32px, 4.5cqi, 56px)">
+<div class="two-col" style="align-items: start">
+<p style="margin: 0; max-width: 32em; color: #c4c7cc">Each day's forecasts, stacked on the day they were sealed. Above the line, the hits. Below it, the misses, in the same ink. The fog over both is everything still open. The thin spike in mid-September is 64 rows voided after a lane was pasted twice: printed, not tidied.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b">
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg viewBox="0 0 14 14" aria-hidden="true" style="width: 14px; height: 14px"><path d="M7 12V4M3.5 7.5L7 4l3.5 3.5" fill="none" stroke="#fff" stroke-width="1.6"></path></svg>Hit</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg viewBox="0 0 14 14" aria-hidden="true" style="width: 14px; height: 14px"><path d="M7 2v8M3.5 6.5L7 10l3.5-3.5" fill="none" stroke="#fff" stroke-width="1.6"></path></svg>Miss</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg viewBox="0 0 14 14" aria-hidden="true" style="width: 14px; height: 14px"><path d="M2 7h10" fill="none" stroke="#6b7079" stroke-width="2.4"></path></svg>Open</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg viewBox="0 0 14 14" aria-hidden="true" style="width: 14px; height: 14px"><path d="M5 7h4" fill="none" stroke="#6b7079" stroke-width="2.4"></path></svg>Void</span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 28px 32px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 28px">
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">Sealed</span><span style="font-size: clamp(34px, 4.6cqi, 64px); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums" data-live="n-sealed">5,593</span></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">Hits</span><span style="font-size: clamp(34px, 4.6cqi, 64px); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums" data-live="n-hit">816</span></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">Misses</span><span style="font-size: clamp(34px, 4.6cqi, 64px); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums" data-live="n-miss">810</span></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">Open</span><span style="font-size: clamp(34px, 4.6cqi, 64px); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums" data-live="n-open">3,871</span></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">Void</span><span style="font-size: clamp(34px, 4.6cqi, 64px); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums" data-live="n-void">96</span></div>
+</div>
+</div>
+</section>
+
+<div class="wrap">
+
+<section id="docket" class="sec">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">§ 1</span>
+<h2 style="margin: 0; font-size: clamp(26px, 2.4cqi, 32px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.15">The docket</h2>
+<p style="margin: 0; font-size: 15px; color: #c4c7cc" data-live="docket-note">3,871 open. 658 come due in the next fourteen days. 1,420 are past deadline and await a verdict.</p>
+</div>
+<div style="display: flex; flex-direction: column; min-width: 0">
+<p style="margin: 0 0 20px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05" data-live="docket-label">Next to come due · the nearest deadline in each subject area</p>
+<div id="docket-rows"><div class="drow">
+<div class="dd" style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; line-height: 1.2">11 NOV</div>
+<div class="ds" style="display: flex; flex-direction: column; gap: 10px"><p style="margin: 0; font-size: 18px; line-height: 1.45; color: #fff">A US federal agency will file new public criminal or civil charges against Gautam Adani or a named Adani Group executive, occurring between 2026-08-11 and 2026-11-09, despite the dismissal in item 9.</p><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.02em; color: #8d929b">KKR-20260811-35 · manual/sonnet-5/unattested · sealed 11 Aug</span></div>
+<div class="dp" style="font-size: clamp(40px, 5cqi, 72px); line-height: 0.9; letter-spacing: -0.03em; font-variant-numeric: tabular-nums">12<span style="font-size: 0.4em; letter-spacing: 0; color: #8d929b">%</span></div>
+</div><div class="drow">
+<div class="dd" style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; line-height: 1.2">11 NOV</div>
+<div class="ds" style="display: flex; flex-direction: column; gap: 10px"><p style="margin: 0; font-size: 18px; line-height: 1.45; color: #fff">A US-Iran ceasefire or truce covering the Strait of Hormuz theater will be publicly announced by a government on either side AND hold with zero further reported US-Iran kinetic incidents for at least 14 consecutive days, within the window between 2026-09-10 and 2026-11-08.</p><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.02em; color: #8d929b">KKR-20260909-07 · manual/sonnet-5/unattested · sealed 9 Sep</span></div>
+<div class="dp" style="font-size: clamp(40px, 5cqi, 72px); line-height: 0.9; letter-spacing: -0.03em; font-variant-numeric: tabular-nums">15<span style="font-size: 0.4em; letter-spacing: 0; color: #8d929b">%</span></div>
+</div><div class="drow">
+<div class="dd" style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; line-height: 1.2">11 NOV</div>
+<div class="ds" style="display: flex; flex-direction: column; gap: 10px"><p style="margin: 0; font-size: 18px; line-height: 1.45; color: #fff">An earthquake of magnitude 6.5 or greater occurs within 250 km of the epicenter of the M7.7 Panama mainshock, USGS event us6000u18k, between 2026-10-12 and 2026-11-08 UTC.</p><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.02em; color: #8d929b">KKR-20261011-65 · manual/opus-5.5/unattested · sealed 11 Oct</span></div>
+<div class="dp" style="font-size: clamp(40px, 5cqi, 72px); line-height: 0.9; letter-spacing: -0.03em; font-variant-numeric: tabular-nums">42<span style="font-size: 0.4em; letter-spacing: 0; color: #8d929b">%</span></div>
+</div><div class="drow">
+<div class="dd" style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; line-height: 1.2">12 NOV</div>
+<div class="ds" style="display: flex; flex-direction: column; gap: 10px"><p style="margin: 0; font-size: 18px; line-height: 1.45; color: #fff">The Form 10-Q filed by Berkshire Hathaway for the quarter ended 2026-09-30 reports cash, cash equivalents, and short-term investments below 365.5 billion dollars, continuing the Q2 decline.</p><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.02em; color: #8d929b">KKR-20260809-17 · manual/sonnet-5 · sealed 9 Aug</span></div>
+<div class="dp" style="font-size: clamp(40px, 5cqi, 72px); line-height: 0.9; letter-spacing: -0.03em; font-variant-numeric: tabular-nums">55<span style="font-size: 0.4em; letter-spacing: 0; color: #8d929b">%</span></div>
+</div><div class="drow" style="border-bottom: 1px solid rgba(255, 255, 255, 0.14);">
+<div class="dd" style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; line-height: 1.2">12 NOV</div>
+<div class="ds" style="display: flex; flex-direction: column; gap: 10px"><p style="margin: 0; font-size: 18px; line-height: 1.45; color: #fff">The CISA Known Exploited Vulnerabilities catalog adds at least one vulnerability affecting F5 NGINX products with a dateAdded value between 2026-10-20 and 2026-11-09.</p><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.02em; color: #8d929b">KKR-20261019-60 · manual/sonnet-5.5/unattested · sealed 19 Oct</span></div>
+<div class="dp" style="font-size: clamp(40px, 5cqi, 72px); line-height: 0.9; letter-spacing: -0.03em; font-variant-numeric: tabular-nums">9<span style="font-size: 0.4em; letter-spacing: 0; color: #8d929b">%</span></div>
 </div></div>
+<a class="arrow" href="kkr.html" style="align-self: flex-start; margin-top: 16px">The full docket →</a>
+</div>
+</section>
 
-<style id="instrument-index-style">
-.instr-index{position:relative;z-index:3;border-bottom:1px solid #1B222C;
-  background:rgba(8,11,15,.55);padding:1.4rem 2rem}
-.instr-index-in{max-width:1180px;margin:0 auto;display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.15rem 2rem}
-.ii-group .ii-label{font:600 .58rem 'IBM Plex Mono',ui-monospace,monospace;
-  letter-spacing:.2em;text-transform:uppercase;color:#8A6E30;
-  padding-bottom:.5rem;margin-bottom:.5rem;border-bottom:1px solid #1E2630}
-.ii-group a{display:block;text-decoration:none;padding:.16rem 0;
-  font:600 .74rem 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.06em;
-  color:#9BA7B5}
-.ii-group a:hover{color:#e9e7e2}
-.ii-group a .ii-desc{color:#5A6675;font-weight:400;letter-spacing:0;
-  text-transform:none;font-size:.66rem;margin-left:.5rem}
-</style><div class="instr-index" id="instrument-index" aria-label="instruments"><div class="instr-index-in"><div class="ii-group"><div class="ii-label">DESK</div><a href="index.html">Desk<span class="ii-desc">the face</span></a><a href="report.html">Report<span class="ii-desc">daily brief</span></a><a href="spion.html">Spion<span class="ii-desc">quiet channel</span></a></div><div class="ii-group"><div class="ii-label">FORECASTING</div><a href="kkr.html">Forecasts<span class="ii-desc">scored calls</span></a><a href="ledger.html">Ledger<span class="ii-desc">the record</span></a><a href="KriegForeKaster.html">ForeKaster<span class="ii-desc">order of battle</span></a><a href="globalkaster.html">GlobalKaster<span class="ii-desc">world board</span></a><a href="fogsim.html">FogSim<span class="ii-desc">scenarios</span></a><a href="okk.html">OberKommando<span class="ii-desc">command</span></a></div><div class="ii-group"><div class="ii-label">FEDERATION</div><a href="kraehes_kalls.html">Kalls<span class="ii-desc">abduction log</span></a><a href="nest.html">Nest<span class="ii-desc">forecasters</span></a></div><div class="ii-group"><div class="ii-label">STANDARDS</div><a href="standards.html">Standards<span class="ii-desc">the method</span></a><a href="conformance.html">Conformance<span class="ii-desc">RPAS-26</span></a><a href="register.html">Register<span class="ii-desc">conformance</span></a><a href="verify.html">Verify<span class="ii-desc">run the check</span></a></div><div class="ii-group"><div class="ii-label">CABINET</div><a href="ohrwurm.html">Ohrwurm<span class="ii-desc">phrase spread</span></a><a href="konsole.html">Konsole<span class="ii-desc">cipher</span></a><a href="marks.html">Marks<span class="ii-desc">heraldry</span></a></div></div></div>
+<section id="record" class="sec">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">§ 2</span>
+<h2 style="margin: 0; font-size: clamp(26px, 2.4cqi, 32px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.15">The record</h2>
+<p style="margin: 0; font-size: 15px; color: #c4c7cc">Each forecaster is scored on its own claims. No pooled score exists (RPAS 5.04). Under thirty resolved, a score prints as noise.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: clamp(36px, 5cqi, 56px); min-width: 0">
+<div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+<h3 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">By forecaster</h3>
+<div class="ftab" id="ftab">
+<div class="frow fhead" style="min-height: 36px"><span>Forecaster</span><span style="text-align: right">Resolved</span><span style="text-align: right">Hit</span><span style="text-align: right">Miss</span><span style="text-align: right">Brier</span></div>
+<div class="frow" style="min-height: 44px; border-top: 1px solid rgba(255,255,255,0.14)"><span>control/baserate</span><span style="text-align: right">477</span><span style="text-align: right">273</span><span style="text-align: right">204</span><span style="text-align: right">0.300</span></div><div class="frow" style="min-height: 44px; border-top: 1px solid rgba(255,255,255,0.14)"><span>lmstudio/auto</span><span style="text-align: right">319</span><span style="text-align: right">89</span><span style="text-align: right">230</span><span style="text-align: right">0.202</span></div><div class="frow" style="min-height: 44px; border-top: 1px solid rgba(255,255,255,0.14)"><span>manual/sonnet-5/unattested</span><span style="text-align: right">196</span><span style="text-align: right">98</span><span style="text-align: right">98</span><span style="text-align: right">0.245</span></div><div class="frow" style="min-height: 44px; border-top: 1px solid rgba(255,255,255,0.14)"><span>lmstudio/realist</span><span style="text-align: right">119</span><span style="text-align: right">66</span><span style="text-align: right">53</span><span style="text-align: right">0.317</span></div><div class="frow" style="min-height: 44px; border-top: 1px solid rgba(255,255,255,0.14)"><span>manual/fable-5.1/unattested</span><span style="text-align: right">107</span><span style="text-align: right">61</span><span style="text-align: right">46</span><span style="text-align: right">0.211</span></div><div class="frow" style="min-height: 44px; border-top: 1px solid rgba(255, 255, 255, 0.14); border-bottom: 1px solid rgba(255, 255, 255, 0.14);"><span>manual/opus-5.5/unattested</span><span style="text-align: right">14</span><span style="text-align: right">8</span><span style="text-align: right">6</span><span style="text-align: right; color: rgb(141, 146, 155);">noise, n&lt;30</span></div></div>
+<p style="margin: 0; color: #c4c7cc; font-size: 15px" data-live="ftab-note">6 of 21 forecasters shown: the five with the most resolved rows, and one still under the floor.</p>
+<a class="arrow" href="kalibrierwarte.html" style="align-self: flex-start">Every forecaster →</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+<h3 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">Latest verdicts</h3>
+<div class="vgrid" id="verdicts"><div style="display: flex; flex-direction: column; gap: 10px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.14)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.04em"><span style="color: #8d929b">KKR-20261016-04</span><span style="padding: 3px 8px; background: #fff; color: #000; font-weight: 500">HIT @ 30%</span></div>
+<p style="margin: 0; color: #c4c7cc; font-size: 16px; line-height: 1.5">On 2026-10-17, a drone strike targeting a military installation in Kyiv, Ukraine, results in at least one confirmed casualty, as reported by two…</p>
+</div><div style="display: flex; flex-direction: column; gap: 10px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.14)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.04em"><span style="color: #8d929b">KKR-20261015-17</span><span style="padding: 3px 8px; background: #fff; color: #000; font-weight: 500">HIT @ 40%</span></div>
+<p style="margin: 0; color: #c4c7cc; font-size: 16px; line-height: 1.5">A magnitude 6.0 or greater earthquake occurs between 2026-10-16 and 2026-10-23.</p>
+</div><div style="display: flex; flex-direction: column; gap: 10px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.14)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.04em"><span style="color: #8d929b">KKR-20261014-05</span><span style="padding: 2px 7px; border: 1px solid #fff; color: #fff; font-weight: 500">MISS @ 40%</span></div>
+<p style="margin: 0; color: #c4c7cc; font-size: 16px; line-height: 1.5">On 2026-10-20, the 10-year U.S. Treasury yield exceeds 5.3% at the close of trading, as reported by FRED.</p>
+</div></div>
+<a class="arrow" href="ledger.html" style="align-self: flex-start">Every verdict, permanently →</a>
+</div>
+</div>
+</section>
 
-<div class="siegel" aria-label="Live commitment seal">
-  <div class="siegel-track" id="siegel-track">
-    <span class="siegel-run" id="siegel-run">COMMITMENT SEAL · SHA-256(ledger.json) · computing…</span>
-  </div>
+<section id="method" class="sec">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">§ 3</span>
+<h2 style="margin: 0; font-size: clamp(26px, 2.4cqi, 32px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.15">The method</h2>
+<a class="arrow" href="https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md" style="align-self: flex-start">The sealed definition →</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: clamp(28px, 4cqi, 48px); min-width: 0">
+<p style="margin: 0; max-width: 23em; font-size: clamp(24px, 2.9cqi, 40px); line-height: 1.2; letter-spacing: -0.02em; font-weight: 400; color: #fff">Most prediction claims are told after the fact, from memory, by the person who benefits from the telling. The audit removes every one of those outs.</p>
+<div style="display: flex; flex-direction: column">
+<div class="mrow"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">01</span><h3 style="margin: 0; font-size: clamp(19px, 1.8cqi, 23px); font-weight: 500; line-height: 1.3">Sealed before the outcome.</h3><p class="mx" style="margin: 0; font-size: 16px; color: #c4c7cc">Every projection is hashed into a commitment the day it is issued.</p></div>
+<div class="mrow"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">02</span><h3 style="margin: 0; font-size: clamp(19px, 1.8cqi, 23px); font-weight: 500; line-height: 1.3">Falsifiable as written.</h3><p class="mx" style="margin: 0; font-size: 16px; color: #c4c7cc">A stranger reading only the statement must be able to say happened or didn't.</p></div>
+<div class="mrow"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">03</span><h3 style="margin: 0; font-size: clamp(19px, 1.8cqi, 23px); font-weight: 500; line-height: 1.3">Blind adjudication.</h3><p class="mx" style="margin: 0; font-size: 16px; color: #c4c7cc">The adjudicator sees neither forecaster nor stated probability, must cite evidence, and may return ambiguous.</p></div>
+<div class="mrow"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">04</span><h3 style="margin: 0; font-size: clamp(19px, 1.8cqi, 23px); font-weight: 500; line-height: 1.3">The record keeps its misses.</h3><p class="mx" style="margin: 0; font-size: 16px; color: #c4c7cc">Hits and misses publish together, permanently.</p></div>
+<div class="mrow" style="border-bottom: 1px solid rgba(255,255,255,0.14)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">05</span><h3 style="margin: 0; font-size: clamp(19px, 1.8cqi, 23px); font-weight: 500; line-height: 1.3">Under thirty resolutions, the score is noise.</h3><p class="mx" style="margin: 0; font-size: 16px; color: #c4c7cc">The ledger says so on its own face until the record is deep enough to mean something.</p></div>
+</div>
+</div>
+</section>
+
+<section id="check" class="sec">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">§ 4</span>
+<h2 style="margin: 0; font-size: clamp(26px, 2.4cqi, 32px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.15">The check</h2>
+<p style="margin: 0; font-size: 15px; color: #c4c7cc">Don't take the desk's word. A NONCONFORMANT verdict against this desk publishes like any other finding.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: clamp(28px, 4cqi, 48px); min-width: 0">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<h3 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">Commitment seal · SHA-256 of ledger.json</h3>
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: clamp(15px, 2.5cqi, 34px); line-height: 1.3; color: #fff" data-live="seal" translate="no">cf88aaa5 01330a91 9eaf9359 11165623 fd2da531 af277029 904995b9 bf4b63ad</p>
+<p data-live="seal-asof" style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b">Ledger as of 2026-11-10 16:35Z</p>
+<p style="margin: 0; max-width: 40em; color: #c4c7cc">Editing, softening, or deleting a forecast breaks the seal for the entire set.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+<h3 style="margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #8d929b; line-height: 1.05">Two reference verifiers · Python standard library · no account</h3>
+<div translate="no" style="border: 1px solid rgba(255,255,255,0.28); padding: 20px 22px; overflow-x: auto; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.7; color: #fff">
+<code style="display: block; white-space: pre-wrap; overflow-wrap: anywhere; padding: 4px 0">python rpas_verify.py https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/ledger.json</code>
+<code style="display: block; white-space: pre-wrap; overflow-wrap: anywhere; padding: 4px 0">python knp_verify.py https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/kalls_hashlog.json</code>
+</div>
+<a class="arrow" href="verify.html" style="align-self: flex-start">Verify page →</a>
+</div>
+</div>
+</section>
+
+<section id="take-part" class="sec">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8d929b">§ 5</span>
+<h2 style="margin: 0; font-size: clamp(26px, 2.4cqi, 32px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.15">Take part</h2>
+</div>
+<div style="display: flex; flex-direction: column; min-width: 0">
+<div class="prow"><h3 style="margin: 0; font-size: clamp(19px, 1.8cqi, 23px); font-weight: 500; line-height: 1.3">Seal a call of your own.</h3><p style="margin: 0; font-size: 16px; color: #c4c7cc">Sealed under the same standards, misses kept under your name.</p><a class="arrow" href="https://github.com/OccultusTheoretician/netz/issues/new?template=guest_kall.yml" style="justify-self: start">Seal a guest call →</a></div>
+<div class="prow"><h3 style="margin: 0; font-size: clamp(19px, 1.8cqi, 23px); font-weight: 500; line-height: 1.3">Adopt the standard.</h3><p style="margin: 0; font-size: 16px; color: #c4c7cc">Parties on the record with a conformance statement.</p><a class="arrow" href="register.html" style="justify-self: start">The register →</a></div>
+<div class="prow" style="border-bottom: 1px solid rgba(255,255,255,0.14)"><h3 style="margin: 0; font-size: clamp(19px, 1.8cqi, 23px); font-weight: 500; line-height: 1.3">Write to the desk.</h3><p style="margin: 0; font-size: 16px; color: #c4c7cc">Corrections, findings against the desk, and questions about the standards.</p><a class="arrow" href="mailto:audit@retroprescientaudit.com" style="justify-self: start; text-transform: none; letter-spacing: 0; font-size: 15px">audit@retroprescientaudit.com</a></div>
+</div>
+</section>
+
 </div>
 
-<div class="pruef" id="pruefung" aria-label="Verify this desk">
-  <div class="pruef-in">
-    <div class="pruef-head">DON'T TAKE THE DESK'S WORD · RUN THE CHECK</div>
-    <pre class="pruef-cmd" translate="no">python knp_verify.py  https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/kalls_hashlog.json
-python rpas_verify.py https://raw.githubusercontent.com/OccultusTheoretician/netz/main/docs/ledger.json</pre>
-    <div class="pruef-note">Two reference verifiers — Python standard library, no account, no material from this desk.
-    Each returns a verdict with paragraph citations: every seal recomputed, every figure rederived from the
-    records, every finding read off the record's own face. Save a snapshot and add
-    <span class="pruef-mono">--previous</span> to prove nothing sealed was ever restated.
-    A NONCONFORMANT verdict against this desk publishes like any other finding.
-    Or put your own call on the record — sealed under the same standards, misses kept under your name:
-    <a href="https://github.com/OccultusTheoretician/netz/issues/new?template=guest_kall.yml">seal a Guest Kall →</a>&nbsp;&nbsp;<a href="verify.html">Verify page →</a>&nbsp;&nbsp;<a href="conformance.html">Latest verdicts →</a></div>
-  </div>
+<footer style="border-top: 2px solid #fff">
+<div class="wrap" style="padding-top: clamp(36px, 5cqi, 64px); padding-bottom: 40px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px 48px">
+<p lang="de" style="margin: 0; font-family: 'Cinzel', serif; font-weight: 500; font-size: clamp(18px, 2.4cqi, 30px); letter-spacing: 0.08em; line-height: 1.3; color: #fff">DIE KRÄHE SIEHT DURCH DEN NEBEL</p>
+<p style="margin: 0; font-size: 15px; color: #c4c7cc">The crow sees through the fog.</p>
 </div>
+<nav aria-label="All pages" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0 24px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 16px">
+<a class="flink" href="index.html">Home</a>
+<a class="flink" href="ledger.html">Ledger</a>
+<a class="flink" href="kkr.html">Forecasts</a>
+<a class="flink" href="kalibrierwarte.html">Warte</a>
+<a class="flink" href="versprechen.html">Versprechen</a>
+<a class="flink" href="kraehes_kalls.html">Kalls</a>
+<a class="flink" href="nest.html">Nest</a>
+<a class="flink" href="findings.html">Findings</a>
+<a class="flink" href="luecke.html">Luecke</a>
+<a class="flink" href="urteil.html">Urteil</a>
+<a class="flink" href="health.html">Health</a>
+<a class="flink" href="standards.html">Standards</a>
+<a class="flink" href="conformance.html">Conformance</a>
+<a class="flink" href="register.html">Register</a>
+<a class="flink" href="verify.html">Verify</a>
+<a class="flink" href="decc.html">DECC-26</a>
+<a class="flink" href="spion.html">Spion</a>
+<a class="flink" href="instruments.html">Instruments</a>
+<a class="flink" href="report.html">Report</a>
+<a class="flink" href="KriegForeKaster.html">ForeKaster</a>
+<a class="flink" href="KriegForeKaster_compendium.html">Compendium</a>
+<a class="flink" href="kfk_map.html">Overlay</a>
+<a class="flink" href="globalkaster.html">GlobalKaster</a>
+<a class="flink" href="okk.html">OberKommando</a>
+<a class="flink" href="fogsim.html">FogSim</a>
+<a class="flink" href="fogwar.html">Fogwar</a>
+<a class="flink" href="ohrwurm.html">Ohrwurm</a>
+<a class="flink" href="konsole.html">Konsole</a>
+</nav>
+<p style="margin: 0; max-width: 52em; font-size: 15px; color: #c4c7cc; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 24px">Machine-collated open sources. Deterministic grading. Model-drafted synthesis under citation audit. Resolution and publication are the operator's. Nothing classified or privileged.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 40px; font-size: 13.5px; color: #8d929b">
+<span>© 2026 NebelKrähe · <a href="https://github.com/OccultusTheoretician/netz/blob/main/LICENSE" style="color: #c4c7cc">License</a> · <a href="terms.html" style="color: #c4c7cc">Terms</a> · <a href="privacy.html" style="color: #c4c7cc">Privacy</a> · <a href="https://github.com/OccultusTheoretician/netz" style="color: #c4c7cc">GitHub</a> · <a href="https://github.com/OccultusTheoretician/voidsection" style="color: #c4c7cc">VoidSection</a></span>
+<span>Retro-Prescient Audit™: name first used in dated commit history, anchored by an OpenTimestamps receipt.</span>
+</div>
+</div>
+</footer>
 
-<main class="wrap">
-
-<section id="method">
-  <div class="sec-head rv"><span class="sec-num">I.</span><h2>The Method</h2><span class="rule"></span></div>
-  <div class="method-grid">
-    <div class="prose rv">
-      <p>Most prediction claims are told after the fact, from memory, by the person who
-      benefits from the telling. The audit removes every one of those outs. A forecast
-      here is written down, given a probability and a deadline, and cryptographically
-      sealed <em>before</em> any outcome exists. When the deadline passes, an adjudicator
-      who sees neither the forecaster nor the stated probability rules on the evidence.
-      The result — hit or miss — goes on the record and never comes off.</p>
-      <p class="dictum">“What feels true is a hypothesis. The world is the only referee.”</p>
-      <p>The night is the condition, not the excuse. Everyone forecasts in fog; the
-      question is whether you kept the score.</p>
-      <p class="seal">The full definition is on the record - dated commit history on a host whose clock the desk does not control, plus its OpenTimestamps receipt:
-      <a href="https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md">RETRO_PRESCIENT_AUDIT.md</a></p>
-    </div>
-    <ol class="laws rv">
-      <li><b>Sealed before the outcome.</b> Every projection is hashed into a commitment
-      the day it is issued. Editing, softening, or deleting a forecast breaks the seal
-      for the entire set.</li>
-      <li><b>Falsifiable as written.</b> A stranger reading only the statement must be
-      able to say happened or didn't. Anything that resolves however you feel about it
-      is rejected at the gate.</li>
-      <li><b>Blind adjudication.</b> The adjudicator sees neither forecaster nor stated
-      probability, must cite evidence, and may return ambiguous.</li>
-      <li><b>The record keeps its misses.</b> Hits and misses publish together,
-      permanently. A ledger that can shed its failures is a marketing document.</li>
-      <li><b>Under thirty resolutions, the score is noise.</b> The ledger says so on its
-      own face until the record is deep enough to mean something.</li>
-    </ol>
-  </div>
-</section>
-
-<section id="instruments">
-  <div class="sec-head rv"><span class="sec-num">II.</span><h2>The Instruments</h2><span class="rule"></span></div>
-  <div class="cards rv">
-    <a class="card" href="ledger.html">
-      <span class="card-k">Primary instrument</span>
-      <span class="card-t">The KKR Ledger</span>
-      <span class="card-d"><b>KKR is the Kaos Kontrol Report</b>, the daily forecasting
-      stage that issues the projections. This is its ledger: every projection ever issued,
-      open and resolved, hits and misses, Brier score and calibration table, segregated by
-      the forecaster arm that issued it. The only surface here that constitutes evidence of
-      skill.</span>
-      <span class="card-go">Read the record →</span>
-    </a>
-    <a class="card" href="report.html#tab_wardesk">
-      <span class="card-k">Verification instrument</span>
-      <span class="card-t">The War Desk</span>
-      <span class="card-d">Armed-conflict claims graded by who disagrees. A report is
-      single-source until an <em>independently-biased</em> channel corroborates it; when
-      enemies agree an event happened, it happened. Single-source claims are counted and
-      withheld.</span>
-      <span class="card-live" id="wd-live">Latest pull: —</span>
-      <span class="card-top3" id="wd-top3"></span>
-      <span class="card-go">Confirmed events →</span>
-    </a>
-    <a class="card" href="report.html">
-      <span class="card-k">Collation feed</span>
-      <span class="card-t">NETZ — Daily Report</span>
-      <span class="card-d">Open-source collation under intelligence grammar: mechanical
-      corroboration grading, standing requirements, convergence watch, a citation audit
-      on every synthesized line.</span>
-      <span class="card-go">Today's desk →</span>
-    </a>
-    <a class="card" href="kkr.html">
-      <span class="card-k">Working surface · KKR</span>
-      <span class="card-t">The Kaos Kontrol Report</span>
-      <span class="card-d">The current issuance — sealed projections with deadlines,
-      resolution criteria, and stated probabilities, committed before any outcome
-      exists.</span>
-      <span class="card-go">The open positions →</span>
-    </a>
-    <a class="card" href="KriegForeKaster.html">
-      <span class="card-k">Scored order of battle</span>
-      <span class="card-t">KriegForeKaster</span>
-      <span class="card-d">Formations on a map where the unit of record is the claim, not
-      the unit. Existence, composition, posture, position and command each carry their own
-      grade, their own sources and their own date, and each expires on a published
-      half-life &mdash; command at sixty days, position at fourteen. A claim past its
-      half-life is not asserted wrong; it means nobody has checked recently, and the board
-      greys it rather than showing it with the confidence of a fresh one. Claims worth
-      arguing about are issued into the ledger and resolved hit or miss like any other
-      projection.</span>
-      <span class="card-live">US Army proving set live &mdash; every claim sourced, dated, and expiring on a published clock</span>
-      <span class="card-go">The board &rarr;</span>
-    </a>
-    <a class="card" href="https://github.com/OccultusTheoretician/voidsection">
-      <span class="card-k">Sibling instrument</span>
-      <span class="card-t">VoidSection™</span>
-      <span class="card-d">The same discipline turned on institutions: the distance
-      between the document and the conduct, scored under the Inversion Quotient.
-      Pre-registered; no entity scored yet.</span>
-      <span class="card-go">The gap engine →</span>
-    </a>
-    <a class="card" href="kraehes_kalls.html">
-      <span class="card-k">Abduction log</span>
-      <span class="card-t">Krähe's Kalls</span>
-      <span class="card-d">The calls that fire mid-synthesis, sealed the instant they are
-      spoken and held in the dark. Contents abyssal; the count is committed. Reveal is his
-      alone — the misses stay bound.</span>
-      <span class="card-go">The sealed nest →</span>
-    </a>
-    <a class="card" href="ohrwurm.html">
-      <span class="card-k">Propagation instrument</span>
-      <span class="card-t">Ohrwurm</span>
-      <span class="card-d">Which phrasings cross a line, and which never leave home. Every
-      phrase above the floor is tracked across independently-biased channels: one that
-      surfaces on both sides of a war has propagated; one that stays inside a single camp
-      is that camp's own language, not a fact about the world. The confined ones are
-      counted and published alongside the ones that crossed.</span>
-      <span class="card-go">The propagation board →</span>
-    </a>
-    <a class="card" href="conformance.html">
-      <span class="card-k">The desk bound by its own rule</span>
-      <span class="card-t">Standards &amp; Conformance</span>
-      <span class="card-d">The live ledger audited against the desk's own published
-      standard, computed in your browser from <span class="tag">ledger.json</span> rather
-      than typed by hand. Every status is printed, so the denominator reconciles; accuracy
-      is segregated by forecaster arm and never pooled. The failing rows are the point
-      &mdash; the standard is real enough to fail its own author, in public, with
-      paragraph numbers.</span>
-      <span class="card-go">What the record fails →</span>
-    </a>
-
-  </div>
-</section>
-
-<section id="standing">
-  <div class="sec-head rv"><span class="sec-num">III.</span><h2>The Record</h2><span class="rule"></span></div>
-  <div class="record-grid rv">
-    <div class="standing">
-      <p>This is an instrument being tested in public, not a validated one. Under thirty
-      resolved predictions the score is noise — and the ledger says so on its own face.
-      The record currently shows the machine <strong>missing more than it hits</strong>.</p>
-      <p>That number is the credential. A desk that prints its own bad news is the only
-      kind whose good news means anything.</p>
-      <div class="tiefe" aria-label="Depth to statistical signal">
-        <div class="tiefe-lbl"><span>Depth to signal</span><span id="tiefe-n">— / 30 resolved</span></div>
-        <div class="tiefe-bar"><div class="tiefe-fill" id="tiefe-fill"></div>
-          <div class="tiefe-mark" title="the noise floor"></div></div>
-        <div class="tiefe-sub">The score means nothing until the floor. The bar says how far.</div>
-      </div>
-      <p class="close">Consistency is not correctness — resolution is.</p>
-    </div>
-    <div class="verdicts">
-      <div class="verdicts-k">Latest verdicts — live from the ledger</div>
-      <ul id="verdicts"><li class="pend">reading the record…</li></ul>
-      <a class="card-go" href="ledger.html">Every verdict, permanently →</a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer><div style='font-size:.78rem;opacity:.75;margin-bottom:.5rem'><a href='terms.html'>Terms</a> · <a href='privacy.html'>Privacy</a> · <a href='marks.html'>Marks</a></div>
-  <div class="foot">
-    <div class="foot-mark">
-      <img src="crow_mark_small.svg" alt="">
-      <div>
-        <div class="fm-t">NebelKrähe · The Prescient Desk</div>
-        <div class="fm-d">Machine-collated open sources. Deterministic grading.
-        Model-drafted synthesis under citation audit. Resolution and publication are
-        the operator's.</div>
-      </div>
-    </div>
-    <div>
-      <h4>Instruments</h4>
-      <ul>
-        <li><a href="ledger.html">The Ledger</a></li>
-        <li><a href="report.html">Daily Report</a></li>
-        <li><a href="kkr.html">Forecasts</a></li>
-        <li><a href="report.html#tab_wardesk">War Desk</a></li>
-        <li><a href="https://github.com/OccultusTheoretician/voidsection">VoidSection™</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Method</h4>
-      <ul>
-        <li><a href="#method">The five laws</a></li>
-        <li><a href="https://github.com/OccultusTheoretician/netz/blob/main/RETRO_PRESCIENT_AUDIT.md">Sealed definition</a></li>
-        <li><a href="https://github.com/OccultusTheoretician/netz">Source (GitHub)</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:audit@retroprescientaudit.com">audit@retroprescientaudit.com</a></li>
-        <li><a href="https://bsky.app/profile/occultustheory.bsky.social">Bluesky</a></li>
-        <li><a href="https://x.com/OccultusTheory">X</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="legal"><div class="legal-in">
-    <span class="cls">▲ NOTHING CLASSIFIED OR PRIVILEGED</span>
-    <span>Retro-Prescient Audit™ · VoidSection™ — first use in dated commit history, anchored by OpenTimestamps receipt</span>
-  </div></div>
-<br>© 2026 NebelKrähe · <a href="https://github.com/OccultusTheoretician/netz/blob/main/LICENSE">LICENSE</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></footer>
-
+</div>
 <script>
-(function(){
-  function esc(t){var d=document.createElement('div');d.textContent=String(t==null?'':t);return d.innerHTML}
-  // the record: never covered by the fog
-  fetch('ledger.json').then(function(r){return r.json()}).then(function(d){
-    var p=d.projections||[]; var c={};
-    p.forEach(function(x){c[x.status]=(c[x.status]||0)+1});
-    var briers=[]; p.forEach(function(x){
-      if(x.status==='hit'||x.status==='miss'){
-        var f=parseInt(x.probability,10)/100, o=(x.status==='hit')?1:0;
-        briers.push((f-o)*(f-o));}});
-    var brier=briers.length?briers.reduce(function(a,b){return a+b},0)/briers.length:null;
-    function S(id,v){var el=document.getElementById(id); if(el) el.textContent=v}
-    S('b-issued',p.length); S('b-open',c.open||0);
-    S('b-hm',(c.hit||0)+'H / '+(c.miss||0)+'M');
-    S('b-brier',brier!==null?brier.toFixed(3):'—'); S('b-void',c.void||0);
-    S('b-asof','Live · '+briers.length+' resolved'+(briers.length<30?' · under the noise floor':''));
-    // the record, on the front page: last three verdicts
-    var res=p.filter(function(x){return x.status==='hit'||x.status==='miss'});
-    res.sort(function(a,b){
-      var da=a.resolved_date||'', db=b.resolved_date||'';
-      if(da!==db) return da<db?1:-1;
-      var ia=a.id||'', ib=b.id||'';
-      return ia===ib?0:(ia<ib?1:-1);
-    });
-    var ul=document.getElementById('verdicts');
-    if(ul){
-      ul.innerHTML='';
-      res.slice(0,3).forEach(function(x){
-        var li=document.createElement('li');
-        var st=String(x.statement||'');
-        li.innerHTML='<span class="vid">'+esc(x.id)+'</span>'+
-          '<span class="tag '+(x.status==='hit'?'hit':'miss')+'">'+esc(x.status.toUpperCase())+' @ '+esc(x.probability)+'%</span>'+
-          esc(st.length>110?st.slice(0,107)+'…':st);
-        ul.appendChild(li);
-      });
-      if(!res.length) ul.innerHTML='<li class="pend">nothing resolved yet — the seals are set</li>';
-    }
-    // depth to signal
-    var n=res.length, fill=document.getElementById('tiefe-fill'), tn=document.getElementById('tiefe-n');
-    if(fill) fill.style.width=Math.min(100,(n/30)*100)+'%';
-    if(tn) tn.textContent=n+' / 30 resolved';
-  }).catch(function(){
-    var el=document.getElementById('b-asof');
-    if(el) el.textContent='Full record on the ledger';
-  });
-  // the commitment seal, computed live from the ledger the reader is holding
-  fetch('ledger.json').then(function(r){return r.arrayBuffer()}).then(function(buf){
-    if(!(window.crypto&&crypto.subtle)) throw 0;
-    return crypto.subtle.digest('SHA-256',buf);
-  }).then(function(h){
-    var hex=Array.from(new Uint8Array(h)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
-    var run=document.getElementById('siegel-run');
-    var line='COMMITMENT SEAL \u00b7 SHA-256(ledger.json) = '+hex+' \u00b7 SEALED BEFORE OUTCOME \u00b7 EDITING ANY FORECAST BREAKS THIS NUMBER \u00b7 ';
-    if(run) run.textContent=line+line;
-  }).catch(function(){
-    var run=document.getElementById('siegel-run');
-    if(run) run.textContent='COMMITMENT SEAL \u00b7 SHA-256 published in commit history \u00b7 SEALED BEFORE OUTCOME \u00b7 ';
-  });
-  fetch('war_desk.json').then(function(r){return r.json()}).then(function(d){
-    var g=d.grades||{}; var el=document.getElementById('b-wd');
-    if(el) el.textContent=(g.A||0)+'A / '+(g.B||0)+'B';
-    var lv=document.getElementById('wd-live');
-    if(lv){
-      var st=d.statements||{};
-      lv.innerHTML='Live: <b>'+(g.A||0)+'A / '+(g.B||0)+'B</b> kinetic · <b>'+
-        ((st.A||0)+(st.B||0))+'</b> statements confirmed';
-    }
-    var t3=document.getElementById('wd-top3');
-    if(t3){
-      var rows=[];
-      if(d.top3 && d.top3.length){
-        d.top3.slice(0,3).forEach(function(e){
-          rows.push('<span class="g">'+esc(e.grade)+'</span>'+esc(e.anchor)+
-                    ' <span class="z">· '+esc(e.sides)+' sides</span>');
-        });
-      } else if(d.top_confirmed){
-        rows.push('<span class="g">A</span>'+esc(d.top_confirmed.anchor)+
-                  ' <span class="z">· '+(d.top_confirmed.sides||'—')+' sides</span>');
-      }
-      t3.innerHTML=rows.join('<br>');
-    }
-  }).catch(function(){});
-  // reveal
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);}});
-    },{threshold:.12});
-    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-  } else {
-    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+(function () {
+  'use strict';
+  // The figures in this page's markup are a dated snapshot. This block replaces them, in the
+  // reader's browser, from ledger_index.json (the viewer's index of ledger.json) and recomputes
+  // the seal from ledger.json itself. If either read fails the dated snapshot stands.
+  var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var LINE = '1px solid rgba(255,255,255,0.14)';
+  function live(k) { return document.querySelector('[data-live="' + k + '"]'); }
+  function set(k, v) { var e = live(k); if (e) e.textContent = v; }
+  function num(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function dayNo(s) { return Math.round(Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) / 864e5); }
+  function iso(n) { return new Date(n * 864e5).toISOString().slice(0, 10); }
+  function dm(s) { return (+s.slice(8, 10)) + ' ' + MON[+s.slice(5, 7) - 1]; }
+  function r2(n) { return Math.round(n * 100) / 100; }
+  function clip(s, n) {
+    s = String(s || '');
+    if (s.length <= n) return s;
+    var t = s.slice(0, n), i = t.lastIndexOf(' ');
+    if (i > n * 0.6) t = t.slice(0, i);
+    return t.replace(/[\s,;:.]+$/, '') + '…';
   }
+
+  function paint(id, p, W, H, y0, label) {
+    var svg = document.getElementById(id);
+    if (!svg) return;
+    var ps = svg.querySelectorAll('path');
+    if (ps.length < 5) return;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.setAttribute('aria-label', label);
+    ps[0].setAttribute('d', p.o); ps[1].setAttribute('d', p.v);
+    ps[2].setAttribute('d', p.h); ps[3].setAttribute('d', p.m);
+    ps[4].setAttribute('d', 'M0 ' + y0 + 'H' + W);
+  }
+
+  // One column per day sealed. Hits rise from the line, the open rows and the voided ones sit
+  // above them, misses hang below. Wide: one tick per forecast. Narrow: one bar per status.
+  function charts(D, c, first, today) {
+    var maxA = 1, maxB = 1, i;
+    for (i = 0; i < D.length; i++) {
+      maxA = Math.max(maxA, D[i][0] + D[i][2] + D[i][3]);
+      maxB = Math.max(maxB, D[i][1]);
+    }
+    var label = "Each day's sealed forecasts from " + first + ' to ' + today + ': ' + num(c.hit) +
+      ' hits above the line, ' + num(c.miss) + ' misses below it, ' + num(c.open) + ' still open, ' +
+      num(c['void']) + ' void';
+    var w = { o: '', v: '', h: '', m: '' }, n = { o: '', v: '', h: '', m: '' };
+    var wy = r2(8 + maxA * 2.4), ny = 8 + maxA * 4;
+    for (var d = 0; d < D.length; d++) {
+      var h = D[d][0], m = D[d][1], o = D[d][2], v = D[d][3], x = d * 10 + 1.5, k;
+      for (k = 0; k < h; k++) w.h += 'M' + x + ' ' + r2(wy - 3.2 - k * 2.4) + 'h7';
+      for (k = h; k < h + o; k++) w.o += 'M' + x + ' ' + r2(wy - 3.2 - k * 2.4) + 'h7';
+      for (k = h + o; k < h + o + v; k++) w.v += 'M' + (x + 2) + ' ' + r2(wy - 3.2 - k * 2.4) + 'h3';
+      for (k = 0; k < m; k++) w.m += 'M' + x + ' ' + r2(wy + 3.2 + k * 2.4) + 'h7';
+      var bx = d * 6 + 3;
+      if (h) n.h += 'M' + bx + ' ' + (ny - 2) + 'V' + (ny - 2 - h * 4);
+      if (o) n.o += 'M' + bx + ' ' + (ny - 2 - h * 4) + 'V' + (ny - 2 - (h + o) * 4);
+      if (v) n.v += 'M' + bx + ' ' + (ny - 2 - (h + o) * 4) + 'V' + (ny - 2 - (h + o + v) * 4);
+      if (m) n.m += 'M' + bx + ' ' + (ny + 2) + 'V' + (ny + 2 + m * 4);
+    }
+    paint('chart-wide', w, D.length * 10, Math.ceil(wy + maxB * 2.4 + 8), wy, label);
+    paint('chart-narrow', n, D.length * 6, ny + maxB * 4 + 8, ny, label);
+  }
+
+  function months(first, nDays, d0) {
+    var box = document.getElementById('months');
+    if (!box || !box.firstElementChild) return;
+    var tpl = box.firstElementChild.cloneNode(true);
+    box.textContent = '';
+    function add(text, idx) {
+      var s = tpl.cloneNode(true);
+      s.textContent = text;
+      s.style.left = r2(idx / nDays * 100) + '%';
+      box.appendChild(s);
+    }
+    add(MON[+first.slice(5, 7) - 1].toUpperCase(), 0);
+    for (var i = 1; i < nDays; i++) {
+      var s = iso(d0 + i);
+      if (s.slice(8, 10) === '01') add(MON[+s.slice(5, 7) - 1].toUpperCase(), i);
+    }
+  }
+
+  // The docket: among open rows of the frontier arms whose deadline is still ahead, the
+  // nearest deadline in each subject area, earliest five. Ties go to the lower id.
+  function docket(R, today, c) {
+    var t = dayNo(today), late = 0, soon = 0, best = {}, i, r;
+    for (i = 0; i < R.length; i++) {
+      r = R[i];
+      if (r.s !== 'open' || !r.dl) continue;
+      var dl = dayNo(r.dl);
+      if (dl < t) late++; else if (dl > t && dl <= t + 14) soon++;
+      if (dl > t && String(r.a).indexOf('manual/') === 0) {
+        var b = best[r.dom];
+        if (!b || r.dl < b.dl || (r.dl === b.dl && r.i < b.i)) best[r.dom] = r;
+      }
+    }
+    set('docket-note', num(c.open) + ' open. ' + num(soon) + ' come due in the next fourteen days. ' +
+      num(late) + ' are past deadline and await a verdict.');
+    var pick = Object.keys(best).map(function (k) { return best[k]; }).sort(function (a, b) {
+      return a.dl < b.dl ? -1 : a.dl > b.dl ? 1 : (a.i < b.i ? -1 : 1);
+    }).slice(0, 5);
+    var box = document.getElementById('docket-rows');
+    if (!box || !box.firstElementChild || !pick.length) return;
+    var tpl = box.firstElementChild.cloneNode(true);
+    tpl.style.borderBottom = '';
+    box.textContent = '';
+    pick.forEach(function (r, j) {
+      var row = tpl.cloneNode(true);
+      row.querySelector('.dd').textContent = dm(r.dl).toUpperCase();
+      row.querySelector('.ds p').textContent = r.st;
+      row.querySelector('.ds span').textContent = r.i + ' · ' + r.a + ' · sealed ' + dm(r.d);
+      row.querySelector('.dp').firstChild.nodeValue = String(parseInt(r.p, 10));
+      if (j === pick.length - 1) row.style.borderBottom = LINE;
+      box.appendChild(row);
+    });
+    set('docket-label', 'Next to come due · the nearest deadline in each subject area');
+  }
+
+  // Each forecaster on its own claims; no pooled score is computed anywhere on this page.
+  function forecasters(R) {
+    var A = {}, i, r;
+    for (i = 0; i < R.length; i++) {
+      r = R[i];
+      var a = A[r.a] || (A[r.a] = { tag: r.a, issued: 0, n: 0, h: 0, sq: 0 });
+      a.issued++;
+      if (r.s === 'hit' || r.s === 'miss') {
+        var f = parseInt(r.p, 10) / 100, o = r.s === 'hit' ? 1 : 0;
+        a.n++; a.h += o; a.sq += (f - o) * (f - o);
+      }
+    }
+    var all = Object.keys(A).map(function (k) { return A[k]; });
+    var top = all.filter(function (a) { return a.n >= 30; }).sort(function (x, y) {
+      return y.n - x.n || (x.tag < y.tag ? -1 : 1);
+    }).slice(0, 5);
+    var under = all.filter(function (a) { return a.n > 0 && a.n < 30; }).sort(function (x, y) {
+      return y.issued - x.issued || (x.tag < y.tag ? -1 : 1);
+    })[0];
+    var rows = under ? top.concat([under]) : top;
+    var box = document.getElementById('ftab');
+    if (!box || box.children.length < 2 || !rows.length) return;
+    var tpl = box.children[1].cloneNode(true);
+    tpl.style.borderBottom = '';
+    while (box.children.length > 1) box.removeChild(box.lastChild);
+    rows.forEach(function (a, j) {
+      var row = tpl.cloneNode(true), s = row.querySelectorAll('span');
+      s[0].textContent = a.tag;
+      s[1].textContent = num(a.n);
+      s[2].textContent = num(a.h);
+      s[3].textContent = num(a.n - a.h);
+      if (a.n >= 30) { s[4].textContent = (a.sq / a.n).toFixed(3); s[4].style.color = ''; }
+      else { s[4].textContent = 'noise, n<30'; s[4].style.color = '#8d929b'; }
+      if (j === rows.length - 1) row.style.borderBottom = LINE;
+      box.appendChild(row);
+    });
+    set('ftab-note', rows.length + ' of ' + all.length + ' forecasters shown: the ' +
+      (top.length === 5 ? 'five' : top.length) + ' with the most resolved rows' +
+      (under ? ', and one still under the floor.' : '.'));
+  }
+
+  function verdicts(R) {
+    var res = R.filter(function (r) { return r.s === 'hit' || r.s === 'miss'; }).sort(function (a, b) {
+      var x = a.rd || '', y = b.rd || '';
+      if (x !== y) return x < y ? 1 : -1;
+      return a.i < b.i ? 1 : a.i > b.i ? -1 : 0;
+    }).slice(0, 3);
+    var box = document.getElementById('verdicts');
+    if (!box || !box.firstElementChild || !res.length) return;
+    var tpl = box.firstElementChild.cloneNode(true);
+    tpl.style.borderBottom = '';
+    box.textContent = '';
+    res.forEach(function (r) {
+      var it = tpl.cloneNode(true), sp = it.querySelectorAll('span');
+      sp[0].textContent = r.i;
+      sp[1].textContent = r.s.toUpperCase() + ' @ ' + parseInt(r.p, 10) + '%';
+      sp[1].setAttribute('style', r.s === 'hit'
+        ? 'padding: 3px 8px; background: #fff; color: #000; font-weight: 500'
+        : 'padding: 2px 7px; border: 1px solid #fff; color: #fff; font-weight: 500');
+      it.querySelector('p').textContent = clip(r.st, 150);
+      box.appendChild(it);
+    });
+  }
+
+  function render(d) {
+    var R = d.rows || [];
+    if (!R.length) return;
+    var asof = String(d.as_of || ''), today = asof.slice(0, 10);
+    var first = R[0].d, last = R[0].d, i, r;
+    var c = { open: 0, hit: 0, miss: 0, 'void': 0 };
+    for (i = 0; i < R.length; i++) {
+      r = R[i];
+      if (r.d < first) first = r.d;
+      if (r.d > last) last = r.d;
+      if (c[r.s] !== undefined) c[r.s]++;
+    }
+    if (!today || today < last) today = last;
+    var d0 = dayNo(first), nDays = dayNo(today) - d0 + 1;
+    var D = [], K = { hit: 0, miss: 1, open: 2, 'void': 3 };
+    for (i = 0; i < nDays; i++) D.push([0, 0, 0, 0]);
+    for (i = 0; i < R.length; i++) {
+      r = R[i];
+      var k = K[r.s], x = dayNo(r.d) - d0;
+      if (k !== undefined && D[x]) D[x][k]++;
+    }
+    set('folio', 'Day ' + nDays + ' · ' + dm(today) + ' ' + today.slice(0, 4) +
+      (asof.length >= 16 ? ' · ' + asof.slice(11, 16) + 'Z' : ''));
+    set('n-sealed', num(R.length)); set('n-hit', num(c.hit)); set('n-miss', num(c.miss));
+    set('n-open', num(c.open)); set('n-void', num(c['void']));
+    charts(D, c, first, today);
+    months(first, nDays, d0);
+    docket(R, today, c);
+    forecasters(R);
+    verdicts(R);
+  }
+
+  function seal() {
+    var e = live('seal'), note = live('seal-asof');
+    if (!e || !(window.crypto && crypto.subtle)) return;
+    fetch('ledger.json', { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error('ledger');
+      return r.arrayBuffer();
+    }).then(function (buf) {
+      return crypto.subtle.digest('SHA-256', buf);
+    }).then(function (h) {
+      var hex = Array.prototype.map.call(new Uint8Array(h), function (b) {
+        return ('0' + b.toString(16)).slice(-2);
+      }).join('');
+      e.textContent = hex.match(/.{8}/g).join(' ');
+      if (note) note.textContent = 'Computed in your browser from the ledger you are reading';
+    }).catch(function () {});
+  }
+
+  fetch('ledger_index.json', { cache: 'no-cache' }).then(function (r) {
+    if (!r.ok) throw new Error('index');
+    return r.json();
+  }).then(function (d) { render(d); window.__homeLive = 'done'; })
+    .catch(function () { window.__homeLive = 'snapshot'; });
+
+  var sec = document.getElementById('check');
+  if (sec && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      if (es.some(function (x) { return x.isIntersecting; })) { io.disconnect(); seal(); }
+    }, { rootMargin: '600px' });
+    io.observe(sec);
+  } else { seal(); }
 })();
 </script>
 
-
-<script>
-(function(){
-var BEAM_OFFSET = 0; /* degrees; nudge if paint leads or lags the light */
-var SWEEP_MS = 22000;
-var svgNS='http://www.w3.org/2000/svg';
-var g=document.getElementById('contacts'); var beam=document.querySelector('.beam');
-var tick=document.getElementById('scope-ticker');
-if(!g)return;
-var CAT=[
- ['battleship \u00b7 dreadnought era','sea',0.013,'<path d="M-11,0 L-8,-2.4 L8,-2.4 L11,0 L8,2.4 L-8,2.4 Z"/><circle cx="-5" cy="0" r="1.3"/><circle cx="0" cy="0" r="1.3"/><circle cx="6" cy="0" r="1.3"/>'],
- ['carrier \u00b7 straight deck, prop age','sea',0.012,'<path d="M-11,-2.6 L11,-2.6 L11,2.6 L-11,2.6 Z"/><rect x="4" y="-4" width="3" height="1.6"/>'],
- ['carrier \u00b7 angled deck, jet age','sea',0.015,'<path d="M-11,-3 L9,-3 L11,-1 L11,3 L-7,3 L-11,1 Z"/><rect x="3" y="-4.4" width="3" height="1.6"/>'],
- ['cruiser','sea',0.018,'<path d="M-9,0 L-6.5,-1.8 L6.5,-1.8 L9,0 L6.5,1.8 L-6.5,1.8 Z"/><circle cx="-3" cy="0" r="1.1"/><circle cx="3.5" cy="0" r="1.1"/>'],
- ['destroyer','sea',0.022,'<path d="M-7,0 L-5,-1.4 L5,-1.4 L7,0 L5,1.4 L-5,1.4 Z"/><circle cx="0" cy="0" r="1"/>'],
- ['submarine \u00b7 surfaced','sea',0.010,'<path d="M-8,0 Q0,-2.2 8,0 Q0,2.2 -8,0 Z"/><rect x="-1" y="-2.6" width="2" height="1.8"/>'],
- ['biplane','air',0.045,'<g fill="none" stroke-width="1.1"><path d="M-5,-2 L5,-2 M-4,1 L4,1 M0,-2 L0,3 M-1.6,3 L1.6,3"/></g>'],
- ['fighter \u00b7 prop age','air',0.07,'<path d="M0,-8 L1.2,-2.2 L1.2,5.5 L0,8 L-1.2,5.5 L-1.2,-2.2 Z"/><path d="M-8,-.5 L-1.2,-1.6 L-1.2,1.4 Z"/><path d="M8,-.5 L1.2,-1.6 L1.2,1.4 Z"/><path d="M-3,6.4 L3,6.4 L0,5.2 Z"/>'],
- ['fighter \u00b7 swept wing','air',0.10,'<path d="M0,-8 L1,-2 L1,6 L0,7.5 L-1,6 L-1,-2 Z"/><path d="M-7.5,4.5 L-1,-1 L-1,1.8 Z"/><path d="M7.5,4.5 L1,-1 L1,1.8 Z"/>'],
- ['interceptor \u00b7 delta','air',0.12,'<path d="M0,-7.5 L5.5,5.5 L0,3.6 L-5.5,5.5 Z"/>'],
- ['helicopter','air',0.035,'<ellipse cx="0" cy="1" rx="2" ry="3"/><g fill="none"><path d="M0,1 L0,7 M-1.4,7 L1.4,7" stroke-width="1.1"/><path d="M-6,-5 L6,7 M-6,7 L6,-5" stroke-width=".8" opacity=".8"/></g>'],
- ['submarine \u00b7 submerged','sub',0.008,'<path d="M-7,0 Q0,-1.7 7,0 Q0,1.7 -7,0 Z"/><rect x="-0.8" y="-3.1" width="1.6" height="2.1"/><path d="M0,-3.1 L0,-5" stroke-width=".8"/>'],
- ['submarine \u00b7 running deep','sub',0.006,'<path d="M-6,0 Q0,-1.5 6,0 Q0,1.5 -6,0 Z"/><path d="M0,-2.6 L0,-4.2" stroke-width=".7"/>'],
- ['patrol boat','sea',0.030,'<path d="M-5,0 L-3.5,-1.2 L3.5,-1.2 L5,0 L3.5,1.2 L-3.5,1.2 Z"/><rect x="-1" y="-2.2" width="2" height="1.4"/>'],
- ['minesweeper','sea',0.016,'<path d="M-6,0 L-4,-1.5 L4,-1.5 L6,0 L4,1.5 L-4,1.5 Z"/><g fill="none" stroke-width=".8"><path d="M-6,0 L-10,-2.4 M-6,0 L-10,2.4"/></g>'],
- ['landing craft','sea',0.014,'<path d="M-6,-2 L5,-2 L7,0 L5,2 L-6,2 Z"/><path d="M-6.6,-2.4 L-6.6,2.4" stroke-width="1.5"/>'],
- ['fleet tender','sea',0.011,'<path d="M-9,0 L-7,-2 L7,-2 L9,0 L7,2 L-7,2 Z"/><rect x="-2" y="-3.6" width="3.4" height="1.8"/>'],
- ['tank','land',0.011,'<path d="M-7,-2.4 L7,-2.4 L7,2.4 L-7,2.4 Z"/><rect x="-2.6" y="-4.2" width="5.2" height="2"/><path d="M2.6,-3.2 L9.4,-3.2" stroke-width="1"/>'],
- ['self-propelled gun','land',0.009,'<path d="M-7,-2.2 L6,-2.2 L7,0 L6,2.2 L-7,2.2 Z"/><path d="M0.5,-2.8 L11,-4.6" stroke-width="1.2"/>'],
- ['armoured column','land',0.008,'<rect x="-9.5" y="-1.7" width="4.6" height="3.4"/><rect x="-2.3" y="-1.7" width="4.6" height="3.4"/><rect x="4.9" y="-1.7" width="4.6" height="3.4"/>'],
- ['missile transporter','land',0.010,'<path d="M-8,-1.8 L6,-1.8 L6,1.8 L-8,1.8 Z"/><path d="M-4.5,-2.6 L9,-5" stroke-width="1.5"/><circle cx="-5" cy="2.4" r="1"/><circle cx="3" cy="2.4" r="1"/>'],
- ['SAM battery','land',0.004,'<path d="M-5,2.4 L5,2.4 L3.2,-0.6 L-3.2,-0.6 Z"/><g fill="none" stroke-width=".9"><path d="M-2.2,-0.6 L-3.4,-6.4 M0,-0.6 L0,-7 M2.2,-0.6 L3.4,-6.4"/></g>'],
- ['radar site','land',0.002,'<circle cx="0" cy="2.4" r="1.7"/><path d="M0,2.4 L0,-1.6" stroke-width="1"/><path d="M-4.4,-4.2 Q0,-7 4.4,-4.2" fill="none" stroke-width="1.3"/>'],
- ['UAV \u00b7 loitering','air',0.028,'<path d="M0,-6 L0.9,-1 L0.9,4 L0,6 L-0.9,4 L-0.9,-1 Z"/><path d="M-9.5,0.4 L9.5,0.4" stroke-width="1"/><path d="M-2.6,5.2 L2.6,5.2" stroke-width=".9"/>'],
- ['bomber \u00b7 heavy','air',0.055,'<path d="M0,-8 L1.7,-3 L1.7,5 L0,7 L-1.7,5 L-1.7,-3 Z"/><path d="M-11.5,2.4 L-1.7,-2.2 L-1.7,1.2 Z"/><path d="M11.5,2.4 L1.7,-2.2 L1.7,1.2 Z"/><path d="M-4.2,6.6 L4.2,6.6 L0,5.2 Z"/>'],
- ['AWACS','air',0.040,'<path d="M0,-7 L1.4,-2 L1.4,5 L0,7 L-1.4,5 L-1.4,-2 Z"/><path d="M-9.5,1.2 L-1.4,-1.6 L-1.4,1.2 Z"/><path d="M9.5,1.2 L1.4,-1.6 L1.4,1.2 Z"/><ellipse cx="0" cy="0.6" rx="4.4" ry="1.3" fill="none" stroke-width="1"/>'],
- ['transport \u00b7 four-engine','air',0.048,'<path d="M0,-7.5 L1.5,-2.5 L1.5,5 L0,7 L-1.5,5 L-1.5,-2.5 Z"/><path d="M-10.5,0.6 L-1.5,-2.2 L-1.5,1.4 Z"/><path d="M10.5,0.6 L1.5,-2.2 L1.5,1.4 Z"/><path d="M-3.8,6.4 L3.8,6.4 L0,5.2 Z"/>'],
- ['orbital pass','orb',0.180,'<rect x="-1.7" y="-2.1" width="3.4" height="4.2"/><rect x="-7.4" y="-1.3" width="4.6" height="2.6"/><rect x="2.8" y="-1.3" width="4.6" height="2.6"/><path d="M-2.8,0 L-1.7,0 M1.7,0 L2.8,0" stroke-width=".8"/>']
-];
-var PHRASES=['FATE UNKNOWN','CREATE YOUR FATE','THE PROPHET BOARD'];
-var tickTimer=null;
-function say(t,hold,hot){if(!tick)return;tick.textContent=t;
- tick.setAttribute('class',hot?'ticker hot':'ticker');
- tick.style.opacity=hot?'.95':'.6';
- clearTimeout(tickTimer);tickTimer=setTimeout(function(){tick.style.opacity='0';
-  tick.setAttribute('class','ticker');},hold||3200);}
-var idleI=0; setInterval(function(){if(tick&&tick.style.opacity==='0'){say(PHRASES[idleI++%PHRASES.length],2600);}},11000);
-var contacts=[]; var departures=0;
-function spawn(){
- var idx=Math.floor(Math.random()*CAT.length);
- var a=Math.random()*360, r=78+Math.random()*104;
- var t=(a-90)*Math.PI/180;
- var c={cls:CAT[idx], x:200+r*Math.cos(t), y:200+r*Math.sin(t),
-  heading:Math.random()*360, speed:CAT[idx][2]*(0.7+Math.random()*0.7),
-  maxO:0.70+Math.random()*0.30, born:performance.now(),
-  rot:(CAT[idx][1]==='air'?0:-90), sub:(CAT[idx][1]==='sub'),
-  phase:Math.random()*6.28,
-  life:SWEEP_MS*(2+Math.random()*2), dying:0, el:document.createElementNS(svgNS,'g')};
- c.el.setAttribute('fill','var(--messing3,#6a6a64)');
- c.el.setAttribute('stroke','var(--messing3,#6a6a64)');
- c.el.setAttribute('stroke-width','1.15');
- c.el.setAttribute('opacity','0');
- c.el.innerHTML=c.cls[3]+'<title>'+c.cls[0]+' \u00b7 fate unknown</title>';
- g.appendChild(c.el); contacts.push(c);
- if(Math.random()<0.22)say('CREATE YOUR FATE',3200,true);
-}
-function depart(c){
- if(c.dying)return; c.dying=performance.now(); departures++;
- if(departures%7===0)say('FATE-ALITY',3800,true);
- else if(Math.random()<0.18)say('FATE UNKNOWN',3000,true);
- var wait=800+Math.random()*8200;
- setTimeout(function(){if(contacts.length<12)spawn();},wait);
-}
-var N=7+Math.floor(Math.random()*4);
-for(var i=0;i<N;i++)spawn();
-var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(reduced){contacts.forEach(function(c){c.el.setAttribute('opacity','0.4');
- c.el.setAttribute('transform','translate('+c.x+','+c.y+') rotate('+(c.heading+c.rot)+') scale(1.55)');});return;}
-var t0=performance.now(), last=t0;
-function beamAngle(now){
- if(beam){var tr=getComputedStyle(beam).transform;
-  var mm=tr&&tr!=='none'&&tr.match(/matrix\(([-\d.e]+),\s*([-\d.e]+)/);
-  if(mm)return (Math.atan2(parseFloat(mm[2]),parseFloat(mm[1]))*180/Math.PI+360+BEAM_OFFSET)%360;}
- return (((now-t0)/SWEEP_MS)*360+BEAM_OFFSET)%360;
-}
-function loop(now){
- var dt=Math.min(50,now-last); last=now;
- var ang=beamAngle(now);
- for(var i=contacts.length-1;i>=0;i--){
-  var c=contacts[i];
-  var h=(c.heading-90)*Math.PI/180;
-  c.x+=Math.cos(h)*c.speed*dt; c.y+=Math.sin(h)*c.speed*dt;
-  var dx=c.x-200, dy=c.y-200, rr=Math.sqrt(dx*dx+dy*dy);
-  if(!c.dying&&(rr>188||rr<62||now-c.born>c.life))depart(c);
-  var aCur=(Math.atan2(dy,dx)*180/Math.PI+90+360)%360;
-  var trail=((ang-aCur)%360+360)%360;
-  var o=trail<10?c.maxO:c.maxO*Math.pow(0.5,trail/52);
-  if(o<0.11)o=0.11;
-  if(c.sub){var ph=Math.sin((now-c.born)/3300+c.phase); o*=(ph>0.30?1:0.10);}
-  if(c.dying){var f=1-(now-c.dying)/1500; if(f<=0){c.el.remove();contacts.splice(i,1);continue;} o*=f;}
-  c.el.setAttribute('opacity',o.toFixed(2));
-  c.el.setAttribute('transform','translate('+c.x.toFixed(1)+','+c.y.toFixed(1)+') rotate('+(c.heading+c.rot)+') scale(1.55)');
- }
- requestAnimationFrame(loop);
-}
-requestAnimationFrame(loop);
-})();
-</script>
 
 </body></html>
