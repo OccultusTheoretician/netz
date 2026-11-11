@@ -683,7 +683,6 @@ main{max-width:900px; margin:0 auto; padding:0 1.25rem 4rem}
   .crest{gap:1rem} .crest-title{font-size:1.28rem}}
 
 /* ---- HEADINGS ---- */
-h1{display:none}
 h2{font-family:'IBM Plex Mono',monospace; font-size:.8rem; font-weight:700;
   color:var(--brass2); letter-spacing:.24em; text-transform:uppercase;
   margin:2.7rem 0 1rem; padding-bottom:.55rem;
@@ -896,7 +895,7 @@ def _intel_sections(inner: str, scope: str) -> str:
         sid = f"{scope}_h{i:02d}"
         plain = _re.sub(r"<[^>]+>", "", title).strip()[:26]
         chips.append(f"<a href='#{sid}'>{i:02d} · {plain}</a>")
-        return (f"<h2 id='{sid}'><span class='pmk'>(U//OS)</span>"
+        return (f"<h2 id='{sid}'>"
                 f"<span class='snum'>{i:02d}.</span> {title}"
                 f"<a class='stop' href='#{scope}_nav'>\u25b2</a></h2>")
     inner = _re.sub(r"<h2>(.*?)</h2>", _repl, inner, flags=_re.DOTALL)
@@ -938,20 +937,28 @@ def render_html(md: str, title: str) -> str:
             f"<div class='tile-v {mk_cls}'>{mk_txt}</div><div class='tile-s'>lead index move</div></div>"
             f"</div>")
 
+    # HEAD-2026-11-11: one header on the page. The second masthead and the
+    # portion marks are gone; the page carries its plain name and its tag,
+    # as the menu prints them.
+    _tu = title.upper()
+    if "LEDGER" in _tu:
+        _pg_name, _pg_tag = "Full ledger", ""
+    elif "KKR" in _tu or "FORECAST" in _tu:
+        _pg_name, _pg_tag = "Daily forecasts", "KKR"
+    else:
+        _pg_name, _pg_tag = "Daily report", "Netz"
+    if _pg_tag:
+        _pg_tag = f" <span class='pg-tag' translate='no'>{_pg_tag}</span>"
     letterhead = (
         f"<div class='letterhead'>"
         f"<div class='classbar'><span>▲ NOTHING CLASSIFIED OR PRIVILEGED</span>"
         f"<span class='dtg'>{dtg}</span></div>"
-        f"<div class='crest'>{CROW_SVG}<div class='crest-text'>"
-        f"<div class='crest-org'>NEBELKRÄHE · OSINT DESK</div>"
-        f"<h1 class='crest-title'>THE PRESCIENT DESK\u2122 · {doc_kind}</h1>"
-        f"<div class='crest-line'>Forecasts kept on the record</div>"
-        f"<div class='crest-motto'>Calling our shots in the fog. Soaring through our misses.</div>"
-        f"</div></div>{tiles}</div>")
+        f"<h1 class='pg-title'>{_pg_name}{_pg_tag}</h1>"
+        f"{tiles}</div>")
 
     footer = (
         "<div class='footbar'>▲ NOTHING CLASSIFIED OR PRIVILEGED</div>"
-        "<div class='byline'>NEBELKRÄHE · THE PRESCIENT DESK</div>"
+        "<div class='byline'>NEBELKRÄHE</div>"
         "<div class='legalline' style='font-size:.72rem;opacity:.7;margin:.2rem 0 .5rem'>© 2026 NebelKrähe · <a href='https://github.com/OccultusTheoretician/netz/blob/main/LICENSE'>LICENSE</a> · <a href='terms.html'>Terms</a> · <a href='privacy.html'>Privacy</a></div>"
         "<div class='colophon'>Machine-collated open-source intelligence. Every synthesized "
         "claim traces to the record; the record traces to source. Grades are mechanical, "

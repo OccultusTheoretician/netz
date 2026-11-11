@@ -245,8 +245,8 @@ font-family:var(--mono);font-size:.68rem;color:var(--faint)}}
 </head>
 <body>
 <div class="wrap">
-<div class="kicker">(U//OS) - KriegForeKaster - order of battle</div>
-<h1>The Overlay</h1>
+<div class="kicker">KriegForeKaster - order of battle</div>
+<h1>Map <span class="pg-tag" translate="no">Overlay</span></h1>
 <div class="stand">generated {now.strftime('%d%H%MZ %b %y').upper()} - record as_of {escape(str(d.get('as_of','?')))} - {len(recs)} formation(s)</div>
 <p class="doctrine">The board renders its own doctrine instead of hiding it in a comment. <strong>Solid points locate a command</strong> (headquarters or installation centroid); <strong>dashed hollow points locate a state</strong> - a capital centroid is an honest coordinate declaring that nobody has sourced where the formation sits. SPECULATIVE existence renders near-ghost and can never fuel a forecast; claims past their location half-life fade. A brass ring is a formation named in the graded WarDesk stream inside {SIGHT_RING_H} hours. <strong>Of {len(recs)} formations on this board, {sum(1 for _r in recs if ((_r.get('existence') or {{}}).get('grade')) in ('DOCUMENTED','REPORTED'))} carry real sourcing; the remaining {sum(1 for _r in recs if ((_r.get('existence') or {{}}).get('grade')) == 'SPECULATIVE')} are the held-open skeleton - a country having an armed force, located at its capital - and render as faint ghosts that can never fuel a forecast.</strong></p>
 <div class="board">

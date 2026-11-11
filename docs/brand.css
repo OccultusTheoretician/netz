@@ -273,3 +273,65 @@ section{padding:3rem 0}
   body>#wrap{flex:1 1 0;min-height:0;height:auto;max-height:none}
   #wrap>#nav{display:none}
 }
+
+/* ===== GRID-2026-11-11 - every page under the stamped header sits on the header's
+   grid: one left edge, one title block, one plain black ground. The lattice, the
+   watermark and the corner marks are gone, as on the front page. A page whose nav
+   carries data-grid="off" (nav_manifest.json, as_built) keeps its own layout. ===== */
+@media screen{
+  html:root #brandbg,html:root #brandhud,html:root .field-bg,html:root .facets,html:root .grain,
+  html:root .grund,html:root .bank,html:root .korn,html:root .beam{display:none}
+  html:root{--sans:'IBM Plex Sans',system-ui,sans-serif;--messing-ghost:rgba(255,255,255,.035)}
+  html:root .desknav-unified:not([data-grid="off"])~.band{background:none}
+  :where(code,kbd,samp,pre){font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace}
+  html:root .colophon{font-family:'IBM Plex Sans',system-ui,sans-serif}
+  .pg-tag{display:inline-block;margin-left:.8em;vertical-align:middle;font:400 13px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#8d929b;white-space:nowrap}
+
+  /* the column: every block under the header takes the header's box, so titles,
+     text and rules share its left edge; inner wrappers keep their own measure */
+  html:root .desknav-unified:not([data-grid="off"])~:is(header,main,section,footer,.wrap,.band),
+  html:root .desknav-unified:not([data-grid="off"])~main#spion{
+    margin-left:calc(max(0px,(100% - 1240px)/2) + clamp(16px,5vw,72px));margin-right:calc(max(0px,(100% - 1240px)/2) + clamp(16px,5vw,72px));padding-left:0;padding-right:0}
+  html:root .desknav-unified:not([data-grid="off"])~* :is(.wrap,.foot-in,.foot-bar,.band-in){
+    margin-left:0;margin-right:0;padding-left:0;padding-right:0}
+  html:root body:has(>h1)>:not(.desknav-unified):not(script):not(style):not(link):not(#_){
+    margin-left:calc(max(0px,(100% - 1240px)/2) + clamp(16px,5vw,72px));margin-right:calc(max(0px,(100% - 1240px)/2) + clamp(16px,5vw,72px))}
+  html:root .desknav-unified:not([data-grid="off"])~* :is(.footbar,.byline,.colophon){text-align:left}
+  html:root .desknav-unified:not([data-grid="off"])~* .foot-brand img{display:none}
+
+  /* nothing between the header and the title block */
+  html:root .desknav-unified:not([data-grid="off"])~:is(header,main,.wrap),
+  html:root .desknav-unified:not([data-grid="off"])~main#spion,
+  html:root .desknav-unified:not([data-grid="off"])~header>.wrap,
+  html:root .desknav-unified:not([data-grid="off"])~.wrap>header,
+  html:root .desknav-unified:not([data-grid="off"])~main>.letterhead{margin-top:0;padding-top:0}
+
+  /* the title block: one size, one weight, one place */
+  html:root .desknav-unified:not([data-grid="off"])~h1,
+  html:root .desknav-unified:not([data-grid="off"])~* h1,
+  html:root .desknav-unified:not([data-grid="off"])~#spion h1{
+    display:block;max-width:21em;margin:clamp(44px,7vw,96px) 0 22px;padding:0;border:0;
+    font:400 clamp(28px,3.6vw,50px)/1.16 'IBM Plex Sans',system-ui,sans-serif;
+    letter-spacing:-.02em;text-transform:none;text-align:left;color:#fff;text-wrap:balance}
+  html:root .desknav-unified:not([data-grid="off"])~:is(.kicker,.mark,.eyebrow):has(+h1),
+  html:root .desknav-unified:not([data-grid="off"])~* :is(.kicker,.mark,.eyebrow):has(+h1),
+  html:root .desknav-unified:not([data-grid="off"])~#spion .mark:has(+h1){
+    display:block;margin:clamp(44px,7vw,96px) 0 18px;padding:0;border:0;
+    font:500 13px/1.05 'IBM Plex Sans',system-ui,sans-serif;letter-spacing:.04em;
+    text-transform:uppercase;color:#8d929b}
+  html:root .desknav-unified:not([data-grid="off"])~* .classbar:has(+h1){
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    margin:clamp(44px,7vw,96px) 0 18px;padding:0;border:0;
+    font:500 13px/1.05 'IBM Plex Sans',system-ui,sans-serif;letter-spacing:.04em;
+    text-transform:uppercase;color:#8d929b}
+  html:root .desknav-unified:not([data-grid="off"])~* .classbar:has(+h1) :is(span,.dtg){font:inherit;letter-spacing:inherit;color:inherit}
+  html:root .desknav-unified:not([data-grid="off"])~:is(.kicker,.mark,.eyebrow)+h1,
+  html:root .desknav-unified:not([data-grid="off"])~* :is(.kicker,.mark,.eyebrow)+h1,
+  html:root .desknav-unified:not([data-grid="off"])~#spion .mark+h1,
+  html:root .desknav-unified:not([data-grid="off"])~* .classbar+h1{margin-top:0}
+  html:root .desknav-unified:not([data-grid="off"])~* header.top h1{margin-bottom:0}
+}
+@media screen and (max-width:760px){
+  /* a long hash or address inside a sentence breaks instead of widening the page */
+  html:root .desknav-unified:not([data-grid="off"])~* :is(p,li,em,dd){overflow-wrap:anywhere}
+}

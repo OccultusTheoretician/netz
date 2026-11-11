@@ -109,7 +109,7 @@ def main() -> int:
     B.append(f"<style>{STYLE}</style><link rel=\"stylesheet\" href=\"brand.css\">\n")
     B.append("</head><body>\n")
 
-    B.append("<div class='kicker'>Instrument</div>\n<h1>VERSPRECHEN</h1>\n")
+    B.append("<div class='kicker'>Instrument</div>\n<h1>Promise book <span class='pg-tag' translate='no'>Versprechen</span></h1>\n")
     B.append("<p class='note'>The promise book. Frontier AI labs publish commitments with dates on them; "
              "this book seals those commitments as forecast rows before their outcomes, under the same gate, "
              "the same controls and the same adjudication as every other row on the desk. Stated versus "

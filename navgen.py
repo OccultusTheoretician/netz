@@ -261,7 +261,11 @@ def render_nav(manifest, active):
     titles = render_nav.titles
     health = render_nav.health
     parts = [STYLE,
-             '<nav class="desknav-unified" data-navgen="3" aria-label="site">',
+             # GRID-2026-11-11: a page the manifest lists under as_built keeps its
+             # own layout; brand.css reads the mark.
+             '<nav class="desknav-unified" data-navgen="3"'
+             + (' data-grid="off"' if active in set(manifest.get("as_built", [])) else '')
+             + ' aria-label="site">',
              '<div class="ng-in"><div class="ng-top">',
              '<a class="ng-brand" href="index.html" translate="no">' + CROW +
              '<span class="ng-word">NEBELKR&Auml;HE</span></a>']

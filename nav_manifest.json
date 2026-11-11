@@ -1,5 +1,5 @@
 {
- "_readme": "Single source of truth for site navigation. Edit here, then run: python navgen.py - every served page gets the identical header. 'contents' is the numbered line. 'groups' is the full page map under All pages: 'text' is the plain name a visitor reads, 'tag' the working name printed beside it. A group may carry 'asof_path' (a path listed in docs/health.json) and 'asof_note'; its last move is printed beside the group label. Pages listed in 'skip' keep whatever nav they have and are exempt from --check drift. 'external' renders at the foot of the map.",
+ "_readme": "Single source of truth for site navigation. Edit here, then run: python navgen.py - every served page gets the identical header. 'contents' is the numbered line. 'groups' is the full page map under All pages: 'text' is the plain name a visitor reads, 'tag' the working name printed beside it. A group may carry 'asof_path' (a path listed in docs/health.json) and 'asof_note'; its last move is printed beside the group label. Pages listed in 'skip' keep whatever nav they have and are exempt from --check drift. 'external' renders at the foot of the map. Pages listed in 'as_built' keep their own layout: navgen marks their nav data-grid=\"off\" and brand.css leaves their columns and titles alone.",
  "contents": [
   {
    "href": "ledger.html",
@@ -202,5 +202,13 @@
  ],
  "skip": [
   "index.html"
+ ],
+ "as_built": [
+  "ohrwurm.html",
+  "KriegForeKaster.html",
+  "KriegForeKaster_compendium.html",
+  "kfk_map.html",
+  "okk.html",
+  "konsole.html"
  ]
 }
