@@ -1,0 +1,333 @@
+[
+  {
+    "statement": "The CISA KEV catalog adds at least one Microsoft CVE with a dateAdded value of 2026-12-08, the scheduled December 2026 Patch Tuesday.",
+    "resolution": "The CISA KEV JSON feed contains at least one entry whose vendorProject is Microsoft and whose dateAdded equals 2026-12-08.",
+    "failure_condition": "At the deadline no KEV entry with vendorProject Microsoft carries dateAdded 2026-12-08.",
+    "domain": "cyber",
+    "deadline": "2026-12-11",
+    "probability": 57,
+    "citations": [
+      27,
+      32,
+      38
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:34Z",
+      "ledger_sha16": "08acac4ed107be78",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-30"
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds an N-able entry with a dateAdded value between 2026-11-11 and 2026-12-04, following the N-able zero-day hotfixes.",
+    "resolution": "The CISA KEV JSON feed contains an entry whose vendorProject is N-able and whose dateAdded falls between 2026-11-11 and 2026-12-04 inclusive.",
+    "failure_condition": "At the deadline no KEV entry with vendorProject N-able carries a dateAdded within 2026-11-11 to 2026-12-04.",
+    "domain": "cyber",
+    "deadline": "2026-12-08",
+    "probability": 57,
+    "citations": [
+      20
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:34Z",
+      "ledger_sha16": "08acac4ed107be78",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-31"
+    }
+  },
+  {
+    "statement": "The US Treasury 10-year par yield for 2026-12-31 is at or above 5.00 percent. Reference: 5.00 percent per the packet snapshot on 2026-11-11.",
+    "resolution": "The Treasury Daily Par Yield Curve Rates table shows a 10 Yr value of 5.00 or higher for the row dated 2026-12-31. Reference level 5.00 on 2026-11-11.",
+    "failure_condition": "The Treasury 10 Yr par yield value for 2026-12-31 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2027-01-05",
+    "probability": 57,
+    "citations": [
+      75
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:34Z",
+      "ledger_sha16": "08acac4ed107be78",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-32"
+    }
+  },
+  {
+    "statement": "The FOMC statement from the December 2026 meeting, scheduled for 2026-12-09, announces a federal funds target range identical to the range in effect immediately before that meeting.",
+    "resolution": "The Federal Reserve press release for the December 2026 FOMC meeting states a target range equal to the range in force on 2026-12-08.",
+    "failure_condition": "The December 2026 FOMC statement announces a target range different from the one in force on 2026-12-08.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-11",
+    "probability": 57,
+    "citations": [
+      75
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:34Z",
+      "ledger_sha16": "08acac4ed107be78",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-33"
+    }
+  },
+  {
+    "statement": "ICE Brent front-month crude settles above 100.00 dollars per barrel on at least one trading day between 2026-11-12 and 2026-12-18. Reference: 93.87 on the packet date 2026-11-11.",
+    "resolution": "ICE Futures Europe daily settlement data show a Brent front-month settlement above 100.00 on any trading day from 2026-11-12 to 2026-12-18 inclusive. Reference 93.87 on 2026-11-11.",
+    "failure_condition": "No ICE Brent front-month settlement between 2026-11-12 and 2026-12-18 exceeds 100.00 dollars per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-22",
+    "probability": 57,
+    "citations": [
+      82,
+      87,
+      94
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:34Z",
+      "ledger_sha16": "08acac4ed107be78",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-34"
+    }
+  },
+  {
+    "statement": "Russia and Ukraine carry out a prisoner exchange of at least 300 persons per side between 2026-11-12 and 2026-12-15, confirmed by both the Russian Ministry of Defence and the Ukrainian Coordination Headquarters.",
+    "resolution": "Official statements from both the Russian Ministry of Defence and the Ukrainian Coordination Headquarters confirm a single exchange of 300 or more persons per side completed between 2026-11-12 and 2026-12-15.",
+    "failure_condition": "No exchange of at least 300 persons per side is confirmed by both governments as completed within 2026-11-12 to 2026-12-15.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-18",
+    "probability": 57,
+    "citations": [
+      45,
+      100
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:34Z",
+      "ledger_sha16": "08acac4ed107be78",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-35"
+    }
+  },
+  {
+    "statement": "Iranian forces board or seize a commercial tanker in the Persian Gulf, Strait of Hormuz, or Gulf of Oman between 2026-11-12 and 2026-12-11, confirmed by a UKMTO advisory and the vessel operator or flag state.",
+    "resolution": "A UKMTO advisory plus a statement from the tanker operator or flag state both attribute a boarding or seizure of a named commercial tanker to Iranian forces, event dated 2026-11-12 to 2026-12-11.",
+    "failure_condition": "No named commercial tanker is confirmed by UKMTO and operator or flag state as boarded or seized by Iranian forces within 2026-11-12 to 2026-12-11.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-15",
+    "probability": 57,
+    "citations": [
+      82,
+      87
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:34Z",
+      "ledger_sha16": "08acac4ed107be78",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-36"
+    }
+  },
+  {
+    "statement": "Italian authorities announce the arrest of at least one named or identified suspect for the November 2026 email bomb threats against Italian schools between 2026-11-12 and 2026-12-11.",
+    "resolution": "An Italian police, Carabinieri, or prosecutor statement announces an arrest tied to the school email bomb threats, dated 2026-11-12 to 2026-12-11, reported by ANSA and one non-Italian wire service.",
+    "failure_condition": "No arrest tied to the Italian school email bomb threats is announced by Italian authorities within 2026-11-12 to 2026-12-11.",
+    "domain": "crime/security",
+    "deadline": "2026-12-15",
+    "probability": 57,
+    "citations": [
+      46,
+      103
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "crime-security",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:34Z",
+      "ledger_sha16": "08acac4ed107be78",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-37"
+    }
+  },
+  {
+    "statement": "GDACS issues an Orange or Red flood alert for Kenya with an event start date between 2026-11-12 and 2026-12-31.",
+    "resolution": "The GDACS event list contains a flood event with country Kenya, alert level Orange or Red, and a start date between 2026-11-12 and 2026-12-31 inclusive.",
+    "failure_condition": "No GDACS flood event for Kenya at Orange or Red level starts within 2026-11-12 to 2026-12-31.",
+    "domain": "disaster",
+    "deadline": "2027-01-05",
+    "probability": 57,
+    "citations": [
+      56
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "disaster",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-11",
+      "ledger_as_of": "2026-11-11T21:13:34Z",
+      "ledger_sha16": "08acac4ed107be78",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261111-38"
+    }
+  }
+]
