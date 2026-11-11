@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- NAMES-2026-11-11. The page names in the footer list follow nav_manifest.json (plain name, working name as a tag); adopted by the operator on 2026-11-10. -->
 <!-- HOME-2026-11-10. Layout and the lines new to this page were drafted by the desk's assistant under the operator's direction on 2026-11-10; read and adopted by the operator on 2026-11-10. The figures in this markup are a dated snapshot; the block at the foot of the page replaces them in the reader's browser from ledger_index.json and recomputes the seal from ledger.json. -->
 <html lang="en"><head>
 <meta charset="utf-8">
@@ -32,7 +33,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .tn{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:400;color:#8d929b}
 .arrow{display:inline-flex;align-items:center;min-height:44px;color:#fff;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;text-decoration:underline;text-decoration-color:rgba(255,255,255,.45);text-underline-offset:6px}
 .arrow:hover{text-decoration-color:#fff}
-.flink{display:flex;align-items:center;min-height:44px;color:#c4c7cc;text-decoration:none;font-size:14.5px;line-height:1.3}
+.flink{display:flex;align-items:baseline;gap:10px;padding:11px 0;min-height:44px;color:#c4c7cc;text-decoration:none;font-size:14.5px;line-height:1.3}.ftag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#8d929b}
 .flink:hover{color:#fff}
 .np-crow{display:block;flex:0 0 auto;width:clamp(190px,18cqi,270px);height:auto}
 .np-word{font-family:'Cinzel',serif;font-weight:500;font-size:clamp(38px,6.9cqi,104px);letter-spacing:.06em;line-height:.82;white-space:nowrap}
@@ -277,35 +278,35 @@ a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:3px}
 <p lang="de" style="margin: 0; font-family: 'Cinzel', serif; font-weight: 500; font-size: clamp(18px, 2.4cqi, 30px); letter-spacing: 0.08em; line-height: 1.3; color: #fff">DIE KRÄHE SIEHT DURCH DEN NEBEL</p>
 <p style="margin: 0; font-size: 15px; color: #c4c7cc">The crow sees through the fog.</p>
 </div>
-<nav aria-label="All pages" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0 24px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 16px">
-<a class="flink" href="index.html">Home</a>
+<nav aria-label="All pages" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0 24px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 16px">
+<a class="flink" href="index.html">Front page</a>
 <a class="flink" href="ledger.html">Ledger</a>
-<a class="flink" href="kkr.html">Forecasts</a>
-<a class="flink" href="kalibrierwarte.html">Warte</a>
-<a class="flink" href="versprechen.html">Versprechen</a>
-<a class="flink" href="kraehes_kalls.html">Kalls</a>
-<a class="flink" href="nest.html">Nest</a>
+<a class="flink" href="kkr.html">Daily forecasts<span class="ftag" translate="no">KKR</span></a>
+<a class="flink" href="report.html">Daily report<span class="ftag" translate="no">Netz</span></a>
+<a class="flink" href="kalibrierwarte.html">Calibration<span class="ftag" translate="no">Warte</span></a>
 <a class="flink" href="findings.html">Findings</a>
-<a class="flink" href="luecke.html">Luecke</a>
-<a class="flink" href="urteil.html">Urteil</a>
-<a class="flink" href="health.html">Health</a>
 <a class="flink" href="standards.html">Standards</a>
 <a class="flink" href="conformance.html">Conformance</a>
-<a class="flink" href="register.html">Register</a>
+<a class="flink" href="register.html">Conformance register<span class="ftag" translate="no">Register</span></a>
 <a class="flink" href="verify.html">Verify</a>
-<a class="flink" href="decc.html">DECC-26</a>
-<a class="flink" href="spion.html">Spion</a>
-<a class="flink" href="instruments.html">Instruments</a>
-<a class="flink" href="report.html">Report</a>
-<a class="flink" href="KriegForeKaster.html">ForeKaster</a>
+<a class="flink" href="decc.html">Disclosure verifier<span class="ftag" translate="no">DECC-26</span></a>
+<a class="flink" href="urteil.html">Verdict audit<span class="ftag" translate="no">Urteil</span></a>
+<a class="flink" href="luecke.html">Completeness audit<span class="ftag" translate="no">Luecke</span></a>
+<a class="flink" href="instruments.html">All instruments</a>
+<a class="flink" href="health.html">Desk health</a>
+<a class="flink" href="spion.html">Standards watch<span class="ftag" translate="no">Spion</span></a>
+<a class="flink" href="ohrwurm.html">Phrase tracking<span class="ftag" translate="no">Ohrwurm</span></a>
+<a class="flink" href="versprechen.html">Promise book<span class="ftag" translate="no">Versprechen</span></a>
+<a class="flink" href="kraehes_kalls.html">Sealed calls<span class="ftag" translate="no">Kalls</span></a>
+<a class="flink" href="nest.html">Federation reader<span class="ftag" translate="no">Nest</span></a>
+<a class="flink" href="fogsim.html">Sealed scenario runs<span class="ftag" translate="no">FogSim</span></a>
+<a class="flink" href="fogwar.html">Auditable wargame<span class="ftag" translate="no">Fogwar</span></a>
+<a class="flink" href="konsole.html">Console<span class="ftag" translate="no">Konsole</span></a>
+<a class="flink" href="KriegForeKaster.html">Order of battle<span class="ftag" translate="no">ForeKaster</span></a>
 <a class="flink" href="KriegForeKaster_compendium.html">Compendium</a>
-<a class="flink" href="kfk_map.html">Overlay</a>
-<a class="flink" href="globalkaster.html">GlobalKaster</a>
-<a class="flink" href="okk.html">OberKommando</a>
-<a class="flink" href="fogsim.html">FogSim</a>
-<a class="flink" href="fogwar.html">Fogwar</a>
-<a class="flink" href="ohrwurm.html">Ohrwurm</a>
-<a class="flink" href="konsole.html">Konsole</a>
+<a class="flink" href="kfk_map.html">Map<span class="ftag" translate="no">Overlay</span></a>
+<a class="flink" href="okk.html">Command view<span class="ftag" translate="no">OberKommando</span></a>
+<a class="flink" href="globalkaster.html">Board, simulated<span class="ftag" translate="no">GlobalKaster</span></a>
 </nav>
 <p style="margin: 0; max-width: 52em; font-size: 15px; color: #c4c7cc; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 24px">Machine-collated open sources. Deterministic grading. Model-drafted synthesis under citation audit. Resolution and publication are the operator's. Nothing classified or privileged.</p>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 40px; font-size: 13.5px; color: #8d929b">

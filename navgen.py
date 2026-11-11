@@ -10,15 +10,16 @@ tool makes nav_manifest.json the single source of truth and stamps the same
 grouped nav onto every served page: replacing the bar where one exists,
 inserting after <body> where none does.
 
-KK30b: flyout panels carry each instrument's one-line definition\n(from instruments_map.json: blurb, else module docstring). KK30: the nav is the brand bar - crow monogram + NEBELKRAEHE in Cinzel
-as the home link - and groups render as hover flyouts (CSS-only). Chrome
-is monochrome; verdict colors stay on the pages. Desktop opens on :hover;
-touch and keyboard open via :focus-within (the group container is
-tabindex=0, so a tap or Tab focuses it). The group holding the current page
-carries ng-here and its label reads brass. If instruments_map.json exists
-beside this file, each link gains a title tooltip: an explicit blurb from
-the map, else the first docstring line of the mapped module — the legend is
-sourced from the tools themselves, never hand-copied.
+HEADER-2026-11-11: the stamped nav is the front page's header - the crow and
+NEBELKRAEHE as the home link, a numbered contents line, and one "All pages"
+disclosure (a <details> element, no script) holding the whole map. Links print
+a plain name; the working name rides as a tag when the manifest gives one. A
+group may name the health surface whose last move dates it (asof_path), read
+at stamp time and omitted when unreadable. Each link keeps its title tooltip:
+an explicit blurb from instruments_map.json, else the first docstring line of
+the mapped module - the legend is sourced from the tools themselves, never
+hand-copied. Every stamped page also loads fonts/fonts.css (fonts-ensure), so
+the header's faces resolve on pages that never linked them.
 
 MIRROR DISCIPLINE (why this cannot break desk verify)
 desk.py asserts docs/kkr.html == forecasts/KKR_latest.html and
@@ -26,9 +27,9 @@ docs/ledger.html == forecasts/ledger.html. Whatever this tool does to a
 mirrored docs page it does identically to its forecasts twin, so the mirror
 invariant holds by construction.
 
-Idempotent: its own output carries data-navgen="2" and is matched and replaced
-whole on re-run. Zero external assets; nav carries translate="no" (instrument
-names are proper nouns).
+Idempotent: its own output carries data-navgen="3" and is matched and replaced
+whole on re-run (an older stamp is matched by the same pattern). Zero external
+assets; the wordmark and the working-name tags carry translate="no".
 
     python navgen.py            stamp every page (prints per-page action)
     python navgen.py --check    read-only drift report; exit 1 on drift
@@ -67,57 +68,137 @@ BODY_RE = re.compile(r"<body[^>]*>", re.I)
 # manifest nav is the only site nav regardless of what any generator emits
 LEGACY_NAV_RE = re.compile(r'<nav class="desknav">.*?</nav>', re.S)
 
+# HEADER-2026-11-11: the stamped nav is the front page's header on every page -
+# nameplate, numbered contents, and one "All pages" disclosure holding the whole
+# map (plain names, working names as tags). CSS only. Every property a host page
+# could leak into the nav through a bare element rule (nav, a, summary, details)
+# is set here, so the header reads the same on all of them.
+CROW = ('<svg class="ng-crow" viewBox="0 0 729 300" aria-hidden="true">'
+        '<path d="M149 4 L258 29 L264 116 L268 125 L475 85 L602 149 L557 168 '
+        'L609 189 L553 211 L582 234 L570 237 L725 296 L573 296 L456 257 L421 263 '
+        'L271 219 L268 125 L234 138 L249 169 L202 163 L204 200 L164 159 L170 113 '
+        'L186 109 L165 92 L4 53 Z" fill="#fff"></path>'
+        '<path d="M269 132 L392 162 L326 188 L388 216 L336 227 L272 226 Z" '
+        'fill="#000"></path>'
+        '<path d="M271 219 L268 125 L234 138 L249 169 L202 163 L204 200 L164 159 '
+        'L170 113" fill="none" stroke="#000" stroke-width="40" '
+        'stroke-linejoin="miter" stroke-miterlimit="12"></path>'
+        '<path d="M139.9 45.7 L160.5 45.3 L173.1 53.3 L156.6 53.5 Z" '
+        'fill="#000"></path></svg>')
+
+# The contents line when the manifest carries none.
+DEFAULT_CONTENTS = [
+    {"href": "ledger.html", "text": "Record"},
+    {"href": "index.html#method", "text": "Method"},
+    {"href": "findings.html", "text": "Findings"},
+    {"href": "standards.html", "text": "Standards"},
+    {"href": "instruments.html", "text": "Instruments"},
+    {"href": "verify.html", "text": "Run the check"},
+]
+
+_N = ".desknav-unified"
 STYLE = (
     '<style id="desknav-style">'
-    '.desknav-unified{display:flex;flex-wrap:wrap;gap:.2rem 1.05rem;'
-    'align-items:center;padding:.5rem 1.1rem;border-bottom:1px solid #26292f;'
-    'background:rgba(7,9,12,.55);position:relative;z-index:40}'
-    '.desknav-unified .ng-brand{display:inline-flex;align-items:center;'
-    'gap:.6rem;text-decoration:none;margin-right:.9rem}'
-    '.desknav-unified .ng-brand img{height:26px;width:auto;opacity:.95}'
-    ".desknav-unified .ng-word{font:500 .8rem 'Cinzel',serif;"
-    'letter-spacing:.28em;color:#e9e7e2}'
-    '.desknav-unified .ng-brand:hover .ng-word{color:#ffffff}'
-    '.desknav-unified .ng-drop{position:relative;display:inline-block;'
-    'outline:none}'
-    '.desknav-unified .ng-label{display:inline-block;color:#8b8b85;'
-    "font:600 .62rem 'IBM Plex Mono',monospace;letter-spacing:.14em;"
-    'text-transform:uppercase;cursor:pointer;user-select:none;'
-    'padding:.25rem .1rem}'
-    ".desknav-unified .ng-label::after{content:' \\25BE';color:#565650}"
-    '.desknav-unified .ng-drop:hover .ng-label,'
-    '.desknav-unified .ng-drop:focus-within .ng-label{color:#e9e7e2}'
-    '.desknav-unified .ng-here .ng-label{color:#f2f0ea}'
-    '.desknav-unified .ng-panel{display:none;position:absolute;left:0;'
-    'top:100%;min-width:19rem;max-width:23rem;background:#0c0e11;'
-    'border:1px solid #26292f;padding:.6rem .85rem;z-index:41;'
-    'flex-direction:column;gap:.42rem}'
-    '.desknav-unified .ng-drop:hover>.ng-panel,'
-    '.desknav-unified .ng-drop:focus-within>.ng-panel{display:flex}'
-    '.desknav-unified .ng-item{display:block}'
-    '.desknav-unified .ng-panel a{color:#c9c7c1;text-decoration:none;'
-    "font:600 .7rem 'IBM Plex Mono',monospace;letter-spacing:.1em;"
-    'text-transform:uppercase;white-space:nowrap;padding:.05rem 0}'
-    '.desknav-unified .ng-panel a:hover{color:#ffffff}'
-    ".desknav-unified .ng-def{display:block;font:400 .58rem "
-    "'IBM Plex Mono',monospace;color:#6a6a64;letter-spacing:.02em;"
-    'text-transform:none;line-height:1.5;max-width:20rem;margin-top:.1rem}'
-    '.desknav-unified a[aria-current="page"]{color:#f2f0ea}'
-    '.desknav-unified .ng-ext{color:#565650;text-decoration:none;'
-    "font:600 .62rem 'IBM Plex Mono',monospace;letter-spacing:.14em;"
-    'text-transform:uppercase;margin-left:auto}'
-    '.desknav-unified .ng-ext:hover{color:#e9e7e2}'
+    + _N + '{display:block;position:relative;z-index:40;margin:0;padding:0;'
+    'border:0;background:#000;color:#fff;text-align:left;'
+    'container-type:inline-size;'
+    "font:400 15px/1.3 'IBM Plex Sans',system-ui,sans-serif;"
+    'letter-spacing:0;text-transform:none;-webkit-font-smoothing:antialiased}'
+    + _N + ' *{box-sizing:border-box}'
+    + _N + ' a,' + _N + ' summary,' + _N + ' details,' + _N + ' span,'
+    + _N + ' div{margin:0;padding:0;border:0;background:none;float:none;'
+    'font:inherit;letter-spacing:inherit;text-transform:inherit;'
+    'text-decoration:none;clip-path:none}'
+    + _N + ' a:focus-visible,' + _N + ' summary:focus-visible'
+    '{outline:2px solid #fff;outline-offset:3px}'
+    # the gutter a host page already gives the nav (a padded or narrow body) is
+    # taken off the nav's own, so the header lines up with the page under it
+    + _N + ' .ng-in{max-width:1240px;margin:0 auto;padding:0 max(0px,'
+    'calc(clamp(16px,5cqi,72px) - (100vw - 100cqi)/2))}'
+    + _N + ' .ng-top{display:flex;flex-wrap:wrap;align-items:center;'
+    'justify-content:space-between;gap:2px 24px;padding:14px 0 10px}'
+    + _N + ' .ng-brand{display:inline-flex;align-items:center;gap:14px;'
+    'min-height:44px;color:#fff}'
+    + _N + ' svg,' + _N + ' b{margin:0;padding:0;border:0;background:none;'
+    'min-width:0;max-width:none;float:none}'
+    + _N + ' .ng-crow{display:block;flex:none;width:58px;height:auto}'
+    + _N + " .ng-word{font:500 17px/1 'Cinzel',serif;letter-spacing:.24em;"
+    'color:#fff}'
     # FRESHLINE-2026-09-02: one freshness line per page, from docs/health.json
-    '.desknav-unified .ng-fresh{flex-basis:100%;display:flex;flex-wrap:wrap;'
-    'gap:.2rem .7rem;align-items:baseline;margin-top:.15rem;'
-    "font:500 .56rem 'IBM Plex Mono',monospace;letter-spacing:.12em;"
-    'text-transform:uppercase;color:#6a6a64}'
-    '.desknav-unified .ng-fresh b{font-weight:600;color:#8b8b85}'
-    '.desknav-unified .ng-fresh.ok b{color:#4E9E71}'
-    '.desknav-unified .ng-fresh.late b{color:#c9a04a}'
-    '.desknav-unified .ng-fresh.stale b{color:#C05149}'
-    '.desknav-unified .ng-fresh a{color:#8b8b85;text-decoration:none}'
-    '.desknav-unified .ng-fresh a:hover{color:#e9e7e2}'
+    + _N + ' .ng-fresh{display:flex;flex-wrap:wrap;gap:2px 12px;'
+    "align-items:baseline;font:500 11px/1.5 'IBM Plex Mono',monospace;"
+    'letter-spacing:.06em;text-transform:uppercase;color:#8d929b}'
+    + _N + ' .ng-fresh b{font-weight:500;color:#c4c7cc}'
+    + _N + ' .ng-fresh.ok b{color:#4E9E71}'
+    + _N + ' .ng-fresh.late b{color:#c9a04a}'
+    + _N + ' .ng-fresh.stale b{color:#C05149}'
+    + _N + ' .ng-fresh a{color:#c4c7cc;text-decoration:underline;'
+    'text-decoration-color:rgba(255,255,255,.35);text-underline-offset:3px}'
+    + _N + ' .ng-fresh a:hover{color:#fff}'
+    + _N + ' .ng-bar{position:relative;display:flex;flex-wrap:wrap;'
+    'align-items:center;justify-content:space-between;gap:0 28px;'
+    'border-top:2px solid #fff;border-bottom:1px solid rgba(255,255,255,.28)}'
+    + _N + ' .ng-toc{display:flex;flex-wrap:wrap;gap:0 26px}'
+    + _N + ' .ng-toc a{display:inline-flex;align-items:center;gap:8px;'
+    'min-height:44px;color:#fff;font-size:13px;font-weight:500;'
+    'letter-spacing:.04em;text-transform:uppercase}'
+    + _N + " .ng-tn{font:400 11.5px 'IBM Plex Mono',monospace;color:#8d929b;"
+    'letter-spacing:.04em}'
+    + _N + ' .ng-toc a:hover{text-decoration:underline;text-underline-offset:6px}'
+    + _N + ' .ng-toc a[aria-current="page"]{box-shadow:inset 0 -2px 0 #fff}'
+    + _N + ' .ng-all>summary{display:inline-flex;align-items:center;gap:10px;'
+    'min-height:44px;list-style:none;cursor:pointer;user-select:none;'
+    'color:#fff;font-size:13px;font-weight:500;letter-spacing:.04em;'
+    'text-transform:uppercase}'
+    + _N + ' .ng-all>summary::-webkit-details-marker{display:none}'
+    + _N + ' .ng-all>summary::before{content:none}'
+    + _N + ' .ng-all>summary>span{display:inline-flex;align-items:baseline;gap:10px}'
+    + _N + " .ng-all>summary::after{content:'+';"
+    "font:400 16px/1 'IBM Plex Mono',monospace;color:#8d929b}"
+    + _N + " .ng-all[open]>summary::after{content:'\\2212'}"
+    + _N + ' .ng-all>summary:hover{text-decoration:underline;'
+    'text-underline-offset:6px}'
+    + _N + ' .ng-map{position:absolute;left:0;right:0;top:100%;z-index:41;'
+    'display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px 28px;'
+    'padding:18px 0 26px;background:#000;'
+    'border-bottom:1px solid rgba(255,255,255,.28)}'
+    + _N + " .ng-gl{display:block;padding:8px 0 8px;font:500 11px/1.4 "
+    "'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;"
+    'color:#8d929b}'
+    + _N + ' .ng-gd{display:block;color:#6f747d}'
+    + _N + ' .ng-map a{display:flex;align-items:baseline;'
+    'justify-content:space-between;gap:10px;padding:8px 0;color:#fff;'
+    'font-size:14.5px;line-height:1.3;'
+    'border-top:1px solid rgba(255,255,255,.14)}'
+    + _N + ' .ng-map a:hover .ng-nm{text-decoration:underline;'
+    'text-underline-offset:4px}'
+    + _N + ' .ng-map a[aria-current="page"] .ng-nm{font-weight:500;'
+    'box-shadow:inset 0 -1px 0 #fff}'
+    + _N + " .ng-tg{flex:none;font:400 10.5px 'IBM Plex Mono',monospace;"
+    'letter-spacing:.06em;text-transform:uppercase;color:#8d929b}'
+    + _N + ' .ng-ext{display:inline-flex;align-items:center;min-height:34px;'
+    'margin-top:10px;color:#c4c7cc;font-size:13px;text-decoration:underline;'
+    'text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px}'
+    '@container (max-width:1040px){'
+    + _N + ' .ng-toc{gap:0 20px}'
+    + _N + ' .ng-map{grid-template-columns:repeat(3,minmax(0,1fr))}}'
+    '@container (max-width:880px){'
+    + _N + ' .ng-toc{flex:1 1 100%;min-width:0;flex-wrap:nowrap;overflow-x:auto;'
+    'scrollbar-width:none;gap:0 22px}'
+    + _N + ' .ng-toc::-webkit-scrollbar{display:none}'
+    + _N + ' .ng-toc a{flex:none}'
+    + _N + ' .ng-all{flex:1 1 100%;border-top:1px solid rgba(255,255,255,.14)}'
+    + _N + ' .ng-all>summary{display:flex;justify-content:space-between}'
+    + _N + ' .ng-map{position:static;grid-template-columns:repeat(2,minmax(0,1fr));'
+    'padding:4px 0 18px;border-bottom:0}}'
+    '@container (max-width:600px){'
+    + _N + ' .ng-top{padding:10px 0 8px}'
+    + _N + ' .ng-crow{width:50px}'
+    + _N + ' .ng-word{font-size:15px;letter-spacing:.2em}'
+    + _N + ' .ng-fresh span:nth-child(2){display:none}'
+    + _N + ' .ng-map{grid-template-columns:minmax(0,1fr)}'
+    + _N + ' .ng-map a{padding:12px 0}}'
+    '@media print{' + _N + ' .ng-bar,' + _N + ' .ng-fresh{display:none}}'
     '</style>')
 
 
@@ -163,34 +244,60 @@ def _esc(s):
              .replace("<", "&lt;").replace(">", "&gt;"))
 
 
+def _asof(health, path):
+    """ARCHIVE date: the day a group's source of record last moved, read from
+    the health face. Absent or unreadable -> '' and the line is omitted."""
+    try:
+        for s in (health or {}).get("surfaces") or []:
+            if s.get("path") == path and s.get("last_moved_utc"):
+                return str(s["last_moved_utc"])[:10]
+    except Exception:
+        pass
+    return ""
+
+
 def render_nav(manifest, active):
     titles = render_nav.titles
+    health = render_nav.health
     parts = [STYLE,
-             '<nav class="desknav-unified" data-navgen="2" '
-             'aria-label="site" translate="no">',
-             '<a class="ng-brand" href="index.html">'
-             '<img src="brand/crow_mark_small_reverse.svg" alt="">'
+             '<nav class="desknav-unified" data-navgen="3" aria-label="site">',
+             '<div class="ng-in"><div class="ng-top">',
+             '<a class="ng-brand" href="index.html" translate="no">' + CROW +
              '<span class="ng-word">NEBELKR&Auml;HE</span></a>']
-    for g in manifest.get("groups", []):
-        here = any(ln["href"] == active for ln in g.get("links", []))
-        cls = "ng-drop ng-here" if here else "ng-drop"
-        parts.append(f'<div class="{cls}" tabindex="0">'
-                     f'<span class="ng-label">{g["label"]}</span>'
-                     '<div class="ng-panel">')
+    fresh = render_fresh(health)   # FRESHLINE-2026-09-02
+    if fresh:
+        parts.append(fresh)
+    parts.append('</div><div class="ng-bar"><div class="ng-toc">')
+    for i, ln in enumerate(manifest.get("contents") or DEFAULT_CONTENTS, 1):
+        cur = ' aria-current="page"' if ln["href"] == active else ""
+        parts.append(f'<a{cur} href="{ln["href"]}">'
+                     f'<span class="ng-tn">{i:02d}</span>{ln["text"]}</a>')
+    npages = sum(len(g.get("links", [])) for g in manifest.get("groups", []))
+    parts.append('</div><details class="ng-all"><summary><span>All pages '
+                 f'<span class="ng-tn">{npages}</span></span></summary>'
+                 '<div class="ng-map">')
+    ext = manifest.get("external", [])
+    groups = manifest.get("groups", [])
+    for gi, g in enumerate(groups):
+        date = _asof(health, g["asof_path"]) if g.get("asof_path") else ""
+        note = g.get("asof_note", "as of")
+        gd = f'<span class="ng-gd">{_esc(note)} {date}</span>' if date else ""
+        parts.append(f'<div class="ng-grp"><span class="ng-gl">{g["label"]}'
+                     f'{gd}</span>')
         for ln in g.get("links", []):
             cur = ' aria-current="page"' if ln["href"] == active else ""
             tip = titles.get(ln["href"])
             t = f' title="{_esc(tip)}"' if tip else ""
-            d = f'<span class="ng-def">{_esc(tip)}</span>' if tip else ""
-            parts.append(f'<div class="ng-item"><a{cur}{t} '
-                         f'href="{ln["href"]}">{ln["text"]}</a>{d}</div>')
-        parts.append("</div></div>")
-    for ln in manifest.get("external", []):
-        parts.append(f'<a class="ng-ext" href="{ln["href"]}">{ln["text"]}</a>')
-    fresh = render_fresh(render_nav.health)   # FRESHLINE-2026-09-02
-    if fresh:
-        parts.append(fresh)
-    parts.append("</nav>")
+            tag = (f'<span class="ng-tg" translate="no">{ln["tag"]}</span>'
+                   if ln.get("tag") else "")
+            parts.append(f'<a{cur}{t} href="{ln["href"]}">'
+                         f'<span class="ng-nm">{ln["text"]}</span>{tag}</a>')
+        if gi == len(groups) - 1:
+            for ln in ext:
+                parts.append(f'<a class="ng-ext" href="{ln["href"]}">'
+                             f'{ln["text"]}</a>')
+        parts.append("</div>")
+    parts.append("</div></details></div></div></nav>")
     return "".join(parts)
 
 
@@ -365,6 +472,17 @@ def main():
                  + active + '">')
         if 'rel="canonical"' not in base and "</title>" in base:
             base = base.replace("</title>", "</title>\n" + canon, 1)
+            if action == "current":
+                action = "inserted"
+            new = base
+        elif new is not None:
+            new = base
+        # fonts-ensure (HEADER-2026-11-11): the header names IBM Plex and Cinzel;
+        # thirteen pages never linked the self-hosted faces. Same shape as the
+        # brand-ensure below; @font-face carries no cascade, so order is free.
+        fcss = '<link rel="stylesheet" href="fonts/fonts.css">'
+        if 'fonts/fonts.css' not in base and "</head>" in base:
+            base = base.replace("</head>", fcss + "\n</head>", 1)
             if action == "current":
                 action = "inserted"
             new = base

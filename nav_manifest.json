@@ -1,99 +1,66 @@
 {
- "_readme": "Single source of truth for site navigation. Edit groups/labels here, then run: python navgen.py  \u2014 every served page gets the identical grouped nav. Pages listed in 'skip' keep whatever nav they have and are exempt from --check drift. 'external' renders after the groups.",
+ "_readme": "Single source of truth for site navigation. Edit here, then run: python navgen.py - every served page gets the identical header. 'contents' is the numbered line. 'groups' is the full page map under All pages: 'text' is the plain name a visitor reads, 'tag' the working name printed beside it. A group may carry 'asof_path' (a path listed in docs/health.json) and 'asof_note'; its last move is printed beside the group label. Pages listed in 'skip' keep whatever nav they have and are exempt from --check drift. 'external' renders at the foot of the map.",
+ "contents": [
+  {
+   "href": "ledger.html",
+   "text": "Record"
+  },
+  {
+   "href": "index.html#method",
+   "text": "Method"
+  },
+  {
+   "href": "findings.html",
+   "text": "Findings"
+  },
+  {
+   "href": "standards.html",
+   "text": "Standards"
+  },
+  {
+   "href": "instruments.html",
+   "text": "Instruments"
+  },
+  {
+   "href": "verify.html",
+   "text": "Run the check"
+  }
+ ],
  "groups": [
   {
-   "label": "DESK",
+   "label": "Record",
    "links": [
     {
      "href": "index.html",
-     "text": "Desk"
-    },
-    {
-     "href": "report.html",
-     "text": "Report"
-    },
-    {
-     "href": "spion.html",
-     "text": "Spion"
-    },
-    {
-     "href": "health.html",
-     "text": "Health"
-    },
-    {
-     "href": "findings.html",
-     "text": "Findings"
-    },
-    {
-     "href": "instruments.html",
-     "text": "Instruments"
-    }
-   ]
-  },
-  {
-   "label": "FORECASTING",
-   "links": [
-    {
-     "href": "kkr.html",
-     "text": "Forecasts"
+     "text": "Front page"
     },
     {
      "href": "ledger.html",
      "text": "Ledger"
     },
     {
-     "href": "KriegForeKaster.html",
-     "text": "ForeKaster"
+     "href": "kkr.html",
+     "text": "Daily forecasts",
+     "tag": "KKR"
     },
     {
-     "href": "KriegForeKaster_compendium.html",
-     "text": "Compendium"
-    },
-    {
-     "href": "kfk_map.html",
-     "text": "Overlay"
-    },
-    {
-     "href": "globalkaster.html",
-     "text": "GlobalKaster"
-    },
-    {
-     "href": "fogsim.html",
-     "text": "FogSim"
-    },
-    {
-     "href": "fogwar.html",
-     "text": "Fogwar"
-    },
-    {
-     "href": "okk.html",
-     "text": "OberKommando"
+     "href": "report.html",
+     "text": "Daily report",
+     "tag": "Netz"
     },
     {
      "href": "kalibrierwarte.html",
-     "text": "Warte"
+     "text": "Calibration",
+     "tag": "Warte"
     },
     {
-     "href": "versprechen.html",
-     "text": "Versprechen"
+     "href": "findings.html",
+     "text": "Findings"
     }
    ]
   },
   {
-   "label": "FEDERATION",
-   "links": [
-    {
-     "href": "kraehes_kalls.html",
-     "text": "Kalls"
-    },
-    {
-     "href": "nest.html",
-     "text": "Nest"
-    }
-   ]
-  },
-  {
-   "label": "STANDARDS",
+   "label": "Standards and checks",
    "links": [
     {
      "href": "standards.html",
@@ -105,7 +72,8 @@
     },
     {
      "href": "register.html",
-     "text": "Register"
+     "text": "Conformance register",
+     "tag": "Register"
     },
     {
      "href": "verify.html",
@@ -113,28 +81,107 @@
     },
     {
      "href": "decc.html",
-     "text": "DECC-26"
+     "text": "Disclosure verifier",
+     "tag": "DECC-26"
     },
     {
      "href": "urteil.html",
-     "text": "Urteil"
+     "text": "Verdict audit",
+     "tag": "Urteil"
     },
     {
      "href": "luecke.html",
-     "text": "Luecke"
+     "text": "Completeness audit",
+     "tag": "Luecke"
     }
    ]
   },
   {
-   "label": "CABINET",
+   "label": "Instruments",
    "links": [
     {
+     "href": "instruments.html",
+     "text": "All instruments"
+    },
+    {
+     "href": "health.html",
+     "text": "Desk health"
+    },
+    {
+     "href": "spion.html",
+     "text": "Standards watch",
+     "tag": "Spion"
+    },
+    {
      "href": "ohrwurm.html",
-     "text": "Ohrwurm"
+     "text": "Phrase tracking",
+     "tag": "Ohrwurm"
+    },
+    {
+     "href": "versprechen.html",
+     "text": "Promise book",
+     "tag": "Versprechen"
+    },
+    {
+     "href": "kraehes_kalls.html",
+     "text": "Sealed calls",
+     "tag": "Kalls"
+    },
+    {
+     "href": "nest.html",
+     "text": "Federation reader",
+     "tag": "Nest"
+    }
+   ]
+  },
+  {
+   "label": "Simulation",
+   "links": [
+    {
+     "href": "fogsim.html",
+     "text": "Sealed scenario runs",
+     "tag": "FogSim"
+    },
+    {
+     "href": "fogwar.html",
+     "text": "Auditable wargame",
+     "tag": "Fogwar"
     },
     {
      "href": "konsole.html",
-     "text": "Konsole"
+     "text": "Console",
+     "tag": "Konsole"
+    }
+   ]
+  },
+  {
+   "label": "Archive",
+   "asof_path": "docs/KriegForeKaster.json",
+   "asof_note": "board as of",
+   "links": [
+    {
+     "href": "KriegForeKaster.html",
+     "text": "Order of battle",
+     "tag": "ForeKaster"
+    },
+    {
+     "href": "KriegForeKaster_compendium.html",
+     "text": "Compendium"
+    },
+    {
+     "href": "kfk_map.html",
+     "text": "Map",
+     "tag": "Overlay"
+    },
+    {
+     "href": "okk.html",
+     "text": "Command view",
+     "tag": "OberKommando"
+    },
+    {
+     "href": "globalkaster.html",
+     "text": "Board, simulated",
+     "tag": "GlobalKaster"
     }
    ]
   }
