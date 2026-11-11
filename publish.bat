@@ -33,6 +33,9 @@ REM daily-regenerated report face drifted from the manifest until a hand run.
 REM packet_commit --write is the standing BEHIND reflex made permanent (both
 REM are no-ops when current). Before add -A so their output rides this publish.
 python navgen.py
+REM LAG-2026-11-11: the resolution-lag face is cut at every publish; it sat at
+REM 2026-10-25 for seventeen days because nothing in the chain ran it.
+python lag_plot.py
 python packet_commit.py --write
 REM OTSFACE-2026-09-03: the receipt face describes the bytes this publish
 REM serves - a target changed above is labelled DRIFT here, not at the next

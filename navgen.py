@@ -93,6 +93,7 @@ DEFAULT_CONTENTS = [
     {"href": "findings.html", "text": "Findings"},
     {"href": "standards.html", "text": "Standards"},
     {"href": "instruments.html", "text": "Instruments"},
+    {"href": "about.html", "text": "About"},
     {"href": "verify.html", "text": "Run the check"},
 ]
 
@@ -165,7 +166,7 @@ STYLE = (
     + _N + " .ng-gl{display:block;padding:8px 0 8px;font:500 11px/1.4 "
     "'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;"
     'color:#8d929b}'
-    + _N + ' .ng-gd{display:block;color:#6f747d}'
+    + _N + ' .ng-gd{display:block;color:#8d929b}'
     + _N + ' .ng-map a{display:flex;align-items:baseline;'
     'justify-content:space-between;gap:10px;padding:8px 0;color:#fff;'
     'font-size:14.5px;line-height:1.3;'

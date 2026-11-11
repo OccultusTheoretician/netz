@@ -243,3 +243,33 @@ section{padding:3rem 0}
     display:block;max-width:100%;overflow-x:auto}
   #body>.ph{overflow-x:clip}
 }
+
+
+/* ===== BODY-2026-11-11 - one type system and one scheme under the one header.
+   Reading is IBM Plex Sans and data is IBM Plex Mono on every page: a page's own
+   --serif and --mono now resolve to them. The standards watch was the one page that
+   followed the reader's light or dark setting, and in light mode its text was dark
+   on the site's black ground; it is dark like the rest. A link no page styles takes
+   the colour of its text. Screen only. ===== */
+@media screen{
+  html:root{
+    color-scheme:dark;
+    --serif:'IBM Plex Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  }
+  #spion{
+    --ground:#000; --ground-2:#0c1015; --ink:#e8eae7; --ink-2:#a3aaa5;
+    --rule:rgba(255,255,255,.16); --moved:#d5a54a; --moved-bg:#2a2317;
+    --down:#c96f66; --steady:#8fa595;
+    --sans:'IBM Plex Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  }
+  body:has(>#spion){margin:0}
+  :where(a:any-link){color:inherit}
+  /* the order-of-battle board filled a whole window under the header, so its foot
+     was cut off and could not be reached; it now fills what the header leaves.
+     Its own link row goes: the header carries the site's navigation. */
+  body:has(>#wrap){display:flex;flex-direction:column}
+  body>#wrap{flex:1 1 0;min-height:0;height:auto;max-height:none}
+  #wrap>#nav{display:none}
+}
