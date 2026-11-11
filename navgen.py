@@ -251,8 +251,11 @@ def tracked_docs_pages():
                            cwd=str(HERE), capture_output=True, text=True,
                            timeout=15)
         if r.returncode == 0 and r.stdout.strip():
-            return [HERE / line.strip() for line in r.stdout.splitlines()
-                    if line.strip()]
+            # NAVGONE-2026-11-10: a tracked page that has left the disk is on its way out
+            # of the index (the publish stages the removal after this runs). It is no
+            # served surface any more and there is nothing to stamp.
+            return [p for p in (HERE / line.strip() for line in r.stdout.splitlines()
+                                if line.strip()) if p.exists()]
     except Exception:
         pass
     print("  WARN: git scoping unavailable - falling back to disk glob; "
