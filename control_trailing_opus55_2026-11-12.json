@@ -1,0 +1,262 @@
+[
+  {
+    "statement": "A general ceasefire covering the entire Russia-Ukraine line of contact takes effect between 2026-11-13 and 2027-02-15, confirmed by both the Russian and Ukrainian governments.",
+    "resolution": "TRUE if Reuters and AP both report a ceasefire covering the whole front line took effect between 2026-11-13 and 2027-02-15, confirmed by both governments; energy-only, humanitarian, holiday or localized truces do not count.",
+    "failure_condition": "No ceasefire covering the entire line of contact and confirmed by both governments took effect between 2026-11-13 and 2027-02-15.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-19",
+    "probability": 57,
+    "citations": [
+      79,
+      99,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:46Z",
+      "ledger_sha16": "0bd388388c9892bb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-34"
+    }
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield, FRED series DGS10, closes at or above 5.25 percent on at least one trading day between 2026-11-13 and 2027-01-29. Reference: 5.07 percent on the packet date.",
+    "resolution": "TRUE if the highest FRED DGS10 daily value dated 2026-11-13 through 2027-01-29 is 5.25 or higher; FALSE otherwise. Reference: 5.07 percent on the packet date.",
+    "failure_condition": "Every DGS10 daily value from 2026-11-13 through 2027-01-29 is below 5.25 percent.",
+    "domain": "economics/markets",
+    "deadline": "2027-02-01",
+    "probability": 57,
+    "citations": [
+      49
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:46Z",
+      "ledger_sha16": "0bd388388c9892bb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-35"
+    }
+  },
+  {
+    "statement": "CISA adds at least one CVE from Citrix bulletins CTX697305 or CTX697320, the NetScaler ADC, Gateway and Console flaws patched on 2026-11-12, to the KEV catalog between 2026-11-13 and 2027-01-29.",
+    "resolution": "TRUE if the CISA KEV JSON feed shows a dateAdded between 2026-11-13 and 2027-01-29 for any CVE listed in Citrix bulletin CTX697305 or CTX697320; FALSE otherwise.",
+    "failure_condition": "CISA added no CVE from bulletin CTX697305 or CTX697320 to the KEV catalog between 2026-11-13 and 2027-01-29.",
+    "domain": "cyber",
+    "deadline": "2027-02-02",
+    "probability": 57,
+    "citations": [
+      14
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:46Z",
+      "ledger_sha16": "0bd388388c9892bb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-36"
+    }
+  },
+  {
+    "statement": "Donald Trump, Xi Jinping and Vladimir Putin hold a dedicated in-person three-way meeting between 2026-11-13 and 2026-11-22, the window around the APEC leaders meeting in Shenzhen.",
+    "resolution": "TRUE if at least two of Reuters, AP and AFP report a dedicated in-person meeting of all three leaders held between 2026-11-13 and 2026-11-22; plenaries, gala dinners and group photos do not count.",
+    "failure_condition": "Trump, Xi and Putin did not meet together in a dedicated three-way session between 2026-11-13 and 2026-11-22.",
+    "domain": "political",
+    "deadline": "2026-11-24",
+    "probability": 57,
+    "citations": [
+      83,
+      99,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:46Z",
+      "ledger_sha16": "0bd388388c9892bb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-37"
+    }
+  },
+  {
+    "statement": "The Commerce Department adds Megaspeed, the company at the center of the Nvidia scandal, to the Entity List in a rule published between 2026-11-13 and 2027-02-26.",
+    "resolution": "TRUE if a BIS rule published in the Federal Register between 2026-11-13 and 2027-02-26 adds an entry naming Megaspeed, under any corporate or address variant, to the Entity List; FALSE otherwise.",
+    "failure_condition": "BIS did not add Megaspeed to the Entity List through any rule published between 2026-11-13 and 2027-02-26.",
+    "domain": "political",
+    "deadline": "2027-03-02",
+    "probability": 57,
+    "citations": [
+      59,
+      69,
+      101
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:46Z",
+      "ledger_sha16": "0bd388388c9892bb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-38"
+    }
+  },
+  {
+    "statement": "At least one of the two Iranian nationals convicted on 2026-11-12 of assisting Iranian intelligence, Sepahvand or Manesh, receives a custodial term of 10 years or more, imposed between 2026-12-14 and 2027-02-26.",
+    "resolution": "TRUE if judiciary.uk sentencing remarks, a CPS statement or PA reporting show Sepahvand or Manesh given a custodial term of 10 years or more, excluding extended licence, imposed between 2026-12-14 and 2027-02-26; FALSE otherwise.",
+    "failure_condition": "Neither man received a custodial term of 10 years or more between 2026-12-14 and 2027-02-26, including the case where sentencing did not take place in that window.",
+    "domain": "crime/security",
+    "deadline": "2027-03-02",
+    "probability": 57,
+    "citations": [
+      76,
+      80,
+      115
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "crime-security",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:46Z",
+      "ledger_sha16": "0bd388388c9892bb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-39"
+    }
+  },
+  {
+    "statement": "The New Zealand government classifies drought conditions in at least one region as a medium-scale or larger adverse event, announced between 2026-11-13 and 2027-03-31.",
+    "resolution": "TRUE if an MPI or Beehive.govt.nz release dated between 2026-11-13 and 2027-03-31 announces a new or expanded drought classification at medium-scale or larger for any New Zealand region; FALSE otherwise.",
+    "failure_condition": "No new or expanded medium-scale or larger drought classification was announced for any New Zealand region between 2026-11-13 and 2027-03-31.",
+    "domain": "disaster",
+    "deadline": "2027-04-05",
+    "probability": 57,
+    "citations": [
+      42
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "disaster",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:46Z",
+      "ledger_sha16": "0bd388388c9892bb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-40"
+    }
+  }
+]

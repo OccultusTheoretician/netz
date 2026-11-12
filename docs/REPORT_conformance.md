@@ -1,13 +1,13 @@
 # RPAS-26 Conformance Report — ledger.json
-*Generated 2026-11-11. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
+*Generated 2026-11-12. Audits the live ledger against the published standard. Per RPAS 6.04 the desk is bound by its own rule; per 5.03/5.07 gaps are printed, not hidden.*
 
-- entries: **5606** · resolved: **1626** · keyless: **330** · keyed: **3377**
+- entries: **5663** · resolved: **1626** · keyless: **330** · keyed: **3377**
 - 5.02 fifty-entry gate: **MET**
 - thirty-resolved noise floor: **cleared**
-- 1.04 keyed/keyless missing: **1899/5606**
-- 4.03 failure condition missing: **27/5606**
+- 1.04 keyed/keyless missing: **1956/5663**
+- 4.03 failure condition missing: **27/5663**
 
-- findings: **1926 FAIL**, **5140 WARN**
+- findings: **1983 FAIL**, **5186 WARN**
 
 ## Findings
 
@@ -7079,3 +7079,106 @@
 | KKR-20261111-12 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
 | KKR-20261111-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
 | KKR-20261111-13 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-14 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-14 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-15 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-15 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-16 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-17 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-17 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-18 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-18 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-19 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-20 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-20 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-21 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-21 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-22 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-22 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-23 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-23 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-24 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-25 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-25 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-26 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-26 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-27 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-28 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-28 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-29 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-29 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-30 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-30 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-31 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-31 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-32 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-32 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-33 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-33 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-34 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-34 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-35 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-36 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-36 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-37 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-37 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-38 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-38 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-39 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-39 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-40 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-40 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-41 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-41 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-42 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-42 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-43 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-43 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-44 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-45 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-45 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-46 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-46 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-47 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-47 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-48 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-48 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-49 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-49 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-50 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-51 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-51 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-52 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-52 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-53 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-53 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-54 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261111-55 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261111-55 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-01 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-02 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-02 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-03 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-03 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-04 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-04 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-05 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-06 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-06 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-07 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-07 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-08 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-08 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-09 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-09 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-10 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-10 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-11 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-11 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-12 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-12 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-13 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-13 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-14 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |
+| KKR-20261112-15 | WARN | 4.02b | resolution criterion names no concrete source/instrument |
+| KKR-20261112-15 | FAIL | 4.02f | no keyed/keyless determination (the master law, 1.04) |

@@ -1,0 +1,122 @@
+[
+  {
+    "statement": "The FRED DGS10 10-year Treasury constant maturity yield for 2026-12-18 is at or above 5.00 percent. Reference: 5.07 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 50,
+    "resolution": "The FRED DGS10 observation dated 2026-12-18 is 5.00 or higher. If that date has no observation, the next published observation governs.",
+    "deadline": "2026-12-22",
+    "citations": [
+      49,
+      62
+    ],
+    "failure_condition": "The DGS10 observation for 2026-12-18 is below 5.00 percent."
+  },
+  {
+    "statement": "Nvidia files a Form 8-K on SEC EDGAR between 2026-11-13 and 2027-02-26 announcing appointment of a chief executive officer with no interim or acting designation.",
+    "domain": "economics/markets",
+    "probability": 35,
+    "resolution": "SEC EDGAR shows an Nvidia 8-K, filed between 2026-11-13 and 2027-02-26, under Item 5.02 naming a CEO appointment without the words interim or acting.",
+    "deadline": "2027-03-02",
+    "citations": [
+      53,
+      81,
+      104
+    ],
+    "failure_condition": "By the deadline no Nvidia 8-K filed in the window names a non-interim chief executive officer."
+  },
+  {
+    "statement": "The CISA KEV catalog adds CVE-2026-118383, the pre-auth MongoDB flaw, with a dateAdded between 2026-11-12 and 2027-01-15.",
+    "domain": "cyber",
+    "probability": 15,
+    "resolution": "The CISA KEV JSON feed contains an entry with cveID CVE-2026-118383 and dateAdded between 2026-11-12 and 2027-01-15 inclusive.",
+    "deadline": "2027-01-19",
+    "citations": [
+      28
+    ],
+    "failure_condition": "CVE-2026-118383 is absent from the KEV feed or carries a dateAdded outside the window."
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry with vendorProject Apache and product HTTP Server with a dateAdded between 2026-11-12 and 2027-01-15.",
+    "domain": "cyber",
+    "probability": 30,
+    "resolution": "The CISA KEV JSON feed contains at least one entry whose vendorProject is Apache, whose product is HTTP Server, and whose dateAdded falls between 2026-11-12 and 2027-01-15 inclusive.",
+    "deadline": "2027-01-19",
+    "citations": [
+      31
+    ],
+    "failure_condition": "No Apache HTTP Server entry in the KEV feed carries a dateAdded inside the window."
+  },
+  {
+    "statement": "Scott Colom is seated as United States Senator from Mississippi with service beginning on or before 2027-01-06.",
+    "domain": "political",
+    "probability": 88,
+    "resolution": "The Congress.gov or Senate.gov member record for Scott Colom shows Senate service for Mississippi with a start date on or before 2027-01-06.",
+    "deadline": "2027-01-12",
+    "citations": [
+      122,
+      123
+    ],
+    "failure_condition": "On the deadline the official member record shows no Senate service for Scott Colom beginning on or before 2027-01-06."
+  },
+  {
+    "statement": "Indonesia's People's Consultative Assembly elects or swears in a replacement Vice President between 2026-11-12 and 2027-01-16.",
+    "domain": "political",
+    "probability": 55,
+    "resolution": "Reuters and Antara both report an MPR plenary session that elected or inaugurated a new Vice President of Indonesia on a date between 2026-11-12 and 2027-01-16.",
+    "deadline": "2027-01-19",
+    "citations": [
+      112
+    ],
+    "failure_condition": "No MPR session electing or inaugurating a Vice President takes place within the window."
+  },
+  {
+    "statement": "The Russian and Ukrainian governments both announce a general ceasefire covering the full front line, with a stated effective date, between 2026-11-12 and 2026-12-31.",
+    "domain": "military/conflict",
+    "probability": 12,
+    "resolution": "Reuters and AP both report official announcements from both governments, made between 2026-11-12 and 2026-12-31, of a general ceasefire across the front with an effective date.",
+    "deadline": "2027-01-05",
+    "citations": [
+      99,
+      105
+    ],
+    "failure_condition": "Either government has not announced a general front-wide ceasefire with an effective date by the end of the window."
+  },
+  {
+    "statement": "The PLA Eastern Theater Command announces a named joint exercise around Taiwan, confirmed by Taiwan's Ministry of National Defense, starting between 2026-11-13 and 2027-01-31.",
+    "domain": "military/conflict",
+    "probability": 25,
+    "resolution": "Taiwan MND public statements and Reuters both identify a PLA joint exercise around Taiwan carrying a PLA-assigned name, with a start date between 2026-11-13 and 2027-01-31.",
+    "deadline": "2027-02-03",
+    "citations": [
+      92,
+      83
+    ],
+    "failure_condition": "No named PLA joint exercise around Taiwan begins within the window."
+  },
+  {
+    "statement": "Iranian state forces board, seize, or detain a commercial tanker in the Strait of Hormuz, Persian Gulf, or Gulf of Oman between 2026-11-13 and 2026-12-13.",
+    "domain": "military/conflict",
+    "probability": 30,
+    "resolution": "UKMTO advisories and Reuters both report Iranian boarding, seizure, or detention of a commercial tanker in those waters on a date between 2026-11-13 and 2026-12-13.",
+    "deadline": "2026-12-16",
+    "citations": [
+      62,
+      86,
+      114
+    ],
+    "failure_condition": "No Iranian boarding, seizure, or detention of a commercial tanker occurs in those waters within the window."
+  },
+  {
+    "statement": "A person is criminally charged for the 2026-11-12 Logan Circle shooting in Washington DC with a charge date between 2026-11-12 and 2026-12-12.",
+    "domain": "crime/security",
+    "probability": 40,
+    "resolution": "An MPD press release or DC Superior Court docket shows a named defendant charged with homicide or assault for the 2026-11-12 Logan Circle shooting, charge dated between 2026-11-12 and 2026-12-12.",
+    "deadline": "2026-12-15",
+    "citations": [
+      9,
+      74,
+      90
+    ],
+    "failure_condition": "No defendant is charged in connection with the Logan Circle shooting within the window."
+  }
+]
