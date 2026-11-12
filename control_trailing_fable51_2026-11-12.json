@@ -1,0 +1,334 @@
+[
+  {
+    "statement": "The FRED DGS10 10-year Treasury constant maturity yield for 2026-12-18 is at or above 5.00 percent. Reference: 5.07 percent on the packet date.",
+    "resolution": "The FRED DGS10 observation dated 2026-12-18 is 5.00 or higher. If that date has no observation, the next published observation governs.",
+    "failure_condition": "The DGS10 observation for 2026-12-18 is below 5.00 percent.",
+    "domain": "economics/markets",
+    "deadline": "2026-12-22",
+    "probability": 69,
+    "citations": [
+      49,
+      62
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6923,
+      "n": 26,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:38Z",
+      "ledger_sha16": "e0ec043e055e4fbc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-16"
+    }
+  },
+  {
+    "statement": "Nvidia files a Form 8-K on SEC EDGAR between 2026-11-13 and 2027-02-26 announcing appointment of a chief executive officer with no interim or acting designation.",
+    "resolution": "SEC EDGAR shows an Nvidia 8-K, filed between 2026-11-13 and 2027-02-26, under Item 5.02 naming a CEO appointment without the words interim or acting.",
+    "failure_condition": "By the deadline no Nvidia 8-K filed in the window names a non-interim chief executive officer.",
+    "domain": "economics/markets",
+    "deadline": "2027-03-02",
+    "probability": 69,
+    "citations": [
+      53,
+      81,
+      104
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6923,
+      "n": 26,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:38Z",
+      "ledger_sha16": "e0ec043e055e4fbc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-17"
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds CVE-2026-118383, the pre-auth MongoDB flaw, with a dateAdded between 2026-11-12 and 2027-01-15.",
+    "resolution": "The CISA KEV JSON feed contains an entry with cveID CVE-2026-118383 and dateAdded between 2026-11-12 and 2027-01-15 inclusive.",
+    "failure_condition": "CVE-2026-118383 is absent from the KEV feed or carries a dateAdded outside the window.",
+    "domain": "cyber",
+    "deadline": "2027-01-19",
+    "probability": 55,
+    "citations": [
+      28
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.5517,
+      "n": 29,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:38Z",
+      "ledger_sha16": "e0ec043e055e4fbc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-18"
+    }
+  },
+  {
+    "statement": "The CISA KEV catalog adds an entry with vendorProject Apache and product HTTP Server with a dateAdded between 2026-11-12 and 2027-01-15.",
+    "resolution": "The CISA KEV JSON feed contains at least one entry whose vendorProject is Apache, whose product is HTTP Server, and whose dateAdded falls between 2026-11-12 and 2027-01-15 inclusive.",
+    "failure_condition": "No Apache HTTP Server entry in the KEV feed carries a dateAdded inside the window.",
+    "domain": "cyber",
+    "deadline": "2027-01-19",
+    "probability": 55,
+    "citations": [
+      31
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.5517,
+      "n": 29,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:38Z",
+      "ledger_sha16": "e0ec043e055e4fbc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-19"
+    }
+  },
+  {
+    "statement": "Scott Colom is seated as United States Senator from Mississippi with service beginning on or before 2027-01-06.",
+    "resolution": "The Congress.gov or Senate.gov member record for Scott Colom shows Senate service for Mississippi with a start date on or before 2027-01-06.",
+    "failure_condition": "On the deadline the official member record shows no Senate service for Scott Colom beginning on or before 2027-01-06.",
+    "domain": "political",
+    "deadline": "2027-01-12",
+    "probability": 42,
+    "citations": [
+      122,
+      123
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.4167,
+      "n": 12,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:38Z",
+      "ledger_sha16": "e0ec043e055e4fbc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-20"
+    }
+  },
+  {
+    "statement": "Indonesia's People's Consultative Assembly elects or swears in a replacement Vice President between 2026-11-12 and 2027-01-16.",
+    "resolution": "Reuters and Antara both report an MPR plenary session that elected or inaugurated a new Vice President of Indonesia on a date between 2026-11-12 and 2027-01-16.",
+    "failure_condition": "No MPR session electing or inaugurating a Vice President takes place within the window.",
+    "domain": "political",
+    "deadline": "2027-01-19",
+    "probability": 42,
+    "citations": [
+      112
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.4167,
+      "n": 12,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:38Z",
+      "ledger_sha16": "e0ec043e055e4fbc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-21"
+    }
+  },
+  {
+    "statement": "The Russian and Ukrainian governments both announce a general ceasefire covering the full front line, with a stated effective date, between 2026-11-12 and 2026-12-31.",
+    "resolution": "Reuters and AP both report official announcements from both governments, made between 2026-11-12 and 2026-12-31, of a general ceasefire across the front with an effective date.",
+    "failure_condition": "Either government has not announced a general front-wide ceasefire with an effective date by the end of the window.",
+    "domain": "military/conflict",
+    "deadline": "2027-01-05",
+    "probability": 65,
+    "citations": [
+      99,
+      105
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6471,
+      "n": 17,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:38Z",
+      "ledger_sha16": "e0ec043e055e4fbc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-22"
+    }
+  },
+  {
+    "statement": "The PLA Eastern Theater Command announces a named joint exercise around Taiwan, confirmed by Taiwan's Ministry of National Defense, starting between 2026-11-13 and 2027-01-31.",
+    "resolution": "Taiwan MND public statements and Reuters both identify a PLA joint exercise around Taiwan carrying a PLA-assigned name, with a start date between 2026-11-13 and 2027-01-31.",
+    "failure_condition": "No named PLA joint exercise around Taiwan begins within the window.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-03",
+    "probability": 65,
+    "citations": [
+      92,
+      83
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6471,
+      "n": 17,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:38Z",
+      "ledger_sha16": "e0ec043e055e4fbc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-23"
+    }
+  },
+  {
+    "statement": "Iranian state forces board, seize, or detain a commercial tanker in the Strait of Hormuz, Persian Gulf, or Gulf of Oman between 2026-11-13 and 2026-12-13.",
+    "resolution": "UKMTO advisories and Reuters both report Iranian boarding, seizure, or detention of a commercial tanker in those waters on a date between 2026-11-13 and 2026-12-13.",
+    "failure_condition": "No Iranian boarding, seizure, or detention of a commercial tanker occurs in those waters within the window.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-16",
+    "probability": 65,
+    "citations": [
+      62,
+      86,
+      114
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/fable-5.1/unattested",
+      "step": 1,
+      "step_name": "mirrored arm, canonical domain",
+      "rate": 0.6471,
+      "n": 17,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-12",
+      "ledger_as_of": "2026-11-12T18:04:38Z",
+      "ledger_sha16": "e0ec043e055e4fbc",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261112-24"
+    }
+  }
+]

@@ -1,0 +1,123 @@
+[
+  {
+    "statement": "A general ceasefire covering the entire Russia-Ukraine line of contact takes effect between 2026-11-13 and 2027-02-15, confirmed by both the Russian and Ukrainian governments.",
+    "domain": "military/conflict",
+    "probability": 8,
+    "resolution": "TRUE if Reuters and AP both report a ceasefire covering the whole front line took effect between 2026-11-13 and 2027-02-15, confirmed by both governments; energy-only, humanitarian, holiday or localized truces do not count.",
+    "deadline": "2027-02-19",
+    "citations": [
+      79,
+      99,
+      105
+    ],
+    "failure_condition": "No ceasefire covering the entire line of contact and confirmed by both governments took effect between 2026-11-13 and 2027-02-15."
+  },
+  {
+    "statement": "The PLA Eastern Theater Command announces a named large-scale joint exercise around Taiwan, comparable to the Joint Sword and Strait Thunder series, beginning between 2026-11-13 and 2027-01-31.",
+    "domain": "military/conflict",
+    "probability": 15,
+    "resolution": "TRUE if the PLA Eastern Theater Command announces a named joint exercise around Taiwan beginning between 2026-11-13 and 2027-01-31, as reported by Reuters or AP; routine patrols and unnamed incursions do not count.",
+    "deadline": "2027-02-03",
+    "citations": [
+      83,
+      92
+    ],
+    "failure_condition": "No named PLA joint exercise around Taiwan began between 2026-11-13 and 2027-01-31."
+  },
+  {
+    "statement": "The 10-year Treasury constant-maturity yield, FRED series DGS10, closes at or above 5.25 percent on at least one trading day between 2026-11-13 and 2027-01-29. Reference: 5.07 percent on the packet date.",
+    "domain": "economics/markets",
+    "probability": 40,
+    "resolution": "TRUE if the highest FRED DGS10 daily value dated 2026-11-13 through 2027-01-29 is 5.25 or higher; FALSE otherwise. Reference: 5.07 percent on the packet date.",
+    "deadline": "2027-02-01",
+    "citations": [
+      49
+    ],
+    "failure_condition": "Every DGS10 daily value from 2026-11-13 through 2027-01-29 is below 5.25 percent."
+  },
+  {
+    "statement": "Nvidia announces a permanent, non-interim chief executive, whether Colette Kress or another person, with the announcement dated between 2026-11-13 and 2027-02-26.",
+    "domain": "economics/markets",
+    "probability": 25,
+    "resolution": "TRUE if an Nvidia press release or SEC Form 8-K on EDGAR dated between 2026-11-13 and 2027-02-26 announces a permanent, non-interim CEO appointment; FALSE otherwise.",
+    "deadline": "2027-03-05",
+    "citations": [
+      38,
+      53,
+      81
+    ],
+    "failure_condition": "No permanent, non-interim Nvidia CEO appointment was announced between 2026-11-13 and 2027-02-26."
+  },
+  {
+    "statement": "CISA adds at least one CVE from Citrix bulletins CTX697305 or CTX697320, the NetScaler ADC, Gateway and Console flaws patched on 2026-11-12, to the KEV catalog between 2026-11-13 and 2027-01-29.",
+    "domain": "cyber",
+    "probability": 45,
+    "resolution": "TRUE if the CISA KEV JSON feed shows a dateAdded between 2026-11-13 and 2027-01-29 for any CVE listed in Citrix bulletin CTX697305 or CTX697320; FALSE otherwise.",
+    "deadline": "2027-02-02",
+    "citations": [
+      14
+    ],
+    "failure_condition": "CISA added no CVE from bulletin CTX697305 or CTX697320 to the KEV catalog between 2026-11-13 and 2027-01-29."
+  },
+  {
+    "statement": "CISA adds the Windows privilege-escalation flaw released as the SignDrop zero-day on 2026-11-12 to the KEV catalog between 2026-11-13 and 2027-01-29.",
+    "domain": "cyber",
+    "probability": 25,
+    "resolution": "TRUE if the CISA KEV JSON feed shows a dateAdded between 2026-11-13 and 2027-01-29 for the CVE Microsoft assigns to SignDrop, as mapped by the Microsoft advisory or BleepingComputer; FALSE otherwise.",
+    "deadline": "2027-02-02",
+    "citations": [
+      13
+    ],
+    "failure_condition": "No CVE corresponding to SignDrop was added to the KEV catalog between 2026-11-13 and 2027-01-29, including the case where no CVE was assigned."
+  },
+  {
+    "statement": "Donald Trump, Xi Jinping and Vladimir Putin hold a dedicated in-person three-way meeting between 2026-11-13 and 2026-11-22, the window around the APEC leaders meeting in Shenzhen.",
+    "domain": "political",
+    "probability": 55,
+    "resolution": "TRUE if at least two of Reuters, AP and AFP report a dedicated in-person meeting of all three leaders held between 2026-11-13 and 2026-11-22; plenaries, gala dinners and group photos do not count.",
+    "deadline": "2026-11-24",
+    "citations": [
+      83,
+      99,
+      105
+    ],
+    "failure_condition": "Trump, Xi and Putin did not meet together in a dedicated three-way session between 2026-11-13 and 2026-11-22."
+  },
+  {
+    "statement": "The Commerce Department adds Megaspeed, the company at the center of the Nvidia scandal, to the Entity List in a rule published between 2026-11-13 and 2027-02-26.",
+    "domain": "political",
+    "probability": 20,
+    "resolution": "TRUE if a BIS rule published in the Federal Register between 2026-11-13 and 2027-02-26 adds an entry naming Megaspeed, under any corporate or address variant, to the Entity List; FALSE otherwise.",
+    "deadline": "2027-03-02",
+    "citations": [
+      59,
+      69,
+      101
+    ],
+    "failure_condition": "BIS did not add Megaspeed to the Entity List through any rule published between 2026-11-13 and 2027-02-26."
+  },
+  {
+    "statement": "At least one of the two Iranian nationals convicted on 2026-11-12 of assisting Iranian intelligence, Sepahvand or Manesh, receives a custodial term of 10 years or more, imposed between 2026-12-14 and 2027-02-26.",
+    "domain": "crime/security",
+    "probability": 40,
+    "resolution": "TRUE if judiciary.uk sentencing remarks, a CPS statement or PA reporting show Sepahvand or Manesh given a custodial term of 10 years or more, excluding extended licence, imposed between 2026-12-14 and 2027-02-26; FALSE otherwise.",
+    "deadline": "2027-03-02",
+    "citations": [
+      76,
+      80,
+      115
+    ],
+    "failure_condition": "Neither man received a custodial term of 10 years or more between 2026-12-14 and 2027-02-26, including the case where sentencing did not take place in that window."
+  },
+  {
+    "statement": "The New Zealand government classifies drought conditions in at least one region as a medium-scale or larger adverse event, announced between 2026-11-13 and 2027-03-31.",
+    "domain": "disaster",
+    "probability": 55,
+    "resolution": "TRUE if an MPI or Beehive.govt.nz release dated between 2026-11-13 and 2027-03-31 announces a new or expanded drought classification at medium-scale or larger for any New Zealand region; FALSE otherwise.",
+    "deadline": "2027-04-05",
+    "citations": [
+      42
+    ],
+    "failure_condition": "No new or expanded medium-scale or larger drought classification was announced for any New Zealand region between 2026-11-13 and 2027-03-31."
+  }
+]
