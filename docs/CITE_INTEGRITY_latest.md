@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-11-11T12:56:34Z · ledger `ledger.json` · 5593 rows in scope
+Generated 2026-11-12T13:58:24Z · ledger `ledger.json` · 5648 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,11 +12,11 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **5592**
+- rows audited: **5647**
 - scope limitation (no resolvable source report): **1**
-- defective: **882** (15.8% of audited)
+- defective: **899** (15.9% of audited)
 - rows whose citation number does not identify a unique item: **437** (max candidates behind one number: 8)
-  - UNSUPPORTED: 611
+  - UNSUPPORTED: 628
   - AMBIGUOUS_REF: 437
   - DEADWEIGHT: 258
   - SHOTGUN: 56
@@ -59,22 +59,22 @@ A keyless determination says the claim went beyond its declared priors. Where th
 |---|---:|---:|---:|
 | control/baserate | 1788 | 234 | 13% |
 | lmstudio/auto | 550 | 137 | 25% |
-| manual/fable-5.1/unattested | 518 | 89 | 17% |
+| manual/fable-5.1/unattested | 526 | 91 | 17% |
 | lmstudio/realist | 249 | 82 | 33% |
-| manual/opus-5.5/unattested | 372 | 69 | 19% |
+| manual/opus-5.5/unattested | 381 | 72 | 19% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| lmstudio/qwen36-abliterated | 204 | 41 | 20% |
-| control/trailing | 157 | 33 | 21% |
+| lmstudio/qwen36-abliterated | 209 | 43 | 21% |
+| control/trailing | 178 | 40 | 22% |
 | manual/sonnet-5.5/unattested | 222 | 32 | 14% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
-| lmstudio/qwen36 | 198 | 27 | 14% |
-| lmstudio/qwen36-realist | 178 | 24 | 13% |
+| lmstudio/qwen36 | 201 | 27 | 13% |
+| lmstudio/qwen36-realist | 183 | 25 | 14% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
 | manual/opus-5 | 74 | 12 | 16% |
 | manual/fable | 45 | 6 | 13% |
 | manual/fable-5 | 38 | 2 | 5% |
+| manual/fable-5.2/unattested | 12 | 2 | 17% |
 | manual/sonnet-5 | 45 | 1 | 2% |
 | operator/human | 10 | 0 | 0% |
 | kfk/halflife | 10 | 0 | 0% |
-| manual/fable-5.2/unattested | 8 | 0 | 0% |
 
