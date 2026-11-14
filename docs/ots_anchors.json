@@ -1,6 +1,6 @@
 {
   "schema": "ots_anchors/v1",
-  "generated": "2026-11-13T12:34:43.084527+00:00",
+  "generated": "2026-11-14T11:43:40.377962+00:00",
   "construction": "SHA-256 over the exact served bytes, submitted to OpenTimestamps calendars, aggregated into a Bitcoin transaction. Verification requires no trust in this desk or in the calendars.",
   "two_phase_note": "a PENDING receipt carries calendar commitments only and does NOT prove a block height; only an ANCHORED receipt does. Pending must never be described as anchored.",
   "pairing_note": "digest_at_stamp is read from the receipt and is fixed; digest_served is computed from the bytes served at the moment this face was generated (see generated) - publish.bat refreshes it before every publish, and the anchor pass when it stamps or upgrades (OTSFACE-2026-09-03). pairing=MATCH means the receipt covers what you can download. pairing=DRIFT means the file has changed since it was stamped and the receipt covers the older bytes only. DRIFT is disclosed, not corrected: a receipt is never re-issued to make a later file look anchored.",
@@ -8,7 +8,7 @@
   "files": {
     "ledger.json": {
       "receipt": "ledger.json.ots",
-      "state": "pending",
+      "state": "anchored",
       "digest": "506f1aaf0f2b4c1ff6bda156fc298931bc491a515fbfa2a4d952209ab030f387",
       "digest_at_stamp": "506f1aaf0f2b4c1ff6bda156fc298931bc491a515fbfa2a4d952209ab030f387",
       "digest_served": "506f1aaf0f2b4c1ff6bda156fc298931bc491a515fbfa2a4d952209ab030f387",
@@ -243,7 +243,7 @@
     },
     "KALIBRIERWARTE_REGISTERED_REPORT_v4.md": {
       "receipt": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md.ots",
-      "state": "pending",
+      "state": "anchored",
       "digest": "cf7b1418d471d1312be006b8ea48d5a5d6dbe27e29e41416cc2641af59744a57",
       "digest_at_stamp": "cf7b1418d471d1312be006b8ea48d5a5d6dbe27e29e41416cc2641af59744a57",
       "digest_served": "cf7b1418d471d1312be006b8ea48d5a5d6dbe27e29e41416cc2641af59744a57",
