@@ -1,0 +1,332 @@
+[
+  {
+    "statement": "Donald Trump, Vladimir Putin and Xi Jinping hold an in-person trilateral meeting, all three present together, in China between 2026-11-17 and 2026-11-21, around the APEC Leaders Meeting in Shenzhen on 2026-11-18 and 2026-11-19.",
+    "resolution": "True if at least two of Reuters, AP, BBC or Xinhua report that the three leaders met together in person in China between 2026-11-17 and 2026-11-21.",
+    "failure_condition": "No in-person meeting with Trump, Putin and Xi all present together takes place in China between 2026-11-17 and 2026-11-21.",
+    "domain": "political",
+    "deadline": "2026-11-24",
+    "probability": 57,
+    "citations": [
+      58,
+      76
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-14",
+      "ledger_as_of": "2026-11-14T23:54:40Z",
+      "ledger_sha16": "2d9e42d92ac271cb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261114-16"
+    }
+  },
+  {
+    "statement": "The Europe Brent spot price (EIA, FRED series DCOILBRENTEU) closes above 110.00 USD per barrel on at least one trading day between 2026-11-16 and 2027-01-29. Reference: 95.84 USD on the packet date.",
+    "resolution": "True if FRED DCOILBRENTEU shows any daily value above 110.00 dated between 2026-11-16 and 2027-01-29. Reference: 95.84 on 2026-11-14.",
+    "failure_condition": "Every daily Brent spot value between 2026-11-16 and 2027-01-29 is at or below 110.00 USD per barrel.",
+    "domain": "economics/markets",
+    "deadline": "2027-02-02",
+    "probability": 57,
+    "citations": [
+      41,
+      70
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-14",
+      "ledger_as_of": "2026-11-14T23:54:40Z",
+      "ledger_sha16": "2d9e42d92ac271cb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261114-17"
+    }
+  },
+  {
+    "statement": "Grand Theft Auto VI launches on PlayStation 5 and Xbox Series X|S on its scheduled release date of 2026-11-19.",
+    "resolution": "True if Rockstar Games or Take-Two Interactive confirms the game launched and became playable on 2026-11-19, with the PlayStation Store listing it as released on that date.",
+    "failure_condition": "The game does not become commercially available to play on 2026-11-19 on either platform.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-23",
+    "probability": 57,
+    "citations": [
+      39
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-14",
+      "ledger_as_of": "2026-11-14T23:54:40Z",
+      "ledger_sha16": "2d9e42d92ac271cb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261114-18"
+    }
+  },
+  {
+    "statement": "The CISA Known Exploited Vulnerabilities catalog adds a PostgreSQL vulnerability with a dateAdded value between 2026-11-16 and 2027-02-26.",
+    "resolution": "True if the CISA KEV catalog JSON carries an entry with vendorProject PostgreSQL and dateAdded between 2026-11-16 and 2027-02-26.",
+    "failure_condition": "No PostgreSQL entry with dateAdded between 2026-11-16 and 2027-02-26 exists in the CISA KEV catalog.",
+    "domain": "cyber",
+    "deadline": "2027-03-02",
+    "probability": 57,
+    "citations": [
+      15
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-14",
+      "ledger_as_of": "2026-11-14T23:54:40Z",
+      "ledger_sha16": "2d9e42d92ac271cb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261114-19"
+    }
+  },
+  {
+    "statement": "The US Department of Justice announces criminal charges against at least one named individual tied to the North Korean campaign behind the roughly 400 million USD crypto theft, between 2026-11-16 and 2027-02-26.",
+    "resolution": "True if a justice.gov press release dated between 2026-11-16 and 2027-02-26 announces an indictment or criminal complaint naming a defendant tied to that campaign.",
+    "failure_condition": "No criminal charge against a named individual tied to the campaign is announced between 2026-11-16 and 2027-02-26.",
+    "domain": "cyber",
+    "deadline": "2027-03-02",
+    "probability": 57,
+    "citations": [
+      11
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "cyber",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-14",
+      "ledger_as_of": "2026-11-14T23:54:40Z",
+      "ledger_sha16": "2d9e42d92ac271cb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261114-20"
+    }
+  },
+  {
+    "statement": "At least one person is criminally charged in state or federal court in connection with the bomb found at the Illinois ethanol plant near Peoria, with charges filed between 2026-11-15 and 2027-01-15.",
+    "resolution": "True if a DOJ press release, federal docket or Illinois court record shows charges filed between 2026-11-15 and 2027-01-15 over the device found at the plant.",
+    "failure_condition": "No person is charged over the ethanol plant bomb between 2026-11-15 and 2027-01-15.",
+    "domain": "crime/security",
+    "deadline": "2027-01-19",
+    "probability": 57,
+    "citations": [
+      17
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "crime-security",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-14",
+      "ledger_as_of": "2026-11-14T23:54:40Z",
+      "ledger_sha16": "2d9e42d92ac271cb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261114-21"
+    }
+  },
+  {
+    "statement": "South Sudan opens polling for its first national general election on any day between 2027-02-01 and 2027-02-28.",
+    "resolution": "True if South Sudan's National Elections Commission and at least one of the UN, AU or IGAD observer missions report polls opened for the national election between 2027-02-01 and 2027-02-28.",
+    "failure_condition": "Polling for South Sudan's national general election does not open on any day between 2027-02-01 and 2027-02-28.",
+    "domain": "political",
+    "deadline": "2027-03-03",
+    "probability": 57,
+    "citations": [
+      96
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-14",
+      "ledger_as_of": "2026-11-14T23:54:40Z",
+      "ledger_sha16": "2d9e42d92ac271cb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261114-22"
+    }
+  },
+  {
+    "statement": "Russia and Ukraine both announce a general ceasefire covering the entire front line that takes effect between 2026-11-16 and 2027-01-31.",
+    "resolution": "True if the Kremlin and the Office of the President of Ukraine each announce a front-wide ceasefire taking effect between 2026-11-16 and 2027-01-31, reported by Reuters and AP.",
+    "failure_condition": "No front-wide ceasefire announced by both governments takes effect between 2026-11-16 and 2027-01-31.",
+    "domain": "military/conflict",
+    "deadline": "2027-02-03",
+    "probability": 57,
+    "citations": [
+      61,
+      77,
+      93
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-14",
+      "ledger_as_of": "2026-11-14T23:54:40Z",
+      "ledger_sha16": "2d9e42d92ac271cb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261114-23"
+    }
+  },
+  {
+    "statement": "The USGS earthquake catalog records at least one earthquake of magnitude 7.0 or greater anywhere in the world with an origin time between 2026-11-16 and 2026-12-15.",
+    "resolution": "True if a USGS ComCat query returns at least one event of magnitude 7.0 or greater with origin time between 2026-11-16T00:00Z and 2026-12-15T23:59Z.",
+    "failure_condition": "No earthquake of magnitude 7.0 or greater with origin time in the window appears in the USGS catalog.",
+    "domain": "disaster",
+    "deadline": "2026-12-18",
+    "probability": 57,
+    "citations": [
+      25,
+      30,
+      31
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "disaster",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-14",
+      "ledger_as_of": "2026-11-14T23:54:40Z",
+      "ledger_sha16": "2d9e42d92ac271cb",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261114-24"
+    }
+  }
+]
