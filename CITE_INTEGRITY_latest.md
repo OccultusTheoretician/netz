@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-11-14T12:29:33Z · ledger `ledger.json` · 5703 rows in scope
+Generated 2026-11-15T12:57:04Z · ledger `ledger.json` · 5767 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
@@ -12,13 +12,13 @@ Read-only. Sealed rows are never edited; a defect found after sealing is a print
 
 ## Result
 
-- rows audited: **5702**
+- rows audited: **5766**
 - scope limitation (no resolvable source report): **1**
-- defective: **900** (15.8% of audited)
+- defective: **907** (15.7% of audited)
 - rows whose citation number does not identify a unique item: **438** (max candidates behind one number: 8)
-  - UNSUPPORTED: 629
+  - UNSUPPORTED: 634
   - AMBIGUOUS_REF: 438
-  - DEADWEIGHT: 258
+  - DEADWEIGHT: 260
   - SHOTGUN: 56
   - NO_CITES: 24
   - THIN: 3
@@ -61,19 +61,19 @@ A keyless determination says the claim went beyond its declared priors. Where th
 | lmstudio/auto | 550 | 137 | 25% |
 | manual/fable-5.1/unattested | 535 | 91 | 17% |
 | lmstudio/realist | 249 | 82 | 33% |
-| manual/opus-5.5/unattested | 388 | 72 | 19% |
+| manual/opus-5.5/unattested | 397 | 72 | 18% |
 | manual/opus-5/unattested | 326 | 46 | 14% |
-| lmstudio/qwen36-abliterated | 212 | 43 | 20% |
-| control/trailing | 198 | 40 | 20% |
+| lmstudio/qwen36-abliterated | 220 | 43 | 20% |
+| control/trailing | 214 | 42 | 20% |
 | manual/sonnet-5.5/unattested | 222 | 32 | 14% |
+| lmstudio/qwen36 | 215 | 30 | 14% |
 | manual/fable-5/unattested | 258 | 28 | 11% |
-| lmstudio/qwen36 | 207 | 28 | 14% |
-| lmstudio/qwen36-realist | 189 | 25 | 13% |
+| lmstudio/qwen36-realist | 205 | 26 | 13% |
 | manual/sonnet-5/unattested | 342 | 19 | 6% |
 | manual/opus-5 | 74 | 12 | 16% |
 | manual/fable | 45 | 6 | 13% |
+| manual/fable-5.2/unattested | 23 | 4 | 17% |
 | manual/fable-5 | 38 | 2 | 5% |
-| manual/fable-5.2/unattested | 16 | 2 | 12% |
 | manual/sonnet-5 | 45 | 1 | 2% |
 | operator/human | 10 | 0 | 0% |
 | kfk/halflife | 10 | 0 | 0% |

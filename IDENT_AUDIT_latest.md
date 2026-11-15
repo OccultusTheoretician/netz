@@ -1,18 +1,18 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-11-14T12:29:41Z · 146 report(s)
+Generated 2026-11-15T12:57:12Z · 148 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **146**
-- findings: **258**
+- reports audited: **148**
+- findings: **260**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 4
-  - UNSOURCED: 254
-- distinct tokens: **168**
+  - UNSOURCED: 256
+- distinct tokens: **170**
 
 ## Reached a sealed row
 
@@ -470,4 +470,6 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-11-11_1613.md | `CVE-2026-116606` | UNSOURCED |
 | battle_report_2026-11-11_1613.md | `CVE-2026-125350` | UNSOURCED |
 | battle_report_2026-11-12_1613.md | `CVE-2026-119618` | UNSOURCED |
+| battle_report_2026-11-14_1613.md | `CVE-2026-114713` | UNSOURCED |
+| battle_report_2026-11-14_1613.md | `CVE-2026-123039` | UNSOURCED |
 
