@@ -1,0 +1,259 @@
+[
+  {
+    "statement": "Iran launches at least one drone or missile attack at Bahraini territory, including US facilities in Bahrain, between 2026-11-16 and 2026-11-29.",
+    "resolution": "TRUE if the government of Bahrain or US Central Command states that Iranian drones or missiles were launched at Bahraini territory between 2026-11-16 and 2026-11-29, as reported by at least two of Reuters, AP, AFP, BBC. Otherwise FALSE.",
+    "failure_condition": "No Iranian drone or missile was launched at Bahraini territory between 2026-11-16 and 2026-11-29.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-02",
+    "probability": 57,
+    "citations": [
+      53,
+      54,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-15",
+      "ledger_as_of": "2026-11-15T23:33:30Z",
+      "ledger_sha16": "234259319523e1f7",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261115-15"
+    }
+  },
+  {
+    "statement": "US forces strike at least one target on Iranian land territory, mainland or islands, between 2026-11-16 and 2026-11-29.",
+    "resolution": "TRUE if the Pentagon, US Central Command or the White House confirms, or at least two of Reuters, AP, AFP report citing US officials, a US strike on Iranian land territory between 2026-11-16 and 2026-11-29. Otherwise FALSE.",
+    "failure_condition": "US forces struck no target on Iranian land territory between 2026-11-16 and 2026-11-29.",
+    "domain": "military/conflict",
+    "deadline": "2026-12-02",
+    "probability": 57,
+    "citations": [
+      53,
+      74
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "military",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-15",
+      "ledger_as_of": "2026-11-15T23:33:30Z",
+      "ledger_sha16": "234259319523e1f7",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261115-16"
+    }
+  },
+  {
+    "statement": "Nvidia reports revenue of at least 110.16 billion dollars, the top of its own guidance range, for its fiscal Q3 2027 quarter ended 2026-10-25, in results scheduled for release on 2026-11-17.",
+    "resolution": "TRUE if revenue for the quarter ended 2026-10-25, in Nvidia results filed on SEC EDGAR between 2026-11-17 and 2026-11-23, is at least 110.16 billion dollars. Reference: guidance 108.0 billion plus or minus 2 percent. Otherwise FALSE.",
+    "failure_condition": "Nvidia revenue for the quarter ended 2026-10-25 is below 110.16 billion dollars, or no results for that quarter are released by 2026-11-23.",
+    "domain": "economics/markets",
+    "deadline": "2026-11-23",
+    "probability": 57,
+    "citations": [
+      35
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "economics",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-15",
+      "ledger_as_of": "2026-11-15T23:33:30Z",
+      "ledger_sha16": "234259319523e1f7",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261115-17"
+    }
+  },
+  {
+    "statement": "A new Israeli government headed by Gadi Eisenkot wins a Knesset confidence vote between 2026-11-16 and 2026-12-31.",
+    "resolution": "TRUE if the Knesset approves a government headed by Gadi Eisenkot in a confidence vote held between 2026-11-16 and 2026-12-31, per the official Knesset record or both Reuters and AP. Otherwise FALSE.",
+    "failure_condition": "No government headed by Gadi Eisenkot wins a Knesset confidence vote between 2026-11-16 and 2026-12-31.",
+    "domain": "political",
+    "deadline": "2027-01-04",
+    "probability": 57,
+    "citations": [
+      83,
+      95
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-15",
+      "ledger_as_of": "2026-11-15T23:33:30Z",
+      "ledger_sha16": "234259319523e1f7",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261115-18"
+    }
+  },
+  {
+    "statement": "The United States, China and Russia issue one joint written statement agreed by all three governments in connection with the Trump-Xi-Putin meeting scheduled for 2026-11-19 in Shenzhen, published between 2026-11-18 and 2026-11-25.",
+    "resolution": "TRUE if one joint statement text of the United States, China and Russia is published between 2026-11-18 and 2026-11-25 on at least two of whitehouse.gov, kremlin.ru, mfa.gov.cn. Separate national readouts do not count. Otherwise FALSE.",
+    "failure_condition": "No joint statement agreed by all three of the United States, China and Russia is issued between 2026-11-18 and 2026-11-25.",
+    "domain": "political",
+    "deadline": "2026-11-30",
+    "probability": 57,
+    "citations": [
+      98,
+      100
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "political",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-15",
+      "ledger_as_of": "2026-11-15T23:33:30Z",
+      "ledger_sha16": "234259319523e1f7",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261115-19"
+    }
+  },
+  {
+    "statement": "Between 2026-11-15 and 2027-01-31, a person is criminally charged in federal or Illinois state court over the explosive device found on 2026-11-13 at the BioUrja Renewables ethanol plant in Peoria, Illinois.",
+    "resolution": "TRUE if a DOJ or US Attorney press release, a court docket, or the Peoria County prosecutor shows charges filed between 2026-11-15 and 2027-01-31 against a person over the Peoria BioUrja explosive device. Otherwise FALSE.",
+    "failure_condition": "No person is charged over the Peoria BioUrja explosive device between 2026-11-15 and 2027-01-31.",
+    "domain": "crime/security",
+    "deadline": "2027-02-03",
+    "probability": 57,
+    "citations": [
+      30
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "crime-security",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-15",
+      "ledger_as_of": "2026-11-15T23:33:30Z",
+      "ledger_sha16": "234259319523e1f7",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261115-20"
+    }
+  },
+  {
+    "statement": "The CDC cumulative count of confirmed 2026 US measles cases reaches at least 7,000 in a CDC update published between 2026-11-16 and 2027-01-08. Reference: 5,412 cases as of 2026-11-12.",
+    "resolution": "TRUE if any CDC measles cases and outbreaks update published between 2026-11-16 and 2027-01-08 reports at least 7,000 confirmed 2026 US cases. Reference: 5,412 as of 2026-11-12. Otherwise FALSE.",
+    "failure_condition": "Confirmed 2026 US measles cases counted by CDC stay below 7,000 in every update published between 2026-11-16 and 2027-01-08.",
+    "domain": "disaster",
+    "deadline": "2027-01-11",
+    "probability": 57,
+    "citations": [
+      28
+    ],
+    "control_basis": {
+      "arm": "control/trailing",
+      "rule": "climatological, trailing - the realized hit rate of the mirrored arm's own resolved rows, by the first step of the ladder with at least 10 rows (registration v4, Section 3)",
+      "mirror_of": "manual/opus-5.5/unattested",
+      "step": 2,
+      "step_name": "mirrored arm, all domains",
+      "rate": 0.5714,
+      "n": 14,
+      "domain_canonical": "disaster",
+      "min_n": 10,
+      "scope": [
+        "manual/fable-5.1/unattested",
+        "manual/opus-5.5/unattested",
+        "manual/fable-5.2/unattested",
+        "operator/cold",
+        "operator/advised"
+      ],
+      "history_cut": "2026-11-15",
+      "ledger_as_of": "2026-11-15T23:33:30Z",
+      "ledger_sha16": "234259319523e1f7",
+      "clamped_to_gate_band": false,
+      "registration": "KALIBRIERWARTE_REGISTERED_REPORT_v4.md, Section 3",
+      "note": "pre-registered before the outcome existed. The floor the mirrored arm must clear, priced from its own record; it is not an attempt to be right.",
+      "control_for": "KKR-20261115-21"
+    }
+  }
+]
