@@ -43,6 +43,18 @@ REM anchor pass. No calendar, no receipt change, no state change.
 python ots_anchor.py --refresh-face
 git add -A
 
+REM NEW-FILE GATE: a path the desk has never published before stops the publish
+REM until someone looks at it. Tracked files pass.
+python newfile_gate.py
+if errorlevel 1 (
+  echo.
+  echo  NEW-FILE GATE STOPPED THE PUBLISH - NOTHING committed, NOTHING pushed.
+  echo  Everything is unstaged again; your files are untouched.
+  git reset -q
+  pause
+  exit /b 1
+)
+
 REM KK24: the guard was never in the publish path - everything it caught
 REM on 2026-08-06 was caught by a hand-run verify. Runs AFTER add -A so
 REM newly staged files are inside the scan surface. WARNs pass; FAILs stop.

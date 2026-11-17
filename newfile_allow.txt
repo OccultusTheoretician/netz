@@ -1,0 +1,54 @@
+# newfile_allow.txt: path patterns the desk publishes as NEW files (fnmatch, case-sensitive).
+# Derived 2026-11-13 from every path added since 2026-09-15. A new path that matches nothing here
+# stops publish.bat until someone looks at it; if it belongs on the site, add its pattern here.
+# Never add: HANDOFF*, *handoff*, .~lock*, *.local.*, notes or drafts, or a one-off .py script.
+newfile_gate.py
+newfile_allow.txt
+# daily arms and controls (repo root)
+Fable*kkr_forecasts_*.json
+Fable*kkr_forecasts_*.json.ots
+Fable*kkr_projections_*.json
+Fable*kkr_projections_*.json.ots
+Opus*kkr_forecasts_*.json
+Opus*kkr_forecasts_*.json.ots
+Opus*kkr_projections_*.json
+Opus*kkr_projections_*.json.ots
+Opus*forecasts_*.json
+Opus*forecasts_*.json.ots
+Sonnet*kkr_forecasts_*.json
+Sonnet*kkr_forecasts_*.json.ots
+Sonnet*kkr_desk_forecasts_*.json
+Sonnet*kkr_desk_forecasts_*.json.ots
+Sonnet*forecasts_*.json
+Sonnet*forecasts_*.json.ots
+control_*.json
+correction_keys_*.json
+# forecasts/
+forecasts/KKR_*.html
+forecasts/KKR_*.md
+forecasts/OHRWURM_*.md
+forecasts/WARDESK_*.md
+forecasts/dialektik_meter_*.json
+forecasts/kfk_sightings_*.json
+forecasts/ohrwurm_*.json
+forecasts/jury_A_parts/*.md
+forecasts/jury_A_parts/*.json
+forecasts/jury_A_*.json
+forecasts/jury_B_*.json
+forecasts/jury_B_*.json.partial
+forecasts/keys_packet_*.md
+forecasts/keys_worksheet_*.json
+forecasts/audit_packet_*.md
+forecasts/held_evidence_*.json
+forecasts/DISPOSITION_*.md
+forecasts/SITTING_*.md
+forecasts/warte_*.json
+forecasts/local_runs.jsonl
+# reports/
+reports/battle_report_*.html
+reports/battle_report_*.md
+# docs/: receipts and registered reports
+docs/ledger.json.*.ots
+docs/KALIBRIERWARTE_REGISTERED_REPORT_v*.md
+docs/KALIBRIERWARTE_REGISTERED_REPORT_v*.md.ots
+docs/KALIBRIERWARTE_REGISTERED_REPORT_v*.md.*.ots
