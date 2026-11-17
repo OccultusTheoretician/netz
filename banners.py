@@ -32,9 +32,18 @@ OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("docs/brand/banners")
 # banner that carries it is generated locally and never committed.
 _ident = Path(__file__).resolve().parent / "identity.local.json"
 _I = {}
+# docs/ is served. A run that writes there never reads the identity file, so the
+# name cannot reach a tracked, published banner. The personal set needs an outdir
+# outside docs/ (2026-11-16).
+_served = Path(__file__).resolve().parent / "docs"
+_out = OUT.resolve()
 if _ident.exists():
-    import json as _j
-    _I = _j.loads(_ident.read_text(encoding="utf-8"))
+    if _out == _served or _served in _out.parents:
+        print("  identity.local.json NOT read: the output folder is served.")
+        print("  For the personal set, pass a folder outside docs/.")
+    else:
+        import json as _j
+        _I = _j.loads(_ident.read_text(encoding="utf-8"))
 NAME = _I.get("name", "NEBELKR\u00c4HE")
 # No carrier line: the personal banners carry the name and the desk only
 # (operator ruling, 2026-11-16). A "carrier" key in identity.local.json is ignored.
