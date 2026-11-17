@@ -11,7 +11,7 @@ a print-to-PDF gives you the PNG at the exact size a platform wants.
     python banners.py [outdir]        default: docs/brand/banners
 
 EDIT THESE, NOT THE ARTWORK
-    NAME, CARRIER, SAYINGS at the top of this file. Everything downstream is
+    NAME and SAYINGS at the top of this file. Everything downstream is
     generated. No banner is hand-composed, so a change to a line of copy is one
     edit rather than fourteen.
 """
@@ -36,8 +36,8 @@ if _ident.exists():
     import json as _j
     _I = _j.loads(_ident.read_text(encoding="utf-8"))
 NAME = _I.get("name", "NEBELKR\u00c4HE")
-CARRIER = _I.get("carrier",
-                 "A public-finance and audit professional with a decade of state service")
+# No carrier line: the personal banners carry the name and the desk only
+# (operator ruling, 2026-11-16). A "carrier" key in identity.local.json is ignored.
 BRAND = "THE PRESCIENT DESK\u2122"
 WORD = "NEBELKR\u00c4HE"
 SITE = "retroprescientaudit.com"
@@ -133,8 +133,7 @@ def header_linkedin_personal():       # 1584 x 396, safe area is generous left
     b = (mark(88, 84, 0.20, uid="li")
          + t(88, 236, NAME, 52, ls=11)
          + rule(88, 262, 900, BRASS, .5)
-         + t(90, 300, CARRIER, 22, TYPE, "#c2c6cb")
-         + t(92, 340, BRAND + "   \u00b7   " + SITE, 17, MONO, DIM, 5))
+         + t(92, 300, BRAND + "   \u00b7   " + SITE, 17, MONO, DIM, 5))
     return svg(w, h, b)
 
 
@@ -176,9 +175,8 @@ def lower_third():                    # 1920 x 300
     w, h = 1920, 300
     b = (mark(70, 96, 0.145, uid="l3")
          + t(340, 150, NAME, 46, ls=9)
-         + t(342, 190, CARRIER, 19, TYPE, "#b9bec4")
-         + rule(340, 214, 1180, BRASS, .5)
-         + t(342, 246, BRAND + "   \u00b7   " + SITE, 16, MONO, DIM, 5))
+         + rule(340, 174, 1180, BRASS, .5)
+         + t(342, 206, BRAND + "   \u00b7   " + SITE, 16, MONO, DIM, 5))
     return svg(w, h, b)
 
 
@@ -252,7 +250,7 @@ which is why these ship as SVG.</p>
     for f in sorted(OUT.iterdir()):
         print(f"  {f.name:44s} {f.stat().st_size:>8,}")
     print(f"\n  {len(list(OUT.iterdir()))} files.")
-    print("  Copy lives in NAME, CARRIER and SAYINGS at the top of banners.py.")
+    print("  Copy lives in NAME and SAYINGS at the top of banners.py.")
     print("  Open export.html to see them all at true size.")
     return 0
 
