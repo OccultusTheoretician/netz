@@ -37,6 +37,15 @@ the workflow the standard directs, not an edit to sealed material. Such
 rows are counted and disclosed as an INFO note under 4.03; only rows
 failing BOTH recomputations are 5.06 must-failures.
 
+RESOLUTION CORRECTIONS (VERIFY13, rpas_verify/1.3; RPAS-26 amendment 2026-11-17, 5.07a):
+a resolved verdict that changes between two snapshots is a 5.06 must-failure
+unless the later row keeps the superseded verdict (status_superseded), dates the
+change (resolution_corrected) and names its authority (resolution_authority), and
+the later ledger discloses that exact change by id in disclosed_entries (clause
+5.06, with status_from, status_to, corrected, dated and finding). Such a change is
+printed as conformant-as-disclosed under 5.07. Two snapshots that both predate a
+correction's disclosure still fail: neither carries it.
+
 Entries issued before 2026-07-30 are unsealed by history; the ledger's own
 disclosure prints that finding (RPAS 6.04) and this verifier reads it. Entries
 issued on or after that date without a seal are a MUST failure. Scores obey the
@@ -72,7 +81,7 @@ def rec(level, cite, msg):
 
 def load(src):
     if str(src).startswith(("http://", "https://")):
-        req = Request(str(src), headers={"User-Agent": "rpas_verify/1.2"})
+        req = Request(str(src), headers={"User-Agent": "rpas_verify/1.3"})
         with urlopen(req, timeout=30) as r:
             raw = r.read().decode("utf-8")
     else:
@@ -348,6 +357,33 @@ def check_figures(rows):
                              "the weaker record into the stronger")
 
 
+_DATE10 = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def _correction_disclosed(h, rid, o, n):
+    """VERIFY13 (RPAS-26 amendment 2026-11-17, 5.07a): a resolved verdict that changed reads
+    conformant-as-disclosed under 5.07 only when the later row keeps the superseded
+    verdict, dates the change and names its authority, and the later ledger discloses
+    that exact change by id. Returns a short description, or '' (a 5.06 failure)."""
+    if n.get("status_superseded") != o.get("status"):
+        return ""
+    cor = str(n.get("resolution_corrected") or "").strip()
+    if not _DATE10.match(cor) or not str(n.get("resolution_authority") or "").strip():
+        return ""
+    for d in (h.get("disclosed_entries") or []):
+        if not isinstance(d, dict):
+            continue
+        if (rid in [str(i) for i in (d.get("ids") or [])]
+                and "5.06" in [str(c) for c in (d.get("clauses") or [])]
+                and str(d.get("status_from") or "") == str(o.get("status"))
+                and str(d.get("status_to") or "") == str(n.get("status"))
+                and str(d.get("corrected") or "") == cor
+                and _DATE10.match(str(d.get("dated") or "").strip())
+                and str(d.get("finding") or "").strip()):
+            return "corrected %s, disclosed %s" % (cor, str(d.get("dated")).strip())
+    return ""
+
+
 def check_append_only(h, prev):
     old = {e.get("id"): e for e in prev.get("projections", [])
            if isinstance(e, dict)}
@@ -387,7 +423,14 @@ def check_append_only(h, prev):
                                          f"after issue ({o.get(f)!r} -> {n.get(f)!r})")
         if o.get("seal_sha256") and o.get("seal_sha256") != n.get("seal_sha256"):
             rec("MUST", "RPAS 5.06", f"{rid}: seal ALTERED between snapshots")
-        if o.get("status") in RESOLVED and n.get("status") != o.get("status"):
+        _rc = (o.get("status") in RESOLVED and n.get("status") != o.get("status")
+               and _correction_disclosed(h, rid, o, n))  # VERIFY13
+        if _rc:
+            rec("INFO", "RPAS 5.07", f"{rid}: resolved status changed "
+                                     f"({o.get('status')} -> {n.get('status')}) and the "
+                                     f"ledger discloses it by id ({_rc}) - "
+                                     f"conformant-as-disclosed (amendment 5.07a)")
+        elif o.get("status") in RESOLVED and n.get("status") != o.get("status"):
             rec("MUST", "RPAS 5.06", f"{rid}: resolved status changed "
                                      f"({o.get('status')} -> {n.get('status')}) — "
                                      f"resolutions do not reverse; a correction is "
@@ -397,6 +440,38 @@ def check_append_only(h, prev):
 
 
 # ----------------------------------------------------------------------
+def _selftest_correction():
+    """VERIFY13 vectors: a reversed verdict reads conformant-as-disclosed only with the
+    row's own supersession fields and a matching disclosed_entries record."""
+    base = {"id": "T-0001", "statement": "s", "resolution": "r", "deadline": "2026-01-02",
+            "probability": 40, "failure_condition": "f", "keyed_keyless": "keyed",
+            "keyed_keyless_rationale": "k", "date_issued": "2026-01-01", "status": "miss"}
+    fixed = dict(base, status="hit", status_superseded="miss", notes_superseded="n",
+                 resolution_corrected="2026-01-05", resolution_authority="operator")
+    told = {"ids": ["T-0001"], "clauses": ["5.06"], "dated": "2026-01-06", "finding": "f",
+            "status_from": "miss", "status_to": "hit", "corrected": "2026-01-05"}
+    cases = [
+        ("undisclosed reversal fails", {"projections": [fixed]}, 1),
+        ("disclosed reversal reads conformant-as-disclosed",
+         {"projections": [fixed], "disclosed_entries": [told]}, 0),
+        ("disclosure without the row's superseded verdict fails",
+         {"projections": [dict(fixed, status_superseded=None)], "disclosed_entries": [told]}, 1),
+        ("disclosure of a different change fails",
+         {"projections": [fixed], "disclosed_entries": [dict(told, status_to="void")]}, 1),
+    ]
+    keep = list(findings)
+    good = True
+    print("\nRPAS-26 RESOLUTION-CORRECTION VECTORS (5.06, 5.07a)")
+    for name, new, want in cases:
+        del findings[:]
+        check_append_only(new, {"projections": [base]})
+        got = sum(1 for f in findings if f[0] == "MUST")
+        good = good and got == want
+        print(f"  {name}: {'PASS' if got == want else 'FAIL'}")
+    findings[:] = keep
+    return good
+
+
 def selftest():
     print("RPAS-26 SEAL CONSTRUCTION VECTOR")
     print("An independent implementation is conformant when it produces this exact")
@@ -428,7 +503,8 @@ def selftest():
     print(f"  ensure_ascii=False is load-bearing: {'PASS' if pin else 'FAIL'}")
     print("  (an implementation that escapes non-ASCII will disagree with the desk")
     print("   on every unicode entry — this pin is what catches it)")
-    return 0 if (same and stable and pin) else 1
+    rc_ok = _selftest_correction()
+    return 0 if (same and stable and pin and rc_ok) else 1
 
 
 def report(as_json, src, nrec):
@@ -442,7 +518,7 @@ def report(as_json, src, nrec):
             "should_departures": [{"cite": c, "message": m} for _, c, m in shoulds],
             "notes": [{"cite": c, "message": m} for l, c, m in findings if l == "INFO"],
             "verified_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "verifier": "rpas_verify/1.2"}, indent=2))
+            "verifier": "rpas_verify/1.3"}, indent=2))
         return 1 if musts else 0
     print(f"\nRPAS-26 CONFORMANCE — {src}")
     print("-" * 66)

@@ -281,9 +281,44 @@ def check_family_rulings():
     return "pass", "no lmstudio keyless determination after 2026-08-18 (ruling of that date)"
 
 
+def check_append_only():
+    """APPENDONLY-1117 (RPAS 4.01, 5.06, 5.07; amendment 2026-11-17, 5.07a): the ledger about
+    to be published is read against the ledger last committed, with rpas_verify's own
+    append-only check. A dropped row, a moved pre-registered field, an altered seal or a
+    resolved verdict that changes without its disclosure stops the publish."""
+    cur = ROOT / "docs" / "ledger.json"
+    if not cur.exists():
+        return "skip", "docs/ledger.json not present"
+    try:
+        r = subprocess.run(["git", "show", "HEAD:docs/ledger.json"], cwd=str(ROOT),
+                           capture_output=True, timeout=60)
+    except Exception as e:
+        return "skip", f"git not available ({e})"
+    if r.returncode != 0 or not r.stdout.strip():
+        return "skip", "no committed docs/ledger.json to compare"
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("rpas_verify_desk", str(ROOT / "rpas_verify.py"))
+        rv = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(rv)
+        new = json.loads(cur.read_text(encoding="utf-8"))
+        old = json.loads(r.stdout.decode("utf-8"))
+    except Exception as e:
+        return "fail", f"append-only check could not run: {type(e).__name__}: {e}"
+    rv.check_append_only(new, old)
+    musts = [m for m in rv.findings if m[0] == "MUST"]
+    told = [m for m in rv.findings if m[0] == "INFO" and "conformant-as-disclosed" in m[2]]
+    if musts:
+        return "fail", (f"{len(musts)} append-only failure(s) against the last commit: "
+                        + "; ".join(m[2][:140] for m in musts[:2]))
+    return "pass", ("nothing dropped, no sealed field moved, no resolved verdict changed since "
+                    "the last commit" + (f" ({len(told)} disclosed correction(s) read)" if told else ""))
+
+
 CHECKS = [("family rulings", check_family_rulings),  # KEYSFAM-1009
           ("identity guard", check_identity),
           ("ledger envelope", check_envelope),
+          ("append-only", check_append_only),  # APPENDONLY-1117
           ("vault leak", check_vault_leak),
           ("merge state", check_unmerged),  # PUBGUARD-2026-09-01
           ("working tree", check_dirty),
