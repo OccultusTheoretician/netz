@@ -1,18 +1,18 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-11-22T13:36:10Z · 150 report(s)
+Generated 2026-11-23T16:28:10Z · 156 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
 ## Result
 
-- reports audited: **150**
-- findings: **260**
+- reports audited: **156**
+- findings: **270**
 > **Scope limitation.** `--packets` was not supplied, so UNSOURCED findings were tested against the published report only. The packet the forecaster arm actually read is excluded from the repository by `.gitignore` (`forecasts/kkr_packet_*.md`), and it carries article summaries the report's record lines omit. An UNSOURCED finding here means *not present in the published record* — it is not a claim that the identifier is invented. MALFORMED findings stand regardless of provenance.
 
   - MALFORMED: 4
-  - UNSOURCED: 256
-- distinct tokens: **170**
+  - UNSOURCED: 266
+- distinct tokens: **180**
 
 ## Reached a sealed row
 
@@ -472,4 +472,14 @@ Identifiers appearing in machine-drafted synthesis prose are tested for format v
 | battle_report_2026-11-12_1613.md | `CVE-2026-119618` | UNSOURCED |
 | battle_report_2026-11-14_1613.md | `CVE-2026-114713` | UNSOURCED |
 | battle_report_2026-11-14_1613.md | `CVE-2026-123039` | UNSOURCED |
+| battle_report_2026-11-18_1613.md | `CVE-2026-115731` | UNSOURCED |
+| battle_report_2026-11-19_1615.md | `CVE-2024-10441` | UNSOURCED |
+| battle_report_2026-11-19_1615.md | `CVE-2026-40217` | UNSOURCED |
+| battle_report_2026-11-19_1615.md | `CVE-2026-90817` | UNSOURCED |
+| battle_report_2026-11-19_1615.md | `CVE-2026-90436` | UNSOURCED |
+| battle_report_2026-11-21_1612.md | `CVE-2026-129448` | UNSOURCED |
+| battle_report_2026-11-21_1612.md | `CVE-2026-123890` | UNSOURCED |
+| battle_report_2026-11-21_1612.md | `CVE-2025-42884` | UNSOURCED |
+| battle_report_2026-11-21_1612.md | `CVE-2026-76466` | UNSOURCED |
+| battle_report_2026-11-21_1612.md | `CVE-2026-23871` | UNSOURCED |
 
