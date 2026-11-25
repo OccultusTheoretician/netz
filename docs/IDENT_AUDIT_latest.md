@@ -1,6 +1,6 @@
 # IDENTIFIER GROUNDEDNESS AUDIT
 
-Generated 2026-11-24T16:23:43Z · 156 report(s)
+Generated 2026-11-25T16:02:46Z · 156 report(s)
 
 Identifiers appearing in machine-drafted synthesis prose are tested for format validity and for presence in the numbered record the synthesis summarises. An identifier the synthesis introduces on its own is unsourced by construction, and reads as more precise than the prose around it — which is why it goes unchecked.
 
