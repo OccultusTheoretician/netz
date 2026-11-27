@@ -1,6 +1,6 @@
 # CITATION INTEGRITY AUDIT
 
-Generated 2026-11-26T15:46:47Z · ledger `ledger.json` · 5921 rows in scope
+Generated 2026-11-27T15:34:29Z · ledger `ledger.json` · 5921 rows in scope
 
 Read-only. Sealed rows are never edited; a defect found after sealing is a printed finding, not a substitution.
 
